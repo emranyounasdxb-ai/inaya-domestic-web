@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "Inaya Domestic",
     "defaultTitle": "Inaya Domestic | Maid & Domestic Worker Services in Ajman, UAE",
-    "defaultDescription": "Inaya Domestic provides trusted maid, nanny, cooking, elder care and domestic worker services across Ajman and the UAE. Hire trained, verified staff today."
+    "defaultDescription": "Inaya Domestic provides trusted maid, nanny, cooking, elder care and domestic worker services in Ajman, UAE. Contact us to arrange the right support for your family."
   },
   "nav": {
     "home": "Home",
@@ -20,7 +20,7 @@
     "bookNow": "Book Now"
   },
   "hero": {
-    "badge": "Trusted in Ajman & across the UAE",
+    "badge": "Trusted in Ajman",
     "title": "Trusted Maid & Domestic Worker Services",
     "subtitle": "Hire trained, verified and reliable maids, nannies, cooks and care staff. Live-in or live-out, hourly or monthly.",
     "ctaPrimary": "Book a Service",
@@ -48,17 +48,17 @@
   },
   "about": {
     "title": "About Inaya Domestic",
-    "subtitle": "Your trusted domestic services partner in the UAE",
+    "subtitle": "Your trusted domestic services partner in Ajman",
     "p1": "Inaya Domestic is a leading domestic worker and maid services provider based in Ajman, UAE. We connect families with trained, verified and reliable domestic staff.",
     "p2": "From live-in maids and nannies to cooks, elder care and recruitment services, we handle every detail including visa assistance, background verification and replacement guarantees.",
     "missionTitle": "Our Mission",
-    "mission": "To make hiring trusted domestic help simple, safe and affordable for every family in the UAE.",
+    "mission": "To make hiring trusted domestic help simple, safe and affordable for families in Ajman.",
     "visionTitle": "Our Vision",
     "vision": "To be the most trusted domestic services brand in the region, known for quality staff and honest service."
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Complete domestic worker and home care solutions across the UAE",
+    "subtitle": "Complete domestic worker and home care solutions in Ajman",
     "learnMore": "Learn More",
     "bookThis": "Book This Service",
     "categoryDomestic": "Domestic Workers Services (UAE)"
@@ -171,7 +171,7 @@
     "lastUpdated": "Last updated"
   },
   "footer": {
-    "about": "Trusted maid and domestic worker services across Ajman and the UAE.",
+    "about": "Trusted maid and domestic worker services for families in Ajman.",
     "quickLinks": "Quick Links",
     "ourServices": "Our Services",
     "contactInfo": "Contact Info",
