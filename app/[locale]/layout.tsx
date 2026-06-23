@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navbar from '@/components/Navbar';
@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import '../globals.css';
 
+export const dynamic = 'force-dynamic';
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -17,6 +18,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
     title: { default: t('defaultTitle'), template: `%s | ${t('siteName')}` },
