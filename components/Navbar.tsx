@@ -27,9 +27,12 @@ export default function Navbar({ locale }: { locale: string }) {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
       <nav className="container-x flex h-16 items-center justify-between">
-        <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-primary-700">
-          <span className="text-2xl">🏡</span>
-          <span className="text-lg">Inaya Domestic</span>
+        <Link href={`/${locale}`} className="flex items-center" aria-label="INAYA Domestic Workers home">
+          <img
+            src="/brand/inaya-domestic-workers-logo.png"
+            alt="INAYA Domestic Workers"
+            className="h-11 w-auto max-w-[180px] object-contain sm:max-w-[220px]"
+          />
         </Link>
 
         <div className="hidden items-center gap-6 lg:flex">
