@@ -122,14 +122,14 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
     <div className="bg-[#f6fbf5] text-[#181d1a]">
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 scale-105 bg-cover bg-center transition-transform duration-1000" style={{ backgroundImage: `url(${heroImageUrl})` }} />
-        <div className="absolute inset-0 bg-primary-950/60 backdrop-blur-[3px]" />
+        <div className="absolute inset-0 bg-[#003f2e]/65 backdrop-blur-[3px]" />
         <div className="container-x relative z-10 py-24 text-center">
           <h1 className="mx-auto max-w-5xl text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">{copy.heroTitle}</h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/85 sm:text-lg">{copy.heroText}</p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-bold text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl">◉ {copy.whatsapp}</a>
             <a href={phoneHref} className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-8 py-4 font-bold text-white shadow-lg transition hover:-translate-y-1 hover:bg-primary-900 hover:shadow-xl">☎ {copy.call}</a>
-            <a href="#contact-form" className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/75 px-8 py-4 font-bold text-primary-950 shadow-lg backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white">↗ {copy.callback}</a>
+            <a href="#contact-form" className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/75 px-8 py-4 font-bold text-[#003f2e] shadow-lg backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white">↗ {copy.callback}</a>
           </div>
         </div>
       </section>
