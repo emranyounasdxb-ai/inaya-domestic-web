@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import FloatingSocialBar from '@/components/FloatingSocialBar';
 import '../globals.css';
 
 export const dynamic = 'force-dynamic';
@@ -44,9 +44,9 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
-  
-setRequestLocale(locale);
-  
+
+  setRequestLocale(locale);
+
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
@@ -55,9 +55,9 @@ setRequestLocale(locale);
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar locale={locale} />
+          <FloatingSocialBar />
           <main>{children}</main>
           <Footer locale={locale} />
-          <WhatsAppButton />
         </NextIntlClientProvider>
       </body>
     </html>
