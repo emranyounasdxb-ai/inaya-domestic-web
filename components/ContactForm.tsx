@@ -6,13 +6,15 @@ import { services } from '@/lib/services';
 
 type ContactFormProps = {
   locale?: string;
+  variant?: 'default' | 'floating';
 };
 
-export default function ContactForm({ locale = 'en' }: ContactFormProps) {
+export default function ContactForm({ locale = 'en', variant = 'default' }: ContactFormProps) {
   const t = useTranslations('contact');
   const tb = useTranslations('booking');
   const isArabic = locale === 'ar';
   const lang = isArabic ? 'ar' : 'en';
+  const isFloating = variant === 'floating';
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -47,6 +49,74 @@ export default function ContactForm({ locale = 'en' }: ContactFormProps) {
         <div className="mb-2 text-4xl">✓</div>
         <p className="font-medium">{t('success')}</p>
       </div>
+    );
+  }
+
+  if (isFloating) {
+    const floatingInputClass = 'peer w-full rounded-xl border-0 bg-[#eef5f0] px-4 pb-3 pt-6 text-sm text-gray-950 shadow-sm outline-none ring-1 ring-transparent transition placeholder:text-transparent focus:ring-2 focus:ring-primary-700';
+    const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-gray-500 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary-800 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
+
+    return (
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div>
+            <div className="relative">
+              <input name="name" placeholder=" " className={floatingInputClass} />
+              <label className={floatingLabelClass}>{t('name')} *</label>
+            </div>
+            {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
+          </div>
+          <div>
+            <div className="relative">
+              <input name="phone" placeholder=" " className={floatingInputClass} dir="ltr" />
+              <label className={floatingLabelClass}>{t('phone')} *</label>
+            </div>
+            {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div>
+            <div className="relative">
+              <input name="email" type="email" placeholder=" " className={floatingInputClass} dir="ltr" />
+              <label className={floatingLabelClass}>{t('email')} *</label>
+            </div>
+            {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+          </div>
+          <div>
+            <label className="sr-only">{labels.service}</label>
+            <select name="service" className="w-full rounded-xl border-0 bg-[#eef5f0] px-4 py-4 text-sm text-gray-600 shadow-sm outline-none ring-1 ring-transparent transition focus:ring-2 focus:ring-primary-700" defaultValue="">
+              <option value="" disabled>{labels.service}</option>
+              {services.slice(0, 12).map((service) => (
+                <option key={service.slug} value={service.slug}>{service.name[lang]}</option>
+              ))}
+            </select>
+            {errors.service && <p className="mt-1 text-xs text-red-600">{errors.service}</p>}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="relative">
+            <input name="nationality" placeholder=" " className={floatingInputClass} />
+            <label className={floatingLabelClass}>{labels.nationality}</label>
+          </div>
+          <div className="relative">
+            <input name="area" placeholder=" " className={floatingInputClass} />
+            <label className={floatingLabelClass}>{labels.area}</label>
+          </div>
+        </div>
+
+        <div>
+          <div className="relative">
+            <textarea name="message" placeholder=" " rows={4} className={`${floatingInputClass} min-h-32 resize-y`} />
+            <label className={floatingLabelClass}>{t('message')} *</label>
+          </div>
+          {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
+        </div>
+
+        <button type="submit" className="w-full rounded-xl bg-primary-800 px-6 py-4 text-lg font-bold text-white shadow-lg shadow-primary-900/15 transition hover:scale-[1.01] hover:bg-primary-900 active:scale-[0.99]">{labels.submit}</button>
+        <p className="text-center text-xs text-gray-500">{labels.privacy}</p>
+      </form>
     );
   }
 
