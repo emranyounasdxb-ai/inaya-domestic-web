@@ -10,6 +10,10 @@ export default function Footer({ locale }: { locale: string }) {
   const year = new Date().getFullYear();
   const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.png' : '/brand/inaya-domestic-workers-logo.png';
   const logoAlt = locale === 'ar' ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
+  const contactAddress = locale === 'ar'
+    ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'
+    : siteConfig.address;
+  const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
 
   return (
     <footer className="bg-primary-900 text-gray-200">
@@ -51,9 +55,22 @@ export default function Footer({ locale }: { locale: string }) {
         <div>
           <h4 className="mb-3 font-semibold text-white">{t('contactInfo')}</h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>📍 {siteConfig.address}</li>
-            <li>📞 {siteConfig.phone}</li>
-            <li>✉️ {siteConfig.email}</li>
+            <li className="flex items-start gap-2">
+              <span aria-hidden="true">📍</span>
+              <span>{contactAddress}</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span aria-hidden="true">📞</span>
+              <a href={phoneHref} dir="ltr" className="inline-block hover:text-white">
+                {siteConfig.phone}
+              </a>
+            </li>
+            <li className="flex items-start gap-2">
+              <span aria-hidden="true">✉️</span>
+              <a href={`mailto:${siteConfig.email}`} dir="ltr" className="inline-block hover:text-white">
+                {siteConfig.email}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
