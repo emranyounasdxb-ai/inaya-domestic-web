@@ -1,10 +1,10 @@
 const authorityLogos = [
-  { src: '/authority-logos/ministry-logo.png', alt: 'Ministry logo' },
-  { src: '/authority-logos/ajman-gold-logo.png', alt: 'Ajman Gold logo' },
-  { src: '/authority-logos/uae-pass-logo.png', alt: 'UAE Pass logo' },
-  { src: '/authority-logos/tadbeer-logo.png', alt: 'Tadbeer logo' },
-  { src: '/authority-logos/ajman-chamber-logo.png', alt: 'Ajman Chamber logo' },
-  { src: '/authority-logos/ajman-logo.png', alt: 'Ajman logo' }
+  { src: '/authority-logos/Ministry-logo.png', alt: 'Ministry logo' },
+  { src: '/authority-logos/Ajman-Gold-logo.png', alt: 'Ajman Gold logo' },
+  { src: '/authority-logos/ajman-UAE-Pass-Logo.png', alt: 'UAE Pass logo' },
+  { src: '/authority-logos/ajman-tadbeer-logo.png', alt: 'Tadbeer logo' },
+  { src: '/authority-logos/Ajman-Chamber-logo.png', alt: 'Ajman Chamber logo' },
+  { src: '/authority-logos/Ajman-logo.png', alt: 'Ajman logo' }
 ];
 
 export default function AuthorityLogos({ locale }: { locale: string }) {
