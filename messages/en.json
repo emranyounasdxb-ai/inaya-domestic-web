@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "siteName": "Inaya Domestic",
+    "defaultTitle": "Inaya Domestic | Maid & Domestic Worker Services in Ajman, UAE",
+    "defaultDescription": "Inaya Domestic provides trusted maid, nanny, cooking, elder care and domestic worker services across Ajman and the UAE. Hire trained, verified staff today."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "booking": "Book a Service",
+    "pricing": "Pricing",
+    "howItWorks": "How It Works",
+    "serviceAreas": "Service Areas",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact Us",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "badge": "Trusted in Ajman & across the UAE",
+    "title": "Trusted Maid & Domestic Worker Services",
+    "subtitle": "Hire trained, verified and reliable maids, nannies, cooks and care staff. Live-in or live-out, hourly or monthly.",
+    "ctaPrimary": "Book a Service",
+    "ctaSecondary": "View Services",
+    "stat1": "Verified Staff",
+    "stat2": "Happy Families",
+    "stat3": "Years Experience"
+  },
+  "home": {
+    "servicesTitle": "Our Popular Services",
+    "servicesSubtitle": "Complete domestic and care solutions for your home",
+    "whyTitle": "Why Choose Inaya Domestic",
+    "whySubtitle": "We deliver quality, trust and peace of mind",
+    "why1Title": "Verified & Trained Staff",
+    "why1Desc": "Every worker is background-checked, trained and experienced.",
+    "why2Title": "Flexible Plans",
+    "why2Desc": "Hourly, part-time, full-time, monthly and live-in options.",
+    "why3Title": "Replacement Guarantee",
+    "why3Desc": "Free replacement if you are not satisfied with the staff.",
+    "why4Title": "Visa & Sponsorship Help",
+    "why4Desc": "Full assistance with maid visa and sponsorship transfer.",
+    "ctaTitle": "Ready to hire trusted help?",
+    "ctaSubtitle": "Book a service today and let us take care of your home.",
+    "viewAll": "View All Services"
+  },
+  "about": {
+    "title": "About Inaya Domestic",
+    "subtitle": "Your trusted domestic services partner in the UAE",
+    "p1": "Inaya Domestic is a leading domestic worker and maid services provider based in Ajman, UAE. We connect families with trained, verified and reliable domestic staff.",
+    "p2": "From live-in maids and nannies to cooks, elder care and recruitment services, we handle every detail including visa assistance, background verification and replacement guarantees.",
+    "missionTitle": "Our Mission",
+    "mission": "To make hiring trusted domestic help simple, safe and affordable for every family in the UAE.",
+    "visionTitle": "Our Vision",
+    "vision": "To be the most trusted domestic services brand in the region, known for quality staff and honest service."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete domestic worker and home care solutions across the UAE",
+    "learnMore": "Learn More",
+    "bookThis": "Book This Service",
+    "categoryDomestic": "Domestic Workers Services (UAE)"
+  },
+  "booking": {
+    "title": "Book a Service",
+    "subtitle": "Fill the form and our team will contact you shortly",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "service": "Select Service",
+    "plan": "Plan Type",
+    "planHourly": "Hourly",
+    "planPartTime": "Part-time",
+    "planFullTime": "Full-time",
+    "planMonthly": "Monthly",
+    "planLiveIn": "Live-in",
+    "date": "Preferred Date",
+    "area": "Your Area",
+    "message": "Additional Details",
+    "submit": "Submit Booking",
+    "success": "Thank you! Your booking request has been received. We will contact you soon.",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email",
+    "invalidPhone": "Please enter a valid phone number"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help. Reach out anytime.",
+    "name": "Your Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "success": "Thank you! Your message has been sent.",
+    "addressTitle": "Address",
+    "address": "Ajman, United Arab Emirates",
+    "phoneTitle": "Phone",
+    "emailTitle": "Email",
+    "hoursTitle": "Working Hours",
+    "hours": "Sat - Thu: 8:00 AM - 9:00 PM"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to common questions about our services",
+    "q1": "How do I book a maid service?",
+    "a1": "Simply fill the booking form or contact us. Our team will confirm availability and arrange the service.",
+    "q2": "Are your domestic workers verified?",
+    "a2": "Yes. Every worker goes through background verification and training before placement.",
+    "q3": "Do you offer a replacement guarantee?",
+    "a3": "Yes. If you are not satisfied, we provide a free replacement as per our policy.",
+    "q4": "Do you help with maid visa and sponsorship?",
+    "a4": "Yes. We provide full maid visa assistance and sponsorship transfer services.",
+    "q5": "Which areas do you serve?",
+    "a5": "We mainly serve Ajman and surrounding emirates across the UAE."
+  },
+  "reviews": {
+    "title": "Reviews & Testimonials",
+    "subtitle": "What our happy clients say about us"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Transparent and affordable plans",
+    "note": "Final pricing depends on service type, duration and requirements. Contact us for an exact quote.",
+    "perHour": "/ hour",
+    "perMonth": "/ month",
+    "popular": "Most Popular",
+    "choose": "Choose Plan"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Hire trusted help in 4 simple steps",
+    "step1Title": "Choose a Service",
+    "step1Desc": "Select the domestic service you need from our list.",
+    "step2Title": "Book Online",
+    "step2Desc": "Fill the booking form with your details and preferences.",
+    "step3Title": "We Match Staff",
+    "step3Desc": "We assign a verified, trained worker that fits your needs.",
+    "step4Title": "Enjoy Service",
+    "step4Desc": "Relax while our staff takes care of your home."
+  },
+  "serviceAreas": {
+    "title": "Service Areas",
+    "subtitle": "We proudly serve Ajman and across the UAE",
+    "intro": "Our domestic worker and maid services are available throughout Ajman and nearby emirates."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tips, guides and news on domestic services",
+    "readMore": "Read More",
+    "comingSoon": "Articles coming soon. Stay tuned!"
+  },
+  "careers": {
+    "title": "Careers - Apply for Job",
+    "subtitle": "Join Inaya Domestic. We are hiring maids and staff.",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "position": "Position Applying For",
+    "experience": "Years of Experience",
+    "nationality": "Nationality",
+    "message": "Tell us about yourself",
+    "submit": "Submit Application",
+    "success": "Thank you! Your application has been received."
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms & Conditions",
+    "refundTitle": "Refund / Replacement Policy",
+    "lastUpdated": "Last updated"
+  },
+  "footer": {
+    "about": "Trusted maid and domestic worker services across Ajman and the UAE.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactInfo": "Contact Info",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "refund": "Refund / Replacement Policy"
+  },
+  "common": {
+    "langSwitch": "العربية",
+    "loading": "Loading..."
+  }
+}
