@@ -1,8 +1,9 @@
 export const siteConfig = {
-  name: 'Inaya Domestic',
-  phone: '+971 50 000 0000',
-  whatsapp: '971500000000',
+  name: 'INAYA Domestic Workers',
+  phone: '+9716 740 0128',
+  whatsapp: '971502036767',
   email: 'info@inayadomestic.ae',
-  address: 'Ajman, United Arab Emirates',
+  address: 'Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman',
+  serviceArea: 'Ajman only',
   url: 'https://inayadomestic.ae'
 };
