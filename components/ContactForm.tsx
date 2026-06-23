@@ -53,8 +53,8 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
   }
 
   if (isFloating) {
-    const floatingInputClass = 'peer w-full rounded-xl border-0 bg-[#eef5f0] px-4 pb-3 pt-6 text-sm text-gray-950 shadow-sm outline-none ring-1 ring-transparent transition placeholder:text-transparent focus:ring-2 focus:ring-primary-700';
-    const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-gray-500 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary-800 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
+    const floatingInputClass = 'peer w-full rounded-2xl border border-primary-700/10 bg-ivory-100/70 px-4 pb-3 pt-6 text-sm text-ink shadow-sm outline-none transition placeholder:text-transparent focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30';
+    const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-ink/55 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent-600 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
 
     return (
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -85,7 +85,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
           </div>
           <div>
             <label className="sr-only">{labels.service}</label>
-            <select name="service" className="w-full rounded-xl border-0 bg-[#eef5f0] px-4 py-4 text-sm text-gray-600 shadow-sm outline-none ring-1 ring-transparent transition focus:ring-2 focus:ring-primary-700" defaultValue="">
+            <select name="service" className="w-full rounded-2xl border border-primary-700/10 bg-ivory-100/70 px-4 py-4 text-sm text-ink/70 shadow-sm outline-none transition focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30" defaultValue="">
               <option value="" disabled>{labels.service}</option>
               {services.slice(0, 12).map((service) => (
                 <option key={service.slug} value={service.slug}>{service.name[lang]}</option>
@@ -114,8 +114,8 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
           {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
         </div>
 
-        <button type="submit" className="w-full rounded-xl bg-primary-800 px-6 py-4 text-lg font-bold text-white shadow-lg shadow-primary-900/15 transition hover:scale-[1.01] hover:bg-primary-900 active:scale-[0.99]">{labels.submit}</button>
-        <p className="text-center text-xs text-gray-500">{labels.privacy}</p>
+        <button type="submit" className="w-full rounded-full bg-primary-900 px-6 py-4 text-base font-bold text-white shadow-premium transition hover:-translate-y-0.5 hover:bg-primary-800 active:scale-[0.99]">{labels.submit}</button>
+        <p className="text-center text-xs text-ink/55">{labels.privacy}</p>
       </form>
     );
   }
@@ -124,22 +124,22 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       <div>
         <label className="label">{t('name')} *</label>
-        <input name="name" className="field bg-gray-50" />
+        <input name="name" className="field" />
         {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
       </div>
       <div>
         <label className="label">{t('phone')} *</label>
-        <input name="phone" className="field bg-gray-50" dir="ltr" />
+        <input name="phone" className="field" dir="ltr" />
         {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
       </div>
       <div>
         <label className="label">{t('email')} *</label>
-        <input name="email" type="email" className="field bg-gray-50" dir="ltr" />
+        <input name="email" type="email" className="field" dir="ltr" />
         {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
       </div>
       <div>
         <label className="label">{labels.service} *</label>
-        <select name="service" className="field bg-gray-50" defaultValue="">
+        <select name="service" className="field" defaultValue="">
           <option value="" disabled>{labels.chooseService}</option>
           {services.slice(0, 12).map((service) => (
             <option key={service.slug} value={service.slug}>{service.name[lang]}</option>
@@ -149,20 +149,20 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
       </div>
       <div>
         <label className="label">{labels.nationality}</label>
-        <input name="nationality" className="field bg-gray-50" />
+        <input name="nationality" className="field" />
       </div>
       <div>
         <label className="label">{labels.area}</label>
-        <input name="area" className="field bg-gray-50" placeholder={labels.chooseArea} />
+        <input name="area" className="field" placeholder={labels.chooseArea} />
       </div>
       <div className="sm:col-span-2">
         <label className="label">{t('message')} *</label>
-        <textarea name="message" rows={5} className="field bg-gray-50" />
+        <textarea name="message" rows={5} className="field" />
         {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
       </div>
       <div className="sm:col-span-2">
         <button type="submit" className="btn-primary w-full">{labels.submit}</button>
-        <p className="mt-3 text-center text-xs text-gray-500">{labels.privacy}</p>
+        <p className="mt-3 text-center text-xs text-ink/55">{labels.privacy}</p>
       </div>
     </form>
   );
