@@ -1,16 +1,19 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import Hero from '@/components/Hero';
+import AuthorityLogos from '@/components/AuthorityLogos';
 import ServiceCard from '@/components/ServiceCard';
 import { services } from '@/lib/services';
 
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('home');
   const ts = useTranslations('services');
+  const nav = useTranslations('nav');
 
   return (
     <>
       <Hero locale={locale} />
+      <AuthorityLogos locale={locale} />
 
       <section className="section">
         <div className="container-x">
@@ -57,7 +60,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
           <div className="rounded-3xl bg-gradient-to-r from-primary-700 to-primary-900 px-8 py-14 text-center text-white">
             <h2 className="text-3xl font-bold">{t('ctaTitle')}</h2>
             <p className="mx-auto mt-3 max-w-xl text-primary-100">{t('ctaSubtitle')}</p>
-            <Link href={`/${locale}/booking`} className="btn-accent mt-6">{useTranslations('nav')('bookNow')}</Link>
+            <Link href={`/${locale}/booking`} className="btn-accent mt-6">{nav('bookNow')}</Link>
           </div>
         </div>
       </section>
