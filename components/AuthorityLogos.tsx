@@ -8,10 +8,11 @@ const authorityLogos = [
 ];
 
 export default function AuthorityLogos({ locale }: { locale: string }) {
-  const title = locale === 'ar'
+  const isArabic = locale === 'ar';
+  const title = isArabic
     ? 'معترف بها وموثوقة من الجهات الحكومية في دولة الإمارات'
     : 'Recognized & Trusted by UAE Authorities';
-  const subtitle = locale === 'ar'
+  const subtitle = isArabic
     ? 'نعمل بثقة ووضوح لخدمة العائلات في عجمان من خلال قنوات ومنصات رسمية معروفة.'
     : 'Working with trusted UAE platforms and Ajman-based authorities to support families with confidence.';
   const logos = [...authorityLogos, ...authorityLogos];
@@ -24,7 +25,7 @@ export default function AuthorityLogos({ locale }: { locale: string }) {
           <p className="mt-3 text-sm leading-6 text-gray-600 sm:text-base">{subtitle}</p>
         </div>
 
-        <div className="authority-marquee mt-10" dir="ltr">
+        <div className={`authority-marquee mt-10 ${isArabic ? 'authority-marquee-reverse' : ''}`} dir="ltr">
           <div className="authority-track">
             {logos.map((logo, index) => (
               <div key={`${logo.src}-${index}`} className="authority-logo-card">
