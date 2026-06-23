@@ -13,6 +13,8 @@ export default function Navbar({ locale }: { locale: string }) {
 
   const otherLocale = locale === 'en' ? 'ar' : 'en';
   const switchedPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
+  const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.png' : '/brand/inaya-domestic-workers-logo.png';
+  const logoAlt = locale === 'ar' ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
 
   const links = [
     { href: `/${locale}`, label: t('home') },
@@ -29,8 +31,8 @@ export default function Navbar({ locale }: { locale: string }) {
       <nav className="container-x flex h-16 items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center" aria-label="INAYA Domestic Workers home">
           <img
-            src="/brand/inaya-domestic-workers-logo.png"
-            alt="INAYA Domestic Workers"
+            src={logoSrc}
+            alt={logoAlt}
             className="h-11 w-auto max-w-[180px] object-contain sm:max-w-[220px]"
           />
         </Link>
