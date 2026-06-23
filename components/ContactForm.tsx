@@ -32,7 +32,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5">
       <div>
         <label className="label">{t('name')} *</label>
         <input name="name" className="field" />
