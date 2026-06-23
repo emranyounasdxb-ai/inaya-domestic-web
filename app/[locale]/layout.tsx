@@ -44,7 +44,9 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
-
+  
+setRequestLocale(locale);
+  
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
