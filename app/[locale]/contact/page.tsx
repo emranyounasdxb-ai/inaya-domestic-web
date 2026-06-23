@@ -25,6 +25,15 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
       <span>٠١٢٨</span>
     </span>
   ) : siteConfig.phone;
+  const whatsappDisplay = isArabic ? (
+    <span className="inline-flex flex-row items-center gap-1" dir="ltr" style={{ unicodeBidi: 'isolate' }}>
+      <span>+</span>
+      <span>٩٧١</span>
+      <span>٥٠</span>
+      <span>٢٠٣</span>
+      <span>٦٧٦٧</span>
+    </span>
+  ) : '+971 50 203 6767';
 
   return (
     <section className="bg-gray-50 py-14 sm:py-20">
@@ -46,7 +55,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
               </a>
               <a href={whatsappHref} target="_blank" rel="noreferrer" className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">{whatsappLabel}</span>
-                <span className="mt-2 block text-sm font-semibold text-gray-950" dir="ltr">+971 50 203 6767</span>
+                <span className="mt-2 block text-sm font-semibold text-gray-950" dir="ltr">{whatsappDisplay}</span>
               </a>
               <a href={`mailto:${siteConfig.email}`} className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700">{emailLabel}</span>
