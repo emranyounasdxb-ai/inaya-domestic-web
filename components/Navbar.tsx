@@ -28,12 +28,12 @@ export default function Navbar({ locale }: { locale: string }) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
-      <nav className="container-x flex h-16 items-center justify-between">
+      <nav className="container-x flex h-14 items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center" aria-label="INAYA Domestic Workers home">
           <img
             src={logoSrc}
             alt={logoAlt}
-            className="h-11 w-auto max-w-[180px] object-contain sm:max-w-[220px]"
+            className="h-8 w-auto max-w-[145px] object-contain sm:max-w-[170px]"
           />
         </Link>
 
