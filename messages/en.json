@@ -113,7 +113,7 @@
     "q4": "Do you help with maid visa and sponsorship?",
     "a4": "Yes. We provide full maid visa assistance and sponsorship transfer services.",
     "q5": "Which areas do you serve?",
-    "a5": "We mainly serve Ajman and surrounding emirates across the UAE."
+    "a5": "We currently serve customers inside Ajman only."
   },
   "reviews": {
     "title": "Reviews & Testimonials",
@@ -141,9 +141,9 @@
     "step4Desc": "Relax while our staff takes care of your home."
   },
   "serviceAreas": {
-    "title": "Service Areas",
-    "subtitle": "We proudly serve Ajman and across the UAE",
-    "intro": "Our domestic worker and maid services are available throughout Ajman and nearby emirates."
+    "title": "Service Areas in Ajman",
+    "subtitle": "We serve customers inside Ajman only",
+    "intro": "Our domestic worker and maid services are available across key residential districts in Ajman. Contact us to confirm availability in your area."
   },
   "blog": {
     "title": "Blog",
