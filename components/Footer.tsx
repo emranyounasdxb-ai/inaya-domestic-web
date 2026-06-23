@@ -8,6 +8,8 @@ export default function Footer({ locale }: { locale: string }) {
   const tn = useTranslations('nav');
   const lang = locale === 'ar' ? 'ar' : 'en';
   const year = new Date().getFullYear();
+  const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.png' : '/brand/inaya-domestic-workers-logo.png';
+  const logoAlt = locale === 'ar' ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
 
   return (
     <footer className="bg-primary-900 text-gray-200">
@@ -15,8 +17,8 @@ export default function Footer({ locale }: { locale: string }) {
         <div>
           <div className="mb-4 inline-flex rounded-md bg-white px-3 py-2">
             <img
-              src="/brand/inaya-domestic-workers-logo.png"
-              alt="INAYA Domestic Workers"
+              src={logoSrc}
+              alt={logoAlt}
               className="h-12 w-auto max-w-[200px] object-contain"
             />
           </div>
