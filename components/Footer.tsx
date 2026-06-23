@@ -13,8 +13,12 @@ export default function Footer({ locale }: { locale: string }) {
     <footer className="bg-primary-900 text-gray-200">
       <div className="container-x grid grid-cols-1 gap-8 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="mb-3 flex items-center gap-2 text-xl font-bold text-white">
-            <span>🏡</span> Inaya Domestic
+          <div className="mb-4 inline-flex rounded-md bg-white px-3 py-2">
+            <img
+              src="/brand/inaya-domestic-workers-logo.png"
+              alt="INAYA Domestic Workers"
+              className="h-12 w-auto max-w-[200px] object-contain"
+            />
           </div>
           <p className="text-sm leading-relaxed text-gray-300">{t('about')}</p>
         </div>
@@ -54,7 +58,7 @@ export default function Footer({ locale }: { locale: string }) {
 
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-gray-400 sm:flex-row">
-          <p>© {year} Inaya Domestic. {t('rights')}</p>
+          <p>© {year} INAYA Domestic Workers. {t('rights')}</p>
           <div className="flex gap-4">
             <Link href={`/${locale}/privacy-policy`} className="hover:text-white">{t('privacy')}</Link>
             <Link href={`/${locale}/terms`} className="hover:text-white">{t('terms')}</Link>
