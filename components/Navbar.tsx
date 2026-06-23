@@ -27,46 +27,70 @@ export default function Navbar({ locale }: { locale: string }) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
-      <nav className="container-x flex h-14 items-center justify-between">
-        <Link href={`/${locale}`} className="flex items-center" aria-label="INAYA Domestic Workers home">
+    <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/75 shadow-[0_1px_0_rgba(255,255,255,0.65)_inset] backdrop-blur-xl">
+      <nav className="container-x flex h-11 items-center justify-between gap-6">
+        <Link href={`/${locale}`} className="flex shrink-0 items-center" aria-label="INAYA Domestic Workers home">
           <img
             src={logoSrc}
             alt={logoAlt}
-            className="h-8 w-auto max-w-[145px] object-contain sm:max-w-[170px]"
+            className="h-6 w-auto max-w-[118px] object-contain sm:max-w-[138px]"
           />
         </Link>
 
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden flex-1 items-center justify-center gap-7 lg:flex">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-sm font-medium text-gray-700 hover:text-primary-700">
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-[12px] font-medium leading-none text-gray-700 transition-colors hover:text-gray-950"
+            >
               {l.label}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <Link href={switchedPath} className="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium hover:bg-gray-50">
+        <div className="flex shrink-0 items-center gap-2.5">
+          <Link
+            href={switchedPath}
+            className="rounded-full px-2.5 py-1 text-[12px] font-medium leading-none text-gray-700 transition hover:bg-black/[0.04] hover:text-gray-950"
+          >
             {tc('langSwitch')}
           </Link>
-          <Link href={`/${locale}/booking`} className="hidden btn-accent !px-4 !py-2 !text-sm sm:inline-flex">
+          <Link
+            href={`/${locale}/booking`}
+            className="hidden rounded-full bg-gray-950 px-3.5 py-1.5 text-[12px] font-semibold leading-none text-white transition hover:bg-gray-800 sm:inline-flex"
+          >
             {t('bookNow')}
           </Link>
-          <button onClick={() => setOpen(!open)} className="lg:hidden" aria-label="Menu">
-            <span className="text-2xl">☰</span>
+          <button
+            onClick={() => setOpen(!open)}
+            className="rounded-full px-2.5 py-1 text-[12px] font-medium text-gray-800 transition hover:bg-black/[0.04] lg:hidden"
+            aria-label="Menu"
+            aria-expanded={open}
+          >
+            Menu
           </button>
         </div>
       </nav>
 
       {open && (
-        <div className="border-t border-gray-100 bg-white lg:hidden">
-          <div className="container-x flex flex-col gap-1 py-3">
+        <div className="border-t border-black/[0.06] bg-white/90 backdrop-blur-xl lg:hidden">
+          <div className="container-x flex flex-col py-2">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="border-b border-black/[0.04] py-3 text-sm font-medium text-gray-800 last:border-b-0 hover:text-gray-950"
+              >
                 {l.label}
               </Link>
             ))}
-            <Link href={`/${locale}/booking`} onClick={() => setOpen(false)} className="btn-accent mt-2 !py-2 !text-sm">
+            <Link
+              href={`/${locale}/booking`}
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-full bg-gray-950 px-4 py-2.5 text-center text-sm font-semibold text-white"
+            >
               {t('bookNow')}
             </Link>
           </div>
