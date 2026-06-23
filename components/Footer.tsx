@@ -6,15 +6,23 @@ import { siteConfig } from '@/lib/site-config';
 export default function Footer({ locale }: { locale: string }) {
   const t = useTranslations('footer');
   const tn = useTranslations('nav');
-  const lang = locale === 'ar' ? 'ar' : 'en';
+  const isArabic = locale === 'ar';
+  const lang = isArabic ? 'ar' : 'en';
   const year = new Date().getFullYear();
-  const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.png' : '/brand/inaya-domestic-workers-logo.png';
-  const logoAlt = locale === 'ar' ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
-  const contactAddress = locale === 'ar'
+  const logoSrc = isArabic ? '/brand/inaya-arabic-logo.png' : '/brand/inaya-domestic-workers-logo.png';
+  const logoAlt = isArabic ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
+  const contactAddress = isArabic
     ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'
     : siteConfig.address;
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
-  const displayPhone = locale === 'ar' ? '+٩٧١٦ ٧٤٠ ٠١٢٨' : siteConfig.phone;
+  const phoneDisplay = isArabic ? (
+    <>
+      <span>+</span>
+      <span>٩٧١٦</span>
+      <span>٧٤٠</span>
+      <span>٠١٢٨</span>
+    </>
+  ) : siteConfig.phone;
 
   return (
     <footer className="bg-primary-900 text-gray-200">
@@ -62,8 +70,8 @@ export default function Footer({ locale }: { locale: string }) {
             </li>
             <li className="flex items-start gap-2">
               <span aria-hidden="true">📞</span>
-              <a href={phoneHref} dir="ltr" className="inline-block hover:text-white">
-                {displayPhone}
+              <a href={phoneHref} dir="ltr" aria-label={siteConfig.phone} className="inline-flex flex-row items-center gap-1 hover:text-white">
+                {phoneDisplay}
               </a>
             </li>
             <li className="flex items-start gap-2">
