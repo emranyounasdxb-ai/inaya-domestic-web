@@ -14,6 +14,7 @@ export default function Footer({ locale }: { locale: string }) {
     ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'
     : siteConfig.address;
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
+  const displayPhone = locale === 'ar' ? '+٩٧١٦ ٧٤٠ ٠١٢٨' : siteConfig.phone;
 
   return (
     <footer className="bg-primary-900 text-gray-200">
@@ -62,7 +63,7 @@ export default function Footer({ locale }: { locale: string }) {
             <li className="flex items-start gap-2">
               <span aria-hidden="true">📞</span>
               <a href={phoneHref} dir="ltr" className="inline-block hover:text-white">
-                {siteConfig.phone}
+                {displayPhone}
               </a>
             </li>
             <li className="flex items-start gap-2">
