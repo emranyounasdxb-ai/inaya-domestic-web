@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Cormorant_Garamond, Inter, Noto_Sans_Arabic } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -7,6 +8,10 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import '../globals.css';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
+const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: ['600', '700'], variable: '--font-heading', display: 'swap' });
+const notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '700'], variable: '--font-arabic', display: 'swap' });
 
 export const dynamic = 'force-dynamic';
 export function generateStaticParams() {
@@ -52,7 +57,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir}>
-      <body>
+      <body className={`${inter.variable} ${cormorant.variable} ${notoSansArabic.variable}`}>
         <NextIntlClientProvider messages={messages}>
           <Navbar locale={locale} />
           <FloatingSocialBar />
