@@ -23,6 +23,7 @@ export default function Navbar({ locale }: { locale: string }) {
     { href: `/${locale}/pricing`, label: t('pricing') },
     { href: `/${locale}/how-it-works`, label: t('howItWorks') },
     { href: `/${locale}/service-areas`, label: t('serviceAreas') },
+    { href: `/${locale}/faq`, label: t('faq') },
     { href: `/${locale}/contact`, label: t('contact') }
   ];
 
@@ -37,14 +38,14 @@ export default function Navbar({ locale }: { locale: string }) {
           />
         </Link>
 
-        <div className="hidden flex-1 items-center justify-center gap-7 lg:flex">
+        <div className="hidden flex-1 items-center justify-center gap-5 xl:gap-7 lg:flex">
           {links.map((l) => {
             const active = pathname === l.href;
             return (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`relative text-[12px] font-semibold leading-none transition-colors ${active ? 'text-primary-900' : 'text-ink/70 hover:text-primary-900'}`}
+                className={`relative text-[11px] font-semibold leading-none transition-colors xl:text-[12px] ${active ? 'text-primary-900' : 'text-ink/70 hover:text-primary-900'}`}
               >
                 {l.label}
                 {active && <span className="absolute -bottom-2 left-0 h-px w-full bg-accent-500" />}
