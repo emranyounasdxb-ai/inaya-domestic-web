@@ -170,6 +170,30 @@ svg[aria-label='تغطية جميع الإمارات'] g[stroke='url(#goldLine)'
   display: none !important;
 }
 
+svg[aria-label='All UAE Coverage'] g[transform='translate(526 139)'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(526 139)'] { transform: translate(500px, 160px); }
+
+svg[aria-label='All UAE Coverage'] g[transform='translate(548 122)'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(548 122)'] { transform: translate(526px, 146px); }
+
+svg[aria-label='All UAE Coverage'] g[transform='translate(562 96)'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(562 96)'] { transform: translate(548px, 136px); }
+
+svg[aria-label='All UAE Coverage'] g[transform='translate(620 78)'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(620 78)'] { transform: translate(602px, 112px); }
+
+svg[aria-label='All UAE Coverage'] g[transform='translate(626 177)'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(626 177)'] { transform: translate(604px, 178px); }
+
+svg[aria-label='All UAE Coverage'] g[transform='translate(557 267)'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(557 267)'] { transform: translate(552px, 260px); }
+
+svg[aria-label='All UAE Coverage'] g[transform^='translate'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform^='translate'] {
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+
 svg[aria-label='All UAE Coverage'] g[transform^='translate'] > path,
 svg[aria-label='تغطية جميع الإمارات'] g[transform^='translate'] > path {
   display: none !important;
@@ -177,9 +201,23 @@ svg[aria-label='تغطية جميع الإمارات'] g[transform^='translate']
 
 svg[aria-label='All UAE Coverage'] g[transform^='translate'] > circle,
 svg[aria-label='تغطية جميع الإمارات'] g[transform^='translate'] > circle {
-  transform: scale(0.52);
   transform-box: fill-box;
   transform-origin: center;
+}
+
+svg[aria-label='All UAE Coverage'] g[transform^='translate'] > circle[fill='#F8F6F0'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform^='translate'] > circle[fill='#F8F6F0'] {
+  fill: #BFA46A !important;
+  filter: drop-shadow(0 0 8px rgba(191,164,106,0.58));
+  animation: coverageDotBlink 2s ease-in-out infinite;
+}
+
+svg[aria-label='All UAE Coverage'] g[transform^='translate'] > circle[stroke='#FFF8E6'],
+svg[aria-label='تغطية جميع الإمارات'] g[transform^='translate'] > circle[stroke='#FFF8E6'] {
+  stroke: rgba(191,164,106,0.72) !important;
+  stroke-width: 2 !important;
+  transform: scale(0.42);
+  animation: coverageRingPulse 2s ease-out infinite;
 }
 
 svg[aria-label='All UAE Coverage'] g[transform='translate(548 122)'] > circle:nth-of-type(1),
@@ -187,6 +225,33 @@ svg[aria-label='All UAE Coverage'] g[transform='translate(548 122)'] > circle:nt
 svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(548 122)'] > circle:nth-of-type(1),
 svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(548 122)'] > circle:nth-of-type(2) {
   display: none !important;
+}
+
+svg[aria-label='All UAE Coverage'] g[transform='translate(351 217)'] > circle { animation-delay: 0s; }
+svg[aria-label='All UAE Coverage'] g[transform='translate(424 211)'] > circle { animation-delay: 0.2s; }
+svg[aria-label='All UAE Coverage'] g[transform='translate(526 139)'] > circle { animation-delay: 0.4s; }
+svg[aria-label='All UAE Coverage'] g[transform='translate(548 122)'] > circle { animation-delay: 0.6s; }
+svg[aria-label='All UAE Coverage'] g[transform='translate(562 96)'] > circle { animation-delay: 0.8s; }
+svg[aria-label='All UAE Coverage'] g[transform='translate(620 78)'] > circle { animation-delay: 1s; }
+svg[aria-label='All UAE Coverage'] g[transform='translate(626 177)'] > circle { animation-delay: 1.2s; }
+svg[aria-label='All UAE Coverage'] g[transform='translate(557 267)'] > circle { animation-delay: 1.4s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(351 217)'] > circle { animation-delay: 0s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(424 211)'] > circle { animation-delay: 0.2s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(526 139)'] > circle { animation-delay: 0.4s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(548 122)'] > circle { animation-delay: 0.6s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(562 96)'] > circle { animation-delay: 0.8s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(620 78)'] > circle { animation-delay: 1s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(626 177)'] > circle { animation-delay: 1.2s; }
+svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(557 267)'] > circle { animation-delay: 1.4s; }
+
+@keyframes coverageDotBlink {
+  0%, 100% { opacity: 0.7; transform: scale(0.58); }
+  50% { opacity: 1; transform: scale(0.82); }
+}
+
+@keyframes coverageRingPulse {
+  0% { opacity: 0.66; transform: scale(0.22); }
+  72%, 100% { opacity: 0; transform: scale(0.9); }
 }
 
 .glass-panel:has(> svg[aria-label='All UAE Coverage']) > div:last-child,
