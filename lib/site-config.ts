@@ -4,6 +4,6 @@ export const siteConfig = {
   whatsapp: '971502036767',
   email: 'info@inayadomestic.ae',
   address: 'Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman',
-  serviceArea: 'Ajman only',
+  serviceArea: 'All UAE',
   url: 'https://inayadomestic.ae'
 };
