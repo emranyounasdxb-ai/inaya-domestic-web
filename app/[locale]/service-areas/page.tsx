@@ -49,7 +49,7 @@ function CoveragePin({ x, y, hub = false }: { x: number; y: number; hub?: boolea
   );
 }
 
-function UaeCoverageVisual({ isArabic }: { isArabic: boolean }) {
+function CoverageVisual({ isArabic }: { isArabic: boolean }) {
   const title = isArabic ? 'تغطية جميع الإمارات' : 'All UAE Coverage';
   const subtitle = isArabic ? 'مركز المكتب: عجمان' : 'Ajman office hub';
   const labels = isArabic
