@@ -41,33 +41,33 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   const whatsappDisplay = isArabic ? <ArabicNumber type="whatsapp" /> : '+971 50 203 6767';
 
   const copy = {
-    badge: isArabic ? 'نخدم عائلات عجمان' : 'Serving families in Ajman',
-    heroTitle: isArabic ? 'تواصل مع عناية للخدمات المنزلية' : 'Premium domestic care, guided clearly.',
+    badge: isArabic ? 'نخدم العائلات في جميع أنحاء الإمارات' : 'Serving families across the UAE',
+    heroTitle: isArabic ? 'تواصل مع عناية للعمالة المنزلية' : 'Premium UAE domestic care, guided clearly.',
     heroText: isArabic
-      ? 'فريقنا يساعدك في اختيار خدمة العمالة المنزلية المناسبة لعائلتك داخل عجمان بتواصل واضح وتجربة راقية.'
-      : 'Speak with INAYA for trusted domestic worker services in Ajman, with clear guidance and friendly follow-up.',
+      ? 'فريقنا يساعدك في اختيار خدمة العمالة المنزلية المناسبة لعائلتك في أي إمارة داخل دولة الإمارات بتواصل واضح وتجربة راقية.'
+      : 'Speak with INAYA for trusted maid and domestic worker services across the UAE, with clear guidance and friendly follow-up.',
     whatsapp: isArabic ? 'واتساب' : 'WhatsApp',
     call: isArabic ? 'اتصل الآن' : 'Call Now',
     callback: isArabic ? 'أرسل طلبك' : 'Send Request',
     formTitle: isArabic ? 'أرسل لنا متطلباتك' : 'Send your requirement',
-    formText: isArabic ? 'شاركنا تفاصيل الخدمة المطلوبة وسنتواصل معك لتأكيد الخطوات التالية.' : 'Share your requirement and our team will contact you with the next steps.',
-    locationTitle: isArabic ? 'موقع المكتب' : 'Office location',
-    locationText: isArabic ? 'يمكنك زيارة مكتبنا في جراند مول، عجمان. يرجى التواصل معنا لتأكيد الموعد قبل الزيارة.' : 'Visit our office at Grand Mall, Ajman. Please contact us to confirm timing before your visit.',
-    trustTitle: isArabic ? 'تجربة تواصل واضحة وموثوقة' : 'A clear and trusted contact experience',
+    formText: isArabic ? 'شاركنا تفاصيل الخدمة والإمارة المطلوبة وسنتواصل معك لتأكيد الخطوات التالية.' : 'Share your service requirement and emirate, and our team will contact you with the next steps.',
+    locationTitle: isArabic ? 'موقع المكتب الرئيسي' : 'Main office location',
+    locationText: isArabic ? 'مكتبنا في جراند مول، عجمان، ونقدم خدمات العمالة المنزلية في جميع أنحاء الإمارات. يرجى التواصل معنا لتأكيد الموعد قبل الزيارة.' : 'Our office is at Grand Mall, Ajman, and we provide domestic worker services across the UAE. Please contact us to confirm timing before your visit.',
+    trustTitle: isArabic ? 'تجربة تواصل واضحة وموثوقة في الإمارات' : 'A clear and trusted UAE contact experience',
     ctaTitle: isArabic ? 'هل تحتاج إلى متابعة سريعة؟' : 'Need a faster response?',
-    ctaText: isArabic ? 'راسل فريقنا عبر واتساب لمعرفة التوفر والخطوات التالية.' : 'Chat with our team on WhatsApp for availability and next steps.',
+    ctaText: isArabic ? 'راسل فريقنا عبر واتساب لمعرفة التوفر والخطوات التالية في إمارتك.' : 'Chat with our team on WhatsApp for availability and next steps in your emirate.',
     directions: isArabic ? 'افتح الاتجاهات' : 'Get Directions',
     hoursTitle: isArabic ? 'ساعات العمل' : 'Working Hours',
     hoursText: isArabic ? 'يرجى التواصل معنا لتأكيد مواعيد اليوم.' : "Contact us to confirm today's timings.",
     faqTitle: isArabic ? 'أسئلة سريعة' : 'Quick questions',
-    mapTitle: isArabic ? 'موقع عناية للخدمات المنزلية في عجمان' : 'INAYA Domestic Workers Ajman location map'
+    mapTitle: isArabic ? 'موقع عناية للعمالة المنزلية في عجمان' : 'INAYA Domestic Workers Ajman location map'
   };
 
   const actions = [
     { title: isArabic ? 'الهاتف' : 'Phone', value: phoneDisplay, note: isArabic ? 'تواصل مباشر مع الفريق' : 'Speak directly with our team', href: phoneHref, icon: 'phone' as IconName },
     { title: isArabic ? 'واتساب' : 'WhatsApp', value: whatsappDisplay, note: isArabic ? 'الأسرع للمتابعة' : 'Fastest for follow-up', href: whatsappHref, icon: 'message' as IconName, external: true },
     { title: isArabic ? 'البريد الإلكتروني' : 'Email', value: siteConfig.email, note: isArabic ? 'لإرسال التفاصيل' : 'Send details and documents', href: `mailto:${siteConfig.email}`, icon: 'mail' as IconName },
-    { title: isArabic ? 'المكتب' : 'Office', value: isArabic ? 'جراند مول، عجمان' : 'Grand Mall, Ajman', note: isArabic ? 'زيارة بعد تأكيد الموعد' : 'Visit after confirming timing', href: directionsUrl, icon: 'pin' as IconName, external: true }
+    { title: isArabic ? 'المكتب' : 'Office', value: isArabic ? 'جراند مول، عجمان' : 'Grand Mall, Ajman', note: isArabic ? 'خدماتنا متوفرة في جميع الإمارات' : 'UAE-wide service support', href: directionsUrl, icon: 'pin' as IconName, external: true }
   ];
 
   const trustItems = [
@@ -77,7 +77,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   ];
 
   const faqs = [
-    { question: isArabic ? 'هل تقدمون الخدمة خارج عجمان؟' : 'Do you serve outside Ajman?', answer: isArabic ? 'حالياً نركز على خدمة العملاء داخل عجمان. تواصل معنا لتأكيد الحالات الخاصة.' : 'At the moment, our service team is focused on Ajman. Please contact us to confirm special requests.' },
+    { question: isArabic ? 'هل تقدمون الخدمة في جميع الإمارات؟' : 'Do you serve all UAE emirates?', answer: isArabic ? 'نعم، نقدم خدمات الخادمات والعمالة المنزلية في جميع إمارات الدولة. تواصل معنا لتأكيد التوفر حسب منطقتك ونوع الخدمة.' : 'Yes, we provide maid and domestic worker services across all UAE emirates. Contact us to confirm availability by area and service type.' },
     { question: isArabic ? 'ما أسرع طريقة للتواصل؟' : 'What is the fastest way to contact you?', answer: isArabic ? 'واتساب هو الأسرع لإرسال المتطلبات والحصول على متابعة من الفريق.' : 'WhatsApp is the fastest option for sharing your requirement and getting follow-up.' },
     { question: isArabic ? 'هل يمكن زيارة المكتب؟' : 'Can I visit the office?', answer: isArabic ? 'نعم، يمكن زيارة المكتب في جراند مول بعجمان، ويفضل التواصل معنا قبل الزيارة لتأكيد الموعد.' : 'Yes, you can visit our office at Grand Mall in Ajman. Please contact us first to confirm timing.' }
   ];
