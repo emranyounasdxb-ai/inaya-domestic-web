@@ -17,7 +17,7 @@ Dubai premium domestic service: clean, trustworthy, luxurious, airy, and Apple-i
 - Icons are thin line icons in navy/gold. Original-color social icons are allowed only in the floating social bar.
 - Images should be real lifestyle/home-service photography or clean office/location visuals, not heavy AI collage.
 - Arabic layouts mirror direction, but phone numbers and technical values must remain controlled and readable.
-- Ajman-only service area must remain clear across the site.
+- UAE-wide service coverage should remain clear without over-repeating it in every block.
 
 ## Palette
 
@@ -37,9 +37,10 @@ Dubai premium domestic service: clean, trustworthy, luxurious, airy, and Apple-i
 
 | Use | Font | Weight |
 | --- | --- | --- |
-| English Headings | `Cormorant Garamond` or `Playfair Display` | 600/700 |
-| English Body / UI | `Inter` or `Manrope` | 400/500/600 |
-| Arabic / Urdu | `Noto Sans Arabic` | 400/500/700 |
+| English Headings | `Plus Jakarta Sans` | 600/700/800 |
+| English Body / UI | `Inter` | 400/500/600 |
+| Arabic Headings | `IBM Plex Sans Arabic` | 600/700 |
+| Arabic Body / UI | `Noto Sans Arabic` | 400/500/600/700 |
 
 ## Components
 
@@ -64,4 +65,4 @@ Sections should have generous vertical spacing and clean visual separation.
 - Do not mix many accent colors.
 - No nested cards unless unavoidable.
 - Keep hero sections calm and premium.
-- Keep content real and specific to INAYA Domestic Workers in Ajman.
+- Keep content real and specific to INAYA Domestic Workers across the UAE.
