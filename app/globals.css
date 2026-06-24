@@ -268,6 +268,30 @@ svg[aria-label='تغطية جميع الإمارات'] g[transform='translate(55
   background: rgba(255,255,255,0.84);
 }
 
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel > div:first-child {
+  background-position: center;
+  background-size: cover;
+}
+
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel > div:first-child > div:first-child {
+  background:
+    linear-gradient(180deg, rgba(2,10,44,0.18), rgba(2,10,44,0.06) 42%, rgba(248,246,240,0.14)),
+    linear-gradient(135deg, rgba(191,164,106,0.18), rgba(255,255,255,0.04));
+}
+
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel > div:first-child > svg {
+  display: none;
+}
+
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(1) > div:first-child { background-image: url('/images/service-areas/dubai.webp'); }
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(2) > div:first-child { background-image: url('/images/service-areas/abu-dhabi.webp'); }
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(3) > div:first-child { background-image: url('/images/service-areas/sharjah.webp'); }
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(4) > div:first-child { background-image: url('/images/service-areas/ajman.webp'); }
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(5) > div:first-child { background-image: url('/images/service-areas/ras-al-khaimah.webp'); }
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(6) > div:first-child { background-image: url('/images/service-areas/fujairah.webp'); }
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(7) > div:first-child { background-image: url('/images/service-areas/umm-al-quwain.webp'); }
+.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(8) > div:first-child { background-image: url('/images/service-areas/al-ain.webp'); }
+
 .authority-marquee {
   overflow: hidden;
   position: relative;
