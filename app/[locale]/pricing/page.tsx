@@ -146,54 +146,54 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
 
   return (
     <div className="overflow-hidden bg-[#fbfaf7] text-ink">
-      <section className="container-x pt-16 pb-14 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20">
+      <section className="container-x pt-24 pb-28 sm:pt-28 sm:pb-32 lg:pt-32 lg:pb-36">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.15rem] font-bold leading-[1.08] tracking-[-0.02em] text-primary-900 sm:text-[2.75rem] lg:text-[3.2rem]`}>
+          <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.25rem] font-bold leading-[1.08] tracking-[-0.02em] text-primary-900 sm:text-[3rem] lg:text-[3.35rem]`}>
             {copy.hero.title}
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-ink/62 sm:text-base">
+          <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-ink/62 sm:text-base">
             {copy.hero.subtitle}
           </p>
         </div>
       </section>
 
-      <section className="container-x pb-12 sm:pb-16">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+      <section className="container-x pb-24 sm:pb-28">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
           {copy.assurance.map(([title, text], index) => (
-            <div key={title} className="rounded-[14px] border border-primary-900/8 bg-[#f2eff1] p-7 shadow-[0_18px_50px_rgba(7,22,74,0.04)]">
-              <div className="mb-7 flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary-900 shadow-sm">
+            <div key={title} className="min-h-[260px] rounded-[14px] border border-primary-900/8 bg-[#f2eff1] p-9 shadow-[0_18px_50px_rgba(7,22,74,0.04)]">
+              <div className="mb-9 flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary-900 shadow-sm">
                 <LineIcon name={assuranceIcons[index]} className="h-4 w-4" />
               </div>
               <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} max-w-[13rem] text-2xl font-bold leading-[1.05] text-primary-900`}>
                 {title}
               </h2>
-              <p className="mt-4 text-sm leading-6 text-ink/58">{text}</p>
+              <p className="mt-5 text-sm leading-7 text-ink/58">{text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="container-x pb-16 sm:pb-20">
-        <div className="mx-auto grid max-w-6xl items-end gap-6 lg:grid-cols-3">
+      <section className="container-x pb-28 sm:pb-32">
+        <div className="mx-auto grid max-w-6xl items-end gap-8 lg:grid-cols-3">
           {copy.packages.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex min-h-[560px] flex-col rounded-[16px] border p-8 shadow-[0_24px_70px_rgba(7,22,74,0.07)] ${plan.featured ? 'bg-[#020202] text-white lg:min-h-[610px] lg:-translate-y-8' : 'bg-white text-primary-900'}`}
+              className={`relative flex min-h-[650px] flex-col rounded-[16px] border p-9 shadow-[0_24px_70px_rgba(7,22,74,0.07)] ${plan.featured ? 'bg-[#020202] text-white lg:min-h-[715px] lg:-translate-y-10' : 'bg-white text-primary-900'}`}
             >
               {plan.badge ? <span className="absolute right-7 top-7 rounded-full bg-accent-500 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-primary-900">{plan.badge}</span> : null}
               <p className={`text-[0.67rem] font-bold uppercase tracking-[0.22em] ${plan.featured ? 'text-white/55' : 'text-ink/45'}`}>{plan.eyebrow}</p>
-              <div className="mt-6 flex items-start justify-between gap-4">
+              <div className="mt-8 flex items-start justify-between gap-4">
                 <div>
-                  <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold leading-none ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.price}</h2>
-                  <p className={`mt-2 text-xs ${plan.featured ? 'text-white/62' : 'text-ink/55'}`}>{plan.period}</p>
+                  <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.45rem] font-bold leading-none ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.price}</h2>
+                  <p className={`mt-3 text-xs ${plan.featured ? 'text-white/62' : 'text-ink/55'}`}>{plan.period}</p>
                 </div>
               </div>
-              <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-5 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h3>
-              <p className={`mt-3 text-sm leading-6 ${plan.featured ? 'text-white/68' : 'text-ink/58'}`}>{plan.desc}</p>
-              <div className={`my-7 h-px ${plan.featured ? 'bg-white/12' : 'bg-primary-900/8'}`} />
-              <div className="space-y-4">
+              <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h3>
+              <p className={`mt-4 text-sm leading-7 ${plan.featured ? 'text-white/68' : 'text-ink/58'}`}>{plan.desc}</p>
+              <div className={`my-9 h-px ${plan.featured ? 'bg-white/12' : 'bg-primary-900/8'}`} />
+              <div className="space-y-5">
                 {plan.features.map((feature, index) => (
-                  <div key={feature} className={`flex items-start gap-3 text-sm leading-6 ${plan.featured ? 'text-white/82' : 'text-ink/68'}`}>
+                  <div key={feature} className={`flex items-start gap-3 text-sm leading-7 ${plan.featured ? 'text-white/82' : 'text-ink/68'}`}>
                     <LineIcon name={plan.featured && index > 1 ? 'star' : 'check'} className={`mt-1 h-4 w-4 shrink-0 ${plan.featured && index > 1 ? 'text-accent-500' : plan.featured ? 'text-white' : 'text-primary-900'}`} />
                     <span>{feature}</span>
                   </div>
@@ -208,53 +208,53 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
             </div>
           ))}
         </div>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-xs leading-6 text-ink/45">{copy.note}</p>
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-6 text-ink/45">{copy.note}</p>
       </section>
 
-      <section className="container-x pb-16 sm:pb-20">
+      <section className="container-x pb-28 sm:pb-32">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-3xl font-bold text-primary-900`}>{copy.comparisonTitle}</h2>
-          <div className="mt-8 overflow-hidden rounded-[14px] border border-primary-900/8 bg-white shadow-[0_18px_60px_rgba(7,22,74,0.045)]">
+          <div className="mt-10 overflow-hidden rounded-[14px] border border-primary-900/8 bg-white shadow-[0_18px_60px_rgba(7,22,74,0.045)]">
             <div className="grid grid-cols-4 bg-[#f3f1f0] text-[0.68rem] font-bold uppercase tracking-[0.18em] text-ink/45">
               {copy.tableHeaders.map((header, index) => (
-                <div key={header} className={`px-4 py-5 ${index === 2 ? 'bg-primary-900/5' : ''}`}>{header}</div>
+                <div key={header} className={`px-5 py-6 ${index === 2 ? 'bg-primary-900/5' : ''}`}>{header}</div>
               ))}
             </div>
             {copy.rows.map((row, index) => (
               <div key={String(row[0])} className={`grid grid-cols-4 border-t border-primary-900/6 text-sm ${index % 2 === 0 ? 'bg-white' : 'bg-[#fdfcf9]'}`}>
-                <div className="px-4 py-5 text-start font-semibold text-primary-900">{row[0]}</div>
-                <div className="px-4 py-5 text-center text-ink/62"><FeatureValue value={row[1]} /></div>
-                <div className="bg-primary-900/[0.035] px-4 py-5 text-center font-semibold text-primary-900"><FeatureValue value={row[2]} /></div>
-                <div className="px-4 py-5 text-center text-ink/62"><FeatureValue value={row[3]} /></div>
+                <div className="px-5 py-6 text-start font-semibold text-primary-900">{row[0]}</div>
+                <div className="px-5 py-6 text-center text-ink/62"><FeatureValue value={row[1]} /></div>
+                <div className="bg-primary-900/[0.035] px-5 py-6 text-center font-semibold text-primary-900"><FeatureValue value={row[2]} /></div>
+                <div className="px-5 py-6 text-center text-ink/62"><FeatureValue value={row[3]} /></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="container-x pb-16 sm:pb-20">
+      <section className="container-x pb-28 sm:pb-32">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-3xl font-bold text-primary-900`}>{copy.faqTitle}</h2>
-          <p className="mt-3 text-sm text-ink/55">{copy.faqSubtitle}</p>
-          <div className="mt-8 space-y-3 text-start">
+          <p className="mt-4 text-sm text-ink/55">{copy.faqSubtitle}</p>
+          <div className="mt-10 space-y-4 text-start">
             {copy.faqs.map(([question, answer]) => (
               <details key={question} className="group rounded-[12px] border border-primary-900/8 bg-white shadow-sm">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold text-primary-900">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-semibold text-primary-900">
                   <span>{question}</span>
                   <span className="text-ink/50 transition group-open:rotate-180">⌄</span>
                 </summary>
-                <p className="border-t border-primary-900/8 px-5 pb-5 pt-4 text-sm leading-7 text-ink/62">{answer}</p>
+                <p className="border-t border-primary-900/8 px-6 pb-6 pt-5 text-sm leading-7 text-ink/62">{answer}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="container-x pb-20 sm:pb-24">
-        <div className="mx-auto max-w-6xl rounded-[18px] bg-[#f2eff1] px-6 py-14 text-center shadow-[0_18px_60px_rgba(7,22,74,0.04)] sm:px-10">
+      <section className="container-x pb-28 sm:pb-36">
+        <div className="mx-auto max-w-6xl rounded-[18px] bg-[#f2eff1] px-6 py-20 text-center shadow-[0_18px_60px_rgba(7,22,74,0.04)] sm:px-10">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-3xl font-bold text-primary-900`}>{copy.cta.title}</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-ink/58">{copy.cta.text}</p>
-          <Link href={`/${locale}/contact`} className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-900">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-ink/58">{copy.cta.text}</p>
+          <Link href={`/${locale}/contact`} className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-primary-900">
             {copy.cta.button}
             <LineIcon name="arrow" className="h-4 w-4" />
           </Link>
