@@ -41,6 +41,16 @@ main button[class*='rounded-full'] {
   padding-bottom: 0.72rem;
 }
 
+@media (min-width: 1024px) {
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] {
+    align-items: flex-start !important;
+  }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > div:first-child {
+    justify-content: flex-start !important;
+  }
+}
+
 [dir='rtl'] main h1 {
   font-size: clamp(1.8rem, 3vw, 2.75rem) !important;
   line-height: 1.36 !important;
