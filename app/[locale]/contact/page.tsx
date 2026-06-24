@@ -39,6 +39,12 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
     : siteConfig.address;
   const phoneDisplay = isArabic ? <ArabicNumber type="phone" /> : siteConfig.phone;
   const whatsappDisplay = isArabic ? <ArabicNumber type="whatsapp" /> : '+971 50 203 6767';
+  const headingClass = isArabic
+    ? 'font-arabic text-4xl font-bold leading-[1.32] text-primary-900 sm:text-5xl lg:text-6xl'
+    : 'font-heading text-5xl font-bold leading-[0.95] text-primary-900 sm:text-6xl lg:text-7xl';
+  const sectionTitleClass = isArabic
+    ? 'font-arabic text-3xl font-bold leading-[1.35] text-primary-900 sm:text-4xl'
+    : 'font-heading text-4xl font-bold leading-tight text-primary-900';
 
   const copy = {
     badge: isArabic ? 'نخدم العائلات في جميع أنحاء الإمارات' : 'Serving families across the UAE',
@@ -83,40 +89,40 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   ];
 
   return (
-    <div className="bg-ivory text-ink">
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(191,164,106,0.20),transparent_34rem),radial-gradient(circle_at_bottom_right,rgba(7,22,74,0.10),transparent_30rem)]" />
+    <div className="overflow-hidden bg-ivory text-ink">
+      <section className="relative overflow-hidden pt-12 pb-12 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(191,164,106,0.20),transparent_30rem),radial-gradient(circle_at_bottom_right,rgba(7,22,74,0.10),transparent_28rem)]" />
         <div className="container-x relative">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary-700/10 bg-white/60 px-4 py-2 text-sm font-semibold text-primary-900 shadow-sm backdrop-blur-xl">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="text-center lg:text-start">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary-700/10 bg-white/65 px-4 py-2 text-xs font-semibold text-primary-900 shadow-sm backdrop-blur-xl sm:text-sm">
                 <span className="h-2 w-2 rounded-full bg-accent-500" />
                 {copy.badge}
               </span>
-              <h1 className="mt-6 max-w-3xl font-heading text-5xl font-bold leading-none text-primary-900 sm:text-7xl">
+              <h1 className={`mx-auto mt-6 max-w-3xl lg:mx-0 ${headingClass}`}>
                 {copy.heroTitle}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/75">{copy.heroText}</p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-3 font-semibold text-white shadow-premium transition hover:-translate-y-0.5"><LineIcon name="message" className="h-5 w-5" />{copy.whatsapp}</a>
-                <a href={phoneHref} className="inline-flex items-center gap-2 rounded-full bg-primary-900 px-7 py-3 font-semibold text-white shadow-premium transition hover:-translate-y-0.5"><LineIcon name="phone" className="h-5 w-5" />{copy.call}</a>
-                <a href="#contact-form" className="inline-flex items-center gap-2 rounded-full border border-accent-500/60 bg-white/60 px-7 py-3 font-semibold text-primary-900 shadow-glass backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-accent-50"><LineIcon name="spark" className="h-5 w-5 text-accent-600" />{copy.callback}</a>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-ink/75 sm:text-lg sm:leading-8 lg:mx-0">{copy.heroText}</p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
+                <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-3 font-semibold text-white shadow-premium transition hover:-translate-y-0.5 sm:w-auto"><LineIcon name="message" className="h-5 w-5" />{copy.whatsapp}</a>
+                <a href={phoneHref} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary-900 px-7 py-3 font-semibold text-white shadow-premium transition hover:-translate-y-0.5 sm:w-auto"><LineIcon name="phone" className="h-5 w-5" />{copy.call}</a>
+                <a href="#contact-form" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-accent-500/60 bg-white/65 px-7 py-3 font-semibold text-primary-900 shadow-glass backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-accent-50 sm:w-auto"><LineIcon name="spark" className="h-5 w-5 text-accent-600" />{copy.callback}</a>
               </div>
             </div>
 
-            <div className="glass-panel rounded-[28px] p-5 sm:p-6">
-              <div className="rounded-[24px] bg-gradient-to-br from-white/80 to-ivory-100/80 p-6">
-                <div className="flex items-center justify-between border-b border-primary-700/10 pb-5">
+            <div className="glass-panel rounded-[24px] p-4 sm:p-5">
+              <div className="rounded-[20px] bg-gradient-to-br from-white/85 to-ivory-100/80 p-5 sm:p-6">
+                <div className="flex items-center justify-between border-b border-primary-700/10 pb-4">
                   <div>
                     <p className="text-sm font-semibold text-accent-600">INAYA Domestic Workers</p>
-                    <h2 className="mt-1 font-heading text-3xl font-bold text-primary-900">{isArabic ? 'تواصل راقٍ وواضح' : 'Premium support desk'}</h2>
+                    <h2 className={`${isArabic ? 'font-arabic text-2xl leading-snug' : 'font-heading text-3xl'} mt-1 font-bold text-primary-900`}>{isArabic ? 'تواصل راقٍ وواضح' : 'Premium support desk'}</h2>
                   </div>
-                  <LineIcon name="shield" className="h-11 w-11 text-accent-600" />
+                  <LineIcon name="shield" className="h-10 w-10 shrink-0 text-accent-600" />
                 </div>
-                <div className="mt-5 grid gap-3">
+                <div className="mt-4 grid gap-3">
                   {actions.slice(0, 3).map((item) => (
-                    <a key={item.title} href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined} className="flex items-center gap-4 rounded-2xl border border-primary-700/10 bg-white/65 p-4 shadow-sm backdrop-blur-xl transition hover:border-accent-500/50 hover:bg-white/85">
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-ivory text-primary-900"><LineIcon name={item.icon} className="h-5 w-5" /></span>
+                    <a key={item.title} href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined} className="flex items-center gap-4 rounded-2xl border border-primary-700/10 bg-white/70 p-4 shadow-sm backdrop-blur-xl transition hover:border-accent-500/50 hover:bg-white/90">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ivory text-primary-900"><LineIcon name={item.icon} className="h-5 w-5" /></span>
                       <span className="min-w-0">
                         <span className="block text-sm font-semibold text-primary-900">{item.title}</span>
                         <span className="block break-words text-sm text-ink/70" dir={item.title === 'Email' || item.title === 'البريد الإلكتروني' ? 'ltr' : undefined}>{item.value}</span>
@@ -128,10 +134,10 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
             </div>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-8 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {actions.map((item) => (
-              <a key={item.title} href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined} className="glass-panel group rounded-[20px] p-6 transition hover:-translate-y-1 hover:border-accent-500/40">
-                <LineIcon name={item.icon} className="h-7 w-7 text-accent-600" />
+              <a key={item.title} href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined} className="glass-panel group rounded-[18px] p-5 text-center transition hover:-translate-y-1 hover:border-accent-500/40 sm:text-start">
+                <LineIcon name={item.icon} className="mx-auto h-6 w-6 text-accent-600 sm:mx-0" />
                 <h3 className="mt-4 font-semibold text-primary-900">{item.title}</h3>
                 <p className="mt-1 break-words text-sm font-medium text-ink" dir={item.title === 'Email' || item.title === 'البريد الإلكتروني' ? 'ltr' : undefined}>{item.value}</p>
                 <p className="mt-2 text-sm leading-6 text-ink/60">{item.note}</p>
@@ -141,90 +147,96 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
         </div>
       </section>
 
-      <section id="contact-form" className="container-x grid gap-8 pb-16 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="glass-panel rounded-[28px] p-7 sm:p-9">
-          <h2 className="font-heading text-4xl font-bold text-primary-900">{copy.locationTitle}</h2>
-          <p className="mt-4 leading-7 text-ink/70">{copy.locationText}</p>
-          <div className="mt-8 space-y-5">
-            <div className="flex gap-4">
-              <LineIcon name="pin" className="mt-1 h-6 w-6 shrink-0 text-accent-600" />
-              <p className="text-sm leading-6 text-ink/75">{address}</p>
-            </div>
-            <div className="flex gap-4">
-              <LineIcon name="calendar" className="mt-1 h-6 w-6 shrink-0 text-accent-600" />
-              <div>
-                <h3 className="font-semibold text-primary-900">{copy.hoursTitle}</h3>
-                <p className="text-sm leading-6 text-ink/70">{copy.hoursText}</p>
+      <section id="contact-form" className="container-x pb-12 sm:pb-16">
+        <div className="mx-auto grid max-w-6xl items-start gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="glass-panel rounded-[24px] p-6 sm:p-8">
+            <h2 className={sectionTitleClass}>{copy.locationTitle}</h2>
+            <p className="mt-4 leading-7 text-ink/70">{copy.locationText}</p>
+            <div className="mt-7 space-y-5">
+              <div className="flex gap-4">
+                <LineIcon name="pin" className="mt-1 h-6 w-6 shrink-0 text-accent-600" />
+                <p className="text-sm leading-6 text-ink/75">{address}</p>
+              </div>
+              <div className="flex gap-4">
+                <LineIcon name="calendar" className="mt-1 h-6 w-6 shrink-0 text-accent-600" />
+                <div>
+                  <h3 className="font-semibold text-primary-900">{copy.hoursTitle}</h3>
+                  <p className="text-sm leading-6 text-ink/70">{copy.hoursText}</p>
+                </div>
               </div>
             </div>
+            <a href={directionsUrl} target="_blank" rel="noreferrer" className="btn-outline mt-7 w-full gap-2 sm:w-auto"><LineIcon name="pin" className="h-5 w-5" />{copy.directions}</a>
           </div>
-          <a href={directionsUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full border border-accent-500 bg-white/60 px-6 py-3 font-semibold text-primary-900 shadow-glass transition hover:-translate-y-0.5 hover:bg-accent-50"><LineIcon name="pin" className="h-5 w-5" />{copy.directions}</a>
-        </div>
 
-        <div className="glass-panel rounded-[28px] p-7 sm:p-9">
-          <h2 className="font-heading text-4xl font-bold text-primary-900">{copy.formTitle}</h2>
-          <p className="mt-3 text-sm leading-6 text-ink/70">{copy.formText}</p>
-          <div className="mt-7">
-            <ContactForm locale={locale} variant="floating" />
-          </div>
-        </div>
-      </section>
-
-      <section className="container-x grid gap-8 pb-16 lg:grid-cols-[1fr_1.1fr]">
-        <div>
-          <h2 className="font-heading text-4xl font-bold text-primary-900">{copy.trustTitle}</h2>
-          <p className="mt-4 max-w-xl leading-7 text-ink/70">{copy.heroText}</p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {trustItems.map((item) => (
-            <div key={item.title} className="glass-panel rounded-[20px] p-5">
-              <LineIcon name={item.icon} className="h-7 w-7 text-accent-600" />
-              <h3 className="mt-4 font-semibold text-primary-900">{item.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-ink/65">{item.text}</p>
+          <div className="glass-panel rounded-[24px] p-6 sm:p-8">
+            <h2 className={sectionTitleClass}>{copy.formTitle}</h2>
+            <p className="mt-3 text-sm leading-6 text-ink/70">{copy.formText}</p>
+            <div className="mt-6">
+              <ContactForm locale={locale} variant="floating" />
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="container-x pb-16">
-        <div className="overflow-hidden rounded-[28px] border border-primary-700/10 bg-primary-900 p-8 text-white shadow-premium sm:p-10">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h2 className="font-heading text-4xl font-bold">{copy.ctaTitle}</h2>
-              <p className="mt-2 max-w-xl text-white/75">{copy.ctaText}</p>
-            </div>
-            <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5"><LineIcon name="message" className="h-5 w-5" />{copy.whatsapp}</a>
           </div>
         </div>
       </section>
 
-      <section className="container-x grid gap-8 pb-20 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="glass-panel rounded-[28px] p-7 sm:p-9">
-          <h2 className="font-heading text-4xl font-bold text-primary-900">{copy.faqTitle}</h2>
-          <div className="mt-6 divide-y divide-primary-700/10">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-primary-900">
-                  {faq.question}
-                  <span className="text-accent-600 transition group-open:rotate-180">⌄</span>
-                </summary>
-                <p className="mt-3 text-sm leading-6 text-ink/65">{faq.answer}</p>
-              </details>
+      <section className="container-x pb-12 sm:pb-16">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="text-center lg:text-start">
+            <h2 className={sectionTitleClass}>{copy.trustTitle}</h2>
+            <p className="mx-auto mt-4 max-w-xl leading-7 text-ink/70 lg:mx-0">{copy.heroText}</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {trustItems.map((item) => (
+              <div key={item.title} className="glass-panel rounded-[18px] p-5 text-center sm:text-start">
+                <LineIcon name={item.icon} className="mx-auto h-7 w-7 text-accent-600 sm:mx-0" />
+                <h3 className="mt-4 font-semibold text-primary-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-ink/65">{item.text}</p>
+              </div>
             ))}
           </div>
         </div>
-        <div className="overflow-hidden rounded-[28px] border border-primary-700/10 bg-white/70 shadow-glass backdrop-blur-xl">
-          <iframe
-            src={mapEmbedUrl}
-            title={copy.mapTitle}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="h-[420px] w-full"
-          />
+      </section>
+
+      <section className="container-x pb-12 sm:pb-16">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[24px] border border-primary-700/10 bg-primary-900 p-6 text-white shadow-premium sm:p-8 lg:p-10">
+          <div className="flex flex-col gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-start">
+            <div>
+              <h2 className={`${isArabic ? 'font-arabic text-3xl leading-snug' : 'font-heading text-4xl'} font-bold`}>{copy.ctaTitle}</h2>
+              <p className="mt-2 max-w-xl text-white/75">{copy.ctaText}</p>
+            </div>
+            <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 sm:w-auto"><LineIcon name="message" className="h-5 w-5" />{copy.whatsapp}</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-x pb-16 sm:pb-20">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="glass-panel rounded-[24px] p-6 sm:p-8">
+            <h2 className={sectionTitleClass}>{copy.faqTitle}</h2>
+            <div className="mt-6 divide-y divide-primary-700/10">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="group py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold leading-6 text-primary-900">
+                    {faq.question}
+                    <span className="shrink-0 text-accent-600 transition group-open:rotate-180">⌄</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-6 text-ink/65">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-[24px] border border-primary-700/10 bg-white/70 shadow-glass backdrop-blur-xl">
+            <iframe
+              src={mapEmbedUrl}
+              title={copy.mapTitle}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-[320px] w-full sm:h-[420px]"
+            />
+          </div>
         </div>
       </section>
     </div>
