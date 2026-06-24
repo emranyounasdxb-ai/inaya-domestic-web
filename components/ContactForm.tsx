@@ -21,9 +21,9 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
   const labels = {
     service: isArabic ? 'الخدمة المطلوبة' : 'Select Service',
     nationality: isArabic ? 'الجنسية المفضلة' : 'Nationality Preference',
-    area: isArabic ? 'المنطقة داخل عجمان' : 'Area in Ajman',
+    area: isArabic ? 'الإمارة / المنطقة' : 'Emirate / Area',
     chooseService: isArabic ? 'اختر الخدمة' : 'Choose a service',
-    chooseArea: isArabic ? 'مثال: الراشدية، النعيمية، الجرف' : 'Example: Al Rashidiya, Al Nuaimiya, Al Jurf',
+    chooseArea: isArabic ? 'مثال: دبي، أبوظبي، الشارقة، عجمان' : 'Example: Dubai, Abu Dhabi, Sharjah, Ajman',
     submit: isArabic ? 'إرسال الطلب' : 'Submit Request',
     privacy: isArabic ? 'سيتم استخدام بياناتك للتواصل معك بخصوص طلبك فقط.' : 'Your information will be used only to contact you about your request.'
   };
@@ -57,8 +57,8 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
     const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-ink/55 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent-600 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
 
     return (
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <div className="relative">
               <input name="name" placeholder=" " className={floatingInputClass} />
@@ -75,7 +75,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <div className="relative">
               <input name="email" type="email" placeholder=" " className={floatingInputClass} dir="ltr" />
@@ -95,7 +95,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="relative">
             <input name="nationality" placeholder=" " className={floatingInputClass} />
             <label className={floatingLabelClass}>{labels.nationality}</label>
@@ -108,7 +108,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
 
         <div>
           <div className="relative">
-            <textarea name="message" placeholder=" " rows={4} className={`${floatingInputClass} min-h-32 resize-y`} />
+            <textarea name="message" placeholder=" " rows={4} className={`${floatingInputClass} min-h-28 resize-y`} />
             <label className={floatingLabelClass}>{t('message')} *</label>
           </div>
           {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
