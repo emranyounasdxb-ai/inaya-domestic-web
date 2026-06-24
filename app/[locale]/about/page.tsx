@@ -30,6 +30,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
 
   const heroImage = 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=82';
   const chairmanImage = '/images/about/chairman-ummed-khan.webp';
+  const chairmanAvatar = '/images/about/chairman-ummed-khan-avatar.webp';
 
   const copy = {
     eyebrow: isArabic ? 'إرث عناية' : 'The INAYA Legacy',
@@ -183,8 +184,8 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
             <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.chairmanEyebrow}</p>
             <h2 className={`${sectionTitleClass} mt-4`}>{copy.chairmanTitle}</h2>
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-900 text-white shadow-glass">
-                <LineIcon name="user" className="h-6 w-6" />
+              <div className="h-14 w-14 overflow-hidden rounded-full border border-accent-500/28 bg-white shadow-glass ring-4 ring-white/60">
+                <img src={chairmanAvatar} alt={isArabic ? 'صورة السيد أمّد خان' : 'Mr. Ummed Khan'} className="h-full w-full object-cover object-top" />
               </div>
               <div>
                 <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold text-primary-900`}>{copy.chairmanName}</h3>
