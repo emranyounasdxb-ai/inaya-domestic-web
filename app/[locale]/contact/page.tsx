@@ -41,7 +41,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   const whatsappDisplay = isArabic ? <ArabicNumber type="whatsapp" /> : '+971 50 203 6767';
 
   const copy = {
-    badge: isArabic ? 'خدمة داخل عجمان فقط' : 'Ajman only service area',
+    badge: isArabic ? 'نخدم عائلات عجمان' : 'Serving families in Ajman',
     heroTitle: isArabic ? 'تواصل مع عناية للخدمات المنزلية' : 'Premium domestic care, guided clearly.',
     heroText: isArabic
       ? 'فريقنا يساعدك في اختيار خدمة العمالة المنزلية المناسبة لعائلتك داخل عجمان بتواصل واضح وتجربة راقية.'
@@ -77,7 +77,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   ];
 
   const faqs = [
-    { question: isArabic ? 'هل تقدمون الخدمة خارج عجمان؟' : 'Do you serve outside Ajman?', answer: isArabic ? 'حالياً نركز على خدمة العملاء داخل إمارة عجمان فقط.' : 'At the moment, our service area is focused on Ajman only.' },
+    { question: isArabic ? 'هل تقدمون الخدمة خارج عجمان؟' : 'Do you serve outside Ajman?', answer: isArabic ? 'حالياً نركز على خدمة العملاء داخل عجمان. تواصل معنا لتأكيد الحالات الخاصة.' : 'At the moment, our service team is focused on Ajman. Please contact us to confirm special requests.' },
     { question: isArabic ? 'ما أسرع طريقة للتواصل؟' : 'What is the fastest way to contact you?', answer: isArabic ? 'واتساب هو الأسرع لإرسال المتطلبات والحصول على متابعة من الفريق.' : 'WhatsApp is the fastest option for sharing your requirement and getting follow-up.' },
     { question: isArabic ? 'هل يمكن زيارة المكتب؟' : 'Can I visit the office?', answer: isArabic ? 'نعم، يمكن زيارة المكتب في جراند مول بعجمان، ويفضل التواصل معنا قبل الزيارة لتأكيد الموعد.' : 'Yes, you can visit our office at Grand Mall in Ajman. Please contact us first to confirm timing.' }
   ];
