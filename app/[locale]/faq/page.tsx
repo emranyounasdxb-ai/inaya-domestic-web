@@ -24,6 +24,9 @@ function LineIcon({ name, className = '' }: { name: IconName; className?: string
 
 export default function FaqPage({ params: { locale } }: { params: { locale: string } }) {
   const isArabic = locale === 'ar';
+  const headingClass = isArabic
+    ? 'font-arabic text-4xl font-bold leading-[1.32] text-primary-900 sm:text-5xl lg:text-6xl'
+    : 'font-heading text-4xl font-bold leading-[1.05] text-primary-900 sm:text-5xl lg:text-6xl';
   const categories: FaqCategory[] = isArabic ? [
     {
       id: 'services',
@@ -166,19 +169,20 @@ export default function FaqPage({ params: { locale } }: { params: { locale: stri
   };
 
   return (
-    <div className="overflow-hidden bg-[#fbf8f5] text-ink">
-      <section className="border-b border-primary-900/5 bg-[linear-gradient(180deg,#f3f6fb_0%,#edf1f8_100%)]">
-        <div className="container-x py-20 text-center sm:py-24 lg:py-28">
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent-500/22 bg-white/72 px-4 py-2 text-xs font-bold text-primary-900 shadow-sm backdrop-blur-xl">
-            <span className="h-2 w-2 rounded-full bg-accent-500" />
-            {copy.badge}
-          </span>
-          <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} mx-auto mt-7 max-w-4xl text-[2.35rem] font-bold leading-[1.04] tracking-[-0.025em] text-primary-900 sm:text-[3.1rem] lg:text-[3.55rem]`}>
-            {copy.title}
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-ink/62 sm:text-base">
-            {copy.subtitle}
-          </p>
+    <div className="overflow-hidden bg-ivory text-ink">
+      <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-18 lg:pt-16 lg:pb-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_18%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_12%_44%,rgba(7,22,74,0.10),transparent_25rem)]" />
+        <div className="container-x relative">
+          <div className="mx-auto max-w-4xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary-700/10 bg-white/65 px-4 py-2 text-xs font-semibold text-primary-900 shadow-sm backdrop-blur-xl sm:text-sm">
+              <span className="h-2 w-2 rounded-full bg-accent-500" />
+              {copy.badge}
+            </span>
+            <h1 className={`mx-auto mt-6 max-w-3xl ${headingClass}`}>{copy.title}</h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-ink/75 sm:text-lg sm:leading-8">
+              {copy.subtitle}
+            </p>
+          </div>
         </div>
       </section>
 
