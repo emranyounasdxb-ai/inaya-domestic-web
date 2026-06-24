@@ -29,7 +29,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
     : 'font-heading text-3xl font-bold leading-tight text-primary-900 sm:text-4xl';
 
   const heroImage = 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=82';
-  const chairmanImage = '/images/about/chairman-ummed-khan.webp';
+  const chairmanImage = '/images/about/chairman-ummed-khan-image.webp';
   const chairmanAvatar = '/images/about/chairman-ummed-khan-avatar.webp';
 
   const copy = {
