@@ -26,32 +26,32 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
   const isArabic = locale === 'ar';
 
   const copy = {
-    badge: isArabic ? 'نخدم عائلات عجمان' : 'Serving Ajman families',
-    title: isArabic ? 'خدمات العمالة المنزلية داخل مناطق عجمان' : 'Domestic worker services across Ajman districts',
+    badge: isArabic ? 'نخدم جميع إمارات الدولة' : 'Serving all UAE emirates',
+    title: isArabic ? 'خدمات العمالة المنزلية في جميع أنحاء الإمارات' : 'Maid and domestic worker services across the UAE',
     subtitle: isArabic
-      ? 'نساعد العائلات داخل عجمان في اختيار خدمات الخادمات، المربيات، الطهاة، والرعاية المنزلية بتواصل واضح وتجربة راقية.'
-      : 'We help families across Ajman arrange trusted maid, nanny, cook, and home-care services with clear guidance and premium follow-up.',
+      ? 'عناية للعمالة المنزلية خيار موثوق للعائلات التي تبحث عن خادمات ومربيات وطهاة وعمالة رعاية في جميع إمارات الدولة.'
+      : 'INAYA Domestic Workers is a trusted UAE maid and domestic worker company for families looking for maids, nannies, cooks and caregivers across all emirates.',
     primaryCta: isArabic ? 'احجز استشارة' : 'Book Consultation',
     whatsapp: isArabic ? 'واتساب' : 'WhatsApp Us',
-    searchTitle: isArabic ? 'ابحث عن منطقتك داخل عجمان' : 'Find your Ajman neighborhood',
-    searchPlaceholder: isArabic ? 'مثال: الراشدية، النعيمية، الجرف' : 'Enter neighborhood, e.g. Al Jurf',
+    searchTitle: isArabic ? 'ابحث عن إمارتك أو منطقتك' : 'Find your emirate or area',
+    searchPlaceholder: isArabic ? 'مثال: دبي، أبوظبي، الشارقة، عجمان' : 'Enter emirate or area, e.g. Dubai Marina',
     serviceRequired: isArabic ? 'الخدمة المطلوبة' : 'Service required',
     allServices: isArabic ? 'كل الخدمات' : 'All services',
     findHelp: isArabic ? 'اعرف التوفر' : 'Find Help',
-    dashboardTitle: isArabic ? 'تغطية مركزة داخل عجمان' : 'Focused Ajman coverage',
-    dashboardText: isArabic ? 'خدمة محلية واضحة مع متابعة منظمة للعائلات داخل عجمان.' : 'Clear local support and organized follow-up for families across Ajman.',
+    dashboardTitle: isArabic ? 'تغطية موثوقة في الإمارات' : 'Trusted UAE-wide coverage',
+    dashboardText: isArabic ? 'خدمة منظمة للعائلات في جميع إمارات الدولة مع متابعة واضحة حسب الإمارة ونوع الخدمة.' : 'Organized support for families across the UAE, with clear follow-up based on emirate, area and service type.',
     mapTitle: isArabic ? 'خريطة مكتب عناية في عجمان' : 'INAYA Ajman office map',
-    categoriesTitle: isArabic ? 'الخدمات المتوفرة داخل عجمان' : 'Service categories available in Ajman',
-    areasTitle: isArabic ? 'أبرز مناطق الخدمة' : 'Prime Ajman neighborhoods',
-    areasText: isArabic ? 'نغطي مناطق عجمان الرئيسية، ويتم تأكيد التوفر حسب نوع الخدمة والموعد.' : 'We cover key Ajman districts, with availability confirmed by service type and timing.',
+    categoriesTitle: isArabic ? 'الخدمات المتوفرة في الإمارات' : 'Service categories available across the UAE',
+    areasTitle: isArabic ? 'الإمارات والمناطق التي نخدمها' : 'UAE emirates and areas we serve',
+    areasText: isArabic ? 'نغطي جميع إمارات الدولة، ويتم تأكيد التوفر حسب نوع الخدمة والموعد والمنطقة.' : 'We serve all UAE emirates, with availability confirmed by service type, timing and area.',
     viewAll: isArabic ? 'تواصل للتأكيد' : 'Contact to confirm',
-    noteTitle: isArabic ? 'ملاحظة مهمة' : 'Important note',
-    noteText: isArabic ? 'نركز حالياً على خدمة العملاء داخل عجمان. إذا كانت لديك حالة خاصة، تواصل معنا لتأكيد التوفر.' : 'Our service team is currently focused on Ajman. If you have a specific requirement, contact us to confirm availability.'
+    noteTitle: isArabic ? 'ملاحظة عن التوفر' : 'Availability note',
+    noteText: isArabic ? 'نقدم خدمات العمالة المنزلية في جميع أنحاء الإمارات. قد يختلف التوفر حسب الإمارة والمنطقة ونوع الخدمة، لذلك يرجى التواصل معنا للتأكيد.' : 'We provide domestic worker services across the UAE. Availability can vary by emirate, area and service type, so please contact us to confirm your requirement.'
   };
 
   const stats = [
-    { label: isArabic ? 'نطاق الخدمة' : 'Service scope', value: isArabic ? 'عجمان' : 'Ajman' },
-    { label: isArabic ? 'المناطق الرئيسية' : 'Key districts', value: isArabic ? 'رئيسية' : 'Focused' },
+    { label: isArabic ? 'نطاق الخدمة' : 'Service scope', value: isArabic ? 'كل الإمارات' : 'All UAE' },
+    { label: isArabic ? 'الإمارات' : 'Emirates', value: '7' },
     { label: isArabic ? 'التواصل' : 'Follow-up', value: isArabic ? 'واضح' : 'Clear' },
     { label: isArabic ? 'زيارة المكتب' : 'Office visit', value: isArabic ? 'متاح' : 'Available' }
   ];
@@ -65,36 +65,46 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
     { icon: 'spark' as IconName, en: 'Cook', ar: 'طباخة / طاهٍ' }
   ];
 
-  const neighborhoods = [
+  const areas = [
     {
-      name: isArabic ? 'الراشدية' : 'Al Rashidiya',
-      sub: isArabic ? 'قريب من جراند مول والمناطق السكنية' : 'Near Grand Mall and residential communities',
-      points: isArabic ? ['خادمات منزلية', 'خدمات رعاية ومتابعة'] : ['Maid services', 'Care and follow-up support']
+      name: isArabic ? 'دبي' : 'Dubai',
+      sub: isArabic ? 'خدمات خادمات وعمالة منزلية للعائلات في دبي' : 'Maid and domestic worker services for Dubai families',
+      points: isArabic ? ['خادمات ومربيات', 'خيارات حسب التوفر'] : ['Maids and nannies', 'Options subject to availability']
     },
     {
-      name: isArabic ? 'النعيمية' : 'Al Nuaimiya',
-      sub: isArabic ? 'شقق ومنازل عائلية داخل عجمان' : 'Family apartments and homes in Ajman',
-      points: isArabic ? ['خدمات تنظيف منزلية', 'مربيات حسب التوفر'] : ['Home cleaning support', 'Nannies subject to availability']
+      name: isArabic ? 'أبوظبي' : 'Abu Dhabi',
+      sub: isArabic ? 'دعم منزلي موثوق للعائلات في أبوظبي' : 'Trusted home support for families in Abu Dhabi',
+      points: isArabic ? ['عمالة منزلية موثوقة', 'رعاية منزلية وطهاة'] : ['Trusted domestic workers', 'Caregivers and cooks']
     },
     {
-      name: isArabic ? 'الجرف' : 'Al Jurf',
-      sub: isArabic ? 'فلل ومجتمعات سكنية' : 'Villas and residential communities',
-      points: isArabic ? ['عمالة منزلية موثوقة', 'خدمات شهرية أو حسب الطلب'] : ['Trusted domestic workers', 'Monthly or requested services']
+      name: isArabic ? 'الشارقة' : 'Sharjah',
+      sub: isArabic ? 'خدمات منزلية مرنة للعائلات في الشارقة' : 'Flexible domestic services for Sharjah homes',
+      points: isArabic ? ['خدمات شهرية أو حسب الطلب', 'تأكيد سريع عبر واتساب'] : ['Monthly or requested services', 'Quick WhatsApp confirmation']
     },
     {
-      name: isArabic ? 'المويهات' : 'Al Mowaihat',
-      sub: isArabic ? 'مناطق عائلية واسعة داخل عجمان' : 'Spacious family districts inside Ajman',
-      points: isArabic ? ['خدمات للعائلات', 'متابعة واضحة قبل الحجز'] : ['Family-focused services', 'Clear follow-up before booking']
+      name: isArabic ? 'عجمان' : 'Ajman',
+      sub: isArabic ? 'مقرنا في عجمان مع دعم لجميع الإمارات' : 'Our office base with UAE-wide support',
+      points: isArabic ? ['زيارة المكتب متاحة', 'متابعة واضحة قبل الحجز'] : ['Office visit available', 'Clear follow-up before booking']
     },
     {
-      name: isArabic ? 'الروضة' : 'Al Rawda',
-      sub: isArabic ? 'منازل وفلل بالقرب من الخدمات' : 'Homes and villas near key amenities',
-      points: isArabic ? ['خادمات ومربيات', 'تأكيد التوفر عبر واتساب'] : ['Maids and nannies', 'Availability via WhatsApp']
+      name: isArabic ? 'رأس الخيمة' : 'Ras Al Khaimah',
+      sub: isArabic ? 'خيارات خادمات ودعم منزلي حسب التوفر' : 'Maid and home support options by availability',
+      points: isArabic ? ['خدمات للعائلات', 'تأكيد المنطقة قبل الحجز'] : ['Family-focused services', 'Area confirmation before booking']
     },
     {
-      name: isArabic ? 'كورنيش عجمان' : 'Ajman Corniche',
-      sub: isArabic ? 'أبراج وشقق سكنية على الساحل' : 'Coastal towers and apartments',
-      points: isArabic ? ['خدمات منزلية مرنة', 'خيارات حسب احتياج الأسرة'] : ['Flexible domestic support', 'Options based on family needs']
+      name: isArabic ? 'الفجيرة' : 'Fujairah',
+      sub: isArabic ? 'خدمات عمالة منزلية للعائلات في الفجيرة' : 'Domestic worker services for Fujairah families',
+      points: isArabic ? ['خادمات ورعاية منزلية', 'تنسيق حسب المتطلبات'] : ['Maids and home care', 'Coordination by requirement']
+    },
+    {
+      name: isArabic ? 'أم القيوين' : 'Umm Al Quwain',
+      sub: isArabic ? 'دعم منزلي موثوق حسب التوفر' : 'Trusted home support subject to availability',
+      points: isArabic ? ['خدمات مرنة', 'متابعة ودية'] : ['Flexible services', 'Friendly follow-up']
+    },
+    {
+      name: isArabic ? 'العين' : 'Al Ain',
+      sub: isArabic ? 'خدمات عائلية منزلية داخل منطقة العين' : 'Family home services across Al Ain',
+      points: isArabic ? ['خيارات مناسبة للعائلات', 'تأكيد التوفر حسب المنطقة'] : ['Family-suitable options', 'Availability by area']
     }
   ];
 
@@ -171,14 +181,14 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
             <p className="mt-4 max-w-xl leading-7 text-ink/70">{copy.dashboardText}</p>
             <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold text-primary-900">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 shadow-sm"><span className="h-2 w-2 rounded-full bg-accent-500" /> {copy.badge}</span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 shadow-sm"><LineIcon name="shield" className="h-4 w-4 text-accent-600" /> INAYA Ajman</span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 shadow-sm"><LineIcon name="shield" className="h-4 w-4 text-accent-600" /> INAYA UAE</span>
             </div>
           </div>
           <div className="glass-panel relative min-h-[360px] overflow-hidden rounded-[28px]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(191,164,106,0.26),transparent_18%),linear-gradient(135deg,rgba(7,22,74,0.11)_1px,transparent_1px),linear-gradient(45deg,rgba(191,164,106,0.10)_1px,transparent_1px)] bg-[length:100%_100%,34px_34px,34px_34px]" />
             <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-900 text-white shadow-premium"><LineIcon name="pin" className="h-8 w-8" /></span>
-              <span className="mt-3 rounded-full border border-primary-700/10 bg-white/80 px-6 py-2 text-sm font-bold text-primary-900 shadow-sm backdrop-blur-xl">Ajman</span>
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-900 text-white shadow-premium"><LineIcon name="map" className="h-8 w-8" /></span>
+              <span className="mt-3 rounded-full border border-primary-700/10 bg-white/80 px-6 py-2 text-sm font-bold text-primary-900 shadow-sm backdrop-blur-xl">All UAE</span>
             </div>
           </div>
         </div>
@@ -212,12 +222,12 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {neighborhoods.map((area) => (
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {areas.map((area) => (
             <div key={area.name} className="glass-panel overflow-hidden rounded-[24px] transition hover:-translate-y-1 hover:border-accent-500/40">
-              <div className="relative h-44 overflow-hidden bg-ivory-100">
+              <div className="relative h-40 overflow-hidden bg-ivory-100">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(191,164,106,0.26),transparent_26%),linear-gradient(135deg,rgba(7,22,74,0.10)_1px,transparent_1px),linear-gradient(45deg,rgba(191,164,106,0.10)_1px,transparent_1px)] bg-[length:100%_100%,32px_32px,32px_32px]" />
-                <span className="absolute right-4 top-4 rounded-full bg-primary-900 px-3 py-1 text-xs font-bold text-white">Ajman</span>
+                <span className="absolute right-4 top-4 rounded-full bg-primary-900 px-3 py-1 text-xs font-bold text-white">UAE</span>
                 <LineIcon name="map" className="absolute bottom-5 start-5 h-12 w-12 text-accent-600" />
               </div>
               <div className="p-6">
@@ -226,7 +236,6 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
                     <h3 className="font-heading text-2xl font-bold text-primary-900">{area.name}</h3>
                     <p className="mt-1 text-sm leading-6 text-ink/65">{area.sub}</p>
                   </div>
-                  <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-primary-900">{isArabic ? 'متاح' : 'Live'}</span>
                 </div>
                 <div className="mt-5 space-y-3">
                   {area.points.map((point) => (
