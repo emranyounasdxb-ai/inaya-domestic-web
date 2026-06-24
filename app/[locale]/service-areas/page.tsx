@@ -22,6 +22,132 @@ function LineIcon({ name, className = '' }: { name: IconName; className?: string
   return <svg viewBox="0 0 24 24" className={className} aria-hidden="true">{paths[name]}</svg>;
 }
 
+function UaeFlag() {
+  return (
+    <span className="grid h-8 w-11 overflow-hidden rounded-md border border-white/60 shadow-sm">
+      <span className="col-start-1 row-span-3 row-start-1 w-3.5 bg-[#CE1126]" />
+      <span className="col-start-2 row-start-1 bg-[#007A3D]" />
+      <span className="col-start-2 row-start-2 bg-white" />
+      <span className="col-start-2 row-start-3 bg-black" />
+    </span>
+  );
+}
+
+function CoveragePin({ x, y, hub = false }: { x: number; y: number; hub?: boolean }) {
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      {hub ? (
+        <>
+          <circle r="46" fill="none" stroke="#BFA46A" strokeOpacity="0.18" strokeWidth="2" />
+          <circle r="31" fill="none" stroke="#BFA46A" strokeOpacity="0.34" strokeWidth="2" />
+        </>
+      ) : null}
+      <path d="M0 22c11-14 17-24 17-34A17 17 0 0 0-17-12c0 10 6 20 17 34Z" fill="#BFA46A" />
+      <circle r={hub ? 9 : 7} fill="#F8F6F0" />
+      <circle r={hub ? 22 : 17} fill="none" stroke="#FFF8E6" strokeOpacity="0.9" strokeWidth="3" />
+    </g>
+  );
+}
+
+function UaeCoverageVisual({ isArabic }: { isArabic: boolean }) {
+  const title = isArabic ? 'تغطية جميع الإمارات' : 'All UAE Coverage';
+  const subtitle = isArabic ? 'مركز المكتب: عجمان' : 'Ajman office hub';
+  const labels = isArabic
+    ? ['أبوظبي', 'دبي', 'الشارقة', 'عجمان', 'أم القيوين', 'رأس الخيمة', 'الفجيرة', 'العين']
+    : ['Abu Dhabi', 'Dubai', 'Sharjah', 'Ajman', 'Umm Al Quwain', 'Ras Al Khaimah', 'Fujairah', 'Al Ain'];
+  const chips = isArabic
+    ? ['دبي', 'أبوظبي', 'الشارقة', 'عجمان']
+    : ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman'];
+
+  return (
+    <div className="glass-panel relative min-h-[280px] overflow-hidden rounded-[24px] sm:min-h-[340px]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(191,164,106,0.20),transparent_22rem),radial-gradient(circle_at_22%_80%,rgba(7,22,74,0.08),transparent_18rem)]" />
+      <div className="absolute inset-0 opacity-70 [background-image:radial-gradient(rgba(191,164,106,0.32)_1px,transparent_1px)] [background-size:28px_28px]" />
+
+      <div className={`absolute top-5 z-10 flex max-w-[78%] items-center gap-3 rounded-full border border-accent-500/45 bg-white/72 py-2 pl-2 pr-5 text-primary-900 shadow-glass backdrop-blur-xl ${isArabic ? 'right-5 flex-row-reverse pl-5 pr-2 text-right' : 'left-5'}`}>
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-900 ring-1 ring-accent-500/50">
+          <UaeFlag />
+        </span>
+        <span className="min-w-0">
+          <span className="block truncate text-sm font-bold sm:text-base">{title}</span>
+          <span className="block truncate text-xs font-semibold text-ink/55">{subtitle}</span>
+        </span>
+      </div>
+
+      <svg className="absolute inset-x-0 bottom-0 h-full w-full" viewBox="0 0 720 390" preserveAspectRatio="xMidYMid meet" role="img" aria-label={title}>
+        <defs>
+          <filter id="coverageShadow" x="-20%" y="-20%" width="140%" height="150%">
+            <feDropShadow dx="0" dy="18" stdDeviation="14" floodColor="#07164A" floodOpacity="0.18" />
+          </filter>
+          <linearGradient id="mapFill" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stopColor="#07164A" />
+            <stop offset="1" stopColor="#020A2C" />
+          </linearGradient>
+          <linearGradient id="goldLine" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stopColor="#BFA46A" stopOpacity="0.08" />
+            <stop offset="0.62" stopColor="#BFA46A" stopOpacity="0.68" />
+            <stop offset="1" stopColor="#BFA46A" stopOpacity="0.18" />
+          </linearGradient>
+        </defs>
+
+        <g opacity="0.34" stroke="#BFA46A" strokeWidth="1" fill="none">
+          <path d="M28 318c118 40 224 38 322 6s200-58 342-8" />
+          <path d="M22 336c126 40 238 42 344 9s200-60 340-12" />
+          <path d="M18 354c132 42 250 46 358 12s200-62 338-14" />
+        </g>
+
+        <g filter="url(#coverageShadow)">
+          <path
+            d="M96 238l23 20 40-5 64-22 82-14 76-29 72-22 44-28 49-7 42-34 45 24 13 48-28 42 37 33-34 35-55 31-38 54-82 18-126-11-92-18-72-29-48-34-43-47-17-35Z"
+            fill="url(#mapFill)"
+            stroke="#BFA46A"
+            strokeWidth="3"
+            strokeLinejoin="round"
+          />
+        </g>
+
+        <g stroke="url(#goldLine)" strokeWidth="2" fill="none" opacity="0.9">
+          <path d="M548 122C502 82 438 100 404 163" />
+          <path d="M548 122C495 136 451 160 424 211" />
+          <path d="M548 122C544 169 542 215 557 267" />
+          <path d="M548 122C580 128 607 145 626 177" />
+          <path d="M548 122C558 95 583 75 620 78" />
+          <path d="M548 122C514 111 484 115 462 136" />
+          <path d="M548 122C468 126 405 151 351 217" />
+        </g>
+
+        <CoveragePin x={351} y={217} />
+        <CoveragePin x={424} y={211} />
+        <CoveragePin x={526} y={139} />
+        <CoveragePin x={548} y={122} hub />
+        <CoveragePin x={562} y={96} />
+        <CoveragePin x={620} y={78} />
+        <CoveragePin x={626} y={177} />
+        <CoveragePin x={557} y={267} />
+
+        <g className="hidden sm:block" fill="#07164A" fontFamily="Inter, sans-serif" fontSize="12" fontWeight="700" opacity="0.78">
+          <text x="374" y="219">{labels[0]}</text>
+          <text x="444" y="210">{labels[1]}</text>
+          <text x="468" y="148">{labels[2]}</text>
+          <text x="500" y="112">{labels[3]}</text>
+          <text x="486" y="82">{labels[4]}</text>
+          <text x="632" y="72">{labels[5]}</text>
+          <text x="642" y="178">{labels[6]}</text>
+          <text x="572" y="268">{labels[7]}</text>
+        </g>
+      </svg>
+
+      <div className="absolute bottom-5 left-5 right-5 flex flex-wrap justify-center gap-2 sm:justify-end">
+        {chips.map((chip) => (
+          <span key={chip} className="rounded-full border border-primary-700/10 bg-white/70 px-3 py-1 text-xs font-bold text-primary-900 shadow-sm backdrop-blur-xl">
+            {chip}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ServiceAreasPage({ params: { locale } }: { params: { locale: string } }) {
   const isArabic = locale === 'ar';
   const headingClass = isArabic
@@ -190,13 +316,7 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
               <span className="inline-flex items-center gap-2 rounded-full bg-white/65 px-4 py-2 shadow-sm"><LineIcon name="shield" className="h-4 w-4 text-accent-600" /> INAYA UAE</span>
             </div>
           </div>
-          <div className="glass-panel relative min-h-[260px] overflow-hidden rounded-[24px] sm:min-h-[320px]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(191,164,106,0.26),transparent_18%),linear-gradient(135deg,rgba(7,22,74,0.11)_1px,transparent_1px),linear-gradient(45deg,rgba(191,164,106,0.10)_1px,transparent_1px)] bg-[length:100%_100%,34px_34px,34px_34px]" />
-            <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-900 text-white shadow-premium sm:h-16 sm:w-16"><LineIcon name="map" className="h-7 w-7 sm:h-8 sm:w-8" /></span>
-              <span className="mt-3 rounded-full border border-primary-700/10 bg-white/80 px-5 py-2 text-sm font-bold text-primary-900 shadow-sm backdrop-blur-xl">All UAE</span>
-            </div>
-          </div>
+          <CoverageVisual isArabic={isArabic} />
         </div>
       </section>
 
