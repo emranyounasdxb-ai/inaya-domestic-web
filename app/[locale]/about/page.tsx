@@ -150,7 +150,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x py-16 sm:py-20 lg:py-24">
+      <section className="container-x py-14 sm:py-16 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
           <div>
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent-700">{isArabic ? 'بداية واضحة' : 'A clear beginning'}</p>
@@ -180,36 +180,37 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x pb-16 sm:pb-20 lg:pb-24">
-        <div className="mx-auto grid max-w-6xl gap-8 rounded-[30px] border border-accent-500/22 bg-white/66 p-5 shadow-[0_24px_80px_rgba(7,22,74,0.08)] backdrop-blur-xl lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch lg:p-8">
-          <div className="relative overflow-hidden rounded-[24px] border border-accent-500/18 bg-[radial-gradient(circle_at_75%_20%,rgba(191,164,106,0.30),transparent_18rem),#f5f1e9] p-5 sm:p-7">
-            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-primary-900/12 to-transparent" />
-            <img src={chairmanImage} alt={isArabic ? 'السيد أمّد خان رئيس مجلس إدارة مجموعة ألياس' : 'Mr. Ummed Khan Founder and Chairman of ALIYAS Group'} className="relative mx-auto h-[410px] w-full max-w-[320px] object-contain object-bottom sm:h-[480px]" />
+      <section className="container-x pb-14 sm:pb-16 lg:pb-20">
+        <div className="mx-auto grid max-w-6xl gap-6 rounded-[28px] border border-accent-500/22 bg-white/66 p-4 shadow-[0_22px_70px_rgba(7,22,74,0.08)] backdrop-blur-xl lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:p-5">
+          <div className="relative flex min-h-[460px] items-end justify-center overflow-hidden rounded-[24px] border border-accent-500/18 bg-[radial-gradient(circle_at_55%_22%,rgba(191,164,106,0.30),transparent_18rem),linear-gradient(180deg,#fbf8f1_0%,#f2eadc_100%)] px-6 pt-6 sm:min-h-[500px]">
+            <div className="absolute inset-x-8 bottom-0 h-24 rounded-t-[80px] bg-gradient-to-t from-accent-500/20 to-transparent" />
+            <div className="absolute inset-x-10 bottom-0 h-px bg-accent-500/45" />
+            <img src={chairmanImage} alt={isArabic ? 'السيد أمّد خان رئيس مجلس إدارة مجموعة ألياس' : 'Mr. Ummed Khan Founder and Chairman of ALIYAS Group'} className="relative z-10 h-[430px] w-full max-w-[325px] object-contain object-bottom drop-shadow-[0_18px_28px_rgba(7,22,74,0.16)] sm:h-[470px]" />
           </div>
 
-          <div className="flex flex-col justify-center p-2 sm:p-4 lg:p-6">
-            <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.chairmanEyebrow}</p>
-            <h2 className={`${sectionTitleClass} mt-4`}>{copy.chairmanTitle}</h2>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <div className="h-14 w-14 overflow-hidden rounded-full border border-accent-500/34 bg-white shadow-glass ring-4 ring-accent-500/10">
+          <div className="flex flex-col justify-center px-2 py-3 sm:px-4 lg:px-6">
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.chairmanEyebrow}</p>
+            <h2 className={`${isArabic ? 'font-arabic text-3xl leading-[1.25]' : 'font-heading text-3xl leading-[1.08]'} mt-3 max-w-2xl font-bold text-primary-900 sm:text-4xl`}>{copy.chairmanTitle}</h2>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <div className="h-13 w-13 overflow-hidden rounded-full border border-accent-500/34 bg-white shadow-glass ring-4 ring-accent-500/10">
                 <img src={chairmanAvatar} alt={isArabic ? 'صورة السيد أمّد خان' : 'Mr. Ummed Khan'} className="h-full w-full object-cover object-top" />
               </div>
               <div>
-                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold text-primary-900`}>{copy.chairmanName}</h3>
+                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-lg font-bold text-primary-900 sm:text-xl`}>{copy.chairmanName}</h3>
                 <p className="text-sm font-semibold text-ink/56">{copy.chairmanRole}</p>
               </div>
             </div>
-            <div className="mt-6 space-y-4 leading-8 text-ink/70">
+            <div className="mt-5 max-w-2xl space-y-3 text-[0.95rem] leading-7 text-ink/70">
               {copy.chairmanText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
-            <blockquote className="mt-7 rounded-[20px] border border-accent-500/30 bg-accent-50/80 px-5 py-4 text-lg font-bold leading-8 text-primary-900 shadow-sm">
+            <blockquote className="mt-5 rounded-[18px] border border-accent-500/30 bg-accent-50/80 px-5 py-4 text-base font-bold leading-7 text-primary-900 shadow-sm">
               “{copy.chairmanQuote}”
             </blockquote>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f2eee8] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[#f2eee8] py-14 sm:py-16 lg:py-20">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent-700">INAYA VALUES</p>
@@ -243,7 +244,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x py-16 sm:py-20 lg:py-24">
+      <section className="container-x py-14 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
             <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.standardsEyebrow}</p>
@@ -270,7 +271,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="bg-[#f7f4ee] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[#f7f4ee] py-14 sm:py-16 lg:py-20">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.leadershipEyebrow}</p>
@@ -294,7 +295,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x py-16 sm:py-20 lg:py-24">
+      <section className="container-x py-14 sm:py-16 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="glass-panel rounded-[26px] border border-accent-500/18 p-7 shadow-[0_20px_60px_rgba(7,22,74,0.06)] sm:p-8">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500/12 text-accent-700 shadow-sm ring-1 ring-accent-500/24">
