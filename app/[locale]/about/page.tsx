@@ -29,6 +29,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
     : 'font-heading text-3xl font-bold leading-tight text-primary-900 sm:text-4xl';
 
   const heroImage = 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=82';
+  const chairmanImage = '/images/about/chairman-ummed-khan.png';
 
   const copy = {
     eyebrow: isArabic ? 'إرث عناية' : 'The INAYA Legacy',
@@ -52,6 +53,20 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
     ] : [
       'Clear communication before every commitment or final step.',
       'Organized service guidance built around each household requirement.'
+    ],
+    chairmanEyebrow: isArabic ? 'رؤية القيادة' : 'Leadership Vision',
+    chairmanTitle: isArabic ? 'رسالة من رئيس مجلس الإدارة' : 'A Message from Our Chairman',
+    chairmanName: isArabic ? 'السيد أمّد خان' : 'Mr. Ummed Khan',
+    chairmanRole: isArabic ? 'المؤسس ورئيس مجلس إدارة مجموعة ألياس' : 'Founder & Chairman, ALIYAS Group',
+    chairmanQuote: isArabic ? 'تبدأ جودة الخدمة من الثقة والوضوح والمسؤولية.' : 'Service excellence begins with trust, clarity and responsibility.',
+    chairmanText: isArabic ? [
+      'تسترشد عناية للعمالة المنزلية برؤية السيد أمّد خان، المؤسس ورئيس مجلس إدارة مجموعة ألياس. تقوم هذه الرؤية على الثقة، والابتكار، والمسؤولية، والالتزام بتقديم خدمات متميزة داخل دولة الإمارات.',
+      'وبصفتها جزءاً من مجموعة ألياس، تواصل عناية التزامها بتقديم خدمات عمالة منزلية منظمة، وتواصل واضح، ودعم موثوق للعائلات. ومع توسع المجموعة في قطاعات متعددة مثل العقارات، التوظيف، النقل، الأمن، التنظيف، والضيافة، يبقى تركيز عناية واضحاً: مساعدة العائلات على اختيار خدمات العمالة المنزلية بثقة وراحة.',
+      'هدفنا أن تكون كل خطوة واضحة ومحترمة ومدارة باحتراف، من أول استفسار حتى تأكيد الخدمة والمتابعة.'
+    ] : [
+      'INAYA Domestic Workers is guided by the vision of Mr. Ummed Khan, Founder & Chairman of ALIYAS Group. His leadership is built on trust, innovation, responsibility and long-term service excellence across the UAE.',
+      'As part of ALIYAS Group, INAYA carries forward a clear commitment to organized domestic worker services, transparent communication and dependable support for families. While the Group has grown across sectors such as real estate, employment services, transport, security, cleaning and hospitality, INAYA stays focused on one purpose: helping families choose reliable domestic worker services with confidence.',
+      'Our goal is to make every step clear, respectful and professionally managed, from the first enquiry to service confirmation and follow-up.'
     ],
     purposeTitle: isArabic ? 'الغاية والقيم' : 'Purpose & Values',
     purposeSub: isArabic ? 'الأسس التي توجه خدمتنا في كل تواصل.' : 'The pillars that define our service and guide every interaction.',
@@ -133,7 +148,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x py-14 sm:py-18 lg:py-20">
+      <section className="container-x py-14 sm:py-16 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <h2 className={`${sectionTitleClass}`}>{copy.storyTitle}</h2>
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -153,6 +168,35 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-x pb-16 sm:pb-20 lg:pb-24">
+        <div className="mx-auto grid max-w-6xl gap-8 rounded-[30px] border border-accent-500/18 bg-white/64 p-5 shadow-[0_24px_80px_rgba(7,22,74,0.07)] backdrop-blur-xl lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch lg:p-8">
+          <div className="relative overflow-hidden rounded-[24px] bg-[radial-gradient(circle_at_75%_20%,rgba(191,164,106,0.28),transparent_18rem),#f5f1e9] p-5 sm:p-7">
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-primary-900/12 to-transparent" />
+            <img src={chairmanImage} alt={isArabic ? 'السيد أمّد خان رئيس مجلس إدارة مجموعة ألياس' : 'Mr. Ummed Khan Founder and Chairman of ALIYAS Group'} className="relative mx-auto h-[430px] w-full max-w-[320px] object-contain object-bottom sm:h-[500px]" />
+          </div>
+
+          <div className="flex flex-col justify-center p-2 sm:p-4 lg:p-6">
+            <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.chairmanEyebrow}</p>
+            <h2 className={`${sectionTitleClass} mt-4`}>{copy.chairmanTitle}</h2>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-900 text-white shadow-glass">
+                <LineIcon name="user" className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold text-primary-900`}>{copy.chairmanName}</h3>
+                <p className="text-sm font-semibold text-ink/56">{copy.chairmanRole}</p>
+              </div>
+            </div>
+            <div className="mt-6 space-y-4 leading-8 text-ink/70">
+              {copy.chairmanText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+            <blockquote className="mt-7 rounded-[20px] border border-accent-500/24 bg-accent-50/70 px-5 py-4 text-lg font-bold leading-8 text-primary-900 shadow-sm">
+              “{copy.chairmanQuote}”
+            </blockquote>
           </div>
         </div>
       </section>
