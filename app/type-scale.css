@@ -49,6 +49,42 @@ main button[class*='rounded-full'] {
   main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > div:first-child {
     justify-content: flex-start !important;
   }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > .glass-panel {
+    padding: 1.35rem !important;
+    border-radius: 1.35rem !important;
+  }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > .glass-panel h2 {
+    font-size: clamp(1.35rem, 1.9vw, 1.85rem) !important;
+    line-height: 1.14 !important;
+    max-width: 28rem;
+  }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > .glass-panel p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > .glass-panel .grid {
+    gap: 0.65rem !important;
+    margin-top: 1rem !important;
+  }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > .glass-panel .grid > div {
+    padding: 0.9rem !important;
+    border-radius: 1rem !important;
+  }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > .glass-panel .grid h3 {
+    font-size: 1rem !important;
+    line-height: 1.18 !important;
+  }
+
+  main > div > section:first-child .container-x > div[class*='lg:grid-cols'] > .glass-panel .grid p {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
 }
 
 [dir='rtl'] main h1 {
