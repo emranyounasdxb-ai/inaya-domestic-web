@@ -42,6 +42,16 @@ Dubai premium domestic service: clean, trustworthy, luxurious, airy, and Apple-i
 | Arabic Headings | `IBM Plex Sans Arabic` | 600/700 |
 | Arabic Body / UI | `Noto Sans Arabic` | 400/500/600/700 |
 
+## Type Scale
+
+| Use | English | Arabic |
+| --- | --- | --- |
+| Hero H1 | `clamp(2.35rem, 5vw, 4rem)` | `clamp(2rem, 4.4vw, 3.5rem)` |
+| Section H2 | `clamp(1.75rem, 3.2vw, 2.75rem)` | `clamp(1.65rem, 3vw, 2.45rem)` |
+| Reusable heading class | `text-3xl` to `lg:text-5xl` | follows RTL heading cap |
+
+Headings should be premium and controlled, not oversized. Arabic headings need more line-height to avoid overlap.
+
 ## Components
 
 - Navbar: translucent glass on ivory, thin border, compact height, navy text, navy pill booking button.
