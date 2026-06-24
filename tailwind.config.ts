@@ -39,8 +39,9 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
         body: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-heading)', 'Cormorant Garamond', 'serif'],
-        arabic: ['var(--font-arabic)', 'Noto Sans Arabic', 'Tahoma', 'sans-serif']
+        heading: ['var(--font-heading)', 'Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        arabic: ['var(--font-arabic-body)', 'Noto Sans Arabic', 'Tahoma', 'sans-serif'],
+        arabicHeading: ['var(--font-arabic-heading)', 'IBM Plex Sans Arabic', 'Noto Sans Arabic', 'Tahoma', 'sans-serif']
       },
       boxShadow: {
         glass: '0 22px 70px rgba(7, 22, 74, 0.08), 0 1px 0 rgba(255, 255, 255, 0.85) inset',
