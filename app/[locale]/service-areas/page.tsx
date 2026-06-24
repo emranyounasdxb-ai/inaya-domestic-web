@@ -26,7 +26,7 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
   const isArabic = locale === 'ar';
 
   const copy = {
-    badge: isArabic ? 'تغطية داخل عجمان فقط' : 'Ajman coverage only',
+    badge: isArabic ? 'نخدم عائلات عجمان' : 'Serving Ajman families',
     title: isArabic ? 'خدمات العمالة المنزلية داخل مناطق عجمان' : 'Domestic worker services across Ajman districts',
     subtitle: isArabic
       ? 'نساعد العائلات داخل عجمان في اختيار خدمات الخادمات، المربيات، الطهاة، والرعاية المنزلية بتواصل واضح وتجربة راقية.'
@@ -39,18 +39,18 @@ export default function ServiceAreasPage({ params: { locale } }: { params: { loc
     allServices: isArabic ? 'كل الخدمات' : 'All services',
     findHelp: isArabic ? 'اعرف التوفر' : 'Find Help',
     dashboardTitle: isArabic ? 'تغطية مركزة داخل عجمان' : 'Focused Ajman coverage',
-    dashboardText: isArabic ? 'خدمة محلية واضحة مع متابعة منظمة داخل إمارة عجمان فقط.' : 'Clear local support and organized follow-up within Ajman only.',
+    dashboardText: isArabic ? 'خدمة محلية واضحة مع متابعة منظمة للعائلات داخل عجمان.' : 'Clear local support and organized follow-up for families across Ajman.',
     mapTitle: isArabic ? 'خريطة مكتب عناية في عجمان' : 'INAYA Ajman office map',
     categoriesTitle: isArabic ? 'الخدمات المتوفرة داخل عجمان' : 'Service categories available in Ajman',
     areasTitle: isArabic ? 'أبرز مناطق الخدمة' : 'Prime Ajman neighborhoods',
     areasText: isArabic ? 'نغطي مناطق عجمان الرئيسية، ويتم تأكيد التوفر حسب نوع الخدمة والموعد.' : 'We cover key Ajman districts, with availability confirmed by service type and timing.',
     viewAll: isArabic ? 'تواصل للتأكيد' : 'Contact to confirm',
     noteTitle: isArabic ? 'ملاحظة مهمة' : 'Important note',
-    noteText: isArabic ? 'نخدم العملاء داخل عجمان فقط. إذا لم تكن منطقتك مذكورة، تواصل معنا لتأكيد التوفر.' : 'We currently serve customers inside Ajman only. If your area is not listed, contact us to confirm availability.'
+    noteText: isArabic ? 'نركز حالياً على خدمة العملاء داخل عجمان. إذا كانت لديك حالة خاصة، تواصل معنا لتأكيد التوفر.' : 'Our service team is currently focused on Ajman. If you have a specific requirement, contact us to confirm availability.'
   };
 
   const stats = [
-    { label: isArabic ? 'نطاق الخدمة' : 'Service scope', value: isArabic ? 'عجمان فقط' : 'Ajman only' },
+    { label: isArabic ? 'نطاق الخدمة' : 'Service scope', value: isArabic ? 'عجمان' : 'Ajman' },
     { label: isArabic ? 'المناطق الرئيسية' : 'Key districts', value: isArabic ? 'رئيسية' : 'Focused' },
     { label: isArabic ? 'التواصل' : 'Follow-up', value: isArabic ? 'واضح' : 'Clear' },
     { label: isArabic ? 'زيارة المكتب' : 'Office visit', value: isArabic ? 'متاح' : 'Available' }
