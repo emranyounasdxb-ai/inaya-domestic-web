@@ -24,14 +24,14 @@ body {
 }
 
 [dir='rtl'] body {
-  font-family: var(--font-arabic), 'Noto Sans Arabic', Tahoma, sans-serif;
+  font-family: var(--font-arabic-body), 'Noto Sans Arabic', Tahoma, sans-serif;
 }
 
 [dir='rtl'] .heading,
 [dir='rtl'] h1,
 [dir='rtl'] h2,
 [dir='rtl'] h3 {
-  font-family: var(--font-arabic), 'Noto Sans Arabic', Tahoma, sans-serif;
+  font-family: var(--font-arabic-heading), 'IBM Plex Sans Arabic', 'Noto Sans Arabic', Tahoma, sans-serif;
 }
 
 .container-x { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
