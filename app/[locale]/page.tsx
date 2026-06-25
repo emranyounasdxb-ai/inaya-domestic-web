@@ -1,212 +1,275 @@
 import Link from 'next/link';
 
-const homeCopy = {
+const homeContent = {
   en: {
-    heroKicker: 'Modern UAE Luxury Domestic Services',
-    heroTitle: 'Elevating Domestic Excellence.',
-    heroText: 'Trusted maid and domestic worker services for UAE families, with organized guidance, respectful follow-up and support across all emirates.',
-    primaryCta: 'Explore Services',
-    secondaryCta: 'Discover The Process',
-    heroBadge: 'Vetting Status',
-    heroBadgeValue: 'Guided & Verified',
-    stats: [
-      { value: 'All UAE', label: 'Service Coverage', text: 'Support available across all seven emirates, subject to service type and availability.' },
-      { value: '50+', label: 'Detail Checks', text: 'Service requirements, timing, area and household expectations are reviewed before confirmation.' },
-      { value: '24/7', label: 'Follow-up Support', text: 'Our team remains available for WhatsApp guidance and next-step coordination.' }
+    heroLabel: 'Legacy of Trust',
+    heroTitleA: 'Elevating Domestic',
+    heroTitleB: 'Excellence',
+    heroText: 'Bespoke domestic worker services for UAE families who expect clarity, trust and a calm household experience.',
+    primaryCta: 'Request Consultation',
+    secondaryCta: 'Explore Services',
+    trustLabel: 'Recognized & Trusted by UAE Authorities',
+    authorities: ['MOHRE', 'Tadbeer', 'Ajman Chamber', 'UAE Pass'],
+    conciergeLabel: '24/7 Support',
+    conciergeTitle: 'Global Executive Concierge',
+    conciergeText: 'Beyond staffing, INAYA provides a dedicated support layer for family requirements, urgent coordination and practical follow-up across the UAE.',
+    learnMore: 'Learn More',
+    safetyTitle: 'Safety & Discretion',
+    safetyText: 'Privacy is part of the service experience. Household information, documents and expectations are handled carefully before any step is confirmed.',
+    safetyCards: [
+      { title: 'Document Care', text: 'Requirements are handled with clear records and careful follow-up.' },
+      { title: 'Family Privacy', text: 'Communication remains respectful, private and relevant to the household.' }
     ],
-    servicesLabel: 'Curated Disciplines',
-    servicesTitle: 'Domestic support for every household rhythm',
-    servicesText: 'Premium service categories presented with clear options, simple next steps and family-focused coordination.',
-    viewAll: 'View All Services',
-    cards: [
-      { slug: 'nanny', label: 'Childcare Excellence', title: 'Nannies & Babysitters', text: 'Caring childcare professionals for families seeking safe, warm and reliable support.' },
-      { slug: 'personal-chef', label: 'Home Dining', title: 'Cooks & Private Chefs', text: 'Home cooking support for daily meals, family preferences and special requirements.' },
-      { slug: 'live-in-maid', label: 'Household Care', title: 'Live-in & Live-out Maids', text: 'Domestic worker services organized around cleaning, home routines and household comfort.' }
+    spotlightTitle: 'Elite Candidate Spotlight',
+    spotlightText: 'A glimpse into the caliber of professionals within our service network.',
+    candidates: [
+      { name: 'Elena V.', role: 'Executive Nanny • 12 Years Exp.', text: 'Specialized in early childhood support and family routines.' },
+      { name: 'Marcus T.', role: 'Private Chef • Home Dining', text: 'Experienced in family meal planning and private home cooking.' },
+      { name: 'Sarah J.', role: 'House Manager • Estate Support', text: 'Skilled in household coordination and domestic team support.' }
     ],
-    philosophyLabel: 'The INAYA Philosophy',
-    philosophyTitle: 'The Art of Living Well',
-    philosophyText: 'A well-supported home feels calm, organized and easy to manage. INAYA focuses on matching the right service type to the household need, then keeping communication clear from enquiry to follow-up.',
-    philosophyPoints: [
-      { title: 'Quiet Confidence', text: 'Guidance that helps families understand options without pressure.' },
-      { title: 'Respectful Coordination', text: 'A practical process built around privacy, clarity and household comfort.' }
+    matrixTitle: 'The Inaya Vetting Matrix',
+    matrix: [
+      { title: 'Identity', text: 'Documentation and eligibility review before service coordination.' },
+      { title: 'Skill', text: 'Requirement matching based on household needs and service type.' },
+      { title: 'Behaviour', text: 'Communication style and suitability are considered carefully.' },
+      { title: 'Reference', text: 'Past experience and available background details are reviewed.' },
+      { title: 'Matching', text: 'The service recommendation is aligned with family expectations.' }
     ],
-    processLabel: 'Operational Rigor',
-    processTitle: 'The 5-Step Service Journey',
-    processText: 'A clear process designed to reduce confusion before a family proceeds with a booking.',
-    process: [
-      { title: 'Requirement Review', text: 'We confirm service type, emirate, schedule and household expectations.' },
-      { title: 'Availability Check', text: 'Suitable options are reviewed by area, service type and requested duration.' },
-      { title: 'Document Guidance', text: 'Documents, fees and responsibilities are explained before confirmation.' },
-      { title: 'Service Confirmation', text: 'The family receives clear next steps and follow-up instructions.' },
-      { title: 'After-booking Support', text: 'Our team stays available for questions and service-related feedback.' }
+    journeyTitle: 'A Seamless Journey',
+    journeyText: 'Hiring domestic support should not feel complex. The process is arranged in three clear stages.',
+    startSearch: 'Start Your Search',
+    steps: [
+      { title: 'Share Requirement', text: 'Tell us the service type, emirate, timing and household details.' },
+      { title: 'Confirm Details', text: 'We explain suitable options, documents and next steps.' },
+      { title: 'Commence Service', text: 'Your service begins with clear follow-up and support guidance.' }
     ],
-    perspectiveLabel: 'Perspectives',
-    perspectiveTitle: 'Trusted by UAE families',
-    quote: 'The process felt clear from the first call. The team understood what our household needed and followed up professionally.',
-    quoteBy: 'Family client, Dubai',
-    blackLabel: 'Premium Household Support',
-    blackTitle: 'INAYA Signature Care',
-    blackText: 'For families who require more structured support, our team can coordinate multiple service needs, follow-up points and household requirements through one clear consultation.',
-    blackCta: 'Request Consultation',
-    finalTitle: 'Experience the Exceptional',
-    finalText: 'Start with a simple requirement review and our team will guide you toward the right domestic worker service for your home.',
-    finalCta: 'Book Consultation'
+    disciplinesTitle: 'Curated Disciplines',
+    disciplinesText: 'Expertise that extends beyond cleaning. We provide specialized professionals for every part of your home.',
+    services: [
+      { slug: 'nanny', tag: 'Premier Selection', title: 'Executive Nannies', text: 'Specialized childcare support focused on care, routine and family comfort.', cta: 'Learn More' },
+      { slug: 'personal-chef', title: 'Private Chefs', text: 'Culinary support in the comfort of your kitchen.', cta: 'Inquire' },
+      { slug: 'live-in-maid', title: 'House Managers', text: 'Structured household support and coordination for busy homes.', cta: 'View Credentials' }
+    ],
+    testimonialsLabel: 'Client Perspectives',
+    testimonialsTitle: 'Whispers of Satisfaction',
+    testimonials: [
+      { quote: 'INAYA helped me find reliable support for my home. The team was polite, clear and responsive.', name: 'Sarah Malik', role: 'Working Mother, Ajman' },
+      { quote: 'Excellent and transparent service. The team explained every step and followed up professionally.', name: 'Ali Khan', role: 'Business Owner, Sharjah' }
+    ],
+    imageQuote: 'Our sanctuary is finally managed with the precision it deserves.',
+    blackLabel: 'INAYA BLACK',
+    blackTitle: 'The Zenith of Domestic Staffing',
+    blackText: 'A premium consultation tier for families requiring structured household support, priority coordination and a more personalized domestic service plan.',
+    blackCta: 'Apply for Membership'
   },
   ar: {
-    heroKicker: 'خدمات منزلية راقية في الإمارات',
-    heroTitle: 'نرتقي بتجربة الخدمات المنزلية.',
-    heroText: 'خدمات خادمات وعمالة منزلية موثوقة للأسر في الإمارات، مع إرشاد منظم ومتابعة واضحة في جميع الإمارات.',
-    primaryCta: 'استكشف الخدمات',
-    secondaryCta: 'تعرف على الخطوات',
-    heroBadge: 'حالة المتابعة',
-    heroBadgeValue: 'إرشاد وتحقق',
-    stats: [
-      { value: 'كل الإمارات', label: 'نطاق الخدمة', text: 'دعم متاح في الإمارات السبع حسب نوع الخدمة والتوفر.' },
-      { value: '50+', label: 'تفاصيل تتم مراجعتها', text: 'نراجع نوع الخدمة، الوقت، المنطقة وتوقعات الأسرة قبل التأكيد.' },
-      { value: '24/7', label: 'متابعة ودعم', text: 'يبقى فريقنا متاحاً عبر واتساب لتوضيح الخطوات التالية.' }
+    heroLabel: 'إرث من الثقة',
+    heroTitleA: 'نرتقي بتجربة',
+    heroTitleB: 'الخدمات المنزلية',
+    heroText: 'خدمات عمالة منزلية منظمة للأسر في الإمارات، مع وضوح في الخطوات وثقة ومتابعة محترمة.',
+    primaryCta: 'اطلب استشارة',
+    secondaryCta: 'استكشف الخدمات',
+    trustLabel: 'موثوق ومنظم مع جهات الإمارات',
+    authorities: ['MOHRE', 'تدبير', 'غرفة عجمان', 'UAE Pass'],
+    conciergeLabel: 'دعم ومتابعة',
+    conciergeTitle: 'كونسيرج تنفيذي للعائلة',
+    conciergeText: 'إلى جانب الخدمة، تقدم عناية طبقة دعم مخصصة لاحتياجات الأسرة، التنسيق العاجل، والمتابعة العملية داخل الإمارات.',
+    learnMore: 'اعرف المزيد',
+    safetyTitle: 'السلامة والخصوصية',
+    safetyText: 'الخصوصية جزء أساسي من تجربة الخدمة. يتم التعامل مع معلومات الأسرة والمستندات والتوقعات بعناية قبل تأكيد أي خطوة.',
+    safetyCards: [
+      { title: 'عناية بالمستندات', text: 'تتم متابعة المتطلبات بسجلات واضحة وتنسيق دقيق.' },
+      { title: 'خصوصية الأسرة', text: 'يبقى التواصل محترماً وخاصاً ومرتبطاً باحتياج المنزل.' }
     ],
-    servicesLabel: 'خدمات مختارة',
-    servicesTitle: 'دعم منزلي يناسب روتين كل أسرة',
-    servicesText: 'فئات خدمة واضحة مع خيارات عملية وخطوات بسيطة وتنسيق يركز على راحة الأسرة.',
-    viewAll: 'عرض كل الخدمات',
-    cards: [
-      { slug: 'nanny', label: 'رعاية الأطفال', title: 'المربيات وجليسات الأطفال', text: 'دعم آمن وهادئ للأطفال من خلال مربيات مناسبات لاحتياج الأسرة.' },
-      { slug: 'personal-chef', label: 'الطبخ المنزلي', title: 'الطهاة والشيف الخاص', text: 'دعم للوجبات اليومية وتفضيلات الأسرة والمتطلبات الخاصة.' },
-      { slug: 'live-in-maid', label: 'رعاية المنزل', title: 'الخادمات المقيمات وغير المقيمات', text: 'خدمات منزلية منظمة للتنظيف والروتين اليومي وراحة المنزل.' }
+    spotlightTitle: 'نماذج من الكفاءات',
+    spotlightText: 'لمحة عن مستوى المهنيين ضمن شبكة خدماتنا.',
+    candidates: [
+      { name: 'إيلينا V.', role: 'مربية تنفيذية • 12 سنة خبرة', text: 'متخصصة في رعاية الأطفال ودعم روتين الأسرة.' },
+      { name: 'ماركوس T.', role: 'شيف خاص • طبخ منزلي', text: 'خبرة في تخطيط وجبات الأسرة والطبخ المنزلي.' },
+      { name: 'سارة J.', role: 'مديرة منزل • دعم الأسر', text: 'مهارة في تنسيق المنزل ودعم فريق الخدمة.' }
     ],
-    philosophyLabel: 'فلسفة عناية',
-    philosophyTitle: 'فن الحياة المنظمة',
-    philosophyText: 'المنزل المدعوم بشكل صحيح يكون أكثر هدوءاً وسهولة في الإدارة. تركز عناية على ربط نوع الخدمة باحتياج المنزل ثم الحفاظ على وضوح التواصل من أول استفسار إلى المتابعة.',
-    philosophyPoints: [
-      { title: 'ثقة هادئة', text: 'إرشاد يساعد الأسرة على فهم الخيارات دون ضغط.' },
-      { title: 'تنسيق محترم', text: 'عملية عملية تراعي الخصوصية والوضوح وراحة المنزل.' }
+    matrixTitle: 'مصفوفة التحقق في عناية',
+    matrix: [
+      { title: 'الهوية', text: 'مراجعة المستندات والأهلية قبل تنسيق الخدمة.' },
+      { title: 'المهارة', text: 'مطابقة الاحتياج حسب نوع الخدمة ومتطلبات المنزل.' },
+      { title: 'السلوك', text: 'تؤخذ طريقة التواصل والملاءمة بعين الاعتبار.' },
+      { title: 'الخبرة', text: 'تتم مراجعة الخبرات والتفاصيل المتاحة بعناية.' },
+      { title: 'المطابقة', text: 'يتم ربط التوصية بتوقعات الأسرة واحتياجها.' }
     ],
-    processLabel: 'منهجية العمل',
-    processTitle: 'رحلة الخدمة في خمس خطوات',
-    processText: 'عملية واضحة تساعد الأسرة على فهم ما يحدث قبل المتابعة بالحجز.',
-    process: [
-      { title: 'مراجعة الطلب', text: 'نؤكد نوع الخدمة، الإمارة، الجدول وتوقعات الأسرة.' },
-      { title: 'فحص التوفر', text: 'تراجع الخيارات المناسبة حسب المنطقة ونوع الخدمة والمدة المطلوبة.' },
-      { title: 'إرشاد المستندات', text: 'يتم شرح المستندات والرسوم والمسؤوليات قبل التأكيد.' },
-      { title: 'تأكيد الخدمة', text: 'تحصل الأسرة على خطوات واضحة وتعليمات المتابعة.' },
-      { title: 'دعم بعد الحجز', text: 'يبقى الفريق متاحاً للأسئلة وملاحظات الخدمة.' }
+    journeyTitle: 'رحلة سلسة',
+    journeyText: 'طلب الدعم المنزلي يجب ألا يكون معقداً. لذلك نرتب العملية في ثلاث مراحل واضحة.',
+    startSearch: 'ابدأ طلبك',
+    steps: [
+      { title: 'شارك الاحتياج', text: 'أخبرنا بنوع الخدمة، الإمارة، التوقيت وتفاصيل المنزل.' },
+      { title: 'تأكيد التفاصيل', text: 'نشرح الخيارات المناسبة والمستندات والخطوات التالية.' },
+      { title: 'بدء الخدمة', text: 'تبدأ الخدمة مع متابعة واضحة وإرشادات دعم.' }
     ],
-    perspectiveLabel: 'آراء العملاء',
-    perspectiveTitle: 'موثوق من الأسر في الإمارات',
-    quote: 'كانت الخطوات واضحة من أول اتصال. فهم الفريق احتياج منزلنا وتابع معنا باحتراف.',
-    quoteBy: 'عميل أسرة، دبي',
-    blackLabel: 'دعم منزلي مميز',
-    blackTitle: 'عناية سيجنتشر',
-    blackText: 'للأسر التي تحتاج إلى دعم أكثر تنظيماً، يمكن لفريقنا تنسيق أكثر من خدمة ومتطلبات المنزل من خلال استشارة واضحة واحدة.',
-    blackCta: 'اطلب استشارة',
-    finalTitle: 'ابدأ تجربة مختلفة',
-    finalText: 'ابدأ بمراجعة بسيطة لاحتياجك، وسنرشدك إلى خدمة العمالة المنزلية الأنسب لمنزلك.',
-    finalCta: 'احجز استشارة'
+    disciplinesTitle: 'تخصصات مختارة',
+    disciplinesText: 'خبرات تتجاوز التنظيف. نقدم مهنيين متخصصين لكل جانب من جوانب المنزل.',
+    services: [
+      { slug: 'nanny', tag: 'اختيار مميز', title: 'مربيات تنفيذيات', text: 'دعم متخصص للأطفال يركز على الرعاية والروتين وراحة الأسرة.', cta: 'اعرف المزيد' },
+      { slug: 'personal-chef', title: 'شيف خاص', text: 'دعم للطبخ داخل منزلك بما يناسب ذوق الأسرة.', cta: 'استفسر' },
+      { slug: 'live-in-maid', title: 'مديرو المنزل', text: 'دعم منظم وتنسيق منزلي للأسر كثيرة الانشغال.', cta: 'عرض التفاصيل' }
+    ],
+    testimonialsLabel: 'آراء العملاء',
+    testimonialsTitle: 'ثقة ورضا العملاء',
+    testimonials: [
+      { quote: 'ساعدتني عناية في الوصول إلى دعم موثوق للمنزل. كان الفريق واضحاً ومتعاوناً.', name: 'سارة مالك', role: 'أم عاملة، عجمان' },
+      { quote: 'خدمة ممتازة وواضحة. شرح الفريق كل خطوة وتابع معنا باحتراف.', name: 'علي خان', role: 'صاحب عمل، الشارقة' }
+    ],
+    imageQuote: 'أصبح منزلنا أكثر تنظيماً وراحة.',
+    blackLabel: 'عناية بلاك',
+    blackTitle: 'قمة خدمات العمالة المنزلية',
+    blackText: 'مستوى استشارة مميز للأسر التي تحتاج إلى دعم منزلي منظم وتنسيق أولوية وخطة خدمة أكثر تخصيصاً.',
+    blackCta: 'اطلب العضوية'
   }
 };
 
+function ImagePlaceholder({ label, className = '' }: { label: string; className?: string }) {
+  return (
+    <div className={`relative overflow-hidden bg-[linear-gradient(135deg,#efe9de_0%,#ffffff_48%,#dfe7f3_100%)] ${className}`}>
+      <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(7,22,74,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(7,22,74,.08)_1px,transparent_1px)] [background-size:44px_44px]" />
+      <div className="absolute inset-5 rounded-[1.1rem] border border-white/70 bg-white/20" />
+      <div className="absolute left-5 top-5 rounded-full border border-accent-500/30 bg-white/80 px-4 py-2 text-[0.62rem] font-bold uppercase tracking-[0.18em] text-primary-900 shadow-sm backdrop-blur-xl">
+        {label}
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const isArabic = locale === 'ar';
-  const copy = isArabic ? homeCopy.ar : homeCopy.en;
+  const copy = isArabic ? homeContent.ar : homeContent.en;
 
   return (
-    <div className="overflow-hidden bg-ivory text-ink">
-      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden px-6 pb-20 pt-28 sm:pt-32 lg:px-10 lg:pb-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_80%_18%,rgba(7,22,74,0.08),transparent_30rem),linear-gradient(120deg,#F8F6F0_0%,#FFFFFF_52%,#EFE9DE_100%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-6">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-accent-700">{copy.heroKicker}</p>
-            <h1 className={`${isArabic ? 'font-arabicHeading leading-[1.25]' : 'font-heading leading-[1.02]'} mt-6 max-w-3xl text-[2.8rem] font-bold tracking-[-0.055em] text-primary-900 sm:text-[4.6rem] lg:text-[5.3rem]`}>
-              {copy.heroTitle}
+    <div className="overflow-hidden bg-[#fcf8fa] text-ink">
+      <section className="relative min-h-[82vh] overflow-hidden">
+        <ImagePlaceholder label="Hero Image Placeholder" className="absolute inset-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fcf8fa]/92 via-[#fcf8fa]/68 to-white/20" />
+        <div className="relative mx-auto flex min-h-[82vh] max-w-7xl items-center px-6 py-24 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-accent-700">{copy.heroLabel}</p>
+            <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-[2.65rem] font-bold leading-[1.05] tracking-[-0.055em] text-primary-900 sm:text-[4.4rem] lg:text-[5rem]`}>
+              {copy.heroTitleA}<br />
+              <span className="font-light italic">{copy.heroTitleB}</span>
             </h1>
-            <p className="mt-7 max-w-xl text-[1.02rem] leading-8 text-ink/66 sm:text-[1.1rem]">{copy.heroText}</p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href={`/${locale}/services`} className="inline-flex items-center justify-center rounded-full bg-primary-900 px-8 py-4 text-sm font-bold text-white shadow-[0_22px_55px_rgba(7,22,74,0.20)] transition hover:-translate-y-0.5">
-                {copy.primaryCta} <span className="ms-2">→</span>
+            <p className="mt-7 max-w-xl text-[1rem] leading-8 text-ink/64 sm:text-[1.08rem]">{copy.heroText}</p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link href={`/${locale}/contact`} className="inline-flex items-center justify-center bg-primary-900 px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_18px_45px_rgba(7,22,74,0.16)] transition hover:-translate-y-0.5">
+                {copy.primaryCta}
               </Link>
-              <Link href={`/${locale}/how-it-works`} className="inline-flex items-center justify-center rounded-full border border-accent-500/35 bg-white/78 px-8 py-4 text-sm font-bold text-primary-900 shadow-sm backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500">
+              <Link href={`/${locale}/services`} className="inline-flex items-center justify-center border border-primary-900/35 bg-white/40 px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-primary-900 backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white">
                 {copy.secondaryCta}
               </Link>
-            </div>
-          </div>
-
-          <div className="lg:col-span-6">
-            <div className="relative mx-auto max-w-[560px] rounded-[2rem] border border-accent-500/18 bg-white/70 p-2 shadow-[0_35px_100px_rgba(7,22,74,0.16)] backdrop-blur-xl">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.55rem] bg-[linear-gradient(135deg,#efe9de_0%,#ffffff_42%,#dfe7f3_100%)]">
-                <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(7,22,74,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(7,22,74,.08)_1px,transparent_1px)] [background-size:54px_54px]" />
-                <div className="absolute inset-8 rounded-[1.25rem] border border-white/70 bg-white/28" />
-                <div className="absolute left-8 top-8 rounded-full border border-accent-500/30 bg-white/80 px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary-900 shadow-sm">
-                  Image Placeholder
-                </div>
-                <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-white/70 bg-white/76 p-5 shadow-[0_18px_45px_rgba(7,22,74,0.12)] backdrop-blur-xl">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-accent-700">{copy.heroBadge}</p>
-                      <p className="mt-1 font-heading text-lg font-bold text-primary-900">{copy.heroBadgeValue}</p>
-                    </div>
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-500/14 text-accent-700 ring-1 ring-accent-500/25">✓</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-accent-500/12 bg-[#f5f2f4] px-6 py-14 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
-          {copy.stats.map((item, index) => (
-            <div key={item.label} className={`rounded-[24px] border border-white/70 bg-white/72 p-7 text-center shadow-[0_20px_60px_rgba(7,22,74,0.06)] backdrop-blur-xl ${index === 1 ? 'md:-translate-y-2' : ''}`}>
-              <div className="font-heading text-4xl font-bold tracking-[-0.04em] text-primary-900">{item.value}</div>
-              <p className="mt-3 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-accent-700">{item.label}</p>
-              <p className="mx-auto mt-4 max-w-xs text-sm leading-6 text-ink/58">{item.text}</p>
+      <section className="border-y border-black/8 bg-white px-6 py-14 lg:px-10">
+        <div className="mx-auto max-w-7xl text-center">
+          <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-ink/46">{copy.trustLabel}</p>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {copy.authorities.map((item) => (
+              <div key={item} className="flex h-16 min-w-[145px] items-center justify-center rounded-[18px] border border-black/8 bg-[#f6f3f5] px-6 text-xs font-bold uppercase tracking-[0.18em] text-primary-900/62 shadow-sm">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl rounded-[28px] border border-white/70 bg-white/55 p-7 shadow-[0_30px_90px_rgba(7,22,74,0.10)] backdrop-blur-xl sm:p-10 lg:p-14">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+            <div>
+              <p className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-accent-700">{copy.conciergeLabel}</p>
+              <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.conciergeTitle}</h2>
+              <p className="mt-5 max-w-2xl text-[1rem] leading-8 text-ink/62">{copy.conciergeText}</p>
+              <Link href={`/${locale}/contact`} className="mt-8 inline-flex items-center rounded-full bg-primary-900 px-8 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:-translate-y-0.5">
+                {copy.learnMore}
+              </Link>
             </div>
-          ))}
+            <ImagePlaceholder label="Concierge Image" className="min-h-[320px] rounded-[22px] shadow-inner" />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-black/6 bg-[#f6f3f5] px-6 py-20 lg:px-10">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="grid grid-cols-2 gap-5">
+            {copy.safetyCards.map((card, index) => (
+              <div key={card.title} className={`rounded-[24px] border border-white/70 bg-white/60 p-6 shadow-sm backdrop-blur-xl ${index === 1 ? 'mt-8' : ''}`}>
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-accent-500/14 text-accent-700 ring-1 ring-accent-500/20">✓</div>
+                <h3 className="font-heading text-lg font-bold text-primary-900">{card.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-ink/60">{card.text}</p>
+              </div>
+            ))}
+          </div>
+          <div>
+            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.safetyTitle}</h2>
+            <p className="mt-5 max-w-xl text-[1rem] leading-8 text-ink/64">{copy.safetyText}</p>
+          </div>
         </div>
       </section>
 
       <section className="px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-accent-700">{copy.servicesLabel}</p>
-              <h2 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} mt-4 text-[2.15rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.servicesTitle}</h2>
-              <p className="mt-4 text-sm leading-7 text-ink/62 sm:text-base">{copy.servicesText}</p>
+          <div className="mb-12 text-center">
+            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.spotlightTitle}</h2>
+            <p className="mt-3 text-sm leading-7 text-ink/60">{copy.spotlightText}</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {copy.candidates.map((item, index) => (
+              <div key={item.name} className="overflow-hidden rounded-[24px] border border-accent-500/14 bg-white shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
+                <ImagePlaceholder label={`Candidate ${index + 1}`} className="h-64" />
+                <div className="p-7">
+                  <h3 className="font-heading text-xl font-bold text-primary-900">{item.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-accent-700">{item.role}</p>
+                  <p className="mt-4 text-sm leading-6 text-ink/62">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 pb-20 lg:px-10 lg:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 text-center">
+            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.matrixTitle}</h2>
+            <div className="mx-auto mt-5 h-px w-24 bg-accent-500/70" />
+          </div>
+          <div className="grid gap-px overflow-hidden rounded-[26px] border border-black/8 bg-black/8 md:grid-cols-5">
+            {copy.matrix.map((item) => (
+              <div key={item.title} className="bg-white p-7 transition hover:bg-[#f6f3f5] sm:p-9">
+                <div className="mb-6 text-3xl text-accent-700">✦</div>
+                <h3 className="font-heading text-xl font-bold text-primary-900">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-ink/62">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary-900 px-6 py-20 text-white sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold tracking-[-0.04em] sm:text-[3rem]`}>{copy.journeyTitle}</h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/60 sm:text-base">{copy.journeyText}</p>
             </div>
-            <Link href={`/${locale}/services`} className="inline-flex w-fit items-center gap-2 rounded-full border border-accent-500/30 bg-white/70 px-6 py-3 text-sm font-bold text-primary-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-white">
-              {copy.viewAll} <span>→</span>
+            <Link href={`/${locale}/how-it-works`} className="w-fit border-b border-white/35 pb-2 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:border-white">
+              {copy.startSearch}
             </Link>
           </div>
-
-          <div className="grid gap-6 lg:grid-cols-12">
-            {copy.cards.map((card, index) => (
-              <Link key={card.slug} href={`/${locale}/services/${card.slug}`} className={`${index === 0 ? 'lg:col-span-7' : index === 1 ? 'lg:col-span-5' : 'lg:col-span-12'} group relative min-h-[390px] overflow-hidden rounded-[28px] border border-accent-500/18 bg-white shadow-[0_26px_80px_rgba(7,22,74,0.08)] transition hover:-translate-y-1`}>
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,#efe9de_0%,#ffffff_40%,#dfe7f3_100%)] transition duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(7,22,74,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(7,22,74,.08)_1px,transparent_1px)] [background-size:58px_58px]" />
-                <div className="absolute left-7 top-7 rounded-full border border-accent-500/28 bg-white/76 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-primary-900 backdrop-blur-xl">Image Placeholder</div>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary-900/90 via-primary-900/45 to-transparent p-7 text-white sm:p-9">
-                  <p className="text-[0.66rem] font-bold uppercase tracking-[0.22em] text-accent-100">{card.label}</p>
-                  <h3 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} mt-3 max-w-xl text-3xl font-bold tracking-[-0.04em] sm:text-4xl`}>{card.title}</h3>
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/76">{card.text}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-accent-500/12 bg-[#f5f2f4] px-6 py-20 text-center sm:py-24 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-accent-700">{copy.philosophyLabel}</p>
-          <h2 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} mx-auto mt-5 max-w-3xl text-[2.4rem] font-bold leading-tight tracking-[-0.05em] text-primary-900 sm:text-[4rem]`}>{copy.philosophyTitle}</h2>
-          <div className="mx-auto my-9 h-px w-24 bg-accent-500/70" />
-          <p className="mx-auto max-w-3xl text-[1rem] leading-8 text-ink/66 sm:text-[1.08rem]">{copy.philosophyText}</p>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {copy.philosophyPoints.map((point) => (
-              <div key={point.title} className="rounded-[24px] border border-accent-500/16 bg-white/76 p-7 text-start shadow-[0_20px_60px_rgba(7,22,74,0.06)] backdrop-blur-xl">
-                <div className="mb-5 h-px w-16 bg-accent-500/70" />
-                <h3 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} text-xl font-bold text-primary-900`}>{point.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-ink/62">{point.text}</p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {copy.steps.map((step, index) => (
+              <div key={step.title} className="relative border border-white/10 bg-white/[0.055] p-8 transition hover:bg-white/[0.08]">
+                <span className="absolute right-8 top-7 font-heading text-4xl font-bold text-white/10">{String(index + 1).padStart(2, '0')}</span>
+                <div className="mb-7 text-4xl text-accent-300">{index === 0 ? '⌕' : index === 1 ? '▤' : '▶'}</div>
+                <h3 className="font-heading text-xl font-bold text-white">{step.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/62">{step.text}</p>
               </div>
             ))}
           </div>
@@ -214,73 +277,83 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       </section>
 
       <section className="px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-accent-700">{copy.processLabel}</p>
-            <h2 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} mt-4 text-[2.1rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.processTitle}</h2>
-            <p className="mt-5 max-w-md text-sm leading-7 text-ink/62 sm:text-base">{copy.processText}</p>
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 text-center">
+            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.disciplinesTitle}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-ink/62">{copy.disciplinesText}</p>
           </div>
-          <div className="space-y-5">
-            {copy.process.map((step, index) => (
-              <div key={step.title} className="group flex gap-5 rounded-[24px] border border-accent-500/14 bg-white/76 p-6 shadow-[0_18px_55px_rgba(7,22,74,0.06)] backdrop-blur-xl transition hover:-translate-y-1 hover:border-accent-500/35 sm:p-7">
-                <span className="font-heading text-[3rem] font-bold leading-none text-primary-900/10 transition group-hover:text-accent-500">{String(index + 1).padStart(2, '0')}</span>
-                <div>
-                  <h3 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} text-xl font-bold text-primary-900`}>{step.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-ink/62">{step.text}</p>
+          <div className="grid min-h-[720px] gap-6 lg:grid-cols-12">
+            <Link href={`/${locale}/services/${copy.services[0].slug}`} className="group relative overflow-hidden rounded-[28px] border border-accent-500/18 shadow-[0_26px_80px_rgba(7,22,74,0.10)] lg:col-span-7 lg:row-span-2">
+              <ImagePlaceholder label="Service Image" className="absolute inset-0 transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/28 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-7 text-white sm:p-10">
+                <span className="inline-flex rounded-full bg-accent-500 px-4 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-primary-900">{copy.services[0].tag}</span>
+                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-3xl font-bold tracking-[-0.04em] sm:text-5xl`}>{copy.services[0].title}</h3>
+                <p className="mt-4 max-w-md text-sm leading-7 text-white/75">{copy.services[0].text}</p>
+                <span className="mt-6 inline-flex bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-primary-900">{copy.services[0].cta}</span>
+              </div>
+            </Link>
+            <Link href={`/${locale}/services/${copy.services[1].slug}`} className="group relative min-h-[340px] overflow-hidden rounded-[28px] border border-accent-500/18 shadow-[0_26px_80px_rgba(7,22,74,0.08)] lg:col-span-5">
+              <ImagePlaceholder label="Service Image" className="absolute inset-0 transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-black/40 transition group-hover:bg-black/25" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center text-white">
+                <h3 className="font-heading text-3xl font-bold">{copy.services[1].title}</h3>
+                <p className="mt-3 max-w-xs text-sm leading-6 text-white/78">{copy.services[1].text}</p>
+                <span className="mt-6 border-b border-white/50 pb-1 text-xs font-bold uppercase tracking-[0.16em]">{copy.services[1].cta}</span>
+              </div>
+            </Link>
+            <Link href={`/${locale}/services/${copy.services[2].slug}`} className="flex min-h-[340px] flex-col justify-center rounded-[28px] border border-accent-500/16 bg-[#eae7e9] p-9 transition hover:-translate-y-1 lg:col-span-5">
+              <div className="mb-7 text-4xl text-accent-700">⌂</div>
+              <h3 className="font-heading text-3xl font-bold text-primary-900">{copy.services[2].title}</h3>
+              <p className="mt-4 max-w-sm text-sm leading-7 text-ink/62">{copy.services[2].text}</p>
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary-900">{copy.services[2].cta} <span>→</span></span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-black/6 bg-white px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-accent-700">{copy.testimonialsLabel}</p>
+            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.testimonialsTitle}</h2>
+            <div className="mt-10 space-y-9">
+              {copy.testimonials.map((item) => (
+                <div key={item.name} className="relative border-s-2 border-primary-900/10 ps-8">
+                  <span className="absolute -start-4 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#fcf8fa] text-accent-700">“</span>
+                  <p className="text-lg italic leading-8 text-ink/78">{item.quote}</p>
+                  <div className="mt-5 flex items-center gap-4">
+                    <div className="h-11 w-11 rounded-full border border-accent-500/25 bg-[linear-gradient(135deg,#efe9de,#ffffff)]" />
+                    <div>
+                      <p className="font-bold text-primary-900">{item.name}</p>
+                      <p className="text-sm text-ink/55">{item.role}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-5xl text-center">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-accent-700">{copy.perspectiveLabel}</p>
-          <h2 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} mt-4 text-[2.1rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.perspectiveTitle}</h2>
-          <div className="relative mt-12 rounded-[28px] border border-accent-500/18 bg-[#f8f6f0] p-8 shadow-[0_25px_75px_rgba(7,22,74,0.08)] sm:p-12">
-            <div className="absolute -top-5 left-1/2 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full bg-accent-500 text-2xl font-bold text-primary-900 shadow-lg">“</div>
-            <blockquote className="mx-auto max-w-3xl font-heading text-2xl font-semibold leading-snug tracking-[-0.035em] text-primary-900 sm:text-3xl">{copy.quote}</blockquote>
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <div className="h-12 w-12 rounded-full border border-accent-500/25 bg-[linear-gradient(135deg,#efe9de,#ffffff)]" />
-              <div className="text-start">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary-900">{copy.quoteBy}</p>
-                <p className="mt-1 text-sm text-ink/55">INAYA Domestic Workers</p>
-              </div>
+          <div className="relative min-h-[560px] overflow-hidden shadow-[0_30px_90px_rgba(7,22,74,0.12)]">
+            <ImagePlaceholder label="Interior Image" className="absolute inset-0" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary-900/82 to-transparent p-9 text-white">
+              <p className="text-2xl font-light leading-snug">“{copy.imageQuote}”</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
-        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[32px] border border-accent-500/24 bg-primary-900 text-white shadow-[0_30px_95px_rgba(7,22,74,0.22)] lg:grid-cols-2">
-          <div className="relative p-8 sm:p-12 lg:p-16">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(191,164,106,0.32),transparent_18rem)]" />
-            <div className="relative">
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent-500/35 bg-white/6 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-accent-100"><span className="h-2 w-2 rounded-full bg-accent-500" />{copy.blackLabel}</span>
-              <h2 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} mt-8 text-[2.3rem] font-bold leading-none tracking-[-0.055em] sm:text-[4rem]`}>{copy.blackTitle}</h2>
-              <p className="mt-6 max-w-md text-[1rem] leading-8 text-white/70">{copy.blackText}</p>
-              <Link href={`/${locale}/contact`} className="mt-9 inline-flex items-center justify-center rounded-full bg-accent-500 px-8 py-4 text-sm font-bold text-primary-900 shadow-[0_18px_45px_rgba(191,164,106,0.24)] transition hover:-translate-y-0.5">
-                {copy.blackCta}
-              </Link>
-            </div>
+      <section className="relative overflow-hidden bg-[#0a0a0a] px-6 py-20 text-center text-white sm:py-24 lg:px-10 lg:py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(191,164,106,0.12),transparent_24rem)]" />
+        <div className="relative mx-auto max-w-5xl">
+          <div className="mb-8 inline-flex items-center gap-4">
+            <span className="h-px w-12 bg-accent-500" />
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.45em] text-accent-500">{copy.blackLabel}</span>
+            <span className="h-px w-12 bg-accent-500" />
           </div>
-          <div className="relative min-h-[360px] overflow-hidden bg-[radial-gradient(circle_at_center,rgba(191,164,106,0.22),transparent_12rem)]">
-            <div className="absolute inset-12 rounded-full border border-accent-500/25" />
-            <div className="absolute inset-24 rounded-full border border-accent-500/15" />
-            <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-accent-500/30 bg-white/6 text-center text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-100 backdrop-blur-xl">
-              Image Placeholder
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 pb-20 text-center sm:pb-24 lg:px-10 lg:pb-28">
-        <div className="mx-auto max-w-4xl rounded-[28px] border border-accent-500/20 bg-white/78 p-8 shadow-[0_25px_75px_rgba(7,22,74,0.08)] backdrop-blur-xl sm:p-12">
-          <h2 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} text-[2.15rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.finalTitle}</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-ink/62 sm:text-base">{copy.finalText}</p>
-          <Link href={`/${locale}/booking`} className="mt-8 inline-flex items-center justify-center rounded-full bg-primary-900 px-9 py-4 text-sm font-bold text-white shadow-[0_18px_45px_rgba(7,22,74,0.18)] transition hover:-translate-y-0.5">
-            {copy.finalCta} <span className="ms-2">→</span>
+          <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.3rem] font-bold leading-tight tracking-[-0.05em] sm:text-[4.2rem]`}>{copy.blackTitle}</h2>
+          <p className="mx-auto mt-8 max-w-3xl text-[1rem] leading-8 text-white/68 sm:text-lg">{copy.blackText}</p>
+          <Link href={`/${locale}/contact`} className="mt-10 inline-flex border border-accent-500 px-9 py-4 text-xs font-bold uppercase tracking-[0.18em] text-accent-500 transition hover:bg-accent-500 hover:text-black">
+            {copy.blackCta}
           </Link>
         </div>
       </section>
