@@ -1,0 +1,70 @@
+@keyframes inayaHomeLogoSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-18rem); }
+}
+
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 {
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  overflow: hidden;
+  margin-inline: auto;
+  max-width: min(100%, 46rem);
+  padding: 0.35rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 > div {
+  min-width: 10.5rem;
+  flex: 0 0 auto;
+  gap: 0.35rem;
+  flex-direction: column;
+  animation: inayaHomeLogoSlide 14s ease-in-out infinite alternate;
+}
+
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9:hover > div {
+  animation-play-state: paused;
+}
+
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 > div::before {
+  content: '';
+  display: block;
+  width: 7rem;
+  height: 1.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 > div:nth-child(1)::before { background-image: url('/images/logo-carousel/mohre.webp'); }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 > div:nth-child(2)::before { background-image: url('/images/logo-carousel/tadbeer.webp'); }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 > div:nth-child(3)::before { background-image: url('/images/logo-carousel/ajman-chamber.webp'); }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 > div:nth-child(4)::before { background-image: url('/images/logo-carousel/uae-pass.webp'); }
+
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(1) > div:first-child,
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2),
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(5) [class*='md:grid-cols-3'] > div:nth-child(1) > div:first-child,
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(5) [class*='md:grid-cols-3'] > div:nth-child(2) > div:first-child,
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(5) [class*='md:grid-cols-3'] > div:nth-child(3) > div:first-child,
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(8) [class*='lg:grid-cols-12'] > a:nth-child(1) > div:first-child,
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(8) [class*='lg:grid-cols-12'] > a:nth-child(2) > div:first-child,
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(9) [class*='lg:grid-cols-2'] > div:nth-child(2) > div:first-child {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(1) > div:first-child { background-image: url('/images/home/home-hero-family.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) { background-image: url('/images/home/home-concierge-support.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(5) [class*='md:grid-cols-3'] > div:nth-child(1) > div:first-child { background-image: url('/images/home/candidate-executive-nanny.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(5) [class*='md:grid-cols-3'] > div:nth-child(2) > div:first-child { background-image: url('/images/home/candidate-private-chef.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(5) [class*='md:grid-cols-3'] > div:nth-child(3) > div:first-child { background-image: url('/images/home/candidate-house-manager.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(8) [class*='lg:grid-cols-12'] > a:nth-child(1) > div:first-child { background-image: url('/images/home/discipline-executive-nannies.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(8) [class*='lg:grid-cols-12'] > a:nth-child(2) > div:first-child { background-image: url('/images/home/discipline-private-chef.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(9) [class*='lg:grid-cols-2'] > div:nth-child(2) > div:first-child { background-image: url('/images/home/home-interior-testimonial.webp'), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6) !important; }
+
+@media (max-width: 640px) {
+  main > div[class*='bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)]'] > section:nth-of-type(2) .mt-9 {
+    max-width: 100%;
+  }
+}
