@@ -9,7 +9,6 @@ const homeContent = {
     primaryCta: 'Request Consultation',
     secondaryCta: 'Explore Services',
     trustLabel: 'Recognized & Trusted by UAE Authorities',
-    authorities: ['MOHRE', 'Tadbeer', 'Ajman Chamber', 'UAE Pass'],
     conciergeLabel: '24/7 Support',
     conciergeTitle: 'Global Executive Concierge',
     conciergeText: 'Beyond staffing, INAYA provides a dedicated support layer for family requirements, urgent coordination and practical follow-up across the UAE.',
@@ -70,7 +69,6 @@ const homeContent = {
     primaryCta: 'اطلب استشارة',
     secondaryCta: 'استكشف الخدمات',
     trustLabel: 'موثوق ومنظم مع جهات الإمارات',
-    authorities: ['MOHRE', 'تدبير', 'غرفة عجمان', 'UAE Pass'],
     conciergeLabel: 'دعم ومتابعة',
     conciergeTitle: 'كونسيرج تنفيذي للعائلة',
     conciergeText: 'إلى جانب الخدمة، تقدم عناية طبقة دعم مخصصة لاحتياجات الأسرة، التنسيق العاجل، والمتابعة العملية داخل الإمارات.',
@@ -125,14 +123,73 @@ const homeContent = {
   }
 };
 
-function ImagePlaceholder({ label, className = '' }: { label: string; className?: string }) {
+const authorityLogos = [
+  { name: 'MOHRE', file: 'Ministry-logo.png' },
+  { name: 'Tadbeer', file: 'ajman-tadbeer-logo.png' },
+  { name: 'Ajman Chamber', file: 'Ajman-Chamber-logo.png' },
+  { name: 'UAE Pass', file: 'ajman-UAE-Pass-Logo.png' },
+  { name: 'Ajman Gold', file: 'Ajman-Gold-logo.png' },
+  { name: 'Ajman', file: 'Ajman-logo.png' }
+];
+
+const homeImages = {
+  hero: '/images/home/home-hero-family.webp',
+  concierge: '/images/home/home-concierge-support.webp',
+  candidates: [
+    '/images/home/candidate-executive-nanny.webp',
+    '/images/home/candidate-private-chef.webp',
+    '/images/home/candidate-house-manager.webp'
+  ],
+  disciplines: [
+    '/images/home/discipline-executive-nannies.webp',
+    '/images/home/discipline-private-chef.webp'
+  ],
+  testimonial: '/images/home/home-interior-testimonial.webp'
+};
+
+function ImagePlaceholder({ label, className = '', src }: { label: string; className?: string; src?: string }) {
+  const backgroundImage = src ? `url(${src}), linear-gradient(135deg,#f2eadc,#ffffff,#e7edf6)` : undefined;
+
   return (
-    <div className={`relative overflow-hidden bg-[linear-gradient(135deg,#f2eadc_0%,#ffffff_42%,#e7edf6_100%)] ${className}`}>
+    <div
+      aria-label={label}
+      className={`relative overflow-hidden bg-[linear-gradient(135deg,#f2eadc_0%,#ffffff_42%,#e7edf6_100%)] bg-cover bg-center ${className}`}
+      style={backgroundImage ? { backgroundImage } : undefined}
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(191,164,106,0.22),transparent_16rem),radial-gradient(circle_at_82%_68%,rgba(7,22,74,0.10),transparent_18rem)]" />
       <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(7,22,74,.075)_1px,transparent_1px),linear-gradient(90deg,rgba(7,22,74,.075)_1px,transparent_1px)] [background-size:44px_44px]" />
       <div className="absolute inset-5 rounded-[1.1rem] border border-white/75 bg-white/25 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] backdrop-blur-[2px]" />
-      <div className="absolute left-5 top-5 rounded-full border border-accent-500/30 bg-white/75 px-4 py-2 text-[0.62rem] font-bold uppercase tracking-[0.18em] text-primary-900 shadow-[0_12px_30px_rgba(7,22,74,0.08)] backdrop-blur-xl">
-        {label}
+      {!src ? (
+        <div className="absolute left-5 top-5 rounded-full border border-accent-500/30 bg-white/75 px-4 py-2 text-[0.62rem] font-bold uppercase tracking-[0.18em] text-primary-900 shadow-[0_12px_30px_rgba(7,22,74,0.08)] backdrop-blur-xl">
+          {label}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function AuthorityLogoCard({ name, file }: { name: string; file: string }) {
+  return (
+    <div className="flex h-20 min-w-[178px] flex-col items-center justify-center rounded-[20px] border border-white/70 bg-white/68 px-6 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:bg-white/82">
+      <div
+        className="h-8 w-32 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/authority-logos/${file}')` }}
+        aria-label={name}
+      />
+      <span className="mt-2 text-[0.58rem] font-bold uppercase tracking-[0.18em] text-primary-900/62">{name}</span>
+    </div>
+  );
+}
+
+function AuthorityLogoCarousel() {
+  const logos = [...authorityLogos, ...authorityLogos];
+
+  return (
+    <div className="relative mt-9 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
+      <div className="flex w-max gap-4 py-2" style={{ animation: 'homeLogoMarquee 30s linear infinite' }}>
+        {logos.map((logo, index) => (
+          <AuthorityLogoCard key={`${logo.file}-${index}`} {...logo} />
+        ))}
       </div>
     </div>
   );
@@ -144,8 +201,15 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
   return (
     <div className="overflow-hidden bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)] text-ink">
+      <style>{`
+        @keyframes homeLogoMarquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+      `}</style>
+
       <section className="relative min-h-[82vh] overflow-hidden">
-        <ImagePlaceholder label="Hero Image Placeholder" className="absolute inset-0" />
+        <ImagePlaceholder label="Hero Image Placeholder" src={homeImages.hero} className="absolute inset-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_24%,rgba(191,164,106,0.18),transparent_22rem),linear-gradient(90deg,rgba(252,248,250,0.96)_0%,rgba(252,248,250,0.78)_48%,rgba(255,255,255,0.30)_100%)]" />
         <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-accent-500/40 to-transparent" />
         <div className="relative mx-auto flex min-h-[82vh] max-w-7xl items-center px-6 py-24 lg:px-10">
@@ -171,13 +235,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <section className="border-y border-accent-500/12 bg-white/72 px-6 py-14 backdrop-blur-xl lg:px-10">
         <div className="mx-auto max-w-7xl text-center">
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-ink/46">{copy.trustLabel}</p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            {copy.authorities.map((item) => (
-              <div key={item} className="flex h-16 min-w-[145px] items-center justify-center rounded-[18px] border border-white/70 bg-white/62 px-6 text-xs font-bold uppercase tracking-[0.18em] text-primary-900/68 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:text-primary-900">
-                {item}
-              </div>
-            ))}
-          </div>
+          <AuthorityLogoCarousel />
         </div>
       </section>
 
@@ -194,7 +252,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                 {copy.learnMore}
               </Link>
             </div>
-            <ImagePlaceholder label="Concierge Image" className="min-h-[320px] rounded-[22px] border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_18px_50px_rgba(7,22,74,0.08)]" />
+            <ImagePlaceholder label="Concierge Image" src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_18px_50px_rgba(7,22,74,0.08)]" />
           </div>
         </div>
       </section>
@@ -228,7 +286,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
           <div className="grid gap-6 md:grid-cols-3">
             {copy.candidates.map((item, index) => (
               <div key={item.name} className="overflow-hidden rounded-[24px] border border-white/70 bg-white/68 shadow-[0_22px_70px_rgba(7,22,74,0.075)] ring-1 ring-accent-500/10 backdrop-blur-xl transition hover:-translate-y-1 hover:border-accent-500/30">
-                <ImagePlaceholder label={`Candidate ${index + 1}`} className="h-64 border-b border-white/70" />
+                <ImagePlaceholder label={`Candidate ${index + 1}`} src={homeImages.candidates[index]} className="h-64 border-b border-white/70" />
                 <div className="p-7">
                   <h3 className="font-heading text-xl font-bold text-primary-900">{item.name}</h3>
                   <p className="mt-1 text-sm font-semibold text-accent-700">{item.role}</p>
@@ -293,7 +351,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
           </div>
           <div className="grid min-h-[720px] gap-6 lg:grid-cols-12">
             <Link href={`/${locale}/services/${copy.services[0].slug}`} className="group relative overflow-hidden rounded-[28px] border border-white/70 shadow-[0_30px_90px_rgba(7,22,74,0.12)] ring-1 ring-accent-500/12 backdrop-blur-xl lg:col-span-7 lg:row-span-2">
-              <ImagePlaceholder label="Service Image" className="absolute inset-0 transition duration-700 group-hover:scale-105" />
+              <ImagePlaceholder label="Service Image" src={homeImages.disciplines[0]} className="absolute inset-0 transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/86 via-primary-900/28 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-7 text-white sm:p-10">
                 <span className="inline-flex rounded-full bg-accent-500 px-4 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-primary-900 shadow-[0_14px_35px_rgba(191,164,106,0.20)]">{copy.services[0].tag}</span>
@@ -303,7 +361,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
               </div>
             </Link>
             <Link href={`/${locale}/services/${copy.services[1].slug}`} className="group relative min-h-[340px] overflow-hidden rounded-[28px] border border-white/70 shadow-[0_26px_80px_rgba(7,22,74,0.10)] ring-1 ring-accent-500/12 lg:col-span-5">
-              <ImagePlaceholder label="Service Image" className="absolute inset-0 transition duration-700 group-hover:scale-105" />
+              <ImagePlaceholder label="Service Image" src={homeImages.disciplines[1]} className="absolute inset-0 transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-primary-900/42 transition group-hover:bg-primary-900/30" />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center text-white">
                 <h3 className="font-heading text-3xl font-bold">{copy.services[1].title}</h3>
@@ -343,7 +401,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             </div>
           </div>
           <div className="relative min-h-[560px] overflow-hidden rounded-[2px] border border-white/70 shadow-[0_30px_90px_rgba(7,22,74,0.12)] ring-1 ring-accent-500/10">
-            <ImagePlaceholder label="Interior Image" className="absolute inset-0" />
+            <ImagePlaceholder label="Interior Image" src={homeImages.testimonial} className="absolute inset-0" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary-900/82 to-transparent p-9 text-white">
               <p className="text-2xl font-light leading-snug">“{copy.imageQuote}”</p>
             </div>
