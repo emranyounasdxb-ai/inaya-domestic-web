@@ -22,11 +22,11 @@ function LineIcon({ name, className = '' }: { name: IconName; className?: string
 export default function AboutPage({ params: { locale } }: { params: { locale: string } }) {
   const isArabic = locale === 'ar';
   const headingClass = isArabic
-    ? 'font-arabic text-4xl font-bold leading-[1.2] text-primary-900 sm:text-5xl lg:text-[3.5rem]'
-    : 'font-heading text-4xl font-bold leading-[1.02] text-primary-900 sm:text-5xl lg:text-[3.5rem]';
+    ? 'font-arabic text-[2.35rem] font-bold leading-[1.2] text-primary-900 sm:text-[2.85rem] lg:text-[3.2rem]'
+    : 'font-heading text-[2.35rem] font-bold leading-[1.04] text-primary-900 sm:text-[2.85rem] lg:text-[3.2rem]';
   const sectionTitleClass = isArabic
-    ? 'font-arabic text-3xl font-bold leading-[1.25] text-primary-900 sm:text-[2.35rem]'
-    : 'font-heading text-3xl font-bold leading-tight text-primary-900 sm:text-[2.35rem]';
+    ? 'font-arabic text-[1.9rem] font-bold leading-[1.25] text-primary-900 sm:text-[2.25rem]'
+    : 'font-heading text-[1.9rem] font-bold leading-tight text-primary-900 sm:text-[2.25rem]';
 
   const heroImage = '/images/about/about-hero-domestic-service.webp';
   const chairmanImage = '/images/about/CEO-Umed-khan.webp';
@@ -125,52 +125,55 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
 
   return (
     <div className="overflow-hidden bg-ivory text-ink">
-      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(191,164,106,0.24),transparent_28rem),radial-gradient(circle_at_10%_44%,rgba(7,22,74,0.09),transparent_25rem)]" />
+      <section className="relative overflow-hidden py-14 sm:py-16 lg:py-[4.75rem]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(191,164,106,0.22),transparent_28rem),radial-gradient(circle_at_10%_44%,rgba(7,22,74,0.08),transparent_25rem)]" />
         <div className="container-x relative">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="text-center lg:text-start">
-              <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.eyebrow}</p>
-              <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent-500/24 bg-white/70 px-4 py-2 text-xs font-semibold text-primary-900 shadow-sm backdrop-blur-xl sm:text-sm">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.96fr_0.78fr] lg:gap-16">
+            <div className="max-w-xl text-center lg:text-start">
+              <p className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-accent-700">{copy.eyebrow}</p>
+              <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent-500/24 bg-white/72 px-4 py-2 text-xs font-semibold text-primary-900 shadow-sm backdrop-blur-xl sm:text-sm">
                 <span className="h-2 w-2 rounded-full bg-accent-500" />
                 {copy.badge}
               </span>
-              <h1 className={`mx-auto mt-6 max-w-3xl lg:mx-0 ${headingClass}`}>{copy.title}</h1>
-              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-ink/75 lg:mx-0 sm:text-lg sm:leading-8">{copy.subtitle}</p>
-              <div className="mx-auto mt-7 h-px w-24 bg-gradient-to-r from-transparent via-accent-500 to-transparent lg:mx-0" />
+              <h1 className={`mt-6 ${headingClass}`}>{copy.title}</h1>
+              <p className="mt-5 max-w-xl text-[0.98rem] leading-7 text-ink/72 sm:text-[1.05rem] sm:leading-8">{copy.subtitle}</p>
+              <div className="mt-7 h-px w-24 bg-gradient-to-r from-accent-500 via-accent-400 to-transparent" />
             </div>
 
-            <div className="mx-auto w-full max-w-[460px] lg:ms-auto">
-              <div className="glass-panel overflow-hidden rounded-[28px] border border-accent-500/24 p-3 shadow-[0_28px_80px_rgba(7,22,74,0.14)]">
-                <img src={heroImage} alt={isArabic ? 'غرفة معيشة راقية لخدمات عناية المنزلية' : 'Premium home interior for INAYA domestic services'} className="h-[340px] w-full rounded-[22px] object-cover sm:h-[420px]" />
+            <div className="mx-auto w-full max-w-[430px] lg:ms-auto">
+              <div className="relative rounded-[30px] border border-accent-500/24 bg-white/72 p-3 shadow-[0_28px_80px_rgba(7,22,74,0.13)] backdrop-blur-xl">
+                <div className="absolute -inset-1 -z-10 rounded-[34px] bg-gradient-to-br from-accent-500/18 via-transparent to-primary-900/8" />
+                <div className="overflow-hidden rounded-[23px] border border-white/80 bg-[#f7f2e8] shadow-inner">
+                  <img src={heroImage} alt={isArabic ? 'فريق عناية للعمالة المنزلية' : 'INAYA domestic workers team'} className="h-[330px] w-full object-cover object-center sm:h-[390px]" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container-x py-14 sm:py-16 lg:py-20">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
-          <div>
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent-700">{isArabic ? 'بداية واضحة' : 'A clear beginning'}</p>
-            <h2 className={`${sectionTitleClass} mt-4`}>{copy.storyTitle}</h2>
+      <section className="container-x py-12 sm:py-14 lg:py-16">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:items-start">
+          <div className="max-w-xs">
+            <p className="text-[0.66rem] font-bold uppercase tracking-[0.24em] text-accent-700">{isArabic ? 'بداية واضحة' : 'A clear beginning'}</p>
+            <h2 className={`${sectionTitleClass} mt-3`}>{copy.storyTitle}</h2>
           </div>
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="glass-panel rounded-[24px] border border-accent-500/14 p-6 leading-8 text-ink/72 sm:p-7">
+          <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="glass-panel rounded-[24px] border border-accent-500/14 p-6 text-[0.94rem] leading-7 text-ink/70 shadow-[0_16px_45px_rgba(7,22,74,0.045)] sm:p-7">
               <div className="mb-5 h-px w-20 bg-accent-500/60" />
-              <div className="space-y-5">
+              <div className="space-y-4">
                 {copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
             </div>
-            <div className="glass-panel rounded-[24px] border border-accent-500/18 p-6 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
-              <h3 className={`${isArabic ? 'font-arabic text-2xl' : 'font-heading text-2xl'} font-bold text-primary-900`}>{copy.principlesTitle}</h3>
+            <div className="glass-panel rounded-[24px] border border-accent-500/18 p-6 shadow-[0_18px_55px_rgba(7,22,74,0.06)] sm:p-7">
+              <h3 className={`${isArabic ? 'font-arabic text-xl' : 'font-heading text-xl'} font-bold text-primary-900`}>{copy.principlesTitle}</h3>
               <div className="mt-5 space-y-4">
                 {copy.principles.map((item) => (
                   <div key={item} className="flex gap-3">
-                    <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-500/14 text-accent-700 ring-1 ring-accent-500/24">
+                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-500/14 text-accent-700 ring-1 ring-accent-500/24">
                       <LineIcon name="check" className="h-4 w-4" />
                     </span>
-                    <p className="text-sm leading-6 text-ink/72">{item}</p>
+                    <p className="text-sm leading-6 text-ink/70">{item}</p>
                   </div>
                 ))}
               </div>
@@ -179,58 +182,53 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x pb-14 sm:pb-16 lg:pb-20">
-        <div className="mx-auto grid max-w-6xl gap-8 rounded-[28px] border border-accent-500/22 bg-white/66 p-5 shadow-[0_22px_70px_rgba(7,22,74,0.08)] backdrop-blur-xl lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:p-7">
-          <div className="relative flex min-h-[430px] items-end justify-center overflow-hidden rounded-[24px] border border-accent-500/18 bg-[radial-gradient(circle_at_50%_18%,rgba(191,164,106,0.28),transparent_16rem),linear-gradient(180deg,#fbf8f1_0%,#f0e7d7_100%)] px-6 pt-8 sm:min-h-[470px]">
-            <div className="absolute inset-x-10 bottom-0 h-28 rounded-t-[90px] bg-gradient-to-t from-accent-500/24 to-transparent" />
+      <section className="container-x py-12 sm:py-14 lg:py-16">
+        <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[28px] border border-accent-500/22 bg-white/68 shadow-[0_22px_70px_rgba(7,22,74,0.08)] backdrop-blur-xl lg:grid-cols-[0.78fr_1.22fr]">
+          <div className="relative flex min-h-[390px] items-end justify-center overflow-hidden bg-[radial-gradient(circle_at_50%_22%,rgba(191,164,106,0.26),transparent_15rem),linear-gradient(180deg,#fbf8f1_0%,#efe4d0_100%)] px-8 pt-8 sm:min-h-[430px]">
+            <div className="absolute inset-x-12 bottom-0 h-24 rounded-t-[80px] bg-gradient-to-t from-accent-500/24 to-transparent" />
             <div className="absolute bottom-0 h-px w-3/4 bg-accent-500/50" />
-            <img src={chairmanImage} alt={isArabic ? 'السيد أمّد خان رئيس مجلس إدارة مجموعة ألياس' : 'Mr. Ummed Khan Founder and Chairman of ALIYAS Group'} className="relative z-10 h-[400px] w-full max-w-[310px] object-contain object-bottom drop-shadow-[0_18px_26px_rgba(7,22,74,0.14)] sm:h-[440px]" />
+            <img src={chairmanImage} alt={isArabic ? 'السيد أمّد خان رئيس مجلس إدارة مجموعة ألياس' : 'Mr. Ummed Khan Founder and Chairman of ALIYAS Group'} className="relative z-10 h-[365px] w-full max-w-[300px] object-contain object-bottom drop-shadow-[0_18px_26px_rgba(7,22,74,0.14)] sm:h-[405px]" />
           </div>
 
-          <div className="flex flex-col justify-center px-1 py-2 sm:px-3 lg:px-4">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.chairmanEyebrow}</p>
-            <h2 className={`${isArabic ? 'font-arabic text-3xl leading-[1.22]' : 'font-heading text-3xl leading-[1.08]'} mt-3 max-w-2xl font-bold text-primary-900 sm:text-[2.35rem]`}>{copy.chairmanTitle}</h2>
-            <div className="mt-4 flex items-center gap-3 border-y border-accent-500/18 py-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-900 text-accent-200 shadow-sm ring-4 ring-accent-500/10">
-                <LineIcon name="user" className="h-5 w-5" />
-              </span>
-              <div>
-                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-lg font-bold leading-tight text-primary-900 sm:text-xl`}>{copy.chairmanName}</h3>
-                <p className="mt-1 text-sm font-semibold text-ink/56">{copy.chairmanRole}</p>
-              </div>
+          <div className="flex flex-col justify-center px-7 py-8 sm:px-9 lg:px-11 lg:py-10">
+            <p className="text-[0.66rem] font-bold uppercase tracking-[0.24em] text-accent-700">{copy.chairmanEyebrow}</p>
+            <h2 className={`${isArabic ? 'font-arabic text-[1.9rem] leading-[1.25]' : 'font-heading text-[1.95rem] leading-[1.1]'} mt-3 max-w-xl font-bold text-primary-900 sm:text-[2.28rem]`}>{copy.chairmanTitle}</h2>
+            <div className="mt-5 border-s-2 border-accent-500/55 ps-4">
+              <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[1.28rem] font-bold leading-tight text-primary-900 sm:text-[1.45rem]`}>{copy.chairmanName}</h3>
+              <p className="mt-1 text-sm font-semibold text-ink/56">{copy.chairmanRole}</p>
             </div>
-            <div className="mt-5 max-w-2xl space-y-3 text-[0.94rem] leading-7 text-ink/70">
+            <div className="mt-5 max-w-[650px] space-y-3 text-[0.93rem] leading-7 text-ink/68">
               {copy.chairmanText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
-            <blockquote className="mt-5 rounded-[18px] border border-accent-500/30 bg-accent-50/80 px-5 py-4 text-base font-bold leading-7 text-primary-900 shadow-sm">
+            <blockquote className="mt-5 max-w-[620px] rounded-[18px] border border-accent-500/28 bg-accent-50/80 px-5 py-4 text-[0.98rem] font-bold leading-7 text-primary-900 shadow-sm">
               “{copy.chairmanQuote}”
             </blockquote>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f2eee8] py-14 sm:py-16 lg:py-20">
+      <section className="bg-[#f2eee8] py-14 sm:py-16 lg:py-[4.5rem]">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent-700">INAYA VALUES</p>
-            <h2 className={`${sectionTitleClass} mt-4`}>{copy.purposeTitle}</h2>
+            <p className="text-[0.66rem] font-bold uppercase tracking-[0.24em] text-accent-700">INAYA VALUES</p>
+            <h2 className={`${sectionTitleClass} mt-3`}>{copy.purposeTitle}</h2>
             <p className="mt-4 text-sm leading-7 text-ink/62 sm:text-base">{copy.purposeSub}</p>
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-6xl gap-5 lg:grid-cols-2">
-            <div className="glass-panel rounded-[24px] border border-accent-500/18 p-7 shadow-[0_20px_60px_rgba(7,22,74,0.06)] sm:p-8">
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-accent-700">{copy.missionLabel}</p>
-              <h3 className={`${isArabic ? 'font-arabic leading-snug' : 'font-heading leading-tight'} mt-4 text-2xl font-bold text-primary-900 sm:text-3xl`}>{copy.mission}</h3>
+          <div className="mx-auto mt-9 grid max-w-6xl gap-5 lg:grid-cols-2">
+            <div className="glass-panel flex min-h-[170px] flex-col justify-center rounded-[24px] border border-accent-500/18 p-7 shadow-[0_20px_60px_rgba(7,22,74,0.06)] sm:p-8">
+              <p className="text-[0.66rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.missionLabel}</p>
+              <h3 className={`${isArabic ? 'font-arabic leading-snug' : 'font-heading leading-tight'} mt-4 text-[1.45rem] font-bold text-primary-900 sm:text-[1.75rem]`}>{copy.mission}</h3>
             </div>
-            <div className="rounded-[24px] border border-accent-500/24 bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.2)] sm:p-8">
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-accent-300">{copy.visionLabel}</p>
-              <h3 className={`${isArabic ? 'font-arabic leading-snug' : 'font-heading leading-tight'} mt-4 text-2xl font-bold sm:text-3xl`}>{copy.vision}</h3>
+            <div className="flex min-h-[170px] flex-col justify-center rounded-[24px] border border-accent-500/24 bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.2)] sm:p-8">
+              <p className="text-[0.66rem] font-bold uppercase tracking-[0.22em] text-accent-300">{copy.visionLabel}</p>
+              <h3 className={`${isArabic ? 'font-arabic leading-snug' : 'font-heading leading-tight'} mt-4 text-[1.45rem] font-bold sm:text-[1.75rem]`}>{copy.vision}</h3>
             </div>
           </div>
 
           <div className="mx-auto mt-5 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {copy.values.map((value) => (
-              <div key={value.title} className="glass-panel group relative overflow-hidden rounded-[22px] border border-accent-500/16 p-6 shadow-[0_20px_55px_rgba(7,22,74,0.06)]">
+              <div key={value.title} className="glass-panel group relative min-h-[205px] overflow-hidden rounded-[22px] border border-accent-500/16 p-6 shadow-[0_20px_55px_rgba(7,22,74,0.06)]">
                 <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent-500/20 via-accent-500 to-accent-500/20" />
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500/12 text-accent-700 shadow-sm ring-1 ring-accent-500/24 transition group-hover:bg-primary-900 group-hover:text-accent-200">
                   <LineIcon name={value.icon} className="h-6 w-6" />
@@ -243,21 +241,21 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x py-14 sm:py-16 lg:py-20">
+      <section className="container-x py-14 sm:py-16 lg:py-[4.5rem]">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
-            <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.standardsEyebrow}</p>
-            <h2 className={`${sectionTitleClass} mt-4`}>{copy.standardsTitle}</h2>
-            <p className="mt-5 leading-8 text-ink/68">{copy.standardsText}</p>
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-accent-700">{copy.standardsEyebrow}</p>
+            <h2 className={`${sectionTitleClass} mt-3`}>{copy.standardsTitle}</h2>
+            <p className="mt-4 max-w-xl text-[0.96rem] leading-7 text-ink/68">{copy.standardsText}</p>
           </div>
 
-          <div className="relative mx-auto mt-14 max-w-4xl">
+          <div className="relative mx-auto mt-12 max-w-4xl">
             <div className="absolute left-6 top-0 hidden h-full w-px bg-accent-500/35 md:left-1/2 md:block" />
-            <div className="space-y-8">
+            <div className="space-y-7">
               {copy.standards.map((step, index) => (
                 <div key={step.title} className={`relative grid gap-5 md:grid-cols-2 ${index % 2 === 0 ? '' : 'md:[&>*:first-child]:col-start-2'}`}>
-                  <div className={`glass-panel rounded-[22px] border border-accent-500/16 p-6 shadow-[0_18px_55px_rgba(7,22,74,0.06)] ${index % 2 === 0 ? 'md:text-end' : ''}`}>
-                    <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-2xl font-bold text-primary-900`}>{step.title}</h3>
+                  <div className={`glass-panel rounded-[22px] border border-accent-500/16 p-5 shadow-[0_18px_55px_rgba(7,22,74,0.06)] sm:p-6 ${index % 2 === 0 ? 'md:text-end' : ''}`}>
+                    <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[1.25rem] font-bold text-primary-900`}>{step.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-ink/64">{step.text}</p>
                   </div>
                   <div className="absolute left-3 top-6 hidden h-10 w-10 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-primary-900 shadow-glass ring-4 ring-ivory md:left-1/2 md:flex md:-translate-x-1/2">
@@ -270,21 +268,21 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="bg-[#f7f4ee] py-14 sm:py-16 lg:py-20">
+      <section className="bg-[#f7f4ee] py-14 sm:py-16 lg:py-[4.5rem]">
         <div className="container-x">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.leadershipEyebrow}</p>
-            <h2 className={`${sectionTitleClass} mt-4`}>{copy.leadershipTitle}</h2>
-            <p className="mt-5 leading-8 text-ink/68">{copy.leadershipText}</p>
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-accent-700">{copy.leadershipEyebrow}</p>
+            <h2 className={`${sectionTitleClass} mt-3`}>{copy.leadershipTitle}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-[0.96rem] leading-7 text-ink/68">{copy.leadershipText}</p>
           </div>
 
-          <div className="glass-panel mx-auto mt-10 max-w-4xl overflow-hidden rounded-[26px] border border-accent-500/20 p-2">
-            <div className="relative min-h-[260px] overflow-hidden rounded-[22px] bg-primary-900">
+          <div className="glass-panel mx-auto mt-9 max-w-4xl overflow-hidden rounded-[26px] border border-accent-500/20 p-2 shadow-[0_20px_60px_rgba(7,22,74,0.08)]">
+            <div className="relative min-h-[245px] overflow-hidden rounded-[22px] bg-primary-900">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(191,164,106,0.55),transparent_15rem),radial-gradient(circle_at_78%_42%,rgba(255,255,255,0.16),transparent_18rem)]" />
               <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] [background-size:48px_48px]" />
-              <div className="relative flex min-h-[260px] items-center justify-center px-8 text-center text-white">
+              <div className="relative flex min-h-[245px] items-center justify-center px-8 text-center text-white">
                 <div>
-                  <p className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-accent-200">INAYA DOMESTIC WORKERS</p>
+                  <p className="text-[0.66rem] font-bold uppercase tracking-[0.28em] text-accent-200">INAYA DOMESTIC WORKERS</p>
                   <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-2xl font-bold sm:text-3xl`}>{copy.leadershipTitle}</h3>
                   <div className="mx-auto mt-5 h-px w-24 bg-accent-300/70" />
                 </div>
@@ -294,7 +292,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="container-x py-14 sm:py-16 lg:py-20">
+      <section className="container-x py-14 sm:py-16 lg:py-[4.5rem]">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="glass-panel rounded-[26px] border border-accent-500/18 p-7 shadow-[0_20px_60px_rgba(7,22,74,0.06)] sm:p-8">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500/12 text-accent-700 shadow-sm ring-1 ring-accent-500/24">
