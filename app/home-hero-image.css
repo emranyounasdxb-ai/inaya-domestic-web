@@ -1,20 +1,48 @@
-main section:first-of-type > div[aria-label='Hero Image Placeholder'] {
-  background-image: url('/images/home/home-hero-family.webp'), linear-gradient(135deg, #f2eadc, #ffffff, #e7edf6) !important;
+main [aria-label='Hero Image Placeholder'] {
+  background: transparent !important;
+  background-image: none !important;
+  position: absolute !important;
+  inset: 0 !important;
+  isolation: isolate;
+}
+
+main [aria-label='Hero Image Placeholder']::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  background-image: url('/images/home/home-hero-family.webp?v=hero-2'), linear-gradient(135deg, #f2eadc, #ffffff, #e7edf6) !important;
   background-size: cover !important;
   background-position: center right !important;
   background-repeat: no-repeat !important;
 }
 
-main section:first-of-type > div[aria-label='Hero Image Placeholder'] > div {
+main [aria-label='Hero Image Placeholder']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  background: radial-gradient(circle at 22% 22%, rgba(191, 164, 106, 0.13), transparent 24rem),
+    linear-gradient(90deg, rgba(252, 248, 250, 0.82) 0%, rgba(252, 248, 250, 0.48) 42%, rgba(252, 248, 250, 0.04) 100%) !important;
+}
+
+main [aria-label='Hero Image Placeholder'] > * {
   display: none !important;
 }
 
-main section:first-of-type > div:nth-child(2) {
-  background: linear-gradient(90deg, rgba(252, 248, 250, 0.9) 0%, rgba(252, 248, 250, 0.62) 44%, rgba(252, 248, 250, 0.12) 100%) !important;
+main > div > section:first-of-type > div:nth-child(2) {
+  background: linear-gradient(90deg, rgba(252, 248, 250, 0.78) 0%, rgba(252, 248, 250, 0.42) 44%, rgba(252, 248, 250, 0.02) 100%) !important;
 }
 
 @media (max-width: 768px) {
-  main section:first-of-type > div[aria-label='Hero Image Placeholder'] {
+  main [aria-label='Hero Image Placeholder']::before {
     background-position: center top !important;
+  }
+
+  main [aria-label='Hero Image Placeholder']::after,
+  main > div > section:first-of-type > div:nth-child(2) {
+    background: linear-gradient(180deg, rgba(252, 248, 250, 0.78) 0%, rgba(252, 248, 250, 0.55) 100%) !important;
   }
 }
