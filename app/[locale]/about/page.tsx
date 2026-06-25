@@ -101,36 +101,36 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
   };
 
   return (
-    <div className="overflow-hidden bg-[#050505] text-white">
+    <div className="overflow-hidden bg-[#f8f6f0] text-[#050505]">
       <section className="px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1fr_0.82fr] lg:gap-20">
           <div className="max-w-2xl text-start">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-white/58">{copy.eyebrow}</p>
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-black/44">{copy.eyebrow}</p>
             <h1 className={`${isArabic ? 'font-arabic leading-[1.15]' : 'font-heading leading-[0.98]'} mt-5 text-[2.65rem] font-bold tracking-[-0.04em] sm:text-[4rem] lg:text-[4.6rem]`}>{copy.title}</h1>
-            <p className="mt-7 max-w-xl text-[0.98rem] leading-7 text-white/58 sm:text-[1.05rem]">{copy.subtitle}</p>
+            <p className="mt-7 max-w-xl text-[0.98rem] leading-7 text-black/58 sm:text-[1.05rem]">{copy.subtitle}</p>
           </div>
 
           <div className="mx-auto w-full max-w-[430px] lg:mx-0 lg:ms-auto">
-            <div className="overflow-hidden rounded-[18px] border border-white/12 bg-white/6 p-1.5 shadow-[0_36px_90px_rgba(0,0,0,0.45)]">
+            <div className="overflow-hidden rounded-[18px] border border-black/8 bg-white p-1.5 shadow-[0_36px_90px_rgba(0,0,0,0.14)]">
               <img src={heroImage} alt={isArabic ? 'خدمات منزلية راقية من عناية' : 'Premium domestic service by INAYA'} className="h-[360px] w-full rounded-[14px] object-cover object-center sm:h-[430px]" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-white/10 px-6 py-20 lg:px-10 lg:py-24">
+      <section className="border-t border-black/8 px-6 py-20 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold leading-tight tracking-[-0.03em] sm:text-[2.45rem]`}>{copy.storyTitle}</h2>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-6 text-[1rem] leading-8 text-white/62">
+            <div className="space-y-6 text-[1rem] leading-8 text-black/58">
               {copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
             <div>
               <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[1.35rem] font-bold`}>{copy.principlesTitle}</h3>
-              <div className="mt-5 space-y-4 text-sm leading-6 text-white/60">
+              <div className="mt-5 space-y-4 text-sm leading-6 text-black/56">
                 {copy.principles.map((item) => (
                   <div key={item} className="flex gap-3">
-                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/28 text-white/80">
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-black/22 text-black/70">
                       <LineIcon name="check" className="h-3 w-3" />
                     </span>
                     <p>{item}</p>
@@ -174,7 +174,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="bg-[#050505] px-6 py-20 sm:py-24 lg:px-10 lg:py-32">
+      <section className="bg-[#050505] px-6 py-20 text-white sm:py-24 lg:px-10 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
             <p className="text-[0.66rem] font-bold uppercase tracking-[0.28em] text-white/45">{copy.standardsEyebrow}</p>
@@ -221,7 +221,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      <section className="bg-[#050505] px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
+      <section className="bg-[#050505] px-6 py-20 text-white sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.82fr_1.18fr]">
           <div className="rounded-[12px] bg-white p-8 text-[#050505] shadow-[0_25px_70px_rgba(0,0,0,0.22)]">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/[0.03] text-black/72 ring-1 ring-black/10">
