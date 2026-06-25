@@ -1,0 +1,1 @@
+Logo carousel assets folder.
