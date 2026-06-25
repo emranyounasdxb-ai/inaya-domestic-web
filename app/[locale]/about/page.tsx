@@ -14,80 +14,92 @@ export default function AboutPage({ params: { locale } }: PageProps) {
     eyebrow: isArabic ? 'إرث عناية' : 'The INAYA Legacy',
     title: isArabic ? 'تعريف التميز في خدمات العمالة المنزلية' : 'Defining Domestic Excellence',
     subtitle: isArabic
-      ? 'إرث من الثقة والوضوح والجودة في خدمات العمالة المنزلية داخل الإمارات. نساعد العائلات على اختيار الدعم المنزلي بثقة وراحة.'
-      : 'A legacy of trust, clarity and uncompromising quality in UAE domestic worker services. We help families choose home support with confidence.',
+      ? 'تساعد عناية الأسر في دولة الإمارات على اختيار دعم منزلي موثوق من خلال تنسيق محترم، متابعة واضحة، وخدمة تناسب احتياج كل منزل.'
+      : 'INAYA helps UAE families choose dependable home support through respectful coordination, practical guidance and service coverage across the UAE.',
     contact: isArabic ? 'تواصل معنا' : 'Contact Us',
     services: isArabic ? 'استكشف الخدمات' : 'Explore Services',
     storyLabel: isArabic ? 'بداية واضحة' : 'A Clear Beginning',
     storyTitle: isArabic ? 'قصتنا' : 'Our Story',
     story: isArabic
       ? [
-          'بدأت عناية برؤية واضحة: سد الفجوة بين العائلات في الإمارات واحتياجها إلى خدمات منزلية موثوقة ومنظمة.',
-          'نركز على الوضوح من أول تواصل، نفهم الاحتياج، نراجع التوفر، نشرح الخطوات، ونبقى متاحين للمتابعة.'
+          'تأسست عناية لتجعل طلب خدمات العمالة المنزلية أكثر سهولة وطمأنينة للأسر في الإمارات. نحن نركز على فهم احتياج المنزل قبل اقتراح أي خدمة.',
+          'يجمع فريقنا تفاصيل الخدمة، الإمارة، التوقيت، ومتطلبات الأسرة، ثم يوضح الخيارات المتاحة بطريقة عملية ومحترمة.'
         ]
       : [
-          'INAYA began with a focused vision: to bridge the gap between UAE families and reliable, well-organized domestic worker services.',
-          'Our role is to make every household decision feel clear, supported and professionally managed from the first enquiry to follow-up.'
+          'INAYA was created to make domestic worker enquiries easier and more reassuring for UAE households. We focus on understanding the home requirement before suggesting a service.',
+          'Our team reviews the service type, emirate, schedule and household expectations, then explains suitable options in a practical and respectful way.'
         ],
     principlesTitle: isArabic ? 'مبادئ التأسيس' : 'Founding Principles',
     principles: isArabic
-      ? ['تواصل واضح قبل كل التزام.', 'خدمة منظمة تناسب احتياج كل منزل.', 'متابعة مسؤولة بعد تأكيد الخدمة.']
-      : ['Clear communication before every commitment.', 'Organized guidance around each household requirement.', 'Responsible follow-up after every confirmation.'],
+      ? ['احترام خصوصية الأسرة في كل تواصل.', 'اقتراح خدمات مرتبطة فعلاً بالاحتياج.', 'تأكيد الخطوات قبل الانتقال إلى الحجز.']
+      : ['Respect for family privacy in every conversation.', 'Service options matched to the actual requirement.', 'Next steps confirmed before moving to booking.'],
     purposeTitle: isArabic ? 'الغاية والقيم' : 'Purpose & Values',
-    purposeSub: isArabic ? 'الأسس التي تحدد خدمتنا وتوجه كل تواصل.' : 'The pillars that define our service and guide every interaction.',
+    purposeSub: isArabic ? 'القيم التي توجه طريقة تعاملنا مع كل أسرة.' : 'The values that shape how we support every household.',
     missionLabel: isArabic ? 'رسالتنا' : 'Our Mission',
     mission: isArabic
-      ? 'رفع مستوى خدمات العمالة المنزلية من خلال تواصل واضح، متابعة مهنية، وتجربة تمنح كل أسرة راحة وثقة.'
-      : 'To elevate the standard of domestic care through clear guidance, organized service and a calm experience for every family we serve.',
+      ? 'رفع مستوى خدمات العمالة المنزلية من خلال تجربة هادئة، مهنية، وسهلة الفهم للعائلات في الإمارات.'
+      : 'To raise the standard of domestic worker services through a calm, professional and easy-to-understand experience for UAE families.',
     visionLabel: isArabic ? 'رؤيتنا' : 'Our Vision',
     vision: isArabic
-      ? 'أن نكون اسماً موثوقاً للعائلات التي تبحث عن خدمات عمالة منزلية راقية ومنظمة في الإمارات.'
-      : 'To become a trusted name for families seeking premium, organized domestic worker services across the UAE.',
+      ? 'أن تكون عناية اسماً موثوقاً للأسر التي تبحث عن خدمات منزلية منظمة وراقية في جميع أنحاء الإمارات.'
+      : 'To become a trusted UAE name for families seeking organized, premium and reliable domestic worker services.',
     values: isArabic
       ? [
-          { icon: '◇', title: 'الخصوصية', text: 'نتعامل مع تفاصيل الأسرة والمستندات بعناية ومسؤولية.' },
-          { icon: '✓', title: 'الثقة', text: 'كل خطوة مصممة لتكون واضحة قبل المتابعة.' },
-          { icon: '✦', title: 'الرقي', text: 'خدمة هادئة ومنظمة تعكس معايير عناية.' },
-          { icon: '♡', title: 'الرعاية', text: 'كل طلب يعامل كاحتياج منزلي مهم.' }
+          { icon: '◇', title: 'الخصوصية', text: 'نحافظ على معلومات الأسرة والمستندات بعناية ومسؤولية.' },
+          { icon: '✓', title: 'الموثوقية', text: 'نراجع تفاصيل الطلب قبل مشاركة الخيارات المناسبة.' },
+          { icon: '✦', title: 'الرقي', text: 'نهتم بتجربة خدمة هادئة تعكس معايير عناية.' },
+          { icon: '♡', title: 'الاهتمام', text: 'نتعامل مع كل منزل كحالة خاصة لها احتياجها.' }
         ]
       : [
-          { icon: '◇', title: 'Discretion', text: 'Family details and documents are handled with care and responsibility.' },
-          { icon: '✓', title: 'Trust', text: 'Every step is designed to be clear before moving forward.' },
-          { icon: '✦', title: 'Refinement', text: 'A calm, organized service experience that reflects INAYA standards.' },
-          { icon: '♡', title: 'Care', text: 'Every request is treated as an important household requirement.' }
+          { icon: '◇', title: 'Discretion', text: 'Family information and documents are handled with care and responsibility.' },
+          { icon: '✓', title: 'Reliability', text: 'Every request is reviewed before suitable options are shared.' },
+          { icon: '✦', title: 'Refinement', text: 'We maintain a calm service experience that reflects INAYA standards.' },
+          { icon: '♡', title: 'Care', text: 'Each household is treated as a unique requirement, not a generic request.' }
         ],
-    standardsLabel: isArabic ? 'أسلوب عملنا' : 'The INAYA Standard',
-    standardsTitle: isArabic ? 'معايير واضحة لا نتنازل عنها' : 'Uncompromising Standards',
+    standardsLabel: isArabic ? 'طريقة العمل' : 'How We Work',
+    standardsTitle: isArabic ? 'خطوات عملية قبل القرار' : 'Practical Steps Before You Decide',
     standardsText: isArabic
-      ? 'تعتمد خدمتنا على خطوات عملية وواضحة تساعد العائلة على فهم الخيارات والتكلفة والتوفر قبل اتخاذ القرار.'
-      : 'Our process is step-by-step, practical and clear, helping families understand options, cost and availability before making a decision.',
+      ? 'نرتب الطلب في مراحل بسيطة حتى تعرف الأسرة ماذا يحدث، وما المطلوب، وما هي الخيارات المناسبة.'
+      : 'We keep the enquiry process simple, so families understand what happens next, what is required and which option fits best.',
     standards: isArabic
       ? [
-          { title: 'فهم الاحتياج أولاً', text: 'نبدأ بمعرفة نوع الخدمة، الإمارة، الوقت، وتفاصيل المنزل حتى يكون التوجيه مناسباً.' },
-          { title: 'مراجعة التوفر', text: 'نراجع الخيارات المتاحة حسب الخدمة والمنطقة والمدة المطلوبة قبل تقديم أي تأكيد.' },
-          { title: 'توضيح الخطوات', text: 'نشرح الأسعار، المستندات، والتزامات كل طرف قبل المتابعة.' },
-          { title: 'متابعة منظمة', text: 'يبقى الفريق متاحاً بعد الحجز للرد على الأسئلة ومتابعة أي ملاحظة.' }
+          { title: 'مراجعة الطلب', text: 'نحدد نوع الخدمة، الإمارة، الجدول، وتفاصيل المنزل الأساسية.' },
+          { title: 'فحص التوفر', text: 'نراجع الخيارات المتاحة حسب نوع الخدمة والمنطقة والمدة المطلوبة.' },
+          { title: 'شرح المتطلبات', text: 'نوضح المستندات، الرسوم، والمسؤوليات قبل أي تأكيد.' },
+          { title: 'متابعة بعد الحجز', text: 'يبقى الفريق متاحاً للرد على الأسئلة ومراجعة أي ملاحظات.' }
         ]
       : [
-          { title: 'Initial Requirement Review', text: 'We start with the service type, emirate, timing and household details so guidance is relevant.' },
-          { title: 'Availability Matching', text: 'Available options are reviewed by service, area and requested duration before confirmation.' },
-          { title: 'Clear Step Explanation', text: 'Pricing, documents and responsibilities are explained before the family proceeds.' },
-          { title: 'Organized Follow-up', text: 'The team remains available after booking to answer questions and review concerns.' }
+          { title: 'Requirement Review', text: 'We confirm the service type, emirate, schedule and key household details.' },
+          { title: 'Availability Check', text: 'Suitable options are reviewed by service category, area and requested duration.' },
+          { title: 'Guidance & Documents', text: 'Documents, fees and responsibilities are explained before confirmation.' },
+          { title: 'After-booking Support', text: 'The team remains available for questions and service-related feedback.' }
         ],
     leadershipLabel: isArabic ? 'العنصر البشري' : 'The Human Element',
-    leadershipTitle: isArabic ? 'التميز في القيادة' : 'Excellence in Leadership',
+    leadershipTitle: isArabic ? 'قيادة تركز على جودة التجربة' : 'Leadership Focused on Service Quality',
     leadershipText: isArabic
-      ? 'يجمع فريق عناية بين الخبرة التشغيلية وفهم احتياجات البيوت في الإمارات، حتى تكون كل محادثة عملية وواضحة ومحترمة.'
-      : 'Our team brings operational experience and an understanding of UAE households, ensuring every service conversation is practical, clear and respectful.',
+      ? 'تعتمد عناية على تنسيق تشغيلي منظم وفهم لطبيعة الأسر في الإمارات، حتى تكون كل تجربة خدمة أكثر وضوحاً واحتراماً.'
+      : 'INAYA is guided by operational discipline and an understanding of UAE households, helping every service conversation remain focused, respectful and useful.',
+    leadershipCardLabel: isArabic ? 'منهج القيادة' : 'Leadership Approach',
+    leadershipHighlights: isArabic
+      ? [
+          { title: 'إشراف تشغيلي', text: 'متابعة الطلبات بناءً على متطلبات موثقة وواضحة.' },
+          { title: 'فهم الأسرة', text: 'مراعاة خصوصية المنزل وروتين الأسرة قبل اقتراح الخدمة.' },
+          { title: 'تحسين مستمر', text: 'استخدام ملاحظات العملاء لتطوير طريقة التنسيق والمتابعة.' }
+        ]
+      : [
+          { title: 'Operational Oversight', text: 'Requests are managed against documented household requirements.' },
+          { title: 'Household Understanding', text: 'Family routines and privacy expectations guide our recommendations.' },
+          { title: 'Continuous Improvement', text: 'Client feedback helps refine our coordination and follow-up process.' }
+        ],
     complianceTitle: isArabic ? 'التزام واضح' : 'Clear Compliance',
     complianceText: isArabic
-      ? 'نوضح الخطوات والمستندات والسياسات الأساسية قبل الحجز حتى يكون القرار واضحاً.'
-      : 'We explain steps, documents and key policies before booking so each decision is clear.',
+      ? 'يتم شرح السياسات، المستندات، وخطوات التأكيد قبل الحجز حتى تكون الصورة واضحة للأسرة.'
+      : 'Policies, documents and confirmation steps are explained before booking so each family has a clear picture.',
     differenceLabel: isArabic ? 'معيار عناية' : 'INAYA Standard',
     differenceTitle: isArabic ? 'الفرق مع عناية' : 'The INAYA Difference',
     differenceText: isArabic
-      ? 'نحن لا نركز فقط على تقديم خدمة، بل على تجربة كاملة: فهم الاحتياج، توضيح الخيارات، تنظيم الخطوات، والمتابعة بعد الحجز.'
-      : 'We focus on more than providing a service. We create a complete experience: understanding the need, explaining options, organizing steps and following up after booking.',
+      ? 'تجمع عناية بين فهم احتياج المنزل، اختيار الخدمة المناسبة، والمتابعة المسؤولة، لتتمكن الأسرة من اتخاذ القرار براحة.'
+      : 'INAYA combines household understanding, relevant service guidance and responsible follow-up so families can move forward with confidence.',
     ctaPrimary: isArabic ? 'قابل فريقنا' : 'Meet Our Team',
     ctaSecondary: isArabic ? 'احجز استشارة' : 'Book a Consultation'
   };
@@ -117,7 +129,7 @@ export default function AboutPage({ params: { locale } }: PageProps) {
         </div>
       </section>
 
-      <section className="border-t border-accent-500/12 bg-ivory px-6 py-18 sm:py-20 lg:px-10 lg:py-24">
+      <section className="border-t border-accent-500/12 bg-ivory px-6 py-16 sm:py-20 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
             <p className="text-[0.66rem] font-bold uppercase tracking-[0.24em] text-accent-700">{copy.storyLabel}</p>
@@ -204,10 +216,17 @@ export default function AboutPage({ params: { locale } }: PageProps) {
             <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-[2.15rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.leadershipTitle}</h2>
             <p className="mx-auto mt-5 max-w-2xl text-[0.98rem] leading-7 text-ink/62">{copy.leadershipText}</p>
           </div>
-          <div className="mx-auto mt-10 max-w-4xl rounded-[26px] border border-accent-500/22 bg-white/76 p-8 text-center shadow-[0_26px_75px_rgba(7,22,74,0.08)] backdrop-blur-xl sm:p-12">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.28em] text-accent-700">INAYA DOMESTIC WORKERS</p>
-            <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-2xl font-bold text-primary-900 sm:text-3xl`}>{copy.leadershipTitle}</h3>
-            <div className="mx-auto mt-6 h-px w-24 bg-accent-500/65" />
+          <div className="mx-auto mt-10 max-w-5xl rounded-[26px] border border-accent-500/22 bg-white/76 p-7 shadow-[0_26px_75px_rgba(7,22,74,0.08)] backdrop-blur-xl sm:p-8">
+            <p className="text-center text-[0.68rem] font-bold uppercase tracking-[0.28em] text-accent-700">{copy.leadershipCardLabel}</p>
+            <div className="mt-7 grid gap-5 md:grid-cols-3">
+              {copy.leadershipHighlights.map((item) => (
+                <div key={item.title} className="rounded-[20px] border border-accent-500/16 bg-[#f8f6f0] p-5 text-center shadow-sm">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-accent-500/12 text-sm font-bold text-accent-700 ring-1 ring-accent-500/22">✓</div>
+                  <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-lg font-bold text-primary-900`}>{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-ink/62">{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
