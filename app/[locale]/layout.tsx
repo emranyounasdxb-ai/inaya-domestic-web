@@ -10,6 +10,7 @@ import FloatingSocialBar from '@/components/FloatingSocialBar';
 import '../globals.css';
 import '../service-area-images.css';
 import '../type-scale.css';
+import '../home-hero-image.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
