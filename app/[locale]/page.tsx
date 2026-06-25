@@ -170,23 +170,24 @@ function ImagePlaceholder({ label, className = '', src }: { label: string; class
 
 function AuthorityLogoCard({ name, file }: { name: string; file: string }) {
   return (
-    <div className="flex h-20 min-w-[178px] flex-col items-center justify-center rounded-[20px] border border-white/70 bg-white/68 px-6 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:bg-white/82">
+    <div className="flex h-20 min-w-[178px] items-center justify-center rounded-[20px] border border-white/70 bg-white/68 px-7 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:bg-white/82">
       <div
-        className="h-8 w-32 bg-contain bg-center bg-no-repeat"
+        className="h-11 w-36 bg-contain bg-center bg-no-repeat"
         style={{ backgroundImage: `url('/authority-logos/${file}')` }}
         aria-label={name}
+        role="img"
       />
-      <span className="mt-2 text-[0.58rem] font-bold uppercase tracking-[0.18em] text-primary-900/62">{name}</span>
     </div>
   );
 }
 
-function AuthorityLogoCarousel() {
+function AuthorityLogoCarousel({ isArabic }: { isArabic: boolean }) {
   const logos = [...authorityLogos, ...authorityLogos];
+  const animationName = isArabic ? 'homeLogoMarqueeLtr' : 'homeLogoMarqueeRtl';
 
   return (
-    <div className="relative mt-9 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
-      <div className="flex w-max gap-4 py-2" style={{ animation: 'homeLogoMarquee 30s linear infinite' }}>
+    <div className="relative mt-9 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]" dir="ltr">
+      <div className="home-logo-track flex w-max gap-4 py-2" style={{ animation: `${animationName} 30s linear infinite` }}>
         {logos.map((logo, index) => (
           <AuthorityLogoCard key={`${logo.file}-${index}`} {...logo} />
         ))}
@@ -202,9 +203,17 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
   return (
     <div className="overflow-hidden bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)] text-ink">
       <style>{`
-        @keyframes homeLogoMarquee {
+        @keyframes homeLogoMarqueeRtl {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
+        }
+        @keyframes homeLogoMarqueeLtr {
+          from { transform: translateX(-50%); }
+          to { transform: translateX(0); }
+        }
+        .home-logo-track:hover { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+          .home-logo-track { animation: none !important; }
         }
       `}</style>
 
@@ -235,7 +244,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <section className="border-y border-accent-500/12 bg-white/72 px-6 py-14 backdrop-blur-xl lg:px-10">
         <div className="mx-auto max-w-7xl text-center">
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-ink/46">{copy.trustLabel}</p>
-          <AuthorityLogoCarousel />
+          <AuthorityLogoCarousel isArabic={isArabic} />
         </div>
       </section>
 
