@@ -22,15 +22,14 @@ function LineIcon({ name, className = '' }: { name: IconName; className?: string
 export default function AboutPage({ params: { locale } }: { params: { locale: string } }) {
   const isArabic = locale === 'ar';
   const headingClass = isArabic
-    ? 'font-arabic text-4xl font-bold leading-[1.25] text-primary-900 sm:text-5xl lg:text-6xl'
-    : 'font-heading text-4xl font-bold leading-[1.04] text-primary-900 sm:text-5xl lg:text-6xl';
+    ? 'font-arabic text-4xl font-bold leading-[1.2] text-primary-900 sm:text-5xl lg:text-[3.5rem]'
+    : 'font-heading text-4xl font-bold leading-[1.02] text-primary-900 sm:text-5xl lg:text-[3.5rem]';
   const sectionTitleClass = isArabic
-    ? 'font-arabic text-3xl font-bold leading-[1.3] text-primary-900 sm:text-4xl'
-    : 'font-heading text-3xl font-bold leading-tight text-primary-900 sm:text-4xl';
+    ? 'font-arabic text-3xl font-bold leading-[1.25] text-primary-900 sm:text-[2.35rem]'
+    : 'font-heading text-3xl font-bold leading-tight text-primary-900 sm:text-[2.35rem]';
 
   const heroImage = '/images/about/about-hero-domestic-service.webp';
   const chairmanImage = '/images/about/CEO-Umed-khan.webp';
-  const chairmanAvatar = '/images/about/chairman-ummed-khan-avatar.webp';
 
   const copy = {
     eyebrow: isArabic ? 'إرث عناية' : 'The INAYA Legacy',
@@ -181,26 +180,26 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
       </section>
 
       <section className="container-x pb-14 sm:pb-16 lg:pb-20">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-[28px] border border-accent-500/22 bg-white/66 p-4 shadow-[0_22px_70px_rgba(7,22,74,0.08)] backdrop-blur-xl lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:p-5">
-          <div className="relative flex min-h-[460px] items-end justify-center overflow-hidden rounded-[24px] border border-accent-500/18 bg-[radial-gradient(circle_at_55%_22%,rgba(191,164,106,0.30),transparent_18rem),linear-gradient(180deg,#fbf8f1_0%,#f2eadc_100%)] px-6 pt-6 sm:min-h-[500px]">
-            <div className="absolute inset-x-8 bottom-0 h-24 rounded-t-[80px] bg-gradient-to-t from-accent-500/20 to-transparent" />
-            <div className="absolute inset-x-10 bottom-0 h-px bg-accent-500/45" />
-            <img src={chairmanImage} alt={isArabic ? 'السيد أمّد خان رئيس مجلس إدارة مجموعة ألياس' : 'Mr. Ummed Khan Founder and Chairman of ALIYAS Group'} className="relative z-10 h-[430px] w-full max-w-[325px] object-contain object-bottom drop-shadow-[0_18px_28px_rgba(7,22,74,0.16)] sm:h-[470px]" />
+        <div className="mx-auto grid max-w-6xl gap-8 rounded-[28px] border border-accent-500/22 bg-white/66 p-5 shadow-[0_22px_70px_rgba(7,22,74,0.08)] backdrop-blur-xl lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:p-7">
+          <div className="relative flex min-h-[430px] items-end justify-center overflow-hidden rounded-[24px] border border-accent-500/18 bg-[radial-gradient(circle_at_50%_18%,rgba(191,164,106,0.28),transparent_16rem),linear-gradient(180deg,#fbf8f1_0%,#f0e7d7_100%)] px-6 pt-8 sm:min-h-[470px]">
+            <div className="absolute inset-x-10 bottom-0 h-28 rounded-t-[90px] bg-gradient-to-t from-accent-500/24 to-transparent" />
+            <div className="absolute bottom-0 h-px w-3/4 bg-accent-500/50" />
+            <img src={chairmanImage} alt={isArabic ? 'السيد أمّد خان رئيس مجلس إدارة مجموعة ألياس' : 'Mr. Ummed Khan Founder and Chairman of ALIYAS Group'} className="relative z-10 h-[400px] w-full max-w-[310px] object-contain object-bottom drop-shadow-[0_18px_26px_rgba(7,22,74,0.14)] sm:h-[440px]" />
           </div>
 
-          <div className="flex flex-col justify-center px-2 py-3 sm:px-4 lg:px-6">
+          <div className="flex flex-col justify-center px-1 py-2 sm:px-3 lg:px-4">
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent-700">{copy.chairmanEyebrow}</p>
-            <h2 className={`${isArabic ? 'font-arabic text-3xl leading-[1.25]' : 'font-heading text-3xl leading-[1.08]'} mt-3 max-w-2xl font-bold text-primary-900 sm:text-4xl`}>{copy.chairmanTitle}</h2>
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <div className="h-13 w-13 overflow-hidden rounded-full border border-accent-500/34 bg-white shadow-glass ring-4 ring-accent-500/10">
-                <img src={chairmanAvatar} alt={isArabic ? 'صورة السيد أمّد خان' : 'Mr. Ummed Khan'} className="h-full w-full object-cover object-top" />
-              </div>
+            <h2 className={`${isArabic ? 'font-arabic text-3xl leading-[1.22]' : 'font-heading text-3xl leading-[1.08]'} mt-3 max-w-2xl font-bold text-primary-900 sm:text-[2.35rem]`}>{copy.chairmanTitle}</h2>
+            <div className="mt-4 flex items-center gap-3 border-y border-accent-500/18 py-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-900 text-accent-200 shadow-sm ring-4 ring-accent-500/10">
+                <LineIcon name="user" className="h-5 w-5" />
+              </span>
               <div>
-                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-lg font-bold text-primary-900 sm:text-xl`}>{copy.chairmanName}</h3>
-                <p className="text-sm font-semibold text-ink/56">{copy.chairmanRole}</p>
+                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-lg font-bold leading-tight text-primary-900 sm:text-xl`}>{copy.chairmanName}</h3>
+                <p className="mt-1 text-sm font-semibold text-ink/56">{copy.chairmanRole}</p>
               </div>
             </div>
-            <div className="mt-5 max-w-2xl space-y-3 text-[0.95rem] leading-7 text-ink/70">
+            <div className="mt-5 max-w-2xl space-y-3 text-[0.94rem] leading-7 text-ink/70">
               {copy.chairmanText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
             <blockquote className="mt-5 rounded-[18px] border border-accent-500/30 bg-accent-50/80 px-5 py-4 text-base font-bold leading-7 text-primary-900 shadow-sm">
