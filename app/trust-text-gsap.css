@@ -5,12 +5,15 @@ main > div > section:nth-of-type(2) p:first-child {
   align-items: center !important;
   justify-content: center !important;
   gap: 0.7rem !important;
-  color: #06133f !important;
-  background: transparent !important;
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-  animation: none !important;
+  padding: 0.65rem 1.35rem !important;
+  border: 1px solid rgba(191, 164, 106, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.54) !important;
+  box-shadow: 0 16px 42px rgba(7, 22, 74, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
   overflow: hidden;
+  color: #06133f !important;
+  animation: trustFallbackFloat 3.8s ease-in-out infinite !important;
 }
 
 main > div > section:nth-of-type(2) p:first-child::before,
@@ -22,38 +25,37 @@ main > div > section:nth-of-type(2) p:first-child::after {
   flex: 0 0 auto;
   border-radius: 999px !important;
   background: #bfa46a !important;
-  box-shadow: 0 0 0 0.3rem rgba(191, 164, 106, 0.12) !important;
-  animation: none !important;
+  box-shadow: 0 0 0 0.3rem rgba(191, 164, 106, 0.14) !important;
+  animation: trustDotFallback 1.8s ease-in-out infinite !important;
 }
 
-main > div > section:nth-of-type(2) p:first-child span,
-main > div > section:nth-of-type(2) p:first-child {
-  text-shadow: 0 12px 34px rgba(7, 22, 74, 0.08);
-}
-
-main > div > section:nth-of-type(2) p:first-child::selection {
-  background: rgba(191, 164, 106, 0.22);
+main > div > section:nth-of-type(2) p:first-child::after {
+  animation-delay: 0.9s !important;
 }
 
 main > div > section:nth-of-type(2) p:first-child {
-  mask-image: linear-gradient(90deg, #000 0%, #000 100%);
-}
-
-main > div > section:nth-of-type(2) p:first-child::marker {
-  display: none;
-}
-
-main > div > section:nth-of-type(2) p:first-child {
-  background-image: linear-gradient(105deg, #06133f 0%, #06133f 35%, #bfa46a var(--trust-sheen-x), #06133f calc(var(--trust-sheen-x) + 28%)) !important;
+  background-image: linear-gradient(105deg, #06133f 0%, #06133f 34%, #bfa46a var(--trust-sheen-x), #06133f calc(var(--trust-sheen-x) + 28%)) !important;
   background-size: 100% 100% !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   color: transparent !important;
+  text-shadow: 0 12px 34px rgba(7, 22, 74, 0.08);
+}
+
+@keyframes trustFallbackFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes trustDotFallback {
+  0%, 100% { transform: scale(0.78); opacity: 0.55; }
+  50% { transform: scale(1.18); opacity: 1; }
 }
 
 @media (max-width: 768px) {
   main > div > section:nth-of-type(2) p:first-child {
     gap: 0.48rem !important;
     font-size: 0.62rem !important;
+    padding: 0.58rem 0.85rem !important;
   }
 }
