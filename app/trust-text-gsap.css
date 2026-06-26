@@ -1,61 +1,65 @@
 main > div > section:nth-of-type(2) p:first-child {
-  --trust-sheen-x: -45%;
+  --trust-sheen-x: -50%;
+  --trust-line-scale: 0;
   position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0.7rem !important;
-  padding: 0.65rem 1.35rem !important;
-  border: 1px solid rgba(191, 164, 106, 0.24);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.54) !important;
-  box-shadow: 0 16px 42px rgba(7, 22, 74, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(14px);
-  overflow: hidden;
+  display: inline-block !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  overflow: visible !important;
   color: #06133f !important;
-  animation: trustFallbackFloat 3.8s ease-in-out infinite !important;
+  animation: none !important;
+  text-shadow: 0 14px 38px rgba(7, 22, 74, 0.08);
 }
 
-main > div > section:nth-of-type(2) p:first-child::before,
+main > div > section:nth-of-type(2) p:first-child::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: calc(100% + 0.55rem) !important;
+  width: 5.75rem !important;
+  height: 1px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, transparent, rgba(191, 164, 106, 0.95), transparent) !important;
+  transform: translateX(-50%) scaleX(var(--trust-line-scale)) !important;
+  transform-origin: center !important;
+}
+
 main > div > section:nth-of-type(2) p:first-child::after {
   content: '' !important;
-  display: inline-block !important;
-  width: 0.45rem !important;
-  height: 0.45rem !important;
-  flex: 0 0 auto;
+  position: absolute !important;
+  left: 50% !important;
+  top: calc(100% + 0.1rem) !important;
+  width: 0.42rem !important;
+  height: 0.42rem !important;
   border-radius: 999px !important;
   background: #bfa46a !important;
-  box-shadow: 0 0 0 0.3rem rgba(191, 164, 106, 0.14) !important;
-  animation: trustDotFallback 1.8s ease-in-out infinite !important;
+  box-shadow: 0 0 0 0.28rem rgba(191, 164, 106, 0.16) !important;
+  transform: translateX(-50%) !important;
 }
 
-main > div > section:nth-of-type(2) p:first-child::after {
-  animation-delay: 0.9s !important;
+.trust-gsap-word {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: bottom;
 }
 
-main > div > section:nth-of-type(2) p:first-child {
-  background-image: linear-gradient(105deg, #06133f 0%, #06133f 34%, #bfa46a var(--trust-sheen-x), #06133f calc(var(--trust-sheen-x) + 28%)) !important;
-  background-size: 100% 100% !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-  text-shadow: 0 12px 34px rgba(7, 22, 74, 0.08);
-}
-
-@keyframes trustFallbackFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-
-@keyframes trustDotFallback {
-  0%, 100% { transform: scale(0.78); opacity: 0.55; }
-  50% { transform: scale(1.18); opacity: 1; }
+.trust-gsap-letter {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+  background-image: linear-gradient(105deg, #06133f 0%, #06133f 34%, #bfa46a var(--trust-sheen-x), #06133f calc(var(--trust-sheen-x) + 28%));
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (max-width: 768px) {
   main > div > section:nth-of-type(2) p:first-child {
-    gap: 0.48rem !important;
     font-size: 0.62rem !important;
-    padding: 0.58rem 0.85rem !important;
   }
 }
