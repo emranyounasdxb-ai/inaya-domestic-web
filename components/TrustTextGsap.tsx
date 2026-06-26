@@ -61,17 +61,41 @@ export default function TrustTextGsap() {
     let hoverTween: any;
     let active = true;
     let originalText = '';
+    let cleanupHover: (() => void) | undefined;
 
     loadGsap().then((gsap) => {
       if (!active) return;
       const label = document.querySelector<HTMLElement>('main > div > section:nth-of-type(2) p:first-child');
       if (!label) return;
 
+      const isArabic = document.documentElement.lang === 'ar' || document.documentElement.dir === 'rtl';
+      originalText = label.textContent || '';
+
+      timeline = gsap.timeline({ defaults: { ease: 'power4.out' } });
+      gsap.set(label, { opacity: 0, y: 10, '--trust-sheen-x': '-60%' });
+
+      if (isArabic) {
+        label.textContent = 'موثوق ومنظم مع جهات الإمارات';
+        label.style.direction = 'rtl';
+        label.style.unicodeBidi = 'isolate';
+
+        timeline
+          .to(label, { opacity: 1, y: 0, duration: 0.7 })
+          .to(label, { '--trust-sheen-x': '155%', duration: 1.35, ease: 'power2.inOut' }, '-=0.25')
+          .to(label, { y: -1, duration: 1.7, repeat: -1, yoyo: true, ease: 'sine.inOut' }, '-=0.1');
+
+        const replayHover = () => {
+          if (hoverTween) hoverTween.kill();
+          hoverTween = gsap.fromTo(label, { '--trust-sheen-x': '-60%' }, { '--trust-sheen-x': '155%', duration: 1.05, ease: 'power2.inOut' });
+        };
+        label.addEventListener('mouseenter', replayHover);
+        cleanupHover = () => label.removeEventListener('mouseenter', replayHover);
+        return;
+      }
+
       originalText = splitText(label);
       const letters = label.querySelectorAll<HTMLElement>('.trust-gsap-letter');
       const words = label.querySelectorAll<HTMLElement>('.trust-gsap-word');
-
-      timeline = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
       gsap.set(label, { opacity: 1, '--trust-line-scale': 0, '--trust-sheen-x': '-60%' });
       gsap.set(words, { perspective: 700 });
@@ -98,20 +122,17 @@ export default function TrustTextGsap() {
 
       const replayHover = () => {
         if (hoverTween) hoverTween.kill();
-        hoverTween = gsap.fromTo(
-          label,
-          { '--trust-sheen-x': '-60%' },
-          { '--trust-sheen-x': '155%', duration: 1.05, ease: 'power2.inOut' }
-        );
+        hoverTween = gsap.fromTo(label, { '--trust-sheen-x': '-60%' }, { '--trust-sheen-x': '155%', duration: 1.05, ease: 'power2.inOut' });
         gsap.fromTo(letters, { y: 0 }, { y: -2, duration: 0.32, stagger: 0.006, yoyo: true, repeat: 1, ease: 'sine.inOut' });
       };
 
       label.addEventListener('mouseenter', replayHover);
-      label.dataset.gsapHoverReady = 'true';
+      cleanupHover = () => label.removeEventListener('mouseenter', replayHover);
     });
 
     return () => {
       active = false;
+      if (cleanupHover) cleanupHover();
       if (timeline) timeline.kill();
       if (hoverTween) hoverTween.kill();
       const label = document.querySelector<HTMLElement>('main > div > section:nth-of-type(2) p:first-child');
