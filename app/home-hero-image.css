@@ -104,6 +104,61 @@ main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-
   border-color: rgba(191, 164, 106, 0.42) !important;
 }
 
+main > div > section:nth-of-type(2) p:first-child {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.35rem 1rem;
+  color: transparent !important;
+  background-image: linear-gradient(90deg, #06133f 0%, #bfa46a 28%, #06133f 52%, #bfa46a 78%, #06133f 100%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 14px 34px rgba(7, 22, 74, 0.08);
+  animation: inayaTrustTextShimmer 4.8s linear infinite, inayaTrustTextLift 5.5s ease-in-out infinite;
+}
+
+main > div > section:nth-of-type(2) p:first-child::before,
+main > div > section:nth-of-type(2) p:first-child::after {
+  content: '';
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #bfa46a;
+  box-shadow: 0 0 0 0 rgba(191, 164, 106, 0.35);
+  animation: inayaTrustDotPulse 2.4s ease-in-out infinite;
+}
+
+main > div > section:nth-of-type(2) p:first-child::after {
+  animation-delay: 1.2s;
+}
+
+@keyframes inayaTrustTextShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 240% 50%; }
+}
+
+@keyframes inayaTrustTextLift {
+  0%, 100% { transform: translateY(0); letter-spacing: 0.22em; }
+  50% { transform: translateY(-1px); letter-spacing: 0.25em; }
+}
+
+@keyframes inayaTrustDotPulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.88);
+    box-shadow: 0 0 0 0 rgba(191, 164, 106, 0.36);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+    box-shadow: 0 0 0 0.45rem rgba(191, 164, 106, 0);
+  }
+}
+
 @media (max-width: 1280px) {
   main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-child(4) > div {
     transform: translateX(-1.5rem);
@@ -132,6 +187,13 @@ main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-
     width: 100%;
     min-height: 3.25rem;
     padding-inline: 1.4rem !important;
+  }
+
+  main > div > section:nth-of-type(2) p:first-child {
+    gap: 0.48rem;
+    padding-inline: 0.35rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em !important;
   }
 
   main [aria-label='Hero Image Placeholder']::after,
