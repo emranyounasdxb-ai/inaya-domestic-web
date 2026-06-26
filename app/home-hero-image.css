@@ -15,7 +15,7 @@ main [aria-label='Hero Image Placeholder']::before {
   z-index: 0;
   display: block;
   background-image:
-    url('/images/home/inaya-home-hero-family.webp?v=hero-5'),
+    url('/images/home/inaya-home-hero-family.webp?v=hero-6'),
     linear-gradient(135deg, #f2eadc, #ffffff, #e7edf6) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -66,6 +66,31 @@ main > div > section:first-of-type > div:nth-child(2) {
     ) !important;
 }
 
+main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-child(4) {
+  direction: ltr !important;
+  justify-content: flex-start !important;
+}
+
+main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-child(4) > div {
+  transform: translateX(-3.25rem);
+}
+
+html[dir='ltr'] main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-child(4) > div {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir='rtl'] main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-child(4) > div {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+@media (max-width: 1280px) {
+  main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-child(4) > div {
+    transform: translateX(-1.5rem);
+  }
+}
+
 @media (max-width: 1024px) {
   main [aria-label='Hero Image Placeholder']::before {
     background-position: 72% center !important;
@@ -78,6 +103,10 @@ main > div > section:first-of-type > div:nth-child(2) {
     background-position: center top !important;
     background-size: cover !important;
     transform: scale(1.01);
+  }
+
+  main section:first-of-type:has([aria-label='Hero Image Placeholder']) > div:nth-child(4) > div {
+    transform: none;
   }
 
   main [aria-label='Hero Image Placeholder']::after,
