@@ -7,21 +7,38 @@ const content = {
     title: 'Our Service Standards',
     subtitle: 'Every placement is guided by clear checks, careful matching and respectful household support.',
     cards: [
-      { title: 'Verified & Documented', role: 'Identity, eligibility and document review', text: 'We review key records and service requirements before recommending a suitable household support option.', icon: '✓' },
-      { title: 'Trained for Household Needs', role: 'Cleaning, care routine and service discipline', text: 'Service options are aligned with the practical expectations of each home, schedule and support type.', icon: '✦' },
-      { title: 'Matched with Care', role: 'Family needs, emirate, timing and service type', text: 'We keep the process clear, private and organized so every recommendation feels relevant and respectful.', icon: '◌' }
+      { title: 'Verified & Documented', role: 'Identity, eligibility and document review', text: 'We review key records and service requirements before recommending a suitable household support option.', visual: 'shield', icon: '✓' },
+      { title: 'Trained for Household Needs', role: 'Cleaning, care routine and service discipline', text: 'Service options are aligned with the practical expectations of each home, schedule and support type.', visual: 'diamond', icon: '✦' },
+      { title: 'Matched with Care', role: 'Family needs, emirate, timing and service type', text: 'We keep the process clear, private and organized so every recommendation feels relevant and respectful.', visual: 'orb', icon: '◌' }
     ]
   },
   ar: {
     title: 'معايير الخدمة لدينا',
     subtitle: 'كل خدمة تعتمد على تحقق واضح، مطابقة دقيقة، ودعم منزلي محترم يحافظ على خصوصية الأسرة.',
     cards: [
-      { title: 'تحقق وتوثيق', role: 'مراجعة الهوية والأهلية والمتطلبات', text: 'نراجع السجلات الأساسية ومتطلبات الخدمة قبل اقتراح خيار دعم منزلي مناسب.', icon: '✓' },
-      { title: 'تدريب يناسب احتياج المنزل', role: 'تنظيف، روتين رعاية، وانضباط في الخدمة', text: 'يتم اختيار الخدمة بما يتوافق مع توقعات المنزل والجدول ونوع الدعم المطلوب.', icon: '✦' },
-      { title: 'مطابقة بعناية', role: 'احتياج الأسرة، الإمارة، التوقيت ونوع الخدمة', text: 'نحافظ على وضوح العملية وخصوصيتها وتنظيمها حتى تكون كل توصية مناسبة ومحترمة.', icon: '◌' }
+      { title: 'تحقق وتوثيق', role: 'مراجعة الهوية والأهلية والمتطلبات', text: 'نراجع السجلات الأساسية ومتطلبات الخدمة قبل اقتراح خيار دعم منزلي مناسب.', visual: 'shield', icon: '✓' },
+      { title: 'تدريب يناسب احتياج المنزل', role: 'تنظيف، روتين رعاية، وانضباط في الخدمة', text: 'يتم اختيار الخدمة بما يتوافق مع توقعات المنزل والجدول ونوع الدعم المطلوب.', visual: 'diamond', icon: '✦' },
+      { title: 'مطابقة بعناية', role: 'احتياج الأسرة، الإمارة، التوقيت ونوع الخدمة', text: 'نحافظ على وضوح العملية وخصوصيتها وتنظيمها حتى تكون كل توصية مناسبة ومحترمة.', visual: 'orb', icon: '◌' }
     ]
   }
 };
+
+function visualMarkup(visual: string, icon: string) {
+  return `
+    <div class="standard-visual standard-visual-${visual}">
+      <div class="standard-ambient"></div>
+      <div class="standard-orbit standard-orbit-one"></div>
+      <div class="standard-orbit standard-orbit-two"></div>
+      <div class="standard-object">
+        <span>${icon}</span>
+      </div>
+      <div class="standard-platform"></div>
+      <div class="standard-particle standard-particle-a"></div>
+      <div class="standard-particle standard-particle-b"></div>
+      <div class="standard-particle standard-particle-c"></div>
+    </div>
+  `;
+}
 
 export default function HomeStandardsSpotlight() {
   useEffect(() => {
@@ -41,12 +58,12 @@ export default function HomeStandardsSpotlight() {
     cards.forEach((card, index) => {
       const item = copy.cards[index];
       if (!item) return;
-      card.dataset.standardCard = 'true';
+      card.dataset.standardCard = item.visual;
 
-      const image = card.querySelector<HTMLElement>('[aria-label^="Candidate"]');
+      const image = card.querySelector<HTMLElement>('[aria-label^="Candidate"], [aria-label="Verified & Documented"], [aria-label="Trained for Household Needs"], [aria-label="Matched with Care"], [aria-label="تحقق وتوثيق"], [aria-label="تدريب يناسب احتياج المنزل"], [aria-label="مطابقة بعناية"]');
       if (image) {
         image.setAttribute('aria-label', item.title);
-        image.innerHTML = `<div class="standard-icon-wrap"><span>${item.icon}</span></div>`;
+        image.innerHTML = visualMarkup(item.visual, item.icon);
       }
 
       const title = card.querySelector('h3');
