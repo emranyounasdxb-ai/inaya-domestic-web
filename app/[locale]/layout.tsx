@@ -7,6 +7,7 @@ import { locales } from '@/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
+import TrustTextGsap from '@/components/TrustTextGsap';
 import '../globals.css';
 import '../service-area-images.css';
 import '../type-scale.css';
@@ -63,6 +64,7 @@ export default async function LocaleLayout({
     <html lang={locale} dir={dir}>
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>
         <NextIntlClientProvider messages={messages}>
+          <TrustTextGsap />
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <main>{children}</main>
