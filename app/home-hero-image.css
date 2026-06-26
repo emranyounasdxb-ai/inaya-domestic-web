@@ -15,12 +15,12 @@ main [aria-label='Hero Image Placeholder']::before {
   z-index: 0;
   display: block;
   background-image:
-    url('/images/home/home-hero-family.webp?v=hero-3'),
+    url('/images/home/inaya-home-hero-family.webp?v=hero-4'),
     linear-gradient(135deg, #f2eadc, #ffffff, #e7edf6) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  background-position: 78% center !important;
-  transform: scale(1.02);
+  background-position: center center !important;
+  transform: scale(1.01);
   transform-origin: center right;
 }
 
@@ -34,11 +34,11 @@ main [aria-label='Hero Image Placeholder']::after {
     radial-gradient(circle at 22% 24%, rgba(191, 164, 106, 0.10), transparent 24rem),
     linear-gradient(
       90deg,
-      rgba(248, 246, 240, 0.92) 0%,
-      rgba(248, 246, 240, 0.86) 24%,
-      rgba(248, 246, 240, 0.62) 45%,
-      rgba(248, 246, 240, 0.22) 62%,
-      rgba(248, 246, 240, 0.04) 78%,
+      rgba(248, 246, 240, 0.90) 0%,
+      rgba(248, 246, 240, 0.82) 23%,
+      rgba(248, 246, 240, 0.54) 43%,
+      rgba(248, 246, 240, 0.16) 62%,
+      rgba(248, 246, 240, 0.02) 82%,
       rgba(248, 246, 240, 0.00) 100%
     ) !important;
 }
@@ -51,17 +51,17 @@ main > div > section:first-of-type > div:nth-child(2) {
   background:
     linear-gradient(
       90deg,
-      rgba(248, 246, 240, 0.90) 0%,
-      rgba(248, 246, 240, 0.78) 30%,
-      rgba(248, 246, 240, 0.44) 52%,
-      rgba(248, 246, 240, 0.08) 72%,
+      rgba(248, 246, 240, 0.84) 0%,
+      rgba(248, 246, 240, 0.68) 30%,
+      rgba(248, 246, 240, 0.34) 52%,
+      rgba(248, 246, 240, 0.06) 72%,
       rgba(248, 246, 240, 0.00) 100%
     ) !important;
 }
 
 @media (max-width: 1024px) {
   main [aria-label='Hero Image Placeholder']::before {
-    background-position: 82% center !important;
+    background-position: 72% center !important;
     background-size: cover !important;
   }
 }
@@ -78,9 +78,9 @@ main > div > section:first-of-type > div:nth-child(2) {
     background:
       linear-gradient(
         180deg,
-        rgba(248, 246, 240, 0.86) 0%,
-        rgba(248, 246, 240, 0.68) 45%,
-        rgba(248, 246, 240, 0.42) 100%
+        rgba(248, 246, 240, 0.84) 0%,
+        rgba(248, 246, 240, 0.62) 45%,
+        rgba(248, 246, 240, 0.36) 100%
       ) !important;
   }
 }
