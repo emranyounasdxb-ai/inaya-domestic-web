@@ -8,11 +8,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import TrustTextGsap from '@/components/TrustTextGsap';
+import HomeStandardsSpotlight from '@/components/HomeStandardsSpotlight';
 import '../globals.css';
 import '../service-area-images.css';
 import '../type-scale.css';
 import '../home-hero-image.css';
 import '../trust-text-gsap.css';
+import '../home-standards-spotlight.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
@@ -66,6 +68,7 @@ export default async function LocaleLayout({
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>
         <NextIntlClientProvider messages={messages}>
           <TrustTextGsap />
+          <HomeStandardsSpotlight />
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <main>{children}</main>
