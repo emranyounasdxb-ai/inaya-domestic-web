@@ -15,7 +15,7 @@ main [aria-label='Hero Image Placeholder']::before {
   z-index: 0;
   display: block;
   background-image:
-    url('/images/home/inaya-home-hero-family.webp?v=hero-4'),
+    url('/images/home/inaya-home-hero-family.webp?v=hero-5'),
     linear-gradient(135deg, #f2eadc, #ffffff, #e7edf6) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -31,15 +31,21 @@ main [aria-label='Hero Image Placeholder']::after {
   z-index: 1;
   display: block;
   background:
-    radial-gradient(circle at 22% 24%, rgba(191, 164, 106, 0.10), transparent 24rem),
+    radial-gradient(circle at 17% 28%, rgba(191, 164, 106, 0.18), transparent 24rem),
+    radial-gradient(circle at 45% 18%, rgba(255, 255, 255, 0.30), transparent 26rem),
     linear-gradient(
       90deg,
-      rgba(248, 246, 240, 0.90) 0%,
-      rgba(248, 246, 240, 0.82) 23%,
-      rgba(248, 246, 240, 0.54) 43%,
-      rgba(248, 246, 240, 0.16) 62%,
-      rgba(248, 246, 240, 0.02) 82%,
-      rgba(248, 246, 240, 0.00) 100%
+      rgba(248, 246, 240, 0.58) 0%,
+      rgba(248, 246, 240, 0.48) 24%,
+      rgba(248, 246, 240, 0.34) 44%,
+      rgba(248, 246, 240, 0.24) 66%,
+      rgba(248, 246, 240, 0.20) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 22, 74, 0.08) 0%,
+      rgba(7, 22, 74, 0.02) 42%,
+      rgba(7, 22, 74, 0.14) 100%
     ) !important;
 }
 
@@ -49,12 +55,13 @@ main [aria-label='Hero Image Placeholder'] > * {
 
 main > div > section:first-of-type > div:nth-child(2) {
   background:
+    radial-gradient(circle at 18% 30%, rgba(191, 164, 106, 0.12), transparent 22rem),
     linear-gradient(
       90deg,
-      rgba(248, 246, 240, 0.84) 0%,
-      rgba(248, 246, 240, 0.68) 30%,
-      rgba(248, 246, 240, 0.34) 52%,
-      rgba(248, 246, 240, 0.06) 72%,
+      rgba(248, 246, 240, 0.36) 0%,
+      rgba(248, 246, 240, 0.26) 34%,
+      rgba(248, 246, 240, 0.14) 58%,
+      rgba(248, 246, 240, 0.04) 78%,
       rgba(248, 246, 240, 0.00) 100%
     ) !important;
 }
@@ -78,9 +85,9 @@ main > div > section:first-of-type > div:nth-child(2) {
     background:
       linear-gradient(
         180deg,
-        rgba(248, 246, 240, 0.84) 0%,
-        rgba(248, 246, 240, 0.62) 45%,
-        rgba(248, 246, 240, 0.36) 100%
+        rgba(248, 246, 240, 0.76) 0%,
+        rgba(248, 246, 240, 0.58) 45%,
+        rgba(248, 246, 240, 0.38) 100%
       ) !important;
   }
 }
