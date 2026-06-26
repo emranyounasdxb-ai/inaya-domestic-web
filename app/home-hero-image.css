@@ -4,6 +4,8 @@ main [aria-label='Hero Image Placeholder'] {
   position: absolute !important;
   inset: 0 !important;
   isolation: isolate;
+  overflow: hidden;
+  border-radius: 0 !important;
 }
 
 main [aria-label='Hero Image Placeholder']::before {
@@ -12,10 +14,14 @@ main [aria-label='Hero Image Placeholder']::before {
   inset: 0;
   z-index: 0;
   display: block;
-  background-image: url('/images/home/home-hero-family.webp?v=hero-2'), linear-gradient(135deg, #f2eadc, #ffffff, #e7edf6) !important;
-  background-size: cover !important;
-  background-position: center right !important;
+  background-image:
+    url('/images/home/home-hero-family.webp?v=hero-3'),
+    linear-gradient(135deg, #f2eadc, #ffffff, #e7edf6) !important;
   background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: 78% center !important;
+  transform: scale(1.02);
+  transform-origin: center right;
 }
 
 main [aria-label='Hero Image Placeholder']::after {
@@ -24,8 +30,17 @@ main [aria-label='Hero Image Placeholder']::after {
   inset: 0;
   z-index: 1;
   display: block;
-  background: radial-gradient(circle at 22% 22%, rgba(191, 164, 106, 0.13), transparent 24rem),
-    linear-gradient(90deg, rgba(252, 248, 250, 0.82) 0%, rgba(252, 248, 250, 0.48) 42%, rgba(252, 248, 250, 0.04) 100%) !important;
+  background:
+    radial-gradient(circle at 22% 24%, rgba(191, 164, 106, 0.10), transparent 24rem),
+    linear-gradient(
+      90deg,
+      rgba(248, 246, 240, 0.92) 0%,
+      rgba(248, 246, 240, 0.86) 24%,
+      rgba(248, 246, 240, 0.62) 45%,
+      rgba(248, 246, 240, 0.22) 62%,
+      rgba(248, 246, 240, 0.04) 78%,
+      rgba(248, 246, 240, 0.00) 100%
+    ) !important;
 }
 
 main [aria-label='Hero Image Placeholder'] > * {
@@ -33,16 +48,39 @@ main [aria-label='Hero Image Placeholder'] > * {
 }
 
 main > div > section:first-of-type > div:nth-child(2) {
-  background: linear-gradient(90deg, rgba(252, 248, 250, 0.78) 0%, rgba(252, 248, 250, 0.42) 44%, rgba(252, 248, 250, 0.02) 100%) !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(248, 246, 240, 0.90) 0%,
+      rgba(248, 246, 240, 0.78) 30%,
+      rgba(248, 246, 240, 0.44) 52%,
+      rgba(248, 246, 240, 0.08) 72%,
+      rgba(248, 246, 240, 0.00) 100%
+    ) !important;
+}
+
+@media (max-width: 1024px) {
+  main [aria-label='Hero Image Placeholder']::before {
+    background-position: 82% center !important;
+    background-size: cover !important;
+  }
 }
 
 @media (max-width: 768px) {
   main [aria-label='Hero Image Placeholder']::before {
     background-position: center top !important;
+    background-size: cover !important;
+    transform: scale(1.01);
   }
 
   main [aria-label='Hero Image Placeholder']::after,
   main > div > section:first-of-type > div:nth-child(2) {
-    background: linear-gradient(180deg, rgba(252, 248, 250, 0.78) 0%, rgba(252, 248, 250, 0.55) 100%) !important;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(248, 246, 240, 0.86) 0%,
+        rgba(248, 246, 240, 0.68) 45%,
+        rgba(248, 246, 240, 0.42) 100%
+      ) !important;
   }
 }
