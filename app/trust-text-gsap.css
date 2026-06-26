@@ -2,7 +2,9 @@ main > div > section:nth-of-type(2) p:first-child {
   --trust-sheen-x: -50%;
   --trust-line-scale: 0;
   position: relative !important;
-  display: inline-block !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.72rem !important;
   padding: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -13,32 +15,21 @@ main > div > section:nth-of-type(2) p:first-child {
   color: #06133f !important;
   animation: none !important;
   text-shadow: 0 14px 38px rgba(7, 22, 74, 0.08);
+  cursor: default;
 }
 
-main > div > section:nth-of-type(2) p:first-child::before {
-  content: '' !important;
-  position: absolute !important;
-  left: 50% !important;
-  top: calc(100% + 0.55rem) !important;
-  width: 5.75rem !important;
-  height: 1px !important;
-  border-radius: 999px !important;
-  background: linear-gradient(90deg, transparent, rgba(191, 164, 106, 0.95), transparent) !important;
-  transform: translateX(-50%) scaleX(var(--trust-line-scale)) !important;
-  transform-origin: center !important;
-}
-
+main > div > section:nth-of-type(2) p:first-child::before,
 main > div > section:nth-of-type(2) p:first-child::after {
   content: '' !important;
-  position: absolute !important;
-  left: 50% !important;
-  top: calc(100% + 0.1rem) !important;
-  width: 0.42rem !important;
-  height: 0.42rem !important;
+  display: inline-block !important;
+  position: static !important;
+  width: 0.46rem !important;
+  height: 0.46rem !important;
+  flex: 0 0 auto !important;
   border-radius: 999px !important;
   background: #bfa46a !important;
-  box-shadow: 0 0 0 0.28rem rgba(191, 164, 106, 0.16) !important;
-  transform: translateX(-50%) !important;
+  box-shadow: 0 0 0 0.26rem rgba(191, 164, 106, 0.14) !important;
+  transform: none !important;
 }
 
 .trust-gsap-word {
@@ -58,8 +49,13 @@ main > div > section:nth-of-type(2) p:first-child::after {
   color: transparent;
 }
 
+main > div > section:nth-of-type(2) p:first-child:hover .trust-gsap-letter {
+  text-shadow: 0 10px 30px rgba(191, 164, 106, 0.16);
+}
+
 @media (max-width: 768px) {
   main > div > section:nth-of-type(2) p:first-child {
+    gap: 0.48rem !important;
     font-size: 0.62rem !important;
   }
 }
