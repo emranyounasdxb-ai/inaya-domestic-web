@@ -58,6 +58,7 @@ function splitText(label: HTMLElement) {
 export default function TrustTextGsap() {
   useEffect(() => {
     let timeline: any;
+    let hoverTween: any;
     let active = true;
     let originalText = '';
 
@@ -72,13 +73,13 @@ export default function TrustTextGsap() {
 
       timeline = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-      gsap.set(label, { opacity: 1 });
+      gsap.set(label, { opacity: 1, '--trust-line-scale': 0, '--trust-sheen-x': '-60%' });
       gsap.set(words, { perspective: 700 });
       gsap.set(letters, {
-        yPercent: 130,
+        yPercent: 135,
         opacity: 0,
-        rotateX: -85,
-        filter: 'blur(8px)',
+        rotateX: -75,
+        filter: 'blur(7px)',
         transformOrigin: '50% 100%'
       });
 
@@ -88,17 +89,31 @@ export default function TrustTextGsap() {
           opacity: 1,
           rotateX: 0,
           filter: 'blur(0px)',
-          duration: 0.8,
-          stagger: { each: 0.018, from: 'start' }
+          duration: 1.18,
+          stagger: { each: 0.032, from: 'start' }
         })
-        .to(label, { '--trust-line-scale': 1, duration: 0.65, ease: 'power3.inOut' }, '-=0.35')
-        .to(label, { '--trust-sheen-x': '150%', duration: 1.1, ease: 'power2.inOut' }, '-=0.45')
-        .to(label, { y: -1, duration: 1.35, repeat: -1, yoyo: true, ease: 'sine.inOut' }, '-=0.15');
+        .to(label, { '--trust-line-scale': 1, duration: 0.9, ease: 'power3.inOut' }, '-=0.45')
+        .to(label, { '--trust-sheen-x': '155%', duration: 1.45, ease: 'power2.inOut' }, '-=0.55')
+        .to(label, { y: -1, duration: 1.7, repeat: -1, yoyo: true, ease: 'sine.inOut' }, '-=0.15');
+
+      const replayHover = () => {
+        if (hoverTween) hoverTween.kill();
+        hoverTween = gsap.fromTo(
+          label,
+          { '--trust-sheen-x': '-60%' },
+          { '--trust-sheen-x': '155%', duration: 1.05, ease: 'power2.inOut' }
+        );
+        gsap.fromTo(letters, { y: 0 }, { y: -2, duration: 0.32, stagger: 0.006, yoyo: true, repeat: 1, ease: 'sine.inOut' });
+      };
+
+      label.addEventListener('mouseenter', replayHover);
+      label.dataset.gsapHoverReady = 'true';
     });
 
     return () => {
       active = false;
       if (timeline) timeline.kill();
+      if (hoverTween) hoverTween.kill();
       const label = document.querySelector<HTMLElement>('main > div > section:nth-of-type(2) p:first-child');
       if (label && originalText) label.textContent = originalText;
     };
