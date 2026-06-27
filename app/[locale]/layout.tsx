@@ -10,6 +10,7 @@ import FloatingSocialBar from '@/components/FloatingSocialBar';
 import TrustTextGsap from '@/components/TrustTextGsap';
 import HomeStandardsSpotlight from '@/components/HomeStandardsSpotlight';
 import HomeVettingMatrix from '@/components/HomeVettingMatrix';
+import LiveInPhaseThree from '@/components/LiveInPhaseThree';
 import '../globals.css';
 import '../service-area-images.css';
 import '../type-scale.css';
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
           <TrustTextGsap />
           <HomeStandardsSpotlight />
           <HomeVettingMatrix />
+          <LiveInPhaseThree />
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <main>{children}</main>
