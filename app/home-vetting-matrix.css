@@ -23,9 +23,7 @@ main > div > section:nth-of-type(6)[data-vetting-matrix='true'] [data-vetting-ti
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.74);
   border-radius: 1.35rem;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(191,164,106,0.12), transparent 9rem),
-    linear-gradient(145deg, rgba(255,255,255,0.78), rgba(248,246,240,0.56));
+  background: radial-gradient(circle at 18% 12%, rgba(191,164,106,0.12), transparent 9rem), linear-gradient(145deg, rgba(255,255,255,0.78), rgba(248,246,240,0.56));
   box-shadow: 0 22px 62px rgba(7,22,74,0.065), inset 0 1px 0 rgba(255,255,255,0.84);
   backdrop-filter: blur(18px);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
@@ -59,7 +57,7 @@ main > div > section:nth-of-type(6)[data-vetting-matrix='true'] [data-vetting-ti
   display: flex !important;
   position: relative;
   width: 100%;
-  height: 8.2rem;
+  height: 8.7rem;
   margin-bottom: 1.15rem !important;
   align-items: center;
   justify-content: center;
@@ -67,26 +65,26 @@ main > div > section:nth-of-type(6)[data-vetting-matrix='true'] [data-vetting-ti
 
 .identity-prototype {
   position: relative;
-  width: 7.8rem;
-  height: 7.8rem;
+  width: 8.2rem;
+  height: 8.2rem;
   transform-style: preserve-3d;
 }
 
 .identity-glow {
   position: absolute;
-  inset: 0.1rem;
+  inset: -0.25rem;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(191,164,106,0.34), rgba(191,164,106,0.08) 48%, transparent 72%);
-  filter: blur(7px);
+  background: radial-gradient(circle, rgba(191,164,106,0.34), rgba(191,164,106,0.08) 44%, transparent 70%);
+  filter: blur(8px);
   animation: identityGlow 3.7s ease-in-out infinite;
 }
 
 .identity-ring {
   position: absolute;
-  inset: 0.65rem;
+  inset: 0.45rem;
   border-radius: 999px;
-  border: 1px solid rgba(191,164,106,0.42);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.30), 0 0 28px rgba(191,164,106,0.18);
+  border: 2px solid rgba(191,164,106,0.66);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.30), 0 0 34px rgba(191,164,106,0.26), inset 0 0 18px rgba(191,164,106,0.10);
   animation: identityRing 7s linear infinite;
 }
 
@@ -94,76 +92,79 @@ main > div > section:nth-of-type(6)[data-vetting-matrix='true'] [data-vetting-ti
 .identity-ring::after {
   content: '';
   position: absolute;
-  width: 0.52rem;
-  height: 0.52rem;
+  width: 0.56rem;
+  height: 0.56rem;
   border-radius: 999px;
-  background: #bfa46a;
-  box-shadow: 0 0 0 0.25rem rgba(191,164,106,0.12), 0 0 22px rgba(191,164,106,0.42);
+  background: linear-gradient(145deg, #d5bf7b, #8a6f30);
+  box-shadow: 0 0 0 0.22rem rgba(191,164,106,0.15), 0 0 22px rgba(191,164,106,0.48);
 }
 
-.identity-ring::before { left: 50%; top: -0.28rem; }
-.identity-ring::after { right: 0.55rem; bottom: 0.25rem; }
+.identity-ring::before { left: -0.2rem; top: 50%; }
+.identity-ring::after { right: 0.2rem; top: 0.55rem; }
 
 .identity-disc {
   position: absolute;
-  inset: 1.35rem;
+  inset: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.82);
-  background: linear-gradient(145deg, rgba(255,255,255,0.86), rgba(255,255,255,0.34));
-  box-shadow: 0 24px 55px rgba(7,22,74,0.13), inset 0 1px 0 rgba(255,255,255,0.92), inset 0 -1px 0 rgba(7,22,74,0.08);
-  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.72);
+  background: radial-gradient(circle at 34% 28%, rgba(255,255,255,0.48), rgba(255,255,255,0.12) 48%, rgba(255,255,255,0.04) 100%);
+  box-shadow: 0 24px 55px rgba(7,22,74,0.12), inset 0 1px 0 rgba(255,255,255,0.78), inset 0 -1px 0 rgba(7,22,74,0.06);
+  backdrop-filter: blur(10px);
   animation: identityFloat 4.1s ease-in-out infinite;
 }
 
 .identity-disc::before {
   content: '';
   position: absolute;
-  inset: -40%;
-  background: linear-gradient(115deg, transparent 36%, rgba(255,255,255,0.72) 48%, rgba(255,255,255,0.18) 55%, transparent 66%);
+  inset: -18%;
+  border-radius: 999px;
+  background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,0.58) 49%, rgba(255,255,255,0.16) 56%, transparent 68%);
   transform: translateX(-120%) skewX(-18deg);
   animation: identitySweep 5.8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .identity-fingerprint {
   position: relative;
   z-index: 2;
-  width: 4.25rem;
-  height: 4.25rem;
-  stroke: rgba(138,111,48,0.78);
-  stroke-width: 4.5;
+  width: 4.45rem;
+  height: 4.45rem;
+  stroke: rgba(138,111,48,0.90);
+  stroke-width: 4.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 8px 18px rgba(191,164,106,0.20));
+  filter: drop-shadow(0 8px 18px rgba(191,164,106,0.22));
 }
 
 .identity-check {
   position: absolute;
-  right: 0.15rem;
-  bottom: 0.1rem;
-  z-index: 3;
+  right: -0.55rem;
+  bottom: 0.45rem;
+  z-index: 5;
   display: flex;
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 2.35rem;
+  height: 2.35rem;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: #06133f;
+  border: 2px solid rgba(191,164,106,0.95);
+  background: radial-gradient(circle at 28% 24%, #102054, #06133f 66%, #020817);
   color: white;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 900;
-  box-shadow: 0 12px 28px rgba(7,22,74,0.18), 0 0 0 0.28rem rgba(255,255,255,0.62);
+  box-shadow: 0 14px 34px rgba(7,22,74,0.24), 0 0 0 0.22rem rgba(255,255,255,0.54), 0 0 28px rgba(191,164,106,0.30);
 }
 
 .identity-shadow {
   position: absolute;
   left: 50%;
-  bottom: 0.4rem;
-  width: 4.8rem;
-  height: 0.7rem;
+  bottom: 0.25rem;
+  width: 5.2rem;
+  height: 0.65rem;
   border-radius: 999px;
   background: radial-gradient(ellipse, rgba(7,22,74,0.18), transparent 70%);
   filter: blur(4px);
