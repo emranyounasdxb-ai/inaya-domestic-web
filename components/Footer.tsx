@@ -68,10 +68,10 @@ export default function Footer({ locale }: { locale: string }) {
           <div className="lg:flex lg:h-full lg:flex-col">
             <FooterTitle>{t('contactInfo')}</FooterTitle>
             <div className="mt-4 divide-y divide-primary-900/10 text-[0.8rem] lg:grid lg:flex-1 lg:grid-rows-4">
-              <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'واتساب متاح' : 'WhatsApp Available'} href={phoneHref} />
-              <ContactItem icon="mail" title={siteConfig.email} text="" href={`mailto:${siteConfig.email}`} />
-              <ContactItem icon="pin" title={isArabic ? 'مكتب عناية' : 'INAYA Office'} text={contactAddress} />
-              <ContactItem icon="clock" title="9:00 AM - 9:00 PM" text={isArabic ? 'كل الأيام' : 'All Days'} />
+              <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'واتساب متاح' : 'WhatsApp Available'} href={phoneHref} isArabic={isArabic} titleDirection="ltr" />
+              <ContactItem icon="mail" title={siteConfig.email} text="" href={`mailto:${siteConfig.email}`} isArabic={isArabic} titleDirection="ltr" />
+              <ContactItem icon="pin" title={isArabic ? 'مكتب عناية' : 'INAYA Office'} text={contactAddress} isArabic={isArabic} />
+              <ContactItem icon="clock" title="9:00 AM - 9:00 PM" text={isArabic ? 'كل الأيام' : 'All Days'} isArabic={isArabic} titleDirection="ltr" />
             </div>
           </div>
         </div>
@@ -136,18 +136,32 @@ function FooterColumn({ title, links }: { title: string; links: { label: string;
   );
 }
 
-function ContactItem({ icon, title, text, href }: { icon: IconName; title: React.ReactNode; text: string; href?: string }) {
+function ContactItem({
+  icon,
+  title,
+  text,
+  href,
+  isArabic,
+  titleDirection
+}: {
+  icon: IconName;
+  title: React.ReactNode;
+  text: string;
+  href?: string;
+  isArabic: boolean;
+  titleDirection?: 'ltr' | 'rtl';
+}) {
   const content = (
     <>
       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#c98700]/55 text-[#c98700]"><Icon name={icon} size={15} /></span>
-      <span>
-        <span className="block font-semibold leading-tight text-primary-900">{title}</span>
+      <span className={`min-w-0 flex-1 ${isArabic ? 'text-right' : 'text-left'}`}>
+        <span dir={titleDirection} className="block font-semibold leading-tight text-primary-900">{title}</span>
         {text ? <span className="mt-0.5 block leading-tight text-ink/62">{text}</span> : null}
       </span>
     </>
   );
   const className = 'flex h-full items-center gap-2.5 py-1.5 transition hover:-translate-y-0.5';
-  return href ? <a href={href} dir="ltr" className={className}>{content}</a> : <div className={className}>{content}</div>;
+  return href ? <a href={href} className={className}>{content}</a> : <div className={className}>{content}</div>;
 }
 
 function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
