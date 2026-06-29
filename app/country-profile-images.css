@@ -1,5 +1,5 @@
 main > div > section:nth-of-type(8) .h-24 {
-  height: 180px !important;
+  height: 320px !important;
   border-radius: 18px !important;
   background-size: cover !important;
   background-position: center top !important;
@@ -106,4 +106,8 @@ main > div > section:nth-of-type(7) .grid > div > div:last-child {
 @media (max-width: 1200px) {
   main > div > section:nth-of-type(7) .grid > div h3 { font-size: 1.15rem !important; }
   main > div > section:nth-of-type(7) .grid > div { padding-left: 18px !important; padding-right: 18px !important; }
+}
+
+@media (max-width: 768px) {
+  main > div > section:nth-of-type(8) .h-24 { height: 260px !important; }
 }
