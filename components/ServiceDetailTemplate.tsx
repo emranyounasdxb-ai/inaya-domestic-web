@@ -4,12 +4,35 @@ import { getServiceWithExtras } from '@/lib/service-helpers';
 import { servicePageCopies, type Lang, type Pair, type ServiceCopy } from '@/lib/service-page-copy-all';
 
 function ImageBlock() {
-  return (
-    <div className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-white/80 bg-[linear-gradient(135deg,#efe9de,#ffffff,#e7edf6)] shadow-[0_22px_60px_rgba(7,22,74,0.09)]">
-      <div className="absolute inset-5 rounded-[18px] border border-white/80 bg-white/18" />
-    </div>
-  );
+  return <div className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-white/80 bg-[linear-gradient(135deg,#efe9de,#ffffff,#e7edf6)] shadow-[0_22px_60px_rgba(7,22,74,0.09)]"><div className="absolute inset-5 rounded-[18px] border border-white/80 bg-white/18" /></div>;
 }
+
+const matrixCopy = {
+  en: {
+    eyebrow: 'Our Process',
+    title: 'Our 5-Step Vetting Matrix',
+    text: 'A comprehensive evaluation framework designed to keep every service recommendation clear, trusted and suitable for your home.',
+    steps: [
+      { title: 'Identity', text: 'Documentation and eligibility review before service coordination.', icon: '◍' },
+      { title: 'Skill', text: 'Requirement matching based on household needs and service type.', icon: '♙' },
+      { title: 'Behaviour', text: 'Communication style and suitability are considered carefully.', icon: '◌' },
+      { title: 'Reference', text: 'Past experience and available background details are reviewed.', icon: '▣' },
+      { title: 'Matching', text: 'The service recommendation is aligned with family expectations.', icon: '✚' }
+    ]
+  },
+  ar: {
+    eyebrow: 'عملية عناية',
+    title: 'مصفوفة التحقق من خمس خطوات',
+    text: 'إطار تقييم شامل يساعد على جعل كل توصية خدمة واضحة وموثوقة ومناسبة لمنزلك.',
+    steps: [
+      { title: 'الهوية', text: 'مراجعة المستندات والأهلية قبل تنسيق الخدمة.', icon: '◍' },
+      { title: 'المهارة', text: 'مطابقة الاحتياج حسب متطلبات المنزل ونوع الخدمة.', icon: '♙' },
+      { title: 'السلوك', text: 'تتم مراجعة أسلوب التواصل والملاءمة بعناية.', icon: '◌' },
+      { title: 'المرجع', text: 'تتم مراجعة الخبرة السابقة والتفاصيل المتاحة.', icon: '▣' },
+      { title: 'المطابقة', text: 'تتم مواءمة توصية الخدمة مع توقعات الأسرة.', icon: '✚' }
+    ]
+  }
+};
 
 export default function ServiceDetailTemplate({ locale, slug }: { locale: string; slug: string }) {
   const service = getServiceWithExtras(slug);
@@ -17,55 +40,23 @@ export default function ServiceDetailTemplate({ locale, slug }: { locale: string
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
   const c = servicePageCopies[slug]?.[lang];
+  const commonMatrixTitle = matrixCopy[lang].title;
 
   if (!c) {
-    return (
-      <div className="bg-ivory py-20 text-center">
-        <h1 className="font-heading text-5xl font-bold text-primary-900">{service.name[lang]}</h1>
-        <p className="mx-auto mt-5 max-w-2xl text-ink/70">{service.description[lang]}</p>
-        <Link href={`/${locale}/booking?service=${slug}`} className="btn-primary mt-8">
-          {lang === 'ar' ? 'احجز الخدمة' : 'Book This Service'}
-        </Link>
-      </div>
-    );
+    return <div className="bg-ivory py-20 text-center"><h1 className="font-heading text-5xl font-bold text-primary-900">{service.name[lang]}</h1><p className="mx-auto mt-5 max-w-2xl text-ink/70">{service.description[lang]}</p><Link href={`/${locale}/booking?service=${slug}`} className="btn-primary mt-8">{lang === 'ar' ? 'احجز الخدمة' : 'Book This Service'}</Link></div>;
   }
 
   return (
     <div className="overflow-hidden bg-[#fbfaf7] text-ink">
-      <section className="px-6 py-14 lg:px-10">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_0.78fr] lg:items-center">
-          <div>
-            <span className="inline-flex rounded-full border border-accent-500/25 bg-white/80 px-4 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.20em] text-accent-700">{c.badge}</span>
-            <h1 className="mt-5 font-heading text-[2.15rem] font-bold leading-[1.03] tracking-[-0.055em] text-primary-900 sm:text-[3.3rem]">{c.title}</h1>
-            <p className="mt-4 max-w-xl text-[0.92rem] leading-7 text-primary-900/75">{c.lead}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href={`/${locale}/booking?service=${slug}`} className="rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white">{c.book}</Link>
-              <Link href={`/${locale}/contact`} className="rounded-full border border-accent-500/30 bg-white/70 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">{c.whatsapp}</Link>
-            </div>
-          </div>
-          <ImageBlock />
-        </div>
-      </section>
+      <section className="px-6 py-14 lg:px-10"><div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_0.78fr] lg:items-center"><div><span className="inline-flex rounded-full border border-accent-500/25 bg-white/80 px-4 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.20em] text-accent-700">{c.badge}</span><h1 className="mt-5 font-heading text-[2.15rem] font-bold leading-[1.03] tracking-[-0.055em] text-primary-900 sm:text-[3.3rem]">{c.title}</h1><p className="mt-4 max-w-xl text-[0.92rem] leading-7 text-primary-900/75">{c.lead}</p><div className="mt-6 flex flex-wrap gap-3"><Link href={`/${locale}/booking?service=${slug}`} className="rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white">{c.book}</Link><Link href={`/${locale}/contact`} className="rounded-full border border-accent-500/30 bg-white/70 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">{c.whatsapp}</Link></div></div><ImageBlock /></div></section>
+      <section className="px-6 py-8 lg:px-10"><div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">{c.cards.map((x) => <Card key={x.title} item={x} />)}</div></section>
+      <section className="px-6 py-8 lg:px-10"><div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1fr] lg:items-center"><ImageBlock /><InfoBox item={{ title: c.whatTitle, text: c.whatText }} /></div></section>
+      <section className="px-6 py-8 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.whyTitle} /><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{c.why.map((x) => <Mini key={x} text={x} />)}</div></div></section>
+      <section className="px-6 py-8 lg:px-10"><div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-2"><ListBox title={c.includedTitle} items={c.included} /><ListBox title={c.perfectTitle} items={c.perfect} /></div></section>
 
-      <section className="px-6 py-8 lg:px-10">
-        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">{c.cards.map((x) => <Card key={x.title} item={x} />)}</div>
-      </section>
+      <CommonVettingMatrix lang={lang} />
 
-      <section className="px-6 py-8 lg:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1fr] lg:items-center"><ImageBlock /><InfoBox item={{ title: c.whatTitle, text: c.whatText }} /></div>
-      </section>
-
-      <section className="px-6 py-8 lg:px-10">
-        <div className="mx-auto max-w-6xl"><SectionTitle title={c.whyTitle} /><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{c.why.map((x) => <Mini key={x} text={x} />)}</div></div>
-      </section>
-
-      <section className="px-6 py-8 lg:px-10">
-        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-2"><ListBox title={c.includedTitle} items={c.included} /><ListBox title={c.perfectTitle} items={c.perfect} /></div>
-      </section>
-
-      <section className="px-6 py-10 lg:px-10">
-        <div className="mx-auto max-w-6xl"><SectionTitle title={c.journeyTitle} text={c.journeyText} /><div className="grid gap-4 md:grid-cols-5">{c.journey.map((x, i) => <MatrixCard key={x.title} n={i + 1} item={x} />)}</div></div>
-      </section>
+      {c.journeyTitle !== commonMatrixTitle && <section className="px-6 py-10 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.journeyTitle} text={c.journeyText} /><div className="grid gap-4 md:grid-cols-5">{c.journey.map((x, i) => <MatrixCard key={x.title} n={i + 1} item={x} />)}</div></div></section>}
 
       <VettingSection c={c} />
       <Countries c={c} />
@@ -73,68 +64,27 @@ export default function ServiceDetailTemplate({ locale, slug }: { locale: string
       <FAQ c={c} />
       <Related c={c} locale={locale} lang={lang} />
       <Comparison c={c} lang={lang} />
-
-      <section className="px-6 py-10 lg:px-10">
-        <div className="mx-auto max-w-3xl rounded-[24px] border border-white/80 bg-white/80 p-7 text-center shadow-[0_18px_55px_rgba(7,22,74,0.07)]">
-          <h2 className="font-heading text-xl font-bold text-primary-900 sm:text-2xl">{c.finalTitle}</h2>
-          <p className="mx-auto mt-3 max-w-xl text-xs leading-5 text-primary-900/72">{c.finalText}</p>
-          <Link href={`/${locale}/booking?service=${slug}`} className="mt-5 inline-flex rounded-full bg-primary-900 px-7 py-3 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-white">{c.book}</Link>
-        </div>
-      </section>
+      <section className="px-6 py-10 lg:px-10"><div className="mx-auto max-w-3xl rounded-[24px] border border-white/80 bg-white/80 p-7 text-center shadow-[0_18px_55px_rgba(7,22,74,0.07)]"><h2 className="font-heading text-xl font-bold text-primary-900 sm:text-2xl">{c.finalTitle}</h2><p className="mx-auto mt-3 max-w-xl text-xs leading-5 text-primary-900/72">{c.finalText}</p><Link href={`/${locale}/booking?service=${slug}`} className="mt-5 inline-flex rounded-full bg-primary-900 px-7 py-3 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-white">{c.book}</Link></div></section>
     </div>
   );
+}
+
+function CommonVettingMatrix({ lang }: { lang: Lang }) {
+  const copy = matrixCopy[lang];
+  return <section className="bg-[#f7f4ee] px-6 py-14 lg:px-10"><div className="mx-auto max-w-6xl text-center"><div className="text-[0.62rem] font-extrabold uppercase tracking-[0.36em] text-[#9b751f]">{copy.eyebrow}</div><div className="mx-auto mt-3 h-px w-24 bg-gradient-to-r from-transparent via-[#b99143] to-transparent" /><h2 className="mt-7 font-heading text-[2.2rem] font-semibold leading-tight tracking-[-0.055em] text-primary-900 sm:text-[3.1rem]">{copy.title}</h2><p className="mx-auto mt-5 max-w-2xl text-[0.95rem] leading-7 text-primary-900/70">{copy.text}</p><div className="mt-12 grid gap-4 md:grid-cols-5">{copy.steps.map((step, index) => <div key={step.title} className="group rounded-[22px] border border-white/80 bg-white/78 p-5 text-center shadow-[0_18px_50px_rgba(7,22,74,0.075)] transition hover:-translate-y-1 hover:border-[#c9a24a]/45"><div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-[#c9a24a]/45 bg-[radial-gradient(circle,#fffaf0_0%,#f3ecdc_62%,#ffffff_100%)] text-3xl font-bold text-[#9b751f] shadow-[inset_0_0_0_12px_rgba(255,255,255,0.55)]">{step.icon}</div><h3 className="mt-7 font-heading text-lg font-bold text-primary-900">{step.title}</h3><div className="mx-auto mt-3 h-px w-12 bg-[#c9a24a]" /><p className="mt-5 text-[0.78rem] font-medium leading-6 text-primary-900/64">{step.text}</p><div className="mt-7 text-xl font-bold text-[#9b751f]">›</div></div>)}</div></div></section>;
 }
 
 function SectionTitle({ title, text }: { title: string; text?: string }) {
   return <div className="mb-6 text-center"><h2 className="font-heading text-[1.55rem] font-bold tracking-[-0.035em] text-primary-900 sm:text-[2rem]">{title}</h2>{text && <p className="mx-auto mt-2 max-w-2xl text-xs font-medium leading-5 text-primary-900/78">{text}</p>}<div className="mx-auto mt-3 h-px w-16 bg-gradient-to-r from-transparent via-[#c98700] to-transparent" /></div>;
 }
-
-function Card({ item }: { item: Pair }) {
-  return <div className="rounded-2xl border border-white/80 bg-white/78 p-4 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><div className="mb-2 text-sm text-[#c98700]">✓</div><h2 className="font-heading text-base font-bold leading-tight text-primary-900">{item.title}</h2><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/72">{item.text}</p></div>;
-}
-
-function InfoBox({ item }: { item: Pair }) {
-  return <div className="rounded-2xl border border-white/80 bg-white/78 p-5 shadow-[0_16px_45px_rgba(7,22,74,0.06)]"><h2 className="font-heading text-lg font-bold text-primary-900">{item.title}</h2><p className="mt-3 text-xs leading-5 text-primary-900/76">{item.text}</p></div>;
-}
-
-function Mini({ text }: { text: string }) {
-  return <div className="flex items-center gap-2 rounded-xl border border-accent-500/12 bg-white/72 px-3 py-2 text-[0.72rem] font-semibold text-primary-900"><span className="text-[#c98700]">✓</span><span>{text}</span></div>;
-}
-
-function ListBox({ title, items }: { title: string; items: string[] }) {
-  return <div className="rounded-2xl border border-white/80 bg-white/78 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><h2 className="font-heading text-lg font-bold text-primary-900">{title}</h2><div className="mt-4 grid gap-2 sm:grid-cols-2">{items.map((x) => <Mini key={x} text={x} />)}</div></div>;
-}
-
-function MatrixCard({ n, item }: { n: number; item: Pair }) {
-  return <div className="rounded-2xl border border-white/85 bg-white p-4 text-center shadow-[0_16px_45px_rgba(7,22,74,0.075)]"><div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-accent-500/35 text-xs font-bold text-[#c98700]">{String(n).padStart(2, '0')}</div><h3 className="font-heading text-sm font-bold text-primary-900">{item.title}</h3><p className="mt-2 text-[0.7rem] leading-5 text-primary-900/78">{item.text}</p></div>;
-}
-
-function VettingSection({ c }: { c: ServiceCopy }) {
-  return <section className="bg-white px-6 py-10 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.vettingTitle} text={c.vettingText} /><div className="grid gap-4 md:grid-cols-5">{c.vetting.map((x, i) => <div key={x.title} className="relative rounded-[18px] border border-primary-900/8 bg-white p-4 text-center shadow-[0_18px_48px_rgba(7,22,74,0.095)]"><span className="absolute left-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#c98700] text-[0.68rem] font-bold text-white">{String(i + 1).padStart(2, '0')}</span><div className="mx-auto mb-4 mt-4 flex h-16 w-16 items-center justify-center rounded-full border border-[#c98700]/45 bg-white text-2xl text-[#c98700] shadow-[0_10px_24px_rgba(201,135,0,0.12)]">{x.icon}</div><h3 className="font-heading text-sm font-extrabold text-primary-900">{x.title}</h3><p className="mt-2 text-[0.72rem] font-medium leading-5 text-primary-900/86">{x.text}</p><div className="mx-auto mt-3 h-px w-8 bg-[#c98700]" /></div>)}</div></div></section>;
-}
-
-function Countries({ c }: { c: ServiceCopy }) {
-  return <section className="px-6 py-10 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.countriesTitle} text={c.countriesText} /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{c.countries.map((x) => <div key={x.title} className="rounded-2xl border border-white/80 bg-white/72 p-4 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><div className="mb-4 h-24 rounded-xl bg-[linear-gradient(135deg,#f2eadc,#fff,#e7edf6)]" /><h3 className="font-heading text-sm font-bold text-primary-900">{x.title}</h3><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/70">{x.text}</p></div>)}</div></div></section>;
-}
-
-function Pricing({ c, locale, slug }: { c: ServiceCopy; locale: string; slug: string }) {
-  return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.pricingTitle} text={c.pricingText} /><div className="grid gap-4 lg:grid-cols-3">{c.pricing.map((x) => <div key={x.title} className="rounded-2xl border border-white/80 bg-white/78 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><h3 className="font-heading text-base font-bold text-primary-900">{x.title}</h3><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/70">{x.text}</p><div className="mt-4 space-y-2">{x.points.map((p) => <Mini key={p} text={p} />)}</div><Link href={`/${locale}/booking?service=${slug}`} className="mt-5 inline-flex rounded-full bg-primary-900 px-5 py-2.5 text-[0.68rem] font-bold text-white">{c.book}</Link></div>)}</div></div></section>;
-}
-
-function FAQ({ c }: { c: ServiceCopy }) {
-  return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl rounded-2xl bg-white/84 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><SectionTitle title={c.faqTitle} /><div className="grid gap-2 md:grid-cols-2">{c.faqs.map((x) => <details key={x.title} className="rounded-xl border border-primary-900/8 bg-white px-3 py-2.5"><summary className="cursor-pointer text-[0.72rem] font-bold text-primary-900"><span className="me-2 rounded-full bg-[#c98700] px-1.5 py-0.5 text-[9px] text-white">?</span>{x.title}</summary><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/72">{x.text}</p></details>)}</div></div></section>;
-}
-
-function Related({ c, locale, lang }: { c: ServiceCopy; locale: string; lang: Lang }) {
-  return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl rounded-2xl bg-white/84 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><SectionTitle title={c.relatedTitle} /><div className="flex overflow-x-auto">{c.related.map((relatedSlug) => { const service = getServiceWithExtras(relatedSlug); return service ? <Link key={relatedSlug} href={`/${locale}/services/${relatedSlug}`} className="min-w-[132px] flex-1 border-s border-accent-500/20 px-3 py-2 text-center first:border-s-0"><div className="mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-full border border-[#c98700]/45 text-lg text-[#c98700]">{service.icon}</div><h3 className="font-heading text-[0.7rem] font-bold leading-tight text-primary-900">{service.name[lang]}</h3></Link> : null; })}</div></div></section>;
-}
-
-function Comparison({ c, lang }: { c: ServiceCopy; lang: Lang }) {
-  const offer = lang === 'ar' ? 'ما نقدمه' : 'What We Offer';
-  const others = lang === 'ar' ? 'شركات أخرى' : 'Other Companies';
-  const promise = lang === 'ar' ? 'وعد عناية:' : 'INAYA Promise:';
-  const promiseText = lang === 'ar' ? 'نتعامل مع كل أسرة بمسؤولية ووضوح.' : 'We treat every family with responsibility and clarity.';
-  const trustText = lang === 'ar' ? 'ثقة. شفافية. عناية.' : 'Trust. Transparency. Care.';
-
-  return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-5xl"><SectionTitle title={c.compareTitle} text={c.compareText} /><div className="overflow-hidden rounded-[16px] border border-primary-900/10 bg-white shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><div className="grid grid-cols-[1.35fr_0.85fr_0.85fr] text-center text-[0.62rem] font-bold uppercase tracking-[0.12em] text-primary-900"><div className="bg-primary-900/[0.04] px-3 py-2.5">{offer}</div><div className="bg-[#b99143] px-3 py-2.5 text-white">INAYA</div><div className="bg-primary-900/[0.04] px-3 py-2.5">{others}</div></div>{c.comparison.map((row, index) => <div key={row.feature} className="grid grid-cols-[1.35fr_0.85fr_0.85fr] border-t border-primary-900/8 text-[0.68rem] font-semibold text-primary-900"><div className="flex items-center gap-2 px-3 py-1.5"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-accent-500/25 text-[0.62rem] text-accent-700">{index + 1}</span><span className="truncate">{row.feature}</span></div><div className="flex items-center justify-center gap-2 border-x border-primary-900/8 px-2 py-1.5"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#52ae5f] text-[0.65rem] text-white">✓</span><span className="truncate">{row.inaya}</span></div><div className="flex items-center justify-center gap-2 px-2 py-1.5"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ef4444] text-[0.65rem] text-white">×</span><span className="truncate">{row.other}</span></div></div>)}</div><div className="mt-3 grid gap-3 rounded-[14px] border border-accent-500/16 bg-white p-3 shadow-[0_10px_28px_rgba(7,22,74,0.04)] sm:grid-cols-2"><div className="text-[0.72rem] font-semibold text-primary-900">{promise} <span className="font-medium text-primary-900/72">{promiseText}</span></div><div className="text-[0.72rem] font-semibold text-primary-900">{trustText}</div></div></div></section>;
-}
+function Card({ item }: { item: Pair }) { return <div className="rounded-2xl border border-white/80 bg-white/78 p-4 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><div className="mb-2 text-sm text-[#c98700]">✓</div><h2 className="font-heading text-base font-bold leading-tight text-primary-900">{item.title}</h2><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/72">{item.text}</p></div>; }
+function InfoBox({ item }: { item: Pair }) { return <div className="rounded-2xl border border-white/80 bg-white/78 p-5 shadow-[0_16px_45px_rgba(7,22,74,0.06)]"><h2 className="font-heading text-lg font-bold text-primary-900">{item.title}</h2><p className="mt-3 text-xs leading-5 text-primary-900/76">{item.text}</p></div>; }
+function Mini({ text }: { text: string }) { return <div className="flex items-center gap-2 rounded-xl border border-accent-500/12 bg-white/72 px-3 py-2 text-[0.72rem] font-semibold text-primary-900"><span className="text-[#c98700]">✓</span><span>{text}</span></div>; }
+function ListBox({ title, items }: { title: string; items: string[] }) { return <div className="rounded-2xl border border-white/80 bg-white/78 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><h2 className="font-heading text-lg font-bold text-primary-900">{title}</h2><div className="mt-4 grid gap-2 sm:grid-cols-2">{items.map((x) => <Mini key={x} text={x} />)}</div></div>; }
+function MatrixCard({ n, item }: { n: number; item: Pair }) { return <div className="rounded-2xl border border-white/85 bg-white p-4 text-center shadow-[0_16px_45px_rgba(7,22,74,0.075)]"><div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-accent-500/35 text-xs font-bold text-[#c98700]">{String(n).padStart(2, '0')}</div><h3 className="font-heading text-sm font-bold text-primary-900">{item.title}</h3><p className="mt-2 text-[0.7rem] leading-5 text-primary-900/78">{item.text}</p></div>; }
+function VettingSection({ c }: { c: ServiceCopy }) { return <section className="bg-white px-6 py-10 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.vettingTitle} text={c.vettingText} /><div className="grid gap-4 md:grid-cols-5">{c.vetting.map((x, i) => <div key={x.title} className="relative rounded-[18px] border border-primary-900/8 bg-white p-4 text-center shadow-[0_18px_48px_rgba(7,22,74,0.095)]"><span className="absolute left-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#c98700] text-[0.68rem] font-bold text-white">{String(i + 1).padStart(2, '0')}</span><div className="mx-auto mb-4 mt-4 flex h-16 w-16 items-center justify-center rounded-full border border-[#c98700]/45 bg-white text-2xl text-[#c98700] shadow-[0_10px_24px_rgba(201,135,0,0.12)]">{x.icon}</div><h3 className="font-heading text-sm font-extrabold text-primary-900">{x.title}</h3><p className="mt-2 text-[0.72rem] font-medium leading-5 text-primary-900/86">{x.text}</p><div className="mx-auto mt-3 h-px w-8 bg-[#c98700]" /></div>)}</div></div></section>; }
+function Countries({ c }: { c: ServiceCopy }) { return <section className="px-6 py-10 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.countriesTitle} text={c.countriesText} /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{c.countries.map((x) => <div key={x.title} className="rounded-2xl border border-white/80 bg-white/72 p-4 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><div className="mb-4 h-24 rounded-xl bg-[linear-gradient(135deg,#f2eadc,#fff,#e7edf6)]" /><h3 className="font-heading text-sm font-bold text-primary-900">{x.title}</h3><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/70">{x.text}</p></div>)}</div></div></section>; }
+function Pricing({ c, locale, slug }: { c: ServiceCopy; locale: string; slug: string }) { return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl"><SectionTitle title={c.pricingTitle} text={c.pricingText} /><div className="grid gap-4 lg:grid-cols-3">{c.pricing.map((x) => <div key={x.title} className="rounded-2xl border border-white/80 bg-white/78 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><h3 className="font-heading text-base font-bold text-primary-900">{x.title}</h3><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/70">{x.text}</p><div className="mt-4 space-y-2">{x.points.map((p) => <Mini key={p} text={p} />)}</div><Link href={`/${locale}/booking?service=${slug}`} className="mt-5 inline-flex rounded-full bg-primary-900 px-5 py-2.5 text-[0.68rem] font-bold text-white">{c.book}</Link></div>)}</div></div></section>; }
+function FAQ({ c }: { c: ServiceCopy }) { return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl rounded-2xl bg-white/84 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><SectionTitle title={c.faqTitle} /><div className="grid gap-2 md:grid-cols-2">{c.faqs.map((x) => <details key={x.title} className="rounded-xl border border-primary-900/8 bg-white px-3 py-2.5"><summary className="cursor-pointer text-[0.72rem] font-bold text-primary-900"><span className="me-2 rounded-full bg-[#c98700] px-1.5 py-0.5 text-[9px] text-white">?</span>{x.title}</summary><p className="mt-2 text-[0.72rem] leading-5 text-primary-900/72">{x.text}</p></details>)}</div></div></section>; }
+function Related({ c, locale, lang }: { c: ServiceCopy; locale: string; lang: Lang }) { return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl rounded-2xl bg-white/84 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><SectionTitle title={c.relatedTitle} /><div className="flex overflow-x-auto">{c.related.map((relatedSlug) => { const service = getServiceWithExtras(relatedSlug); return service ? <Link key={relatedSlug} href={`/${locale}/services/${relatedSlug}`} className="min-w-[132px] flex-1 border-s border-accent-500/20 px-3 py-2 text-center first:border-s-0"><div className="mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-full border border-[#c98700]/45 text-lg text-[#c98700]">{service.icon}</div><h3 className="font-heading text-[0.7rem] font-bold leading-tight text-primary-900">{service.name[lang]}</h3></Link> : null; })}</div></div></section>; }
+function Comparison({ c, lang }: { c: ServiceCopy; lang: Lang }) { const offer = lang === 'ar' ? 'ما نقدمه' : 'What We Offer'; const others = lang === 'ar' ? 'شركات أخرى' : 'Other Companies'; const promise = lang === 'ar' ? 'وعد عناية:' : 'INAYA Promise:'; const promiseText = lang === 'ar' ? 'نتعامل مع كل أسرة بمسؤولية ووضوح.' : 'We treat every family with responsibility and clarity.'; const trustText = lang === 'ar' ? 'ثقة. شفافية. عناية.' : 'Trust. Transparency. Care.'; return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-5xl"><SectionTitle title={c.compareTitle} text={c.compareText} /><div className="overflow-hidden rounded-[16px] border border-primary-900/10 bg-white shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><div className="grid grid-cols-[1.35fr_0.85fr_0.85fr] text-center text-[0.62rem] font-bold uppercase tracking-[0.12em] text-primary-900"><div className="bg-primary-900/[0.04] px-3 py-2.5">{offer}</div><div className="bg-[#b99143] px-3 py-2.5 text-white">INAYA</div><div className="bg-primary-900/[0.04] px-3 py-2.5">{others}</div></div>{c.comparison.map((row, index) => <div key={row.feature} className="grid grid-cols-[1.35fr_0.85fr_0.85fr] border-t border-primary-900/8 text-[0.68rem] font-semibold text-primary-900"><div className="flex items-center gap-2 px-3 py-1.5"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-accent-500/25 text-[0.62rem] text-accent-700">{index + 1}</span><span className="truncate">{row.feature}</span></div><div className="flex items-center justify-center gap-2 border-x border-primary-900/8 px-2 py-1.5"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#52ae5f] text-[0.65rem] text-white">✓</span><span className="truncate">{row.inaya}</span></div><div className="flex items-center justify-center gap-2 px-2 py-1.5"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ef4444] text-[0.65rem] text-white">×</span><span className="truncate">{row.other}</span></div></div>)}</div><div className="mt-3 grid gap-3 rounded-[14px] border border-accent-500/16 bg-white p-3 shadow-[0_10px_28px_rgba(7,22,74,0.04)] sm:grid-cols-2"><div className="text-[0.72rem] font-semibold text-primary-900">{promise} <span className="font-medium text-primary-900/72">{promiseText}</span></div><div className="text-[0.72rem] font-semibold text-primary-900">{trustText}</div></div></div></section>; }
