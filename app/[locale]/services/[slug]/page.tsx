@@ -3,8 +3,12 @@ import { allServices, getServiceWithExtras } from '@/lib/service-helpers';
 import { servicePageCopies, type Lang } from '@/lib/service-page-copy-all';
 import ServiceDetailTemplate from '@/components/ServiceDetailTemplate';
 
+const staticServicePages = ['countries-we-source-from'];
+
 export function generateStaticParams() {
-  return allServices.map((service) => ({ slug: service.slug }));
+  return allServices
+    .filter((service) => !staticServicePages.includes(service.slug))
+    .map((service) => ({ slug: service.slug }));
 }
 
 export async function generateMetadata({ params: { locale, slug } }: { params: { locale: string; slug: string } }): Promise<Metadata> {
