@@ -45,17 +45,17 @@ export default function Footer({ locale }: { locale: string }) {
   ];
 
   return (
-    <footer className="bg-[#f8f6f0] px-3 py-5 text-primary-900 lg:px-5">
+    <footer className="bg-[#f8f6f0] px-3 py-4 text-primary-900 lg:px-5">
       <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[18px] border border-primary-900/8 bg-white/78 shadow-[0_24px_80px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10 backdrop-blur-xl">
-        <div className="grid gap-8 px-7 py-9 sm:px-10 lg:grid-cols-[1.18fr_0.92fr_1.04fr_1.23fr] lg:px-12 xl:px-14">
+        <div className="grid gap-5 px-7 py-5 sm:px-10 lg:grid-cols-[1.18fr_0.92fr_1.04fr_1.23fr] lg:px-12 lg:py-6 xl:px-14">
           <div>
-            <img src={logoSrc} alt={logoAlt} className="h-20 w-auto max-w-[310px] object-contain" />
-            <p className="mt-4 max-w-[330px] text-[0.94rem] leading-6 text-ink/72">{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}</p>
-            <div className="mt-4 h-px w-12 bg-[#c98700]" />
-            <div className="mt-4 space-y-3">
+            <img src={logoSrc} alt={logoAlt} className="h-16 w-auto max-w-[280px] object-contain" />
+            <p className="mt-3 max-w-[310px] text-[0.9rem] leading-5 text-ink/72">{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}</p>
+            <div className="mt-3 h-px w-12 bg-[#c98700]" />
+            <div className="mt-3 space-y-2.5">
               {featureItems.map((item) => (
-                <div key={item.label} className="flex items-center gap-3 text-[0.93rem] leading-tight text-primary-900/88">
-                  <span className="text-[#c98700]"><Icon name={item.icon} size={21} /></span>
+                <div key={item.label} className="flex items-center gap-3 text-[0.9rem] leading-tight text-primary-900/88">
+                  <span className="text-[#c98700]"><Icon name={item.icon} size={19} /></span>
                   <span>{item.label}</span>
                 </div>
               ))}
@@ -67,7 +67,7 @@ export default function Footer({ locale }: { locale: string }) {
 
           <div>
             <FooterTitle>{t('contactInfo')}</FooterTitle>
-            <div className="mt-5 divide-y divide-primary-900/10 text-[0.92rem]">
+            <div className="mt-4 divide-y divide-primary-900/10 text-[0.88rem]">
               <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'واتساب متاح' : 'WhatsApp Available'} href={phoneHref} />
               <ContactItem icon="mail" title={siteConfig.email} text="" href={`mailto:${siteConfig.email}`} />
               <ContactItem icon="pin" title={isArabic ? 'مكتب عناية' : 'INAYA Office'} text={contactAddress} />
@@ -76,21 +76,21 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <div className="border-y border-primary-900/8 bg-[#fbfaf7]/70 px-7 py-4 sm:px-10 lg:px-14">
-          <div className="grid gap-4 lg:grid-cols-4">
+        <div className="border-y border-primary-900/8 bg-[#fbfaf7]/70 px-7 py-3 sm:px-10 lg:px-14">
+          <div className="grid gap-3 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <div key={stat.label} className={`flex items-center justify-center gap-4 ${index > 0 ? 'lg:border-s lg:border-primary-900/10' : ''}`}>
-                <span className="text-[#c98700]"><Icon name={stat.icon} size={38} /></span>
+                <span className="text-[#c98700]"><Icon name={stat.icon} size={34} /></span>
                 <div>
-                  <p className="font-heading text-2xl font-bold leading-none tracking-[-0.04em] text-primary-900">{stat.value}</p>
-                  <p className="mt-1 text-[0.88rem] leading-tight text-ink/62">{stat.label}</p>
+                  <p className="font-heading text-[1.45rem] font-bold leading-none tracking-[-0.04em] text-primary-900">{stat.value}</p>
+                  <p className="mt-0.5 text-[0.82rem] leading-tight text-ink/62">{stat.label}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 px-7 py-5 text-[0.84rem] text-ink/64 sm:px-10 lg:flex-row lg:px-14">
+        <div className="flex flex-col items-center justify-between gap-3 px-7 py-3.5 text-[0.8rem] text-ink/64 sm:px-10 lg:flex-row lg:px-14">
           <p>© {year} INAYA Domestic Workers. {t('rights')}</p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <Link href={`/${locale}/privacy-policy`} className="transition hover:text-primary-900">{t('privacy')}</Link>
@@ -100,7 +100,7 @@ export default function Footer({ locale }: { locale: string }) {
             <Link href={`/${locale}/refund-policy`} className="transition hover:text-primary-900">{t('refund')}</Link>
           </div>
           <div className="flex items-center gap-3 text-ink/68">
-            <span className="text-[#c98700]"><Icon name="lock" size={22} /></span>
+            <span className="text-[#c98700]"><Icon name="lock" size={20} /></span>
             <span>{isArabic ? 'مرخص ومعتمد من الجهات الحكومية في الإمارات' : 'Licensed & Approved by UAE Government Authorities'}</span>
           </div>
         </div>
@@ -112,8 +112,8 @@ export default function Footer({ locale }: { locale: string }) {
 function FooterTitle({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="font-heading text-[1rem] font-bold uppercase tracking-[0.08em] text-primary-900">{children}</h4>
-      <div className="mt-3 h-[2px] w-14 bg-[#c98700]" />
+      <h4 className="font-heading text-[0.96rem] font-bold uppercase tracking-[0.08em] text-primary-900">{children}</h4>
+      <div className="mt-2.5 h-[2px] w-14 bg-[#c98700]" />
     </div>
   );
 }
@@ -122,7 +122,7 @@ function FooterColumn({ title, links }: { title: string; links: { label: string;
   return (
     <div>
       <FooterTitle>{title}</FooterTitle>
-      <ul className="mt-5 space-y-3 text-[0.92rem] leading-tight text-ink/75">
+      <ul className="mt-4 space-y-2.5 text-[0.88rem] leading-tight text-ink/75">
         {links.map((link) => (
           <li key={`${link.href}-${link.label}`}>
             <Link href={link.href} className="group inline-flex items-center gap-3 transition hover:text-primary-900">
@@ -139,14 +139,14 @@ function FooterColumn({ title, links }: { title: string; links: { label: string;
 function ContactItem({ icon, title, text, href }: { icon: IconName; title: React.ReactNode; text: string; href?: string }) {
   const content = (
     <>
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#c98700]/55 text-[#c98700]"><Icon name={icon} size={20} /></span>
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#c98700]/55 text-[#c98700]"><Icon name={icon} size={18} /></span>
       <span>
-        <span className="block font-semibold leading-snug text-primary-900">{title}</span>
-        {text ? <span className="mt-0.5 block leading-snug text-ink/62">{text}</span> : null}
+        <span className="block font-semibold leading-tight text-primary-900">{title}</span>
+        {text ? <span className="mt-0.5 block leading-tight text-ink/62">{text}</span> : null}
       </span>
     </>
   );
-  const className = 'flex items-start gap-4 py-3 transition hover:-translate-y-0.5';
+  const className = 'flex items-start gap-3 py-2 transition hover:-translate-y-0.5';
   return href ? <a href={href} dir="ltr" className={className}>{content}</a> : <div className={className}>{content}</div>;
 }
 
