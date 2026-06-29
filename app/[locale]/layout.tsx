@@ -17,6 +17,7 @@ import '../home-hero-image.css';
 import '../trust-text-gsap.css';
 import '../home-standards-spotlight.css';
 import '../home-vetting-matrix.css';
+import '../live-in-fixes.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
