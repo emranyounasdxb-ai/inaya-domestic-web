@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getService } from '@/lib/services';
+import { getServiceWithExtras } from '@/lib/service-helpers';
 import { servicePageCopies, type Lang, type Pair, type ServiceCopy } from '@/lib/service-page-copy-all';
 
 function ImageBlock() {
@@ -12,7 +12,7 @@ function ImageBlock() {
 }
 
 export default function ServiceDetailTemplate({ locale, slug }: { locale: string; slug: string }) {
-  const service = getService(slug);
+  const service = getServiceWithExtras(slug);
   if (!service) notFound();
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
@@ -126,7 +126,7 @@ function FAQ({ c }: { c: ServiceCopy }) {
 }
 
 function Related({ c, locale, lang }: { c: ServiceCopy; locale: string; lang: Lang }) {
-  return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl rounded-2xl bg-white/84 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><SectionTitle title={c.relatedTitle} /><div className="flex overflow-x-auto">{c.related.map((relatedSlug) => { const service = getService(relatedSlug); return service ? <Link key={relatedSlug} href={`/${locale}/services/${relatedSlug}`} className="min-w-[132px] flex-1 border-s border-accent-500/20 px-3 py-2 text-center first:border-s-0"><div className="mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-full border border-[#c98700]/45 text-lg text-[#c98700]">{service.icon}</div><h3 className="font-heading text-[0.7rem] font-bold leading-tight text-primary-900">{service.name[lang]}</h3></Link> : null; })}</div></div></section>;
+  return <section className="px-6 py-9 lg:px-10"><div className="mx-auto max-w-6xl rounded-2xl bg-white/84 p-5 shadow-[0_14px_38px_rgba(7,22,74,0.055)]"><SectionTitle title={c.relatedTitle} /><div className="flex overflow-x-auto">{c.related.map((relatedSlug) => { const service = getServiceWithExtras(relatedSlug); return service ? <Link key={relatedSlug} href={`/${locale}/services/${relatedSlug}`} className="min-w-[132px] flex-1 border-s border-accent-500/20 px-3 py-2 text-center first:border-s-0"><div className="mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-full border border-[#c98700]/45 text-lg text-[#c98700]">{service.icon}</div><h3 className="font-heading text-[0.7rem] font-bold leading-tight text-primary-900">{service.name[lang]}</h3></Link> : null; })}</div></div></section>;
 }
 
 function Comparison({ c, lang }: { c: ServiceCopy; lang: Lang }) {
