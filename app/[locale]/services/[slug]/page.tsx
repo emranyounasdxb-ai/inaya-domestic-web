@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { services, getService } from '@/lib/services';
-import { servicePageCopies, type Lang } from '@/lib/service-page-copy';
+import { servicePageCopies, type Lang } from '@/lib/service-page-copy-all';
 import ServiceDetailTemplate from '@/components/ServiceDetailTemplate';
 
 export function generateStaticParams() {

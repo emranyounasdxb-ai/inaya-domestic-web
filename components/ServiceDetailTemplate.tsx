@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getService } from '@/lib/services';
-import { servicePageCopies, type Lang, type Pair, type ServiceCopy } from '@/lib/service-page-copy';
+import { servicePageCopies, type Lang, type Pair, type ServiceCopy } from '@/lib/service-page-copy-all';
 
 function ImageBlock() {
   return (
