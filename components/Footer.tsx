@@ -47,12 +47,12 @@ export default function Footer({ locale }: { locale: string }) {
   return (
     <footer className="bg-[#f8f6f0] px-3 py-4 text-primary-900 lg:px-5">
       <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[18px] border border-primary-900/8 bg-white/78 shadow-[0_24px_80px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10 backdrop-blur-xl">
-        <div className="grid gap-5 px-7 py-5 sm:px-10 lg:grid-cols-[1.18fr_0.92fr_1.04fr_1.23fr] lg:px-12 lg:py-6 xl:px-14">
-          <div>
+        <div className="grid items-stretch gap-5 px-7 py-5 sm:px-10 lg:grid-cols-[1.18fr_0.92fr_1.04fr_1.23fr] lg:px-12 lg:py-6 xl:px-14">
+          <div className="lg:flex lg:h-full lg:flex-col">
             <img src={logoSrc} alt={logoAlt} className="h-16 w-auto max-w-[280px] object-contain" />
             <p className="mt-3 max-w-[310px] text-[0.9rem] leading-5 text-ink/72">{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}</p>
             <div className="mt-3 h-px w-12 bg-[#c98700]" />
-            <div className="mt-3 space-y-2.5">
+            <div className="mt-3 space-y-2.5 lg:flex lg:flex-1 lg:flex-col lg:justify-between lg:space-y-0">
               {featureItems.map((item) => (
                 <div key={item.label} className="flex items-center gap-3 text-[0.9rem] leading-tight text-primary-900/88">
                   <span className="text-[#c98700]"><Icon name={item.icon} size={19} /></span>
@@ -65,9 +65,9 @@ export default function Footer({ locale }: { locale: string }) {
           <FooterColumn title={t('quickLinks')} links={quickLinks} />
           <FooterColumn title={t('ourServices')} links={serviceLinks} />
 
-          <div>
+          <div className="lg:flex lg:h-full lg:flex-col">
             <FooterTitle>{t('contactInfo')}</FooterTitle>
-            <div className="mt-4 divide-y divide-primary-900/10 text-[0.88rem]">
+            <div className="mt-4 divide-y divide-primary-900/10 text-[0.8rem] lg:grid lg:flex-1 lg:grid-rows-4">
               <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'واتساب متاح' : 'WhatsApp Available'} href={phoneHref} />
               <ContactItem icon="mail" title={siteConfig.email} text="" href={`mailto:${siteConfig.email}`} />
               <ContactItem icon="pin" title={isArabic ? 'مكتب عناية' : 'INAYA Office'} text={contactAddress} />
@@ -120,9 +120,9 @@ function FooterTitle({ children }: { children: React.ReactNode }) {
 
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
-    <div>
+    <div className="lg:flex lg:h-full lg:flex-col">
       <FooterTitle>{title}</FooterTitle>
-      <ul className="mt-4 space-y-2.5 text-[0.88rem] leading-tight text-ink/75">
+      <ul className="mt-4 space-y-2.5 text-[0.88rem] leading-tight text-ink/75 lg:flex lg:flex-1 lg:flex-col lg:justify-between lg:space-y-0">
         {links.map((link) => (
           <li key={`${link.href}-${link.label}`}>
             <Link href={link.href} className="group inline-flex items-center gap-3 transition hover:text-primary-900">
@@ -139,14 +139,14 @@ function FooterColumn({ title, links }: { title: string; links: { label: string;
 function ContactItem({ icon, title, text, href }: { icon: IconName; title: React.ReactNode; text: string; href?: string }) {
   const content = (
     <>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#c98700]/55 text-[#c98700]"><Icon name={icon} size={18} /></span>
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#c98700]/55 text-[#c98700]"><Icon name={icon} size={15} /></span>
       <span>
         <span className="block font-semibold leading-tight text-primary-900">{title}</span>
         {text ? <span className="mt-0.5 block leading-tight text-ink/62">{text}</span> : null}
       </span>
     </>
   );
-  const className = 'flex items-start gap-3 py-2 transition hover:-translate-y-0.5';
+  const className = 'flex h-full items-center gap-2.5 py-1.5 transition hover:-translate-y-0.5';
   return href ? <a href={href} dir="ltr" className={className}>{content}</a> : <div className={className}>{content}</div>;
 }
 
