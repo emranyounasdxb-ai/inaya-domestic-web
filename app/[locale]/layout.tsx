@@ -18,6 +18,7 @@ import '../trust-text-gsap.css';
 import '../home-standards-spotlight.css';
 import '../home-vetting-matrix.css';
 import '../live-in-fixes.css';
+import '../country-profile-images.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
