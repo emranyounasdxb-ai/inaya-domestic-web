@@ -9,6 +9,13 @@ main > div > section:nth-of-type(8) .rounded-2xl {
   padding: 18px !important;
 }
 
+main > div > section:nth-of-type(8) .grid > div:nth-child(1) .h-24 { background-image: url('/images/countries/maid-philippines.webp') !important; }
+main > div > section:nth-of-type(8) .grid > div:nth-child(2) .h-24 { background-image: url('/images/countries/maid-indonesia.webp') !important; }
+main > div > section:nth-of-type(8) .grid > div:nth-child(3) .h-24 { background-image: url('/images/countries/maid-nepal.webp') !important; }
+main > div > section:nth-of-type(8) .grid > div:nth-child(4) .h-24 { background-image: url('/images/countries/maid-sri-lanka.webp') !important; }
+main > div > section:nth-of-type(8) .grid > div:nth-child(5) .h-24 { background-image: url('/images/countries/maid-india.webp') !important; }
+main > div > section:nth-of-type(8) .grid > div:nth-child(6) .h-24 { background-image: url('/images/countries/maid-kenya-uganda.webp') !important; }
+
 main > div > section:nth-of-type(8) h3 {
   margin-top: 2px !important;
   font-size: 1.1rem !important;
