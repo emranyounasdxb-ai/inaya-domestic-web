@@ -72,6 +72,7 @@ main > div > section:nth-of-type(7) .grid > div > span:first-child {
 }
 
 main > div > section:nth-of-type(7) .grid > div > div {
+  position: relative !important;
   width: 92px !important;
   height: 92px !important;
   margin-top: 38px !important;
@@ -79,6 +80,26 @@ main > div > section:nth-of-type(7) .grid > div > div {
   color: #c98700 !important;
   border-color: rgba(201,135,0,0.75) !important;
   font-size: 2.05rem !important;
+}
+
+main > div > section:nth-of-type(7) .grid > div > div::after {
+  content: '✓' !important;
+  position: absolute !important;
+  right: -14px !important;
+  bottom: -8px !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 999px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(145deg, #d7aa23, #bd8509) !important;
+  color: #ffffff !important;
+  font-size: 1.35rem !important;
+  font-weight: 900 !important;
+  box-shadow: 0 10px 22px rgba(201,135,0,0.28), inset 0 1px 0 rgba(255,255,255,0.45) !important;
+  border: 2px solid rgba(255,255,255,0.88) !important;
+  z-index: 3 !important;
 }
 
 main > div > section:nth-of-type(7) .grid > div h3 {
@@ -110,4 +131,5 @@ main > div > section:nth-of-type(7) .grid > div > div:last-child {
 
 @media (max-width: 768px) {
   main > div > section:nth-of-type(8) .h-24 { height: 260px !important; }
+  main > div > section:nth-of-type(7) .grid > div > div::after { width: 32px !important; height: 32px !important; font-size: 1.15rem !important; }
 }
