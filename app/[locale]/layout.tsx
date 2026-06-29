@@ -10,7 +10,6 @@ import FloatingSocialBar from '@/components/FloatingSocialBar';
 import TrustTextGsap from '@/components/TrustTextGsap';
 import HomeStandardsSpotlight from '@/components/HomeStandardsSpotlight';
 import HomeVettingMatrix from '@/components/HomeVettingMatrix';
-import LiveInPhaseThree from '@/components/LiveInPhaseThree';
 import '../globals.css';
 import '../service-area-images.css';
 import '../type-scale.css';
@@ -25,47 +24,25 @@ const notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap' });
 
 export const dynamic = 'force-dynamic';
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
 
-export async function generateMetadata({
-  params: { locale }
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
     title: { default: t('defaultTitle'), template: `%s | ${t('siteName')}` },
     description: t('defaultDescription'),
     metadataBase: new URL('https://inayadomestic.ae'),
-    alternates: {
-      languages: { en: '/en', ar: '/ar' }
-    },
-    openGraph: {
-      title: t('defaultTitle'),
-      description: t('defaultDescription'),
-      type: 'website',
-      locale
-    }
+    alternates: { languages: { en: '/en', ar: '/ar' } },
+    openGraph: { title: t('defaultTitle'), description: t('defaultDescription'), type: 'website', locale }
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale }
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+export default async function LocaleLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
-
   setRequestLocale(locale);
-
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
-
   return (
     <html lang={locale} dir={dir}>
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>
@@ -73,7 +50,6 @@ export default async function LocaleLayout({
           <TrustTextGsap />
           <HomeStandardsSpotlight />
           <HomeVettingMatrix />
-          <LiveInPhaseThree />
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <main>{children}</main>
