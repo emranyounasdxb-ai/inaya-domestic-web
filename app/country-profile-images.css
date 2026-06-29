@@ -71,7 +71,7 @@ main > div > section:nth-of-type(7) .grid > div > span:first-child {
   box-shadow: 0 10px 22px rgba(201,135,0,0.24) !important;
 }
 
-main > div > section:nth-of-type(7) .grid > div > div {
+main > div > section:nth-of-type(7) .grid > div > div:first-of-type {
   position: relative !important;
   width: 92px !important;
   height: 92px !important;
@@ -82,7 +82,7 @@ main > div > section:nth-of-type(7) .grid > div > div {
   font-size: 2.05rem !important;
 }
 
-main > div > section:nth-of-type(7) .grid > div > div::after {
+main > div > section:nth-of-type(7) .grid > div > div:first-of-type::after {
   content: '✓' !important;
   position: absolute !important;
   right: -14px !important;
@@ -131,5 +131,5 @@ main > div > section:nth-of-type(7) .grid > div > div:last-child {
 
 @media (max-width: 768px) {
   main > div > section:nth-of-type(8) .h-24 { height: 260px !important; }
-  main > div > section:nth-of-type(7) .grid > div > div::after { width: 32px !important; height: 32px !important; font-size: 1.15rem !important; }
+  main > div > section:nth-of-type(7) .grid > div > div:first-of-type::after { width: 32px !important; height: 32px !important; font-size: 1.15rem !important; }
 }
