@@ -17,10 +17,32 @@ export async function generateMetadata({ params: { locale, slug } }: { params: {
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
   const pageCopy = servicePageCopies[slug]?.[lang];
+  const title = pageCopy?.title ?? service.name[lang];
+  const description = pageCopy?.meta ?? service.short[lang];
+  const canonical = `/${locale}/services/${slug}`;
 
   return {
-    title: pageCopy?.title ?? service.name[lang],
-    description: pageCopy?.meta ?? service.short[lang]
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        en: `/en/services/${slug}`,
+        ar: `/ar/services/${slug}`
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: lang === 'ar' ? 'ar_AE' : 'en_AE',
+      url: canonical
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description
+    }
   };
 }
 
