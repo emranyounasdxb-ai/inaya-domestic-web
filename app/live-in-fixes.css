@@ -1,9 +1,9 @@
 /* Live-in service page direct alignment fixes */
-main > div > section:nth-last-of-type(2) > div {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) > div {
   max-width: 1120px !important;
 }
 
-main > div > section:nth-last-of-type(2) > div > div:first-child > div:last-child {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) > div > div:first-child > div:last-child {
   display: block !important;
   width: 72px !important;
   height: 1px !important;
@@ -16,48 +16,48 @@ main > div > section:nth-last-of-type(2) > div > div:first-child > div:last-chil
   overflow: hidden !important;
 }
 
-main > div > section:nth-last-of-type(2) [class*="grid-cols-[1.35fr_0.85fr_0.85fr]"] {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="grid-cols-[1.35fr_0.85fr_0.85fr]"] {
   grid-template-columns: 1.25fr 0.82fr 0.82fr !important;
   align-items: stretch !important;
 }
 
-main > div > section:nth-last-of-type(2) [class*="border-t"] > div,
-main > div > section:nth-last-of-type(2) [class*="text-center"] > div {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] > div,
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="text-center"] > div {
   min-height: 38px !important;
   display: flex !important;
   align-items: center !important;
 }
 
-main > div > section:nth-last-of-type(2) [class*="text-center"] > div {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="text-center"] > div {
   justify-content: center !important;
 }
 
-main > div > section:nth-last-of-type(2) [class*="border-t"] > div:first-child {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] > div:first-child {
   justify-content: flex-start !important;
   text-align: left !important;
 }
 
-main > div > section:nth-last-of-type(2) [class*="border-t"] > div:nth-child(2),
-main > div > section:nth-last-of-type(2) [class*="border-t"] > div:nth-child(3) {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] > div:nth-child(2),
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] > div:nth-child(3) {
   justify-content: flex-start !important;
   padding-left: 72px !important;
   text-align: left !important;
 }
 
-main > div > section:nth-last-of-type(2) [class*="border-t"] span.truncate,
-main > div > section:nth-last-of-type(2) [class*="border-t"] div > span:last-child {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] span.truncate,
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] div > span:last-child {
   max-width: 100% !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
 
-main > div > section:nth-last-of-type(2) [class*="border-t"] span.flex {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] span.flex {
   margin: 0 !important;
   flex-shrink: 0 !important;
 }
 
-main > div > section:nth-last-of-type(2) > div > div:last-child {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) > div > div:last-child {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   align-items: center !important;
@@ -66,7 +66,7 @@ main > div > section:nth-last-of-type(2) > div > div:last-child {
   overflow: hidden !important;
 }
 
-main > div > section:nth-last-of-type(2) > div > div:last-child > div {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) > div > div:last-child > div {
   min-height: 46px !important;
   display: flex !important;
   align-items: center !important;
@@ -75,13 +75,13 @@ main > div > section:nth-last-of-type(2) > div > div:last-child > div {
   text-align: center !important;
 }
 
-main > div > section:nth-last-of-type(2) > div > div:last-child > div:first-child {
+main > div > section:nth-last-of-type(2):not(.google-reviews-section) > div > div:last-child > div:first-child {
   border-right: 1px solid rgba(191, 164, 106, 0.22) !important;
 }
 
-[dir="rtl"] main > div > section:nth-last-of-type(2) [class*="border-t"] > div:first-child,
-[dir="rtl"] main > div > section:nth-last-of-type(2) [class*="border-t"] > div:nth-child(2),
-[dir="rtl"] main > div > section:nth-last-of-type(2) [class*="border-t"] > div:nth-child(3) {
+[dir="rtl"] main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] > div:first-child,
+[dir="rtl"] main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] > div:nth-child(2),
+[dir="rtl"] main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="border-t"] > div:nth-child(3) {
   text-align: right !important;
   justify-content: flex-start !important;
   padding-left: 12px !important;
@@ -89,10 +89,10 @@ main > div > section:nth-last-of-type(2) > div > div:last-child > div:first-chil
 }
 
 @media (max-width: 768px) {
-  main > div > section:nth-last-of-type(2) [class*="grid-cols-[1.35fr_0.85fr_0.85fr]"] {
+  main > div > section:nth-last-of-type(2):not(.google-reviews-section) [class*="grid-cols-[1.35fr_0.85fr_0.85fr]"] {
     min-width: 780px !important;
   }
-  main > div > section:nth-last-of-type(2) > div > div:nth-child(2) {
+  main > div > section:nth-last-of-type(2):not(.google-reviews-section) > div > div:nth-child(2) {
     overflow-x: auto !important;
   }
 }
