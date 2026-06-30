@@ -18,7 +18,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(26rem, 0.82fr) minmax(34rem, 1.08fr);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
   align-items: stretch;
   max-width: 82rem;
   margin: 0 auto;
@@ -200,10 +200,11 @@
 
 .google-reviews-panel {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: block;
   justify-self: stretch;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   padding: clamp(1.35rem, 3vw, 2.15rem);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(248, 246, 240, 0.45));
@@ -266,8 +267,10 @@
   z-index: 1;
   display: block;
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   min-width: 0;
+  margin: 0;
+  transform: none;
   min-height: 15rem;
   border: 1px solid rgba(191, 164, 106, 0.55);
   border-radius: 1.35rem;
@@ -278,7 +281,7 @@
 
 .google-feature-head {
   display: grid;
-  grid-template-columns: auto minmax(10rem, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   width: 100%;
   min-width: 0;
   gap: 1rem;
@@ -461,6 +464,8 @@
 .google-carousel-nav {
   display: flex;
   align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
   gap: 0.7rem;
 }
 
@@ -486,6 +491,8 @@
 
 .google-review-dots {
   display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
   gap: 0.42rem;
 }
 
@@ -507,11 +514,14 @@
 .google-view-button {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: 0.55rem;
+  max-width: 100%;
   color: #07164a;
   text-decoration: none;
   font-size: 0.86rem;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .google-view-button span {
@@ -561,15 +571,6 @@
   .google-reviews-left {
     border-inline-end: 0;
     border-bottom: 1px solid rgba(191, 164, 106, 0.16);
-  }
-}
-
-@media (min-width: 1101px) {
-  .google-reviews-panel,
-  .google-feature-card,
-  .google-mini-grid,
-  .google-carousel-footer {
-    min-width: 100%;
   }
 }
 
