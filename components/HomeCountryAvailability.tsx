@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import HomeGoogleReviews from './HomeGoogleReviews';
 
 const countries = [
   { code: 'lk', en: 'Sri Lanka', ar: 'سريلانكا' },
@@ -95,5 +96,5 @@ export default function HomeCountryAvailability() {
     return () => window.clearTimeout(timer);
   }, []);
 
-  return null;
+  return <HomeGoogleReviews />;
 }
