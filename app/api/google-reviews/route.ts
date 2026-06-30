@@ -14,7 +14,9 @@ const fallbackReviews = [
   { name: 'Ekram Abdu Ekuti', time: '20 hours ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5, source: 'Google Review' },
   { name: 'Wine su Chit', time: '21 hours ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5, source: 'Google Review' },
   { name: 'Yehya Shawky', time: '12 weeks ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5, source: 'Google Review' },
-  { name: 'Sara El alaoui', time: '12 weeks ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5, source: 'Google Review' }
+  { name: 'Sara El alaoui', time: '12 weeks ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5, source: 'Google Review' },
+  { name: 'Chrizanne', time: '12 weeks ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5, source: 'Google Review' },
+  { name: 'Olive raj Singh', time: '12 weeks ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5, source: 'Google Review' }
 ];
 
 export const dynamic = 'force-dynamic';

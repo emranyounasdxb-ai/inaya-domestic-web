@@ -10,7 +10,6 @@ import FloatingSocialBar from '@/components/FloatingSocialBar';
 import TrustTextGsap from '@/components/TrustTextGsap';
 import HomeStandardsSpotlight from '@/components/HomeStandardsSpotlight';
 import HomeVettingMatrix from '@/components/HomeVettingMatrix';
-import HomeCountryAvailability from '@/components/HomeCountryAvailability';
 import '../globals.css';
 import '../service-area-images.css';
 import '../type-scale.css';
@@ -21,6 +20,7 @@ import '../home-vetting-matrix.css';
 import '../live-in-fixes.css';
 import '../country-profile-images.css';
 import '../home-country-availability.css';
+import '../home-google-reviews.css';
 import '../source-country-flags.css';
 import '../curated-discipline-images.css';
 
@@ -56,7 +56,6 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
           <TrustTextGsap />
           <HomeStandardsSpotlight />
           <HomeVettingMatrix />
-          <HomeCountryAvailability />
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <main>{children}</main>

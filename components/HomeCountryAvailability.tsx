@@ -1,7 +1,4 @@
-'use client';
-
-import { useEffect } from 'react';
-import HomeGoogleReviews from './HomeGoogleReviews';
+import Link from 'next/link';
 
 const countries = [
   { code: 'lk', en: 'Sri Lanka', ar: 'سريلانكا' },
@@ -37,64 +34,43 @@ const copy = {
   }
 };
 
-function countryCards(lang: 'en' | 'ar') {
-  const c = copy[lang];
-  return countries
-    .map((country) => {
-      const name = lang === 'ar' ? country.ar : country.en;
-      return `
-        <article class="home-country-card">
-          <div class="home-country-flag">
-            <img src="https://flagcdn.com/w80/${country.code}.png" alt="${name} flag" loading="lazy" />
-          </div>
-          <div class="home-country-content">
-            <h3>${name}</h3>
-            <p>${c.tag}</p>
-          </div>
-        </article>
-      `;
-    })
-    .join('');
-}
+export default function HomeCountryAvailability({ locale }: { locale: string }) {
+  const lang = locale === 'ar' ? 'ar' : 'en';
+  const t = copy[lang];
 
-export default function HomeCountryAvailability() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const path = window.location.pathname.replace(/\/$/, '');
-      if (path !== '/en' && path !== '/ar') return;
-      if (document.querySelector('[data-home-country-availability="true"]')) return;
-
-      const lang = document.documentElement.lang === 'ar' ? 'ar' : 'en';
-      const t = copy[lang];
-      const anchor = document.querySelector('main > div > section:nth-of-type(3)');
-      if (!anchor?.parentElement) return;
-
-      const section = document.createElement('section');
-      section.dataset.homeCountryAvailability = 'true';
-      section.className = 'home-country-section';
-      section.innerHTML = `
-        <div class="home-country-shell">
-          <div class="home-country-heading">
-            <p>${t.eyebrow}</p>
-            <h2>${t.title}</h2>
-            <span></span>
-            <div>${t.text}</div>
-          </div>
-          <div class="home-country-scroll" dir="ltr">
-            ${countryCards(lang)}
-          </div>
-          <div class="home-country-footer">
-            <p>${t.note}</p>
-            <a href="/${lang}/services/countries-we-source-from">${t.cta}</a>
-          </div>
+  return (
+    <section className="home-country-section" data-home-country-availability="true">
+      <div className="home-country-shell">
+        <div className="home-country-heading">
+          <p>{t.eyebrow}</p>
+          <h2>{t.title}</h2>
+          <span aria-hidden="true" />
+          <div>{t.text}</div>
         </div>
-      `;
 
-      anchor.parentElement.insertBefore(section, anchor.nextSibling);
-    }, 120);
+        <div className="home-country-scroll" dir="ltr">
+          {countries.map((country) => {
+            const name = lang === 'ar' ? country.ar : country.en;
 
-    return () => window.clearTimeout(timer);
-  }, []);
+            return (
+              <article className="home-country-card" key={country.code}>
+                <div className="home-country-flag">
+                  <img src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${name} flag`} loading="lazy" />
+                </div>
+                <div className="home-country-content">
+                  <h3>{name}</h3>
+                  <p>{t.tag}</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
 
-  return <HomeGoogleReviews />;
+        <div className="home-country-footer">
+          <p>{t.note}</p>
+          <Link href={`/${locale}/services/countries-we-source-from`}>{t.cta}</Link>
+        </div>
+      </div>
+    </section>
+  );
 }

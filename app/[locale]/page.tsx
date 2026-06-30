@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import HomeCountryAvailability from '@/components/HomeCountryAvailability';
+import HomeGoogleReviews from '@/components/HomeGoogleReviews';
 
 const homeContent = {
   en: {
@@ -308,6 +310,8 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         </div>
       </section>
 
+      <HomeCountryAvailability locale={locale} />
+
       <section className="relative border-y border-accent-500/12 bg-[#f6f3f5]/85 px-6 py-20 backdrop-blur-xl lg:px-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(191,164,106,0.13),transparent_24rem)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
@@ -418,35 +422,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         </div>
       </section>
 
-      <section className="border-y border-accent-500/12 bg-white/72 px-6 py-20 backdrop-blur-xl sm:py-24 lg:px-10 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="rounded-[28px] border border-white/60 bg-white/40 p-7 shadow-[0_20px_60px_rgba(7,22,74,0.055)] backdrop-blur-xl lg:bg-transparent lg:shadow-none">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-accent-700">{copy.testimonialsLabel}</p>
-            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.testimonialsTitle}</h2>
-            <div className="mt-10 space-y-9">
-              {copy.testimonials.map((item) => (
-                <div key={item.name} className="relative border-s-2 border-accent-500/25 ps-8">
-                  <span className="absolute -start-4 top-0 flex h-8 w-8 items-center justify-center rounded-full border border-accent-500/20 bg-[#fcf8fa] text-accent-700 shadow-sm">“</span>
-                  <p className="text-lg italic leading-8 text-ink/78">{item.quote}</p>
-                  <div className="mt-5 flex items-center gap-4">
-                    <div className="h-11 w-11 rounded-full border border-accent-500/25 bg-[linear-gradient(135deg,#efe9de,#ffffff)] shadow-sm" />
-                    <div>
-                      <p className="font-bold text-primary-900">{item.name}</p>
-                      <p className="text-sm text-ink/55">{item.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative min-h-[560px] overflow-hidden rounded-[2px] border border-white/70 shadow-[0_30px_90px_rgba(7,22,74,0.12)] ring-1 ring-accent-500/10">
-            <ImagePlaceholder label="Interior Image" src={homeImages.testimonial} className="absolute inset-0" />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary-900/82 to-transparent p-9 text-white">
-              <p className="text-2xl font-light leading-snug">“{copy.imageQuote}”</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeGoogleReviews locale={locale} />
 
       <section className="relative overflow-hidden bg-[#0a0a0a] px-6 py-20 text-center text-white sm:py-24 lg:px-10 lg:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(191,164,106,0.18),transparent_24rem),radial-gradient(circle_at_18%_82%,rgba(255,255,255,0.08),transparent_20rem)]" />
