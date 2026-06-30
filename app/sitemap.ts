@@ -17,6 +17,18 @@ const coreRoutes = [
   'services/countries-we-source-from'
 ];
 
+const trustRoutes = [
+  'faq',
+  'documents-required',
+  'inaya-advantages',
+  'reviews',
+  'privacy-policy',
+  'terms',
+  'refund-policy',
+  'service-guidelines',
+  'support-process'
+];
+
 function localizedEntry(path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'weekly') {
   return locales.map((locale) => {
     const normalizedPath = path ? `/${locale}/${path}` : `/${locale}`;
@@ -40,6 +52,7 @@ function localizedEntry(path: string, priority: number, changeFrequency: Metadat
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const corePages = coreRoutes.flatMap((route) => localizedEntry(route, route === '' ? 1 : 0.85));
+  const trustPages = trustRoutes.flatMap((route) => localizedEntry(route, 0.72, 'monthly'));
 
   const servicePages = allServices.flatMap((service) => (
     localizedEntry(`services/${service.slug}`, service.slug === 'countries-we-source-from' ? 0.9 : 0.86)
@@ -55,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
 
-  for (const entry of [...corePages, ...servicePages, ...countryPages, ...locationPages]) {
+  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages]) {
     uniqueEntries.set(entry.url, entry);
   }
 
