@@ -4,12 +4,12 @@ import CountrySourcePage from '@/components/CountrySourcePage';
 export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
   return locale === 'ar'
     ? {
-        title: 'دليل دول المصدر في الإمارات | عناية',
-        description: 'استكشف دليل دول المصدر مع عناية من خلال بطاقات الدول والأعلام واستشارة واضحة تعتمد على الملف الفردي والخبرة والمستندات واحتياج الأسرة.'
+        title: 'دول مصدر العمالة المنزلية في الإمارات | عناية',
+        description: 'قارن دول مصدر الخادمات والعمالة المنزلية في الإمارات مع عناية: الفلبين، سريلانكا، نيبال، الهند، بنغلاديش، إثيوبيا، كينيا، أوغندا، إندونيسيا وميانمار.'
       }
     : {
-        title: 'Country Source Guide in UAE | INAYA',
-        description: 'Explore INAYA country source guidance through flag cards and profile-first consultation based on experience, documents, communication and family needs.'
+        title: 'Maid Source Countries in UAE | INAYA Domestic Workers',
+        description: 'Compare domestic worker and maid source countries in the UAE with INAYA, including the Philippines, Sri Lanka, Nepal, India, Bangladesh, Ethiopia, Kenya, Uganda, Indonesia and Myanmar.'
       };
 }
 
