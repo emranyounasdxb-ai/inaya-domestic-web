@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import TrustSupportPage from '@/components/TrustSupportPage';
 import { generateTrustSupportMetadata } from '@/lib/trust-support-metadata';
 
-const slug = 'documents-required';
+const slug = ['why', 'choose', 'inaya'].join('-');
 
 export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
   return generateTrustSupportMetadata(locale, slug);
