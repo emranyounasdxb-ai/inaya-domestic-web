@@ -3,18 +3,18 @@
 import { useEffect } from 'react';
 
 const countries = [
-  { flag: '🇱🇰', en: 'Sri Lanka', ar: 'سريلانكا' },
-  { flag: '🇳🇵', en: 'Nepal', ar: 'نيبال' },
-  { flag: '🇲🇲', en: 'Myanmar', ar: 'ميانمار' },
-  { flag: '🇵🇭', en: 'Philippines', ar: 'الفلبين' },
-  { flag: '🇮🇳', en: 'India', ar: 'الهند' },
-  { flag: '🇧🇩', en: 'Bangladesh', ar: 'بنغلاديش' },
-  { flag: '🇪🇹', en: 'Ethiopia', ar: 'إثيوبيا' },
-  { flag: '🇰🇪', en: 'Kenya', ar: 'كينيا' },
-  { flag: '🇬🇭', en: 'Ghana', ar: 'غانا' },
-  { flag: '🇺🇬', en: 'Uganda', ar: 'أوغندا' },
-  { flag: '🇸🇱', en: 'Sierra Leone', ar: 'سيراليون' },
-  { flag: '🇮🇩', en: 'Indonesia', ar: 'إندونيسيا' }
+  { code: 'lk', en: 'Sri Lanka', ar: 'سريلانكا' },
+  { code: 'np', en: 'Nepal', ar: 'نيبال' },
+  { code: 'mm', en: 'Myanmar', ar: 'ميانمار' },
+  { code: 'ph', en: 'Philippines', ar: 'الفلبين' },
+  { code: 'in', en: 'India', ar: 'الهند' },
+  { code: 'bd', en: 'Bangladesh', ar: 'بنغلاديش' },
+  { code: 'et', en: 'Ethiopia', ar: 'إثيوبيا' },
+  { code: 'ke', en: 'Kenya', ar: 'كينيا' },
+  { code: 'gh', en: 'Ghana', ar: 'غانا' },
+  { code: 'ug', en: 'Uganda', ar: 'أوغندا' },
+  { code: 'sl', en: 'Sierra Leone', ar: 'سيراليون' },
+  { code: 'id', en: 'Indonesia', ar: 'إندونيسيا' }
 ];
 
 const copy = {
@@ -43,7 +43,9 @@ function countryCards(lang: 'en' | 'ar') {
       const name = lang === 'ar' ? country.ar : country.en;
       return `
         <article class="home-country-card">
-          <div class="home-country-flag" aria-hidden="true">${country.flag}</div>
+          <div class="home-country-flag">
+            <img src="https://flagcdn.com/w80/${country.code}.png" alt="${name} flag" loading="lazy" />
+          </div>
           <div class="home-country-content">
             <h3>${name}</h3>
             <p>${c.tag}</p>
