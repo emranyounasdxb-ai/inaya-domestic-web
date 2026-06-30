@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const countries = [
   { flag: '🇱🇰', en: 'Sri Lanka', ar: 'سريلانكا' },
   { flag: '🇳🇵', en: 'Nepal', ar: 'نيبال' },
-  { flag: '🇲🇲', en: 'Myanmar / Burma', ar: 'ميانمار / بورما' },
+  { flag: '🇲🇲', en: 'Myanmar', ar: 'ميانمار' },
   { flag: '🇵🇭', en: 'Philippines', ar: 'الفلبين' },
   { flag: '🇮🇳', en: 'India', ar: 'الهند' },
   { flag: '🇧🇩', en: 'Bangladesh', ar: 'بنغلاديش' },
@@ -13,7 +13,8 @@ const countries = [
   { flag: '🇰🇪', en: 'Kenya', ar: 'كينيا' },
   { flag: '🇬🇭', en: 'Ghana', ar: 'غانا' },
   { flag: '🇺🇬', en: 'Uganda', ar: 'أوغندا' },
-  { flag: '🇸🇱', en: 'Sierra Leone', ar: 'سيراليون' }
+  { flag: '🇸🇱', en: 'Sierra Leone', ar: 'سيراليون' },
+  { flag: '🇮🇩', en: 'Indonesia', ar: 'إندونيسيا' }
 ];
 
 const copy = {
