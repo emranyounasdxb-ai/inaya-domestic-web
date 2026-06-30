@@ -1,3 +1,4 @@
+import { servicePageCopiesGenerated } from './service-page-copy-generated';
 import { servicePageCopies as baseServicePageCopies } from './service-page-copy';
 import { servicePageCopiesNext } from './service-page-copy-next';
 import { servicePageCopiesMore } from './service-page-copy-more';
@@ -10,6 +11,7 @@ import type { Lang, ServiceCopy } from './service-page-copy';
 export type { CompareRow, Lang, Pair, Pricing, ServiceCopy } from './service-page-copy';
 
 const combinedServicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
+  ...servicePageCopiesGenerated,
   ...baseServicePageCopies,
   ...servicePageCopiesNext,
   ...servicePageCopiesMore,
