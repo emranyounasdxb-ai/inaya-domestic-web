@@ -1,0 +1,13 @@
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]']{position:relative!important;overflow:hidden!important;justify-content:flex-end!important;background:transparent!important;padding:2.25rem!important;isolation:isolate!important}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]']::before{content:'';position:absolute;inset:0;z-index:0;background-image:url('/images/home/discipline-house-manager.webp?v=discipline-1'),linear-gradient(135deg,#f2eadc,#fff,#e7edf6);background-size:cover;background-position:center center;background-repeat:no-repeat;transform:scale(1.01);transition:transform .7s ease}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]']::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,22,74,.08),rgba(7,22,74,.22) 42%,rgba(7,22,74,.78));pointer-events:none}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]']:hover::before{transform:scale(1.055)}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]']>div:first-child{display:none!important}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] h3,
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] p,
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] span{position:relative!important;z-index:2!important;color:#fff!important;text-shadow:0 10px 28px rgba(0,0,0,.22)!important}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] span{display:inline-flex!important;width:max-content!important;border-bottom:1px solid rgba(191,164,106,.7)!important;padding-bottom:.35rem!important;color:#fff!important}
+main a[href$='/services/nanny'] [aria-label='Service Image'],
+main a[href$='/services/personal-chef'] [aria-label='Service Image']{background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important}
+main a[href$='/services/nanny'] [aria-label='Service Image']::after,
+main a[href$='/services/personal-chef'] [aria-label='Service Image']::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,22,74,.04),rgba(7,22,74,.18) 40%,rgba(7,22,74,.70));z-index:3}
