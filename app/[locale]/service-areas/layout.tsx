@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import LocationServiceLinksSection from '@/components/LocationServiceLinksSection';
 
 export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
   return locale === 'ar'
@@ -13,11 +12,6 @@ export function generateMetadata({ params: { locale } }: { params: { locale: str
       };
 }
 
-export default function ServiceAreasLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
-  return (
-    <>
-      {children}
-      <LocationServiceLinksSection locale={locale} />
-    </>
-  );
+export default function ServiceAreasLayout({ children }: { children: React.ReactNode }) {
+  return children;
 }
