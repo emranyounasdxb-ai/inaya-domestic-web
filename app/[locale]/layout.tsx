@@ -22,6 +22,7 @@ import '../live-in-fixes.css';
 import '../country-profile-images.css';
 import '../home-country-availability.css';
 import '../source-country-flags.css';
+import '../curated-discipline-images.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
