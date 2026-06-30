@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import HomeCountryAvailability from '@/components/HomeCountryAvailability';
 import HomeGoogleReviews from '@/components/HomeGoogleReviews';
+import HomeVettingMatrix from '@/components/HomeVettingMatrix';
 
 const homeContent = {
   en: {
@@ -27,14 +28,6 @@ const homeContent = {
       { name: 'Elena V.', role: 'Executive Nanny • 12 Years Exp.', text: 'Specialized in early childhood support and family routines.' },
       { name: 'Marcus T.', role: 'Private Chef • Home Dining', text: 'Experienced in family meal planning and private home cooking.' },
       { name: 'Sarah J.', role: 'House Manager • Estate Support', text: 'Skilled in household coordination and domestic team support.' }
-    ],
-    matrixTitle: 'The Inaya Vetting Matrix',
-    matrix: [
-      { title: 'Identity', text: 'Documentation and eligibility review before service coordination.' },
-      { title: 'Skill', text: 'Requirement matching based on household needs and service type.' },
-      { title: 'Behaviour', text: 'Communication style and suitability are considered carefully.' },
-      { title: 'Reference', text: 'Past experience and available background details are reviewed.' },
-      { title: 'Matching', text: 'The service recommendation is aligned with family expectations.' }
     ],
     journeyTitle: 'A Seamless Journey',
     journeyText: 'Hiring domestic support should not feel complex. The process is arranged in three clear stages.',
@@ -87,14 +80,6 @@ const homeContent = {
       { name: 'إيلينا V.', role: 'مربية تنفيذية • 12 سنة خبرة', text: 'متخصصة في رعاية الأطفال ودعم روتين الأسرة.' },
       { name: 'ماركوس T.', role: 'شيف خاص • طبخ منزلي', text: 'خبرة في تخطيط وجبات الأسرة والطبخ المنزلي.' },
       { name: 'سارة J.', role: 'مديرة منزل • دعم الأسر', text: 'مهارة في تنسيق المنزل ودعم فريق الخدمة.' }
-    ],
-    matrixTitle: 'مصفوفة التحقق في عناية',
-    matrix: [
-      { title: 'الهوية', text: 'مراجعة المستندات والأهلية قبل تنسيق الخدمة.' },
-      { title: 'المهارة', text: 'مطابقة الاحتياج حسب نوع الخدمة ومتطلبات المنزل.' },
-      { title: 'السلوك', text: 'تؤخذ طريقة التواصل والملاءمة بعين الاعتبار.' },
-      { title: 'الخبرة', text: 'تتم مراجعة الخبرات والتفاصيل المتاحة بعناية.' },
-      { title: 'المطابقة', text: 'يتم ربط التوصية بتوقعات الأسرة واحتياجها.' }
     ],
     journeyTitle: 'رحلة سلسة',
     journeyText: 'طلب الدعم المنزلي يجب ألا يكون معقداً. لذلك نرتب العملية في ثلاث مراحل واضحة.',
@@ -353,23 +338,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         </div>
       </section>
 
-      <section className="px-6 pb-20 lg:px-10 lg:pb-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 text-center">
-            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.matrixTitle}</h2>
-            <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-accent-500 to-transparent" />
-          </div>
-          <div className="grid gap-px overflow-hidden rounded-[26px] border border-white/70 bg-white/48 shadow-[0_24px_75px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10 backdrop-blur-2xl md:grid-cols-5">
-            {copy.matrix.map((item) => (
-              <div key={item.title} className="bg-white/64 p-7 transition hover:bg-white/86 sm:p-9">
-                <div className="mb-6 text-3xl text-accent-700">✦</div>
-                <h3 className="font-heading text-xl font-bold text-primary-900">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-ink/62">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeVettingMatrix />
 
       <section className="relative overflow-hidden bg-primary-900 px-6 py-20 text-white sm:py-24 lg:px-10 lg:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(191,164,106,0.18),transparent_26rem),radial-gradient(circle_at_82%_72%,rgba(255,255,255,0.08),transparent_30rem)]" />

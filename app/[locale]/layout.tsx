@@ -9,7 +9,6 @@ import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import TrustTextGsap from '@/components/TrustTextGsap';
 import HomeStandardsSpotlight from '@/components/HomeStandardsSpotlight';
-import HomeVettingMatrix from '@/components/HomeVettingMatrix';
 import '../globals.css';
 import '../service-area-images.css';
 import '../type-scale.css';
@@ -55,7 +54,6 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
         <NextIntlClientProvider messages={messages}>
           <TrustTextGsap />
           <HomeStandardsSpotlight />
-          <HomeVettingMatrix />
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <main>{children}</main>
