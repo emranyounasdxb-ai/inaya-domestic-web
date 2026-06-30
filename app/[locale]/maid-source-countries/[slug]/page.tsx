@@ -11,10 +11,30 @@ export function generateMetadata({ params: { locale, slug } }: { params: { local
   const country = getCountrySourcePage(slug);
   if (!country) return {};
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
+  const canonical = `/${locale}/maid-source-countries/${slug}`;
 
   return {
     title: country.metaTitle[lang],
-    description: country.metaDescription[lang]
+    description: country.metaDescription[lang],
+    alternates: {
+      canonical,
+      languages: {
+        en: `/en/maid-source-countries/${slug}`,
+        ar: `/ar/maid-source-countries/${slug}`
+      }
+    },
+    openGraph: {
+      title: country.metaTitle[lang],
+      description: country.metaDescription[lang],
+      type: 'website',
+      locale: lang === 'ar' ? 'ar_AE' : 'en_AE',
+      url: canonical
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: country.metaTitle[lang],
+      description: country.metaDescription[lang]
+    }
   };
 }
 
