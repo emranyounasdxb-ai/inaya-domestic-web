@@ -656,6 +656,10 @@
     grid-template-columns: 1fr;
   }
 
+  .google-panel-stack .google-mini-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .google-rating-summary {
     align-items: flex-start;
     flex-direction: column;
