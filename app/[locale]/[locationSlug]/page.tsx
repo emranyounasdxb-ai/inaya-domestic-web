@@ -11,10 +11,30 @@ export function generateMetadata({ params: { locale, locationSlug } }: { params:
   const location = getLocationServicePage(locationSlug);
   if (!location) return {};
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
+  const canonical = `/${locale}/${location.slug}`;
 
   return {
     title: location.metaTitle[lang],
-    description: location.metaDescription[lang]
+    description: location.metaDescription[lang],
+    alternates: {
+      canonical,
+      languages: {
+        en: `/en/${location.slug}`,
+        ar: `/ar/${location.slug}`
+      }
+    },
+    openGraph: {
+      title: location.metaTitle[lang],
+      description: location.metaDescription[lang],
+      type: 'website',
+      locale: lang === 'ar' ? 'ar_AE' : 'en_AE',
+      url: canonical
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: location.metaTitle[lang],
+      description: location.metaDescription[lang]
+    }
   };
 }
 
@@ -27,6 +47,7 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
   const t = lang === 'ar'
     ? {
         badge: 'دليل خدمات المنطقة',
+        areaBadge: 'منطقة خدمة داخل الإمارات',
         localTitle: 'احتياجات الأسر في هذه الإمارة',
         servicesTitle: 'الخدمات المتوفرة',
         areasTitle: 'مناطق قريبة نخدمها',
@@ -43,6 +64,7 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
       }
     : {
         badge: 'Location Service Guide',
+        areaBadge: 'UAE Service Area',
         localTitle: 'Common family needs in this emirate',
         servicesTitle: 'Available service options',
         areasTitle: 'Nearby areas we support',
@@ -58,8 +80,45 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
         back: 'All Service Areas'
       };
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: location.heroTitle[lang],
+    description: location.metaDescription[lang],
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: location.city[lang]
+    },
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'INAYA Domestic Workers',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Ajman',
+        addressCountry: 'AE'
+      }
+    },
+    serviceType: ['Maid Services', 'Domestic Workers', 'Nanny Services', 'Home Cooking', 'Maid Visa Assistance']
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: location.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question[lang],
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer[lang]
+      }
+    }))
+  };
+
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <section className="relative px-6 py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_80%_28%,rgba(7,22,74,0.09),transparent_30rem)]" />
         <div className="relative mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.76fr] lg:items-center">
@@ -79,8 +138,8 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
           </div>
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">
             <div className="rounded-[24px] bg-[linear-gradient(135deg,#07164A,#10266c)] p-6 text-white shadow-[0_20px_50px_rgba(7,22,74,0.18)]">
-              <p className="text-[0.62rem] font-bold uppercase tracking-[0.24em] text-accent-300">UAE Service Area</p>
-              <h2 className="mt-3 font-heading text-3xl font-bold tracking-[-0.04em]">{location.city[lang]}</h2>
+              <p className="text-[0.62rem] font-bold uppercase tracking-[0.24em] text-accent-300">{t.areaBadge}</p>
+              <h2 className={`${lang === 'ar' ? 'font-arabic' : 'font-heading'} mt-3 text-3xl font-bold tracking-[-0.04em]`}>{location.city[lang]}</h2>
               <p className="mt-3 text-sm leading-7 text-white/72">{location.intro[lang]}</p>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
