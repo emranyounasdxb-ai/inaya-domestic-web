@@ -209,82 +209,80 @@ export default function HomeGoogleReviews({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <div className="google-reviews-right">
-          <div className="google-reviews-panel">
-            <div className="google-reviews-panel-header">
-              <div className="google-business-title">
-                <GoogleIcon />
-                <span>{t.badge}</span>
-              </div>
-              <div className="google-live-pill">
-                <i className="google-live-dot" aria-hidden="true" />
-                {liveText}
-              </div>
+        <div className="google-reviews-panel">
+          <div className="google-reviews-panel-header">
+            <div className="google-business-title">
+              <GoogleIcon />
+              <span>{t.badge}</span>
             </div>
+            <div className="google-live-pill">
+              <i className="google-live-dot" aria-hidden="true" />
+              {liveText}
+            </div>
+          </div>
 
-            <article className="google-feature-card" key={`${activeReview.name}-${activeIndex}`} aria-live="polite">
-              <div className="google-feature-head">
-                <ReviewAvatar review={activeReview} />
-                <div className="google-reviewer-meta">
-                  <h3>{activeReview.name}</h3>
-                  <p>{activeReview.time || 'Google review'}</p>
-                </div>
-                <RatingStars rating={activeReview.rating || 5} className="google-feature-stars" />
+          <article className="google-feature-card" key={`${activeReview.name}-${activeIndex}`} aria-live="polite">
+            <div className="google-feature-head">
+              <ReviewAvatar review={activeReview} />
+              <div className="google-reviewer-meta">
+                <h3>{activeReview.name}</h3>
+                <p>{activeReview.time || 'Google review'}</p>
               </div>
-              <p className="google-feature-text">{activeReview.text || 'Rated INAYA Domestic Workers Ajman 5 stars on Google.'}</p>
-              <div className="google-verified-row">
-                <GoogleIcon />
-                <span>{t.verified}</span>
-              </div>
-            </article>
+              <RatingStars rating={activeReview.rating || 5} className="google-feature-stars" />
+            </div>
+            <p className="google-feature-text">{activeReview.text || 'Rated INAYA Domestic Workers Ajman 5 stars on Google.'}</p>
+            <div className="google-verified-row">
+              <GoogleIcon />
+              <span>{t.verified}</span>
+            </div>
+          </article>
 
-            <div className="google-mini-grid">
-              {miniReviews.map((review, index) => (
-                <article className="google-mini-card" key={`${review.name}-${index}`}>
-                  <div className="google-mini-top">
-                    <ReviewAvatar review={review} compact />
-                    <div>
-                      <h4>{review.name}</h4>
-                      <small>{review.time || 'Google review'}</small>
-                    </div>
+          <div className="google-mini-grid">
+            {miniReviews.map((review, index) => (
+              <article className="google-mini-card" key={`${review.name}-${index}`}>
+                <div className="google-mini-top">
+                  <ReviewAvatar review={review} compact />
+                  <div>
+                    <h4>{review.name}</h4>
+                    <small>{review.time || 'Google review'}</small>
                   </div>
-                  <RatingStars rating={review.rating || 5} className="google-mini-stars" />
-                  <p>{review.text || 'Rated INAYA Domestic Workers Ajman 5 stars on Google.'}</p>
-                </article>
-              ))}
-            </div>
-
-            <div className="google-carousel-footer">
-              <div className="google-carousel-nav">
-                <button type="button" className="google-nav-button" onClick={() => goToReview(activeIndex - 1)} aria-label={t.previous}>
-                  ‹
-                </button>
-                <div className="google-review-dots" aria-label="Google review carousel">
-                  {reviews.map((review, index) => (
-                    <button
-                      type="button"
-                      key={`${review.name}-${index}`}
-                      className={`google-review-dot ${index === activeIndex ? 'is-active' : ''}`}
-                      onClick={() => goToReview(index)}
-                      aria-label={`Show review ${index + 1}`}
-                      aria-current={index === activeIndex}
-                    />
-                  ))}
                 </div>
-                <button type="button" className="google-nav-button" onClick={() => goToReview(activeIndex + 1)} aria-label={t.next}>
-                  ›
-                </button>
+                <RatingStars rating={review.rating || 5} className="google-mini-stars" />
+                <p>{review.text || 'Rated INAYA Domestic Workers Ajman 5 stars on Google.'}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="google-carousel-footer">
+            <div className="google-carousel-nav">
+              <button type="button" className="google-nav-button" onClick={() => goToReview(activeIndex - 1)} aria-label={t.previous}>
+                ‹
+              </button>
+              <div className="google-review-dots" aria-label="Google review carousel">
+                {reviews.map((review, index) => (
+                  <button
+                    type="button"
+                    key={`${review.name}-${index}`}
+                    className={`google-review-dot ${index === activeIndex ? 'is-active' : ''}`}
+                    onClick={() => goToReview(index)}
+                    aria-label={`Show review ${index + 1}`}
+                    aria-current={index === activeIndex}
+                  />
+                ))}
               </div>
-
-              <a className="google-view-button" href={reviewUrl} target="_blank" rel="noopener noreferrer">
-                {t.view}
-                <span aria-hidden="true">↗</span>
-              </a>
+              <button type="button" className="google-nav-button" onClick={() => goToReview(activeIndex + 1)} aria-label={t.next}>
+                ›
+              </button>
             </div>
 
-            <div className="google-progress-line" aria-hidden="true">
-              <span style={{ width: `${((activeIndex + 1) / reviews.length) * 100}%` }} />
-            </div>
+            <a className="google-view-button" href={reviewUrl} target="_blank" rel="noopener noreferrer">
+              {t.view}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div className="google-progress-line" aria-hidden="true">
+            <span style={{ width: `${((activeIndex + 1) / reviews.length) * 100}%` }} />
           </div>
         </div>
       </div>
