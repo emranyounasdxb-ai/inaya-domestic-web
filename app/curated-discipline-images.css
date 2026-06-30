@@ -1,13 +1,28 @@
+main a.group[href$='/services/nanny']>div[aria-label='Service Image'],
+main a.group[href$='/services/personal-chef']>div[aria-label='Service Image']{position:absolute!important;inset:0!important;width:auto!important;height:auto!important;margin:0!important;border:0!important;border-radius:inherit!important;box-shadow:none!important;color:inherit!important;animation:none!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important}
+main a.group[href$='/services/nanny']>div[aria-label='Service Image']{background-image:url('/images/home/discipline-executive-nannies.webp?v=discipline-3'),linear-gradient(135deg,#f2eadc,#fff,#e7edf6)!important}
+main a.group[href$='/services/personal-chef']>div[aria-label='Service Image']{background-image:url('/images/home/discipline-private-chef.webp?v=discipline-3'),linear-gradient(135deg,#f2eadc,#fff,#e7edf6)!important}
+main a.group[href$='/services/nanny']>div[aria-label='Service Image']>* ,
+main a.group[href$='/services/personal-chef']>div[aria-label='Service Image']>*{display:none!important}
+main a.group[href$='/services/nanny']::after,
+main a.group[href$='/services/personal-chef']::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(7,22,74,.04),rgba(7,22,74,.18) 40%,rgba(7,22,74,.76))}
+main a.group[href$='/services/nanny']>div:not([aria-label]),
+main a.group[href$='/services/personal-chef']>div:not([aria-label]){position:relative!important;z-index:2!important}
+main a.group[href$='/services/nanny'] h3,
+main a.group[href$='/services/personal-chef'] h3,
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] h3{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;max-width:28rem!important;letter-spacing:-.035em!important;color:#fff!important;text-shadow:0 10px 28px rgba(0,0,0,.26)!important}
+main a.group[href$='/services/nanny'] h3{font-size:clamp(2rem,4.2vw,3.5rem)!important;line-height:1.05!important}
+main a.group[href$='/services/personal-chef'] h3,
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] h3{font-size:1.7rem!important;line-height:1.12!important}
+main a.group[href$='/services/nanny'] p,
+main a.group[href$='/services/personal-chef'] p,
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] p{white-space:normal!important;overflow:visible!important;max-width:32rem!important;color:rgba(255,255,255,.88)!important;text-shadow:0 10px 28px rgba(0,0,0,.22)!important}
 main a[href$='/services/live-in-maid'][class*='min-h-[340px]']{position:relative!important;overflow:hidden!important;justify-content:flex-end!important;background:transparent!important;padding:2.25rem!important;isolation:isolate!important}
-main a[href$='/services/live-in-maid'][class*='min-h-[340px]']::before{content:'';position:absolute;inset:0;z-index:0;background-image:url('/images/home/discipline-house-manager.webp?v=discipline-1'),linear-gradient(135deg,#f2eadc,#fff,#e7edf6);background-size:cover;background-position:center center;background-repeat:no-repeat;transform:scale(1.01);transition:transform .7s ease}
-main a[href$='/services/live-in-maid'][class*='min-h-[340px]']::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,22,74,.08),rgba(7,22,74,.22) 42%,rgba(7,22,74,.78));pointer-events:none}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]']::before{content:'';position:absolute;inset:0;z-index:0;background-image:url('/images/home/discipline-house-manager.webp?v=discipline-3'),linear-gradient(135deg,#f2eadc,#fff,#e7edf6);background-size:cover;background-position:center center;background-repeat:no-repeat;transform:scale(1.01);transition:transform .7s ease}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]']::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,22,74,.08),rgba(7,22,74,.24) 42%,rgba(7,22,74,.80));pointer-events:none}
 main a[href$='/services/live-in-maid'][class*='min-h-[340px]']:hover::before{transform:scale(1.055)}
 main a[href$='/services/live-in-maid'][class*='min-h-[340px]']>div:first-child{display:none!important}
 main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] h3,
 main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] p,
-main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] span{position:relative!important;z-index:2!important;color:#fff!important;text-shadow:0 10px 28px rgba(0,0,0,.22)!important}
+main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] span{position:relative!important;z-index:2!important;color:#fff!important;text-shadow:0 10px 28px rgba(0,0,0,.24)!important}
 main a[href$='/services/live-in-maid'][class*='min-h-[340px]'] span{display:inline-flex!important;width:max-content!important;border-bottom:1px solid rgba(191,164,106,.7)!important;padding-bottom:.35rem!important;color:#fff!important}
-main a[href$='/services/nanny'] [aria-label='Service Image'],
-main a[href$='/services/personal-chef'] [aria-label='Service Image']{background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important}
-main a[href$='/services/nanny'] [aria-label='Service Image']::after,
-main a[href$='/services/personal-chef'] [aria-label='Service Image']::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,22,74,.04),rgba(7,22,74,.18) 40%,rgba(7,22,74,.70));z-index:3}
