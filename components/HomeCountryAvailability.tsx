@@ -58,37 +58,41 @@ function countryCards(lang: 'en' | 'ar') {
 
 export default function HomeCountryAvailability() {
   useEffect(() => {
-    const path = window.location.pathname.replace(/\/$/, '');
-    if (path !== '/en' && path !== '/ar') return;
-    if (document.querySelector('[data-home-country-availability="true"]')) return;
+    const timer = window.setTimeout(() => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      if (path !== '/en' && path !== '/ar') return;
+      if (document.querySelector('[data-home-country-availability="true"]')) return;
 
-    const lang = document.documentElement.lang === 'ar' ? 'ar' : 'en';
-    const t = copy[lang];
-    const anchor = document.querySelector('main > div > section:nth-of-type(2)');
-    if (!anchor?.parentElement) return;
+      const lang = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+      const t = copy[lang];
+      const anchor = document.querySelector('main > div > section:nth-of-type(3)');
+      if (!anchor?.parentElement) return;
 
-    const section = document.createElement('section');
-    section.dataset.homeCountryAvailability = 'true';
-    section.className = 'home-country-section';
-    section.innerHTML = `
-      <div class="home-country-shell">
-        <div class="home-country-heading">
-          <p>${t.eyebrow}</p>
-          <h2>${t.title}</h2>
-          <span></span>
-          <div>${t.text}</div>
+      const section = document.createElement('section');
+      section.dataset.homeCountryAvailability = 'true';
+      section.className = 'home-country-section';
+      section.innerHTML = `
+        <div class="home-country-shell">
+          <div class="home-country-heading">
+            <p>${t.eyebrow}</p>
+            <h2>${t.title}</h2>
+            <span></span>
+            <div>${t.text}</div>
+          </div>
+          <div class="home-country-scroll" dir="ltr">
+            ${countryCards(lang)}
+          </div>
+          <div class="home-country-footer">
+            <p>${t.note}</p>
+            <a href="/${lang}/services/countries-we-source-from">${t.cta}</a>
+          </div>
         </div>
-        <div class="home-country-scroll" dir="ltr">
-          ${countryCards(lang)}
-        </div>
-        <div class="home-country-footer">
-          <p>${t.note}</p>
-          <a href="/${lang}/services/countries-we-source-from">${t.cta}</a>
-        </div>
-      </div>
-    `;
+      `;
 
-    anchor.parentElement.insertBefore(section, anchor.nextSibling);
+      anchor.parentElement.insertBefore(section, anchor.nextSibling);
+    }, 120);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   return null;
