@@ -142,7 +142,8 @@ const homeImages = {
   ],
   disciplines: [
     '/images/home/discipline-executive-nannies.webp',
-    '/images/home/discipline-private-chef.webp'
+    '/images/home/discipline-private-chef.webp',
+    '/images/home/discipline-house-manager.webp'
   ],
   testimonial: '/images/home/home-interior-testimonial.webp'
 };
@@ -165,6 +166,47 @@ function ImagePlaceholder({ label, className = '', src }: { label: string; class
         </div>
       ) : null}
     </div>
+  );
+}
+
+
+function CuratedDisciplineCard({
+  href,
+  image,
+  title,
+  text,
+  cta,
+  tag,
+  featured = false,
+  isArabic
+}: {
+  href: string;
+  image: string;
+  title: string;
+  text: string;
+  cta: string;
+  tag?: string;
+  featured?: boolean;
+  isArabic: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`curated-discipline-card group ${featured ? 'curated-discipline-card--featured lg:col-span-7 lg:row-span-2' : 'lg:col-span-5'}`}
+    >
+      <div
+        className="curated-discipline-card__image"
+        style={{ backgroundImage: `url(${image})` }}
+        aria-hidden="true"
+      />
+      <div className="curated-discipline-card__glow" aria-hidden="true" />
+      <div className="curated-discipline-card__content">
+        {tag ? <span className="curated-discipline-card__badge">{tag}</span> : null}
+        <h3 className={`${isArabic ? 'font-arabicHeading' : 'font-heading'} curated-discipline-card__title`}>{title}</h3>
+        <p className="curated-discipline-card__text">{text}</p>
+        <span className="curated-discipline-card__button">{cta}</span>
+      </div>
+    </Link>
   );
 }
 
@@ -358,32 +400,20 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[3rem]`}>{copy.disciplinesTitle}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-ink/62">{copy.disciplinesText}</p>
           </div>
-          <div className="grid min-h-[720px] gap-6 lg:grid-cols-12">
-            <Link href={`/${locale}/services/${copy.services[0].slug}`} className="group relative overflow-hidden rounded-[28px] border border-white/70 shadow-[0_30px_90px_rgba(7,22,74,0.12)] ring-1 ring-accent-500/12 backdrop-blur-xl lg:col-span-7 lg:row-span-2">
-              <ImagePlaceholder label="Service Image" src={homeImages.disciplines[0]} className="absolute inset-0 transition duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/86 via-primary-900/28 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-7 text-white sm:p-10">
-                <span className="inline-flex rounded-full bg-accent-500 px-4 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-primary-900 shadow-[0_14px_35px_rgba(191,164,106,0.20)]">{copy.services[0].tag}</span>
-                <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-4 text-3xl font-bold tracking-[-0.04em] sm:text-5xl`}>{copy.services[0].title}</h3>
-                <p className="mt-4 max-w-md text-sm leading-7 text-white/78">{copy.services[0].text}</p>
-                <span className="mt-6 inline-flex bg-white/90 px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-primary-900 shadow-[0_12px_32px_rgba(7,22,74,0.14)] backdrop-blur-xl">{copy.services[0].cta}</span>
-              </div>
-            </Link>
-            <Link href={`/${locale}/services/${copy.services[1].slug}`} className="group relative min-h-[340px] overflow-hidden rounded-[28px] border border-white/70 shadow-[0_26px_80px_rgba(7,22,74,0.10)] ring-1 ring-accent-500/12 lg:col-span-5">
-              <ImagePlaceholder label="Service Image" src={homeImages.disciplines[1]} className="absolute inset-0 transition duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-primary-900/42 transition group-hover:bg-primary-900/30" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center text-white">
-                <h3 className="font-heading text-3xl font-bold">{copy.services[1].title}</h3>
-                <p className="mt-3 max-w-xs text-sm leading-6 text-white/80">{copy.services[1].text}</p>
-                <span className="mt-6 border-b border-accent-300/70 pb-1 text-xs font-bold uppercase tracking-[0.16em] text-accent-100">{copy.services[1].cta}</span>
-              </div>
-            </Link>
-            <Link href={`/${locale}/services/${copy.services[2].slug}`} className="flex min-h-[340px] flex-col justify-center rounded-[28px] border border-white/70 bg-white/58 p-9 shadow-[0_26px_80px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10 backdrop-blur-2xl transition hover:-translate-y-1 hover:bg-white/72 lg:col-span-5">
-              <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-accent-500/14 text-3xl text-accent-700 ring-1 ring-accent-500/25">⌂</div>
-              <h3 className="font-heading text-3xl font-bold text-primary-900">{copy.services[2].title}</h3>
-              <p className="mt-4 max-w-sm text-sm leading-7 text-ink/62">{copy.services[2].text}</p>
-              <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary-900">{copy.services[2].cta} <span>→</span></span>
-            </Link>
+          <div className="curated-disciplines-grid grid gap-6 lg:grid-cols-12">
+            {copy.services.map((service, index) => (
+              <CuratedDisciplineCard
+                key={service.slug}
+                href={`/${locale}/services/${service.slug}`}
+                image={homeImages.disciplines[index]}
+                title={service.title}
+                text={service.text}
+                cta={service.cta}
+                tag={service.tag}
+                featured={index === 0}
+                isArabic={isArabic}
+              />
+            ))}
           </div>
         </div>
       </section>
