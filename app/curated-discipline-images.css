@@ -10,7 +10,7 @@
   overflow: hidden;
   align-items: flex-end;
   border-radius: 28px;
-  border: 1px solid rgba(239, 233, 222, 0.72);
+  border: 1px solid rgba(191, 164, 106, 0.46);
   background: #07164a;
   box-shadow: 0 26px 80px rgba(7, 22, 74, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.24);
   transition: transform 360ms ease, border-color 360ms ease, box-shadow 360ms ease;
@@ -23,32 +23,34 @@
 .curated-discipline-card__image {
   position: absolute !important;
   inset: 0 !important;
-  z-index: -3;
+  z-index: 0;
   width: auto !important;
   height: auto !important;
   margin: 0 !important;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   border: 0 !important;
   box-shadow: none !important;
   color: inherit !important;
   animation: none !important;
   transform: scale(1.01);
-  transition: transform 800ms ease;
+  transition: transform 800ms ease, filter 800ms ease;
 }
 
 .curated-discipline-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 1;
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(2, 10, 44, 0) 0%,
-    rgba(2, 10, 44, 0.01) 38%,
-    rgba(2, 10, 44, 0.18) 62%,
-    rgba(2, 10, 44, 0.58) 100%
+    rgba(7, 22, 74, 0) 0%,
+    rgba(7, 22, 74, 0.04) 36%,
+    rgba(7, 22, 74, 0.18) 58%,
+    rgba(7, 22, 74, 0.46) 80%,
+    rgba(7, 22, 74, 0.74) 100%
   );
 }
 
@@ -56,20 +58,23 @@
   position: absolute;
   right: -5rem;
   bottom: -6rem;
-  z-index: -1;
+  z-index: 2;
   width: 16rem;
   height: 16rem;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(191, 164, 106, 0.2), transparent 68%);
+  background: radial-gradient(circle, rgba(191, 164, 106, 0.24), transparent 68%);
   filter: blur(10px);
   pointer-events: none;
 }
 
 .curated-discipline-card__content {
+  position: relative;
+  z-index: 3;
   display: flex;
   width: min(100%, 34rem);
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-end;
   padding: 2rem;
   color: #fff;
   text-align: start;
@@ -84,42 +89,47 @@
   width: max-content;
   border-radius: 999px;
   background: linear-gradient(135deg, #e1c77f, #bfa46a);
-  padding: 0.52rem 0.95rem;
+  padding: 0.54rem 1rem;
   color: #07164a;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   line-height: 1;
   text-transform: uppercase;
-  box-shadow: 0 12px 26px rgba(191, 164, 106, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  box-shadow: 0 12px 26px rgba(191, 164, 106, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.38);
 }
 
 .curated-discipline-card__title {
-  max-width: 21rem !important;
-  margin: 0.85rem 0 0 !important;
+  max-width: 26rem !important;
+  margin: 0.9rem 0 0 !important;
   overflow: visible !important;
   color: #fff !important;
-  font-size: clamp(1.85rem, 2.4vw, 2.55rem) !important;
+  font-size: clamp(2.05rem, 2.8vw, 3rem) !important;
   font-weight: 800 !important;
-  letter-spacing: -0.045em !important;
-  line-height: 1.02 !important;
-  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.28) !important;
+  letter-spacing: -0.05em !important;
+  line-height: 0.98 !important;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.32) !important;
   text-overflow: clip !important;
   white-space: normal !important;
 }
 
 .curated-discipline-card--featured .curated-discipline-card__title {
   max-width: 28rem !important;
-  font-size: clamp(2.3rem, 4vw, 3.75rem) !important;
+  font-size: clamp(2.45rem, 4.1vw, 4rem) !important;
 }
 
 .curated-discipline-card__text {
-  max-width: 25rem;
-  margin-top: 0.85rem;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.96rem;
-  line-height: 1.62;
-  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+  max-width: 27rem;
+  margin-top: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.58;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.curated-discipline-card--featured .curated-discipline-card__text {
+  max-width: 32rem;
+  font-size: 1.04rem;
 }
 
 .curated-discipline-card__button {
@@ -127,13 +137,13 @@
   width: max-content;
   align-items: center;
   justify-content: center;
-  margin-top: 1.2rem;
-  border: 1px solid rgba(225, 199, 127, 0.58);
+  margin-top: 1.15rem;
+  border: 1px solid rgba(225, 199, 127, 0.62);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 0.82rem 1.18rem;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.84rem 1.24rem;
   color: #07164a;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   line-height: 1;
@@ -150,6 +160,7 @@
 
 .curated-discipline-card:hover .curated-discipline-card__image {
   transform: scale(1.055);
+  filter: saturate(1.04) contrast(1.02);
 }
 
 .curated-discipline-card:hover .curated-discipline-card__button {
@@ -179,6 +190,11 @@
   .curated-discipline-card__content,
   .curated-discipline-card--featured .curated-discipline-card__content {
     padding: 1.45rem;
+  }
+
+  .curated-discipline-card__title,
+  .curated-discipline-card--featured .curated-discipline-card__title {
+    font-size: clamp(1.9rem, 8vw, 2.75rem) !important;
   }
 
   .curated-discipline-card__text {
