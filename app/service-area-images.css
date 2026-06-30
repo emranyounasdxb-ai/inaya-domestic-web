@@ -40,7 +40,3 @@
 .grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(7) > div:first-child {
   background-image: url('/images/service-areas/umm-al-quwain.webp');
 }
-
-.grid.gap-5.sm\:grid-cols-2.lg\:grid-cols-4 > .glass-panel:nth-child(8) > div:first-child {
-  background-image: url('/images/service-areas/al-ain.webp');
-}
