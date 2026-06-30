@@ -42,9 +42,19 @@ function cardMarkup(item: typeof items[number], index: number) {
   `;
 }
 
+function findMatrixSection() {
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('main > div > section'));
+  return (
+    sections.find((section) => section.textContent?.includes('The Inaya Vetting Matrix')) ||
+    sections.find((section) => section.textContent?.includes('مصفوفة التحقق')) ||
+    sections.find((section) => section.textContent?.includes('Our 5-Step Vetting Matrix')) ||
+    document.querySelector<HTMLElement>('main > div > section:nth-of-type(6)')
+  );
+}
+
 export default function HomeVettingMatrix() {
   useEffect(() => {
-    const section = document.querySelector<HTMLElement>('main > div > section:nth-of-type(6)');
+    const section = findMatrixSection();
     if (!section) return;
     section.dataset.vettingMatrix = 'dark';
     section.innerHTML = `
