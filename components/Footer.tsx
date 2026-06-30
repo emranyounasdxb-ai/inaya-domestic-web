@@ -23,7 +23,7 @@ export default function Footer({ locale }: { locale: string }) {
     { label: tn('about'), href: `/${locale}/about` },
     { label: tn('services'), href: `/${locale}/services` },
     { label: isArabic ? 'آلية العمل' : 'How It Works', href: `/${locale}/how-it-works` },
-    { label: isArabic ? 'الدول التي نوفر منها' : 'Countries We Source From', href: `/${locale}/services/live-in-maid#countries` },
+    { label: isArabic ? 'الدول التي نوفر منها' : 'Countries We Source From', href: `/${locale}/services/countries-we-source-from` },
     { label: tn('faq'), href: `/${locale}/faq` },
     { label: tn('contact'), href: `/${locale}/contact` }
   ];
