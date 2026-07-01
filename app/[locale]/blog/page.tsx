@@ -40,7 +40,7 @@ export default function BlogPage({ params: { locale } }: { params: { locale: str
             <article key={title} className="glass-panel flex min-h-[240px] flex-col rounded-[24px] p-6 transition hover:-translate-y-1 hover:border-accent-500/40">
               <div className="mb-5 h-24 rounded-[18px] bg-[radial-gradient(circle_at_30%_30%,rgba(191,164,106,0.25),transparent_34%),linear-gradient(135deg,rgba(7,22,74,0.08)_1px,transparent_1px)] bg-[length:100%_100%,28px_28px]" />
               <h2 className={`${isArabic ? 'font-arabic text-xl leading-snug' : 'font-heading text-2xl'} font-bold text-primary-900`}>{title}</h2>
-              <p className="mt-2 flex-1 text-sm leading-6 text-ink/65">{text}</p>
+              <p className="mt-2 flex-1 text-sm leading-6 text-primary-900/80">{text}</p>
               <Link href={`/${locale}/contact`} className="mt-5 text-sm font-bold text-primary-900">{copy.read}</Link>
             </article>
           ))}

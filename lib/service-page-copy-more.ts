@@ -14,7 +14,7 @@ const comparisonAr: CompareRow[] = [
   { feature: 'متابعة الدعم', inaya: 'متوفرة', other: 'غالباً غير موجودة' }
 ];
 
-type PartialCopy = Pick<ServiceCopy, 'title' | 'meta' | 'badge' | 'lead' | 'whatTitle' | 'whatText' | 'finalTitle' | 'finalText' | 'cards' | 'why' | 'included' | 'perfect' | 'journey' | 'vetting' | 'countries' | 'pricing' | 'faqs' | 'related'> & { ar?: boolean };
+type PartialCopy = Pick<ServiceCopy, 'title' | 'meta' | 'badge' | 'lead' | 'whatTitle' | 'whatText' | 'finalTitle' | 'finalText' | 'cards' | 'why' | 'included' | 'perfect' | 'journey' | 'countries' | 'pricing' | 'faqs' | 'related'> & { ar?: boolean };
 
 function makeCopy(data: PartialCopy): ServiceCopy {
   const ar = Boolean(data.ar);
@@ -27,8 +27,6 @@ function makeCopy(data: PartialCopy): ServiceCopy {
     perfectTitle: ar ? 'مناسبة لـ' : 'Perfect For',
     journeyTitle: ar ? 'خطوات الخدمة' : 'Service Process',
     journeyText: ar ? 'عملية واضحة لمراجعة الاحتياج ومطابقة الخدمة المناسبة.' : 'A clear process to review requirements and match the right service.',
-    vettingTitle: ar ? 'فحص الخدمة في عناية' : 'INAYA Service Check',
-    vettingText: ar ? 'نراجع المهام والجدول والتوقعات قبل التأكيد.' : 'We review duties, schedule and expectations before confirmation.',
     countriesTitle: ar ? 'إرشاد المطابقة' : 'Matching Guidance',
     countriesText: ar ? 'تتم المطابقة حسب الخبرة واللغة والمهام والتوفر.' : 'Matching is guided by experience, language, duties and availability.',
     pricingTitle: ar ? 'إرشاد الأسعار' : 'Pricing Guidance',
@@ -66,13 +64,6 @@ export const servicePageCopiesMore: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'Duties', text: 'Cleaning, laundry, ironing and kitchen help are discussed clearly.' },
         { title: 'Schedule', text: 'Visit timing, contact details and location notes are aligned.' },
         { title: 'Follow-up', text: 'INAYA follows up to keep the monthly arrangement organized.' }
-      ],
-      vetting: [
-        { title: 'Visit Frequency', text: 'Weekly, biweekly or custom monthly needs are reviewed.', icon: '01' },
-        { title: 'Task Planning', text: 'Recurring tasks are defined for a smoother monthly routine.', icon: '02' },
-        { title: 'Home Size', text: 'Apartment or villa size is considered before planning hours.', icon: '03' },
-        { title: 'Schedule Fit', text: 'Preferred days and timing are matched with availability.', icon: '04' },
-        { title: 'Follow-up', text: 'Feedback helps keep the monthly plan consistent.', icon: '05' }
       ],
       countries: [
         { title: 'Cleaning Standards', text: 'Routine cleaning and organization needs are reviewed.' },
@@ -121,13 +112,6 @@ export const servicePageCopiesMore: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'مهام', text: 'يتم توضيح التنظيف والغسيل والكي والمطبخ قبل التأكيد.' },
         { title: 'جدول', text: 'يتم ترتيب التوقيت وبيانات التواصل وتعليمات الموقع.' },
         { title: 'متابعة', text: 'تتابع عناية لضمان استمرار الخدمة بشكل منظم.' }
-      ],
-      vetting: [
-        { title: 'عدد الزيارات', text: 'نراجع الاحتياج الأسبوعي أو الشهري حسب الأسرة.', icon: '01' },
-        { title: 'تخطيط المهام', text: 'يتم تحديد المهام المتكررة لروتين شهري أسهل.', icon: '02' },
-        { title: 'حجم المنزل', text: 'يتم اعتبار الشقة أو الفيلا قبل تحديد الساعات.', icon: '03' },
-        { title: 'ملاءمة الجدول', text: 'تتم مطابقة الأيام والتوقيت حسب التوفر.', icon: '04' },
-        { title: 'متابعة الخدمة', text: 'تساعد الملاحظات على الحفاظ على الخطة الشهرية.', icon: '05' }
       ],
       countries: [
         { title: 'معايير التنظيف', text: 'تتم المطابقة حسب احتياج التنظيف والتنظيم.' },
@@ -178,13 +162,6 @@ export const servicePageCopiesMore: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'Arrangement', text: 'Live-in, live-out, full-time or part-time options are reviewed.' },
         { title: 'Follow-up', text: 'INAYA stays connected to support a smoother family arrangement.' }
       ],
-      vetting: [
-        { title: 'Child Age Review', text: 'The child age and routine are considered before matching.', icon: '01' },
-        { title: 'Experience Fit', text: 'Relevant childcare exposure and family experience are reviewed.', icon: '02' },
-        { title: 'Routine Planning', text: 'School, meals, play and rest routines are discussed clearly.', icon: '03' },
-        { title: 'Language Preference', text: 'Communication needs are considered where available.', icon: '04' },
-        { title: 'Family Support', text: 'Follow-up helps keep the arrangement smooth and comfortable.', icon: '05' }
-      ],
       countries: [
         { title: 'Philippines', text: 'Often requested for English communication and childcare exposure.' },
         { title: 'Indonesia', text: 'Family care, calm routines and household support.' },
@@ -232,13 +209,6 @@ export const servicePageCopiesMore: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'المهام', text: 'يتم توضيح الوجبات والإشراف وروتين المدرسة.' },
         { title: 'الترتيب', text: 'تتم مناقشة المقيمة أو غير المقيمة أو الدوام الكامل أو الجزئي.' },
         { title: 'المتابعة', text: 'تتابع عناية لدعم ترتيب أكثر سلاسة للأسرة.' }
-      ],
-      vetting: [
-        { title: 'عمر الطفل', text: 'تتم مراعاة عمر الطفل وروتينه قبل المطابقة.', icon: '01' },
-        { title: 'ملاءمة الخبرة', text: 'تتم مراجعة خبرة رعاية الأطفال والأسرة.', icon: '02' },
-        { title: 'تخطيط الروتين', text: 'تتم مناقشة المدرسة والوجبات واللعب والراحة.', icon: '03' },
-        { title: 'تفضيل اللغة', text: 'تتم مراعاة احتياج التواصل عند التوفر.', icon: '04' },
-        { title: 'دعم الأسرة', text: 'تساعد المتابعة على ترتيب مريح وسلس.', icon: '05' }
       ],
       countries: [
         { title: 'الفلبين', text: 'غالباً مطلوبة للتواصل بالإنجليزية وخبرة الأطفال.' },

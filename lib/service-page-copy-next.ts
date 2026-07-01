@@ -38,8 +38,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
       perfectTitle: 'Perfect For',
       journeyTitle: 'Our Full-time Maid Hiring Process',
       journeyText: 'A clear hiring and matching process that helps families choose the right domestic worker for daily household needs.',
-      vettingTitle: 'INAYA Full-time Maid Matching Check',
-      vettingText: 'We review duties, timing, home size, family routine and preferred experience before recommending the right service direction.',
       countriesTitle: 'Candidate Matching Guidance',
       countriesText: 'Families can be guided by language, experience, cooking style, childcare exposure, cleaning standards and preferred nationality where available.',
       pricingTitle: 'Full-time Maid Pricing Guidance',
@@ -64,13 +62,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'Duty Plan', text: 'Daily tasks and expectations are clarified before confirmation.' },
         { title: 'Documentation', text: 'Required documents and process steps are explained clearly.' },
         { title: 'Confirmation', text: 'The service plan is aligned with timing, location and family expectations.' }
-      ],
-      vetting: [
-        { title: 'Routine Fit', text: 'Daily household routine and expected support level are reviewed.', icon: '◷' },
-        { title: 'Skill Mapping', text: 'Cleaning, laundry, ironing and kitchen needs are matched carefully.', icon: '☷' },
-        { title: 'Family Suitability', text: 'Children, elders, pets and privacy needs are considered where relevant.', icon: '✦' },
-        { title: 'Home Size Review', text: 'Apartment or villa size is reviewed to define realistic duties.', icon: '⌂' },
-        { title: 'Follow-up Plan', text: 'Communication and support steps are explained before confirmation.', icon: '✓' }
       ],
       countries: [
         { title: 'Philippines', text: 'Strong English communication, childcare exposure and housekeeping.' },
@@ -110,8 +101,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
       perfectTitle: 'مناسبة لـ',
       journeyTitle: 'خطوات توظيف خادمة بدوام كامل',
       journeyText: 'عملية واضحة للمطابقة والتوظيف تساعد الأسر على اختيار الدعم المنزلي المناسب للاحتياج اليومي.',
-      vettingTitle: 'فحص مطابقة الخادمة بدوام كامل',
-      vettingText: 'نراجع المهام والتوقيت وحجم المنزل وروتين الأسرة والخبرة المطلوبة قبل توجيه الخدمة المناسبة.',
       countriesTitle: 'إرشاد مطابقة العمالة',
       countriesText: 'يمكن إرشاد الأسر حسب اللغة والخبرة ونمط الطبخ ورعاية الأطفال ومعايير التنظيف والجنسية المفضلة عند التوفر.',
       pricingTitle: 'إرشاد أسعار الخادمة بدوام كامل',
@@ -136,13 +125,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'خطة المهام', text: 'يتم توضيح المهام اليومية والتوقعات قبل التأكيد.' },
         { title: 'المستندات', text: 'يتم شرح المستندات المطلوبة وخطوات العملية بوضوح.' },
         { title: 'التأكيد', text: 'تتم مواءمة خطة الخدمة مع التوقيت والموقع وتوقعات الأسرة.' }
-      ],
-      vetting: [
-        { title: 'ملاءمة الروتين', text: 'يتم مراجعة روتين المنزل ومستوى الدعم المتوقع.', icon: '◷' },
-        { title: 'مطابقة المهارات', text: 'تتم مطابقة التنظيف والغسيل والكي والمطبخ بعناية.', icon: '☷' },
-        { title: 'ملاءمة الأسرة', text: 'تؤخذ احتياجات الأطفال وكبار السن والخصوصية بعين الاعتبار.', icon: '✦' },
-        { title: 'مراجعة حجم المنزل', text: 'نراجع حجم الشقة أو الفيلا لتحديد المهام الواقعية.', icon: '⌂' },
-        { title: 'خطة المتابعة', text: 'يتم توضيح التواصل وخطوات الدعم قبل التأكيد.', icon: '✓' }
       ],
       countries: [
         { title: 'الفلبين', text: 'تواصل إنجليزي قوي ورعاية أطفال وتنظيم المنزل.' },
@@ -184,8 +166,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
       perfectTitle: 'Perfect For',
       journeyTitle: 'Our Part-time Maid Booking Process',
       journeyText: 'A simple process that aligns timing, tasks and home requirements before the service is confirmed.',
-      vettingTitle: 'INAYA Part-time Service Check',
-      vettingText: 'We review the service hours, tasks, home type and preferred schedule to keep the arrangement clear and practical.',
       countriesTitle: 'Flexible Matching Guidance',
       countriesText: 'Part-time support can be guided by cleaning needs, home size, language preference, kitchen assistance and visit frequency.',
       pricingTitle: 'Part-time Maid Pricing Guidance',
@@ -210,13 +190,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'Tasks', text: 'Cleaning, laundry, ironing and kitchen tasks are defined.' },
         { title: 'Schedule', text: 'The visit timing and location details are confirmed.' },
         { title: 'Support', text: 'Feedback is reviewed for future bookings or repeat plans.' }
-      ],
-      vetting: [
-        { title: 'Hour Review', text: 'Required service hours are reviewed before confirmation.', icon: '◷' },
-        { title: 'Task Fit', text: 'Tasks are matched with available time and home needs.', icon: '☷' },
-        { title: 'Home Type', text: 'Apartment or villa size is considered for realistic planning.', icon: '⌂' },
-        { title: 'Schedule Fit', text: 'Preferred days and timing are checked with availability.', icon: '⌁' },
-        { title: 'Repeat Support', text: 'Future visit options can be discussed after feedback.', icon: '✓' }
       ],
       countries: [
         { title: 'Cleaning Focus', text: 'Routine cleaning and home organization needs are reviewed.' },
@@ -256,8 +229,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
       perfectTitle: 'مناسبة لـ',
       journeyTitle: 'خطوات حجز خادمة بدوام جزئي',
       journeyText: 'عملية بسيطة توائم التوقيت والمهام واحتياج المنزل قبل تأكيد الخدمة.',
-      vettingTitle: 'فحص خدمة الدوام الجزئي',
-      vettingText: 'نراجع ساعات الخدمة والمهام ونوع المنزل والجدول المفضل للحفاظ على ترتيب واضح وعملي.',
       countriesTitle: 'إرشاد المطابقة المرنة',
       countriesText: 'يمكن توجيه الدعم الجزئي حسب احتياج التنظيف وحجم المنزل واللغة والمطبخ وعدد الزيارات.',
       pricingTitle: 'إرشاد أسعار الخادمة بدوام جزئي',
@@ -282,13 +253,6 @@ export const servicePageCopiesNext: Record<string, Record<Lang, ServiceCopy>> = 
         { title: 'المهام', text: 'يتم تحديد التنظيف والغسيل والكي والمطبخ.' },
         { title: 'الجدول', text: 'يتم تأكيد موعد الزيارة وتفاصيل الموقع.' },
         { title: 'الدعم', text: 'تتم مراجعة الملاحظات للحجوزات القادمة أو الخطط المتكررة.' }
-      ],
-      vetting: [
-        { title: 'مراجعة الساعات', text: 'يتم مراجعة ساعات الخدمة المطلوبة قبل التأكيد.', icon: '◷' },
-        { title: 'ملاءمة المهام', text: 'تتم مطابقة المهام مع الوقت المتاح واحتياج المنزل.', icon: '☷' },
-        { title: 'نوع المنزل', text: 'يتم اعتبار حجم الشقة أو الفيلا للتخطيط الواقعي.', icon: '⌂' },
-        { title: 'ملاءمة الجدول', text: 'يتم فحص الأيام والتوقيت حسب التوفر.', icon: '⌁' },
-        { title: 'دعم متكرر', text: 'يمكن مناقشة الزيارات المستقبلية بعد الملاحظات.', icon: '✓' }
       ],
       countries: [
         { title: 'تركيز التنظيف', text: 'تتم مراجعة احتياج التنظيف والتنظيم.' },

@@ -176,7 +176,7 @@ export default function HowItWorksPage({ params: { locale } }: { params: { local
                         </div>
                         <h3 className="font-bold leading-snug text-primary-900">{step.title}</h3>
                       </div>
-                      <p className="text-sm leading-6 text-ink/65">{step.desc}</p>
+                      <p className="text-sm leading-6 text-primary-900/80">{step.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -200,10 +200,10 @@ export default function HowItWorksPage({ params: { locale } }: { params: { local
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/70 text-accent-600 shadow-sm ring-1 ring-primary-700/10">
                         <LineIcon name={section.icon} className="h-6 w-6" />
                       </div>
-                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-ink/45">0{sectionIndex + 1}</span>
+                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-accent-700">0{sectionIndex + 1}</span>
                     </div>
                     <h2 className={`mt-4 ${sectionTitleClass}`}>{section.title}</h2>
-                    <p className="mt-3 text-sm leading-6 text-ink/65">{section.text}</p>
+                    <p className="mt-3 text-sm leading-6 text-primary-900/80">{section.text}</p>
                   </div>
 
                   <div className="space-y-3">
@@ -234,7 +234,7 @@ export default function HowItWorksPage({ params: { locale } }: { params: { local
           <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className={`${isArabic ? 'font-arabic text-3xl leading-snug' : 'font-heading text-4xl'} font-bold`}>{copy.ctaTitle}</h2>
-              <p className="mt-3 max-w-2xl leading-7 text-white/78">{copy.ctaText}</p>
+              <p className="mt-3 max-w-2xl leading-7 text-white/85">{copy.ctaText}</p>
             </div>
             <Link href={`/${locale}/booking`} className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3 font-bold text-primary-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-accent-400 md:w-auto">
               {copy.ctaButton}

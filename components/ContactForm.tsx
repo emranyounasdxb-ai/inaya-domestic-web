@@ -54,7 +54,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
 
   if (isFloating) {
     const floatingInputClass = 'peer w-full rounded-2xl border border-primary-700/10 bg-ivory-100/70 px-4 pb-3 pt-6 text-sm text-ink shadow-sm outline-none transition placeholder:text-transparent focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30';
-    const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-ink/55 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent-600 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
+    const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-primary-900/75 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent-700 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
 
     return (
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -115,7 +115,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
         </div>
 
         <button type="submit" className="w-full rounded-full bg-primary-900 px-6 py-4 text-base font-bold text-white shadow-premium transition hover:-translate-y-0.5 hover:bg-primary-800 active:scale-[0.99]">{labels.submit}</button>
-        <p className="text-center text-xs text-ink/55">{labels.privacy}</p>
+        <p className="text-center text-xs text-primary-900/75">{labels.privacy}</p>
       </form>
     );
   }
@@ -162,7 +162,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
       </div>
       <div className="sm:col-span-2">
         <button type="submit" className="btn-primary w-full">{labels.submit}</button>
-        <p className="mt-3 text-center text-xs text-ink/55">{labels.privacy}</p>
+        <p className="mt-3 text-center text-xs text-primary-900/75">{labels.privacy}</p>
       </div>
     </form>
   );

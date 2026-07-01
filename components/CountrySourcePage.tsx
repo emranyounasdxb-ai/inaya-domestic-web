@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { countrySourcePages, type Lang } from '@/lib/country-source-pages';
 
@@ -66,11 +67,11 @@ export default function CountrySourcePage({ locale }: { locale: string }) {
               <Link key={country.slug} href={`/${locale}/maid-source-countries/${country.slug}`} className="group rounded-[24px] border border-white/80 bg-white/80 p-5 shadow-[0_18px_48px_rgba(7,22,74,0.06)] transition hover:-translate-y-1 hover:border-accent-500/28 hover:shadow-[0_24px_60px_rgba(7,22,74,0.10)]">
                 <div className="flex items-center gap-3">
                   <span className="flex h-12 w-16 overflow-hidden rounded-2xl bg-white p-1 shadow-inner">
-                    <img src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${country.country[lang]} flag`} className="h-full w-full rounded-xl object-cover" loading="lazy" />
+                    <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${country.country[lang]} flag`} width={80} height={48} className="h-full w-full rounded-xl object-cover" />
                   </span>
                   <div>
                     <h3 className="font-heading text-xl font-bold">{country.country[lang]}</h3>
-                    <p className="mt-1 text-xs font-semibold text-primary-900/56">{country.workerLabel[lang]}</p>
+                    <p className="mt-1 text-xs font-semibold text-primary-900/75">{country.workerLabel[lang]}</p>
                   </div>
                 </div>
                 <p className="mt-4 text-sm leading-6 text-primary-900/70">{country.lead[lang]}</p>

@@ -23,8 +23,6 @@ export const servicePageCopiesCountry: Record<string, Record<Lang, ServiceCopy>>
       perfectTitle: 'Source Country Guidance Is Useful For',
       journeyTitle: 'Profile Matching Process',
       journeyText: 'We guide families by matching individual worker experience with household needs, not nationality alone.',
-      vettingTitle: 'Important Matching Note',
-      vettingText: 'Source country is only one part of selection. The right domestic worker should be matched by skills, experience, documents, attitude, availability and family suitability.',
       countriesTitle: 'Countries We Commonly Support',
       countriesText: 'Availability depends on current profiles, documentation and legal status.',
       pricingTitle: 'Consultation Guidance',
@@ -49,13 +47,6 @@ export const servicePageCopiesCountry: Record<string, Record<Lang, ServiceCopy>>
         { title: 'Skill Matching', text: 'Experience is matched with cleaning, cooking or childcare needs.' },
         { title: 'Documentation', text: 'Visa status and documents are discussed before confirmation.' },
         { title: 'Family Fit', text: 'The final direction is based on overall household suitability.' }
-      ],
-      vetting: [
-        { title: 'Experience', text: 'Past household experience is reviewed.', icon: '01' },
-        { title: 'Language', text: 'Communication preference is considered.', icon: '02' },
-        { title: 'Skills', text: 'Cleaning, cooking and care skills are discussed.', icon: '03' },
-        { title: 'Documents', text: 'Documentation and status are considered.', icon: '04' },
-        { title: 'Family Fit', text: 'Suitability for the household is prioritized.', icon: '05' }
       ],
       countries: [
         { title: 'Philippines', text: 'English communication, childcare exposure and housekeeping.' },
@@ -95,8 +86,6 @@ export const servicePageCopiesCountry: Record<string, Record<Lang, ServiceCopy>>
       perfectTitle: 'مناسبة لـ',
       journeyTitle: 'خطوات مطابقة الملف',
       journeyText: 'نرشد الأسر من خلال مطابقة خبرة العامل الفردية مع احتياج المنزل وليس حسب الجنسية فقط.',
-      vettingTitle: 'ملاحظة مهمة عن المطابقة',
-      vettingText: 'دولة المصدر هي جزء واحد فقط من الاختيار. المطابقة الصحيحة تعتمد على المهارات والخبرة والمستندات والسلوك والتوفر وملاءمة الأسرة.',
       countriesTitle: 'الدول التي ندعمها عادة',
       countriesText: 'يعتمد التوفر على الملفات الحالية والمستندات والحالة القانونية.',
       pricingTitle: 'إرشاد الاستشارة',
@@ -121,13 +110,6 @@ export const servicePageCopiesCountry: Record<string, Record<Lang, ServiceCopy>>
         { title: 'المهارات', text: 'تتم مطابقة الخبرة مع التنظيف أو الطبخ أو الأطفال.' },
         { title: 'المستندات', text: 'تتم مناقشة التأشيرة والمستندات قبل التأكيد.' },
         { title: 'الملاءمة', text: 'الاتجاه النهائي يعتمد على ملاءمة الأسرة.' }
-      ],
-      vetting: [
-        { title: 'الخبرة', text: 'تتم مراجعة الخبرة المنزلية السابقة.', icon: '01' },
-        { title: 'اللغة', text: 'تتم مراعاة تفضيل التواصل.', icon: '02' },
-        { title: 'المهارات', text: 'تتم مناقشة التنظيف والطبخ والرعاية.', icon: '03' },
-        { title: 'المستندات', text: 'تؤخذ المستندات والحالة بعين الاعتبار.', icon: '04' },
-        { title: 'ملاءمة الأسرة', text: 'يتم إعطاء الأولوية لملاءمة المنزل.', icon: '05' }
       ],
       countries: [
         { title: 'الفلبين', text: 'تواصل إنجليزي وخبرة أطفال وتنظيم المنزل.' },

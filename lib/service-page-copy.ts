@@ -17,8 +17,6 @@ export type ServiceCopy = {
   perfectTitle: string;
   journeyTitle: string;
   journeyText: string;
-  vettingTitle: string;
-  vettingText: string;
   countriesTitle: string;
   countriesText: string;
   pricingTitle: string;
@@ -34,7 +32,6 @@ export type ServiceCopy = {
   included: string[];
   perfect: string[];
   journey: Pair[];
-  vetting: Array<Pair & { icon: string }>;
   countries: Pair[];
   pricing: Pricing[];
   faqs: Pair[];
@@ -80,8 +77,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
       perfectTitle: 'Perfect For',
       journeyTitle: 'How INAYA Coordinates Live-in Maid Services',
       journeyText: 'A structured evaluation framework designed to keep every service recommendation clear, trusted and suitable for your home.',
-      vettingTitle: 'INAYA Vetting Matrix',
-      vettingText: 'Every recommendation is supported by a clear review process designed to protect the household, clarify expectations and improve long-term suitability.',
       countriesTitle: 'Countries We Source From',
       countriesText: 'We match profiles by language, household experience, cooking style, childcare exposure and family requirements.',
       pricingTitle: 'Transparent Pricing Guidance',
@@ -106,13 +101,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'Behaviour', text: 'Communication style and suitability are considered carefully.' },
         { title: 'Reference', text: 'Past experience and available background details are reviewed.' },
         { title: 'Matching', text: 'Service recommendation is aligned with family expectations.' }
-      ],
-      vetting: [
-        { title: 'Identity Review', text: 'Passport, identity details and eligibility are checked before moving forward.', icon: '▣' },
-        { title: 'Skills Mapping', text: 'Cleaning, laundry, cooking and family routine requirements are matched carefully.', icon: '☷' },
-        { title: 'Behaviour Fit', text: 'Communication style, attitude and household suitability are reviewed.', icon: '✦' },
-        { title: 'Experience Check', text: 'Past household experience and practical strengths are reviewed.', icon: '◈' },
-        { title: 'Family Matching', text: 'Recommendations are aligned with home size, emirate and expectations.', icon: '◎' }
       ],
       countries: [
         { title: 'Philippines', text: 'English communication, childcare and housekeeping.' },
@@ -152,8 +140,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
       perfectTitle: 'مناسبة لـ',
       journeyTitle: 'مصفوفة التحقق من خمس خطوات',
       journeyText: 'إطار تقييم واضح يساعد على جعل كل ترشيح مناسباً وموثوقاً للأسرة.',
-      vettingTitle: 'مصفوفة التحقق في عناية',
-      vettingText: 'كل ترشيح يعتمد على مراجعة منظمة تساعد على حماية الأسرة وتوضيح التوقعات وتحسين الملاءمة.',
       countriesTitle: 'الدول التي نوفر منها العمالة',
       countriesText: 'نطابق الملفات حسب اللغة والخبرة المنزلية ونمط الطبخ ورعاية الأطفال واحتياج الأسرة.',
       pricingTitle: 'إرشاد واضح للأسعار',
@@ -178,13 +164,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'السلوك', text: 'مراجعة أسلوب التواصل والملاءمة بعناية.' },
         { title: 'المرجع', text: 'مراجعة الخبرة المتاحة والتفاصيل العملية.' },
         { title: 'المطابقة', text: 'تتم مواءمة الترشيح مع توقعات الأسرة.' }
-      ],
-      vetting: [
-        { title: 'مراجعة الهوية', text: 'يتم التحقق من جواز السفر وتفاصيل الهوية والأهلية.', icon: '▣' },
-        { title: 'مطابقة المهارات', text: 'تتم مطابقة التنظيف والغسيل والطبخ وروتين الأسرة.', icon: '☷' },
-        { title: 'الملاءمة السلوكية', text: 'يتم أخذ التواصل والالتزام والملاءمة بعين الاعتبار.', icon: '✦' },
-        { title: 'مراجعة الخبرة', text: 'تتم مراجعة الخبرات المنزلية ونقاط القوة العملية.', icon: '◈' },
-        { title: 'مطابقة الأسرة', text: 'تتم مواءمة الترشيح مع المنزل والإمارة والتوقيت.', icon: '◎' }
       ],
       countries: [
         { title: 'الفلبين', text: 'تواصل إنجليزي ورعاية أطفال وتنظيم المنزل.' },
@@ -226,8 +205,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
       perfectTitle: 'Perfect For',
       journeyTitle: 'Our Live-out Maid Booking Process',
       journeyText: 'A clear scheduling and requirement-matching process designed for privacy, flexibility and reliable household support.',
-      vettingTitle: 'INAYA Live-out Service Check',
-      vettingText: 'We review timing, tasks, location and household expectations before confirming the most suitable service arrangement.',
       countriesTitle: 'Candidate Matching Guidance',
       countriesText: 'We guide families based on language needs, cleaning experience, kitchen support, childcare exposure and preferred schedule.',
       pricingTitle: 'Live-out Maid Pricing Guidance',
@@ -252,13 +229,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'Duties', text: 'Cleaning, laundry, ironing and kitchen support are discussed clearly.' },
         { title: 'Visit', text: 'Our team confirms the visit, location and communication details.' },
         { title: 'Follow-up', text: 'We stay connected to keep the service smooth and reliable.' }
-      ],
-      vetting: [
-        { title: 'Timing Fit', text: 'Preferred days, hours and frequency are reviewed before confirmation.', icon: '◷' },
-        { title: 'Task Scope', text: 'Cleaning, laundry, ironing and kitchen support are clarified in advance.', icon: '☷' },
-        { title: 'Location Check', text: 'Emirate, area and access details are reviewed for smooth coordination.', icon: '⌖' },
-        { title: 'Home Type Match', text: 'Apartment, villa and family size requirements are considered carefully.', icon: '⌂' },
-        { title: 'Service Follow-up', text: 'Feedback is reviewed to keep the arrangement consistent and reliable.', icon: '✓' }
       ],
       countries: [
         { title: 'Language Preference', text: 'Options can be guided by English, Arabic or other communication needs.' },
@@ -298,8 +268,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
       perfectTitle: 'مناسبة لـ',
       journeyTitle: 'خطوات حجز الخادمة غير المقيمة',
       journeyText: 'عملية واضحة لمطابقة الاحتياج والجدول بما يحافظ على الخصوصية والمرونة وجودة الخدمة.',
-      vettingTitle: 'فحص خدمة الخادمة غير المقيمة',
-      vettingText: 'نراجع التوقيت والمهام والموقع وتوقعات الأسرة قبل تأكيد ترتيب الخدمة المناسب.',
       countriesTitle: 'إرشاد مطابقة العمالة',
       countriesText: 'نرشد الأسر حسب اللغة والخبرة في التنظيف والمطبخ ورعاية الأطفال والجدول المطلوب.',
       pricingTitle: 'إرشاد أسعار الخادمة غير المقيمة',
@@ -324,13 +292,6 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'المهام', text: 'يتم توضيح التنظيف والغسيل والكي والمطبخ قبل الحجز.' },
         { title: 'الزيارة', text: 'يؤكد فريقنا تفاصيل الزيارة والموقع ووسيلة التواصل.' },
         { title: 'المتابعة', text: 'نتابع معك لضمان تجربة منظمة وموثوقة.' }
-      ],
-      vetting: [
-        { title: 'ملاءمة التوقيت', text: 'نراجع الأيام والساعات وعدد الزيارات قبل التأكيد.', icon: '◷' },
-        { title: 'نطاق المهام', text: 'يتم توضيح التنظيف والغسيل والكي والمطبخ مسبقاً.', icon: '☷' },
-        { title: 'مراجعة الموقع', text: 'تتم مراجعة الإمارة والمنطقة وتفاصيل الوصول للتنسيق السلس.', icon: '⌖' },
-        { title: 'مطابقة نوع المنزل', text: 'نراعي احتياج الشقة أو الفيلا وحجم الأسرة.', icon: '⌂' },
-        { title: 'متابعة الخدمة', text: 'نراجع الملاحظات للحفاظ على ترتيب ثابت وموثوق.', icon: '✓' }
       ],
       countries: [
         { title: 'تفضيل اللغة', text: 'يمكن الإرشاد حسب الحاجة للإنجليزية أو العربية أو غيرها.' },

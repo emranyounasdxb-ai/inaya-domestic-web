@@ -217,7 +217,7 @@ export default function PhaseOneSeoSection({ page, locale }: { page: PageKey; lo
           <div>
             <p className="text-[0.66rem] font-bold uppercase tracking-[0.26em] text-accent-700">{t.eyebrow}</p>
             <h2 className={`${lang === 'ar' ? 'font-arabic leading-[1.32]' : 'font-heading leading-tight'} mt-4 text-[2rem] font-bold tracking-[-0.045em] sm:text-[2.75rem]`}>{t.title}</h2>
-            <p className="mt-5 text-[0.98rem] leading-8 text-primary-900/68">{t.lead}</p>
+            <p className="mt-5 text-[0.98rem] leading-8 text-primary-900/80">{t.lead}</p>
             <div className="mt-7 rounded-[22px] border border-accent-500/16 bg-[#f8f6f0] p-5">
               <h3 className="font-heading text-lg font-bold text-primary-900">{t.bulletsTitle}</h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-primary-900/72">
@@ -229,7 +229,7 @@ export default function PhaseOneSeoSection({ page, locale }: { page: PageKey; lo
             {t.sections.map((item) => (
               <article key={item.title} className="rounded-[22px] border border-primary-900/8 bg-white p-5 shadow-[0_14px_40px_rgba(7,22,74,0.045)]">
                 <h3 className="font-heading text-xl font-bold text-primary-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-primary-900/68">{item.text}</p>
+                <p className="mt-3 text-sm leading-7 text-primary-900/80">{item.text}</p>
               </article>
             ))}
           </div>
@@ -241,7 +241,7 @@ export default function PhaseOneSeoSection({ page, locale }: { page: PageKey; lo
               {t.faqs.map((faq) => (
                 <details key={faq.question} className="rounded-2xl border border-primary-900/8 bg-white p-5 open:border-accent-500/28">
                   <summary className="cursor-pointer font-semibold text-primary-900">{faq.question}</summary>
-                  <p className="mt-3 text-sm leading-7 text-primary-900/66">{faq.answer}</p>
+                  <p className="mt-3 text-sm leading-7 text-primary-900/75">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -249,7 +249,7 @@ export default function PhaseOneSeoSection({ page, locale }: { page: PageKey; lo
           <div className="rounded-[24px] bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.18)]">
             <p className="text-[0.66rem] font-bold uppercase tracking-[0.24em] text-accent-300">INAYA</p>
             <h3 className={`${lang === 'ar' ? 'font-arabic' : 'font-heading'} mt-4 text-2xl font-bold leading-tight`}>{t.ctaTitle}</h3>
-            <p className="mt-4 text-sm leading-7 text-white/72">{t.ctaText}</p>
+            <p className="mt-4 text-sm leading-7 text-white/85">{t.ctaText}</p>
             <Link href={href} className="mt-6 inline-flex rounded-full bg-accent-500 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-900 transition hover:-translate-y-0.5 hover:bg-accent-300">
               {t.ctaLabel}
             </Link>

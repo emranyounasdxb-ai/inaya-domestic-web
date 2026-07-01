@@ -20,7 +20,7 @@ function LineIcon({ name, className = '' }: { name: IconName; className?: string
 
 function FeatureValue({ value }: { value: string | boolean }) {
   if (value === true) return <LineIcon name="check" className="mx-auto h-4 w-4 text-accent-700" />;
-  if (value === false) return <LineIcon name="x" className="mx-auto h-4 w-4 text-ink/28" />;
+  if (value === false) return <LineIcon name="x" className="mx-auto h-4 w-4 text-primary-900/70" />;
   return <span>{value}</span>;
 }
 
@@ -151,7 +151,7 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
           <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.25rem] font-bold leading-[1.08] tracking-[-0.02em] text-primary-900 sm:text-[3rem] lg:text-[3.35rem]`}>
             {copy.hero.title}
           </h1>
-          <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-ink/62 sm:text-base">
+          <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-primary-900/80 sm:text-base">
             {copy.hero.subtitle}
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
                 {title}
               </h2>
               <div className="mt-5 h-px w-14 bg-accent-500/55" />
-              <p className="mt-5 text-sm leading-7 text-ink/58">{text}</p>
+              <p className="mt-5 text-sm leading-7 text-primary-900/80">{text}</p>
             </div>
           ))}
         </div>
@@ -187,15 +187,15 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
               <div className="mt-8 flex items-start justify-between gap-4">
                 <div>
                   <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.45rem] font-bold leading-none ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.price}</h2>
-                  <p className={`mt-3 text-xs ${plan.featured ? 'text-white/62' : 'text-ink/55'}`}>{plan.period}</p>
+                  <p className={`mt-3 text-xs ${plan.featured ? 'text-white/85' : 'text-primary-900/75'}`}>{plan.period}</p>
                 </div>
               </div>
               <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h3>
-              <p className={`mt-4 text-sm leading-7 ${plan.featured ? 'text-white/68' : 'text-ink/58'}`}>{plan.desc}</p>
+              <p className={`mt-4 text-sm leading-7 ${plan.featured ? 'text-white/85' : 'text-primary-900/80'}`}>{plan.desc}</p>
               <div className={`my-9 h-px ${plan.featured ? 'bg-accent-500/28' : 'bg-accent-500/18'}`} />
               <div className="space-y-5">
                 {plan.features.map((feature, index) => (
-                  <div key={feature} className={`flex items-start gap-3 text-sm leading-7 ${plan.featured ? 'text-white/82' : 'text-ink/68'}`}>
+                  <div key={feature} className={`flex items-start gap-3 text-sm leading-7 ${plan.featured ? 'text-white/85' : 'text-primary-900/80'}`}>
                     <LineIcon name={plan.featured && index > 1 ? 'star' : 'check'} className={`mt-1 h-4 w-4 shrink-0 ${plan.featured ? 'text-accent-500' : 'text-accent-700'}`} />
                     <span>{feature}</span>
                   </div>
@@ -210,14 +210,14 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
             </div>
           ))}
         </div>
-        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-6 text-ink/45">{copy.note}</p>
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-6 text-primary-900/70">{copy.note}</p>
       </section>
 
       <section className="container-x pb-28 sm:pb-32">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-3xl font-bold text-primary-900`}>{copy.comparisonTitle}</h2>
           <div className="mt-10 overflow-hidden rounded-[14px] border border-accent-500/18 bg-white shadow-[0_18px_60px_rgba(7,22,74,0.045)]">
-            <div className="grid grid-cols-4 bg-[#f3f1f0] text-[0.68rem] font-bold uppercase tracking-[0.18em] text-ink/45">
+            <div className="grid grid-cols-4 bg-[#f3f1f0] text-[0.68rem] font-bold uppercase tracking-[0.18em] text-primary-900/70">
               {copy.tableHeaders.map((header, index) => (
                 <div key={header} className={`px-5 py-6 ${index === 2 ? 'bg-accent-500/18 text-primary-900' : ''}`}>{header}</div>
               ))}
@@ -225,9 +225,9 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
             {copy.rows.map((row, index) => (
               <div key={String(row[0])} className={`grid grid-cols-4 border-t border-primary-900/6 text-sm ${index % 2 === 0 ? 'bg-white' : 'bg-[#fdfcf9]'}`}>
                 <div className="px-5 py-6 text-start font-semibold text-primary-900">{row[0]}</div>
-                <div className="px-5 py-6 text-center text-ink/62"><FeatureValue value={row[1]} /></div>
+                <div className="px-5 py-6 text-center text-primary-900/80"><FeatureValue value={row[1]} /></div>
                 <div className="bg-accent-500/[0.08] px-5 py-6 text-center font-semibold text-primary-900"><FeatureValue value={row[2]} /></div>
-                <div className="px-5 py-6 text-center text-ink/62"><FeatureValue value={row[3]} /></div>
+                <div className="px-5 py-6 text-center text-primary-900/80"><FeatureValue value={row[3]} /></div>
               </div>
             ))}
           </div>
@@ -237,7 +237,7 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
       <section className="container-x pb-28 sm:pb-32">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-3xl font-bold text-primary-900`}>{copy.faqTitle}</h2>
-          <p className="mt-4 text-sm text-ink/55">{copy.faqSubtitle}</p>
+          <p className="mt-4 text-sm text-primary-900/75">{copy.faqSubtitle}</p>
           <div className="mt-10 space-y-4 text-start">
             {copy.faqs.map(([question, answer]) => (
               <details key={question} className="group rounded-[12px] border border-accent-500/16 bg-white shadow-sm">
@@ -245,7 +245,7 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
                   <span>{question}</span>
                   <span className="text-accent-700 transition group-open:rotate-180">⌄</span>
                 </summary>
-                <p className="border-t border-accent-500/12 px-6 pb-6 pt-5 text-sm leading-7 text-ink/62">{answer}</p>
+                <p className="border-t border-accent-500/12 px-6 pb-6 pt-5 text-sm leading-7 text-primary-900/80">{answer}</p>
               </details>
             ))}
           </div>
@@ -255,7 +255,7 @@ export default function PricingPage({ params: { locale } }: { params: { locale: 
       <section className="container-x pb-28 sm:pb-36">
         <div className="mx-auto max-w-6xl rounded-[18px] border border-accent-500/20 bg-[radial-gradient(circle_at_70%_20%,rgba(191,164,106,0.18),transparent_22rem),#f2eff1] px-6 py-20 text-center shadow-[0_18px_60px_rgba(7,22,74,0.04)] sm:px-10">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-3xl font-bold text-primary-900`}>{copy.cta.title}</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-ink/58">{copy.cta.text}</p>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-primary-900/80">{copy.cta.text}</p>
           <Link href={`/${locale}/contact`} className="mt-9 inline-flex items-center justify-center gap-2 rounded-full border border-accent-400 bg-primary-900 px-7 py-3 text-sm font-bold text-accent-100 shadow-[0_12px_30px_rgba(7,22,74,0.20)] transition hover:-translate-y-0.5 hover:bg-accent-500 hover:text-primary-900">
             {copy.cta.button}
             <LineIcon name="arrow" className="h-4 w-4" />

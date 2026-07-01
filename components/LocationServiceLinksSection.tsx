@@ -23,14 +23,14 @@ export default function LocationServiceLinksSection({ locale }: { locale: string
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[0.66rem] font-bold uppercase tracking-[0.28em] text-accent-700">{t.eyebrow}</p>
           <h2 className={`${lang === 'ar' ? 'font-arabic leading-[1.3]' : 'font-heading leading-tight'} mt-4 text-[2rem] font-bold tracking-[-0.045em] sm:text-[2.8rem]`}>{t.title}</h2>
-          <p className="mt-4 text-sm leading-7 text-primary-900/68">{t.lead}</p>
+          <p className="mt-4 text-sm leading-7 text-primary-900/80">{t.lead}</p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {locationServicePages.map((location) => (
             <Link key={location.slug} href={`/${locale}/${location.slug}`} className="group rounded-[22px] border border-primary-900/8 bg-[#fbfaf7] p-5 transition hover:-translate-y-1 hover:border-accent-500/28 hover:bg-white hover:shadow-[0_18px_48px_rgba(7,22,74,0.08)]">
               <p className="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-accent-700">UAE</p>
               <h3 className="mt-3 font-heading text-xl font-bold tracking-[-0.03em] text-primary-900">{location.city[lang]}</h3>
-              <p className="mt-3 text-xs leading-6 text-primary-900/68">{location.metaDescription[lang]}</p>
+              <p className="mt-3 text-xs leading-6 text-primary-900/75">{location.metaDescription[lang]}</p>
               <span className="mt-4 inline-flex text-xs font-bold uppercase tracking-[0.14em] text-accent-700 transition group-hover:translate-x-1">{t.view} →</span>
             </Link>
           ))}

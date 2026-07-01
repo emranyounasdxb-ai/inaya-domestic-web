@@ -96,28 +96,45 @@ export const serviceGroups: ServiceGroup[] = [
   }
 ];
 
+export const serviceFallbackImage = '/images/about/about-hero-domestic-service.webp';
+
 export const serviceImageBySlug: Partial<Record<string, string>> = {
-  'live-in-maid': '/images/about/about-hero-domestic-service.webp',
-  'live-out-maid': '/images/about/about-hero-domestic-service.webp',
-  housemaid: '/images/about/about-hero-domestic-service.webp',
-  housekeeping: '/images/about/about-hero-domestic-service.webp',
-  'full-time-maid': '/images/about/about-hero-domestic-service.webp',
-  'part-time-maid': '/images/about/about-hero-domestic-service.webp',
-  'monthly-maid-contract': '/images/about/about-hero-domestic-service.webp',
-  'on-demand-domestic-help': '/images/about/about-hero-domestic-service.webp',
-  nanny: '/images/home/discipline-executive-nannies.webp',
-  'executive-nannies': '/images/home/discipline-executive-nannies.webp',
-  babysitting: '/images/home/discipline-executive-nannies.webp',
-  'newborn-care': '/images/home/discipline-executive-nannies.webp',
-  'home-cooking': '/images/home/discipline-private-chef.webp',
-  'private-chefs': '/images/home/discipline-private-chef.webp',
-  'personal-chef': '/images/home/discipline-private-chef.webp',
-  'kitchen-helper': '/images/home/discipline-private-chef.webp',
-  'house-managers': '/images/home/discipline-house-manager.webp',
-  'bespoke-household-management': '/images/home/discipline-house-manager.webp',
-  'experienced-maid': '/images/about/about-hero-domestic-service.webp',
-  'background-verification': '/images/about/about-hero-domestic-service.webp'
+  'live-in-maid': '/images/services/live-in-maid.webp',
+  'live-out-maid': '/images/services/live-out-maid.webp',
+  housemaid: '/images/services/housemaid.webp',
+  housekeeping: '/images/services/housekeeping.webp',
+  'full-time-maid': '/images/services/full-time-maid.webp',
+  'part-time-maid': '/images/services/part-time-maid.webp',
+  'monthly-maid-contract': '/images/services/monthly-maid-contract.webp',
+  'on-demand-domestic-help': '/images/services/on-demand-domestic-help.webp',
+  nanny: '/images/services/nanny.webp',
+  'executive-nannies': '/images/services/executive-nannies.webp',
+  babysitting: '/images/services/babysitting.webp',
+  'newborn-care': '/images/services/newborn-care.webp',
+  'home-cooking': '/images/services/home-cooking.webp',
+  'private-chefs': '/images/services/private-chefs.webp',
+  'personal-chef': '/images/services/personal-chef.webp',
+  'kitchen-helper': '/images/services/kitchen-helper.webp',
+  'house-managers': '/images/services/house-managers.webp',
+  'elder-care': '/images/services/elder-care.webp',
+  'patient-care': '/images/services/patient-care.webp',
+  'companion-care': '/images/services/companion-care.webp',
+  recruitment: '/images/services/recruitment.webp',
+  'maid-visa': '/images/services/maid-visa.webp',
+  'maid-replacement': '/images/services/maid-replacement.webp',
+  'sponsorship-transfer': '/images/services/sponsorship-transfer.webp',
+  'experienced-maid': '/images/services/experienced-maid.webp',
+  'background-verification': '/images/services/background-verification.webp',
+  'bespoke-household-management': '/images/services/bespoke-household-management.webp',
+  'floral-styling': '/images/services/floral-styling.webp',
+  'relocation-support': '/images/services/relocation-support.webp',
+  'pet-care-specialists': '/images/services/pet-care-specialists.webp',
+  'event-staffing': '/images/services/event-staffing.webp'
 };
+
+export function getServiceImage(slug: string) {
+  return serviceImageBySlug[slug] ?? serviceFallbackImage;
+}
 
 export const countryProfiles = [
   {

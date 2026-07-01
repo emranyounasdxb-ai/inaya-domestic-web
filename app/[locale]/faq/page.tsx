@@ -358,7 +358,7 @@ export default function FaqPage({ params: { locale } }: { params: { locale: stri
                     key={category.id}
                     type="button"
                     onClick={() => setActiveId(category.id)}
-                    className={`flex items-center justify-center gap-2 rounded-[13px] px-4 py-3 text-sm font-bold transition ${isActive ? 'bg-primary-900 text-white shadow-[0_12px_26px_rgba(7,22,74,0.2)]' : 'text-ink/58 hover:bg-accent-50 hover:text-primary-900'}`}
+                    className={`flex items-center justify-center gap-2 rounded-[13px] px-4 py-3 text-sm font-bold transition ${isActive ? 'bg-primary-900 text-white shadow-[0_12px_26px_rgba(7,22,74,0.2)]' : 'text-primary-900/75 hover:bg-accent-50 hover:text-primary-900'}`}
                   >
                     <LineIcon name={category.icon} className={`h-4 w-4 ${isActive ? 'text-accent-200' : 'text-accent-700'}`} />
                     <span>{category.title}</span>
@@ -392,7 +392,7 @@ export default function FaqPage({ params: { locale } }: { params: { locale: stri
                     <span>{item.question}</span>
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-accent-700 transition group-open:rotate-180">⌄</span>
                   </summary>
-                  <p className="border-t border-primary-900/8 px-6 pb-6 pt-4 text-sm leading-7 text-ink/62 sm:px-8 sm:text-[0.95rem]">
+                  <p className="border-t border-primary-900/8 px-6 pb-6 pt-4 text-sm leading-7 text-primary-900/80 sm:px-8 sm:text-[0.95rem]">
                     {item.answer}
                   </p>
                 </details>
@@ -405,7 +405,7 @@ export default function FaqPage({ params: { locale } }: { params: { locale: stri
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2rem] font-bold leading-tight tracking-[-0.02em] text-primary-900 sm:text-[2.45rem]`}>
             {copy.ctaTitle}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-ink/60 sm:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-primary-900/80 sm:text-base">
             {copy.ctaText}
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

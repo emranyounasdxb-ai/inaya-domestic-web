@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 const countries = [
@@ -55,7 +56,7 @@ export default function HomeCountryAvailability({ locale }: { locale: string }) 
             return (
               <article className="home-country-card" key={country.code}>
                 <div className="home-country-flag">
-                  <img src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${name} flag`} loading="lazy" />
+                  <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${name} flag`} width={80} height={48} />
                 </div>
                 <div className="home-country-content">
                   <h3>{name}</h3>

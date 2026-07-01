@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -31,9 +32,11 @@ export default function Navbar({ locale }: { locale: string }) {
     <header className="sticky top-0 z-50 border-b border-primary-700/10 bg-ivory/80 shadow-[0_1px_0_rgba(255,255,255,0.75)_inset] backdrop-blur-2xl">
       <nav className="container-x flex h-14 items-center justify-between gap-6">
         <Link href={`/${locale}`} className="flex shrink-0 items-center" aria-label="INAYA Domestic Workers home">
-          <img
+          <Image
             src={logoSrc}
             alt={logoAlt}
+            width={156}
+            height={28}
             className="h-7 w-auto max-w-[132px] object-contain sm:max-w-[156px]"
           />
         </Link>

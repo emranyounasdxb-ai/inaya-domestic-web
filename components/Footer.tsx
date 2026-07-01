@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
@@ -49,7 +50,7 @@ export default function Footer({ locale }: { locale: string }) {
       <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[18px] border border-primary-900/8 bg-white/78 shadow-[0_24px_80px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10 backdrop-blur-xl">
         <div className="grid items-stretch gap-5 px-7 py-5 sm:px-10 lg:grid-cols-[1.18fr_0.92fr_1.04fr_1.23fr] lg:px-12 lg:py-6 xl:px-14">
           <div className="lg:flex lg:h-full lg:flex-col">
-            <img src={logoSrc} alt={logoAlt} className="h-16 w-auto max-w-[280px] object-contain" />
+            <Image src={logoSrc} alt={logoAlt} width={280} height={64} className="h-16 w-auto max-w-[280px] object-contain" />
             <p className="mt-3 max-w-[310px] text-[0.9rem] leading-5 text-ink/72">{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}</p>
             <div className="mt-3 h-px w-12 bg-[#c98700]" />
             <div className="mt-3 space-y-2.5 lg:flex lg:flex-1 lg:flex-col lg:justify-between lg:space-y-0">
@@ -83,23 +84,23 @@ export default function Footer({ locale }: { locale: string }) {
                 <span className="text-[#c98700]"><Icon name={stat.icon} size={34} /></span>
                 <div>
                   <p className="font-heading text-[1.45rem] font-bold leading-none tracking-[-0.04em] text-primary-900">{stat.value}</p>
-                  <p className="mt-0.5 text-[0.82rem] leading-tight text-ink/62">{stat.label}</p>
+                  <p className="mt-0.5 text-[0.82rem] leading-tight text-primary-900/75">{stat.label}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 px-7 py-3.5 text-[0.8rem] text-ink/64 sm:px-10 lg:flex-row lg:px-14">
+        <div className="flex flex-col items-center justify-between gap-3 px-7 py-3.5 text-[0.8rem] text-primary-900/75 sm:px-10 lg:flex-row lg:px-14">
           <p>© {year} INAYA Domestic Workers. {t('rights')}</p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <Link href={`/${locale}/privacy-policy`} className="transition hover:text-primary-900">{t('privacy')}</Link>
-            <span className="text-primary-900/25">|</span>
+            <span className="text-accent-700/70">|</span>
             <Link href={`/${locale}/terms`} className="transition hover:text-primary-900">{t('terms')}</Link>
-            <span className="text-primary-900/25">|</span>
+            <span className="text-accent-700/70">|</span>
             <Link href={`/${locale}/refund-policy`} className="transition hover:text-primary-900">{t('refund')}</Link>
           </div>
-          <div className="flex items-center gap-3 text-ink/68">
+          <div className="flex items-center gap-3 text-primary-900/75">
             <span className="text-[#c98700]"><Icon name="lock" size={20} /></span>
             <span>{isArabic ? 'مرخص ومعتمد من الجهات الحكومية في الإمارات' : 'Licensed & Approved by UAE Government Authorities'}</span>
           </div>
@@ -156,7 +157,7 @@ function ContactItem({
       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#c98700]/55 text-[#c98700]"><Icon name={icon} size={15} /></span>
       <span className={`min-w-0 flex-1 ${isArabic ? 'text-right' : 'text-left'}`}>
         <span dir={titleDirection} className="block font-semibold leading-tight text-primary-900">{title}</span>
-        {text ? <span className="mt-0.5 block leading-tight text-ink/62">{text}</span> : null}
+        {text ? <span className="mt-0.5 block leading-tight text-primary-900/75">{text}</span> : null}
       </span>
     </>
   );

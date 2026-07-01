@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { countrySourcePages, getCountrySourcePage, type Lang } from '@/lib/country-source-pages';
@@ -102,17 +103,17 @@ export default function MaidSourceCountryPage({ params: { locale, slug } }: { pa
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">
             <div className="flex items-center gap-4">
               <span className="flex h-20 w-28 overflow-hidden rounded-[22px] bg-white p-1 shadow-inner">
-                <img src={`https://flagcdn.com/w160/${country.code}.png`} alt={`${country.country[lang]} flag`} className="h-full w-full rounded-[18px] object-cover" />
+                <Image src={`https://flagcdn.com/w160/${country.code}.png`} alt={`${country.country[lang]} flag`} width={160} height={100} className="h-full w-full rounded-[18px] object-cover" />
               </span>
               <div>
                 <p className="text-[0.62rem] font-bold uppercase tracking-[0.22em] text-accent-700">{t.sourceLabel}</p>
                 <h2 className="mt-1 font-heading text-2xl font-bold text-primary-900">{country.country[lang]}</h2>
-                <p className="mt-1 text-sm font-semibold text-primary-900/62">{country.workerLabel[lang]}</p>
+                <p className="mt-1 text-sm font-semibold text-primary-900/75">{country.workerLabel[lang]}</p>
               </div>
             </div>
             <div className="mt-6 rounded-[22px] bg-[#f8f6f0] p-5">
               <h3 className="font-heading text-lg font-bold text-primary-900">{t.profileFirst}</h3>
-              <p className="mt-3 text-sm leading-7 text-primary-900/68">{t.profileText}</p>
+              <p className="mt-3 text-sm leading-7 text-primary-900/80">{t.profileText}</p>
             </div>
           </div>
         </div>
@@ -164,7 +165,7 @@ export default function MaidSourceCountryPage({ params: { locale, slug } }: { pa
           <div className="rounded-[26px] border border-white/80 bg-white/82 p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
             <h2 className="font-heading text-2xl font-bold tracking-[-0.035em] text-primary-900">{t.faqTitle}</h2>
             <div className="mt-5 grid gap-3">
-              {country.faqs.map((faq) => <details key={faq.question.en} className="rounded-2xl border border-primary-900/8 bg-white px-4 py-3"><summary className="cursor-pointer text-sm font-bold text-primary-900">{faq.question[lang]}</summary><p className="mt-3 text-xs leading-6 text-primary-900/68">{faq.answer[lang]}</p></details>)}
+              {country.faqs.map((faq) => <details key={faq.question.en} className="rounded-2xl border border-primary-900/8 bg-white px-4 py-3"><summary className="cursor-pointer text-sm font-bold text-primary-900">{faq.question[lang]}</summary><p className="mt-3 text-xs leading-6 text-primary-900/75">{faq.answer[lang]}</p></details>)}
             </div>
           </div>
           <div className="rounded-[26px] bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.18)]">
@@ -174,7 +175,7 @@ export default function MaidSourceCountryPage({ params: { locale, slug } }: { pa
             </div>
             <div className="mt-7 rounded-[22px] bg-white/8 p-5">
               <h3 className="font-heading text-xl font-bold">{t.ctaTitle}</h3>
-              <p className="mt-3 text-sm leading-7 text-white/72">{t.ctaText}</p>
+              <p className="mt-3 text-sm leading-7 text-white/85">{t.ctaText}</p>
               <Link href={`/${locale}/contact`} className="mt-5 inline-flex rounded-full bg-accent-500 px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900 transition hover:bg-accent-300">{t.cta}</Link>
             </div>
           </div>

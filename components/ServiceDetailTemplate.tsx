@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getServiceWithExtras } from '@/lib/service-helpers';
 import { servicePageCopies, type Lang, type Pair, type ServiceCopy } from '@/lib/service-page-copy-all';
-import { countryProfiles, serviceImageBySlug, usesCountryMatching } from '@/lib/service-presentation';
+import { countryProfiles, getServiceImage, usesCountryMatching } from '@/lib/service-presentation';
 import { siteConfig } from '@/lib/site-config';
 import ServiceSeoBlock from './ServiceSeoBlock';
 import ServiceIcon from './ServiceIcon';
@@ -21,7 +21,7 @@ type SectionTitleProps = {
 };
 
 const sectionPadding = 'px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20';
-const surface = 'rounded-lg border border-primary-900/10 bg-white shadow-[0_14px_38px_rgba(7,22,74,0.07)]';
+const surface = 'rounded-[24px] border border-primary-900/10 bg-white shadow-[0_18px_48px_rgba(7,22,74,0.08)]';
 
 function headingFont(lang: Lang) {
   return lang === 'ar' ? 'font-arabic leading-[1.45]' : 'font-heading';
@@ -77,7 +77,7 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
     <div className="overflow-hidden bg-white text-primary-900">
       <ServiceHero
         copy={copy}
-        image={serviceImageBySlug[slug]}
+        image={getServiceImage(slug)}
         lang={lang}
         locale={locale}
         slug={slug}
@@ -93,12 +93,9 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
       </section>
 
       <section className={`${sectionPadding} bg-[#fffdf8]`}>
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-          <div>
-            <SectionTitle title={copy.whatTitle} lang={lang} />
-            <p className="max-w-2xl text-[0.98rem] leading-8 text-primary-900/80">{copy.whatText}</p>
-          </div>
-          <ServiceFactsPanel copy={copy} lang={lang} />
+        <div className="mx-auto max-w-4xl rounded-[26px] border border-accent-500/25 bg-white p-7 shadow-[0_20px_54px_rgba(7,22,74,0.08)] sm:p-10">
+          <SectionTitle title={copy.whatTitle} lang={lang} />
+          <p className="mt-6 max-w-3xl text-[1rem] leading-8 text-primary-900/85">{copy.whatText}</p>
         </div>
       </section>
 
@@ -141,19 +138,20 @@ function ServiceHero({
   whatsappHref
 }: {
   copy: ServiceCopy;
-  image?: string;
+  image: string;
   lang: Lang;
   locale: string;
   slug: string;
   whatsappHref: string;
 }) {
   return (
-    <section className="border-b border-primary-900/8 bg-[#fffdf8] px-5 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.88fr] lg:items-center">
+    <section className="relative border-b border-primary-900/10 bg-[#fffdf8] px-5 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(191,164,106,0.16),transparent_24rem),radial-gradient(circle_at_88%_16%,rgba(7,22,74,0.05),transparent_28rem)]" />
+      <div className="relative mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.88fr] lg:items-center">
         <div className="ps-8 sm:ps-6 lg:ps-4 rtl:ps-0">
           <p className="text-sm font-bold text-accent-700">{copy.badge}</p>
           <h1 className={`${headingFont(lang)} mt-4 max-w-3xl font-bold text-primary-900`}>{copy.title}</h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-primary-900/80 sm:text-[1.05rem]">{copy.lead}</p>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-primary-900/85 sm:text-[1.05rem]">{copy.lead}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href={`/${locale}/booking?service=${slug}`}
@@ -171,46 +169,20 @@ function ServiceHero({
             </a>
           </div>
         </div>
-        {image ? (
-          <div className="relative aspect-[4/3] min-h-[330px] overflow-hidden rounded-lg border border-primary-900/10 bg-white shadow-[0_24px_60px_rgba(7,22,74,0.12)]">
-            <Image src={image} alt={copy.title} fill priority sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
-          </div>
-        ) : (
-          <EditorialPanel copy={copy} lang={lang} />
-        )}
+        <div className="relative aspect-[4/3] min-h-[350px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]">
+          <Image src={image} alt={copy.title} fill priority sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
+        </div>
       </div>
     </section>
   );
 }
 
-function EditorialPanel({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
-  return (
-    <div className="min-h-[330px] rounded-lg border border-primary-900/10 bg-primary-900 p-7 text-white shadow-[0_24px_60px_rgba(7,22,74,0.16)] sm:p-9">
-      <p className="text-sm font-bold text-accent-300">{lang === 'ar' ? 'نطاق الخدمة' : 'Service at a glance'}</p>
-      <h2 className={`${headingFont(lang)} mt-3 text-2xl font-bold text-white`}>
-        {lang === 'ar' ? 'ترتيب واضح يبدأ من احتياج منزلك' : 'Clear coordination built around your household'}
-      </h2>
-      <div className="mt-7 divide-y divide-white/15">
-        {copy.cards.map((item, index) => (
-          <div key={item.title} className="grid grid-cols-[2rem_1fr] gap-3 py-4 first:pt-0">
-            <span className="font-heading text-lg font-bold text-accent-300">{String(index + 1).padStart(2, '0')}</span>
-            <div>
-              <h3 className={`${headingFont(lang)} text-base font-bold text-white`}>{item.title}</h3>
-              <p className="mt-1 text-sm leading-6 text-white/75">{item.text}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function TrustCard({ item, index, lang }: { item: Pair; index: number; lang: Lang }) {
+function TrustCard({ item, lang }: { item: Pair; index: number; lang: Lang }) {
   return (
     <article className={`${surface} h-full p-5 sm:p-6`}>
       <div className="flex items-start gap-4">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent-500/35 bg-accent-50 text-xs font-bold text-accent-700">
-          {String(index).padStart(2, '0')}
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent-500/35 bg-accent-50 text-accent-700">
+          <CheckIcon />
         </span>
         <div>
           <h2 className={`${headingFont(lang)} text-lg font-bold leading-snug text-primary-900`}>{item.title}</h2>
@@ -228,22 +200,6 @@ function SectionTitle({ title, text, lang, align = 'start' }: SectionTitleProps)
       <h2 className={`${headingFont(lang)} font-bold text-primary-900`}>{title}</h2>
       {text ? <p className="mt-4 text-[0.95rem] leading-7 text-primary-900/76">{text}</p> : null}
       <div className={`${centered ? 'mx-auto' : ''} mt-4 h-0.5 w-14 bg-accent-500`} />
-    </div>
-  );
-}
-
-function ServiceFactsPanel({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
-  return (
-    <div className={`${surface} p-5 sm:p-6`}>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {copy.vetting.slice(0, 4).map((item, index) => (
-          <article key={item.title} className="border-b border-primary-900/10 pb-4 sm:border-b-0 sm:border-s sm:pb-0 sm:ps-4">
-            <span className="text-xs font-bold text-accent-700">{item.icon || String(index + 1).padStart(2, '0')}</span>
-            <h3 className={`${headingFont(lang)} mt-2 text-base font-bold text-primary-900`}>{item.title}</h3>
-            <p className="mt-2 text-sm leading-6 text-primary-900/74">{item.text}</p>
-          </article>
-        ))}
-      </div>
     </div>
   );
 }
@@ -280,7 +236,7 @@ function ProcessSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
         <div className="mt-10 grid gap-4 md:grid-cols-5">
           {copy.journey.map((item, index) => (
             <article key={item.title} className={`${surface} relative min-h-[190px] p-5`}>
-              <span className="font-heading text-3xl font-bold text-accent-500/45">{String(index + 1).padStart(2, '0')}</span>
+              <span className="font-heading text-3xl font-bold text-accent-700">{String(index + 1).padStart(2, '0')}</span>
               <h3 className={`${headingFont(lang)} mt-5 text-lg font-bold text-primary-900`}>{item.title}</h3>
               <p className="mt-2 text-sm leading-6 text-primary-900/74">{item.text}</p>
             </article>
@@ -330,9 +286,9 @@ function MatchingCards({
                       <ServiceIcon slug={slug} className="h-6 w-6" />
                     </span>
                     <div>
-                      <span className="text-xs font-bold text-accent-700">{String(index + 1).padStart(2, '0')}</span>
-                      <p className={`${headingFont(lang)} mt-1 text-base font-bold text-primary-900`}>
-                        {lang === 'ar' ? 'خطوة تنسيق واضحة' : 'Clear coordination step'}
+                      <ServiceIcon slug={slug} className="h-6 w-6 text-accent-700" />
+                      <p className={`${headingFont(lang)} mt-2 text-base font-bold text-primary-900`}>
+                        {lang === 'ar' ? 'تنسيق واضح' : 'Clear coordination'}
                       </p>
                     </div>
                   </div>
@@ -384,10 +340,10 @@ function PricingCards({
         <SectionTitle title={copy.pricingTitle} text={copy.pricingText} lang={lang} align="center" />
         <p className="mx-auto mt-5 w-fit border-b border-accent-500/40 pb-1 text-sm font-bold text-accent-700">{note}</p>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
-          {copy.pricing.map((item, index) => (
+          {copy.pricing.map((item) => (
             <article key={item.title} className={`${surface} flex h-full flex-col p-6`}>
-              <span className="text-xs font-bold text-accent-700">{String(index + 1).padStart(2, '0')}</span>
-              <h3 className={`${headingFont(lang)} mt-3 text-xl font-bold text-primary-900`}>{item.title}</h3>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-50 text-accent-700"><CheckIcon className="h-5 w-5" /></span>
+              <h3 className={`${headingFont(lang)} mt-4 text-xl font-bold text-primary-900`}>{item.title}</h3>
               <p className="mt-3 min-h-[4.5rem] text-sm leading-6 text-primary-900/75">{item.text}</p>
               <div className="mt-5 flex-1 divide-y divide-primary-900/10 border-y border-primary-900/10">
                 {item.points.map((point) => (
@@ -437,7 +393,7 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
     <section className={`${sectionPadding} bg-white`}>
       <div className="mx-auto max-w-6xl">
         <SectionTitle title={copy.relatedTitle} lang={lang} />
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {copy.related.map((relatedSlug) => {
             const service = getServiceWithExtras(relatedSlug);
             if (!service) return null;
@@ -445,14 +401,29 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
               <Link
                 key={relatedSlug}
                 href={`/${locale}/services/${relatedSlug}`}
-                className="group flex min-h-20 items-center gap-4 rounded-lg border border-primary-900/10 bg-[#fffdf8] px-4 py-3 transition hover:-translate-y-0.5 hover:border-accent-500/40 hover:bg-white hover:shadow-[0_12px_30px_rgba(7,22,74,0.08)]"
+                className="group flex h-full min-h-[270px] flex-col overflow-hidden rounded-[24px] border border-primary-900/10 bg-white shadow-[0_18px_48px_rgba(7,22,74,0.08)] transition hover:-translate-y-1 hover:border-accent-600/45 hover:shadow-[0_26px_66px_rgba(7,22,74,0.12)]"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent-500/30 bg-white text-accent-700">
-                  <ServiceIcon slug={relatedSlug} className="h-5 w-5" />
+                <span className="relative block h-36 overflow-hidden bg-[#f7f8fb]">
+                  <Image
+                    src={getServiceImage(relatedSlug)}
+                    alt={service.name[lang]}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                  />
+                  <span className="absolute start-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/80 bg-white text-accent-700 shadow-[0_10px_24px_rgba(7,22,74,0.12)]">
+                    <ServiceIcon slug={relatedSlug} className="h-5 w-5" />
+                  </span>
                 </span>
-                <span className={`${headingFont(lang)} flex-1 text-base font-bold leading-snug text-primary-900`}>{service.name[lang]}</span>
-                <span className={`${lang === 'ar' ? 'rotate-180' : ''} text-accent-700 transition group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5`}>
-                  <ArrowIcon />
+                <span className="flex flex-1 flex-col p-5">
+                  <span className={`${headingFont(lang)} text-lg font-bold leading-snug text-primary-900`}>{service.name[lang]}</span>
+                  <span className="mt-2 text-sm leading-6 text-primary-900/80">{service.short[lang]}</span>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold text-accent-700 transition group-hover:text-primary-900">
+                    {lang === 'ar' ? 'تفاصيل الخدمة' : 'View service'}
+                    <span className={`${lang === 'ar' ? 'rotate-180' : ''} transition group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5`}>
+                      <ArrowIcon />
+                    </span>
+                  </span>
                 </span>
               </Link>
             );
@@ -487,7 +458,7 @@ function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
                   <span>{row.inaya}</span>
                 </div>
                 <div className="flex items-center justify-center gap-3 px-4 py-4 text-center text-primary-900/72">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary-900/20 text-primary-900/55"><CrossIcon /></span>
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary-900/20 text-primary-900/70"><CrossIcon /></span>
                   <span>{row.other}</span>
                 </div>
               </div>
@@ -506,7 +477,7 @@ function FinalCta({ copy, lang, locale, slug }: { copy: ServiceCopy; lang: Lang;
       <div className="mx-auto flex max-w-5xl flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <h2 className={`${headingFont(lang)} font-bold text-white`}>{copy.finalTitle}</h2>
-          <p className="mt-4 text-base leading-7 text-white/78">{copy.finalText}</p>
+          <p className="mt-4 text-base leading-7 text-white/85">{copy.finalText}</p>
         </div>
         <Link
           href={`/${locale}/booking?service=${slug}`}

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const authorityLogos = [
   { src: '/authority-logos/Ministry-logo.png', alt: 'Ministry logo' },
   { src: '/authority-logos/Ajman-Gold-logo.png', alt: 'Ajman Gold logo' },
@@ -29,7 +31,7 @@ export default function AuthorityLogos({ locale }: { locale: string }) {
           <div className="authority-track">
             {logos.map((logo, index) => (
               <div key={`${logo.src}-${index}`} className="authority-logo-card">
-                <img src={logo.src} alt={logo.alt} className="h-14 max-w-[170px] object-contain sm:h-16" />
+                <Image src={logo.src} alt={logo.alt} width={170} height={64} className="h-14 w-auto max-w-[170px] object-contain sm:h-16" />
               </div>
             ))}
           </div>

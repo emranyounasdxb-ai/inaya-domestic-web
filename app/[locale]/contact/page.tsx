@@ -140,7 +140,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
                 <LineIcon name={item.icon} className="mx-auto h-6 w-6 text-accent-600 sm:mx-0" />
                 <h3 className="mt-4 font-semibold text-primary-900">{item.title}</h3>
                 <p className="mt-1 break-words text-sm font-medium text-ink" dir={item.title === 'Email' || item.title === 'البريد الإلكتروني' ? 'ltr' : undefined}>{item.value}</p>
-                <p className="mt-2 text-sm leading-6 text-ink/60">{item.note}</p>
+                <p className="mt-2 text-sm leading-6 text-primary-900/80">{item.note}</p>
               </a>
             ))}
           </div>
@@ -189,7 +189,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
               <div key={item.title} className="glass-panel rounded-[18px] p-5 text-center sm:text-start">
                 <LineIcon name={item.icon} className="mx-auto h-7 w-7 text-accent-600 sm:mx-0" />
                 <h3 className="mt-4 font-semibold text-primary-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-ink/65">{item.text}</p>
+                <p className="mt-2 text-sm leading-6 text-primary-900/80">{item.text}</p>
               </div>
             ))}
           </div>
@@ -201,7 +201,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
           <div className="flex flex-col gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-start">
             <div>
               <h2 className={`${isArabic ? 'font-arabic text-3xl leading-snug' : 'font-heading text-4xl'} font-bold`}>{copy.ctaTitle}</h2>
-              <p className="mt-2 max-w-xl text-white/75">{copy.ctaText}</p>
+              <p className="mt-2 max-w-xl text-white/85">{copy.ctaText}</p>
             </div>
             <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 sm:w-auto"><LineIcon name="message" className="h-5 w-5" />{copy.whatsapp}</a>
           </div>
@@ -219,7 +219,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
                     {faq.question}
                     <span className="shrink-0 text-accent-600 transition group-open:rotate-180">⌄</span>
                   </summary>
-                  <p className="mt-3 text-sm leading-6 text-ink/65">{faq.answer}</p>
+                  <p className="mt-3 text-sm leading-6 text-primary-900/80">{faq.answer}</p>
                 </details>
               ))}
             </div>

@@ -74,8 +74,6 @@ function copyFor(service: Service, lang: Lang): ServiceCopy {
       perfectTitle: 'مناسبة لـ',
       journeyTitle: 'طريقة العمل في عناية',
       journeyText: 'خطوات واضحة تساعد الأسرة على فهم الخيارات، تحديد نطاق الخدمة، وتأكيد الترتيب المناسب بثقة.',
-      vettingTitle: 'مراجعة الملاءمة في عناية',
-      vettingText: 'نراجع نوع الخدمة والمهام والجدول وتوقعات الأسرة قبل تقديم التوجيه المناسب.',
       countriesTitle: 'إرشاد مطابقة العمالة',
       countriesText: 'يمكن الإرشاد حسب اللغة والخبرة المنزلية ونمط الأسرة ونوع الخدمة والتوفر داخل الإمارات.',
       pricingTitle: 'إرشاد واضح للأسعار',
@@ -100,13 +98,6 @@ function copyFor(service: Service, lang: Lang): ServiceCopy {
         { title: 'المطابقة', text: 'يتم توجيه الأسرة نحو الخيار الأنسب حسب التوفر والمتطلبات.' },
         { title: 'التأكيد', text: 'نرتب الخطوات النهائية ونوضح المستندات أو التفاصيل المطلوبة.' },
         { title: 'المتابعة', text: 'نتابع التجربة بعد التأكيد للحفاظ على خدمة منظمة.' }
-      ],
-      vetting: [
-        { title: 'مراجعة الهوية', text: 'تتم مراجعة المعلومات الأساسية قبل التنسيق النهائي عند الحاجة.', icon: '▣' },
-        { title: 'مطابقة المهارات', text: 'تتم مطابقة المهام مع نوع الخدمة واحتياج المنزل.', icon: '☷' },
-        { title: 'ملاءمة الأسرة', text: 'نراعي الأطفال وكبار السن والحيوانات الأليفة والخصوصية عند الحاجة.', icon: '✦' },
-        { title: 'مراجعة الجدول', text: 'نوضح التوقيت والمدة والتوفر قبل تأكيد الخدمة.', icon: '◷' },
-        { title: 'خطة المتابعة', text: 'يتم توضيح طريقة التواصل والمتابعة قبل البدء.', icon: '✓' }
       ],
       countries: [
         { title: 'تفضيل اللغة', text: 'يمكن مراعاة الإنجليزية أو العربية أو لغات أخرى حسب التوفر.' },
@@ -148,8 +139,6 @@ function copyFor(service: Service, lang: Lang): ServiceCopy {
     perfectTitle: 'Perfect For',
     journeyTitle: 'How INAYA Coordinates This Service',
     journeyText: 'A clear process that helps families compare options, define the service scope and confirm the right arrangement with confidence.',
-    vettingTitle: 'INAYA Suitability Review',
-    vettingText: 'We review service type, duties, schedule, home environment and family expectations before guiding the right option.',
     countriesTitle: 'Candidate Matching Guidance',
     countriesText: 'Families can be guided by language, household experience, family routine, service type and availability across the UAE.',
     pricingTitle: 'Transparent Pricing Guidance',
@@ -174,13 +163,6 @@ function copyFor(service: Service, lang: Lang): ServiceCopy {
       { title: 'Matching', text: 'Your family is guided toward the most suitable option based on availability and requirements.' },
       { title: 'Confirmation', text: 'Final steps, documents or service details are explained clearly.' },
       { title: 'Follow-up', text: 'We follow up to keep the arrangement organized and comfortable.' }
-    ],
-    vetting: [
-      { title: 'Identity Review', text: 'Basic details are reviewed before final coordination where applicable.', icon: '▣' },
-      { title: 'Skill Mapping', text: 'Duties are matched with the service type and home requirements.', icon: '☷' },
-      { title: 'Family Suitability', text: 'Children, seniors, pets and privacy needs are considered where relevant.', icon: '✦' },
-      { title: 'Schedule Review', text: 'Timing, duration and availability are clarified before confirmation.', icon: '◷' },
-      { title: 'Follow-up Plan', text: 'Communication and support steps are explained before the service begins.', icon: '✓' }
     ],
     countries: [
       { title: 'Language Preference', text: 'English, Arabic or other communication preferences can be discussed.' },

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
 
 const fallbackReviewUrl = 'https://search.google.com/local/writereview?placeid=ChIJxzRGAUJZXz4R8zN5ye8vn_M';
 
@@ -88,6 +89,10 @@ function initials(name: string) {
   );
 }
 
+function remoteImageLoader({ src }: { src: string }) {
+  return src;
+}
+
 function normalizeReviews(reviews?: ReviewItem[]) {
   const fiveStarReviews = (reviews || []).filter((review) => (review.rating || 0) >= 5);
   return fiveStarReviews.length ? fiveStarReviews : fallbackReviews;
@@ -115,7 +120,16 @@ function RatingStars({ rating = 5, className = '' }: { rating?: number; classNam
 function ReviewAvatar({ review, compact = false }: { review: ReviewItem; compact?: boolean }) {
   return (
     <div className={compact ? 'google-mini-avatar' : 'google-review-avatar'}>
-      {review.profilePhoto ? <img src={review.profilePhoto} alt={review.name} loading="lazy" /> : <span>{initials(review.name)}</span>}
+      {review.profilePhoto ? (
+        <Image
+          src={review.profilePhoto}
+          alt={review.name}
+          width={compact ? 34 : 64}
+          height={compact ? 34 : 64}
+          loader={remoteImageLoader}
+          unoptimized
+        />
+      ) : <span>{initials(review.name)}</span>}
       {!compact ? <span className="google-review-check" aria-hidden="true">✓</span> : null}
     </div>
   );

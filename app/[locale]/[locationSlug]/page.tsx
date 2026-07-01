@@ -140,7 +140,7 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
             <div className="rounded-[24px] bg-[linear-gradient(135deg,#07164A,#10266c)] p-6 text-white shadow-[0_20px_50px_rgba(7,22,74,0.18)]">
               <p className="text-[0.62rem] font-bold uppercase tracking-[0.24em] text-accent-300">{t.areaBadge}</p>
               <h2 className={`${lang === 'ar' ? 'font-arabic' : 'font-heading'} mt-3 text-3xl font-bold tracking-[-0.04em]`}>{location.city[lang]}</h2>
-              <p className="mt-3 text-sm leading-7 text-white/72">{location.intro[lang]}</p>
+              <p className="mt-3 text-sm leading-7 text-white/85">{location.intro[lang]}</p>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {location.localNeeds[lang].slice(0, 4).map((need) => <div key={need} className="rounded-2xl border border-primary-900/8 bg-[#f8f6f0] px-4 py-3 text-xs font-semibold leading-5 text-primary-900/76"><span className="me-2 text-accent-700">✓</span>{need}</div>)}
@@ -164,7 +164,7 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
             </div>
             <h3 className="mt-7 font-heading text-xl font-bold tracking-[-0.025em] text-primary-900">{t.areasTitle}</h3>
             <div className="mt-4 flex flex-wrap gap-2">
-              {location.neighbourhoods[lang].map((area) => <span key={area} className="rounded-full border border-primary-900/8 bg-white px-3 py-1.5 text-xs font-semibold text-primary-900/66">{area}</span>)}
+              {location.neighbourhoods[lang].map((area) => <span key={area} className="rounded-full border border-primary-900/8 bg-white px-3 py-1.5 text-xs font-semibold text-primary-900/75">{area}</span>)}
             </div>
           </article>
         </div>
@@ -184,7 +184,7 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
           <div className="rounded-[26px] border border-white/80 bg-white/82 p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
             <h2 className="font-heading text-2xl font-bold tracking-[-0.035em] text-primary-900">{t.faqTitle}</h2>
             <div className="mt-5 grid gap-3">
-              {location.faqs.map((faq) => <details key={faq.question.en} className="rounded-2xl border border-primary-900/8 bg-white px-4 py-3"><summary className="cursor-pointer text-sm font-bold text-primary-900">{faq.question[lang]}</summary><p className="mt-3 text-xs leading-6 text-primary-900/68">{faq.answer[lang]}</p></details>)}
+              {location.faqs.map((faq) => <details key={faq.question.en} className="rounded-2xl border border-primary-900/8 bg-white px-4 py-3"><summary className="cursor-pointer text-sm font-bold text-primary-900">{faq.question[lang]}</summary><p className="mt-3 text-xs leading-6 text-primary-900/75">{faq.answer[lang]}</p></details>)}
             </div>
           </div>
           <div className="rounded-[26px] bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.18)]">
@@ -194,7 +194,7 @@ export default function LocationServicePage({ params: { locale, locationSlug } }
             </div>
             <div className="mt-7 rounded-[22px] bg-white/8 p-5">
               <h3 className="font-heading text-xl font-bold">{t.ctaTitle}</h3>
-              <p className="mt-3 text-sm leading-7 text-white/72">{t.ctaText}</p>
+              <p className="mt-3 text-sm leading-7 text-white/85">{t.ctaText}</p>
               <Link href={`/${locale}/contact`} className="mt-5 inline-flex rounded-full bg-accent-500 px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900 transition hover:bg-accent-300">{t.cta}</Link>
             </div>
           </div>

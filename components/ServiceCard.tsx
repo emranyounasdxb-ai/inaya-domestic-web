@@ -22,7 +22,7 @@ export default function ServiceCard({
       <h3 className="mb-2 text-xl font-bold leading-snug text-primary-900 group-hover:text-accent-700">
         {service.name[lang]}
       </h3>
-      <p className="flex-1 text-sm leading-6 text-ink/65">{service.short[lang]}</p>
+      <p className="flex-1 text-sm leading-6 text-primary-900/80">{service.short[lang]}</p>
       <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary-900">
         {cta}
         <span className="transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1">→</span>
