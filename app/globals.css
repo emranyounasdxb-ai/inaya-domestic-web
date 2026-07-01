@@ -58,3 +58,32 @@ body {
   38% { opacity: .72; }
   65%, 100% { transform: translateX(125%) skewX(-18deg); opacity: 0; }
 }
+
+/* Service detail country matching cards: keep uploaded maid photos visible without harsh cropping. */
+div[class~="h-[205px]"][class~="bg-[#eef2f8]"] {
+  height: 260px !important;
+  background: linear-gradient(135deg, #f7f8fb 0%, #fffdf8 48%, #eef2f8 100%) !important;
+}
+
+div[class~="h-[205px]"][class~="bg-[#eef2f8]"] img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 10px 14px 0 !important;
+}
+
+/* Related service thumbnails should show the full service composition instead of cutting heads or uniforms. */
+a[href*="/services/"] > span[class~="h-48"] {
+  height: 210px !important;
+  background: linear-gradient(135deg, #f7f8fb 0%, #fffdf8 52%, #eef2f8 100%) !important;
+}
+
+a[href*="/services/"] > span[class~="h-48"] img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 8px !important;
+}
+
+@media (max-width: 640px) {
+  div[class~="h-[205px]"][class~="bg-[#eef2f8]"] { height: 235px !important; }
+  a[href*="/services/"] > span[class~="h-48"] { height: 190px !important; }
+}
