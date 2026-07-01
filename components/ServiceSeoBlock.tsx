@@ -110,7 +110,7 @@ export default function ServiceSeoBlock({ locale, slug }: { locale: string; slug
 
   const text = lang === 'ar'
     ? {
-        eyebrow: 'محتوى إرشادي للخدمة',
+        eyebrow: 'دليل الخدمة',
         title: `${service.name.ar} للأسر في الإمارات`,
         intro: `عند البحث عن ${focus.keyword}، تحتاج الأسرة إلى معلومات واضحة عن نطاق الخدمة والجدول والتوفر والمستندات والخطوات التالية. تساعد عناية في ترتيب هذه التفاصيل حتى يكون القرار مبنياً على احتياج المنزل وليس على وعود عامة.`,
         process: `هذه الخدمة مناسبة لـ ${focus.audience}. يراجع فريق عناية تفاصيل المنزل والإمارة والوقت المطلوب والمهام اليومية قبل شرح الخيارات المتاحة أو الملفات المناسبة.`,
@@ -126,7 +126,7 @@ export default function ServiceSeoBlock({ locale, slug }: { locale: string; slug
         cta: 'اطلب استشارة واضحة'
       }
     : {
-        eyebrow: 'Service SEO Guide',
+        eyebrow: 'Helpful Service Guide',
         title: `${service.name.en} for UAE families`,
         intro: `When families search for ${focus.keyword}, they usually need clear guidance on service scope, schedule, availability, documents and next steps. INAYA helps organize these details so the decision is based on real household needs, not generic promises.`,
         process: `This service is useful for ${focus.audience}. The INAYA team reviews the home, emirate, timing and daily duties before explaining available options or suitable profiles.`,
@@ -142,42 +142,60 @@ export default function ServiceSeoBlock({ locale, slug }: { locale: string; slug
         cta: 'Request clear guidance'
       };
 
+  const headingClass = lang === 'ar' ? 'font-arabic leading-[1.45]' : 'font-heading';
+  const faqs = [{ q: text.q1, a: text.a1 }, { q: text.q2, a: text.a2 }, { q: text.q3, a: text.a3 }];
+
   return (
-    <section className="bg-[#f8f6f0] px-6 py-10 lg:px-10 lg:py-14">
-      <div className="mx-auto max-w-6xl rounded-[26px] border border-white/80 bg-white/78 p-6 shadow-[0_20px_60px_rgba(7,22,74,0.07)] ring-1 ring-accent-500/10 sm:p-8 lg:p-10">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <p className="text-[0.62rem] font-bold uppercase tracking-[0.26em] text-accent-700">{text.eyebrow}</p>
-            <h2 className={`${lang === 'ar' ? 'font-arabic leading-[1.35]' : 'font-heading leading-tight'} mt-4 text-[1.75rem] font-bold tracking-[-0.04em] text-primary-900 sm:text-[2.35rem]`}>{text.title}</h2>
-            <p className="mt-4 text-sm leading-7 text-primary-900/72">{text.intro}</p>
-            <p className="mt-4 text-sm leading-7 text-primary-900/72">{text.process}</p>
-          </div>
-          <div className="rounded-[22px] border border-accent-500/14 bg-[#fbfaf7] p-5">
-            <h3 className="font-heading text-lg font-bold text-primary-900">{text.why}</h3>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {focus.duties.map((item) => <div key={item} className="rounded-xl border border-primary-900/8 bg-white px-3 py-2 text-xs font-semibold leading-5 text-primary-900/76"><span className="me-2 text-accent-700">✓</span>{item}</div>)}
-            </div>
-          </div>
+    <section className="bg-white px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="border-b border-primary-900/10 pb-6">
+          <p className="text-sm font-bold text-accent-700">{text.eyebrow}</p>
+          <h2 className={`${headingClass} mt-3 max-w-3xl font-bold text-primary-900`}>{text.title}</h2>
         </div>
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
-          <div>
-            <h3 className="font-heading text-xl font-bold text-primary-900">{text.faqTitle}</h3>
-            <div className="mt-4 grid gap-3">
-              {[{ q: text.q1, a: text.a1 }, { q: text.q2, a: text.a2 }, { q: text.q3, a: text.a3 }].map((faq) => (
-                <details key={faq.q} className="rounded-2xl border border-primary-900/8 bg-white p-4">
-                  <summary className="cursor-pointer text-sm font-bold text-primary-900">{faq.q}</summary>
-                  <p className="mt-3 text-xs leading-6 text-primary-900/68">{faq.a}</p>
+        <div className="grid gap-10 pt-9 lg:grid-cols-[1.05fr_0.95fr]">
+          <article>
+            <p className="text-[0.98rem] leading-8 text-primary-900/80">{text.intro}</p>
+            <p className="mt-5 text-[0.98rem] leading-8 text-primary-900/80">{text.process}</p>
+            <h3 className={`${headingClass} mt-8 text-xl font-bold text-primary-900`}>{text.why}</h3>
+            <div className="mt-4 grid gap-x-6 sm:grid-cols-2">
+              {focus.duties.map((item) => (
+                <div key={item} className="flex min-h-12 items-center gap-3 border-b border-primary-900/10 py-3 text-sm font-semibold leading-6 text-primary-900">
+                  <span className="text-accent-700">✓</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+          <aside className="rounded-lg border border-primary-900/10 bg-[#fffdf8] p-5 sm:p-6">
+            <h3 className={`${headingClass} text-xl font-bold text-primary-900`}>{text.faqTitle}</h3>
+            <div className="mt-4 divide-y divide-primary-900/10 border-y border-primary-900/10">
+              {faqs.map((faq) => (
+                <details key={faq.q} className="py-4">
+                  <summary className="cursor-pointer text-sm font-bold leading-6 text-primary-900">{faq.q}</summary>
+                  <p className="mt-3 text-sm leading-7 text-primary-900/74">{faq.a}</p>
                 </details>
               ))}
             </div>
-          </div>
-          <div className="rounded-[22px] bg-primary-900 p-6 text-white">
-            <h3 className="font-heading text-xl font-bold">{text.relatedTitle}</h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {related.map((item) => item ? <Link key={item.slug} href={`/${locale}/services/${item.slug}`} className="rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/16">{item.name[lang]}</Link> : null)}
+            <h3 className={`${headingClass} mt-7 text-lg font-bold text-primary-900`}>{text.relatedTitle}</h3>
+            <div className="mt-3 grid gap-2">
+              {related.map((item) => item ? (
+                <Link
+                  key={item.slug}
+                  href={`/${locale}/services/${item.slug}`}
+                  className="flex items-center justify-between gap-4 border-b border-primary-900/10 py-2.5 text-sm font-semibold text-primary-900 transition hover:text-accent-700"
+                >
+                  <span>{item.name[lang]}</span>
+                  <span aria-hidden="true">{lang === 'ar' ? '←' : '→'}</span>
+                </Link>
+              ) : null)}
             </div>
-            <Link href={`/${locale}/contact`} className="mt-6 inline-flex rounded-full bg-accent-500 px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900 transition hover:bg-accent-300">{text.cta}</Link>
-          </div>
+            <Link
+              href={`/${locale}/contact`}
+              className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-primary-900 px-6 py-3 text-sm font-bold text-white transition hover:bg-primary-800"
+            >
+              {text.cta}
+            </Link>
+          </aside>
         </div>
       </div>
     </section>

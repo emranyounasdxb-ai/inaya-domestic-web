@@ -1,8 +1,8 @@
-import { servicePageCopiesGenerated } from './service-page-copy-generated';
 import { servicePageCopies as baseServicePageCopies } from './service-page-copy';
 import { servicePageCopiesNext } from './service-page-copy-next';
 import { servicePageCopiesMore } from './service-page-copy-more';
 import { servicePageCopiesCountry } from './service-page-copy-countries';
+import { servicePageCopiesGenerated } from './service-page-copy-generated';
 import { serviceSeoPolish } from './service-page-seo-polish';
 import { serviceSeoPolishMoreA } from './service-page-seo-polish-more-a';
 import { serviceSeoPolishMoreB } from './service-page-seo-polish-more-b';

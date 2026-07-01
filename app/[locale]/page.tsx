@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import HomeCountryAvailability from '@/components/HomeCountryAvailability';
 import HomeGoogleReviews from '@/components/HomeGoogleReviews';
+import HomeStandardsSpotlight from '@/components/HomeStandardsSpotlight';
 import HomeVettingMatrix from '@/components/HomeVettingMatrix';
+import TrustTextGsap from '@/components/TrustTextGsap';
 
 const homeContent = {
   en: {
@@ -231,6 +233,8 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
   return (
     <div className="overflow-hidden bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)] text-ink">
+      <TrustTextGsap />
+      <HomeStandardsSpotlight />
       <style>{`
         @keyframes homeLogoMarqueeRtl {
           from { transform: translateX(0); }

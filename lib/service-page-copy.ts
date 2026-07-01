@@ -78,7 +78,7 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
       whyTitle: 'Why Families Choose INAYA',
       includedTitle: 'Our Service Standards',
       perfectTitle: 'Perfect For',
-      journeyTitle: 'Our 5-Step Vetting Matrix',
+      journeyTitle: 'How INAYA Coordinates Live-in Maid Services',
       journeyText: 'A structured evaluation framework designed to keep every service recommendation clear, trusted and suitable for your home.',
       vettingTitle: 'INAYA Vetting Matrix',
       vettingText: 'Every recommendation is supported by a clear review process designed to protect the household, clarify expectations and improve long-term suitability.',
