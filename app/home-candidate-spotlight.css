@@ -1,6 +1,17 @@
-main div.h-64.border-b{
-  border-radius:1.45rem!important;
-  border:1px solid rgba(255,255,255,.70)!important;
+.relative.h-64.border-b{
+  position:relative!important;
+  border-radius:24px!important;
+  border:1px solid rgba(255,255,255,.78)!important;
   overflow:hidden!important;
-  box-shadow:inset 0 0 0 14px rgba(255,255,255,.16),inset 0 0 24px rgba(255,255,255,.18),0 18px 45px rgba(7,22,74,.10)!important;
+  box-shadow:inset 0 0 0 14px rgba(255,255,255,.18),inset 0 0 28px rgba(255,255,255,.18),0 18px 45px rgba(7,22,74,.10)!important;
+}
+
+.relative.h-64.border-b:after{
+  content:'';
+  position:absolute;
+  inset:12px;
+  border:1px solid rgba(255,255,255,.92);
+  border-radius:18px;
+  pointer-events:none;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.80),0 0 0 1px rgba(255,255,255,.14);
 }
