@@ -41,7 +41,7 @@ export default function Footer({ locale }: { locale: string }) {
   const stats = [
     { icon: 'shield' as IconName, value: '100%', label: isArabic ? 'عاملات موثوقات' : 'Verified Workers' },
     { icon: 'users' as IconName, value: '10,000+', label: isArabic ? 'أسر سعيدة' : 'Happy Families' },
-    { icon: 'globe' as IconName, value: '6+', label: isArabic ? 'دول توريد' : 'Countries' },
+    { icon: 'globe' as IconName, value: isArabic ? '٧' : '7', label: isArabic ? 'الإمارات المغطاة' : 'Emirates Covered' },
     { icon: 'headset' as IconName, value: '24/7', label: isArabic ? 'دعم العملاء' : 'Customer Support' }
   ];
 
