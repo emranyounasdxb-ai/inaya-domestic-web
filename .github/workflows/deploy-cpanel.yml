@@ -26,12 +26,18 @@ jobs:
         run: |
           cp next.config.cpanel.js next.config.js
           sed -i "/force-dynamic/d" app/[locale]/layout.tsx
+          rm -rf app/api
           cp public/images/home/candidates/elite-candidate-nanny.webp public/images/home/candidate-executive-nanny.webp
           cp public/images/home/candidates/elite-candidate-chef.webp public/images/home/candidate-private-chef.webp
           cp public/images/home/candidates/elite-candidate-house-manager.webp public/images/home/candidate-house-manager.webp
 
       - name: Build static site
         run: npm run build
+
+      - name: Add cPanel root files
+        run: |
+          printf '%s\n' 'Options -Indexes' 'DirectoryIndex index.html' > out/.htaccess
+          printf '%s\n' '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0; url=/en/"><title>INAYA Domestic Workers</title><link rel="canonical" href="/en/"></head><body style="margin:0;min-height:100vh;display:grid;place-items:center;background:#fbfaf7;color:#07164A;font-family:system-ui,sans-serif;"><p>Redirecting to INAYA Domestic Workers...</p></body></html>' > out/index.html
 
       - name: Deploy to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
