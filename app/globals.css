@@ -74,24 +74,33 @@ body {
   background: radial-gradient(circle at 24% 24%, rgba(191,164,106,0.18), transparent 22rem), linear-gradient(90deg, rgba(252,248,250,0.96) 0%, rgba(252,248,250,0.76) 46%, rgba(255,255,255,0.14) 100%) !important;
 }
 
-/* Arabic journey cards: separate icon from number and display Arabic digits. */
+/* Arabic journey cards: keep icons and Arabic numbers separated. */
 [dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div {
   direction: rtl;
+  padding-top: 6.75rem !important;
 }
 
 [dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div > span.absolute {
   color: transparent !important;
   font-size: 0 !important;
   line-height: 1 !important;
+  right: 2rem !important;
+  top: 2rem !important;
+  width: 4.25rem;
+  height: 2.75rem;
+  text-align: right;
+  z-index: 2;
 }
 
 [dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div > span.absolute::after {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.88);
   display: block;
   font-family: var(--font-arabic-heading), 'IBM Plex Sans Arabic', 'Noto Sans Arabic', Tahoma, sans-serif;
-  font-size: 2.35rem;
+  font-size: 2.45rem;
   font-weight: 700;
   line-height: 1;
+  position: absolute;
+  inset: 0;
 }
 
 [dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div:nth-child(1) > span.absolute::after { content: '٠١'; }
@@ -99,8 +108,19 @@ body {
 [dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div:nth-child(3) > span.absolute::after { content: '٠٣'; }
 
 [dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div > div.mb-7.text-4xl {
-  padding-inline-end: 4.5rem;
-  text-align: start;
+  left: 2rem !important;
+  right: auto !important;
+  top: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  text-align: left !important;
+  z-index: 1;
+}
+
+[dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div > h3,
+[dir='rtl'] section.relative.overflow-hidden.bg-primary-900 .grid.gap-6 > div > p {
+  text-align: right;
 }
 
 /* Service detail card photos must fill the card image area edge-to-edge. */
