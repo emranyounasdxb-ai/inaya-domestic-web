@@ -20,6 +20,7 @@ import '../home-country-availability.css';
 import '../home-google-reviews.css';
 import '../source-country-flags.css';
 import '../curated-discipline-images.css';
+import '../home-candidate-spotlight.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
