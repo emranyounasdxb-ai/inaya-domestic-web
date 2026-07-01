@@ -62,6 +62,10 @@ jobs:
             return path.relative(outDir, filePath).split(path.sep).join('/');
           }
 
+          function withoutExt(webPath) {
+            return webPath.replace(/\.[^.]+$/i, '');
+          }
+
           function maxWidthFor(webPath) {
             if (webPath.startsWith('authority-logos/')) return 320;
             if (webPath.startsWith('brand/')) return 620;
@@ -72,13 +76,47 @@ jobs:
             return 1200;
           }
 
+          function variantWidthsFor(webPath) {
+            if (webPath.startsWith('authority-logos/')) return [160, 320];
+            if (webPath.startsWith('brand/')) return [320, 620];
+            if (webPath.startsWith('images/home/')) return [480, 768, 960, 1200, 1400];
+            if (webPath.startsWith('images/services/')) return [480, 768, 900];
+            if (webPath.startsWith('images/countries/')) return [480, 768, 900];
+            return [480, 768, 960, 1200];
+          }
+
+          async function writeResponsiveVariants(filePath, metadata) {
+            const ext = path.extname(filePath).toLowerCase();
+            if (!['.webp', '.png', '.jpg', '.jpeg'].includes(ext)) return;
+
+            const webPath = toWebPath(filePath);
+            if (webPath.startsWith('optimized/')) return;
+
+            const sourceWidth = metadata.width || 0;
+            const widths = variantWidthsFor(webPath).filter((width) => !sourceWidth || width <= sourceWidth + 80);
+            if (!widths.length) widths.push(Math.min(sourceWidth || 480, 480));
+
+            for (const width of widths) {
+              const targetWebPath = `optimized/${withoutExt(webPath)}-${width}.webp`;
+              const targetPath = path.join(outDir, targetWebPath);
+              await fs.mkdir(path.dirname(targetPath), { recursive: true });
+              await sharp(filePath)
+                .resize({ width, withoutEnlargement: true })
+                .webp({ quality: webPath.startsWith('authority-logos/') || webPath.startsWith('brand/') ? 78 : 70, effort: 6 })
+                .toFile(targetPath);
+            }
+          }
+
           async function optimizeImage(filePath) {
             const ext = path.extname(filePath).toLowerCase();
             if (!['.webp', '.png', '.jpg', '.jpeg'].includes(ext)) return;
 
             const webPath = toWebPath(filePath);
+            if (webPath.startsWith('optimized/')) return;
+
             const maxWidth = maxWidthFor(webPath);
             const metadata = await sharp(filePath).metadata();
+            await writeResponsiveVariants(filePath, metadata);
             const shouldResize = metadata.width && metadata.width > maxWidth;
 
             if (ext === '.png' && (webPath.startsWith('authority-logos/') || webPath.startsWith('brand/'))) {
@@ -98,8 +136,8 @@ jobs:
             const tempFile = `${filePath}.optimized`;
             let image = sharp(filePath).resize({ width: maxWidth, withoutEnlargement: true });
 
-            if (ext === '.webp') image = image.webp({ quality: 74, effort: 6 });
-            if (ext === '.jpg' || ext === '.jpeg') image = image.jpeg({ quality: 76, progressive: true, mozjpeg: true });
+            if (ext === '.webp') image = image.webp({ quality: 72, effort: 6 });
+            if (ext === '.jpg' || ext === '.jpeg') image = image.jpeg({ quality: 74, progressive: true, mozjpeg: true });
             if (ext === '.png') image = image.png({ compressionLevel: 9, adaptiveFiltering: true, palette: true });
 
             await image.toFile(tempFile);
@@ -126,7 +164,7 @@ jobs:
             }
             const nextFiles = await walk(outDir);
             await applyReplacements(nextFiles);
-            console.log(`Optimized exported images. Modernized ${replacements.length / 2} PNG references.`);
+            console.log(`Optimized exported images and generated responsive variants. Modernized ${replacements.length / 2} PNG references.`);
           })();
           NODE
 
