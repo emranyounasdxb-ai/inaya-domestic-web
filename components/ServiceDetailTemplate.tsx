@@ -436,36 +436,57 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
 
 function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
   const labels = lang === 'ar'
-    ? { offer: 'ما نقدمه', inaya: 'عناية', others: 'شركات أخرى', promise: 'وضوح. مسؤولية. متابعة.' }
-    : { offer: 'What We Offer', inaya: 'INAYA', others: 'Other Companies', promise: 'Clarity. Responsibility. Follow-up.' };
+    ? { offer: 'ما نقدمه', inaya: 'عناية', others: 'شركات أخرى', promise: 'الثقة. الشفافية. الرعاية.' }
+    : { offer: 'What We Offer', inaya: 'INAYA', others: 'Other Companies', promise: 'Trust. Transparency. Care.' };
+  const pledge = lang === 'ar'
+    ? 'وعد عناية: نتعامل مع كل عائلة بمسؤولية ووضوح.'
+    : 'INAYA Promise: We treat every family with responsibility and clarity.';
 
   return (
-    <section className={`${sectionPadding} border-y border-primary-900/8 bg-[#fffdf8]`}>
+    <section className="bg-[#fffdf8] px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-6xl">
-        <SectionTitle title={copy.compareTitle} text={copy.compareText} lang={lang} align="center" />
-        <div className="mt-9 overflow-x-auto rounded-lg border border-primary-900/10 bg-white shadow-[0_14px_38px_rgba(7,22,74,0.07)]">
-          <div className="min-w-[780px]">
-            <div className="grid grid-cols-[1.45fr_1fr_1fr] text-sm font-bold text-primary-900">
-              <div className="bg-[#f7f8fb] px-5 py-4 text-start">{labels.offer}</div>
-              <div className="bg-accent-500 px-5 py-4 text-center text-primary-900">{labels.inaya}</div>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className={`${headingFont(lang)} text-3xl font-bold tracking-[-0.03em] text-primary-900 sm:text-4xl`}>{copy.compareTitle}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm font-medium leading-6 text-primary-900/75">{copy.compareText}</p>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-[20px] border border-primary-900/10 bg-white shadow-[0_18px_52px_rgba(7,22,74,0.10)]">
+          <div className="min-w-[760px]">
+            <div className="grid grid-cols-[1.55fr_1fr_1fr] border-b border-primary-900/10 text-[0.72rem] font-black uppercase tracking-[0.18em] text-primary-900">
+              <div className="bg-[#f7f8fb] px-5 py-4 text-center">{labels.offer}</div>
+              <div className="bg-accent-600 px-5 py-4 text-center text-white">{labels.inaya}</div>
               <div className="bg-[#f7f8fb] px-5 py-4 text-center">{labels.others}</div>
             </div>
-            {copy.comparison.map((row) => (
-              <div key={row.feature} className="grid min-h-16 grid-cols-[1.45fr_1fr_1fr] border-t border-primary-900/10 text-sm leading-6 text-primary-900">
-                <div className="flex items-center px-5 py-4 font-semibold">{row.feature}</div>
-                <div className="flex items-center justify-center gap-3 border-x border-primary-900/10 bg-accent-50/40 px-4 py-4 text-center font-semibold">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-900 text-white"><CheckIcon /></span>
+
+            {copy.comparison.map((row, index) => (
+              <div key={row.feature} className="grid min-h-[3.85rem] grid-cols-[1.55fr_1fr_1fr] border-b border-primary-900/10 text-sm text-primary-900 last:border-b-0">
+                <div className="flex items-center gap-3 px-5 py-3 font-bold leading-5">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent-500/35 bg-white text-[0.68rem] font-bold text-accent-700">
+                    {index + 1}
+                  </span>
+                  <span>{row.feature}</span>
+                </div>
+                <div className="flex items-center justify-center gap-3 border-x border-primary-900/10 bg-white px-4 py-3 text-center font-bold">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
+                    <CheckIcon className="h-3.5 w-3.5" />
+                  </span>
                   <span>{row.inaya}</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 px-4 py-4 text-center text-primary-900/72">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary-900/20 text-primary-900/70"><CrossIcon /></span>
+                <div className="flex items-center justify-center gap-3 px-4 py-3 text-center font-bold text-primary-900/82">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                    <CrossIcon className="h-3.5 w-3.5" />
+                  </span>
                   <span>{row.other}</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <p className="mt-5 text-center text-sm font-bold text-primary-900">{labels.promise}</p>
+
+        <div className="mt-5 grid overflow-hidden rounded-[16px] border border-primary-900/10 bg-white text-center text-sm font-black text-primary-900 shadow-[0_12px_34px_rgba(7,22,74,0.06)] md:grid-cols-2">
+          <div className="px-5 py-4">{pledge}</div>
+          <div className="border-t border-primary-900/10 px-5 py-4 md:border-s md:border-t-0">{labels.promise}</div>
+        </div>
       </div>
     </section>
   );
