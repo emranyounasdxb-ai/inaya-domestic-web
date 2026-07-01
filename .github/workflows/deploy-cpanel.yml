@@ -36,6 +36,100 @@ jobs:
           NEXT_PUBLIC_STATIC_EXPORT: 'true'
         run: npm run build
 
+      - name: Optimize exported images
+        run: |
+          npm install --no-save sharp
+          node <<'NODE'
+          const fs = require('fs/promises');
+          const path = require('path');
+          const sharp = require('sharp');
+
+          const outDir = path.resolve('out');
+          const replacements = [];
+
+          async function walk(dir) {
+            const entries = await fs.readdir(dir, { withFileTypes: true });
+            const files = [];
+            for (const entry of entries) {
+              const fullPath = path.join(dir, entry.name);
+              if (entry.isDirectory()) files.push(...await walk(fullPath));
+              else files.push(fullPath);
+            }
+            return files;
+          }
+
+          function toWebPath(filePath) {
+            return path.relative(outDir, filePath).split(path.sep).join('/');
+          }
+
+          function maxWidthFor(webPath) {
+            if (webPath.startsWith('authority-logos/')) return 320;
+            if (webPath.startsWith('brand/')) return 620;
+            if (webPath.startsWith('images/services/')) return 900;
+            if (webPath.startsWith('images/home/')) return 1400;
+            if (webPath.startsWith('images/countries/')) return 900;
+            if (webPath.startsWith('images/service-areas/')) return 900;
+            return 1200;
+          }
+
+          async function optimizeImage(filePath) {
+            const ext = path.extname(filePath).toLowerCase();
+            if (!['.webp', '.png', '.jpg', '.jpeg'].includes(ext)) return;
+
+            const webPath = toWebPath(filePath);
+            const maxWidth = maxWidthFor(webPath);
+            const metadata = await sharp(filePath).metadata();
+            const shouldResize = metadata.width && metadata.width > maxWidth;
+
+            if (ext === '.png' && (webPath.startsWith('authority-logos/') || webPath.startsWith('brand/'))) {
+              const nextWebPath = webPath.replace(/\.png$/i, '.webp');
+              const webpFile = path.join(outDir, nextWebPath);
+              await sharp(filePath)
+                .resize({ width: maxWidth, withoutEnlargement: true })
+                .webp({ quality: 74, effort: 6 })
+                .toFile(webpFile);
+              replacements.push([`/${webPath}`, `/${nextWebPath}`]);
+              replacements.push([webPath, nextWebPath]);
+              return;
+            }
+
+            if (!shouldResize && ext === '.png') return;
+
+            const tempFile = `${filePath}.optimized`;
+            let image = sharp(filePath).resize({ width: maxWidth, withoutEnlargement: true });
+
+            if (ext === '.webp') image = image.webp({ quality: 74, effort: 6 });
+            if (ext === '.jpg' || ext === '.jpeg') image = image.jpeg({ quality: 76, progressive: true, mozjpeg: true });
+            if (ext === '.png') image = image.png({ compressionLevel: 9, adaptiveFiltering: true, palette: true });
+
+            await image.toFile(tempFile);
+            await fs.rename(tempFile, filePath);
+          }
+
+          async function applyReplacements(files) {
+            if (!replacements.length) return;
+            const textExtensions = new Set(['.html', '.js', '.css', '.txt']);
+            for (const filePath of files) {
+              if (!textExtensions.has(path.extname(filePath).toLowerCase())) continue;
+              let content = await fs.readFile(filePath, 'utf8');
+              let nextContent = content;
+              for (const [from, to] of replacements) nextContent = nextContent.split(from).join(to);
+              if (nextContent !== content) await fs.writeFile(filePath, nextContent);
+            }
+          }
+
+          (async () => {
+            const files = await walk(outDir);
+            for (const file of files) {
+              try { await optimizeImage(file); }
+              catch (error) { console.warn(`Skipped image optimization for ${file}: ${error.message}`); }
+            }
+            const nextFiles = await walk(outDir);
+            await applyReplacements(nextFiles);
+            console.log(`Optimized exported images. Modernized ${replacements.length / 2} PNG references.`);
+          })();
+          NODE
+
       - name: Add cPanel root files
         run: |
           cat > out/.htaccess <<'EOF'
