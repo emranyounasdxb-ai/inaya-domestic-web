@@ -466,17 +466,21 @@ function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
                   </span>
                   <span>{row.feature}</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 border-x border-primary-900/10 bg-white px-4 py-3 text-center font-bold">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-                    <CheckIcon className="h-3.5 w-3.5" />
+                <div className="flex items-center justify-center border-x border-primary-900/10 bg-white px-4 py-3 font-bold">
+                  <span className="grid w-[12rem] grid-cols-[1.5rem_minmax(0,1fr)] items-center gap-3 text-start">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
+                      <CheckIcon className="h-3.5 w-3.5" />
+                    </span>
+                    <span>{row.inaya}</span>
                   </span>
-                  <span>{row.inaya}</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 px-4 py-3 text-center font-bold text-primary-900/82">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
-                    <CrossIcon className="h-3.5 w-3.5" />
+                <div className="flex items-center justify-center px-4 py-3 font-bold text-primary-900/82">
+                  <span className="grid w-[12rem] grid-cols-[1.5rem_minmax(0,1fr)] items-center gap-3 text-start">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                      <CrossIcon className="h-3.5 w-3.5" />
+                    </span>
+                    <span>{row.other}</span>
                   </span>
-                  <span>{row.other}</span>
                 </div>
               </div>
             ))}
