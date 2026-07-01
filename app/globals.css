@@ -12,3 +12,4 @@ main section div.grid>div:nth-child(3)>div.mb-4.h-24.rounded-xl{background-image
 main section div.grid>div:nth-child(4)>div.mb-4.h-24.rounded-xl{background-image:url('/images/countries/maid-sri-lanka.webp')!important}
 main section div.grid>div:nth-child(5)>div.mb-4.h-24.rounded-xl{background-image:url('/images/countries/maid-india.webp')!important}
 main section div.grid>div:nth-child(6)>div.mb-4.h-24.rounded-xl{background-image:url('/images/countries/maid-kenya-uganda.webp')!important}
+[aria-label^="Candidate "]>div{display:none!important}[aria-label^="Candidate "]{background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
