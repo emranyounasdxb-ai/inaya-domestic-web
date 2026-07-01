@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import HomeCountryAvailability from '@/components/HomeCountryAvailability';
 import HomeGoogleReviews from '@/components/HomeGoogleReviews';
@@ -15,7 +14,7 @@ const homeContent = {
     conciergeLabel: '24/7 Support',
     conciergeTitle: 'Global Executive Concierge',
     conciergeText: 'Beyond staffing, INAYA provides a dedicated support layer for family requirements, urgent coordination and practical follow-up across the UAE.',
-    learnMore: 'Learn More',
+    learnMore: 'Contact INAYA Support',
     safetyTitle: 'Safety & Discretion',
     safetyText: 'Privacy is part of the service experience. Household information, documents and expectations are handled carefully before any step is confirmed.',
     safetyCards: [
@@ -67,7 +66,7 @@ const homeContent = {
     conciergeLabel: 'دعم ومتابعة',
     conciergeTitle: 'كونسيرج تنفيذي للعائلة',
     conciergeText: 'إلى جانب الخدمة، تقدم عناية طبقة دعم مخصصة لاحتياجات الأسرة، التنسيق العاجل، والمتابعة العملية داخل الإمارات.',
-    learnMore: 'اعرف المزيد',
+    learnMore: 'تواصل مع فريق عناية',
     safetyTitle: 'السلامة والخصوصية',
     safetyText: 'الخصوصية جزء أساسي من تجربة الخدمة. يتم التعامل مع معلومات الأسرة والمستندات والتوقعات بعناية قبل تأكيد أي خطوة.',
     safetyCards: [
@@ -135,21 +134,53 @@ const homeImages = {
   testimonial: '/images/home/inaya-home-hero-family.webp'
 };
 
-function HomeImage({ alt, className = '', src, priority = false }: { alt: string; className?: string; src: string; priority?: boolean }) {
+const imageWidths = [480, 768, 960, 1200, 1400];
+
+function optimizedVariant(src: string, width: number) {
+  const cleanSrc = src.replace(/^\//, '').replace(/\.[^.]+$/i, '');
+  return `/optimized/${cleanSrc}-${width}.webp`;
+}
+
+function optimizedSrcSet(src: string, widths = imageWidths) {
+  return widths.map((width) => `${optimizedVariant(src, width)} ${width}w`).join(', ');
+}
+
+function ResponsiveImage({
+  alt,
+  src,
+  priority = false,
+  sizes = '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw',
+  imageClassName = 'object-cover'
+}: {
+  alt: string;
+  src: string;
+  priority?: boolean;
+  sizes?: string;
+  imageClassName?: string;
+}) {
   return (
-    <div className={`relative overflow-hidden bg-[#f7f8fb] ${className}`}>
-      <Image
+    <picture className="absolute inset-0 block">
+      <source type="image/webp" srcSet={optimizedSrcSet(src)} sizes={sizes} />
+      <img
         src={src}
         alt={alt}
-        fill
-        priority={priority}
-        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-        className="object-cover"
+        width="1400"
+        height="900"
+        loading={priority ? 'eager' : 'lazy'}
+        decoding={priority ? 'sync' : 'async'}
+        className={`h-full w-full ${imageClassName}`}
       />
-    </div>
+    </picture>
   );
 }
 
+function HomeImage({ alt, className = '', src, priority = false }: { alt: string; className?: string; src: string; priority?: boolean }) {
+  return (
+    <div className={`relative overflow-hidden bg-[#f7f8fb] ${className}`}>
+      <ResponsiveImage alt={alt} src={src} priority={priority} />
+    </div>
+  );
+}
 
 function CuratedDisciplineCard({
   href,
@@ -175,7 +206,12 @@ function CuratedDisciplineCard({
       href={href}
       className={`curated-discipline-card group ${featured ? 'curated-discipline-card--featured lg:col-span-7 lg:row-span-2' : 'lg:col-span-5'}`}
     >
-      <Image src={image} alt="" fill sizes={featured ? '(max-width: 1024px) 100vw, 58vw' : '(max-width: 1024px) 100vw, 42vw'} className="curated-discipline-card__image object-cover" />
+      <ResponsiveImage
+        src={image}
+        alt={title}
+        sizes={featured ? '(max-width: 1024px) 100vw, 58vw' : '(max-width: 1024px) 100vw, 42vw'}
+        imageClassName="curated-discipline-card__image object-cover"
+      />
       <div className="curated-discipline-card__glow" aria-hidden="true" />
       <div className="curated-discipline-card__content">
         {tag ? <span className="curated-discipline-card__badge">{tag}</span> : null}
@@ -188,9 +224,15 @@ function CuratedDisciplineCard({
 }
 
 function AuthorityLogoCard({ name, file }: { name: string; file: string }) {
+  const src = `/authority-logos/${file}`;
+  const base = `/optimized/authority-logos/${file.replace(/\.[^.]+$/i, '')}`;
+
   return (
     <div className="flex h-20 min-w-[178px] items-center justify-center rounded-[20px] border border-white/70 bg-white/68 px-7 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:bg-white/82">
-      <Image src={`/authority-logos/${file}`} alt={name} width={144} height={44} className="h-11 w-36 object-contain" />
+      <picture>
+        <source type="image/webp" srcSet={`${base}-160.webp 160w, ${base}-320.webp 320w`} sizes="144px" />
+        <img src={src} alt={name} width="144" height="44" loading="lazy" decoding="async" className="h-11 w-36 object-contain" />
+      </picture>
     </div>
   );
 }
@@ -233,13 +275,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
       <section className="relative min-h-[82vh] overflow-hidden">
         <div className="absolute inset-0 overflow-hidden bg-[#f7f8fb]">
-          <Image
+          <ResponsiveImage
             src={homeImages.hero}
             alt={isArabic ? 'عائلة تستمتع بمنزل منظم مع دعم عناية' : 'Family enjoying a well-supported home with INAYA'}
-            fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            imageClassName="object-cover object-center"
           />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_24%,rgba(191,164,106,0.18),transparent_22rem),linear-gradient(90deg,rgba(252,248,250,0.96)_0%,rgba(252,248,250,0.72)_48%,rgba(255,255,255,0.10)_100%)]" />
