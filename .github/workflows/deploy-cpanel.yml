@@ -251,7 +251,7 @@ jobs:
           set net:max-retries 3
           set net:timeout 30
           set mirror:parallel-directories true
-          mirror --reverse --delete --verbose --parallel=3 \
+          mirror --reverse --verbose --parallel=2 \
             --exclude-glob .well-known \
             --exclude-glob .well-known/** \
             --exclude-glob .ftp-deploy-sync-state.json \
