@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 
 const fallbackReviewUrl = 'https://search.google.com/local/writereview?placeid=ChIJxzRGAUJZXz4R8zN5ye8vn_M';
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true';
 
 type ReviewItem = {
   name: string;
@@ -51,11 +52,11 @@ const copy = {
     intro: 'Real feedback from families and clients who trust INAYA Domestic Workers Ajman for professional service and peace of mind.',
     badge: 'Google Business Profile',
     live: 'Live Updates',
-    ready: 'Live Sync Ready',
+    ready: 'Review Highlights',
     rating: 'Google Business Profile highlights',
     write: 'Write a Google Review',
     view: 'View on Google',
-    connected: 'Connected to Google Business Profile',
+    connected: 'Google Business Profile',
     verified: 'Verified Google Review',
     previous: 'Previous review',
     next: 'Next review'
@@ -67,11 +68,11 @@ const copy = {
     intro: 'آراء حقيقية من العملاء الذين يثقون بعناية للعمالة المنزلية عجمان للحصول على خدمة مهنية وراحة بال.',
     badge: 'ملف Google التجاري',
     live: 'تحديثات مباشرة',
-    ready: 'جاهز للمزامنة',
+    ready: 'مختارات التقييمات',
     rating: 'مختارات من ملف Google التجاري',
     write: 'اكتب تقييماً على Google',
     view: 'عرض على Google',
-    connected: 'متصل بملف Google التجاري',
+    connected: 'ملف Google التجاري',
     verified: 'تقييم موثق على Google',
     previous: 'التقييم السابق',
     next: 'التقييم التالي'
@@ -149,6 +150,11 @@ export default function HomeGoogleReviews({ locale }: { locale: string }) {
   const miniReviews = [1, 2, 3].map((offset) => reviews[(activeIndex + offset) % reviews.length]);
 
   useEffect(() => {
+    if (isStaticExport) {
+      setPayload(fallbackPayload);
+      return undefined;
+    }
+
     let isMounted = true;
 
     fetch('/api/google-reviews', { cache: 'no-store' })
@@ -281,7 +287,7 @@ export default function HomeGoogleReviews({ locale }: { locale: string }) {
                       className={`google-review-dot ${index === activeIndex ? 'is-active' : ''}`}
                       onClick={() => goToReview(index)}
                       aria-label={`Show review ${index + 1}`}
-                      aria-current={index === activeIndex}
+                      aria-current={index === activeIndex ? 'true' : 'false'}
                     />
                   ))}
                 </div>
