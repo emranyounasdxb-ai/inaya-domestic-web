@@ -115,14 +115,29 @@ export default function FloatingSocialBar() {
   ];
 
   return (
-    <aside className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center rounded-full border border-white/70 bg-white/80 p-1.5 shadow-[0_16px_45px_rgba(15,23,42,0.16)] backdrop-blur-xl lg:flex">
-      {links.map((item, index) => (
-        <div key={item.label} className={index === 3 ? 'border-t border-black/10 pt-1.5' : undefined}>
-          <IconLink href={item.href} label={item.label}>
-            <span className={item.tone}>{item.icon}</span>
-          </IconLink>
-        </div>
-      ))}
-    </aside>
+    <>
+      <aside className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center rounded-full border border-white/70 bg-white/80 p-1.5 shadow-[0_16px_45px_rgba(15,23,42,0.16)] backdrop-blur-xl lg:flex">
+        {links.map((item, index) => (
+          <div key={item.label} className={index === 3 ? 'border-t border-black/10 pt-1.5' : undefined}>
+            <IconLink href={item.href} label={item.label}>
+              <span className={item.tone}>{item.icon}</span>
+            </IconLink>
+          </div>
+        ))}
+      </aside>
+
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp INAYA Domestic Workers"
+        title="WhatsApp INAYA Domestic Workers"
+        className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/80 bg-white shadow-[0_16px_40px_rgba(37,211,102,0.35)] transition hover:-translate-y-1 hover:scale-105 lg:hidden"
+      >
+        <span className="[&>svg]:h-9 [&>svg]:w-9">
+          <WhatsAppIcon />
+        </span>
+      </a>
+    </>
   );
 }
