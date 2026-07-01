@@ -27,7 +27,6 @@ const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-he
 const notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-body', display: 'swap' });
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap' });
 
-export const dynamic = 'force-dynamic';
 export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
