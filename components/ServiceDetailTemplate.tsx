@@ -269,15 +269,15 @@ function MatchingCards({
           {copy.countries.slice(0, 6).map((item, index) => {
             const profile = countryProfiles[index];
             return (
-              <article key={item.title} className={`${surface} flex h-full ${countryBased ? 'min-h-[410px]' : 'min-h-[300px]'} flex-col overflow-hidden`}>
+              <article key={item.title} className={`${surface} flex h-full ${countryBased ? 'min-h-[430px]' : 'min-h-[300px]'} flex-col overflow-hidden`}>
                 {countryBased ? (
-                  <div className="relative h-[205px] border-b border-primary-900/8 bg-[#eef2f8]">
+                  <div className="relative h-[225px] border-b border-primary-900/8 bg-[#eef2f8]">
                     <Image
                       src={profile.image}
                       alt={profile.title[lang]}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-contain object-bottom px-5 pt-3"
+                      className="object-cover object-top"
                     />
                   </div>
                 ) : (
@@ -403,13 +403,13 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
                 href={`/${locale}/services/${relatedSlug}`}
                 className="group flex h-full min-h-[270px] flex-col overflow-hidden rounded-[24px] border border-primary-900/10 bg-white shadow-[0_18px_48px_rgba(7,22,74,0.08)] transition hover:-translate-y-1 hover:border-accent-600/45 hover:shadow-[0_26px_66px_rgba(7,22,74,0.12)]"
               >
-                <span className="relative block h-48 overflow-hidden bg-[#f7f8fb]">
+                <span className="relative block h-[232px] overflow-hidden bg-[#f7f8fb] max-sm:h-[210px]">
                   <Image
                     src={getServiceImage(relatedSlug)}
                     alt={service.name[lang]}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition duration-500 group-hover:scale-[1.04]"
+                    className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                   />
                   <span className="absolute start-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/80 bg-white text-accent-700 shadow-[0_10px_24px_rgba(7,22,74,0.12)]">
                     <ServiceIcon slug={relatedSlug} className="h-5 w-5" />
