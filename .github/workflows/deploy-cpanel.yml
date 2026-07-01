@@ -101,11 +101,28 @@ jobs:
           </html>
           EOF
 
+      - name: Install FTP client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
       - name: Deploy to cPanel
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.CPANEL_FTP_HOST }}
-          username: ${{ secrets.CPANEL_FTP_USER }}
-          password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
+        env:
+          CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
+          CPANEL_FTP_USER: ${{ secrets.CPANEL_FTP_USER }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_SERVER_DIR: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
+        run: |
+          lftp -u "$CPANEL_FTP_USER","$CPANEL_FTP_PASSWORD" "$CPANEL_FTP_HOST" <<EOF
+          set ftp:ssl-allow no
+          set ftp:list-options -a
+          set net:max-retries 3
+          set net:timeout 30
+          set mirror:parallel-directories true
+          mirror --reverse --delete --verbose --parallel=3 \
+            --exclude-glob .well-known \
+            --exclude-glob .well-known/** \
+            --exclude-glob .ftp-deploy-sync-state.json \
+            ./out/ "$CPANEL_FTP_SERVER_DIR"
+          bye
+          EOF
