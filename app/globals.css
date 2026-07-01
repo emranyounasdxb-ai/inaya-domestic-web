@@ -59,6 +59,21 @@ body {
   65%, 100% { transform: translateX(125%) skewX(-18deg); opacity: 0; }
 }
 
+/* Arabic home hero: keep the text panel away from the model side while preserving RTL text. */
+[dir='rtl'] main > div > section:first-of-type > div.relative.mx-auto.flex {
+  direction: ltr;
+  justify-content: flex-start;
+}
+
+[dir='rtl'] main > div > section:first-of-type > div.relative.mx-auto.flex > div {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir='rtl'] main > div > section:first-of-type > div.absolute.inset-0:last-of-type {
+  background: radial-gradient(circle at 24% 24%, rgba(191,164,106,0.18), transparent 22rem), linear-gradient(90deg, rgba(252,248,250,0.96) 0%, rgba(252,248,250,0.76) 46%, rgba(255,255,255,0.14) 100%) !important;
+}
+
 /* Service detail card photos must fill the card image area edge-to-edge. */
 div[class~="h-[205px]"][class~="bg-[#eef2f8]"] {
   height: 225px !important;
