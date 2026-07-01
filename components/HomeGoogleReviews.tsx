@@ -1,26 +1,10 @@
-'use client';
-
-import { useEffect, useMemo, useState } from 'react';
-import Image from 'next/image';
-
 const fallbackReviewUrl = 'https://search.google.com/local/writereview?placeid=ChIJxzRGAUJZXz4R8zN5ye8vn_M';
-const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true';
 
 type ReviewItem = {
   name: string;
   time?: string;
   text?: string;
   rating?: number;
-  profilePhoto?: string;
-};
-
-type ReviewPayload = {
-  live?: boolean;
-  placeName?: string;
-  rating?: number;
-  totalReviews?: number | null;
-  reviewUrl?: string;
-  reviews?: ReviewItem[];
 };
 
 const fallbackReviews: ReviewItem[] = [
@@ -33,17 +17,6 @@ const fallbackReviews: ReviewItem[] = [
   { name: 'Olive raj Singh', time: '12 weeks ago', text: 'Rated INAYA Domestic Workers Ajman 5 stars on Google.', rating: 5 }
 ];
 
-const fallbackPayload: Required<Pick<ReviewPayload, 'live' | 'placeName' | 'rating' | 'reviewUrl' | 'reviews'>> & {
-  totalReviews: number | null;
-} = {
-  live: false,
-  placeName: 'INAYA Domestic Workers Ajman',
-  rating: 5,
-  totalReviews: null,
-  reviewUrl: fallbackReviewUrl,
-  reviews: fallbackReviews
-};
-
 const copy = {
   en: {
     eyebrow: 'CLIENT PERSPECTIVES',
@@ -51,15 +24,12 @@ const copy = {
     titleB: 'from Clients',
     intro: 'Real feedback from families and clients who trust INAYA Domestic Workers Ajman for professional service and peace of mind.',
     badge: 'Google Business Profile',
-    live: 'Live Updates',
     ready: 'Review Highlights',
     rating: 'Google Business Profile highlights',
     write: 'Write a Google Review',
     view: 'View on Google',
     connected: 'Google Business Profile',
-    verified: 'Verified Google Review',
-    previous: 'Previous review',
-    next: 'Next review'
+    verified: 'Verified Google Review'
   },
   ar: {
     eyebrow: 'آراء العملاء',
@@ -67,15 +37,12 @@ const copy = {
     titleB: 'من العملاء',
     intro: 'آراء حقيقية من العملاء الذين يثقون بعناية للعمالة المنزلية عجمان للحصول على خدمة مهنية وراحة بال.',
     badge: 'ملف Google التجاري',
-    live: 'تحديثات مباشرة',
     ready: 'مختارات التقييمات',
     rating: 'مختارات من ملف Google التجاري',
     write: 'اكتب تقييماً على Google',
     view: 'عرض على Google',
     connected: 'ملف Google التجاري',
-    verified: 'تقييم موثق على Google',
-    previous: 'التقييم السابق',
-    next: 'التقييم التالي'
+    verified: 'تقييم موثق على Google'
   }
 };
 
@@ -88,15 +55,6 @@ function initials(name: string) {
       .slice(0, 2)
       .toUpperCase() || 'G'
   );
-}
-
-function remoteImageLoader({ src }: { src: string }) {
-  return src;
-}
-
-function normalizeReviews(reviews?: ReviewItem[]) {
-  const fiveStarReviews = (reviews || []).filter((review) => (review.rating || 0) >= 5);
-  return fiveStarReviews.length ? fiveStarReviews : fallbackReviews;
 }
 
 function GoogleIcon({ className = '' }: { className?: string }) {
@@ -121,16 +79,7 @@ function RatingStars({ rating = 5, className = '' }: { rating?: number; classNam
 function ReviewAvatar({ review, compact = false }: { review: ReviewItem; compact?: boolean }) {
   return (
     <div className={compact ? 'google-mini-avatar' : 'google-review-avatar'}>
-      {review.profilePhoto ? (
-        <Image
-          src={review.profilePhoto}
-          alt={review.name}
-          width={compact ? 34 : 64}
-          height={compact ? 34 : 64}
-          loader={remoteImageLoader}
-          unoptimized
-        />
-      ) : <span>{initials(review.name)}</span>}
+      <span>{initials(review.name)}</span>
       {!compact ? <span className="google-review-check" aria-hidden="true">✓</span> : null}
     </div>
   );
@@ -139,60 +88,10 @@ function ReviewAvatar({ review, compact = false }: { review: ReviewItem; compact
 export default function HomeGoogleReviews({ locale }: { locale: string }) {
   const lang = locale === 'ar' ? 'ar' : 'en';
   const t = copy[lang];
-  const [payload, setPayload] = useState<ReviewPayload>(fallbackPayload);
-  const reviews = useMemo(() => normalizeReviews(payload.reviews), [payload.reviews]);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeReview = reviews[activeIndex % reviews.length];
-  const reviewUrl = payload.reviewUrl || fallbackReviewUrl;
-  const rating = Number(payload.rating || fallbackPayload.rating);
-  const ratingText = payload.totalReviews ? `${t.rating} • ${payload.totalReviews}+ reviews` : t.rating;
-  const liveText = payload.live ? t.live : t.ready;
-  const miniReviews = [1, 2, 3].map((offset) => reviews[(activeIndex + offset) % reviews.length]);
-
-  useEffect(() => {
-    if (isStaticExport) {
-      setPayload(fallbackPayload);
-      return undefined;
-    }
-
-    let isMounted = true;
-
-    fetch('/api/google-reviews', { cache: 'no-store' })
-      .then((response) => {
-        if (!response.ok) throw new Error('Google reviews request failed');
-        return response.json() as Promise<ReviewPayload>;
-      })
-      .then((nextPayload) => {
-        if (isMounted) setPayload(nextPayload);
-      })
-      .catch(() => {
-        if (isMounted) setPayload(fallbackPayload);
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
-  useEffect(() => {
-    setActiveIndex(0);
-  }, [reviews.length]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return undefined;
-    }
-
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % reviews.length);
-    }, 5200);
-
-    return () => window.clearInterval(interval);
-  }, [reviews.length]);
-
-  const goToReview = (index: number) => {
-    setActiveIndex((index + reviews.length) % reviews.length);
-  };
+  const reviews = fallbackReviews;
+  const activeReview = reviews[0];
+  const miniReviews = reviews.slice(1, 4);
+  const rating = 5;
 
   return (
     <section className="google-reviews-section" aria-labelledby="google-reviews-title">
@@ -210,11 +109,11 @@ export default function HomeGoogleReviews({ locale }: { locale: string }) {
             <div className="google-rating-divider" aria-hidden="true" />
             <div>
               <RatingStars rating={rating} />
-              <p>{ratingText}</p>
+              <p>{t.rating}</p>
             </div>
           </div>
 
-          <a className="google-review-cta" href={reviewUrl} target="_blank" rel="noopener noreferrer">
+          <a className="google-review-cta" href={fallbackReviewUrl} target="_blank" rel="noopener noreferrer">
             <GoogleIcon />
             <span>{t.write}</span>
             <span aria-hidden="true">→</span>
@@ -224,7 +123,7 @@ export default function HomeGoogleReviews({ locale }: { locale: string }) {
             <span>◇ {t.connected}</span>
             <span>
               <i className="google-live-dot" aria-hidden="true" />
-              {liveText}
+              {t.ready}
             </span>
           </div>
         </div>
@@ -238,11 +137,11 @@ export default function HomeGoogleReviews({ locale }: { locale: string }) {
               </div>
               <div className="google-live-pill">
                 <i className="google-live-dot" aria-hidden="true" />
-                {liveText}
+                {t.ready}
               </div>
             </div>
 
-            <article className="google-feature-card" key={`${activeReview.name}-${activeIndex}`} aria-live="polite">
+            <article className="google-feature-card">
               <div className="google-feature-head">
                 <ReviewAvatar review={activeReview} />
                 <div className="google-reviewer-meta">
@@ -275,35 +174,24 @@ export default function HomeGoogleReviews({ locale }: { locale: string }) {
             </div>
 
             <div className="google-carousel-footer">
-              <div className="google-carousel-nav">
-                <button type="button" className="google-nav-button" onClick={() => goToReview(activeIndex - 1)} aria-label={t.previous}>
-                  ‹
-                </button>
-                <div className="google-review-dots" aria-label="Google review carousel">
+              <div className="google-carousel-nav" aria-hidden="true">
+                <span className="google-nav-button">‹</span>
+                <div className="google-review-dots">
                   {reviews.map((review, index) => (
-                    <button
-                      type="button"
-                      key={`${review.name}-${index}`}
-                      className={`google-review-dot ${index === activeIndex ? 'is-active' : ''}`}
-                      onClick={() => goToReview(index)}
-                      aria-label={`Show review ${index + 1}`}
-                      aria-current={index === activeIndex ? 'true' : 'false'}
-                    />
+                    <span key={`${review.name}-${index}`} className={`google-review-dot ${index === 0 ? 'is-active' : ''}`} />
                   ))}
                 </div>
-                <button type="button" className="google-nav-button" onClick={() => goToReview(activeIndex + 1)} aria-label={t.next}>
-                  ›
-                </button>
+                <span className="google-nav-button">›</span>
               </div>
 
-              <a className="google-view-button" href={reviewUrl} target="_blank" rel="noopener noreferrer">
+              <a className="google-view-button" href={fallbackReviewUrl} target="_blank" rel="noopener noreferrer">
                 {t.view}
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
 
             <div className="google-progress-line" aria-hidden="true">
-              <span style={{ width: `${((activeIndex + 1) / reviews.length) * 100}%` }} />
+              <span style={{ width: `${(1 / reviews.length) * 100}%` }} />
             </div>
           </div>
         </div>
