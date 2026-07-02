@@ -159,13 +159,22 @@
   background: rgba(255, 255, 255, 0.92);
   padding: 0.84rem 1.24rem;
   color: #07164a;
-  font-size: 0.8rem;
+  font-size: 0;
   font-weight: 800;
   letter-spacing: 0.14em;
   line-height: 1;
   text-transform: uppercase;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transition: transform 280ms ease, background 280ms ease, box-shadow 280ms ease;
+}
+
+.curated-discipline-card__button::before {
+  content: 'Explore Service';
+  font-size: 0.8rem;
+}
+
+[dir='rtl'] .curated-discipline-card__button::before {
+  content: 'استكشف الخدمة';
 }
 
 .curated-discipline-card:hover {
