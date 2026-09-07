@@ -7,19 +7,41 @@ const scrollNearBottom = async (page: import('@playwright/test').Page) => {
 test.describe('Sierra Leone offer controls', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/en');
-    await page.evaluate(() => window.sessionStorage.clear());
-    await page.reload();
   });
 
-  test('shows the English offer after scrolling with correct pricing and WhatsApp message', async ({ page }) => {
+  test('shows a centered English modal and blurred backdrop after scrolling', async ({ page }) => {
     const offer = page.getByTestId('sierra-leone-offer');
     await expect(offer).toBeHidden();
 
     await scrollNearBottom(page);
     await expect(offer).toBeVisible();
+    await expect(offer).toHaveAttribute('role', 'dialog');
+    await expect(offer).toHaveAttribute('aria-modal', 'true');
     await expect(offer.getByRole('heading', { name: 'Sierra Leone Maid Offer' })).toBeVisible();
     await expect(offer).toContainText('AED 6,500');
     await expect(offer).toContainText('AED 4,500');
+
+    const centered = await offer.evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      return {
+        horizontal: Math.abs(rect.left + rect.width / 2 - window.innerWidth / 2),
+        vertical: Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2)
+      };
+    });
+    expect(centered.horizontal).toBeLessThanOrEqual(2);
+    expect(centered.vertical).toBeLessThanOrEqual(2);
+
+    const backdrop = page.getByTestId('sierra-leone-offer-backdrop');
+    await expect(backdrop).toBeVisible();
+    const backdropStyles = await backdrop.evaluate((element) => {
+      const style = getComputedStyle(element);
+      return {
+        background: style.backgroundColor,
+        filter: style.backdropFilter || style.getPropertyValue('-webkit-backdrop-filter')
+      };
+    });
+    expect(backdropStyles.background).toBe('rgba(2, 10, 44, 0.38)');
+    expect(backdropStyles.filter).toContain('blur(9px)');
 
     const whatsapp = page.getByTestId('sierra-leone-whatsapp');
     const href = await whatsapp.getAttribute('href');
@@ -27,22 +49,26 @@ test.describe('Sierra Leone offer controls', () => {
     expect(decodeURIComponent(href ?? '')).toContain("Hello INAYA, I’m interested in the Sierra Leone maid offer for AED 4,500.");
   });
 
-  test('keeps the offer dismissed for the browser session', async ({ page }) => {
+  test('keeps the offer dismissed for the page load and allows it after reload', async ({ page }) => {
     await scrollNearBottom(page);
     const offer = page.getByTestId('sierra-leone-offer');
+    const backdrop = page.getByTestId('sierra-leone-offer-backdrop');
     await expect(offer).toBeVisible();
     await offer.getByRole('button', { name: 'Close Sierra Leone offer' }).click();
+    await expect(offer).toBeHidden();
+    await expect(backdrop).toBeHidden();
+
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await scrollNearBottom(page);
     await expect(offer).toBeHidden();
 
     await page.reload();
     await scrollNearBottom(page);
-    await expect(offer).toBeHidden();
+    await expect(offer).toBeVisible();
   });
 
   test('renders localized Arabic RTL content and message', async ({ page }) => {
     await page.goto('/ar');
-    await page.evaluate(() => window.sessionStorage.clear());
-    await page.reload();
     await scrollNearBottom(page);
 
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
@@ -59,6 +85,7 @@ test.describe('Sierra Leone offer controls', () => {
 
   test('shows Back to Top near the page bottom and returns to the top', async ({ page }) => {
     await scrollNearBottom(page);
+    await page.getByTestId('sierra-leone-offer').getByRole('button', { name: 'Close Sierra Leone offer' }).click();
     const backToTop = page.getByTestId('back-to-top');
     await expect(backToTop).toBeVisible();
     await backToTop.click();
@@ -67,11 +94,23 @@ test.describe('Sierra Leone offer controls', () => {
     await expect(backToTop).toHaveAttribute('tabindex', '-1');
   });
 
-  test('does not overflow horizontally on mobile', async ({ page }) => {
-    await page.setViewportSize({ width: 360, height: 740 });
+  test('centers the modal without overflow at 390 by 844', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
     await scrollNearBottom(page);
-    await expect(page.getByTestId('sierra-leone-offer')).toBeVisible();
+    const offer = page.getByTestId('sierra-leone-offer');
+    await expect(offer).toBeVisible();
+    const geometry = await offer.evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      return {
+        horizontal: Math.abs(rect.left + rect.width / 2 - window.innerWidth / 2),
+        vertical: Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2),
+        withinViewport: rect.top >= 0 && rect.bottom <= window.innerHeight
+      };
+    });
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(geometry.horizontal).toBeLessThanOrEqual(2);
+    expect(geometry.vertical).toBeLessThanOrEqual(2);
+    expect(geometry.withinViewport).toBe(true);
     expect(overflow).toBeLessThanOrEqual(0);
   });
 
