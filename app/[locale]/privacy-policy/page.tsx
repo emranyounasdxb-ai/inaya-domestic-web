@@ -4,10 +4,12 @@ import { generateTrustSupportMetadata } from '@/lib/trust-support-metadata';
 
 const slug = 'privacy-policy';
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   return generateTrustSupportMetadata(locale, slug);
 }
 
-export default function PrivacyPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return <TrustSupportPage locale={locale} slug={slug} />;
 }

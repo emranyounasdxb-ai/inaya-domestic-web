@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import PhaseOneSeoSection from '@/components/PhaseOneSeoSection';
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   return locale === 'ar'
     ? {
         title: 'كيف تعمل عناية | خطوات اختيار خادمة في الإمارات',
@@ -13,7 +14,8 @@ export function generateMetadata({ params: { locale } }: { params: { locale: str
       };
 }
 
-export default function HowItWorksLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
+export default async function HowItWorksLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <>
       {children}

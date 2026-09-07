@@ -5,10 +5,12 @@ import { trustSupportPages } from '@/lib/trust-support-pages';
 
 const slug = trustSupportPages[5].slug;
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   return generateTrustSupportMetadata(locale, slug);
 }
 
-export default function Page({ params: { locale } }: { params: { locale: string } }) {
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return <TrustSupportPage locale={locale} slug={slug} />;
 }

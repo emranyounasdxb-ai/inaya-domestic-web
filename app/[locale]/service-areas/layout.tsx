@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   return locale === 'ar'
     ? {
         title: 'مناطق خدمة عناية في الإمارات | خدمات خادمات حسب الإمارة',

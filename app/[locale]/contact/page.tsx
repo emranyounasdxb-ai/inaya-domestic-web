@@ -30,7 +30,8 @@ function ArabicNumber({ type }: { type: 'phone' | 'whatsapp' }) {
   return <span className="inline-flex flex-row items-center gap-1" dir="ltr" style={{ unicodeBidi: 'isolate' }}><span>+</span><span>٩٧١</span><span>٥٠</span><span>٢٠٣</span><span>٦٧٦٧</span></span>;
 }
 
-export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const whatsappHref = `https://wa.me/${siteConfig.whatsapp}`;

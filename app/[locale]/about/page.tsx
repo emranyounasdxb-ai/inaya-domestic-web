@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 type PageProps = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
 const aboutImages = {
@@ -13,7 +13,8 @@ const aboutImages = {
   family: '/images/home/inaya-home-hero-family.webp'
 };
 
-export default function AboutPage({ params: { locale } }: PageProps) {
+export default async function AboutPage({ params }: PageProps) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const headingClass = isArabic ? 'font-arabic leading-[1.35]' : 'font-heading leading-[1.05]';
 

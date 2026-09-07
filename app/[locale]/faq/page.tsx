@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { use, useState } from 'react';
 import Link from 'next/link';
 
 type IconName = 'service' | 'price' | 'booking' | 'support' | 'shield' | 'arrow' | 'message';
@@ -22,7 +22,8 @@ function LineIcon({ name, className = '' }: { name: IconName; className?: string
   return <svg viewBox="0 0 24 24" className={className} aria-hidden="true">{paths[name]}</svg>;
 }
 
-export default function FaqPage({ params: { locale } }: { params: { locale: string } }) {
+export default function FaqPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
   const isArabic = locale === 'ar';
   const headingClass = isArabic
     ? 'font-arabic text-4xl font-bold leading-[1.32] text-primary-900 sm:text-5xl lg:text-6xl'

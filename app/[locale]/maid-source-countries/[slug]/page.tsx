@@ -8,7 +8,8 @@ export function generateStaticParams() {
   return countrySourcePages.map((country) => ({ slug: country.slug }));
 }
 
-export function generateMetadata({ params: { locale, slug } }: { params: { locale: string; slug: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
   const country = getCountrySourcePage(slug);
   if (!country) return {};
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
@@ -39,7 +40,8 @@ export function generateMetadata({ params: { locale, slug } }: { params: { local
   };
 }
 
-export default function MaidSourceCountryPage({ params: { locale, slug } }: { params: { locale: string; slug: string } }) {
+export default async function MaidSourceCountryPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
   const country = getCountrySourcePage(slug);
   if (!country) notFound();
 

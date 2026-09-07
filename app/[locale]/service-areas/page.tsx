@@ -57,7 +57,8 @@ function CoverageVisual({ isArabic }: { isArabic: boolean }) {
   );
 }
 
-export default function ServiceAreasPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function ServiceAreasPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const headingClass = isArabic ? 'font-arabic text-4xl font-bold leading-[1.32] text-primary-900 sm:text-5xl lg:text-6xl' : 'font-heading text-5xl font-bold leading-[0.95] text-primary-900 sm:text-6xl lg:text-7xl';
   const sectionTitleClass = isArabic ? 'font-arabic text-3xl font-bold leading-[1.35] text-primary-900 sm:text-4xl' : 'font-heading text-4xl font-bold leading-tight text-primary-900';

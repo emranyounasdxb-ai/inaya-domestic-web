@@ -1,6 +1,7 @@
 import PhaseOneSeoSection from '@/components/PhaseOneSeoSection';
 
-export default function CountriesSourceLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
+export default async function CountriesSourceLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <>
       {children}
