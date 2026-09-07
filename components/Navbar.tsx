@@ -14,7 +14,7 @@ export default function Navbar({ locale }: { locale: string }) {
 
   const otherLocale = locale === 'en' ? 'ar' : 'en';
   const switchedPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
-  const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.png' : '/brand/inaya-domestic-workers-logo.png';
+  const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp';
   const logoAlt = locale === 'ar' ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
 
   const links = [

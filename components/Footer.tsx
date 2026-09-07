@@ -12,7 +12,7 @@ export default function Footer({ locale }: { locale: string }) {
   const isArabic = locale === 'ar';
   const lang = isArabic ? 'ar' : 'en';
   const year = new Date().getFullYear();
-  const logoSrc = isArabic ? '/brand/inaya-arabic-logo.png' : '/brand/inaya-domestic-workers-logo.png';
+  const logoSrc = isArabic ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp';
   const logoAlt = isArabic ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const contactAddress = isArabic
