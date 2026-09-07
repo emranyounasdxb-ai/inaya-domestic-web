@@ -6,9 +6,9 @@ import { getServiceImage, serviceGroups } from '@/lib/service-presentation';
 import type { Lang } from '@/lib/service-page-copy-all';
 
 type PageProps = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
 function ArrowIcon({ className = 'h-4 w-4' }: { className?: string }) {
@@ -19,7 +19,8 @@ function ArrowIcon({ className = 'h-4 w-4' }: { className?: string }) {
   );
 }
 
-export default function ServicesPage({ params: { locale } }: PageProps) {
+export default async function ServicesPage({ params }: PageProps) {
+  const { locale } = await params;
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
   const isArabic = lang === 'ar';
   const headingClass = isArabic ? 'font-arabic leading-[1.35]' : 'font-heading leading-[1.05]';

@@ -17,7 +17,7 @@ test('home page renders main sections', async ({ page }) => {
   await page.goto('/en');
 
   await expect(page.getByRole('heading', { name: /Elevating Domestic/i })).toBeVisible();
-  await expect(page.getByText('Our 5-Step Vetting Matrix')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Global Executive Concierge' })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Google Reviews/i })).toBeVisible();
   await expect(page.getByText('INAYA on Google', { exact: true })).toBeVisible();
 });
@@ -132,10 +132,10 @@ test('Google reviews carousel disables autoplay and animation for reduced motion
   await expect(track).not.toHaveClass(/is-animating/);
 });
 
-test('vetting matrix is not rendered on internal pages', async ({ page }) => {
+test('homepage concierge section is not rendered on internal pages', async ({ page }) => {
   for (const path of ['/en/service-areas', '/en/services/live-in-maid']) {
     await page.goto(path);
-    await expect(page.getByText('Our 5-Step Vetting Matrix')).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: 'Global Executive Concierge' })).toHaveCount(0);
   }
 });
 

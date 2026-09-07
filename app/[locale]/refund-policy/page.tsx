@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const title = isArabic ? 'سياسة الاسترداد والاستبدال | عناية للعمالة المنزلية' : 'Refund & Replacement Policy | INAYA Domestic Workers';
   const description = isArabic
@@ -20,7 +21,8 @@ export function generateMetadata({ params: { locale } }: { params: { locale: str
   };
 }
 
-export default function RefundPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function RefundPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const copy = isArabic ? {
     badge: 'سياسة الاسترداد والاستبدال',

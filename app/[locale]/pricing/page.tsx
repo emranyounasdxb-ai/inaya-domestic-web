@@ -24,7 +24,8 @@ function FeatureValue({ value }: { value: string | boolean }) {
   return <span>{value}</span>;
 }
 
-export default function PricingPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const copy = {
     hero: isArabic ? {

@@ -4,7 +4,7 @@ Modern, bilingual (English / Arabic with full RTL) website for **Inaya Domestic*
 
 ## Tech Stack
 
-- **Next.js 14** (App Router)
+- **Next.js 16** (App Router)
 - **TypeScript**
 - **Tailwind CSS**
 - **next-intl** (English / Arabic, automatic RTL)
@@ -42,7 +42,7 @@ components/        UI components (Navbar, Footer, forms, cards)
 messages/          en.json / ar.json translation files
 lib/               services data + site config
 i18n.ts            next-intl config
-middleware.ts      locale routing
+proxy.ts           locale routing
 ```
 
 ## Customization

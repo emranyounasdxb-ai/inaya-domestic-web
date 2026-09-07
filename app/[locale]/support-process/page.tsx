@@ -1,4 +1,5 @@
-export default function Page({ params: { locale } }: { params: { locale: string } }) {
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const points = isArabic
     ? ['تقديم الملاحظة مع تفاصيل الحجز ونوع الخدمة', 'مراجعة الحالة وشروط الاتفاق والتوقيت', 'توضيح الخيارات المتاحة حسب التوفر', 'المتابعة لتحسين الخطوة التالية']

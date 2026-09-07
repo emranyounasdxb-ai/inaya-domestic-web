@@ -7,6 +7,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inayadomestic.ae';
 const locales = ['en', 'ar'] as const;
 const now = new Date();
 
+export const dynamic = 'force-static';
+
 const coreRoutes = [
   '',
   'about',

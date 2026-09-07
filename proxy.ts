@@ -10,7 +10,7 @@ const intlMiddleware = createMiddleware({
   localePrefix: 'always'
 });
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const response = intlMiddleware(request);
   const host = request.headers.get('host')?.split(':')[0].toLowerCase();
 

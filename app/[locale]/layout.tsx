@@ -20,7 +20,8 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['
 export const dynamic = 'force-dynamic';
 export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
@@ -32,7 +33,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
-export default async function LocaleLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
+export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
   setRequestLocale(locale);
   const messages = await getMessages();

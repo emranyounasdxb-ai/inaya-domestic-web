@@ -17,7 +17,8 @@ function LineIcon({ name, className = '' }: { name: IconName; className?: string
   return <svg viewBox="0 0 24 24" className={className} aria-hidden="true">{paths[name]}</svg>;
 }
 
-export default function HowItWorksPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const headingClass = isArabic
     ? 'font-arabic text-4xl font-bold leading-[1.32] text-primary-900 sm:text-5xl lg:text-6xl'

@@ -7,7 +7,8 @@ export function generateStaticParams() {
   return locationServicePages.map((location) => ({ locationSlug: location.slug }));
 }
 
-export function generateMetadata({ params: { locale, locationSlug } }: { params: { locale: string; locationSlug: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; locationSlug: string }> }): Promise<Metadata> {
+  const { locale, locationSlug } = await params;
   const location = getLocationServicePage(locationSlug);
   if (!location) return {};
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
@@ -38,7 +39,8 @@ export function generateMetadata({ params: { locale, locationSlug } }: { params:
   };
 }
 
-export default function LocationServicePage({ params: { locale, locationSlug } }: { params: { locale: string; locationSlug: string } }) {
+export default async function LocationServicePage({ params }: { params: Promise<{ locale: string; locationSlug: string }> }) {
+  const { locale, locationSlug } = await params;
   const location = getLocationServicePage(locationSlug);
   if (!location) notFound();
 

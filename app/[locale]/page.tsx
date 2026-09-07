@@ -253,7 +253,8 @@ function AuthorityLogoCarousel({ isArabic }: { isArabic: boolean }) {
   );
 }
 
-export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const copy = isArabic ? homeContent.ar : homeContent.en;
 

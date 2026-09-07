@@ -1,4 +1,5 @@
-export default function Page({ params: { locale } }: { params: { locale: string } }) {
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   return (
     <main className="bg-[#fbfaf7] px-6 py-16 text-primary-900 lg:px-10">

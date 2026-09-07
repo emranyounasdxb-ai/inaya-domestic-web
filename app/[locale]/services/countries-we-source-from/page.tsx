@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import CountrySourcePage from '@/components/CountrySourcePage';
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   const isArabic = locale === 'ar';
   const title = isArabic ? 'دول مصدر العمالة المنزلية في الإمارات | عناية' : 'Maid Source Countries in UAE | INAYA Domestic Workers';
   const description = isArabic
@@ -34,6 +35,7 @@ export function generateMetadata({ params: { locale } }: { params: { locale: str
   };
 }
 
-export default function CountriesWeSourceFromRoute({ params: { locale } }: { params: { locale: string } }) {
+export default async function CountriesWeSourceFromRoute({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return <CountrySourcePage locale={locale} />;
 }
