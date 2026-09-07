@@ -135,6 +135,7 @@ const homeImages = {
 };
 
 const imageWidths = [480, 768, 960, 1200, 1400];
+const useOptimizedImageVariants = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true';
 
 function optimizedVariant(src: string, width: number) {
   const cleanSrc = src.replace(/^\//, '').replace(/\.[^.]+$/i, '');
@@ -160,7 +161,7 @@ function ResponsiveImage({
 }) {
   return (
     <picture className="absolute inset-0 block">
-      <source type="image/webp" srcSet={optimizedSrcSet(src)} sizes={sizes} />
+      {useOptimizedImageVariants ? <source type="image/webp" srcSet={optimizedSrcSet(src)} sizes={sizes} /> : null}
       <img
         src={src}
         alt={alt}
@@ -230,7 +231,7 @@ function AuthorityLogoCard({ name, file }: { name: string; file: string }) {
   return (
     <div className="flex h-20 min-w-[178px] items-center justify-center rounded-[20px] border border-white/70 bg-white/68 px-7 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:bg-white/82">
       <picture>
-        <source type="image/webp" srcSet={`${base}-160.webp 160w, ${base}-320.webp 320w`} sizes="144px" />
+        {useOptimizedImageVariants ? <source type="image/webp" srcSet={`${base}-160.webp 160w, ${base}-320.webp 320w`} sizes="144px" /> : null}
         <img src={src} alt={name} width="144" height="44" loading="lazy" decoding="async" className="h-11 w-36 object-contain" />
       </picture>
     </div>
