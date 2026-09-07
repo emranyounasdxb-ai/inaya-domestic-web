@@ -19,7 +19,7 @@ test('home page renders main sections', async ({ page }) => {
   await expect(page.getByRole('heading', { name: /Elevating Domestic/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Global Executive Concierge' })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Google Reviews/i })).toBeVisible();
-  await expect(page.getByText('INAYA on Google', { exact: true })).toBeVisible();
+  await expect(page.locator('p.google-reviews-profile')).toHaveText('INAYA on Google');
 });
 
 test('curated Google reviews render static content on English homepage', async ({ page }) => {
