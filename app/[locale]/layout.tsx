@@ -7,6 +7,7 @@ import { locales } from '@/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
+import SierraLeoneOfferControls from '@/components/SierraLeoneOfferControls';
 import '../globals.css';
 import '../home-country-availability.css';
 import '../home-google-reviews.css';
@@ -45,6 +46,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <NextIntlClientProvider messages={messages}>
           <Navbar locale={locale} />
           <FloatingSocialBar />
+          <SierraLeoneOfferControls locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />
         </NextIntlClientProvider>
