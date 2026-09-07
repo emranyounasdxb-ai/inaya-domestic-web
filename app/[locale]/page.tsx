@@ -134,7 +134,8 @@ const homeImages = {
   testimonial: '/images/home/inaya-home-hero-family.webp'
 };
 
-const imageWidths = [480, 768, 960, 1200, 1400];
+const homeImageWidths = [480, 768, 960, 1200, 1400];
+const serviceImageWidths = [480, 768, 900];
 const useOptimizedImageVariants = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true';
 
 function optimizedVariant(src: string, width: number) {
@@ -142,7 +143,8 @@ function optimizedVariant(src: string, width: number) {
   return `/optimized/${cleanSrc}-${width}.webp`;
 }
 
-function optimizedSrcSet(src: string, widths = imageWidths) {
+function optimizedSrcSet(src: string) {
+  const widths = src.startsWith('/images/services/') ? serviceImageWidths : homeImageWidths;
   return widths.map((width) => `${optimizedVariant(src, width)} ${width}w`).join(', ');
 }
 
