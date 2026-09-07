@@ -5,8 +5,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { siteConfig } from '@/lib/site-config';
 import styles from './SierraLeoneOfferControls.module.css';
 
-const dismissedSessionKey = 'inaya-sierra-leone-offer-dismissed';
-
 const copy = {
   en: {
     eyebrow: 'SPECIAL OFFER',
@@ -53,8 +51,6 @@ export default function SierraLeoneOfferControls({ locale }: { locale: string })
   );
 
   useEffect(() => {
-    const wasDismissed = window.sessionStorage.getItem(dismissedSessionKey) === 'true';
-
     let frame = 0;
     const updateScrollControls = () => {
       frame = 0;
@@ -62,7 +58,7 @@ export default function SierraLeoneOfferControls({ locale }: { locale: string })
       const popupThreshold = Math.min(Math.max(window.innerHeight * 0.75, 480), scrollableDistance * 0.5);
       const backToTopThreshold = Math.min(Math.max(window.innerHeight * 1.25, 900), scrollableDistance * 0.72);
 
-      setOfferVisible(!wasDismissed && scrollableDistance > 120 && window.scrollY >= popupThreshold);
+      setOfferVisible(!dismissed && scrollableDistance > 120 && window.scrollY >= popupThreshold);
       setBackToTopVisible(scrollableDistance > 120 && window.scrollY >= backToTopThreshold);
     };
     const handleScroll = () => {
@@ -78,10 +74,9 @@ export default function SierraLeoneOfferControls({ locale }: { locale: string })
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, []);
+  }, [dismissed]);
 
   const dismissOffer = () => {
-    window.sessionStorage.setItem(dismissedSessionKey, 'true');
     setDismissed(true);
     setOfferVisible(false);
   };
@@ -94,70 +89,80 @@ export default function SierraLeoneOfferControls({ locale }: { locale: string })
   return (
     <>
       {offerVisible && !dismissed ? (
-        <aside
-          className={styles.offerShell}
-          dir={isArabic ? 'rtl' : 'ltr'}
-          aria-labelledby="sierra-leone-offer-title"
-          data-testid="sierra-leone-offer"
-        >
-          <div className={styles.offerCard}>
-            <button type="button" className={styles.closeButton} onClick={dismissOffer} aria-label={content.close}>
-              <CloseIcon />
-            </button>
+        <div className={styles.modalLayer}>
+          <div
+            className={styles.modalBackdrop}
+            aria-hidden="true"
+            data-testid="sierra-leone-offer-backdrop"
+            style={{ backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }}
+          />
+          <aside
+            className={styles.offerShell}
+            dir={isArabic ? 'rtl' : 'ltr'}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="sierra-leone-offer-title"
+            data-testid="sierra-leone-offer"
+          >
+            <div className={styles.offerCard}>
+              <button type="button" className={styles.closeButton} onClick={dismissOffer} aria-label={content.close} autoFocus>
+                <CloseIcon />
+              </button>
 
-            <div className={styles.brandRow} dir="ltr">
-              <Image
-                src={isArabic ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp'}
-                alt={isArabic ? 'INAYA Arabic logo' : 'INAYA Domestic Workers'}
-                width={isArabic ? 140 : 150}
-                height={isArabic ? 60 : 43}
-                className={styles.logo}
-              />
-              <span className={styles.flag} aria-label={isArabic ? 'علم سيراليون' : 'Sierra Leone flag'} role="img">
-                <span className={styles.flagGreen} />
-                <span className={styles.flagWhite} />
-                <span className={styles.flagBlue} />
-              </span>
-            </div>
-
-            <div className={styles.offerBody}>
-              <p className={styles.eyebrow}>{content.eyebrow}</p>
-              <h2 id="sierra-leone-offer-title" className={styles.heading}>{content.heading}</h2>
-              <p className={styles.description}>{content.body}</p>
-
-              <div className={styles.pricing} aria-label={`${content.oldLabel} ${content.oldPrice}; ${content.newLabel} ${content.newPrice}`}>
-                <div className={styles.oldPrice}>
-                  <span>{content.oldLabel}</span>
-                  <strong dir={isArabic ? 'rtl' : 'ltr'}>{content.oldPrice}</strong>
-                </div>
-                <div className={styles.newPrice}>
-                  <span>{content.newLabel}</span>
-                  <strong dir={isArabic ? 'rtl' : 'ltr'}>{content.newPrice}</strong>
-                </div>
+              <div className={styles.brandRow} dir="ltr">
+                <Image
+                  src={isArabic ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp'}
+                  alt={isArabic ? 'INAYA Arabic logo' : 'INAYA Domestic Workers'}
+                  width={isArabic ? 140 : 150}
+                  height={isArabic ? 60 : 43}
+                  className={styles.logo}
+                />
+                <span className={styles.flag} aria-label={isArabic ? 'علم سيراليون' : 'Sierra Leone flag'} role="img">
+                  <span className={styles.flagGreen} />
+                  <span className={styles.flagWhite} />
+                  <span className={styles.flagBlue} />
+                </span>
               </div>
 
-              <a
-                className={styles.whatsappButton}
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="sierra-leone-whatsapp"
-              >
-                <WhatsAppIcon />
-                <span>{content.cta}</span>
-              </a>
+              <div className={styles.offerBody}>
+                <p className={styles.eyebrow}>{content.eyebrow}</p>
+                <h2 id="sierra-leone-offer-title" className={styles.heading}>{content.heading}</h2>
+                <p className={styles.description}>{content.body}</p>
 
-              <ul className={styles.trustList} aria-label={isArabic ? 'مزايا العرض' : 'Offer support'}>
-                {content.trustItems.map((item, index) => (
-                  <li key={item}>
-                    <span className={styles.trustIcon}><TrustIcon name={(['shield', 'headset', 'profiles'] as const)[index]} /></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+                <div className={styles.pricing} aria-label={`${content.oldLabel} ${content.oldPrice}; ${content.newLabel} ${content.newPrice}`}>
+                  <div className={styles.oldPrice}>
+                    <span>{content.oldLabel}</span>
+                    <strong dir={isArabic ? 'rtl' : 'ltr'}>{content.oldPrice}</strong>
+                  </div>
+                  <div className={styles.newPrice}>
+                    <span>{content.newLabel}</span>
+                    <strong dir={isArabic ? 'rtl' : 'ltr'}>{content.newPrice}</strong>
+                  </div>
+                </div>
+
+                <a
+                  className={styles.whatsappButton}
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="sierra-leone-whatsapp"
+                >
+                  <WhatsAppIcon />
+                  <span>{content.cta}</span>
+                </a>
+
+                <ul className={styles.trustList} aria-label={isArabic ? 'مزايا العرض' : 'Offer support'}>
+                  {content.trustItems.map((item, index) => (
+                    <li key={item}>
+                      <span className={styles.trustIcon}><TrustIcon name={(['shield', 'headset', 'profiles'] as const)[index]} /></span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </aside>
+          </aside>
+        </div>
       ) : null}
 
       <button
