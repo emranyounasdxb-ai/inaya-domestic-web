@@ -9,6 +9,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import SierraLeoneOfferControls from '@/components/SierraLeoneOfferControls';
+import Measurement from '@/components/Measurement';
+import sitemap from '@/app/sitemap';
 import '../globals.css';
 import '../home-country-availability.css';
 import '../home-google-reviews.css';
@@ -39,6 +41,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     <html lang={locale} dir={dir}>
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>
         <NextIntlClientProvider messages={messages}>
+          {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <SierraLeoneOfferControls locale={locale} />
