@@ -309,7 +309,7 @@
       "route": "booking",
       "family": "information/hub",
       "title": "Request a Domestic Worker Service | INAYA",
-      "description": "Send INAYA your household service requirements, emirate, timing and contact details. The team will follow up to confirm options and next steps.",
+      "description": "Prepare household service requirements with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your enquiry.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -326,7 +326,7 @@
       "route": "booking",
       "family": "information/hub",
       "title": "طلب خدمة عمالة منزلية | عناية",
-      "description": "أرسل إلى عناية متطلبات الخدمة المنزلية والإمارة والموعد وبيانات التواصل. يتابع الفريق معك لتأكيد الخيارات والخطوات التالية.",
+      "description": "جهز متطلبات الخدمة المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة استفسارك.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -343,7 +343,7 @@
       "route": "careers",
       "family": "information/hub",
       "title": "Domestic Worker Opportunities | INAYA",
-      "description": "Share your domestic service experience, preferred role, language and availability with INAYA. The team will contact you when a suitable opportunity is available.",
+      "description": "Prepare a domestic-work application with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your experience.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -360,7 +360,7 @@
       "route": "careers",
       "family": "information/hub",
       "title": "فرص العمل في الخدمات المنزلية | عناية",
-      "description": "شارك عناية خبرتك في الخدمات المنزلية ونوع العمل المناسب واللغة والتوفر. يتواصل الفريق معك عند توفر فرصة مناسبة.",
+      "description": "جهز طلباً للعمل في الخدمات المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة خبرتك.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",

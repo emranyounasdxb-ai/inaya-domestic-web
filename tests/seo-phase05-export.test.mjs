@@ -4,11 +4,15 @@ import { execFileSync } from 'node:child_process';
 import test from 'node:test';
 import path from 'node:path';
 import { auditExport } from '../scripts/seo-content-audit.mjs';
+import remediation from './seo-final-remediation-expectations.cjs';
 
 test('Phase 5 retains all 140 canonical routes and previous-phase source, content, metadata and schema identities', async () => {
   const checkpoint = '3c2aee5822d1425feb19d3d08106790bd6d5561f';
   for (const file of ['app/robots.ts', 'app/sitemap.ts', 'lib/seo.ts', 'lib/page-seo.ts', 'lib/structured-data.ts', 'lib/buyer-answers.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/content-architecture.ts', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'tests/e2e/sierra-leone-offer-controls.spec.ts', 'tests/fixtures/seo-phase03-baseline.json', 'next.config.js']) {
-    assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), execFileSync('git', ['show', `${checkpoint}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n'), `${file}: checkpoint protection`);
+    let expected = execFileSync('git', ['show', `${checkpoint}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
+    if (file === 'lib/page-seo.ts' || file === 'tests/fixtures/seo-phase03-baseline.json') expected = remediation.approvedDescriptions(expected);
+    if (file === 'tests/e2e/home.spec.ts') expected = remediation.approvedHomeFlow(expected);
+    assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), expected, `${file}: exact checkpoint protection with reviewed remediation only`);
   }
   const audit = await auditExport();
   assert.equal(audit.pages.length, 140);

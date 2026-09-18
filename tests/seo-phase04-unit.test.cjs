@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
 const test = require('node:test');
+const { approvedDescriptions, approvedHomeFlow } = require('./seo-final-remediation-expectations.cjs');
 const { buyerAnswers } = require('../.next/phase-02-unit/lib/buyer-answers.js');
 const { getPageSeo } = require('../.next/phase-02-unit/lib/page-seo.js');
 const checkpoint = '0d4a804dd3c8c502e984ddb8ebfa68ed2e353617';
@@ -26,14 +27,15 @@ test('buyer answers have unique paired questions, contextual answers and real lo
 test('protected popup differs only in two approved localized copy replacements', () => {
   const file = 'components/SierraLeoneOfferControls.tsx';
   assert.equal(current(file), previous(file).replace("'Available Profiles'", "'Candidate Profiles'").replace("'ملفات متاحة'", "'ملفات المرشحات'"));
-  for (const file of ['components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts']) {
+  for (const file of ['components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx']) {
     assert.equal(current(file), previous(file), `${file}: protected behavior/test`);
   }
+  assert.equal(current('tests/e2e/home.spec.ts'), approvedHomeFlow(previous('tests/e2e/home.spec.ts')), 'only the approved modal setup is added; all original carousel assertions remain');
 });
 
-test('manually reviewed snapshot exceptions are precisely four titles and two descriptions', () => {
+test('Phase 4 snapshot exceptions remain precisely four titles and two descriptions after approved final corrections', () => {
   const file = 'tests/fixtures/seo-phase03-baseline.json';
-  const before = JSON.parse(previous(file));
+  const before = JSON.parse(approvedDescriptions(previous(file)));
   const after = JSON.parse(current(file));
   const expected = {
     'https://inayadomestic.ae/en/inaya-advantages/': ['title'],

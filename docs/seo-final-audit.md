@@ -4,7 +4,7 @@
 
 ## Decision
 
-NOT complete production readiness. Technical export/SEO foundations pass locally, but six pre-existing popup/carousel interaction failures, absent form delivery, four inherited form-related metadata descriptions, owner/consent/provider verification and hosting/field-performance checks remain unresolved. The Phase 5 checkpoint is local measurement readiness/final evidence, not analytics activation or approval to deploy. No ranking/traffic/AI-citation guarantee, “100% SEO”, field-CWV pass or external rich-result certification is claimed.
+Repository-controlled code readiness: PASS after final remediation. All 140 export/SEO routes and the unfiltered 166-case browser suite pass; four misleading form-related descriptions and six modal-flow test failures are resolved. NOT complete production readiness: actual form delivery, owner/consent/provider verification, Search Console, hosting/field-performance checks and external reputation actions remain pending. The Phase 5 checkpoint is preserved; final remediation is a separate local checkpoint, not analytics activation or approval to deploy. No ranking/traffic/AI-citation guarantee, “100% SEO”, field-CWV pass or external rich-result certification is claimed.
 
 BeyondSEO was not available in the active tools/skills inventory. Chrome DevTools MCP and local Lighthouse were unavailable. No replacement tool was presented as BeyondSEO/Lighthouse; native Playwright/PerformanceObserver lab checks were used with explicit limitations. Nothing was installed or added to global MCP configuration.
 
@@ -14,7 +14,7 @@ Every sitemap route was independently parsed from fresh exported HTML, not just 
 
 | Family | EN | AR | Total | Coverage |
 | --- | --- | --- | --- | --- |
-| Home/informational/hubs/functional | 20 | 20 | 40 | Canonical/alternates, metadata/headings, graphs, links, alt and identity checks; four descriptions have semantic concern below |
+| Home/informational/hubs/functional | 20 | 20 | 40 | Canonical/alternates, metadata/headings, graphs, links, alt and identity checks; four form descriptions now accurately disclose local-only checking |
 | Service spokes | 31 | 31 | 62 | All existing service slugs, paired scope/preparation, FAQs/schema, service/provider identity and related links |
 | Country/nationality guides | 12 | 12 | 24 | All existing source-country slugs; individual-profile guidance, qualifications and exact visible FAQs |
 | Location guides | 7 | 7 | 14 | Ajman, Dubai, Sharjah, Abu Dhabi, Ras Al Khaimah, Fujairah, Umm Al Quwain; localized hierarchy/FAQ/service graph |
@@ -29,7 +29,7 @@ Functional/information paths per locale: home, about, services, contact, how-it-
 | Crawlability/robots | Public EN/AR routes allowed; correct production sitemap; existing robot test passes | Deployed Apache/CDN/WAF behavior unavailable; 406 and Googlebot blocking unverified |
 | Sitemap/indexability | Exactly 140 distinct indexable production canonicals; redirects/errors/duplicates excluded; no invented lastmod | Actual Google indexing requires Search Console/live evidence |
 | Canonical/hreflang | Exact absolute self-canonicals; reciprocal en/ar; equivalent-route English x-default; all 140 | No live deployed-header inspection |
-| Metadata | 140 unique titles and descriptions; OG/Twitter consistent; route-aware system unchanged | Four booking/careers descriptions imply delivery/follow-up; see below |
+| Metadata | 140 unique titles and descriptions; OG/Twitter/schema summaries consistent; four booking/careers descriptions corrected; route-aware system unchanged | Actual form delivery remains absent; no delivery/follow-up promise in the corrected descriptions |
 | Headings/images | One H1 per page; existing hierarchy and alt-presence/localized service-description checks pass | Not independent full WCAG certification or human verification of every old image's factual identity |
 | Entity/schema | Organization, LocalBusiness, WebSite, WebPage: 140 each; Service 76; BreadcrumbList 138; FAQPage 112; stable production IDs and safe serialization | Real-world NAP/listing/review evidence pending; no hours, aggregate rating, invented reviews/prices/guarantees added |
 | FAQ/breadcrumbs | All 100 dynamic pages share exact visible FAQ data with schema; existing interactive EN/AR category checks retained; visible breadcrumb hierarchy matches graph | Informational answer sections are intentionally not duplicate FAQPage blocks; home has no breadcrumb |
@@ -40,17 +40,21 @@ Functional/information paths per locale: home, about, services, contact, how-it-
 | Measurement/privacy | Default disabled; explicit-consent boundary; allowlisted known canonicals; queries/hash/inputs/PII excluded; native-event/form/page-view dedup checks | No provider destination, GA/GTM ID, CMP, ownership verification or actual conversion/reporting active |
 | Form delivery | Local validation accurately disclosed; no form_success emitter exists | Delivery/backend receipt absent; client done state cannot justify conversion |
 | Export/local routes | Static and ordinary production builds pass; all existing internal-route/export assertions retained | cPanel generated-image/Apache deployment needs separately authorized deployed verification |
-| Browser regression | Full unfiltered result documented in Phase 5 validation | Existing carousel/modal interception remains; no test filtering/weakening or protected behavior change |
+| Browser regression | Final unfiltered 166/166 PASS, zero skipped; all six former carousel failures resolved through visible modal dismissal and natural pointer exit | No test filtering/weakening or protected production behavior change; not independent accessibility certification |
 | Performance | 20 initial-load samples: five page families × EN/AR × desktop/mobile; native production-build timing | Unthrottled localhost, short observation, one sample each; not Lighthouse, INP, field p75, CrUX or Search Console |
 | Reputation/backlinks | Eight distinct, realistically prioritized Phase 4 actions reviewed with completion evidence in measurement plan | ALL PENDING; no contact/login/listing/citation/review/backlink action performed |
 
-Browser totals: 166 unfiltered cases, 160 passed and six known home.spec.ts failures (61/92/117 in desktop/mobile), zero skipped; all 12 existing offer cases and all four new Phase 5 cases passed. Separate focused run four passed; unit 18 passed; export six passed; enabled collector script 24 assertions passed. Lint, TypeScript, normal/static builds and whitespace checks pass. These are per-run totals; focused cases also occur in the full suite. The suite is not wholly green.
+Historical Phase 5 browser totals remain 166 unfiltered cases, 160 passed and six home.spec.ts failures (61/92/117 in desktop/mobile), zero skipped; all 12 offer cases and all four Phase 5 cases passed. Historical focused/unit/export totals were four/18/six passed, with 24 collector assertions. The preserved Phase 5 report is not rewritten.
+
+Final remediation totals: 166/166 unfiltered browser cases PASS (83 desktop, 83 mobile), 32 focused browser cases PASS, 20 unit tests PASS, six export tests PASS and 24 enabled collector assertions PASS; zero failed/skipped in these final runs. Lint, TypeScript, normal/static production builds and git diff --check pass. These are per-run totals; focused cases also occur in the full suite. The suite is now wholly green locally. See seo-final-remediation.md for exact commands, changed-file inventory, the disclosed intermediate 26/28 diagnostic run and strict assertion/source-preservation checks.
 
 The same reproducible duplication algorithm is scripts/seo-content-audit.mjs: same-language exact p normalization (>=8 tokens and >=60 chars) and five-token-shingle Jaccard >=0.65, excluding nav/header/footer/scripts/styles. Phase 2 baseline 981 paragraphs/13,141 repeated tokens/86 near pairs; Phase 3 and Phase 4 improvements remain preserved. No new deduplication gain is claimed in Phase 5.
 
-## Unresolved repository finding: inherited descriptions
+## Resolved repository findings: descriptions and modal test flow
 
-`/en/booking/`, `/ar/booking/`, `/en/careers/`, `/ar/careers/`: current descriptions in lib/page-seo.ts speak of sending/sharing details and team follow-up. The current forms have no delivery integration. Phone/WhatsApp are real alternatives, but the descriptions should explicitly distinguish them from local form checking. These four descriptions and corresponding social/schema summaries need a separately reviewed correction or a genuinely delivered-form integration. Existing strict identity/snapshot checks pass because they preserve these inherited values, not because those values prove delivery. No snapshot was regenerated or loosened in Phase 5.
+`/en/booking/`, `/ar/booking/`, `/en/careers/`, `/ar/careers/`: four manually reviewed localized descriptions now explicitly disclose local-only form checking and direct enquiries/experience discussions to existing phone/WhatsApp links, without sending/receipt/follow-up/availability promises. Corresponding social/WebPage summaries match; only their four exact snapshot description expectations changed. No blind snapshot regeneration or broad guard exemption occurred. Forms still have no delivery integration.
+
+The popup is intentionally modal (role=dialog, aria-modal=true and full-screen backdrop). The three affected tests in both projects now assert it visible, close it using its visible accessible control and verify both modal/backdrop removal before original carousel assertions. Leaving the close-button pointer location avoids correctly triggered carousel hover pause. All original assertions remain unchanged; popup/carousel production components/styles and approved Candidate Profiles / ملفات المرشحات wording are unchanged. No remaining production behavior defect was found in these checks.
 
 ## External evidence still required
 

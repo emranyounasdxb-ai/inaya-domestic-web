@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { CURATED_GOOGLE_REVIEWS } from '../../lib/curated-google-reviews';
+import { dismissOffer } from './helpers/dismiss-offer';
 
 const carouselSelector = '.google-review-carousel';
 
@@ -64,6 +65,7 @@ test('Google reviews carousel autoplay pauses for hover and focus, then resumes'
   await page.goto('/en');
   const carousel = page.locator(carouselSelector);
   await carousel.scrollIntoViewIfNeeded();
+  await dismissOffer(page);
 
   await expect(carousel).toHaveAttribute('data-active-index', '0');
   await expect.poll(async () => carousel.getAttribute('data-active-index'), { timeout: 7000 }).toBe('1');
@@ -96,6 +98,7 @@ test('Google reviews carousel controls, dots and seamless loop remain functional
   const track = page.locator('.google-review-track');
   const next = page.getByRole('button', { name: 'Next review' });
   await carousel.scrollIntoViewIfNeeded();
+  await dismissOffer(page);
   await carousel.focus();
 
   for (let step = 1; step <= CURATED_GOOGLE_REVIEWS.length; step += 1) {
@@ -120,6 +123,7 @@ test('Google reviews carousel disables autoplay and animation for reduced motion
   const carousel = page.locator(carouselSelector);
   const track = page.locator('.google-review-track');
   await carousel.scrollIntoViewIfNeeded();
+  await dismissOffer(page);
 
   await expect(carousel).toHaveAttribute('data-reduced-motion', 'true');
   await expect(carousel).toHaveAttribute('data-autoplay-paused', 'true');
