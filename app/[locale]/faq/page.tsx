@@ -1,4 +1,5 @@
 'use client';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 import { use, useState } from 'react';
 import Link from 'next/link';
@@ -349,6 +350,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="faq" className="mb-7" />
 
       <section className="container-x -mt-7 pb-24 sm:pb-28 lg:pb-36">
         <div className="mx-auto max-w-6xl">

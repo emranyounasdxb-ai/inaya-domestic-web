@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import { serviceImageAlt } from '@/lib/image-alt';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -84,6 +85,7 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
         slug={slug}
         whatsappHref={`https://wa.me/${siteConfig.whatsapp}?text=${whatsappText}`}
       />
+      <PageBreadcrumbs locale={locale} route={`services/${slug}`} />
 
       <section className={`${sectionPadding} border-y border-primary-900/8 bg-white`}>
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">

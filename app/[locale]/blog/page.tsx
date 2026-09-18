@@ -1,4 +1,5 @@
 import GuideContent from '@/components/GuideContent';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -34,6 +35,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="blog" />
 
       <section className="container-x pb-16 sm:pb-20">
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">

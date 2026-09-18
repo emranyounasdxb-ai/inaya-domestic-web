@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { pageMetadata } from '@/lib/page-seo';
 import RouteSeo from '@/components/RouteSeo';
 import Link from 'next/link';
@@ -89,6 +90,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route={locationSlug} />
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.9fr_1.1fr]">

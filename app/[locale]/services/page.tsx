@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/page-seo';
 import RouteSeo from '@/components/RouteSeo';
@@ -90,6 +91,7 @@ export default async function ServicesPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="services" />
 
       <nav id="service-groups" aria-label={copy.browse} className="sticky top-0 z-20 border-b border-primary-900/10 bg-white/92 px-5 py-5 shadow-sm backdrop-blur-xl sm:px-6 lg:px-10">
         <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto pb-1 lg:flex-wrap lg:overflow-visible lg:pb-0">

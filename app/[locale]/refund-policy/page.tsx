@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 
 export default async function RefundPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -72,6 +73,7 @@ export default async function RefundPage({ params }: { params: Promise<{ locale:
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="refund-policy" />
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-2">

@@ -25,8 +25,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     assert.deepEqual(page.prices, before.prices, `${page.url}: displayed prices`);
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const body = file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
-    const relatedNav = body.match(/<nav\b[^>]*data-seo="related-guides"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
-    assert.ok(relatedNav, page.url);
+    assert.doesNotMatch(body, /data-seo="related-guides"|data-content="page-purpose"/, `${page.url}: removed strip must not render`);
     for (const match of body.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)) {
       const href = attrs(match[1]).href;
       if (!href || /^(mailto|tel|javascript):/.test(href)) continue;

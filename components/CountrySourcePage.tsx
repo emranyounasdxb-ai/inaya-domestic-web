@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Link from 'next/link';
 import { countrySourcePages, type Lang } from '@/lib/country-source-pages';
 
@@ -58,6 +59,7 @@ export default function CountrySourcePage({ locale }: { locale: string }) {
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="services/countries-we-source-from" />
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto max-w-6xl">

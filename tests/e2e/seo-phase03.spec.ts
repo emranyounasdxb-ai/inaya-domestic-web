@@ -3,15 +3,25 @@ import { expect, test } from '@playwright/test';
 for (const locale of ['en', 'ar']) {
   test(`${locale} hub links lead to formerly orphaned guides and information`, async ({ page }) => {
     await page.goto(`/${locale}/how-it-works/`);
-    const blog = page.locator('[data-seo="related-guides"] a').filter({ hasText: locale === 'ar' ? 'أدلة الخدمات' : 'Domestic Service Guides' });
+    const blog = page.locator(`main a[href="/${locale}/blog/"]`);
+    await blog.scrollIntoViewIfNeeded();
+    await expect(page.getByTestId('sierra-leone-offer')).toBeVisible();
+    await page.getByTestId('sierra-leone-offer').getByRole('button').click();
+    await expect(page.getByTestId('sierra-leone-offer-backdrop')).toHaveCount(0);
     await blog.click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/blog/$`));
     await expect(page.locator('[data-content="practical-guide"]')).toBeVisible();
     await expect(page.locator('[data-content="practical-guide"] a')).toHaveCount(3);
     await page.goto(`/${locale}/about/`);
-    await page.locator(`[data-seo="related-guides"] a[href="/${locale}/careers/"]`).click();
+    const careers = page.locator(`main a[href="/${locale}/careers/"]`);
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await expect(page.getByTestId('sierra-leone-offer')).toBeVisible();
+    await page.getByTestId('sierra-leone-offer').getByRole('button').click();
+    await expect(page.getByTestId('sierra-leone-offer-backdrop')).toHaveCount(0);
+    await careers.click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/careers/$`));
-    await expect(page.locator('[data-content="page-purpose"]')).toBeVisible();
+    await expect(page.locator('[data-content="page-purpose"], [data-seo="related-guides"]')).toHaveCount(0);
+    await expect(page.locator('h1')).toHaveText(locale === 'ar' ? 'قدّم للعمل في خدمات العمالة المنزلية' : 'Apply for domestic worker opportunities');
   });
 
   for (const route of ['services/housemaid', 'maid-source-countries/philippines-maid-uae', 'maid-services-dubai']) {
@@ -36,7 +46,7 @@ for (const locale of ['en', 'ar']) {
         await expect(details.nth(index).locator('p')).toBeVisible();
         await expect(details.nth(index).locator('p')).toHaveText(item.acceptedAnswer.text);
       }
-      for (const href of await page.locator('[data-seo="related-guides"] a').evaluateAll((links) => links.map((a) => a.getAttribute('href')))) expect(href).toMatch(new RegExp(`^/${locale}/`));
+      await expect(page.locator('[data-seo="related-guides"], [data-content="page-purpose"]')).toHaveCount(0);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
       expect(overflow).toBe(false);
       await page.locator('[data-seo="breadcrumbs"] a').first().click();

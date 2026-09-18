@@ -16,12 +16,19 @@ for (const locale of ['en', 'ar']) {
       const crumbs = graph.find((node: Record<string, unknown>) => node['@type'] === 'BreadcrumbList').itemListElement;
       const nav = page.locator('[data-seo="breadcrumbs"]');
       for (const crumb of crumbs) await expect(nav).toContainText(crumb.name);
-      const guides = page.locator('[data-seo="related-guides"] a');
+      await expect(page.locator('[data-seo="related-guides"], [data-content="page-purpose"]')).toHaveCount(0);
+      const guides = page.locator(`main a[href^="/${locale}/"]`);
       expect(await guides.count()).toBeGreaterThan(0);
       for (const href of await guides.evaluateAll((links) => links.map((link) => link.getAttribute('href')))) {
         expect(href).toMatch(new RegExp(`^/${locale}/`));
       }
       // Newly added links stay within the current host, including local previews.
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+      const offer = page.getByTestId('sierra-leone-offer');
+      await expect(offer).toBeVisible();
+      await offer.getByRole('button').click();
+      await expect(offer).toHaveCount(0);
+      await expect(page.getByTestId('sierra-leone-offer-backdrop')).toHaveCount(0);
       await nav.locator('a').first().click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/$`));
       await expect(page.locator('h1')).toHaveCount(1);

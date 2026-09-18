@@ -22,10 +22,11 @@ test('Phase 5 retains all 140 canonical routes and previous-phase source, conten
   assert.equal(new Set(audit.pages.map((p) => p.description)).size, 140);
   assert.equal(audit.repeatedTokens, 8258);
   assert.equal(audit.repeatedParagraphs, 651);
-  assert.equal(audit.paragraphTokens, 28745);
+  // The visual remediation removes 32 preparation paragraphs, not technical SEO.
+  assert.equal(audit.paragraphTokens, 27787);
   assert.equal(audit.nearPairs.length, 0);
   assert.deepEqual(audit.orphans, []);
-  for (const locale of ['en', 'ar']) { assert.equal(audit.linkCoverage[locale].reachable, 70); assert.equal(audit.linkCoverage[locale].maximumDepth, 3); }
+  for (const locale of ['en', 'ar']) { assert.equal(audit.linkCoverage[locale].reachable, 70); assert.equal(audit.linkCoverage[locale].maximumDepth, 2); }
   for (const page of audit.pages) {
     const html = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     assert.doesNotMatch(html, /<script[^>]+src=["'][^"']*(?:googletagmanager|google-analytics)/);

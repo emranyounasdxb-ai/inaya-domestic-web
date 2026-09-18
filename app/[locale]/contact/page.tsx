@@ -1,4 +1,5 @@
 import ContactForm from '@/components/ContactForm';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { siteConfig } from '@/lib/site-config';
 
 const mapEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.365890608938!2d55.43878240000001!3d25.3925602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5942014634c7%3A0xf39f2fefc97933f3!2sINAYA%20Domestic%20Workers%20Ajman!5e0!3m2!1sen!2sae!4v1782223058219!5m2!1sen!2sae';
@@ -147,6 +148,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="contact" />
 
       <section id="contact-form" className="container-x pb-12 sm:pb-16">
         <div className="mx-auto grid max-w-6xl items-start gap-6 lg:grid-cols-[0.9fr_1.1fr]">

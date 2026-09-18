@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 type IconName = 'check' | 'x' | 'shield' | 'file' | 'refresh' | 'star' | 'arrow' | 'message';
 
@@ -157,6 +158,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
           </p>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="pricing" />
 
       <section className="container-x pb-24 sm:pb-28">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">

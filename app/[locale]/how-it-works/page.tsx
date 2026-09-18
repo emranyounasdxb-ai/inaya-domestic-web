@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 type IconName = 'chat' | 'search' | 'shield' | 'file' | 'support' | 'arrow' | 'spark';
 
@@ -186,6 +187,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="how-it-works" />
 
       <section className="container-x py-8 sm:py-10">
         <div className="mx-auto max-w-6xl">
@@ -236,6 +238,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
             <div>
               <h2 className={`${isArabic ? 'font-arabic text-3xl leading-snug' : 'font-heading text-4xl'} font-bold`}>{copy.ctaTitle}</h2>
               <p className="mt-3 max-w-2xl leading-7 text-white/85">{copy.ctaText}</p>
+              <p className="mt-3 max-w-2xl leading-7 text-white/85">{isArabic ? 'يمكنك أيضاً قراءة ' : 'You can also read our '}<Link className="underline underline-offset-4" href={`/${locale}/blog/`}>{isArabic ? 'أدلة الخدمات المنزلية' : 'domestic service guides'}</Link>{isArabic ? ' قبل التواصل مع عناية.' : ' before contacting INAYA.'}</p>
             </div>
             <Link href={`/${locale}/booking`} className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-3 font-bold text-primary-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-accent-400 md:w-auto">
               {copy.ctaButton}

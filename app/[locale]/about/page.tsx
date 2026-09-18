@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Link from 'next/link';
 
 type PageProps = {
@@ -133,6 +134,7 @@ export default async function AboutPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="about" />
 
       <section className="bg-white px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -142,7 +144,11 @@ export default async function AboutPage({ params }: PageProps) {
           <div>
             <h2 className={`${headingClass} text-[2.2rem] font-bold tracking-[-0.035em] text-primary-900 sm:text-[3rem]`}>{copy.storyTitle}</h2>
             <div className="mt-6 space-y-5 text-[1rem] leading-8 text-primary-900/85">
-              {copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {copy.story.map((paragraph) => {
+                const phrase = isArabic ? 'فريقنا' : 'Our team';
+                const parts = paragraph.split(phrase);
+                return <p key={paragraph}>{parts[0]}{parts.length > 1 ? <><Link className="underline underline-offset-4" href={`/${locale}/careers/`}>{phrase}</Link>{parts[1]}</> : null}</p>;
+              })}
             </div>
             <div className="mt-8 rounded-[24px] border border-accent-500/22 bg-[#fffdf8] p-6 shadow-[0_16px_42px_rgba(7,22,74,0.07)]">
               <h3 className={`${headingClass} text-xl font-bold text-primary-900`}>{copy.principlesTitle}</h3>
@@ -214,7 +220,11 @@ export default async function AboutPage({ params }: PageProps) {
               {copy.highlights.map((item) => (
                 <article key={item.title} className="rounded-[20px] border border-primary-900/10 bg-white p-5 shadow-[0_14px_36px_rgba(7,22,74,0.07)]">
                   <h3 className={`${headingClass} text-lg font-bold text-primary-900`}>{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-primary-900/80">{item.text}</p>
+                  <p className="mt-3 text-sm leading-6 text-primary-900/80">{(() => {
+                    const phrase = isArabic ? 'ملاحظات العملاء' : 'Client feedback';
+                    const parts = item.text.split(phrase);
+                    return <>{parts[0]}{parts.length > 1 ? <><Link className="underline underline-offset-4" href={`/${locale}/reviews/`}>{phrase}</Link>{parts[1]}</> : null}</>;
+                  })()}</p>
                 </article>
               ))}
             </div>
@@ -228,7 +238,7 @@ export default async function AboutPage({ params }: PageProps) {
       <section className="bg-primary-900 px-5 py-14 text-white sm:px-6 sm:py-16 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_0.7fr] lg:items-center">
           <div>
-            <h2 className={`${headingClass} text-[2.1rem] font-bold tracking-[-0.04em] text-white sm:text-[3rem]`}>{copy.differenceTitle}</h2>
+            <h2 className={`${headingClass} text-[2.1rem] font-bold tracking-[-0.04em] text-white sm:text-[3rem]`}><Link className="hover:underline" href={`/${locale}/inaya-advantages/`}>{copy.differenceTitle}</Link></h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/85">{copy.differenceText}</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">

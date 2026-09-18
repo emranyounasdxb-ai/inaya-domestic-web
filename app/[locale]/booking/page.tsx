@@ -1,4 +1,5 @@
 import BookingForm from '@/components/BookingForm';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 export default async function BookingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -29,6 +30,7 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="booking" />
 
       <section className="container-x pb-16 sm:pb-20">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
