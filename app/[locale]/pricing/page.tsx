@@ -187,11 +187,11 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <div className={`mt-4 h-px w-12 ${plan.featured ? 'bg-accent-500/80' : 'bg-accent-500/55'}`} />
               <div className="mt-8 flex items-start justify-between gap-4">
                 <div>
-                  <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.45rem] font-bold leading-none ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.price}</h2>
+                  <p className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.45rem] font-bold leading-none ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.price}</p>
                   <p className={`mt-3 text-xs ${plan.featured ? 'text-white/85' : 'text-primary-900/75'}`}>{plan.period}</p>
                 </div>
               </div>
-              <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h3>
+              <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h2>
               <p className={`mt-4 text-sm leading-7 ${plan.featured ? 'text-white/85' : 'text-primary-900/80'}`}>{plan.desc}</p>
               <div className={`my-9 h-px ${plan.featured ? 'bg-accent-500/28' : 'bg-accent-500/18'}`} />
               <div className="space-y-5">

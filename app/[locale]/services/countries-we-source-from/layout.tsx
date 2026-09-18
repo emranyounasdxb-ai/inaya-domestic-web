@@ -1,11 +1,18 @@
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 import PhaseOneSeoSection from '@/components/PhaseOneSeoSection';
 
-export default async function CountriesSourceLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return (
-    <>
-      {children}
-      <PhaseOneSeoSection page="countries" locale={locale} />
-    </>
-  );
+  return pageMetadata(locale, 'services/countries-we-source-from');
+}
+
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return <>
+    <RouteSeo locale={locale} route="services/countries-we-source-from" />
+    {children}
+    <PhaseOneSeoSection page="countries" locale={locale} />
+  </>;
 }

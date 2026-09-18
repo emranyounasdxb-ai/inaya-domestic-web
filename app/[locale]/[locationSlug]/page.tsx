@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { localeAlternates, localizedUrl } from '@/lib/seo';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getLocationServicePage, locationServicePages, type Lang } from '@/lib/location-service-pages';
@@ -10,28 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; locationSlug: string }> }): Promise<Metadata> {
   const { locale, locationSlug } = await params;
-  const location = getLocationServicePage(locationSlug);
-  if (!location) return {};
-  const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const canonical = localizedUrl(locale, location.slug);
-
-  return {
-    title: location.metaTitle[lang],
-    description: location.metaDescription[lang],
-    alternates: localeAlternates(locale, location.slug),
-    openGraph: {
-      title: location.metaTitle[lang],
-      description: location.metaDescription[lang],
-      type: 'website',
-      locale: lang === 'ar' ? 'ar_AE' : 'en_AE',
-      url: canonical
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: location.metaTitle[lang],
-      description: location.metaDescription[lang]
-    }
-  };
+  return pageMetadata(locale, locationSlug);
 }
 
 export default async function LocationServicePage({ params }: { params: Promise<{ locale: string; locationSlug: string }> }) {
@@ -77,44 +57,9 @@ export default async function LocationServicePage({ params }: { params: Promise<
         back: 'All Service Areas'
       };
 
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: location.heroTitle[lang],
-    description: location.metaDescription[lang],
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: location.city[lang]
-    },
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'INAYA Domestic Workers',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Ajman',
-        addressCountry: 'AE'
-      }
-    },
-    serviceType: ['Maid Services', 'Domestic Workers', 'Nanny Services', 'Home Cooking', 'Maid Visa Assistance']
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: location.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question[lang],
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer[lang]
-      }
-    }))
-  };
-
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <RouteSeo locale={locale} route={locationSlug} />
 
       <section className="relative px-6 py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_80%_28%,rgba(7,22,74,0.09),transparent_30rem)]" />

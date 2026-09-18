@@ -2,6 +2,7 @@
 
 import { use, useState } from 'react';
 import Link from 'next/link';
+import { faqEntity, serializeJsonLd } from '@/lib/json-ld';
 
 type IconName = 'service' | 'price' | 'booking' | 'support' | 'shield' | 'arrow' | 'message';
 type FaqItem = { question: string; answer: string };
@@ -332,6 +333,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
 
   return (
     <div className="overflow-hidden bg-ivory text-ink">
+      <script type="application/ld+json" data-seo="visible-faq" dangerouslySetInnerHTML={{ __html: serializeJsonLd({ '@context': 'https://schema.org', ...faqEntity(locale, 'faq', activeCategory.items) }) }} />
       <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-16 lg:pt-16 lg:pb-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_18%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_12%_44%,rgba(7,22,74,0.10),transparent_25rem)]" />
         <div className="container-x relative">

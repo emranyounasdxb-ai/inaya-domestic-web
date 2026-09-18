@@ -1,23 +1,5 @@
-import type { Metadata } from 'next';
-import { localeAlternates } from '@/lib/seo';
 import Link from 'next/link';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  const isArabic = locale === 'ar';
-  const title = isArabic ? 'سياسة الاسترداد والاستبدال | عناية للعمالة المنزلية' : 'Refund & Replacement Policy | INAYA Domestic Workers';
-  const description = isArabic
-    ? 'تفاصيل سياسة الاسترداد والاستبدال لخدمات عناية للعمالة المنزلية في الإمارات، مع خطوات المراجعة والأهلية والتواصل والدعم.'
-    : 'Detailed refund and replacement policy for INAYA Domestic Workers services in the UAE, including review steps, eligibility, communication and support.';
-
-  return {
-    title,
-    description,
-    alternates: localeAlternates(locale, 'refund-policy'),
-    openGraph: { title, description, type: 'website', locale: isArabic ? 'ar_AE' : 'en_AE', url: `/${locale}/refund-policy` },
-    twitter: { card: 'summary_large_image', title, description }
-  };
-}
 
 export default async function RefundPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

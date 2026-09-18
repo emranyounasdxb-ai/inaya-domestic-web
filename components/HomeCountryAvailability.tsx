@@ -56,7 +56,7 @@ export default function HomeCountryAvailability({ locale }: { locale: string }) 
             return (
               <article className="home-country-card" key={country.code}>
                 <div className="home-country-flag">
-                  <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${name} flag`} width={80} height={48} />
+                  <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={lang === 'ar' ? `علم ${name}` : `${name} flag`} width={80} height={48} />
                 </div>
                 <div className="home-country-content">
                   <h3>{name}</h3>

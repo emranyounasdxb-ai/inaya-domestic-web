@@ -129,7 +129,7 @@ export default async function AboutPage({ params }: PageProps) {
             </div>
           </div>
           <div className="relative min-h-[360px] overflow-hidden rounded-[30px] border border-primary-900/10 bg-white shadow-[0_28px_78px_rgba(7,22,74,0.15)]">
-            <Image src={aboutImages.hero} alt={copy.title} fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
+            <Image src={aboutImages.hero} alt={isArabic ? 'صورة توضيحية لعاملة منزلية تقدم الشاي لأسرة في غرفة المعيشة' : 'Illustration of a domestic worker serving tea to a family in a living room'} fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
           </div>
         </div>
       </section>
@@ -137,7 +137,7 @@ export default async function AboutPage({ params }: PageProps) {
       <section className="bg-white px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-[#f7f8fb] shadow-[0_22px_60px_rgba(7,22,74,0.10)]">
-            <Image src={aboutImages.family} alt={copy.storyTitle} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+            <Image src={aboutImages.family} alt={isArabic ? 'صورة توضيحية لعاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'Illustration of a domestic worker beside a table with the Dubai skyline in the background'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
           </div>
           <div>
             <h2 className={`${headingClass} text-[2.2rem] font-bold tracking-[-0.035em] text-primary-900 sm:text-[3rem]`}>{copy.storyTitle}</h2>
@@ -220,7 +220,7 @@ export default async function AboutPage({ params }: PageProps) {
             </div>
           </div>
           <div className="relative min-h-[380px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_22px_60px_rgba(7,22,74,0.10)]">
-            <Image src={aboutImages.support} alt={copy.leadershipTitle} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+            <Image src={aboutImages.support} alt={isArabic ? 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'Illustration of a domestic worker arranging sofa cushions near a mother and child'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
           </div>
         </div>
       </section>

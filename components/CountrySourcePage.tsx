@@ -67,7 +67,7 @@ export default function CountrySourcePage({ locale }: { locale: string }) {
               <Link key={country.slug} href={`/${locale}/maid-source-countries/${country.slug}`} className="group rounded-[24px] border border-white/80 bg-white/80 p-5 shadow-[0_18px_48px_rgba(7,22,74,0.06)] transition hover:-translate-y-1 hover:border-accent-500/28 hover:shadow-[0_24px_60px_rgba(7,22,74,0.10)]">
                 <div className="flex items-center gap-3">
                   <span className="flex h-12 w-16 overflow-hidden rounded-2xl bg-white p-1 shadow-inner">
-                    <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${country.country[lang]} flag`} width={80} height={48} className="h-full w-full rounded-xl object-cover" />
+                    <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={lang === 'ar' ? `علم ${country.country.ar}` : `${country.country.en} flag`} width={80} height={48} className="h-full w-full rounded-xl object-cover" />
                   </span>
                   <div>
                     <h3 className="font-heading text-xl font-bold">{country.country[lang]}</h3>

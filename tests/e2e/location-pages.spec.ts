@@ -1,4 +1,20 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
+
+async function expectLocationSchema(page: Page, locale: string) {
+  const scripts = page.locator('script[type="application/ld+json"]');
+  await expect(scripts).toHaveCount(1);
+  const data = JSON.parse(await scripts.textContent() as string);
+  expect(data['@context']).toBe('https://schema.org');
+  const graph = data['@graph'];
+  const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
+  const byType = (type: string) => graph.filter((node: { '@type': string | string[] }) => [node['@type']].flat().includes(type));
+  for (const type of ['Organization', 'LocalBusiness', 'WebSite', 'WebPage', 'Service', 'BreadcrumbList', 'FAQPage']) expect(byType(type)).toHaveLength(1);
+  expect(byType('Service')[0].url).toBe(canonical);
+  expect(byType('Service')[0].provider['@id']).toBe(byType('Organization')[0]['@id']);
+  expect(byType('FAQPage')[0].url).toBe(canonical);
+  expect(byType('FAQPage')[0].inLanguage).toBe(locale);
+  expect(byType('FAQPage')[0].mainEntity.length).toBeGreaterThan(0);
+}
 
 const englishLocationPages = [
   '/en/maid-services-ajman',
@@ -30,7 +46,7 @@ test.describe('location service pages', () => {
       await expect(page.getByText('Available service options')).toBeVisible();
       await expect(page.getByText('Frequently asked questions')).toBeVisible();
       await expect(page.getByRole('link', { name: /Request Consultation/i })).toBeVisible();
-      await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(2);
+      await expectLocationSchema(page, 'en');
     });
   }
 
@@ -42,7 +58,7 @@ test.describe('location service pages', () => {
       await expect(page.locator('h1')).toContainText(/خدمات خادمات/i);
       await expect(page.getByText('الخدمات المتوفرة')).toBeVisible();
       await expect(page.getByText('أسئلة شائعة')).toBeVisible();
-      await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(2);
+      await expectLocationSchema(page, 'ar');
     });
   }
 });

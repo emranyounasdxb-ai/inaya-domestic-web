@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { localeAlternates } from '@/lib/seo';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: localeAlternates(locale) };
+  return pageMetadata(locale, '');
 }
 import HomeCountryAvailability from '@/components/HomeCountryAvailability';
 import HomeGoogleReviews from '@/components/HomeGoogleReviews';
@@ -269,6 +270,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className="overflow-hidden bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)] text-ink">
+      <RouteSeo locale={locale} route="" />
       <style>{`
         @keyframes homeLogoMarqueeRtl {
           from { transform: translateX(0); }
@@ -288,7 +290,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="absolute inset-0 overflow-hidden bg-[#f7f8fb]">
           <ResponsiveImage
             src={homeImages.hero}
-            alt={isArabic ? 'عائلة تستمتع بمنزل منظم مع دعم عناية' : 'Family enjoying a well-supported home with INAYA'}
+            alt={isArabic ? 'صورة توضيحية لعاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'Illustration of a domestic worker beside a table with the Dubai skyline in the background'}
             priority
             sizes="100vw"
             imageClassName="object-cover object-center"
@@ -336,7 +338,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {copy.learnMore}
               </Link>
             </div>
-            <HomeImage alt={isArabic ? 'فريق عناية يقدم دعماً مخصصاً للأسرة' : 'INAYA concierge support for a UAE household'} src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
+            <HomeImage alt={isArabic ? 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'Illustration of a domestic worker arranging sofa cushions near a mother and child'} src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
           </div>
         </div>
       </section>

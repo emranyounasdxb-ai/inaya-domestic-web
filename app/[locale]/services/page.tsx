@@ -1,4 +1,12 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, 'services');
+}
 import Link from 'next/link';
 import ServiceIcon from '@/components/ServiceIcon';
 import { getServiceWithExtras } from '@/lib/service-helpers';
@@ -51,6 +59,7 @@ export default async function ServicesPage({ params }: PageProps) {
 
   return (
     <div className="overflow-hidden bg-white text-primary-900">
+      <RouteSeo locale={locale} route="services" />
       <section className="relative border-b border-primary-900/10 bg-[#fffdf8] px-5 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(191,164,106,0.16),transparent_24rem),radial-gradient(circle_at_84%_12%,rgba(7,22,74,0.05),transparent_28rem)]" />
         <div className="relative mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.78fr] lg:items-center">
@@ -72,7 +81,7 @@ export default async function ServicesPage({ params }: PageProps) {
           <div className="relative min-h-[330px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_26px_70px_rgba(7,22,74,0.14)]">
             <Image
               src="/images/home/home-concierge-support.webp"
-              alt={copy.title}
+              alt={lang === 'ar' ? 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'Illustration of a domestic worker arranging sofa cushions near a mother and child'}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -172,7 +181,7 @@ function ServiceImageCard({
       <div className="relative h-52 overflow-hidden bg-[#f7f8fb]">
         <Image
           src={getServiceImage(slug)}
-          alt={title}
+          alt=""
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover transition duration-500 group-hover:scale-[1.04]"

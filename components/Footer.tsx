@@ -13,7 +13,7 @@ export default function Footer({ locale }: { locale: string }) {
   const lang = isArabic ? 'ar' : 'en';
   const year = new Date().getFullYear();
   const logoSrc = isArabic ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp';
-  const logoAlt = isArabic ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
+  const logoAlt = isArabic ? 'شعار عناية للعمالة المنزلية' : 'INAYA Domestic Workers logo';
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const contactAddress = isArabic
     ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'

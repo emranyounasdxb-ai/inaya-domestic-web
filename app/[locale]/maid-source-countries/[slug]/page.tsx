@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { localeAlternates, localizedUrl } from '@/lib/seo';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -11,28 +12,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const country = getCountrySourcePage(slug);
-  if (!country) return {};
-  const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const canonical = localizedUrl(locale, `maid-source-countries/${slug}`);
-
-  return {
-    title: country.metaTitle[lang],
-    description: country.metaDescription[lang],
-    alternates: localeAlternates(locale, `maid-source-countries/${slug}`),
-    openGraph: {
-      title: country.metaTitle[lang],
-      description: country.metaDescription[lang],
-      type: 'website',
-      locale: lang === 'ar' ? 'ar_AE' : 'en_AE',
-      url: canonical
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: country.metaTitle[lang],
-      description: country.metaDescription[lang]
-    }
-  };
+  return pageMetadata(locale, `maid-source-countries/${slug}`);
 }
 
 export default async function MaidSourceCountryPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -80,6 +60,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
 
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
+      <RouteSeo locale={locale} route={`maid-source-countries/${slug}`} />
       <section className="relative px-6 py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(191,164,106,0.18),transparent_28rem),radial-gradient(circle_at_84%_30%,rgba(7,22,74,0.08),transparent_30rem)]" />
         <div className="relative mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.72fr] lg:items-center">
@@ -100,7 +81,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">
             <div className="flex items-center gap-4">
               <span className="flex h-20 w-28 overflow-hidden rounded-[22px] bg-white p-1 shadow-inner">
-                <Image src={`https://flagcdn.com/w160/${country.code}.png`} alt={`${country.country[lang]} flag`} width={160} height={100} className="h-full w-full rounded-[18px] object-cover" />
+                <Image src={`https://flagcdn.com/w160/${country.code}.png`} alt={lang === 'ar' ? `علم ${country.country.ar}` : `${country.country.en} flag`} width={160} height={100} className="h-full w-full rounded-[18px] object-cover" />
               </span>
               <div>
                 <p className="text-[0.62rem] font-bold uppercase tracking-[0.22em] text-accent-700">{t.sourceLabel}</p>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { serviceImageAlt } from '@/lib/image-alt';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getServiceWithExtras } from '@/lib/service-helpers';
@@ -170,7 +171,7 @@ function ServiceHero({
           </div>
         </div>
         <div className="relative aspect-[4/3] min-h-[350px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]">
-          <Image src={image} alt={copy.title} fill priority sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
+          <Image src={image} alt={serviceImageAlt(lang, slug)} fill priority sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
         </div>
       </div>
     </section>
@@ -406,7 +407,7 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
                 <span className="relative block h-[232px] overflow-hidden bg-[#f7f8fb] max-sm:h-[210px]">
                   <Image
                     src={getServiceImage(relatedSlug)}
-                    alt={service.name[lang]}
+                    alt=""
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
