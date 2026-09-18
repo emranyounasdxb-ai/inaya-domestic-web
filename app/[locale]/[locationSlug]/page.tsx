@@ -20,14 +20,13 @@ export default async function LocationServicePage({ params }: { params: Promise<
   if (!location) notFound();
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const otherLocations = locationServicePages.filter((item) => item.slug !== location.slug).slice(0, 6);
   const t = lang === 'ar'
     ? {
         badge: 'دليل خدمات المنطقة',
         areaBadge: 'منطقة خدمة داخل الإمارات',
         localTitle: 'احتياجات الأسر في هذه الإمارة',
         servicesTitle: 'الخدمات المتوفرة',
-        areasTitle: 'مناطق قريبة نخدمها',
+        areasTitle: 'مناطق يمكن ذكرها عند الطلب',
         processTitle: 'كيف تساعدك عناية؟',
         process: ['مراجعة احتياج المنزل والأسرة', 'تحديد نوع الخدمة والمهام', 'شرح التوفر والخطوات', 'متابعة واضحة قبل التأكيد'],
         faqTitle: 'أسئلة شائعة',
@@ -44,7 +43,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
         areaBadge: 'UAE Service Area',
         localTitle: 'Common family needs in this emirate',
         servicesTitle: 'Available service options',
-        areasTitle: 'Nearby areas we support',
+        areasTitle: 'Areas to specify in your enquiry',
         processTitle: 'How INAYA helps',
         process: ['Review the home and family requirement', 'Confirm service type and duties', 'Explain availability and next steps', 'Follow up clearly before confirmation'],
         faqTitle: 'Frequently asked questions',
@@ -85,7 +84,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
               <p className="mt-3 text-sm leading-7 text-white/85">{location.intro[lang]}</p>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {location.localNeeds[lang].slice(0, 4).map((need) => <div key={need} className="rounded-2xl border border-primary-900/8 bg-[#f8f6f0] px-4 py-3 text-xs font-semibold leading-5 text-primary-900/76"><span className="me-2 text-accent-700">✓</span>{need}</div>)}
+              <Link href={`/${locale}/documents-required/`} className="rounded-2xl border border-primary-900/8 bg-[#f8f6f0] px-4 py-3 text-xs font-semibold leading-5 text-primary-900/76 underline underline-offset-4">{lang === 'ar' ? 'جهز تفاصيل طلبك' : 'Prepare your enquiry details'}</Link>
             </div>
           </div>
         </div>
@@ -132,7 +131,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
           <div className="rounded-[26px] bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.18)]">
             <h2 className="font-heading text-2xl font-bold">{t.otherTitle}</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {otherLocations.map((item) => <Link key={item.slug} href={`/${locale}/${item.slug}`} className="rounded-2xl border border-white/12 bg-white/8 p-4 transition hover:bg-white/14"><span className="text-xs font-bold uppercase tracking-[0.14em] text-accent-300">{item.city[lang]}</span><p className="mt-2 text-sm font-semibold text-white/82">{item.heroTitle[lang]}</p></Link>)}
+              <Link href={`/${locale}/service-areas/`} className="rounded-2xl border border-white/12 bg-white/8 p-4 text-sm font-semibold transition hover:bg-white/14">{t.back}</Link>
             </div>
             <div className="mt-7 rounded-[22px] bg-white/8 p-5">
               <h3 className="font-heading text-xl font-bold">{t.ctaTitle}</h3>

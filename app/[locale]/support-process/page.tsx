@@ -1,3 +1,5 @@
+import GuideContent from '@/components/GuideContent';
+
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const isArabic = locale === 'ar';
@@ -13,6 +15,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {points.map((item) => <div key={item} className="rounded-2xl bg-white p-5 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">✓ {item}</div>)}
         </div>
+        <GuideContent locale={locale} route="support-process" />
       </div>
     </main>
   );

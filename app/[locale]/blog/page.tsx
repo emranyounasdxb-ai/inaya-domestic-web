@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import GuideContent from '@/components/GuideContent';
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -9,7 +9,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const copy = {
     badge: isArabic ? 'دليل العائلات' : 'Family guide',
     title: isArabic ? 'نصائح لاختيار الدعم المنزلي المناسب' : 'Guides for choosing the right home support',
-    subtitle: isArabic ? 'مقالات قصيرة تساعد العائلات على فهم الخدمات، الأسئلة المهمة، والخطوات قبل الحجز.' : 'Short guides to help families understand services, key questions and steps before booking.',
+    subtitle: isArabic ? 'موضوعات قادمة لفهم الخدمات والأسئلة المهمة قبل الحجز، مع روابط لأدلة متاحة الآن.' : 'Upcoming topics on services and questions before booking, with links to guides available now.',
     read: isArabic ? 'اقرأ قريباً' : 'Coming Soon',
     posts: isArabic ? [
       ['كيف تختار الخدمة المنزلية المناسبة؟', 'نقاط عملية قبل التواصل مع شركة العمالة المنزلية.'],
@@ -42,11 +42,12 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
               <div className="mb-5 h-24 rounded-[18px] bg-[radial-gradient(circle_at_30%_30%,rgba(191,164,106,0.25),transparent_34%),linear-gradient(135deg,rgba(7,22,74,0.08)_1px,transparent_1px)] bg-[length:100%_100%,28px_28px]" />
               <h2 className={`${isArabic ? 'font-arabic text-xl leading-snug' : 'font-heading text-2xl'} font-bold text-primary-900`}>{title}</h2>
               <p className="mt-2 flex-1 text-sm leading-6 text-primary-900/80">{text}</p>
-              <Link href={`/${locale}/contact`} className="mt-5 text-sm font-bold text-primary-900">{copy.read}</Link>
+              <span className="mt-5 text-sm font-bold text-primary-900">{copy.read}</span>
             </article>
           ))}
         </div>
       </section>
+      <div className="container-x pb-16"><GuideContent locale={locale} route="blog" /></div>
     </div>
   );
 }

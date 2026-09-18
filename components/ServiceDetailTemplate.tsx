@@ -437,8 +437,8 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
 
 function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
   const labels = lang === 'ar'
-    ? { offer: 'ما نقدمه', inaya: 'عناية', others: 'شركات أخرى', promise: 'الثقة. الشفافية. الرعاية.' }
-    : { offer: 'What We Offer', inaya: 'INAYA', others: 'Other Companies', promise: 'Trust. Transparency. Care.' };
+    ? { offer: 'نقطة المراجعة', inaya: 'تفاصيل المنزل', others: 'وضح مع الفريق', promise: 'الثقة. الشفافية. الرعاية.' }
+    : { offer: 'Review point', inaya: 'Household details', others: 'Clarify with the team', promise: 'Trust. Transparency. Care.' };
   const pledge = lang === 'ar'
     ? 'وعد عناية: نتعامل مع كل عائلة بمسؤولية ووضوح.'
     : 'INAYA Promise: We treat every family with responsibility and clarity.';
@@ -448,7 +448,7 @@ function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className={`${headingFont(lang)} text-3xl font-bold tracking-[-0.03em] text-primary-900 sm:text-4xl`}>{copy.compareTitle}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm font-medium leading-6 text-primary-900/75">{copy.compareText}</p>
+          {copy.compareText ? <p className="mx-auto mt-3 max-w-2xl text-sm font-medium leading-6 text-primary-900/75">{copy.compareText}</p> : null}
         </div>
 
         <div className="mt-10 overflow-hidden rounded-[20px] border border-primary-900/10 bg-white shadow-[0_18px_52px_rgba(7,22,74,0.10)]">
