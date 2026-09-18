@@ -73,10 +73,10 @@ export default function Navbar({ locale }: { locale: string }) {
           <button
             onClick={() => setOpen(!open)}
             className="rounded-full border border-primary-700/10 bg-white/45 px-3 py-1.5 text-[12px] font-semibold text-primary-900 transition hover:bg-white/80 lg:hidden"
-            aria-label="Menu"
+            aria-label={locale === 'ar' ? 'القائمة' : 'Menu'}
             aria-expanded={open}
           >
-            Menu
+            {locale === 'ar' ? 'القائمة' : 'Menu'}
           </button>
         </div>
       </nav>

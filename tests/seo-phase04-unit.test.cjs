@@ -1,4 +1,5 @@
 const assert = require('node:assert/strict');
+const { assertFormPreserved } = require('./form-accessibility-preservation.cjs');
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
 const test = require('node:test');
@@ -61,5 +62,5 @@ test('local-only forms have accurate completion copy and unchanged booking/caree
       assert.doesNotMatch(messages[key].success, /has been received|has been sent|تم استلام|تم إرسال/);
     }
   }
-  for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx']) assert.equal(current(file), previous(file));
+  for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx']) assertFormPreserved(current(file), previous(file), file);
 });

@@ -11,7 +11,7 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
     badge: isArabic ? 'جهز تفاصيل الاستفسار' : 'Prepare enquiry details',
     title: isArabic ? 'جهز استفسار خدمة العمالة المنزلية' : 'Prepare your domestic service enquiry',
     subtitle: isArabic ? 'هذا النموذج يراجع البيانات محلياً ولا يرسلها إلى المكتب. تواصل مع عناية بالهاتف أو واتساب لمشاركة احتياجك ومناقشة الخطوة التالية.' : 'This form checks details locally and does not send them to the office. Contact INAYA by phone or WhatsApp to share your requirement and discuss the next step.',
-    sideTitle: isArabic ? 'قبل الإرسال' : 'Before you submit',
+    sideTitle: isArabic ? 'قبل مراجعة البيانات' : 'Before checking your details',
     points: isArabic ? ['اختر نوع الخدمة المطلوبة', 'اكتب الإمارة والمنطقة', 'أضف أي ملاحظات مهمة للعائلة'] : ['Choose the required service type', 'Add your emirate and area', 'Include any important household notes']
   };
 

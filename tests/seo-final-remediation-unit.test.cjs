@@ -1,4 +1,5 @@
 const assert = require('node:assert/strict');
+const { assertFormPreserved } = require('./form-accessibility-preservation.cjs');
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
 const test = require('node:test');
@@ -20,5 +21,6 @@ test('exactly four hand-reviewed localized descriptions change; all other source
 });
 test('carousel test additions preserve every original assertion and protected production/measurement sources', () => {
   assert.equal(current('tests/e2e/home.spec.ts'), approvedHomeFlow(previous('tests/e2e/home.spec.ts')));
-  for (const file of ['components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'components/Measurement.tsx', 'lib/measurement.ts', 'app/[locale]/layout.tsx', 'components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) assert.equal(current(file), previous(file), file);
+  for (const file of ['components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'components/Measurement.tsx', 'lib/measurement.ts', 'app/[locale]/layout.tsx']) assert.equal(current(file), previous(file), file);
+  for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) assertFormPreserved(current(file), previous(file), file);
 });

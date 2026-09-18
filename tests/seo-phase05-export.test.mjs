@@ -22,8 +22,10 @@ test('Phase 5 retains all 140 canonical routes and previous-phase source, conten
   assert.equal(new Set(audit.pages.map((p) => p.description)).size, 140);
   assert.equal(audit.repeatedTokens, 8258);
   assert.equal(audit.repeatedParagraphs, 651);
-  // The visual remediation removes 32 preparation paragraphs, not technical SEO.
-  assert.equal(audit.paragraphTokens, 27787);
+  // Visual remediation removed 32 preparation paragraphs. The two reviewed
+  // local-check CTA disclaimers now meet the audit's paragraph-length threshold
+  // and contribute 24 tokens; repetition and near-pair guards stay unchanged.
+  assert.equal(audit.paragraphTokens, 27811);
   assert.equal(audit.nearPairs.length, 0);
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) { assert.equal(audit.linkCoverage[locale].reachable, 70); assert.equal(audit.linkCoverage[locale].maximumDepth, 2); }
