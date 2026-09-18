@@ -36,11 +36,11 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       subtitle: 'Select a service package that aligns with your household requirements. Every option is explained clearly before booking confirmation.'
     },
     assurance: isArabic ? [
-      ['ضمان الاستبدال', 'حماية أوضح للعميل خلال فترة الخدمة المتفق عليها، حسب نوع الباقة والتوفر.'],
+      ['مراجعة الاستبدال', 'حماية أوضح للعميل خلال فترة الخدمة المتفق عليها، حسب نوع الباقة والتوفر.'],
       ['دعم التأشيرة والإجراءات', 'إرشاد واضح بخصوص المستندات والخطوات المطلوبة للعقود المناسبة.'],
       ['الالتزام بإجراءات الدولة', 'توضيح منظم للخطوات بما يتوافق مع متطلبات خدمات العمالة المنزلية في الإمارات.']
     ] : [
-      ['Replacement Guarantee', 'Clearer client protection within the agreed service period, depending on package type and availability.'],
+      ['Replacement Review', 'Clearer client protection within the agreed service period, depending on package type and availability.'],
       ['Visa & Process Support', 'Structured guidance on documents and steps required for suitable long-term arrangements.'],
       ['UAE Compliance Guidance', 'Organized service guidance aligned with domestic worker service requirements in the UAE.']
     ],
@@ -109,7 +109,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
     tableHeaders: isArabic ? ['المزايا', 'أساسي', 'مميز', 'عناية بلاك'] : ['Features', 'Essential', 'Signature', 'INAYA Black'],
     rows: isArabic ? [
       ['تأكيد التوفر', 'مبدئي', 'أولوية', 'مخصص'],
-      ['ضمان الاستبدال', 'حسب الاتفاق', 'موسع', 'مخصص'],
+      ['مراجعة الاستبدال', 'حسب الاتفاق', 'موسع', 'مخصص'],
       ['دعم المستندات والإجراءات', false, true, true],
       ['صياغة متطلبات الخدمة', true, true, true],
       ['متابعة مخصصة', false, true, 'VIP']
@@ -125,7 +125,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
     faqs: isArabic ? [
       ['هل الأسعار نهائية؟', 'لا. الأسعار إرشادية ويتم تأكيد السعر النهائي بعد معرفة نوع الخدمة والإمارة والمدة والتوفر.'],
       ['هل تشمل الباقات الرسوم الحكومية؟', 'أي رسوم حكومية أو إجراءات رسمية يتم توضيحها بشكل منفصل حسب الحالة ونوع الخدمة.'],
-      ['ما معنى ضمان الاستبدال؟', 'يعتمد على نوع الباقة والاتفاق وفترة الخدمة والتوفر، ويتم توضيحه قبل الحجز.']
+      ['ما معنى مراجعة الاستبدال؟', 'يعتمد على نوع الباقة والاتفاق وفترة الخدمة والتوفر، ويتم توضيحه قبل الحجز.']
     ] : [
       ['Are these final prices?', 'No. Prices are indicative and final pricing is confirmed after reviewing service type, emirate, duration and availability.'],
       ['Are government fees included?', 'Any government or official processing fees are clarified separately depending on the service and case.'],

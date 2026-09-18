@@ -89,7 +89,7 @@ export const services: Service[] = [
     icon: '🍼',
     name: { en: 'Newborn Care Services', ar: 'خدمات رعاية المواليد' },
     short: { en: 'Specialist newborn care.', ar: 'رعاية متخصصة للمواليد.' },
-    description: { en: 'Specialist carers trained in newborn care to support new parents during the early months with feeding routines, hygiene and calm baby care.', ar: 'مقدمات رعاية متخصصات مدربات على رعاية المواليد لدعم الوالدين خلال الأشهر الأولى في الروتين والنظافة والعناية الهادئة بالطفل.' }
+    description: { en: 'Newborn care enquiries cover practical support with feeding routines, hygiene and baby care. Review relevant experience on each individual profile.', ar: 'تتناول طلبات رعاية المواليد الدعم العملي لروتين التغذية والنظافة والعناية بالطفل. راجع الخبرة المناسبة لكل ملف فردي.' }
   },
   {
     slug: 'home-cooking',
@@ -131,14 +131,14 @@ export const services: Service[] = [
     icon: '👵',
     name: { en: 'Elder Care Services', ar: 'خدمات رعاية المسنين' },
     short: { en: 'Compassionate elderly care.', ar: 'رعاية رحيمة للمسنين.' },
-    description: { en: 'Compassionate and trained caregivers providing daily support, companionship, mobility assistance and comfort for elderly family members.', ar: 'مقدمو رعاية مدربون ورحيمون يقدمون الدعم اليومي والرفقة والمساعدة في الحركة والراحة لكبار السن من أفراد العائلة.' }
+    description: { en: 'Elder care enquiries cover daily household support, companionship and mobility assistance. Discuss the needs and relevant experience; this is not a clinical care plan.', ar: 'تتناول طلبات رعاية كبار السن الدعم المنزلي اليومي والرفقة والمساعدة في الحركة. ناقش الاحتياجات والخبرة المناسبة؛ فهذا ليس خطة رعاية طبية.' }
   },
   {
     slug: 'patient-care',
     icon: '🏥',
     name: { en: 'Home Care / Patient Care Services', ar: 'خدمات الرعاية المنزلية / رعاية المرضى' },
     short: { en: 'Professional patient care at home.', ar: 'رعاية احترافية للمرضى في المنزل.' },
-    description: { en: 'Trained caregivers offering professional home-based patient care, daily living support, hygiene assistance and family relief.', ar: 'مقدمو رعاية مدربون يقدمون رعاية منزلية للمرضى ودعم الحياة اليومية والمساعدة في النظافة وتخفيف العبء عن الأسرة.' }
+    description: { en: 'Patient care enquiries concern practical daily living and hygiene assistance at home. Discuss the support needed and each profile’s experience; clinical responsibilities need separate clarification.', ar: 'تتعلق طلبات رعاية المرضى بالمساعدة العملية للحياة اليومية والنظافة في المنزل. ناقش الدعم المطلوب وخبرة كل ملف؛ وتحتاج المسؤوليات الطبية إلى توضيح منفصل.' }
   },
   {
     slug: 'companion-care',
@@ -179,8 +179,8 @@ export const services: Service[] = [
     slug: 'experienced-maid',
     icon: '⭐',
     name: { en: 'Experienced / Trained Maid Hiring', ar: 'توظيف خادمة ذات خبرة / مدربة' },
-    short: { en: 'Highly skilled trained maids.', ar: 'خادمات مدربات ذوات مهارة عالية.' },
-    description: { en: 'Hire experienced, professionally trained maids skilled in cleaning, cooking, childcare, laundry and family routines.', ar: 'وظّف خادمات ذوات خبرة ومدربات احترافياً وماهرات في التنظيف والطبخ ورعاية الأطفال والغسيل وروتين الأسرة.' }
+    short: { en: 'Compare relevant household experience.', ar: 'قارن الخبرة المنزلية المناسبة.' },
+    description: { en: 'Discuss the cleaning, cooking, childcare or laundry experience relevant to your household. Experience and training must be reviewed for each profile.', ar: 'ناقش الخبرة في التنظيف أو الطبخ أو رعاية الأطفال أو الغسيل المناسبة لمنزلك. يجب مراجعة الخبرة والتدريب لكل ملف.' }
   },
   {
     slug: 'background-verification',

@@ -7,9 +7,9 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
     ? 'font-arabic text-4xl font-bold leading-[1.32] text-primary-900 sm:text-5xl lg:text-6xl'
     : 'font-heading text-4xl font-bold leading-[1.05] text-primary-900 sm:text-5xl lg:text-6xl';
   const copy = {
-    badge: isArabic ? 'ابدأ طلبك خلال دقائق' : 'Start your request in minutes',
-    title: isArabic ? 'احجز خدمة العمالة المنزلية' : 'Book your domestic worker service',
-    subtitle: isArabic ? 'أرسل لنا تفاصيل احتياجك وسيتواصل معك فريق عناية لتأكيد التوفر والخطوات التالية.' : 'Share your requirement and the INAYA team will contact you to confirm availability and next steps.',
+    badge: isArabic ? 'جهز تفاصيل الاستفسار' : 'Prepare enquiry details',
+    title: isArabic ? 'جهز استفسار خدمة العمالة المنزلية' : 'Prepare your domestic service enquiry',
+    subtitle: isArabic ? 'هذا النموذج يراجع البيانات محلياً ولا يرسلها إلى المكتب. تواصل مع عناية بالهاتف أو واتساب لمشاركة احتياجك ومناقشة الخطوة التالية.' : 'This form checks details locally and does not send them to the office. Contact INAYA by phone or WhatsApp to share your requirement and discuss the next step.',
     sideTitle: isArabic ? 'قبل الإرسال' : 'Before you submit',
     points: isArabic ? ['اختر نوع الخدمة المطلوبة', 'اكتب الإمارة والمنطقة', 'أضف أي ملاحظات مهمة للعائلة'] : ['Choose the required service type', 'Add your emirate and area', 'Include any important household notes']
   };

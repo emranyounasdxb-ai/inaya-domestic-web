@@ -34,7 +34,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
         process: ['تحديد الدور: دليل التوظيف', 'الاستعداد: دليل المستندات', 'متابعة الطلب: خطوات الخدمة'],
         faqTitle: 'أسئلة شائعة',
         relatedTitle: 'دول أخرى يمكن مقارنتها',
-        ctaTitle: 'هل تريد مقارنة الملفات المتاحة؟',
+        ctaTitle: 'هل تريد مناقشة ملفات المرشحات؟',
         ctaText: 'شارك احتياج الأسرة وستساعدك عناية على فهم الخيارات المناسبة حسب التوفر والملف.',
         cta: 'تواصل مع عناية',
         back: 'العودة إلى دول المصدر'
@@ -51,7 +51,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
         process: ['Define the role: recruitment guide', 'Prepare: documents guide', 'Follow the enquiry: service process'],
         faqTitle: 'Frequently asked questions',
         relatedTitle: 'Other countries to compare',
-        ctaTitle: 'Want to compare available profiles?',
+        ctaTitle: 'Want to discuss candidate profiles?',
         ctaText: 'Share your family requirement and INAYA will help you understand suitable options based on availability and profile fit.',
         cta: 'Contact INAYA',
         back: 'Back to Source Countries'

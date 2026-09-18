@@ -2,7 +2,7 @@ import ContactForm from '@/components/ContactForm';
 import { siteConfig } from '@/lib/site-config';
 
 const mapEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.365890608938!2d55.43878240000001!3d25.3925602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5942014634c7%3A0xf39f2fefc97933f3!2sINAYA%20Domestic%20Workers%20Ajman!5e0!3m2!1sen!2sae!4v1782223058219!5m2!1sen!2sae';
-const directionsUrl = 'https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman';
+const directionsUrl = siteConfig.directionsUrl;
 
 type IconName = 'phone' | 'message' | 'mail' | 'pin' | 'shield' | 'user' | 'calendar' | 'spark';
 
@@ -57,7 +57,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     call: isArabic ? 'اتصل الآن' : 'Call Now',
     callback: isArabic ? 'أرسل طلبك' : 'Send Request',
     formTitle: isArabic ? 'أرسل لنا متطلباتك' : 'Send your requirement',
-    formText: isArabic ? 'شاركنا تفاصيل الخدمة والإمارة المطلوبة وسنتواصل معك لتأكيد الخطوات التالية.' : 'Share your service requirement and emirate, and our team will contact you with the next steps.',
+    formText: isArabic ? 'النموذج يراجع البيانات محلياً ولا يرسل رسالة. تواصل بالهاتف أو واتساب لمشاركة الخدمة والإمارة ومناقشة الخطوات التالية.' : 'This form checks details locally and does not send a message. Contact us by phone or WhatsApp to share the service and emirate and discuss next steps.',
     locationTitle: isArabic ? 'موقع المكتب الرئيسي' : 'Main office location',
     locationText: isArabic ? 'مكتبنا في جراند مول، عجمان، ونقدم خدمات العمالة المنزلية في جميع أنحاء الإمارات. يرجى التواصل معنا لتأكيد الموعد قبل الزيارة.' : 'Our office is at Grand Mall, Ajman, and we provide domestic worker services across the UAE. Please contact us to confirm timing before your visit.',
     trustTitle: isArabic ? 'تجربة تواصل واضحة وموثوقة في الإمارات' : 'A clear and trusted UAE contact experience',
@@ -72,20 +72,20 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   const actions = [
     { title: isArabic ? 'الهاتف' : 'Phone', value: phoneDisplay, note: isArabic ? 'تواصل مباشر مع الفريق' : 'Speak directly with our team', href: phoneHref, icon: 'phone' as IconName },
-    { title: isArabic ? 'واتساب' : 'WhatsApp', value: whatsappDisplay, note: isArabic ? 'الأسرع للمتابعة' : 'Fastest for follow-up', href: whatsappHref, icon: 'message' as IconName, external: true },
+    { title: isArabic ? 'واتساب' : 'WhatsApp', value: whatsappDisplay, note: isArabic ? 'شارك متطلباتك' : 'Share your requirements', href: whatsappHref, icon: 'message' as IconName, external: true },
     { title: isArabic ? 'البريد الإلكتروني' : 'Email', value: siteConfig.email, note: isArabic ? 'لإرسال التفاصيل' : 'Send details and documents', href: `mailto:${siteConfig.email}`, icon: 'mail' as IconName },
     { title: isArabic ? 'المكتب' : 'Office', value: isArabic ? 'جراند مول، عجمان' : 'Grand Mall, Ajman', note: isArabic ? 'خدماتنا متوفرة في جميع الإمارات' : 'UAE-wide service support', href: directionsUrl, icon: 'pin' as IconName, external: true }
   ];
 
   const trustItems = [
     { icon: 'shield' as IconName, title: isArabic ? 'إرشاد واضح' : 'Clear guidance', text: isArabic ? 'نشرح لك الخيارات والخطوات قبل بدء الطلب.' : 'We explain options and next steps before you proceed.' },
-    { icon: 'user' as IconName, title: isArabic ? 'عمالة موثوقة' : 'Verified workers', text: isArabic ? 'نراجع بيانات المرشحين بعناية قبل مشاركة الخيارات.' : 'Candidate details are reviewed carefully before options are shared.' },
+    { icon: 'user' as IconName, title: isArabic ? 'مناقشة الملفات' : 'Profile discussion', text: isArabic ? 'نراجع بيانات المرشحين بعناية قبل مشاركة الخيارات.' : 'Candidate details are reviewed carefully before options are shared.' },
     { icon: 'message' as IconName, title: isArabic ? 'متابعة ودية' : 'Friendly follow-up', text: isArabic ? 'يتابع فريقنا معك قبل وبعد تأكيد الخدمة.' : 'Our team supports you before and after service confirmation.' }
   ];
 
   const faqs = [
     { question: isArabic ? 'هل تقدمون الخدمة في جميع الإمارات؟' : 'Do you serve all UAE emirates?', answer: isArabic ? 'نعم، نقدم خدمات الخادمات والعمالة المنزلية في جميع إمارات الدولة. تواصل معنا لتأكيد التوفر حسب منطقتك ونوع الخدمة.' : 'Yes, we provide maid and domestic worker services across all UAE emirates. Contact us to confirm availability by area and service type.' },
-    { question: isArabic ? 'ما أسرع طريقة للتواصل؟' : 'What is the fastest way to contact you?', answer: isArabic ? 'واتساب هو الأسرع لإرسال المتطلبات والحصول على متابعة من الفريق.' : 'WhatsApp is the fastest option for sharing your requirement and getting follow-up.' },
+    { question: isArabic ? 'ما أسرع طريقة للتواصل؟' : 'What is the fastest way to contact you?', answer: isArabic ? 'يمكنك مشاركة متطلباتك عبر واتساب؛ يعتمد وقت الرد على الفريق.' : 'WhatsApp lets you share your requirement; response timing depends on the team.' },
     { question: isArabic ? 'هل يمكن زيارة المكتب؟' : 'Can I visit the office?', answer: isArabic ? 'نعم، يمكن زيارة المكتب في جراند مول بعجمان، ويفضل التواصل معنا قبل الزيارة لتأكيد الموعد.' : 'Yes, you can visit our office at Grand Mall in Ajman. Please contact us first to confirm timing.' }
   ];
 

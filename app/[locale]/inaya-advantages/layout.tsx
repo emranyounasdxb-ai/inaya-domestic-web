@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/page-seo';
 import RouteSeo from '@/components/RouteSeo';
+import BuyerAnswer from '@/components/BuyerAnswer';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -12,5 +13,6 @@ export default async function Layout({ children, params }: { children: React.Rea
   return <>
     <RouteSeo locale={locale} route="inaya-advantages" />
     {children}
+    <BuyerAnswer locale={locale} route="inaya-advantages" />
   </>;
 }

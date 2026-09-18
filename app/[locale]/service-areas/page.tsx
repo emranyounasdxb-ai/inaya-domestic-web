@@ -86,8 +86,8 @@ export default async function ServiceAreasPage({ params }: { params: Promise<{ l
     noteText: isArabic ? 'نقدم خدمات العمالة المنزلية في جميع أنحاء الإمارات. قد يختلف التوفر حسب الإمارة والمنطقة ونوع الخدمة، لذلك يرجى التواصل معنا للتأكيد.' : 'We provide domestic worker services across the UAE. Availability can vary by emirate, area and service type, so please contact us to confirm your requirement.',
     officeTitle: isArabic ? 'زيارة مكتب عناية' : 'Visit INAYA office',
     officeText: isArabic ? 'موقع المكتب في جراند مول عجمان مع دعم استفسارات جميع الإمارات عبر الهاتف وواتساب.' : 'Our office is in Grand Mall Ajman, with UAE-wide enquiry support by phone and WhatsApp.',
-    timing: isArabic ? '09:00 صباحاً - 09:00 مساءً' : '09:00 AM - 09:00 PM',
-    allDays: isArabic ? 'كل الأيام' : 'All days'
+    timing: isArabic ? 'تواصل لتأكيد موعد الزيارة' : 'Contact us to confirm visit timing',
+    allDays: isArabic ? 'أكد الموعد قبل الزيارة' : 'Confirm before visiting'
   };
 
   const stats = [

@@ -136,7 +136,10 @@ export function strengthenServiceCopy(slug: string, lang: Lang, copy: ServiceCop
   const brief = serviceContentBriefs[slug];
   if (!brief) return copy;
   const ar = lang === 'ar';
-  return { ...copy, whatText: brief.overview[lang], journeyText: brief.prepare[lang], related: brief.related,
+  return { ...copy,
+    whatTitle: ar ? `ما نطاق ${getService(slug)!.name[lang]}؟` : `What does ${getService(slug)!.name[lang]} cover?`,
+    journeyTitle: ar ? 'ماذا أجهز قبل مناقشة هذا الدور؟' : 'What should I prepare before discussing this role?',
+    whatText: brief.overview[lang], journeyText: brief.prepare[lang], related: brief.related,
     compareText: '',
     comparison: ar ? [
       { feature: 'نطاق المهام', inaya: 'حدد العمل المطلوب', other: 'وضح المهام المتفق عليها' },

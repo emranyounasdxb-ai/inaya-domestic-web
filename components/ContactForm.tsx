@@ -24,8 +24,8 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
     area: isArabic ? 'الإمارة / المنطقة' : 'Emirate / Area',
     chooseService: isArabic ? 'اختر الخدمة' : 'Choose a service',
     chooseArea: isArabic ? 'مثال: دبي، أبوظبي، الشارقة، عجمان' : 'Example: Dubai, Abu Dhabi, Sharjah, Ajman',
-    submit: isArabic ? 'إرسال الطلب' : 'Submit Request',
-    privacy: isArabic ? 'سيتم استخدام بياناتك للتواصل معك بخصوص طلبك فقط.' : 'Your information will be used only to contact you about your request.'
+    submit: isArabic ? 'مراجعة بيانات الاستفسار' : 'Check Enquiry Details',
+    privacy: isArabic ? 'لا يرسل هذا النموذج بياناتك إلى المكتب. تواصل بالهاتف أو واتساب لمشاركة الاستفسار وتجنب إدخال مستندات حساسة هنا.' : 'This form does not send your details to the office. Contact us by phone or WhatsApp to share the enquiry; do not enter sensitive documents here.'
   };
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

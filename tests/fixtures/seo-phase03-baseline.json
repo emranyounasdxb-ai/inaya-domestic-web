@@ -522,7 +522,7 @@
       "locale": "en",
       "route": "inaya-advantages",
       "family": "information/hub",
-      "title": "Why Choose INAYA Domestic Workers | Trusted Maid Agency UAE",
+      "title": "INAYA Domestic Workers Service Approach",
       "description": "Learn why UAE families choose INAYA for maid services, nannies, cooks, caregivers, recruitment, source country guidance and maid visa support.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
@@ -540,7 +540,7 @@
       "locale": "ar",
       "route": "inaya-advantages",
       "family": "information/hub",
-      "title": "لماذا تختار عناية للعمالة المنزلية | شركة خادمات موثوقة في الإمارات",
+      "title": "نهج خدمات عناية للعمالة المنزلية",
       "description": "تعرف لماذا تختار الأسر في الإمارات عناية لخدمات الخادمات والمربيات والطهاة والرعاية والتوظيف ودول المصدر وتأشيرة الخادمة.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
@@ -1681,7 +1681,7 @@
       "route": "services/experienced-maid",
       "family": "service",
       "title": "Experienced Maid Hiring in UAE for Skilled Household Support | INAYA",
-      "description": "Experienced maid hiring in UAE with INAYA. Find trained or experienced maids for cleaning, cooking, childcare exposure, laundry and family routine support.",
+      "description": "Discuss experienced maid requirements in UAE with INAYA. Review individual household experience, cleaning, cooking, childcare and laundry duties before selection.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -1700,7 +1700,7 @@
       "route": "services/experienced-maid",
       "family": "service",
       "title": "توظيف خادمة ذات خبرة في الإمارات لدعم منزلي ماهر | عناية",
-      "description": "توظيف خادمة ذات خبرة في الإمارات مع عناية. ملفات مدربة أو ذات خبرة للتنظيف والطبخ ورعاية الأطفال والغسيل ودعم روتين الأسرة.",
+      "description": "ناقش متطلبات الخادمة ذات الخبرة في الإمارات مع عناية. راجع الخبرة المنزلية الفردية ومهام التنظيف والطبخ ورعاية الأطفال والغسيل قبل الاختيار.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -1718,7 +1718,7 @@
       "locale": "en",
       "route": "services/background-verification",
       "family": "service",
-      "title": "Maid Background Verification Services in UAE for Safer Hiring | INAYA",
+      "title": "Maid Background Verification Guidance in UAE | INAYA",
       "description": "Maid background verification services in UAE with INAYA. Review identity details, documents, experience notes and hiring risk considerations before selecting domestic support.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
@@ -1737,7 +1737,7 @@
       "locale": "ar",
       "route": "services/background-verification",
       "family": "service",
-      "title": "خدمات التحقق من خلفية الخادمة في الإمارات لاختيار أكثر أماناً | عناية",
+      "title": "إرشاد مراجعة خلفية الخادمة في الإمارات | عناية",
       "description": "خدمات التحقق من خلفية الخادمة في الإمارات مع عناية. مراجعة بيانات الهوية والمستندات وملاحظات الخبرة واعتبارات المخاطر قبل اختيار الدعم المنزلي.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",

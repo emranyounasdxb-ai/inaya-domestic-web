@@ -169,7 +169,7 @@ export const serviceSeoPolishMoreB: ServiceSeoPolish = {
   'experienced-maid': {
     en: {
       title: 'Experienced Maid Hiring in UAE for Skilled Household Support',
-      meta: 'Experienced maid hiring in UAE with INAYA. Find trained or experienced maids for cleaning, cooking, childcare exposure, laundry and family routine support.',
+      meta: 'Discuss experienced maid requirements in UAE with INAYA. Review individual household experience, cleaning, cooking, childcare and laundry duties before selection.',
       lead: 'INAYA helps families looking for experienced maid hiring in UAE by reviewing past duties, practical skills, family expectations and suitable profile options.',
       whatText: 'An experienced maid can support homes that need stronger practical knowledge in cleaning, laundry, cooking, childcare exposure or daily household routines. The right choice still depends on the individual profile.',
       why: ['Experience and duty review', 'Cleaning and laundry skill matching', 'Cooking or childcare preference discussion', 'Profile-first recommendation', 'Family routine alignment', 'Document and process clarity'],
@@ -186,7 +186,7 @@ export const serviceSeoPolishMoreB: ServiceSeoPolish = {
     },
     ar: {
       title: 'توظيف خادمة ذات خبرة في الإمارات لدعم منزلي ماهر',
-      meta: 'توظيف خادمة ذات خبرة في الإمارات مع عناية. ملفات مدربة أو ذات خبرة للتنظيف والطبخ ورعاية الأطفال والغسيل ودعم روتين الأسرة.',
+      meta: 'ناقش متطلبات الخادمة ذات الخبرة في الإمارات مع عناية. راجع الخبرة المنزلية الفردية ومهام التنظيف والطبخ ورعاية الأطفال والغسيل قبل الاختيار.',
       lead: 'تساعد عناية الأسر الباحثة عن خادمة ذات خبرة في الإمارات من خلال مراجعة المهام السابقة والمهارات العملية وتوقعات الأسرة والملفات المناسبة.',
       whatText: 'الخادمة ذات الخبرة تدعم المنازل التي تحتاج معرفة عملية أقوى في التنظيف والغسيل والطبخ أو رعاية الأطفال أو الروتين اليومي. ويبقى الاختيار الصحيح معتمداً على الملف الفردي.',
       why: ['مراجعة الخبرة والمهام', 'مطابقة مهارات التنظيف والغسيل', 'مناقشة تفضيل الطبخ أو الأطفال', 'ترشيح يعتمد على الملف', 'مواءمة روتين الأسرة', 'وضوح المستندات والإجراءات'],
@@ -204,7 +204,7 @@ export const serviceSeoPolishMoreB: ServiceSeoPolish = {
   },
   'background-verification': {
     en: {
-      title: 'Maid Background Verification Services in UAE for Safer Hiring',
+      title: 'Maid Background Verification Guidance in UAE',
       meta: 'Maid background verification services in UAE with INAYA. Review identity details, documents, experience notes and hiring risk considerations before selecting domestic support.',
       lead: 'INAYA helps families understand maid background verification in UAE by reviewing available identity details, documents, experience notes and suitability factors before selection.',
       whatText: 'Background verification helps families make a more careful decision when hiring domestic support. INAYA focuses on available documents, profile details and practical risk discussion before moving forward.',
@@ -221,7 +221,7 @@ export const serviceSeoPolishMoreB: ServiceSeoPolish = {
       finalText: 'Speak with INAYA to understand what can be reviewed before you proceed.'
     },
     ar: {
-      title: 'خدمات التحقق من خلفية الخادمة في الإمارات لاختيار أكثر أماناً',
+      title: 'إرشاد مراجعة خلفية الخادمة في الإمارات',
       meta: 'خدمات التحقق من خلفية الخادمة في الإمارات مع عناية. مراجعة بيانات الهوية والمستندات وملاحظات الخبرة واعتبارات المخاطر قبل اختيار الدعم المنزلي.',
       lead: 'تساعد عناية الأسر على فهم التحقق من خلفية الخادمة في الإمارات من خلال مراجعة بيانات الهوية والمستندات وملاحظات الخبرة وعوامل الملاءمة قبل الاختيار.',
       whatText: 'التحقق من الخلفية يساعد الأسرة على اتخاذ قرار أكثر حذراً عند اختيار دعم منزلي. تركز عناية على المستندات المتاحة وتفاصيل الملف ومناقشة المخاطر العملية قبل المتابعة.',

@@ -92,7 +92,7 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'Clear Hiring Guidance', text: 'Step-by-step support with documents, options and joining requirements.' },
         { title: 'Premium Family Experience', text: 'Private, organized communication focused on your household needs.' }
       ],
-      why: ['Licensed UAE process guidance', 'Verified documentation support', 'Dedicated family coordinator', 'Clear replacement support policy', 'Privacy-first communication', 'Fast consultation and follow-up'],
+      why: ['Service process discussion', 'Document preparation guidance', 'Dedicated family coordinator', 'Clear replacement support policy', 'Privacy-first communication', 'Fast consultation and follow-up'],
       included: ['Daily cleaning and room care', 'Laundry and ironing support', 'Kitchen assistance and meal prep', 'Childcare support where suitable', 'Elderly household assistance', 'Organized daily task planning'],
       perfect: ['Working families', 'Large villas', 'New parents', 'Elderly households', 'Busy professionals', 'Consistent household help'],
       journey: [
@@ -155,7 +155,7 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'إرشاد واضح للتوظيف', text: 'دعم خطوة بخطوة للمستندات والخيارات ومتطلبات الالتحاق.' },
         { title: 'تجربة أسرية مميزة', text: 'تواصل خاص ومنظم يركز على احتياج المنزل.' }
       ],
-      why: ['إرشاد لعملية مرخصة في الإمارات', 'دعم التحقق من المستندات', 'منسق مخصص للأسرة', 'سياسة دعم للاستبدال بوضوح', 'تواصل يحافظ على الخصوصية', 'استشارة ومتابعة سريعة'],
+      why: ['مناقشة خطوات الخدمة', 'إرشاد تجهيز المستندات', 'منسق مخصص للأسرة', 'سياسة دعم للاستبدال بوضوح', 'تواصل يحافظ على الخصوصية', 'استشارة ومتابعة سريعة'],
       included: ['تنظيف يومي وترتيب الغرف', 'غسيل وكي الملابس', 'مساعدة في المطبخ والتحضير', 'دعم رعاية الأطفال عند المناسبة', 'مساعدة منزلية لكبار السن', 'تنظيم المهام اليومية'],
       perfect: ['الأسر العاملة', 'الفلل الكبيرة', 'الآباء الجدد', 'منازل كبار السن', 'المهنيون المشغولون', 'دعم منزلي ثابت'],
       journey: [
