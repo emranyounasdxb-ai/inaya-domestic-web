@@ -23,7 +23,7 @@ test('services index lists every grouped service in English and Arabic', async (
     for (const group of serviceGroups) {
       await expect(page.getByRole('heading', { name: group.title[locale] })).toBeVisible();
       for (const slug of group.slugs) {
-        expect(await page.locator(`a[href="/${locale}/services/${slug}"]`).count(), `${locale}/${slug}`).toBeGreaterThan(0);
+        expect(await page.locator(`a[href="/${locale}/services/${slug}/"]`).count(), `${locale}/${slug}`).toBeGreaterThan(0);
       }
     }
   }

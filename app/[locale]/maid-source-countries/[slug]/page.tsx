@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { localeAlternates, localizedUrl } from '@/lib/seo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -13,18 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const country = getCountrySourcePage(slug);
   if (!country) return {};
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const canonical = `/${locale}/maid-source-countries/${slug}`;
+  const canonical = localizedUrl(locale, `maid-source-countries/${slug}`);
 
   return {
     title: country.metaTitle[lang],
     description: country.metaDescription[lang],
-    alternates: {
-      canonical,
-      languages: {
-        en: `/en/maid-source-countries/${slug}`,
-        ar: `/ar/maid-source-countries/${slug}`
-      }
-    },
+    alternates: localeAlternates(locale, `maid-source-countries/${slug}`),
     openGraph: {
       title: country.metaTitle[lang],
       description: country.metaDescription[lang],

@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
+import { localeAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return locale === 'ar'
     ? {
+        alternates: localeAlternates(locale, 'service-areas'),
         title: 'مناطق خدمة عناية في الإمارات | خدمات خادمات حسب الإمارة',
         description: 'استكشف مناطق خدمة عناية للعمالة المنزلية في الإمارات: عجمان، دبي، الشارقة، أبوظبي، رأس الخيمة، الفجيرة وأم القيوين.'
       }
     : {
+        alternates: localeAlternates(locale, 'service-areas'),
         title: 'INAYA Service Areas in UAE | Maid Services by Emirate',
         description: 'Explore INAYA Domestic Workers service areas across the UAE, including Ajman, Dubai, Sharjah, Abu Dhabi, Ras Al Khaimah, Fujairah and Umm Al Quwain.'
       };

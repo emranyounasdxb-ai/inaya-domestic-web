@@ -7,7 +7,9 @@ const productionHosts = new Set(['inayadomestic.ae', 'www.inayadomestic.ae']);
 const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
-  localePrefix: 'always'
+  localePrefix: 'always',
+  // Page metadata/sitemap own the production alternates, including x-default.
+  alternateLinks: false
 });
 
 export default function proxy(request: NextRequest) {

@@ -5,8 +5,12 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  trailingSlash: true,
+  // Reproduce the cPanel export locally without replacing configuration files.
+  ...(process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' ? { output: 'export' } : {}),
   allowedDevOrigins: ['127.0.0.1'],
   images: {
+    unoptimized: process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true',
     qualities: [75],
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },

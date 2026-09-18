@@ -6,7 +6,7 @@ const slug = ['why', 'choose', 'inaya'].join('-');
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return generateTrustSupportMetadata(locale, slug);
+  return generateTrustSupportMetadata(locale, slug, 'inaya-advantages');
 }
 
 export default async function InayaAdvantagesPage({ params }: { params: Promise<{ locale: string }> }) {

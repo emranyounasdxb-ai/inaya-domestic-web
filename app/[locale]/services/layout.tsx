@@ -1,15 +1,9 @@
 import type { Metadata } from 'next';
+import { localeAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `/${locale}/services`;
-  const alternates = {
-    canonical,
-    languages: {
-      en: '/en/services',
-      ar: '/ar/services'
-    }
-  };
+  const alternates = localeAlternates(locale, 'services');
 
   if (locale === 'ar') {
     return {

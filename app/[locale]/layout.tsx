@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
+import { siteConfig } from '@/lib/site-config';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
@@ -18,7 +19,6 @@ const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-he
 const notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-body', display: 'swap' });
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap' });
 
-export const dynamic = 'force-dynamic';
 export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -28,8 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: { default: t('defaultTitle'), template: `%s | ${t('siteName')}` },
     description: t('defaultDescription'),
-    metadataBase: new URL('https://inayadomestic.ae'),
-    alternates: { languages: { en: '/en', ar: '/ar' } },
+    metadataBase: new URL(siteConfig.url),
     openGraph: { title: t('defaultTitle'), description: t('defaultDescription'), type: 'website', locale }
   };
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { localeAlternates } from '@/lib/seo';
 import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -12,10 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: `/${locale}/refund-policy`,
-      languages: { en: '/en/refund-policy', ar: '/ar/refund-policy' }
-    },
+    alternates: localeAlternates(locale, 'refund-policy'),
     openGraph: { title, description, type: 'website', locale: isArabic ? 'ar_AE' : 'en_AE', url: `/${locale}/refund-policy` },
     twitter: { card: 'summary_large_image', title, description }
   };

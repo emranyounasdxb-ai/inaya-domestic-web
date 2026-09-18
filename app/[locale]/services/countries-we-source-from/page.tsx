@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { localeAlternates, localizedUrl } from '@/lib/seo';
 import CountrySourcePage from '@/components/CountrySourcePage';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -8,18 +9,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const description = isArabic
     ? 'قارن دول مصدر الخادمات والعمالة المنزلية في الإمارات مع عناية: الفلبين، سريلانكا، نيبال، الهند، بنغلاديش، إثيوبيا، كينيا، أوغندا، إندونيسيا وميانمار.'
     : 'Compare domestic worker and maid source countries in the UAE with INAYA, including the Philippines, Sri Lanka, Nepal, India, Bangladesh, Ethiopia, Kenya, Uganda, Indonesia and Myanmar.';
-  const canonical = `/${locale}/services/countries-we-source-from`;
+  const canonical = localizedUrl(locale, 'services/countries-we-source-from');
 
   return {
     title,
     description,
-    alternates: {
-      canonical,
-      languages: {
-        en: '/en/services/countries-we-source-from',
-        ar: '/ar/services/countries-we-source-from'
-      }
-    },
+    alternates: localeAlternates(locale, 'services/countries-we-source-from'),
     openGraph: {
       title,
       description,

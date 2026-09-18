@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
+import { localeAlternates } from '@/lib/seo';
 import PhaseOneSeoSection from '@/components/PhaseOneSeoSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return locale === 'ar'
     ? {
+        alternates: localeAlternates(locale, 'about'),
         title: 'عن عناية للعمالة المنزلية | شركة خادمات موثوقة في الإمارات',
         description: 'تعرف على عناية للعمالة المنزلية، شركة خدمات خادمات وعمالة منزلية موثوقة في الإمارات تقدم إرشاداً واضحاً للأسر في عجمان ودبي والشارقة وأبوظبي.'
       }
     : {
+        alternates: localeAlternates(locale, 'about'),
         title: 'About INAYA Domestic Workers | Trusted Maid Agency UAE',
         description: 'Learn about INAYA Domestic Workers, a trusted UAE maid and domestic worker service supporting families in Ajman, Dubai, Sharjah, Abu Dhabi and across the UAE.'
       };

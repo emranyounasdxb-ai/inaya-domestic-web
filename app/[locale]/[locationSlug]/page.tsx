@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { localeAlternates, localizedUrl } from '@/lib/seo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getLocationServicePage, locationServicePages, type Lang } from '@/lib/location-service-pages';
@@ -12,18 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const location = getLocationServicePage(locationSlug);
   if (!location) return {};
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const canonical = `/${locale}/${location.slug}`;
+  const canonical = localizedUrl(locale, location.slug);
 
   return {
     title: location.metaTitle[lang],
     description: location.metaDescription[lang],
-    alternates: {
-      canonical,
-      languages: {
-        en: `/en/${location.slug}`,
-        ar: `/ar/${location.slug}`
-      }
-    },
+    alternates: localeAlternates(locale, location.slug),
     openGraph: {
       title: location.metaTitle[lang],
       description: location.metaDescription[lang],

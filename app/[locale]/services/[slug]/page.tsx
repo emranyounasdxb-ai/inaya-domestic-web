@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { localeAlternates, localizedUrl } from '@/lib/seo';
 import { allServices, getServiceWithExtras } from '@/lib/service-helpers';
 import { servicePageCopies, type Lang } from '@/lib/service-page-copy-all';
 import ServiceDetailTemplate from '@/components/ServiceDetailTemplate';
@@ -20,18 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const pageCopy = servicePageCopies[slug]?.[lang];
   const title = pageCopy?.title ?? service.name[lang];
   const description = pageCopy?.meta ?? service.short[lang];
-  const canonical = `/${locale}/services/${slug}`;
+  const canonical = localizedUrl(locale, `services/${slug}`);
 
   return {
     title,
     description,
-    alternates: {
-      canonical,
-      languages: {
-        en: `/en/services/${slug}`,
-        ar: `/ar/services/${slug}`
-      }
-    },
+    alternates: localeAlternates(locale, `services/${slug}`),
     openGraph: {
       title,
       description,
