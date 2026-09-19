@@ -49,7 +49,7 @@ export default function CountrySourcePage({ locale }: { locale: string }) {
             <h1 className={`${lang === 'ar' ? 'font-arabic leading-[1.25]' : 'font-heading leading-[1.05]'} mt-5 text-[2.25rem] font-bold tracking-[-0.055em] sm:text-[3.45rem]`}>{t.title}</h1>
             <p className="mt-4 max-w-2xl text-[0.95rem] leading-7 text-primary-900/72">{t.lead}</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href={`/${locale}/booking?service=countries-we-source-from`} className="rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white">{t.book}</Link>
+              <Link href={`/${locale}/booking`} className="rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white">{t.book}</Link>
               <Link href={`/${locale}/contact`} className="rounded-full border border-accent-500/30 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em]">{t.contact}</Link>
             </div>
           </div>

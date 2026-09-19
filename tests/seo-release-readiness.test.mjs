@@ -6,6 +6,9 @@ test('cPanel root uses a language-aware HTTP redirect and preserves proven FTP d
   const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
   const htaccess = workflow.match(/cat > out\/\.htaccess <<'EOF'\r?\n([\s\S]*?)\r?\n\s*EOF/)?.[1];
   assert.ok(htaccess, 'generated cPanel .htaccess found');
+  assert.match(htaccess, /RewriteCond %\{HTTP_HOST\} \^www\\\.inayadomestic\\\.ae\$ \[NC\]/);
+  assert.match(htaccess, /RewriteRule \^ https:\/\/inayadomestic\.ae%\{REQUEST_URI\} \[R=301,L,NE\]/);
+  assert.ok(htaccess.indexOf('RewriteCond %{HTTP_HOST}') < htaccess.indexOf('RewriteCond %{HTTP:Accept-Language}'));
   assert.match(htaccess, /RewriteCond %\{HTTP:Accept-Language\} \^ar\(\[-,;\]\|\$\) \[NC\]/);
   assert.match(htaccess, /RewriteRule \^\$ \/ar\/ \[R=302,L\]/);
   assert.match(htaccess, /RewriteRule \^\$ \/en\/ \[R=302,L\]/);

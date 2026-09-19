@@ -1,13 +1,22 @@
 const assert = require('node:assert/strict');
 
-// The approved exception permits label wiring and focus/scroll presentation,
-// not changes to local validation, service options, fields or visual styling.
+// The approved exceptions permit label wiring, focus/scroll presentation and
+// exact booking-service URL preselection, not changes to local validation,
+// service options, other fields or visual styling.
 function assertFormPreserved(current, previous, file) {
   const handler = source => source.match(/  function handleSubmit\([\s\S]*?\n  }/)[0];
   assert.equal(handler(current), handler(previous), `${file}: exact local validation logic`);
   const fields = source => [...source.matchAll(/<(input|select|textarea)\b[^>]*name="([^"]+)"[^>]*>/g)]
-    .map(m => m[0].replace(/ \{\.\.\.fieldA11y\('[^']+'\)\}/g, '').replace(/ id=\{fieldId\('[^']+'\)\}/g, ''));
+    .map(m => {
+      const field = m[0].replace(/ \{\.\.\.fieldA11y\('[^']+'\)\}/g, '').replace(/ id=\{fieldId\('[^']+'\)\}/g, '');
+      return file === 'components/BookingForm.tsx' && m[2] === 'service'
+        ? field.replace(/ value=\{selectedService\} onChange=\{handleServiceChange\}/, '')
+        : field;
+    });
   assert.deepEqual(fields(current), fields(previous), `${file}: original field attributes and order`);
+  if (file === 'components/BookingForm.tsx') {
+    assert.match(current, /<select \{\.\.\.fieldA11y\('service'\)\} name="service" className="field" value=\{selectedService\} onChange=\{handleServiceChange\}>/);
+  }
   const options = source => [...source.matchAll(/<option\b[\s\S]*?<\/option>/g)].map(m => m[0]);
   assert.deepEqual(options(current), options(previous), `${file}: original options`);
   const styles = source => [...source.matchAll(/className=("[^"]*"|\{[^\n]*\})/g)].map(m => m[0]);
