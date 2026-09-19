@@ -178,6 +178,8 @@ jobs:
           # Use a temporary HTTP redirect because the target varies by visitor language.
           <IfModule mod_rewrite.c>
             RewriteEngine On
+            RewriteCond %{HTTP_HOST} ^www\.inayadomestic\.ae$ [NC]
+            RewriteRule ^ https://inayadomestic.ae%{REQUEST_URI} [R=301,L,NE]
             RewriteCond %{HTTP:Accept-Language} ^ar([-,;]|$) [NC]
             RewriteRule ^$ /ar/ [R=302,L]
             RewriteRule ^$ /en/ [R=302,L]

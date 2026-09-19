@@ -1,6 +1,6 @@
 'use client';
 
-import { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import LocalFormConfirmation from './LocalFormConfirmation';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
@@ -17,6 +17,29 @@ export default function BookingForm({ locale }: { locale: string }) {
   });
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [selectedService, setSelectedService] = useState(services[0].slug);
+
+  useEffect(() => {
+    const syncServiceFromUrl = () => {
+      const requested = new URLSearchParams(window.location.search).get('service');
+      const selected = requested && services.some((service) => service.slug === requested)
+        ? requested
+        : services[0].slug;
+      setSelectedService(selected);
+    };
+
+    syncServiceFromUrl();
+    window.addEventListener('popstate', syncServiceFromUrl);
+    window.addEventListener('pageshow', syncServiceFromUrl);
+    return () => {
+      window.removeEventListener('popstate', syncServiceFromUrl);
+      window.removeEventListener('pageshow', syncServiceFromUrl);
+    };
+  }, []);
+
+  function handleServiceChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    setSelectedService(event.target.value);
+  }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -61,11 +84,12 @@ export default function BookingForm({ locale }: { locale: string }) {
       </div>
       <div>
         <label htmlFor={fieldId('service')} className="label">{t('service')}</label>
-        <select {...fieldA11y('service')} name="service" className="field">
+        <select {...fieldA11y('service')} name="service" className="field" value={selectedService} onChange={handleServiceChange}>
           {services.map((s) => (
             <option key={s.slug} value={s.slug}>{s.name[lang]}</option>
           ))}
         </select>
+        <script dangerouslySetInnerHTML={{ __html: "(function(){var select=document.currentScript.previousElementSibling;var requested=new URLSearchParams(location.search).get('service');if(select&&requested&&Array.prototype.some.call(select.options,function(option){return option.value===requested;}))select.value=requested;})();" }} />
       </div>
       <div>
         <label htmlFor={fieldId('plan')} className="label">{t('plan')}</label>

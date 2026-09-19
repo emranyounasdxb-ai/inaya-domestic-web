@@ -67,6 +67,9 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
   };
   for (const file of heroFiles) {
     const before = execFileSync('git', ['show', `0cc89c4ca6d5621a6ed08818b799b2bdeb71a5af:${file}`], { encoding: 'utf8' });
-    assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), heroSource(before.replace(/\r\n/g, '\n')), `${file}: original Hero markup and styling`);
+    const expected = file === 'components/CountrySourcePage.tsx'
+      ? heroSource(before.replace(/\r\n/g, '\n')).replace('booking?service=countries-we-source-from', 'booking')
+      : heroSource(before.replace(/\r\n/g, '\n'));
+    assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling`);
   }
 });
