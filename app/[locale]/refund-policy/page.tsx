@@ -1,25 +1,6 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  const isArabic = locale === 'ar';
-  const title = isArabic ? 'سياسة الاسترداد والاستبدال | عناية للعمالة المنزلية' : 'Refund & Replacement Policy | INAYA Domestic Workers';
-  const description = isArabic
-    ? 'تفاصيل سياسة الاسترداد والاستبدال لخدمات عناية للعمالة المنزلية في الإمارات، مع خطوات المراجعة والأهلية والتواصل والدعم.'
-    : 'Detailed refund and replacement policy for INAYA Domestic Workers services in the UAE, including review steps, eligibility, communication and support.';
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `/${locale}/refund-policy`,
-      languages: { en: '/en/refund-policy', ar: '/ar/refund-policy' }
-    },
-    openGraph: { title, description, type: 'website', locale: isArabic ? 'ar_AE' : 'en_AE', url: `/${locale}/refund-policy` },
-    twitter: { card: 'summary_large_image', title, description }
-  };
-}
 
 export default async function RefundPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -92,6 +73,7 @@ export default async function RefundPage({ params }: { params: Promise<{ locale:
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="refund-policy" />
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-2">

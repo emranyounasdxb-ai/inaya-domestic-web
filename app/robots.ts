@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inayadomestic.ae';
+import { siteConfig } from '@/lib/site-config';
 
 export const dynamic = 'force-static';
 
@@ -9,11 +9,11 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/']
+        // All existing routes are public; do not disallow localized pages/assets.
+        allow: '/'
       }
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url
   };
 }

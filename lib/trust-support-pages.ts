@@ -75,9 +75,9 @@ export const trustSupportPages: TrustSupportPage[] = [
     path: 'why-choose-inaya',
     badge: { en: 'Why INAYA', ar: 'لماذا عناية' },
     title: { en: 'Why Choose INAYA Domestic Workers in UAE', ar: 'لماذا تختار عناية للعمالة المنزلية في الإمارات' },
-    metaTitle: { en: 'Why Choose INAYA Domestic Workers | Trusted Maid Agency UAE', ar: 'لماذا تختار عناية للعمالة المنزلية | شركة خادمات موثوقة في الإمارات' },
+    metaTitle: { en: 'INAYA Domestic Workers Service Approach', ar: 'نهج خدمات عناية للعمالة المنزلية' },
     metaDescription: { en: 'Learn why UAE families choose INAYA for maid services, nannies, cooks, caregivers, recruitment, source country guidance and maid visa support.', ar: 'تعرف لماذا تختار الأسر في الإمارات عناية لخدمات الخادمات والمربيات والطهاة والرعاية والتوظيف ودول المصدر وتأشيرة الخادمة.' },
-    lead: { en: 'INAYA focuses on clear communication, profile-first matching, organized follow-up and family-safe domestic worker service guidance across the UAE.', ar: 'تركز عناية على التواصل الواضح ومطابقة الملفات أولاً والمتابعة المنظمة وإرشاد خدمات العمالة المنزلية الآمن للأسرة في الإمارات.' },
+    lead: { en: 'INAYA focuses on clear communication, profile-first matching, organized follow-up and domestic worker service guidance across the UAE.', ar: 'تركز عناية على التواصل الواضح ومطابقة الملفات أولاً والمتابعة المنظمة وإرشاد خدمات العمالة المنزلية في الإمارات.' },
     highlights: { en: ['UAE family-focused consultation', 'Profile-first selection approach', 'Source country and service guidance', 'Clear follow-up before confirmation'], ar: ['استشارة موجهة للأسر في الإمارات', 'اختيار يعتمد على الملف الفردي', 'إرشاد دول المصدر والخدمات', 'متابعة واضحة قبل التأكيد'] },
     sections: [
       {

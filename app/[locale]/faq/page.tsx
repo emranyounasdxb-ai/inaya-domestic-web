@@ -1,7 +1,9 @@
 'use client';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 import { use, useState } from 'react';
 import Link from 'next/link';
+import { faqEntity, serializeJsonLd } from '@/lib/json-ld';
 
 type IconName = 'service' | 'price' | 'booking' | 'support' | 'shield' | 'arrow' | 'message';
 type FaqItem = { question: string; answer: string };
@@ -38,7 +40,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'ما الخدمات التي تقدمها عناية للعمالة المنزلية؟', answer: 'تقدم عناية خدمات الخادمات المنزليات، المربيات، جليسات الأطفال، مقدمي الرعاية، الطهاة، والمساعدة بدوام جزئي حسب نوع الطلب والتوفر.' },
         { question: 'هل تخدمون جميع إمارات الدولة؟', answer: 'نعم، نقدم خدماتنا في جميع إمارات الدولة، ويتم تأكيد التوفر حسب الإمارة والمنطقة ونوع الخدمة والمدة المطلوبة.' },
         { question: 'هل يمكن طلب خادمة أو مربية حسب الخبرة أو الجنسية؟', answer: 'يمكنك مشاركة تفضيلاتك بوضوح، وسيقوم الفريق بمراجعة الخيارات المتاحة التي تناسب احتياج الأسرة.' },
-        { question: 'هل التوفر مضمون فوراً؟', answer: 'التوفر لا يكون مضموناً إلا بعد مراجعة الطلب. نؤكد لك الخيارات المناسبة قبل أي حجز أو التزام.' },
+        { question: 'هل التوفر مضمون فوراً؟', answer: 'الاستفسار لا يضمن التوفر. اطلب من الفريق مراجعة خيارات الدور والمنطقة قبل الحجز.' },
         { question: 'هل توفرون خادمات مقيمات داخل المنزل؟', answer: 'يمكننا مراجعة طلب الخادمة المقيمة حسب الإمارة ونوع الخدمة والتوفر الحالي، ثم توضيح الخيارات المناسبة.' },
         { question: 'هل توفرون خدمات خارجية أو غير مقيمة؟', answer: 'نعم، يمكن ترتيب خدمات غير مقيمة أو بدوام جزئي حسب نوع الطلب والمنطقة والجدول المطلوب.' },
         { question: 'هل يمكن طلب مربية أطفال؟', answer: 'نعم، يمكن طلب مربية أو جليسة أطفال مع توضيح عمر الأطفال، ساعات الخدمة، وأي متطلبات خاصة للأسرة.' },
@@ -179,7 +181,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'What services does INAYA Domestic Workers provide?', answer: 'INAYA provides house maid, nanny, babysitter, caregiver, cook and part-time help services, subject to availability and service type.' },
         { question: 'Do you serve all UAE emirates?', answer: 'Yes. We serve all UAE emirates, with availability confirmed by emirate, area, service type and requested duration.' },
         { question: 'Can I request a maid or nanny by experience or nationality?', answer: 'You can share your preferences clearly, and our team will review suitable available options for your household requirement.' },
-        { question: 'Is availability guaranteed immediately?', answer: 'Availability is confirmed only after we review the request. We share suitable options before any booking or commitment.' },
+        { question: 'Is availability guaranteed immediately?', answer: 'An enquiry does not guarantee availability. Ask the team to review options for your role and area before booking.' },
         { question: 'Do you provide live-in maids?', answer: 'Live-in maid requests can be reviewed by emirate, service type and current availability, then suitable options are explained.' },
         { question: 'Do you provide live-out domestic workers?', answer: 'Yes. Live-out or part-time arrangements can be discussed depending on the area, schedule and required service.' },
         { question: 'Can I request a nanny?', answer: 'Yes. Please share the children’s ages, required timings and any important family preferences so we can review suitable options.' },
@@ -332,6 +334,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
 
   return (
     <div className="overflow-hidden bg-ivory text-ink">
+      <script type="application/ld+json" data-seo="visible-faq" dangerouslySetInnerHTML={{ __html: serializeJsonLd({ '@context': 'https://schema.org', ...faqEntity(locale, 'faq', activeCategory.items) }) }} />
       <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-16 lg:pt-16 lg:pb-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_18%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_12%_44%,rgba(7,22,74,0.10),transparent_25rem)]" />
         <div className="container-x relative">
@@ -347,6 +350,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="faq" className="mb-7" />
 
       <section className="container-x -mt-7 pb-24 sm:pb-28 lg:pb-36">
         <div className="mx-auto max-w-6xl">
@@ -359,6 +363,8 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
                     key={category.id}
                     type="button"
                     onClick={() => setActiveId(category.id)}
+                    aria-controls={`faq-panel-${category.id}`}
+                    aria-pressed={isActive}
                     className={`flex items-center justify-center gap-2 rounded-[13px] px-4 py-3 text-sm font-bold transition ${isActive ? 'bg-primary-900 text-white shadow-[0_12px_26px_rgba(7,22,74,0.2)]' : 'text-primary-900/75 hover:bg-accent-50 hover:text-primary-900'}`}
                   >
                     <LineIcon name={category.icon} className={`h-4 w-4 ${isActive ? 'text-accent-200' : 'text-accent-700'}`} />
@@ -382,21 +388,31 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
               </span>
             </div>
 
-            <div className="space-y-4">
-              {activeCategory.items.map((item, index) => (
-                <details
-                  key={item.question}
-                  open={index === 0}
-                  className="group rounded-[16px] border border-primary-900/8 bg-white/86 shadow-[0_14px_42px_rgba(7,22,74,0.05)] backdrop-blur-xl transition hover:border-accent-500/28"
+            <div>
+              {categories.map((category) => (
+                <div
+                  key={category.id}
+                  id={`faq-panel-${category.id}`}
+                  data-faq-panel={category.id}
+                  hidden={category.id !== activeId}
+                  className="space-y-4"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 text-start text-lg font-bold leading-snug text-primary-900 sm:px-8 sm:py-6 sm:text-xl">
-                    <span>{item.question}</span>
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-accent-700 transition group-open:rotate-180">⌄</span>
-                  </summary>
-                  <p className="border-t border-primary-900/8 px-6 pb-6 pt-4 text-sm leading-7 text-primary-900/80 sm:px-8 sm:text-[0.95rem]">
-                    {item.answer}
-                  </p>
-                </details>
+                  {category.items.map((item, index) => (
+                    <details
+                      key={item.question}
+                      open={index === 0}
+                      className="group rounded-[16px] border border-primary-900/8 bg-white/86 shadow-[0_14px_42px_rgba(7,22,74,0.05)] backdrop-blur-xl transition hover:border-accent-500/28"
+                    >
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 text-start text-lg font-bold leading-snug text-primary-900 sm:px-8 sm:py-6 sm:text-xl">
+                        <span>{item.question}</span>
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-accent-700 transition group-open:rotate-180">⌄</span>
+                      </summary>
+                      <p className="border-t border-primary-900/8 px-6 pb-6 pt-4 text-sm leading-7 text-primary-900/80 sm:px-8 sm:text-[0.95rem]">
+                        {item.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
               ))}
             </div>
           </div>

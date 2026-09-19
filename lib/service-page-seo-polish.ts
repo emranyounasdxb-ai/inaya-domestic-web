@@ -177,7 +177,7 @@ export const serviceSeoPolish: ServiceSeoPolish = {
       faqs: [
         { title: 'What roles can recruitment cover?', text: 'Recruitment may cover maids, nannies, cooks, caregivers and other domestic worker roles depending on availability.' },
         { title: 'Can I request a specific nationality?', text: 'Yes, a preference can be shared, but final suitability depends on the individual profile and family needs.' },
-        { title: 'How are profiles compared?', text: 'Profiles are reviewed by experience, duties, documents, communication and household expectations.' },
+        { title: 'Can I interview a candidate before selection?', text: 'Discuss review or interview options before confirmation. Options depend on the service type and candidate availability; compare experience, duties, documents and communication needs.' },
         { title: 'Does recruitment include visa guidance?', text: 'Visa or document guidance can be discussed when the selected recruitment path requires it.' }
       ],
       comparison: commonComparisonEn,
@@ -194,7 +194,7 @@ export const serviceSeoPolish: ServiceSeoPolish = {
       faqs: [
         { title: 'ما الأدوار التي يشملها التوظيف؟', text: 'قد يشمل التوظيف خادمات ومربيات وطهاة ومقدمي رعاية وأدوار عمالة منزلية أخرى حسب التوفر.' },
         { title: 'هل يمكن طلب جنسية محددة؟', text: 'نعم، يمكن مشاركة التفضيل، لكن الملاءمة النهائية تعتمد على الملف الفردي واحتياج الأسرة.' },
-        { title: 'كيف تتم مقارنة الملفات؟', text: 'تتم مراجعة الملفات حسب الخبرة والمهام والمستندات والتواصل وتوقعات المنزل.' },
+        { title: 'هل يمكن مقابلة المرشحة قبل الاختيار؟', text: 'ناقش خيارات المراجعة أو المقابلة قبل التأكيد. تعتمد الخيارات على نوع الخدمة وتوفر المرشحة؛ قارن الخبرة والمهام والمستندات واحتياجات التواصل.' },
         { title: 'هل يشمل التوظيف إرشاد التأشيرة؟', text: 'يمكن مناقشة إرشاد التأشيرة أو المستندات عندما يتطلب مسار التوظيف ذلك.' }
       ],
       comparison: commonComparisonAr,

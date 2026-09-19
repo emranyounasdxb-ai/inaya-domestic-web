@@ -2,10 +2,9 @@ import type { MetadataRoute } from 'next';
 import { allServices } from '@/lib/service-helpers';
 import { countrySourcePages } from '@/lib/country-source-pages';
 import { locationServicePages } from '@/lib/location-service-pages';
+import { localizedUrl, localeAlternates } from '@/lib/seo';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inayadomestic.ae';
 const locales = ['en', 'ar'] as const;
-const now = new Date();
 
 export const dynamic = 'force-static';
 
@@ -16,7 +15,11 @@ const coreRoutes = [
   'contact',
   'how-it-works',
   'service-areas',
-  'services/countries-we-source-from'
+  'services/countries-we-source-from',
+  'booking',
+  'careers',
+  'pricing',
+  'blog'
 ];
 
 const trustRoutes = [
@@ -33,19 +36,14 @@ const trustRoutes = [
 
 function localizedEntry(path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'weekly') {
   return locales.map((locale) => {
-    const normalizedPath = path ? `/${locale}/${path}` : `/${locale}`;
-    const enPath = path ? `/en/${path}` : '/en';
-    const arPath = path ? `/ar/${path}` : '/ar';
-
     return {
-      url: `${siteUrl}${normalizedPath}`,
-      lastModified: now,
+      url: localizedUrl(locale, path),
+      // No reliable route-level modification dates are recorded in the source.
       changeFrequency,
       priority,
       alternates: {
         languages: {
-          en: `${siteUrl}${enPath}`,
-          ar: `${siteUrl}${arPath}`
+          ...localeAlternates(locale, path).languages
         }
       }
     };

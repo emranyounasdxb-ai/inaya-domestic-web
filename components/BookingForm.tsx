@@ -1,12 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
+import LocalFormConfirmation from './LocalFormConfirmation';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
 
 export default function BookingForm({ locale }: { locale: string }) {
   const t = useTranslations('booking');
   const lang = locale === 'ar' ? 'ar' : 'en';
+  const formId = useId();
+  const fieldId = (name: string) => `${formId}-${name}`;
+  const fieldA11y = (name: string) => ({
+    id: fieldId(name),
+    'aria-invalid': errors[name] ? true : undefined,
+    'aria-describedby': errors[name] ? `${fieldId(name)}-error` : undefined
+  });
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -26,45 +34,42 @@ export default function BookingForm({ locale }: { locale: string }) {
 
   if (done) {
     return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center text-green-800">
-        <div className="mb-2 text-4xl">✅</div>
-        <p className="font-medium">{t('success')}</p>
-      </div>
+      <LocalFormConfirmation message={t('success')} symbol="✅" />
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:grid-cols-2">
       <div>
-        <label className="label">{t('name')} *</label>
-        <input name="name" className="field" />
-        {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
+        <label htmlFor={fieldId('name')} className="label">{t('name')} *</label>
+        <input {...fieldA11y('name')} name="name" className="field" />
+        {errors.name && <p id={`${fieldId('name')}-error`} className="mt-1 text-xs text-red-600">{errors.name}</p>}
       </div>
       <div>
-        <label className="label">{t('phone')} *</label>
-        <input name="phone" className="field" dir="ltr" />
-        {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
+        <label htmlFor={fieldId('phone')} className="label">{t('phone')} *</label>
+        <input {...fieldA11y('phone')} name="phone" className="field" dir="ltr" />
+        {errors.phone && <p id={`${fieldId('phone')}-error`} className="mt-1 text-xs text-red-600">{errors.phone}</p>}
       </div>
       <div>
-        <label className="label">{t('email')}</label>
-        <input name="email" type="email" className="field" dir="ltr" />
-        {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+        <label htmlFor={fieldId('email')} className="label">{t('email')}</label>
+        <input {...fieldA11y('email')} name="email" type="email" className="field" dir="ltr" />
+        {errors.email && <p id={`${fieldId('email')}-error`} className="mt-1 text-xs text-red-600">{errors.email}</p>}
       </div>
       <div>
-        <label className="label">{t('area')}</label>
-        <input name="area" className="field" />
+        <label htmlFor={fieldId('area')} className="label">{t('area')}</label>
+        <input {...fieldA11y('area')} name="area" className="field" />
       </div>
       <div>
-        <label className="label">{t('service')}</label>
-        <select name="service" className="field">
+        <label htmlFor={fieldId('service')} className="label">{t('service')}</label>
+        <select {...fieldA11y('service')} name="service" className="field">
           {services.map((s) => (
             <option key={s.slug} value={s.slug}>{s.name[lang]}</option>
           ))}
         </select>
       </div>
       <div>
-        <label className="label">{t('plan')}</label>
-        <select name="plan" className="field">
+        <label htmlFor={fieldId('plan')} className="label">{t('plan')}</label>
+        <select {...fieldA11y('plan')} name="plan" className="field">
           <option>{t('planHourly')}</option>
           <option>{t('planPartTime')}</option>
           <option>{t('planFullTime')}</option>
@@ -73,12 +78,12 @@ export default function BookingForm({ locale }: { locale: string }) {
         </select>
       </div>
       <div>
-        <label className="label">{t('date')}</label>
-        <input name="date" type="date" className="field" />
+        <label htmlFor={fieldId('date')} className="label">{t('date')}</label>
+        <input {...fieldA11y('date')} name="date" type="date" className="field" />
       </div>
       <div className="sm:col-span-2">
-        <label className="label">{t('message')}</label>
-        <textarea name="message" rows={4} className="field" />
+        <label htmlFor={fieldId('message')} className="label">{t('message')}</label>
+        <textarea {...fieldA11y('message')} name="message" rows={4} className="field" />
       </div>
       <div className="sm:col-span-2">
         <button type="submit" className="btn-primary w-full">{t('submit')}</button>

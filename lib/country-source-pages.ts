@@ -1,3 +1,4 @@
+import { countryContentBriefs } from './profile-content-briefs';
 export type Lang = 'en' | 'ar';
 
 type Localized = Record<Lang, string>;
@@ -38,7 +39,7 @@ const commonRoles: CountryRole[] = [
   { slug: 'maid-visa', title: { en: 'Maid Visa Support', ar: 'دعم تأشيرة الخادمة' } }
 ];
 
-export const countrySourcePages: CountrySourceSeoPage[] = [
+const originalCountrySourcePages: CountrySourceSeoPage[] = [
   {
     slug: 'philippines-maid-uae',
     code: 'ph',
@@ -268,6 +269,18 @@ export const countrySourcePages: CountrySourceSeoPage[] = [
     ]
   }
 ];
+
+export const countrySourcePages: CountrySourceSeoPage[] = originalCountrySourcePages.map((country) => ({
+  ...country, intro: countryContentBriefs[country.slug] ?? country.intro,
+  strengths: {
+    en: ['Review actual language and communication', 'Discuss experience relevant to the selected role', 'Clarify duties instead of assuming skills from nationality', 'Check individual documents and options with the team'],
+    ar: ['راجع اللغة وطريقة التواصل الفعلية', 'ناقش الخبرة المناسبة للدور المختار', 'وضح المهام بدلاً من افتراض المهارات من الجنسية', 'راجع المستندات والخيارات الفردية مع الفريق']
+  },
+  bestFor: { en: ['A defined household role', 'A clear working arrangement', 'Individual experience review', 'Questions prepared before confirmation'], ar: ['دور منزلي محدد', 'ترتيب عمل واضح', 'مراجعة الخبرة الفردية', 'أسئلة جاهزة قبل التأكيد'] },
+  faqs: country.faqs.map((faq) => /best way|أفضل طريقة/.test(faq.question.en + faq.question.ar) ? {
+    ...faq, question: { en: 'How should I compare Myanmar profiles?', ar: 'كيف أقارن ملفات ميانمار؟' }
+  } : faq)
+}));
 
 export function getCountrySourcePage(slug: string) {
   return countrySourcePages.find((country) => country.slug === slug);

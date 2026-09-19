@@ -1,3 +1,4 @@
+import { locationContentBriefs } from './profile-content-briefs';
 export type Lang = 'en' | 'ar';
 
 type Localized = Record<Lang, string>;
@@ -37,7 +38,7 @@ const commonServices: LocationServiceLink[] = [
   { slug: 'maid-visa', title: { en: 'Maid Visa Assistance', ar: 'مساعدة تأشيرة الخادمة' } }
 ];
 
-export const locationServicePages: LocationServicePage[] = [
+const originalLocationServicePages: LocationServicePage[] = [
   {
     slug: 'maid-services-ajman',
     city: { en: 'Ajman', ar: 'عجمان' },
@@ -165,6 +166,14 @@ export const locationServicePages: LocationServicePage[] = [
     ]
   }
 ];
+
+export const locationServicePages: LocationServicePage[] = originalLocationServicePages.map((location) => ({
+  ...location, intro: locationContentBriefs[location.slug] ?? location.intro,
+  faqs: [...location.faqs, { question: { en: `Do the listed areas confirm availability in ${location.city.en}?`, ar: `هل تؤكد المناطق المذكورة التوفر في ${location.city.ar}؟` }, answer: {
+    en: 'The area names help you describe the address for your enquiry. They do not confirm a worker, visit or start date; the team reviews the exact area, role and current options before confirmation.',
+    ar: 'تساعد أسماء المناطق على وصف عنوان الطلب. ولا تؤكد عاملة أو زيارة أو موعد بدء؛ يراجع الفريق المنطقة الدقيقة والدور والخيارات الحالية قبل التأكيد.'
+  } }]
+}));
 
 export function getLocationServicePage(slug: string) {
   return locationServicePages.find((location) => location.slug === slug);

@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, '');
+}
 import HomeCountryAvailability from '@/components/HomeCountryAvailability';
 import HomeGoogleReviews from '@/components/HomeGoogleReviews';
 
@@ -10,8 +18,8 @@ const homeContent = {
     heroText: 'Bespoke domestic worker services for UAE families who expect clarity, trust and a calm household experience.',
     primaryCta: 'Request Consultation',
     secondaryCta: 'Explore Services',
-    trustLabel: 'Recognized & Trusted by UAE Authorities',
-    conciergeLabel: '24/7 Support',
+    trustLabel: 'Logos identify organizations only; no endorsement or approval is claimed',
+    conciergeLabel: 'Enquiry & Follow-up',
     conciergeTitle: 'Global Executive Concierge',
     conciergeText: 'Beyond staffing, INAYA provides a dedicated support layer for family requirements, urgent coordination and practical follow-up across the UAE.',
     learnMore: 'Contact INAYA Support',
@@ -21,12 +29,12 @@ const homeContent = {
       { title: 'Document Care', text: 'Requirements are handled with clear records and careful follow-up.' },
       { title: 'Family Privacy', text: 'Communication remains respectful, private and relevant to the household.' }
     ],
-    spotlightTitle: 'Elite Candidate Spotlight',
-    spotlightText: 'A glimpse into the caliber of professionals within our service network.',
+    spotlightTitle: 'Which household roles can I discuss?',
+    spotlightText: 'These illustrations describe service roles, not identified candidates or current availability.',
     candidates: [
-      { name: 'Elena V.', role: 'Executive Nanny • 12 Years Exp.', text: 'Specialized in early childhood support and family routines.' },
-      { name: 'Marcus T.', role: 'Private Chef • Home Dining', text: 'Experienced in family meal planning and private home cooking.' },
-      { name: 'Sarah J.', role: 'House Manager • Estate Support', text: 'Skilled in household coordination and domestic team support.' }
+      { name: 'Childcare', role: 'Executive Nanny Role', text: 'Discuss childcare experience and the family routine when reviewing individual profiles.' },
+      { name: 'Cooking', role: 'Private Chef • Home Dining', text: 'Explain meal preferences and kitchen duties before comparing profiles.' },
+      { name: 'Household Coordination', role: 'House Manager • Estate Support', text: 'Describe coordination duties and the household team before selecting a role.' }
     ],
     journeyTitle: 'A Seamless Journey',
     journeyText: 'Hiring domestic support should not feel complex. The process is arranged in three clear stages.',
@@ -34,10 +42,10 @@ const homeContent = {
     steps: [
       { title: 'Share Requirement', text: 'Tell us the service type, emirate, timing and household details.' },
       { title: 'Confirm Details', text: 'We explain suitable options, documents and next steps.' },
-      { title: 'Commence Service', text: 'Your service begins with clear follow-up and support guidance.' }
+      { title: 'Review Before Confirmation', text: 'Review availability, costs, documents and the agreement before confirming any service.' }
     ],
     disciplinesTitle: 'Curated Disciplines',
-    disciplinesText: 'Expertise that extends beyond cleaning. We provide specialized professionals for every part of your home.',
+    disciplinesText: 'Compare the listed household roles and discuss which duties are relevant to your request.',
     services: [
       { slug: 'executive-nannies', tag: 'Premier Selection', title: 'Executive Nannies', text: 'Specialized childcare support focused on care, routine and family comfort.', cta: 'Learn More' },
       { slug: 'private-chefs', title: 'Private Chefs', text: 'Culinary support in the comfort of your kitchen.', cta: 'Inquire' },
@@ -50,10 +58,10 @@ const homeContent = {
       { quote: 'Excellent and transparent service. The team explained every step and followed up professionally.', name: 'Ali Khan', role: 'Business Owner, Sharjah' }
     ],
     imageQuote: 'Our sanctuary is finally managed with the precision it deserves.',
-    blackLabel: 'INAYA BLACK',
-    blackTitle: 'The Zenith of Domestic Staffing',
-    blackText: 'A premium consultation tier for families requiring structured household support, priority coordination and a more personalized domestic service plan.',
-    blackCta: 'Apply for Membership'
+    blackLabel: 'HOUSEHOLD ENQUIRIES',
+    blackTitle: 'Discuss a Household Service Plan',
+    blackText: 'Share the household duties and coordination needs to discuss an appropriate service plan. An enquiry does not confirm membership, availability or placement.',
+    blackCta: 'Enquire About Your Requirements'
   },
   ar: {
     heroLabel: 'إرث من الثقة',
@@ -62,7 +70,7 @@ const homeContent = {
     heroText: 'خدمات عمالة منزلية منظمة للأسر في الإمارات، مع وضوح في الخطوات وثقة ومتابعة محترمة.',
     primaryCta: 'اطلب استشارة',
     secondaryCta: 'استكشف الخدمات',
-    trustLabel: 'موثوق ومنظم مع جهات الإمارات',
+    trustLabel: 'الشعارات للتعريف بالجهات فقط ولا تعني اعتماداً أو تأييداً',
     conciergeLabel: 'دعم ومتابعة',
     conciergeTitle: 'كونسيرج تنفيذي للعائلة',
     conciergeText: 'إلى جانب الخدمة، تقدم عناية طبقة دعم مخصصة لاحتياجات الأسرة، التنسيق العاجل، والمتابعة العملية داخل الإمارات.',
@@ -73,12 +81,12 @@ const homeContent = {
       { title: 'عناية بالمستندات', text: 'تتم متابعة المتطلبات بسجلات واضحة وتنسيق دقيق.' },
       { title: 'خصوصية الأسرة', text: 'يبقى التواصل محترماً وخاصاً ومرتبطاً باحتياج المنزل.' }
     ],
-    spotlightTitle: 'نماذج من الكفاءات',
-    spotlightText: 'لمحة عن مستوى المهنيين ضمن شبكة خدماتنا.',
+    spotlightTitle: 'ما الأدوار المنزلية التي يمكنني مناقشتها؟',
+    spotlightText: 'توضح الصور أدوار الخدمات وليست مرشحات محددات أو تأكيداً للتوفر الحالي.',
     candidates: [
-      { name: 'إيلينا V.', role: 'مربية تنفيذية • 12 سنة خبرة', text: 'متخصصة في رعاية الأطفال ودعم روتين الأسرة.' },
-      { name: 'ماركوس T.', role: 'شيف خاص • طبخ منزلي', text: 'خبرة في تخطيط وجبات الأسرة والطبخ المنزلي.' },
-      { name: 'سارة J.', role: 'مديرة منزل • دعم الأسر', text: 'مهارة في تنسيق المنزل ودعم فريق الخدمة.' }
+      { name: 'رعاية الأطفال', role: 'دور المربية التنفيذية', text: 'ناقش خبرة رعاية الأطفال وروتين الأسرة عند مراجعة الملفات الفردية.' },
+      { name: 'الطبخ', role: 'شيف خاص • طبخ منزلي', text: 'وضح تفضيلات الوجبات ومهام المطبخ قبل مقارنة الملفات.' },
+      { name: 'تنسيق المنزل', role: 'مديرة منزل • دعم الأسر', text: 'وضح مهام التنسيق وفريق المنزل قبل اختيار الدور.' }
     ],
     journeyTitle: 'رحلة سلسة',
     journeyText: 'طلب الدعم المنزلي يجب ألا يكون معقداً. لذلك نرتب العملية في ثلاث مراحل واضحة.',
@@ -86,10 +94,10 @@ const homeContent = {
     steps: [
       { title: 'شارك الاحتياج', text: 'أخبرنا بنوع الخدمة، الإمارة، التوقيت وتفاصيل المنزل.' },
       { title: 'تأكيد التفاصيل', text: 'نشرح الخيارات المناسبة والمستندات والخطوات التالية.' },
-      { title: 'بدء الخدمة', text: 'تبدأ الخدمة مع متابعة واضحة وإرشادات دعم.' }
+      { title: 'المراجعة قبل التأكيد', text: 'راجع التوفر والتكاليف والمستندات والاتفاق قبل تأكيد أي خدمة.' }
     ],
     disciplinesTitle: 'تخصصات مختارة',
-    disciplinesText: 'خبرات تتجاوز التنظيف. نقدم مهنيين متخصصين لكل جانب من جوانب المنزل.',
+    disciplinesText: 'قارن الأدوار المنزلية المدرجة وناقش المهام ذات الصلة بطلبك.',
     services: [
       { slug: 'executive-nannies', tag: 'اختيار مميز', title: 'مربيات تنفيذيات', text: 'دعم متخصص للأطفال يركز على الرعاية والروتين وراحة الأسرة.', cta: 'اعرف المزيد' },
       { slug: 'private-chefs', title: 'شيف خاص', text: 'دعم للطبخ داخل منزلك بما يناسب ذوق الأسرة.', cta: 'استفسر' },
@@ -102,10 +110,10 @@ const homeContent = {
       { quote: 'خدمة ممتازة وواضحة. شرح الفريق كل خطوة وتابع معنا باحتراف.', name: 'علي خان', role: 'صاحب عمل، الشارقة' }
     ],
     imageQuote: 'أصبح منزلنا أكثر تنظيماً وراحة.',
-    blackLabel: 'عناية بلاك',
-    blackTitle: 'قمة خدمات العمالة المنزلية',
-    blackText: 'مستوى استشارة مميز للأسر التي تحتاج إلى دعم منزلي منظم وتنسيق أولوية وخطة خدمة أكثر تخصيصاً.',
-    blackCta: 'اطلب العضوية'
+    blackLabel: 'استفسارات المنزل',
+    blackTitle: 'ناقش خطة الخدمة المنزلية',
+    blackText: 'شارك مهام المنزل واحتياجات التنسيق لمناقشة خطة مناسبة. الاستفسار لا يؤكد عضوية أو توفراً أو توظيفاً.',
+    blackCta: 'استفسر عن متطلباتك'
   }
 };
 
@@ -262,6 +270,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className="overflow-hidden bg-[linear-gradient(180deg,#fcf8fa_0%,#f8f6f0_44%,#fbfaf7_100%)] text-ink">
+      <RouteSeo locale={locale} route="" />
       <style>{`
         @keyframes homeLogoMarqueeRtl {
           from { transform: translateX(0); }
@@ -281,7 +290,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="absolute inset-0 overflow-hidden bg-[#f7f8fb]">
           <ResponsiveImage
             src={homeImages.hero}
-            alt={isArabic ? 'عائلة تستمتع بمنزل منظم مع دعم عناية' : 'Family enjoying a well-supported home with INAYA'}
+            alt={isArabic ? 'صورة توضيحية لعاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'Illustration of a domestic worker beside a table with the Dubai skyline in the background'}
             priority
             sizes="100vw"
             imageClassName="object-cover object-center"
@@ -329,7 +338,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {copy.learnMore}
               </Link>
             </div>
-            <HomeImage alt={isArabic ? 'فريق عناية يقدم دعماً مخصصاً للأسرة' : 'INAYA concierge support for a UAE household'} src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
+            <HomeImage alt={isArabic ? 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'Illustration of a domestic worker arranging sofa cushions near a mother and child'} src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
           </div>
         </div>
       </section>

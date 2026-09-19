@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -10,34 +13,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const country = getCountrySourcePage(slug);
-  if (!country) return {};
-  const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const canonical = `/${locale}/maid-source-countries/${slug}`;
-
-  return {
-    title: country.metaTitle[lang],
-    description: country.metaDescription[lang],
-    alternates: {
-      canonical,
-      languages: {
-        en: `/en/maid-source-countries/${slug}`,
-        ar: `/ar/maid-source-countries/${slug}`
-      }
-    },
-    openGraph: {
-      title: country.metaTitle[lang],
-      description: country.metaDescription[lang],
-      type: 'website',
-      locale: lang === 'ar' ? 'ar_AE' : 'en_AE',
-      url: canonical
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: country.metaTitle[lang],
-      description: country.metaDescription[lang]
-    }
-  };
+  return pageMetadata(locale, `maid-source-countries/${slug}`);
 }
 
 export default async function MaidSourceCountryPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -46,21 +22,20 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
   if (!country) notFound();
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const otherCountries = countrySourcePages.filter((item) => item.slug !== country.slug).slice(0, 6);
   const t = lang === 'ar'
     ? {
         badge: 'دليل دولة المصدر',
         sourceLabel: 'دولة المصدر',
         profileFirst: 'اختيار يعتمد على الملف الفردي',
-        profileText: 'الجنسية تساعد في بداية البحث، لكن القرار الصحيح يعتمد على الخبرة والمهام والمستندات وملاءمة الأسرة.',
-        strengthsTitle: 'لماذا تفكر الأسر في هذه الدولة؟',
-        bestForTitle: 'مناسبة غالباً لـ',
+        profileText: 'راجع دليل مقارنة الدول والملفات',
+        strengthsTitle: 'أسئلة لمراجعة الملف الفردي',
+        bestForTitle: 'استعد لمناقشة الملف',
         rolesTitle: 'الخدمات المرتبطة',
         processTitle: 'كيف تساعدك عناية في الاختيار؟',
-        process: ['مراجعة احتياج الأسرة والمنطقة', 'مناقشة تفضيل الدولة واللغة والمهام', 'فحص التوفر والملفات المناسبة', 'شرح المستندات والخطوات التالية'],
+        process: ['تحديد الدور: دليل التوظيف', 'الاستعداد: دليل المستندات', 'متابعة الطلب: خطوات الخدمة'],
         faqTitle: 'أسئلة شائعة',
         relatedTitle: 'دول أخرى يمكن مقارنتها',
-        ctaTitle: 'هل تريد مقارنة الملفات المتاحة؟',
+        ctaTitle: 'هل تريد مناقشة ملفات المرشحات؟',
         ctaText: 'شارك احتياج الأسرة وستساعدك عناية على فهم الخيارات المناسبة حسب التوفر والملف.',
         cta: 'تواصل مع عناية',
         back: 'العودة إلى دول المصدر'
@@ -69,15 +44,15 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
         badge: 'Source Country Guide',
         sourceLabel: 'Source Country',
         profileFirst: 'Profile-first selection',
-        profileText: 'Nationality can start the search, but the right decision depends on experience, duties, documents and family suitability.',
-        strengthsTitle: 'Why families consider this country',
-        bestForTitle: 'Often suitable for',
+        profileText: 'Read the country and profile comparison guide',
+        strengthsTitle: 'Questions for individual profile review',
+        bestForTitle: 'Prepare for the profile discussion',
         rolesTitle: 'Related services',
         processTitle: 'How INAYA guides your selection',
-        process: ['Review the family requirement and area', 'Discuss country, language and duty preferences', 'Check availability and suitable profiles', 'Explain documents and next steps'],
+        process: ['Define the role: recruitment guide', 'Prepare: documents guide', 'Follow the enquiry: service process'],
         faqTitle: 'Frequently asked questions',
         relatedTitle: 'Other countries to compare',
-        ctaTitle: 'Want to compare available profiles?',
+        ctaTitle: 'Want to discuss candidate profiles?',
         ctaText: 'Share your family requirement and INAYA will help you understand suitable options based on availability and profile fit.',
         cta: 'Contact INAYA',
         back: 'Back to Source Countries'
@@ -85,6 +60,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
 
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
+      <RouteSeo locale={locale} route={`maid-source-countries/${slug}`} />
       <section className="relative px-6 py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(191,164,106,0.18),transparent_28rem),radial-gradient(circle_at_84%_30%,rgba(7,22,74,0.08),transparent_30rem)]" />
         <div className="relative mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.72fr] lg:items-center">
@@ -99,13 +75,13 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
             <p className="mt-5 max-w-2xl text-[0.98rem] leading-8 text-primary-900/72">{country.lead[lang]}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href={`/${locale}/contact`} className="rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-[0_18px_45px_rgba(7,22,74,0.16)]">{t.cta}</Link>
-              <Link href={`/${locale}/services/recruitment`} className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">Recruitment</Link>
+              <Link href={`/${locale}/services/recruitment/`} className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">{lang === 'ar' ? 'التوظيف' : 'Recruitment'}</Link>
             </div>
           </div>
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">
             <div className="flex items-center gap-4">
               <span className="flex h-20 w-28 overflow-hidden rounded-[22px] bg-white p-1 shadow-inner">
-                <Image src={`https://flagcdn.com/w160/${country.code}.png`} alt={`${country.country[lang]} flag`} width={160} height={100} className="h-full w-full rounded-[18px] object-cover" />
+                <Image src={`https://flagcdn.com/w160/${country.code}.png`} alt={lang === 'ar' ? `علم ${country.country.ar}` : `${country.country.en} flag`} width={160} height={100} className="h-full w-full rounded-[18px] object-cover" />
               </span>
               <div>
                 <p className="text-[0.62rem] font-bold uppercase tracking-[0.22em] text-accent-700">{t.sourceLabel}</p>
@@ -115,11 +91,12 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
             </div>
             <div className="mt-6 rounded-[22px] bg-[#f8f6f0] p-5">
               <h3 className="font-heading text-lg font-bold text-primary-900">{t.profileFirst}</h3>
-              <p className="mt-3 text-sm leading-7 text-primary-900/80">{t.profileText}</p>
+              <Link href={`/${locale}/services/countries-we-source-from/`} className="mt-3 inline-flex text-sm leading-7 text-primary-900/80 underline underline-offset-4">{t.profileText}</Link>
             </div>
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route={`maid-source-countries/${slug}`} />
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.9fr_1.1fr]">
@@ -156,8 +133,8 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
       <section className="bg-[#f7f4ee] px-6 py-14 lg:px-10">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="font-heading text-[2rem] font-bold tracking-[-0.045em] text-primary-900 sm:text-[2.7rem]">{t.processTitle}</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
-            {t.process.map((step, index) => <div key={step} className="rounded-[22px] border border-white/80 bg-white/80 p-5 shadow-[0_18px_50px_rgba(7,22,74,0.065)]"><div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-900 text-xs font-bold text-white">{index + 1}</div><p className="mt-4 text-sm font-semibold leading-6 text-primary-900/72">{step}</p></div>)}
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {t.process.map((step, index) => <Link href={`/${locale}/${['services/recruitment', 'documents-required', 'how-it-works'][index]}/`} key={step} className="rounded-[22px] border border-white/80 bg-white/80 p-5 shadow-[0_18px_50px_rgba(7,22,74,0.065)]"><span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-900 text-xs font-bold text-white">{index + 1}</span><span className="mt-4 block text-sm font-semibold leading-6 text-primary-900/72">{step}</span></Link>)}
           </div>
         </div>
       </section>
@@ -173,7 +150,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
           <div className="rounded-[26px] bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.18)]">
             <h2 className="font-heading text-2xl font-bold">{t.relatedTitle}</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {otherCountries.map((item) => <Link key={item.slug} href={`/${locale}/maid-source-countries/${item.slug}`} className="rounded-2xl border border-white/12 bg-white/8 p-4 transition hover:bg-white/14"><span className="text-xs font-bold uppercase tracking-[0.14em] text-accent-300">{item.country[lang]}</span><p className="mt-2 text-sm font-semibold text-white/82">{item.workerLabel[lang]}</p></Link>)}
+              <Link href={`/${locale}/services/countries-we-source-from/`} className="rounded-2xl border border-white/12 bg-white/8 p-4 text-sm font-semibold transition hover:bg-white/14">{t.back}</Link>
             </div>
             <div className="mt-7 rounded-[22px] bg-white/8 p-5">
               <h3 className="font-heading text-xl font-bold">{t.ctaTitle}</h3>

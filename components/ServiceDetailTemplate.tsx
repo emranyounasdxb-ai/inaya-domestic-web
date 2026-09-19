@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
+import { serviceImageAlt } from '@/lib/image-alt';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getServiceWithExtras } from '@/lib/service-helpers';
@@ -83,6 +85,7 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
         slug={slug}
         whatsappHref={`https://wa.me/${siteConfig.whatsapp}?text=${whatsappText}`}
       />
+      <PageBreadcrumbs locale={locale} route={`services/${slug}`} />
 
       <section className={`${sectionPadding} border-y border-primary-900/8 bg-white`}>
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
@@ -170,7 +173,7 @@ function ServiceHero({
           </div>
         </div>
         <div className="relative aspect-[4/3] min-h-[350px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]">
-          <Image src={image} alt={copy.title} fill priority sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
+          <Image src={image} alt={serviceImageAlt(lang, slug)} fill priority sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
         </div>
       </div>
     </section>
@@ -406,7 +409,7 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
                 <span className="relative block h-[232px] overflow-hidden bg-[#f7f8fb] max-sm:h-[210px]">
                   <Image
                     src={getServiceImage(relatedSlug)}
-                    alt={service.name[lang]}
+                    alt=""
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
@@ -436,8 +439,8 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
 
 function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
   const labels = lang === 'ar'
-    ? { offer: 'ما نقدمه', inaya: 'عناية', others: 'شركات أخرى', promise: 'الثقة. الشفافية. الرعاية.' }
-    : { offer: 'What We Offer', inaya: 'INAYA', others: 'Other Companies', promise: 'Trust. Transparency. Care.' };
+    ? { offer: 'نقطة المراجعة', inaya: 'تفاصيل المنزل', others: 'وضح مع الفريق', promise: 'الثقة. الشفافية. الرعاية.' }
+    : { offer: 'Review point', inaya: 'Household details', others: 'Clarify with the team', promise: 'Trust. Transparency. Care.' };
   const pledge = lang === 'ar'
     ? 'وعد عناية: نتعامل مع كل عائلة بمسؤولية ووضوح.'
     : 'INAYA Promise: We treat every family with responsibility and clarity.';
@@ -447,7 +450,7 @@ function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className={`${headingFont(lang)} text-3xl font-bold tracking-[-0.03em] text-primary-900 sm:text-4xl`}>{copy.compareTitle}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm font-medium leading-6 text-primary-900/75">{copy.compareText}</p>
+          {copy.compareText ? <p className="mx-auto mt-3 max-w-2xl text-sm font-medium leading-6 text-primary-900/75">{copy.compareText}</p> : null}
         </div>
 
         <div className="mt-10 overflow-hidden rounded-[20px] border border-primary-900/10 bg-white shadow-[0_18px_52px_rgba(7,22,74,0.10)]">

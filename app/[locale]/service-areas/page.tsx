@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 const mapEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.365890608938!2d55.43878240000001!3d25.3925602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5942014634c7%3A0xf39f2fefc97933f3!2sINAYA%20Domestic%20Workers%20Ajman!5e0!3m2!1sen!2sae!4v1782223058219!5m2!1sen!2sae';
 
@@ -86,8 +87,8 @@ export default async function ServiceAreasPage({ params }: { params: Promise<{ l
     noteText: isArabic ? 'نقدم خدمات العمالة المنزلية في جميع أنحاء الإمارات. قد يختلف التوفر حسب الإمارة والمنطقة ونوع الخدمة، لذلك يرجى التواصل معنا للتأكيد.' : 'We provide domestic worker services across the UAE. Availability can vary by emirate, area and service type, so please contact us to confirm your requirement.',
     officeTitle: isArabic ? 'زيارة مكتب عناية' : 'Visit INAYA office',
     officeText: isArabic ? 'موقع المكتب في جراند مول عجمان مع دعم استفسارات جميع الإمارات عبر الهاتف وواتساب.' : 'Our office is in Grand Mall Ajman, with UAE-wide enquiry support by phone and WhatsApp.',
-    timing: isArabic ? '09:00 صباحاً - 09:00 مساءً' : '09:00 AM - 09:00 PM',
-    allDays: isArabic ? 'كل الأيام' : 'All days'
+    timing: isArabic ? 'تواصل لتأكيد موعد الزيارة' : 'Contact us to confirm visit timing',
+    allDays: isArabic ? 'أكد الموعد قبل الزيارة' : 'Confirm before visiting'
   };
 
   const stats = [
@@ -142,6 +143,7 @@ export default async function ServiceAreasPage({ params }: { params: Promise<{ l
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="service-areas" className="mb-6 sm:mb-8" />
 
       <section className="container-x relative z-10 -mt-6 sm:-mt-8"><div className="glass-panel mx-auto max-w-6xl rounded-[24px] p-4 sm:p-6"><div className="grid gap-4 lg:grid-cols-[1fr_1fr_auto] lg:items-end"><div><label className="mb-2 block text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary-900/75 sm:text-xs">{copy.searchTitle}</label><div className="relative"><LineIcon name="search" className="absolute start-4 top-1/2 h-5 w-5 -translate-y-1/2 text-accent-600" /><input className="field ps-12" placeholder={copy.searchPlaceholder} /></div></div><div><label className="mb-2 block text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary-900/75 sm:text-xs">{copy.serviceRequired}</label><select className="field" defaultValue="all"><option value="all">{copy.allServices}</option>{categories.map((category) => <option key={category.en} value={category.en}>{isArabic ? category.ar : category.en}</option>)}</select></div><Link href={`/${locale}/contact`} className="btn-primary h-[50px] w-full px-8 lg:w-auto">{copy.findHelp}</Link></div></div></section>
 

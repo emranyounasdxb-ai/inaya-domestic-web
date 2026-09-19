@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "Inaya Domestic",
     "defaultTitle": "INAYA Domestic Workers | UAE Maid & Domestic Worker Services",
-    "defaultDescription": "INAYA Domestic Workers is a trusted UAE maid and domestic worker services company providing maids, nannies, cooks, caregivers and home support across all UAE emirates. A premium No. 1 choice for families searching for top domestic workers in the UAE."
+    "defaultDescription": "INAYA Domestic Workers provides household service enquiries, role guidance and document preparation discussions from its Ajman office."
   },
   "nav": {
     "home": "Home",
@@ -22,39 +22,39 @@
   "hero": {
     "badge": "Serving families across all UAE",
     "title": "UAE's Trusted Maid & Domestic Worker Services",
-    "subtitle": "INAYA Domestic Workers is a premium No. 1 choice for families looking for reliable maids, nannies, cooks and care staff across the UAE. Live-in, live-out, hourly and monthly domestic help.",
+    "subtitle": "Discuss maid, nanny, cooking and care-support requirements with INAYA. Review the role and arrangement before confirmation.",
     "ctaPrimary": "Book a Service",
     "ctaSecondary": "View Services",
-    "stat1": "Verified Staff",
-    "stat2": "Happy Families",
-    "stat3": "Years Experience"
+    "stat1": "Profile Review",
+    "stat2": "Household Requirements",
+    "stat3": "Service Enquiries"
   },
   "home": {
     "servicesTitle": "Our Popular Services",
     "servicesSubtitle": "Complete maid, domestic worker and home care solutions across the UAE",
     "whyTitle": "Why Choose INAYA Domestic Workers",
-    "whySubtitle": "A trusted UAE domestic workers company and top choice for premium home support",
-    "why1Title": "Verified & Trained Staff",
-    "why1Desc": "Every worker is background-checked, trained and experienced.",
+    "whySubtitle": "Discuss household roles, documents and next steps before selecting a service.",
+    "why1Title": "Individual Profile Review",
+    "why1Desc": "Ask what experience, training and documents can be reviewed for each candidate.",
     "why2Title": "Flexible Plans",
     "why2Desc": "Hourly, part-time, full-time, monthly and live-in options.",
-    "why3Title": "Replacement Guarantee",
-    "why3Desc": "Free replacement if you are not satisfied with the staff.",
+    "why3Title": "Replacement Review",
+    "why3Desc": "Replacement depends on the agreement, case review and available options.",
     "why4Title": "Visa & Sponsorship Help",
     "why4Desc": "Full assistance with maid visa and sponsorship transfer.",
-    "ctaTitle": "Looking for the best maid service in the UAE?",
-    "ctaSubtitle": "Book with INAYA Domestic Workers, a premium No. 1 choice for trusted home support anywhere across the UAE.",
+    "ctaTitle": "Need domestic service guidance in the UAE?",
+    "ctaSubtitle": "Share your requirements with INAYA to discuss the next step.",
     "viewAll": "View All Services"
   },
   "about": {
     "title": "About INAYA Domestic Workers",
     "subtitle": "Your trusted domestic services partner across the UAE",
-    "p1": "INAYA Domestic Workers is a leading maid and domestic worker services provider based in Ajman and serving families across the UAE. We connect homes with trained, verified and reliable domestic staff.",
+    "p1": "INAYA Domestic Workers has an office at Grand Mall in Ajman. Discuss household roles, individual profiles and service requirements with the team.",
     "p2": "From live-in maids and nannies to cooks, elder care and recruitment services, we handle every detail including visa assistance, background verification and replacement support.",
     "missionTitle": "Our Mission",
-    "mission": "To make hiring trusted domestic help simple, safe and affordable for families across the UAE.",
+    "mission": "To explain household service enquiries and next steps clearly.",
     "visionTitle": "Our Vision",
-    "vision": "To be the UAE's most trusted domestic workers company, known for quality staff, honest service and premium family support."
+    "vision": "To support informed household service discussions."
   },
   "services": {
     "title": "Our Services",
@@ -65,7 +65,7 @@
   },
   "booking": {
     "title": "Book a Service",
-    "subtitle": "Fill the form and our team will contact you shortly",
+    "subtitle": "Prepare your details here, then contact the office by phone or WhatsApp to send your enquiry.",
     "name": "Full Name",
     "phone": "Phone Number",
     "email": "Email Address",
@@ -79,8 +79,8 @@
     "date": "Preferred Date",
     "area": "Your Area / Emirate",
     "message": "Additional Details",
-    "submit": "Submit Booking",
-    "success": "Thank you! Your booking request has been received. We will contact you soon.",
+    "submit": "Check Enquiry Details",
+    "success": "Your details were checked on this page only, not sent to the office. Please contact INAYA by phone or WhatsApp to share your request. No booking is confirmed.",
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email",
     "invalidPhone": "Please enter a valid phone number"
@@ -93,23 +93,23 @@
     "phone": "Phone Number",
     "message": "Your Message",
     "submit": "Send Message",
-    "success": "Thank you! Your message has been sent.",
+    "success": "Your details were checked on this page only. This form has not sent a message. Please contact INAYA by phone or WhatsApp to share your enquiry.",
     "addressTitle": "Address",
     "address": "Ajman, United Arab Emirates",
     "phoneTitle": "Phone",
     "emailTitle": "Email",
     "hoursTitle": "Working Hours",
-    "hours": "Sat - Thu: 8:00 AM - 9:00 PM"
+    "hours": "Contact the office to confirm visit timing."
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Answers to common questions about our UAE maid and domestic worker services",
     "q1": "How do I book a maid service?",
-    "a1": "Simply fill the booking form or contact us. Our team will confirm availability and arrange the service.",
-    "q2": "Are your domestic workers verified?",
-    "a2": "Yes. Every worker goes through background verification and training before placement.",
-    "q3": "Do you offer a replacement guarantee?",
-    "a3": "Yes. If you are not satisfied, we provide a free replacement as per our policy.",
+    "a1": "Submit an enquiry or contact the team. Review availability, costs, documents and the agreement before confirming a service.",
+    "q2": "What candidate details can I review?",
+    "a2": "Ask the team which identity details, documents and experience notes are available for the individual profile. A review is not a safety guarantee.",
+    "q3": "How is a replacement request reviewed?",
+    "a3": "The team reviews the agreement, service stage, case details and available options. Do not assume a free or guaranteed replacement.",
     "q4": "Do you help with maid visa and sponsorship?",
     "a4": "Yes. We provide full maid visa assistance and sponsorship transfer services.",
     "q5": "Which areas do you serve?",
@@ -136,9 +136,9 @@
     "step2Title": "Book Online",
     "step2Desc": "Fill the booking form with your details, emirate and preferences.",
     "step3Title": "We Match Staff",
-    "step3Desc": "We assign a verified, trained worker that fits your needs.",
+    "step3Desc": "Discuss individual profiles and clarify the relevant experience and duties.",
     "step4Title": "Enjoy Service",
-    "step4Desc": "Relax while our staff takes care of your home."
+    "step4Desc": "Review the agreement and next steps before confirming the service."
   },
   "serviceAreas": {
     "title": "Service Areas Across the UAE",
@@ -161,8 +161,8 @@
     "experience": "Years of Experience",
     "nationality": "Nationality",
     "message": "Tell us about yourself",
-    "submit": "Submit Application",
-    "success": "Thank you! Your application has been received."
+    "submit": "Check Career Enquiry Details",
+    "success": "This form has not sent your application. Please contact INAYA by phone or WhatsApp to discuss how to share your details. No job or placement is confirmed."
   },
   "legal": {
     "privacyTitle": "Privacy Policy",

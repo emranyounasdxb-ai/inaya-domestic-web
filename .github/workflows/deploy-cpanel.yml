@@ -174,6 +174,15 @@ jobs:
           Options -Indexes
           DirectoryIndex index.html
 
+          # The root is a language chooser, not an indexable duplicate of /en/.
+          # Use a temporary HTTP redirect because the target varies by visitor language.
+          <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteCond %{HTTP:Accept-Language} ^ar([-,;]|$) [NC]
+            RewriteRule ^$ /ar/ [R=302,L]
+            RewriteRule ^$ /en/ [R=302,L]
+          </IfModule>
+
           <IfModule mod_expires.c>
             ExpiresActive On
             ExpiresByType text/html "access plus 0 seconds"
@@ -191,6 +200,8 @@ jobs:
           </IfModule>
 
           <IfModule mod_headers.c>
+            Header always merge Vary Accept-Language "expr=%{REQUEST_URI} == '/'"
+            Header always set Cache-Control "private, no-store" "expr=%{REQUEST_URI} == '/'"
             <FilesMatch "\.(?:css|js|mjs|webp|avif|png|jpe?g|svg|ico|woff2)$">
               Header set Cache-Control "public, max-age=31536000, immutable"
             </FilesMatch>

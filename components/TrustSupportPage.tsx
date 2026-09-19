@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import { getTrustSupportPage, type Lang } from '@/lib/trust-support-pages';
 
 export default function TrustSupportPage({ locale, slug }: { locale: string; slug: string }) {
@@ -14,6 +15,7 @@ export default function TrustSupportPage({ locale, slug }: { locale: string; slu
         <h1 className={`${lang === 'ar' ? 'font-arabic leading-[1.25]' : 'font-heading leading-[1.05]'} mt-4 text-[2.35rem] font-bold tracking-[-0.055em] sm:text-[3.5rem]`}>{page.title[lang]}</h1>
         <p className="mt-5 max-w-3xl text-sm leading-8 text-primary-900/72 sm:text-base">{page.lead[lang]}</p>
         <Link href={`/${locale}/contact`} className="mt-7 inline-flex rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white">{contactLabel}</Link>
+        <PageBreadcrumbs locale={locale} route={slug === 'why-choose-inaya' ? 'inaya-advantages' : slug} />
         <section className="mt-10 grid gap-5 lg:grid-cols-2">
           {page.sections.map((section) => (
             <article key={section.title.en} className="rounded-[26px] border border-white/80 bg-white/78 p-6 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">

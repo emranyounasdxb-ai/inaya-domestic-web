@@ -15,7 +15,7 @@ export default function Navbar({ locale }: { locale: string }) {
   const otherLocale = locale === 'en' ? 'ar' : 'en';
   const switchedPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
   const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp';
-  const logoAlt = locale === 'ar' ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
+  const logoAlt = locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers — Home';
 
   const links = [
     { href: `/${locale}`, label: t('home') },
@@ -73,10 +73,10 @@ export default function Navbar({ locale }: { locale: string }) {
           <button
             onClick={() => setOpen(!open)}
             className="rounded-full border border-primary-700/10 bg-white/45 px-3 py-1.5 text-[12px] font-semibold text-primary-900 transition hover:bg-white/80 lg:hidden"
-            aria-label="Menu"
+            aria-label={locale === 'ar' ? 'القائمة' : 'Menu'}
             aria-expanded={open}
           >
-            Menu
+            {locale === 'ar' ? 'القائمة' : 'Menu'}
           </button>
         </div>
       </nav>

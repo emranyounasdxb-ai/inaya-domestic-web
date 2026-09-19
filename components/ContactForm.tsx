@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
+import LocalFormConfirmation from './LocalFormConfirmation';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
 
@@ -15,6 +16,13 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
   const isArabic = locale === 'ar';
   const lang = isArabic ? 'ar' : 'en';
   const isFloating = variant === 'floating';
+  const formId = useId();
+  const fieldId = (name: string) => `${formId}-${name}`;
+  const fieldA11y = (name: string) => ({
+    id: fieldId(name),
+    'aria-invalid': errors[name] ? true : undefined,
+    'aria-describedby': errors[name] ? `${fieldId(name)}-error` : undefined
+  });
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -24,8 +32,8 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
     area: isArabic ? 'الإمارة / المنطقة' : 'Emirate / Area',
     chooseService: isArabic ? 'اختر الخدمة' : 'Choose a service',
     chooseArea: isArabic ? 'مثال: دبي، أبوظبي، الشارقة، عجمان' : 'Example: Dubai, Abu Dhabi, Sharjah, Ajman',
-    submit: isArabic ? 'إرسال الطلب' : 'Submit Request',
-    privacy: isArabic ? 'سيتم استخدام بياناتك للتواصل معك بخصوص طلبك فقط.' : 'Your information will be used only to contact you about your request.'
+    submit: isArabic ? 'مراجعة بيانات الاستفسار' : 'Check Enquiry Details',
+    privacy: isArabic ? 'لا يرسل هذا النموذج بياناتك إلى المكتب. تواصل بالهاتف أو واتساب لمشاركة الاستفسار وتجنب إدخال مستندات حساسة هنا.' : 'This form does not send your details to the office. Contact us by phone or WhatsApp to share the enquiry; do not enter sensitive documents here.'
   };
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -45,10 +53,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
 
   if (done) {
     return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center text-green-800">
-        <div className="mb-2 text-4xl">✓</div>
-        <p className="font-medium">{t('success')}</p>
-      </div>
+      <LocalFormConfirmation message={t('success')} symbol="✓" />
     );
   }
 
@@ -57,112 +62,112 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
     const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-primary-900/75 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent-700 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
 
     return (
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form aria-describedby={`${formId}-help`} onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <div className="relative">
-              <input name="name" placeholder=" " className={floatingInputClass} />
-              <label className={floatingLabelClass}>{t('name')} *</label>
+              <input {...fieldA11y('name')} name="name" placeholder=" " className={floatingInputClass} />
+              <label htmlFor={fieldId('name')} className={floatingLabelClass}>{t('name')} *</label>
             </div>
-            {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
+            {errors.name && <p id={`${fieldId('name')}-error`} className="mt-1 text-xs text-red-600">{errors.name}</p>}
           </div>
           <div>
             <div className="relative">
-              <input name="phone" placeholder=" " className={floatingInputClass} dir="ltr" />
-              <label className={floatingLabelClass}>{t('phone')} *</label>
+              <input {...fieldA11y('phone')} name="phone" placeholder=" " className={floatingInputClass} dir="ltr" />
+              <label htmlFor={fieldId('phone')} className={floatingLabelClass}>{t('phone')} *</label>
             </div>
-            {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
+            {errors.phone && <p id={`${fieldId('phone')}-error`} className="mt-1 text-xs text-red-600">{errors.phone}</p>}
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <div className="relative">
-              <input name="email" type="email" placeholder=" " className={floatingInputClass} dir="ltr" />
-              <label className={floatingLabelClass}>{t('email')} *</label>
+              <input {...fieldA11y('email')} name="email" type="email" placeholder=" " className={floatingInputClass} dir="ltr" />
+              <label htmlFor={fieldId('email')} className={floatingLabelClass}>{t('email')} *</label>
             </div>
-            {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+            {errors.email && <p id={`${fieldId('email')}-error`} className="mt-1 text-xs text-red-600">{errors.email}</p>}
           </div>
           <div>
-            <label className="sr-only">{labels.service}</label>
-            <select name="service" className="w-full rounded-2xl border border-primary-700/10 bg-ivory-100/70 px-4 py-4 text-sm text-ink/70 shadow-sm outline-none transition focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30" defaultValue="">
+            <label htmlFor={fieldId('service')} className="sr-only">{labels.service}</label>
+            <select {...fieldA11y('service')} name="service" className="w-full rounded-2xl border border-primary-700/10 bg-ivory-100/70 px-4 py-4 text-sm text-ink/70 shadow-sm outline-none transition focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30" defaultValue="">
               <option value="" disabled>{labels.service}</option>
               {services.slice(0, 12).map((service) => (
                 <option key={service.slug} value={service.slug}>{service.name[lang]}</option>
               ))}
             </select>
-            {errors.service && <p className="mt-1 text-xs text-red-600">{errors.service}</p>}
+            {errors.service && <p id={`${fieldId('service')}-error`} className="mt-1 text-xs text-red-600">{errors.service}</p>}
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="relative">
-            <input name="nationality" placeholder=" " className={floatingInputClass} />
-            <label className={floatingLabelClass}>{labels.nationality}</label>
+            <input {...fieldA11y('nationality')} name="nationality" placeholder=" " className={floatingInputClass} />
+            <label htmlFor={fieldId('nationality')} className={floatingLabelClass}>{labels.nationality}</label>
           </div>
           <div className="relative">
-            <input name="area" placeholder=" " className={floatingInputClass} />
-            <label className={floatingLabelClass}>{labels.area}</label>
+            <input {...fieldA11y('area')} name="area" placeholder=" " className={floatingInputClass} />
+            <label htmlFor={fieldId('area')} className={floatingLabelClass}>{labels.area}</label>
           </div>
         </div>
 
         <div>
           <div className="relative">
-            <textarea name="message" placeholder=" " rows={4} className={`${floatingInputClass} min-h-28 resize-y`} />
-            <label className={floatingLabelClass}>{t('message')} *</label>
+            <textarea {...fieldA11y('message')} name="message" placeholder=" " rows={4} className={`${floatingInputClass} min-h-28 resize-y`} />
+            <label htmlFor={fieldId('message')} className={floatingLabelClass}>{t('message')} *</label>
           </div>
-          {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
+          {errors.message && <p id={`${fieldId('message')}-error`} className="mt-1 text-xs text-red-600">{errors.message}</p>}
         </div>
 
         <button type="submit" className="w-full rounded-full bg-primary-900 px-6 py-4 text-base font-bold text-white shadow-premium transition hover:-translate-y-0.5 hover:bg-primary-800 active:scale-[0.99]">{labels.submit}</button>
-        <p className="text-center text-xs text-primary-900/75">{labels.privacy}</p>
+        <p id={`${formId}-help`} className="text-center text-xs text-primary-900/75">{labels.privacy}</p>
       </form>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <form aria-describedby={`${formId}-help`} onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       <div>
-        <label className="label">{t('name')} *</label>
-        <input name="name" className="field" />
-        {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
+        <label htmlFor={fieldId('name')} className="label">{t('name')} *</label>
+        <input {...fieldA11y('name')} name="name" className="field" />
+        {errors.name && <p id={`${fieldId('name')}-error`} className="mt-1 text-xs text-red-600">{errors.name}</p>}
       </div>
       <div>
-        <label className="label">{t('phone')} *</label>
-        <input name="phone" className="field" dir="ltr" />
-        {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
+        <label htmlFor={fieldId('phone')} className="label">{t('phone')} *</label>
+        <input {...fieldA11y('phone')} name="phone" className="field" dir="ltr" />
+        {errors.phone && <p id={`${fieldId('phone')}-error`} className="mt-1 text-xs text-red-600">{errors.phone}</p>}
       </div>
       <div>
-        <label className="label">{t('email')} *</label>
-        <input name="email" type="email" className="field" dir="ltr" />
-        {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+        <label htmlFor={fieldId('email')} className="label">{t('email')} *</label>
+        <input {...fieldA11y('email')} name="email" type="email" className="field" dir="ltr" />
+        {errors.email && <p id={`${fieldId('email')}-error`} className="mt-1 text-xs text-red-600">{errors.email}</p>}
       </div>
       <div>
-        <label className="label">{labels.service} *</label>
-        <select name="service" className="field" defaultValue="">
+        <label htmlFor={fieldId('service')} className="label">{labels.service} *</label>
+        <select {...fieldA11y('service')} name="service" className="field" defaultValue="">
           <option value="" disabled>{labels.chooseService}</option>
           {services.slice(0, 12).map((service) => (
             <option key={service.slug} value={service.slug}>{service.name[lang]}</option>
           ))}
         </select>
-        {errors.service && <p className="mt-1 text-xs text-red-600">{errors.service}</p>}
+        {errors.service && <p id={`${fieldId('service')}-error`} className="mt-1 text-xs text-red-600">{errors.service}</p>}
       </div>
       <div>
-        <label className="label">{labels.nationality}</label>
-        <input name="nationality" className="field" />
+        <label htmlFor={fieldId('nationality')} className="label">{labels.nationality}</label>
+        <input {...fieldA11y('nationality')} name="nationality" className="field" />
       </div>
       <div>
-        <label className="label">{labels.area}</label>
-        <input name="area" className="field" placeholder={labels.chooseArea} />
+        <label htmlFor={fieldId('area')} className="label">{labels.area}</label>
+        <input {...fieldA11y('area')} name="area" className="field" placeholder={labels.chooseArea} />
       </div>
       <div className="sm:col-span-2">
-        <label className="label">{t('message')} *</label>
-        <textarea name="message" rows={5} className="field" />
-        {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
+        <label htmlFor={fieldId('message')} className="label">{t('message')} *</label>
+        <textarea {...fieldA11y('message')} name="message" rows={5} className="field" />
+        {errors.message && <p id={`${fieldId('message')}-error`} className="mt-1 text-xs text-red-600">{errors.message}</p>}
       </div>
       <div className="sm:col-span-2">
         <button type="submit" className="btn-primary w-full">{labels.submit}</button>
-        <p className="mt-3 text-center text-xs text-primary-900/75">{labels.privacy}</p>
+        <p id={`${formId}-help`} className="mt-3 text-center text-xs text-primary-900/75">{labels.privacy}</p>
       </div>
     </form>
   );

@@ -1,0 +1,2643 @@
+{
+  "checkpoint": "718ce7d75a17a0f36a80dbd4f236e4dfa756a1c5",
+  "groups": {
+    "en:information/hub": {
+      "pages": 20,
+      "paragraphTokens": 3715,
+      "repeatedTokens": 223,
+      "repeatedParagraphs": 12
+    },
+    "ar:information/hub": {
+      "pages": 20,
+      "paragraphTokens": 2861,
+      "repeatedTokens": 220,
+      "repeatedParagraphs": 12
+    },
+    "en:service": {
+      "pages": 31,
+      "paragraphTokens": 14367,
+      "repeatedTokens": 7905,
+      "repeatedParagraphs": 613
+    },
+    "ar:service": {
+      "pages": 31,
+      "paragraphTokens": 8540,
+      "repeatedTokens": 3396,
+      "repeatedParagraphs": 258
+    },
+    "en:country": {
+      "pages": 12,
+      "paragraphTokens": 1446,
+      "repeatedTokens": 643,
+      "repeatedParagraphs": 36
+    },
+    "ar:country": {
+      "pages": 12,
+      "paragraphTokens": 1139,
+      "repeatedTokens": 544,
+      "repeatedParagraphs": 36
+    },
+    "en:location": {
+      "pages": 7,
+      "paragraphTokens": 818,
+      "repeatedTokens": 133,
+      "repeatedParagraphs": 7
+    },
+    "ar:location": {
+      "pages": 7,
+      "paragraphTokens": 640,
+      "repeatedTokens": 77,
+      "repeatedParagraphs": 7
+    }
+  },
+  "repeatedParagraphs": 981,
+  "repeatedTokens": 13141,
+  "paragraphTokens": 33526,
+  "nearPairs": 86,
+  "orphans": [
+    "https://inayadomestic.ae/en/careers/",
+    "https://inayadomestic.ae/ar/careers/",
+    "https://inayadomestic.ae/en/blog/",
+    "https://inayadomestic.ae/ar/blog/",
+    "https://inayadomestic.ae/en/inaya-advantages/",
+    "https://inayadomestic.ae/ar/inaya-advantages/",
+    "https://inayadomestic.ae/en/reviews/",
+    "https://inayadomestic.ae/ar/reviews/",
+    "https://inayadomestic.ae/en/support-process/",
+    "https://inayadomestic.ae/ar/support-process/"
+  ],
+  "pages": [
+    {
+      "url": "https://inayadomestic.ae/en/",
+      "locale": "en",
+      "route": "",
+      "family": "information/hub",
+      "title": "Maid & Domestic Worker Services in UAE | INAYA",
+      "description": "Explore INAYA domestic worker services for UAE households, including maids, nannies, cooking, care support and guidance before booking.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/#webpage"
+      ],
+      "prices": [],
+      "words": 682,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/",
+      "locale": "ar",
+      "route": "",
+      "family": "information/hub",
+      "title": "خدمات الخادمات والعمالة المنزلية في الإمارات | عناية",
+      "description": "استكشف خدمات عناية للعمالة المنزلية للأسر في الإمارات، بما يشمل الخادمات والمربيات والطبخ ودعم الرعاية والإرشاد قبل الحجز.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/#webpage"
+      ],
+      "prices": [],
+      "words": 644,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/about/",
+      "locale": "en",
+      "route": "about",
+      "family": "information/hub",
+      "title": "About INAYA Domestic Workers",
+      "description": "Learn about INAYA Domestic Workers, its household service approach, consultation process and support for families across the UAE.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/about/#breadcrumb",
+        "https://inayadomestic.ae/en/about/#webpage"
+      ],
+      "prices": [],
+      "words": 652,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/about/",
+      "locale": "ar",
+      "route": "about",
+      "family": "information/hub",
+      "title": "عن عناية للعمالة المنزلية",
+      "description": "تعرف على عناية للعمالة المنزلية ونهجها في الخدمات المنزلية والاستشارة ودعم الأسر في جميع أنحاء الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/about/#breadcrumb",
+        "https://inayadomestic.ae/ar/about/#webpage"
+      ],
+      "prices": [],
+      "words": 559,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/",
+      "locale": "en",
+      "route": "services",
+      "family": "information/hub",
+      "title": "Domestic Worker Services in UAE | INAYA",
+      "description": "Compare INAYA maid, childcare, cooking, household management, care and administrative support services. Contact the team to discuss your requirements.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/#breadcrumb",
+        "https://inayadomestic.ae/en/services/#webpage"
+      ],
+      "prices": [],
+      "words": 436,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/",
+      "locale": "ar",
+      "route": "services",
+      "family": "information/hub",
+      "title": "خدمات العمالة المنزلية في الإمارات | عناية",
+      "description": "قارن خدمات عناية للخادمات ورعاية الأطفال والطبخ وإدارة المنزل ودعم الرعاية والإجراءات. تواصل مع الفريق لمناقشة متطلباتك.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/#webpage"
+      ],
+      "prices": [],
+      "words": 418,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/contact/",
+      "locale": "en",
+      "route": "contact",
+      "family": "information/hub",
+      "title": "Contact INAYA Domestic Workers",
+      "description": "Contact INAYA by phone, WhatsApp or email to discuss household services across the UAE, or arrange a visit to the Grand Mall office in Ajman.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/contact/#breadcrumb",
+        "https://inayadomestic.ae/en/contact/#webpage"
+      ],
+      "prices": [],
+      "words": 638,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/contact/",
+      "locale": "ar",
+      "route": "contact",
+      "family": "information/hub",
+      "title": "اتصل بعناية للعمالة المنزلية",
+      "description": "تواصل مع عناية عبر الهاتف أو واتساب أو البريد لمناقشة الخدمات المنزلية في الإمارات أو ترتيب زيارة المكتب في جراند مول بعجمان.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/contact/#breadcrumb",
+        "https://inayadomestic.ae/ar/contact/#webpage"
+      ],
+      "prices": [],
+      "words": 535,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/how-it-works/",
+      "locale": "en",
+      "route": "how-it-works",
+      "family": "information/hub",
+      "title": "How INAYA Services Work",
+      "description": "Understand the INAYA process from sharing household requirements to reviewing service options, documents, confirmation and follow-up.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/how-it-works/#breadcrumb",
+        "https://inayadomestic.ae/en/how-it-works/#webpage"
+      ],
+      "prices": [],
+      "words": 667,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/how-it-works/",
+      "locale": "ar",
+      "route": "how-it-works",
+      "family": "information/hub",
+      "title": "كيف تعمل خدمات عناية",
+      "description": "تعرف على خطوات عناية من مشاركة احتياجات المنزل إلى مراجعة خيارات الخدمة والمستندات والتأكيد والمتابعة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/how-it-works/#breadcrumb",
+        "https://inayadomestic.ae/ar/how-it-works/#webpage"
+      ],
+      "prices": [],
+      "words": 539,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/service-areas/",
+      "locale": "en",
+      "route": "service-areas",
+      "family": "information/hub",
+      "title": "Domestic Service Areas in UAE | INAYA",
+      "description": "Explore INAYA service guides for Ajman, Dubai, Sharjah, Abu Dhabi, Ras Al Khaimah, Fujairah and Umm Al Quwain, and discuss availability in your area.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/service-areas/#breadcrumb",
+        "https://inayadomestic.ae/en/service-areas/#webpage"
+      ],
+      "prices": [],
+      "words": 389,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/service-areas/",
+      "locale": "ar",
+      "route": "service-areas",
+      "family": "information/hub",
+      "title": "مناطق الخدمات المنزلية في الإمارات | عناية",
+      "description": "استكشف أدلة خدمات عناية لعجمان ودبي والشارقة وأبوظبي ورأس الخيمة والفجيرة وأم القيوين وناقش التوفر في منطقتك.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/service-areas/#breadcrumb",
+        "https://inayadomestic.ae/ar/service-areas/#webpage"
+      ],
+      "prices": [],
+      "words": 348,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/countries-we-source-from/",
+      "locale": "en",
+      "route": "services/countries-we-source-from",
+      "family": "information/hub",
+      "title": "Domestic Worker Source Countries | INAYA",
+      "description": "Compare the domestic worker source-country guides available from INAYA. Consider individual profiles, duties, documents and household needs before deciding.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/countries-we-source-from/#breadcrumb",
+        "https://inayadomestic.ae/en/services/countries-we-source-from/#webpage"
+      ],
+      "prices": [],
+      "words": 818,
+      "repeatedParagraphs": 12
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/countries-we-source-from/",
+      "locale": "ar",
+      "route": "services/countries-we-source-from",
+      "family": "information/hub",
+      "title": "دول مصدر العمالة المنزلية | عناية",
+      "description": "قارن أدلة دول مصدر العمالة المنزلية المتوفرة لدى عناية. راجع الملف الفردي والمهام والمستندات واحتياجات الأسرة قبل الاختيار.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/countries-we-source-from/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/countries-we-source-from/#webpage"
+      ],
+      "prices": [],
+      "words": 773,
+      "repeatedParagraphs": 12
+    },
+    {
+      "url": "https://inayadomestic.ae/en/booking/",
+      "locale": "en",
+      "route": "booking",
+      "family": "information/hub",
+      "title": "Request a Domestic Worker Service | INAYA",
+      "description": "Prepare household service requirements with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your enquiry.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/booking/#breadcrumb",
+        "https://inayadomestic.ae/en/booking/#webpage"
+      ],
+      "prices": [],
+      "words": 168,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/booking/",
+      "locale": "ar",
+      "route": "booking",
+      "family": "information/hub",
+      "title": "طلب خدمة عمالة منزلية | عناية",
+      "description": "جهز متطلبات الخدمة المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة استفسارك.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/booking/#breadcrumb",
+        "https://inayadomestic.ae/ar/booking/#webpage"
+      ],
+      "prices": [],
+      "words": 163,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/careers/",
+      "locale": "en",
+      "route": "careers",
+      "family": "information/hub",
+      "title": "Domestic Worker Opportunities | INAYA",
+      "description": "Prepare a domestic-work application with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your experience.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/careers/#breadcrumb",
+        "https://inayadomestic.ae/en/careers/#webpage"
+      ],
+      "prices": [],
+      "words": 158,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/careers/",
+      "locale": "ar",
+      "route": "careers",
+      "family": "information/hub",
+      "title": "فرص العمل في الخدمات المنزلية | عناية",
+      "description": "جهز طلباً للعمل في الخدمات المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة خبرتك.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/careers/#breadcrumb",
+        "https://inayadomestic.ae/ar/careers/#webpage"
+      ],
+      "prices": [],
+      "words": 158,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/pricing/",
+      "locale": "en",
+      "route": "pricing",
+      "family": "information/hub",
+      "title": "Domestic Worker Packages & Pricing | INAYA",
+      "description": "Review the domestic service packages and pricing information shown by INAYA, compare included support and contact the team to confirm your requirements.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/pricing/#breadcrumb",
+        "https://inayadomestic.ae/en/pricing/#webpage"
+      ],
+      "prices": [
+        "AED 1,500",
+        "AED 2,500"
+      ],
+      "words": 313,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/pricing/",
+      "locale": "ar",
+      "route": "pricing",
+      "family": "information/hub",
+      "title": "باقات وأسعار العمالة المنزلية | عناية",
+      "description": "راجع معلومات باقات وأسعار الخدمات المنزلية المعروضة لدى عناية وقارن الدعم المشمول وتواصل مع الفريق لتأكيد متطلباتك.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/pricing/#breadcrumb",
+        "https://inayadomestic.ae/ar/pricing/#webpage"
+      ],
+      "prices": [
+        "AED 1,500",
+        "AED 2,500"
+      ],
+      "words": 281,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/blog/",
+      "locale": "en",
+      "route": "blog",
+      "family": "information/hub",
+      "title": "Domestic Service Guides | INAYA",
+      "description": "Browse upcoming INAYA guide topics on choosing domestic services, questions before booking and the differences between maid, nanny and care support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/blog/#breadcrumb",
+        "https://inayadomestic.ae/en/blog/#webpage"
+      ],
+      "prices": [],
+      "words": 71,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/blog/",
+      "locale": "ar",
+      "route": "blog",
+      "family": "information/hub",
+      "title": "أدلة الخدمات المنزلية | عناية",
+      "description": "تصفح موضوعات أدلة عناية القادمة حول اختيار الخدمات المنزلية والأسئلة قبل الحجز والفروق بين خدمات الخادمة والمربية ودعم الرعاية.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/blog/#breadcrumb",
+        "https://inayadomestic.ae/ar/blog/#webpage"
+      ],
+      "prices": [],
+      "words": 64,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/faq/",
+      "locale": "en",
+      "route": "faq",
+      "family": "information/hub",
+      "title": "Frequently Asked Questions | INAYA",
+      "description": "Find INAYA answers about domestic services, booking, pricing, support and UAE service procedures. Choose a topic or contact the team for clarification.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/faq/#breadcrumb",
+        "https://inayadomestic.ae/en/faq/#faq",
+        "https://inayadomestic.ae/en/faq/#webpage"
+      ],
+      "prices": [],
+      "words": 555,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/faq/",
+      "locale": "ar",
+      "route": "faq",
+      "family": "information/hub",
+      "title": "الأسئلة الشائعة | عناية",
+      "description": "اطلع على إجابات عناية حول الخدمات المنزلية والحجز والأسعار والدعم والإجراءات في الإمارات. اختر الموضوع أو تواصل مع الفريق للتوضيح.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/faq/#breadcrumb",
+        "https://inayadomestic.ae/ar/faq/#faq",
+        "https://inayadomestic.ae/ar/faq/#webpage"
+      ],
+      "prices": [],
+      "words": 475,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/documents-required/",
+      "locale": "en",
+      "route": "documents-required",
+      "family": "information/hub",
+      "title": "Documents Required for Maid Services in UAE | INAYA",
+      "description": "Understand the documents usually needed for maid services, recruitment, sponsorship transfer, maid visa support and domestic worker processing in the UAE.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/documents-required/#breadcrumb",
+        "https://inayadomestic.ae/en/documents-required/#faq",
+        "https://inayadomestic.ae/en/documents-required/#webpage"
+      ],
+      "prices": [],
+      "words": 358,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/documents-required/",
+      "locale": "ar",
+      "route": "documents-required",
+      "family": "information/hub",
+      "title": "المستندات المطلوبة لخدمات الخادمات في الإمارات | عناية",
+      "description": "تعرف على المستندات المطلوبة عادة لخدمات الخادمات والتوظيف ونقل الكفالة وتأشيرة الخادمة وإجراءات العمالة المنزلية في الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/documents-required/#breadcrumb",
+        "https://inayadomestic.ae/ar/documents-required/#faq",
+        "https://inayadomestic.ae/ar/documents-required/#webpage"
+      ],
+      "prices": [],
+      "words": 326,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/inaya-advantages/",
+      "locale": "en",
+      "route": "inaya-advantages",
+      "family": "information/hub",
+      "title": "INAYA Domestic Workers Service Approach",
+      "description": "Learn why UAE families choose INAYA for maid services, nannies, cooks, caregivers, recruitment, source country guidance and maid visa support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/inaya-advantages/#breadcrumb",
+        "https://inayadomestic.ae/en/inaya-advantages/#faq",
+        "https://inayadomestic.ae/en/inaya-advantages/#webpage"
+      ],
+      "prices": [],
+      "words": 303,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/inaya-advantages/",
+      "locale": "ar",
+      "route": "inaya-advantages",
+      "family": "information/hub",
+      "title": "نهج خدمات عناية للعمالة المنزلية",
+      "description": "تعرف لماذا تختار الأسر في الإمارات عناية لخدمات الخادمات والمربيات والطهاة والرعاية والتوظيف ودول المصدر وتأشيرة الخادمة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/inaya-advantages/#breadcrumb",
+        "https://inayadomestic.ae/ar/inaya-advantages/#faq",
+        "https://inayadomestic.ae/ar/inaya-advantages/#webpage"
+      ],
+      "prices": [],
+      "words": 268,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/reviews/",
+      "locale": "en",
+      "route": "reviews",
+      "family": "information/hub",
+      "title": "Google Reviews & Client Feedback | INAYA Domestic Workers",
+      "description": "Read how client feedback helps INAYA improve maid services, domestic worker recruitment, communication, follow-up and family support in the UAE.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/reviews/#breadcrumb",
+        "https://inayadomestic.ae/en/reviews/#faq",
+        "https://inayadomestic.ae/en/reviews/#webpage"
+      ],
+      "prices": [],
+      "words": 277,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/reviews/",
+      "locale": "ar",
+      "route": "reviews",
+      "family": "information/hub",
+      "title": "آراء جوجل وتجارب العملاء | عناية للعمالة المنزلية",
+      "description": "اقرأ كيف تساعد آراء العملاء عناية على تحسين خدمات الخادمات والتوظيف والتواصل والمتابعة ودعم الأسر في الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/reviews/#breadcrumb",
+        "https://inayadomestic.ae/ar/reviews/#faq",
+        "https://inayadomestic.ae/ar/reviews/#webpage"
+      ],
+      "prices": [],
+      "words": 254,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/privacy-policy/",
+      "locale": "en",
+      "route": "privacy-policy",
+      "family": "information/hub",
+      "title": "Privacy Policy | INAYA Domestic Workers UAE",
+      "description": "Read how INAYA Domestic Workers collects, uses and protects customer information for maid service enquiries, bookings, WhatsApp communication and support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/privacy-policy/#breadcrumb",
+        "https://inayadomestic.ae/en/privacy-policy/#faq",
+        "https://inayadomestic.ae/en/privacy-policy/#webpage"
+      ],
+      "prices": [],
+      "words": 280,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/privacy-policy/",
+      "locale": "ar",
+      "route": "privacy-policy",
+      "family": "information/hub",
+      "title": "سياسة الخصوصية | عناية للعمالة المنزلية في الإمارات",
+      "description": "اقرأ كيف تجمع عناية للعمالة المنزلية معلومات العملاء وتستخدمها وتحميها لطلبات الخادمات والحجوزات والتواصل عبر واتساب والدعم.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/privacy-policy/#breadcrumb",
+        "https://inayadomestic.ae/ar/privacy-policy/#faq",
+        "https://inayadomestic.ae/ar/privacy-policy/#webpage"
+      ],
+      "prices": [],
+      "words": 252,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/terms/",
+      "locale": "en",
+      "route": "terms",
+      "family": "information/hub",
+      "title": "Terms & Conditions | INAYA Domestic Workers UAE",
+      "description": "Read INAYA terms for website use, maid service enquiries, booking confirmation, pricing, responsibilities, service changes and support communication.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/terms/#breadcrumb",
+        "https://inayadomestic.ae/en/terms/#faq",
+        "https://inayadomestic.ae/en/terms/#webpage"
+      ],
+      "prices": [],
+      "words": 288,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/terms/",
+      "locale": "ar",
+      "route": "terms",
+      "family": "information/hub",
+      "title": "الشروط والأحكام | عناية للعمالة المنزلية في الإمارات",
+      "description": "اقرأ شروط عناية لاستخدام الموقع وطلبات خدمات الخادمات وتأكيد الحجز والأسعار والمسؤوليات وتغييرات الخدمة والتواصل.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/terms/#breadcrumb",
+        "https://inayadomestic.ae/ar/terms/#faq",
+        "https://inayadomestic.ae/ar/terms/#webpage"
+      ],
+      "prices": [],
+      "words": 273,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/refund-policy/",
+      "locale": "en",
+      "route": "refund-policy",
+      "family": "information/hub",
+      "title": "Refund & Replacement Policy | INAYA",
+      "description": "Read the INAYA refund and replacement review process, including eligibility, agreement terms, documents and how to contact the team about your request.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/refund-policy/#breadcrumb",
+        "https://inayadomestic.ae/en/refund-policy/#webpage"
+      ],
+      "prices": [],
+      "words": 497,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/refund-policy/",
+      "locale": "ar",
+      "route": "refund-policy",
+      "family": "information/hub",
+      "title": "سياسة الاسترداد والاستبدال | عناية",
+      "description": "اقرأ إجراءات عناية لمراجعة الاسترداد والاستبدال بما يشمل الأهلية وشروط الاتفاق والمستندات وكيفية التواصل مع الفريق بشأن طلبك.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/refund-policy/#breadcrumb",
+        "https://inayadomestic.ae/ar/refund-policy/#webpage"
+      ],
+      "prices": [],
+      "words": 440,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/service-guidelines/",
+      "locale": "en",
+      "route": "service-guidelines",
+      "family": "information/hub",
+      "title": "Domestic Worker Service Guidelines | INAYA",
+      "description": "Read INAYA service guidelines on household duties, documents, availability, agreement details and the steps to review before confirming a service.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/service-guidelines/#breadcrumb",
+        "https://inayadomestic.ae/en/service-guidelines/#webpage"
+      ],
+      "prices": [],
+      "words": 51,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/service-guidelines/",
+      "locale": "ar",
+      "route": "service-guidelines",
+      "family": "information/hub",
+      "title": "إرشادات خدمات العمالة المنزلية | عناية",
+      "description": "اقرأ إرشادات عناية للخدمات حول المهام المنزلية والمستندات والتوفر وتفاصيل الاتفاق والخطوات الواجب مراجعتها قبل تأكيد الخدمة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/service-guidelines/#breadcrumb",
+        "https://inayadomestic.ae/ar/service-guidelines/#webpage"
+      ],
+      "prices": [],
+      "words": 42,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/support-process/",
+      "locale": "en",
+      "route": "support-process",
+      "family": "information/hub",
+      "title": "Service Support Process | INAYA",
+      "description": "Learn how INAYA reviews household service concerns using booking details, the confirmed agreement, available options and follow-up.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/support-process/#breadcrumb",
+        "https://inayadomestic.ae/en/support-process/#webpage"
+      ],
+      "prices": [],
+      "words": 53,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/support-process/",
+      "locale": "ar",
+      "route": "support-process",
+      "family": "information/hub",
+      "title": "إجراءات دعم الخدمات | عناية",
+      "description": "تعرف على كيفية مراجعة عناية لملاحظات الخدمات المنزلية باستخدام تفاصيل الحجز والاتفاق المؤكد والخيارات المتوفرة والمتابعة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/support-process/#breadcrumb",
+        "https://inayadomestic.ae/ar/support-process/#webpage"
+      ],
+      "prices": [],
+      "words": 41,
+      "repeatedParagraphs": 0
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/live-in-maid/",
+      "locale": "en",
+      "route": "services/live-in-maid",
+      "family": "service",
+      "title": "Live-in Maid Services in UAE for Daily Home Support | INAYA",
+      "description": "Hire live-in maid services in UAE with INAYA. Clear guidance for daily cleaning, laundry, cooking support, childcare exposure, documents and family matching across all emirates.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/live-in-maid/#breadcrumb",
+        "https://inayadomestic.ae/en/services/live-in-maid/#faq",
+        "https://inayadomestic.ae/en/services/live-in-maid/#service",
+        "https://inayadomestic.ae/en/services/live-in-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 942,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/live-in-maid/",
+      "locale": "ar",
+      "route": "services/live-in-maid",
+      "family": "service",
+      "title": "خدمات خادمة مقيمة في الإمارات لدعم المنزل اليومي | عناية",
+      "description": "استعن بخادمة مقيمة في الإمارات مع عناية. إرشاد واضح للتنظيف اليومي والغسيل والمطبخ ورعاية الأطفال والمستندات ومطابقة الأسرة في جميع الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/live-in-maid/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/live-in-maid/#faq",
+        "https://inayadomestic.ae/ar/services/live-in-maid/#service",
+        "https://inayadomestic.ae/ar/services/live-in-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 816,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/live-out-maid/",
+      "locale": "en",
+      "route": "services/live-out-maid",
+      "family": "service",
+      "title": "Live-out Maid Services in UAE for Scheduled Home Support | INAYA",
+      "description": "Live-out maid services in UAE with INAYA. Schedule reliable cleaning, laundry, kitchen and household support without accommodation in Dubai, Ajman, Sharjah and across UAE.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/live-out-maid/#breadcrumb",
+        "https://inayadomestic.ae/en/services/live-out-maid/#faq",
+        "https://inayadomestic.ae/en/services/live-out-maid/#service",
+        "https://inayadomestic.ae/en/services/live-out-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 989,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/live-out-maid/",
+      "locale": "ar",
+      "route": "services/live-out-maid",
+      "family": "service",
+      "title": "خدمات خادمة غير مقيمة في الإمارات لدعم منزلي مجدول | عناية",
+      "description": "خدمات خادمة غير مقيمة في الإمارات مع عناية. تنظيم تنظيف وغسيل ومطبخ ودعم منزلي دون إقامة في دبي وعجمان والشارقة وباقي الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/live-out-maid/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/live-out-maid/#faq",
+        "https://inayadomestic.ae/ar/services/live-out-maid/#service",
+        "https://inayadomestic.ae/ar/services/live-out-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 879,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/housemaid/",
+      "locale": "en",
+      "route": "services/housemaid",
+      "family": "service",
+      "title": "Housemaid Services in UAE | INAYA",
+      "description": "Housemaid Services in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/housemaid/#breadcrumb",
+        "https://inayadomestic.ae/en/services/housemaid/#faq",
+        "https://inayadomestic.ae/en/services/housemaid/#service",
+        "https://inayadomestic.ae/en/services/housemaid/#webpage"
+      ],
+      "prices": [],
+      "words": 1042,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/housemaid/",
+      "locale": "ar",
+      "route": "services/housemaid",
+      "family": "service",
+      "title": "خدمات عاملات المنازل في الإمارات | عناية",
+      "description": "خدمات عاملات المنازل في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/housemaid/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/housemaid/#faq",
+        "https://inayadomestic.ae/ar/services/housemaid/#service",
+        "https://inayadomestic.ae/ar/services/housemaid/#webpage"
+      ],
+      "prices": [],
+      "words": 926,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/housekeeping/",
+      "locale": "en",
+      "route": "services/housekeeping",
+      "family": "service",
+      "title": "Cleaning & Housekeeping Services in UAE | INAYA",
+      "description": "Cleaning & Housekeeping Services in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/housekeeping/#breadcrumb",
+        "https://inayadomestic.ae/en/services/housekeeping/#faq",
+        "https://inayadomestic.ae/en/services/housekeeping/#service",
+        "https://inayadomestic.ae/en/services/housekeeping/#webpage"
+      ],
+      "prices": [],
+      "words": 1056,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/housekeeping/",
+      "locale": "ar",
+      "route": "services/housekeeping",
+      "family": "service",
+      "title": "خدمات التنظيف وترتيب المنزل في الإمارات | عناية",
+      "description": "خدمات التنظيف وترتيب المنزل في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/housekeeping/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/housekeeping/#faq",
+        "https://inayadomestic.ae/ar/services/housekeeping/#service",
+        "https://inayadomestic.ae/ar/services/housekeeping/#webpage"
+      ],
+      "prices": [],
+      "words": 936,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/full-time-maid/",
+      "locale": "en",
+      "route": "services/full-time-maid",
+      "family": "service",
+      "title": "Full-time Maid Hiring in UAE for Complete Daily Support | INAYA",
+      "description": "Full-time maid hiring in UAE with INAYA. Get clear guidance for daily cleaning, laundry, household routines, family support, documents and suitable profile matching.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/full-time-maid/#breadcrumb",
+        "https://inayadomestic.ae/en/services/full-time-maid/#faq",
+        "https://inayadomestic.ae/en/services/full-time-maid/#service",
+        "https://inayadomestic.ae/en/services/full-time-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 951,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/full-time-maid/",
+      "locale": "ar",
+      "route": "services/full-time-maid",
+      "family": "service",
+      "title": "توظيف خادمة بدوام كامل في الإمارات لدعم يومي متكامل | عناية",
+      "description": "توظيف خادمة بدوام كامل في الإمارات مع عناية. إرشاد واضح للتنظيف اليومي والغسيل وروتين المنزل ودعم الأسرة والمستندات ومطابقة الملف.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/full-time-maid/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/full-time-maid/#faq",
+        "https://inayadomestic.ae/ar/services/full-time-maid/#service",
+        "https://inayadomestic.ae/ar/services/full-time-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 860,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/part-time-maid/",
+      "locale": "en",
+      "route": "services/part-time-maid",
+      "family": "service",
+      "title": "Part-time Maid Services in UAE for Flexible Home Cleaning | INAYA",
+      "description": "Part-time maid services in UAE with INAYA. Flexible cleaning, laundry, kitchen and household help by schedule for families in Dubai, Ajman, Sharjah and across UAE.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/part-time-maid/#breadcrumb",
+        "https://inayadomestic.ae/en/services/part-time-maid/#faq",
+        "https://inayadomestic.ae/en/services/part-time-maid/#service",
+        "https://inayadomestic.ae/en/services/part-time-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 930,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/part-time-maid/",
+      "locale": "ar",
+      "route": "services/part-time-maid",
+      "family": "service",
+      "title": "خدمات خادمة بدوام جزئي في الإمارات لتنظيف مرن | عناية",
+      "description": "خدمات خادمة بدوام جزئي في الإمارات مع عناية. تنظيف وغسيل ومطبخ ودعم منزلي مرن حسب الجدول في دبي وعجمان والشارقة وباقي الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/part-time-maid/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/part-time-maid/#faq",
+        "https://inayadomestic.ae/ar/services/part-time-maid/#service",
+        "https://inayadomestic.ae/ar/services/part-time-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 836,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/monthly-maid-contract/",
+      "locale": "en",
+      "route": "services/monthly-maid-contract",
+      "family": "service",
+      "title": "Monthly Maid Contract in UAE for Regular Home Support | INAYA",
+      "description": "Monthly maid contract in UAE with INAYA. Plan regular cleaning, laundry and household support with clear schedules, duties and follow-up across UAE emirates.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/monthly-maid-contract/#breadcrumb",
+        "https://inayadomestic.ae/en/services/monthly-maid-contract/#faq",
+        "https://inayadomestic.ae/en/services/monthly-maid-contract/#service",
+        "https://inayadomestic.ae/en/services/monthly-maid-contract/#webpage"
+      ],
+      "prices": [],
+      "words": 862,
+      "repeatedParagraphs": 5
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/monthly-maid-contract/",
+      "locale": "ar",
+      "route": "services/monthly-maid-contract",
+      "family": "service",
+      "title": "عقد خادمة شهري في الإمارات لدعم منزلي منتظم | عناية",
+      "description": "عقد خادمة شهري في الإمارات مع عناية. خطط لتنظيف وغسيل ودعم منزلي منتظم مع جداول ومهام ومتابعة واضحة في الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/monthly-maid-contract/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/monthly-maid-contract/#faq",
+        "https://inayadomestic.ae/ar/services/monthly-maid-contract/#service",
+        "https://inayadomestic.ae/ar/services/monthly-maid-contract/#webpage"
+      ],
+      "prices": [],
+      "words": 773,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/on-demand-domestic-help/",
+      "locale": "en",
+      "route": "services/on-demand-domestic-help",
+      "family": "service",
+      "title": "On-demand Domestic Help in UAE | INAYA",
+      "description": "On-demand Domestic Help in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/on-demand-domestic-help/#breadcrumb",
+        "https://inayadomestic.ae/en/services/on-demand-domestic-help/#faq",
+        "https://inayadomestic.ae/en/services/on-demand-domestic-help/#service",
+        "https://inayadomestic.ae/en/services/on-demand-domestic-help/#webpage"
+      ],
+      "prices": [],
+      "words": 1066,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/on-demand-domestic-help/",
+      "locale": "ar",
+      "route": "services/on-demand-domestic-help",
+      "family": "service",
+      "title": "مساعدة منزلية عند الطلب في الإمارات | عناية",
+      "description": "مساعدة منزلية عند الطلب في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/on-demand-domestic-help/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/on-demand-domestic-help/#faq",
+        "https://inayadomestic.ae/ar/services/on-demand-domestic-help/#service",
+        "https://inayadomestic.ae/ar/services/on-demand-domestic-help/#webpage"
+      ],
+      "prices": [],
+      "words": 938,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/nanny/",
+      "locale": "en",
+      "route": "services/nanny",
+      "family": "service",
+      "title": "Nanny Services in UAE for Childcare and Family Routines | INAYA",
+      "description": "Find nanny services in UAE with INAYA. Clear childcare guidance for daily routines, supervised activities, school support and family matching in Dubai, Ajman, Sharjah and across UAE.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/nanny/#breadcrumb",
+        "https://inayadomestic.ae/en/services/nanny/#faq",
+        "https://inayadomestic.ae/en/services/nanny/#service",
+        "https://inayadomestic.ae/en/services/nanny/#webpage"
+      ],
+      "prices": [],
+      "words": 872,
+      "repeatedParagraphs": 5
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/nanny/",
+      "locale": "ar",
+      "route": "services/nanny",
+      "family": "service",
+      "title": "خدمات المربيات في الإمارات لرعاية الأطفال وروتين الأسرة | عناية",
+      "description": "احصل على خدمات مربيات في الإمارات مع عناية. إرشاد واضح لرعاية الأطفال والروتين اليومي والأنشطة والدوام المدرسي ومطابقة الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/nanny/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/nanny/#faq",
+        "https://inayadomestic.ae/ar/services/nanny/#service",
+        "https://inayadomestic.ae/ar/services/nanny/#webpage"
+      ],
+      "prices": [],
+      "words": 808,
+      "repeatedParagraphs": 2
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/executive-nannies/",
+      "locale": "en",
+      "route": "services/executive-nannies",
+      "family": "service",
+      "title": "Executive Nannies in UAE | INAYA",
+      "description": "Executive Nannies in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/executive-nannies/#breadcrumb",
+        "https://inayadomestic.ae/en/services/executive-nannies/#faq",
+        "https://inayadomestic.ae/en/services/executive-nannies/#service",
+        "https://inayadomestic.ae/en/services/executive-nannies/#webpage"
+      ],
+      "prices": [],
+      "words": 1030,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/executive-nannies/",
+      "locale": "ar",
+      "route": "services/executive-nannies",
+      "family": "service",
+      "title": "مربيات تنفيذيات في الإمارات | عناية",
+      "description": "مربيات تنفيذيات في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/executive-nannies/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/executive-nannies/#faq",
+        "https://inayadomestic.ae/ar/services/executive-nannies/#service",
+        "https://inayadomestic.ae/ar/services/executive-nannies/#webpage"
+      ],
+      "prices": [],
+      "words": 912,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/babysitting/",
+      "locale": "en",
+      "route": "services/babysitting",
+      "family": "service",
+      "title": "Babysitting Services in UAE for Flexible Childcare | INAYA",
+      "description": "Book babysitting services in UAE with INAYA for short-term, evening, occasional and family event childcare support with clear guidance and availability checks.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/babysitting/#breadcrumb",
+        "https://inayadomestic.ae/en/services/babysitting/#faq",
+        "https://inayadomestic.ae/en/services/babysitting/#service",
+        "https://inayadomestic.ae/en/services/babysitting/#webpage"
+      ],
+      "prices": [],
+      "words": 951,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/babysitting/",
+      "locale": "ar",
+      "route": "services/babysitting",
+      "family": "service",
+      "title": "خدمات جليسات أطفال في الإمارات لرعاية مرنة | عناية",
+      "description": "احجز جليسة أطفال في الإمارات مع عناية للرعاية المؤقتة أو المسائية أو المناسبات مع إرشاد واضح وفحص التوفر.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/babysitting/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/babysitting/#faq",
+        "https://inayadomestic.ae/ar/services/babysitting/#service",
+        "https://inayadomestic.ae/ar/services/babysitting/#webpage"
+      ],
+      "prices": [],
+      "words": 863,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/newborn-care/",
+      "locale": "en",
+      "route": "services/newborn-care",
+      "family": "service",
+      "title": "Newborn Care Services in UAE | INAYA",
+      "description": "Newborn Care Services in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/newborn-care/#breadcrumb",
+        "https://inayadomestic.ae/en/services/newborn-care/#faq",
+        "https://inayadomestic.ae/en/services/newborn-care/#service",
+        "https://inayadomestic.ae/en/services/newborn-care/#webpage"
+      ],
+      "prices": [],
+      "words": 1061,
+      "repeatedParagraphs": 27
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/newborn-care/",
+      "locale": "ar",
+      "route": "services/newborn-care",
+      "family": "service",
+      "title": "خدمات رعاية المواليد في الإمارات | عناية",
+      "description": "خدمات رعاية المواليد في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/newborn-care/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/newborn-care/#faq",
+        "https://inayadomestic.ae/ar/services/newborn-care/#service",
+        "https://inayadomestic.ae/ar/services/newborn-care/#webpage"
+      ],
+      "prices": [],
+      "words": 940,
+      "repeatedParagraphs": 12
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/home-cooking/",
+      "locale": "en",
+      "route": "services/home-cooking",
+      "family": "service",
+      "title": "Home Cooking Services in UAE for Family Meals | INAYA",
+      "description": "Home cooking services in UAE with INAYA. Arrange domestic cooks for daily meals, family taste preferences, kitchen routines and healthy home dining support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/home-cooking/#breadcrumb",
+        "https://inayadomestic.ae/en/services/home-cooking/#faq",
+        "https://inayadomestic.ae/en/services/home-cooking/#service",
+        "https://inayadomestic.ae/en/services/home-cooking/#webpage"
+      ],
+      "prices": [],
+      "words": 928,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/home-cooking/",
+      "locale": "ar",
+      "route": "services/home-cooking",
+      "family": "service",
+      "title": "خدمات الطبخ المنزلي في الإمارات لوجبات الأسرة | عناية",
+      "description": "خدمات الطبخ المنزلي في الإمارات مع عناية. ترتيب طباخات منزليات للوجبات اليومية وذوق الأسرة وروتين المطبخ ودعم الطعام المنزلي الصحي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/home-cooking/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/home-cooking/#faq",
+        "https://inayadomestic.ae/ar/services/home-cooking/#service",
+        "https://inayadomestic.ae/ar/services/home-cooking/#webpage"
+      ],
+      "prices": [],
+      "words": 834,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/private-chefs/",
+      "locale": "en",
+      "route": "services/private-chefs",
+      "family": "service",
+      "title": "Private Chefs in UAE | INAYA",
+      "description": "Private Chefs in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/private-chefs/#breadcrumb",
+        "https://inayadomestic.ae/en/services/private-chefs/#faq",
+        "https://inayadomestic.ae/en/services/private-chefs/#service",
+        "https://inayadomestic.ae/en/services/private-chefs/#webpage"
+      ],
+      "prices": [],
+      "words": 1039,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/private-chefs/",
+      "locale": "ar",
+      "route": "services/private-chefs",
+      "family": "service",
+      "title": "طهاة خاصون في الإمارات | عناية",
+      "description": "طهاة خاصون في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/private-chefs/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/private-chefs/#faq",
+        "https://inayadomestic.ae/ar/services/private-chefs/#service",
+        "https://inayadomestic.ae/ar/services/private-chefs/#webpage"
+      ],
+      "prices": [],
+      "words": 916,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/personal-chef/",
+      "locale": "en",
+      "route": "services/personal-chef",
+      "family": "service",
+      "title": "Private Chef and Personal Cook Hiring in UAE | INAYA",
+      "description": "Private chef and personal cook hiring in UAE with INAYA. Premium home dining support for daily meals, special occasions, dietary preferences and family kitchens.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/personal-chef/#breadcrumb",
+        "https://inayadomestic.ae/en/services/personal-chef/#faq",
+        "https://inayadomestic.ae/en/services/personal-chef/#service",
+        "https://inayadomestic.ae/en/services/personal-chef/#webpage"
+      ],
+      "prices": [],
+      "words": 949,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/personal-chef/",
+      "locale": "ar",
+      "route": "services/personal-chef",
+      "family": "service",
+      "title": "توظيف شيف خاص أو طباخ شخصي في الإمارات | عناية",
+      "description": "توظيف شيف خاص أو طباخ شخصي في الإمارات مع عناية. دعم طعام منزلي راق للوجبات اليومية والمناسبات والتفضيلات الغذائية ومطابخ الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/personal-chef/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/personal-chef/#faq",
+        "https://inayadomestic.ae/ar/services/personal-chef/#service",
+        "https://inayadomestic.ae/ar/services/personal-chef/#webpage"
+      ],
+      "prices": [],
+      "words": 850,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/kitchen-helper/",
+      "locale": "en",
+      "route": "services/kitchen-helper",
+      "family": "service",
+      "title": "Kitchen Helper Services in UAE for Home Meal Routines | INAYA",
+      "description": "Kitchen helper services in UAE with INAYA. Get support for food preparation, dish care, kitchen cleaning, storage and daily meal routines at home.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/kitchen-helper/#breadcrumb",
+        "https://inayadomestic.ae/en/services/kitchen-helper/#faq",
+        "https://inayadomestic.ae/en/services/kitchen-helper/#service",
+        "https://inayadomestic.ae/en/services/kitchen-helper/#webpage"
+      ],
+      "prices": [],
+      "words": 941,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/kitchen-helper/",
+      "locale": "ar",
+      "route": "services/kitchen-helper",
+      "family": "service",
+      "title": "خدمات مساعد المطبخ في الإمارات لروتين الوجبات المنزلية | عناية",
+      "description": "خدمات مساعد المطبخ في الإمارات مع عناية. دعم لتحضير الطعام والعناية بالأطباق وتنظيف المطبخ والتخزين وروتين الوجبات اليومية.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/kitchen-helper/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/kitchen-helper/#faq",
+        "https://inayadomestic.ae/ar/services/kitchen-helper/#service",
+        "https://inayadomestic.ae/ar/services/kitchen-helper/#webpage"
+      ],
+      "prices": [],
+      "words": 840,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/house-managers/",
+      "locale": "en",
+      "route": "services/house-managers",
+      "family": "service",
+      "title": "House Managers in UAE | INAYA",
+      "description": "House Managers in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/house-managers/#breadcrumb",
+        "https://inayadomestic.ae/en/services/house-managers/#faq",
+        "https://inayadomestic.ae/en/services/house-managers/#service",
+        "https://inayadomestic.ae/en/services/house-managers/#webpage"
+      ],
+      "prices": [],
+      "words": 1035,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/house-managers/",
+      "locale": "ar",
+      "route": "services/house-managers",
+      "family": "service",
+      "title": "مديرو المنازل في الإمارات | عناية",
+      "description": "مديرو المنازل في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/house-managers/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/house-managers/#faq",
+        "https://inayadomestic.ae/ar/services/house-managers/#service",
+        "https://inayadomestic.ae/ar/services/house-managers/#webpage"
+      ],
+      "prices": [],
+      "words": 910,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/elder-care/",
+      "locale": "en",
+      "route": "services/elder-care",
+      "family": "service",
+      "title": "Elder Care Services in UAE for Respectful Home Support | INAYA",
+      "description": "Elder care services in UAE with INAYA. Arrange respectful senior support, companionship, daily routine assistance and family follow-up at home.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/elder-care/#breadcrumb",
+        "https://inayadomestic.ae/en/services/elder-care/#faq",
+        "https://inayadomestic.ae/en/services/elder-care/#service",
+        "https://inayadomestic.ae/en/services/elder-care/#webpage"
+      ],
+      "prices": [],
+      "words": 958,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/elder-care/",
+      "locale": "ar",
+      "route": "services/elder-care",
+      "family": "service",
+      "title": "خدمات رعاية كبار السن في الإمارات لدعم منزلي محترم | عناية",
+      "description": "خدمات رعاية كبار السن في الإمارات مع عناية. ترتيب دعم محترم ومرافقة يومية ومساعدة روتينية ومتابعة مع الأسرة داخل المنزل.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/elder-care/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/elder-care/#faq",
+        "https://inayadomestic.ae/ar/services/elder-care/#service",
+        "https://inayadomestic.ae/ar/services/elder-care/#webpage"
+      ],
+      "prices": [],
+      "words": 877,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/patient-care/",
+      "locale": "en",
+      "route": "services/patient-care",
+      "family": "service",
+      "title": "Patient Care Services at Home in UAE for Daily Support | INAYA",
+      "description": "Patient care services at home in UAE with INAYA. Arrange daily living assistance, comfort support, family instructions and respectful home care guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/patient-care/#breadcrumb",
+        "https://inayadomestic.ae/en/services/patient-care/#faq",
+        "https://inayadomestic.ae/en/services/patient-care/#service",
+        "https://inayadomestic.ae/en/services/patient-care/#webpage"
+      ],
+      "prices": [],
+      "words": 974,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/patient-care/",
+      "locale": "ar",
+      "route": "services/patient-care",
+      "family": "service",
+      "title": "خدمات رعاية المرضى في المنزل في الإمارات للدعم اليومي | عناية",
+      "description": "خدمات رعاية المرضى في المنزل في الإمارات مع عناية. ترتيب مساعدة يومية ودعم للراحة وتعليمات الأسرة وإرشاد رعاية منزلية محترمة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/patient-care/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/patient-care/#faq",
+        "https://inayadomestic.ae/ar/services/patient-care/#service",
+        "https://inayadomestic.ae/ar/services/patient-care/#webpage"
+      ],
+      "prices": [],
+      "words": 889,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/companion-care/",
+      "locale": "en",
+      "route": "services/companion-care",
+      "family": "service",
+      "title": "Companion Care Services in UAE for Friendly Home Support | INAYA",
+      "description": "Companion care services in UAE with INAYA. Arrange friendly companionship, conversation, daily routine help and family follow-up for loved ones at home.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/companion-care/#breadcrumb",
+        "https://inayadomestic.ae/en/services/companion-care/#faq",
+        "https://inayadomestic.ae/en/services/companion-care/#service",
+        "https://inayadomestic.ae/en/services/companion-care/#webpage"
+      ],
+      "prices": [],
+      "words": 929,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/companion-care/",
+      "locale": "ar",
+      "route": "services/companion-care",
+      "family": "service",
+      "title": "خدمات رعاية المرافقة في الإمارات لدعم منزلي ودي | عناية",
+      "description": "خدمات رعاية المرافقة في الإمارات مع عناية. ترتيب مرافقة ودية ومحادثة ومساعدة روتينية وتحديثات للأسرة داخل المنزل.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/companion-care/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/companion-care/#faq",
+        "https://inayadomestic.ae/ar/services/companion-care/#service",
+        "https://inayadomestic.ae/ar/services/companion-care/#webpage"
+      ],
+      "prices": [],
+      "words": 839,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/recruitment/",
+      "locale": "en",
+      "route": "services/recruitment",
+      "family": "service",
+      "title": "Domestic Worker Recruitment in UAE with Profile Matching | INAYA",
+      "description": "Domestic worker recruitment in UAE with INAYA. Guided profile matching for maids, nannies, cooks and caregivers with document support and family requirement review.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/recruitment/#breadcrumb",
+        "https://inayadomestic.ae/en/services/recruitment/#faq",
+        "https://inayadomestic.ae/en/services/recruitment/#service",
+        "https://inayadomestic.ae/en/services/recruitment/#webpage"
+      ],
+      "prices": [],
+      "words": 931,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/recruitment/",
+      "locale": "ar",
+      "route": "services/recruitment",
+      "family": "service",
+      "title": "توظيف العمالة المنزلية في الإمارات مع مطابقة الملفات | عناية",
+      "description": "توظيف العمالة المنزلية في الإمارات مع عناية. مطابقة ملفات للخادمات والمربيات والطهاة ومقدمي الرعاية مع دعم المستندات ومراجعة احتياج الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/recruitment/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/recruitment/#faq",
+        "https://inayadomestic.ae/ar/services/recruitment/#service",
+        "https://inayadomestic.ae/ar/services/recruitment/#webpage"
+      ],
+      "prices": [],
+      "words": 839,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/maid-visa/",
+      "locale": "en",
+      "route": "services/maid-visa",
+      "family": "service",
+      "title": "Maid Visa Assistance in UAE with Clear Document Guidance | INAYA",
+      "description": "Maid visa assistance in UAE by INAYA. Get clear guidance for document checklist, application steps, renewal support and sponsorship responsibilities for UAE families.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/maid-visa/#breadcrumb",
+        "https://inayadomestic.ae/en/services/maid-visa/#faq",
+        "https://inayadomestic.ae/en/services/maid-visa/#service",
+        "https://inayadomestic.ae/en/services/maid-visa/#webpage"
+      ],
+      "prices": [],
+      "words": 944,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/maid-visa/",
+      "locale": "ar",
+      "route": "services/maid-visa",
+      "family": "service",
+      "title": "مساعدة تأشيرة الخادمة في الإمارات مع إرشاد واضح للمستندات | عناية",
+      "description": "مساعدة تأشيرة الخادمة في الإمارات من عناية. احصل على إرشاد واضح لقائمة المستندات وخطوات الطلب والتجديد ومسؤوليات الكفالة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/maid-visa/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/maid-visa/#faq",
+        "https://inayadomestic.ae/ar/services/maid-visa/#service",
+        "https://inayadomestic.ae/ar/services/maid-visa/#webpage"
+      ],
+      "prices": [],
+      "words": 847,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/maid-replacement/",
+      "locale": "en",
+      "route": "services/maid-replacement",
+      "family": "service",
+      "title": "Maid Replacement Services in UAE with Clear Follow-up | INAYA",
+      "description": "Maid replacement services in UAE by INAYA. Get a clear review of concerns, policy guidance, replacement coordination and family support across UAE emirates.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/maid-replacement/#breadcrumb",
+        "https://inayadomestic.ae/en/services/maid-replacement/#faq",
+        "https://inayadomestic.ae/en/services/maid-replacement/#service",
+        "https://inayadomestic.ae/en/services/maid-replacement/#webpage"
+      ],
+      "prices": [],
+      "words": 916,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/maid-replacement/",
+      "locale": "ar",
+      "route": "services/maid-replacement",
+      "family": "service",
+      "title": "خدمات استبدال الخادمة في الإمارات مع متابعة واضحة | عناية",
+      "description": "خدمات استبدال الخادمة في الإمارات من عناية. مراجعة واضحة للملاحظات وإرشاد السياسة وتنسيق الاستبدال ودعم الأسرة في الإمارات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/maid-replacement/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/maid-replacement/#faq",
+        "https://inayadomestic.ae/ar/services/maid-replacement/#service",
+        "https://inayadomestic.ae/ar/services/maid-replacement/#webpage"
+      ],
+      "prices": [],
+      "words": 825,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/sponsorship-transfer/",
+      "locale": "en",
+      "route": "services/sponsorship-transfer",
+      "family": "service",
+      "title": "Maid Sponsorship Transfer in UAE with Document Guidance | INAYA",
+      "description": "Maid sponsorship transfer in UAE with INAYA. Get clear guidance for transfer steps, document review, sponsor responsibilities and domestic worker process support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/sponsorship-transfer/#breadcrumb",
+        "https://inayadomestic.ae/en/services/sponsorship-transfer/#faq",
+        "https://inayadomestic.ae/en/services/sponsorship-transfer/#service",
+        "https://inayadomestic.ae/en/services/sponsorship-transfer/#webpage"
+      ],
+      "prices": [],
+      "words": 929,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/sponsorship-transfer/",
+      "locale": "ar",
+      "route": "services/sponsorship-transfer",
+      "family": "service",
+      "title": "نقل كفالة الخادمة في الإمارات مع إرشاد المستندات | عناية",
+      "description": "نقل كفالة الخادمة في الإمارات مع عناية. إرشاد واضح لخطوات النقل ومراجعة المستندات ومسؤوليات الكفيل ودعم إجراءات العمالة المنزلية.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/sponsorship-transfer/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/sponsorship-transfer/#faq",
+        "https://inayadomestic.ae/ar/services/sponsorship-transfer/#service",
+        "https://inayadomestic.ae/ar/services/sponsorship-transfer/#webpage"
+      ],
+      "prices": [],
+      "words": 832,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/experienced-maid/",
+      "locale": "en",
+      "route": "services/experienced-maid",
+      "family": "service",
+      "title": "Experienced Maid Hiring in UAE for Skilled Household Support | INAYA",
+      "description": "Discuss experienced maid requirements in UAE with INAYA. Review individual household experience, cleaning, cooking, childcare and laundry duties before selection.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/experienced-maid/#breadcrumb",
+        "https://inayadomestic.ae/en/services/experienced-maid/#faq",
+        "https://inayadomestic.ae/en/services/experienced-maid/#service",
+        "https://inayadomestic.ae/en/services/experienced-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 940,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/experienced-maid/",
+      "locale": "ar",
+      "route": "services/experienced-maid",
+      "family": "service",
+      "title": "توظيف خادمة ذات خبرة في الإمارات لدعم منزلي ماهر | عناية",
+      "description": "ناقش متطلبات الخادمة ذات الخبرة في الإمارات مع عناية. راجع الخبرة المنزلية الفردية ومهام التنظيف والطبخ ورعاية الأطفال والغسيل قبل الاختيار.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/experienced-maid/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/experienced-maid/#faq",
+        "https://inayadomestic.ae/ar/services/experienced-maid/#service",
+        "https://inayadomestic.ae/ar/services/experienced-maid/#webpage"
+      ],
+      "prices": [],
+      "words": 868,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/background-verification/",
+      "locale": "en",
+      "route": "services/background-verification",
+      "family": "service",
+      "title": "Maid Background Verification Guidance in UAE | INAYA",
+      "description": "Maid background verification services in UAE with INAYA. Review identity details, documents, experience notes and hiring risk considerations before selecting domestic support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/background-verification/#breadcrumb",
+        "https://inayadomestic.ae/en/services/background-verification/#faq",
+        "https://inayadomestic.ae/en/services/background-verification/#service",
+        "https://inayadomestic.ae/en/services/background-verification/#webpage"
+      ],
+      "prices": [],
+      "words": 916,
+      "repeatedParagraphs": 20
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/background-verification/",
+      "locale": "ar",
+      "route": "services/background-verification",
+      "family": "service",
+      "title": "إرشاد مراجعة خلفية الخادمة في الإمارات | عناية",
+      "description": "خدمات التحقق من خلفية الخادمة في الإمارات مع عناية. مراجعة بيانات الهوية والمستندات وملاحظات الخبرة واعتبارات المخاطر قبل اختيار الدعم المنزلي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/background-verification/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/background-verification/#faq",
+        "https://inayadomestic.ae/ar/services/background-verification/#service",
+        "https://inayadomestic.ae/ar/services/background-verification/#webpage"
+      ],
+      "prices": [],
+      "words": 849,
+      "repeatedParagraphs": 7
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/bespoke-household-management/",
+      "locale": "en",
+      "route": "services/bespoke-household-management",
+      "family": "service",
+      "title": "Bespoke Household Management in UAE | INAYA",
+      "description": "Bespoke Household Management in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/bespoke-household-management/#breadcrumb",
+        "https://inayadomestic.ae/en/services/bespoke-household-management/#faq",
+        "https://inayadomestic.ae/en/services/bespoke-household-management/#service",
+        "https://inayadomestic.ae/en/services/bespoke-household-management/#webpage"
+      ],
+      "prices": [],
+      "words": 1043,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/bespoke-household-management/",
+      "locale": "ar",
+      "route": "services/bespoke-household-management",
+      "family": "service",
+      "title": "إدارة منزلية مخصصة في الإمارات | عناية",
+      "description": "إدارة منزلية مخصصة في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/bespoke-household-management/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/bespoke-household-management/#faq",
+        "https://inayadomestic.ae/ar/services/bespoke-household-management/#service",
+        "https://inayadomestic.ae/ar/services/bespoke-household-management/#webpage"
+      ],
+      "prices": [],
+      "words": 920,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/floral-styling/",
+      "locale": "en",
+      "route": "services/floral-styling",
+      "family": "service",
+      "title": "Floral Styling in UAE | INAYA",
+      "description": "Floral Styling in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/floral-styling/#breadcrumb",
+        "https://inayadomestic.ae/en/services/floral-styling/#faq",
+        "https://inayadomestic.ae/en/services/floral-styling/#service",
+        "https://inayadomestic.ae/en/services/floral-styling/#webpage"
+      ],
+      "prices": [],
+      "words": 1015,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/floral-styling/",
+      "locale": "ar",
+      "route": "services/floral-styling",
+      "family": "service",
+      "title": "تنسيق الزهور في الإمارات | عناية",
+      "description": "تنسيق الزهور في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/floral-styling/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/floral-styling/#faq",
+        "https://inayadomestic.ae/ar/services/floral-styling/#service",
+        "https://inayadomestic.ae/ar/services/floral-styling/#webpage"
+      ],
+      "prices": [],
+      "words": 890,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/relocation-support/",
+      "locale": "en",
+      "route": "services/relocation-support",
+      "family": "service",
+      "title": "Relocation Support in UAE | INAYA",
+      "description": "Relocation Support in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/relocation-support/#breadcrumb",
+        "https://inayadomestic.ae/en/services/relocation-support/#faq",
+        "https://inayadomestic.ae/en/services/relocation-support/#service",
+        "https://inayadomestic.ae/en/services/relocation-support/#webpage"
+      ],
+      "prices": [],
+      "words": 1017,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/relocation-support/",
+      "locale": "ar",
+      "route": "services/relocation-support",
+      "family": "service",
+      "title": "دعم الانتقال في الإمارات | عناية",
+      "description": "دعم الانتقال في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/relocation-support/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/relocation-support/#faq",
+        "https://inayadomestic.ae/ar/services/relocation-support/#service",
+        "https://inayadomestic.ae/ar/services/relocation-support/#webpage"
+      ],
+      "prices": [],
+      "words": 894,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/pet-care-specialists/",
+      "locale": "en",
+      "route": "services/pet-care-specialists",
+      "family": "service",
+      "title": "Pet Care Specialists in UAE | INAYA",
+      "description": "Pet Care Specialists in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/pet-care-specialists/#breadcrumb",
+        "https://inayadomestic.ae/en/services/pet-care-specialists/#faq",
+        "https://inayadomestic.ae/en/services/pet-care-specialists/#service",
+        "https://inayadomestic.ae/en/services/pet-care-specialists/#webpage"
+      ],
+      "prices": [],
+      "words": 1029,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/pet-care-specialists/",
+      "locale": "ar",
+      "route": "services/pet-care-specialists",
+      "family": "service",
+      "title": "متخصصو رعاية الحيوانات الأليفة في الإمارات | عناية",
+      "description": "متخصصو رعاية الحيوانات الأليفة في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/pet-care-specialists/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/pet-care-specialists/#faq",
+        "https://inayadomestic.ae/ar/services/pet-care-specialists/#service",
+        "https://inayadomestic.ae/ar/services/pet-care-specialists/#webpage"
+      ],
+      "prices": [],
+      "words": 910,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/services/event-staffing/",
+      "locale": "en",
+      "route": "services/event-staffing",
+      "family": "service",
+      "title": "Event Staffing in UAE | INAYA",
+      "description": "Event Staffing in UAE by INAYA with clear consultation, trusted coordination, document guidance and organized follow-up for families in Dubai, Ajman, Sharjah and Abu Dhabi.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/services/event-staffing/#breadcrumb",
+        "https://inayadomestic.ae/en/services/event-staffing/#faq",
+        "https://inayadomestic.ae/en/services/event-staffing/#service",
+        "https://inayadomestic.ae/en/services/event-staffing/#webpage"
+      ],
+      "prices": [],
+      "words": 1015,
+      "repeatedParagraphs": 28
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/services/event-staffing/",
+      "locale": "ar",
+      "route": "services/event-staffing",
+      "family": "service",
+      "title": "طاقم للمناسبات في الإمارات | عناية",
+      "description": "طاقم للمناسبات في الإمارات من عناية مع استشارة واضحة، تنسيق موثوق، دعم مستندات ومتابعة منظمة للأسر في دبي وعجمان والشارقة وأبوظبي.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/services/event-staffing/#breadcrumb",
+        "https://inayadomestic.ae/ar/services/event-staffing/#faq",
+        "https://inayadomestic.ae/ar/services/event-staffing/#service",
+        "https://inayadomestic.ae/ar/services/event-staffing/#webpage"
+      ],
+      "prices": [],
+      "words": 890,
+      "repeatedParagraphs": 13
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/philippines-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/philippines-maid-uae",
+      "family": "country",
+      "title": "Filipino Maid in UAE | Philippines Domestic Workers | INAYA",
+      "description": "Looking for a Filipino maid in UAE? INAYA helps families compare Philippines domestic worker profiles for housekeeping, nanny care, cooking support and visa guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/philippines-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/philippines-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/philippines-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 318,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/philippines-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/philippines-maid-uae",
+      "family": "country",
+      "title": "خادمة فلبينية في الإمارات | عمالة منزلية من الفلبين | عناية",
+      "description": "تبحث عن خادمة فلبينية في الإمارات؟ تساعد عناية الأسر على مقارنة ملفات العمالة المنزلية من الفلبين للتنظيف ورعاية الأطفال والطبخ والتأشيرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/philippines-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/philippines-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/philippines-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 296,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/sri-lankan-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/sri-lankan-maid-uae",
+      "family": "country",
+      "title": "Sri Lankan Maid in UAE | Sri Lanka Domestic Workers | INAYA",
+      "description": "Compare Sri Lankan maid profiles in UAE with INAYA for housekeeping, cooking support, childcare exposure, family routines and document guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/sri-lankan-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/sri-lankan-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/sri-lankan-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 311,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/sri-lankan-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/sri-lankan-maid-uae",
+      "family": "country",
+      "title": "خادمة سريلانكية في الإمارات | عمالة منزلية من سريلانكا | عناية",
+      "description": "قارن ملفات الخادمات السريلانكيات في الإمارات مع عناية للتنظيف والطبخ ورعاية الأطفال وروتين الأسرة وإرشاد المستندات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/sri-lankan-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/sri-lankan-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/sri-lankan-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 282,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/nepali-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/nepali-maid-uae",
+      "family": "country",
+      "title": "Nepali Maid in UAE | Nepal Domestic Workers | INAYA",
+      "description": "Looking for a Nepali maid in UAE? INAYA helps families review Nepal domestic worker profiles for cleaning, household duties, childcare exposure and family fit.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/nepali-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/nepali-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/nepali-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 301,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/nepali-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/nepali-maid-uae",
+      "family": "country",
+      "title": "خادمة نيبالية في الإمارات | عمالة منزلية من نيبال | عناية",
+      "description": "تبحث عن خادمة نيبالية في الإمارات؟ تساعد عناية الأسر على مراجعة ملفات العمالة المنزلية من نيبال للتنظيف والمهام المنزلية ورعاية الأطفال وملاءمة الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/nepali-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/nepali-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/nepali-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 270,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/indian-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/indian-maid-uae",
+      "family": "country",
+      "title": "Indian Maid in UAE | India Domestic Workers | INAYA",
+      "description": "Compare Indian maid profiles in UAE with INAYA for cooking, cleaning, childcare support, home routines, recruitment and maid visa guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/indian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/indian-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/indian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 311,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/indian-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/indian-maid-uae",
+      "family": "country",
+      "title": "خادمة هندية في الإمارات | عمالة منزلية من الهند | عناية",
+      "description": "قارن ملفات الخادمات الهنديات في الإمارات مع عناية للطبخ والتنظيف ورعاية الأطفال وروتين المنزل والتوظيف وتأشيرة الخادمة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/indian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/indian-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/indian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 277,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/bangladeshi-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/bangladeshi-maid-uae",
+      "family": "country",
+      "title": "Bangladeshi Maid in UAE | Bangladesh Domestic Workers | INAYA",
+      "description": "Looking for a Bangladeshi maid in UAE? INAYA helps review Bangladesh domestic worker profiles for cleaning, home duties, kitchen support and family routines.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/bangladeshi-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/bangladeshi-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/bangladeshi-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 288,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/bangladeshi-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/bangladeshi-maid-uae",
+      "family": "country",
+      "title": "خادمة بنغلاديشية في الإمارات | عمالة منزلية من بنغلاديش | عناية",
+      "description": "تبحث عن خادمة بنغلاديشية في الإمارات؟ تساعد عناية في مراجعة ملفات العمالة المنزلية من بنغلاديش للتنظيف والمهام المنزلية والمطبخ وروتين الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/bangladeshi-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/bangladeshi-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/bangladeshi-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 265,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/ethiopian-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/ethiopian-maid-uae",
+      "family": "country",
+      "title": "Ethiopian Maid in UAE | Ethiopia Domestic Workers | INAYA",
+      "description": "Compare Ethiopian maid profiles in UAE with INAYA for housekeeping, childcare exposure, home routines, recruitment and document guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/ethiopian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/ethiopian-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/ethiopian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 291,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/ethiopian-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/ethiopian-maid-uae",
+      "family": "country",
+      "title": "خادمة إثيوبية في الإمارات | عمالة منزلية من إثيوبيا | عناية",
+      "description": "قارن ملفات الخادمات الإثيوبيات في الإمارات مع عناية للتنظيف ورعاية الأطفال وروتين المنزل والتوظيف وإرشاد المستندات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/ethiopian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/ethiopian-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/ethiopian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 265,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/kenyan-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/kenyan-maid-uae",
+      "family": "country",
+      "title": "Kenyan Maid in UAE | Kenya Domestic Workers | INAYA",
+      "description": "Looking for a Kenyan maid in UAE? INAYA helps review Kenya domestic worker profiles for childcare, housekeeping, communication, cooking support and family matching.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/kenyan-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/kenyan-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/kenyan-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 294,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/kenyan-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/kenyan-maid-uae",
+      "family": "country",
+      "title": "خادمة كينية في الإمارات | عمالة منزلية من كينيا | عناية",
+      "description": "تبحث عن خادمة كينية في الإمارات؟ تساعد عناية في مراجعة ملفات العمالة المنزلية من كينيا لرعاية الأطفال والتنظيف والتواصل والطبخ ومطابقة الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/kenyan-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/kenyan-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/kenyan-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 282,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/ugandan-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/ugandan-maid-uae",
+      "family": "country",
+      "title": "Ugandan Maid in UAE | Uganda Domestic Workers | INAYA",
+      "description": "Compare Ugandan maid profiles in UAE with INAYA for housekeeping, childcare exposure, family support, documents and domestic worker recruitment guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/ugandan-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/ugandan-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/ugandan-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 289,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/ugandan-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/ugandan-maid-uae",
+      "family": "country",
+      "title": "خادمة أوغندية في الإمارات | عمالة منزلية من أوغندا | عناية",
+      "description": "قارن ملفات الخادمات الأوغنديات في الإمارات مع عناية للتنظيف ورعاية الأطفال ودعم الأسرة والمستندات وإرشاد التوظيف.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/ugandan-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/ugandan-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/ugandan-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 275,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/ghanaian-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/ghanaian-maid-uae",
+      "family": "country",
+      "title": "Ghanaian Maid in UAE | Ghana Domestic Workers | INAYA",
+      "description": "Looking for a Ghanaian maid in UAE? INAYA helps compare Ghana domestic worker profiles for home duties, cleaning, childcare exposure, documents and family matching.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/ghanaian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/ghanaian-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/ghanaian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 296,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/ghanaian-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/ghanaian-maid-uae",
+      "family": "country",
+      "title": "خادمة غانية في الإمارات | عمالة منزلية من غانا | عناية",
+      "description": "تبحث عن خادمة غانية في الإمارات؟ تساعد عناية في مقارنة ملفات العمالة المنزلية من غانا للمهام المنزلية والتنظيف ورعاية الأطفال والمستندات ومطابقة الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/ghanaian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/ghanaian-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/ghanaian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 267,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/sierra-leone-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/sierra-leone-maid-uae",
+      "family": "country",
+      "title": "Sierra Leone Maid in UAE | Domestic Workers | INAYA",
+      "description": "Compare Sierra Leone maid profiles in UAE with INAYA for housekeeping, home support, childcare exposure, documents and family matching guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/sierra-leone-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/sierra-leone-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/sierra-leone-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 289,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/sierra-leone-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/sierra-leone-maid-uae",
+      "family": "country",
+      "title": "خادمة من سيراليون في الإمارات | عمالة منزلية | عناية",
+      "description": "قارن ملفات الخادمات من سيراليون في الإمارات مع عناية للتنظيف والدعم المنزلي ورعاية الأطفال والمستندات وإرشاد مطابقة الأسرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/sierra-leone-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/sierra-leone-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/sierra-leone-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 268,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/indonesian-maid-uae",
+      "family": "country",
+      "title": "Indonesian Maid in UAE | Indonesia Domestic Workers | INAYA",
+      "description": "Looking for an Indonesian maid in UAE? INAYA helps review Indonesia domestic worker profiles for housekeeping, cooking support, family care and document guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 304,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/indonesian-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/indonesian-maid-uae",
+      "family": "country",
+      "title": "خادمة إندونيسية في الإمارات | عمالة منزلية من إندونيسيا | عناية",
+      "description": "تبحث عن خادمة إندونيسية في الإمارات؟ تساعد عناية في مراجعة ملفات العمالة المنزلية من إندونيسيا للتنظيف والطبخ ورعاية الأسرة وإرشاد المستندات.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/indonesian-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/indonesian-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/indonesian-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 274,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-source-countries/myanmar-maid-uae/",
+      "locale": "en",
+      "route": "maid-source-countries/myanmar-maid-uae",
+      "family": "country",
+      "title": "Myanmar Maid in UAE | Myanmar Domestic Workers | INAYA",
+      "description": "Compare Myanmar maid profiles in UAE with INAYA for cleaning, household duties, family support, availability, documents and domestic worker guidance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-source-countries/myanmar-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-source-countries/myanmar-maid-uae/#faq",
+        "https://inayadomestic.ae/en/maid-source-countries/myanmar-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 288,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-source-countries/myanmar-maid-uae/",
+      "locale": "ar",
+      "route": "maid-source-countries/myanmar-maid-uae",
+      "family": "country",
+      "title": "خادمة من ميانمار في الإمارات | عمالة منزلية من ميانمار | عناية",
+      "description": "قارن ملفات الخادمات من ميانمار في الإمارات مع عناية للتنظيف والمهام المنزلية ودعم الأسرة والتوفر والمستندات وإرشاد العمالة المنزلية.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-source-countries/myanmar-maid-uae/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-source-countries/myanmar-maid-uae/#faq",
+        "https://inayadomestic.ae/ar/maid-source-countries/myanmar-maid-uae/#webpage"
+      ],
+      "prices": [],
+      "words": 265,
+      "repeatedParagraphs": 3
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-services-ajman/",
+      "locale": "en",
+      "route": "maid-services-ajman",
+      "family": "location",
+      "title": "Maid Services in Ajman | Domestic Workers Ajman | INAYA",
+      "description": "Maid services in Ajman by INAYA Domestic Workers. Get help with live-in maids, live-out maids, nannies, cooks, caregivers, recruitment and maid visa support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-services-ajman/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-services-ajman/#faq",
+        "https://inayadomestic.ae/en/maid-services-ajman/#service",
+        "https://inayadomestic.ae/en/maid-services-ajman/#webpage"
+      ],
+      "prices": [],
+      "words": 383,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-services-ajman/",
+      "locale": "ar",
+      "route": "maid-services-ajman",
+      "family": "location",
+      "title": "خدمات خادمات في عجمان | عمالة منزلية عجمان | عناية",
+      "description": "خدمات خادمات في عجمان من عناية للعمالة المنزلية. دعم للخادمات المقيمات وغير المقيمات والمربيات والطهاة والرعاية والتوظيف وتأشيرة الخادمة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-services-ajman/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-services-ajman/#faq",
+        "https://inayadomestic.ae/ar/maid-services-ajman/#service",
+        "https://inayadomestic.ae/ar/maid-services-ajman/#webpage"
+      ],
+      "prices": [],
+      "words": 318,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-services-dubai/",
+      "locale": "en",
+      "route": "maid-services-dubai",
+      "family": "location",
+      "title": "Maid Services in Dubai | Nanny, Cook & Domestic Workers | INAYA",
+      "description": "Looking for maid services in Dubai? INAYA helps families compare live-in maids, live-out maids, part-time maids, nannies, cooks, caregivers and visa support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-services-dubai/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-services-dubai/#faq",
+        "https://inayadomestic.ae/en/maid-services-dubai/#service",
+        "https://inayadomestic.ae/en/maid-services-dubai/#webpage"
+      ],
+      "prices": [],
+      "words": 368,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-services-dubai/",
+      "locale": "ar",
+      "route": "maid-services-dubai",
+      "family": "location",
+      "title": "خدمات خادمات في دبي | مربيات وطهاة وعمالة منزلية | عناية",
+      "description": "تبحث عن خدمات خادمات في دبي؟ تساعد عناية الأسر على مقارنة الخادمات المقيمات وغير المقيمات والدوام الجزئي والمربيات والطهاة والرعاية والتأشيرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-services-dubai/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-services-dubai/#faq",
+        "https://inayadomestic.ae/ar/maid-services-dubai/#service",
+        "https://inayadomestic.ae/ar/maid-services-dubai/#webpage"
+      ],
+      "prices": [],
+      "words": 314,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-services-sharjah/",
+      "locale": "en",
+      "route": "maid-services-sharjah",
+      "family": "location",
+      "title": "Maid Services in Sharjah | Domestic Workers Sharjah | INAYA",
+      "description": "Maid services in Sharjah with INAYA. Get guided support for live-in maids, live-out maids, nannies, cooks, elder care, recruitment and maid visa assistance.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-services-sharjah/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-services-sharjah/#faq",
+        "https://inayadomestic.ae/en/maid-services-sharjah/#service",
+        "https://inayadomestic.ae/en/maid-services-sharjah/#webpage"
+      ],
+      "prices": [],
+      "words": 345,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-services-sharjah/",
+      "locale": "ar",
+      "route": "maid-services-sharjah",
+      "family": "location",
+      "title": "خدمات خادمات في الشارقة | عمالة منزلية الشارقة | عناية",
+      "description": "خدمات خادمات في الشارقة مع عناية. دعم موجه للخادمات المقيمات وغير المقيمات والمربيات والطهاة ورعاية كبار السن والتوظيف وتأشيرة الخادمة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-services-sharjah/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-services-sharjah/#faq",
+        "https://inayadomestic.ae/ar/maid-services-sharjah/#service",
+        "https://inayadomestic.ae/ar/maid-services-sharjah/#webpage"
+      ],
+      "prices": [],
+      "words": 298,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-services-abu-dhabi/",
+      "locale": "en",
+      "route": "maid-services-abu-dhabi",
+      "family": "location",
+      "title": "Maid Services in Abu Dhabi | Domestic Workers Abu Dhabi | INAYA",
+      "description": "Maid services in Abu Dhabi with INAYA. Compare live-in maids, nannies, cooks, caregivers, recruitment and maid visa guidance for family homes.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-services-abu-dhabi/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-services-abu-dhabi/#faq",
+        "https://inayadomestic.ae/en/maid-services-abu-dhabi/#service",
+        "https://inayadomestic.ae/en/maid-services-abu-dhabi/#webpage"
+      ],
+      "prices": [],
+      "words": 355,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-services-abu-dhabi/",
+      "locale": "ar",
+      "route": "maid-services-abu-dhabi",
+      "family": "location",
+      "title": "خدمات خادمات في أبوظبي | عمالة منزلية أبوظبي | عناية",
+      "description": "خدمات خادمات في أبوظبي مع عناية. قارن الخادمات المقيمات والمربيات والطهاة والرعاية والتوظيف وإرشاد تأشيرة الخادمة للمنازل العائلية.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-services-abu-dhabi/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-services-abu-dhabi/#faq",
+        "https://inayadomestic.ae/ar/maid-services-abu-dhabi/#service",
+        "https://inayadomestic.ae/ar/maid-services-abu-dhabi/#webpage"
+      ],
+      "prices": [],
+      "words": 295,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-services-ras-al-khaimah/",
+      "locale": "en",
+      "route": "maid-services-ras-al-khaimah",
+      "family": "location",
+      "title": "Maid Services in Ras Al Khaimah | Domestic Workers RAK | INAYA",
+      "description": "Maid services in Ras Al Khaimah with INAYA. Get guidance for live-in maids, live-out maids, nannies, cooks, caregivers and maid visa support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-services-ras-al-khaimah/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-services-ras-al-khaimah/#faq",
+        "https://inayadomestic.ae/en/maid-services-ras-al-khaimah/#service",
+        "https://inayadomestic.ae/en/maid-services-ras-al-khaimah/#webpage"
+      ],
+      "prices": [],
+      "words": 343,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-services-ras-al-khaimah/",
+      "locale": "ar",
+      "route": "maid-services-ras-al-khaimah",
+      "family": "location",
+      "title": "خدمات خادمات في رأس الخيمة | عمالة منزلية رأس الخيمة | عناية",
+      "description": "خدمات خادمات في رأس الخيمة مع عناية. إرشاد للخادمات المقيمات وغير المقيمات والمربيات والطهاة والرعاية وتأشيرة الخادمة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-services-ras-al-khaimah/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-services-ras-al-khaimah/#faq",
+        "https://inayadomestic.ae/ar/maid-services-ras-al-khaimah/#service",
+        "https://inayadomestic.ae/ar/maid-services-ras-al-khaimah/#webpage"
+      ],
+      "prices": [],
+      "words": 280,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-services-fujairah/",
+      "locale": "en",
+      "route": "maid-services-fujairah",
+      "family": "location",
+      "title": "Maid Services in Fujairah | Domestic Workers Fujairah | INAYA",
+      "description": "Maid services in Fujairah with INAYA. Get guided support for domestic workers, live-in maids, nannies, cooks, caregivers, recruitment and maid visa steps.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-services-fujairah/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-services-fujairah/#faq",
+        "https://inayadomestic.ae/en/maid-services-fujairah/#service",
+        "https://inayadomestic.ae/en/maid-services-fujairah/#webpage"
+      ],
+      "prices": [],
+      "words": 330,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-services-fujairah/",
+      "locale": "ar",
+      "route": "maid-services-fujairah",
+      "family": "location",
+      "title": "خدمات خادمات في الفجيرة | عمالة منزلية الفجيرة | عناية",
+      "description": "خدمات خادمات في الفجيرة مع عناية. دعم موجه للعمالة المنزلية والخادمات المقيمات والمربيات والطهاة والرعاية والتوظيف وخطوات التأشيرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-services-fujairah/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-services-fujairah/#faq",
+        "https://inayadomestic.ae/ar/maid-services-fujairah/#service",
+        "https://inayadomestic.ae/ar/maid-services-fujairah/#webpage"
+      ],
+      "prices": [],
+      "words": 283,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/en/maid-services-umm-al-quwain/",
+      "locale": "en",
+      "route": "maid-services-umm-al-quwain",
+      "family": "location",
+      "title": "Maid Services in Umm Al Quwain | Domestic Workers UAQ | INAYA",
+      "description": "Maid services in Umm Al Quwain with INAYA. Get guidance for live-in maids, live-out maids, nannies, cooks, elder care, recruitment and visa support.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/en/maid-services-umm-al-quwain/#breadcrumb",
+        "https://inayadomestic.ae/en/maid-services-umm-al-quwain/#faq",
+        "https://inayadomestic.ae/en/maid-services-umm-al-quwain/#service",
+        "https://inayadomestic.ae/en/maid-services-umm-al-quwain/#webpage"
+      ],
+      "prices": [],
+      "words": 345,
+      "repeatedParagraphs": 1
+    },
+    {
+      "url": "https://inayadomestic.ae/ar/maid-services-umm-al-quwain/",
+      "locale": "ar",
+      "route": "maid-services-umm-al-quwain",
+      "family": "location",
+      "title": "خدمات خادمات في أم القيوين | عمالة منزلية أم القيوين | عناية",
+      "description": "خدمات خادمات في أم القيوين مع عناية. إرشاد للخادمات المقيمات وغير المقيمات والمربيات والطهاة ورعاية كبار السن والتوظيف والتأشيرة.",
+      "schemaIds": [
+        "https://inayadomestic.ae/#organization",
+        "https://inayadomestic.ae/#website",
+        "https://inayadomestic.ae/ar/maid-services-umm-al-quwain/#breadcrumb",
+        "https://inayadomestic.ae/ar/maid-services-umm-al-quwain/#faq",
+        "https://inayadomestic.ae/ar/maid-services-umm-al-quwain/#service",
+        "https://inayadomestic.ae/ar/maid-services-umm-al-quwain/#webpage"
+      ],
+      "prices": [],
+      "words": 289,
+      "repeatedParagraphs": 1
+    }
+  ]
+}

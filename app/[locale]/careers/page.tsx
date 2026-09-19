@@ -1,4 +1,5 @@
 import CareersForm from '@/components/CareersForm';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 export default async function CareersPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -9,7 +10,7 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
   const copy = {
     badge: isArabic ? 'انضم إلى شبكة عناية' : 'Join the INAYA network',
     title: isArabic ? 'قدّم للعمل في خدمات العمالة المنزلية' : 'Apply for domestic worker opportunities',
-    subtitle: isArabic ? 'إذا كنت تبحث عن فرص عمل في مجال الخدمات المنزلية، أرسل بياناتك وسيتواصل معك الفريق عند توفر فرصة مناسبة.' : 'If you are looking for domestic service opportunities, share your details and our team will contact you when a suitable role is available.',
+    subtitle: isArabic ? 'هذا النموذج لا يرسل طلباً. تواصل مع عناية بالهاتف أو واتساب لمناقشة طريقة مشاركة خبرتك واهتمامك. الاستفسار لا يؤكد وظيفة أو مقابلة.' : 'This form does not send an application. Contact INAYA by phone or WhatsApp to discuss how to share your experience and interest. An enquiry does not confirm a job or interview.',
     sideTitle: isArabic ? 'ما نراجعه' : 'What we review',
     points: isArabic ? ['الخبرة السابقة', 'نوع الخدمة المناسبة', 'اللغة والتوفر', 'المستندات المطلوبة'] : ['Previous experience', 'Suitable service type', 'Language and availability', 'Required documents']
   };
@@ -26,6 +27,7 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="careers" />
 
       <section className="container-x pb-16 sm:pb-20">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">

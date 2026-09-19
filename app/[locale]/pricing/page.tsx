@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 type IconName = 'check' | 'x' | 'shield' | 'file' | 'refresh' | 'star' | 'arrow' | 'message';
 
@@ -36,11 +37,11 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       subtitle: 'Select a service package that aligns with your household requirements. Every option is explained clearly before booking confirmation.'
     },
     assurance: isArabic ? [
-      ['ضمان الاستبدال', 'حماية أوضح للعميل خلال فترة الخدمة المتفق عليها، حسب نوع الباقة والتوفر.'],
+      ['مراجعة الاستبدال', 'حماية أوضح للعميل خلال فترة الخدمة المتفق عليها، حسب نوع الباقة والتوفر.'],
       ['دعم التأشيرة والإجراءات', 'إرشاد واضح بخصوص المستندات والخطوات المطلوبة للعقود المناسبة.'],
       ['الالتزام بإجراءات الدولة', 'توضيح منظم للخطوات بما يتوافق مع متطلبات خدمات العمالة المنزلية في الإمارات.']
     ] : [
-      ['Replacement Guarantee', 'Clearer client protection within the agreed service period, depending on package type and availability.'],
+      ['Replacement Review', 'Clearer client protection within the agreed service period, depending on package type and availability.'],
       ['Visa & Process Support', 'Structured guidance on documents and steps required for suitable long-term arrangements.'],
       ['UAE Compliance Guidance', 'Organized service guidance aligned with domestic worker service requirements in the UAE.']
     ],
@@ -109,7 +110,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
     tableHeaders: isArabic ? ['المزايا', 'أساسي', 'مميز', 'عناية بلاك'] : ['Features', 'Essential', 'Signature', 'INAYA Black'],
     rows: isArabic ? [
       ['تأكيد التوفر', 'مبدئي', 'أولوية', 'مخصص'],
-      ['ضمان الاستبدال', 'حسب الاتفاق', 'موسع', 'مخصص'],
+      ['مراجعة الاستبدال', 'حسب الاتفاق', 'موسع', 'مخصص'],
       ['دعم المستندات والإجراءات', false, true, true],
       ['صياغة متطلبات الخدمة', true, true, true],
       ['متابعة مخصصة', false, true, 'VIP']
@@ -125,7 +126,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
     faqs: isArabic ? [
       ['هل الأسعار نهائية؟', 'لا. الأسعار إرشادية ويتم تأكيد السعر النهائي بعد معرفة نوع الخدمة والإمارة والمدة والتوفر.'],
       ['هل تشمل الباقات الرسوم الحكومية؟', 'أي رسوم حكومية أو إجراءات رسمية يتم توضيحها بشكل منفصل حسب الحالة ونوع الخدمة.'],
-      ['ما معنى ضمان الاستبدال؟', 'يعتمد على نوع الباقة والاتفاق وفترة الخدمة والتوفر، ويتم توضيحه قبل الحجز.']
+      ['ما معنى مراجعة الاستبدال؟', 'يعتمد على نوع الباقة والاتفاق وفترة الخدمة والتوفر، ويتم توضيحه قبل الحجز.']
     ] : [
       ['Are these final prices?', 'No. Prices are indicative and final pricing is confirmed after reviewing service type, emirate, duration and availability.'],
       ['Are government fees included?', 'Any government or official processing fees are clarified separately depending on the service and case.'],
@@ -157,6 +158,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
           </p>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route="pricing" />
 
       <section className="container-x pb-24 sm:pb-28">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
@@ -187,11 +189,11 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <div className={`mt-4 h-px w-12 ${plan.featured ? 'bg-accent-500/80' : 'bg-accent-500/55'}`} />
               <div className="mt-8 flex items-start justify-between gap-4">
                 <div>
-                  <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.45rem] font-bold leading-none ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.price}</h2>
+                  <p className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.45rem] font-bold leading-none ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.price}</p>
                   <p className={`mt-3 text-xs ${plan.featured ? 'text-white/85' : 'text-primary-900/75'}`}>{plan.period}</p>
                 </div>
               </div>
-              <h3 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h3>
+              <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h2>
               <p className={`mt-4 text-sm leading-7 ${plan.featured ? 'text-white/85' : 'text-primary-900/80'}`}>{plan.desc}</p>
               <div className={`my-9 h-px ${plan.featured ? 'bg-accent-500/28' : 'bg-accent-500/18'}`} />
               <div className="space-y-5">

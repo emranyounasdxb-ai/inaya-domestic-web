@@ -17,7 +17,7 @@ const copy = {
     cta: 'Enquire on WhatsApp',
     close: 'Close Sierra Leone offer',
     backToTop: 'Back to top',
-    trustItems: ['Trusted Service', 'Professional Support', 'Available Profiles'],
+    trustItems: ['Trusted Service', 'Professional Support', 'Candidate Profiles'],
     message: "Hello INAYA, I’m interested in the Sierra Leone maid offer for AED 4,500. Please share the available profiles and details."
   },
   ar: {
@@ -31,7 +31,7 @@ const copy = {
     cta: 'استفسر عبر واتساب',
     close: 'إغلاق عرض سيراليون',
     backToTop: 'العودة إلى الأعلى',
-    trustItems: ['خدمة موثوقة', 'دعم احترافي', 'ملفات متاحة'],
+    trustItems: ['خدمة موثوقة', 'دعم احترافي', 'ملفات المرشحات'],
     message: 'مرحباً عناية، أرغب في الاستفسار عن عرض العمالة المنزلية من سيراليون بسعر 4,500 درهم. يرجى إرسال الملفات المتاحة والتفاصيل.'
   }
 } as const;

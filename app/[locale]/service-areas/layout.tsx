@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === 'ar'
-    ? {
-        title: 'مناطق خدمة عناية في الإمارات | خدمات خادمات حسب الإمارة',
-        description: 'استكشف مناطق خدمة عناية للعمالة المنزلية في الإمارات: عجمان، دبي، الشارقة، أبوظبي، رأس الخيمة، الفجيرة وأم القيوين.'
-      }
-    : {
-        title: 'INAYA Service Areas in UAE | Maid Services by Emirate',
-        description: 'Explore INAYA Domestic Workers service areas across the UAE, including Ajman, Dubai, Sharjah, Abu Dhabi, Ras Al Khaimah, Fujairah and Umm Al Quwain.'
-      };
+  return pageMetadata(locale, 'service-areas');
 }
 
-export default function ServiceAreasLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return <>
+    <RouteSeo locale={locale} route="service-areas" />
+    {children}
+  </>;
 }

@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getLocationServicePage, locationServicePages, type Lang } from '@/lib/location-service-pages';
@@ -9,34 +12,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; locationSlug: string }> }): Promise<Metadata> {
   const { locale, locationSlug } = await params;
-  const location = getLocationServicePage(locationSlug);
-  if (!location) return {};
-  const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const canonical = `/${locale}/${location.slug}`;
-
-  return {
-    title: location.metaTitle[lang],
-    description: location.metaDescription[lang],
-    alternates: {
-      canonical,
-      languages: {
-        en: `/en/${location.slug}`,
-        ar: `/ar/${location.slug}`
-      }
-    },
-    openGraph: {
-      title: location.metaTitle[lang],
-      description: location.metaDescription[lang],
-      type: 'website',
-      locale: lang === 'ar' ? 'ar_AE' : 'en_AE',
-      url: canonical
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: location.metaTitle[lang],
-      description: location.metaDescription[lang]
-    }
-  };
+  return pageMetadata(locale, locationSlug);
 }
 
 export default async function LocationServicePage({ params }: { params: Promise<{ locale: string; locationSlug: string }> }) {
@@ -45,14 +21,13 @@ export default async function LocationServicePage({ params }: { params: Promise<
   if (!location) notFound();
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const otherLocations = locationServicePages.filter((item) => item.slug !== location.slug).slice(0, 6);
   const t = lang === 'ar'
     ? {
         badge: 'دليل خدمات المنطقة',
         areaBadge: 'منطقة خدمة داخل الإمارات',
         localTitle: 'احتياجات الأسر في هذه الإمارة',
         servicesTitle: 'الخدمات المتوفرة',
-        areasTitle: 'مناطق قريبة نخدمها',
+        areasTitle: 'مناطق يمكن ذكرها عند الطلب',
         processTitle: 'كيف تساعدك عناية؟',
         process: ['مراجعة احتياج المنزل والأسرة', 'تحديد نوع الخدمة والمهام', 'شرح التوفر والخطوات', 'متابعة واضحة قبل التأكيد'],
         faqTitle: 'أسئلة شائعة',
@@ -69,7 +44,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
         areaBadge: 'UAE Service Area',
         localTitle: 'Common family needs in this emirate',
         servicesTitle: 'Available service options',
-        areasTitle: 'Nearby areas we support',
+        areasTitle: 'Areas to specify in your enquiry',
         processTitle: 'How INAYA helps',
         process: ['Review the home and family requirement', 'Confirm service type and duties', 'Explain availability and next steps', 'Follow up clearly before confirmation'],
         faqTitle: 'Frequently asked questions',
@@ -82,44 +57,9 @@ export default async function LocationServicePage({ params }: { params: Promise<
         back: 'All Service Areas'
       };
 
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: location.heroTitle[lang],
-    description: location.metaDescription[lang],
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: location.city[lang]
-    },
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'INAYA Domestic Workers',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Ajman',
-        addressCountry: 'AE'
-      }
-    },
-    serviceType: ['Maid Services', 'Domestic Workers', 'Nanny Services', 'Home Cooking', 'Maid Visa Assistance']
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: location.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question[lang],
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer[lang]
-      }
-    }))
-  };
-
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <RouteSeo locale={locale} route={locationSlug} />
 
       <section className="relative px-6 py-16 lg:px-10 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_80%_28%,rgba(7,22,74,0.09),transparent_30rem)]" />
@@ -145,11 +85,12 @@ export default async function LocationServicePage({ params }: { params: Promise<
               <p className="mt-3 text-sm leading-7 text-white/85">{location.intro[lang]}</p>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {location.localNeeds[lang].slice(0, 4).map((need) => <div key={need} className="rounded-2xl border border-primary-900/8 bg-[#f8f6f0] px-4 py-3 text-xs font-semibold leading-5 text-primary-900/76"><span className="me-2 text-accent-700">✓</span>{need}</div>)}
+              <Link href={`/${locale}/documents-required/`} className="rounded-2xl border border-primary-900/8 bg-[#f8f6f0] px-4 py-3 text-xs font-semibold leading-5 text-primary-900/76 underline underline-offset-4">{lang === 'ar' ? 'جهز تفاصيل طلبك' : 'Prepare your enquiry details'}</Link>
             </div>
           </div>
         </div>
       </section>
+      <PageBreadcrumbs locale={locale} route={locationSlug} />
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.9fr_1.1fr]">
@@ -192,7 +133,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
           <div className="rounded-[26px] bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.18)]">
             <h2 className="font-heading text-2xl font-bold">{t.otherTitle}</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {otherLocations.map((item) => <Link key={item.slug} href={`/${locale}/${item.slug}`} className="rounded-2xl border border-white/12 bg-white/8 p-4 transition hover:bg-white/14"><span className="text-xs font-bold uppercase tracking-[0.14em] text-accent-300">{item.city[lang]}</span><p className="mt-2 text-sm font-semibold text-white/82">{item.heroTitle[lang]}</p></Link>)}
+              <Link href={`/${locale}/service-areas/`} className="rounded-2xl border border-white/12 bg-white/8 p-4 text-sm font-semibold transition hover:bg-white/14">{t.back}</Link>
             </div>
             <div className="mt-7 rounded-[22px] bg-white/8 p-5">
               <h3 className="font-heading text-xl font-bold">{t.ctaTitle}</h3>

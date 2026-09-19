@@ -1,25 +1,18 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/page-seo';
+import RouteSeo from '@/components/RouteSeo';
 import PhaseOneSeoSection from '@/components/PhaseOneSeoSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === 'ar'
-    ? {
-        title: 'عن عناية للعمالة المنزلية | شركة خادمات موثوقة في الإمارات',
-        description: 'تعرف على عناية للعمالة المنزلية، شركة خدمات خادمات وعمالة منزلية موثوقة في الإمارات تقدم إرشاداً واضحاً للأسر في عجمان ودبي والشارقة وأبوظبي.'
-      }
-    : {
-        title: 'About INAYA Domestic Workers | Trusted Maid Agency UAE',
-        description: 'Learn about INAYA Domestic Workers, a trusted UAE maid and domestic worker service supporting families in Ajman, Dubai, Sharjah, Abu Dhabi and across the UAE.'
-      };
+  return pageMetadata(locale, 'about');
 }
 
-export default async function AboutLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  return (
-    <>
-      {children}
-      <PhaseOneSeoSection page="about" locale={locale} />
-    </>
-  );
+  return <>
+    <RouteSeo locale={locale} route="about" />
+    {children}
+    <PhaseOneSeoSection page="about" locale={locale} />
+  </>;
 }

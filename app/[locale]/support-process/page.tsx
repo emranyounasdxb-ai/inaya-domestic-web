@@ -1,3 +1,6 @@
+import GuideContent from '@/components/GuideContent';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
+
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const isArabic = locale === 'ar';
@@ -10,9 +13,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <p className="text-[0.66rem] font-bold uppercase tracking-[0.28em] text-accent-700">{isArabic ? 'إجراءات الدعم' : 'Support Process'}</p>
         <h1 className="mt-4 font-heading text-4xl font-bold tracking-[-0.05em] sm:text-5xl">{isArabic ? 'إجراءات الدعم لخدمات عناية' : 'Support Process for INAYA Services'}</h1>
         <p className="mt-5 max-w-3xl text-sm leading-8 text-primary-900/72">{isArabic ? 'توضح هذه الصفحة كيف تتم مراجعة الملاحظات وطلبات الدعم حسب الخدمة والتوفر والاتفاق المؤكد.' : 'This page explains how concerns and support requests are reviewed based on service type, availability and confirmed agreement.'}</p>
+        <PageBreadcrumbs locale={locale} route="support-process" />
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {points.map((item) => <div key={item} className="rounded-2xl bg-white p-5 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">✓ {item}</div>)}
         </div>
+        <GuideContent locale={locale} route="support-process" />
       </div>
     </main>
   );

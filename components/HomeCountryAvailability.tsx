@@ -18,20 +18,20 @@ const countries = [
 
 const copy = {
   en: {
-    eyebrow: 'Available Nationalities',
+    eyebrow: 'Nationality Preferences',
     title: 'Countries We Source Domestic Workers From',
     text: 'INAYA provides domestic worker profiles from trusted source countries based on availability, experience, documents, language preference and family needs across the UAE.',
     note: 'Profiles are subject to current availability, documentation and service requirements.',
     cta: 'Explore Countries',
-    tag: 'Available profiles'
+    tag: 'Candidate profiles'
   },
   ar: {
-    eyebrow: 'الجنسيات المتوفرة',
+    eyebrow: 'تفضيلات الجنسية',
     title: 'الدول التي نوفر منها العمالة المنزلية',
     text: 'توفر عناية ملفات عمالة منزلية من عدة دول حسب التوفر والخبرة والمستندات واللغة واحتياج الأسرة داخل الإمارات.',
     note: 'تخضع الملفات للتوفر الحالي والمستندات ومتطلبات الخدمة.',
     cta: 'استكشف الدول',
-    tag: 'ملفات متاحة'
+    tag: 'ملفات المرشحات'
   }
 };
 
@@ -56,7 +56,7 @@ export default function HomeCountryAvailability({ locale }: { locale: string }) 
             return (
               <article className="home-country-card" key={country.code}>
                 <div className="home-country-flag">
-                  <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={`${name} flag`} width={80} height={48} />
+                  <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={lang === 'ar' ? `علم ${name}` : `${name} flag`} width={80} height={48} />
                 </div>
                 <div className="home-country-content">
                   <h3>{name}</h3>

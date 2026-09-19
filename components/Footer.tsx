@@ -13,7 +13,7 @@ export default function Footer({ locale }: { locale: string }) {
   const lang = isArabic ? 'ar' : 'en';
   const year = new Date().getFullYear();
   const logoSrc = isArabic ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp';
-  const logoAlt = isArabic ? 'INAYA Arabic logo' : 'INAYA Domestic Workers';
+  const logoAlt = isArabic ? 'شعار عناية للعمالة المنزلية' : 'INAYA Domestic Workers logo';
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const contactAddress = isArabic
     ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'
@@ -32,17 +32,17 @@ export default function Footer({ locale }: { locale: string }) {
   const serviceLinks = services.slice(0, 6).map((s) => ({ label: s.name[lang], href: `/${locale}/services/${s.slug}` }));
 
   const featureItems = [
-    { icon: 'shield' as IconName, label: isArabic ? 'عاملات موثوقات ومتحقق منهن' : 'Verified & Trusted Workers' },
-    { icon: 'users' as IconName, label: isArabic ? 'مدربات وذوات خبرة' : 'Trained & Experienced' },
-    { icon: 'refresh' as IconName, label: isArabic ? 'عملية سهلة ومنظمة' : 'Hassle-Free Process' },
+    { icon: 'shield' as IconName, label: isArabic ? 'مناقشة المستندات' : 'Document Discussion' },
+    { icon: 'users' as IconName, label: isArabic ? 'مقارنة الملفات الفردية' : 'Individual Profile Comparison' },
+    { icon: 'refresh' as IconName, label: isArabic ? 'مراجعة خطوات الطلب' : 'Enquiry Process Review' },
     { icon: 'headset' as IconName, label: isArabic ? 'دعم مخصص' : 'Dedicated Support' }
   ];
 
   const stats = [
-    { icon: 'shield' as IconName, value: '100%', label: isArabic ? 'عاملات موثوقات' : 'Verified Workers' },
-    { icon: 'users' as IconName, value: '10,000+', label: isArabic ? 'أسر سعيدة' : 'Happy Families' },
-    { icon: 'globe' as IconName, value: isArabic ? '٧' : '7', label: isArabic ? 'الإمارات المغطاة' : 'Emirates Covered' },
-    { icon: 'headset' as IconName, value: '24/7', label: isArabic ? 'دعم العملاء' : 'Customer Support' }
+    { icon: 'shield' as IconName, value: isArabic ? 'المستندات' : 'Documents', label: isArabic ? 'ناقش متطلبات حالتك' : 'Discuss your case requirements' },
+    { icon: 'users' as IconName, value: isArabic ? 'الملفات' : 'Profiles', label: isArabic ? 'راجع الخبرة والمهام' : 'Review experience and duties' },
+    { icon: 'globe' as IconName, value: isArabic ? 'الإمارات' : 'UAE', label: isArabic ? 'أكد خيارات منطقتك' : 'Confirm options for your area' },
+    { icon: 'headset' as IconName, value: isArabic ? 'الاستفسار' : 'Enquiry', label: isArabic ? 'اسأل عن الخطوة التالية' : 'Ask about the next step' }
   ];
 
   return (
@@ -69,10 +69,10 @@ export default function Footer({ locale }: { locale: string }) {
           <div className="lg:flex lg:h-full lg:flex-col">
             <FooterTitle>{t('contactInfo')}</FooterTitle>
             <div className="mt-4 divide-y divide-primary-900/10 text-[0.8rem] lg:grid lg:flex-1 lg:grid-rows-4">
-              <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'واتساب متاح' : 'WhatsApp Available'} href={phoneHref} isArabic={isArabic} titleDirection="ltr" />
+              <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'هاتف المكتب' : 'Office telephone'} href={phoneHref} isArabic={isArabic} titleDirection="ltr" />
               <ContactItem icon="mail" title={siteConfig.email} text="" href={`mailto:${siteConfig.email}`} isArabic={isArabic} titleDirection="ltr" />
               <ContactItem icon="pin" title={isArabic ? 'مكتب عناية' : 'INAYA Office'} text={contactAddress} isArabic={isArabic} />
-              <ContactItem icon="clock" title="9:00 AM - 9:00 PM" text={isArabic ? 'كل الأيام' : 'All Days'} isArabic={isArabic} titleDirection="ltr" />
+              <ContactItem icon="clock" title={isArabic ? 'أكد موعد الزيارة' : 'Confirm visit timing'} text={isArabic ? 'تواصل مع المكتب قبل الزيارة' : 'Contact the office before visiting'} isArabic={isArabic} />
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
           <div className="flex items-center gap-3 text-primary-900/75">
             <span className="text-[#c98700]"><Icon name="lock" size={20} /></span>
-            <span>{isArabic ? 'مرخص ومعتمد من الجهات الحكومية في الإمارات' : 'Licensed & Approved by UAE Government Authorities'}</span>
+            <span>{isArabic ? 'ناقش التفاصيل قبل تأكيد الخدمة' : 'Discuss details before confirming a service'}</span>
           </div>
         </div>
       </div>

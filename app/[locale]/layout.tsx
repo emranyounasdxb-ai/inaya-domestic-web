@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans_Arabic, Inter, Noto_Sans_Arabic, Plus_Jakarta_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
+import { siteConfig } from '@/lib/site-config';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import SierraLeoneOfferControls from '@/components/SierraLeoneOfferControls';
+import Measurement from '@/components/Measurement';
+import sitemap from '@/app/sitemap';
 import '../globals.css';
 import '../home-country-availability.css';
 import '../home-google-reviews.css';
@@ -18,19 +21,13 @@ const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-he
 const notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-body', display: 'swap' });
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap' });
 
-export const dynamic = 'force-dynamic';
 export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: 'meta' });
   return {
-    title: { default: t('defaultTitle'), template: `%s | ${t('siteName')}` },
-    description: t('defaultDescription'),
-    metadataBase: new URL('https://inayadomestic.ae'),
-    alternates: { languages: { en: '/en', ar: '/ar' } },
-    openGraph: { title: t('defaultTitle'), description: t('defaultDescription'), type: 'website', locale }
+    title: locale === 'ar' ? 'عناية للعمالة المنزلية' : siteConfig.name,
+    metadataBase: new URL(siteConfig.url)
   };
 }
 
@@ -44,6 +41,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     <html lang={locale} dir={dir}>
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>
         <NextIntlClientProvider messages={messages}>
+          {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}
           <Navbar locale={locale} />
           <FloatingSocialBar />
           <SierraLeoneOfferControls locale={locale} />

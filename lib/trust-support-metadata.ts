@@ -1,23 +1,18 @@
 import type { Metadata } from 'next';
+import { localeAlternates, localizedUrl } from '@/lib/seo';
 import { getTrustSupportPage, type Lang } from './trust-support-pages';
 
-export function generateTrustSupportMetadata(locale: string, slug: string): Metadata {
+export function generateTrustSupportMetadata(locale: string, slug: string, routePath = slug): Metadata {
   const page = getTrustSupportPage(slug);
   if (!page) return {};
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
-  const canonical = `/${locale}/${page.path}`;
+  const canonical = localizedUrl(locale, routePath);
 
   return {
     title: page.metaTitle[lang],
     description: page.metaDescription[lang],
-    alternates: {
-      canonical,
-      languages: {
-        en: `/en/${page.path}`,
-        ar: `/ar/${page.path}`
-      }
-    },
+    alternates: localeAlternates(locale, routePath),
     openGraph: {
       title: page.metaTitle[lang],
       description: page.metaDescription[lang],
