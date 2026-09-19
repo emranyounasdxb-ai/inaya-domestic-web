@@ -39,12 +39,15 @@ for (const locale of ['en', 'ar']) {
     await page.goto(`/${locale}/faq/`);
     const tabs = page.locator('main button').filter({ has: page.locator('svg') });
     expect(await tabs.count()).toBe(5);
+    await expect(page.locator('[data-faq-panel] details')).toHaveCount(100);
     for (const tab of await tabs.all()) {
       const label = (await tab.innerText()).trim();
       await tab.click();
       await expect(page.getByRole('heading', { name: label, exact: true })).toBeVisible();
-      const questions = await page.locator('details summary > span:first-child').allTextContents();
-      const answers = await page.locator('details > p').allTextContents();
+      const activePanel = page.locator('[data-faq-panel]:not([hidden])');
+      await expect(activePanel.locator('details')).toHaveCount(20);
+      const questions = await activePanel.locator('details summary > span:first-child').allTextContents();
+      const answers = await activePanel.locator('details > p').allTextContents();
       await expect.poll(async () => {
         const data = JSON.parse(await page.locator('script[data-seo="visible-faq"]').textContent() as string);
         return data.mainEntity.map((entity: { name: string }) => entity.name);

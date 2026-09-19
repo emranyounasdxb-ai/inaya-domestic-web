@@ -1,0 +1,33 @@
+name: SEO and site CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: node node_modules/typescript/bin/tsc --noEmit --incremental false
+      - name: Build static export
+        run: npm run build
+        env:
+          NEXT_PUBLIC_STATIC_EXPORT: 'true'
+      - name: Compile focused unit helpers
+        run: node node_modules/typescript/bin/tsc lib/json-ld.ts lib/structured-data.ts lib/image-alt.ts lib/content-architecture.ts lib/guide-content.ts lib/buyer-answers.ts lib/measurement.ts --outDir .next/phase-02-unit --rootDir . --module commonjs --target es2020 --esModuleInterop --skipLibCheck
+      - name: Unit and export checks
+        run: node --test tests/seo-phase02-unit.test.cjs tests/seo-phase03-unit.test.cjs tests/seo-phase04-unit.test.cjs tests/seo-phase05-unit.test.cjs tests/seo-final-remediation-unit.test.cjs tests/final-ux-accessibility-unit.test.cjs tests/seo-export.test.mjs tests/seo-phase02-export.test.mjs tests/seo-phase03-export.test.mjs tests/seo-phase04-export.test.mjs tests/seo-phase05-export.test.mjs tests/seo-visual-content-export.test.mjs tests/final-ux-accessibility-export.test.mjs tests/seo-release-readiness.test.mjs
+      - name: Install Chromium for browser regression
+        run: node node_modules/@playwright/test/cli.js install --with-deps chromium
+      - name: Browser regression
+        run: node node_modules/@playwright/test/cli.js test

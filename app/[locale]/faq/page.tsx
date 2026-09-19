@@ -363,6 +363,8 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
                     key={category.id}
                     type="button"
                     onClick={() => setActiveId(category.id)}
+                    aria-controls={`faq-panel-${category.id}`}
+                    aria-pressed={isActive}
                     className={`flex items-center justify-center gap-2 rounded-[13px] px-4 py-3 text-sm font-bold transition ${isActive ? 'bg-primary-900 text-white shadow-[0_12px_26px_rgba(7,22,74,0.2)]' : 'text-primary-900/75 hover:bg-accent-50 hover:text-primary-900'}`}
                   >
                     <LineIcon name={category.icon} className={`h-4 w-4 ${isActive ? 'text-accent-200' : 'text-accent-700'}`} />
@@ -386,21 +388,31 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
               </span>
             </div>
 
-            <div className="space-y-4">
-              {activeCategory.items.map((item, index) => (
-                <details
-                  key={item.question}
-                  open={index === 0}
-                  className="group rounded-[16px] border border-primary-900/8 bg-white/86 shadow-[0_14px_42px_rgba(7,22,74,0.05)] backdrop-blur-xl transition hover:border-accent-500/28"
+            <div>
+              {categories.map((category) => (
+                <div
+                  key={category.id}
+                  id={`faq-panel-${category.id}`}
+                  data-faq-panel={category.id}
+                  hidden={category.id !== activeId}
+                  className="space-y-4"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 text-start text-lg font-bold leading-snug text-primary-900 sm:px-8 sm:py-6 sm:text-xl">
-                    <span>{item.question}</span>
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-accent-700 transition group-open:rotate-180">⌄</span>
-                  </summary>
-                  <p className="border-t border-primary-900/8 px-6 pb-6 pt-4 text-sm leading-7 text-primary-900/80 sm:px-8 sm:text-[0.95rem]">
-                    {item.answer}
-                  </p>
-                </details>
+                  {category.items.map((item, index) => (
+                    <details
+                      key={item.question}
+                      open={index === 0}
+                      className="group rounded-[16px] border border-primary-900/8 bg-white/86 shadow-[0_14px_42px_rgba(7,22,74,0.05)] backdrop-blur-xl transition hover:border-accent-500/28"
+                    >
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 text-start text-lg font-bold leading-snug text-primary-900 sm:px-8 sm:py-6 sm:text-xl">
+                        <span>{item.question}</span>
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f1eee7] text-accent-700 transition group-open:rotate-180">⌄</span>
+                      </summary>
+                      <p className="border-t border-primary-900/8 px-6 pb-6 pt-4 text-sm leading-7 text-primary-900/80 sm:px-8 sm:text-[0.95rem]">
+                        {item.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
