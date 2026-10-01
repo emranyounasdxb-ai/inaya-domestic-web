@@ -88,6 +88,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
     assert.equal(organization['@id'], `${origin}/#organization`);
     assert.equal(organization.telephone, '+971 6 740 0128');
     assert.equal(organization.email, 'info@inayadomestic.ae');
+    assert.deepEqual(organization.sameAs, ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/']);
     assert.equal(organization.address.addressLocality, 'Ajman');
     assert.equal(organization.address.addressCountry, 'AE');
     assert.equal(ofType('WebSite')[0]['@id'], `${origin}/#website`);
