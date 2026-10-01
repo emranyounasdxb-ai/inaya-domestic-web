@@ -53,6 +53,11 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
   const files = ['app/robots.ts', 'lib/seo.ts', 'lib/json-ld.ts', 'lib/content-architecture.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/services.ts', 'lib/buyer-answers.ts', 'lib/measurement.ts', 'components/Measurement.tsx', 'components/Footer.tsx', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'tests/e2e/sierra-leone-offer-controls.spec.ts', 'app/globals.css', 'app/[locale]/layout.tsx', 'next.config.js', 'tests/fixtures/seo-phase03-baseline.json'];
   for (const file of files) {
     let before = execFileSync('git', ['show', `0cc89c4ca6d5621a6ed08818b799b2bdeb71a5af:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
+    if (file === 'components/Footer.tsx') {
+      const faqLink = "    { label: tn('faq'), href: `/${locale}/faq` },\n";
+      assert.equal(before.split(faqLink).length, 2, 'one Footer FAQ anchor in checkpoint');
+      before = before.replace(faqLink, faqLink + "    { label: isArabic ? 'الأدلة' : 'Guides', href: `/${locale}/blog/` },\n");
+    }
     if (file === 'lib/structured-data.ts') {
       const anchor = '      logo: `${siteConfig.url}/brand/inaya-domestic-workers-logo.webp`,';
       assert.equal(before.split(anchor).length, 2, 'one Organization logo anchor in checkpoint');

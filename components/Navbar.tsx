@@ -25,6 +25,7 @@ export default function Navbar({ locale }: { locale: string }) {
     { href: `/${locale}/how-it-works`, label: t('howItWorks') },
     { href: `/${locale}/service-areas`, label: t('serviceAreas') },
     { href: `/${locale}/faq`, label: t('faq') },
+    { href: `/${locale}/blog/`, label: locale === 'ar' ? 'الأدلة' : 'Guides' },
     { href: `/${locale}/contact`, label: t('contact') }
   ];
 
@@ -43,11 +44,14 @@ export default function Navbar({ locale }: { locale: string }) {
 
         <div className="hidden flex-1 items-center justify-center gap-5 xl:gap-7 lg:flex">
           {links.map((l) => {
-            const active = pathname === l.href;
+            const active = l.href === `/${locale}/blog/`
+              ? pathname === `/${locale}/blog` || pathname.startsWith(l.href)
+              : pathname === l.href;
             return (
               <Link
                 key={l.href}
                 href={l.href}
+                aria-current={active ? 'page' : undefined}
                 className={`relative text-[11px] font-semibold leading-none transition-colors xl:text-[12px] ${active ? 'text-primary-900' : 'text-ink/70 hover:text-primary-900'}`}
               >
                 {l.label}
@@ -84,16 +88,22 @@ export default function Navbar({ locale }: { locale: string }) {
       {open && (
         <div className="border-t border-primary-700/10 bg-ivory/95 backdrop-blur-2xl lg:hidden">
           <div className="container-x flex flex-col py-2">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-primary-700/10 py-3 text-sm font-semibold text-primary-900 last:border-b-0"
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) => {
+              const active = l.href === `/${locale}/blog/`
+                ? pathname === `/${locale}/blog` || pathname.startsWith(l.href)
+                : pathname === l.href;
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? 'page' : undefined}
+                  className={`border-b py-3 text-sm font-semibold text-primary-900 last:border-b-0 ${active && l.href === `/${locale}/blog/` ? 'border-accent-500' : 'border-primary-700/10'}`}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
             <Link
               href={`/${locale}/booking`}
               onClick={() => setOpen(false)}
