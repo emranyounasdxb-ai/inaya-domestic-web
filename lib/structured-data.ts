@@ -16,6 +16,7 @@ export function pageStructuredData(locale: string, route: string) {
       '@type': ['Organization', 'LocalBusiness'], '@id': organizationId,
       name: locale === 'ar' ? 'عناية للعمالة المنزلية' : siteConfig.name,
       url: home, telephone: siteConfig.phone, email: siteConfig.email,
+      sameAs: ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/'],
       logo: `${siteConfig.url}/brand/inaya-domestic-workers-logo.webp`,
       address: { '@type': 'PostalAddress', streetAddress: siteConfig.address, addressLocality: 'Ajman', addressCountry: 'AE' }
     },
