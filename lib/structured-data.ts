@@ -2,6 +2,7 @@ import { getPageSeo, pageBreadcrumbs } from './page-seo';
 import { localizedUrl } from './seo';
 import { siteConfig } from './site-config';
 import { faqEntity } from './json-ld';
+import { getDomesticWorkerGuide } from './domestic-worker-guides';
 
 export function pageStructuredData(locale: string, route: string) {
   const page = getPageSeo(locale, route);
@@ -30,7 +31,8 @@ export function pageStructuredData(locale: string, route: string) {
       name: page.name, description: page.description, inLanguage: locale,
       isPartOf: { '@id': websiteId }, about: { '@id': organizationId },
       ...(route ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
-      ...(page.service ? { mainEntity: { '@id': `${url}#service` } } : {})
+      ...(page.service ? { mainEntity: { '@id': `${url}#service` } } : {}),
+      ...(route.startsWith('blog/') ? { mainEntity: { '@id': `${url}#article` } } : {})
     }
   ];
   if (route) graph.push({
@@ -44,6 +46,12 @@ export function pageStructuredData(locale: string, route: string) {
     name: page.service.name, serviceType: page.service.name, description: page.service.description,
     provider: { '@id': organizationId }, mainEntityOfPage: { '@id': `${url}#webpage` },
     ...(page.service.area ? { areaServed: { '@type': 'AdministrativeArea', name: page.service.area } } : {})
+  });
+  if (route.startsWith('blog/') && getDomesticWorkerGuide(route.slice('blog/'.length))) graph.push({
+    '@type': 'Article', '@id': `${url}#article`, url,
+    headline: page.name, description: page.description, inLanguage: locale,
+    mainEntityOfPage: { '@id': `${url}#webpage` },
+    author: { '@id': organizationId }, publisher: { '@id': organizationId }
   });
   // Questions are reused from the exact data rendered by the corresponding page.
   if (page.faqs?.length) graph.push(faqEntity(locale, route, page.faqs));

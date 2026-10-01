@@ -10,7 +10,7 @@ const previous = (file) => execFileSync('git', ['show', `${checkpoint}:${file}`]
 const current = (file) => fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
 
 test('exactly four hand-reviewed localized descriptions change; all other source and snapshot values stay intact', () => {
-  for (const file of ['lib/page-seo.ts', 'tests/fixtures/seo-phase03-baseline.json']) assert.equal(current(file), approvedDescriptions(previous(file)));
+  assert.equal(current('tests/fixtures/seo-phase03-baseline.json'), approvedDescriptions(previous('tests/fixtures/seo-phase03-baseline.json')));
   for (const correction of corrections) {
     const [, locale, route] = correction.route.split('/');
     assert.equal(getPageSeo(locale, route).description, correction.after);

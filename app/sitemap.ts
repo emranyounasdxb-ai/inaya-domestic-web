@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { allServices } from '@/lib/service-helpers';
 import { countrySourcePages } from '@/lib/country-source-pages';
 import { locationServicePages } from '@/lib/location-service-pages';
+import { domesticWorkerGuides } from '@/lib/domestic-worker-guides';
 import { localizedUrl, localeAlternates } from '@/lib/seo';
 
 const locales = ['en', 'ar'] as const;
@@ -66,9 +67,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     localizedEntry(location.slug, 0.82)
   ));
 
+  const guidePages = domesticWorkerGuides.flatMap((guide) => (
+    localizedEntry(`blog/${guide.slug}`, 0.76, 'monthly')
+  ));
+
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
 
-  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages]) {
+  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages]) {
     uniqueEntries.set(entry.url, entry);
   }
 

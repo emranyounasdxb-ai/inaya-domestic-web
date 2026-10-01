@@ -7,6 +7,7 @@ import { getServiceImage } from './service-presentation';
 import { getLocationServicePage } from './location-service-pages';
 import { getCountrySourcePage } from './country-source-pages';
 import { getTrustSupportPage } from './trust-support-pages';
+import { getDomesticWorkerGuide } from './domestic-worker-guides';
 
 type Localized = Record<Lang, string>;
 export type VisibleFaq = { question: string; answer: string };
@@ -47,7 +48,7 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   blog: {
     name: { en: 'Domestic Service Guides', ar: 'أدلة الخدمات المنزلية' },
-    description: { en: 'Browse upcoming INAYA guide topics on choosing domestic services, questions before booking and the differences between maid, nanny and care support.', ar: 'تصفح موضوعات أدلة عناية القادمة حول اختيار الخدمات المنزلية والأسئلة قبل الحجز والفروق بين خدمات الخادمة والمربية ودعم الرعاية.' }
+    description: { en: 'Read bilingual INAYA guides to the UAE domestic worker hiring process, package pricing factors and documents to prepare before an enquiry.', ar: 'اقرأ أدلة عناية بالعربية والإنجليزية حول خطوات استقدام العمالة المنزلية وعوامل الأسعار والمستندات اللازمة قبل الاستفسار.' }
   },
   faq: {
     name: { en: 'Frequently Asked Questions', ar: 'الأسئلة الشائعة' },
@@ -87,6 +88,15 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
   const entry = pages[route];
   if (entry) return { name: entry.name[lang], title: entry.name[lang], description: entry.description[lang] };
+
+  if (route.startsWith('blog/')) {
+    const guide = getDomesticWorkerGuide(route.slice('blog/'.length));
+    if (guide) return {
+      name: guide[lang].title,
+      title: guide[lang].title,
+      description: guide[lang].description
+    };
+  }
 
   const trustRoutes: Record<string, string> = {
     'documents-required': 'documents-required', 'inaya-advantages': 'why-choose-inaya',
@@ -145,6 +155,7 @@ export function pageBreadcrumbs(locale: string, route: string) {
   const home = { name: locale === 'ar' ? 'الرئيسية' : 'Home', url: localizedUrl(locale) };
   const parents = route.startsWith('maid-source-countries/') ? ['services', 'services/countries-we-source-from']
     : route.startsWith('services/') ? ['services']
+    : route.startsWith('blog/') ? ['blog']
     : getLocationServicePage(route) ? ['service-areas'] : [];
   return route ? [home, ...parents.map((path) => ({ name: names(path), url: localizedUrl(locale, path) })),
     { name: names(route), url: localizedUrl(locale, route) }] : [home];
