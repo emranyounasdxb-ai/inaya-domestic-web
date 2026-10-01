@@ -1,5 +1,22 @@
 import { expect, test } from '@playwright/test';
 
+for (const [locale, label, oldLabel] of [
+  ['en', 'Domestic Worker Guide', 'SEO Guide'],
+  ['ar', 'دليل العمالة المنزلية', 'دليل تحسين المحتوى']
+]) {
+  test(`${locale} About guide label is localized in visible and initial HTML`, async ({ page, request }) => {
+    const response = await request.get(`/${locale}/about/`);
+    expect(response.ok()).toBe(true);
+    const html = await response.text();
+    expect(html).toContain(label);
+    expect(html).not.toContain(oldLabel);
+
+    await page.goto(`/${locale}/about/`);
+    await expect(page.locator('main').getByText(label, { exact: true })).toBeVisible();
+    await expect(page.locator('main').getByText(oldLabel, { exact: true })).toHaveCount(0);
+  });
+}
+
 for (const locale of ['en', 'ar']) {
   test(`${locale} hub links lead to formerly orphaned guides and information`, async ({ page }) => {
     await page.goto(`/${locale}/how-it-works/`);

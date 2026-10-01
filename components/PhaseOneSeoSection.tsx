@@ -21,7 +21,7 @@ type SeoContent = {
 const content: Record<PageKey, Record<Lang, SeoContent>> = {
   about: {
     en: {
-      eyebrow: 'SEO Guide',
+      eyebrow: 'Domestic Worker Guide',
       title: 'Trusted domestic worker agency for UAE families',
       lead: 'INAYA Domestic Workers supports families who need clear guidance for maid services, nanny support, cooks, caregivers, recruitment and maid visa assistance across the UAE.',
       sections: [
@@ -43,7 +43,7 @@ const content: Record<PageKey, Record<Lang, SeoContent>> = {
       ctaLabel: 'Contact INAYA'
     },
     ar: {
-      eyebrow: 'دليل تحسين المحتوى',
+      eyebrow: 'دليل العمالة المنزلية',
       title: 'شركة عمالة منزلية موثوقة للعائلات في الإمارات',
       lead: 'تساعد عناية للعمالة المنزلية الأسر التي تبحث عن إرشاد واضح لخدمات الخادمات والمربيات والطهاة والرعاية المنزلية والتوظيف وتأشيرة الخادمة في الإمارات.',
       sections: [

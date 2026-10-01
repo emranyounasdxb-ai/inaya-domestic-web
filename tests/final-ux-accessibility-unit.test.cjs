@@ -40,11 +40,11 @@ test('messages and navigation permit only reviewed localized copy changes', () =
   assert.equal(current(file), expected);
 });
 
-test('page and CTA sources permit only the approved form-oriented copy replacements', () => {
+test('page and CTA sources permit only the approved localized copy replacements', () => {
   const replacements = {
     'app/[locale]/contact/page.tsx': [['أرسل طلبك', 'راجع بيانات الاستفسار'], ['Send Request', 'Check Enquiry Details'], ['أرسل لنا متطلباتك', 'جهز بيانات استفسارك محلياً'], ['Send your requirement', 'Prepare your enquiry details locally']],
     'app/[locale]/booking/page.tsx': [['قبل الإرسال', 'قبل مراجعة البيانات'], ['Before you submit', 'Before checking your details']],
-    'components/PhaseOneSeoSection.tsx': [['Send your details and our team will guide you clearly.', 'Review enquiry details locally. This form does not send them to the office.'], ['Send Request', 'Check Enquiry Details'], ['أرسل التفاصيل وسيرشدك فريقنا بوضوح.', 'راجع بيانات الاستفسار محلياً. لا يرسل هذا النموذج البيانات إلى المكتب.'], ['أرسل الطلب', 'راجع بيانات الاستفسار']]
+    'components/PhaseOneSeoSection.tsx': [['Send your details and our team will guide you clearly.', 'Review enquiry details locally. This form does not send them to the office.'], ['Send Request', 'Check Enquiry Details'], ['أرسل التفاصيل وسيرشدك فريقنا بوضوح.', 'راجع بيانات الاستفسار محلياً. لا يرسل هذا النموذج البيانات إلى المكتب.'], ['أرسل الطلب', 'راجع بيانات الاستفسار'], ["eyebrow: 'SEO Guide'", "eyebrow: 'Domestic Worker Guide'"], ["eyebrow: 'دليل تحسين المحتوى'", "eyebrow: 'دليل العمالة المنزلية'"]]
   };
   for (const [file, pairs] of Object.entries(replacements)) {
     let expected = previous(file);
