@@ -9,6 +9,11 @@ const slugs = [
   'domestic-worker-package-pricing-factors',
   'documents-for-domestic-worker-enquiry'
 ];
+const relatedGuide = {
+  'uae-domestic-worker-hiring-process': 'domestic-worker-package-pricing-factors',
+  'domestic-worker-package-pricing-factors': 'documents-for-domestic-worker-enquiry',
+  'documents-for-domestic-worker-enquiry': 'uae-domestic-worker-hiring-process'
+};
 
 test('three substantive EN/AR guides are linked from each blog hub and have matching Article schema', async () => {
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
@@ -27,6 +32,7 @@ test('three substantive EN/AR guides are linked from each blog hub and have matc
       const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
       const article = body.match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1];
       assert.ok(article, `${route}: visible article`);
+      assert.ok(body.includes(`href="/${locale}/blog/${relatedGuide[slug]}/"`), `${route}: related guide link`);
       assert.ok(tokens(text(article)).length >= 200, `${route}: substantive article copy`);
       assert.equal([...article.matchAll(/<h2\b/g)].length, 4, `${route}: four explanatory sections`);
       assert.ok(html.includes('rel="canonical"'), `${route}: canonical`);

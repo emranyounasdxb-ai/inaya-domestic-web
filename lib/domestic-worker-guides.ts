@@ -65,6 +65,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         }
       ],
       nextSteps: [
+        { label: 'Understand package pricing factors', route: 'blog/domestic-worker-package-pricing-factors' },
         { label: 'How INAYA services work', route: 'how-it-works' },
         { label: 'Compare services', route: 'services' },
         { label: 'Prepare an enquiry', route: 'booking' },
@@ -107,6 +108,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         }
       ],
       nextSteps: [
+        { label: 'تعرف على عوامل تسعير الباقات', route: 'blog/domestic-worker-package-pricing-factors' },
         { label: 'كيف تعمل خدمات عناية', route: 'how-it-works' },
         { label: 'قارن الخدمات', route: 'services' },
         { label: 'جهز استفسارك', route: 'booking' },
@@ -163,6 +165,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         }
       ],
       nextSteps: [
+        { label: 'Prepare documents for an enquiry', route: 'blog/documents-for-domestic-worker-enquiry' },
         { label: 'View INAYA pricing', route: 'pricing' },
         { label: 'Read common questions', route: 'faq' },
         { label: 'Discuss a quote', route: 'contact' },
@@ -211,6 +214,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         }
       ],
       nextSteps: [
+        { label: 'جهز مستندات الاستفسار', route: 'blog/documents-for-domestic-worker-enquiry' },
         { label: 'اطلع على أسعار عناية', route: 'pricing' },
         { label: 'اقرأ الأسئلة الشائعة', route: 'faq' },
         { label: 'ناقش العرض مع الفريق', route: 'contact' },
@@ -267,6 +271,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         }
       ],
       nextSteps: [
+        { label: 'Review the hiring process', route: 'blog/uae-domestic-worker-hiring-process' },
         { label: 'See INAYA document guidance', route: 'documents-required' },
         { label: 'Prepare an enquiry', route: 'booking' },
         { label: 'Read common questions', route: 'faq' },
@@ -315,6 +320,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         }
       ],
       nextSteps: [
+        { label: 'راجع خطوات الاستقدام', route: 'blog/uae-domestic-worker-hiring-process' },
         { label: 'إرشادات عناية للمستندات', route: 'documents-required' },
         { label: 'جهز استفسارك', route: 'booking' },
         { label: 'اقرأ الأسئلة الشائعة', route: 'faq' },
