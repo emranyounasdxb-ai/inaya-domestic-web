@@ -5,6 +5,7 @@ import test from 'node:test';
 import path from 'node:path';
 import { auditExport } from '../scripts/seo-content-audit.mjs';
 import remediation from './seo-final-remediation-expectations.cjs';
+import corePageCopy from './core-page-copy-expectations.cjs';
 
 test('Phase 5 retains all prior routes and protected sources while adding six bilingual guides', async () => {
   const checkpoint = '3c2aee5822d1425feb19d3d08106790bd6d5561f';
@@ -12,6 +13,7 @@ test('Phase 5 retains all prior routes and protected sources while adding six bi
     let expected = execFileSync('git', ['show', `${checkpoint}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
     if (file === 'tests/fixtures/seo-phase03-baseline.json') expected = remediation.approvedDescriptions(expected);
     if (file === 'tests/e2e/home.spec.ts') expected = remediation.approvedHomeFlow(expected);
+    if (file === 'lib/service-content-briefs.ts') expected = corePageCopy.approvedCorePageCopy(file, expected);
     assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), expected, `${file}: exact checkpoint protection with reviewed remediation only`);
   }
   const audit = await auditExport();

@@ -30,7 +30,7 @@ const content: Record<PageKey, Record<Lang, SeoContent>> = {
         { title: 'UAE-wide service support', text: 'From Ajman to Dubai, Sharjah, Abu Dhabi and the Northern Emirates, INAYA helps families choose services that fit their home, schedule and expectations.' }
       ],
       bulletsTitle: 'Families choose INAYA for',
-      bullets: ['Live-in and live-out maid service guidance', 'Nanny, babysitting and newborn care coordination', 'Home cooking, personal chef and kitchen support', 'Elder care, patient care and companion care options', 'Maid visa, sponsorship transfer and recruitment support'],
+      bullets: ['Live-in and live-out maid service guidance', 'Nanny, babysitting and newborn care coordination', 'Home cooking, personal chef and kitchen support', 'Non-clinical elder support, daily home help and companionship', 'Maid visa, sponsorship transfer and recruitment support'],
       faqTitle: 'About INAYA — common questions',
       faqs: [
         { question: 'Is INAYA only based in Ajman?', answer: 'INAYA is based in Ajman and supports domestic worker enquiries across UAE emirates, subject to availability and service type.' },
@@ -52,7 +52,7 @@ const content: Record<PageKey, Record<Lang, SeoContent>> = {
         { title: 'دعم في جميع الإمارات', text: 'من عجمان إلى دبي والشارقة وأبوظبي والإمارات الشمالية، تساعد عناية الأسر على اختيار خدمة تناسب المنزل والجدول والتوقعات.' }
       ],
       bulletsTitle: 'لماذا تختار الأسر عناية؟',
-      bullets: ['إرشاد لخدمات الخادمات المقيمات وغير المقيمات', 'تنسيق خدمات المربيات ورعاية الأطفال والمواليد', 'الطبخ المنزلي والشيف الخاص ومساعدة المطبخ', 'رعاية كبار السن والمرضى والمرافقة', 'دعم تأشيرة الخادمة ونقل الكفالة والتوظيف'],
+      bullets: ['إرشاد لخدمات الخادمات المقيمات وغير المقيمات', 'تنسيق خدمات المربيات ورعاية الأطفال والمواليد', 'الطبخ المنزلي والشيف الخاص ومساعدة المطبخ', 'دعم غير طبي لكبار السن ومساعدة منزلية يومية ومرافقة', 'دعم تأشيرة الخادمة ونقل الكفالة والتوظيف'],
       faqTitle: 'أسئلة شائعة عن عناية',
       faqs: [
         { question: 'هل عناية موجودة فقط في عجمان؟', answer: 'عناية مقرها في عجمان وتدعم طلبات العمالة المنزلية في مختلف إمارات الدولة حسب التوفر ونوع الخدمة.' },

@@ -5,6 +5,10 @@ import test from 'node:test';
 import { auditExport, origin, attrs, text } from '../scripts/seo-content-audit.mjs';
 
 test('Phase 3 preserves all route identities, reduces measured repetition and removes all orphans', async () => {
+  const correctedCareMetadata = {
+    en: { title: 'Non-clinical Home Support in UAE for Daily Routines | INAYA', description: 'Discuss non-clinical home support with INAYA for daily routines, practical household help and companionship in the UAE. Medical and nursing care are not included.' },
+    ar: { title: 'دعم منزلي غير طبي للروتين اليومي في الإمارات | عناية', description: 'ناقش مع عناية الدعم المنزلي غير الطبي للروتين اليومي والمساعدة العملية والمرافقة في الإمارات. لا تشمل الخدمة العلاج الطبي أو التمريض.' }
+  };
   const baseline = JSON.parse(await readFile('tests/fixtures/seo-phase03-baseline.json', 'utf8'));
   const current = await auditExport();
   assert.equal(current.pages.length, 146);
@@ -19,8 +23,9 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
-    assert.equal(page.title, before.title, page.url);
-    if (page.route !== 'blog') assert.equal(page.description, before.description, page.url);
+    const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
+    assert.equal(page.title, correctedCare?.title ?? before.title, page.url);
+    if (page.route !== 'blog') assert.equal(page.description, correctedCare?.description ?? before.description, page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
     assert.deepEqual(page.prices, before.prices, `${page.url}: displayed prices`);

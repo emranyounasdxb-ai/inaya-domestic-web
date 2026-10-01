@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import test from 'node:test';
 import preservation from './form-accessibility-preservation.cjs';
+import corePageCopy from './core-page-copy-expectations.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
 test('all 146 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
@@ -63,6 +64,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       assert.equal(before.split(anchor).length, 2, 'one Organization logo anchor in checkpoint');
       before = before.replace(anchor, "      sameAs: ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/'],\n" + anchor);
     }
+    if (file === 'lib/service-content-briefs.ts' || file === 'lib/services.ts') before = corePageCopy.approvedCorePageCopy(file, before);
     assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), before, file);
   }
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) {
@@ -77,9 +79,15 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
   };
   for (const file of heroFiles) {
     const before = execFileSync('git', ['show', `0cc89c4ca6d5621a6ed08818b799b2bdeb71a5af:${file}`], { encoding: 'utf8' });
-    const expected = file === 'components/CountrySourcePage.tsx'
+    let expected = file === 'components/CountrySourcePage.tsx'
       ? heroSource(before.replace(/\r\n/g, '\n')).replace('booking?service=countries-we-source-from', 'booking')
       : heroSource(before.replace(/\r\n/g, '\n'));
+    if (file === 'app/[locale]/pricing/page.tsx') {
+      const original = '{copy.hero.subtitle}\n          </p>';
+      const corrected = '{copy.hero.subtitle}{\' \'}\n            <Link href={`/${locale}/blog/domestic-worker-package-pricing-factors/`} className="font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{copy.hero.guide}</Link>\n          </p>';
+      assert.equal(expected.split(original).length, 2, 'one original pricing Hero subtitle');
+      expected = expected.replace(original, corrected);
+    }
     assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling`);
   }
 });
