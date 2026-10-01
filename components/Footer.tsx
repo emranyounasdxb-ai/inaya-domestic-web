@@ -26,6 +26,7 @@ export default function Footer({ locale }: { locale: string }) {
     { label: isArabic ? 'آلية العمل' : 'How It Works', href: `/${locale}/how-it-works` },
     { label: isArabic ? 'الدول التي نوفر منها' : 'Countries We Source From', href: `/${locale}/services/countries-we-source-from` },
     { label: tn('faq'), href: `/${locale}/faq` },
+    { label: isArabic ? 'الأدلة' : 'Guides', href: `/${locale}/blog/` },
     { label: tn('contact'), href: `/${locale}/contact` }
   ];
 
