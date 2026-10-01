@@ -30,11 +30,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   const isArabic = locale === 'ar';
   const copy = {
     hero: isArabic ? {
-      title: 'الأسعار، بشكل واضح ومنظم.',
-      subtitle: 'اختر باقة تناسب احتياج منزلك. يتم تأكيد السعر النهائي حسب نوع الخدمة، الإمارة، المدة، والتوفر.'
+      title: 'باقات وأسعار العمالة المنزلية',
+      subtitle: 'الأسعار المعروضة للباقات إرشادية. يتحدد العرض النهائي حسب نوع الخدمة والإمارة والمدة والتوفر؛ تأكد من نطاق الخدمة وأي رسوم منفصلة مع الفريق قبل الحجز.',
+      guide: 'اقرأ دليل عوامل تسعير الباقات'
     } : {
-      title: 'Exclusivity, transparently structured.',
-      subtitle: 'Select a service package that aligns with your household requirements. Every option is explained clearly before booking confirmation.'
+      title: 'Domestic Worker Packages and Pricing',
+      subtitle: 'Displayed package prices are indicative. The final quote depends on the service type, emirate, duration and availability; confirm the full scope and any separate fees with the team before booking.',
+      guide: 'Read the package pricing guide'
     },
     assurance: isArabic ? [
       ['مراجعة الاستبدال', 'حماية أوضح للعميل خلال فترة الخدمة المتفق عليها، حسب نوع الباقة والتوفر.'],
@@ -154,7 +156,8 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             {copy.hero.title}
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-primary-900/80 sm:text-base">
-            {copy.hero.subtitle}
+            {copy.hero.subtitle}{' '}
+            <Link href={`/${locale}/blog/domestic-worker-package-pricing-factors/`} className="font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{copy.hero.guide}</Link>
           </p>
         </div>
       </section>

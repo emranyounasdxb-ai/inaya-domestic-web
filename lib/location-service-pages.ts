@@ -48,7 +48,7 @@ const originalLocationServicePages: LocationServicePage[] = [
     heroTitle: { en: 'Maid Services in Ajman for Trusted Home Support', ar: 'خدمات خادمات في عجمان لدعم منزلي موثوق' },
     lead: { en: 'INAYA is based in Ajman and supports families with maid services, domestic worker recruitment, nanny care, home cooking and maid visa guidance across the emirate.', ar: 'عناية مقرها في عجمان وتدعم الأسر بخدمات الخادمات وتوظيف العمالة المنزلية والمربيات والطبخ المنزلي وإرشاد تأشيرة الخادمة داخل الإمارة.' },
     intro: { en: 'Families in Ajman often need clear and fast support for home cleaning, live-in maid arrangements, part-time help, childcare, cooking and visa-related guidance. INAYA helps review the household requirement first, then explains suitable service options based on availability and family expectations.', ar: 'تحتاج كثير من الأسر في عجمان إلى دعم واضح وسريع للتنظيف وترتيبات الخادمة المقيمة والمساعدة الجزئية ورعاية الأطفال والطبخ وإرشاد التأشيرة. تراجع عناية احتياج المنزل أولاً ثم توضح خيارات الخدمة المناسبة حسب التوفر وتوقعات الأسرة.' },
-    localNeeds: { en: ['Grand Mall Ajman office access', 'Fast consultation for Ajman families', 'Live-in and live-out maid guidance', 'Nanny, cook and care support options', 'Maid visa and document guidance'], ar: ['سهولة الوصول إلى مكتب جراند مول عجمان', 'استشارة سريعة للأسر في عجمان', 'إرشاد للخادمة المقيمة وغير المقيمة', 'خيارات المربيات والطهاة والرعاية', 'إرشاد تأشيرة الخادمة والمستندات'] },
+    localNeeds: { en: ['Grand Mall Ajman office access', 'Discuss needs with the Ajman team', 'Live-in and live-out maid guidance', 'Nanny, cook and care support options', 'Maid visa and document guidance'], ar: ['سهولة الوصول إلى مكتب جراند مول عجمان', 'مناقشة احتياجات الأسرة مع فريق عجمان', 'إرشاد للخادمة المقيمة وغير المقيمة', 'خيارات المربيات والطهاة والرعاية', 'إرشاد تأشيرة الخادمة والمستندات'] },
     popularServices: commonServices,
     neighbourhoods: { en: ['Al Rashidiya', 'Al Nuaimiya', 'Al Jurf', 'Al Mowaihat', 'Ajman Corniche', 'Al Rawda'], ar: ['الراشدية', 'النعيمية', 'الجرف', 'المويهات', 'كورنيش عجمان', 'الروضة'] },
     faqs: [
@@ -108,7 +108,7 @@ const originalLocationServicePages: LocationServicePage[] = [
     faqs: [
       { question: { en: 'Do you support maid service enquiries in Abu Dhabi?', ar: 'هل تدعمون طلبات خدمات الخادمات في أبوظبي؟' }, answer: { en: 'Yes. INAYA supports Abu Dhabi enquiries subject to service type, location, documents and availability.', ar: 'نعم، تدعم عناية طلبات أبوظبي حسب نوع الخدمة والمنطقة والمستندات والتوفر.' } },
       { question: { en: 'Can Abu Dhabi families ask for live-in maid guidance?', ar: 'هل يمكن لأسر أبوظبي طلب إرشاد خادمة مقيمة؟' }, answer: { en: 'Yes. Live-in maid requirements, duties and documents can be discussed clearly before moving forward.', ar: 'نعم، يمكن مناقشة احتياج الخادمة المقيمة والمهام والمستندات بوضوح قبل المتابعة.' } },
-      { question: { en: 'Do you provide care support guidance?', ar: 'هل تقدمون إرشاد خدمات الرعاية؟' }, answer: { en: 'Yes. Elder care, patient care and companion care options can be reviewed by family requirement.', ar: 'نعم، يمكن مراجعة خيارات رعاية كبار السن والمرضى والمرافقة حسب احتياج الأسرة.' } }
+      { question: { en: 'Do you provide care support guidance?', ar: 'هل تقدمون إرشاد خدمات الرعاية؟' }, answer: { en: 'Yes. Non-clinical elder support, daily home help and companionship can be discussed based on the family’s needs.', ar: 'نعم، يمكن مناقشة الدعم غير الطبي لكبار السن والمساعدة المنزلية اليومية والمرافقة حسب احتياج الأسرة.' } }
     ]
   },
   {
@@ -161,7 +161,7 @@ const originalLocationServicePages: LocationServicePage[] = [
     neighbourhoods: { en: ['UAQ City', 'Al Salamah', 'Al Raas', 'Falaj Al Mualla', 'Al Dar Al Baida', 'Al Humrah'], ar: ['مدينة أم القيوين', 'السلامة', 'الراس', 'فلج المعلا', 'الدار البيضاء', 'الحمراء'] },
     faqs: [
       { question: { en: 'Do you support maid services in Umm Al Quwain?', ar: 'هل تدعمون خدمات الخادمات في أم القيوين؟' }, answer: { en: 'Yes. INAYA can review Umm Al Quwain enquiries and explain suitable service options.', ar: 'نعم، يمكن لعناية مراجعة طلبات أم القيوين وشرح خيارات الخدمة المناسبة.' } },
-      { question: { en: 'Can I ask for a nanny or caregiver?', ar: 'هل يمكن طلب مربية أو مقدم رعاية؟' }, answer: { en: 'Yes. Nanny, elder care, patient care and companion care needs can be discussed.', ar: 'نعم، يمكن مناقشة احتياجات المربية ورعاية كبار السن والمرضى والمرافقة.' } },
+      { question: { en: 'Can I ask for a nanny or caregiver?', ar: 'هل يمكن طلب مربية أو مقدم رعاية؟' }, answer: { en: 'Yes. Nanny, non-clinical elder support, daily home help and companionship needs can be discussed.', ar: 'نعم، يمكن مناقشة احتياجات المربية والدعم غير الطبي لكبار السن والمساعدة المنزلية اليومية والمرافقة.' } },
       { question: { en: 'Can INAYA guide documents?', ar: 'هل ترشد عناية للمستندات؟' }, answer: { en: 'Yes. Document and visa guidance can be explained according to your service path.', ar: 'نعم، يمكن شرح إرشاد المستندات والتأشيرة حسب مسار خدمتك.' } }
     ]
   }

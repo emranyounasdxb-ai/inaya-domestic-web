@@ -135,10 +135,10 @@ export const services: Service[] = [
   },
   {
     slug: 'patient-care',
-    icon: '🏥',
-    name: { en: 'Home Care / Patient Care Services', ar: 'خدمات الرعاية المنزلية / رعاية المرضى' },
-    short: { en: 'Professional patient care at home.', ar: 'رعاية احترافية للمرضى في المنزل.' },
-    description: { en: 'Patient care enquiries concern practical daily living and hygiene assistance at home. Discuss the support needed and each profile’s experience; clinical responsibilities need separate clarification.', ar: 'تتعلق طلبات رعاية المرضى بالمساعدة العملية للحياة اليومية والنظافة في المنزل. ناقش الدعم المطلوب وخبرة كل ملف؛ وتحتاج المسؤوليات الطبية إلى توضيح منفصل.' }
+    icon: '🏠',
+    name: { en: 'Non-clinical Home Support', ar: 'دعم منزلي غير طبي' },
+    short: { en: 'Practical daily help and companionship at home.', ar: 'مساعدة يومية ومرافقة داخل المنزل دون رعاية طبية.' },
+    description: { en: 'Discuss practical help with daily routines, hygiene and companionship at home. INAYA does not provide medical treatment, nursing or medication management.', ar: 'ناقش المساعدة العملية في الروتين اليومي والنظافة والمرافقة داخل المنزل. لا تقدم عناية العلاج الطبي أو التمريض أو إدارة الأدوية.' }
   },
   {
     slug: 'companion-care',

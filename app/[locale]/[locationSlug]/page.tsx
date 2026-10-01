@@ -56,6 +56,11 @@ export default async function LocationServicePage({ params }: { params: Promise<
         countries: 'Compare Source Countries',
         back: 'All Service Areas'
       };
+  const process = locationSlug === 'maid-services-ajman'
+    ? lang === 'ar'
+      ? ['شارك الدور المنزلي والمهام والمنطقة في عجمان', 'راجع خيارات الخدمة والتوفر وفق جدول الأسرة', 'اطلب توضيح النطاق والتكاليف والمستندات حسب حالتك كتابةً', 'أكد الشروط قبل إتمام الترتيب']
+      : ['Share the household role, duties and Ajman location', 'Review service options and availability for your schedule', 'Ask for the proposed scope, costs and case-specific documents in writing', 'Confirm the terms before making an arrangement']
+    : t.process;
 
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
@@ -117,8 +122,9 @@ export default async function LocationServicePage({ params }: { params: Promise<
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="font-heading text-[2rem] font-bold tracking-[-0.045em] text-primary-900 sm:text-[2.7rem]">{t.processTitle}</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-4">
-            {t.process.map((step, index) => <div key={step} className="rounded-[22px] border border-white/80 bg-white/80 p-5 shadow-[0_18px_50px_rgba(7,22,74,0.065)]"><div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-900 text-xs font-bold text-white">{index + 1}</div><p className="mt-4 text-sm font-semibold leading-6 text-primary-900/72">{step}</p></div>)}
+            {process.map((step, index) => <div key={step} className="rounded-[22px] border border-white/80 bg-white/80 p-5 shadow-[0_18px_50px_rgba(7,22,74,0.065)]"><div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-900 text-xs font-bold text-white">{index + 1}</div><p className="mt-4 text-sm font-semibold leading-6 text-primary-900/72">{step}</p></div>)}
           </div>
+          {locationSlug === 'maid-services-ajman' ? <Link href={`/${locale}/blog/uae-domestic-worker-hiring-process/`} className="mt-7 inline-block text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{lang === 'ar' ? 'اقرأ خطوات استقدام العمالة المنزلية' : 'Read the UAE domestic worker hiring process'}</Link> : null}
         </div>
       </section>
 

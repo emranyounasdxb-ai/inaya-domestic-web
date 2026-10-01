@@ -31,7 +31,7 @@ export const serviceSeoPolishMoreB: ServiceSeoPolish = {
       why: ['Respectful senior care guidance', 'Daily routine and companionship support', 'Family instruction review', 'Comfort and dignity focus', 'Home environment understanding', 'Clear follow-up with family'],
       included: ['Daily companionship', 'Routine and mobility assistance', 'Meal and comfort reminders', 'Light household support around the senior', 'Family update communication', 'Respectful care expectations'],
       faqs: [
-        { title: 'Is elder care medical care?', text: 'INAYA elder care is focused on home support and companionship. Any medical requirement should be discussed clearly before service selection.' },
+        { title: 'Is elder care medical care?', text: 'No. INAYA elder support is non-clinical home help and companionship; medical treatment and nursing are outside this service.' },
         { title: 'Can care support daily routines?', text: 'Yes. Routine support can include companionship, reminders and daily comfort assistance depending on scope.' },
         { title: 'Can the family give instructions?', text: 'Yes. Family instructions and comfort preferences should be shared before confirmation.' },
         { title: 'Is elder care available across UAE?', text: 'INAYA supports elder care enquiries across the UAE subject to availability and requirement.' }
@@ -48,7 +48,7 @@ export const serviceSeoPolishMoreB: ServiceSeoPolish = {
       why: ['إرشاد رعاية محترمة لكبار السن', 'دعم الروتين والمرافقة اليومية', 'مراجعة تعليمات الأسرة', 'تركيز على الراحة والكرامة', 'فهم بيئة المنزل', 'متابعة واضحة مع الأسرة'],
       included: ['مرافقة يومية', 'مساعدة في الروتين والحركة', 'تذكير بالوجبات والراحة', 'دعم منزلي خفيف حول كبير السن', 'تواصل تحديثات مع الأسرة', 'توقعات رعاية محترمة'],
       faqs: [
-        { title: 'هل رعاية كبار السن رعاية طبية؟', text: 'خدمة عناية تركز على الدعم المنزلي والمرافقة. أي احتياج طبي يجب توضيحه قبل اختيار الخدمة.' },
+        { title: 'هل رعاية كبار السن رعاية طبية؟', text: 'لا. يقتصر دعم عناية لكبار السن على المساعدة المنزلية والمرافقة غير الطبية، ولا يشمل العلاج أو التمريض.' },
         { title: 'هل يمكن دعم الروتين اليومي؟', text: 'نعم، يمكن أن يشمل الدعم المرافقة والتذكير والمساعدة اليومية حسب النطاق.' },
         { title: 'هل يمكن للأسرة إعطاء تعليمات؟', text: 'نعم، يجب مشاركة تعليمات الأسرة وتفضيلات الراحة قبل التأكيد.' },
         { title: 'هل الخدمة متوفرة في الإمارات؟', text: 'تدعم عناية طلبات رعاية كبار السن في الإمارات حسب التوفر والاحتياج.' }
@@ -60,38 +60,38 @@ export const serviceSeoPolishMoreB: ServiceSeoPolish = {
   },
   'patient-care': {
     en: {
-      title: 'Patient Care Services at Home in UAE for Daily Support',
-      meta: 'Patient care services at home in UAE with INAYA. Arrange daily living assistance, comfort support, family instructions and respectful home care guidance.',
-      lead: 'INAYA helps families arrange patient care services at home in UAE for daily living support, comfort-focused assistance and clear family instruction follow-up.',
-      whatText: 'Patient care at home is useful when a family member needs non-hospital daily support, personal routine assistance and a caring presence. Requirements should be clarified carefully before service selection.',
-      why: ['Home patient support guidance', 'Daily living assistance review', 'Comfort and routine focus', 'Family instruction clarity', 'Respectful care environment', 'Follow-up and communication'],
+      title: 'Non-clinical Home Support in UAE for Daily Routines',
+      meta: 'Discuss non-clinical home support with INAYA for daily routines, practical household help and companionship in the UAE. Medical and nursing care are not included.',
+      lead: 'INAYA helps families discuss non-clinical home support for daily routines, practical household help and companionship. Medical treatment, nursing and medication management are outside this service.',
+      whatText: 'This service concerns practical help with daily routines, hygiene and companionship at home. Clarify the household duties and any medical needs separately before choosing an arrangement.',
+      why: ['Non-clinical home support guidance', 'Daily living assistance review', 'Comfort and routine focus', 'Family instruction clarity', 'Respectful home setting', 'Follow-up and communication'],
       included: ['Daily living support', 'Routine comfort assistance', 'Mobility and household help where suitable', 'Family instruction follow-up', 'Meal and hygiene routine reminders', 'Clear care scope discussion'],
       faqs: [
-        { title: 'Is patient care at home medical nursing?', text: 'This service focuses on home support. Any clinical or nursing requirement must be discussed clearly and may need specialist care.' },
-        { title: 'Can care be arranged after hospital discharge?', text: 'Post-discharge support can be discussed depending on the required scope and family instructions.' },
+        { title: 'Does INAYA provide medical or nursing care?', text: 'No. This service is limited to non-clinical household support and companionship. Seek a healthcare provider for treatment, nursing or medication management.' },
+        { title: 'What can a family discuss before requesting support?', text: 'Share the daily routine, practical duties, location and schedule. The team can review non-clinical options subject to availability.' },
         { title: 'Can family routines be followed?', text: 'Yes. Family instructions, comfort preferences and daily routines should be shared before confirmation.' },
         { title: 'Does INAYA check availability by emirate?', text: 'Yes. Availability is reviewed by emirate, timing and service requirements.' }
       ],
       comparison: commonComparisonEn,
-      finalTitle: 'Need patient care support at home?',
-      finalText: 'Share the daily support requirement and location with INAYA for clear next steps.'
+      finalTitle: 'Need practical home support?',
+      finalText: 'Share the daily household duties and location with INAYA to discuss suitable non-clinical options.'
     },
     ar: {
-      title: 'خدمات رعاية المرضى في المنزل في الإمارات للدعم اليومي',
-      meta: 'خدمات رعاية المرضى في المنزل في الإمارات مع عناية. ترتيب مساعدة يومية ودعم للراحة وتعليمات الأسرة وإرشاد رعاية منزلية محترمة.',
-      lead: 'تساعد عناية الأسر على ترتيب خدمات رعاية المرضى في المنزل في الإمارات لدعم الحياة اليومية والمساعدة التي تركز على الراحة ومتابعة تعليمات الأسرة.',
-      whatText: 'رعاية المرضى في المنزل مفيدة عندما يحتاج أحد أفراد الأسرة إلى دعم يومي خارج المستشفى ومساعدة في الروتين وحضور مهتم. يجب توضيح المتطلبات بعناية قبل اختيار الخدمة.',
-      why: ['إرشاد دعم المرضى في المنزل', 'مراجعة مساعدة الحياة اليومية', 'تركيز على الراحة والروتين', 'وضوح تعليمات الأسرة', 'بيئة رعاية محترمة', 'متابعة وتواصل'],
+      title: 'دعم منزلي غير طبي للروتين اليومي في الإمارات',
+      meta: 'ناقش مع عناية الدعم المنزلي غير الطبي للروتين اليومي والمساعدة العملية والمرافقة في الإمارات. لا تشمل الخدمة العلاج الطبي أو التمريض.',
+      lead: 'تساعد عناية الأسر على مناقشة دعم منزلي غير طبي للروتين اليومي والمساعدة العملية والمرافقة. لا تشمل هذه الخدمة العلاج الطبي أو التمريض أو إدارة الأدوية.',
+      whatText: 'تختص هذه الخدمة بالمساعدة العملية في الروتين اليومي والنظافة والمرافقة داخل المنزل. وضح المهام المنزلية وأي احتياجات طبية بصورة منفصلة قبل اختيار الترتيب.',
+      why: ['إرشاد الدعم المنزلي غير الطبي', 'مراجعة المساعدة اليومية', 'تركيز على الراحة والروتين', 'وضوح تعليمات الأسرة', 'بيئة منزلية مناسبة', 'متابعة وتواصل'],
       included: ['دعم الحياة اليومية', 'مساعدة في روتين الراحة', 'مساعدة في الحركة والمنزل حسب الحالة', 'متابعة تعليمات الأسرة', 'تذكير بروتين الوجبات والنظافة', 'مناقشة واضحة لنطاق الرعاية'],
       faqs: [
-        { title: 'هل رعاية المرضى في المنزل تمريض طبي؟', text: 'تركز هذه الخدمة على الدعم المنزلي. أي احتياج طبي أو تمريضي يجب توضيحه وقد يحتاج رعاية متخصصة.' },
-        { title: 'هل يمكن ترتيب الدعم بعد الخروج من المستشفى؟', text: 'يمكن مناقشة دعم ما بعد الخروج حسب النطاق المطلوب وتعليمات الأسرة.' },
+        { title: 'هل تقدم عناية علاجاً طبياً أو تمريضاً؟', text: 'لا. تقتصر الخدمة على المساعدة المنزلية والمرافقة غير الطبية. استشر مقدم رعاية صحية بشأن العلاج أو التمريض أو إدارة الأدوية.' },
+        { title: 'ما المعلومات التي تحتاجها الأسرة قبل طلب الدعم؟', text: 'اذكر الروتين اليومي والمهام العملية والمنطقة والجدول. يراجع الفريق خيارات الدعم غير الطبي حسب التوفر.' },
         { title: 'هل يمكن اتباع روتين الأسرة؟', text: 'نعم، يجب مشاركة تعليمات الأسرة وتفضيلات الراحة والروتين اليومي قبل التأكيد.' },
         { title: 'هل تراجع عناية التوفر حسب الإمارة؟', text: 'نعم، تتم مراجعة التوفر حسب الإمارة والتوقيت ومتطلبات الخدمة.' }
       ],
       comparison: commonComparisonAr,
-      finalTitle: 'هل تحتاج دعم رعاية مريض في المنزل؟',
-      finalText: 'شارك احتياج الدعم اليومي والمنطقة مع عناية للحصول على خطوات واضحة.'
+      finalTitle: 'هل تحتاج مساعدة منزلية يومية؟',
+      finalText: 'شارك المهام المنزلية والمنطقة مع عناية لمناقشة خيارات الدعم غير الطبي المناسبة.'
     }
   },
   'companion-care': {
