@@ -6,6 +6,10 @@ const { assertFormPreserved } = require('./form-accessibility-preservation.cjs')
 const base = 'f45a93dc0b8274ad6a792420cfa3e4bcbb828103';
 const current = file => readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
 const previous = file => execFileSync('git', ['show', `${base}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
+const replaceOnce = (source, before, after) => {
+  assert.equal(source.split(before).length, 2, `Expected exactly one approved navigation anchor: ${before}`);
+  return source.replace(before, after);
+};
 
 test('all form variants retain exact validation, fields, options and styling with unique labelled IDs', () => {
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) {
@@ -35,8 +39,49 @@ test('messages and navigation permit only reviewed localized copy changes', () =
     assert.deepEqual(JSON.parse(current(file)), before);
   }
   const file = 'components/Navbar.tsx';
-  const expected = previous(file).replace('aria-label="Menu"', "aria-label={locale === 'ar' ? 'القائمة' : 'Menu'}")
-    .replace('            Menu', "            {locale === 'ar' ? 'القائمة' : 'Menu'}");
+  let expected = replaceOnce(previous(file), 'aria-label="Menu"', "aria-label={locale === 'ar' ? 'القائمة' : 'Menu'}");
+  expected = replaceOnce(expected, '            Menu', "            {locale === 'ar' ? 'القائمة' : 'Menu'}");
+  const faqLink = "    { href: `/${locale}/faq`, label: t('faq') },\n";
+  expected = replaceOnce(expected, faqLink, faqLink + "    { href: `/${locale}/blog/`, label: locale === 'ar' ? 'الأدلة' : 'Guides' },\n");
+  expected = replaceOnce(expected, '            const active = pathname === l.href;\n', [
+    '            const active = l.href === `/${locale}/blog/`',
+    '              ? pathname === `/${locale}/blog` || pathname.startsWith(l.href)',
+    '              : pathname === l.href;'
+  ].join('\n') + '\n');
+  expected = replaceOnce(expected,
+    '                href={l.href}\n                className={`relative',
+    "                href={l.href}\n                aria-current={active ? 'page' : undefined}\n                className={`relative");
+  const previousMobile = [
+    '            {links.map((l) => (',
+    '              <Link',
+    '                key={l.href}',
+    '                href={l.href}',
+    '                onClick={() => setOpen(false)}',
+    '                className="border-b border-primary-700/10 py-3 text-sm font-semibold text-primary-900 last:border-b-0"',
+    '              >',
+    '                {l.label}',
+    '              </Link>',
+    '            ))}'
+  ].join('\n');
+  const approvedMobile = [
+    '            {links.map((l) => {',
+    '              const active = l.href === `/${locale}/blog/`',
+    '                ? pathname === `/${locale}/blog` || pathname.startsWith(l.href)',
+    '                : pathname === l.href;',
+    '              return (',
+    '                <Link',
+    '                  key={l.href}',
+    '                  href={l.href}',
+    '                  onClick={() => setOpen(false)}',
+    "                  aria-current={active ? 'page' : undefined}",
+    "                  className={`border-b py-3 text-sm font-semibold text-primary-900 last:border-b-0 ${active && l.href === `/${locale}/blog/` ? 'border-accent-500' : 'border-primary-700/10'}`}",
+    '                >',
+    '                  {l.label}',
+    '                </Link>',
+    '              );',
+    '            })}'
+  ].join('\n');
+  expected = replaceOnce(expected, previousMobile, approvedMobile);
   assert.equal(current(file), expected);
 });
 
