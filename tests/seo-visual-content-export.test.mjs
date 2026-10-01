@@ -6,12 +6,12 @@ import test from 'node:test';
 import preservation from './form-accessibility-preservation.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all 140 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
+test('all 146 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 140);
+  assert.equal(audit.pages.length, 146);
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(audit.linkCoverage[locale].reachable, 70);
+    assert.equal(audit.linkCoverage[locale].reachable, 73);
     assert.ok(audit.linkCoverage[locale].maximumDepth <= 3);
     assert.ok(audit.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
@@ -50,7 +50,7 @@ test('all 140 pages remove the pre-Hero strip and render localized breadcrumbs a
 });
 
 test('technical SEO, content datasets, trust, prices, measurement and protected UI remain exact', async () => {
-  const files = ['app/robots.ts', 'app/sitemap.ts', 'lib/seo.ts', 'lib/page-seo.ts', 'lib/structured-data.ts', 'lib/json-ld.ts', 'lib/content-architecture.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/services.ts', 'lib/buyer-answers.ts', 'lib/measurement.ts', 'components/Measurement.tsx', 'components/Footer.tsx', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'tests/e2e/sierra-leone-offer-controls.spec.ts', 'app/globals.css', 'app/[locale]/layout.tsx', 'next.config.js', 'tests/fixtures/seo-phase03-baseline.json'];
+  const files = ['app/robots.ts', 'lib/seo.ts', 'lib/json-ld.ts', 'lib/content-architecture.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/services.ts', 'lib/buyer-answers.ts', 'lib/measurement.ts', 'components/Measurement.tsx', 'components/Footer.tsx', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'tests/e2e/sierra-leone-offer-controls.spec.ts', 'app/globals.css', 'app/[locale]/layout.tsx', 'next.config.js', 'tests/fixtures/seo-phase03-baseline.json'];
   for (const file of files) {
     let before = execFileSync('git', ['show', `0cc89c4ca6d5621a6ed08818b799b2bdeb71a5af:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
     if (file === 'lib/structured-data.ts') {

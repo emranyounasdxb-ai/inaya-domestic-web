@@ -7,20 +7,21 @@ import { auditExport, origin, attrs, text } from '../scripts/seo-content-audit.m
 test('Phase 3 preserves all route identities, reduces measured repetition and removes all orphans', async () => {
   const baseline = JSON.parse(await readFile('tests/fixtures/seo-phase03-baseline.json', 'utf8'));
   const current = await auditExport();
-  assert.equal(current.pages.length, 140);
-  assert.deepEqual(current.pages.map((p) => p.url), baseline.pages.map((p) => p.url));
+  assert.equal(current.pages.length, 146);
+  assert.deepEqual(current.pages.slice(0, 140).map((p) => p.url), baseline.pages.map((p) => p.url));
   assert.deepEqual(current.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(current.linkCoverage[locale].reachable, 70);
+    assert.equal(current.linkCoverage[locale].reachable, 73);
     assert.ok(current.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
   assert.ok(current.repeatedTokens < baseline.repeatedTokens);
   assert.ok(current.repeatedParagraphs < baseline.repeatedParagraphs);
   assert.ok(current.nearPairs.length < baseline.nearPairs);
-  for (const page of current.pages) {
+  for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
     assert.equal(page.title, before.title, page.url);
-    assert.equal(page.description, before.description, page.url);
+    if (page.route !== 'blog') assert.equal(page.description, before.description, page.url);
+    else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
     assert.deepEqual(page.prices, before.prices, `${page.url}: displayed prices`);
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
@@ -45,5 +46,5 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
       assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), details, `${page.url}: visible FAQ/schema`);
     }
   }
-  console.log(JSON.stringify({ routes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
+  console.log(JSON.stringify({ routes: 146, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
 });

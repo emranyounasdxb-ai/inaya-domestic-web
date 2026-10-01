@@ -8,14 +8,14 @@ const require = createRequire(import.meta.url);
 const { buyerAnswers } = require('../.next/phase-02-unit/lib/buyer-answers.js');
 const { siteConfig } = require('../.next/phase-02-unit/lib/site-config.js');
 
-test('all 140 routes omit unsupported statistics, approval and ranking labels and retain business identity', async () => {
+test('all 146 routes omit unsupported statistics, approval and ranking labels and retain business identity', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 140);
-  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 140);
-  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 140);
+  assert.equal(audit.pages.length, 146);
+  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 146);
+  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 146);
   assert.deepEqual(audit.orphans, []);
   assert.equal(audit.nearPairs.length, 0);
-  assert.ok(audit.repeatedTokens <= 8258, 'retain Phase 3 lexical improvement without requiring artificial uniqueness');
+  assert.ok(audit.repeatedTokens <= 8300, 'retain Phase 3 lexical improvement with six substantive guide pages');
   for (const page of audit.pages) {
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const visible = text(file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, ''));
@@ -32,5 +32,5 @@ test('all 140 routes omit unsupported statistics, approval and ranking labels an
       assert.ok(visible.includes(answer.answer[page.locale]));
     }
   }
-  console.log(JSON.stringify({ routes: 140, localizedBuyerAnswers: 16, orphans: 0, nearPairs: 0, repeatedTokens: audit.repeatedTokens }));
+  console.log(JSON.stringify({ routes: 146, localizedBuyerAnswers: 16, orphans: 0, nearPairs: 0, repeatedTokens: audit.repeatedTokens }));
 });
