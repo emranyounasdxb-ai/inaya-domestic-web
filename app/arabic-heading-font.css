@@ -1,0 +1,37 @@
+/* Unmodified copies of the existing IBM Plex Sans Arabic faces.
+   All four weights remain available; other scripts retain the original fallback. */
+@font-face {
+  font-family: 'INAYA Arabic Heading';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-heading-400.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41;
+}
+
+@font-face {
+  font-family: 'INAYA Arabic Heading';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-heading-500.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41;
+}
+
+@font-face {
+  font-family: 'INAYA Arabic Heading';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-heading-600.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41;
+}
+
+@font-face {
+  font-family: 'INAYA Arabic Heading';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-heading-700.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41;
+}

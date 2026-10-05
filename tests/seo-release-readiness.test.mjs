@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
@@ -46,10 +47,10 @@ test('exported pages remove shared visa promises, retain neutral transfer FAQs a
     for (const route of ['', 'maid-services-ajman', 'services/monthly-maid-contract']) {
       const html = await readFile(`out/${locale}/${route ? route + '/' : ''}index.html`, 'utf8');
       const fontPreloads = [...html.matchAll(/<link\b[^>]*rel="preload"[^>]*as="font"[^>]*>/g)].map(match => match[0]);
-      assert.equal(fontPreloads.length, locale === 'ar' ? 1 : 0, 'only the used Arabic body subset is preloaded');
+      assert.equal(fontPreloads.length, locale === 'ar' ? 3 : 0, 'only the three critical used Arabic font faces are preloaded');
       if (locale === 'ar') {
-        assert.match(fontPreloads[0], /href="\/fonts\/inaya-arabic-body\.woff2"/);
-        assert.match(fontPreloads[0], /crossorigin="(?:anonymous)?"/i, 'empty crossorigin is the equivalent anonymous mode emitted by React');
+        assert.deepEqual(fontPreloads.map(tag => tag.match(/href="([^"]+)"/)[1]).sort(), ['/fonts/inaya-arabic-body-core-eb3aa9ff2a7a.woff2', '/fonts/inaya-arabic-body-latin.woff2', '/fonts/inaya-arabic-heading-700.woff2']);
+        for (const tag of fontPreloads) assert.match(tag, /crossorigin="(?:anonymous)?"/i, 'empty crossorigin is the equivalent anonymous mode emitted by React');
       }
     }
     const ajman = await readFile(`out/${locale}/maid-services-ajman/index.html`, 'utf8');
@@ -61,18 +62,33 @@ test('exported pages remove shared visa promises, retain neutral transfer FAQs a
   }
 });
 
-test('Arabic body subset is locale-scoped, preserves original fallback and keeps all homepage card images lazy', async () => {
-  const font = await readFile('public/fonts/inaya-arabic-body.woff2');
+test('Arabic fonts are locale-scoped, preserve exact original faces and fallbacks, and keep homepage card images lazy', async () => {
+  const font = await readFile('public/fonts/inaya-arabic-body-core-eb3aa9ff2a7a.woff2');
   assert.equal(font.subarray(0, 4).toString(), 'wOF2');
-  assert.ok(font.length < 80000, 'Arabic body font remains below 80 KB');
+  assert.equal(createHash('sha256').update(font).digest('hex'), 'eb3aa9ff2a7a7ccafbd858042afbf9378a64df6db01a6a89eb190af6ac6c0c37');
+  assert.ok(font.length < 56000, 'Arabic body font remains below 56 KB');
   assert.match(await readFile('public/fonts/OFL-NotoSansArabic.txt', 'utf8'), /SIL OPEN FONT LICENSE Version 1\.1/);
+  assert.match(await readFile('public/fonts/OFL-IBMPlexSansArabic.txt', 'utf8'), /SIL OPEN FONT LICENSE Version 1\.1/);
+  const exactFaces = {
+    'inaya-arabic-body-latin.woff2': '20d51311e187e0ff5be9d6fe24f099e97be6cc583078d6f271c74d68920cd1e0',
+    'inaya-arabic-heading-400.woff2': '4ed189e8653e9303ec1e1448a6025f838ecd19fe4a5f4f7889b8394b3c5378fb',
+    'inaya-arabic-heading-500.woff2': 'bf2b68e78ca6e9c6e560634ecc33c1f11947b9ffaff1b6d9b42730ce85f696da',
+    'inaya-arabic-heading-600.woff2': '0ccee44455f545eb6b4083f77e5d15e7c9cd514007870167c8c69d1ba7631e26',
+    'inaya-arabic-heading-700.woff2': 'c6e0419cba62fba9e573686eaa1b503cae2f332e4ab1b0acff5cde599dee5d7a'
+  };
+  for (const [name, expected] of Object.entries(exactFaces)) {
+    const bytes = await readFile(`public/fonts/${name}`);
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), expected, `${name}: unmodified existing typography`);
+  }
   for (const locale of ['en', 'ar']) {
     const html = await readFile(`out/${locale}/index.html`, 'utf8');
     const body = html.match(/<body\b[^>]*>/)?.[0];
     if (locale === 'ar') {
       assert.match(body, /INAYA Arabic Body/);
       assert.match(body, /Noto Sans Arabic Fallback/);
-    } else assert.doesNotMatch(body, /INAYA Arabic Body/);
+      assert.match(body, /INAYA Arabic Heading/);
+      assert.match(body, /IBM Plex Sans Arabic Fallback/);
+    } else assert.doesNotMatch(body, /INAYA Arabic (?:Body|Heading)/);
     const cards = [...html.matchAll(/<a\b[^>]*class="[^"]*curated-discipline-card[^>]*>([\s\S]*?)<\/a>/g)];
     assert.equal(cards.length, 3);
     for (const card of cards) {

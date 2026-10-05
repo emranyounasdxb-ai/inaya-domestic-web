@@ -10,12 +10,13 @@ function assertFormPreserved(current, previous, file) {
     .map(m => {
       const field = m[0].replace(/ \{\.\.\.fieldA11y\('[^']+'\)\}/g, '').replace(/ id=\{fieldId\('[^']+'\)\}/g, '');
       return file === 'components/BookingForm.tsx' && m[2] === 'service'
-        ? field.replace(/ value=\{selectedService\} onChange=\{handleServiceChange\}/, '')
+        ? field.replace(/ ref=\{serviceRef\}/, '').replace(/ value=\{selectedService\} onChange=\{handleServiceChange\}/, '')
         : field;
     });
   assert.deepEqual(fields(current), fields(previous), `${file}: original field attributes and order`);
   if (file === 'components/BookingForm.tsx') {
-    assert.match(current, /<select \{\.\.\.fieldA11y\('service'\)\} name="service" className="field" value=\{selectedService\} onChange=\{handleServiceChange\}>/);
+    assert.match(current, /<select \{\.\.\.fieldA11y\('service'\)\} ref=\{serviceRef\} name="service" className="field" value=\{selectedService\} onChange=\{handleServiceChange\}>/);
+    assert.match(current, /setSelectedService\(serviceRef\.current\?\.value \?\? services\[0\]\.slug\)/, 'hydration adopts the actual user selection');
   }
   const options = source => [...source.matchAll(/<option\b[\s\S]*?<\/option>/g)].map(m => m[0]);
   assert.deepEqual(options(current), options(previous), `${file}: original options`);
