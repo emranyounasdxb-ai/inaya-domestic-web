@@ -7,7 +7,7 @@ const notes = {
       ['full-time-maid', 'Full-time housemaid in Ajman', 'List the regular workload, days and hours needed in your home. A full-time schedule does not automatically include accommodation; discuss live-in or live-out arrangements separately.'],
       ['part-time-maid', 'Part-time maid visits in Ajman', 'Share the rooms, priority tasks and preferred visit times. Include the exact residential area and access details so the team can review the proposed visit.'],
       ['nanny', 'Nanny enquiries in Ajman', 'Prepare the children’s ages, nursery or school routine and parent instructions. Ask about the individual profile’s relevant childcare experience and how updates will be shared.'],
-      ['monthly-maid-contract', 'Monthly maid visits in Ajman', 'For repeating cleaning needs, discuss visit frequency, hours and tasks. A monthly visit plan is different from a full-time worker or a live-in arrangement; confirm which model the quote covers.'],
+      ['monthly-maid-contract', 'Monthly maid contract enquiries in Ajman', 'For a monthly contract enquiry from Ajman, describe your household needs. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.'],
       ['maid-visa', 'Maid visa enquiries in Ajman', 'Explain the current worker and sponsor situation. Contact INAYA to confirm the support available for your case, applicable requirements and fees.']
     ],
     ar: [
@@ -15,7 +15,7 @@ const notes = {
       ['full-time-maid', 'عاملة منزل بدوام كامل في عجمان', 'حدد العمل المنتظم والأيام والساعات المطلوبة في المنزل. جدول الدوام الكامل لا يشمل السكن تلقائياً؛ ناقش الإقامة أو عدم الإقامة بشكل منفصل.'],
       ['part-time-maid', 'زيارات خادمة بدوام جزئي في عجمان', 'شارك الغرف والمهام ذات الأولوية وأوقات الزيارات المفضلة. أضف المنطقة السكنية الدقيقة وتفاصيل الدخول لمراجعة الزيارة المقترحة.'],
       ['nanny', 'طلبات المربيات في عجمان', 'جهز أعمار الأطفال وروتين الحضانة أو المدرسة وتعليمات الوالدين. اسأل عن خبرة الملف الفردي المناسبة وطريقة مشاركة التحديثات.'],
-      ['monthly-maid-contract', 'زيارات خادمة شهرية في عجمان', 'ناقش تكرار الزيارات والساعات والمهام لاحتياجات التنظيف المتكررة. الخطة الشهرية تختلف عن الدوام الكامل أو الإقامة؛ أكد النموذج الذي يغطيه العرض.'],
+      ['monthly-maid-contract', 'طلبات عقد خادمة شهري في عجمان', 'لطلب عقد شهري في عجمان، صف احتياجات المنزل. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.'],
       ['maid-visa', 'استفسارات تأشيرة الخادمة في عجمان', 'وضح الوضع الحالي للعاملة والكفيل. تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة.']
     ]
   },
@@ -25,7 +25,7 @@ const notes = {
       ['full-time-maid', 'Full-time maid enquiries in Dubai', 'For a villa or apartment, describe the rooms, regular laundry and daily workload. Confirm the days, hours and live-in or live-out model rather than choosing on the job title alone.'],
       ['part-time-maid', 'Scheduled maid visits in Dubai', 'Prioritize tasks for each visit and specify your area, building access and preferred time window. Ask what supplies and equipment should be ready.'],
       ['nanny', 'Nanny services for Dubai families', 'Working parents can describe childcare hours, school or nursery preparation and handovers. Review relevant individual experience and distinguish ongoing nanny care from occasional babysitting.'],
-      ['monthly-maid-contract', 'Recurring monthly visits in Dubai', 'A recurring plan should specify the visit count, length and agreed tasks. Confirm how it fits your family schedule; a monthly charge does not by itself provide full-time residence.'],
+      ['monthly-maid-contract', 'Monthly contract enquiries in Dubai', 'Share your Dubai area, building access and household priorities for a monthly contract enquiry. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.'],
       ['maid-visa', 'Maid visa enquiries from Dubai', 'State the current case and ask what support INAYA can provide. Confirm applicable requirements, responsible parties and fees before relying on a checklist or proposed next step.']
     ],
     ar: [
@@ -33,7 +33,7 @@ const notes = {
       ['full-time-maid', 'طلبات خادمة بدوام كامل في دبي', 'صف الغرف والغسيل المنتظم والعمل اليومي في الفيلا أو الشقة. أكد الأيام والساعات والإقامة أو عدمها بدلاً من الاختيار بالمسمى وحده.'],
       ['part-time-maid', 'زيارات خادمة مجدولة في دبي', 'رتب مهام كل زيارة وحدد المنطقة والدخول إلى المبنى والفترة الزمنية المفضلة. اسأل عن المستلزمات والمعدات المطلوب تجهيزها.'],
       ['nanny', 'خدمات المربيات لأسر دبي', 'يمكن للوالدين العاملين توضيح ساعات الرعاية والاستعداد للمدرسة أو الحضانة وتسليم الرعاية. راجع الخبرة الفردية وميز الرعاية المستمرة عن جليسة الأطفال المؤقتة.'],
-      ['monthly-maid-contract', 'زيارات شهرية متكررة في دبي', 'ينبغي تحديد عدد الزيارات ومدتها والمهام المتفق عليها. أكد ملاءمتها لجدول الأسرة؛ الرسوم الشهرية لا تعني وحدها إقامة بدوام كامل.'],
+      ['monthly-maid-contract', 'طلبات عقد خادمة شهري في دبي', 'شارك منطقة المنزل في دبي وتفاصيل الدخول والأولويات لطلب العقد الشهري. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.'],
       ['maid-visa', 'استفسارات تأشيرة الخادمة من دبي', 'حدد الحالة الحالية واسأل عن الدعم الذي يمكن لعناية تقديمه. أكد المتطلبات والأطراف المسؤولة والرسوم قبل الاعتماد على قائمة أو خطوة مقترحة.']
     ]
   },
@@ -43,7 +43,7 @@ const notes = {
       ['full-time-maid', 'Full-time maid for a Sharjah home', 'List regular household tasks and how they fit your family and school schedule. Compare the work schedule separately from whether the worker lives in the home.'],
       ['part-time-maid', 'Part-time maid visits in Sharjah', 'Specify the rooms and tasks that matter most, preferred days and the exact area. Discuss visit length and practical access before confirming a scheduled visit.'],
       ['nanny', 'Nanny enquiries for Sharjah families', 'Separate child supervision, meals and school preparation from household cleaning. Share ages and parent instructions and ask about suitable individual experience and communication.'],
-      ['monthly-maid-contract', 'Monthly household visits in Sharjah', 'For repeated cleaning or laundry, discuss a visit plan with clear frequency and tasks. Do not assume a recurring monthly plan creates a full-time job or live-in accommodation.'],
+      ['monthly-maid-contract', 'Monthly household contract enquiries in Sharjah', 'Describe your Sharjah family routine and the recurring household work you want to discuss. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.'],
       ['maid-visa', 'Maid visa enquiries from Sharjah', 'Prepare the current worker and sponsor situation and your question. Contact INAYA to confirm available case support, applicable requirements and fees; no submission or approval is promised here.']
     ],
     ar: [
@@ -51,7 +51,7 @@ const notes = {
       ['full-time-maid', 'خادمة بدوام كامل لمنزل في الشارقة', 'حدد المهام المنتظمة وملاءمتها لجدول الأسرة والمدرسة. قارن جدول العمل بشكل منفصل عن إقامة العاملة في المنزل.'],
       ['part-time-maid', 'زيارات خادمة بدوام جزئي في الشارقة', 'حدد الغرف والمهام الأهم والأيام المفضلة والمنطقة الدقيقة. ناقش مدة الزيارة والدخول قبل تأكيد الموعد.'],
       ['nanny', 'طلبات المربيات لأسر الشارقة', 'افصل الإشراف على الأطفال والوجبات والاستعداد للمدرسة عن التنظيف. شارك الأعمار وتعليمات الوالدين واسأل عن الخبرة الفردية والتواصل المناسبين.'],
-      ['monthly-maid-contract', 'زيارات منزلية شهرية في الشارقة', 'ناقش خطة زيارات بتكرار ومهام واضحة للتنظيف أو الغسيل المتكرر. لا تفترض أن الخطة الشهرية تعني وظيفة بدوام كامل أو سكناً داخل المنزل.'],
+      ['monthly-maid-contract', 'طلبات عقد خادمة شهري في الشارقة', 'صف روتين الأسرة في الشارقة والعمل المنزلي المتكرر المطلوب مناقشته. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.'],
       ['maid-visa', 'استفسارات تأشيرة الخادمة من الشارقة', 'جهز الوضع الحالي للعاملة والكفيل وسؤالك. تواصل مع عناية لتأكيد دعم الحالة والمتطلبات والرسوم؛ لا يوجد وعد بتقديم الطلب أو الموافقة هنا.']
     ]
   }
@@ -68,7 +68,7 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
   return {
     ...location,
     serviceNotes: local.en.map(([slug, title, description], index) => ({ slug, title: { en: title, ar: local.ar[index][1] }, description: { en: description, ar: local.ar[index][2] } })),
-    popularServices: [...location.popularServices, { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } }, { slug: 'monthly-maid-contract', title: { en: 'Monthly maid visits', ar: 'زيارات خادمة شهرية' } }],
+    popularServices: [...location.popularServices, { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } }, { slug: 'monthly-maid-contract', title: { en: 'Monthly maid contract enquiries', ar: 'طلبات عقد خادمة شهري' } }],
     faqs: [...location.faqs.map((faq) => /visa/i.test(faq.question.en) ? { ...faq, answer: {
       en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.',
       ar: 'تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة.'

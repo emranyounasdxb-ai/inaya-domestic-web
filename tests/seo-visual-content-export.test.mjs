@@ -94,6 +94,11 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       assert.equal(expected.split('{copy.heroTitleA}<br />').length, 2);
       expected = expected.replace('{copy.heroTitleA}<br />', "{copy.heroTitleA}{' '}<br />");
     }
+    if (file === 'components/ServiceDetailTemplate.tsx') {
+      const original = 'fill priority sizes=';
+      assert.equal(expected.split(original).length, 2, 'one service hero loading anchor');
+      expected = expected.replace(original, 'fill loading="eager" fetchPriority="high" sizes=');
+    }
     assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling`);
   }
 });

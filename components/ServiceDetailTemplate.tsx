@@ -23,6 +23,13 @@ type SectionTitleProps = {
 };
 
 const sectionPadding = 'px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20';
+const ajmanContexts: Record<string, Record<Lang, string>> = {
+  'live-in-maid': { en: 'For a live-in enquiry, prepare accommodation details, daily duties and work and rest arrangements. Compare ', ar: 'لطلب خادمة مقيمة، جهز تفاصيل السكن والمهام اليومية وترتيبات العمل والراحة. قارن ' },
+  'full-time-maid': { en: 'For a full-time role, list the workload and daily and weekly hours, then clarify residence separately. Review ', ar: 'لدور بدوام كامل، حدد حجم العمل والساعات اليومية والأسبوعية، ثم وضح السكن بشكل منفصل. راجع ' },
+  'part-time-maid': { en: 'For part-time help, share cleaning priorities, preferred hours and access details for your home. Discuss ', ar: 'للمساعدة الجزئية، شارك أولويات التنظيف والساعات المفضلة وتفاصيل دخول المنزل. ناقش ' },
+  'monthly-maid-contract': { en: 'For a monthly contract, describe your recurring household needs and confirm the selected package terms with the team. Explore ', ar: 'للعقد الشهري، صف احتياجات المنزل المتكررة وأكد شروط الباقة المختارة مع الفريق. استكشف ' },
+  nanny: { en: 'For a nanny enquiry, share the children’s ages, care routine and parent instructions to define the role. Review ', ar: 'لطلب مربية، شارك أعمار الأطفال وروتين الرعاية وتعليمات الوالدين لتحديد الدور. راجع ' }
+};
 const surface = 'rounded-[24px] border border-primary-900/10 bg-white shadow-[0_18px_48px_rgba(7,22,74,0.08)]';
 
 function headingFont(lang: Lang) {
@@ -99,6 +106,11 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
         <div className="mx-auto max-w-4xl rounded-[26px] border border-accent-500/25 bg-white p-7 shadow-[0_20px_54px_rgba(7,22,74,0.08)] sm:p-10">
           <SectionTitle title={copy.whatTitle} lang={lang} />
           <p className="mt-6 max-w-3xl text-[1rem] leading-8 text-primary-900/85">{copy.whatText}</p>
+          {ajmanContexts[slug] ? <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-900/75">
+            {ajmanContexts[slug][lang]}
+            <Link href={`/${locale}/maid-services-ajman/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{lang === 'ar' ? 'خدمات الخادمات في عجمان' : 'maid services in Ajman'}</Link>
+            {lang === 'ar' ? ' قبل تأكيد ترتيب الخدمة.' : ' before confirming an arrangement.'}
+          </p> : null}
         </div>
       </section>
 
@@ -173,7 +185,7 @@ function ServiceHero({
           </div>
         </div>
         <div className="relative aspect-[4/3] min-h-[350px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]">
-          <Image src={image} alt={serviceImageAlt(lang, slug)} fill priority sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
+          <Image src={image} alt={serviceImageAlt(lang, slug)} fill loading="eager" fetchPriority="high" sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
         </div>
       </div>
     </section>
@@ -261,8 +273,9 @@ function MatchingCards({
   locale: string;
   slug: string;
 }) {
-  const countryBased = slug !== 'maid-visa' && usesCountryMatching(slug);
-  const requestLabel = slug === 'maid-visa'
+  const administrativeEnquiry = ['maid-visa', 'sponsorship-transfer'].includes(slug);
+  const countryBased = !administrativeEnquiry && usesCountryMatching(slug);
+  const requestLabel = administrativeEnquiry
     ? lang === 'ar' ? 'ناقش حالتك' : 'Discuss your case'
     : lang === 'ar' ? 'اطلب المطابقة' : 'Request Matching';
 

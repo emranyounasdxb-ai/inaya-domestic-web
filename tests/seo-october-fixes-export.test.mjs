@@ -65,7 +65,7 @@ test('pricing displays only confirmed monthly amounts and makes unconfirmed term
   for (const locale of ['en', 'ar']) {
     const body = visible(await htmlFor(locale, 'pricing'));
     assert.match(text(body), locale === 'ar' ? /Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف/ : /Essential starts from AED 1,500\/month and Signature from AED 2,500\/month, all-inclusive/);
-    assert.match(text(body), locale === 'ar' ? /لم تتأكد تفاصيل المهام والمزايا الفردية/ : /Individual package duties and benefits have not yet been confirmed/);
+    assert.match(text(body), locale === 'ar' ? /تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة/ : /Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package/);
     assert.match(text(body), locale === 'ar' ? /عرض سعر مخصص/ : /Custom Quote/);
     assert.doesNotMatch(text(body), /Priority follow-up|Extended|VIP|Training and appraisal|أولوية في المتابعة|مدير متابعة للحالة|تدريب وتقييم/);
   }
