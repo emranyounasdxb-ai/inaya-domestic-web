@@ -1,5 +1,22 @@
 import { expect, test } from '@playwright/test';
 
+test('Arabic mixed-script pricing renders both owned font subsets without downloading the full Arabic fallback', async ({ page }) => {
+  const fontResponses: Promise<number>[] = [];
+  page.on('response', response => {
+    if (response.url().includes('.woff2')) fontResponses.push(response.body().then(body => body.length));
+  });
+  await page.goto('/ar/pricing/');
+  await page.evaluate(() => document.fonts.ready);
+  const loadedSubsets = await page.evaluate(() => Array.from(document.fonts)
+    .filter(face => face.family === 'INAYA Arabic Body' && face.status === 'loaded')
+    .map(face => ({ weight: face.weight, range: face.unicodeRange })));
+  expect(loadedSubsets).toHaveLength(2);
+  expect(loadedSubsets.every(face => face.weight === '400 700')).toBe(true);
+  expect(loadedSubsets.some(face => face.range.includes('U+600-6FF'))).toBe(true);
+  expect(loadedSubsets.some(face => face.range.includes('U+0-FF'))).toBe(true);
+  expect((await Promise.all(fontResponses)).every(bytes => bytes < 150_000)).toBe(true);
+});
+
 for (const locale of ['en', 'ar']) {
   const ar = locale === 'ar';
   test(`${locale}: transfer enquiry has neutral visible FAQs and no matching promise`, async ({ page }) => {
