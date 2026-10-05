@@ -1,5 +1,6 @@
 import FormTranslations from '@/components/FormTranslations';
 import ContactForm from '@/components/ContactForm';
+import LocationMap from '@/components/LocationMap';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { siteConfig } from '@/lib/site-config';
 
@@ -229,17 +230,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </div>
           </div>
           <div className="overflow-hidden rounded-[24px] border border-primary-700/10 bg-white/70 shadow-glass backdrop-blur-xl">
-            <iframe
-              src={mapEmbedUrl}
-              title={copy.mapTitle}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-[320px] w-full sm:h-[420px]"
-            />
+            <LocationMap src={mapEmbedUrl} title={copy.mapTitle} />
           </div>
         </div>
       </section>
