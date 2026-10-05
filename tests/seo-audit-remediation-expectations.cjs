@@ -2,10 +2,32 @@ const assert = require('node:assert/strict');
 
 // Exact approved content and font-loading changes; every other historical source line remains protected.
 const patches = {
+  "components/Navbar.tsx": [
+    [
+      "            href={switchedPath}\n",
+      "            href={switchedPath}\n            prefetch={false}\n"
+    ]
+  ],
   "app/[locale]/layout.tsx": [
     [
       "const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });\nconst plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });\nconst notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-body', display: 'swap' });\nconst ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap' });\n",
       "// Inline font CSS discovers the faces used by this locale without preloading unused languages or weights.\nconst inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap', preload: false });\nconst plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap', preload: false });\nconst notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-body', display: 'swap', preload: false });\nconst ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap', preload: false });\n"
+    ],
+    [
+      "import '../globals.css';\n",
+      "import '../globals.css';\nimport '../arabic-body-font.css';\n"
+    ],
+    [
+      '      <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>',
+      '      <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`} style={locale === \'ar\' ? { \'--font-arabic-body\': `"INAYA Arabic Body", ${notoSansArabic.style.fontFamily}` } as React.CSSProperties : undefined}>'
+    ],
+    [
+      "import type { Metadata } from 'next';\n",
+      "import type { Metadata } from 'next';\nimport { preload } from 'react-dom';\n"
+    ],
+    [
+      "  const dir = locale === 'ar' ? 'rtl' : 'ltr';\n",
+      "  const dir = locale === 'ar' ? 'rtl' : 'ltr';\n  if (locale === 'ar') preload('/fonts/inaya-arabic-body.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });\n"
     ]
   ],
   "lib/services.ts": [

@@ -52,6 +52,7 @@ export default function Navbar({ locale, labels, logo }: { locale: string; label
         <div className="flex shrink-0 items-center gap-2.5">
           <Link
             href={switchedPath}
+            prefetch={false}
             className="rounded-full border border-primary-700/10 bg-white/45 px-3 py-1.5 text-[12px] font-semibold leading-none text-primary-900 shadow-sm transition hover:border-accent-500 hover:bg-white/80"
           >
             {labels.langSwitch}

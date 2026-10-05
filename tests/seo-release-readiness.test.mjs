@@ -45,7 +45,12 @@ test('exported pages remove shared visa promises, retain neutral transfer FAQs a
     assert.equal([...monthly.matchAll(/<link\b[^>]*rel="preload"[^>]*href="\/images\/services\/monthly-maid-contract\.webp"[^>]*>/g)].length, 1, 'one hero preload');
     for (const route of ['', 'maid-services-ajman', 'services/monthly-maid-contract']) {
       const html = await readFile(`out/${locale}/${route ? route + '/' : ''}index.html`, 'utf8');
-      assert.doesNotMatch(html, /<link\b[^>]*rel="preload"[^>]*as="font"/, 'unused locale fonts are not eagerly fetched');
+      const fontPreloads = [...html.matchAll(/<link\b[^>]*rel="preload"[^>]*as="font"[^>]*>/g)].map(match => match[0]);
+      assert.equal(fontPreloads.length, locale === 'ar' ? 1 : 0, 'only the used Arabic body subset is preloaded');
+      if (locale === 'ar') {
+        assert.match(fontPreloads[0], /href="\/fonts\/inaya-arabic-body\.woff2"/);
+        assert.match(fontPreloads[0], /crossorigin="(?:anonymous)?"/i, 'empty crossorigin is the equivalent anonymous mode emitted by React');
+      }
     }
     const ajman = await readFile(`out/${locale}/maid-services-ajman/index.html`, 'utf8');
     assert.match(ajman, new RegExp(`href="/${locale}/pricing/"`));
@@ -54,6 +59,31 @@ test('exported pages remove shared visa promises, retain neutral transfer FAQs a
       assert.match(html, new RegExp(`href="/${locale}/maid-services-ajman/"`));
     }
   }
+});
+
+test('Arabic body subset is locale-scoped, preserves original fallback and keeps all homepage card images lazy', async () => {
+  const font = await readFile('public/fonts/inaya-arabic-body.woff2');
+  assert.equal(font.subarray(0, 4).toString(), 'wOF2');
+  assert.ok(font.length < 80000, 'Arabic body font remains below 80 KB');
+  assert.match(await readFile('public/fonts/OFL-NotoSansArabic.txt', 'utf8'), /SIL OPEN FONT LICENSE Version 1\.1/);
+  for (const locale of ['en', 'ar']) {
+    const html = await readFile(`out/${locale}/index.html`, 'utf8');
+    const body = html.match(/<body\b[^>]*>/)?.[0];
+    if (locale === 'ar') {
+      assert.match(body, /INAYA Arabic Body/);
+      assert.match(body, /Noto Sans Arabic Fallback/);
+    } else assert.doesNotMatch(body, /INAYA Arabic Body/);
+    const cards = [...html.matchAll(/<a\b[^>]*class="[^"]*curated-discipline-card[^>]*>([\s\S]*?)<\/a>/g)];
+    assert.equal(cards.length, 3);
+    for (const card of cards) {
+      assert.match(card[1], /<picture\b/);
+      assert.match(card[1], /srcSet="\/optimized\/images\/services\//);
+      assert.match(card[1], /<img\b[^>]*loading="lazy"/);
+    }
+  }
+  const css = await readFile('app/curated-discipline-images.css', 'utf8');
+  assert.doesNotMatch(css, /background-image:|display: none/);
+  assert.match(css, /\.curated-discipline-card > picture\s*\{\s*display: block;/);
 });
 
 test('both FAQ exports include all 100 answers in initial HTML while showing one category', async () => {

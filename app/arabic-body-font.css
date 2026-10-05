@@ -1,0 +1,37 @@
+/* Same Noto Sans Arabic outlines, metrics and shaping at the four existing weights.
+   The original next/font faces remain the fallback for other scripts and symbols. */
+@font-face {
+  font-family: 'INAYA Arabic Body';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-body.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200F, U+2010-2011, U+204F, U+2E41;
+}
+
+@font-face {
+  font-family: 'INAYA Arabic Body';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-body.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200F, U+2010-2011, U+204F, U+2E41;
+}
+
+@font-face {
+  font-family: 'INAYA Arabic Body';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-body.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200F, U+2010-2011, U+204F, U+2E41;
+}
+
+@font-face {
+  font-family: 'INAYA Arabic Body';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inaya-arabic-body.woff2') format('woff2');
+  unicode-range: U+0600-08FF, U+200C-200F, U+2010-2011, U+204F, U+2E41;
+}

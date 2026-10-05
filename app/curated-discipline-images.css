@@ -18,20 +18,8 @@
   transition: transform 360ms ease, border-color 360ms ease, box-shadow 360ms ease;
 }
 
-.curated-discipline-card:nth-child(1) {
-  background-image: url('/images/services/executive-nannies.webp');
-}
-
-.curated-discipline-card:nth-child(2) {
-  background-image: url('/images/services/private-chefs.webp');
-}
-
-.curated-discipline-card:nth-child(3) {
-  background-image: url('/images/services/house-managers.webp');
-}
-
 .curated-discipline-card > picture {
-  display: none !important;
+  display: block;
 }
 
 .curated-discipline-card--featured {
@@ -50,7 +38,7 @@
   box-shadow: none !important;
   color: inherit !important;
   animation: none !important;
-  transform: scale(1.01);
+  transform: none;
   transition: transform 800ms ease, filter 800ms ease;
 }
 
