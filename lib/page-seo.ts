@@ -10,6 +10,35 @@ import { getTrustSupportPage } from './trust-support-pages';
 import { getDomesticWorkerGuide } from './domestic-worker-guides';
 
 type Localized = Record<Lang, string>;
+// Concise summaries of existing roles; individual duties and availability are confirmed per enquiry.
+const englishDescriptionRefinements: Record<string, string> = {
+  'services/live-in-maid': 'Discuss live-in maid services in the UAE with INAYA. Review household duties, accommodation and work arrangements before choosing a profile.',
+  'services/live-out-maid': 'Explore live-out maid services in the UAE with INAYA. Discuss cleaning, laundry, working hours and access without accommodation in your home.',
+  'services/housemaid': 'Discuss housemaid support in the UAE with INAYA for cleaning, laundry and daily home tasks. Confirm the duties and arrangement for your household.',
+  'services/housekeeping': 'Explore cleaning and housekeeping support in the UAE with INAYA. Describe the rooms, laundry and organization tasks you need.',
+  'services/full-time-maid': 'Discuss full-time maid services in the UAE with INAYA. Review daily duties, working hours and accommodation separately before agreeing.',
+  'services/part-time-maid': 'Discuss part-time maid services in the UAE with INAYA. Set cleaning and laundry priorities, preferred hours and the scope of your request.',
+  'services/on-demand-domestic-help': 'Ask INAYA about on-demand household help in the UAE. Describe your occasion, tasks and preferred date to confirm suitable options.',
+  'services/nanny': 'Discuss nanny services in the UAE with INAYA. Share your child’s age, routine and care needs, and review relevant individual experience.',
+  'services/executive-nannies': 'Explore executive nanny enquiries with INAYA in the UAE. Discuss childcare priorities, household coordination and individual experience.',
+  'services/newborn-care': 'Discuss newborn-care support in the UAE with INAYA. Share your baby’s routine, parent instructions and the practical help you need.',
+  'services/private-chefs': 'Explore private chef enquiries in the UAE with INAYA. Discuss menus, home dining preferences and the cooking role you need.',
+  'services/personal-chef': 'Discuss a personal chef or cook for your UAE home with INAYA. Share meal preferences, dietary requirements and the proposed schedule.',
+  'services/house-managers': 'Discuss household management in the UAE with INAYA. Review home routines, coordination needs and the responsibilities to agree.',
+  'services/patient-care': 'Discuss non-clinical home support with INAYA in the UAE for daily routines, practical household help and companionship.',
+  'services/recruitment': 'Discuss domestic worker recruitment in the UAE with INAYA. Define the household role and review individual profiles against your needs.',
+  'services/experienced-maid': 'Discuss experienced maid enquiries in the UAE with INAYA. Compare individual cleaning, cooking or childcare experience with your household needs.',
+  'services/background-verification': 'Discuss maid background guidance in the UAE with INAYA. Ask which identity details, documents and experience notes can be reviewed.',
+  'services/bespoke-household-management': 'Discuss bespoke household management with INAYA in the UAE. Describe the home routines, roles and coordination you want to review.',
+  'services/floral-styling': 'Explore floral styling enquiries with INAYA in the UAE. Describe the home space or occasion and the presentation you want to discuss.',
+  'services/relocation-support': 'Discuss household relocation support with INAYA in the UAE. Describe the moving-day and settling-in tasks you want to review.',
+  'services/pet-care-specialists': 'Discuss pet-care support with INAYA in the UAE. Share your pet’s routine and the practical duties and experience needed for your request.',
+  'services/event-staffing': 'Discuss household event support with INAYA in the UAE. Describe the occasion, guest-related duties and coordination you need.',
+  'maid-source-countries/philippines-maid-uae': 'Compare Philippines domestic worker profiles with INAYA in the UAE. Discuss individual experience, communication and the household role you need.',
+  'maid-source-countries/kenyan-maid-uae': 'Compare Kenya domestic worker profiles with INAYA in the UAE. Review relevant childcare or household experience and communication needs.',
+  'maid-source-countries/ghanaian-maid-uae': 'Compare Ghana domestic worker profiles with INAYA in the UAE. Discuss your home routine and review each person’s experience and communication.',
+  'maid-source-countries/indonesian-maid-uae': 'Compare Indonesia domestic worker profiles with INAYA in the UAE. Review individual housekeeping or cooking experience against your requirements.'
+};
 export type VisibleFaq = { question: string; answer: string };
 export type PageSeo = {
   name: string;
@@ -112,7 +141,7 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
     const service = getServiceWithExtras(slug);
     const copy = servicePageCopies[slug]?.[lang];
     if (service && copy) return {
-      name: service.name[lang], title: copy.title, description: copy.meta,
+      name: service.name[lang], title: copy.title, description: lang === 'en' ? englishDescriptionRefinements[route] ?? copy.meta : copy.meta,
       image: getServiceImage(slug),
       service: { name: service.name[lang], description: copy.lead },
       faqs: copy.faqs.map((faq) => ({ question: faq.title, answer: faq.text }))
@@ -121,7 +150,7 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   if (route.startsWith('maid-source-countries/')) {
     const country = getCountrySourcePage(route.slice('maid-source-countries/'.length));
     if (country) return {
-      name: country.workerLabel[lang], title: country.metaTitle[lang], description: country.metaDescription[lang],
+      name: country.workerLabel[lang], title: country.metaTitle[lang], description: lang === 'en' ? englishDescriptionRefinements[route] ?? country.metaDescription[lang] : country.metaDescription[lang],
       faqs: country.faqs.map((faq) => ({ question: faq.question[lang], answer: faq.answer[lang] }))
     };
   }

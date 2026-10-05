@@ -13,10 +13,11 @@ import Measurement from '@/components/Measurement';
 import sitemap from '@/app/sitemap';
 import '../globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
-const notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-body', display: 'swap' });
-const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap' });
+// Inline font CSS discovers the faces used by this locale without preloading unused languages or weights.
+const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap', preload: false });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap', preload: false });
+const notoSansArabic = Noto_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-body', display: 'swap', preload: false });
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600', '700'], variable: '--font-arabic-heading', display: 'swap', preload: false });
 
 export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
 

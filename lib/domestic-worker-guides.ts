@@ -22,10 +22,9 @@ export type DomesticWorkerGuide = {
   sources: { en: string; ar: string; url: string }[];
 };
 
-const governmentEnglish = 'https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers';
-const governmentArabic = 'https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers';
+const contractEnglish = 'https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022';
+const contractArabic = 'https://www.mohre.gov.ae/ar/services/issuance-of-a-new-employment-contract-domestic-worker-2022';
 const ministryGuide = 'https://www.mohre.gov.ae/assets/download/5055543/domestic-workers-employers-guide-en_638924949072877160.pdf.aspx';
-const ministryDocuments = 'https://taqyeem.mohre.gov.ae/ar/our-services/issuance-of-a-new-employment-contract-domestic-worker-2022.aspx';
 
 export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   {
@@ -52,7 +51,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           heading: '3. Review the contracts and official process',
           paragraphs: [
-            'The UAE Government explains that a recruitment contract between the office and employer sets out the employer’s requirements, the work and wage, and financial commitments. It also describes the employment contract with the domestic worker. Read the documents applicable to your arrangement before signing and ask for a copy.',
+            'MOHRE’s current domestic-worker employment-contract service lists a contract signed by both parties among its required documents. Read the terms applicable to your arrangement before signing, ask for a copy and confirm which official service applies to your case.',
             'Confirm with the provider which ministry, identity, residence, medical and insurance steps apply to your case. Requirements can differ by employer status and arrangement. Use current MOHRE instructions for the formal application rather than assuming a checklist from another case is complete.'
           ]
         },
@@ -95,7 +94,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           heading: '٣. راجع العقود والإجراءات الرسمية',
           paragraphs: [
-            'توضح بوابة حكومة الإمارات أن عقد الاستقدام بين المكتب وصاحب العمل يحدد متطلبات صاحب العمل والعمل والأجر والالتزامات المالية، كما تشرح عقد العمل مع العامل المساعد. اقرأ الوثائق التي تنطبق على ترتيبك قبل التوقيع واحتفظ بنسخة منها.',
+            'تدرج خدمة إصدار عقد عمل جديد للعامل المساعد لدى الوزارة عقداً موقعاً من الطرفين ضمن المستندات المطلوبة. اقرأ الشروط التي تنطبق على ترتيبك قبل التوقيع، واطلب نسخة، وأكد الخدمة الرسمية المناسبة لحالتك.',
             'تأكد من مقدم الخدمة من خطوات الوزارة والهوية والإقامة والفحص الطبي والتأمين التي تنطبق على حالتك. قد تختلف المتطلبات بحسب صفة صاحب العمل وترتيب الخدمة. ارجع إلى تعليمات الوزارة الحالية عند تقديم الطلب الرسمي، ولا تعتمد على قائمة مستندات تخص حالة أخرى.'
           ]
         },
@@ -117,9 +116,9 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
       sourceIntro: 'مراجع رسمية للمعلومات العامة والإجراءات الحالية'
     },
     sources: [
-      { en: 'UAE Government: domestic workers', ar: 'بوابة حكومة الإمارات: عمال الخدمة المساعدة', url: governmentEnglish },
-      { en: 'MOHRE: domestic workers employers guide', ar: 'وزارة الموارد البشرية والتوطين: دليل أصحاب العمل', url: ministryGuide },
-      { en: 'UAE Government: Arabic domestic workers page', ar: 'بوابة حكومة الإمارات: الصفحة العربية', url: governmentArabic }
+      { en: 'MOHRE: new domestic worker employment contract (English)', ar: 'وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالإنجليزية)', url: contractEnglish },
+      { en: 'MOHRE: domestic workers employers guide', ar: 'وزارة الموارد البشرية والتوطين: دليل أصحاب العمل (بالإنجليزية)', url: ministryGuide },
+      { en: 'MOHRE: new domestic worker employment contract (Arabic)', ar: 'وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالعربية)', url: contractArabic }
     ]
   },
   {
@@ -139,7 +138,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           heading: 'Check what the quoted amount covers',
           paragraphs: [
-            'Ask for a breakdown of the service fee and any other costs that apply. The UAE Government says the recruitment contract should identify agency fees and financial commitments related to bringing a worker to the UAE. The agreed work and wage should also be clear in the relevant contracts.',
+            'Ask for a breakdown of the service fee and any other costs that apply. MOHRE’s domestic-worker employment-contract service lists government charges and business-centre commission separately. Confirm the costs applicable to your arrangement in writing; an INAYA package price does not by itself specify official fees or the worker’s wage.',
             'Government processing, residence, medical or insurance costs can depend on the arrangement and case. Do not assume they are included or excluded without a written explanation. Ask when payments are due and for what service each payment is made.'
           ],
           points: [
@@ -188,7 +187,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           heading: 'تحقق مما يشمله المبلغ المعروض',
           paragraphs: [
-            'اطلب تفصيلاً لرسوم الخدمة وأي تكاليف أخرى تنطبق. تذكر بوابة حكومة الإمارات أن عقد الاستقدام ينبغي أن يوضح رسوم المكتب والالتزامات المالية المرتبطة باستقدام العامل إلى الدولة. كما يجب توضيح العمل والأجر في العقود ذات الصلة.',
+            'اطلب تفصيلاً لرسوم الخدمة وأي تكاليف أخرى تنطبق. تعرض خدمة عقد عمل العامل المساعد لدى الوزارة الرسوم الحكومية وعمولة مراكز الخدمة بشكل منفصل. أكد التكاليف المنطبقة على ترتيبك كتابةً؛ فسعر باقة عناية وحده لا يحدد الرسوم الرسمية أو أجر العاملة.',
             'قد تختلف تكاليف الإجراءات الحكومية والإقامة والفحص الطبي والتأمين حسب الترتيب والحالة. لا تفترض شمولها أو استبعادها من دون بيان مكتوب. اسأل عن موعد كل دفعة والخدمة التي تقابلها.'
           ],
           points: [
@@ -223,9 +222,9 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
       sourceIntro: 'مراجع رسمية حول ترتيبات الخدمة وعقود الاستقدام'
     },
     sources: [
-      { en: 'MOHRE: domestic workers employers guide', ar: 'وزارة الموارد البشرية والتوطين: دليل أصحاب العمل', url: ministryGuide },
-      { en: 'UAE Government: domestic workers', ar: 'بوابة حكومة الإمارات: عمال الخدمة المساعدة', url: governmentEnglish },
-      { en: 'UAE Government: Arabic domestic workers page', ar: 'بوابة حكومة الإمارات: الصفحة العربية', url: governmentArabic }
+      { en: 'MOHRE: domestic workers employers guide', ar: 'وزارة الموارد البشرية والتوطين: دليل أصحاب العمل (بالإنجليزية)', url: ministryGuide },
+      { en: 'MOHRE: new domestic worker employment contract (English)', ar: 'وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالإنجليزية)', url: contractEnglish },
+      { en: 'MOHRE: new domestic worker employment contract (Arabic)', ar: 'وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالعربية)', url: contractArabic }
     ]
   },
   {
@@ -258,7 +257,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           heading: 'Review the agreement before signing',
           paragraphs: [
-            'The UAE Government explains that the employment contract includes the parties, workplace, type of work, wage and other terms. Review those details against the service discussed with the provider. Ask for corrections before signing if the description does not match.',
+            'MOHRE’s current domestic-worker employment-contract service lists an employment contract signed by both parties among its required documents. Review the proposed work, duties, workplace, wage and terms against your discussion with the provider. Ask for corrections before signing if the description does not match.',
             'Keep the recruitment or service terms and the employment contract distinct. They may describe different obligations. Ask for a clear explanation of any official fees, service charges and support conditions in the documents applicable to you.'
           ]
         },
@@ -307,7 +306,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           heading: 'راجع الاتفاق قبل التوقيع',
           paragraphs: [
-            'توضح بوابة حكومة الإمارات أن عقد العمل يتضمن أطرافه ومكان العمل ونوعه والأجر وشروطاً أخرى. قارن هذه التفاصيل بالخدمة التي ناقشتها مع مقدم الخدمة، واطلب التصحيح قبل التوقيع إذا لم يطابق الوصف ما اتفقتم عليه.',
+            'تدرج خدمة عقد عمل العامل المساعد الحالية لدى الوزارة عقد عمل موقعاً من الطرفين ضمن المستندات المطلوبة. راجع العمل والمهام والمكان والأجر والشروط المقترحة وفق مناقشتك مع مقدم الخدمة، واطلب التصحيح قبل التوقيع إذا لم يطابق الوصف ما اتفقتم عليه.',
             'ميّز بين شروط الاستقدام أو الخدمة وعقد العمل؛ فقد تحدد وثيقتان التزامات مختلفة. اطلب شرحاً واضحاً للرسوم الرسمية ورسوم الخدمة وشروط الدعم في الوثائق التي تنطبق على حالتك.'
           ]
         },
@@ -329,9 +328,9 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
       sourceIntro: 'مراجع رسمية للمستندات والعقود'
     },
     sources: [
-      { en: 'MOHRE: new domestic worker employment contract service', ar: 'وزارة الموارد البشرية والتوطين: إصدار عقد عمل جديد لعامل مساعد', url: ministryDocuments },
-      { en: 'UAE Government: domestic workers', ar: 'بوابة حكومة الإمارات: عمال الخدمة المساعدة', url: governmentEnglish },
-      { en: 'UAE Government: Arabic domestic workers page', ar: 'بوابة حكومة الإمارات: الصفحة العربية', url: governmentArabic }
+      { en: 'MOHRE: domestic workers employers guide (English PDF)', ar: 'وزارة الموارد البشرية والتوطين: دليل أصحاب العمل (ملف PDF بالإنجليزية)', url: ministryGuide },
+      { en: 'MOHRE: new domestic worker employment contract (English)', ar: 'وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالإنجليزية)', url: contractEnglish },
+      { en: 'MOHRE: new domestic worker employment contract (Arabic)', ar: 'وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالعربية)', url: contractArabic }
     ]
   }
 ];

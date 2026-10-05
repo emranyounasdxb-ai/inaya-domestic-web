@@ -53,8 +53,8 @@ export const services: Service[] = [
     slug: 'monthly-maid-contract',
     icon: '📅',
     name: { en: 'Monthly Maid Contract', ar: 'عقد خادمة شهري' },
-    short: { en: 'Cost-effective monthly plans.', ar: 'خطط شهرية اقتصادية.' },
-    description: { en: 'Affordable monthly maid contracts with regular scheduled cleaning visits, defined duties and priority household support.', ar: 'عقود خادمة شهرية بأسعار مناسبة مع زيارات تنظيف منتظمة ومهام واضحة ودعم منزلي ذي أولوية.' }
+    short: { en: 'Discuss monthly maid contracts and package terms.', ar: 'ناقش عقود الخادمات الشهرية وشروط الباقات.' },
+    description: { en: 'Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.', ar: 'تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.' }
   },
   {
     slug: 'on-demand-domestic-help',
@@ -158,8 +158,8 @@ export const services: Service[] = [
     slug: 'maid-visa',
     icon: '📄',
     name: { en: 'Maid Visa Assistance', ar: 'المساعدة في تأشيرة الخادمة' },
-    short: { en: 'Hassle-free visa processing.', ar: 'معالجة تأشيرة دون عناء.' },
-    description: { en: 'Full assistance with maid visa application, renewal, sponsorship steps and documentation guidance as per UAE regulations.', ar: 'مساعدة كاملة في تقديم وتأشيرة الخادمة والتجديد وخطوات الكفالة وإرشاد المستندات وفق لوائح الإمارات.' }
+    short: { en: 'Confirm case-specific visa support, requirements and fees with INAYA.', ar: 'أكد مع عناية دعم التأشيرة المتاح لحالتك والمتطلبات والرسوم.' },
+    description: { en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.', ar: 'تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.' }
   },
   {
     slug: 'maid-replacement',
@@ -172,8 +172,8 @@ export const services: Service[] = [
     slug: 'sponsorship-transfer',
     icon: '📝',
     name: { en: 'Maid Transfer / Sponsorship Change', ar: 'نقل الخادمة / تغيير الكفالة' },
-    short: { en: 'Easy sponsorship transfer.', ar: 'نقل كفالة سهل.' },
-    description: { en: 'Smooth maid transfer and sponsorship change services handled with clear documentation guidance and UAE process support.', ar: 'خدمات نقل الخادمة وتغيير الكفالة بسلاسة مع إرشاد واضح للمستندات ودعم إجراءات الإمارات.' }
+    short: { en: 'Ask INAYA about support, requirements and fees for your transfer enquiry.', ar: 'استفسر من عناية عن الدعم والمتطلبات والرسوم لطلب نقل الكفالة.' },
+    description: { en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.', ar: 'تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.' }
   },
   {
     slug: 'experienced-maid',

@@ -1,3 +1,4 @@
+const { approvedRemediation } = require('./seo-audit-remediation-expectations.cjs');
 const assert = require('node:assert/strict');
 
 // Exact reviewed corrections for 5 October; historical source guards still protect
@@ -102,7 +103,7 @@ function approvedSeoFixes(file, source) {
     assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed source anchor`);
     source = source.replace(before, after);
   }
-  return source;
+  return approvedRemediation(file, source);
 }
 
 module.exports = { approvedSeoFixes };

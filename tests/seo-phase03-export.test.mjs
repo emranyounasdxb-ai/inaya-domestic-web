@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import remediation from './seo-audit-remediation-expectations.cjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -10,8 +11,8 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     ar: { title: 'دعم منزلي غير طبي للروتين اليومي في الإمارات | عناية', description: 'ناقش مع عناية الدعم المنزلي غير الطبي للروتين اليومي والمساعدة العملية والمرافقة في الإمارات. لا تشمل الخدمة العلاج الطبي أو التمريض.' }
   };
   const baseline = JSON.parse(await readFile('tests/fixtures/seo-phase03-baseline.json', 'utf8'));
-  // Only the visa scope correction and the user-confirmed monthly price explanation
-  // change these historical values. Every other metadata and price guard stays exact.
+  // Exact reviewed metadata changes are allowlisted alongside the visa and monthly pricing corrections.
+  // Every other historical metadata and price value remains exact.
   const visaDescriptions = {
     en: 'Ask INAYA about a maid visa enquiry in the UAE. Confirm the support available for your case, applicable requirements and fees before agreeing a next step.',
     ar: 'استفسر عن تأشيرة الخادمة في الإمارات مع عناية. تواصل لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم قبل الاتفاق على أي خطوة.'
@@ -37,9 +38,10 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
+    const approved = remediation.metadata[`${page.locale}/${page.route}`];
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
-    assert.equal(page.title, page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title, page.url);
-    if (page.route !== 'blog') assert.equal(page.description, page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description, page.url);
+    assert.equal(page.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
+    if (page.route !== 'blog') assert.equal(page.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
     const expectedPrices = page.route === 'pricing' ? pricingMentions[page.locale]

@@ -107,12 +107,12 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
     faqSubtitle: isArabic ? 'أساس التسعير وما يجب تأكيده قبل الاتفاق.' : 'The pricing basis and what to confirm before agreeing.',
     faqs: isArabic ? [
       ['هل الأسعار شهرية؟', 'نعم. تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف. السعر المبدئي ليس عرضاً نهائياً لحالتك.'],
-      ['ما الخدمة والمهام التي تشملها الباقة؟', 'لم تتأكد تفاصيل المهام والمزايا الفردية لكل باقة بعد. أكد الخدمة والجدول والنطاق وأي استثناءات مع عناية قبل الاتفاق؛ ولا تفترض أن السعر هو راتب العاملة أو رسم استقدام.'],
+      ['ما الخدمة والمهام التي تشملها الباقة؟', 'تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها. اطلب النطاق كتابةً قبل الاتفاق.'],
       ['كيف أؤكد التكاليف والشروط؟', 'شارك المهام والإمارة والجدول المطلوب، واطلب عرضاً مكتوباً يوضح المبلغ النهائي والتكاليف المشمولة وأي متطلبات خاصة بالحالة. لا توجد رسوم منفصلة محددة منشورة هنا.'],
       ['ما نطاق INAYA Black؟', 'تبقى INAYA Black بعرض سعر مخصص. تواصل مع عناية لتأكيد نطاق الخدمة وشروطها.']
     ] : [
       ['Are the prices monthly?', 'Yes. Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive. A starting price is not the final quote for your case.'],
-      ['Which service and duties does each package cover?', 'Individual package duties and benefits have not yet been confirmed. Confirm the service, schedule, scope and any exclusions with INAYA before agreeing; do not assume the amount is a worker salary or recruitment fee.'],
+      ['Which service and duties does each package cover?', 'Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package. Request the scope in writing before agreeing.'],
       ['How do I confirm costs and terms?', 'Share the duties, emirate and schedule you need, and request a written quote stating the final amount, included costs and any case-specific requirements. No specific separate fee is published here.'],
       ['What does INAYA Black cover?', 'INAYA Black remains Custom Quote. Contact INAYA to confirm the service scope and terms.']
     ],

@@ -116,6 +116,10 @@ export default async function LocationServicePage({ params }: { params: Promise<
                 <p className="mt-2 text-sm leading-7 text-primary-900/75">{service.description[lang]}</p>
               </div>)}
             </div> : null}
+            {locationSlug === 'maid-services-ajman' ? <p className="mt-5 text-sm leading-7 text-primary-900/75">
+              {lang === 'ar' ? 'قارن الأسعار المنشورة، ثم أكد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة المختارة مع عناية. ' : 'Compare published pricing, then contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package. '}
+              <Link href={`/${locale}/pricing/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{lang === 'ar' ? 'الأسعار' : 'Pricing'}</Link>
+            </p> : null}
             <h3 className="mt-7 font-heading text-xl font-bold tracking-[-0.025em] text-primary-900">{t.areasTitle}</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {location.neighbourhoods[lang].map((area) => <span key={area} className="rounded-full border border-primary-900/8 bg-white px-3 py-1.5 text-xs font-semibold text-primary-900/75">{area}</span>)}

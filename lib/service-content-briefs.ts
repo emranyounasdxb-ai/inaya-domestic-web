@@ -31,8 +31,8 @@ export const serviceContentBriefs: Record<string, Brief> = {
     prepare: { en: 'State the preferred hours or visits and the tasks that matter most. Compare a monthly contract if the same work repeats regularly, without assuming either option is available on a particular date.', ar: 'حدد الساعات أو الزيارات المفضلة والمهام الأهم. قارن العقد الشهري إذا كان العمل نفسه يتكرر بانتظام، دون افتراض توفر أي خيار في تاريخ معين.' }, related: ['monthly-maid-contract', 'live-out-maid', 'on-demand-domestic-help']
   },
   'monthly-maid-contract': {
-    overview: { en: 'A monthly maid enquiry concerns recurring visits and a defined household task plan. Compare the proposed schedule and duties with your actual routine; the word monthly alone does not explain the visit pattern or service scope.', ar: 'يتعلق طلب العقد الشهري بزيارات متكررة وخطة مهام منزلية محددة. قارن الجدول والمهام المقترحة بروتينك الفعلي؛ فكلمة شهري وحدها لا توضح نمط الزيارات أو نطاق الخدمة.' },
-    prepare: { en: 'Bring a recurring cleaning checklist and preferred visit pattern. Review the confirmed agreement for included duties and support rather than treating this guide as a fixed package quotation.', ar: 'جهز قائمة التنظيف المتكرر ونمط الزيارات المفضل. راجع الاتفاق المؤكد لمعرفة المهام والدعم المشمول، ولا تعتبر هذا الدليل عرض سعر ثابتاً لباقة.' }, related: ['part-time-maid', 'housekeeping', 'full-time-maid']
+    overview: { en: 'Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.', ar: 'تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.' },
+    prepare: { en: 'Describe your household needs and the arrangement you want to discuss. Review the proposed duties, schedule, costs and terms in writing before selecting a monthly package.', ar: 'صف احتياجات المنزل والترتيب المطلوب مناقشته. راجع المهام والجدول والتكاليف والشروط المقترحة كتابةً قبل اختيار باقة شهرية.' }, related: ['part-time-maid', 'housekeeping', 'full-time-maid']
   },
   'on-demand-domestic-help': {
     overview: { en: 'On-demand enquiries cover a particular household situation, such as guest preparation, moving-day tasks or short-term home support. Describe the occasion and task scope first; an urgent request is not confirmation of immediate availability.', ar: 'تغطي طلبات المساعدة عند الطلب حالة منزلية محددة، مثل تجهيز الضيوف أو مهام يوم الانتقال أو الدعم قصير المدى. وضح المناسبة ونطاق المهام أولاً؛ فالطلب العاجل لا يعني تأكيد التوفر الفوري.' },
@@ -95,7 +95,7 @@ export const serviceContentBriefs: Record<string, Brief> = {
     prepare: { en: 'Prepare the role, working arrangement, experience and language preferences. Use the source-country hub to organize a preference and the documents guide for case-specific preparation.', ar: 'جهز الدور وترتيب العمل وتفضيلات الخبرة واللغة. استخدم مركز دول المصدر لتنظيم التفضيل ودليل المستندات للاستعداد حسب الحالة.' }, related: ['experienced-maid', 'background-verification', 'maid-visa']
   },
   'maid-visa': {
-    overview: { en: 'Maid visa assistance is a document-and-process guidance enquiry, not a promise of approval. Explain the current situation and the selected service path so that the team can clarify the checklist applicable to the case.', ar: 'مساعدة تأشيرة الخادمة طلب لإرشاد المستندات والإجراءات، وليست وعداً بالموافقة. وضح الوضع الحالي ومسار الخدمة المختار ليشرح الفريق القائمة المناسبة للحالة.' },
+    overview: { en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.', ar: 'تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.' },
     prepare: { en: 'Share the emirate, current worker document status and whether the enquiry concerns a new arrangement or an existing one. Exact requirements are reviewed for the case rather than inferred from this page.', ar: 'شارك الإمارة وحالة مستندات العاملة الحالية وهل يخص الطلب ترتيباً جديداً أم قائماً. تراجع المتطلبات الدقيقة للحالة ولا تستنتج من هذه الصفحة.' }, related: ['sponsorship-transfer', 'recruitment', 'background-verification']
   },
   'maid-replacement': {
@@ -103,7 +103,7 @@ export const serviceContentBriefs: Record<string, Brief> = {
     prepare: { en: 'Bring the booking details, agreed duties and a clear description of the concern. Read the refund/replacement policy before treating an alternative profile as a confirmed outcome.', ar: 'جهز تفاصيل الحجز والمهام المتفق عليها ووصفاً واضحاً للملاحظة. اقرأ سياسة الاسترداد والاستبدال قبل اعتبار ملف بديل نتيجة مؤكدة.' }, related: ['experienced-maid', 'recruitment', 'sponsorship-transfer']
   },
   'sponsorship-transfer': {
-    overview: { en: 'Sponsorship transfer guidance concerns an existing arrangement, the document status and responsibilities to clarify. Keep the transfer enquiry separate from choosing a new profile or assuming a visa outcome.', ar: 'يتعلق إرشاد نقل الكفالة بترتيب قائم وحالة المستندات والمسؤوليات المطلوب توضيحها. افصل طلب النقل عن اختيار ملف جديد أو افتراض نتيجة للتأشيرة.' },
+    overview: { en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.', ar: 'تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.' },
     prepare: { en: 'Explain the current sponsorship situation and any previous agreement or transfer information. The documents guide is preparation, not a final legal checklist or a confirmation that transfer can proceed.', ar: 'وضح وضع الكفالة الحالي وأي اتفاق سابق أو معلومات نقل. دليل المستندات وسيلة للاستعداد، لا قائمة قانونية نهائية أو تأكيداً لإمكانية تنفيذ النقل.' }, related: ['maid-visa', 'recruitment', 'maid-replacement']
   },
   'experienced-maid': {
