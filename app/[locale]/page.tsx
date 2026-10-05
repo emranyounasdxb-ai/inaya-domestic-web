@@ -9,12 +9,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 import HomeCountryAvailability from '@/components/HomeCountryAvailability';
 import HomeGoogleReviews from '@/components/HomeGoogleReviews';
+import '../home-country-availability.css';
+import '../home-google-reviews.css';
+import '../curated-discipline-images.css';
 
 const homeContent = {
   en: {
     heroLabel: 'Legacy of Trust',
-    heroTitleA: 'Elevating Domestic',
-    heroTitleB: 'Excellence',
+    heroTitleA: 'Maid & Domestic Worker Services',
+    heroTitleB: 'in Ajman and Across the UAE',
     heroText: 'Bespoke domestic worker services for UAE families who expect clarity, trust and a calm household experience.',
     primaryCta: 'Request Consultation',
     secondaryCta: 'Explore Services',
@@ -65,8 +68,8 @@ const homeContent = {
   },
   ar: {
     heroLabel: 'إرث من الثقة',
-    heroTitleA: 'نرتقي بتجربة',
-    heroTitleB: 'الخدمات المنزلية',
+    heroTitleA: 'خدمات الخادمات والعمالة المنزلية',
+    heroTitleB: 'في عجمان وجميع أنحاء الإمارات',
     heroText: 'خدمات عمالة منزلية منظمة للأسر في الإمارات، مع وضوح في الخطوات وثقة ومتابعة محترمة.',
     primaryCta: 'اطلب استشارة',
     secondaryCta: 'استكشف الخدمات',
@@ -175,9 +178,10 @@ function ResponsiveImage({
       <img
         src={src}
         alt={alt}
-        width="1400"
-        height="900"
+        width={src === '/images/home/inaya-home-hero-family.webp' ? 1513 : 1400}
+        height={src === '/images/home/inaya-home-hero-family.webp' ? 851 : 900}
         loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : undefined}
         decoding={priority ? 'sync' : 'async'}
         className={`h-full w-full ${imageClassName}`}
       />
@@ -302,7 +306,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="max-w-3xl rounded-[28px] border border-white/55 bg-white/[0.22] p-6 shadow-[0_28px_85px_rgba(7,22,74,0.08)] backdrop-blur-[10px] sm:p-8 lg:bg-white/[0.16]">
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-accent-700">{copy.heroLabel}</p>
             <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-[2.65rem] font-bold leading-[1.05] tracking-[-0.055em] text-primary-900 sm:text-[4.4rem] lg:text-[5rem]`}>
-              {copy.heroTitleA}<br />
+              {copy.heroTitleA}{' '}<br />
               <span className="font-light italic text-primary-900/88">{copy.heroTitleB}</span>
             </h1>
             <p className="mt-7 max-w-xl text-[1rem] leading-8 text-primary-900/85 sm:text-[1.08rem]">{copy.heroText}</p>
@@ -438,6 +442,27 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       <HomeGoogleReviews locale={locale} />
+
+      <section className="px-6 py-14 lg:px-10">
+        <div className="mx-auto max-w-6xl">
+          <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-2xl font-bold text-primary-900`}>{isArabic ? 'اختر الخدمة ومنطقة طلبك' : 'Find the service for your household and emirate'}</h2>
+          <p className="mt-4 text-sm leading-7 text-primary-900/75">{isArabic ? 'ابدأ بنوع المهام والجدول المطلوب، ثم راجع التفاصيل مع المكتب في عجمان. التغطية لا تؤكد التوفر أو موعد البدء.' : 'Start with the duties and schedule you need, then discuss the details with our Ajman office. Service coverage does not confirm availability or a start date.'}</p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {[
+              ['services/housemaid', 'Housemaid services', 'خدمات عاملة المنزل'],
+              ['services/live-in-maid', 'Live-in maid', 'خادمة مقيمة'],
+              ['services/full-time-maid', 'Full-time maid', 'خادمة بدوام كامل'],
+              ['services/part-time-maid', 'Part-time maid', 'خادمة بدوام جزئي'],
+              ['services/monthly-maid-contract', 'Monthly maid visits', 'زيارات خادمة شهرية'],
+              ['services/nanny', 'Nanny and childcare', 'المربيات ورعاية الأطفال'],
+              ['services/maid-visa', 'Maid visa enquiry', 'استفسار تأشيرة خادمة'],
+              ['maid-services-ajman', 'Maid services in Ajman', 'خدمات خادمات في عجمان'],
+              ['maid-services-dubai', 'Maid services in Dubai', 'خدمات خادمات في دبي'],
+              ['maid-services-sharjah', 'Maid services in Sharjah', 'خدمات خادمات في الشارقة']
+            ].map(([route, en, ar]) => <Link key={route} href={`/${locale}/${route}/`} className="rounded-full border border-accent-500/22 bg-[#fbfaf7] px-4 py-2 text-sm font-semibold text-primary-900 transition hover:bg-white">{isArabic ? ar : en}</Link>)}
+          </div>
+        </div>
+      </section>
 
       <section className="relative overflow-hidden bg-[#0a0a0a] px-6 py-20 text-center text-white sm:py-24 lg:px-10 lg:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(191,164,106,0.18),transparent_24rem),radial-gradient(circle_at_18%_82%,rgba(255,255,255,0.08),transparent_20rem)]" />

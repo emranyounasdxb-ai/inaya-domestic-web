@@ -1,3 +1,4 @@
+import FormTranslations from '@/components/FormTranslations';
 import CareersForm from '@/components/CareersForm';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
@@ -38,7 +39,7 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
             </div>
           </div>
           <div className="glass-panel rounded-[26px] p-5 sm:p-7">
-            <CareersForm locale={locale} />
+            <FormTranslations namespaces={["careers","booking"]}><CareersForm locale={locale} /></FormTranslations>
           </div>
         </div>
       </section>

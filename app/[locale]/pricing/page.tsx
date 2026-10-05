@@ -31,108 +31,90 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   const copy = {
     hero: isArabic ? {
       title: 'باقات وأسعار العمالة المنزلية',
-      subtitle: 'الأسعار المعروضة للباقات إرشادية. يتحدد العرض النهائي حسب نوع الخدمة والإمارة والمدة والتوفر؛ تأكد من نطاق الخدمة وأي رسوم منفصلة مع الفريق قبل الحجز.',
+      subtitle: 'تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف. أكد المهام وشروط الباقة والعرض النهائي مع عناية قبل الاتفاق.',
       guide: 'اقرأ دليل عوامل تسعير الباقات'
     } : {
       title: 'Domestic Worker Packages and Pricing',
-      subtitle: 'Displayed package prices are indicative. The final quote depends on the service type, emirate, duration and availability; confirm the full scope and any separate fees with the team before booking.',
+      subtitle: 'Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive. Confirm the package duties, terms and final quote with INAYA before agreeing.',
       guide: 'Read the package pricing guide'
     },
     assurance: isArabic ? [
-      ['مراجعة الاستبدال', 'حماية أوضح للعميل خلال فترة الخدمة المتفق عليها، حسب نوع الباقة والتوفر.'],
-      ['دعم التأشيرة والإجراءات', 'إرشاد واضح بخصوص المستندات والخطوات المطلوبة للعقود المناسبة.'],
-      ['الالتزام بإجراءات الدولة', 'توضيح منظم للخطوات بما يتوافق مع متطلبات خدمات العمالة المنزلية في الإمارات.']
+      ['باقات شهرية', 'تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف.'],
+      ['حدد المهام', 'أكد الخدمة والمهام وساعات العمل قبل اختيار الباقة؛ تفاصيل كل باقة تحتاج إلى تأكيد.'],
+      ['عرض مكتوب', 'اطلب نطاق الخدمة والشروط والمبلغ النهائي كتابةً قبل الاتفاق.']
     ] : [
-      ['Replacement Review', 'Clearer client protection within the agreed service period, depending on package type and availability.'],
-      ['Visa & Process Support', 'Structured guidance on documents and steps required for suitable long-term arrangements.'],
-      ['UAE Compliance Guidance', 'Organized service guidance aligned with domestic worker service requirements in the UAE.']
+      ['Monthly packages', 'Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive.'],
+      ['Confirm the duties', 'Confirm the service, duties and working hours before choosing a package; individual package details need confirmation.'],
+      ['Written quote', 'Request the service scope, terms and final amount in writing before agreeing.']
     ],
     packages: isArabic ? [
       {
-        eyebrow: 'أساسي',
-        name: 'Essential',
-        price: 'AED 1,500',
-        period: 'يبدأ من',
-        desc: 'خدمة مناسبة للاحتياجات المنزلية الأساسية والمتابعة الأولية.',
-        cta: 'اختر الباقة الأساسية',
-        features: ['الوصول إلى خيارات الخدمة المتاحة', 'تأكيد مبدئي حسب الإمارة', 'متابعة عبر واتساب', 'إرشاد قبل الحجز']
+        eyebrow: 'أساسي', name: 'Essential', price: 'AED 1,500',
+        period: 'يبدأ من · شهرياً · شامل التكاليف',
+        desc: 'تبدأ Essential من 1,500 درهم شهرياً، شاملة التكاليف. أكد نوع الخدمة والمهام المشمولة مع عناية.',
+        cta: 'ناقش الباقة الأساسية',
+        features: ['حدد الخدمة والمهام المطلوبة', 'أكد الجدول وساعات العمل', 'اطلب تفاصيل الباقة وشروطها كتابةً']
       },
       {
-        eyebrow: 'مميز',
-        name: 'Signature',
-        price: 'AED 2,500',
-        period: 'يبدأ من',
-        desc: 'خدمة أشمل للعائلات التي تحتاج متابعة أوضح وخيارات أوسع.',
-        cta: 'اختر الباقة المميزة',
-        featured: true,
-        features: ['أولوية في المتابعة', 'خيارات خادمة أو مربية أو رعاية منزلية', 'توضيح المستندات والخطوات', 'دعم استبدال حسب الاتفاق', 'مدير متابعة للحالة']
+        eyebrow: 'مميز', name: 'Signature', price: 'AED 2,500',
+        period: 'يبدأ من · شهرياً · شامل التكاليف',
+        desc: 'تبدأ Signature من 2,500 درهم شهرياً، شاملة التكاليف. أكد نوع الخدمة والمهام المشمولة مع عناية.',
+        cta: 'ناقش الباقة المميزة', featured: true,
+        features: ['حدد الخدمة والمهام المطلوبة', 'أكد الجدول وساعات العمل', 'اطلب تفاصيل الباقة وشروطها كتابةً']
       },
       {
-        eyebrow: 'عناية بلاك',
-        name: 'Custom Quote',
-        price: 'عرض خاص',
-        period: 'حسب الطلب',
-        desc: 'حل مخصص للعائلات أو الاحتياجات متعددة الخدمات.',
-        cta: 'اطلب عرضاً خاصاً',
-        badge: 'INAYA BLACK',
-        features: ['متطلبات متعددة داخل المنزل', 'متابعة خاصة من الفريق', 'ترتيبات طويلة المدى', 'خيارات حسب الإمارة والتوفر', 'تدريب وتقييم حسب الحاجة']
+        eyebrow: 'عناية بلاك', name: 'INAYA Black', price: 'عرض سعر مخصص',
+        period: 'حسب عرض السعر', desc: 'تواصل مع عناية لتأكيد نطاق الخدمة وشروط عرض السعر.',
+        cta: 'اطلب عرض سعر', badge: 'INAYA BLACK',
+        features: ['أكد نطاق الخدمة قبل الاتفاق', 'اطلب عرض سعر مكتوباً']
       }
     ] : [
       {
-        eyebrow: 'Essential',
-        name: 'Essential',
-        price: 'AED 1,500',
-        period: 'starting from',
-        desc: 'Core service support for standard household requirements.',
-        cta: 'Select Essential',
-        features: ['Access to available service options', 'Initial emirate availability check', 'WhatsApp follow-up', 'Guidance before booking']
+        eyebrow: 'Essential', name: 'Essential', price: 'AED 1,500',
+        period: 'starting from · per month · all-inclusive',
+        desc: 'Essential — Starting from AED 1,500/month, all-inclusive. Confirm the service and agreed duties with INAYA.',
+        cta: 'Discuss Essential',
+        features: ['Specify the service and duties you need', 'Confirm the schedule and working hours', 'Request written package details and terms']
       },
       {
-        eyebrow: 'Signature',
-        name: 'Signature',
-        price: 'AED 2,500',
-        period: 'starting from',
-        desc: 'Comprehensive support for families needing clearer follow-up and wider service options.',
-        cta: 'Select Signature',
-        featured: true,
-        features: ['Priority follow-up', 'Maid, nanny or caregiver options', 'Document and process guidance', 'Replacement support by agreement', 'Dedicated request follow-up']
+        eyebrow: 'Signature', name: 'Signature', price: 'AED 2,500',
+        period: 'starting from · per month · all-inclusive',
+        desc: 'Signature — Starting from AED 2,500/month, all-inclusive. Confirm the service and agreed duties with INAYA.',
+        cta: 'Discuss Signature', featured: true,
+        features: ['Specify the service and duties you need', 'Confirm the schedule and working hours', 'Request written package details and terms']
       },
       {
-        eyebrow: 'Bespoke',
-        name: 'Custom Quote',
-        price: 'Custom Quote',
-        period: 'tailored',
-        desc: 'Tailored arrangements for multi-service households or complex requirements.',
-        cta: 'Inquire Now',
-        badge: 'INAYA BLACK',
-        features: ['Multiple household requirements', 'Private team follow-up', 'Long-term arrangements', 'Options by emirate and availability', 'Training and appraisal guidance']
+        eyebrow: 'Bespoke', name: 'INAYA Black', price: 'Custom Quote',
+        period: 'as quoted', desc: 'Contact INAYA to confirm the service scope and quote terms.',
+        cta: 'Request a quote', badge: 'INAYA BLACK',
+        features: ['Confirm the scope before agreeing', 'Request a written quote']
       }
     ],
-    comparisonTitle: isArabic ? 'مقارنة شاملة' : 'Comprehensive Comparison',
-    tableHeaders: isArabic ? ['المزايا', 'أساسي', 'مميز', 'عناية بلاك'] : ['Features', 'Essential', 'Signature', 'INAYA Black'],
+    comparisonTitle: isArabic ? 'أساس التسعير المؤكد' : 'Confirmed pricing basis',
+    tableHeaders: isArabic ? ['أساس التسعير', 'أساسي', 'مميز', 'عناية بلاك'] : ['Pricing basis', 'Essential', 'Signature', 'INAYA Black'],
     rows: isArabic ? [
-      ['تأكيد التوفر', 'مبدئي', 'أولوية', 'مخصص'],
-      ['مراجعة الاستبدال', 'حسب الاتفاق', 'موسع', 'مخصص'],
-      ['دعم المستندات والإجراءات', false, true, true],
-      ['صياغة متطلبات الخدمة', true, true, true],
-      ['متابعة مخصصة', false, true, 'VIP']
+      ['السعر المبدئي', '1,500 درهم', '2,500 درهم', 'عرض سعر مخصص'],
+      ['فترة التسعير', 'شهرياً', 'شهرياً', 'أكد مع عناية'],
+      ['شمول التكاليف', 'شامل التكاليف', 'شامل التكاليف', 'أكد مع عناية'],
+      ['تفاصيل المهام والشروط', 'تحتاج إلى تأكيد', 'تحتاج إلى تأكيد', 'تحتاج إلى تأكيد']
     ] : [
-      ['Availability Check', 'Standard', 'Priority', 'Bespoke'],
-      ['Replacement Support', 'By agreement', 'Extended', 'Tailored'],
-      ['Document & Process Guidance', false, true, true],
-      ['Service Requirement Drafting', true, true, true],
-      ['Dedicated Follow-up', false, true, 'VIP']
+      ['Starting price', 'AED 1,500', 'AED 2,500', 'Custom Quote'],
+      ['Pricing period', 'Per month', 'Per month', 'Confirm with INAYA'],
+      ['Cost basis', 'All-inclusive', 'All-inclusive', 'Confirm with INAYA'],
+      ['Individual duties and terms', 'Confirm before agreeing', 'Confirm before agreeing', 'Confirm before agreeing']
     ],
     faqTitle: isArabic ? 'الأسئلة الشائعة' : 'Frequently Asked Questions',
-    faqSubtitle: isArabic ? 'توضيح سريع حول الأسعار والخدمات.' : 'Clarity regarding service fees and package structure.',
+    faqSubtitle: isArabic ? 'أساس التسعير وما يجب تأكيده قبل الاتفاق.' : 'The pricing basis and what to confirm before agreeing.',
     faqs: isArabic ? [
-      ['هل الأسعار نهائية؟', 'لا. الأسعار إرشادية ويتم تأكيد السعر النهائي بعد معرفة نوع الخدمة والإمارة والمدة والتوفر.'],
-      ['هل تشمل الباقات الرسوم الحكومية؟', 'أي رسوم حكومية أو إجراءات رسمية يتم توضيحها بشكل منفصل حسب الحالة ونوع الخدمة.'],
-      ['ما معنى مراجعة الاستبدال؟', 'يعتمد على نوع الباقة والاتفاق وفترة الخدمة والتوفر، ويتم توضيحه قبل الحجز.']
+      ['هل الأسعار شهرية؟', 'نعم. تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف. السعر المبدئي ليس عرضاً نهائياً لحالتك.'],
+      ['ما الخدمة والمهام التي تشملها الباقة؟', 'لم تتأكد تفاصيل المهام والمزايا الفردية لكل باقة بعد. أكد الخدمة والجدول والنطاق وأي استثناءات مع عناية قبل الاتفاق؛ ولا تفترض أن السعر هو راتب العاملة أو رسم استقدام.'],
+      ['كيف أؤكد التكاليف والشروط؟', 'شارك المهام والإمارة والجدول المطلوب، واطلب عرضاً مكتوباً يوضح المبلغ النهائي والتكاليف المشمولة وأي متطلبات خاصة بالحالة. لا توجد رسوم منفصلة محددة منشورة هنا.'],
+      ['ما نطاق INAYA Black؟', 'تبقى INAYA Black بعرض سعر مخصص. تواصل مع عناية لتأكيد نطاق الخدمة وشروطها.']
     ] : [
-      ['Are these final prices?', 'No. Prices are indicative and final pricing is confirmed after reviewing service type, emirate, duration and availability.'],
-      ['Are government fees included?', 'Any government or official processing fees are clarified separately depending on the service and case.'],
-      ['What does replacement support mean?', 'It depends on package type, agreement, service period and availability, and is explained before booking.']
+      ['Are the prices monthly?', 'Yes. Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive. A starting price is not the final quote for your case.'],
+      ['Which service and duties does each package cover?', 'Individual package duties and benefits have not yet been confirmed. Confirm the service, schedule, scope and any exclusions with INAYA before agreeing; do not assume the amount is a worker salary or recruitment fee.'],
+      ['How do I confirm costs and terms?', 'Share the duties, emirate and schedule you need, and request a written quote stating the final amount, included costs and any case-specific requirements. No specific separate fee is published here.'],
+      ['What does INAYA Black cover?', 'INAYA Black remains Custom Quote. Contact INAYA to confirm the service scope and terms.']
     ],
     cta: isArabic ? {
       title: 'تحتاج ترتيباً مخصصاً؟',
@@ -140,7 +122,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       button: 'تواصل مع الفريق'
     } : {
       title: 'Require a bespoke arrangement?',
-      text: 'Every household is unique. If your requirements fall outside standard packages, our team can craft a tailored solution.',
+      text: 'Share your household requirements with INAYA to confirm the service scope and request a quote.',
       button: 'Consult Our Experts'
     },
     note: isArabic ? 'الأسعار إرشادية وتخضع للتأكيد النهائي حسب الخدمة والتوفر.' : 'Prices are indicative and subject to final confirmation based on service and availability.'

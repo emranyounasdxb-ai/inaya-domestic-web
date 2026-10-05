@@ -1,45 +1,33 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 
-export default function Navbar({ locale }: { locale: string }) {
-  const t = useTranslations('nav');
-  const tc = useTranslations('common');
+export default function Navbar({ locale, labels, logo }: { locale: string; labels: Record<string, string>; logo: React.ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   const otherLocale = locale === 'en' ? 'ar' : 'en';
   const switchedPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
-  const logoSrc = locale === 'ar' ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp';
-  const logoAlt = locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers — Home';
 
   const links = [
-    { href: `/${locale}`, label: t('home') },
-    { href: `/${locale}/about`, label: t('about') },
-    { href: `/${locale}/services`, label: t('services') },
-    { href: `/${locale}/pricing`, label: t('pricing') },
-    { href: `/${locale}/how-it-works`, label: t('howItWorks') },
-    { href: `/${locale}/service-areas`, label: t('serviceAreas') },
-    { href: `/${locale}/faq`, label: t('faq') },
+    { href: `/${locale}`, label: labels.home },
+    { href: `/${locale}/about`, label: labels.about },
+    { href: `/${locale}/services`, label: labels.services },
+    { href: `/${locale}/pricing`, label: labels.pricing },
+    { href: `/${locale}/how-it-works`, label: labels.howItWorks },
+    { href: `/${locale}/service-areas`, label: labels.serviceAreas },
+    { href: `/${locale}/faq`, label: labels.faq },
     { href: `/${locale}/blog/`, label: locale === 'ar' ? 'الأدلة' : 'Guides' },
-    { href: `/${locale}/contact`, label: t('contact') }
+    { href: `/${locale}/contact`, label: labels.contact }
   ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-primary-700/10 bg-ivory/80 shadow-[0_1px_0_rgba(255,255,255,0.75)_inset] backdrop-blur-2xl">
       <nav className="container-x flex h-14 items-center justify-between gap-6">
         <Link href={`/${locale}`} className="flex shrink-0 items-center" aria-label="INAYA Domestic Workers home">
-          <Image
-            src={logoSrc}
-            alt={logoAlt}
-            width={156}
-            height={28}
-            className="h-7 w-auto max-w-[132px] object-contain sm:max-w-[156px]"
-          />
+          {logo}
         </Link>
 
         <div className="hidden flex-1 items-center justify-center gap-5 xl:gap-7 lg:flex">
@@ -66,13 +54,13 @@ export default function Navbar({ locale }: { locale: string }) {
             href={switchedPath}
             className="rounded-full border border-primary-700/10 bg-white/45 px-3 py-1.5 text-[12px] font-semibold leading-none text-primary-900 shadow-sm transition hover:border-accent-500 hover:bg-white/80"
           >
-            {tc('langSwitch')}
+            {labels.langSwitch}
           </Link>
           <Link
             href={`/${locale}/booking`}
             className="hidden rounded-full bg-primary-900 px-4 py-2 text-[12px] font-semibold leading-none text-white shadow-glass transition hover:-translate-y-0.5 hover:bg-primary-800 sm:inline-flex"
           >
-            {t('bookNow')}
+            {labels.bookNow}
           </Link>
           <button
             onClick={() => setOpen(!open)}
@@ -109,7 +97,7 @@ export default function Navbar({ locale }: { locale: string }) {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-primary-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
             >
-              {t('bookNow')}
+              {labels.bookNow}
             </Link>
           </div>
         </div>

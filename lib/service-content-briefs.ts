@@ -150,10 +150,6 @@ export function strengthenServiceCopy(slug: string, lang: Lang, copy: ServiceCop
       { feature: 'Working arrangement', inaya: 'Describe the home routine', other: 'Review the schedule' },
       { feature: 'Documents', inaya: 'Explain the current situation', other: 'Ask for a case checklist' }
     ],
-    // Keep route titles, metadata, factual duty lists and pricing information intact.
-    faqs: [
-      { title: ar ? `ما الأدوار التي أقارنها عند مراجعة ${copy.title}؟` : `Which roles can I compare when reviewing ${copy.title}?`,
-        text: brief.related.map((value) => { const service = getService(value)!; return `${service.name[lang]}: ${service.short[lang]}`; }).join(ar ? '؛ ' : '; ') },
-      ...copy.faqs.filter((faq) => !/available|availability|prices fixed|متوفرة|الأسعار ثابتة/i.test(faq.title)).slice(0, 3)
-    ] };
+    // Related-role links remain in their own section; FAQs answer practical questions.
+    faqs: copy.faqs.filter((faq) => !/available|availability|prices fixed|متوفرة|الأسعار ثابتة/i.test(faq.title)).slice(0, 3) };
 }

@@ -59,7 +59,7 @@ function GoogleG({ className = '' }: { className?: string }) {
 
 function Stars({ label }: { label: string }) {
   return (
-    <span className="google-review-stars" aria-label={label}>
+    <span className="google-review-stars" role="img" aria-label={label}>
       <span aria-hidden="true">★★★★★</span>
     </span>
   );

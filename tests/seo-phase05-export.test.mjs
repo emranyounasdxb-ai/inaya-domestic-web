@@ -1,3 +1,5 @@
+import octoberFixes from './seo-october-fixes-expectations.cjs';
+import './seo-october-fixes-export.test.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -14,6 +16,7 @@ test('Phase 5 retains all prior routes and protected sources while adding six bi
     if (file === 'tests/fixtures/seo-phase03-baseline.json') expected = remediation.approvedDescriptions(expected);
     if (file === 'tests/e2e/home.spec.ts') expected = remediation.approvedHomeFlow(expected);
     if (file === 'lib/service-content-briefs.ts') expected = corePageCopy.approvedCorePageCopy(file, expected);
+    expected = octoberFixes.approvedSeoFixes(file, expected);
     assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), expected, `${file}: exact checkpoint protection with reviewed remediation only`);
   }
   const audit = await auditExport();

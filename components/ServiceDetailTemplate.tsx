@@ -261,8 +261,10 @@ function MatchingCards({
   locale: string;
   slug: string;
 }) {
-  const countryBased = usesCountryMatching(slug);
-  const requestLabel = lang === 'ar' ? 'اطلب المطابقة' : 'Request Matching';
+  const countryBased = slug !== 'maid-visa' && usesCountryMatching(slug);
+  const requestLabel = slug === 'maid-visa'
+    ? lang === 'ar' ? 'ناقش حالتك' : 'Discuss your case'
+    : lang === 'ar' ? 'اطلب المطابقة' : 'Request Matching';
 
   return (
     <section className={`${sectionPadding} border-y border-primary-900/8 bg-[#fffdf8]`}>
@@ -341,6 +343,7 @@ function PricingCards({
     <section className={`${sectionPadding} bg-white`}>
       <div className="mx-auto max-w-6xl">
         <SectionTitle title={copy.pricingTitle} text={copy.pricingText} lang={lang} align="center" />
+        {['live-in-maid', 'full-time-maid', 'part-time-maid', 'monthly-maid-contract', 'nanny', 'maid-visa'].includes(slug) ? <p className="mt-4 text-center"><Link href={`/${locale}/pricing/`} className="text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4">{lang === 'ar' ? 'راجع أساس تسعير الباقات وما يجب تأكيده' : 'Review the package pricing basis and what to confirm'}</Link></p> : null}
         <p className="mx-auto mt-5 w-fit border-b border-accent-500/40 pb-1 text-sm font-bold text-accent-700">{note}</p>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
           {copy.pricing.map((item) => (

@@ -1,3 +1,4 @@
+const { approvedSeoFixes } = require('./seo-october-fixes-expectations.cjs');
 const assert = require('node:assert/strict');
 const { execFileSync } = require('node:child_process');
 const { readFileSync } = require('node:fs');
@@ -82,7 +83,7 @@ test('messages and navigation permit only reviewed localized copy changes', () =
     '            })}'
   ].join('\n');
   expected = replaceOnce(expected, previousMobile, approvedMobile);
-  assert.equal(current(file), expected);
+  assert.equal(current(file), approvedSeoFixes(file, expected));
 });
 
 test('page and CTA sources permit only the approved localized copy replacements', () => {
@@ -94,6 +95,6 @@ test('page and CTA sources permit only the approved localized copy replacements'
   for (const [file, pairs] of Object.entries(replacements)) {
     let expected = previous(file);
     for (const [before, after] of pairs) expected = expected.replace(before, after);
-    assert.equal(current(file), expected, file);
+    assert.equal(current(file), approvedSeoFixes(file, expected), file);
   }
 });

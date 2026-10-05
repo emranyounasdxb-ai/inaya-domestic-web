@@ -18,7 +18,7 @@ test('all 146 routes omit unsupported statistics, approval and ranking labels an
   assert.ok(audit.repeatedTokens <= 8300, 'retain Phase 3 lexical improvement with six substantive guide pages');
   for (const page of audit.pages) {
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
-    const visible = text(file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, ''));
+    const visible = text(file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, ''));
     assert.doesNotMatch(visible, /No\.\s*1|10,000\+|100%|24\/7|Licensed & Approved|Recognized & Trusted by UAE Authorities|Verified & Trusted Workers|Verified workers|Available profiles|12 Years Exp\.|12 سنة خبرة|مرخص ومعتمد|ملفات متاحة|الخيار الأول/i, page.url);
     assert.doesNotMatch(`${page.title} ${page.description}`, /safer hiring|trained or experienced|trusted maid agency|أكثر أماناً|ملفات مدربة|شركة خادمات موثوقة/i, page.url);
     assert.ok(file.includes(siteConfig.email), page.url);

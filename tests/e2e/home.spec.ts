@@ -17,7 +17,7 @@ async function visibleReviewCardCount(page: Page) {
 test('home page renders main sections', async ({ page }) => {
   await page.goto('/en');
 
-  await expect(page.getByRole('heading', { name: /Elevating Domestic/i })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Maid & Domestic Worker Services in Ajman and Across the UAE');
   await expect(page.getByRole('heading', { name: 'Global Executive Concierge' })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Google Reviews/i })).toBeVisible();
   await expect(page.locator('p.google-reviews-profile')).toHaveText('INAYA on Google');

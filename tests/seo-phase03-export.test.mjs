@@ -10,6 +10,16 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     ar: { title: 'دعم منزلي غير طبي للروتين اليومي في الإمارات | عناية', description: 'ناقش مع عناية الدعم المنزلي غير الطبي للروتين اليومي والمساعدة العملية والمرافقة في الإمارات. لا تشمل الخدمة العلاج الطبي أو التمريض.' }
   };
   const baseline = JSON.parse(await readFile('tests/fixtures/seo-phase03-baseline.json', 'utf8'));
+  // Only the visa scope correction and the user-confirmed monthly price explanation
+  // change these historical values. Every other metadata and price guard stays exact.
+  const visaDescriptions = {
+    en: 'Ask INAYA about a maid visa enquiry in the UAE. Confirm the support available for your case, applicable requirements and fees before agreeing a next step.',
+    ar: 'استفسر عن تأشيرة الخادمة في الإمارات مع عناية. تواصل لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم قبل الاتفاق على أي خطوة.'
+  };
+  const pricingMentions = {
+    en: [...Array(6).fill('AED 1,500'), ...Array(6).fill('AED 2,500')],
+    ar: [...Array(5).fill('1,500 درهم'), ...Array(5).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
+  };
   const current = await auditExport();
   assert.equal(current.pages.length, 146);
   assert.deepEqual(current.pages.slice(0, 140).map((p) => p.url), baseline.pages.map((p) => p.url));
@@ -25,10 +35,13 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     const before = baseline.pages.find((p) => p.url === page.url);
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
     assert.equal(page.title, correctedCare?.title ?? before.title, page.url);
-    if (page.route !== 'blog') assert.equal(page.description, correctedCare?.description ?? before.description, page.url);
+    if (page.route !== 'blog') assert.equal(page.description, page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description, page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
-    assert.deepEqual(page.prices, before.prices, `${page.url}: displayed prices`);
+    const expectedPrices = page.route === 'pricing' ? pricingMentions[page.locale]
+      : page.route === 'services/monthly-maid-contract' ? page.locale === 'en' ? ['AED 1,500', 'AED 2,500'] : ['1,500 درهم', '2,500 درهم']
+      : before.prices;
+    assert.deepEqual(page.prices, expectedPrices, `${page.url}: displayed prices`);
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const body = file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
     assert.doesNotMatch(body, /data-seo="related-guides"|data-content="page-purpose"/, `${page.url}: removed strip must not render`);

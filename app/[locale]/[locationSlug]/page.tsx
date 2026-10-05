@@ -110,6 +110,12 @@ export default async function LocationServicePage({ params }: { params: Promise<
             <div className="mt-5 flex flex-wrap gap-3">
               {location.popularServices.map((service) => <Link key={service.slug} href={`/${locale}/services/${service.slug}`} className="rounded-full border border-accent-500/22 bg-[#fbfaf7] px-4 py-2 text-xs font-bold text-primary-900 transition hover:-translate-y-0.5 hover:bg-white">{service.title[lang]}</Link>)}
             </div>
+            {location.serviceNotes ? <div className="mt-7 space-y-5">
+              {location.serviceNotes.map((service) => <div key={service.slug}>
+                <h3 className="font-heading text-lg font-bold text-primary-900"><Link href={`/${locale}/services/${service.slug}/`} className="underline decoration-accent-500/50 underline-offset-4">{service.title[lang]}</Link></h3>
+                <p className="mt-2 text-sm leading-7 text-primary-900/75">{service.description[lang]}</p>
+              </div>)}
+            </div> : null}
             <h3 className="mt-7 font-heading text-xl font-bold tracking-[-0.025em] text-primary-900">{t.areasTitle}</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {location.neighbourhoods[lang].map((area) => <span key={area} className="rounded-full border border-primary-900/8 bg-white px-3 py-1.5 text-xs font-semibold text-primary-900/75">{area}</span>)}

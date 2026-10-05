@@ -6,6 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
+  experimental: { inlineCss: true },
   images: {
     unoptimized: true
   }

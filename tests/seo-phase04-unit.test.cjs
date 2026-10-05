@@ -1,4 +1,5 @@
 const assert = require('node:assert/strict');
+const { approvedSeoFixes } = require('./seo-october-fixes-expectations.cjs');
 const { assertFormPreserved } = require('./form-accessibility-preservation.cjs');
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
@@ -29,9 +30,9 @@ test('protected popup differs only in two approved localized copy replacements',
   const file = 'components/SierraLeoneOfferControls.tsx';
   assert.equal(current(file), previous(file).replace("'Available Profiles'", "'Candidate Profiles'").replace("'ملفات متاحة'", "'ملفات المرشحات'"));
   for (const file of ['components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx']) {
-    assert.equal(current(file), previous(file), `${file}: protected behavior/test`);
+    assert.equal(current(file), approvedSeoFixes(file, previous(file)), `${file}: protected behavior/test`);
   }
-  assert.equal(current('tests/e2e/home.spec.ts'), approvedHomeFlow(previous('tests/e2e/home.spec.ts')), 'only the approved modal setup is added; all original carousel assertions remain');
+  assert.equal(current('tests/e2e/home.spec.ts'), approvedSeoFixes('tests/e2e/home.spec.ts', approvedHomeFlow(previous('tests/e2e/home.spec.ts'))), 'approved modal setup and descriptive H1; all original carousel assertions remain');
 });
 
 test('Phase 4 snapshot exceptions remain precisely four titles and two descriptions after approved final corrections', () => {
