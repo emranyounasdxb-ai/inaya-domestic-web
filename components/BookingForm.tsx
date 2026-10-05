@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import LocalFormConfirmation from './LocalFormConfirmation';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
@@ -18,6 +18,7 @@ export default function BookingForm({ locale }: { locale: string }) {
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [selectedService, setSelectedService] = useState(services[0].slug);
+  const serviceRef = useRef<HTMLSelectElement & { inayaServiceInitialized?: boolean }>(null);
 
   useEffect(() => {
     const syncServiceFromUrl = () => {
@@ -28,12 +29,22 @@ export default function BookingForm({ locale }: { locale: string }) {
       setSelectedService(selected);
     };
 
-    syncServiceFromUrl();
+    // The inline preselection already initialized the native field. Adopt its
+    // current value so a choice made before hydration is never overwritten.
+    if (serviceRef.current?.inayaServiceInitialized) {
+      setSelectedService(serviceRef.current?.value ?? services[0].slug);
+    } else {
+      // React does not execute inline scripts on a client-side route change.
+      syncServiceFromUrl();
+    }
+    const restoreServiceFromUrl = (event: PageTransitionEvent) => {
+      if (event.persisted) syncServiceFromUrl();
+    };
     window.addEventListener('popstate', syncServiceFromUrl);
-    window.addEventListener('pageshow', syncServiceFromUrl);
+    window.addEventListener('pageshow', restoreServiceFromUrl);
     return () => {
       window.removeEventListener('popstate', syncServiceFromUrl);
-      window.removeEventListener('pageshow', syncServiceFromUrl);
+      window.removeEventListener('pageshow', restoreServiceFromUrl);
     };
   }, []);
 
@@ -84,12 +95,12 @@ export default function BookingForm({ locale }: { locale: string }) {
       </div>
       <div>
         <label htmlFor={fieldId('service')} className="label">{t('service')}</label>
-        <select {...fieldA11y('service')} name="service" className="field" value={selectedService} onChange={handleServiceChange}>
+        <select {...fieldA11y('service')} ref={serviceRef} name="service" className="field" value={selectedService} onChange={handleServiceChange}>
           {services.map((s) => (
             <option key={s.slug} value={s.slug}>{s.name[lang]}</option>
           ))}
         </select>
-        <script dangerouslySetInnerHTML={{ __html: "(function(){var select=document.currentScript.previousElementSibling;var requested=new URLSearchParams(location.search).get('service');if(select&&requested&&Array.prototype.some.call(select.options,function(option){return option.value===requested;}))select.value=requested;})();" }} />
+        <script dangerouslySetInnerHTML={{ __html: "(function(){var select=document.currentScript.previousElementSibling;var requested=new URLSearchParams(location.search).get('service');if(select){select.inayaServiceInitialized=true;if(requested&&Array.prototype.some.call(select.options,function(option){return option.value===requested;}))select.value=requested;}})();" }} />
       </div>
       <div>
         <label htmlFor={fieldId('plan')} className="label">{t('plan')}</label>

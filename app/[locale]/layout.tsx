@@ -14,6 +14,7 @@ import Measurement from '@/components/Measurement';
 import sitemap from '@/app/sitemap';
 import '../globals.css';
 import '../arabic-body-font.css';
+import '../arabic-heading-font.css';
 
 // Inline font CSS discovers the faces used by this locale without preloading unused languages or weights.
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap', preload: false });
@@ -40,10 +41,14 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const labels = Object.fromEntries(['home', 'about', 'services', 'pricing', 'howItWorks', 'serviceAreas', 'faq', 'contact', 'bookNow'].map((key) => [key, nav(key)]));
   labels.langSwitch = common('langSwitch');
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
-  if (locale === 'ar') preload('/fonts/inaya-arabic-body.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
+  if (locale === 'ar') {
+    preload('/fonts/inaya-arabic-body-core-eb3aa9ff2a7a.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
+    preload('/fonts/inaya-arabic-body-latin.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
+    preload('/fonts/inaya-arabic-heading-700.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
+  }
   return (
     <html lang={locale} dir={dir}>
-      <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`} style={locale === 'ar' ? { '--font-arabic-body': `"INAYA Arabic Body", ${notoSansArabic.style.fontFamily}` } as React.CSSProperties : undefined}>
+      <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`} style={locale === 'ar' ? { '--font-arabic-body': `"INAYA Arabic Body", ${notoSansArabic.style.fontFamily}`, '--font-arabic-heading': `"INAYA Arabic Heading", ${ibmPlexSansArabic.style.fontFamily}` } as React.CSSProperties : undefined}>
           {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}
           <Navbar locale={locale} labels={labels} logo={<BrandLogo locale={locale} alt={locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers — Home'} width={156} className="h-7 w-auto max-w-[132px] object-contain sm:max-w-[156px]" />} />
           <FloatingSocialBar />

@@ -15,11 +15,11 @@ const patches = {
     ],
     [
       "import '../globals.css';\n",
-      "import '../globals.css';\nimport '../arabic-body-font.css';\n"
+      "import '../globals.css';\nimport '../arabic-body-font.css';\nimport '../arabic-heading-font.css';\n"
     ],
     [
       '      <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>',
-      '      <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`} style={locale === \'ar\' ? { \'--font-arabic-body\': `"INAYA Arabic Body", ${notoSansArabic.style.fontFamily}` } as React.CSSProperties : undefined}>'
+      '      <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`} style={locale === \'ar\' ? { \'--font-arabic-body\': `"INAYA Arabic Body", ${notoSansArabic.style.fontFamily}`, \'--font-arabic-heading\': `"INAYA Arabic Heading", ${ibmPlexSansArabic.style.fontFamily}` } as React.CSSProperties : undefined}>'
     ],
     [
       "import type { Metadata } from 'next';\n",
@@ -27,7 +27,7 @@ const patches = {
     ],
     [
       "  const dir = locale === 'ar' ? 'rtl' : 'ltr';\n",
-      "  const dir = locale === 'ar' ? 'rtl' : 'ltr';\n  if (locale === 'ar') preload('/fonts/inaya-arabic-body.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });\n"
+      "  const dir = locale === 'ar' ? 'rtl' : 'ltr';\n  if (locale === 'ar') {\n    preload('/fonts/inaya-arabic-body-core-eb3aa9ff2a7a.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });\n    preload('/fonts/inaya-arabic-body-latin.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });\n    preload('/fonts/inaya-arabic-heading-700.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });\n  }\n"
     ]
   ],
   "lib/services.ts": [
