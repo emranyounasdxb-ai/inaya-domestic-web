@@ -1,7 +1,17 @@
 const assert = require('node:assert/strict');
 
-// Exact approved content and font-loading changes; every other historical source line remains protected.
+// Exact approved content, font-loading and map-loading changes; every other historical source line remains protected.
 const patches = {
+  "app/[locale]/contact/page.tsx": [
+    [
+      "import ContactForm from '@/components/ContactForm';\n",
+      "import ContactForm from '@/components/ContactForm';\nimport LocationMap from '@/components/LocationMap';\n"
+    ],
+    [
+      '            <iframe\n              src={mapEmbedUrl}\n              title={copy.mapTitle}\n              width="100%"\n              height="100%"\n              style={{ border: 0 }}\n              allowFullScreen\n              loading="lazy"\n              referrerPolicy="no-referrer-when-downgrade"\n              className="h-[320px] w-full sm:h-[420px]"\n            />',
+      '            <LocationMap src={mapEmbedUrl} title={copy.mapTitle} />'
+    ]
+  ],
   "components/Navbar.tsx": [
     [
       "            href={switchedPath}\n",
