@@ -298,6 +298,7 @@ export function applyPracticalGuidance(slug: string, lang: Lang, copy: ServiceCo
     faqs: item.faqs
   };
   if (visa) {
+    next.title = ar ? 'استفسارات تأشيرة الخادمة في الإمارات' : 'Maid Visa Enquiries in UAE';
     next.meta = ar ? 'استفسر عن تأشيرة الخادمة في الإمارات مع عناية. تواصل لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم قبل الاتفاق على أي خطوة.' : 'Ask INAYA about a maid visa enquiry in the UAE. Confirm the support available for your case, applicable requirements and fees before agreeing a next step.';
     next.lead = item.scope;
     next.book = ar ? 'جهز استفسار التأشيرة' : 'Prepare a visa enquiry';

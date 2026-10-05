@@ -52,6 +52,9 @@ test('core pages answer practical questions and visa exports contain case guidan
     assert.ok(body.includes(locale === 'ar' ? 'من الاستفسار إلى التأكيد' : 'From enquiry to confirmation'));
     assert.doesNotMatch(body, /Which roles can I compare when reviewing|ما الأدوار التي أقارنها عند مراجعة/);
     if (slug === 'maid-visa') {
+      const heading = locale === 'ar' ? 'استفسارات تأشيرة الخادمة في الإمارات' : 'Maid Visa Enquiries in UAE';
+      assert.equal(text(body.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1]), heading);
+      assert.equal(text(body.match(/<title>([\s\S]*?)<\/title>/)[1]), `${heading} | ${locale === 'ar' ? 'عناية' : 'INAYA'}`);
       assert.ok(body.includes(locale === 'ar' ? 'تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة' : 'Contact INAYA to confirm the support available for your case, applicable requirements and fees'));
       assert.doesNotMatch(body, /maid-filipino|maid-indonesian|maid-srilankan|maid-kenya-uganda|Request Matching|اطلب المطابقة/);
     }

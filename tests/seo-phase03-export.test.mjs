@@ -16,6 +16,10 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     en: 'Ask INAYA about a maid visa enquiry in the UAE. Confirm the support available for your case, applicable requirements and fees before agreeing a next step.',
     ar: 'استفسر عن تأشيرة الخادمة في الإمارات مع عناية. تواصل لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم قبل الاتفاق على أي خطوة.'
   };
+  const visaTitles = {
+    en: 'Maid Visa Enquiries in UAE | INAYA',
+    ar: 'استفسارات تأشيرة الخادمة في الإمارات | عناية'
+  };
   const pricingMentions = {
     en: [...Array(6).fill('AED 1,500'), ...Array(6).fill('AED 2,500')],
     ar: [...Array(5).fill('1,500 درهم'), ...Array(5).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
@@ -34,7 +38,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
-    assert.equal(page.title, correctedCare?.title ?? before.title, page.url);
+    assert.equal(page.title, page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title, page.url);
     if (page.route !== 'blog') assert.equal(page.description, page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description, page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
