@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import BrandLogo from './BrandLogo';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
@@ -12,7 +12,6 @@ export default function Footer({ locale }: { locale: string }) {
   const isArabic = locale === 'ar';
   const lang = isArabic ? 'ar' : 'en';
   const year = new Date().getFullYear();
-  const logoSrc = isArabic ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp';
   const logoAlt = isArabic ? 'شعار عناية للعمالة المنزلية' : 'INAYA Domestic Workers logo';
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const contactAddress = isArabic
@@ -51,7 +50,7 @@ export default function Footer({ locale }: { locale: string }) {
       <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[18px] border border-primary-900/8 bg-white/78 shadow-[0_24px_80px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10 backdrop-blur-xl">
         <div className="grid items-stretch gap-5 px-7 py-5 sm:px-10 lg:grid-cols-[1.18fr_0.92fr_1.04fr_1.23fr] lg:px-12 lg:py-6 xl:px-14">
           <div className="lg:flex lg:h-full lg:flex-col">
-            <Image src={logoSrc} alt={logoAlt} width={280} height={64} className="h-16 w-auto max-w-[280px] object-contain" />
+            <BrandLogo locale={locale} alt={logoAlt} width={280} className="h-16 w-auto max-w-[280px] object-contain" />
             <p className="mt-3 max-w-[310px] text-[0.9rem] leading-5 text-ink/72">{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}</p>
             <div className="mt-3 h-px w-12 bg-[#c98700]" />
             <div className="mt-3 space-y-2.5 lg:flex lg:flex-1 lg:flex-col lg:justify-between lg:space-y-0">
@@ -114,7 +113,7 @@ export default function Footer({ locale }: { locale: string }) {
 function FooterTitle({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="font-heading text-[0.96rem] font-bold uppercase tracking-[0.08em] text-primary-900">{children}</h4>
+      <h2 style={{ fontFamily: 'var(--font-heading), "Plus Jakarta Sans", Inter, system-ui, sans-serif' }} className="font-heading text-[0.96rem] font-bold uppercase tracking-[0.08em] text-primary-900">{children}</h2>
       <div className="mt-2.5 h-[2px] w-14 bg-[#c98700]" />
     </div>
   );

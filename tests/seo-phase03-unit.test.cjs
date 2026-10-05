@@ -39,6 +39,7 @@ test('revised FAQ objects come from exact current bilingual visible datasets', (
     assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), current.faqs);
     assert.equal(faq['@id'], `${page.url}#faq`); assert.equal(faq.inLanguage, page.locale);
     assert.ok(current.faqs.length >= 3);
+    if (page.family === 'service') assert.doesNotMatch(current.faqs.map(item => item.question).join('\n'), /Which roles can I compare when reviewing|ما الأدوار التي أقارنها عند مراجعة/);
   }
 });
 

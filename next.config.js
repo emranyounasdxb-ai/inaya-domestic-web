@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  experimental: { inlineCss: process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' },
   // Reproduce the cPanel export locally without replacing configuration files.
   ...(process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' ? { output: 'export' } : {}),
   allowedDevOrigins: ['127.0.0.1'],

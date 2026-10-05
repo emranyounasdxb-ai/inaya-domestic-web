@@ -1,3 +1,4 @@
+import FormTranslations from '@/components/FormTranslations';
 import ContactForm from '@/components/ContactForm';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { siteConfig } from '@/lib/site-config';
@@ -175,7 +176,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <h2 className={sectionTitleClass}>{copy.formTitle}</h2>
             <p className="mt-3 text-sm leading-6 text-ink/70">{copy.formText}</p>
             <div className="mt-6">
-              <ContactForm locale={locale} variant="floating" />
+              <FormTranslations namespaces={['contact', 'booking']}><ContactForm locale={locale} variant="floating" /></FormTranslations>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import octoberFixes from './seo-october-fixes-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -65,6 +66,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       before = before.replace(anchor, "      sameAs: ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/'],\n" + anchor);
     }
     if (file === 'lib/service-content-briefs.ts' || file === 'lib/services.ts') before = corePageCopy.approvedCorePageCopy(file, before);
+    before = octoberFixes.approvedSeoFixes(file, before);
     assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), before, file);
   }
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) {
@@ -87,6 +89,10 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       const corrected = '{copy.hero.subtitle}{\' \'}\n            <Link href={`/${locale}/blog/domestic-worker-package-pricing-factors/`} className="font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{copy.hero.guide}</Link>\n          </p>';
       assert.equal(expected.split(original).length, 2, 'one original pricing Hero subtitle');
       expected = expected.replace(original, corrected);
+    }
+    if (file === 'app/[locale]/page.tsx') {
+      assert.equal(expected.split('{copy.heroTitleA}<br />').length, 2);
+      expected = expected.replace('{copy.heroTitleA}<br />', "{copy.heroTitleA}{' '}<br />");
     }
     assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling`);
   }

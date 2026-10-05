@@ -1,20 +1,17 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans_Arabic, Inter, Noto_Sans_Arabic, Plus_Jakarta_Sans } from 'next/font/google';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import { siteConfig } from '@/lib/site-config';
 import Navbar from '@/components/Navbar';
+import BrandLogo from '@/components/BrandLogo';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import SierraLeoneOfferControls from '@/components/SierraLeoneOfferControls';
 import Measurement from '@/components/Measurement';
 import sitemap from '@/app/sitemap';
 import '../globals.css';
-import '../home-country-availability.css';
-import '../home-google-reviews.css';
-import '../curated-discipline-images.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
@@ -35,19 +32,20 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const { locale } = await params;
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const nav = await getTranslations('nav');
+  const common = await getTranslations('common');
+  const labels = Object.fromEntries(['home', 'about', 'services', 'pricing', 'howItWorks', 'serviceAreas', 'faq', 'contact', 'bookNow'].map((key) => [key, nav(key)]));
+  labels.langSwitch = common('langSwitch');
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
   return (
     <html lang={locale} dir={dir}>
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`}>
-        <NextIntlClientProvider messages={messages}>
           {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}
-          <Navbar locale={locale} />
+          <Navbar locale={locale} labels={labels} logo={<BrandLogo locale={locale} alt={locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers — Home'} width={156} className="h-7 w-auto max-w-[132px] object-contain sm:max-w-[156px]" />} />
           <FloatingSocialBar />
           <SierraLeoneOfferControls locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />
-        </NextIntlClientProvider>
       </body>
     </html>
   );

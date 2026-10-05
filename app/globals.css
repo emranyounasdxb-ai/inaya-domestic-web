@@ -42,23 +42,6 @@ body {
 .field { @apply w-full rounded-2xl border border-primary-700/15 bg-white px-4 py-3 text-ink shadow-sm outline-none transition placeholder:text-primary-900/70 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30; }
 .label { @apply mb-1.5 block text-sm font-medium text-ink; }
 
-.footer-luxury-card::after {
-  content: '';
-  position: absolute;
-  inset: -35%;
-  background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.5) 50%, rgba(255,255,255,.12) 57%, transparent 68%);
-  transform: translateX(-125%) skewX(-18deg);
-  animation: footerReflection 8.5s ease-in-out infinite;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-@keyframes footerReflection {
-  0%, 28% { transform: translateX(-125%) skewX(-18deg); opacity: 0; }
-  38% { opacity: .72; }
-  65%, 100% { transform: translateX(125%) skewX(-18deg); opacity: 0; }
-}
-
 /* Arabic home hero: keep the text panel away from the model side while preserving RTL text. */
 [dir='rtl'] main > div > section:first-of-type > div.relative.mx-auto.flex {
   direction: ltr;

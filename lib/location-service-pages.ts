@@ -1,4 +1,5 @@
 import { locationContentBriefs } from './profile-content-briefs';
+import { addLocalGuidance } from './location-practical-guidance';
 export type Lang = 'en' | 'ar';
 
 type Localized = Record<Lang, string>;
@@ -25,6 +26,7 @@ export type LocationServicePage = {
   intro: Localized;
   localNeeds: LocalizedList;
   popularServices: LocationServiceLink[];
+  serviceNotes?: (LocationServiceLink & { description: Localized })[];
   neighbourhoods: LocalizedList;
   faqs: LocationFaq[];
 };
@@ -167,7 +169,7 @@ const originalLocationServicePages: LocationServicePage[] = [
   }
 ];
 
-export const locationServicePages: LocationServicePage[] = originalLocationServicePages.map((location) => ({
+export const locationServicePages: LocationServicePage[] = originalLocationServicePages.map((location) => addLocalGuidance({
   ...location, intro: locationContentBriefs[location.slug] ?? location.intro,
   faqs: [...location.faqs, { question: { en: `Do the listed areas confirm availability in ${location.city.en}?`, ar: `هل تؤكد المناطق المذكورة التوفر في ${location.city.ar}؟` }, answer: {
     en: 'The area names help you describe the address for your enquiry. They do not confirm a worker, visit or start date; the team reviews the exact area, role and current options before confirmation.',
