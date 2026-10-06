@@ -2,7 +2,7 @@ import { getPageSeo, pageBreadcrumbs } from './page-seo';
 import { localizedUrl } from './seo';
 import { siteConfig } from './site-config';
 import { faqEntity } from './json-ld';
-import { getDomesticWorkerGuide } from './domestic-worker-guides';
+import { getDomesticWorkerGuide, guideAuthor } from './domestic-worker-guides';
 
 export function pageStructuredData(locale: string, route: string) {
   const page = getPageSeo(locale, route);
@@ -53,11 +53,14 @@ export function pageStructuredData(locale: string, route: string) {
     provider: { '@id': organizationId }, mainEntityOfPage: { '@id': `${url}#webpage` },
     ...(page.service.area ? { areaServed: { '@type': 'AdministrativeArea', name: page.service.area } } : {})
   });
-  if (route.startsWith('blog/') && getDomesticWorkerGuide(route.slice('blog/'.length))) graph.push({
+  const guide = route.startsWith('blog/') ? getDomesticWorkerGuide(route.slice('blog/'.length)) : undefined;
+  if (guide) graph.push({
     '@type': 'Article', '@id': `${url}#article`, url,
     headline: page.name, description: page.description, inLanguage: locale,
     mainEntityOfPage: { '@id': `${url}#webpage` },
-    author: { '@id': organizationId }, publisher: { '@id': organizationId }
+    author: { '@type': 'Organization', name: guideAuthor }, publisher: { '@id': organizationId },
+    datePublished: guide.published, dateModified: guide.updated,
+    citation: guide.sources.map((source) => source.url)
   });
   // Questions are reused from the exact data rendered by the corresponding page.
   if (page.faqs?.length) graph.push(faqEntity(locale, route, page.faqs));

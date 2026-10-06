@@ -26,11 +26,11 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     ar: [...Array(5).fill('1,500 درهم'), ...Array(5).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
   };
   const current = await auditExport();
-  assert.equal(current.pages.length, 146);
+  assert.equal(current.pages.length, 154);
   assert.deepEqual(current.pages.slice(0, 140).map((p) => p.url), baseline.pages.map((p) => p.url));
   assert.deepEqual(current.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(current.linkCoverage[locale].reachable, 73);
+    assert.equal(current.linkCoverage[locale].reachable, 77);
     assert.ok(current.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
   assert.ok(current.repeatedTokens < baseline.repeatedTokens);
@@ -70,5 +70,5 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
       assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), details, `${page.url}: visible FAQ/schema`);
     }
   }
-  console.log(JSON.stringify({ routes: 146, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
+  console.log(JSON.stringify({ routes: 154, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
 });

@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import RouteSeo from '@/components/RouteSeo';
-import { domesticWorkerGuides, getDomesticWorkerGuide, type GuideLanguage } from '@/lib/domestic-worker-guides';
+import { domesticWorkerGuides, getDomesticWorkerGuide, guideAuthor, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { pageMetadata } from '@/lib/page-seo';
+import { siteConfig } from '@/lib/site-config';
 
 type GuideParams = Promise<{ locale: string; slug: string }>;
 
@@ -26,6 +27,9 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
   const isArabic = lang === 'ar';
   const copy = guide[lang];
   const route = `blog/${slug}`;
+  const formatDate = (value: string) => new Intl.DateTimeFormat(isArabic ? 'ar-AE' : 'en-AE', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+  }).format(new Date(`${value}T00:00:00Z`));
 
   return (
     <div className="overflow-hidden bg-ivory text-ink" dir={isArabic ? 'rtl' : 'ltr'}>
@@ -42,13 +46,18 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
               {copy.title}
             </h1>
             <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-ink/75 sm:text-lg">{copy.lead}</p>
+            <dl className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm leading-6 text-primary-900/75" data-guide="attribution">
+              <div><dt className="font-semibold">{isArabic ? 'إعداد' : 'By'}</dt><dd><bdi>{guideAuthor}</bdi></dd></div>
+              <div><dt className="font-semibold">{isArabic ? 'تاريخ النشر' : 'Published'}</dt><dd><time dateTime={guide.published}>{formatDate(guide.published)}</time></dd></div>
+              <div><dt className="font-semibold">{isArabic ? 'آخر تحديث' : 'Updated'}</dt><dd><time dateTime={guide.updated}>{formatDate(guide.updated)}</time></dd></div>
+            </dl>
           </div>
         </div>
       </section>
       <PageBreadcrumbs locale={locale} route={route} />
 
       <div className="container-x grid max-w-6xl gap-10 pb-20 pt-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-14">
-        <article className="space-y-12">
+        <article className="min-w-0 space-y-12">
           {copy.sections.map((section) => (
             <section key={section.heading}>
               <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-2xl font-bold leading-snug text-primary-900 sm:text-3xl`}>{section.heading}</h2>
@@ -60,6 +69,17 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
                 <ul className="mt-5 list-disc space-y-3 ps-6 text-base leading-8 text-primary-900/80">
                   {section.points.map((point) => <li key={point}>{point}</li>)}
                 </ul>
+              ) : null}
+              {section.table ? (
+                <div className="mt-6 overflow-x-auto rounded-2xl border border-primary-900/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-900" role="region" aria-label={section.table.caption} tabIndex={0}>
+                  <table className="w-full min-w-[32rem] border-collapse text-start text-sm leading-7 text-primary-900">
+                    <caption className="bg-white/60 px-5 py-4 text-start font-semibold">{section.table.caption}</caption>
+                    <thead className="bg-primary-900/5"><tr>{section.table.columns.map((column) => <th key={column} scope="col" className="border-t border-primary-900/15 px-5 py-3 text-start font-semibold">{column}</th>)}</tr></thead>
+                    <tbody>{section.table.rows.map((row) => <tr key={row[0]}>{row.map((cell, index) => index === 0
+                      ? <th key={index} scope="row" className="border-t border-primary-900/15 px-5 py-3 text-start align-top font-semibold">{cell}</th>
+                      : <td key={index} className="border-t border-primary-900/15 px-5 py-3 align-top">{cell}</td>)}</tr>)}</tbody>
+                  </table>
+                </div>
               ) : null}
             </section>
           ))}
@@ -78,6 +98,8 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
                   </Link>
                 </li>
               ))}
+              <li><a className="font-semibold leading-7 text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700" href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}>{isArabic ? 'اتصل بمكتب عناية' : 'Call INAYA’s office'}</a></li>
+              <li><a className="font-semibold leading-7 text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700" href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer">{isArabic ? 'ناقش استفسارك عبر واتساب' : 'Discuss your enquiry on WhatsApp'}</a></li>
             </ul>
           </section>
           <section className="glass-panel rounded-[24px] p-6">
@@ -92,7 +114,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
               ))}
             </ul>
             <p className="mt-5 text-sm leading-6 text-primary-900/70">
-              {isArabic ? 'تحقق من المتطلبات الرسمية الحالية للحالة قبل تقديم الطلب.' : 'Check the current official requirements for your case before applying.'}
+              {copy.sourceNote}
             </p>
           </section>
         </aside>
