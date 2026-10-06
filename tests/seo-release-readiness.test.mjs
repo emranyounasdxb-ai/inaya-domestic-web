@@ -3,6 +3,40 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
+test('approved identity and hours match visible bilingual content and visa scope retains authority limits', async () => {
+  const legalName = 'INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)';
+  for (const locale of ['en', 'ar']) {
+    const about = await readFile(`out/${locale}/about/index.html`, 'utf8');
+    assert.ok(about.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').includes(legalName), 'visible legal identity');
+    const contact = await readFile(`out/${locale}/contact/index.html`, 'utf8');
+    const nodes = [...contact.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+      .flatMap(match => JSON.parse(match[1])['@graph'] ?? []);
+    const organization = nodes.find(node => node['@id'] === 'https://inayadomestic.ae/#organization');
+    assert.equal(organization.legalName, legalName);
+    assert.deepEqual(organization.openingHoursSpecification.dayOfWeek, ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']);
+    assert.equal(organization.openingHoursSpecification.opens, '09:00');
+    assert.equal(organization.openingHoursSpecification.closes, '21:00');
+    const visible = contact.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+    assert.match(visible, locale === 'en' ? /Saturday–Thursday: 9:00 AM–9:00 PM\. Friday: Closed/ : /السبت إلى الخميس: 9 صباحاً إلى 9 مساءً\. الجمعة: مغلق/);
+    for (const route of ['maid-visa', 'sponsorship-transfer']) {
+      const html = await readFile(`out/${locale}/services/${route}/index.html`, 'utf8');
+      const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+      for (const phrase of locale === 'en'
+        ? ['document guidance', 'application submission', 'status change', 'medical processing', 'Emirates ID processing', 'insurance processing', 'end-to-end case processing']
+        : ['إرشاد المستندات', 'تقديم الطلبات', 'تعديل الوضع', 'إجراءات الفحص الطبي', 'الهوية الإماراتية', 'التأمين', 'من البداية إلى النهاية']) assert.ok(body.includes(phrase), `${locale}/${route}: ${phrase}`);
+      assert.match(body, locale === 'en' ? /Government approval and outcomes are not guaranteed/ : /لا تضمن عناية الموافقة الحكومية أو النتيجة/);
+      assert.match(body, locale === 'en' ? /not clinical care or treatment/ : /ليس الرعاية السريرية أو العلاج/);
+      assert.doesNotMatch(body, /guidance or submission|whether proposed support includes application submission|الإرشاد أو تقديم الطلب/);
+    }
+    for (const route of ['terms', 'privacy-policy', 'faq']) {
+      const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
+      const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+      assert.match(body, locale === 'en' ? /locally/ : /محلياً/);
+      assert.doesNotMatch(body, /You can submit the request form|The team reviews your request, then contacts you|يقوم الفريق بمراجعة الطلب ثم يتواصل معك/);
+    }
+  }
+});
+
 test('cPanel root uses a language-aware HTTP redirect and preserves proven FTP deployment', async () => {
   const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
   const htaccess = workflow.match(/cat > out\/\.htaccess <<'EOF'\r?\n([\s\S]*?)\r?\n\s*EOF/)?.[1];
@@ -35,7 +69,7 @@ test('exported pages remove shared visa promises, retain neutral transfer FAQs a
     }
     const transfer = await readFile(`out/${locale}/services/sponsorship-transfer/index.html`, 'utf8');
     const body = transfer.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
-    assert.match(body, locale === 'ar' ? /الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة/ : /support available for your case, applicable requirements and fees/);
+    assert.match(body, locale === 'ar' ? /يشمل الدعم المتكامل/ : /Complete visa-processing support/);
     assert.doesNotMatch(body, /Request Matching|اطلب المطابقة|Transfer step guidance|Document checklist review|إرشاد خطوات النقل|مراجعة قائمة المستندات/);
     assert.doesNotMatch(body, /not (?:yet )?confirmed|لم يتأكد|غير مؤكد هنا/);
     const monthly = await readFile(`out/${locale}/services/monthly-maid-contract/index.html`, 'utf8');

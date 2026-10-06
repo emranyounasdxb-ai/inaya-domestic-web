@@ -24,7 +24,7 @@ export const buyerAnswers: Record<string, { question: Pair; answer: Pair; detail
   },
   contact: {
     question: { en: 'Where is INAYA and how do I arrange a visit?', ar: 'أين مكتب عناية وكيف أنسق الزيارة؟' },
-    answer: { en: 'INAYA Domestic Workers Services lists its office at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Use the office telephone or WhatsApp to confirm visit timing and discuss the requested area and role. No fixed opening hours or response time is confirmed here.', ar: 'توضح عناية لخدمات العمالة المنزلية أن مكتبها في جراند مول، الطابق الأرضي، الراشدية 3، عجمان. استخدم هاتف المكتب أو واتساب لتأكيد موعد الزيارة ومناقشة المنطقة والدور المطلوبين. لا تؤكد هذه الصفحة ساعات عمل ثابتة أو وقت رد محدداً.' }, detailRoute: 'service-areas'
+    answer: { en: 'INAYA Domestic Workers Services lists its office at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Use the office telephone or WhatsApp to confirm visit timing and discuss the requested area and role. Office hours are Saturday–Thursday, 9:00 AM–9:00 PM; Friday is closed. Contact the team to confirm an appointment; response timing varies.', ar: 'توضح عناية لخدمات العمالة المنزلية أن مكتبها في جراند مول، الطابق الأرضي، الراشدية 3، عجمان. استخدم هاتف المكتب أو واتساب لتأكيد موعد الزيارة ومناقشة المنطقة والدور المطلوبين. ساعات العمل من السبت إلى الخميس، من 9 صباحاً إلى 9 مساءً؛ الجمعة مغلق. تواصل مع الفريق لتأكيد موعد الزيارة؛ وقد يختلف وقت الرد.' }, detailRoute: 'service-areas'
   },
   'inaya-advantages': {
     question: { en: 'What should I ask before choosing a candidate?', ar: 'ما الذي أسأل عنه قبل اختيار المرشحة؟' },

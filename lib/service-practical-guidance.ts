@@ -311,20 +311,22 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
   },
   'sponsorship-transfer': {
   "en": {
-    "scope": "Contact INAYA to confirm the support available for your case, applicable requirements and fees. Explain your current sponsorship situation before agreeing to any next step.",
-    "arrangement": "Explain the current worker and sponsor situation. Ask what support INAYA can offer for your transfer enquiry and who is responsible for any proposed action.",
-    "prepare": "Share your emirate, the current arrangement and the question you need answered. Confirm the appropriate contact channel before sharing documents.",
+    "scope": "INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your individual case and the relevant authorities. Government approval and outcomes are not guaranteed.",
+    "arrangement": "Explain the current worker and sponsor situation so the team can confirm the applicable process and responsibilities. A sponsorship transfer depends on eligibility and authority decisions; an enquiry is not approval.",
+    "prepare": "Share your emirate and current document status. Confirm a suitable contact channel before sharing sensitive documents; this page is not a final eligibility checklist.",
     "duties": [
-      "Confirm the support available for your case",
-      "Ask for applicable requirements",
-      "Clarify responsibility for any proposed action",
-      "Request the scope and fees in writing"
+      "Document guidance and application submission",
+      "Status-change processing",
+      "Medical-processing coordination, not medical treatment",
+      "Emirates ID and insurance processing",
+      "End-to-end case processing"
     ],
     "limits": [
-      "Confirm case-specific support before proceeding",
-      "Ask whether proposed support includes guidance or submission",
-      "Confirm requirements and fees with the responsible parties",
-      "Agree the next step after reviewing the proposed scope"
+      "Requirements and eligibility depend on the individual case and authorities",
+      "Confirm applicable fees in writing; no fixed government fee is promised",
+      "Processing timelines and government decisions are authority-dependent",
+      "No guaranteed approval, transfer outcome or completion date",
+      "Medical processing is coordination, not clinical care or treatment"
     ],
     "steps": [
       {
@@ -332,61 +334,63 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
         "text": "Share the emirate and current worker and sponsor situation."
       },
       {
-        "title": "Ask about support",
-        "text": "Contact INAYA to confirm the support available for your case, applicable requirements and fees."
+        "title": "Review the support",
+        "text": "Discuss document guidance, submission and the processing steps applicable to your case."
       },
       {
         "title": "Confirm requirements",
-        "text": "Ask which requirements apply to your case before gathering documents."
+        "text": "Confirm current requirements and eligibility with the relevant authority."
       },
       {
         "title": "Review responsibilities and fees",
-        "text": "Confirm who handles each proposed action and request fees in writing."
+        "text": "Confirm who handles each step and request the scope and applicable costs in writing."
       },
       {
         "title": "Confirm the next step",
-        "text": "Agree a next step only after the available support and requirements are clear."
+        "text": "Agree the next action after review; official approval and completion time are not guaranteed."
       }
     ],
     "quote": [
-      "Support available for your case",
-      "Applicable requirements and responsibilities",
-      "Written scope and fees"
+      "The processing steps applicable to your case",
+      "Authority requirements and responsibilities",
+      "Written service scope and applicable fees"
     ],
     "faqs": [
       {
-        "title": "What support can INAYA provide for a sponsorship transfer?",
-        "text": "Contact INAYA to confirm the support available for your case, applicable requirements and fees."
+        "title": "What visa-processing support does INAYA provide?",
+        "text": "INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your individual case and the relevant authorities. Government approval and outcomes are not guaranteed."
       },
       {
-        "title": "Will INAYA review documents or submit an application?",
-        "text": "Ask INAYA which support is available for your particular case and who would handle each action. Confirm the proposed scope before proceeding."
+        "title": "Does INAYA submit applications?",
+        "text": "Yes. Application submission is included in INAYA’s complete visa-processing support. Confirm the applicable process, responsibilities and requirements for your individual case."
       },
       {
-        "title": "Which requirements, fees and timing apply?",
-        "text": "Contact INAYA to confirm requirements and fees for your case. Ask the responsible authority about current official requirements and timing; an enquiry does not confirm approval."
+        "title": "Are approval, fees or completion time guaranteed?",
+        "text": "No. Eligibility, requirements, fees, timelines and outcomes depend on the individual case and relevant authorities. Ask for the applicable scope and costs before proceeding."
       },
       {
-        "title": "Is a transfer enquiry the same as recruitment?",
-        "text": "A transfer enquiry concerns an existing sponsorship situation. Recruitment concerns selecting a worker profile. Discuss your current situation so the appropriate enquiry is clear."
+        "title": "Does medical processing mean medical care?",
+        "text": "No. Medical processing concerns coordination of the applicable process. INAYA does not provide clinical nursing, medical treatment or patient medical care."
       }
     ]
   },
   "ar": {
-    "scope": "تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة. وضح وضع الكفالة الحالي قبل الاتفاق على أي خطوة تالية.",
-    "arrangement": "وضح الوضع الحالي للعاملة والكفيل. اسأل عن الدعم الذي يمكن لعناية تقديمه لاستفسار نقل الكفالة وعن مسؤولية أي إجراء مقترح.",
-    "prepare": "شارك الإمارة والترتيب الحالي والسؤال المطلوب توضيحه. أكد قناة التواصل المناسبة قبل مشاركة المستندات.",
+    "scope": "تقدم عناية دعماً متكاملاً لإجراءات التأشيرة، يشمل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدة على حالتك والجهات المختصة، ولا تضمن عناية الموافقة الحكومية أو النتيجة.",
+    "arrangement": "وضح الوضع الحالي للعاملة والكفيل لتأكيد الإجراءات والمسؤوليات المناسبة. يخضع نقل الكفالة للأهلية وقرارات الجهات المختصة؛ والاستفسار لا يعني الموافقة.",
+    "prepare": "شارك الإمارة وحالة المستندات الحالية. أكد قناة التواصل المناسبة قبل مشاركة مستندات حساسة؛ فهذه الصفحة ليست قائمة أهلية نهائية.",
     "duties": [
-      "أكد الدعم المتاح لحالتك",
-      "اسأل عن المتطلبات المطبقة",
-      "وضح مسؤولية أي إجراء مقترح",
-      "اطلب النطاق والرسوم كتابةً"
+      "إرشاد المستندات وتقديم الطلبات",
+      "إجراءات تعديل الوضع",
+      "تنسيق إجراءات الفحص الطبي، وليس تقديم العلاج الطبي",
+      "إجراءات الهوية الإماراتية والتأمين",
+      "متابعة إجراءات الحالة من البداية إلى النهاية"
     ],
     "limits": [
-      "أكد دعم الحالة قبل المتابعة",
-      "اسأل ما إذا كان الدعم المقترح يشمل الإرشاد أو تقديم الطلب",
-      "أكد المتطلبات والرسوم مع الأطراف المسؤولة",
-      "اتفق على الخطوة التالية بعد مراجعة النطاق المقترح"
+      "تختلف المتطلبات والأهلية بحسب الحالة والجهات المختصة",
+      "أكد الرسوم المطبقة كتابةً؛ ولا يوجد وعد برسوم حكومية ثابتة",
+      "تخضع المدة والقرارات الحكومية للجهات المختصة",
+      "لا توجد ضمانات للموافقة أو نجاح النقل أو تاريخ الإنجاز",
+      "إجراءات الفحص الطبي تعني التنسيق، وليس الرعاية السريرية أو العلاج"
     ],
     "steps": [
       {
@@ -394,91 +398,178 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
         "text": "شارك الإمارة والوضع الحالي للعاملة والكفيل."
       },
       {
-        "title": "اسأل عن الدعم",
-        "text": "تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة."
+        "title": "راجع الدعم",
+        "text": "ناقش إرشاد المستندات وتقديم الطلبات وخطوات الإجراءات المناسبة لحالتك."
       },
       {
         "title": "أكد المتطلبات",
-        "text": "اسأل عن المتطلبات المطبقة على حالتك قبل جمع المستندات."
+        "text": "أكد المتطلبات الحالية والأهلية مع الجهة المختصة."
       },
       {
         "title": "راجع المسؤوليات والرسوم",
-        "text": "أكد مسؤولية كل إجراء مقترح واطلب الرسوم كتابةً."
+        "text": "أكد مسؤولية كل خطوة واطلب النطاق والتكاليف المطبقة كتابةً."
       },
       {
         "title": "أكد الخطوة التالية",
-        "text": "اتفق على الخطوة التالية بعد توضيح الدعم المتاح والمتطلبات."
+        "text": "اتفق على الإجراء التالي بعد المراجعة؛ دون ضمان الموافقة الرسمية أو مدة الإنجاز."
       }
     ],
     "quote": [
-      "الدعم المتاح لحالتك",
-      "المتطلبات والمسؤوليات المطبقة",
-      "النطاق والرسوم المكتوبة"
+      "خطوات الإجراءات المناسبة لحالتك",
+      "متطلبات الجهات المختصة والمسؤوليات",
+      "نطاق الخدمة والرسوم المطبقة كتابةً"
     ],
     "faqs": [
       {
-        "title": "ما الدعم الذي يمكن لعناية تقديمه لنقل الكفالة؟",
-        "text": "تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة."
+        "title": "ما دعم إجراءات التأشيرة الذي تقدمه عناية؟",
+        "text": "تقدم عناية دعماً متكاملاً لإجراءات التأشيرة، يشمل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدة على حالتك والجهات المختصة، ولا تضمن عناية الموافقة الحكومية أو النتيجة."
       },
       {
-        "title": "هل ستراجع عناية المستندات أو تقدم الطلب؟",
-        "text": "اسأل عناية عن الدعم المتاح لحالتك تحديداً وعن مسؤولية كل إجراء. أكد النطاق المقترح قبل المتابعة."
+        "title": "هل تقدم عناية الطلبات؟",
+        "text": "نعم. يشمل دعم عناية المتكامل لإجراءات التأشيرة تقديم الطلبات. أكد الإجراءات والمسؤوليات والمتطلبات المناسبة لحالتك الفردية."
       },
       {
-        "title": "ما المتطلبات والرسوم والتوقيت المطبق؟",
-        "text": "تواصل مع عناية لتأكيد المتطلبات والرسوم لحالتك. اسأل الجهة المسؤولة عن المتطلبات الرسمية الحالية والتوقيت؛ الاستفسار لا يؤكد الموافقة."
+        "title": "هل الموافقة أو الرسوم أو مدة الإنجاز مضمونة؟",
+        "text": "لا. تعتمد الأهلية والمتطلبات والرسوم والمدة والنتيجة على الحالة والجهات المختصة. اطلب النطاق والتكاليف المطبقة قبل المتابعة."
       },
       {
-        "title": "هل استفسار نقل الكفالة هو الاستقدام نفسه؟",
-        "text": "يتعلق استفسار النقل بوضع كفالة قائم، بينما يتعلق الاستقدام باختيار ملف عاملة. وضح وضعك الحالي لتحديد الاستفسار المناسب."
+        "title": "هل إجراءات الفحص الطبي تعني تقديم رعاية طبية؟",
+        "text": "لا. تتعلق إجراءات الفحص الطبي بتنسيق الإجراء المطلوب. لا تقدم عناية التمريض السريري أو العلاج أو الرعاية الطبية للمرضى."
       }
     ]
   }
 },
   'maid-visa': {
-    en: {
-      scope: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees. Describe your current situation before relying on a document checklist or proposed next step. Visa enquiries are separate from finding a household worker.',
-      arrangement: 'Tell the team whether your enquiry concerns a new application, renewal or sponsorship transfer. The support available for each type of case, including any application submission, must be confirmed with INAYA.',
-      prepare: 'Prepare your emirate, the current worker and sponsor situation, any existing document status and the question you need answered. This is enquiry preparation, not an official eligibility checklist; do not send sensitive documents before confirming the appropriate channel.',
-      duties: ['Confirm the type of case and support available', 'Ask for the applicable requirements and document checklist', 'Clarify who is responsible for each step', 'Request the applicable fees and scope in writing'],
-      limits: ['Confirm whether proposed support includes application submission', 'New application, renewal and transfer support must each be confirmed', 'No eligibility, approval or processing time is promised', 'Do not assume an enquiry transfers sponsorship or replaces an official decision'],
-      steps: [
-        { title: 'Describe the case', text: 'State the emirate and current worker and sponsor situation.' },
-        { title: 'Confirm support', text: 'Ask what INAYA can support for this particular case.' },
-        { title: 'Confirm requirements', text: 'Ask for the current applicable requirements before gathering documents.' },
-        { title: 'Clarify responsibilities and fees', text: 'Confirm who handles each step and request the scope and costs in writing.' },
-        { title: 'Agree the next step', text: 'Proceed only after the support and applicable requirements are confirmed.' }
-      ],
-      quote: ['Support available for the particular case', 'Applicable requirements and responsible parties', 'Confirmed fees and any proposed service scope'],
-      faqs: [
-        { title: 'Does INAYA handle new applications, renewals or sponsorship transfers?', text: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.' },
-        { title: 'Will INAYA submit an application for me?', text: 'Ask INAYA whether support for your case includes guidance or submission, and confirm who is responsible for each step before proceeding.' },
-        { title: 'Which documents, fees and processing time apply?', text: 'Confirm the current requirements and fees for your case before proceeding. This page does not publish an eligibility decision, fixed processing time or approval promise.' },
-        { title: 'Is visa assistance the same as recruitment?', text: 'No. Recruitment concerns finding a suitable worker; a visa enquiry concerns the applicable document and process requirements. Confirm the scope of each separately.' }
-      ]
-    },
-    ar: {
-      scope: 'تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة. وضح وضعك الحالي قبل الاعتماد على قائمة مستندات أو خطوة مقترحة. استفسارات التأشيرة منفصلة عن البحث عن عاملة منزلية.',
-      arrangement: 'وضح للفريق ما إذا كان الاستفسار يتعلق بطلب جديد أو تجديد أو نقل كفالة. يجب تأكيد الدعم المتاح لكل نوع من الحالات، بما في ذلك تقديم أي طلب، مع عناية.',
-      prepare: 'جهز الإمارة والوضع الحالي للعاملة والكفيل وحالة أي مستندات موجودة والسؤال المطلوب توضيحه. هذا تجهيز للاستفسار وليس قائمة أهلية رسمية؛ لا ترسل مستندات حساسة قبل تأكيد القناة المناسبة.',
-      duties: ['أكد نوع الحالة والدعم المتاح', 'اسأل عن المتطلبات وقائمة المستندات المنطبقة', 'وضح مسؤولية كل خطوة', 'اطلب الرسوم والنطاق كتابةً'],
-      limits: ['أكد ما إذا كان الدعم المقترح يشمل تقديم الطلب', 'يجب تأكيد دعم الطلب الجديد والتجديد والنقل لكل حالة', 'لا يوجد وعد بالأهلية أو الموافقة أو مدة المعالجة', 'لا تفترض أن الاستفسار ينقل الكفالة أو يحل محل القرار الرسمي'],
-      steps: [
-        { title: 'صف الحالة', text: 'حدد الإمارة والوضع الحالي للعاملة والكفيل.' },
-        { title: 'أكد الدعم', text: 'اسأل عن الدعم الذي يمكن لعناية تقديمه لهذه الحالة.' },
-        { title: 'أكد المتطلبات', text: 'اسأل عن المتطلبات الحالية المنطبقة قبل جمع المستندات.' },
-        { title: 'وضح المسؤوليات والرسوم', text: 'أكد مسؤولية كل خطوة واطلب النطاق والتكاليف كتابةً.' },
-        { title: 'اتفق على الخطوة التالية', text: 'تابع بعد تأكيد الدعم والمتطلبات المنطبقة فقط.' }
-      ],
-      quote: ['الدعم المتاح للحالة المحددة', 'المتطلبات المنطبقة والأطراف المسؤولة', 'الرسوم المؤكدة وأي نطاق خدمة مقترح'],
-      faqs: [
-        { title: 'هل تتولى عناية الطلبات الجديدة أو التجديد أو نقل الكفالة؟', text: 'تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.' },
-        { title: 'هل ستقدم عناية الطلب نيابةً عني؟', text: 'اسأل عناية ما إذا كان دعم حالتك يشمل الإرشاد أو تقديم الطلب، وأكد مسؤولية كل خطوة قبل المتابعة.' },
-        { title: 'ما المستندات والرسوم ومدة المعالجة؟', text: 'أكد المتطلبات والرسوم الحالية لحالتك قبل المتابعة. لا تنشر هذه الصفحة قرار أهلية أو مدة ثابتة أو وعداً بالموافقة.' },
-        { title: 'هل مساعدة التأشيرة هي الاستقدام نفسه؟', text: 'لا. يتعلق الاستقدام بالعثور على عاملة مناسبة، واستفسار التأشيرة بمتطلبات المستندات والإجراءات المنطبقة. أكد نطاق كل منهما بشكل منفصل.' }
-      ]
-    }
+  "en": {
+    "scope": "INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your individual case and the relevant authorities. Government approval and outcomes are not guaranteed.",
+    "arrangement": "Explain the current worker and sponsor situation so the team can confirm the applicable process and responsibilities. A sponsorship transfer depends on eligibility and authority decisions; an enquiry is not approval.",
+    "prepare": "Share your emirate and current document status. Confirm a suitable contact channel before sharing sensitive documents; this page is not a final eligibility checklist.",
+    "duties": [
+      "Document guidance and application submission",
+      "Status-change processing",
+      "Medical-processing coordination, not medical treatment",
+      "Emirates ID and insurance processing",
+      "End-to-end case processing"
+    ],
+    "limits": [
+      "Requirements and eligibility depend on the individual case and authorities",
+      "Confirm applicable fees in writing; no fixed government fee is promised",
+      "Processing timelines and government decisions are authority-dependent",
+      "No guaranteed approval, transfer outcome or completion date",
+      "Medical processing is coordination, not clinical care or treatment"
+    ],
+    "steps": [
+      {
+        "title": "Describe the case",
+        "text": "Share the emirate and current worker and sponsor situation."
+      },
+      {
+        "title": "Review the support",
+        "text": "Discuss document guidance, submission and the processing steps applicable to your case."
+      },
+      {
+        "title": "Confirm requirements",
+        "text": "Confirm current requirements and eligibility with the relevant authority."
+      },
+      {
+        "title": "Review responsibilities and fees",
+        "text": "Confirm who handles each step and request the scope and applicable costs in writing."
+      },
+      {
+        "title": "Confirm the next step",
+        "text": "Agree the next action after review; official approval and completion time are not guaranteed."
+      }
+    ],
+    "quote": [
+      "The processing steps applicable to your case",
+      "Authority requirements and responsibilities",
+      "Written service scope and applicable fees"
+    ],
+    "faqs": [
+      {
+        "title": "What visa-processing support does INAYA provide?",
+        "text": "INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your individual case and the relevant authorities. Government approval and outcomes are not guaranteed."
+      },
+      {
+        "title": "Does INAYA submit applications?",
+        "text": "Yes. Application submission is included in INAYA’s complete visa-processing support. Confirm the applicable process, responsibilities and requirements for your individual case."
+      },
+      {
+        "title": "Are approval, fees or completion time guaranteed?",
+        "text": "No. Eligibility, requirements, fees, timelines and outcomes depend on the individual case and relevant authorities. Ask for the applicable scope and costs before proceeding."
+      },
+      {
+        "title": "Does medical processing mean medical care?",
+        "text": "No. Medical processing concerns coordination of the applicable process. INAYA does not provide clinical nursing, medical treatment or patient medical care."
+      }
+    ]
+  },
+  "ar": {
+    "scope": "تقدم عناية دعماً متكاملاً لإجراءات التأشيرة، يشمل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدة على حالتك والجهات المختصة، ولا تضمن عناية الموافقة الحكومية أو النتيجة.",
+    "arrangement": "وضح الوضع الحالي للعاملة والكفيل لتأكيد الإجراءات والمسؤوليات المناسبة. يخضع نقل الكفالة للأهلية وقرارات الجهات المختصة؛ والاستفسار لا يعني الموافقة.",
+    "prepare": "شارك الإمارة وحالة المستندات الحالية. أكد قناة التواصل المناسبة قبل مشاركة مستندات حساسة؛ فهذه الصفحة ليست قائمة أهلية نهائية.",
+    "duties": [
+      "إرشاد المستندات وتقديم الطلبات",
+      "إجراءات تعديل الوضع",
+      "تنسيق إجراءات الفحص الطبي، وليس تقديم العلاج الطبي",
+      "إجراءات الهوية الإماراتية والتأمين",
+      "متابعة إجراءات الحالة من البداية إلى النهاية"
+    ],
+    "limits": [
+      "تختلف المتطلبات والأهلية بحسب الحالة والجهات المختصة",
+      "أكد الرسوم المطبقة كتابةً؛ ولا يوجد وعد برسوم حكومية ثابتة",
+      "تخضع المدة والقرارات الحكومية للجهات المختصة",
+      "لا توجد ضمانات للموافقة أو نجاح النقل أو تاريخ الإنجاز",
+      "إجراءات الفحص الطبي تعني التنسيق، وليس الرعاية السريرية أو العلاج"
+    ],
+    "steps": [
+      {
+        "title": "صف الحالة",
+        "text": "شارك الإمارة والوضع الحالي للعاملة والكفيل."
+      },
+      {
+        "title": "راجع الدعم",
+        "text": "ناقش إرشاد المستندات وتقديم الطلبات وخطوات الإجراءات المناسبة لحالتك."
+      },
+      {
+        "title": "أكد المتطلبات",
+        "text": "أكد المتطلبات الحالية والأهلية مع الجهة المختصة."
+      },
+      {
+        "title": "راجع المسؤوليات والرسوم",
+        "text": "أكد مسؤولية كل خطوة واطلب النطاق والتكاليف المطبقة كتابةً."
+      },
+      {
+        "title": "أكد الخطوة التالية",
+        "text": "اتفق على الإجراء التالي بعد المراجعة؛ دون ضمان الموافقة الرسمية أو مدة الإنجاز."
+      }
+    ],
+    "quote": [
+      "خطوات الإجراءات المناسبة لحالتك",
+      "متطلبات الجهات المختصة والمسؤوليات",
+      "نطاق الخدمة والرسوم المطبقة كتابةً"
+    ],
+    "faqs": [
+      {
+        "title": "ما دعم إجراءات التأشيرة الذي تقدمه عناية؟",
+        "text": "تقدم عناية دعماً متكاملاً لإجراءات التأشيرة، يشمل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدة على حالتك والجهات المختصة، ولا تضمن عناية الموافقة الحكومية أو النتيجة."
+      },
+      {
+        "title": "هل تقدم عناية الطلبات؟",
+        "text": "نعم. يشمل دعم عناية المتكامل لإجراءات التأشيرة تقديم الطلبات. أكد الإجراءات والمسؤوليات والمتطلبات المناسبة لحالتك الفردية."
+      },
+      {
+        "title": "هل الموافقة أو الرسوم أو مدة الإنجاز مضمونة؟",
+        "text": "لا. تعتمد الأهلية والمتطلبات والرسوم والمدة والنتيجة على الحالة والجهات المختصة. اطلب النطاق والتكاليف المطبقة قبل المتابعة."
+      },
+      {
+        "title": "هل إجراءات الفحص الطبي تعني تقديم رعاية طبية؟",
+        "text": "لا. تتعلق إجراءات الفحص الطبي بتنسيق الإجراء المطلوب. لا تقدم عناية التمريض السريري أو العلاج أو الرعاية الطبية للمرضى."
+      }
+    ]
   }
+}
+
 };
 
 export function applyPracticalGuidance(slug: string, lang: Lang, copy: ServiceCopy): ServiceCopy {
@@ -507,35 +598,108 @@ export function applyPracticalGuidance(slug: string, lang: Lang, copy: ServiceCo
     faqs: item.faqs
   };
   if (visa || transfer) {
-    next.title = transfer ? (ar ? 'استفسارات نقل كفالة الخادمة في الإمارات' : 'Maid Sponsorship Transfer Enquiries in UAE') : (ar ? 'استفسارات تأشيرة الخادمة في الإمارات' : 'Maid Visa Enquiries in UAE');
+    next.title = transfer ? (ar ? 'استفسارات نقل كفالة الخادمة في الإمارات' : 'Maid Sponsorship Transfer Enquiries in UAE') : (ar ? 'دعم إجراءات تأشيرة الخادمة في الإمارات' : 'Maid Visa Processing Support in UAE');
     next.badge = next.title;
     next.whatTitle = ar ? 'ما الذي يجب تأكيده لحالتك؟' : 'What should you confirm for your case?';
-    next.meta = ar ? 'استفسر عن تأشيرة الخادمة في الإمارات مع عناية. تواصل لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم قبل الاتفاق على أي خطوة.' : 'Ask INAYA about a maid visa enquiry in the UAE. Confirm the support available for your case, applicable requirements and fees before agreeing a next step.';
+    next.meta = ar ? 'دعم متكامل لإجراءات تأشيرة الخادمة في الإمارات مع عناية: تقديم الطلبات وتعديل الوضع والفحص الطبي والهوية والتأمين. تعتمد الشروط على الحالة والجهات المختصة.' : 'Complete maid visa-processing support from INAYA in the UAE, including submission, status change, medical, Emirates ID and insurance processing. Terms depend on your case and authorities.';
     if (transfer) next.meta = ar ? 'استفسر من عناية عن نقل كفالة الخادمة في الإمارات. أكد الدعم المتاح لحالتك والمتطلبات والرسوم قبل المتابعة.' : 'Ask INAYA about a maid sponsorship transfer enquiry in the UAE. Confirm available case support, applicable requirements and fees before proceeding.';
-    next.lead = item.scope;
+    next.lead = transfer
+      ? (ar ? 'ناقش مع عناية وضع الكفالة الحالي وخيارات الإجراءات المناسبة للحالة. يشمل دعم إجراءات التأشيرة تقديم الطلبات والمتابعة، لكن نجاح نقل الكفالة يخضع للأهلية وقرارات الجهات المختصة.' : 'Discuss your current sponsorship situation and the case-specific process with INAYA. Visa-processing support includes submission and follow-through, but a successful sponsorship transfer depends on eligibility and authority decisions.')
+      : (ar ? 'تقدم عناية دعماً متكاملاً لإجراءات تأشيرة العاملة المنزلية، من إرشاد المستندات وتقديم الطلبات إلى متابعة الحالة. راجع المتطلبات والرسوم المناسبة لحالتك قبل المتابعة؛ فالقرارات الرسمية والمدة تخضع للجهات المختصة.' : 'INAYA supports the complete domestic-worker visa process, from document guidance and application submission to case follow-through. Review the requirements and fees for your situation before proceeding; official decisions and timelines remain with the authorities.');
+    next.whatText = transfer
+      ? (ar ? 'ابدأ بمراجعة العلاقة الحالية بين العاملة والكفيل والخطوة المطلوبة. يمكن للفريق تنسيق إجراءات التأشيرة المناسبة؛ ولا يعني الاستفسار أن النقل متاح أو تمت الموافقة عليه.' : 'Start by reviewing the existing worker–sponsor arrangement and the action requested. The team can coordinate applicable visa processing; an enquiry does not establish that a transfer is eligible or approved.')
+      : (ar ? 'يشمل الدعم إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. الفحص الطبي إجراء يتم تنسيقه، وليس علاجاً تقدمه عناية.' : 'Support covers document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Medical processing is coordination, not treatment provided by INAYA.');
+    next.cards = ar ? [
+      { title: 'نطاق الإجراءات', text: 'حدد الإجراء المطلوب حتى يمكن توضيح الخطوات التي تنطبق على حالتك.' },
+      { title: 'الأهلية والقرار', text: 'تعود القرارات الرسمية إلى الجهات المختصة بعد مراجعة متطلبات الحالة.' },
+      { title: 'مشاركة المستندات', text: 'استخدم قناة التواصل التي يؤكدها الفريق، ولا تدخل مستندات حساسة في نموذج الموقع.' }
+    ] : [
+      { title: 'Processing scope', text: 'Identify the action requested so the team can explain which steps apply to your circumstances.' },
+      { title: 'Eligibility and decision', text: 'The responsible authorities determine official outcomes after reviewing the case requirements.' },
+      { title: 'Sharing documents', text: 'Use a contact channel confirmed by the team; do not enter sensitive documents in the website form.' }
+    ];
     next.book = ar ? 'جهز استفسارك' : 'Prepare your enquiry';
     next.countriesTitle = ar ? 'المستندات والإجراءات: ما الذي يجب تأكيده؟' : 'Documents and process: what to confirm';
-    next.countriesText = item.arrangement;
+    next.journeyText = transfer
+      ? (ar ? 'نظم المعلومات عن الكفالة القائمة قبل طلب أي إجراء.' : 'Organize the existing sponsorship information before requesting any action.')
+      : (ar ? 'ابدأ بالبيانات الأساسية، ثم راجع قائمة المستندات الخاصة بالحالة.' : 'Start with the basic case details, then review the case-specific document checklist.');
+    next.countriesText = transfer
+      ? (ar ? 'راجع هذه النقاط قبل اتخاذ قرار بشأن النقل.' : 'Review these points before deciding how to proceed with a transfer.')
+      : (ar ? 'تأكد من المتطلبات المناسبة لكل مرحلة من مراحل المعالجة.' : 'Check the applicable requirements for each part of processing.');
+    next.pricingText = transfer
+      ? (ar ? 'راجع تكاليف إجراءات نقل الكفالة المقترحة كتابةً. تختلف الرسوم والمتطلبات بحسب الحالة والجهات المختصة؛ ولا يوجد سعر حكومي ثابت منشور هنا.' : 'Review the proposed sponsorship-processing costs in writing. Charges and requirements vary with the case and authorities; no fixed government price is published here.')
+      : (ar ? 'اطلب بياناً مكتوباً بنطاق معالجة التأشيرة والرسوم المطبقة ومسؤولية كل خطوة. راجع المتطلبات الحالية قبل تأكيد أي دفعة.' : 'Request a written visa-processing scope, applicable charges and responsibility for each step. Review current requirements before confirming any payment.');
     next.countries = [
-      { title: ar ? 'نوع الحالة' : 'Case type', text: item.arrangement },
-      { title: ar ? 'الوضع الحالي' : 'Current situation', text: item.prepare },
-      { title: ar ? 'الدعم المتاح' : 'Support available', text: item.scope },
-      { title: ar ? 'المتطلبات' : 'Requirements', text: item.steps[2].text },
-      { title: ar ? 'الرسوم والمسؤوليات' : 'Fees and responsibilities', text: item.steps[3].text },
-      { title: ar ? 'الخطوة التالية' : 'Next step', text: item.steps[4].text }
+      { title: ar ? 'نوع الحالة' : 'Case type', text: ar ? 'حدد الهدف من الإجراء المطلوب.' : 'Identify the purpose of the requested action.' },
+      { title: ar ? 'الوضع الحالي' : 'Current situation', text: ar ? 'وضح وضع المستندات الحالية دون نشر بيانات خاصة.' : 'Explain the current document status without publishing private information.' },
+      { title: ar ? 'الدعم المتاح' : 'Support available', text: ar ? 'اطلب توضيح نطاق خطوات المعالجة.' : 'Request the scope of the processing steps.' },
+      { title: ar ? 'المتطلبات' : 'Requirements', text: ar ? 'استخدم قائمة حالتك، وليس قائمة تخص أسرة أخرى.' : 'Use your case checklist, not one prepared for another household.' },
+      { title: ar ? 'الرسوم والمسؤوليات' : 'Fees and responsibilities', text: ar ? 'ميز بين المسؤوليات الإجرائية والتكاليف المطبقة.' : 'Distinguish processing responsibilities from the applicable charges.' },
+      { title: ar ? 'الخطوة التالية' : 'Next step', text: ar ? 'راجع الإجراء المطلوب قبل تأكيد المتابعة.' : 'Review the proposed action before confirming follow-through.' }
     ];
     next.compareTitle = ar ? 'أسئلة قبل المتابعة' : 'Questions before proceeding';
     next.comparison = ar ? [
-      { feature: 'الدعم', inaya: 'أكد ما هو متاح لحالتك', other: 'وضح الإرشاد أو تقديم الطلب' },
+      { feature: 'الدعم', inaya: 'دعم متكامل لإجراءات التأشيرة', other: 'أكد الخطوات المناسبة لحالتك' },
       { feature: 'المتطلبات', inaya: 'اطلب المتطلبات المنطبقة', other: 'راجع الوضع الحالي' },
       { feature: 'التكاليف', inaya: 'اطلب الرسوم كتابةً', other: 'أكد مسؤولية كل خطوة' }
     ] : [
-      { feature: 'Support', inaya: 'Confirm what is available for your case', other: 'Clarify guidance or submission' },
+      { feature: 'Support', inaya: 'Complete visa-processing support', other: 'Confirm the steps applicable to your case' },
       { feature: 'Requirements', inaya: 'Ask what applies', other: 'Review the current situation' },
       { feature: 'Costs', inaya: 'Request fees in writing', other: 'Confirm responsibility for each step' }
     ];
     next.finalTitle = transfer ? (ar ? 'هل لديك استفسار نقل كفالة؟' : 'Have a sponsorship transfer enquiry?') : (ar ? 'هل لديك استفسار تأشيرة خادمة؟' : 'Have a maid visa enquiry?');
-    next.finalText = item.scope;
+    next.finalText = ar ? 'تواصل هاتفياً أو عبر واتساب لمناقشة الحالة وتأكيد المتطلبات والتكاليف والخطوة التالية. نموذج الموقع يجهز البيانات محلياً ولا يقدم طلباً رسمياً.' : 'Call or WhatsApp to discuss the case and confirm requirements, costs and the next action. The website form prepares details locally and does not submit an official application.';
+    if (transfer) {
+      next.journey = ar ? [
+        { title: 'وضح وضع الكفالة', text: 'ابدأ بالترتيب الحالي والإجراء المطلوب مناقشته.' },
+        { title: 'راجع الأهلية', text: 'أكد الشروط المناسبة للحالة مع الجهة المعنية.' },
+        { title: 'جهز المستندات المطلوبة', text: 'اطلب القائمة الحالية الخاصة بطلبك.' },
+        { title: 'اتفق على مسؤوليات المعالجة', text: 'راجع دور كل طرف في التقديم والمتابعة والتكاليف.' },
+        { title: 'تابع قرار الجهة المختصة', text: 'لا تفترض نجاح النقل أو مدة محددة قبل القرار الرسمي.' }
+      ] : [
+        { title: 'Explain the sponsorship situation', text: 'Start with the existing arrangement and the change requested.' },
+        { title: 'Review eligibility', text: 'Check the case-specific conditions with the responsible body.' },
+        { title: 'Prepare required documents', text: 'Request the current checklist for your proposed action.' },
+        { title: 'Agree processing responsibilities', text: 'Review each party’s role in submission, follow-through and costs.' },
+        { title: 'Follow the authority decision', text: 'Do not assume transfer success or a fixed timeframe before the official decision.' }
+      ];
+      next.cards = ar ? [
+        { title: 'الكفالة الحالية', text: 'وضح الترتيب القائم والإجراء الذي تريد مناقشته.' },
+        { title: 'مراجعة الحالة', text: 'اسأل عن الأهلية والمتطلبات التي يجب التحقق منها قبل النقل.' },
+        { title: 'التواصل الآمن', text: 'شارك المستندات عبر القناة التي يحددها الفريق عند الحاجة فقط.' }
+      ] : [
+        { title: 'Existing sponsorship', text: 'Explain the current arrangement and the action you want to discuss.' },
+        { title: 'Case review', text: 'Ask which eligibility conditions and requirements must be checked before transfer.' },
+        { title: 'Safe communication', text: 'Share documents only when needed through the channel identified by the team.' }
+      ];
+      next.countries = ar ? [
+        { title: 'الأطراف المعنية', text: 'حدد العاملة والكفيل المعنيين بالاستفسار دون نشر بياناتهما.' },
+        { title: 'الإجراء المقترح', text: 'وضح التغيير المطلوب حتى يراجع الفريق المسار المناسب.' },
+        { title: 'المعلومات الناقصة', text: 'اسأل عن التفاصيل اللازمة لمراجعة وضع الكفالة.' },
+        { title: 'الجهة المختصة', text: 'أكد الجهة الرسمية المسؤولة عن قرار حالتك.' },
+        { title: 'التكاليف المكتوبة', text: 'اطلب عرضاً يوضح الرسوم التي تنطبق على الخطوات المطلوبة.' },
+        { title: 'الموافقة الرسمية', text: 'لا تعتمد على الاستفسار وحده لاعتبار النقل مكتملاً.' }
+      ] : [
+        { title: 'Parties involved', text: 'Identify the worker and sponsor concerned without publishing their details.' },
+        { title: 'Proposed action', text: 'Describe the requested change so the appropriate process can be reviewed.' },
+        { title: 'Missing information', text: 'Ask what information is needed to review the sponsorship situation.' },
+        { title: 'Responsible authority', text: 'Confirm which official body decides your particular case.' },
+        { title: 'Written costs', text: 'Request a quotation identifying charges applicable to the proposed steps.' },
+        { title: 'Official approval', text: 'Do not treat an enquiry alone as a completed transfer.' }
+      ];
+      next.finalText = ar ? 'شارك استفسار نقل الكفالة مع مكتب عجمان بالهاتف أو واتساب. أكد نطاق المعالجة المناسب لحالتك قبل اتخاذ أي إجراء.' : 'Share your sponsorship transfer enquiry with the Ajman office by phone or WhatsApp. Confirm the processing scope appropriate to your situation before taking action.';
+      next.faqs = ar ? [
+        { title: 'كيف أبدأ استفسار نقل الكفالة؟', text: 'وضح وضع العاملة والكفيل الحاليين والإمارة والإجراء المطلوب. راجع المتطلبات والأهلية مع الجهات المختصة قبل الاتفاق على خطوات المعالجة.' },
+        { title: 'ما الدعم الذي يمكن مناقشته مع عناية؟', text: 'يشمل الدعم المتكامل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تحدد الحالة والجهات المختصة المتطلبات والرسوم والأهلية والمدة؛ ولا تضمن عناية الموافقة الحكومية أو النتيجة.' },
+        { title: 'هل يمكن ضمان نجاح النقل أو مدة محددة؟', text: 'لا. يختلف القرار والوقت بحسب الحالة ومتطلبات الجهات المختصة. اطلب الرسوم والمسؤوليات كتابةً، ولا تعتبر الاستفسار موافقة على النقل.' },
+        { title: 'هل أحتاج إلى اختيار عاملة جديدة؟', text: 'يتعلق هذا الاستفسار بوضع الكفالة الحالي. إذا كان احتياجك البحث عن عاملة منزلية، ناقش إرشاد الاستقدام بشكل منفصل.' }
+      ] : [
+        { title: 'How do I start a sponsorship transfer enquiry?', text: 'Describe the existing worker and sponsor, emirate and proposed action. Review requirements and eligibility with the responsible authorities before agreeing processing steps.' },
+        { title: 'What support can I discuss with INAYA?', text: 'Complete visa-processing support includes document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Your situation and the authorities determine requirements, fees, eligibility and timelines. Government approval and outcomes are not guaranteed.' },
+        { title: 'Can transfer success or a completion date be guaranteed?', text: 'No. Decisions and timing vary with the circumstances and authority requirements. Request fees and responsibilities in writing; an enquiry is not transfer approval.' },
+        { title: 'Do I need to select a new worker?', text: 'This enquiry concerns the existing sponsorship situation. If you need to find a household worker, discuss recruitment guidance separately.' }
+      ];
+    }
   }
   if (slug === 'monthly-maid-contract') {
     next.title = ar ? 'عقود خادمة شهرية في الإمارات' : 'Monthly Maid Contracts in UAE';

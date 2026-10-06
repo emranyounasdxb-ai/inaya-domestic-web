@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site-config';
 
 type PageProps = {
   params: Promise<{
@@ -29,7 +30,8 @@ export default async function AboutPage({ params }: PageProps) {
         storyTitle: 'قصة عناية',
         story: [
           'تأسست عناية لتجعل طلب خدمات العمالة المنزلية أكثر سهولة وطمأنينة للأسر في الإمارات. نحن نبدأ بفهم احتياج المنزل قبل اقتراح أي خدمة.',
-          'يجمع فريقنا تفاصيل الخدمة، الإمارة، التوقيت، ومتطلبات الأسرة، ثم يوضح الخيارات المتاحة بطريقة عملية ومحترمة.'
+          'يجمع فريقنا تفاصيل الخدمة، الإمارة، التوقيت، ومتطلبات الأسرة، ثم يوضح الخيارات المتاحة بطريقة عملية ومحترمة.',
+          `عناية للعمالة المنزلية هي العلامة التجارية المعلنة لشركة ${siteConfig.legalName}، وهي شركة ذات مسؤولية محدودة (شركة الشخص الواحد)، ولها مكتب واحد في جراند مول، الطابق الأرضي، الراشدية 3، عجمان.`
         ],
         principlesTitle: 'مبادئنا',
         principles: ['احترام خصوصية الأسرة في كل تواصل.', 'اقتراح خدمات مرتبطة فعلاً بالاحتياج.', 'تأكيد الخطوات قبل الانتقال إلى الحجز.'],
@@ -62,7 +64,7 @@ export default async function AboutPage({ params }: PageProps) {
         ],
         differenceTitle: 'الفرق مع عناية',
         differenceText: 'تجمع عناية بين فهم احتياج المنزل، اختيار الخدمة المناسبة، والمتابعة المسؤولة، لتتمكن الأسرة من اتخاذ القرار براحة.',
-        finalCta: 'احجز استشارة'
+        finalCta: 'جهز استفسارك'
       }
     : {
         badge: 'About INAYA Domestic Workers',
@@ -73,7 +75,8 @@ export default async function AboutPage({ params }: PageProps) {
         storyTitle: 'Our Story',
         story: [
           'INAYA was created to make domestic worker enquiries easier and more reassuring for UAE households. We start by understanding the home requirement before suggesting a service.',
-          'Our team reviews the service type, emirate, schedule and household expectations, then explains suitable options in a practical and respectful way.'
+          'Our team reviews the service type, emirate, schedule and household expectations, then explains suitable options in a practical and respectful way.',
+          `INAYA Domestic Workers is the public brand of ${siteConfig.legalName}, an L.L.C (Sole Proprietorship) with one physical office at Grand Mall, ground floor, Al Rashidiya 3, Ajman.`
         ],
         principlesTitle: 'Founding Principles',
         principles: ['Respect for family privacy in every conversation.', 'Service options matched to the actual requirement.', 'Next steps confirmed before moving to booking.'],
@@ -106,7 +109,7 @@ export default async function AboutPage({ params }: PageProps) {
         ],
         differenceTitle: 'The INAYA Difference',
         differenceText: 'INAYA combines household understanding, relevant service guidance and responsible follow-up so families can move forward with confidence.',
-        finalCta: 'Book a Consultation'
+        finalCta: 'Prepare your enquiry'
       };
 
   return (

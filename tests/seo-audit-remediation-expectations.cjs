@@ -175,10 +175,66 @@ const metadata = {
   }
 };
 
+// Exact approved hours, contact and visa-scope replacements; all other source remains protected.
+const approvedFacts = {
+  "app/[locale]/contact/page.tsx": [
+    [
+      "hoursText: isArabic ? 'يرجى التواصل معنا لتأكيد مواعيد اليوم.' : \"Contact us to confirm today's timings.\",",
+      "hoursText: siteConfig.hours[isArabic ? 'ar' : 'en'],",
+      2
+    ]
+  ],
+  "components/Footer.tsx": [
+    [
+      "title={isArabic ? 'أكد موعد الزيارة' : 'Confirm visit timing'} text={isArabic ? 'تواصل مع المكتب قبل الزيارة' : 'Contact the office before visiting'}",
+      "title={isArabic ? 'ساعات العمل' : 'Office hours'} text={siteConfig.hours[lang]}",
+      2
+    ]
+  ],
+  "lib/buyer-answers.ts": [
+    [
+      "No fixed opening hours or response time is confirmed here.",
+      "Office hours are Saturday–Thursday, 9:00 AM–9:00 PM; Friday is closed. Contact the team to confirm an appointment; response timing varies.",
+      2
+    ],
+    [
+      "لا تؤكد هذه الصفحة ساعات عمل ثابتة أو وقت رد محدداً.",
+      "ساعات العمل من السبت إلى الخميس، من 9 صباحاً إلى 9 مساءً؛ الجمعة مغلق. تواصل مع الفريق لتأكيد موعد الزيارة؛ وقد يختلف وقت الرد.",
+      2
+    ]
+  ],
+  "lib/services.ts": [
+    [
+      "Confirm case-specific visa support, requirements and fees with INAYA.",
+      "Complete visa-processing support; requirements and outcomes depend on your case and authorities.",
+      2
+    ],
+    [
+      "أكد مع عناية دعم التأشيرة المتاح لحالتك والمتطلبات والرسوم.",
+      "دعم متكامل لإجراءات التأشيرة؛ تخضع المتطلبات والنتيجة للحالة والجهات المختصة.",
+      2
+    ],
+    [
+      "Contact INAYA to confirm the support available for your case, applicable requirements and fees.",
+      "INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your individual case and the relevant authorities. Government approval and outcomes are not guaranteed.",
+      3
+    ],
+    [
+      "تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.",
+      "تقدم عناية دعماً متكاملاً لإجراءات التأشيرة، يشمل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدة على حالتك والجهات المختصة، ولا تضمن عناية الموافقة الحكومية أو النتيجة.",
+      3
+    ]
+  ]
+};
+
 function approvedRemediation(file, source) {
   for (const [before, after] of patches[file] ?? []) {
     assert.equal(source.split(before).length, 2, `${file}: one approved remediation anchor`);
     source = source.replace(before, after);
+  }
+  for (const [before, after, expectedParts] of approvedFacts[file] ?? []) {
+    assert.equal(source.split(before).length, expectedParts, `${file}: exact approved fact anchors`);
+    source = source.split(before).join(after);
   }
   return source;
 }

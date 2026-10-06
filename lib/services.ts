@@ -158,8 +158,8 @@ export const services: Service[] = [
     slug: 'maid-visa',
     icon: '📄',
     name: { en: 'Maid Visa Assistance', ar: 'المساعدة في تأشيرة الخادمة' },
-    short: { en: 'Confirm case-specific visa support, requirements and fees with INAYA.', ar: 'أكد مع عناية دعم التأشيرة المتاح لحالتك والمتطلبات والرسوم.' },
-    description: { en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.', ar: 'تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.' }
+    short: { en: 'Complete visa-processing support; requirements and outcomes depend on your case and authorities.', ar: 'دعم متكامل لإجراءات التأشيرة؛ تخضع المتطلبات والنتيجة للحالة والجهات المختصة.' },
+    description: { en: 'INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your individual case and the relevant authorities. Government approval and outcomes are not guaranteed.', ar: 'تقدم عناية دعماً متكاملاً لإجراءات التأشيرة، يشمل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدة على حالتك والجهات المختصة، ولا تضمن عناية الموافقة الحكومية أو النتيجة.' }
   },
   {
     slug: 'maid-replacement',
@@ -173,7 +173,7 @@ export const services: Service[] = [
     icon: '📝',
     name: { en: 'Maid Transfer / Sponsorship Change', ar: 'نقل الخادمة / تغيير الكفالة' },
     short: { en: 'Ask INAYA about support, requirements and fees for your transfer enquiry.', ar: 'استفسر من عناية عن الدعم والمتطلبات والرسوم لطلب نقل الكفالة.' },
-    description: { en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.', ar: 'تواصل مع عناية للتأكد من الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة.' }
+    description: { en: 'INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your individual case and the relevant authorities. Government approval and outcomes are not guaranteed.', ar: 'تقدم عناية دعماً متكاملاً لإجراءات التأشيرة، يشمل إرشاد المستندات وتقديم الطلبات وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدة على حالتك والجهات المختصة، ولا تضمن عناية الموافقة الحكومية أو النتيجة.' }
   },
   {
     slug: 'experienced-maid',

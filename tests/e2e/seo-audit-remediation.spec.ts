@@ -23,9 +23,12 @@ for (const locale of ['en', 'ar']) {
     await page.goto(`/${locale}/services/sponsorship-transfer/`);
     await expect(page.locator('html')).toHaveAttribute('dir', ar ? 'rtl' : 'ltr');
     await expect(page.locator('main h1')).toHaveText(ar ? 'استفسارات نقل كفالة الخادمة في الإمارات' : 'Maid Sponsorship Transfer Enquiries in UAE');
-    const faq = page.locator('main details').first();
+    const faq = page.locator('main details').filter({ hasText: ar ? 'ما الدعم الذي يمكن مناقشته مع عناية؟' : 'What support can I discuss with INAYA?' });
     await faq.locator('summary').click();
-    await expect(faq).toContainText(ar ? 'الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة' : 'support available for your case, applicable requirements and fees');
+    for (const phrase of ar
+      ? ['إرشاد المستندات', 'تقديم الطلبات', 'تعديل الوضع', 'الفحص الطبي', 'الهوية الإماراتية', 'التأمين', 'من البداية إلى النهاية']
+      : ['document guidance', 'application submission', 'status change', 'medical processing', 'Emirates ID processing', 'insurance processing', 'end-to-end case processing']) await expect(faq).toContainText(phrase);
+    await expect(faq).toContainText(ar ? 'لا تضمن عناية الموافقة الحكومية أو النتيجة' : 'Government approval and outcomes are not guaranteed');
     await expect(page.getByRole('link', { name: ar ? 'اطلب المطابقة' : 'Request Matching', exact: true })).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   });

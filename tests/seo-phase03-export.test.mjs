@@ -14,12 +14,12 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   // Exact reviewed metadata changes are allowlisted alongside the visa and monthly pricing corrections.
   // Every other historical metadata and price value remains exact.
   const visaDescriptions = {
-    en: 'Ask INAYA about a maid visa enquiry in the UAE. Confirm the support available for your case, applicable requirements and fees before agreeing a next step.',
-    ar: 'استفسر عن تأشيرة الخادمة في الإمارات مع عناية. تواصل لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم قبل الاتفاق على أي خطوة.'
+    en: 'Complete maid visa-processing support from INAYA in the UAE, including submission, status change, medical, Emirates ID and insurance processing. Terms depend on your case and authorities.',
+    ar: 'دعم متكامل لإجراءات تأشيرة الخادمة في الإمارات مع عناية: تقديم الطلبات وتعديل الوضع والفحص الطبي والهوية والتأمين. تعتمد الشروط على الحالة والجهات المختصة.'
   };
   const visaTitles = {
-    en: 'Maid Visa Enquiries in UAE | INAYA',
-    ar: 'استفسارات تأشيرة الخادمة في الإمارات | عناية'
+    en: 'Maid Visa Processing Support in UAE | INAYA',
+    ar: 'دعم إجراءات تأشيرة الخادمة في الإمارات | عناية'
   };
   const pricingMentions = {
     en: [...Array(6).fill('AED 1,500'), ...Array(6).fill('AED 2,500')],
