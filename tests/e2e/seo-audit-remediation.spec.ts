@@ -24,7 +24,14 @@ for (const locale of ['en', 'ar']) {
     await expect(page.locator('html')).toHaveAttribute('dir', ar ? 'rtl' : 'ltr');
     await expect(page.locator('main h1')).toHaveText(ar ? 'استفسارات نقل كفالة الخادمة في الإمارات' : 'Maid Sponsorship Transfer Enquiries in UAE');
     const faq = page.locator('main details').filter({ hasText: ar ? 'ما الدعم الذي يمكن مناقشته مع عناية؟' : 'What support can I discuss with INAYA?' });
-    await faq.locator('summary').click();
+    const summary = faq.locator('summary');
+    await summary.scrollIntoViewIfNeeded();
+    // Scrolling to this FAQ opens the existing offer; use its normal close control.
+    const offer = page.getByTestId('sierra-leone-offer');
+    await expect(offer).toBeVisible();
+    await offer.getByRole('button', { name: ar ? 'إغلاق عرض سيراليون' : 'Close Sierra Leone offer', exact: true }).click();
+    await expect(offer).toHaveCount(0);
+    await summary.click();
     for (const phrase of ar
       ? ['إرشاد المستندات', 'تقديم الطلبات', 'تعديل الوضع', 'الفحص الطبي', 'الهوية الإماراتية', 'التأمين', 'من البداية إلى النهاية']
       : ['document guidance', 'application submission', 'status change', 'medical processing', 'Emirates ID processing', 'insurance processing', 'end-to-end case processing']) await expect(faq).toContainText(phrase);
