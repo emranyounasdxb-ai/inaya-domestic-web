@@ -37,6 +37,7 @@ test('messages and navigation permit only reviewed localized copy changes', () =
     const file = `messages/${locale}.json`;
     const before = JSON.parse(previous(file));
     before.careers.submit = locale === 'ar' ? 'مراجعة بيانات استفسار العمل' : 'Check Career Enquiry Details';
+    before.nav.bookNow = locale === 'ar' ? 'جهز استفسارك' : 'Prepare enquiry';
     assert.deepEqual(JSON.parse(current(file)), before);
   }
   const file = 'components/Navbar.tsx';

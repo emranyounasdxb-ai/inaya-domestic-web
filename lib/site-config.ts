@@ -1,5 +1,7 @@
 export const siteConfig = {
   name: 'INAYA Domestic Workers',
+  legalName: 'INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)',
+  hours: { en: 'Saturday–Thursday: 9:00 AM–9:00 PM. Friday: Closed.', ar: 'السبت إلى الخميس: 9 صباحاً إلى 9 مساءً. الجمعة: مغلق.' },
   phone: '+971 6 740 0128',
   whatsapp: '971502036767',
   email: 'info@inayadomestic.ae',

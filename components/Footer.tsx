@@ -72,7 +72,7 @@ export default function Footer({ locale }: { locale: string }) {
               <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'هاتف المكتب' : 'Office telephone'} href={phoneHref} isArabic={isArabic} titleDirection="ltr" />
               <ContactItem icon="mail" title={siteConfig.email} text="" href={`mailto:${siteConfig.email}`} isArabic={isArabic} titleDirection="ltr" />
               <ContactItem icon="pin" title={isArabic ? 'مكتب عناية' : 'INAYA Office'} text={contactAddress} isArabic={isArabic} />
-              <ContactItem icon="clock" title={isArabic ? 'أكد موعد الزيارة' : 'Confirm visit timing'} text={isArabic ? 'تواصل مع المكتب قبل الزيارة' : 'Contact the office before visiting'} isArabic={isArabic} />
+              <ContactItem icon="clock" title={isArabic ? 'ساعات العمل' : 'Office hours'} text={siteConfig.hours[lang]} isArabic={isArabic} />
             </div>
           </div>
         </div>

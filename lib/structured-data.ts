@@ -16,6 +16,12 @@ export function pageStructuredData(locale: string, route: string) {
       // One entity, two compatible types; details verified in site-config/contact.
       '@type': ['Organization', 'LocalBusiness'], '@id': organizationId,
       name: locale === 'ar' ? 'عناية للعمالة المنزلية' : siteConfig.name,
+      legalName: siteConfig.legalName,
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+        opens: '09:00', closes: '21:00'
+      },
       url: home, telephone: siteConfig.phone, email: siteConfig.email,
       sameAs: ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/'],
       logo: `${siteConfig.url}/brand/inaya-domestic-workers-logo.webp`,

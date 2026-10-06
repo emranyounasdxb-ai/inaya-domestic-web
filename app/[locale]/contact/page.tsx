@@ -68,7 +68,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     ctaText: isArabic ? 'راسل فريقنا عبر واتساب لمعرفة التوفر والخطوات التالية في إمارتك.' : 'Chat with our team on WhatsApp for availability and next steps in your emirate.',
     directions: isArabic ? 'افتح الاتجاهات' : 'Get Directions',
     hoursTitle: isArabic ? 'ساعات العمل' : 'Working Hours',
-    hoursText: isArabic ? 'يرجى التواصل معنا لتأكيد مواعيد اليوم.' : "Contact us to confirm today's timings.",
+    hoursText: siteConfig.hours[isArabic ? 'ar' : 'en'],
     faqTitle: isArabic ? 'أسئلة سريعة' : 'Quick questions',
     mapTitle: isArabic ? 'موقع عناية للعمالة المنزلية في عجمان' : 'INAYA Domestic Workers Ajman location map'
   };

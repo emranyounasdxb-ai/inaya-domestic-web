@@ -2,6 +2,23 @@ import { expect, test } from '@playwright/test';
 
 for (const locale of ['en', 'ar'] as const) {
   const ar = locale === 'ar';
+  test(`${locale}: approved identity, hours and local enquiry explanations are visible`, async ({ page }) => {
+    await page.goto(`/${locale}/about/`);
+    await expect(page.locator('main')).toContainText('INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)');
+    await page.goto(`/${locale}/contact/`);
+    const hours = ar ? 'السبت إلى الخميس: 9 صباحاً إلى 9 مساءً. الجمعة: مغلق.' : 'Saturday–Thursday: 9:00 AM–9:00 PM. Friday: Closed.';
+    await expect(page.locator('main')).toContainText(hours);
+    await expect(page.locator('footer')).toContainText(hours);
+    await page.goto(`/${locale}/faq/`);
+    await page.getByRole('button', { name: ar ? 'الحجز والخطوات' : 'Booking Process', exact: true }).click();
+    await expect(page.locator('[data-faq-panel="booking"]')).toBeVisible();
+    await expect(page.locator('[data-faq-panel="booking"]')).toContainText(ar ? 'ولا يرسلها إلى عناية أو يؤكد موعداً' : 'it does not send them to INAYA or confirm an appointment');
+    for (const route of ['terms', 'privacy-policy']) {
+      await page.goto(`/${locale}/${route}/`);
+      await expect(page.locator('main main')).toContainText(ar ? 'محلياً' : 'locally');
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+    }
+  });
   test(`${locale}: home navigation, ratings, heading and RTL remain usable`, async ({ page, isMobile }) => {
     await page.goto(`/${locale}/`);
     await expect(page.getByTestId('sierra-leone-offer')).toHaveCount(0);
@@ -18,7 +35,7 @@ for (const locale of ['en', 'ar'] as const) {
     const header = page.locator('header');
     await expect(header.getByRole('link', { name: ar ? 'الأدلة' : 'Guides', exact: true }).last()).toBeVisible();
     await expect(header.getByRole('link', { name: ar ? 'English' : 'العربية', exact: true })).toHaveAttribute('href', new RegExp(`^/${ar ? 'en' : 'ar'}/?$`));
-    await expect(header.getByRole('link', { name: ar ? 'احجز الآن' : 'Book Now', exact: true }).last()).toBeVisible();
+    await expect(header.getByRole('link', { name: ar ? 'جهز استفسارك' : 'Prepare enquiry', exact: true }).last()).toBeVisible();
   });
 
   test(`${locale}: visa page asks for confirmed scope and monthly visits distinguish employment`, async ({ page }) => {

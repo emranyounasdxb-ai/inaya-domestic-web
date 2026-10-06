@@ -202,7 +202,7 @@ export const trustSupportPages: TrustSupportPage[] = [
     sections: [
       {
         title: { en: 'Information we collect', ar: 'المعلومات التي نجمعها' },
-        body: { en: 'INAYA may collect information you provide through website forms, WhatsApp, phone calls, email, booking requests or office consultation.', ar: 'قد تجمع عناية المعلومات التي تقدمها عبر نماذج الموقع أو واتساب أو المكالمات أو البريد الإلكتروني أو طلبات الحجز أو زيارة المكتب.' },
+        body: { en: 'INAYA receives information you choose to share by WhatsApp, phone, email or office consultation. The website enquiry forms prepare and check details locally; they do not send those details to INAYA. Do not enter sensitive documents in these forms.', ar: 'تتلقى عناية المعلومات التي تختار مشاركتها عبر واتساب أو الهاتف أو البريد الإلكتروني أو زيارة المكتب. تجهز نماذج الاستفسار في الموقع البيانات وتراجعها محلياً؛ ولا ترسلها إلى عناية. لا تدخل مستندات حساسة في هذه النماذج.' },
         points: { en: ['Name, phone number and email address', 'Emirate, area and preferred contact method', 'Service type and household requirements', 'Documents or case details shared voluntarily', 'Messages related to support, replacement or booking'], ar: ['الاسم ورقم الهاتف والبريد الإلكتروني', 'الإمارة والمنطقة وطريقة التواصل المفضلة', 'نوع الخدمة واحتياجات المنزل', 'المستندات أو تفاصيل الحالة التي تشاركها طوعاً', 'رسائل الدعم أو الاستبدال أو الحجز'] }
       },
       {
@@ -247,7 +247,7 @@ export const trustSupportPages: TrustSupportPage[] = [
       },
       {
         title: { en: 'Submitting service requests', ar: 'إرسال طلبات الخدمة' },
-        body: { en: 'Customers should provide correct information when submitting forms, WhatsApp messages or booking requests. Incorrect information can delay or affect the service process.', ar: 'يجب على العملاء تقديم معلومات صحيحة عند إرسال النماذج أو رسائل واتساب أو طلبات الحجز. المعلومات غير الصحيحة قد تؤخر أو تؤثر على إجراء الخدمة.' },
+        body: { en: 'Share accurate information when contacting INAYA by phone, WhatsApp, email or at the office. Website forms only prepare and validate details locally; they do not submit an enquiry or confirm an appointment. Contact INAYA to share your request and confirm availability.', ar: 'شارك معلومات صحيحة عند التواصل مع عناية هاتفياً أو عبر واتساب أو البريد الإلكتروني أو في المكتب. تجهز نماذج الموقع البيانات وتراجعها محلياً فقط؛ ولا ترسل استفساراً أو تؤكد موعداً. تواصل مع عناية لمشاركة طلبك وتأكيد التوفر.' },
         points: { en: ['Provide correct name and contact number', 'Share accurate area and emirate', 'Explain service type clearly', 'Mention special household requirements early'], ar: ['تقديم الاسم ورقم التواصل بشكل صحيح', 'مشاركة المنطقة والإمارة بدقة', 'شرح نوع الخدمة بوضوح', 'ذكر المتطلبات المنزلية الخاصة مبكراً'] }
       },
       {
