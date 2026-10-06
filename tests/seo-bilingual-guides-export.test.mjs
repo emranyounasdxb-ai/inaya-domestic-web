@@ -23,6 +23,35 @@ const relatedGuide = {
   'domestic-worker-visa-sponsorship-support': 'documents-for-domestic-worker-enquiry'
 };
 
+test('contextual guide links are rendered on relevant commercial pages in both languages', async () => {
+  const connections = [
+    ...['live-in-maid', 'live-out-maid', 'full-time-maid', 'part-time-maid'].map((slug) => [`services/${slug}`, 'live-in-live-out-part-time-maid-uae']),
+    ['services/monthly-maid-contract', 'monthly-maid-package-inclusions-checklist'],
+    ...['nanny', 'babysitting'].map((slug) => [`services/${slug}`, 'maid-nanny-babysitter-differences']),
+    ...['maid-visa', 'sponsorship-transfer'].map((slug) => [`services/${slug}`, 'domestic-worker-visa-sponsorship-support']),
+    ['services/recruitment', 'uae-domestic-worker-hiring-process'],
+    ['pricing', 'monthly-maid-package-inclusions-checklist'],
+    ['pricing', 'domestic-worker-package-pricing-factors'],
+    ['faq', 'monthly-maid-package-inclusions-checklist'],
+    ['faq', 'live-in-live-out-part-time-maid-uae'],
+    ...['ajman', 'dubai', 'sharjah'].map((city) => [`maid-services-${city}`, 'uae-domestic-worker-hiring-process'])
+  ];
+  for (const locale of ['en', 'ar']) {
+    for (const [route, guide] of connections) {
+      const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
+      const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+      const main = body.slice(body.indexOf('<main'), body.lastIndexOf('</main>') + 7);
+      const guideHref = `/${locale}/blog/${guide}/`;
+      const anchors = [...main.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].filter((match) => attrs(match[1]).href === guideHref);
+      assert.equal(anchors.length, 1, `${locale}/${route}: one contextual link to ${guide}`);
+      assert.ok(text(anchors[0][2]).length > 12, `${locale}/${route}: descriptive localized anchor`);
+      const target = await readFile(`out${guideHref}index.html`, 'utf8');
+      assert.match(target, /<h1\b/, `${guideHref}: exported guide target`);
+      assert.doesNotMatch(main, /data-seo="related-guides"|data-content="page-purpose"/, `${locale}/${route}: no removed link strips`);
+    }
+  }
+});
+
 test('seven substantive EN/AR guides have hub links, visible attribution, dates and matching Article schema', async () => {
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);

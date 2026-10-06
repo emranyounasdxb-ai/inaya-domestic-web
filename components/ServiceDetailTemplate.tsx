@@ -30,6 +30,18 @@ const ajmanContexts: Record<string, Record<Lang, string>> = {
   'monthly-maid-contract': { en: 'For a monthly contract, describe your recurring household needs and confirm the selected package terms with the team. Explore ', ar: 'للعقد الشهري، صف احتياجات المنزل المتكررة وأكد شروط الباقة المختارة مع الفريق. استكشف ' },
   nanny: { en: 'For a nanny enquiry, share the children’s ages, care routine and parent instructions to define the role. Review ', ar: 'لطلب مربية، شارك أعمار الأطفال وروتين الرعاية وتعليمات الوالدين لتحديد الدور. راجع ' }
 };
+const guideContexts: Record<string, { slug: string; label: Record<Lang, string> }> = {
+  'live-in-maid': { slug: 'live-in-live-out-part-time-maid-uae', label: { en: 'Compare live-in residence with other working arrangements', ar: 'قارن الإقامة داخل المنزل بترتيبات العمل الأخرى' } },
+  'live-out-maid': { slug: 'live-in-live-out-part-time-maid-uae', label: { en: 'Compare live-out residence and work schedules', ar: 'قارن الإقامة خارج المنزل وجداول العمل' } },
+  'full-time-maid': { slug: 'live-in-live-out-part-time-maid-uae', label: { en: 'Understand the difference between residence and full-time work', ar: 'تعرف على الفرق بين السكن والعمل بدوام كامل' } },
+  'part-time-maid': { slug: 'live-in-live-out-part-time-maid-uae', label: { en: 'Compare part-time visits with other household arrangements', ar: 'قارن الزيارات الجزئية بترتيبات المساعدة المنزلية الأخرى' } },
+  'monthly-maid-contract': { slug: 'monthly-maid-package-inclusions-checklist', label: { en: 'Questions to confirm before choosing a monthly package', ar: 'أسئلة لتأكيد التفاصيل قبل اختيار باقة شهرية' } },
+  nanny: { slug: 'maid-nanny-babysitter-differences', label: { en: 'Compare the nanny role with maid and babysitter enquiries', ar: 'قارن دور المربية بطلبات العاملة المنزلية وجليسة الأطفال' } },
+  babysitting: { slug: 'maid-nanny-babysitter-differences', label: { en: 'Clarify how babysitting differs from other household roles', ar: 'وضح الفرق بين جليسة الأطفال والأدوار المنزلية الأخرى' } },
+  'maid-visa': { slug: 'domestic-worker-visa-sponsorship-support', label: { en: 'Prepare the questions for your visa-processing case', ar: 'جهز أسئلة حالتك المتعلقة بإجراءات التأشيرة' } },
+  'sponsorship-transfer': { slug: 'domestic-worker-visa-sponsorship-support', label: { en: 'Review the case questions before discussing sponsorship support', ar: 'راجع أسئلة الحالة قبل مناقشة دعم إجراءات الكفالة' } },
+  recruitment: { slug: 'uae-domestic-worker-hiring-process', label: { en: 'Questions to ask before choosing a domestic worker agency', ar: 'أسئلة قبل اختيار مكتب للعمالة المنزلية' } }
+};
 const surface = 'rounded-[24px] border border-primary-900/10 bg-white shadow-[0_18px_48px_rgba(7,22,74,0.08)]';
 
 function headingFont(lang: Lang) {
@@ -106,6 +118,9 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
         <div className="mx-auto max-w-4xl rounded-[26px] border border-accent-500/25 bg-white p-7 shadow-[0_20px_54px_rgba(7,22,74,0.08)] sm:p-10">
           <SectionTitle title={copy.whatTitle} lang={lang} />
           <p className="mt-6 max-w-3xl text-[1rem] leading-8 text-primary-900/85">{copy.whatText}</p>
+          {guideContexts[slug] ? <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-900/75">
+            <Link href={`/${locale}/blog/${guideContexts[slug].slug}/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{guideContexts[slug].label[lang]}</Link>
+          </p> : null}
           {ajmanContexts[slug] ? <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-900/75">
             {ajmanContexts[slug][lang]}
             <Link href={`/${locale}/maid-services-ajman/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{lang === 'ar' ? 'خدمات الخادمات في عجمان' : 'maid services in Ajman'}</Link>
