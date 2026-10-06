@@ -8,12 +8,12 @@ import preservation from './form-accessibility-preservation.cjs';
 import corePageCopy from './core-page-copy-expectations.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all 146 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
+test('all 154 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 146);
+  assert.equal(audit.pages.length, 154);
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(audit.linkCoverage[locale].reachable, 73);
+    assert.equal(audit.linkCoverage[locale].reachable, 77);
     assert.ok(audit.linkCoverage[locale].maximumDepth <= 3);
     assert.ok(audit.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
