@@ -134,3 +134,17 @@ a[href*="/services/"] > span[class~="h-48"] img {
   div[class~="h-[205px]"][class~="bg-[#eef2f8]"] { height: 210px !important; }
   a[href*="/services/"] > span[class~="h-48"] { height: 180px !important; }
 }
+
+/* Defer off-screen rendering; keep Heroes, accessible content and print intact. */
+@supports (content-visibility: auto) and (overflow-clip-margin: 200px) {
+  @media screen {
+    main section:not(:has(h1)) {
+      content-visibility: auto;
+      contain-intrinsic-block-size: auto 800px;
+      overflow-clip-margin: 200px;
+    }
+    main section:focus-within {
+      content-visibility: visible;
+    }
+  }
+}

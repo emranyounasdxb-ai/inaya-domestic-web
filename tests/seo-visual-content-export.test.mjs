@@ -67,6 +67,10 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     }
     if (file === 'lib/service-content-briefs.ts' || file === 'lib/services.ts') before = corePageCopy.approvedCorePageCopy(file, before);
     before = octoberFixes.approvedSeoFixes(file, before);
+    if (file === 'app/globals.css') {
+      // Only the approved off-screen rendering block may extend the protected stylesheet.
+      before += '\n/* Defer off-screen rendering; keep Heroes, accessible content and print intact. */\n@supports (content-visibility: auto) and (overflow-clip-margin: 200px) {\n  @media screen {\n    main section:not(:has(h1)) {\n      content-visibility: auto;\n      contain-intrinsic-block-size: auto 800px;\n      overflow-clip-margin: 200px;\n    }\n    main section:focus-within {\n      content-visibility: visible;\n    }\n  }\n}\n';
+    }
     assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), before, file);
   }
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) {
