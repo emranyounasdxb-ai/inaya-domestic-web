@@ -30,6 +30,27 @@ for (const locale of ['en', 'ar']) {
     }
     await expect(page.locator(`header a[href="/${locale}/blog/"][aria-current="page"]`).first()).toBeAttached();
   });
+  test(`${locale} commercial pages offer useful localized guide links`, async ({ page }) => {
+    for (const [route, guide] of [
+      ['services/live-in-maid', 'live-in-live-out-part-time-maid-uae'],
+      ['services/maid-visa', 'domestic-worker-visa-sponsorship-support'],
+      ['pricing', 'monthly-maid-package-inclusions-checklist'],
+      ['faq', 'monthly-maid-package-inclusions-checklist'],
+      ['maid-services-dubai', 'uae-domestic-worker-hiring-process']
+    ]) {
+      await page.goto(`/${locale}/${route}/`);
+      await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
+      const link = page.locator(`main a[href="/${locale}/blog/${guide}/"]`);
+      await expect(link).toHaveCount(1);
+      await expect(link).toBeVisible();
+      await link.focus();
+      await expect(link).toBeFocused();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
+      await link.press('Enter');
+      await expect(page).toHaveURL(new RegExp(`/${locale}/blog/${guide}/$`));
+      await expect(page.locator('main h1')).toHaveCount(1);
+    }
+  });
   for (const slug of slugs) {
     test(`${locale} ${slug} keeps accessible guide content and matching attribution`, async ({ page }) => {
       const route = `/${locale}/blog/${slug}/`;

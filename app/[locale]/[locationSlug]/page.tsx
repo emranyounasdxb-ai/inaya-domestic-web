@@ -135,6 +135,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
             {process.map((step, index) => <div key={step} className="rounded-[22px] border border-white/80 bg-white/80 p-5 shadow-[0_18px_50px_rgba(7,22,74,0.065)]"><div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-900 text-xs font-bold text-white">{index + 1}</div><p className="mt-4 text-sm font-semibold leading-6 text-primary-900/72">{step}</p></div>)}
           </div>
           {locationSlug === 'maid-services-ajman' ? <Link href={`/${locale}/blog/uae-domestic-worker-hiring-process/`} className="mt-7 inline-block text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{lang === 'ar' ? 'اقرأ خطوات استقدام العمالة المنزلية' : 'Read the UAE domestic worker hiring process'}</Link> : null}
+          {['maid-services-dubai', 'maid-services-sharjah'].includes(locationSlug) ? <Link href={`/${locale}/blog/uae-domestic-worker-hiring-process/`} className="mt-7 inline-block text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{lang === 'ar' ? `جهز أسئلة طلبك من ${location.city[lang]} قبل التواصل مع مكتب عناية في عجمان` : `Prepare your ${location.city[lang]} enquiry questions before contacting INAYA’s Ajman office`}</Link> : null}
         </div>
       </section>
 

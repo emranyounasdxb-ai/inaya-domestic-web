@@ -425,6 +425,11 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-primary-900/80 sm:text-base">
             {copy.ctaText}
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-primary-900/80">
+            <Link href={`/${locale}/blog/live-in-live-out-part-time-maid-uae/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{isArabic ? 'قارن الإقامة وجدول العمل' : 'Compare residence and work schedules'}</Link>
+            {' · '}
+            <Link href={`/${locale}/blog/monthly-maid-package-inclusions-checklist/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{isArabic ? 'راجع أسئلة الباقة الشهرية' : 'Review monthly package questions'}</Link>
+          </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a href="https://wa.me/971502036767" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-accent-400 bg-primary-900 px-7 py-3 text-sm font-bold text-accent-100 shadow-[0_14px_30px_rgba(7,22,74,0.20)] transition hover:-translate-y-0.5 hover:bg-accent-500 hover:text-primary-900">
               <LineIcon name="message" className="h-4 w-4" />

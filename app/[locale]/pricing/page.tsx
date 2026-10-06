@@ -198,7 +198,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             </div>
           ))}
         </div>
-        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-6 text-primary-900/70">{copy.note}</p>
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-6 text-primary-900/70">
+          {copy.note}{' '}
+          <Link href={`/${locale}/blog/monthly-maid-package-inclusions-checklist/`} className="font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{isArabic ? 'أسئلة لتأكيد ما تشمله الباقة الشهرية' : 'Questions to confirm your monthly package inclusions'}</Link>
+        </p>
       </section>
 
       <section className="container-x pb-28 sm:pb-32">
