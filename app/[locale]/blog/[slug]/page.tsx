@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import RouteSeo from '@/components/RouteSeo';
 import PublishedArticle from '@/components/PublishedArticle';
+import { publishedArticles } from '@/lib/published-article-content';
 import { domesticWorkerGuides, getDomesticWorkerGuide, guideAuthor, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { pageMetadata } from '@/lib/page-seo';
 import { siteConfig } from '@/lib/site-config';
@@ -27,7 +28,11 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
   const lang: GuideLanguage = locale === 'ar' ? 'ar' : 'en';
   const isArabic = lang === 'ar';
   const copy = guide[lang];
-  if (copy.body) return <PublishedArticle guide={guide} lang={lang} />;
+  if (guide.publication) {
+    const article = publishedArticles.find((entry) => entry.slug === slug);
+    if (!article) notFound();
+    return <PublishedArticle guide={guide} body={article[lang].body} lang={lang} />;
+  }
   const route = `blog/${slug}`;
   const formatDate = (value: string) => new Intl.DateTimeFormat(isArabic ? 'ar-AE' : 'en-AE', {
     year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'

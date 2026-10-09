@@ -1,11 +1,11 @@
-import { publishedArticles } from './published-article-content';
+import { publishedArticleMetadata } from './published-article-metadata';
 import type { DomesticWorkerGuide } from './domestic-worker-guides';
-import { articleLinks } from './article-markdown';
 
-export const publishedArticleGuides: DomesticWorkerGuide[] = publishedArticles.map((article) => ({
+export const publishedArticleGuides: DomesticWorkerGuide[] = publishedArticleMetadata.map((article) => ({
   slug: article.slug,
   published: article.published,
   updated: article.updated,
+  publication: true,
   author: { en: 'INAYA Domestic Workers Editorial Team', ar: 'فريق تحرير عناية للعمالة المنزلية' },
   en: {
     ...article.en, lead: '', sections: [], nextSteps: [], sourceIntro: 'Official sources', sourceNote: ''
@@ -15,7 +15,3 @@ export const publishedArticleGuides: DomesticWorkerGuide[] = publishedArticles.m
   },
   sources: []
 }));
-
-export function publishedArticleSources(body: string) {
-  return articleLinks(body).filter((url) => new URL(url).hostname !== 'inayadomestic.ae');
-}

@@ -1,12 +1,10 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import test from 'node:test';
 import { createHash } from 'node:crypto';
-import { createRequire } from 'node:module';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
-const require = createRequire(import.meta.url);
 const slugs = [
   'uae-domestic-worker-hiring-process',
   'domestic-worker-package-pricing-factors',
@@ -141,7 +139,8 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
 // They protect all forty approved versions against omission or accidental rewriting.
 test('twenty finalized bilingual topics retain exact copy, references and route identity', async () => {
   const approved = JSON.parse(await readFile('tests/fixtures/published-article-content.json', 'utf8'));
-  const { publishedArticles } = require('../.next/phase-02-unit/lib/published-article-content.js');
+  const contentModule = await readFile('lib/published-article-content.ts', 'utf8');
+  const publishedArticles = JSON.parse(contentModule.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
   const sha = (value) => createHash('sha256').update(value).digest('hex');
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   assert.equal(approved.length, 20);
@@ -202,4 +201,10 @@ test('twenty finalized bilingual topics retain exact copy, references and route 
     }
   }
   assert.doesNotMatch(sitemap, /editorial|source-evidence|\.zip|drafts/i);
+  const firstParagraphs = publishedArticles.flatMap((article) => ['en', 'ar'].map((locale) => article[locale].body.split('\n\n')[0]));
+  for (const file of await readdir('out/_next/static/chunks')) {
+    if (!file.endsWith('.js')) continue;
+    const clientScript = await readFile(`out/_next/static/chunks/${file}`, 'utf8');
+    for (const paragraph of firstParagraphs) assert.ok(!clientScript.includes(paragraph), `${file}: manuscripts stay outside shared client JavaScript`);
+  }
 });

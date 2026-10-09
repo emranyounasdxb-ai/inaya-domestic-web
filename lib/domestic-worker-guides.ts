@@ -17,7 +17,7 @@ type GuideCopy = {
   nextSteps: { label: string; route: string }[];
   sourceIntro: string;
   sourceNote: string;
-  body?: string;
+  citations?: string[];
 };
 
 export type DomesticWorkerGuide = {
@@ -25,6 +25,7 @@ export type DomesticWorkerGuide = {
   published: string;
   updated: string;
   author?: Record<GuideLanguage, string>;
+  publication?: boolean;
   en: GuideCopy;
   ar: GuideCopy;
   sources: { en: string; ar: string; url: string }[];

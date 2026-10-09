@@ -12,10 +12,10 @@ function Inline({ text }: { text: string }) {
     : part.text);
 }
 
-export default function PublishedArticle({ guide, lang }: { guide: DomesticWorkerGuide; lang: GuideLanguage }) {
+export default function PublishedArticle({ guide, body, lang }: { guide: DomesticWorkerGuide; body: string; lang: GuideLanguage }) {
   const isArabic = lang === 'ar';
   const copy = guide[lang];
-  const blocks = articleBlocks(copy.body!);
+  const blocks = articleBlocks(body);
   const headings = blocks.filter((block) => block.type === 'heading');
   const route = `blog/${guide.slug}`;
   const formatDate = (value: string) => new Intl.DateTimeFormat(isArabic ? 'ar-AE' : 'en-AE', {
