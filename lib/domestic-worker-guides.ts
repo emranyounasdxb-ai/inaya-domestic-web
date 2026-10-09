@@ -1,3 +1,5 @@
+import { publishedArticleGuides } from './published-articles';
+
 export type GuideLanguage = 'en' | 'ar';
 
 type GuideSection = {
@@ -15,12 +17,15 @@ type GuideCopy = {
   nextSteps: { label: string; route: string }[];
   sourceIntro: string;
   sourceNote: string;
+  citations?: string[];
 };
 
 export type DomesticWorkerGuide = {
   slug: string;
   published: string;
   updated: string;
+  author?: Record<GuideLanguage, string>;
+  publication?: boolean;
   en: GuideCopy;
   ar: GuideCopy;
   sources: { en: string; ar: string; url: string }[];
@@ -850,7 +855,8 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
       { en: 'ICP: residence service and applicant categories', ar: 'الهيئة الاتحادية: خدمة الإقامة وفئات المتقدمين', url: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
       { en: 'GDRFA Dubai: domestic worker service', ar: 'الإدارة العامة للإقامة في دبي: خدمة العمالة المنزلية', url: 'https://www.gdrfad.gov.ae/en/node/14403' }
     ]
-  }
+  },
+  ...publishedArticleGuides
 ];
 
 export function getDomesticWorkerGuide(slug: string) {
