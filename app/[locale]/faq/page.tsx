@@ -48,7 +48,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'هل توفرون طهاة أو مساعدين للمطبخ؟', answer: 'يمكننا مراجعة طلبات الطهاة أو المساعدة في المطبخ حسب نوع المطبخ، عدد أفراد الأسرة، والتوفر.' },
         { question: 'هل يمكن طلب خدمة بدوام جزئي؟', answer: 'نعم، نوفر خيارات بدوام جزئي حسب المنطقة والوقت ونوع العمل المطلوب داخل المنزل.' },
         { question: 'هل تقدمون خدمة عاجلة أو في نفس اليوم؟', answer: 'نراجع الطلبات العاجلة فوراً، لكن التوفر في نفس اليوم يعتمد على المنطقة ونوع الخدمة والوقت المطلوب.' },
-        { question: 'هل يمكن ترتيب خدمة شهرية؟', answer: 'نعم، يمكن مناقشة الترتيبات الشهرية أو طويلة المدى حسب احتياج الأسرة ونوع الخدمة.' },
+        { question: 'هل يمكن ترتيب خدمة شهرية؟', answer: 'تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف؛ وتبقى INAYA Black بعرض سعر مخصص. فترة التسعير الشهرية لا تحدد الإقامة أو الدوام أو الزيارات. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.' },
         { question: 'هل تقدمون خدمات تنظيف فقط؟', answer: 'يمكن مراجعة طلب التنظيف المنزلي ضمن خدمات المساعدة المنزلية حسب المنطقة والمدة المطلوبة.' },
         { question: 'هل الخدمة مناسبة للشقق والفلل؟', answer: 'نعم، نخدم الشقق والفلل. نحتاج فقط معرفة حجم المنزل وعدد الغرف وطبيعة العمل المطلوب.' },
         { question: 'هل يمكن طلب مساعدة لرعاية الأطفال حديثي الولادة؟', answer: 'يمكنك توضيح عمر الطفل ونوع المساعدة المطلوبة، وسيقوم الفريق بمراجعة الخيار المناسب حسب التوفر.' },
@@ -75,7 +75,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'هل يمكن الحصول على عرض سعر مكتوب؟', answer: 'يمكنك طلب ملخص واضح للتكلفة والخدمة عبر واتساب أو البريد الإلكتروني بعد مراجعة التفاصيل.' },
         { question: 'هل تختلف أسعار الخادمة المقيمة عن غير المقيمة؟', answer: 'نعم، تختلف حسب نوع الترتيب، مدة الخدمة، والمسؤوليات المطلوبة داخل المنزل.' },
         { question: 'كيف يتم حساب خدمة الدوام الجزئي؟', answer: 'يتم حسابها حسب عدد الساعات أو الأيام ونوع الخدمة والمنطقة، ثم يتم تأكيد السعر النهائي.' },
-        { question: 'هل توجد باقات شهرية؟', answer: 'يمكن ترتيب باقات أو خدمات شهرية حسب احتياج الأسرة ونوع الخدمة والتوفر.' },
+        { question: 'هل توجد باقات شهرية؟', answer: 'نعم. تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف؛ وINAYA Black بعرض سعر مخصص. راجع نطاق الباقة ومدتها والتجديد والدفع والإلغاء كتابةً، دون استنتاج مزايا أو ترتيب عمل من اسم الباقة.' },
         { question: 'هل يوجد خصم للعقود الطويلة؟', answer: 'يمكن مراجعة الأسعار الخاصة للطلبات طويلة المدى حسب نوع الخدمة والمدة والتفاصيل.' },
         { question: 'هل رسوم الاستبدال مشمولة؟', answer: 'تعتمد شروط الاستبدال على نوع الباقة والاتفاق. يتم توضيحها قبل الحجز.' },
         { question: 'هل يجب الدفع مقدماً؟', answer: 'آلية الدفع والخطوات المالية يتم توضيحها قبل التأكيد، حسب نوع الخدمة أو الباقة.' },
@@ -121,7 +121,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
       eyebrow: 'دعم بعد الحجز',
       icon: 'support',
       items: [
-        { question: 'هل توفرون دعم الاستبدال؟', answer: 'دعم الاستبدال يعتمد على نوع الباقة والاتفاق وفترة الخدمة والتوفر، ويتم توضيحه قبل الحجز.' },
+        { question: 'هل توفرون دعم الاستبدال؟', answer: 'تراجع ملاحظات الخدمة وفق الاتفاق والقانون المنطبق. الحقوق القانونية ومزايا الاستبدال الإضافية للباقة مختلفتان؛ ولا تفترض استبدالاً مجانياً أو غير محدود لكل خدمة. توضح سياسة الاسترداد والاستبدال حالات الاستقدام والأساس المطلوب مراجعته.' },
         { question: 'ماذا إذا لم تكن الخدمة مناسبة؟', answer: 'يمكنك التواصل مع الفريق، وسيتم مراجعة الملاحظة وتوضيح الخيارات المتاحة حسب الحالة والاتفاق.' },
         { question: 'هل توجد متابعة بعد بدء الخدمة؟', answer: 'نعم، يتابع فريق عناية معك لتوضيح أي خطوة لاحقة ودعمك عند الحاجة.' },
         { question: 'ما أسرع طريقة للحصول على الدعم؟', answer: 'واتساب هو الأسرع لمشاركة التفاصيل ومتابعة التوفر والدعم. يمكنك أيضاً الاتصال أو إرسال بريد إلكتروني.' },
@@ -137,7 +137,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'هل تدعمون العائلات بعد الحجز؟', answer: 'نعم، يبقى الفريق متاحاً لتوضيح الخطوات التالية ومتابعة أي استفسار.' },
         { question: 'هل يمكن إعادة جدولة المتابعة؟', answer: 'يمكن ترتيب وقت مناسب للتواصل حسب توفر الفريق واحتياج العميل.' },
         { question: 'هل يوجد دعم للاستفسارات المالية؟', answer: 'نعم، يمكن للفريق توضيح تفاصيل السعر أو الباقة أو أي بند يحتاج شرحاً إضافياً.' },
-        { question: 'هل يمكن تصعيد المشكلة؟', answer: 'إذا احتاجت الملاحظة متابعة إضافية، يتم توجيهها داخلياً للفريق المناسب.' },
+        { question: 'هل يمكن تصعيد المشكلة؟', answer: 'احتفظ بالاتفاق والتواريخ والإيصالات وطلبك والردود، وحدد النقاط غير المحسومة في طلب مراجعة مكتوب إلى info@inayadomestic.ae. يحدد إرشاد الوزارة الموقع وتطبيق MOHRE UAE والرقم 80084 للشكوى المناسبة بشأن العمالة المساعدة أو مكتب الاستقدام. تشرح صفحة إجراءات الدعم المسارات؛ ولا تمنع المراجعة الداخلية التصعيد الرسمي.' },
         { question: 'هل يتم التواصل عبر الهاتف أيضاً؟', answer: 'نعم، يمكن التواصل عبر الهاتف أو واتساب أو البريد الإلكتروني حسب تفضيل العميل.' },
         { question: 'هل يمكن زيارة المكتب للدعم؟', answer: 'نعم، يمكن زيارة المكتب بعد تنسيق الموعد أو التوقيت المناسب مع الفريق.' },
         { question: 'هل تقدمون دعماً للعقود طويلة المدى؟', answer: 'نعم، الطلبات طويلة المدى يمكن متابعتها بشكل منظم حسب نوع الخدمة والاتفاق.' }
@@ -162,7 +162,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'هل تقدمون استشارة قانونية؟', answer: 'نقدم إرشاداً متعلقاً بخطوات الخدمة. أي قرارات أو متطلبات رسمية تكون حسب الجهات المختصة.' },
         { question: 'هل يمكن مراجعة العقد قبل التأكيد؟', answer: 'نعم، يمكن طلب توضيح البنود والخطوات قبل أي تأكيد نهائي.' },
         { question: 'هل يتم توضيح سياسة الإلغاء؟', answer: 'نوضح شروط الإلغاء أو التغيير حسب مرحلة الطلب ونوع الخدمة.' },
-        { question: 'هل يتم توضيح سياسة الاسترداد؟', answer: 'أي تفاصيل متعلقة بالاسترداد يتم توضيحها حسب نوع الخدمة والاتفاق ومرحلة الطلب.' },
+        { question: 'هل يتم توضيح سياسة الاسترداد؟', answer: 'راجع سياسة الاسترداد والاستبدال الرئيسية. فهي تميز رسوم الاستقدام عن الرسوم الشهرية، وتشرح شروط الحقوق القانونية والسجلات المطلوبة للحالات المختلفة. لا تلغي الشروط التجارية حقاً قانونياً منطبقاً، ولا تطبق معادلة استقدام واحدة تلقائياً على كل باقة شهرية.' },
         { question: 'هل العمالة يتم مراجعتها قبل الترشيح؟', answer: 'نراجع التفاصيل المتاحة وفق الإجراءات الداخلية قبل مشاركة الخيارات المناسبة مع العميل.' },
         { question: 'هل يمكن طلب نسخة من تفاصيل الخدمة؟', answer: 'يمكن مشاركة ملخص الخدمة أو التفاصيل الأساسية عبر واتساب أو البريد الإلكتروني بعد المراجعة.' },
         { question: 'هل تتغير الإجراءات حسب الإمارة؟', answer: 'قد تختلف بعض الخطوات حسب الإمارة أو نوع الخدمة، ويتم توضيح ذلك عند مراجعة الطلب.' },
@@ -189,7 +189,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'Can I request a cook or kitchen helper?', answer: 'Cook and kitchen helper requests can be reviewed based on cuisine preference, family size and availability.' },
         { question: 'Do you offer part-time help?', answer: 'Yes. Part-time help may be available depending on the area, timing and type of household work required.' },
         { question: 'Can you arrange same-day service?', answer: 'Urgent requests are reviewed quickly, but same-day availability depends on area, service type and requested timing.' },
-        { question: 'Can I arrange monthly service?', answer: 'Yes. Monthly or long-term arrangements can be discussed according to your household requirement and service type.' },
+        { question: 'Can I arrange monthly service?', answer: 'Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive; INAYA Black remains Custom Quote. A monthly price does not specify residence, full-time work or visits. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.' },
         { question: 'Do you provide cleaning-only help?', answer: 'Cleaning support can be reviewed as part of home help services depending on the area and required duration.' },
         { question: 'Can you support apartments and villas?', answer: 'Yes. We support apartments and villas. Please share home size, room count and the work required.' },
         { question: 'Can I request newborn care support?', answer: 'You can share the baby’s age and required support, and our team will review the suitable option based on availability.' },
@@ -216,7 +216,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'Can I receive a written quote?', answer: 'You can request a clear cost and service summary by WhatsApp or email after the details are reviewed.' },
         { question: 'Do live-in and live-out services cost differently?', answer: 'Yes. Pricing can differ by arrangement type, service duration and household responsibilities.' },
         { question: 'How is part-time service priced?', answer: 'Part-time pricing depends on hours or days, service type and area, then final pricing is confirmed.' },
-        { question: 'Do you offer monthly packages?', answer: 'Monthly packages or recurring service arrangements can be reviewed based on household needs and availability.' },
+        { question: 'Do you offer monthly packages?', answer: 'Yes. Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive; INAYA Black is Custom Quote. Review the package scope, period, renewal, payments and cancellation in writing, without inferring benefits or a working arrangement from its name.' },
         { question: 'Do you offer discounts for long-term service?', answer: 'Long-term requirements can be reviewed for suitable pricing based on service type, duration and details.' },
         { question: 'Is replacement cost included?', answer: 'Replacement terms depend on the selected package or agreement and are clarified before booking.' },
         { question: 'Is advance payment required?', answer: 'Payment steps and timing are explained before confirmation, depending on service type or package.' },
@@ -262,7 +262,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
       eyebrow: 'Support after booking',
       icon: 'support',
       items: [
-        { question: 'Do you offer replacement support?', answer: 'Replacement support depends on package type, agreement, service period and availability, and is explained before booking.' },
+        { question: 'Do you offer replacement support?', answer: 'Service concerns are reviewed against the agreement and applicable law. Statutory remedies and extra package replacement benefits are different; do not assume a free or unlimited replacement for every service. The main refund and replacement policy explains recruitment cases and the basis to review.' },
         { question: 'What if the service is not suitable?', answer: 'You can contact the team, and we will review the concern and explain available options based on the case and agreement.' },
         { question: 'Do you follow up after service starts?', answer: 'Yes. The INAYA team follows up to clarify next steps and support you when needed.' },
         { question: 'What is the fastest way to get support?', answer: 'WhatsApp is fastest for sharing details and following up on availability or support. You can also call or email us.' },
@@ -278,7 +278,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'Do you support families after booking?', answer: 'Yes. The team remains available to clarify next steps and answer questions.' },
         { question: 'Can I reschedule a follow-up call?', answer: 'A suitable follow-up time can be arranged depending on team availability and client need.' },
         { question: 'Can you help with pricing questions after booking?', answer: 'Yes. The team can explain package details, pricing items or any point that needs clarification.' },
-        { question: 'Can an issue be escalated?', answer: 'If a concern needs additional attention, it is directed internally to the right team.' },
+        { question: 'Can an issue be escalated?', answer: 'Keep the agreement, dates, receipts, request and replies, and identify unresolved points in a written review request to info@inayadomestic.ae. MOHRE guidance identifies its website, MOHRE UAE app and 80084 for the appropriate domestic-worker or recruitment-office complaint. Support Process explains the routes; an internal review does not prevent official escalation.' },
         { question: 'Can support happen by phone?', answer: 'Yes. You can contact us by phone, WhatsApp or email depending on your preference.' },
         { question: 'Can I visit the office for support?', answer: 'Yes. Office visits are possible after coordinating a suitable time with the team.' },
         { question: 'Do you support long-term arrangements?', answer: 'Yes. Long-term requests can be followed up in an organized way based on service type and agreement.' }
@@ -303,7 +303,7 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
         { question: 'Do you provide legal advice?', answer: 'We provide guidance related to service steps. Official or legal decisions remain subject to the relevant authorities.' },
         { question: 'Can I review service terms before confirmation?', answer: 'Yes. You can request clarification of terms and steps before final confirmation.' },
         { question: 'Is the cancellation policy explained?', answer: 'Cancellation or change conditions are explained depending on the request stage and service type.' },
-        { question: 'Is the refund policy explained?', answer: 'Any refund-related details are clarified according to service type, agreement and request stage.' },
+        { question: 'Is the refund policy explained?', answer: 'Read the main refund and replacement policy. It distinguishes recruitment fees from monthly charges, explains statutory conditions and lists relevant records for different scenarios. Commercial terms do not remove an applicable statutory right, and a recruitment formula does not automatically apply to every monthly package.' },
         { question: 'Are workers reviewed before recommendation?', answer: 'Available details are reviewed according to internal procedures before suitable options are shared with the client.' },
         { question: 'Can I request a copy of service details?', answer: 'A service summary or key details can be shared by WhatsApp or email after review.' },
         { question: 'Do procedures change by emirate?', answer: 'Some steps may vary by emirate or service type, and this is explained when the request is reviewed.' },
@@ -429,6 +429,10 @@ export default function FaqPage({ params }: { params: Promise<{ locale: string }
             <Link href={`/${locale}/blog/live-in-live-out-part-time-maid-uae/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{isArabic ? 'قارن الإقامة وجدول العمل' : 'Compare residence and work schedules'}</Link>
             {' · '}
             <Link href={`/${locale}/blog/monthly-maid-package-inclusions-checklist/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{isArabic ? 'راجع أسئلة الباقة الشهرية' : 'Review monthly package questions'}</Link>
+            {' · '}
+            <Link href={`/${locale}/refund-policy/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{isArabic ? 'الاسترداد والاستبدال' : 'Refund and replacement'}</Link>
+            {' · '}
+            <Link href={`/${locale}/support-process/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{isArabic ? 'الدعم والتصعيد' : 'Support and escalation'}</Link>
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a href="https://wa.me/971502036767" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-accent-400 bg-primary-900 px-7 py-3 text-sm font-bold text-accent-100 shadow-[0_14px_30px_rgba(7,22,74,0.20)] transition hover:-translate-y-0.5 hover:bg-accent-500 hover:text-primary-900">

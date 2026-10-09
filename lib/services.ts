@@ -11,7 +11,7 @@ export const services: Service[] = [
     slug: 'live-in-maid',
     icon: '🏠',
     name: { en: 'Live-in Maid Services', ar: 'خدمات الخادمات المقيمات' },
-    short: { en: 'Full-time maids living at your home.', ar: 'خادمات بدوام كامل يقمن في منزلك.' },
+    short: { en: 'Residential maid support with agreed duties and schedule.', ar: 'دعم منزلي مع الإقامة وفق مهام وجدول متفق عليهما.' },
     description: { en: 'Reliable live-in maids who stay at your home and handle daily cleaning, cooking and household tasks with care and professionalism.', ar: 'خادمات مقيمات موثوقات يقمن في منزلك ويتولين التنظيف اليومي والطبخ والمهام المنزلية بعناية واحترافية.' }
   },
   {

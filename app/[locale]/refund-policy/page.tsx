@@ -1,55 +1,12 @@
 import Link from 'next/link';
+import { refundPolicyCopy } from '@/lib/refund-policy-content';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 
 export default async function RefundPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const isArabic = locale === 'ar';
-  const copy = isArabic ? {
-    badge: 'سياسة الاسترداد والاستبدال',
-    title: 'سياسة الاسترداد والاستبدال لخدمات عناية',
-    lead: 'توضح هذه الصفحة طريقة مراجعة طلبات الاسترداد أو الاستبدال حسب نوع الخدمة، اتفاق العميل، التوقيت، التوفر، المستندات، ومرحلة الطلب.',
-    updated: 'آخر تحديث: 2026',
-    highlights: ['مراجعة كل حالة بشكل منفصل', 'الشروط تعتمد على اتفاق الخدمة', 'الاستبدال يخضع للتوفر', 'التواصل الواضح يسرع المراجعة'],
-    sections: [
-      ['متى تتم مراجعة الطلب؟', 'تتم مراجعة طلب الاسترداد أو الاستبدال عندما يشارك العميل تفاصيل واضحة عن الخدمة والملاحظة وتاريخ الطلب. يراجع فريق عناية اتفاق الخدمة، المرحلة التي وصل إليها الطلب، والعمل الذي تم إنجازه قبل شرح الخيارات المتاحة.', ['نوع الخدمة والباقة المختارة', 'تاريخ الطلب أو الحجز', 'تفاصيل الملاحظة أو سبب الطلب', 'أي رسائل أو مستندات داعمة']],
-      ['أهلية الاسترداد', 'الاسترداد لا يتم بشكل تلقائي. تتم مراجعته حسب الاتفاق المؤكد، الرسوم التي تم دفعها، أي عمل تم إنجازه، تكاليف الجهات الخارجية أو الحكومية، ومرحلة الخدمة وقت تقديم الطلب.', ['الاسترداد يعتمد على شروط الاتفاق', 'قد توجد رسوم غير قابلة للاسترداد', 'العمل المنجز يؤثر على القرار', 'يتم شرح النتيجة للعميل بوضوح']],
-      ['أهلية الاستبدال', 'قد يكون الاستبدال خياراً مناسباً في بعض الحالات حسب نوع الخدمة والباقة والتوفر. تستخدم عناية ملاحظات العميل لتحسين المطابقة التالية وتوضيح المهام والتوقعات بشكل أفضل.', ['الاستبدال يخضع للتوفر', 'يتم مراجعة سبب الطلب', 'قد تتغير الخيارات حسب المتطلبات الجديدة', 'المتابعة تساعد على تحسين التجربة']],
-      ['كيفية تقديم الطلب', 'لرفع طلب مراجعة، يرجى التواصل مع فريق عناية عبر الهاتف أو واتساب أو البريد الإلكتروني مع ذكر الاسم، رقم التواصل، نوع الخدمة، تفاصيل الحجز، وسبب الطلب بوضوح.', ['اسم العميل ورقم الهاتف', 'نوع الخدمة وتفاصيل الحجز', 'سبب الطلب بشكل واضح', 'أي صور أو مستندات عند الحاجة']],
-      ['التوقيت والمتابعة', 'مدة المراجعة تعتمد على وضوح التفاصيل، نوع الخدمة، توفر البدائل، والمستندات المطلوبة. يهدف فريق عناية إلى تقديم رد واضح وعادل ومنظم للعميل.', ['الطلبات الواضحة تتم مراجعتها أسرع', 'التوفر قد يؤثر على وقت الاستبدال', 'قد تتطلب بعض الحالات مستندات إضافية', 'يتم توضيح الخطوة التالية بعد المراجعة']],
-      ['ملاحظات مهمة', 'تختلف شروط الاسترداد والاستبدال حسب نوع الخدمة أو الاتفاق أو الباقة. لذلك يجب دائماً الرجوع إلى التفاصيل المؤكدة مع فريق عناية قبل اتخاذ أي قرار نهائي.', ['هذه الصفحة إرشادية وليست بديلاً عن الاتفاق المؤكد', 'الرسوم الرسمية قد تكون منفصلة', 'احتفظ بالإيصالات ورسائل التأكيد', 'تواصل مبكراً عند وجود أي ملاحظة']]
-    ],
-    faqs: [
-      ['هل الاسترداد مضمون دائماً؟', 'لا. يتم تقييم الاسترداد حسب اتفاق الخدمة ومرحلة الطلب والرسوم والعمل المنجز.'],
-      ['هل يمكن طلب استبدال بدل الاسترداد؟', 'نعم، يمكن مناقشة الاستبدال عندما يكون مناسباً ويخضع للتوفر وشروط الاتفاق.'],
-      ['ماذا أرسل عند رفع الطلب؟', 'أرسل الاسم ورقم التواصل ونوع الخدمة وتفاصيل الحجز وسبب الطلب وأي مستندات داعمة.'],
-      ['كم يستغرق الرد؟', 'يعتمد التوقيت على وضوح التفاصيل ونوع الخدمة والتوفر، ويتم توضيح الخطوة التالية بعد المراجعة.']
-    ],
-    cta: 'تواصل مع عناية',
-    ctaText: 'هل لديك طلب مراجعة متعلق بالخدمة؟ شارك التفاصيل مع فريق عناية ليتم فحص الحالة بوضوح.'
-  } : {
-    badge: 'Refund & Replacement Policy',
-    title: 'Refund & Replacement Policy for INAYA Services',
-    lead: 'This page explains how refund or replacement requests are reviewed based on service type, customer agreement, timing, availability, documents and request stage.',
-    updated: 'Last updated: 2026',
-    highlights: ['Every case is reviewed individually', 'Terms depend on the service agreement', 'Replacement is subject to availability', 'Clear communication speeds up review'],
-    sections: [
-      ['When a request is reviewed', 'A refund or replacement request is reviewed when the customer shares clear service details, concern notes and request timing. INAYA checks the confirmed agreement, request stage and work already completed before explaining available options.', ['Selected service type and package', 'Request or booking date', 'Clear reason for the request', 'Any supporting messages or documents']],
-      ['Refund eligibility', 'Refunds are not automatic. Each request is reviewed according to the confirmed agreement, paid fees, work already completed, third-party or government costs and the service stage at the time of the request.', ['Eligibility depends on agreement terms', 'Some fees may be non-refundable', 'Completed work affects the decision', 'The outcome is explained clearly']],
-      ['Replacement eligibility', 'Replacement may be a suitable option in selected cases depending on service type, package and availability. INAYA uses customer feedback to improve the next match and clarify duties and expectations.', ['Replacement depends on availability', 'The reason for request is reviewed', 'Options may change with new requirements', 'Follow-up helps improve the experience']],
-      ['How to submit a request', 'To submit a review request, contact INAYA by phone, WhatsApp or email with your name, contact number, service type, booking details and a clear explanation of the request.', ['Customer name and mobile number', 'Service type and booking details', 'Clear reason for the request', 'Photos or documents where needed']],
-      ['Timeline and follow-up', 'Review timing depends on the clarity of details, service type, availability of alternatives and required documents. INAYA aims to provide a clear, fair and organized response.', ['Clear requests are reviewed faster', 'Availability can affect replacement timing', 'Some cases may need more documents', 'Next steps are explained after review']],
-      ['Important notes', 'Refund and replacement terms can vary by service type, agreement or package. Customers should always refer to the details confirmed by the INAYA team before making a final decision.', ['This page is general guidance', 'Official fees may be separate', 'Keep receipts and confirmations', 'Contact early when there is a concern']]
-    ],
-    faqs: [
-      ['Are refunds always guaranteed?', 'No. Refunds are reviewed according to the service agreement, request stage, fees and completed work.'],
-      ['Can I request replacement instead of refund?', 'Yes. Replacement can be discussed where suitable, subject to availability and agreement terms.'],
-      ['What should I send with my request?', 'Send your name, contact number, service type, booking details, reason for the request and any supporting documents.'],
-      ['How long does the review take?', 'Timing depends on the clarity of details, service type and availability. The next step is explained after review.']
-    ],
-    cta: 'Contact INAYA',
-    ctaText: 'Have a service-related review request? Share the details with INAYA so the team can check your case clearly.'
-  };
+  const copy = refundPolicyCopy[isArabic ? 'ar' : 'en'];
 
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
@@ -86,6 +43,26 @@ export default async function RefundPage({ params }: { params: Promise<{ locale:
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section data-content="refund-scenarios" className="px-6 py-10 lg:px-10">
+        <div className="mx-auto max-w-6xl">
+          <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-2xl font-bold text-primary-900`}>{copy.scenarioTitle}</h2>
+          <p className="mt-4 text-sm leading-7 text-primary-900/70">{copy.scenarioIntro}</p>
+          <div className="mt-6 overflow-x-auto rounded-[26px] border border-primary-900/10 bg-white">
+            <table className="w-full text-start text-sm leading-7">
+              <caption className="sr-only">{copy.scenarioTitle}</caption>
+              <thead className="bg-[#f8f6f0]"><tr>{copy.scenarioHeaders.map((heading) => <th key={heading} scope="col" className="p-4 text-start align-top">{heading}</th>)}</tr></thead>
+              <tbody>{copy.scenarios.map(([scenario, basis, records]) => <tr key={scenario} className="border-t border-primary-900/10"><th scope="row" className="p-4 text-start align-top">{scenario}</th><td className="p-4 align-top">{basis}</td><td className="p-4 align-top">{records}</td></tr>)}</tbody>
+            </table>
+          </div>
+          <h3 className="mt-8 text-lg font-bold">{copy.sourceTitle}</h3>
+          <p className="mt-3 text-sm leading-7 text-primary-900/70">{copy.sourceNote}</p>
+          <ul className="mt-4 list-inside list-disc space-y-3 text-sm leading-7">
+            {copy.sources.map((source) => <li key={source.url}><a href={source.url} className="underline decoration-accent-500/70 underline-offset-4">{source.label}</a></li>)}
+          </ul>
+          <Link href={`/${locale}/support-process/`} className="mt-5 inline-block text-sm font-semibold underline decoration-accent-500/70 underline-offset-4">{isArabic ? 'وسائل الدعم والتصعيد الرسمي' : 'Support channels and official escalation'}</Link>
         </div>
       </section>
 

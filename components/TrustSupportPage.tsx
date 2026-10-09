@@ -27,6 +27,10 @@ export default function TrustSupportPage({ locale, slug }: { locale: string; slu
             </article>
           ))}
         </section>
+        {(page.links || page.sources) && <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold leading-7">
+          {page.links?.map((link) => <Link key={link.route} href={`/${locale}/${link.route}/`} className="underline decoration-accent-500/70 underline-offset-4">{link.label[lang]}</Link>)}
+          {page.sources?.map((source) => <a key={source.url.en} href={source.url[lang]} className="underline decoration-accent-500/70 underline-offset-4">{source.label[lang]}</a>)}
+        </div>}
         <section className="mt-10 rounded-[26px] border border-white/80 bg-white/82 p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
           <h2 className="font-heading text-2xl font-bold text-primary-900">{lang === 'ar' ? 'أسئلة شائعة' : 'Frequently asked questions'}</h2>
           <div className="mt-5 grid gap-3">

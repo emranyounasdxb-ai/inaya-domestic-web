@@ -12,7 +12,8 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   };
   const baseline = JSON.parse(await readFile('tests/fixtures/seo-phase03-baseline.json', 'utf8'));
   // Exact reviewed metadata changes are allowlisted alongside the visa and monthly pricing corrections.
-  // Every other historical metadata and price value remains exact.
+  // Every other historical metadata and price value remains exact. The approved
+  // customer-content additions repeat the same monthly amounts in Pricing and FAQ.
   const visaDescriptions = {
     en: 'Complete maid visa-processing support from INAYA in the UAE, including submission, status change, medical, Emirates ID and insurance processing. Terms depend on your case and authorities.',
     ar: 'دعم متكامل لإجراءات تأشيرة الخادمة في الإمارات مع عناية: تقديم الطلبات وتعديل الوضع والفحص الطبي والهوية والتأمين. تعتمد الشروط على الحالة والجهات المختصة.'
@@ -22,8 +23,8 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     ar: 'دعم إجراءات تأشيرة الخادمة في الإمارات | عناية'
   };
   const pricingMentions = {
-    en: [...Array(6).fill('AED 1,500'), ...Array(6).fill('AED 2,500')],
-    ar: [...Array(5).fill('1,500 درهم'), ...Array(5).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
+    en: [...Array(7).fill('AED 1,500'), ...Array(7).fill('AED 2,500')],
+    ar: [...Array(6).fill('1,500 درهم'), ...Array(6).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
   };
   const current = await auditExport();
   assert.equal(current.pages.length, 154);
@@ -45,6 +46,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
     const expectedPrices = page.route === 'pricing' ? pricingMentions[page.locale]
+      : page.route === 'faq' ? page.locale === 'en' ? ['AED 1,500', 'AED 1,500', 'AED 2,500', 'AED 2,500'] : ['1,500 درهم', '1,500 درهم', '2,500 درهم', '2,500 درهم']
       : page.route === 'services/monthly-maid-contract' ? page.locale === 'en' ? ['AED 1,500', 'AED 2,500'] : ['1,500 درهم', '2,500 درهم']
       : before.prices;
     assert.deepEqual(page.prices, expectedPrices, `${page.url}: displayed prices`);

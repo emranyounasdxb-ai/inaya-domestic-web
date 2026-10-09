@@ -150,7 +150,7 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
       <ProcessSection copy={copy} lang={lang} />
       <MatchingCards copy={copy} lang={lang} locale={locale} slug={slug} />
       <PricingCards copy={copy} lang={lang} locale={locale} slug={slug} />
-      <FAQSection copy={copy} lang={lang} />
+      <FAQSection copy={copy} lang={lang} slug={slug} />
       <RelatedServices copy={copy} lang={lang} locale={locale} />
       <ComparisonSection copy={copy} lang={lang} />
       <ServiceSeoBlock locale={locale} slug={slug} />
@@ -401,7 +401,7 @@ function PricingCards({
   );
 }
 
-function FAQSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
+function FAQSection({ copy, lang, slug }: { copy: ServiceCopy; lang: Lang; slug: string }) {
   return (
     <section className={`${sectionPadding} border-y border-primary-900/8 bg-[#f7f8fb]`}>
       <div className="mx-auto max-w-5xl">
@@ -417,6 +417,12 @@ function FAQSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
             </details>
           ))}
         </div>
+        {['monthly-maid-contract', 'recruitment', 'maid-replacement'].includes(slug) && <p className="mt-6 text-sm leading-7 text-primary-900/75">
+          {lang === 'ar' ? 'راجع الحقوق القانونية المنطبقة وشروط الاتفاق في ' : 'Review applicable statutory remedies and agreement conditions in the '}
+          <Link href={`/${lang}/refund-policy/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4">{lang === 'ar' ? 'سياسة الاسترداد والاستبدال' : 'refund and replacement policy'}</Link>
+          {lang === 'ar' ? '، ووسائل التواصل ومسار الشكوى الرسمي في ' : ', and contact channels and official escalation in the '}
+          <Link href={`/${lang}/support-process/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4">{lang === 'ar' ? 'إجراءات الدعم' : 'support process'}</Link>.
+        </p>}
       </div>
     </section>
   );

@@ -84,7 +84,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         },
         {
           q: isArabic ? 'هل يمكن التواصل عبر واتساب؟' : 'Can I contact you on WhatsApp?',
-          a: isArabic ? 'نعم، واتساب هو أسرع طريقة لإرسال التفاصيل والمستندات الأولية ومتابعة التوفر.' : 'Yes. WhatsApp is the fastest way to share details, initial documents and availability questions.'
+          a: isArabic ? 'نعم. شارك نوع الخدمة والإمارة والمهام والتوقيت المفضل عبر واتساب. اسأل عن المستندات المطلوبة قبل إرسال نسخ حساسة؛ ولا يؤكد الاستفسار التوفر أو الحجز.' : 'Yes. Share the service type, emirate, duties and preferred timing through WhatsApp. Ask which documents are required before sending sensitive copies; an enquiry does not confirm availability or a booking.'
         }
       ]
     },
@@ -101,6 +101,10 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         {
           q: isArabic ? 'هل الخدمة متوفرة في كل الإمارات؟' : 'Do you serve all UAE emirates?',
           a: isArabic ? 'نخدم جميع إمارات الدولة، ويتم تأكيد التوفر حسب المنطقة ونوع الخدمة والوقت المطلوب.' : 'We serve all UAE emirates, with availability confirmed by area, service type and requested timing.'
+        },
+        {
+          q: isArabic ? 'كيف أقارن المرشحات أو أجهز مقابلة؟' : 'How do I compare candidates or prepare an interview?',
+          a: isArabic ? 'ناقش خيارات مراجعة الملف أو المقابلة المتاحة قبل الاختيار. جهز أسئلة عن المهام الفعلية والخبرة المناسبة وروتين المنزل واللغة والتواصل. اطلب أمثلة على أعمال سابقة ذات صلة، وميز ما تصفه المرشحة عما تدعمه مستندات أو مراجع مؤكدة. المسمى أو الجنسية لا يثبتان مؤهلاً أو ملاءمة.' : 'Discuss available profile-review or interview options before selection. Prepare questions about the actual duties, relevant experience, household routine, language and communication. Ask for examples of relevant previous work, distinguishing the candidate’s account from documented or confirmed references. A role title or nationality does not establish a qualification or suitability.'
         }
       ]
     },
@@ -117,6 +121,10 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         {
           q: isArabic ? 'هل يتم شرح الرسوم والخطوات قبل الدفع؟' : 'Are fees and steps explained before payment?',
           a: isArabic ? 'نعم، يتم توضيح الرسوم والخطوات والمستندات المطلوبة قبل أي إجراء نهائي.' : 'Yes. Fees, steps and required documents are explained before any final action.'
+        },
+        {
+          q: isArabic ? 'ما الذي يجب أن أحصل عليه كتابةً؟' : 'What should I receive in writing?',
+          a: isArabic ? 'راجع صاحب العمل ونطاق الخدمة والمهام وموقع العمل والجدول والراحة وتاريخ البدء والمدة والتجديد والتكاليف ومسؤولية كل دفعة. حدد المستندات والإجراءات المنطبقة وشروط التغيير والإلغاء والاستبدال والاسترداد. احتفظ بعرض السعر والاتفاق والإيصالات؛ ولا تفترض أن وصف الباقة يحدد كل هذه الشروط.' : 'Review the employer, service scope, duties, workplace, schedule, rest, start date, period, renewal, costs and responsibility for each payment. Identify the applicable documents and processing steps, and change, cancellation, replacement and refund terms. Keep the quote, agreement and receipts; a package description alone does not establish all these terms.'
         }
       ]
     },
@@ -131,8 +139,8 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           a: isArabic ? 'نعم، يتابع فريق عناية معك للتأكد من وضوح الخطوات ومعالجة أي استفسار.' : 'Yes. The INAYA team follows up to keep the process clear and answer any questions.'
         },
         {
-          q: isArabic ? 'ما أسرع طريقة للتواصل؟' : 'What is the fastest way to reach you?',
-          a: isArabic ? 'واتساب هو الأسرع للمتابعة اليومية، ويمكنك أيضاً الاتصال أو إرسال بريد إلكتروني عند الحاجة.' : 'WhatsApp is fastest for daily follow-up. You can also call or email when needed.'
+          q: isArabic ? 'كيف أتابع ملاحظة على خدمة قائمة؟' : 'How do I follow up on an existing-service concern?',
+          a: isArabic ? 'تواصل بالهاتف أو واتساب أو البريد الإلكتروني مع الاتفاق والتواريخ ووصف الملاحظة والإجراء المطلوب. احتفظ بسجل مكتوب واطلب تأكيد الاستلام والنتيجة والخطوة التالية. تبقى الحقوق القانونية المنطبقة سارية؛ وتشرح إجراءات الدعم وسائل التواصل ومسار الشكوى الرسمي.' : 'Contact the team by phone, WhatsApp or email with the agreement, dates, concern and remedy requested. Keep a written record and ask for acknowledgement, the outcome and next action. Applicable statutory rights remain in force; Support Process explains contact channels and official escalation.'
         }
       ]
     }
