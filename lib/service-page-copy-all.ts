@@ -9,6 +9,7 @@ import { serviceSeoPolishMoreB } from './service-page-seo-polish-more-b';
 import type { Lang, ServiceCopy } from './service-page-copy';
 import { strengthenServiceCopy } from './service-content-briefs';
 import { applyPracticalGuidance } from './service-practical-guidance';
+import { serviceCustomerQuestions } from './service-customer-questions';
 
 export type { CompareRow, Lang, Pair, Pricing, ServiceCopy } from './service-page-copy';
 
@@ -38,7 +39,10 @@ const polishedCopies = Object.entries(polishLayers).reduce((copies, [slug, patch
   return copies;
 }, { ...combinedServicePageCopies });
 
-export const servicePageCopies = Object.fromEntries(Object.entries(polishedCopies).map(([slug, copy]) => [slug, {
-  en: applyPracticalGuidance(slug, 'en', strengthenServiceCopy(slug, 'en', copy.en)),
-  ar: applyPracticalGuidance(slug, 'ar', strengthenServiceCopy(slug, 'ar', copy.ar))
-}])) as Record<string, Record<Lang, ServiceCopy>>;
+export const servicePageCopies = Object.fromEntries(Object.entries(polishedCopies).map(([slug, copy]) => {
+  const localizedCopy = (lang: Lang) => {
+    const result = applyPracticalGuidance(slug, lang, strengthenServiceCopy(slug, lang, copy[lang]));
+    return { ...result, faqs: serviceCustomerQuestions[slug]?.[lang] ?? result.faqs };
+  };
+  return [slug, { en: localizedCopy('en'), ar: localizedCopy('ar') }];
+})) as Record<string, Record<Lang, ServiceCopy>>;

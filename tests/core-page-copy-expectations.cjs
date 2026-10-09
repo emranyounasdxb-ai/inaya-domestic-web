@@ -1,9 +1,10 @@
 const assert = require('node:assert/strict');
 
 // Preserve the historical source checkpoints byte for byte apart from these
-// reviewed bilingual corrections to the existing non-clinical support role.
+// reviewed bilingual corrections to existing roles and their scope descriptions.
 const replacements = {
   'lib/services.ts': [
+    ["short: { en: 'Full-time maids living at your home.', ar: 'خادمات بدوام كامل يقمن في منزلك.' }", "short: { en: 'Residential maid support with agreed duties and schedule.', ar: 'دعم منزلي مع الإقامة وفق مهام وجدول متفق عليهما.' }"],
     ["icon: '🏥'", "icon: '🏠'"],
     ["name: { en: 'Home Care / Patient Care Services', ar: 'خدمات الرعاية المنزلية / رعاية المرضى' }", "name: { en: 'Non-clinical Home Support', ar: 'دعم منزلي غير طبي' }"],
     ["short: { en: 'Professional patient care at home.', ar: 'رعاية احترافية للمرضى في المنزل.' }", "short: { en: 'Practical daily help and companionship at home.', ar: 'مساعدة يومية ومرافقة داخل المنزل دون رعاية طبية.' }"],

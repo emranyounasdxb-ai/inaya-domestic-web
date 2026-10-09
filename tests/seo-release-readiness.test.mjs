@@ -3,6 +3,58 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
+test('customer guidance has complete localized cost and statutory refund tables without policy placeholders', async () => {
+  for (const locale of ['en', 'ar']) {
+    const visibleMain = async route => {
+      const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
+      return html.match(/<main\b[^>]*>[\s\S]*?<\/main>/)?.[0].replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '') ?? '';
+    };
+    const pricing = await visibleMain('pricing');
+    const costs = pricing.match(/<section\b[^>]*data-content="payment-responsibilities"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(costs, `${locale}: cost distinctions visible`);
+    assert.equal((costs.match(/<th\b[^>]*scope="row"/g) ?? []).length, 5);
+    for (const amount of ['1,500', '2,500']) assert.ok(pricing.includes(amount), `${locale}: approved monthly price ${amount}`);
+    assert.match(pricing, locale === 'en' ? /all-inclusive/ : /شامل/);
+    const refund = await visibleMain('refund-policy');
+    const rules = refund.match(/<section\b[^>]*data-content="refund-scenarios"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(rules, `${locale}: official recruitment rules visible`);
+    assert.equal((rules.match(/<th\b[^>]*scope="row"/g) ?? []).length, 4, 'only complete statutory cases');
+    assert.match(rules, locale === 'en' ? /Article 6.*No\. \(106\) of 2022/ : /المادة 6.*106 لسنة 2022/);
+    assert.match(rules, locale === 'en' ? /within two weeks of returning the worker.*or reporting absence/ : /خلال أسبوعين من إعادة العاملة.*أو الإبلاغ عن انقطاعها/);
+    assert.match(rules, locale === 'en' ? /excludes directly recruited workers/ : /تستثني.*المستقدمة بصورة مباشرة/);
+    assert.match(rules, locale === 'en' ? /not an automatic refund of every monthly package/ : /ليست استرداداً تلقائياً لرسوم كل باقة شهرية/);
+    assert.ok(rules.includes(`https://uaelegislation.gov.ae/${locale}/legislations/1620`));
+    assert.ok(refund.includes(`href="/${locale}/support-process/"`));
+    for (const route of ['pricing', 'refund-policy', 'support-process', 'privacy-policy']) {
+      assert.doesNotMatch(await visibleMain(route), /\b(?:TBD|placeholder|pending business confirmation)\b|قيد التأكيد|قيد الانتظار/i, `${locale}/${route}: no public placeholders`);
+    }
+  }
+});
+
+test('bilingual support, preparation and profile evidence guidance is readable and uses confirmed channels', async () => {
+  const headings = {
+    en: ['INAYA support channels', 'Official escalation through MOHRE', 'Separate household details from worker records'],
+    ar: ['وسائل دعم عناية', 'التصعيد الرسمي لدى وزارة الموارد البشرية والتوطين', 'افصل معلومات المنزل عن سجلات العاملة']
+  };
+  for (const locale of ['en', 'ar']) {
+    const support = await readFile(`out/${locale}/support-process/index.html`, 'utf8');
+    for (const heading of headings[locale].slice(0, 2)) assert.ok(support.includes(heading));
+    for (const href of ['tel:+97167400128', 'https://wa.me/971502036767', 'mailto:info@inayadomestic.ae', 'tel:80084']) assert.ok(support.includes(`href="${href}"`));
+    const documents = await readFile(`out/${locale}/documents-required/index.html`, 'utf8');
+    assert.ok(documents.includes(headings[locale][2]));
+    const guidelines = await readFile(`out/${locale}/service-guidelines/index.html`, 'utf8');
+    for (const marker of ['household-preparation', 'contract-responsibilities']) assert.ok(guidelines.includes(`data-content="${marker}"`));
+    for (const route of ['housemaid', 'housekeeping', 'recruitment', 'background-verification', 'maid-replacement']) {
+      const html = await readFile(`out/${locale}/services/${route}/index.html`, 'utf8');
+      const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+      const graph = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(match => JSON.parse(match[1])['@graph'] ?? []);
+      const faq = graph.find(node => node['@type'] === 'FAQPage');
+      assert.ok(faq?.mainEntity.length >= 3, `${locale}/${route}: structured customer questions`);
+      for (const question of faq.mainEntity) assert.ok(body.includes(question.name.replaceAll('&', '&amp;').replaceAll('’', '’')), `${locale}/${route}: schema question visible`);
+    }
+  }
+});
+
 test('approved identity and hours match visible bilingual content and visa scope retains authority limits', async () => {
   const legalName = 'INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)';
   for (const locale of ['en', 'ar']) {

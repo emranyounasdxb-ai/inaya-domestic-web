@@ -453,7 +453,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               ['services/live-in-maid', 'Live-in maid', 'خادمة مقيمة'],
               ['services/full-time-maid', 'Full-time maid', 'خادمة بدوام كامل'],
               ['services/part-time-maid', 'Part-time maid', 'خادمة بدوام جزئي'],
-              ['services/monthly-maid-contract', 'Monthly maid visits', 'زيارات خادمة شهرية'],
+              ['services/monthly-maid-contract', 'Monthly maid contracts', 'عقود خادمة شهرية'],
               ['services/nanny', 'Nanny and childcare', 'المربيات ورعاية الأطفال'],
               ['services/maid-visa', 'Maid visa enquiry', 'استفسار تأشيرة خادمة'],
               ['maid-services-ajman', 'Maid services in Ajman', 'خدمات خادمات في عجمان'],

@@ -109,11 +109,15 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       ['هل الأسعار شهرية؟', 'نعم. تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف. السعر المبدئي ليس عرضاً نهائياً لحالتك.'],
       ['ما الخدمة والمهام التي تشملها الباقة؟', 'تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها. اطلب النطاق كتابةً قبل الاتفاق.'],
       ['كيف أؤكد التكاليف والشروط؟', 'شارك المهام والإمارة والجدول المطلوب، واطلب عرضاً مكتوباً يوضح المبلغ النهائي والتكاليف المشمولة وأي متطلبات خاصة بالحالة. لا توجد رسوم منفصلة محددة منشورة هنا.'],
+      ['هل السعر الشهري هو أجر العاملة أو رسم الاستقدام؟', 'لا يحدد السعر الشهري المنشور أجر العاملة أو رسم استقدام لمرة واحدة. رسوم الباقة مقابل نطاق الخدمة المتفق عليه؛ والأجر مبلغ مستحق للعاملة بموجب عقد العمل، ورسوم الاستقدام مقابل إجراء الاستقدام المنطبق. اطلب توضيح الجهة المسؤولة عن كل دفعة وما إذا كانت مشمولة دون دفع إضافي.'],
+      ['ماذا أراجع بشأن التجديد والإلغاء والاستبدال؟', 'راجع تاريخ البدء ومدة العقد وأي حد أدنى للالتزام وآلية التجديد والإشعار والدفع والدفعات المقدمة وشروط الإلغاء والاستبدال كتابةً. الحقوق القانونية المنطبقة مستقلة عن مزايا الباقة الإضافية؛ ولا تفترض انطباق معادلة رد رسوم الاستقدام على كل رسم شهري.'],
       ['ما نطاق INAYA Black؟', 'تبقى INAYA Black بعرض سعر مخصص. تواصل مع عناية لتأكيد نطاق الخدمة وشروطها.']
     ] : [
       ['Are the prices monthly?', 'Yes. Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive. A starting price is not the final quote for your case.'],
       ['Which service and duties does each package cover?', 'Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package. Request the scope in writing before agreeing.'],
       ['How do I confirm costs and terms?', 'Share the duties, emirate and schedule you need, and request a written quote stating the final amount, included costs and any case-specific requirements. No specific separate fee is published here.'],
+      ['Is the monthly price the worker’s wage or a recruitment fee?', 'The published monthly price does not specify the worker’s wage or a one-time recruitment fee. A package charge covers the agreed service scope; a wage is due to the worker under the employment contract, while a recruitment fee concerns the applicable recruitment service. Ask who is responsible for each payment and whether it is covered without an additional charge.'],
+      ['What should I review about renewal, cancellation and replacement?', 'Review the start date, contract period, any minimum commitment, renewal, notice, payment timing, deposits and cancellation or replacement conditions in writing. Applicable statutory rights are separate from extra package benefits; do not apply the recruitment-fee refund formula to every monthly charge.'],
       ['What does INAYA Black cover?', 'INAYA Black remains Custom Quote. Contact INAYA to confirm the service scope and terms.']
     ],
     cta: isArabic ? {
@@ -129,6 +133,19 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   };
 
   const assuranceIcons: IconName[] = ['refresh', 'file', 'shield'];
+  const costRows = isArabic ? [
+    ['رسوم الباقة الشهرية', 'مبلغ مقابل نطاق الخدمة المتفق عليه خلال فترة الفوترة الشهرية.', 'حدد النطاق المشمول وما يقابله المبلغ النهائي؛ والسعر الابتدائي ليس تفاصيل العقد كاملة.'],
+    ['أجر العاملة', 'مبلغ مستحق للعاملة وفق عقد العمل.', 'حدد صاحب العمل ومقدار الأجر وطريقة الدفع ومسؤوليته، وما إذا كان يغطيه مبلغ الباقة.'],
+    ['رسوم الاستقدام', 'مبلغ مقابل خدمة الاستقدام المنطبقة؛ يختلف عن الأجر والرسوم الشهرية.', 'حدد ما إذا كان الترتيب يتضمن استقداماً وما يغطيه المبلغ ومن يستلمه.'],
+    ['تكاليف إجراءات التأشيرة', 'تكاليف خطوات المعالجة المنطبقة على الحالة والجهات المختصة.', 'حدد خطوات المعالجة والرسوم الحكومية وأي رسوم خدمة معروضة، وما هو مشمول وما يعرض منفصلاً.'],
+    ['أي تكلفة إضافية مقترحة', 'لا يثبت وصف الباقة بأنها شاملة وجود رسم إضافي أو قيمته.', 'اطلب تفسير النطاق قبل الموافقة؛ لا تفترض شمول بند أو استبعاده دون بيان مكتوب.']
+  ] : [
+    ['Monthly package charge', 'An amount for the agreed service scope during the monthly billing period.', 'Specify the scope covered and what the final amount pays for; a starting price is not the complete contract.'],
+    ['Worker’s wage', 'An amount due to the worker under the employment contract.', 'Identify the employer, wage, payment method and responsibility, and whether the package amount covers it.'],
+    ['Recruitment fee', 'An amount for the applicable recruitment service, distinct from wages and monthly charges.', 'Identify whether the arrangement includes recruitment, what the amount covers and who receives it.'],
+    ['Visa-processing costs', 'Costs for the processing steps applicable to the case and responsible authorities.', 'Identify processing steps, government fees and any quoted service charges, stating what is covered and what is quoted separately.'],
+    ['Any proposed additional cost', 'The all-inclusive package description does not establish an extra charge or its amount.', 'Obtain a scope explanation before agreeing; do not assume inclusion or exclusion without a written breakdown.']
+  ];
 
   return (
     <div className="overflow-hidden bg-[#fbfaf7] text-ink">
@@ -221,6 +238,25 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                 <div className="px-5 py-6 text-center text-primary-900/80"><FeatureValue value={row[3]} /></div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section data-content="payment-responsibilities" className="container-x pb-28 sm:pb-32">
+        <div className="mx-auto max-w-6xl">
+          <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-3xl font-bold text-primary-900`}>{isArabic ? 'ميز الرسوم ومسؤوليات الدفع' : 'Distinguish charges and payment responsibilities'}</h2>
+          <p className="mt-4 text-sm leading-7 text-primary-900/75">{isArabic ? 'تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف. وتبقى INAYA Black بعرض سعر مخصص. الجدول يشرح أنواع المبالغ المطلوب توضيحها في العرض المكتوب؛ ولا يعلن رسوماً إضافية أو يستبعد تكاليف من أي باقة.' : 'Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive. INAYA Black remains Custom Quote. The table explains payment types to clarify in the written proposal; it does not announce extra charges or exclude costs from a package.'}</p>
+          <div className="mt-6 overflow-x-auto rounded-[14px] border border-accent-500/18 bg-white">
+            <table className="w-full text-start text-sm leading-7">
+              <caption className="sr-only">{isArabic ? 'أنواع المبالغ ومسؤوليات الدفع' : 'Payment types and responsibilities'}</caption>
+              <thead className="bg-[#f3f1f0]"><tr>{(isArabic ? ['نوع المبلغ', 'ما الذي يمثله؟', 'ما المطلوب توضيحه كتابةً؟'] : ['Payment type', 'What does it represent?', 'What needs written clarification?']).map((label) => <th key={label} scope="col" className="p-4 text-start align-top">{label}</th>)}</tr></thead>
+              <tbody>{costRows.map(([type, purpose, confirmation]) => <tr key={type} className="border-t border-primary-900/10"><th scope="row" className="p-4 text-start align-top">{type}</th><td className="p-4 align-top">{purpose}</td><td className="p-4 align-top">{confirmation}</td></tr>)}</tbody>
+            </table>
+          </div>
+          <p className="mt-5 text-sm leading-7 text-primary-900/75">{isArabic ? 'راجع شروط الإلغاء والإنهاء والاستبدال مع الاتفاق. تختلف رسوم الاستقدام عن الرسوم الشهرية؛ ولا تلغي الشروط التجارية حقوقاً قانونية منطبقة.' : 'Review cancellation, termination and replacement terms alongside the agreement. Recruitment fees differ from monthly charges; commercial terms do not remove applicable statutory rights.'}</p>
+          <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href={`/${locale}/refund-policy/`} className="underline">{isArabic ? 'قواعد الاسترداد والاستبدال' : 'Refund and replacement rules'}</Link>
+            <Link href={`/${locale}/support-process/`} className="underline">{isArabic ? 'الدعم والشكوى' : 'Support and complaints'}</Link>
           </div>
         </div>
       </section>

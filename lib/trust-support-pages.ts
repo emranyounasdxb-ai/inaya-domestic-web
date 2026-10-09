@@ -28,6 +28,8 @@ export type TrustSupportPage = {
   faqs: TrustSupportFaq[];
   ctaTitle: Localized;
   ctaText: Localized;
+  links?: { label: Localized; route: string }[];
+  sources?: { label: Localized; url: Localized }[];
 };
 
 export const trustSupportPages: TrustSupportPage[] = [
@@ -60,6 +62,11 @@ export const trustSupportPages: TrustSupportPage[] = [
         title: { en: 'Important note about final requirements', ar: 'ملاحظة مهمة حول المتطلبات النهائية' },
         body: { en: 'This page is a preparation guide, not a final legal checklist. INAYA confirms the exact requirements after reviewing the service type, availability, profile, documents and current UAE process.', ar: 'هذه الصفحة دليل تجهيز وليست قائمة قانونية نهائية. تؤكد عناية المتطلبات الدقيقة بعد مراجعة نوع الخدمة والتوفر والملف والمستندات والإجراء الحالي في الإمارات.' },
         points: { en: ['Final checklist is confirmed before action', 'Government or third-party requirements may change', 'Incomplete details can delay the process', 'Families should keep original documents ready when needed'], ar: ['يتم تأكيد القائمة النهائية قبل أي إجراء', 'قد تتغير متطلبات الجهات الحكومية أو الخارجية', 'نقص التفاصيل قد يؤخر الإجراء', 'ينبغي إبقاء المستندات الأصلية جاهزة عند الحاجة'] }
+      },
+      {
+        title: { en: 'Separate household details from worker records', ar: 'افصل معلومات المنزل عن سجلات العاملة' },
+        body: { en: 'An initial household enquiry needs a role, location, duties and preferred schedule, not a full set of identity documents. For profile review or a formal application, identify the document, the person it concerns, its purpose and who needs to receive it. A profile note is not proof that a reference, qualification or official check has been verified.', ar: 'يحتاج الاستفسار المنزلي الأولي إلى الدور والموقع والمهام والجدول المفضل، وليس مجموعة كاملة من وثائق الهوية. ولمراجعة ملف أو معاملة رسمية، حدد المستند وصاحبه والغرض منه والجهة التي تحتاج استلامه. ملاحظة الملف ليست دليلاً على التحقق من مرجع أو مؤهل أو فحص رسمي.' },
+        points: { en: ['Customer or employer records: confirm the identity and agreement documents for the selected process', 'Worker records: check the name, document status and relevant experience evidence available for review', 'Request the checklist for the exact official service and employer category', 'Check spelling, expiry dates and consistency before an application', 'Ask before sending sensitive copies; the website forms do not upload documents'], ar: ['سجلات العميل أو صاحب العمل: أكد وثائق الهوية والاتفاق المطلوبة للإجراء المختار', 'سجلات العاملة: راجع الاسم وحالة المستندات وإثبات الخبرة ذي الصلة المتاح للمراجعة', 'اطلب قائمة الخدمة الرسمية المحددة وفئة صاحب العمل', 'راجع كتابة الأسماء وتواريخ الانتهاء وتطابق البيانات قبل تقديم الطلب', 'اسأل قبل إرسال نسخ حساسة؛ فنماذج الموقع لا ترفع المستندات'] }
       }
     ],
     faqs: [
@@ -68,7 +75,8 @@ export const trustSupportPages: TrustSupportPage[] = [
       { question: { en: 'Can INAYA help me understand missing documents?', ar: 'هل تساعدني عناية في معرفة المستندات الناقصة؟' }, answer: { en: 'Yes. The team can review your situation and explain what information or documents may be needed next.', ar: 'نعم. يمكن للفريق مراجعة حالتك وشرح المعلومات أو المستندات التي قد تكون مطلوبة لاحقاً.' } }
     ],
     ctaTitle: { en: 'Need a document checklist for your case?', ar: 'هل تحتاج قائمة مستندات لحالتك؟' },
-    ctaText: { en: 'Share your emirate, service type and current situation. INAYA will guide you clearly before the next step.', ar: 'شارك الإمارة ونوع الخدمة ووضعك الحالي، وستوضح لك عناية الخطوات قبل المتابعة.' }
+    ctaText: { en: 'Share your emirate, service type and current situation. INAYA will guide you clearly before the next step.', ar: 'شارك الإمارة ونوع الخدمة ووضعك الحالي، وستوضح لك عناية الخطوات قبل المتابعة.' },
+    links: [{ label: { en: 'Compare enquiry details with formal application documents', ar: 'قارن معلومات الاستفسار بمستندات المعاملة الرسمية' }, route: 'blog/documents-for-domestic-worker-enquiry' }, { label: { en: 'Review background-information limits', ar: 'راجع حدود معلومات الخلفية' }, route: 'services/background-verification' }]
   },
   {
     slug: 'why-choose-inaya',
@@ -203,7 +211,7 @@ export const trustSupportPages: TrustSupportPage[] = [
       {
         title: { en: 'Information we collect', ar: 'المعلومات التي نجمعها' },
         body: { en: 'INAYA receives information you choose to share by WhatsApp, phone, email or office consultation. The website enquiry forms prepare and check details locally; they do not send those details to INAYA. Do not enter sensitive documents in these forms.', ar: 'تتلقى عناية المعلومات التي تختار مشاركتها عبر واتساب أو الهاتف أو البريد الإلكتروني أو زيارة المكتب. تجهز نماذج الاستفسار في الموقع البيانات وتراجعها محلياً؛ ولا ترسلها إلى عناية. لا تدخل مستندات حساسة في هذه النماذج.' },
-        points: { en: ['Name, phone number and email address', 'Emirate, area and preferred contact method', 'Service type and household requirements', 'Documents or case details shared voluntarily', 'Messages related to support, replacement or booking'], ar: ['الاسم ورقم الهاتف والبريد الإلكتروني', 'الإمارة والمنطقة وطريقة التواصل المفضلة', 'نوع الخدمة واحتياجات المنزل', 'المستندات أو تفاصيل الحالة التي تشاركها طوعاً', 'رسائل الدعم أو الاستبدال أو الحجز'] }
+        points: { en: ['Name, phone number and optional email address shared through a contact channel', 'Emirate, area, service preference, household requirements and messages you share', 'Relevant documents or case details sent when needed', 'Support, replacement, booking and payment-related correspondence you provide', 'Website preparation fields also include preferred date or plan, nationality preference and applicant role or experience; checking them locally does not send them to INAYA'], ar: ['الاسم ورقم الهاتف والبريد الإلكتروني الاختياري المشارك عبر قناة التواصل', 'الإمارة والمنطقة وتفضيل الخدمة واحتياجات المنزل والرسائل التي تشاركها', 'المستندات ذات الصلة أو تفاصيل الحالة المرسلة عند الحاجة', 'مراسلات الدعم والاستبدال والحجز والمدفوعات التي تقدمها', 'تشمل حقول التجهيز في الموقع أيضاً التاريخ أو الباقة المفضلة وتفضيل الجنسية ودور المتقدم أو خبرته؛ ولا ترسل مراجعتها محلياً هذه البيانات إلى عناية'] }
       },
       {
         title: { en: 'How we use your information', ar: 'كيف نستخدم معلوماتك' },
@@ -224,7 +232,8 @@ export const trustSupportPages: TrustSupportPage[] = [
     faqs: [
       { question: { en: 'Does INAYA sell customer data?', ar: 'هل تبيع عناية بيانات العملاء؟' }, answer: { en: 'No. INAYA does not sell customer data.', ar: 'لا. لا تبيع عناية بيانات العملاء.' } },
       { question: { en: 'Why do you ask for service details?', ar: 'لماذا تطلبون تفاصيل الخدمة؟' }, answer: { en: 'Service details help the team understand the household requirement and provide accurate guidance.', ar: 'تساعد تفاصيل الخدمة الفريق على فهم احتياج المنزل وتقديم إرشاد دقيق.' } },
-      { question: { en: 'Can I contact INAYA about privacy?', ar: 'هل يمكنني التواصل مع عناية بخصوص الخصوصية؟' }, answer: { en: 'Yes. Contact info@inayadomestic.ae with your question or request.', ar: 'نعم. تواصل عبر info@inayadomestic.ae مع سؤالك أو طلبك.' } }
+      { question: { en: 'Can I contact INAYA about privacy?', ar: 'هل يمكنني التواصل مع عناية بخصوص الخصوصية؟' }, answer: { en: 'Yes. Contact info@inayadomestic.ae with your question or request.', ar: 'نعم. تواصل عبر info@inayadomestic.ae مع سؤالك أو طلبك.' } },
+      { question: { en: 'Does checking a website form send my information?', ar: 'هل ترسل مراجعة نموذج الموقع معلوماتي؟' }, answer: { en: 'No. Contact, booking and careers forms prepare and check details locally; they do not send an enquiry or upload documents. When you choose to contact INAYA through WhatsApp, email or another channel, the information you send is shared through that separate channel.', ar: 'لا. تجهز نماذج التواصل والحجز والوظائف البيانات وتراجعها محلياً؛ ولا ترسل استفساراً أو ترفع مستندات. عندما تختار التواصل مع عناية عبر واتساب أو البريد أو قناة أخرى، تتم مشاركة المعلومات التي ترسلها عبر تلك القناة المنفصلة.' } }
     ],
     ctaTitle: { en: 'Have a privacy question?', ar: 'هل لديك سؤال عن الخصوصية؟' },
     ctaText: { en: 'Contact INAYA and the team will review your privacy-related request.', ar: 'تواصل مع عناية وسيقوم الفريق بمراجعة طلبك المتعلق بالخصوصية.' }
@@ -253,21 +262,23 @@ export const trustSupportPages: TrustSupportPage[] = [
       {
         title: { en: 'Prices, payments and confirmation', ar: 'الأسعار والمدفوعات والتأكيد' },
         body: { en: 'Any prices, quotations, payments, deposits or government-related costs are explained according to the selected service and confirmed before final action where applicable.', ar: 'يتم شرح أي أسعار أو عروض أو مدفوعات أو دفعات مقدمة أو تكاليف حكومية حسب الخدمة المختارة وتأكيدها قبل الإجراء النهائي عند الحاجة.' },
-        points: { en: ['Prices can vary by service type and case', 'Official fees may be separate', 'Payment terms should be confirmed before proceeding', 'Receipts or confirmations should be kept'], ar: ['قد تختلف الأسعار حسب نوع الخدمة والحالة', 'قد تكون الرسوم الرسمية منفصلة', 'يجب تأكيد شروط الدفع قبل المتابعة', 'ينبغي الاحتفاظ بالإيصالات أو التأكيدات'] }
+        points: { en: ['Identify the package charge, worker wage, recruitment fee and visa-processing costs where applicable', 'Confirm which costs are included and any separately quoted amount without assuming an extra charge', 'Record payment timing, any deposit, the service period and renewal or notice terms before proceeding', 'Keep the written quotation, agreement and payment receipts'], ar: ['حدد رسوم الباقة وأجر العاملة ورسوم الاستقدام وتكاليف إجراءات التأشيرة عند انطباقها', 'أكد التكاليف المشمولة وأي مبلغ معروض منفصلاً دون افتراض رسم إضافي', 'سجل مواعيد الدفع وأي دفعة مقدمة ومدة الخدمة وشروط التجديد أو الإشعار قبل المتابعة', 'احتفظ بعرض السعر والاتفاق المكتوبين وإيصالات الدفع'] }
       },
       {
         title: { en: 'Changes, cancellation and support', ar: 'التغييرات والإلغاء والدعم' },
-        body: { en: 'Changes, cancellations, replacement requests and support issues are reviewed according to the confirmed service agreement, timing, availability and work already completed.', ar: 'تتم مراجعة التغييرات والإلغاء وطلبات الاستبدال وملاحظات الدعم حسب اتفاق الخدمة المؤكد والتوقيت والتوفر والعمل الذي تم إنجازه.' },
-        points: { en: ['Raise changes early', 'Replacement and refund terms vary by agreement', 'Support requests should include clear details', 'INAYA may refuse unsuitable or unlawful requests'], ar: ['رفع التغييرات مبكراً', 'شروط الاستبدال والاسترداد تختلف حسب الاتفاق', 'يجب أن تتضمن طلبات الدعم تفاصيل واضحة', 'قد ترفض عناية الطلبات غير المناسبة أو غير النظامية'] }
+        body: { en: 'Review the confirmed agreement and applicable law when requesting a change, cancellation, replacement or refund. Additional commercial benefits and statutory remedies are different; an internal review does not make a legally required remedy discretionary. Recruitment-fee rules do not automatically govern every monthly service charge.', ar: 'راجع الاتفاق المؤكد والقانون المنطبق عند طلب تغيير أو إلغاء أو استبدال أو استرداد. المزايا التجارية الإضافية تختلف عن الحقوق القانونية؛ ولا تجعل المراجعة الداخلية إجراءً ملزماً قانوناً اختيارياً. لا تحكم قواعد رسوم الاستقدام كل رسوم خدمة شهرية تلقائياً.' },
+        points: { en: ['Record changes and notice dates in writing', 'Use the refund policy for scenarios and statutory recruitment-fee conditions', 'Keep the original agreement, payment records and support correspondence', 'INAYA may refuse unsuitable or unlawful requests'], ar: ['وثق التغييرات وتواريخ الإشعار كتابةً', 'راجع سياسة الاسترداد للحالات وشروط رد رسوم الاستقدام القانونية', 'احتفظ بالاتفاق الأصلي وسجلات الدفع ومراسلات الدعم', 'قد ترفض عناية الطلبات غير المناسبة أو غير النظامية'] }
       }
     ],
     faqs: [
       { question: { en: 'Are website prices final?', ar: 'هل أسعار الموقع نهائية؟' }, answer: { en: 'Any price or quotation should be confirmed by the INAYA team before final booking.', ar: 'يجب تأكيد أي سعر أو عرض من فريق عناية قبل الحجز النهائي.' } },
-      { question: { en: 'Can INAYA change service terms?', ar: 'هل يمكن لعناية تغيير شروط الخدمة؟' }, answer: { en: 'Terms may be updated when needed. The applicable terms are explained before confirmation where relevant.', ar: 'قد يتم تحديث الشروط عند الحاجة. يتم شرح الشروط المطبقة قبل التأكيد عند الحاجة.' } },
+      { question: { en: 'Does a website update change my existing agreement?', ar: 'هل يغير تحديث الموقع اتفاقي القائم؟' }, answer: { en: 'Do not treat a website update as confirmation that your existing agreement has changed. Keep the terms agreed for your service and discuss any proposed change in writing, alongside applicable law.', ar: 'لا تعتبر تحديث الموقع تأكيداً لتغيير اتفاقك القائم. احتفظ بالشروط المتفق عليها لخدمتك وناقش أي تعديل مقترح كتابةً مع مراعاة القانون المنطبق.' } },
       { question: { en: 'What happens if I provide incorrect details?', ar: 'ماذا يحدث إذا قدمت تفاصيل غير صحيحة؟' }, answer: { en: 'Incorrect details can delay the process or affect availability, pricing or service suitability.', ar: 'المعلومات غير الصحيحة قد تؤخر الإجراء أو تؤثر على التوفر أو السعر أو ملاءمة الخدمة.' } }
     ],
     ctaTitle: { en: 'Need to clarify terms before booking?', ar: 'هل تحتاج توضيح الشروط قبل الحجز؟' },
-    ctaText: { en: 'Contact INAYA before confirmation so the team can explain the relevant service terms.', ar: 'تواصل مع عناية قبل التأكيد حتى يشرح الفريق شروط الخدمة المناسبة.' }
+    ctaText: { en: 'Contact INAYA before confirmation so the team can explain the relevant service terms.', ar: 'تواصل مع عناية قبل التأكيد حتى يشرح الفريق شروط الخدمة المناسبة.' },
+    links: [{ label: { en: 'Refund and replacement conditions', ar: 'شروط الاسترداد والاستبدال' }, route: 'refund-policy' }, { label: { en: 'Support and complaint channels', ar: 'وسائل الدعم والشكوى' }, route: 'support-process' }],
+    sources: [{ label: { en: 'UAE Government: domestic-worker contracts and responsibilities', ar: 'حكومة الإمارات: عقود العمالة المساعدة والمسؤوليات' }, url: { en: 'https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers', ar: 'https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers' } }]
   },
   {
     slug: 'refund-policy',
