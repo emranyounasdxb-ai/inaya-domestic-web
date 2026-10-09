@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import RouteSeo from '@/components/RouteSeo';
+import PublishedArticle from '@/components/PublishedArticle';
 import { domesticWorkerGuides, getDomesticWorkerGuide, guideAuthor, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { pageMetadata } from '@/lib/page-seo';
 import { siteConfig } from '@/lib/site-config';
@@ -26,6 +27,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
   const lang: GuideLanguage = locale === 'ar' ? 'ar' : 'en';
   const isArabic = lang === 'ar';
   const copy = guide[lang];
+  if (copy.body) return <PublishedArticle guide={guide} lang={lang} />;
   const route = `blog/${slug}`;
   const formatDate = (value: string) => new Intl.DateTimeFormat(isArabic ? 'ar-AE' : 'en-AE', {
     year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'

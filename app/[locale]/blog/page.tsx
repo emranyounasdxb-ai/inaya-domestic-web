@@ -41,7 +41,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
       <section className="container-x pb-16 sm:pb-20">
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
-          {domesticWorkerGuides.map((guide) => (
+          {[...domesticWorkerGuides].sort((a, b) => b.published.localeCompare(a.published)).map((guide) => (
             <article key={guide.slug} className="glass-panel rounded-[24px] transition hover:-translate-y-1 hover:border-accent-500/40">
               <Link href={`/${locale}/blog/${guide.slug}/`} className="flex min-h-[240px] flex-col rounded-[24px] p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-700">
                 <div aria-hidden="true" className="mb-5 h-24 rounded-[18px] bg-[radial-gradient(circle_at_30%_30%,rgba(191,164,106,0.25),transparent_34%),linear-gradient(135deg,rgba(7,22,74,0.08)_1px,transparent_1px)] bg-[length:100%_100%,28px_28px]" />
