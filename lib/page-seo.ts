@@ -8,6 +8,7 @@ import { getLocationServicePage } from './location-service-pages';
 import { getCountrySourcePage } from './country-source-pages';
 import { getTrustSupportPage } from './trust-support-pages';
 import { getDomesticWorkerGuide } from './domestic-worker-guides';
+import { getBlogImage } from './blog-images';
 
 type Localized = Record<Lang, string>;
 // Concise summaries of existing roles; individual duties and availability are confirmed per enquiry.
@@ -47,6 +48,7 @@ export type PageSeo = {
   faqs?: VisibleFaq[];
   service?: { name: string; description: string; area?: string };
   image?: string;
+  imageAlt?: string;
 };
 
 // Only metadata summaries: visible page content remains in its existing source.
@@ -119,11 +121,15 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   if (entry) return { name: entry.name[lang], title: entry.name[lang], description: entry.description[lang] };
 
   if (route.startsWith('blog/')) {
-    const guide = getDomesticWorkerGuide(route.slice('blog/'.length));
+    const slug = route.slice('blog/'.length);
+    const guide = getDomesticWorkerGuide(slug);
+    const image = getBlogImage(slug);
     if (guide) return {
       name: guide[lang].title,
       title: guide[lang].title,
-      description: guide[lang].description
+      description: guide[lang].description,
+      image: image?.src,
+      imageAlt: image?.alt[lang]
     };
   }
 
@@ -166,7 +172,7 @@ export function pageMetadata(locale: string, route: string): Metadata {
   const page = getPageSeo(locale, route);
   if (!page) return {};
   const title = /INAYA|عناية/i.test(page.title) ? page.title : `${page.title} | ${locale === 'ar' ? 'عناية' : 'INAYA'}`;
-  const images = page.image ? [{ url: `${siteConfig.url}${page.image}`, alt: page.name }] : undefined;
+  const images = page.image ? [{ url: `${siteConfig.url}${page.image}`, alt: page.imageAlt ?? page.name }] : undefined;
   return {
     title: { absolute: title }, description: page.description,
     alternates: localeAlternates(locale, route),
