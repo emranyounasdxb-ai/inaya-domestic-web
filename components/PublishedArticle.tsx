@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BlogImage from './BlogImage';
 import PageBreadcrumbs from './PageBreadcrumbs';
 import RouteSeo from './RouteSeo';
 import { articleBlocks, articleInline } from '@/lib/article-markdown';
@@ -38,6 +39,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
               <div><dt className="font-semibold">{isArabic ? 'تاريخ النشر' : 'Published'}</dt><dd><time dateTime={guide.published}>{formatDate(guide.published)}</time></dd></div>
               <div><dt className="font-semibold">{isArabic ? 'آخر تحديث' : 'Updated'}</dt><dd><time dateTime={guide.updated}>{formatDate(guide.updated)}</time></dd></div>
             </dl>
+            <BlogImage slug={guide.slug} locale={lang} hero className="mt-8 rounded-[24px] border border-primary-900/10 shadow-sm" />
           </div>
         </div>
       </section>
