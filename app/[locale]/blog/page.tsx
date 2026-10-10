@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import BlogImage from '@/components/BlogImage';
 import GuideContent from '@/components/GuideContent';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import RouteSeo from '@/components/RouteSeo';
@@ -44,7 +45,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           {[...domesticWorkerGuides].sort((a, b) => b.published.localeCompare(a.published)).map((guide) => (
             <article key={guide.slug} className="glass-panel rounded-[24px] transition hover:-translate-y-1 hover:border-accent-500/40">
               <Link href={`/${locale}/blog/${guide.slug}/`} className="flex min-h-[240px] flex-col rounded-[24px] p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-700">
-                <div aria-hidden="true" className="mb-5 h-24 rounded-[18px] bg-[radial-gradient(circle_at_30%_30%,rgba(191,164,106,0.25),transparent_34%),linear-gradient(135deg,rgba(7,22,74,0.08)_1px,transparent_1px)] bg-[length:100%_100%,28px_28px]" />
+                <BlogImage slug={guide.slug} locale={locale} className="mb-5 rounded-[18px]" />
                 <h2 className={`${isArabic ? 'font-arabic text-xl leading-snug' : 'font-heading text-2xl'} font-bold text-primary-900`}>{guide[isArabic ? 'ar' : 'en'].title}</h2>
                 <p className="mt-2 flex-1 text-sm leading-6 text-primary-900/80">{guide[isArabic ? 'ar' : 'en'].description}</p>
                 <span className="mt-5 text-sm font-bold text-primary-900">{copy.read}</span>
