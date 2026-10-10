@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import RouteSeo from '@/components/RouteSeo';
 import PublishedArticle from '@/components/PublishedArticle';
+import BlogImage from '@/components/BlogImage';
 import { publishedArticles } from '@/lib/published-article-content';
 import { domesticWorkerGuides, getDomesticWorkerGuide, guideAuthor, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { pageMetadata } from '@/lib/page-seo';
@@ -58,6 +59,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
               <div><dt className="font-semibold">{isArabic ? 'تاريخ النشر' : 'Published'}</dt><dd><time dateTime={guide.published}>{formatDate(guide.published)}</time></dd></div>
               <div><dt className="font-semibold">{isArabic ? 'آخر تحديث' : 'Updated'}</dt><dd><time dateTime={guide.updated}>{formatDate(guide.updated)}</time></dd></div>
             </dl>
+            <BlogImage slug={guide.slug} locale={lang} hero className="mt-8 rounded-[24px] border border-primary-900/10 shadow-sm" />
           </div>
         </div>
       </section>
