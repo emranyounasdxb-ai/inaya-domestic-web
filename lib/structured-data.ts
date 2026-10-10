@@ -57,6 +57,7 @@ export function pageStructuredData(locale: string, route: string) {
   if (guide) graph.push({
     '@type': 'Article', '@id': `${url}#article`, url,
     headline: page.name, description: page.description, inLanguage: locale,
+    ...(page.image ? { image: `${siteConfig.url}${page.image}` } : {}),
     mainEntityOfPage: { '@id': `${url}#webpage` },
     author: { '@type': 'Organization', name: guide.author?.[locale === 'ar' ? 'ar' : 'en'] ?? guideAuthor }, publisher: { '@id': organizationId },
     datePublished: guide.published, dateModified: guide.updated,
