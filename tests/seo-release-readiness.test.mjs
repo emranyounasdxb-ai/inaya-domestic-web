@@ -108,9 +108,7 @@ test('cPanel root uses a language-aware HTTP redirect and preserves proven FTP d
   assert.match(workflow, /lftp -u "\$CPANEL_FTP_USER","\$CPANEL_FTP_PASSWORD" "\$CPANEL_FTP_HOST" <<EOF/);
   assert.match(workflow, /set ftp:ssl-allow no/);
   assert.match(workflow, /mirror --reverse --verbose --parallel=2/);
-  assert.match(workflow, /\$RUNNER_TEMP\/inaya-ftp-selected\/" "\$CPANEL_FTP_SERVER_DIR"/);
-  assert.match(workflow, /--overwrite --transfer-all --ignore-time/);
-  assert.match(workflow, /include-glob-from="\$RUNNER_TEMP\/inaya-ftp-current-paths\.txt"/);
+  assert.match(workflow, /\.\/out\/ "\$CPANEL_FTP_SERVER_DIR"/);
   assert.doesNotMatch(workflow, /set ftp:ssl-(?:force|protect-data) yes/);
   assert.doesNotMatch(workflow, /set ssl:verify-certificate yes/);
 });
