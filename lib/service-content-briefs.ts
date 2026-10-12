@@ -31,8 +31,14 @@ export const serviceContentBriefs: Record<string, Brief> = {
     prepare: { en: 'State the preferred hours or visits and the tasks that matter most. Compare a monthly contract if the same work repeats regularly, without assuming either option is available on a particular date.', ar: 'حدد الساعات أو الزيارات المفضلة والمهام الأهم. قارن العقد الشهري إذا كان العمل نفسه يتكرر بانتظام، دون افتراض توفر أي خيار في تاريخ معين.' }, related: ['monthly-maid-contract', 'live-out-maid', 'on-demand-domestic-help']
   },
   'monthly-maid-contract': {
-    overview: { en: 'Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.', ar: 'تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.' },
-    prepare: { en: 'Describe your household needs and the arrangement you want to discuss. Review the proposed duties, schedule, costs and terms in writing before selecting a monthly package.', ar: 'صف احتياجات المنزل والترتيب المطلوب مناقشته. راجع المهام والجدول والتكاليف والشروط المقترحة كتابةً قبل اختيار باقة شهرية.' }, related: ['part-time-maid', 'housekeeping', 'full-time-maid']
+    overview: {
+  "en": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.",
+  "ar": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة."
+},
+    prepare: {
+  "en": "List the individual duties, working hours/rest, household location, accommodation/meals and preferred start. Review the written role, price breakdown, billing date, monthly cancellation terms and eligible replacement coordination before confirmation.",
+  "ar": "حدد المهام الفردية وساعات العمل والراحة وموقع المنزل والسكن والطعام والبدء المفضل. راجع الدور المكتوب وتفصيل السعر وتاريخ الفوترة وشروط الإلغاء الشهري وتنسيق الاستبدال المؤهل قبل التأكيد."
+}, related: ['part-time-maid', 'housekeeping', 'full-time-maid']
   },
   'on-demand-domestic-help': {
     overview: { en: 'On-demand enquiries cover a particular household situation, such as guest preparation, moving-day tasks or short-term home support. Describe the occasion and task scope first; an urgent request is not confirmation of immediate availability.', ar: 'تغطي طلبات المساعدة عند الطلب حالة منزلية محددة، مثل تجهيز الضيوف أو مهام يوم الانتقال أو الدعم قصير المدى. وضح المناسبة ونطاق المهام أولاً؛ فالطلب العاجل لا يعني تأكيد التوفر الفوري.' },

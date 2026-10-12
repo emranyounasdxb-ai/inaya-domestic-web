@@ -4,6 +4,7 @@ const { execFileSync } = require('node:child_process');
 const { readFileSync } = require('node:fs');
 const test = require('node:test');
 const { assertFormPreserved } = require('./form-accessibility-preservation.cjs');
+const { approvedPackageMessages } = require('./managed-package-expectations.cjs');
 const base = 'f45a93dc0b8274ad6a792420cfa3e4bcbb828103';
 const current = file => readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
 const previous = file => execFileSync('git', ['show', `${base}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
@@ -38,7 +39,7 @@ test('messages and navigation permit only reviewed localized copy changes', () =
     const before = JSON.parse(previous(file));
     before.careers.submit = locale === 'ar' ? 'مراجعة بيانات استفسار العمل' : 'Check Career Enquiry Details';
     before.nav.bookNow = locale === 'ar' ? 'جهز استفسارك' : 'Prepare enquiry';
-    assert.deepEqual(JSON.parse(current(file)), before);
+    assert.deepEqual(JSON.parse(current(file)), approvedPackageMessages(locale, before));
   }
   const file = 'components/Navbar.tsx';
   let expected = replaceOnce(previous(file), 'aria-label="Menu"', "aria-label={locale === 'ar' ? 'القائمة' : 'Menu'}");

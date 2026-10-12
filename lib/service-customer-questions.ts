@@ -53,13 +53,13 @@ export const serviceCustomerQuestions: Record<string, Record<Lang, Pair[]>> = {
   'maid-replacement': {
     en: [
       { title: 'How do I explain a replacement concern?', text: 'Describe the agreed duties and the difference observed, using dates and specific examples. Separate a changed preference from failure to meet the agreement, and include relevant profile, contract and payment records with the remedy requested.' },
-      { title: 'Is replacement only at the provider’s discretion?', text: 'Applicable statutory remedies remain in force. Recruitment-contract failures and specified recruitment-fee cases have legal conditions, while any extra package replacement benefit must be stated in the agreement. Do not assume a free or unlimited replacement for every service.' },
-      { title: 'What if a replacement is unavailable?', text: 'Request the alternative remedy required by the applicable law and agreement, with the basis, amount or next action in writing. Availability alone does not remove a statutory refund obligation. Review the main refund policy and use the support process for unresolved concerns.' }
+      { title: 'Is replacement only at the provider’s discretion?', text: "Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination. The monthly charge covers eligible review, matching coordination and administration, while statutory remedies remain available." },
+      { title: 'What if a replacement is unavailable?', text: "If a suitable replacement is unavailable, discuss available alternatives and effective cancellation; unused prepaid service is handled under the monthly refund terms. An unavailable replacement does not remove an applicable statutory remedy." }
     ],
     ar: [
       { title: 'كيف أوضح ملاحظة تستدعي الاستبدال؟', text: 'صف المهام المتفق عليها والفرق الذي لاحظته مع تواريخ وأمثلة محددة. ميز تغيير التفضيلات عن عدم الوفاء بالاتفاق، وأرفق سجلات الملف والعقد والمدفوعات ذات الصلة مع الإجراء المطلوب.' },
-      { title: 'هل الاستبدال متروك لاختيار مقدم الخدمة وحده؟', text: 'تبقى الحقوق القانونية المنطبقة سارية. للإخلال بعقد الاستقدام وحالات رد رسوم الاستقدام المحددة شروط قانونية، بينما يجب بيان أي ميزة إضافية للاستبدال ضمن الباقة في الاتفاق. لا تفترض استبدالاً مجانياً أو غير محدود لكل خدمة.' },
-      { title: 'ماذا لو لم يتوفر بديل؟', text: 'اطلب الإجراء البديل المستحق وفق القانون والاتفاق المنطبقين، مع الأساس والمبلغ أو الإجراء التالي كتابةً. عدم التوفر وحده لا يلغي التزاماً قانونياً برد المبالغ. راجع سياسة الاسترداد الرئيسية وإجراءات الدعم للملاحظات غير المحسومة.' }
+      { title: 'هل الاستبدال متروك لاختيار مقدم الخدمة وحده؟', text: "تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور. تغطي الرسوم الشهرية المراجعة المؤهلة وتنسيق المطابقة وإدارة الإجراءات، مع بقاء سبل الإنصاف القانونية متاحة." },
+      { title: 'ماذا لو لم يتوفر بديل؟', text: "إذا لم يتوفر بديل مناسب، ناقش البدائل المتاحة وسريان الإلغاء؛ وتعالج الخدمة المدفوعة وغير المستخدمة وفق شروط الاسترداد الشهرية. عدم توفر بديل لا يلغي سبيلاً قانونياً منطبقاً للإنصاف." }
     ]
   }
 };

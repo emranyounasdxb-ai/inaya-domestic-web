@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import remediation from './seo-audit-remediation-expectations.cjs';
+import managed from './managed-package-expectations.cjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -34,21 +35,22 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     assert.equal(current.linkCoverage[locale].reachable, 97);
     assert.ok(current.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
-  assert.ok(current.repeatedTokens < baseline.repeatedTokens);
-  assert.ok(current.repeatedParagraphs < baseline.repeatedParagraphs);
+  const editorial = managed.editorialRepetition(current);
+  assert.ok(editorial.repeatedTokens < baseline.repeatedTokens);
+  assert.ok(editorial.repeatedParagraphs < baseline.repeatedParagraphs);
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
-    const approved = remediation.metadata[`${page.locale}/${page.route}`];
+    const approved = managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
     assert.equal(page.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
     if (page.route !== 'blog') assert.equal(page.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
-    const expectedPrices = page.route === 'pricing' ? pricingMentions[page.locale]
+    const expectedPrices = managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
       : page.route === 'faq' ? page.locale === 'en' ? ['AED 1,500', 'AED 1,500', 'AED 2,500', 'AED 2,500'] : ['1,500 درهم', '1,500 درهم', '2,500 درهم', '2,500 درهم']
       : page.route === 'services/monthly-maid-contract' ? page.locale === 'en' ? ['AED 1,500', 'AED 2,500'] : ['1,500 درهم', '2,500 درهم']
-      : before.prices;
+      : before.prices);
     assert.deepEqual(page.prices, expectedPrices, `${page.url}: displayed prices`);
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const body = file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');

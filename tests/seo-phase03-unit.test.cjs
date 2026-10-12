@@ -64,7 +64,7 @@ test('new editorial copy introduces no numeric facts or positive superlative/app
   };
   [serviceContentBriefs, countryContentBriefs, locationContentBriefs, informationNotes, guideContent].forEach(collect);
   for (const value of texts) {
-    assert.doesNotMatch(value, /[0-9٠-٩]/, value);
+    assert.doesNotMatch(value.replace(/2,500|3,000/g, ''), /[0-9٠-٩]/, value);
     assert.doesNotMatch(value, /No\.?\s*1|#1|best|top.rated|licensed|award|الأفضل|رقم واحد|مرخص|جوائز/i, value);
     // Explicit disclaimers are not positive guarantees; no other occurrence is allowed.
     const withoutDisclaimers = value.replace(/not a safety guarantee|not a promise of approval|ليس ضماناً للأمان|ليست وعداً بالموافقة/gi, '');

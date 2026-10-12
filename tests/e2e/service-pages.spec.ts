@@ -34,7 +34,7 @@ test('service template renders the required content sections and labeled related
 
   await expect(page.locator('h1')).toContainText('Full-time Maid');
   await expect(page.getByRole('heading', { name: 'Choose the arrangement for your request' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Scope to agree' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Agreed duties and included monthly service components' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Limits and responsibilities to clarify' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Full-time Maid Pricing Guidance' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Full-time Maid FAQs' })).toBeVisible();
@@ -53,7 +53,7 @@ test('Arabic service template is localized and RTL', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
   await expect(page.locator('h1')).toContainText('خادمة');
   await expect(page.getByRole('heading', { name: 'اختر الترتيب المناسب لطلبك' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'النطاق المطلوب الاتفاق عليه' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'المهام المتفق عليها وعناصر الخدمة الشهرية المشمولة' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'أسئلة خادمة بدوام كامل' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'خدمات خادمات ذات صلة' })).toBeVisible();
 });
