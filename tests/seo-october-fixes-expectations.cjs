@@ -103,7 +103,17 @@ function approvedSeoFixes(file, source) {
     assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed source anchor`);
     source = source.replace(before, after);
   }
-  return approvedRemediation(file, source);
+  source = approvedRemediation(file, source);
+  if (file === 'app/[locale]/layout.tsx') {
+    for (const [before, after] of [
+      ["import Measurement from '@/components/Measurement';\nimport sitemap from '@/app/sitemap';\n", "import GoogleAnalyticsConsent from '@/components/GoogleAnalyticsConsent';\n"],
+      ["          {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}\n", "          <GoogleAnalyticsConsent />\n"]
+    ]) {
+      assert.equal(source.split(before).length, 2, `${file}: exactly one GA4 integration anchor`);
+      source = source.replace(before, after);
+    }
+  }
+  return source;
 }
 
 module.exports = { approvedSeoFixes };

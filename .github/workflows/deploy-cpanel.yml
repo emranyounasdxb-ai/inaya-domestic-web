@@ -6,6 +6,15 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+
+# A baseline is reliable only when deployments cannot overlap.
+concurrency:
+  group: inaya-cpanel-ftp
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -248,12 +257,98 @@ jobs:
           </html>
           EOF
 
+      - name: Find last successful deployment baseline
+        id: baseline
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // A rerun may follow a partial transfer from this same run ID.
+            if (Number(process.env.GITHUB_RUN_ATTEMPT) > 1) {
+              core.info('Rerun: compare current deployed files to repair any partial transfer.');
+              return;
+            }
+            try {
+              const repo = context.repo;
+              const { data: current } = await github.rest.actions.getWorkflowRun({ ...repo, run_id: context.runId });
+              const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+                ...repo, workflow_id: current.workflow_id, per_page: 100,
+              });
+              const previous = runs
+                // Completion/update order also accounts for reruns of older run IDs.
+                .filter(run => run.id !== context.runId && run.status !== 'queued')
+                .sort((a, b) => Date.parse(b.updated_at) - Date.parse(a.updated_at) || b.run_number - a.run_number)[0];
+              // Do not use an older success after a failed/cancelled attempt: FTP may be partially changed.
+              if (!previous || previous.status !== 'completed' || previous.conclusion !== 'success') {
+                core.info('No reliable successful baseline after the latest deployment attempt; compare current deployed files.');
+                return;
+              }
+              const name = `inaya-cpanel-baseline-${previous.id}-${previous.run_attempt}`;
+              const artifacts = await github.paginate(github.rest.actions.listWorkflowRunArtifacts, {
+                ...repo, run_id: previous.id, per_page: 100,
+              });
+              if (!artifacts.some(artifact => artifact.name === name && !artifact.expired)) {
+                core.info('Latest successful deployment has no retained baseline; compare current deployed files.');
+                return;
+              }
+              core.setOutput('run_id', String(previous.id));
+              core.setOutput('artifact_name', name);
+              core.info(`Reuse the final export from successful deployment run ${previous.id}.`);
+            } catch {
+              core.warning('Baseline discovery unavailable; compare current deployed files.');
+            }
+
+      - name: Restore successful deployment baseline
+        id: restore-baseline
+        if: steps.baseline.outputs.run_id != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.baseline.outputs.artifact_name }}
+          run-id: ${{ steps.baseline.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/inaya-ftp-restored-baseline
+
       - name: Install FTP client
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
 
+      - name: Compare against current deployed files when no retained baseline exists
+        if: steps.restore-baseline.outcome != 'success'
+        env:
+          CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
+          CPANEL_FTP_USER: ${{ secrets.CPANEL_FTP_USER }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_SERVER_DIR: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
+        run: |
+          node .github/scripts/cpanel-incremental.mjs include-paths ./out "$RUNNER_TEMP/inaya-ftp-current-paths.txt"
+          lftp -u "$CPANEL_FTP_USER","$CPANEL_FTP_PASSWORD" "$CPANEL_FTP_HOST" <<EOF
+          set cmd:fail-exit yes
+          set ftp:ssl-allow no
+          set ftp:list-options -a
+          set net:max-retries 3
+          set net:timeout 30
+          mirror --verbose --parallel=2 --recursion=always \
+            --include-glob-from="$RUNNER_TEMP/inaya-ftp-current-paths.txt" \
+            --exclude-glob .well-known \
+            --exclude-glob .well-known/** \
+            --exclude-glob .ftp-deploy-sync-state.json \
+            "$CPANEL_FTP_SERVER_DIR" "$RUNNER_TEMP/inaya-ftp-current-remote"
+          bye
+          EOF
+          node .github/scripts/cpanel-incremental.mjs remote-snapshot \
+            "$RUNNER_TEMP/inaya-ftp-current-remote" "$RUNNER_TEMP/inaya-ftp-restored-baseline"
+
+      - name: Select new and changed exported files
+        id: selection
+        env:
+          BASELINE_RESTORED: 'true'
+        run: |
+          node .github/scripts/cpanel-incremental.mjs compare \
+            ./out "$RUNNER_TEMP/inaya-ftp-restored-baseline" "$RUNNER_TEMP/inaya-ftp-selected"
+
       - name: Deploy to cPanel
+        if: steps.selection.outputs.selected_files != '0'
         env:
           CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
           CPANEL_FTP_USER: ${{ secrets.CPANEL_FTP_USER }}
@@ -261,15 +356,31 @@ jobs:
           CPANEL_FTP_SERVER_DIR: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
         run: |
           lftp -u "$CPANEL_FTP_USER","$CPANEL_FTP_PASSWORD" "$CPANEL_FTP_HOST" <<EOF
+          set cmd:fail-exit yes
           set ftp:ssl-allow no
           set ftp:list-options -a
           set net:max-retries 3
           set net:timeout 30
           set mirror:parallel-directories true
-          mirror --reverse --verbose --parallel=2 \
+          mirror --reverse --verbose --parallel=2 --overwrite --transfer-all --ignore-time --recursion=always \
             --exclude-glob .well-known \
             --exclude-glob .well-known/** \
             --exclude-glob .ftp-deploy-sync-state.json \
-            ./out/ "$CPANEL_FTP_SERVER_DIR"
+            "$RUNNER_TEMP/inaya-ftp-selected/" "$CPANEL_FTP_SERVER_DIR"
           bye
           EOF
+
+      # These steps run only after a successful transfer (or an unchanged export).
+      # The next run also requires this entire workflow to have completed successfully.
+      - name: Prepare successful deployment baseline
+        run: |
+          node .github/scripts/cpanel-incremental.mjs snapshot ./out "$RUNNER_TEMP/inaya-ftp-next-baseline"
+
+      - name: Save successful deployment baseline
+        uses: actions/upload-artifact@v4
+        with:
+          name: inaya-cpanel-baseline-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/inaya-ftp-next-baseline/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
