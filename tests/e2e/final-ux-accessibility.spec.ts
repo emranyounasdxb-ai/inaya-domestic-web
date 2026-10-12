@@ -49,7 +49,8 @@ for (const locale of ['en', 'ar'] as const) {
         })).toBe(true);
         await expect(form).toHaveCount(0);
         expect(outbound).toEqual([]);
-        expect(await page.evaluate(() => typeof window.inayaMeasurementConsent)).toBe('undefined');
+        await expect.poll(() => page.evaluate(() => typeof window.inayaMeasurementConsent)).toBe('function');
+        expect(await page.evaluate(() => window['ga-disable-G-986STCSR37'])).toBe(true);
       });
     }
   }
