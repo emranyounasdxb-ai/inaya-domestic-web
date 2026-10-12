@@ -1,3 +1,4 @@
+import { packageSummary, packageSections } from './package-content';
 export type Lang = 'en' | 'ar';
 
 type Localized = Record<Lang, string>;
@@ -42,33 +43,7 @@ export const trustSupportPages: TrustSupportPage[] = [
     metaDescription: { en: 'Understand the documents usually needed for maid services, recruitment, sponsorship transfer, maid visa support and domestic worker processing in the UAE.', ar: 'تعرف على المستندات المطلوبة عادة لخدمات الخادمات والتوظيف ونقل الكفالة وتأشيرة الخادمة وإجراءات العمالة المنزلية في الإمارات.' },
     lead: { en: 'This guide helps UAE families prepare the right information before requesting maid, nanny, cook, caregiver, recruitment or maid visa assistance from INAYA.', ar: 'يساعد هذا الدليل الأسر في الإمارات على تجهيز المعلومات المناسبة قبل طلب خادمة أو مربية أو طباخ أو مقدم رعاية أو توظيف أو مساعدة تأشيرة من عناية.' },
     highlights: { en: ['Clear checklist before consultation', 'Useful for maid visa and recruitment enquiries', 'English and Arabic family guidance', 'Document needs confirmed by case'], ar: ['قائمة واضحة قبل الاستشارة', 'مفيدة لطلبات التأشيرة والتوظيف', 'إرشاد للأسرة بالعربية والإنجليزية', 'يتم تأكيد المستندات حسب الحالة'] },
-    sections: [
-      {
-        title: { en: 'Basic information to prepare', ar: 'المعلومات الأساسية التي يجب تجهيزها' },
-        body: { en: 'Before INAYA can guide your request accurately, the team needs clear family and service details. These details help avoid delays and make the consultation more useful.', ar: 'قبل أن تتمكن عناية من إرشاد طلبك بدقة، يحتاج الفريق إلى تفاصيل واضحة عن الأسرة ونوع الخدمة. تساعد هذه التفاصيل على تقليل التأخير وجعل الاستشارة أكثر فائدة.' },
-        points: { en: ['Full name and mobile number', 'Emirate and residential area', 'Required service type and preferred start date', 'Live-in, live-out, part-time or monthly requirement', 'Family size and main household duties'], ar: ['الاسم الكامل ورقم الهاتف', 'الإمارة والمنطقة السكنية', 'نوع الخدمة المطلوبة وتاريخ البدء المفضل', 'مقيمة أو غير مقيمة أو بدوام جزئي أو شهرية', 'عدد أفراد الأسرة والمهام المنزلية الأساسية'] }
-      },
-      {
-        title: { en: 'Documents for maid visa or sponsorship guidance', ar: 'مستندات إرشاد تأشيرة الخادمة أو الكفالة' },
-        body: { en: 'Maid visa and sponsorship-related requirements can vary by case, emirate and selected service path. INAYA will review your case before confirming the exact checklist.', ar: 'قد تختلف متطلبات تأشيرة الخادمة والكفالة حسب الحالة والإمارة ومسار الخدمة المختار. تراجع عناية حالتك قبل تأكيد القائمة الدقيقة.' },
-        points: { en: ['Sponsor identity and contact details', 'Residence address and emirate', 'Current worker document status where applicable', 'Passport and visa-related details where applicable', 'Any previous service agreement or transfer information'], ar: ['بيانات هوية الكفيل ومعلومات التواصل', 'عنوان السكن والإمارة', 'حالة مستندات العاملة الحالية إن وجدت', 'تفاصيل الجواز والتأشيرة إن وجدت', 'أي اتفاق خدمة سابق أو معلومات نقل الكفالة'] }
-      },
-      {
-        title: { en: 'Documents for recruitment and profile matching', ar: 'مستندات ومعلومات التوظيف ومطابقة الملفات' },
-        body: { en: 'For recruitment or profile comparison, the most important step is to define the role clearly. Nationality preference can be shared, but the final match should depend on the individual profile.', ar: 'في التوظيف أو مقارنة الملفات، أهم خطوة هي تحديد الدور بوضوح. يمكن مشاركة تفضيل الجنسية، لكن المطابقة النهائية يجب أن تعتمد على الملف الفردي.' },
-        points: { en: ['Preferred nationality or source country', 'Experience required in cleaning, cooking, childcare or care support', 'Language preference', 'Expected duties and working arrangement', 'Timing, accommodation and family routine notes'], ar: ['الجنسية أو دولة المصدر المفضلة', 'الخبرة المطلوبة في التنظيف أو الطبخ أو رعاية الأطفال أو الرعاية', 'تفضيل اللغة', 'المهام المتوقعة وترتيب العمل', 'ملاحظات التوقيت والإقامة وروتين الأسرة'] }
-      },
-      {
-        title: { en: 'Important note about final requirements', ar: 'ملاحظة مهمة حول المتطلبات النهائية' },
-        body: { en: 'This page is a preparation guide, not a final legal checklist. INAYA confirms the exact requirements after reviewing the service type, availability, profile, documents and current UAE process.', ar: 'هذه الصفحة دليل تجهيز وليست قائمة قانونية نهائية. تؤكد عناية المتطلبات الدقيقة بعد مراجعة نوع الخدمة والتوفر والملف والمستندات والإجراء الحالي في الإمارات.' },
-        points: { en: ['Final checklist is confirmed before action', 'Government or third-party requirements may change', 'Incomplete details can delay the process', 'Families should keep original documents ready when needed'], ar: ['يتم تأكيد القائمة النهائية قبل أي إجراء', 'قد تتغير متطلبات الجهات الحكومية أو الخارجية', 'نقص التفاصيل قد يؤخر الإجراء', 'ينبغي إبقاء المستندات الأصلية جاهزة عند الحاجة'] }
-      },
-      {
-        title: { en: 'Separate household details from worker records', ar: 'افصل معلومات المنزل عن سجلات العاملة' },
-        body: { en: 'An initial household enquiry needs a role, location, duties and preferred schedule, not a full set of identity documents. For profile review or a formal application, identify the document, the person it concerns, its purpose and who needs to receive it. A profile note is not proof that a reference, qualification or official check has been verified.', ar: 'يحتاج الاستفسار المنزلي الأولي إلى الدور والموقع والمهام والجدول المفضل، وليس مجموعة كاملة من وثائق الهوية. ولمراجعة ملف أو معاملة رسمية، حدد المستند وصاحبه والغرض منه والجهة التي تحتاج استلامه. ملاحظة الملف ليست دليلاً على التحقق من مرجع أو مؤهل أو فحص رسمي.' },
-        points: { en: ['Customer or employer records: confirm the identity and agreement documents for the selected process', 'Worker records: check the name, document status and relevant experience evidence available for review', 'Request the checklist for the exact official service and employer category', 'Check spelling, expiry dates and consistency before an application', 'Ask before sending sensitive copies; the website forms do not upload documents'], ar: ['سجلات العميل أو صاحب العمل: أكد وثائق الهوية والاتفاق المطلوبة للإجراء المختار', 'سجلات العاملة: راجع الاسم وحالة المستندات وإثبات الخبرة ذي الصلة المتاح للمراجعة', 'اطلب قائمة الخدمة الرسمية المحددة وفئة صاحب العمل', 'راجع كتابة الأسماء وتواريخ الانتهاء وتطابق البيانات قبل تقديم الطلب', 'اسأل قبل إرسال نسخ حساسة؛ فنماذج الموقع لا ترفع المستندات'] }
-      }
-    ],
+    sections: [...[{"title":{"en":"Basic information to prepare","ar":"المعلومات الأساسية التي يجب تجهيزها"},"body":{"en":"Before INAYA can guide your request accurately, the team needs clear family and service details. These details help avoid delays and make the consultation more useful.","ar":"قبل أن تتمكن عناية من إرشاد طلبك بدقة، يحتاج الفريق إلى تفاصيل واضحة عن الأسرة ونوع الخدمة. تساعد هذه التفاصيل على تقليل التأخير وجعل الاستشارة أكثر فائدة."},"points":{"en":["Full name and mobile number","Emirate and residential area","Required service type and preferred start date","Live-in, live-out, part-time or monthly requirement","Family size and main household duties"],"ar":["الاسم الكامل ورقم الهاتف","الإمارة والمنطقة السكنية","نوع الخدمة المطلوبة وتاريخ البدء المفضل","مقيمة أو غير مقيمة أو بدوام جزئي أو شهرية","عدد أفراد الأسرة والمهام المنزلية الأساسية"]}},{"title":{"en":"Documents for maid visa or sponsorship guidance","ar":"مستندات إرشاد تأشيرة الخادمة أو الكفالة"},"body":{"en":"Maid visa and sponsorship-related requirements can vary by case, emirate and selected service path. INAYA will review your case before confirming the exact checklist.","ar":"قد تختلف متطلبات تأشيرة الخادمة والكفالة حسب الحالة والإمارة ومسار الخدمة المختار. تراجع عناية حالتك قبل تأكيد القائمة الدقيقة."},"points":{"en":["Sponsor identity and contact details","Residence address and emirate","Current worker document status where applicable","Passport and visa-related details where applicable","Any previous service agreement or transfer information"],"ar":["بيانات هوية الكفيل ومعلومات التواصل","عنوان السكن والإمارة","حالة مستندات العاملة الحالية إن وجدت","تفاصيل الجواز والتأشيرة إن وجدت","أي اتفاق خدمة سابق أو معلومات نقل الكفالة"]}},{"title":{"en":"Documents for recruitment and profile matching","ar":"مستندات ومعلومات التوظيف ومطابقة الملفات"},"body":{"en":"For recruitment or profile comparison, the most important step is to define the role clearly. Nationality preference can be shared, but the final match should depend on the individual profile.","ar":"في التوظيف أو مقارنة الملفات، أهم خطوة هي تحديد الدور بوضوح. يمكن مشاركة تفضيل الجنسية، لكن المطابقة النهائية يجب أن تعتمد على الملف الفردي."},"points":{"en":["Preferred nationality or source country","Experience required in cleaning, cooking, childcare or care support","Language preference","Expected duties and working arrangement","Timing, accommodation and family routine notes"],"ar":["الجنسية أو دولة المصدر المفضلة","الخبرة المطلوبة في التنظيف أو الطبخ أو رعاية الأطفال أو الرعاية","تفضيل اللغة","المهام المتوقعة وترتيب العمل","ملاحظات التوقيت والإقامة وروتين الأسرة"]}},{"title":{"en":"Important note about final requirements","ar":"ملاحظة مهمة حول المتطلبات النهائية"},"body":{"en":"This page is a preparation guide, not a final legal checklist. INAYA confirms the exact requirements after reviewing the service type, availability, profile, documents and current UAE process.","ar":"هذه الصفحة دليل تجهيز وليست قائمة قانونية نهائية. تؤكد عناية المتطلبات الدقيقة بعد مراجعة نوع الخدمة والتوفر والملف والمستندات والإجراء الحالي في الإمارات."},"points":{"en":["Final checklist is confirmed before action","Government or third-party requirements may change","Incomplete details can delay the process","Families should keep original documents ready when needed"],"ar":["يتم تأكيد القائمة النهائية قبل أي إجراء","قد تتغير متطلبات الجهات الحكومية أو الخارجية","نقص التفاصيل قد يؤخر الإجراء","ينبغي إبقاء المستندات الأصلية جاهزة عند الحاجة"]}},{"title":{"en":"Separate household details from worker records","ar":"افصل معلومات المنزل عن سجلات العاملة"},"body":{"en":"An initial household enquiry needs a role, location, duties and preferred schedule, not a full set of identity documents. For profile review or a formal application, identify the document, the person it concerns, its purpose and who needs to receive it. A profile note is not proof that a reference, qualification or official check has been verified.","ar":"يحتاج الاستفسار المنزلي الأولي إلى الدور والموقع والمهام والجدول المفضل، وليس مجموعة كاملة من وثائق الهوية. ولمراجعة ملف أو معاملة رسمية، حدد المستند وصاحبه والغرض منه والجهة التي تحتاج استلامه. ملاحظة الملف ليست دليلاً على التحقق من مرجع أو مؤهل أو فحص رسمي."},"points":{"en":["Customer or employer records: confirm the identity and agreement documents for the selected process","Worker records: check the name, document status and relevant experience evidence available for review","Request the checklist for the exact official service and employer category","Check spelling, expiry dates and consistency before an application","Ask before sending sensitive copies; the website forms do not upload documents"],"ar":["سجلات العميل أو صاحب العمل: أكد وثائق الهوية والاتفاق المطلوبة للإجراء المختار","سجلات العاملة: راجع الاسم وحالة المستندات وإثبات الخبرة ذي الصلة المتاح للمراجعة","اطلب قائمة الخدمة الرسمية المحددة وفئة صاحب العمل","راجع كتابة الأسماء وتواريخ الانتهاء وتطابق البيانات قبل تقديم الطلب","اسأل قبل إرسال نسخ حساسة؛ فنماذج الموقع لا ترفع المستندات"]}}], packageSections.responsibilities],
     faqs: [
       { question: { en: 'Do I need all documents before contacting INAYA?', ar: 'هل يجب تجهيز كل المستندات قبل التواصل مع عناية؟' }, answer: { en: 'No. You can contact INAYA first, and the team will explain which details are needed for your specific service.', ar: 'لا. يمكنك التواصل مع عناية أولاً، وسيشرح الفريق التفاصيل المطلوبة حسب نوع خدمتك.' } },
       { question: { en: 'Are requirements the same for every maid service?', ar: 'هل المتطلبات نفسها لكل خدمات الخادمات؟' }, answer: { en: 'No. Requirements differ between live-in maid, live-out maid, recruitment, visa assistance and sponsorship transfer.', ar: 'لا. تختلف المتطلبات بين الخادمة المقيمة وغير المقيمة والتوظيف ومساعدة التأشيرة ونقل الكفالة.' } },
@@ -85,30 +60,22 @@ export const trustSupportPages: TrustSupportPage[] = [
     title: { en: 'Why Choose INAYA Domestic Workers in UAE', ar: 'لماذا تختار عناية للعمالة المنزلية في الإمارات' },
     metaTitle: { en: 'INAYA Domestic Workers Service Approach', ar: 'نهج خدمات عناية للعمالة المنزلية' },
     metaDescription: { en: 'Learn why UAE families choose INAYA for maid services, nannies, cooks, caregivers, recruitment, source country guidance and maid visa support.', ar: 'تعرف لماذا تختار الأسر في الإمارات عناية لخدمات الخادمات والمربيات والطهاة والرعاية والتوظيف ودول المصدر وتأشيرة الخادمة.' },
-    lead: { en: 'INAYA focuses on clear communication, profile-first matching, organized follow-up and domestic worker service guidance across the UAE.', ar: 'تركز عناية على التواصل الواضح ومطابقة الملفات أولاً والمتابعة المنظمة وإرشاد خدمات العمالة المنزلية في الإمارات.' },
-    highlights: { en: ['UAE family-focused consultation', 'Profile-first selection approach', 'Source country and service guidance', 'Clear follow-up before confirmation'], ar: ['استشارة موجهة للأسر في الإمارات', 'اختيار يعتمد على الملف الفردي', 'إرشاد دول المصدر والخدمات', 'متابعة واضحة قبل التأكيد'] },
-    sections: [
-      {
-        title: { en: 'Family-first service guidance', ar: 'إرشاد خدمة يركز على الأسرة' },
-        body: { en: 'INAYA starts by understanding the home, family routine, children, elderly care needs, cooking preferences, accommodation arrangement and preferred timing before recommending the next step.', ar: 'تبدأ عناية بفهم المنزل وروتين الأسرة والأطفال واحتياجات رعاية كبار السن وتفضيلات الطبخ وترتيب الإقامة والتوقيت قبل ترشيح الخطوة التالية.' },
-        points: { en: ['Requirement review before recommendation', 'Service type explained clearly', 'Timing and duty expectations discussed', 'Support for villas, apartments and family homes'], ar: ['مراجعة الاحتياج قبل الترشيح', 'شرح نوع الخدمة بوضوح', 'مناقشة التوقيت والمهام المتوقعة', 'دعم للفلل والشقق والمنازل العائلية'] }
-      },
-      {
-        title: { en: 'Profile-first domestic worker matching', ar: 'مطابقة العمالة المنزلية حسب الملف الفردي' },
-        body: { en: 'Nationality can be useful as a preference, but INAYA encourages families to compare individual profiles by experience, documents, duties, communication and suitability.', ar: 'قد تكون الجنسية تفضيلاً مفيداً، لكن عناية تشجع الأسر على مقارنة الملفات الفردية حسب الخبرة والمستندات والمهام والتواصل والملاءمة.' },
-        points: { en: ['Country preference can be discussed', 'Experience and duties reviewed individually', 'Communication and family fit considered', 'Documents and availability checked by case'], ar: ['يمكن مناقشة تفضيل دولة المصدر', 'مراجعة الخبرة والمهام بشكل فردي', 'مراعاة التواصل وملاءمة الأسرة', 'فحص المستندات والتوفر حسب الحالة'] }
-      },
-      {
-        title: { en: 'Clear process and transparent follow-up', ar: 'إجراء واضح ومتابعة شفافة' },
-        body: { en: 'Families need confidence before making a domestic worker decision. INAYA explains the service path, documents, availability, costs and next actions before confirmation.', ar: 'تحتاج الأسر إلى الثقة قبل اتخاذ قرار العمالة المنزلية. توضح عناية مسار الخدمة والمستندات والتوفر والتكاليف والخطوات التالية قبل التأكيد.' },
-        points: { en: ['No unclear promises before review', 'Availability confirmed by service type', 'Important costs discussed before booking', 'Support through phone, WhatsApp and office consultation'], ar: ['لا وعود غير واضحة قبل المراجعة', 'تأكيد التوفر حسب نوع الخدمة', 'مناقشة التكاليف المهمة قبل الحجز', 'دعم عبر الهاتف وواتساب وزيارة المكتب'] }
-      },
-      {
-        title: { en: 'Premium UAE household support', ar: 'دعم منزلي راق للأسر في الإمارات' },
-        body: { en: 'INAYA is designed for UAE families that want organized, respectful and premium-feeling domestic worker support without confusion or rushed decisions.', ar: 'صممت عناية للأسر في الإمارات التي تريد دعماً منزلياً منظماً ومحترماً وراقياً دون ارتباك أو قرارات مستعجلة.' },
-        points: { en: ['Maid, nanny, cook and caregiver options', 'Ajman office access and UAE-wide enquiries', 'English and Arabic service support', 'Practical guidance for long-term household needs'], ar: ['خيارات خادمة ومربية وطباخ ورعاية', 'مكتب في عجمان وطلبات في جميع الإمارات', 'دعم بالعربية والإنجليزية', 'إرشاد عملي للاحتياجات المنزلية طويلة المدى'] }
-      }
-    ],
+    lead: packageSummary,
+    highlights: {
+  "en": [
+    "Salary-included managed live-in service",
+    "Individual duty matching and written scope",
+    "Tier-specific coordination and follow-up",
+    "Eligible replacement review and administration"
+  ],
+  "ar": [
+    "خدمة مقيمة مدارة تشمل الراتب",
+    "مطابقة فردية للمهام ونطاق مكتوب",
+    "تنسيق ومتابعة بحسب الباقة",
+    "مراجعة الاستبدال المؤهل وإدارة إجراءاته"
+  ]
+},
+    sections: [{"title":{"en":"Profile-first domestic worker matching","ar":"مطابقة العمالة المنزلية حسب الملف الفردي"},"body":{"en":"Nationality can be useful as a preference, but INAYA encourages families to compare individual profiles by experience, documents, duties, communication and suitability.","ar":"قد تكون الجنسية تفضيلاً مفيداً، لكن عناية تشجع الأسر على مقارنة الملفات الفردية حسب الخبرة والمستندات والمهام والتواصل والملاءمة."},"points":{"en":["Country preference can be discussed","Experience and duties reviewed individually","Communication and family fit considered","Documents and availability checked by case"],"ar":["يمكن مناقشة تفضيل دولة المصدر","مراجعة الخبرة والمهام بشكل فردي","مراعاة التواصل وملاءمة الأسرة","فحص المستندات والتوفر حسب الحالة"]}}, packageSections.inclusions, packageSections.commencement, packageSections.replacement, packageSections.followUp],
     faqs: [
       { question: { en: 'Is INAYA only for Ajman families?', ar: 'هل عناية للأسر في عجمان فقط؟' }, answer: { en: 'No. INAYA is based in Ajman and supports enquiries across UAE emirates, subject to availability and service requirements.', ar: 'لا. عناية مقرها في عجمان وتدعم الطلبات في إمارات الدولة حسب التوفر ومتطلبات الخدمة.' } },
       { question: { en: 'Can INAYA help me choose between maid, nanny and babysitter?', ar: 'هل تساعدني عناية في الاختيار بين الخادمة والمربية وجليسة الأطفال؟' }, answer: { en: 'Yes. The team can explain which service type fits regular childcare, occasional care or household duties.', ar: 'نعم. يمكن للفريق شرح نوع الخدمة الأنسب للرعاية المنتظمة أو المؤقتة أو المهام المنزلية.' } },
@@ -124,31 +91,10 @@ export const trustSupportPages: TrustSupportPage[] = [
     title: { en: 'INAYA Domestic Worker Service Policy', ar: 'سياسة خدمات عناية للعمالة المنزلية' },
     metaTitle: { en: 'Service Policy | INAYA Domestic Workers UAE', ar: 'سياسة الخدمة | عناية للعمالة المنزلية في الإمارات' },
     metaDescription: { en: 'Read INAYA service policy for maid services, domestic worker recruitment, availability, booking confirmation, documents, family responsibilities and follow-up.', ar: 'اقرأ سياسة عناية للخدمات: الخادمات والتوظيف والتوفر وتأكيد الحجز والمستندات ومسؤوليات الأسرة والمتابعة.' },
-    lead: { en: 'This policy explains how INAYA receives service enquiries, reviews requirements, confirms availability and guides families before booking domestic worker services.', ar: 'تشرح هذه السياسة كيف تستقبل عناية طلبات الخدمة وتراجع المتطلبات وتؤكد التوفر وترشد الأسر قبل حجز خدمات العمالة المنزلية.' },
+    lead: packageSummary,
     updated: { en: 'Last updated: 2026', ar: 'آخر تحديث: 2026' },
     highlights: { en: ['Availability confirmed by case', 'Service scope clarified before booking', 'Family details required for accurate guidance', 'Policies vary by selected service model'], ar: ['يتم تأكيد التوفر حسب الحالة', 'توضيح نطاق الخدمة قبل الحجز', 'تفاصيل الأسرة مطلوبة لإرشاد دقيق', 'السياسات تختلف حسب نموذج الخدمة المختار'] },
-    sections: [
-      {
-        title: { en: 'Service enquiry and requirement review', ar: 'طلب الخدمة ومراجعة الاحتياج' },
-        body: { en: 'When a family contacts INAYA, the team reviews the emirate, home type, service category, preferred timing, duties, accommodation needs and any special family requirements.', ar: 'عند تواصل الأسرة مع عناية، يراجع الفريق الإمارة ونوع المنزل وفئة الخدمة والتوقيت المفضل والمهام واحتياج الإقامة وأي متطلبات خاصة للأسرة.' },
-        points: { en: ['Inquiry details must be accurate', 'Service type should be clearly selected', 'Family routine affects recommendations', 'Availability is not final until confirmed by the team'], ar: ['يجب أن تكون تفاصيل الطلب دقيقة', 'يجب تحديد نوع الخدمة بوضوح', 'روتين الأسرة يؤثر على الترشيحات', 'التوفر لا يكون نهائياً حتى يؤكده الفريق'] }
-      },
-      {
-        title: { en: 'Booking and confirmation', ar: 'الحجز والتأكيد' },
-        body: { en: 'No service is considered confirmed until INAYA clearly confirms the service details, timing, scope, cost and next step with the family.', ar: 'لا تعتبر الخدمة مؤكدة حتى تؤكد عناية بوضوح تفاصيل الخدمة والتوقيت والنطاق والتكلفة والخطوة التالية مع الأسرة.' },
-        points: { en: ['Prices and timing are confirmed before booking', 'Service scope is explained before action', 'Urgent requests depend on availability', 'Changes should be communicated as early as possible'], ar: ['تأكيد الأسعار والتوقيت قبل الحجز', 'شرح نطاق الخدمة قبل أي إجراء', 'الطلبات العاجلة تعتمد على التوفر', 'يجب إبلاغ التغييرات في أقرب وقت ممكن'] }
-      },
-      {
-        title: { en: 'Family responsibilities', ar: 'مسؤوليات الأسرة' },
-        body: { en: 'Families should provide safe, respectful and clear working conditions according to the selected service model and UAE expectations.', ar: 'ينبغي على الأسر توفير ظروف عمل آمنة ومحترمة وواضحة حسب نموذج الخدمة المختار وتوقعات الإمارات.' },
-        points: { en: ['Share correct home and duty details', 'Treat domestic workers respectfully', 'Provide agreed accommodation when applicable', 'Follow confirmed payment and document steps'], ar: ['مشاركة تفاصيل صحيحة عن المنزل والمهام', 'التعامل مع العمالة المنزلية باحترام', 'توفير الإقامة المتفق عليها عند الحاجة', 'اتباع خطوات الدفع والمستندات المؤكدة'] }
-      },
-      {
-        title: { en: 'Follow-up and support', ar: 'المتابعة والدعم' },
-        body: { en: 'INAYA provides follow-up based on the selected service path. The team can help clarify concerns, replacement policy, document steps or next actions where applicable.', ar: 'تقدم عناية المتابعة حسب مسار الخدمة المختار. يمكن للفريق توضيح الملاحظات وسياسة الاستبدال وخطوات المستندات أو الإجراءات التالية عند الحاجة.' },
-        points: { en: ['Support requests should include clear details', 'Replacement or refund terms depend on agreement', 'Document delays may affect timing', 'Customer communication remains part of the service process'], ar: ['يجب أن تتضمن طلبات الدعم تفاصيل واضحة', 'شروط الاستبدال أو الاسترداد تعتمد على الاتفاق', 'تأخير المستندات قد يؤثر على التوقيت', 'تواصل العميل جزء من عملية الخدمة'] }
-      }
-    ],
+    sections: [packageSections.commencement, packageSections.responsibilities, packageSections.inclusions, packageSections.exclusions, packageSections.followUp],
     faqs: [
       { question: { en: 'Is availability guaranteed when I submit a form?', ar: 'هل يكون التوفر مضموناً عند إرسال النموذج؟' }, answer: { en: 'No. Availability is confirmed only after INAYA reviews the request and suitable options.', ar: 'لا. يتم تأكيد التوفر فقط بعد مراجعة عناية للطلب والخيارات المناسبة.' } },
       { question: { en: 'Can service details change after enquiry?', ar: 'هل يمكن أن تتغير تفاصيل الخدمة بعد الاستفسار؟' }, answer: { en: 'Yes. Details may change based on availability, documents, timing and final family requirements.', ar: 'نعم. قد تتغير التفاصيل حسب التوفر والمستندات والتوقيت ومتطلبات الأسرة النهائية.' } },
@@ -164,36 +110,42 @@ export const trustSupportPages: TrustSupportPage[] = [
     title: { en: 'Maid Replacement Policy & Support Process', ar: 'سياسة استبدال الخادمة وإجراءات الدعم' },
     metaTitle: { en: 'Maid Replacement Policy UAE | INAYA Domestic Workers', ar: 'سياسة استبدال الخادمة في الإمارات | عناية للعمالة المنزلية' },
     metaDescription: { en: 'Understand INAYA maid replacement process, review steps, issue reporting, eligibility, availability and follow-up for domestic worker service concerns.', ar: 'تعرف على عملية استبدال الخادمة لدى عناية وخطوات المراجعة وتقديم الملاحظات والأهلية والتوفر والمتابعة لملاحظات خدمات العمالة المنزلية.' },
-    lead: { en: 'INAYA handles replacement requests by reviewing the concern, service agreement, timing, availability and family requirement before explaining the next step.', ar: 'تتعامل عناية مع طلبات الاستبدال من خلال مراجعة الملاحظة واتفاق الخدمة والتوقيت والتوفر واحتياج الأسرة قبل شرح الخطوة التالية.' },
+    lead: packageSections.replacement.body,
     updated: { en: 'Last updated: 2026', ar: 'آخر تحديث: 2026' },
     highlights: { en: ['Case reviewed before decision', 'Replacement depends on service agreement', 'Availability must be confirmed', 'Clear feedback improves next match'], ar: ['مراجعة الحالة قبل القرار', 'الاستبدال يعتمد على اتفاق الخدمة', 'يجب تأكيد التوفر', 'الملاحظات الواضحة تحسن المطابقة التالية'] },
-    sections: [
-      {
-        title: { en: 'How replacement requests are reviewed', ar: 'كيف تتم مراجعة طلبات الاستبدال' },
-        body: { en: 'Replacement is not handled as a simple automatic swap. INAYA first reviews the reason, timeline, service type, agreement terms and whether the issue can be resolved through clarification.', ar: 'لا يتم التعامل مع الاستبدال كمجرد تبديل تلقائي. تراجع عناية أولاً السبب والوقت ونوع الخدمة وشروط الاتفاق وما إذا كان يمكن حل الملاحظة بالتوضيح.' },
-        points: { en: ['Reason for request is documented', 'Service agreement is checked', 'Family duties and expectations are reviewed again', 'Suitable next options are explained'], ar: ['توثيق سبب الطلب', 'مراجعة اتفاق الخدمة', 'إعادة مراجعة مهام وتوقعات الأسرة', 'شرح الخيارات التالية المناسبة'] }
-      },
-      {
-        title: { en: 'Eligibility and timing', ar: 'الأهلية والتوقيت' },
-        body: { en: 'Replacement eligibility depends on the selected package, service type, timing of the request, documents, availability and the details agreed before confirmation.', ar: 'تعتمد أهلية الاستبدال على الباقة المختارة ونوع الخدمة وتوقيت الطلب والمستندات والتوفر والتفاصيل المتفق عليها قبل التأكيد.' },
-        points: { en: ['Request should be raised as early as possible', 'Availability can affect replacement timing', 'Documents may affect process speed', 'Confirmed agreement terms remain the reference'], ar: ['يفضل رفع الطلب في أقرب وقت ممكن', 'التوفر قد يؤثر على توقيت الاستبدال', 'المستندات قد تؤثر على سرعة الإجراء', 'شروط الاتفاق المؤكد هي المرجع'] }
-      },
-      {
-        title: { en: 'Information needed for a replacement request', ar: 'المعلومات المطلوبة لطلب الاستبدال' },
-        body: { en: 'A clear explanation helps INAYA assess the concern and guide the family faster. Vague complaints can delay the review.', ar: 'الشرح الواضح يساعد عناية على تقييم الملاحظة وإرشاد الأسرة بسرعة أكبر. الملاحظات غير الواضحة قد تؤخر المراجعة.' },
-        points: { en: ['Customer name and contact number', 'Service type and booking details', 'Reason for replacement request', 'Dates, duties and concern notes', 'Preferred replacement requirements'], ar: ['اسم العميل ورقم التواصل', 'نوع الخدمة وتفاصيل الحجز', 'سبب طلب الاستبدال', 'التواريخ والمهام والملاحظات', 'متطلبات الاستبدال المفضلة'] }
-      },
-      {
-        title: { en: 'Improving the next match', ar: 'تحسين المطابقة التالية' },
-        body: { en: 'When replacement is applicable, INAYA uses the family feedback to better clarify duties, communication, routine and expectations for the next option.', ar: 'عندما يكون الاستبدال منطبقاً، تستخدم عناية ملاحظات الأسرة لتوضيح المهام والتواصل والروتين والتوقعات بشكل أفضل للخيار التالي.' },
-        points: { en: ['Duties are clarified again', 'Profile requirements are adjusted where possible', 'Communication preferences are discussed', 'Follow-up remains important after replacement'], ar: ['توضيح المهام مرة أخرى', 'تعديل متطلبات الملف حيثما أمكن', 'مناقشة تفضيلات التواصل', 'المتابعة تبقى مهمة بعد الاستبدال'] }
-      }
-    ],
+    sections: [packageSections.replacement, packageSections.commencement, packageSections.cancellation, packageSections.followUp],
     faqs: [
-      { question: { en: 'Is maid replacement always guaranteed?', ar: 'هل استبدال الخادمة مضمون دائماً؟' }, answer: { en: 'No. Replacement depends on service agreement terms, eligibility, availability and case review.', ar: 'لا. يعتمد الاستبدال على شروط اتفاق الخدمة والأهلية والتوفر ومراجعة الحالة.' } },
-      { question: { en: 'How fast can a replacement happen?', ar: 'كم يستغرق الاستبدال؟' }, answer: { en: 'Timing depends on availability, documents, selected service type and the details of the request.', ar: 'يعتمد التوقيت على التوفر والمستندات ونوع الخدمة المختار وتفاصيل الطلب.' } },
-      { question: { en: 'Can I change requirements during replacement?', ar: 'هل يمكن تغيير المتطلبات أثناء الاستبدال؟' }, answer: { en: 'You can discuss updated requirements, and INAYA will explain what is possible based on availability and agreement terms.', ar: 'يمكنك مناقشة المتطلبات المحدثة، وستوضح عناية ما يمكن تنفيذه حسب التوفر وشروط الاتفاق.' } }
-    ],
+  {
+    "question": {
+      "en": "What replacement support does each tier include?",
+      "ar": "ما دعم الاستبدال المشمول في كل باقة؟"
+    },
+    "answer": {
+      "en": "Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination.",
+      "ar": "تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور."
+    }
+  },
+  {
+    "question": {
+      "en": "How is a proposed replacement confirmed?",
+      "ar": "كيف يؤكد البديل المقترح؟"
+    },
+    "answer": {
+      "en": "INAYA reviews the request and agreed role, coordinates available individual profiles and explains next steps. A revised candidate profile is provided and customer consent obtained before confirmation. Matching depends on role and availability; no fixed completion deadline is promised.",
+      "ar": "تراجع عناية الطلب والدور المتفق عليه وتنسق الملفات الفردية المتاحة وتوضح الخطوات التالية. يقدم ملف المرشحة المعدل وتؤخذ موافقة العميل قبل التأكيد. تعتمد المطابقة على الدور والتوفر دون وعد بمدة إنجاز ثابتة."
+    }
+  },
+  {
+    "question": {
+      "en": "What if there is no suitable replacement?",
+      "ar": "ماذا إن لم يتوفر بديل مناسب؟"
+    },
+    "answer": {
+      "en": "Discuss available alternatives and effective cancellation. The unused prepaid service period is handled under INAYA’s monthly refund terms, while legally required remedies remain available.",
+      "ar": "ناقش البدائل المتاحة وسريان الإلغاء. تعالج فترة الخدمة المدفوعة وغير المستخدمة وفق شروط عناية للاسترداد الشهري، مع بقاء سبل الإنصاف المطلوبة قانوناً."
+    }
+  }
+],
     ctaTitle: { en: 'Need to discuss a replacement request?', ar: 'هل تحتاج مناقشة طلب استبدال؟' },
     ctaText: { en: 'Contact INAYA with your booking details and concern so the team can review your case clearly.', ar: 'تواصل مع عناية بتفاصيل الحجز والملاحظة حتى يتمكن الفريق من مراجعة حالتك بوضوح.' }
   },
@@ -245,31 +197,13 @@ export const trustSupportPages: TrustSupportPage[] = [
     title: { en: 'Terms & Conditions for INAYA Domestic Workers', ar: 'الشروط والأحكام لعناية للعمالة المنزلية' },
     metaTitle: { en: 'Terms & Conditions | INAYA Domestic Workers UAE', ar: 'الشروط والأحكام | عناية للعمالة المنزلية في الإمارات' },
     metaDescription: { en: 'Read INAYA terms for website use, maid service enquiries, booking confirmation, pricing, responsibilities, service changes and support communication.', ar: 'اقرأ شروط عناية لاستخدام الموقع وطلبات خدمات الخادمات وتأكيد الحجز والأسعار والمسؤوليات وتغييرات الخدمة والتواصل.' },
-    lead: { en: 'These terms explain how customers use the INAYA website and request domestic worker services, consultations, recruitment support and maid visa guidance.', ar: 'توضح هذه الشروط كيفية استخدام العملاء لموقع عناية وطلب خدمات العمالة المنزلية والاستشارات ودعم التوظيف وإرشاد تأشيرة الخادمة.' },
+    lead: {
+  "en": "These terms explain INAYA’s managed monthly service, written confirmation, household responsibilities, payments, cancellation and eligible replacement support. Separately contracted recruitment and visa-only services remain distinct.",
+  "ar": "توضح هذه الشروط خدمة عناية الشهرية المدارة والتأكيد المكتوب ومسؤوليات المنزل والسداد والإلغاء ودعم الاستبدال المؤهل. وتبقى خدمات الاستقدام والتأشيرة المتعاقد عليها منفصلة مستقلة."
+},
     updated: { en: 'Last updated: 2026', ar: 'آخر تحديث: 2026' },
     highlights: { en: ['Website information is guidance', 'Services confirmed by INAYA team', 'Customer details must be accurate', 'Terms may vary by service agreement'], ar: ['معلومات الموقع إرشادية', 'يتم تأكيد الخدمات من فريق عناية', 'يجب أن تكون بيانات العميل دقيقة', 'قد تختلف الشروط حسب اتفاق الخدمة'] },
-    sections: [
-      {
-        title: { en: 'Use of website information', ar: 'استخدام معلومات الموقع' },
-        body: { en: 'Website content is provided for general service guidance. Final service details, availability, prices, documents and timings are confirmed by the INAYA team.', ar: 'يتم تقديم محتوى الموقع كإرشاد عام للخدمات. يتم تأكيد تفاصيل الخدمة النهائية والتوفر والأسعار والمستندات والتوقيت من فريق عناية.' },
-        points: { en: ['Information may be updated', 'Availability is not guaranteed by page content alone', 'Final confirmation happens through the team', 'Customers should ask questions before booking'], ar: ['قد يتم تحديث المعلومات', 'التوفر لا يضمن بمجرد قراءة الصفحة', 'التأكيد النهائي يتم عبر الفريق', 'ينبغي للعميل طرح الأسئلة قبل الحجز'] }
-      },
-      {
-        title: { en: 'Submitting service requests', ar: 'إرسال طلبات الخدمة' },
-        body: { en: 'Share accurate information when contacting INAYA by phone, WhatsApp, email or at the office. Website forms only prepare and validate details locally; they do not submit an enquiry or confirm an appointment. Contact INAYA to share your request and confirm availability.', ar: 'شارك معلومات صحيحة عند التواصل مع عناية هاتفياً أو عبر واتساب أو البريد الإلكتروني أو في المكتب. تجهز نماذج الموقع البيانات وتراجعها محلياً فقط؛ ولا ترسل استفساراً أو تؤكد موعداً. تواصل مع عناية لمشاركة طلبك وتأكيد التوفر.' },
-        points: { en: ['Provide correct name and contact number', 'Share accurate area and emirate', 'Explain service type clearly', 'Mention special household requirements early'], ar: ['تقديم الاسم ورقم التواصل بشكل صحيح', 'مشاركة المنطقة والإمارة بدقة', 'شرح نوع الخدمة بوضوح', 'ذكر المتطلبات المنزلية الخاصة مبكراً'] }
-      },
-      {
-        title: { en: 'Prices, payments and confirmation', ar: 'الأسعار والمدفوعات والتأكيد' },
-        body: { en: 'Any prices, quotations, payments, deposits or government-related costs are explained according to the selected service and confirmed before final action where applicable.', ar: 'يتم شرح أي أسعار أو عروض أو مدفوعات أو دفعات مقدمة أو تكاليف حكومية حسب الخدمة المختارة وتأكيدها قبل الإجراء النهائي عند الحاجة.' },
-        points: { en: ['Identify the package charge, worker wage, recruitment fee and visa-processing costs where applicable', 'Confirm which costs are included and any separately quoted amount without assuming an extra charge', 'Record payment timing, any deposit, the service period and renewal or notice terms before proceeding', 'Keep the written quotation, agreement and payment receipts'], ar: ['حدد رسوم الباقة وأجر العاملة ورسوم الاستقدام وتكاليف إجراءات التأشيرة عند انطباقها', 'أكد التكاليف المشمولة وأي مبلغ معروض منفصلاً دون افتراض رسم إضافي', 'سجل مواعيد الدفع وأي دفعة مقدمة ومدة الخدمة وشروط التجديد أو الإشعار قبل المتابعة', 'احتفظ بعرض السعر والاتفاق المكتوبين وإيصالات الدفع'] }
-      },
-      {
-        title: { en: 'Changes, cancellation and support', ar: 'التغييرات والإلغاء والدعم' },
-        body: { en: 'Review the confirmed agreement and applicable law when requesting a change, cancellation, replacement or refund. Additional commercial benefits and statutory remedies are different; an internal review does not make a legally required remedy discretionary. Recruitment-fee rules do not automatically govern every monthly service charge.', ar: 'راجع الاتفاق المؤكد والقانون المنطبق عند طلب تغيير أو إلغاء أو استبدال أو استرداد. المزايا التجارية الإضافية تختلف عن الحقوق القانونية؛ ولا تجعل المراجعة الداخلية إجراءً ملزماً قانوناً اختيارياً. لا تحكم قواعد رسوم الاستقدام كل رسوم خدمة شهرية تلقائياً.' },
-        points: { en: ['Record changes and notice dates in writing', 'Use the refund policy for scenarios and statutory recruitment-fee conditions', 'Keep the original agreement, payment records and support correspondence', 'INAYA may refuse unsuitable or unlawful requests'], ar: ['وثق التغييرات وتواريخ الإشعار كتابةً', 'راجع سياسة الاسترداد للحالات وشروط رد رسوم الاستقدام القانونية', 'احتفظ بالاتفاق الأصلي وسجلات الدفع ومراسلات الدعم', 'قد ترفض عناية الطلبات غير المناسبة أو غير النظامية'] }
-      }
-    ],
+    sections: [...[{"title":{"en":"Use of website information","ar":"استخدام معلومات الموقع"},"body":{"en":"Website content is provided for general service guidance. Final service details, availability, prices, documents and timings are confirmed by the INAYA team.","ar":"يتم تقديم محتوى الموقع كإرشاد عام للخدمات. يتم تأكيد تفاصيل الخدمة النهائية والتوفر والأسعار والمستندات والتوقيت من فريق عناية."},"points":{"en":["Information may be updated","Availability is not guaranteed by page content alone","Final confirmation happens through the team","Customers should ask questions before booking"],"ar":["قد يتم تحديث المعلومات","التوفر لا يضمن بمجرد قراءة الصفحة","التأكيد النهائي يتم عبر الفريق","ينبغي للعميل طرح الأسئلة قبل الحجز"]}},{"title":{"en":"Submitting service requests","ar":"إرسال طلبات الخدمة"},"body":{"en":"Share accurate information when contacting INAYA by phone, WhatsApp, email or at the office. Website forms only prepare and validate details locally; they do not submit an enquiry or confirm an appointment. Contact INAYA to share your request and confirm availability.","ar":"شارك معلومات صحيحة عند التواصل مع عناية هاتفياً أو عبر واتساب أو البريد الإلكتروني أو في المكتب. تجهز نماذج الموقع البيانات وتراجعها محلياً فقط؛ ولا ترسل استفساراً أو تؤكد موعداً. تواصل مع عناية لمشاركة طلبك وتأكيد التوفر."},"points":{"en":["Provide correct name and contact number","Share accurate area and emirate","Explain service type clearly","Mention special household requirements early"],"ar":["تقديم الاسم ورقم التواصل بشكل صحيح","مشاركة المنطقة والإمارة بدقة","شرح نوع الخدمة بوضوح","ذكر المتطلبات المنزلية الخاصة مبكراً"]}}], packageSections.responsibilities, packageSections.payments, packageSections.commencement, packageSections.exclusions, packageSections.cancellation, packageSections.replacement, packageSections.followUp],
     faqs: [
       { question: { en: 'Are website prices final?', ar: 'هل أسعار الموقع نهائية؟' }, answer: { en: 'Any price or quotation should be confirmed by the INAYA team before final booking.', ar: 'يجب تأكيد أي سعر أو عرض من فريق عناية قبل الحجز النهائي.' } },
       { question: { en: 'Does a website update change my existing agreement?', ar: 'هل يغير تحديث الموقع اتفاقي القائم؟' }, answer: { en: 'Do not treat a website update as confirmation that your existing agreement has changed. Keep the terms agreed for your service and discuss any proposed change in writing, alongside applicable law.', ar: 'لا تعتبر تحديث الموقع تأكيداً لتغيير اتفاقك القائم. احتفظ بالشروط المتفق عليها لخدمتك وناقش أي تعديل مقترح كتابةً مع مراعاة القانون المنطبق.' } },
@@ -287,36 +221,42 @@ export const trustSupportPages: TrustSupportPage[] = [
     title: { en: 'Refund & Replacement Policy for INAYA Services', ar: 'سياسة الاسترداد والاستبدال لخدمات عناية' },
     metaTitle: { en: 'Refund & Replacement Policy | INAYA Domestic Workers', ar: 'سياسة الاسترداد والاستبدال | عناية للعمالة المنزلية' },
     metaDescription: { en: 'Read INAYA refund and replacement policy for domestic worker services, booking changes, eligibility, review process, support requests and service agreement terms.', ar: 'اقرأ سياسة عناية للاسترداد والاستبدال لخدمات العمالة المنزلية وتغييرات الحجز والأهلية وعملية المراجعة وطلبات الدعم وشروط الاتفاق.' },
-    lead: { en: 'Refund and replacement requests are reviewed according to the selected service, agreement terms, timing, availability, documents and the stage of the request.', ar: 'تتم مراجعة طلبات الاسترداد والاستبدال حسب الخدمة المختارة وشروط الاتفاق والتوقيت والتوفر والمستندات ومرحلة الطلب.' },
+    lead: packageSections.cancellation.body,
     updated: { en: 'Last updated: 2026', ar: 'آخر تحديث: 2026' },
     highlights: { en: ['Case-by-case review', 'Terms depend on service agreement', 'Clear request details required', 'Replacement may be offered where applicable'], ar: ['مراجعة حسب كل حالة', 'الشروط تعتمد على اتفاق الخدمة', 'تفاصيل الطلب الواضحة مطلوبة', 'قد يتم توفير الاستبدال عند الانطباق'] },
-    sections: [
-      {
-        title: { en: 'Refund review approach', ar: 'طريقة مراجعة الاسترداد' },
-        body: { en: 'Refund requests are reviewed based on the agreement, work already completed, official or third-party costs, documents, service stage and the reason for the request.', ar: 'تتم مراجعة طلبات الاسترداد حسب الاتفاق والعمل الذي تم إنجازه والتكاليف الرسمية أو الخارجية والمستندات ومرحلة الخدمة وسبب الطلب.' },
-        points: { en: ['Refunds are not automatic', 'Official or third-party fees may be non-refundable', 'Completed work affects eligibility', 'Written confirmation may be required'], ar: ['الاسترداد ليس تلقائياً', 'قد تكون الرسوم الرسمية أو الخارجية غير قابلة للاسترداد', 'العمل المنجز يؤثر على الأهلية', 'قد تكون هناك حاجة إلى تأكيد كتابي'] }
-      },
-      {
-        title: { en: 'Replacement as a support option', ar: 'الاستبدال كخيار دعم' },
-        body: { en: 'Where applicable, replacement may be discussed instead of refund. The replacement process depends on package terms, availability and the nature of the issue.', ar: 'عند الانطباق، قد تتم مناقشة الاستبدال بدلاً من الاسترداد. تعتمد عملية الاستبدال على شروط الباقة والتوفر وطبيعة الملاحظة.' },
-        points: { en: ['Replacement depends on agreement terms', 'Availability affects timing', 'Feedback helps improve next match', 'New requirements may change options'], ar: ['الاستبدال يعتمد على شروط الاتفاق', 'التوفر يؤثر على التوقيت', 'الملاحظات تساعد على تحسين المطابقة التالية', 'المتطلبات الجديدة قد تغير الخيارات'] }
-      },
-      {
-        title: { en: 'How to submit a request', ar: 'كيفية تقديم الطلب' },
-        body: { en: 'Customers should contact INAYA support with clear details and relevant evidence where available. The team will review and explain the next step.', ar: 'يجب على العملاء التواصل مع دعم عناية بتفاصيل واضحة وأي إثباتات متاحة. سيراجع الفريق الطلب ويوضح الخطوة التالية.' },
-        points: { en: ['Customer name and contact number', 'Service type and booking information', 'Reason for refund or replacement', 'Dates and communication history if needed', 'Any supporting details or documents'], ar: ['اسم العميل ورقم التواصل', 'نوع الخدمة ومعلومات الحجز', 'سبب الاسترداد أو الاستبدال', 'التواريخ وسجل التواصل عند الحاجة', 'أي تفاصيل أو مستندات داعمة'] }
-      },
-      {
-        title: { en: 'Final decision and communication', ar: 'القرار النهائي والتواصل' },
-        body: { en: 'INAYA communicates the outcome after reviewing the agreement, request details, availability and applicable terms. The goal is to provide a clear, fair and documented response.', ar: 'تبلغ عناية النتيجة بعد مراجعة الاتفاق وتفاصيل الطلب والتوفر والشروط المطبقة. الهدف هو تقديم رد واضح وعادل وموثق.' },
-        points: { en: ['Outcome explained clearly', 'Applicable next steps shared', 'Timeline depends on case complexity', 'Customers should keep confirmations and receipts'], ar: ['شرح النتيجة بوضوح', 'مشاركة الخطوات التالية المطبقة', 'التوقيت يعتمد على تعقيد الحالة', 'ينبغي الاحتفاظ بالتأكيدات والإيصالات'] }
-      }
-    ],
+    sections: [packageSections.cancellation, packageSections.replacement, packageSections.payments, packageSections.followUp],
     faqs: [
-      { question: { en: 'Are refunds guaranteed?', ar: 'هل الاسترداد مضمون؟' }, answer: { en: 'No. Refunds are reviewed according to the agreement, service stage and applicable costs.', ar: 'لا. تتم مراجعة الاسترداد حسب الاتفاق ومرحلة الخدمة والتكاليف المطبقة.' } },
-      { question: { en: 'Can I request replacement instead of refund?', ar: 'هل يمكن طلب الاستبدال بدلاً من الاسترداد؟' }, answer: { en: 'Where applicable, replacement can be discussed based on policy, eligibility and availability.', ar: 'عند الانطباق، يمكن مناقشة الاستبدال حسب السياسة والأهلية والتوفر.' } },
-      { question: { en: 'How do I raise a refund request?', ar: 'كيف أرفع طلب استرداد؟' }, answer: { en: 'Contact INAYA with your booking details, service type and reason for the request.', ar: 'تواصل مع عناية بتفاصيل الحجز ونوع الخدمة وسبب الطلب.' } }
-    ],
+  {
+    "question": {
+      "en": "What happens to an unused monthly service payment?",
+      "ar": "ماذا يحدث لدفعة الخدمة الشهرية غير المستخدمة؟"
+    },
+    "answer": {
+      "en": "Before service commencement, INAYA returns the unused monthly service payment. After commencement, the unused prepaid service period following effective cancellation is refunded on a clear pro-rata basis. The calculation identifies the prepaid amount, service period, effective cancellation date and unused period.",
+      "ar": "قبل بدء الخدمة، تعيد عناية دفعة الخدمة الشهرية غير المستخدمة. وبعد البدء، ترد قيمة الفترة المدفوعة مقدماً وغير المستخدمة بعد سريان الإلغاء، على أساس تناسبي واضح. يبين الحساب المبلغ المدفوع وفترة الخدمة وتاريخ سريان الإلغاء والفترة غير المستخدمة."
+    }
+  },
+  {
+    "question": {
+      "en": "Can included costs become refund deductions?",
+      "ar": "هل تصبح التكاليف المشمولة خصومات عند الاسترداد؟"
+    },
+    "answer": {
+      "en": "No undisclosed cancellation charge is imposed and already-included monthly costs are not reintroduced as unexpected deductions. The unused-period calculation and relevant dates are explained in writing.",
+      "ar": "لا تفرض رسوم إلغاء غير مفصح عنها ولا تعاد التكاليف الشهرية المشمولة كخصومات غير متوقعة. يوضح حساب الفترة غير المستخدمة والتواريخ ذات الصلة كتابةً."
+    }
+  },
+  {
+    "question": {
+      "en": "How do I raise a refund or replacement request?",
+      "ar": "كيف أقدم طلب استرداد أو استبدال؟"
+    },
+    "answer": {
+      "en": "Contact the office, WhatsApp or info@inayadomestic.ae with the agreement, paid period, relevant dates and concern. Keep written communications and use the published support and official escalation channels.",
+      "ar": "تواصل مع المكتب أو واتساب أو info@inayadomestic.ae وشارك الاتفاق والفترة المدفوعة والتواريخ ذات الصلة والملاحظة. احتفظ بالمراسلات المكتوبة واستخدم قنوات الدعم والتصعيد الرسمي المنشورة."
+    }
+  }
+],
     ctaTitle: { en: 'Need support with a refund or replacement request?', ar: 'هل تحتاج دعماً في طلب استرداد أو استبدال؟' },
     ctaText: { en: 'Share your booking details and concern so INAYA can review the applicable next step.', ar: 'شارك تفاصيل الحجز والملاحظة حتى تراجع عناية الخطوة المناسبة.' }
   },

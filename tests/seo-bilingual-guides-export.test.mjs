@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
+const sectionCounts = [7, 9, 5, 6, 12, 5, 5];
 const slugs = [
   'uae-domestic-worker-hiring-process',
   'domestic-worker-package-pricing-factors',
@@ -72,7 +73,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.ok(article, `${route}: visible article`);
       assert.ok(body.includes(`href="/${locale}/blog/${relatedGuide[slug]}/"`), `${route}: related guide link`);
       assert.ok(tokens(text(article)).length >= 200, `${route}: substantive article copy`);
-      assert.equal([...article.matchAll(/<h2\b/g)].length, 4, `${route}: four explanatory sections`);
+      assert.equal([...article.matchAll(/<h2\b/g)].length, sectionCounts[slugs.indexOf(slug)], `${route}: complete approved explanatory sections`);
       assert.ok(html.includes('rel="canonical"'), `${route}: canonical`);
       assert.ok(html.includes(`content="${url}"`), `${route}: canonical URL`);
       assert.ok(html.includes('hrefLang="en"'), `${route}: English alternate`);
@@ -90,7 +91,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.deepEqual(articleNode.author, { '@type': 'Organization', name: 'INAYA Domestic Workers Editorial Team' });
       assert.ok(text(body).includes(articleNode.author.name), `${route}: editorial author visible`);
       assert.equal(articleNode.datePublished, slugs.indexOf(slug) < 3 ? '2026-10-01' : '2026-10-06');
-      assert.equal(articleNode.dateModified, '2026-10-06');
+      assert.equal(articleNode.dateModified, '2026-10-12');
       assert.ok(body.includes(`dateTime="${articleNode.datePublished}"`), `${route}: published date visible`);
       assert.ok(body.includes(`dateTime="${articleNode.dateModified}"`), `${route}: updated date visible`);
       assert.match(body, /href="tel:\+97167400128"/, `${route}: approved office phone`);
@@ -117,10 +118,11 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       }
       if (['domestic-worker-package-pricing-factors', 'monthly-maid-package-inclusions-checklist'].includes(slug)) {
         const visible = text(body);
-        assert.match(visible, /1,500/);
         assert.match(visible, /2,500/);
-        assert.match(visible, locale === 'en' ? /Essential starts from AED 1,500\/month, all-inclusive/ : /تبدأ Essential من 1,500 درهم شهرياً، شاملة/);
-        assert.match(visible, locale === 'en' ? /Signature starts from AED 2,500\/month, all-inclusive/ : /تبدأ Signature من 2,500 درهم شهرياً، شاملة/);
+        assert.match(visible, /3,000/);
+        assert.doesNotMatch(visible, /1,500/);
+        assert.match(visible, locale === 'en' ? /Essential.*?2,500/ : /Essential.*?2,500/);
+        assert.match(visible, locale === 'en' ? /Signature.*?3,000/ : /Signature.*?3,000/);
         assert.match(visible, locale === 'en' ? /Custom Quote/ : /عرض سعر مخصص/);
       }
       if (slug === 'domestic-worker-visa-sponsorship-support') {
@@ -171,7 +173,8 @@ test('twenty finalized bilingual topics retain exact copy, references and route 
         assert.ok(allowedHosts.has(new URL(link).hostname), `${route}: official or INAYA source`);
         if (new URL(link).origin === origin) assert.ok(new URL(link).pathname.startsWith(`/${locale}/`), `${route}: internal link language`);
       }
-      assert.doesNotMatch(text(rendered), locale === 'ar' ? /[A-Za-z]/ : /[\u0600-\u06ff]/, `${route}: article language`);
+      const languageText = locale === 'ar' ? text(rendered).replace(/INAYA Black|INAYA|Essential|Signature|Black|info@inayadomestic\.ae/g, '') : text(rendered);
+      assert.doesNotMatch(languageText, locale === 'ar' ? /[A-Za-z]/ : /[\u0600-\u06ff]/, `${route}: article language with approved brand names`);
       assert.doesNotMatch(text(rendered), /TODO|TBD|editorial notes|source-evidence|pending business facts/i);
       assert.equal([...body.matchAll(/<h1\b/g)].length, 1, `${route}: one primary heading`);
       assert.ok(text(body.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1]) === copy.title);
@@ -185,7 +188,7 @@ test('twenty finalized bilingual topics retain exact copy, references and route 
       const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((match) => attrs(match[1]).type === 'application/ld+json').flatMap((match) => JSON.parse(match[2])['@graph'] || []);
       const schema = graph.find((node) => node['@type'] === 'Article');
       assert.equal(schema.url, url); assert.equal(schema.inLanguage, locale); assert.equal(schema.headline, copy.title);
-      assert.equal(schema.datePublished, '2026-10-09'); assert.equal(schema.dateModified, '2026-10-09');
+      assert.equal(schema.datePublished, '2026-10-09'); assert.equal(schema.dateModified, '2026-10-12');
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
       assert.deepEqual(schema.citation, [...new Set(links.filter((link) => new URL(link).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);

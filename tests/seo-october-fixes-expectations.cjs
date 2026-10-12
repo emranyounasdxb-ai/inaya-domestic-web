@@ -98,6 +98,8 @@ const patches = {
   ]
 };
 
+const { approvedManagedPackages } = require('./managed-package-expectations.cjs');
+
 function approvedSeoFixes(file, source) {
   for (const [before, after] of patches[file] ?? []) {
     assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed source anchor`);
@@ -113,7 +115,7 @@ function approvedSeoFixes(file, source) {
       source = source.replace(before, after);
     }
   }
-  return source;
+  return approvedManagedPackages(file, source);
 }
 
 module.exports = { approvedSeoFixes };

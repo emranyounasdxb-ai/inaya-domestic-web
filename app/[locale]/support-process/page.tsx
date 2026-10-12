@@ -1,3 +1,4 @@
+import { packageSections } from '@/lib/package-content';
 import GuideContent from '@/components/GuideContent';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import Link from 'next/link';
@@ -6,17 +7,18 @@ import { siteConfig } from '@/lib/site-config';
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const isArabic = locale === 'ar';
+  const lang = isArabic ? 'ar' : 'en';
   const points = isArabic
     ? ['حدد الخدمة والاتفاق والتواريخ والمدفوعات ذات الصلة', 'صف الفرق بين المهام المتفق عليها والمشكلة الفعلية', 'حدد الإجراء المطلوب: توضيح أو استبدال أو استرداد', 'احتفظ بالطلب والردود وأي نتيجة مكتوبة']
     : ['Identify the service, agreement, dates and relevant payments', 'Describe the difference between agreed duties and the actual issue', 'State the remedy requested: clarification, replacement or refund', 'Keep the request, replies and any written outcome'];
   const steps = isArabic ? [
     { title: 'جهز الطلب والسجلات', text: 'شارك الاسم وبيانات التواصل ورقم الحجز أو الاتفاق إن وجد. أرفق النطاق المتفق عليه والإيصالات والتواريخ ووصفاً محدداً للملاحظة والإجراء المطلوب. أرسل السجلات ذات الصلة فقط، ولا ترسل معلومات عائلية أو مستندات هوية غير لازمة.' },
     { title: 'اطلب تأكيد الاستلام والمتابعة', text: 'اطلب تأكيد استلام الطلب ورقماً مرجعياً إن كان مستخدماً، واسم المسؤول عن المتابعة وموعد التحديث التالي المتوقع. احتفظ بهذه المعلومات مع الطلب الأصلي. استخدم السجل المؤرخ نفسه للطلب والردود اللاحقة.' },
-    { title: 'راجع النتيجة كتابةً', text: 'اطلب بيان الأساس التعاقدي أو القانوني للنتيجة والخطوة التالية. إذا كان الاسترداد مستحقاً، يجب توضيح المبلغ وطريقة حسابه وأي خصومات مقترحة وأساسها. وللاستبدال، اطلب الشروط والنطاق والتوقيت المقترح. حدد النقاط التي بقيت دون حل واطلب مراجعتها عبر البريد الإلكتروني نفسه.' }
+    { title: 'راجع النتيجة كتابةً', text: "اطلب الأساس التعاقدي أو القانوني والخطوة التالية. يعاد في الخدمة الشهرية المدارة المبلغ غير المستخدم قبل البدء، أو قيمة الفترة المدفوعة غير المستخدمة بالتناسب بعد سريان الإلغاء؛ ويحدد الحساب المكتوب المبلغ والتواريخ. لا تفرض رسوم إلغاء غير مفصح عنها ولا خصومات غير متوقعة لتكاليف مشمولة. تتبع مراجعة الاستبدال وإدارته المهام المتفق عليها وتنسيق الباقة، مع موافقة العميل على المرشحة المقترحة. أدرج النقاط غير المحسومة في طلب مراجعة مكتوب." }
   ] : [
     { title: 'Prepare the request and records', text: 'Share your name, contact details and booking or agreement reference if available. Include the agreed scope, receipts, dates, a specific description of the concern and the remedy requested. Send relevant records only, without unnecessary family information or identity documents.' },
     { title: 'Request acknowledgement and follow-up', text: 'Ask for confirmation that the request was received, a reference if one is used, the person handling it and the expected next update. Keep this with the original request. Use the same dated record for the request and subsequent replies.' },
-    { title: 'Review the outcome in writing', text: 'Ask for the contractual or legal basis for the outcome and the next action. If a refund is due, request the amount, calculation and any proposed deductions with their basis. For replacement, request the conditions, scope and proposed timing. Identify unresolved points and request further review through the same email channel.' }
+    { title: 'Review the outcome in writing', text: "Ask for the contractual or legal basis and next action. Managed monthly refunds return the unused pre-service payment or the unused prepaid period pro rata after effective cancellation; the written calculation identifies the amount and dates. No undisclosed cancellation charge or unexpected deduction of included costs is imposed. Replacement review and administration follow the agreed duties and tier coordination, with customer consent to a proposed candidate. Keep unresolved points in a written review request." }
   ];
   return (
     <main className="bg-[#fbfaf7] px-6 py-16 text-primary-900 lg:px-10">
@@ -42,6 +44,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="mt-10 grid gap-5 lg:grid-cols-3">
           {steps.map((step) => <article key={step.title} className="rounded-[26px] bg-white p-6 shadow-[0_18px_55px_rgba(7,22,74,0.06)]"><h2 className="font-heading text-xl font-bold">{step.title}</h2><p className="mt-4 text-sm leading-7 text-primary-900/75">{step.text}</p></article>)}
         </section>
+        {[packageSections.followUp, packageSections.replacement].map(section => <section key={section.title.en} className="mt-10 rounded-[26px] bg-white p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
+          <h2 className="font-heading text-2xl font-bold">{section.title[lang]}</h2>
+          <p className="mt-4 text-sm leading-7 text-primary-900/75">{section.body[lang]}</p>
+          <ul className="mt-5 list-inside list-disc space-y-4 text-sm leading-7 text-primary-900/75">{section.points[lang].map(point => <li key={point}>{point}</li>)}</ul>
+        </section>)}
         <section data-content="official-escalation" className="mt-10 rounded-[26px] bg-white p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
           <h2 className="font-heading text-2xl font-bold">{isArabic ? 'التصعيد الرسمي لدى وزارة الموارد البشرية والتوطين' : 'Official escalation through MOHRE'}</h2>
           <p className="mt-4 text-sm leading-7 text-primary-900/75">{isArabic ? 'للخلاف مع مكتب استقدام العمالة المساعدة الذي لم يحل ودياً، يحدد دليل الوزارة لأصحاب العمل الموقع الإلكتروني وتطبيق MOHRE UAE ومركز الاستشارات والمطالبات العمالية على الرقم 80084 كقنوات للشكوى. ولنزاع بين صاحب العمل والعاملة، اطلب مسار شكوى العمالة المساعدة المناسب بدلاً من افتراض انطباق خدمة شكاوى موظفي القطاع الخاص. احتفظ بالاتفاق والإيصالات والسجل المؤرخ للتواصل وأي رقم مرجعي تصدره الوزارة.' : 'For a dispute with a domestic worker recruitment office that has not been resolved amicably, MOHRE’s employers guide identifies the ministry website, MOHRE UAE app and Labour Claims and Advisory Call Centre on 80084 as complaint channels. For an employer–worker dispute, ask for the appropriate domestic-worker complaint route rather than assuming the private-sector employee service applies. Keep the agreement, receipts, dated communication and any reference issued by MOHRE.'}</p>

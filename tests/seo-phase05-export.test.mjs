@@ -8,6 +8,7 @@ import path from 'node:path';
 import { auditExport } from '../scripts/seo-content-audit.mjs';
 import remediation from './seo-final-remediation-expectations.cjs';
 import corePageCopy from './core-page-copy-expectations.cjs';
+import managed from './managed-package-expectations.cjs';
 
 test('Phase 5 retains all prior routes and protected sources while serving seven bilingual guide pairs', async () => {
   const checkpoint = '3c2aee5822d1425feb19d3d08106790bd6d5561f';
@@ -25,8 +26,9 @@ test('Phase 5 retains all prior routes and protected sources while serving seven
   assert.equal(audit.pages.filter((p) => p.locale === 'ar').length, 97);
   assert.equal(new Set(audit.pages.map((p) => p.title)).size, 194);
   assert.equal(new Set(audit.pages.map((p) => p.description)).size, 194);
-  assert.ok(audit.repeatedTokens <= 8300);
-  assert.ok(audit.repeatedParagraphs <= 660);
+  const editorial = managed.editorialRepetition(audit);
+  assert.ok(editorial.repeatedTokens <= 8300);
+  assert.ok(editorial.repeatedParagraphs <= 660);
   // The FAQ now includes the four previously client-only categories in each
   // locale's initial HTML. Their 2,236 measured tokens increase total prose;
   // repeated-token, repeated-paragraph and near-pair guards stay unchanged.

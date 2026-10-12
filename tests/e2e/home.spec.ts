@@ -18,7 +18,7 @@ test('home page renders main sections', async ({ page }) => {
   await page.goto('/en');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Maid & Domestic Worker Services in Ajman and Across the UAE');
-  await expect(page.getByRole('heading', { name: 'Global Executive Concierge' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Managed Service & Follow-up' })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Google Reviews/i })).toBeVisible();
   await expect(page.locator('p.google-reviews-profile')).toHaveText('INAYA on Google');
 });
@@ -139,7 +139,7 @@ test('Google reviews carousel disables autoplay and animation for reduced motion
 test('homepage concierge section is not rendered on internal pages', async ({ page }) => {
   for (const path of ['/en/service-areas', '/en/services/live-in-maid']) {
     await page.goto(path);
-    await expect(page.getByRole('heading', { name: 'Global Executive Concierge' })).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: 'Managed Service & Follow-up' })).toHaveCount(0);
   }
 });
 

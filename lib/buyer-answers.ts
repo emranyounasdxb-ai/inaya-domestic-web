@@ -1,5 +1,6 @@
+import { packageSections } from './package-content';
 // Editorial answers grounded in the existing intake, pricing and support guides.
-// These are preparation guidance, not legal rules or new agreement terms.
+// Owner-approved monthly terms and enquiry guidance remain separate from statutory rules.
 type Pair = { en: string; ar: string };
 export const buyerAnswers: Record<string, { question: Pair; answer: Pair; detailRoute: string }> = {
   booking: {
@@ -8,19 +9,25 @@ export const buyerAnswers: Record<string, { question: Pair; answer: Pair; detail
   },
   'how-it-works': {
     question: { en: 'What happens after I make a service enquiry?', ar: 'ماذا يحدث بعد الاستفسار عن الخدمة؟' },
-    answer: { en: 'The enquiry starts with your household requirements. Discuss the role and individual profiles, then clarify documents, costs and the agreement. Consultation and candidate discussion do not themselves confirm placement or a start date.', ar: 'يبدأ الاستفسار بمتطلبات منزلك. ناقش الدور والملفات الفردية ثم وضح المستندات والتكاليف والاتفاق. الاستشارة ومناقشة المرشحات لا تؤكدان وحدهما التوظيف أو تاريخ البدء.' }, detailRoute: 'documents-required'
+    answer: packageSections.commencement.body, detailRoute: 'documents-required'
   },
   pricing: {
     question: { en: 'Is the displayed price my final service quote?', ar: 'هل السعر المعروض هو عرض السعر النهائي لخدمتي؟' },
-    answer: { en: 'Ask for a quote for your request. The existing pricing guide makes the final amount dependent on service type, duration, emirate and requirements. Clarify inclusions and any applicable costs before confirmation.', ar: 'اطلب عرض سعر لطلبك. يربط دليل الأسعار الحالي المبلغ النهائي بنوع الخدمة والمدة والإمارة والمتطلبات. وضح البنود المشمولة وأي تكاليف منطبقة قبل التأكيد.' }, detailRoute: 'contact'
+    answer: {
+  "en": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. Request the written final quote, scope, exclusions and applicable tax before confirmation.",
+  "ar": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. اطلب العرض النهائي المكتوب والنطاق والاستثناءات والضريبة المنطبقة قبل التأكيد."
+}, detailRoute: 'contact'
   },
   'documents-required': {
     question: { en: 'Which details should I prepare before asking about documents?', ar: 'ما التفاصيل التي أجهزها قبل السؤال عن المستندات؟' },
     answer: { en: 'Prepare your contact details, emirate, requested role and current worker or sponsor document status where relevant. This is enquiry preparation, not an eligibility decision or final visa checklist; ask which responsibilities and documents apply to your case.', ar: 'جهز بيانات التواصل والإمارة والدور المطلوب وحالة مستندات العاملة أو الكفيل إن كانت ذات صلة. هذا تجهيز للاستفسار وليس قرار أهلية أو قائمة تأشيرة نهائية؛ اسأل عن المسؤوليات والمستندات المنطبقة على حالتك.' }, detailRoute: 'services/maid-visa'
   },
   'refund-policy': {
-    question: { en: 'Can I assume a refund or free replacement?', ar: 'هل أفترض استرداداً أو استبدالاً مجانياً؟' },
-    answer: { en: 'No. The existing guide describes review against the service agreement, request stage, costs and available options. Share the agreement and your concern with the team rather than treating an enquiry as an approved outcome.', ar: 'لا. يصف الدليل الحالي المراجعة وفق اتفاق الخدمة ومرحلة الطلب والتكاليف والخيارات المتاحة. شارك الاتفاق وملاحظتك مع الفريق بدلاً من اعتبار الاستفسار نتيجة معتمدة.' }, detailRoute: 'support-process'
+    question: {
+  "en": "How is an unused monthly service payment handled?",
+  "ar": "كيف تعالج دفعة الخدمة الشهرية غير المستخدمة؟"
+},
+    answer: packageSections.cancellation.body, detailRoute: 'support-process'
   },
   contact: {
     question: { en: 'Where is INAYA and how do I arrange a visit?', ar: 'أين مكتب عناية وكيف أنسق الزيارة؟' },

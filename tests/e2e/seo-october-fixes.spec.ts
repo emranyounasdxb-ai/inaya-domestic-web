@@ -44,7 +44,7 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(page.getByRole('heading', { name: ar ? 'المستندات والإجراءات: ما الذي يجب تأكيده؟' : 'Documents and process: what to confirm', exact: true })).toBeVisible();
     await expect(page.locator('main img[src*="maid-filipino"]')).toHaveCount(0);
     await page.goto(`/${locale}/services/monthly-maid-contract/`);
-    await expect(page.getByRole('heading', { name: ar ? 'النطاق المطلوب الاتفاق عليه' : 'Scope to agree', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: ar ? 'المهام المتفق عليها وعناصر الخدمة الشهرية المشمولة' : 'Agreed duties and included monthly service components', exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: ar ? 'راجع أساس تسعير الباقات وما يجب تأكيده' : 'Review the package pricing basis and what to confirm' })).toHaveAttribute('href', `/${locale}/pricing/`);
   });
 }

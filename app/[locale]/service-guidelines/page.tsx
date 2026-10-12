@@ -1,3 +1,4 @@
+import { packageSections } from '@/lib/package-content';
 import GuideContent from '@/components/GuideContent';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import Link from 'next/link';
@@ -5,6 +6,7 @@ import Link from 'next/link';
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const isArabic = locale === 'ar';
+  const lang = isArabic ? 'ar' : 'en';
   const preparation = isArabic ? [
     'حدد المهام الأساسية وأولوياتها وتكرارها؛ وافصل التنظيف ورعاية الأطفال والطبخ عند مناقشة النطاق.',
     'اتفق على أيام العمل والساعات والراحة وتسليم المهام. الإقامة داخل المنزل تصف السكن ولا تعني العمل طوال اليوم.',
@@ -31,6 +33,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           {(isArabic ? ['مراجعة احتياج المنزل والأسرة قبل الترشيح', 'تأكيد التوفر حسب الإمارة ونوع الخدمة', 'توضيح السعر والنطاق قبل الحجز', 'متابعة الطلبات والملاحظات بوضوح'] : ['Review family and home requirements before recommendation', 'Confirm availability by emirate and service type', 'Clarify price and scope before booking', 'Follow up on requests and concerns clearly']).map((item) => <div key={item} className="rounded-2xl bg-white p-5 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">✓ {item}</div>)}
         </div>
         <GuideContent locale={locale} route="service-guidelines" />
+        {[packageSections.responsibilities, packageSections.inclusions, packageSections.exclusions, packageSections.followUp].map(section => <section key={section.title.en} className="mt-10 rounded-[26px] bg-white p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
+          <h2 className="font-heading text-2xl font-bold">{section.title[lang]}</h2>
+          <p className="mt-4 text-sm leading-7 text-primary-900/75">{section.body[lang]}</p>
+          <ul className="mt-5 list-inside list-disc space-y-4 text-sm leading-7 text-primary-900/75">{section.points[lang].map(point => <li key={point}>{point}</li>)}</ul>
+        </section>)}
         <section data-content="household-preparation" className="mt-10 rounded-[26px] bg-white p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
           <h2 className="font-heading text-2xl font-bold">{isArabic ? 'تجهيز المنزل قبل بدء الخدمة' : 'Prepare the household before service starts'}</h2>
           <p className="mt-4 text-sm leading-7 text-primary-900/75">{isArabic ? 'يمكن تجهيز المنزل بعد تأكيد الترتيب ببيان واضح للمهام وترتيبات الدخول وتعليمات السلامة. هذه قائمة استعداد للأسرة، وليست قائمة بمزايا باقة أو شرطاً موحداً لكل خدمة.' : 'Once an arrangement is confirmed, prepare a clear duty brief, access plan and safety instructions. This is a household preparation checklist, not a list of package benefits or a uniform requirement for every service.'}</p>
