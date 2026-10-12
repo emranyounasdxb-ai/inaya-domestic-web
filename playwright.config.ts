@@ -21,7 +21,7 @@ export default defineConfig({
     video: 'retain-on-failure'
   },
   webServer: {
-    command: `npm run dev -- --port ${port}`,
+    command: `npm run dev -- --webpack --port ${port}`,
     url: `${baseURL}/en`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000
