@@ -10,8 +10,7 @@ import BrandLogo from '@/components/BrandLogo';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import SierraLeoneOfferControls from '@/components/SierraLeoneOfferControls';
-import Measurement from '@/components/Measurement';
-import sitemap from '@/app/sitemap';
+import GoogleAnalyticsConsent from '@/components/GoogleAnalyticsConsent';
 import '../globals.css';
 import '../arabic-body-font.css';
 import '../arabic-heading-font.css';
@@ -49,7 +48,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} dir={dir}>
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`} style={locale === 'ar' ? { '--font-arabic-body': `"INAYA Arabic Body", ${notoSansArabic.style.fontFamily}`, '--font-arabic-heading': `"INAYA Arabic Heading", ${ibmPlexSansArabic.style.fontFamily}` } as React.CSSProperties : undefined}>
-          {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}
+          <GoogleAnalyticsConsent />
           <Navbar locale={locale} labels={labels} logo={<BrandLogo locale={locale} alt={locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers — Home'} width={156} className="h-7 w-auto max-w-[132px] object-contain sm:max-w-[156px]" />} />
           <FloatingSocialBar />
           <SierraLeoneOfferControls locale={locale} />
