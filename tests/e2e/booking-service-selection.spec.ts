@@ -33,7 +33,9 @@ for (const locale of ['en', 'ar'] as const) {
       await service.selectOption('nanny');
       await expect(service).toHaveValue('nanny');
       releaseScripts();
-      await page.waitForLoadState('networkidle');
+      // Held script requests can leave networkidle satisfied before hydration.
+      // Wait for the shared client effect before exercising popstate handlers.
+      await expect.poll(() => page.evaluate(() => typeof window.inayaMeasurementConsent)).toBe('function');
       await expect(service).toHaveValue('nanny');
       await page.evaluate(() => {
         history.pushState(null, '', '?service=part-time-maid');
