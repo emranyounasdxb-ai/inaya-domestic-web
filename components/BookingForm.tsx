@@ -110,6 +110,9 @@ export default function BookingForm({ locale }: { locale: string }) {
           <option>{t('planFullTime')}</option>
           <option>{t('planMonthly')}</option>
           <option>{t('planLiveIn')}</option>
+          <option value="Essential">{t('planEssential')}</option>
+          <option value="Signature">{t('planSignature')}</option>
+          <option value="INAYA Black">{t('planBlack')}</option>
         </select>
       </div>
       <div>

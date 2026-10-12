@@ -35,13 +35,13 @@
     "whyTitle": "Why Choose INAYA Domestic Workers",
     "whySubtitle": "Discuss household roles, documents and next steps before selecting a service.",
     "why1Title": "Individual Profile Review",
-    "why1Desc": "Ask what experience, training and documents can be reviewed for each candidate.",
+    "why1Desc": "Candidate assessment against the agreed household duties, with relevant individual experience and communication reviewed.",
     "why2Title": "Flexible Plans",
-    "why2Desc": "Hourly, part-time, full-time, monthly and live-in options.",
+    "why2Desc": "Standard managed monthly live-in service; live-out arrangements and scheduled part-time visits have separate quotations.",
     "why3Title": "Replacement Review",
-    "why3Desc": "Replacement depends on the agreement, case review and available options.",
+    "why3Desc": "All tiers include eligible replacement review and administration, with standard, priority or role-specific coordination.",
     "why4Title": "Visa & Sponsorship Help",
-    "why4Desc": "Full assistance with maid visa and sponsorship transfer.",
+    "why4Desc": "Applicable agency sponsorship and work-permit/residence processing are included in the managed monthly service; visa-only services are separately quoted.",
     "ctaTitle": "Need domestic service guidance in the UAE?",
     "ctaSubtitle": "Share your requirements with INAYA to discuss the next step.",
     "viewAll": "View All Services"
@@ -83,7 +83,10 @@
     "success": "Your details were checked on this page only, not sent to the office. Please contact INAYA by phone or WhatsApp to share your request. No booking is confirmed.",
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email",
-    "invalidPhone": "Please enter a valid phone number"
+    "invalidPhone": "Please enter a valid phone number",
+    "planEssential": "Essential — from AED 2,500/month",
+    "planSignature": "Signature — from AED 3,000/month",
+    "planBlack": "INAYA Black — Custom Quote"
   },
   "contact": {
     "title": "Contact Us",
@@ -121,8 +124,8 @@
   },
   "pricing": {
     "title": "Pricing",
-    "subtitle": "Transparent and affordable plans",
-    "note": "Final pricing depends on service type, duration, emirate and requirements. Contact us for an exact quote.",
+    "subtitle": "Salary-included managed live-in packages",
+    "note": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role.",
     "perHour": "/ hour",
     "perMonth": "/ month",
     "popular": "Most Popular",

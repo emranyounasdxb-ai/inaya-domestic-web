@@ -1,3 +1,4 @@
+import { packageSections } from '@/lib/package-content';
 import Link from 'next/link';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
@@ -52,22 +53,22 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
     {
       icon: 'chat' as IconName,
       title: isArabic ? 'شارك احتياجك' : 'Share your requirement',
-      desc: isArabic ? 'أخبرنا بنوع الخدمة، الإمارة، الوقت المناسب، وأي تفضيلات مهمة للعائلة.' : 'Tell us the service type, emirate, timing and any important household preferences.'
+      desc: isArabic ? "شارك الدور المنزلي والمهام والإمارة والتوقيت المفضل؛ فالعرض الشهري القياسي مقيم." : "Share the household role, agreed duties, emirate and preferred timing; the standard monthly offer is live-in."
     },
     {
       icon: 'search' as IconName,
       title: isArabic ? 'نراجع الخيارات' : 'We review suitable options',
-      desc: isArabic ? 'نراجع التفاصيل ونوضح ما هو متاح حسب الخدمة والمنطقة والمتطلبات.' : 'We review the details and explain what is available by service, area and requirement.'
+      desc: isArabic ? "راجع التوفر والخبرة الفردية والتواصل وفق الدور المختار." : "Review availability and individual experience and communication against the selected role."
     },
     {
       icon: 'shield' as IconName,
       title: isArabic ? 'تأكيد التفاصيل' : 'Confirm the details',
-      desc: isArabic ? 'نؤكد الرسوم، الخطوات، المستندات المطلوبة، وأي ملاحظات قبل المتابعة.' : 'We confirm fees, next steps, required documents and notes before you proceed.'
+      desc: isArabic ? "تسلم النطاق وتفصيل السعر ومستندات السداد؛ يسدد الشهر الأول مقدماً دون رسم تجهيز منفصل أو تأمين نقدي للعرض القياسي." : "Receive the written scope, price breakdown and payment documents; the first month is prepaid with no separate setup fee or deposit for the standard offer."
     },
     {
       icon: 'support' as IconName,
       title: isArabic ? 'متابعة بعد الحجز' : 'Follow-up after booking',
-      desc: isArabic ? 'يبقى الفريق معك للمتابعة، الدعم، وتوضيح أي خطوة لاحقة.' : 'Our team stays available for follow-up, support and any next-step guidance.'
+      desc: isArabic ? "أكد المرشحة وابدأ بعد التصاريح النظامية المطلوبة؛ جهز تسليم احتياجات المنزل واتبع جدول متابعة الباقة." : "Confirm the candidate and start after required lawful authorisation; prepare the handover and follow the package review schedule."
     }
   ];
 
@@ -96,7 +97,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       items: [
         {
           q: isArabic ? 'كيف يتم اقتراح الخدمة المناسبة؟' : 'How do you suggest the right service?',
-          a: isArabic ? 'نطابق احتياج الأسرة مع نوع الخدمة المناسب مثل خادمة منزلية، مربية أطفال، رعاية منزلية، طباخة، أو دعم بدوام جزئي.' : 'We match your family requirement with the right service type, such as house maid, nanny, caregiver, cook or part-time help.'
+          a: isArabic ? "نطابق المهام المنزلية المتفق عليها مع الملفات الفردية. تقدم Essential الدعم المنزلي الاعتيادي، وتضيف Signature تقييماً للخبرة والتواصل لمتطلبات العاملة المنزلية أو المربية أو مقدمة الرعاية غير السريرية، وتخطط Black للأدوار المخصصة أو المعقدة. تحدد المهام والتوفر الاختيار." : "We match agreed household duties to individual profiles. Essential provides routine household support; Signature adds assessment of relevant experience and communication for maid, nanny or non-clinical caregiver requirements; Black plans bespoke or complex roles. Duties and availability govern the selection."
         },
         {
           q: isArabic ? 'هل الخدمة متوفرة في كل الإمارات؟' : 'Do you serve all UAE emirates?',
@@ -112,19 +113,19 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       id: 'confirmation',
       icon: 'file' as IconName,
       title: isArabic ? 'التأكيد والإجراءات' : 'Confirmation & Process',
-      text: isArabic ? 'نوضح الرسوم والخطوات والمستندات المطلوبة قبل الحجز.' : 'We clarify fees, steps and required documents before booking.',
+      text: isArabic ? "في العرض الشهري القياسي المدار، يسدد الشهر الأول مقدماً، ثم تتبع الدفعات اللاحقة تاريخ الفوترة الشهري المتفق عليه. لا توجد رسوم استقدام أو تجهيز منفصلة مقدماً، ولا تأمين نقدي. وتكون لخدمات الاستقدام أو التأشيرة المتعاقد عليها منفصلة عروضها وشروطها الخاصة." : "For the standard managed monthly offer, the first service month is paid in advance and later payments follow the agreed monthly billing date. There is no separate upfront recruitment/setup fee and no security deposit. Separately contracted recruitment and visa-only services have their own quotation and terms.",
       items: [
         {
           q: isArabic ? 'متى يتم تأكيد الحجز؟' : 'When is the booking confirmed?',
-          a: isArabic ? 'يتم تأكيد الحجز بعد مراجعة التفاصيل، توضيح الخطوات، والتأكد من توفر الخدمة المناسبة.' : 'The booking is confirmed after the details are reviewed, the steps are explained and suitable availability is confirmed.'
+          a: isArabic ? "ابدأ بتحديد الدور المنزلي والمهام والموقع والتوقيت المفضل. تراجع عناية التوفر والملاءمة الفردية، وتقدم النطاق والعرض المكتوبين، ثم تؤكد المرشحة المختارة وترتيبات البدء. تبدأ الخدمة بعد الاختيار والحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب. إذا اقترحت مرشحة مختلفة، يقدم الملف المعدل وتؤخذ موافقة العميل. تسجل التغييرات الجوهرية والبدائل كتابةً." : "Start with the household role, duties, location and preferred timing. INAYA reviews availability and individual suitability, provides the written scope and quote, and confirms the selected candidate and start arrangements. Service starts after selection, required lawful authorisation and written confirmation. If a different candidate is proposed, the revised profile is provided and customer consent obtained. Material changes and alternatives are recorded in writing."
         },
         {
           q: isArabic ? 'هل يتم شرح الرسوم والخطوات قبل الدفع؟' : 'Are fees and steps explained before payment?',
-          a: isArabic ? 'نعم، يتم توضيح الرسوم والخطوات والمستندات المطلوبة قبل أي إجراء نهائي.' : 'Yes. Fees, steps and required documents are explained before any final action.'
+          a: isArabic ? "في العرض الشهري القياسي المدار، يسدد الشهر الأول مقدماً، ثم تتبع الدفعات اللاحقة تاريخ الفوترة الشهري المتفق عليه. لا توجد رسوم استقدام أو تجهيز منفصلة مقدماً، ولا تأمين نقدي. وتكون لخدمات الاستقدام أو التأشيرة المتعاقد عليها منفصلة عروضها وشروطها الخاصة." : "For the standard managed monthly offer, the first service month is paid in advance and later payments follow the agreed monthly billing date. There is no separate upfront recruitment/setup fee and no security deposit. Separately contracted recruitment and visa-only services have their own quotation and terms."
         },
         {
           q: isArabic ? 'ما الذي يجب أن أحصل عليه كتابةً؟' : 'What should I receive in writing?',
-          a: isArabic ? 'راجع صاحب العمل ونطاق الخدمة والمهام وموقع العمل والجدول والراحة وتاريخ البدء والمدة والتجديد والتكاليف ومسؤولية كل دفعة. حدد المستندات والإجراءات المنطبقة وشروط التغيير والإلغاء والاستبدال والاسترداد. احتفظ بعرض السعر والاتفاق والإيصالات؛ ولا تفترض أن وصف الباقة يحدد كل هذه الشروط.' : 'Review the employer, service scope, duties, workplace, schedule, rest, start date, period, renewal, costs and responsibility for each payment. Identify the applicable documents and processing steps, and change, cancellation, replacement and refund terms. Keep the quote, agreement and receipts; a package description alone does not establish all these terms.'
+          a: isArabic ? "تسلم نطاق الخدمة وتفصيل السعر ومستندات السداد المنطبقة قبل التأكيد. سجل الوكالة صاحبة العمل والكفيل والمرشحة المختارة والمهام الفردية والساعات والراحة ومسؤوليات المنزل وتاريخ الفوترة وبدء الخدمة وترتيبات التجديد. تطبق شروط الإلغاء الشهري والاستبدال المؤهل المنشورة دون إلغاء الحقوق القانونية." : "Receive the service scope, price breakdown and applicable payment documentation before confirmation. Record the agency employer and sponsor, selected candidate, individual duties, hours/rest, household responsibilities, billing date, service start and renewal arrangements. The published monthly cancellation and eligible replacement terms apply without replacing statutory rights."
         }
       ]
     },
@@ -132,11 +133,11 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       id: 'support',
       icon: 'support' as IconName,
       title: isArabic ? 'الدعم والمتابعة' : 'Support & Follow-up',
-      text: isArabic ? 'يبقى فريق عناية متاحاً للمتابعة وتوضيح أي استفسار.' : 'The INAYA team remains available for follow-up and any questions.',
+      text: isArabic ? "تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق." : "Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up.",
       items: [
         {
           q: isArabic ? 'هل توجد متابعة بعد بدء الخدمة؟' : 'Do you provide follow-up after service starts?',
-          a: isArabic ? 'نعم، يتابع فريق عناية معك للتأكد من وضوح الخطوات ومعالجة أي استفسار.' : 'Yes. The INAYA team follows up to keep the process clear and answer any questions.'
+          a: isArabic ? "تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق. ساعات الدعم البشري من السبت إلى الخميس، من 9 صباحاً إلى 9 مساءً؛ الجمعة مغلق. يمكن استقبال الرسائل خارج تلك الساعات دون وعد برد بشري على مدار الساعة." : "Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up. Human support is Saturday–Thursday, 9 AM–9 PM; Friday closed. Messages may be received outside those hours without a 24/7 human-response promise."
         },
         {
           q: isArabic ? 'كيف أتابع ملاحظة على خدمة قائمة؟' : 'How do I follow up on an existing-service concern?',
