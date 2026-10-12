@@ -9,6 +9,8 @@ const slugs = [
   'maid-nanny-babysitter-differences',
   'domestic-worker-visa-sponsorship-support'
 ];
+const sectionCounts = [7, 9, 5, 6, 12, 5, 5];
+const tableCounts = [0, 1, 0, 2, 1, 1, 1];
 const relatedGuide: Record<string, string> = {
   'uae-domestic-worker-hiring-process': 'domestic-worker-package-pricing-factors',
   'domestic-worker-package-pricing-factors': 'documents-for-domestic-worker-enquiry',
@@ -57,7 +59,7 @@ for (const locale of ['en', 'ar']) {
       await page.goto(route);
       await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
       await expect(page.locator('main h1')).toHaveCount(1);
-      await expect(page.locator('main article h2')).toHaveCount(4);
+      await expect(page.locator('main article h2')).toHaveCount(sectionCounts[slugs.indexOf(slug)]);
       await expect(page.locator(`main aside a[href="/${locale}/blog/${relatedGuide[slug]}/"]`)).toHaveCount(1);
       await expect(page.locator('main a[href^="https://www.mohre.gov.ae/"], main a[href^="https://icp.gov.ae/"], main a[href^="https://www.gdrfad.gov.ae/"]')).toHaveCount(slug === 'domestic-worker-visa-sponsorship-support' ? 4 : 3);
       await expect(page.locator('[data-seo="breadcrumbs"] a[href$="/blog/"]')).toHaveCount(1);
@@ -74,12 +76,16 @@ for (const locale of ['en', 'ar']) {
       await expect(page.locator('main aside a[href="tel:+97167400128"]')).toBeVisible();
       await expect(page.locator('main aside a[href="https://wa.me/971502036767"]')).toBeVisible();
       if (slugs.indexOf(slug) >= 3 || slug === 'domestic-worker-package-pricing-factors') {
-        await expect(page.locator('main article table caption')).toBeVisible();
+        await expect(page.locator('main article table caption')).toHaveCount(tableCounts[slugs.indexOf(slug)]);
         await expect(page.locator('main article table th[scope="col"]').first()).toBeVisible();
-        const tableRegion = page.locator('main article [role="region"]');
-        await tableRegion.focus();
-        await expect(tableRegion).toBeFocused();
-        await expect(tableRegion).toHaveAttribute('aria-label', await page.locator('main article table caption').innerText());
+        const tableRegions = page.locator('main article [role="region"]');
+        await expect(tableRegions).toHaveCount(tableCounts[slugs.indexOf(slug)]);
+        for (let index = 0; index < tableCounts[slugs.indexOf(slug)]; index++) {
+          const tableRegion = tableRegions.nth(index);
+          await tableRegion.focus();
+          await expect(tableRegion).toBeFocused();
+          await expect(tableRegion).toHaveAttribute('aria-label', await page.locator('main article table caption').nth(index).innerText());
+        }
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
       const menu = page.getByRole('button', { name: locale === 'ar' ? 'القائمة' : 'Menu', exact: true });

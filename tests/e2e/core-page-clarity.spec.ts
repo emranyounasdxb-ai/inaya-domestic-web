@@ -7,7 +7,8 @@ for (const locale of ['en', 'ar'] as const) {
     await page.goto(`/${locale}/pricing/`);
     await expect(page.locator('html')).toHaveAttribute('dir', arabic ? 'rtl' : 'ltr');
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(arabic ? 'باقات وأسعار العمالة المنزلية' : 'Domestic Worker Packages and Pricing');
-    await expect(page.locator('section').first().getByText(arabic ? 'تبدأ Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف' : 'Essential starts from AED 1,500/month and Signature from AED 2,500/month, all-inclusive')).toBeVisible();
+    await expect(page.locator('section').first().getByText(arabic ? 'تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف' : 'Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive', {exact:false})).toBeVisible();
+    await expect(page.locator('main')).not.toContainText('1,500');
     await expect(page.getByRole('link', { name: arabic ? 'اقرأ دليل عوامل تسعير الباقات' : 'Read the package pricing guide' })).toHaveAttribute('href', `/${locale}/blog/domestic-worker-package-pricing-factors/`);
   });
 

@@ -1,9 +1,17 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
 import test from 'node:test';
 
 test('customer guidance has complete localized cost and statutory refund tables without policy placeholders', async () => {
+  const require = createRequire(import.meta.url);
+  const approved = JSON.parse(await readFile('tests/fixtures/managed-package-copy.json', 'utf8'));
+  const actual = require('../.next/phase-02-unit/lib/package-content.js');
+  assert.deepEqual(actual.managedPackages, approved.packages);
+  assert.deepEqual(actual.packageSections, approved.sections);
+  assert.deepEqual(actual.managedPackages.map(pkg => pkg.monthlyFrom), [2500, 3000, null]);
+  assert.deepEqual(actual.managedPackages.map(pkg => pkg.features.en.length), [7, 8, 10]);
   for (const locale of ['en', 'ar']) {
     const visibleMain = async route => {
       const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
@@ -12,9 +20,14 @@ test('customer guidance has complete localized cost and statutory refund tables 
     const pricing = await visibleMain('pricing');
     const costs = pricing.match(/<section\b[^>]*data-content="payment-responsibilities"[\s\S]*?<\/section>/)?.[0];
     assert.ok(costs, `${locale}: cost distinctions visible`);
-    assert.equal((costs.match(/<th\b[^>]*scope="row"/g) ?? []).length, 5);
-    for (const amount of ['1,500', '2,500']) assert.ok(pricing.includes(amount), `${locale}: approved monthly price ${amount}`);
+    assert.equal((costs.match(/<th\b[^>]*scope="row"/g) ?? []).length, 11);
+    for (const amount of ['2,500', '3,000']) assert.ok(pricing.includes(amount), `${locale}: approved monthly price ${amount}`);
+    assert.doesNotMatch(pricing, /1,500/);
     assert.match(pricing, locale === 'en' ? /all-inclusive/ : /شامل/);
+    assert.match(pricing, locale === 'en' ? /customer does not pay that salary separately/ : /لا يدفع العميل الراتب نفسه منفصلاً/);
+    assert.match(pricing, locale === 'en' ? /first month is prepaid|first service month is paid in advance/ : /يسدد الشهر الأول مقدماً/);
+    assert.match(pricing, locale === 'en' ? /no separate upfront recruitment\/setup fee and no security deposit/ : /لا توجد رسوم استقدام أو تجهيز منفصلة مقدماً، ولا تأمين نقدي/);
+    assert.match(pricing, locale === 'en' ? /live-out.*?separate itemised quotation.*?part-time visits.*?separately/ : /غير المقيمة.*?عرضاً منفصلاً.*?الزيارات المجدولة.*?عرض مستقل/);
     const refund = await visibleMain('refund-policy');
     const rules = refund.match(/<section\b[^>]*data-content="refund-scenarios"[\s\S]*?<\/section>/)?.[0];
     assert.ok(rules, `${locale}: official recruitment rules visible`);
@@ -108,7 +121,10 @@ test('cPanel root uses a language-aware HTTP redirect and preserves proven FTP d
   assert.match(workflow, /lftp -u "\$CPANEL_FTP_USER","\$CPANEL_FTP_PASSWORD" "\$CPANEL_FTP_HOST" <<EOF/);
   assert.match(workflow, /set ftp:ssl-allow no/);
   assert.match(workflow, /mirror --reverse --verbose --parallel=2/);
-  assert.match(workflow, /\.\/out\/ "\$CPANEL_FTP_SERVER_DIR"/);
+    assert.match(workflow, /\$RUNNER_TEMP\/inaya-ftp-selected\/" "\$CPANEL_FTP_SERVER_DIR"/);
+    assert.match(workflow, /--overwrite --transfer-all --ignore-time/);
+    assert.match(workflow, /include-glob-from="\$RUNNER_TEMP\/inaya-ftp-current-paths\.txt"/);
+    assert.match(workflow, /set cmd:fail-exit yes/);
   assert.doesNotMatch(workflow, /set ftp:ssl-(?:force|protect-data) yes/);
   assert.doesNotMatch(workflow, /set ssl:verify-certificate yes/);
 });

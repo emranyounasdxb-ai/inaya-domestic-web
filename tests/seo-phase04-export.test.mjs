@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import test from 'node:test';
+import managed from './managed-package-expectations.cjs';
 import { auditExport, text } from '../scripts/seo-content-audit.mjs';
 const require = createRequire(import.meta.url);
 const { buyerAnswers } = require('../.next/phase-02-unit/lib/buyer-answers.js');
@@ -15,11 +16,12 @@ test('all 194 routes omit unsupported statistics, approval and ranking labels an
   assert.equal(new Set(audit.pages.map((p) => p.description)).size, 194);
   assert.deepEqual(audit.orphans, []);
   assert.equal(audit.nearPairs.length, 0);
-  assert.ok(audit.repeatedTokens <= 8300, 'retain Phase 3 lexical improvement with six substantive guide pages');
+  assert.ok(managed.editorialRepetition(audit).repeatedTokens <= 8300, 'retain the editorial repetition budget alongside exact approved commercial copy');
   for (const page of audit.pages) {
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const visible = text(file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, ''));
-    assert.doesNotMatch(visible, /No\.\s*1|10,000\+|100%|24\/7|Licensed & Approved|Recognized & Trusted by UAE Authorities|Verified & Trusted Workers|Verified workers|Available profiles|12 Years Exp\.|12 سنة خبرة|مرخص ومعتمد|ملفات متاحة|الخيار الأول/i, page.url);
+    const withoutNegativeHelplineStatement = visible.replace(/\b(?:not|without|does not promise) a 24\/7\b/g, 'not continuous');
+    assert.doesNotMatch(withoutNegativeHelplineStatement, /No\.\s*1|10,000\+|100%|24\/7|Licensed & Approved|Recognized & Trusted by UAE Authorities|Verified & Trusted Workers|Verified workers|Available profiles|12 Years Exp\.|12 سنة خبرة|مرخص ومعتمد|ملفات متاحة|الخيار الأول/i, page.url);
     assert.doesNotMatch(`${page.title} ${page.description}`, /safer hiring|trained or experienced|trusted maid agency|أكثر أماناً|ملفات مدربة|شركة خادمات موثوقة/i, page.url);
     assert.ok(file.includes(siteConfig.email), page.url);
     assert.ok(file.includes(`tel:${siteConfig.phone.replace(/\s/g, '')}`), page.url);

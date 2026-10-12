@@ -61,13 +61,15 @@ test('core pages answer practical questions and visa exports contain case guidan
   }
 });
 
-test('pricing displays only confirmed monthly amounts and makes unconfirmed terms explicit', async () => {
+test('pricing displays the approved managed monthly amounts and concrete terms', async () => {
   for (const locale of ['en', 'ar']) {
     const body = visible(await htmlFor(locale, 'pricing'));
-    assert.match(text(body), locale === 'ar' ? /Essential من 1,500 درهم شهرياً وSignature من 2,500 درهم شهرياً، شاملتين التكاليف/ : /Essential starts from AED 1,500\/month and Signature from AED 2,500\/month, all-inclusive/);
-    assert.match(text(body), locale === 'ar' ? /تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة/ : /Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package/);
+    assert.match(text(body), locale === 'ar' ? /Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف/ : /Essential starts from AED 2,500\/month and Signature from AED 3,000\/month, all-inclusive/);
+    assert.match(text(body), locale === 'ar' ? /مهام مكتوبة وتسليم عملي/ : /Written duties and practical household handover/);
     assert.match(text(body), locale === 'ar' ? /عرض سعر مخصص/ : /Custom Quote/);
-    assert.doesNotMatch(text(body), /Priority follow-up|Extended|VIP|Training and appraisal|أولوية في المتابعة|مدير متابعة للحالة|تدريب وتقييم/);
+    assert.match(text(body), locale === 'ar' ? /أولوية في المتابعة وتنسيق مطابقة الاستبدال/ : /Priority follow-up and replacement matching coordination/);
+    assert.match(text(body), locale === 'ar' ? /إرشاد بشأن التدريب وتقييم الأداء ضمن النطاق المتفق عليه/ : /Training and performance-appraisal guidance within the agreed scope/);
+    assert.doesNotMatch(text(body), /1,500|AED 4,000|unlimited replacements|استبدال غير محدود مضمون/);
   }
 });
 
