@@ -55,7 +55,10 @@ export type PageSeo = {
 const pages: Record<string, { name: Localized; description: Localized }> = {
   '': {
     name: { en: 'Maid & Domestic Worker Services in UAE', ar: 'خدمات الخادمات والعمالة المنزلية في الإمارات' },
-    description: { en: 'Explore INAYA domestic worker services for UAE households, including maids, nannies, cooking, care support and guidance before booking.', ar: 'استكشف خدمات عناية للعمالة المنزلية للأسر في الإمارات، بما يشمل الخادمات والمربيات والطبخ ودعم الرعاية والإرشاد قبل الحجز.' }
+    description: {
+  "en": "INAYA-managed, salary-included live-in domestic-worker service: Essential from AED 2,500/month, Signature from AED 3,000/month and Black Custom Quote.",
+  "ar": "خدمة عمالة منزلية مقيمة تديرها عناية وتشمل الراتب: Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً وBlack بعرض سعر مخصص."
+}
   },
   about: {
     name: { en: 'About INAYA Domestic Workers', ar: 'عن عناية للعمالة المنزلية' },
@@ -75,7 +78,10 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   pricing: {
     name: { en: 'Domestic Worker Packages & Pricing', ar: 'باقات وأسعار العمالة المنزلية' },
-    description: { en: 'Review the domestic service packages and pricing information shown by INAYA, compare included support and contact the team to confirm your requirements.', ar: 'راجع معلومات باقات وأسعار الخدمات المنزلية المعروضة لدى عناية وقارن الدعم المشمول وتواصل مع الفريق لتأكيد متطلباتك.' }
+    description: {
+  "en": "Compare INAYA’s managed live-in packages from AED 2,500 and AED 3,000/month, with salary inclusions, tier features, exclusions and written commercial terms.",
+  "ar": "قارن باقات عناية المقيمة المدارة من 2,500 و3,000 درهم شهرياً، مع شمول الراتب وعناصر الباقات والاستثناءات والشروط التجارية المكتوبة."
+}
   },
   blog: {
     name: { en: 'Domestic Service Guides', ar: 'أدلة الخدمات المنزلية' },
@@ -107,11 +113,17 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   'support-process': {
     name: { en: 'Service Support Process', ar: 'إجراءات دعم الخدمات' },
-    description: { en: 'Learn how INAYA reviews household service concerns using booking details, the confirmed agreement, available options and follow-up.', ar: 'تعرف على كيفية مراجعة عناية لملاحظات الخدمات المنزلية باستخدام تفاصيل الحجز والاتفاق المؤكد والخيارات المتوفرة والمتابعة.' }
+    description: {
+  "en": "INAYA tier follow-up schedules, office response hours, eligible replacement coordination and written complaint review alongside official MOHRE escalation.",
+  "ar": "مواعيد متابعة باقات عناية وساعات الدعم بالمكتب وتنسيق الاستبدال المؤهل ومراجعة الشكاوى المكتوبة إلى جانب التصعيد الرسمي لدى الوزارة."
+}
   },
   'refund-policy': {
     name: { en: 'Refund & Replacement Policy', ar: 'سياسة الاسترداد والاستبدال' },
-    description: { en: 'Read the INAYA refund and replacement review process, including eligibility, agreement terms, documents and how to contact the team about your request.', ar: 'اقرأ إجراءات عناية لمراجعة الاسترداد والاستبدال بما يشمل الأهلية وشروط الاتفاق والمستندات وكيفية التواصل مع الفريق بشأن طلبك.' }
+    description: {
+  "en": "INAYA monthly cancellation refunds return unused pre-service payments or unused prepaid periods pro rata, with eligible replacement support and statutory rights preserved.",
+  "ar": "تعيد عناية الدفعات غير المستخدمة قبل البدء أو الفترات المدفوعة غير المستخدمة بالتناسب بعد الإلغاء، مع دعم الاستبدال المؤهل وحفظ الحقوق القانونية."
+}
   }
 };
 

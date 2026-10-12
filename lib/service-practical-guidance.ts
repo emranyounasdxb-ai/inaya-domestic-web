@@ -11,7 +11,7 @@ type Guidance = {
   faqs: Pair[];
 };
 
-// Service scope already described by INAYA; these are questions to agree, not new contract benefits.
+// Role-specific preparation and the owner-approved managed monthly offering.
 const guidance: Record<string, Record<Lang, Guidance>> = {
   'live-in-maid': {
     en: {
@@ -57,213 +57,365 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
   },
   'full-time-maid': {
     en: {
-      scope: 'Full-time maid enquiries concern regular household work on an agreed schedule: cleaning, laundry, ironing and kitchen assistance where agreed. Full-time does not by itself specify that the worker lives in your home.',
-      arrangement: 'Define the daily and weekly schedule first, then discuss live-in or live-out arrangements separately. A monthly pricing period alone does not define the working arrangement.',
-      prepare: 'Share the home size, recurring duties, required hours and days, emirate, preferred timing and any accommodation proposal.',
-      duties: ['Regular room and surface cleaning', 'Laundry and ironing priorities', 'Kitchen assistance where agreed', 'An organized household task schedule'],
-      limits: ['Agree hours, rest and which duties take priority', 'Do not assume a live-in residence or continuous availability', 'Discuss childcare, cooking or care roles separately if they are the main requirement', 'Confirm written costs, documents and support terms before agreeing'],
-      steps: [
-        { title: 'List recurring work', text: 'Describe the cleaning, laundry and household workload.' },
-        { title: 'Define the schedule', text: 'Specify days and hours and discuss residence separately.' },
-        { title: 'Compare experience', text: 'Review the individual profile against your required duties.' },
-        { title: 'Request a written proposal', text: 'Clarify costs, responsibilities and service support conditions.' },
-        { title: 'Confirm the arrangement', text: 'Agree the scope and timing after availability and terms are confirmed.' }
-      ],
-      quote: ['Recurring workload and home size', 'Required days, hours and working arrangement', 'Agreed service scope and any case-specific requirements'],
-      faqs: [
-        { title: 'Does full-time mean live-in?', text: 'No. Full-time concerns the work schedule. Live-in concerns accommodation. Confirm both parts of the proposed arrangement.' },
-        { title: 'Does monthly pricing mean full-time work?', text: 'A full-time enquiry concerns a regular work schedule. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.' },
-        { title: 'Can duties be changed later?', text: 'Discuss the proposed change with INAYA and review the agreement. Do not assume extra duties, hours or support are automatically included.' }
-      ]
+  "scope": "Full-time maid enquiries concern regular household work on an agreed schedule: cleaning, laundry, ironing and kitchen assistance where agreed. Full-time does not by itself specify that the worker lives in your home.",
+  "arrangement": "Define the daily and weekly schedule first, then discuss live-in or live-out arrangements separately. A monthly pricing period alone does not define the working arrangement.",
+  "prepare": "Share the home size, recurring duties, required hours and days, emirate, preferred timing and any accommodation proposal.",
+  "duties": [
+    "Regular room and surface cleaning",
+    "Laundry and ironing priorities",
+    "Kitchen assistance where agreed",
+    "An organized household task schedule"
+  ],
+  "limits": [
+    "Agree hours, rest and which duties take priority",
+    "Do not assume a live-in residence or continuous availability",
+    "Discuss childcare, cooking or care roles separately if they are the main requirement",
+    "Confirm written costs, documents and support terms before agreeing"
+  ],
+  "steps": [
+    {
+      "title": "List recurring work",
+      "text": "Describe the cleaning, laundry and household workload."
     },
-    ar: {
-      scope: 'تتعلق طلبات الخادمة بدوام كامل بالعمل المنزلي المنتظم وفق جدول متفق عليه: التنظيف والغسيل والكي ومساعدة المطبخ عند الاتفاق. الدوام الكامل لا يحدد وحده إقامة العاملة في المنزل.',
-      arrangement: 'حدد الجدول اليومي والأسبوعي أولاً، ثم ناقش الإقامة أو عدم الإقامة بشكل منفصل. فترة التسعير الشهرية وحدها لا تحدد ترتيب العمل.',
-      prepare: 'شارك حجم المنزل والمهام المتكررة والساعات والأيام المطلوبة والإمارة والتوقيت المفضل وأي اقتراح للسكن.',
-      duties: ['تنظيف منتظم للغرف والأسطح', 'أولويات الغسيل والكي', 'مساعدة المطبخ عند الاتفاق', 'جدول منظم للمهام المنزلية'],
-      limits: ['اتفق على الساعات والراحة وأولويات المهام', 'لا تفترض الإقامة أو التوفر الدائم', 'ناقش رعاية الأطفال أو الطبخ أو الرعاية بشكل منفصل إذا كانت الحاجة الأساسية', 'أكد التكاليف والمستندات وشروط الدعم كتابةً'],
-      steps: [
-        { title: 'حدد العمل المتكرر', text: 'صف عبء التنظيف والغسيل والمهام المنزلية.' },
-        { title: 'حدد الجدول', text: 'وضح الأيام والساعات وناقش السكن بشكل منفصل.' },
-        { title: 'قارن الخبرة', text: 'راجع الملف الفردي وفق المهام المطلوبة.' },
-        { title: 'اطلب عرضاً مكتوباً', text: 'وضح التكاليف والمسؤوليات وشروط دعم الخدمة.' },
-        { title: 'أكد الترتيب', text: 'اتفق على النطاق والتوقيت بعد تأكيد التوفر والشروط.' }
-      ],
-      quote: ['عبء العمل المتكرر وحجم المنزل', 'الأيام والساعات وترتيب العمل', 'نطاق الخدمة وأي متطلبات خاصة بالحالة'],
-      faqs: [
-        { title: 'هل الدوام الكامل يعني الإقامة؟', text: 'لا. الدوام الكامل يتعلق بجدول العمل، والإقامة تتعلق بالسكن. أكد الجزأين في الترتيب المقترح.' },
-        { title: 'هل يعني السعر الشهري العمل بدوام كامل؟', text: 'يتعلق طلب الدوام الكامل بجدول عمل منتظم. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.' },
-        { title: 'هل يمكن تغيير المهام لاحقاً؟', text: 'ناقش التغيير مع عناية وراجع الاتفاق. لا تفترض شمول المهام أو الساعات أو الدعم الإضافي تلقائياً.' }
-      ]
+    {
+      "title": "Define the schedule",
+      "text": "Specify days and hours and discuss residence separately."
+    },
+    {
+      "title": "Compare experience",
+      "text": "Review the individual profile against your required duties."
+    },
+    {
+      "title": "Request a written proposal",
+      "text": "Clarify costs, responsibilities and service support conditions."
+    },
+    {
+      "title": "Confirm the arrangement",
+      "text": "Agree the scope and timing after availability and terms are confirmed."
     }
+  ],
+  "quote": [
+    "Recurring workload and home size",
+    "Required days, hours and working arrangement",
+    "Agreed service scope and any case-specific requirements"
+  ],
+  "faqs": [
+    {
+      "title": "Does full-time mean live-in?",
+      "text": "No. Full-time concerns the work schedule. Live-in concerns accommodation. Confirm both parts of the proposed arrangement."
+    },
+    {
+      "title": "Does monthly pricing mean full-time work?",
+      "text": "The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role."
+    },
+    {
+      "title": "Can duties be changed later?",
+      "text": "Discuss the proposed change with INAYA and review the agreement. Do not assume extra duties, hours or support are automatically included."
+    }
+  ]
+},
+    ar: {
+  "scope": "تتعلق طلبات الخادمة بدوام كامل بالعمل المنزلي المنتظم وفق جدول متفق عليه: التنظيف والغسيل والكي ومساعدة المطبخ عند الاتفاق. الدوام الكامل لا يحدد وحده إقامة العاملة في المنزل.",
+  "arrangement": "حدد الجدول اليومي والأسبوعي أولاً، ثم ناقش الإقامة أو عدم الإقامة بشكل منفصل. فترة التسعير الشهرية وحدها لا تحدد ترتيب العمل.",
+  "prepare": "شارك حجم المنزل والمهام المتكررة والساعات والأيام المطلوبة والإمارة والتوقيت المفضل وأي اقتراح للسكن.",
+  "duties": [
+    "تنظيف منتظم للغرف والأسطح",
+    "أولويات الغسيل والكي",
+    "مساعدة المطبخ عند الاتفاق",
+    "جدول منظم للمهام المنزلية"
+  ],
+  "limits": [
+    "اتفق على الساعات والراحة وأولويات المهام",
+    "لا تفترض الإقامة أو التوفر الدائم",
+    "ناقش رعاية الأطفال أو الطبخ أو الرعاية بشكل منفصل إذا كانت الحاجة الأساسية",
+    "أكد التكاليف والمستندات وشروط الدعم كتابةً"
+  ],
+  "steps": [
+    {
+      "title": "حدد العمل المتكرر",
+      "text": "صف عبء التنظيف والغسيل والمهام المنزلية."
+    },
+    {
+      "title": "حدد الجدول",
+      "text": "وضح الأيام والساعات وناقش السكن بشكل منفصل."
+    },
+    {
+      "title": "قارن الخبرة",
+      "text": "راجع الملف الفردي وفق المهام المطلوبة."
+    },
+    {
+      "title": "اطلب عرضاً مكتوباً",
+      "text": "وضح التكاليف والمسؤوليات وشروط دعم الخدمة."
+    },
+    {
+      "title": "أكد الترتيب",
+      "text": "اتفق على النطاق والتوقيت بعد تأكيد التوفر والشروط."
+    }
+  ],
+  "quote": [
+    "عبء العمل المتكرر وحجم المنزل",
+    "الأيام والساعات وترتيب العمل",
+    "نطاق الخدمة وأي متطلبات خاصة بالحالة"
+  ],
+  "faqs": [
+    {
+      "title": "هل الدوام الكامل يعني الإقامة؟",
+      "text": "لا. الدوام الكامل يتعلق بجدول العمل، والإقامة تتعلق بالسكن. أكد الجزأين في الترتيب المقترح."
+    },
+    {
+      "title": "هل يعني السعر الشهري العمل بدوام كامل؟",
+      "text": "تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار."
+    },
+    {
+      "title": "هل يمكن تغيير المهام لاحقاً؟",
+      "text": "ناقش التغيير مع عناية وراجع الاتفاق. لا تفترض شمول المهام أو الساعات أو الدعم الإضافي تلقائياً."
+    }
+  ]
+}
   },
   'part-time-maid': {
     en: {
-      scope: 'Part-time maid support is organized around scheduled visits and a defined task list. Discuss room cleaning, laundry, ironing or kitchen assistance according to the time and scope agreed for each visit.',
-      arrangement: 'State the preferred visit days, time window and priorities. Part-time visits do not imply a full-time worker or residence in your home.',
-      prepare: 'Prepare the rooms to clean, priority tasks, visit frequency, preferred hours, address and building access details. Ask which supplies and equipment to prepare.',
-      duties: ['Agreed rooms and surfaces', 'Laundry or ironing when included in the task list', 'Kitchen assistance when agreed', 'A priority list that fits the visit'],
-      limits: ['Specialist deep cleaning or moving services are not assumed', 'Childcare requires a separate discussion of duties and experience', 'Confirm supplies, access and the time available for tasks', 'Discuss rescheduling, extra time and costs against the agreed terms'],
-      steps: [
-        { title: 'List the tasks', text: 'Identify rooms and the most important work for the visit.' },
-        { title: 'Specify visit timing', text: 'Share frequency, preferred hours and the exact area.' },
-        { title: 'Check practical details', text: 'Confirm access, supplies and any task limits with the team.' },
-        { title: 'Review the quote', text: 'Request the visit scope, costs and scheduling conditions in writing.' },
-        { title: 'Confirm the visit', text: 'Confirm availability and the agreed work before relying on a booking.' }
-      ],
-      quote: ['Visit frequency and agreed time', 'Home size and priority tasks', 'Address, access and agreed service scope'],
-      faqs: [
-        { title: 'How do I decide the visit scope?', text: 'List the rooms and tasks in priority order and discuss what can fit the agreed visit. Do not assume every household task is included.' },
-        { title: 'Is part-time the same as a monthly plan?', text: 'Part-time describes scheduled, limited-time support. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.' },
-        { title: 'Are supplies and extra hours included?', text: 'Confirm supplies, equipment, agreed hours and the treatment of extra tasks or time in the written proposal; no fixed inclusion is promised here.' }
-      ]
+  "scope": "Part-time maid support is organized around scheduled visits and a defined task list. Discuss room cleaning, laundry, ironing or kitchen assistance according to the time and scope agreed for each visit.",
+  "arrangement": "State the preferred visit days, time window and priorities. Part-time visits do not imply a full-time worker or residence in your home.",
+  "prepare": "Prepare the rooms to clean, priority tasks, visit frequency, preferred hours, address and building access details. Ask which supplies and equipment to prepare.",
+  "duties": [
+    "Agreed rooms and surfaces",
+    "Laundry or ironing when included in the task list",
+    "Kitchen assistance when agreed",
+    "A priority list that fits the visit"
+  ],
+  "limits": [
+    "Specialist deep cleaning or moving services are not assumed",
+    "Childcare requires a separate discussion of duties and experience",
+    "Confirm supplies, access and the time available for tasks",
+    "Discuss rescheduling, extra time and costs against the agreed terms"
+  ],
+  "steps": [
+    {
+      "title": "List the tasks",
+      "text": "Identify rooms and the most important work for the visit."
     },
-    ar: {
-      scope: 'ينظم دعم الخادمة بدوام جزئي حول زيارات مجدولة وقائمة مهام محددة. ناقش تنظيف الغرف أو الغسيل أو الكي أو مساعدة المطبخ وفق الوقت والنطاق المتفق عليه لكل زيارة.',
-      arrangement: 'حدد أيام الزيارة والفترة الزمنية والأولويات. الزيارات الجزئية لا تعني توفير عاملة بدوام كامل أو إقامة في المنزل.',
-      prepare: 'جهز الغرف والمهام ذات الأولوية وتكرار الزيارات والساعات المفضلة والعنوان وتفاصيل الدخول. اسأل عن المستلزمات والمعدات التي يجب تجهيزها.',
-      duties: ['الغرف والأسطح المتفق عليها', 'الغسيل أو الكي إذا شملتهما قائمة المهام', 'مساعدة المطبخ عند الاتفاق', 'أولويات تناسب وقت الزيارة'],
-      limits: ['لا يفترض شمول التنظيف المتخصص أو خدمات النقل', 'تحتاج رعاية الأطفال إلى مناقشة مستقلة للمهام والخبرة', 'أكد المستلزمات والدخول والوقت المتاح للمهام', 'ناقش تغيير الموعد والوقت الإضافي والتكاليف وفق الشروط'],
-      steps: [
-        { title: 'حدد المهام', text: 'حدد الغرف والأعمال الأهم للزيارة.' },
-        { title: 'حدد توقيت الزيارة', text: 'شارك التكرار والساعات المفضلة والمنطقة الدقيقة.' },
-        { title: 'راجع التفاصيل العملية', text: 'أكد الدخول والمستلزمات وحدود المهام مع الفريق.' },
-        { title: 'راجع عرض السعر', text: 'اطلب نطاق الزيارة والتكاليف وشروط الجدولة كتابةً.' },
-        { title: 'أكد الزيارة', text: 'أكد التوفر والعمل المتفق عليه قبل الاعتماد على الحجز.' }
-      ],
-      quote: ['تكرار الزيارات والوقت المتفق عليه', 'حجم المنزل والمهام ذات الأولوية', 'العنوان والدخول ونطاق الخدمة المتفق عليه'],
-      faqs: [
-        { title: 'كيف أحدد نطاق الزيارة؟', text: 'رتب الغرف والمهام حسب الأولوية وناقش ما يناسب وقت الزيارة المتفق عليه. لا تفترض شمول جميع المهام المنزلية.' },
-        { title: 'هل الدوام الجزئي هو الخطة الشهرية نفسها؟', text: 'يصف الدوام الجزئي دعماً مجدولاً ومحدود الوقت، تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.' },
-        { title: 'هل تشمل الخدمة المستلزمات والساعات الإضافية؟', text: 'أكد المستلزمات والمعدات والساعات وطريقة التعامل مع المهام أو الوقت الإضافي في العرض المكتوب؛ لا توجد بنود ثابتة موعودة هنا.' }
-      ]
+    {
+      "title": "Specify visit timing",
+      "text": "Share frequency, preferred hours and the exact area."
+    },
+    {
+      "title": "Check practical details",
+      "text": "Confirm access, supplies and any task limits with the team."
+    },
+    {
+      "title": "Review the quote",
+      "text": "Request the visit scope, costs and scheduling conditions in writing."
+    },
+    {
+      "title": "Confirm the visit",
+      "text": "Confirm availability and the agreed work before relying on a booking."
     }
+  ],
+  "quote": [
+    "Visit frequency and agreed time",
+    "Home size and priority tasks",
+    "Address, access and agreed service scope"
+  ],
+  "faqs": [
+    {
+      "title": "How do I decide the visit scope?",
+      "text": "List the rooms and tasks in priority order and discuss what can fit the agreed visit. Do not assume every household task is included."
+    },
+    {
+      "title": "Is part-time the same as a monthly plan?",
+      "text": "Scheduled part-time visits have a separate quotation for the agreed work, schedule, location and lawful arrangement. The full-time managed monthly starting price does not automatically cover these visits."
+    },
+    {
+      "title": "Are supplies and extra hours included?",
+      "text": "Confirm supplies, equipment, agreed hours and the treatment of extra tasks or time in the written proposal; no fixed inclusion is promised here."
+    }
+  ]
+},
+    ar: {
+  "scope": "ينظم دعم الخادمة بدوام جزئي حول زيارات مجدولة وقائمة مهام محددة. ناقش تنظيف الغرف أو الغسيل أو الكي أو مساعدة المطبخ وفق الوقت والنطاق المتفق عليه لكل زيارة.",
+  "arrangement": "حدد أيام الزيارة والفترة الزمنية والأولويات. الزيارات الجزئية لا تعني توفير عاملة بدوام كامل أو إقامة في المنزل.",
+  "prepare": "جهز الغرف والمهام ذات الأولوية وتكرار الزيارات والساعات المفضلة والعنوان وتفاصيل الدخول. اسأل عن المستلزمات والمعدات التي يجب تجهيزها.",
+  "duties": [
+    "الغرف والأسطح المتفق عليها",
+    "الغسيل أو الكي إذا شملتهما قائمة المهام",
+    "مساعدة المطبخ عند الاتفاق",
+    "أولويات تناسب وقت الزيارة"
+  ],
+  "limits": [
+    "لا يفترض شمول التنظيف المتخصص أو خدمات النقل",
+    "تحتاج رعاية الأطفال إلى مناقشة مستقلة للمهام والخبرة",
+    "أكد المستلزمات والدخول والوقت المتاح للمهام",
+    "ناقش تغيير الموعد والوقت الإضافي والتكاليف وفق الشروط"
+  ],
+  "steps": [
+    {
+      "title": "حدد المهام",
+      "text": "حدد الغرف والأعمال الأهم للزيارة."
+    },
+    {
+      "title": "حدد توقيت الزيارة",
+      "text": "شارك التكرار والساعات المفضلة والمنطقة الدقيقة."
+    },
+    {
+      "title": "راجع التفاصيل العملية",
+      "text": "أكد الدخول والمستلزمات وحدود المهام مع الفريق."
+    },
+    {
+      "title": "راجع عرض السعر",
+      "text": "اطلب نطاق الزيارة والتكاليف وشروط الجدولة كتابةً."
+    },
+    {
+      "title": "أكد الزيارة",
+      "text": "أكد التوفر والعمل المتفق عليه قبل الاعتماد على الحجز."
+    }
+  ],
+  "quote": [
+    "تكرار الزيارات والوقت المتفق عليه",
+    "حجم المنزل والمهام ذات الأولوية",
+    "العنوان والدخول ونطاق الخدمة المتفق عليه"
+  ],
+  "faqs": [
+    {
+      "title": "كيف أحدد نطاق الزيارة؟",
+      "text": "رتب الغرف والمهام حسب الأولوية وناقش ما يناسب وقت الزيارة المتفق عليه. لا تفترض شمول جميع المهام المنزلية."
+    },
+    {
+      "title": "هل الدوام الجزئي هو الخطة الشهرية نفسها؟",
+      "text": "للزيارات المجدولة بدوام جزئي عرض مستقل للعمل والجدول والموقع والترتيب النظامي المتفق عليها. ولا يغطي السعر الشهري المبدئي المدار للدوام الكامل هذه الزيارات تلقائياً."
+    },
+    {
+      "title": "هل تشمل الخدمة المستلزمات والساعات الإضافية؟",
+      "text": "أكد المستلزمات والمعدات والساعات وطريقة التعامل مع المهام أو الوقت الإضافي في العرض المكتوب؛ لا توجد بنود ثابتة موعودة هنا."
+    }
+  ]
+}
   },
   'monthly-maid-contract': {
   "en": {
-    "scope": "A monthly maid contract enquiry starts with your household needs and the service arrangement you want to discuss. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.",
-    "arrangement": "Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.",
-    "prepare": "Describe your household, priority tasks, location and preferred period. Ask INAYA to confirm a proposed arrangement and written package terms.",
-    "duties": [
-      "Describe the household tasks you need",
-      "Confirm the working arrangement",
-      "Agree the schedule for your request",
-      "Review the selected package terms"
-    ],
-    "limits": [
-      "Confirm duties and individual inclusions",
-      "Confirm the working schedule and accommodation arrangement",
-      "Review the written package terms",
-      "Ask about changes and support conditions before agreeing"
-    ],
-    "steps": [
-      {
-        "title": "Describe your needs",
-        "text": "Share household tasks and priorities."
-      },
-      {
-        "title": "Discuss the arrangement",
-        "text": "Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package."
-      },
-      {
-        "title": "Review the proposed scope",
-        "text": "Ask for duties and schedule in writing."
-      },
-      {
-        "title": "Compare published pricing",
-        "text": "Review the published monthly starting prices, then request a written proposal for the package you want to discuss."
-      },
-      {
-        "title": "Confirm the terms",
-        "text": "Confirm the selected package and agreed terms before proceeding."
-      }
-    ],
-    "quote": [
-      "Selected package and working arrangement",
-      "Agreed duties and schedule",
-      "Written terms for your request"
-    ],
-    "faqs": [
-      {
-        "title": "Does monthly pricing specify live-in, live-out or full-time work?",
-        "text": "Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package."
-      },
-      {
-        "title": "What are the published monthly starting prices?",
-        "text": "Essential starts at AED 1,500 per month, all-inclusive. Signature starts at AED 2,500 per month, all-inclusive. INAYA Black remains Custom Quote."
-      },
-      {
-        "title": "Which duties, schedule and terms are included?",
-        "text": "Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package."
-      },
-      {
-        "title": "What if my requirements change?",
-        "text": "Discuss the change with INAYA and review the proposed scope and written terms before agreeing."
-      }
-    ]
-  },
+  "scope": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.",
+  "arrangement": "The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role.",
+  "prepare": "Start with the household role, duties, location and preferred timing. INAYA reviews availability and individual suitability, provides the written scope and quote, and confirms the selected candidate and start arrangements. Service starts after selection, required lawful authorisation and written confirmation.",
+  "duties": [
+  "Household support matched to the individual agreed role",
+  "Written duties and practical household handover",
+  "Tier-specific contact, coordination and follow-up",
+  "Eligible replacement review, matching coordination and administration"
+],
+  "limits": [
+    "Confirm duties and individual inclusions",
+    "Confirm the working schedule and accommodation arrangement",
+    "Review the written package terms",
+    "Ask about changes and support conditions before agreeing"
+  ],
+  "steps": [
+    {
+      "title": "Describe your needs",
+      "text": "Share household tasks and priorities."
+    },
+    {
+      "title": "Discuss the arrangement",
+      "text": "Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package."
+    },
+    {
+      "title": "Review the proposed scope",
+      "text": "Ask for duties and schedule in writing."
+    },
+    {
+      "title": "Compare published pricing",
+      "text": "Review the published monthly starting prices, then request a written proposal for the package you want to discuss."
+    },
+    {
+      "title": "Confirm the terms",
+      "text": "Confirm the selected package and agreed terms before proceeding."
+    }
+  ],
+  "quote": [
+    "Essential — AED 2,500",
+    "Signature — AED 3,000",
+    "INAYA Black — Custom Quote"
+  ],
+  "faqs": [
+    {
+      "title": "What is the advertised standard monthly arrangement?",
+      "text": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role."
+    },
+    {
+      "title": "What payments and salary responsibilities apply?",
+      "text": "For the standard managed monthly offer, the first service month is paid in advance and later payments follow the agreed monthly billing date. There is no separate upfront recruitment/setup fee and no security deposit. Separately contracted recruitment and visa-only services have their own quotation and terms. The service payment includes the agreed worker salary; the customer does not pay that same salary separately."
+    },
+    {
+      "title": "What are the tier differences and follow-up schedules?",
+      "text": "Essential provides routine household matching, an assigned contact and first-week then monthly follow-up. Signature adds experience/communication assessment, a dedicated coordinator, priority matching and first-week then fortnightly follow-up. Black provides bespoke planning, a named contact and an agreed review schedule."
+    },
+    {
+      "title": "What happens if I cancel or need replacement?",
+      "text": "Before service commencement, INAYA returns the unused monthly service payment. After commencement, the unused prepaid service period following effective cancellation is refunded on a clear pro-rata basis. The calculation identifies the prepaid amount, service period, effective cancellation date and unused period. Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination."
+    }
+  ]
+},
   "ar": {
-    "scope": "يبدأ استفسار عقد الخادمة الشهري باحتياجات المنزل وترتيب الخدمة المطلوب مناقشته. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.",
-    "arrangement": "تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.",
-    "prepare": "صف المنزل والمهام ذات الأولوية والمنطقة والفترة المفضلة. اطلب من عناية تأكيد الترتيب المقترح وشروط الباقة كتابةً.",
-    "duties": [
-      "وضح المهام المنزلية المطلوبة",
-      "أكد ترتيب العمل",
-      "اتفق على جدول طلبك",
-      "راجع شروط الباقة المختارة"
-    ],
-    "limits": [
-      "أكد المهام والبنود الفردية المشمولة",
-      "أكد جدول العمل وترتيب السكن",
-      "راجع شروط الباقة المكتوبة",
-      "اسأل عن شروط التغيير والدعم قبل الاتفاق"
-    ],
-    "steps": [
-      {
-        "title": "صف احتياجاتك",
-        "text": "شارك المهام المنزلية والأولويات."
-      },
-      {
-        "title": "ناقش الترتيب",
-        "text": "تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها."
-      },
-      {
-        "title": "راجع النطاق المقترح",
-        "text": "اطلب المهام والجدول كتابةً."
-      },
-      {
-        "title": "قارن الأسعار المنشورة",
-        "text": "راجع الأسعار الشهرية الابتدائية المنشورة، ثم اطلب عرضاً مكتوباً للباقة المطلوب مناقشتها."
-      },
-      {
-        "title": "أكد الشروط",
-        "text": "أكد الباقة المختارة والشروط المتفق عليها قبل المتابعة."
-      }
-    ],
-    "quote": [
-      "الباقة المختارة وترتيب العمل",
-      "المهام والجدول المتفق عليهما",
-      "الشروط المكتوبة لطلبك"
-    ],
-    "faqs": [
-      {
-        "title": "هل يحدد السعر الشهري الإقامة أو عدم الإقامة أو الدوام الكامل؟",
-        "text": "تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها."
-      },
-      {
-        "title": "ما الأسعار الشهرية الابتدائية المنشورة؟",
-        "text": "تبدأ Essential من 1,500 درهم شهرياً شاملة التكاليف. وتبدأ Signature من 2,500 درهم شهرياً شاملة التكاليف. وتبقى INAYA Black بعرض سعر مخصص."
-      },
-      {
-        "title": "ما المهام والجدول والشروط المشمولة؟",
-        "text": "تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها."
-      },
-      {
-        "title": "ماذا لو تغيرت متطلباتي؟",
-        "text": "ناقش التغيير مع عناية وراجع النطاق المقترح والشروط المكتوبة قبل الاتفاق."
-      }
-    ]
-  }
+  "scope": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة.",
+  "arrangement": "تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار.",
+  "prepare": "ابدأ بتحديد الدور المنزلي والمهام والموقع والتوقيت المفضل. تراجع عناية التوفر والملاءمة الفردية، وتقدم النطاق والعرض المكتوبين، ثم تؤكد المرشحة المختارة وترتيبات البدء. تبدأ الخدمة بعد الاختيار والحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.",
+  "duties": [
+  "دعم منزلي مطابق للدور الفردي المتفق عليه",
+  "مهام مكتوبة وتسليم عملي لاحتياجات المنزل",
+  "مسؤول تواصل وتنسيق ومتابعة بحسب الباقة",
+  "مراجعة الاستبدال المؤهل وتنسيق المطابقة وإدارة الإجراءات"
+],
+  "limits": [
+    "أكد المهام والبنود الفردية المشمولة",
+    "أكد جدول العمل وترتيب السكن",
+    "راجع شروط الباقة المكتوبة",
+    "اسأل عن شروط التغيير والدعم قبل الاتفاق"
+  ],
+  "steps": [
+    {
+      "title": "صف احتياجاتك",
+      "text": "شارك المهام المنزلية والأولويات."
+    },
+    {
+      "title": "ناقش الترتيب",
+      "text": "تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها."
+    },
+    {
+      "title": "راجع النطاق المقترح",
+      "text": "اطلب المهام والجدول كتابةً."
+    },
+    {
+      "title": "قارن الأسعار المنشورة",
+      "text": "راجع الأسعار الشهرية الابتدائية المنشورة، ثم اطلب عرضاً مكتوباً للباقة المطلوب مناقشتها."
+    },
+    {
+      "title": "أكد الشروط",
+      "text": "أكد الباقة المختارة والشروط المتفق عليها قبل المتابعة."
+    }
+  ],
+  "quote": [
+    "Essential — 2,500 درهم",
+    "Signature — 3,000 درهم",
+    "INAYA Black — عرض سعر مخصص"
+  ],
+  "faqs": [
+    {
+      "title": "ما ترتيب الخدمة الشهرية القياسي المعلن؟",
+      "text": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار."
+    },
+    {
+      "title": "ما مسؤوليات السداد والراتب؟",
+      "text": "في العرض الشهري القياسي المدار، يسدد الشهر الأول مقدماً، ثم تتبع الدفعات اللاحقة تاريخ الفوترة الشهري المتفق عليه. لا توجد رسوم استقدام أو تجهيز منفصلة مقدماً، ولا تأمين نقدي. وتكون لخدمات الاستقدام أو التأشيرة المتعاقد عليها منفصلة عروضها وشروطها الخاصة. تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى بصورة منفصلة."
+    },
+    {
+      "title": "ما الفروق بين الباقات ومواعيد المتابعة؟",
+      "text": "تقدم Essential مطابقة للدعم المنزلي الاعتيادي ومسؤول تواصل ومتابعة في الأسبوع الأول ثم شهرياً. تضيف Signature تقييم الخبرة والتواصل ومنسقاً مخصصاً وأولوية في المطابقة ومتابعة في الأسبوع الأول ثم كل أسبوعين. تقدم Black تخطيطاً مخصصاً ومسؤولاً مسمى وجدول مراجعة متفقاً عليه."
+    },
+    {
+      "title": "ماذا يحدث عند الإلغاء أو الحاجة إلى بديل؟",
+      "text": "قبل بدء الخدمة، تعيد عناية دفعة الخدمة الشهرية غير المستخدمة. وبعد البدء، ترد قيمة الفترة المدفوعة مقدماً وغير المستخدمة بعد سريان الإلغاء، على أساس تناسبي واضح. يبين الحساب المبلغ المدفوع وفترة الخدمة وتاريخ سريان الإلغاء والفترة غير المستخدمة. تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور."
+    }
+  ]
+}
 },
   nanny: {
     en: {

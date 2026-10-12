@@ -18,13 +18,13 @@ const homeContent = {
     heroLabel: 'Legacy of Trust',
     heroTitleA: 'Maid & Domestic Worker Services',
     heroTitleB: 'in Ajman and Across the UAE',
-    heroText: 'Bespoke domestic worker services for UAE families who expect clarity, trust and a calm household experience.',
+    heroText: "INAYA-managed, salary-included live-in household support: Essential from AED 2,500/month, Signature from AED 3,000/month, and INAYA Black Custom Quote. Review the published scope and exclusions before your written quotation.",
     primaryCta: 'Request Consultation',
     secondaryCta: 'Explore Services',
     trustLabel: 'Logos identify organizations only; no endorsement or approval is claimed',
     conciergeLabel: 'Enquiry & Follow-up',
-    conciergeTitle: 'Global Executive Concierge',
-    conciergeText: 'Beyond staffing, INAYA provides a dedicated support layer for family requirements, urgent coordination and practical follow-up across the UAE.',
+    conciergeTitle: "Managed Service & Follow-up",
+    conciergeText: "Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up. Support is available during the published office hours.",
     learnMore: 'Contact INAYA Support',
     safetyTitle: 'Safety & Discretion',
     safetyText: 'Privacy is part of the service experience. Household information, documents and expectations are handled carefully before any step is confirmed.',
@@ -44,8 +44,8 @@ const homeContent = {
     startSearch: 'Start Your Search',
     steps: [
       { title: 'Share Requirement', text: 'Tell us the service type, emirate, timing and household details.' },
-      { title: 'Confirm Details', text: 'We explain suitable options, documents and next steps.' },
-      { title: 'Review Before Confirmation', text: 'Review availability, costs, documents and the agreement before confirming any service.' }
+      { title: 'Confirm Details', text: "Review individual profiles, agreed duties and the written scope, price breakdown and payment documents." },
+      { title: 'Review Before Confirmation', text: "Confirm the selected candidate and service start after required lawful authorisation and written confirmation; any revised candidate requires your consent." }
     ],
     disciplinesTitle: 'Curated Disciplines',
     disciplinesText: 'Compare the listed household roles and discuss which duties are relevant to your request.',
@@ -61,22 +61,22 @@ const homeContent = {
       { quote: 'Excellent and transparent service. The team explained every step and followed up professionally.', name: 'Ali Khan', role: 'Business Owner, Sharjah' }
     ],
     imageQuote: 'Our sanctuary is finally managed with the precision it deserves.',
-    blackLabel: 'HOUSEHOLD ENQUIRIES',
-    blackTitle: 'Discuss a Household Service Plan',
-    blackText: 'Share the household duties and coordination needs to discuss an appropriate service plan. An enquiry does not confirm membership, availability or placement.',
+    blackLabel: "INAYA BLACK",
+    blackTitle: "Bespoke Staffing & Household Support",
+    blackText: "Custom Quote for specialist, multiple-worker or complex household requirements. Receive individual role assessment, a named account contact, personalised coordination, custom onboarding and an agreed review schedule with role-specific replacement coordination.",
     blackCta: 'Enquire About Your Requirements'
   },
   ar: {
     heroLabel: 'إرث من الثقة',
     heroTitleA: 'خدمات الخادمات والعمالة المنزلية',
     heroTitleB: 'في عجمان وجميع أنحاء الإمارات',
-    heroText: 'خدمات عمالة منزلية منظمة للأسر في الإمارات، مع وضوح في الخطوات وثقة ومتابعة محترمة.',
+    heroText: "دعم منزلي مقيم تديره عناية ويشمل الراتب: Essential من 2,500 درهم شهرياً، وSignature من 3,000 درهم شهرياً، وINAYA Black بعرض سعر مخصص. راجع النطاق والاستثناءات المنشورة قبل عرضك المكتوب.",
     primaryCta: 'اطلب استشارة',
     secondaryCta: 'استكشف الخدمات',
     trustLabel: 'الشعارات للتعريف بالجهات فقط ولا تعني اعتماداً أو تأييداً',
     conciergeLabel: 'دعم ومتابعة',
-    conciergeTitle: 'كونسيرج تنفيذي للعائلة',
-    conciergeText: 'إلى جانب الخدمة، تقدم عناية طبقة دعم مخصصة لاحتياجات الأسرة، التنسيق العاجل، والمتابعة العملية داخل الإمارات.',
+    conciergeTitle: "خدمة مدارة ومتابعة منظمة",
+    conciergeText: "تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق. يتوفر الدعم خلال ساعات المكتب المنشورة.",
     learnMore: 'تواصل مع فريق عناية',
     safetyTitle: 'السلامة والخصوصية',
     safetyText: 'الخصوصية جزء أساسي من تجربة الخدمة. يتم التعامل مع معلومات الأسرة والمستندات والتوقعات بعناية قبل تأكيد أي خطوة.',
@@ -96,8 +96,8 @@ const homeContent = {
     startSearch: 'ابدأ طلبك',
     steps: [
       { title: 'شارك الاحتياج', text: 'أخبرنا بنوع الخدمة، الإمارة، التوقيت وتفاصيل المنزل.' },
-      { title: 'تأكيد التفاصيل', text: 'نشرح الخيارات المناسبة والمستندات والخطوات التالية.' },
-      { title: 'المراجعة قبل التأكيد', text: 'راجع التوفر والتكاليف والمستندات والاتفاق قبل تأكيد أي خدمة.' }
+      { title: 'تأكيد التفاصيل', text: "راجع الملفات الفردية والمهام المتفق عليها والنطاق المكتوب وتفصيل السعر ومستندات السداد." },
+      { title: 'المراجعة قبل التأكيد', text: "أكد المرشحة المختارة وبدء الخدمة بعد التصاريح النظامية والتأكيد المكتوب؛ ويتطلب تغيير المرشحة موافقتك." }
     ],
     disciplinesTitle: 'تخصصات مختارة',
     disciplinesText: 'قارن الأدوار المنزلية المدرجة وناقش المهام ذات الصلة بطلبك.',
@@ -113,9 +113,9 @@ const homeContent = {
       { quote: 'خدمة ممتازة وواضحة. شرح الفريق كل خطوة وتابع معنا باحتراف.', name: 'علي خان', role: 'صاحب عمل، الشارقة' }
     ],
     imageQuote: 'أصبح منزلنا أكثر تنظيماً وراحة.',
-    blackLabel: 'استفسارات المنزل',
-    blackTitle: 'ناقش خطة الخدمة المنزلية',
-    blackText: 'شارك مهام المنزل واحتياجات التنسيق لمناقشة خطة مناسبة. الاستفسار لا يؤكد عضوية أو توفراً أو توظيفاً.',
+    blackLabel: "INAYA BLACK",
+    blackTitle: "عمالة ودعم منزلي حسب الطلب",
+    blackText: "عرض سعر مخصص للاحتياجات المتخصصة أو متعددة العاملين أو المعقدة. تشمل الخدمة تقييماً فردياً للدور ومسؤول حساب مسمى وتنسيقاً شخصياً وتهيئة مخصصة وجدول مراجعة متفقاً عليه مع تنسيق الاستبدال بحسب الدور.",
     blackCta: 'استفسر عن متطلباتك'
   }
 };
