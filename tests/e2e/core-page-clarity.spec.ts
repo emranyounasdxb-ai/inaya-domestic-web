@@ -10,6 +10,35 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(page.locator('section').first().getByText(arabic ? 'تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف' : 'Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive', {exact:false})).toBeVisible();
     await expect(page.locator('main')).not.toContainText('1,500');
     await expect(page.getByRole('link', { name: arabic ? 'اقرأ دليل أسعار الباقات' : 'Read the package pricing guide' })).toHaveAttribute('href', `/${locale}/blog/domestic-worker-package-pricing-factors/`);
+    await page.getByRole('button', { name: arabic ? 'رفض التحليلات' : 'Reject analytics' }).click();
+    const firstPlan = page.getByRole('heading', { name: 'Essential', exact: true });
+    await firstPlan.scrollIntoViewIfNeeded();
+    const offer = page.getByTestId('sierra-leone-offer');
+    await expect(offer).toBeVisible();
+    await offer.getByRole('button').click();
+    const cards = [];
+    const headings = [];
+    const buttons = [];
+    for (const name of ['Essential', 'Signature', 'INAYA Black']) {
+      const heading = page.getByRole('heading', { name, exact: true });
+      const card = heading.locator('..');
+      cards.push((await card.boundingBox())!);
+      headings.push((await heading.boundingBox())!);
+      buttons.push((await card.getByRole('link').boundingBox())!);
+      const sections = await card.evaluate(element => Array.from(element.children).filter(child => getComputedStyle(child).position !== 'absolute').map(child => { const box = child.getBoundingClientRect(); return { top: box.top, bottom: box.bottom }; }));
+      for (let i = 1; i < sections.length; i++) expect(sections[i].top).toBeGreaterThanOrEqual(sections[i - 1].bottom - 1);
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    if (page.viewportSize()!.width >= 1024) {
+      for (let i = 1; i < cards.length; i++) {
+        expect(Math.abs(cards[i].y - cards[0].y)).toBeLessThan(2);
+        expect(Math.abs(cards[i].height - cards[0].height)).toBeLessThan(2);
+        expect(Math.abs(headings[i].y - headings[0].y)).toBeLessThan(2);
+        expect(Math.abs(buttons[i].y - buttons[0].y)).toBeLessThan(2);
+      }
+    } else {
+      for (let i = 1; i < cards.length; i++) expect(cards[i].y).toBeGreaterThanOrEqual(cards[i - 1].y + cards[i - 1].height);
+    }
   });
 
   test(`${locale}: Ajman process names the written terms and hiring guide`, async ({ page }) => {

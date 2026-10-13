@@ -1,4 +1,5 @@
 import BrandLogo from './BrandLogo';
+import { CookieSettingsButton } from './GoogleAnalyticsConsent';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
@@ -99,6 +100,8 @@ export default function Footer({ locale }: { locale: string }) {
             <Link href={`/${locale}/terms`} className="transition hover:text-primary-900">{t('terms')}</Link>
             <span className="text-accent-700/70">|</span>
             <Link href={`/${locale}/refund-policy`} className="transition hover:text-primary-900">{t('refund')}</Link>
+            <span className="text-accent-700/70">|</span>
+            <CookieSettingsButton locale={locale} />
           </div>
           <div className="flex items-center gap-3 text-primary-900/75">
             <span className="text-[#c98700]"><Icon name="lock" size={20} /></span>
