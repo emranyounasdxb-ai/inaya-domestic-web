@@ -84,6 +84,8 @@ test.describe('Sierra Leone offer controls', () => {
   });
 
   test('shows Back to Top near the page bottom and returns to the top', async ({ page }) => {
+    await page.getByRole('button', { name: 'Reject analytics', exact: true }).click();
+    await expect(page.getByRole('region', { name: 'Your cookie preferences' })).toBeHidden();
     await scrollNearBottom(page);
     await page.getByTestId('sierra-leone-offer').getByRole('button', { name: 'Close Sierra Leone offer' }).click();
     const backToTop = page.getByTestId('back-to-top');
