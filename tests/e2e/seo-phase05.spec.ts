@@ -22,6 +22,43 @@ for (const locale of ['en', 'ar']) {
     expect(await page.evaluate(() => (window as unknown as { phase05Events: unknown[] }).phase05Events)).toEqual([]);
     expect(requests).toEqual([]);
   });
+
+  test(`${locale}: cookie banner saves rejection and allows consent to be changed`, async ({ page }) => {
+    const ar = locale === 'ar';
+    await page.route(/www\.googletagmanager\.com\/gtag\/js/, route => route.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
+    await page.goto(`/${locale}/pricing/`);
+    const banner = page.getByRole('region', { name: ar ? 'تفضيلات ملفات تعريف الارتباط' : 'Your cookie preferences' });
+    await expect(banner).toBeVisible();
+    await expect(banner).toHaveAttribute('dir', ar ? 'rtl' : 'ltr');
+    await expect(banner.getByRole('link', { name: ar ? 'سياسة الخصوصية' : 'Privacy policy' })).toHaveAttribute('href', `/${locale}/privacy-policy/`);
+    const reject = ar ? 'رفض التحليلات' : 'Reject analytics';
+    const accept = ar ? 'السماح بالتحليلات' : 'Accept analytics';
+    await banner.getByRole('button', { name: reject }).click();
+    await expect(banner).toBeHidden();
+    expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent'))).toBe('denied');
+    await page.reload();
+    await expect.poll(() => page.evaluate(() => typeof window.inayaMeasurementConsent)).toBe('function');
+    await expect(banner).toBeHidden();
+    await expect(page.locator('script[src*="googletagmanager.com/gtag/js"]')).toHaveCount(0);
+    const settings = page.getByRole('button', { name: ar ? 'إعدادات ملفات تعريف الارتباط' : 'Cookie settings', exact: true });
+    await settings.scrollIntoViewIfNeeded();
+    const offer = page.getByTestId('sierra-leone-offer');
+    await expect(offer).toBeVisible();
+    await offer.getByRole('button').click();
+    await settings.click();
+    await expect(banner.getByRole('button', { name: accept })).toBeFocused();
+    await banner.getByRole('button', { name: accept }).click();
+    await expect(settings).toBeFocused();
+    await expect(page.locator('script[src*="googletagmanager.com/gtag/js?id=G-986STCSR37"]')).toHaveCount(1);
+    expect(await page.evaluate(() => window['ga-disable-G-986STCSR37'])).toBe(false);
+    await settings.click();
+    await banner.getByRole('button', { name: reject }).click();
+    expect(await page.evaluate(() => window['ga-disable-G-986STCSR37'])).toBe(true);
+    expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent'))).toBe('denied');
+    await page.reload();
+    await expect(banner).toBeHidden();
+    await expect(page.locator('script[src*="googletagmanager.com/gtag/js"]')).toHaveCount(0);
+  });
 }
 
 test('GA4 consent loads once, survives a language switch and can be revoked', async ({ page }) => {

@@ -165,13 +165,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       </section>
 
       <section className="container-x pb-28 sm:pb-32">
-        <div className="mx-auto grid max-w-6xl items-end gap-8 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl items-stretch gap-8 lg:grid-cols-3 lg:gap-y-0">
           {copy.packages.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex min-h-[650px] flex-col rounded-[16px] border p-9 shadow-[0_24px_70px_rgba(7,22,74,0.07)] ${plan.featured ? 'border-accent-500/35 bg-[#020202] text-white lg:min-h-[715px] lg:-translate-y-10 shadow-[0_30px_80px_rgba(191,164,106,0.18)]' : 'border-accent-500/16 bg-white text-primary-900'}`}
+              className={`relative flex min-w-0 flex-col rounded-[16px] border p-6 shadow-[0_24px_70px_rgba(7,22,74,0.07)] sm:p-9 lg:row-span-8 lg:grid lg:grid-rows-subgrid ${plan.featured ? 'border-accent-500/35 bg-[#020202] text-white shadow-[0_30px_80px_rgba(191,164,106,0.18)]' : 'border-accent-500/16 bg-white text-primary-900'}`}
             >
-              {plan.badge ? <span className="absolute right-7 top-7 rounded-full border border-accent-300/70 bg-accent-500 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-primary-900 shadow-sm shadow-accent-500/20">{plan.badge}</span> : null}
+              {plan.badge ? <span className="absolute end-7 top-7 rounded-full border border-accent-300/70 bg-accent-500 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-primary-900 shadow-sm shadow-accent-500/20">{plan.badge}</span> : null}
               <p className={`text-[0.67rem] font-bold uppercase tracking-[0.22em] ${plan.featured ? 'text-accent-400' : 'text-accent-700'}`}>{plan.eyebrow}</p>
               <div className={`mt-4 h-px w-12 ${plan.featured ? 'bg-accent-500/80' : 'bg-accent-500/55'}`} />
               <div className="mt-8 flex items-start justify-between gap-4">
@@ -183,7 +183,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-xl font-bold ${plan.featured ? 'text-white' : 'text-primary-900'}`}>{plan.name}</h2>
               <p className={`mt-4 text-sm leading-7 ${plan.featured ? 'text-white/85' : 'text-primary-900/80'}`}>{plan.desc}</p>
               <div className={`my-9 h-px ${plan.featured ? 'bg-accent-500/28' : 'bg-accent-500/18'}`} />
-              <div className="space-y-5">
+              <div className="space-y-5 pb-8">
                 {plan.features.map((feature, index) => (
                   <div key={feature} className={`flex items-start gap-3 text-sm leading-7 ${plan.featured ? 'text-white/85' : 'text-primary-900/80'}`}>
                     <LineIcon name={plan.featured && index > 1 ? 'star' : 'check'} className={`mt-1 h-4 w-4 shrink-0 ${plan.featured ? 'text-accent-500' : 'text-accent-700'}`} />
