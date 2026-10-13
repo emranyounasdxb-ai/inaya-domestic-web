@@ -6,6 +6,13 @@ for (const locale of ['en', 'ar'] as const) {
     test(`${locale} published ${article.slug} preserves responsive reading and translation`, async ({ page }) => {
       const route = `/${locale}/blog/${article.slug}/`;
       await page.goto(route);
+      await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
+      await expect(page.getByRole('region', { name: locale === 'ar' ? 'تفضيلات ملفات تعريف الارتباط' : 'Your cookie preferences' })).toBeHidden();
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+      const offer = page.getByTestId('sierra-leone-offer');
+      await expect(offer).toBeVisible();
+      await offer.getByRole('button').click();
+      await expect(offer).toBeHidden();
       await expect(page.locator('html')).toHaveAttribute('lang', locale);
       await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
       await expect(page.locator('main h1')).toHaveText(article[locale].title);
