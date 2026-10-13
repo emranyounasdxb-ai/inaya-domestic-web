@@ -109,11 +109,27 @@ function approvedSeoFixes(file, source) {
   if (file === 'app/[locale]/layout.tsx') {
     for (const [before, after] of [
       ["import Measurement from '@/components/Measurement';\nimport sitemap from '@/app/sitemap';\n", "import GoogleAnalyticsConsent from '@/components/GoogleAnalyticsConsent';\n"],
-      ["          {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}\n", "          <GoogleAnalyticsConsent />\n"]
+      ["          {process.env.NEXT_PUBLIC_MEASUREMENT_ENABLED === 'true' && <Measurement enabled paths={sitemap().map((entry) => new URL(entry.url).pathname)} origin={siteConfig.url} />}\n", "          <GoogleAnalyticsConsent locale={locale} />\n"]
     ]) {
       assert.equal(source.split(before).length, 2, `${file}: exactly one GA4 integration anchor`);
       source = source.replace(before, after);
     }
+  }
+  if (file === 'components/Footer.tsx') {
+    // The approved consent banner adds only its localized settings control.
+    for (const [before, after] of [
+      ["import BrandLogo from './BrandLogo';\n", "import BrandLogo from './BrandLogo';\nimport { CookieSettingsButton } from './GoogleAnalyticsConsent';\n"],
+      ["            <Link href={`/${locale}/refund-policy`} className=\"transition hover:text-primary-900\">{t('refund')}</Link>\n", "            <Link href={`/${locale}/refund-policy`} className=\"transition hover:text-primary-900\">{t('refund')}</Link>\n            <span className=\"text-accent-700/70\">|</span>\n            <CookieSettingsButton locale={locale} />\n"]
+    ]) {
+      assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed cookie settings anchor`);
+      source = source.replace(before, after);
+    }
+  }
+  if (file === 'tests/e2e/sierra-leone-offer-controls.spec.ts') {
+    const before = "  test('shows Back to Top near the page bottom and returns to the top', async ({ page }) => {\n";
+    const after = before + "    await page.getByRole('button', { name: 'Reject analytics', exact: true }).click();\n    await expect(page.getByRole('region', { name: 'Your cookie preferences' })).toBeHidden();\n";
+    assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed consent interaction anchor`);
+    source = source.replace(before, after);
   }
   return approvedManagedPackages(file, source);
 }
