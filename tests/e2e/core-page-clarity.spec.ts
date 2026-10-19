@@ -37,6 +37,31 @@ for (const locale of ['en', 'ar'] as const) {
       const sections = await card.evaluate(element => Array.from(element.children).filter(child => getComputedStyle(child).position !== 'absolute').map(child => { const box = child.getBoundingClientRect(); return { top: box.top, bottom: box.bottom }; }));
       for (let i = 1; i < sections.length; i++) expect(sections[i].top).toBeGreaterThanOrEqual(sections[i - 1].bottom - 1);
     }
+    for (const cta of [
+      page.locator('[data-package="monthly"]').getByRole('link'),
+      page.getByRole('link', { name: arabic ? 'تواصل مع فريق عناية' : 'Contact the INAYA team', exact: true })
+    ]) {
+      const colors = await cta.evaluate(element => {
+        const style = getComputedStyle(element);
+        const parse = (color: string) => color.match(/[\d.]+/g)!.map(Number);
+        const foreground = parse(style.color);
+        const background = parse(style.backgroundColor);
+        const luminance = (color: number[]) => color.slice(0, 3).map(value => {
+          const channel = value / 255;
+          return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+        }).reduce((sum, value, index) => sum + value * [0.2126, 0.7152, 0.0722][index], 0);
+        const light = luminance(foreground);
+        const dark = luminance(background);
+        return {
+          backgroundAlpha: background[3] ?? 1,
+          foregroundAlpha: foreground[3] ?? 1,
+          contrast: (Math.max(light, dark) + 0.05) / (Math.min(light, dark) + 0.05)
+        };
+      });
+      expect(colors.backgroundAlpha, 'Pricing CTA must have an opaque background').toBe(1);
+      expect(colors.foregroundAlpha, 'Pricing CTA text must be opaque').toBe(1);
+      expect(colors.contrast, 'Pricing CTA text must meet 4.5:1 contrast').toBeGreaterThanOrEqual(4.5);
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     const columns = page.viewportSize()!.width >= 1280 ? 3 : page.viewportSize()!.width >= 640 ? 2 : 1;
     for (let i = 0; i < cards.length; i++) {
