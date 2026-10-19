@@ -67,17 +67,17 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                 <article key={plan.id} data-package={plan.id} className={`flex min-w-0 flex-col rounded-2xl border p-6 shadow-[0_16px_44px_rgba(7,22,74,0.05)] sm:p-7 ${featured ? 'border-primary-900 bg-primary-900 text-white' : 'border-accent-500/20 bg-white'}`}>
                   <div className="flex min-h-8 flex-wrap items-start justify-between gap-3">
                     <h3 className={`${heading} text-xl font-bold`}>{plan.name[lang]}</h3>
-                    <span className={`rounded-full px-3 py-1 text-xs font-semibold leading-5 ${featured ? 'bg-white/10 text-accent-200' : 'bg-accent-50 text-primary-900/80'}`}>{plan.duration[lang]}</span>
+                    <span className={`rounded-full px-3 py-1 text-xs font-semibold leading-5 ${featured ? 'bg-white/10 text-accent-100' : 'bg-accent-50 text-primary-900/80'}`}>{plan.duration[lang]}</span>
                   </div>
                   <div className={`mt-6 border-t pt-6 ${featured ? 'border-white/15' : 'border-primary-900/10'}`}>
                     <p data-price="amount" className={`${heading} text-4xl font-bold leading-tight tracking-tight`}><bdi>{plan.price[lang]}</bdi></p>
-                    <p data-price="period" className={`mt-2 min-h-6 text-sm font-semibold leading-6 ${featured ? 'text-accent-200' : 'text-accent-700'}`}>{plan.period[lang]}</p>
+                    <p data-price="period" className={`mt-2 min-h-6 text-sm font-semibold leading-6 ${featured ? 'text-accent-100' : 'text-accent-700'}`}>{plan.period[lang]}</p>
                   </div>
                   <p className={`mt-5 text-sm leading-7 ${featured ? 'text-white/80' : 'text-primary-900/75'}`}>{plan.description[lang]}</p>
                   <ul className="mb-7 mt-6 space-y-3">
-                    {plan.features[lang].map((feature) => <li key={feature} className={`flex items-start gap-2 text-sm leading-6 ${featured ? 'text-white/85' : 'text-primary-900/80'}`}><CheckIcon className={`mt-0.5 h-5 w-5 shrink-0 ${featured ? 'text-accent-300' : 'text-accent-700'}`} /><span>{feature}</span></li>)}
+                    {plan.features[lang].map((feature) => <li key={feature} className={`flex items-start gap-2 text-sm leading-6 ${featured ? 'text-white/85' : 'text-primary-900/80'}`}><CheckIcon className={`mt-0.5 h-5 w-5 shrink-0 ${featured ? 'text-accent-100' : 'text-accent-700'}`} /><span>{feature}</span></li>)}
                   </ul>
-                  <Link href={`/${locale}/booking/`} className={`mt-auto inline-flex min-h-12 items-center justify-center rounded-full border px-4 py-3 text-center text-sm font-bold transition ${featured ? 'border-accent-300 bg-accent-400 text-primary-900 hover:bg-accent-300' : 'border-primary-900/15 bg-[#f8f7f3] hover:border-accent-500 hover:bg-accent-50'}`}>
+                  <Link href={`/${locale}/booking/`} className={`mt-auto inline-flex min-h-12 items-center justify-center rounded-full border px-4 py-3 text-center text-sm font-bold transition ${featured ? 'border-accent-100 bg-accent-500 text-primary-900 hover:bg-accent-100' : 'border-primary-900/15 bg-[#f8f7f3] hover:border-accent-500 hover:bg-accent-50'}`}>
                     {isArabic ? 'استفسر عن هذه الباقة' : `Enquire about ${plan.name[lang].toLowerCase()}`}
                   </Link>
                 </article>
@@ -156,7 +156,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         <div className="mx-auto max-w-6xl rounded-3xl bg-primary-900 px-6 py-12 text-center text-white sm:px-10">
           <h2 className={`${heading} text-3xl font-bold`}>{isArabic ? 'اختر الباقة المناسبة لمنزلك' : 'Choose the package for your home'}</h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-white/80">{isArabic ? 'شارك المدة والموقع والمهام المطلوبة. يراجع الفريق التوفر والنطاق المكتوب قبل تأكيد الخدمة.' : 'Share your required duration, location and duties. The team reviews availability and the written scope before confirming service.'}</p>
-          <Link href={`/${locale}/contact/`} className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-accent-400 px-7 py-3 text-sm font-bold text-primary-900 transition hover:bg-accent-300">{isArabic ? 'تواصل مع فريق عناية' : 'Contact the INAYA team'}</Link>
+          <Link href={`/${locale}/contact/`} className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-accent-500 px-7 py-3 text-sm font-bold text-primary-900 transition hover:bg-accent-100">{isArabic ? 'تواصل مع فريق عناية' : 'Contact the INAYA team'}</Link>
         </div>
       </section>
     </div>
