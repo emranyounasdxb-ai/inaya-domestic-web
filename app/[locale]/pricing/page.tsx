@@ -65,7 +65,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               const featured = plan.id === 'monthly';
               return (
                 <article key={plan.id} data-package={plan.id} className={`flex min-w-0 flex-col rounded-2xl border p-6 shadow-[0_16px_44px_rgba(7,22,74,0.05)] sm:p-7 ${featured ? 'border-primary-900 bg-primary-900 text-white' : 'border-accent-500/20 bg-white'}`}>
-                  <div className="flex min-h-8 flex-wrap items-center justify-between gap-3">
+                  <div className="flex min-h-8 flex-wrap items-start justify-between gap-3">
                     <h3 className={`${heading} text-xl font-bold`}>{plan.name[lang]}</h3>
                     <span className={`rounded-full px-3 py-1 text-xs font-semibold leading-5 ${featured ? 'bg-white/10 text-accent-200' : 'bg-accent-50 text-primary-900/80'}`}>{plan.duration[lang]}</span>
                   </div>
