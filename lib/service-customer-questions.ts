@@ -2,6 +2,34 @@ import type { Lang, Pair } from './service-page-copy';
 
 // Questions about existing roles and records to review, not additional service benefits.
 export const serviceCustomerQuestions: Record<string, Record<Lang, Pair[]>> = {
+  'part-time-maid': {
+    en: [
+      { title: 'How do I request a part-time or hourly maid in Ajman?', text: 'Contact INAYA’s Ajman office by telephone or WhatsApp with your address, rooms, priority tasks, preferred hours and visit frequency. The team reviews the proposed scope and schedule. Confirm availability, visit duration and the written quotation before treating the enquiry as a booking.' },
+      { title: 'What determines the price of a part-time maid visit?', text: 'Scheduled part-time visits have a separate quotation for the agreed work, schedule, location and lawful arrangement. The full-time managed monthly starting price does not automatically cover these visits.' },
+      { title: 'Is there a fixed hourly rate or minimum booking duration?', text: 'This page does not publish a fixed hourly rate or minimum visit duration. Share your preferred hours and task list with INAYA and request the applicable duration and price in writing. Availability and visit terms must be confirmed for the specific enquiry.' },
+      { title: 'Are cleaning products, equipment and transport included?', text: 'Confirm responsibility for cleaning products, equipment, access and transport in the written proposal. Explain any surface-specific products or building access requirements before the visit. Do not assume these items or extra hours are included in the quoted amount.' },
+      { title: 'Can I include laundry, ironing, kitchen help or childcare?', text: 'Cleaning, laundry, ironing and kitchen assistance can be discussed within an agreed task list and visit time. Childcare requires a separate discussion of duties and relevant individual experience. Specialist deep cleaning and moving services are not assumed to be included.' }
+    ],
+    ar: [
+      { title: 'كيف أطلب خادمة بالساعة أو بدوام جزئي في عجمان؟', text: 'تواصل مع مكتب عناية في عجمان هاتفياً أو عبر واتساب، وحدد العنوان والغرف والمهام ذات الأولوية والساعات المفضلة وتكرار الزيارات. يراجع الفريق النطاق والجدول المقترحين. أكد التوفر ومدة الزيارة وعرض السعر المكتوب قبل اعتبار الاستفسار حجزاً.' },
+      { title: 'كيف تحدد تكلفة زيارة الخادمة بدوام جزئي؟', text: 'للزيارات المجدولة بدوام جزئي عرض مستقل للعمل والجدول والموقع والترتيب النظامي المتفق عليها. ولا يغطي السعر الشهري المبدئي المدار للدوام الكامل هذه الزيارات تلقائياً.' },
+      { title: 'هل يوجد سعر ثابت للساعة أو حد أدنى لمدة الحجز؟', text: 'لا تنشر هذه الصفحة سعراً ثابتاً للساعة أو حداً أدنى لمدة الزيارة. شارك الساعات المفضلة وقائمة المهام مع عناية، واطلب توضيح المدة والسعر المنطبقين كتابةً. يجب تأكيد التوفر وشروط الزيارة لكل طلب على حدة.' },
+      { title: 'هل تشمل التكلفة مواد التنظيف والمعدات والنقل؟', text: 'أكد مسؤولية مواد التنظيف والمعدات والدخول والنقل في العرض المكتوب. وضح المواد المناسبة للأسطح أو متطلبات دخول المبنى قبل الزيارة. لا تفترض شمول هذه البنود أو الساعات الإضافية في المبلغ المعروض.' },
+      { title: 'هل يمكن إضافة الغسيل والكي ومساعدة المطبخ أو رعاية الأطفال؟', text: 'يمكن مناقشة التنظيف والغسيل والكي ومساعدة المطبخ ضمن قائمة المهام ووقت الزيارة المتفق عليهما. تحتاج رعاية الأطفال إلى مناقشة منفصلة للمهام والخبرة الفردية المناسبة. لا يفترض شمول التنظيف العميق المتخصص أو خدمات النقل.' }
+    ]
+  },
+  babysitting: {
+    en: [
+      { title: 'How do I request babysitting services in Ajman?', text: 'Contact INAYA’s Ajman office by telephone or WhatsApp with your home location, children’s ages, required date and hours, and supervision needs. The team reviews the request and availability. Confirm the individual profile, duties, timing and separate quotation before treating the enquiry as a booking.' },
+      { title: 'Should I choose a babysitter or a nanny?', text: 'Babysitting concerns occasional childcare for a specific period, while nanny enquiries concern ongoing childcare routines. Describe meals, hygiene, play, parent instructions and handover requirements for the period you need. Review the individual’s relevant experience rather than assuming the two roles have identical duties.' },
+      { title: 'Can I request evening or event babysitting in Ajman?', text: 'Evening and event childcare can be discussed with INAYA, subject to the requested timing, location, number of children and availability. Share the supervision routine and any important instructions. Scheduled or occasional babysitting is quoted separately and is not automatically included in a managed full-time monthly package.' }
+    ],
+    ar: [
+      { title: 'كيف أطلب خدمات جليسة أطفال في عجمان؟', text: 'تواصل مع مكتب عناية في عجمان هاتفياً أو عبر واتساب، وحدد موقع المنزل وأعمار الأطفال والتاريخ والساعات المطلوبة واحتياجات الإشراف. يراجع الفريق الطلب والتوفر. أكد الملف الفردي والمهام والتوقيت وعرض السعر المنفصل قبل اعتبار الاستفسار حجزاً.' },
+      { title: 'هل أختار جليسة أطفال أم مربية؟', text: 'تتعلق مجالسة الأطفال برعاية مؤقتة لفترة محددة، بينما تتعلق طلبات المربية بروتين رعاية مستمر. وضح الوجبات والنظافة واللعب وتعليمات الوالدين ومتطلبات تسليم الرعاية للفترة المطلوبة. راجع الخبرة الفردية المناسبة بدلاً من افتراض تطابق مهام الدورين.' },
+      { title: 'هل يمكن طلب جليسة أطفال للمساء أو المناسبات في عجمان؟', text: 'يمكن مناقشة رعاية الأطفال للمساء والمناسبات مع عناية بحسب التوقيت والموقع وعدد الأطفال والتوفر. شارك روتين الإشراف وأي تعليمات مهمة. لمجالسة الأطفال المجدولة أو العرضية عرض سعر مستقل، ولا تشملها تلقائياً باقة الدوام الكامل الشهرية المدارة.' }
+    ]
+  },
   housemaid: {
     en: [
       { title: 'Which duties belong in a housemaid request?', text: 'Start with cleaning, laundry, ironing and room care, stating the rooms and priorities. Discuss cooking or childcare separately if needed; a general housemaid role does not establish either responsibility or the individual’s relevant experience.' },
@@ -16,11 +44,13 @@ export const serviceCustomerQuestions: Record<string, Record<Lang, Pair[]>> = {
   },
   housekeeping: {
     en: [
+      { title: 'How do I request hourly home cleaning in Ajman?', text: 'Contact INAYA’s Ajman team to discuss scheduled part-time household help. Share the rooms, cleaning priorities, preferred hours, visit frequency and address. Confirm the agreed tasks, visit duration, availability, responsibility for supplies and the separate quotation in writing. Specialist deep cleaning is not assumed to be included in routine housekeeping.' },
       { title: 'How do I define a housekeeping task list?', text: 'Identify bedrooms, living areas, laundry and kitchen organization, then state priorities and frequency. Describe difficult surfaces or specialist tasks before agreeing the scope; routine housekeeping is not proof that every cleaning method or task is included.' },
       { title: 'Who provides cleaning products and equipment?', text: 'Record responsibility for supplies and equipment in the proposal. Explain the surfaces, preferred products and safe-use instructions. Include the agreed supply responsibilities in the written scope and cost summary.' },
       { title: 'What if the requested tasks exceed the agreed time?', text: 'Agree priorities before the visit and discuss any proposed change to time or scope with INAYA. Record the revised duties, schedule and costs before agreeing; do not assume extra work or time is automatically included.' }
     ],
     ar: [
+      { title: 'كيف أطلب تنظيف المنازل بالساعة في عجمان؟', text: 'تواصل مع فريق عناية في عجمان لمناقشة مساعدة منزلية مجدولة بدوام جزئي. حدد الغرف وأولويات التنظيف والساعات المفضلة وتكرار الزيارات والعنوان. أكد المهام ومدة الزيارة والتوفر ومسؤولية المستلزمات وعرض السعر المنفصل كتابةً. لا يفترض شمول التنظيف العميق المتخصص ضمن التنظيف المنزلي المعتاد.' },
       { title: 'كيف أحدد قائمة مهام تنظيف المنزل وترتيبه؟', text: 'حدد غرف النوم والمعيشة والغسيل وتنظيم المطبخ، ثم وضح الأولويات وتكرارها. صف الأسطح الصعبة أو المهام المتخصصة قبل الاتفاق على النطاق؛ فالتنظيف المعتاد لا يثبت شمول كل طريقة أو مهمة للتنظيف.' },
       { title: 'من يوفر مواد التنظيف والمعدات؟', text: 'سجل مسؤولية المستلزمات والمعدات في العرض. وضح الأسطح والمواد المفضلة وتعليمات الاستخدام الآمن. أدرج مسؤوليات المستلزمات المتفق عليها ضمن النطاق المكتوب وملخص التكلفة.' },
       { title: 'ماذا لو تجاوزت المهام المطلوبة الوقت المتفق عليه؟', text: 'اتفق على الأولويات قبل الزيارة وناقش أي تعديل مقترح للوقت أو النطاق مع عناية. وثق المهام والجدول والتكاليف المعدلة قبل الاتفاق؛ ولا تفترض شمول العمل أو الوقت الإضافيين تلقائياً.' }

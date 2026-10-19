@@ -32,8 +32,24 @@ test('robots.txt exposes the production sitemap and allows public routes', async
 test('every sitemap route has one self-canonical and reciprocal locale alternates', async ({ request }) => {
   test.setTimeout(240_000);
   const xml = await (await request.get('/sitemap.xml')).text();
-  expect(xml).not.toContain('<lastmod>');
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
+  const updatedPaths = [
+    'maid-services-ajman',
+    'services/part-time-maid',
+    'services/monthly-maid-contract',
+    'services/nanny',
+    'services/babysitting',
+    'services/housekeeping'
+  ];
+  const expectedDatedUrls = ['en', 'ar'].flatMap((locale) =>
+    updatedPaths.map((path) => `https://inayadomestic.ae/${locale}/${path}/`)
+  );
+  const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
+  expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
+    .toEqual(expectedDatedUrls.sort());
+  for (const entry of datedEntries) {
+    expect(entry[1].match(/<lastmod>(.*?)<\/lastmod>/g)).toEqual(['<lastmod>2026-10-19</lastmod>']);
+  }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]);
   expect(urls.length).toBeGreaterThan(100);
   expect(new Set(urls).size).toBe(urls.length);
