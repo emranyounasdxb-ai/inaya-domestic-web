@@ -29,6 +29,10 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   };
   const current = await auditExport();
   assert.equal(current.pages.length, 194);
+  for (const page of current.pages) {
+    assert.doesNotMatch(page.mainText + '\n' + page.description, /\bEssential\b|\bSignature\b|INAYA Black|(?:AED\s*)?2,500\b/, `${page.url}: superseded package prices and tiers cannot survive the export`);
+    assert.doesNotMatch(page.mainText, /Live-out service requires a separate itemised quotation|advertised monthly prices concern live-in service|تتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً|تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل/, `${page.url}: no obsolete live-out price distinction`);
+  }
   assert.deepEqual(current.pages.slice(0, 140).map((p) => p.url), baseline.pages.map((p) => p.url));
   assert.deepEqual(current.orphans, []);
   for (const locale of ['en', 'ar']) {
@@ -46,7 +50,8 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     assert.equal(page.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
     if (page.route !== 'blog') assert.equal(page.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
-    assert.deepEqual(page.schemaIds, before.schemaIds, `${page.url}: schema IDs`);
+    const expectedSchemaIds = page.route === 'pricing' ? [...before.schemaIds, `${page.url}#faq`].sort() : before.schemaIds;
+    assert.deepEqual(page.schemaIds, expectedSchemaIds, `${page.url}: preserved schema IDs plus the approved visible pricing FAQ`);
     const expectedPrices = managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
       : page.route === 'faq' ? page.locale === 'en' ? ['AED 1,500', 'AED 1,500', 'AED 2,500', 'AED 2,500'] : ['1,500 درهم', '1,500 درهم', '2,500 درهم', '2,500 درهم']
       : page.route === 'services/monthly-maid-contract' ? page.locale === 'en' ? ['AED 1,500', 'AED 2,500'] : ['1,500 درهم', '2,500 درهم']

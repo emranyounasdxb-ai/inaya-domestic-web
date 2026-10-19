@@ -1,59 +1,93 @@
-import type { Lang, ServiceCopy } from './service-page-copy';
+import type { Lang, Pair, Pricing, ServiceCopy } from './service-page-copy';
 
-type LocalizedText = { en: string; ar: string };
+export type LocalizedText = { en: string; ar: string };
 type LocalizedPoints = { en: string[]; ar: string[] };
 type PackageSection = { title: LocalizedText; body: LocalizedText; points: LocalizedPoints };
+export type ManagedPackage = {
+  id: 'half-day' | 'daily' | 'weekly' | 'monthly' | 'six-month' | 'yearly';
+  name: LocalizedText;
+  amount: number;
+  billingUnit: 'package' | 'month';
+  hours?: number;
+  days?: number;
+  commitmentMonths?: number;
+  price: LocalizedText;
+  period: LocalizedText;
+  duration: LocalizedText;
+  description: LocalizedText;
+  features: LocalizedPoints;
+};
 
-// Owner-approved managed-service offering, effective 12 October 2026.
-// These commercial terms do not replace the worker's statutory rights.
+// Owner-approved published package prices, effective 19 October 2026.
+// Longer commitments are priced per month, not for the whole commitment.
 export const packageSummary: LocalizedText = {
-  en: 'Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.',
-  ar: 'تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة.'
+  en: 'Half-day: AED 120 for 4 hours. Daily: AED 200 for 8 hours. Weekly: AED 1,120 for 7 days. Monthly: AED 3,500 for 30 days. A 6-month commitment is AED 3,250 per month; a 12-month commitment is AED 3,000 per month. These published package prices are the same for live-in and live-out arrangements.',
+  ar: 'نصف يوم: 120 درهماً مقابل 4 ساعات. يومي: 200 درهم مقابل 8 ساعات. أسبوعي: 1,120 درهماً لمدة 7 أيام. شهري: 3,500 درهم لمدة 30 يوماً. الالتزام لمدة 6 أشهر بسعر 3,250 درهماً شهرياً؛ والالتزام لمدة 12 شهراً بسعر 3,000 درهم شهرياً. أسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة.'
 };
 
 export const packageArrangements: LocalizedText = {
-  en: 'The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role.',
-  ar: 'تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار.'
+  en: 'Live-in and live-out arrangements have the same published package price. Record accommodation, meals, transport, cleaning products and equipment responsibilities in the written agreement. The half-day package covers 4 hours and the daily package 8 hours; agree the schedule, duties and rest for weekly, monthly and longer commitments. A 7-day or 30-day package describes the service period, not continuous work.',
+  ar: 'سعر الباقة المنشور واحد للخدمة المقيمة وغير المقيمة. تسجل مسؤوليات السكن والطعام والنقل ومواد التنظيف والمعدات في الاتفاق المكتوب. تغطي باقة نصف اليوم 4 ساعات والباقة اليومية 8 ساعات؛ ويتفق على الجدول والمهام والراحة للباقات الأسبوعية والشهرية والالتزامات الأطول. تصف باقة 7 أيام أو 30 يوماً فترة الخدمة، ولا تعني العمل المتواصل.'
 };
 
-export const managedPackages = [
+export const monthlyPackageSummary: LocalizedText = {
+  en: 'The monthly package is AED 3,500 for 30 days. With a 6-month commitment, the price is AED 3,250 per month; with a 12-month commitment, it is AED 3,000 per month. Live-in and live-out prices are the same. The managed monthly agreement includes the worker’s agreed salary and the applicable published benefits within its written scope.',
+  ar: 'الباقة الشهرية بسعر 3,500 درهم لمدة 30 يوماً. مع الالتزام لمدة 6 أشهر يكون السعر 3,250 درهماً شهرياً؛ ومع الالتزام لمدة 12 شهراً يكون 3,000 درهم شهرياً. السعر واحد للخدمة المقيمة وغير المقيمة. يشمل اتفاق الخدمة الشهرية المدارة راتب العاملة المتفق عليه والمزايا المنشورة المنطبقة ضمن نطاقه المكتوب.'
+};
+
+export const shortPackageSummary: LocalizedText = {
+  en: 'The half-day package is AED 120 for 4 hours; the daily package is AED 200 for 8 hours; the weekly package is AED 1,120 for a 7-day service period. Confirm the household duties, schedule, availability and written scope for your selected package.',
+  ar: 'باقة نصف اليوم بسعر 120 درهماً مقابل 4 ساعات؛ والباقة اليومية بسعر 200 درهم مقابل 8 ساعات؛ والباقة الأسبوعية بسعر 1,120 درهماً لفترة خدمة من 7 أيام. أكد المهام المنزلية والجدول والتوفر والنطاق المكتوب للباقة المختارة.'
+};
+
+export const managedPackages: ManagedPackage[] = [
   {
-    id: 'essential', name: 'Essential', monthlyFrom: 2500,
-    price: { en: 'AED 2,500', ar: '2,500 درهم' },
-    description: {
-      en: 'Routine household support matched to the agreed role, with an assigned booking/support contact and standard service coordination. Cleaning, laundry, ironing and other household tasks follow the individual duty plan.',
-      ar: 'دعم منزلي يومي يطابق الدور المتفق عليه، مع مسؤول للحجز والدعم وتنسيق اعتيادي للخدمة. يحدد بيان المهام الفردي أعمال التنظيف والغسيل والكي وغيرها من المهام المنزلية.'
-    },
-    features: {
-      en: ['Matching against agreed household duties', 'Assigned booking/support contact', 'Initial availability review and pre-booking guidance', 'Written duties and practical household handover', 'First-week follow-up, then monthly follow-up', 'Standard coordination and WhatsApp follow-up', 'Eligible replacement-request review, matching coordination and administration'],
-      ar: ['مطابقة المرشحة مع المهام المنزلية المتفق عليها', 'مسؤول محدد للحجز والدعم', 'مراجعة أولية للتوفر وإرشاد قبل الحجز', 'مهام مكتوبة وتسليم عملي لاحتياجات المنزل', 'متابعة في الأسبوع الأول ثم متابعة شهرية', 'تنسيق اعتيادي ومتابعة عبر واتساب', 'مراجعة طلبات الاستبدال المؤهلة وتنسيق المطابقة وإدارة الإجراءات']
-    }
+    id: 'half-day', name: { en: 'Half-day', ar: 'نصف يوم' }, amount: 120, billingUnit: 'package', hours: 4,
+    price: { en: 'AED 120', ar: '120 درهماً' }, period: { en: 'for 4 hours', ar: 'مقابل 4 ساعات' }, duration: { en: '4 hours', ar: '4 ساعات' },
+    description: { en: 'A defined four-hour visit for your agreed household priorities.', ar: 'زيارة محددة من أربع ساعات لإنجاز الأولويات المنزلية المتفق عليها.' },
+    features: { en: ['4-hour service period', 'Agree the household task list', 'Confirm the visit date and availability'], ar: ['فترة خدمة من 4 ساعات', 'الاتفاق على قائمة المهام المنزلية', 'تأكيد موعد الزيارة والتوفر'] }
   },
   {
-    id: 'signature', name: 'Signature', monthlyFrom: 3000,
-    price: { en: 'AED 3,000', ar: '3,000 درهم' },
-    description: {
-      en: 'The core managed-service components of Essential with more comprehensive coordination for experienced household support or nanny requirements. Maid, nanny and non-clinical caregiver options depend on the agreed role and availability.',
-      ar: 'تشمل عناصر الخدمة المدارة الأساسية في Essential، مع تنسيق أشمل لاحتياجات الدعم المنزلي ذي الخبرة أو المربية. تتاح خيارات العاملة المنزلية والمربية ومقدمة الرعاية غير السريرية بحسب الدور المتفق عليه والتوفر.'
-    },
-    features: {
-      en: ['Core managed-service components included in Essential', 'Additional assessment of relevant individual experience and communication', 'Maid, nanny or non-clinical caregiver options by role and availability', 'Dedicated service coordinator', 'Priority follow-up and replacement matching coordination', 'Document and process guidance', 'Detailed household service plan and onboarding guidance', 'First-week follow-up, then fortnightly follow-up'],
-      ar: ['عناصر الخدمة المدارة الأساسية المشمولة في Essential', 'تقييم إضافي للخبرة الفردية ذات الصلة والتواصل', 'خيارات عاملة منزلية أو مربية أو مقدمة رعاية غير سريرية بحسب الدور والتوفر', 'منسق خدمة مخصص', 'أولوية في المتابعة وتنسيق مطابقة الاستبدال', 'إرشاد بشأن المستندات والإجراءات', 'خطة خدمة منزلية مفصلة وإرشاد عند بدء الخدمة', 'متابعة في الأسبوع الأول ثم كل أسبوعين']
-    }
+    id: 'daily', name: { en: 'Daily', ar: 'يومي' }, amount: 200, billingUnit: 'package', hours: 8,
+    price: { en: 'AED 200', ar: '200 درهم' }, period: { en: 'for 8 hours', ar: 'مقابل 8 ساعات' }, duration: { en: '8 hours', ar: '8 ساعات' },
+    description: { en: 'An eight-hour service package with duties and timing agreed in advance.', ar: 'باقة خدمة من ثماني ساعات، مع الاتفاق مسبقاً على المهام والتوقيت.' },
+    features: { en: ['8-hour service period', 'Agree duties and timing', 'Written service scope before confirmation'], ar: ['فترة خدمة من 8 ساعات', 'الاتفاق على المهام والتوقيت', 'نطاق خدمة مكتوب قبل التأكيد'] }
   },
   {
-    id: 'black', name: 'INAYA Black', monthlyFrom: null,
-    price: { en: 'Custom Quote', ar: 'عرض سعر مخصص' },
-    description: {
-      en: 'Bespoke staffing and household support planned for specialist, multiple-worker or complex requirements. The written custom quotation defines the roles, service scope, costs and review schedule.',
-      ar: 'توفير عمالة ودعم منزلي حسب الطلب للاحتياجات المتخصصة أو متعددة العاملين أو المعقدة. يحدد عرض السعر المخصص المكتوب الأدوار ونطاق الخدمة والتكاليف وجدول المراجعة.'
-    },
-    features: {
-      en: ['Detailed household requirement assessment', 'Tailored planning for specialist, multiple-worker or complex requirements', 'Individual candidate assessment against the agreed role', 'Named household account contact', 'Personalised coordination and private team follow-up', 'Custom onboarding and service planning', 'Training and performance-appraisal guidance within the agreed scope', 'Long-term arrangement planning', 'Location-specific options according to availability', 'Agreed review schedule and role-specific replacement coordination'],
-      ar: ['تقييم مفصل لاحتياجات المنزل', 'تخطيط مخصص للاحتياجات المتخصصة أو متعددة العاملين أو المعقدة', 'تقييم فردي للمرشحة وفق الدور المتفق عليه', 'مسؤول مسمى لحساب الأسرة', 'تنسيق شخصي ومتابعة خاصة من الفريق', 'خطة مخصصة لبدء الخدمة وتنظيمها', 'إرشاد بشأن التدريب وتقييم الأداء ضمن النطاق المتفق عليه', 'تخطيط للترتيبات طويلة الأمد', 'خيارات حسب الموقع والتوفر', 'جدول مراجعة متفق عليه وتنسيق استبدال بحسب الدور']
-    }
+    id: 'weekly', name: { en: 'Weekly', ar: 'أسبوعي' }, amount: 1120, billingUnit: 'package', days: 7,
+    price: { en: 'AED 1,120', ar: '1,120 درهماً' }, period: { en: 'for 7 days', ar: 'لمدة 7 أيام' }, duration: { en: '7 days', ar: '7 أيام' },
+    description: { en: 'A seven-day service period with the work schedule and rest agreed in writing.', ar: 'فترة خدمة من سبعة أيام، مع الاتفاق كتابةً على جدول العمل والراحة.' },
+    features: { en: ['7-day service period', 'Agree working hours and rest', 'Same published live-in and live-out price'], ar: ['فترة خدمة من 7 أيام', 'الاتفاق على ساعات العمل والراحة', 'السعر المنشور نفسه للمقيمة وغير المقيمة'] }
+  },
+  {
+    id: 'monthly', name: { en: 'Monthly', ar: 'شهري' }, amount: 3500, billingUnit: 'package', days: 30,
+    price: { en: 'AED 3,500', ar: '3,500 درهم' }, period: { en: 'for 30 days', ar: 'لمدة 30 يوماً' }, duration: { en: '30 days', ar: '30 يوماً' },
+    description: { en: 'Managed household support for a thirty-day service period under the agreed monthly scope.', ar: 'دعم منزلي مدار لفترة خدمة من ثلاثين يوماً ضمن النطاق الشهري المتفق عليه.' },
+    features: { en: ['30-day service period', 'Agreed salary included in the monthly scope', 'Live-in or live-out at the same price'], ar: ['فترة خدمة من 30 يوماً', 'الراتب المتفق عليه مشمول ضمن النطاق الشهري', 'مقيمة أو غير مقيمة بالسعر نفسه'] }
+  },
+  {
+    id: 'six-month', name: { en: 'Six-month plan', ar: 'باقة 6 أشهر' }, amount: 3250, billingUnit: 'month', commitmentMonths: 6,
+    price: { en: 'AED 3,250', ar: '3,250 درهماً' }, period: { en: 'per month · 6-month commitment', ar: 'شهرياً · التزام لمدة 6 أشهر' }, duration: { en: '6-month commitment', ar: 'التزام لمدة 6 أشهر' },
+    description: { en: 'A monthly package rate for an agreed six-month service commitment.', ar: 'سعر شهري للباقة عند الاتفاق على الالتزام بالخدمة لمدة ستة أشهر.' },
+    features: { en: ['AED 3,250 each month', '6-month service commitment', 'Live-in or live-out at the same price'], ar: ['3,250 درهماً كل شهر', 'التزام بالخدمة لمدة 6 أشهر', 'مقيمة أو غير مقيمة بالسعر نفسه'] }
+  },
+  {
+    id: 'yearly', name: { en: 'Yearly plan', ar: 'باقة سنوية' }, amount: 3000, billingUnit: 'month', commitmentMonths: 12,
+    price: { en: 'AED 3,000', ar: '3,000 درهم' }, period: { en: 'per month · 12-month commitment', ar: 'شهرياً · التزام لمدة 12 شهراً' }, duration: { en: '12-month commitment', ar: 'التزام لمدة 12 شهراً' },
+    description: { en: 'A monthly package rate for an agreed twelve-month service commitment.', ar: 'سعر شهري للباقة عند الاتفاق على الالتزام بالخدمة لمدة اثني عشر شهراً.' },
+    features: { en: ['AED 3,000 each month', '12-month service commitment', 'Live-in or live-out at the same price'], ar: ['3,000 درهم كل شهر', 'التزام بالخدمة لمدة 12 شهراً', 'مقيمة أو غير مقيمة بالسعر نفسه'] }
   }
 ];
+
+export function packagePriceLabel(plan: ManagedPackage, lang: Lang): string {
+  return `${plan.price[lang]} — ${plan.period[lang]}`;
+}
+
+export function packagePricingCards(lang: Lang, scope: 'all' | 'monthly' | 'short' = 'all'): Pricing[] {
+  return managedPackages
+    .filter((plan) => scope === 'all' || (scope === 'monthly' ? ['monthly', 'six-month', 'yearly'].includes(plan.id) : ['half-day', 'daily', 'weekly'].includes(plan.id)))
+    .map((plan) => ({ title: `${plan.name[lang]} — ${packagePriceLabel(plan, lang)}`, text: plan.description[lang], points: plan.features[lang] }));
+}
 
 export const packageSections: Record<string, PackageSection> = {
   responsibilities: {
@@ -63,27 +97,27 @@ export const packageSections: Record<string, PackageSection> = {
       ar: 'تدير عناية الخدمة الشهرية وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. يحدد الاتفاق الوكالة صاحبة العمل والكفيل والعاملة والأسرة المستفيدة. تتولى الوكالة صاحبة العمل التزامات التوظيف وإدارة سداد الراتب المتفق عليه، بينما يدفع العميل رسوم الخدمة الشهرية ويلتزم بمسؤوليات المنزل المسجلة في الاتفاق.'
     },
     points: {
-      en: ['The service payment includes the agreed worker salary; the customer does not pay that same salary separately.', 'Write down the individual role, duties, schedule, rest, supervision and safe working arrangements.', 'Record live-in accommodation, meals, household products and equipment responsibilities in the agreement.', 'Required lawful authorisation and written confirmation precede service commencement.', 'A monthly service charge does not replace the employment contract or waive statutory rights.'],
-      ar: ['تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى بصورة منفصلة.', 'سجل الدور الفردي والمهام والجدول والراحة والإشراف وترتيبات العمل الآمن كتابةً.', 'حدد في الاتفاق مسؤوليات السكن والطعام للعاملة المقيمة ومنتجات المنزل والمعدات.', 'يبدأ العمل بعد الحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.', 'رسوم الخدمة الشهرية لا تحل محل عقد العمل ولا تلغي الحقوق القانونية.']
+      en: ['The service payment includes the agreed worker salary; the customer does not pay that same salary separately.', 'Write down the individual role, duties, schedule, rest, supervision and safe working arrangements.', 'Record accommodation, meals, transport, household products and equipment responsibilities for the selected live-in or live-out arrangement in the agreement.', 'Required lawful authorisation and written confirmation precede service commencement.', 'A monthly service charge does not replace the employment contract or waive statutory rights.'],
+      ar: ['تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى بصورة منفصلة.', 'سجل الدور الفردي والمهام والجدول والراحة والإشراف وترتيبات العمل الآمن كتابةً.', 'حدد في الاتفاق مسؤوليات السكن والطعام والنقل ومنتجات المنزل والمعدات للترتيب المختار، سواء بإقامة داخل المنزل أو خارجها.', 'يبدأ العمل بعد الحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.', 'رسوم الخدمة الشهرية لا تحل محل عقد العمل ولا تلغي الحقوق القانونية.']
     }
   },
   inclusions: {
     title: { en: 'What the managed monthly service includes', ar: 'ما تشمله الخدمة الشهرية المدارة' },
     body: {
-      en: 'All-inclusive refers to these core service components within the written quotation and the published exclusions. It does not mean every possible expense, specialist service or medical treatment is covered.',
-      ar: 'يقصد بشمول التكاليف عناصر الخدمة الأساسية التالية ضمن عرض السعر المكتوب والاستثناءات المنشورة. ولا يعني ذلك تغطية كل نفقة ممكنة أو خدمة متخصصة أو علاج طبي.'
+      en: 'These components apply within the applicable managed monthly agreement and its stated scope. The published benefits include the worker’s salary, government fees, medical insurance, return ticket and end-of-service benefits as applicable under that agreement. They are not automatic benefits of every half-day, daily or weekly visit.',
+      ar: 'تسري هذه العناصر ضمن اتفاق الخدمة الشهرية المدارة المنطبق ونطاقه المحدد. وتشمل المزايا المنشورة راتب العاملة والرسوم الحكومية والتأمين الطبي وتذكرة العودة ومكافأة نهاية الخدمة بحسب ما ينطبق في ذلك الاتفاق. ولا تعد مزايا تلقائية لكل زيارة بنصف يوم أو يومية أو أسبوعية.'
     },
     points: {
-      en: ['The domestic worker’s agreed salary.', 'Documented salary-payment administration through the applicable approved mechanism.', 'Applicable agency sponsorship and work-permit/residence processing.', 'Emirates ID and required medical-fitness processing.', 'The applicable health-insurance premium; benefits, exclusions and co-payments follow the issued policy and lawful responsibilities.', 'Candidate assessment, initial orientation and agreed onboarding.', 'Standard placement transport within the quoted service area.', 'Customer coordination and administration of eligible replacement requests.', 'Applicable agency employment obligations budgeted within the monthly service charge.'],
-      ar: ['راتب العاملة المنزلية المتفق عليه.', 'إدارة موثقة لسداد الراتب عبر الآلية المعتمدة المنطبقة.', 'الكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة المنطبقة.', 'إجراءات الهوية الإماراتية وفحص اللياقة الطبية المطلوب.', 'قسط التأمين الصحي المنطبق؛ وتحدد الوثيقة الصادرة والمسؤوليات القانونية المنافع والاستثناءات والمساهمات في الدفع.', 'تقييم المرشحة والتوجيه الأولي والتهيئة المتفق عليها لبدء الخدمة.', 'النقل الاعتيادي عند بدء الخدمة ضمن منطقة الخدمة المبينة في العرض.', 'التنسيق مع العميل وإدارة طلبات الاستبدال المؤهلة.', 'التزامات الوكالة المتعلقة بالتوظيف والمنطبقة على الترتيب، محسوبة ضمن رسوم الخدمة الشهرية.']
+      en: ['The domestic worker’s agreed salary.', 'Documented salary-payment administration through the applicable approved mechanism.', 'Applicable government fees, agency sponsorship and work-permit/residence processing within the monthly agreement.', 'Emirates ID and required medical-fitness processing.', 'The applicable health-insurance premium; benefits, exclusions and co-payments follow the issued policy and lawful responsibilities.', 'Candidate assessment, initial orientation and agreed onboarding.', 'Return ticket and end-of-service benefits under the applicable monthly agreement and employment obligations.', 'Customer coordination and administration of eligible replacement requests.', 'Applicable agency employment obligations budgeted within the monthly service charge.'],
+      ar: ['راتب العاملة المنزلية المتفق عليه.', 'إدارة موثقة لسداد الراتب عبر الآلية المعتمدة المنطبقة.', 'الرسوم الحكومية المنطبقة والكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة ضمن الاتفاق الشهري.', 'إجراءات الهوية الإماراتية وفحص اللياقة الطبية المطلوب.', 'قسط التأمين الصحي المنطبق؛ وتحدد الوثيقة الصادرة والمسؤوليات القانونية المنافع والاستثناءات والمساهمات في الدفع.', 'تقييم المرشحة والتوجيه الأولي والتهيئة المتفق عليها لبدء الخدمة.', 'تذكرة العودة ومكافأة نهاية الخدمة وفق الاتفاق الشهري المنطبق والتزامات التوظيف.', 'التنسيق مع العميل وإدارة طلبات الاستبدال المؤهلة.', 'التزامات الوكالة المتعلقة بالتوظيف والمنطبقة على الترتيب، محسوبة ضمن رسوم الخدمة الشهرية.']
     }
   },
   exclusions: {
     title: { en: 'Household responsibilities and separately quoted services', ar: 'مسؤوليات المنزل والخدمات ذات العروض المنفصلة' },
     body: { en: packageArrangements.en, ar: packageArrangements.ar },
     points: {
-      en: ['Live-in accommodation and meals: responsibilities are recorded in the applicable agreement.', 'Household cleaning products and equipment: responsibilities are recorded in the service scope.', 'Live-out accommodation and transport: separately itemised in the live-out quotation.', 'Overseas travel with the family and destination-specific procedures: separately agreed.', 'Specialist clinical care, specialist cleaning and duties outside the agreed role are outside the standard household scope unless separately and lawfully arranged.', 'Additional requested services and material scope changes are priced and agreed before acceptance.', 'Applicable tax and the final payable amount are identified in the written quotation.'],
-      ar: ['السكن والطعام للعاملة المقيمة: تسجل المسؤوليات في الاتفاق المنطبق.', 'منتجات التنظيف المنزلية والمعدات: تسجل المسؤوليات في نطاق الخدمة.', 'السكن والنقل للخدمة غير المقيمة: يدرجان كبنود منفصلة في عرض الخدمة غير المقيمة.', 'السفر خارج الدولة مع الأسرة وإجراءات بلد الوجهة: يتفق عليها بصورة منفصلة.', 'الرعاية السريرية والتنظيف المتخصص والمهام خارج الدور المتفق عليه ليست ضمن نطاق الخدمة المنزلية القياسية إلا بترتيب منفصل ونظامي.', 'تحدد أسعار الخدمات الإضافية المطلوبة والتغييرات الجوهرية في النطاق، ويتفق عليها قبل قبولها.', 'يبين عرض السعر المكتوب الضريبة المنطبقة والمبلغ النهائي المستحق.']
+      en: ['Live-in accommodation and meals: responsibilities are recorded in the applicable agreement.', 'Household cleaning products and equipment: responsibilities are recorded in the service scope.', 'Accommodation and transport for live-in and live-out arrangements: responsibilities are recorded in the written agreement; the published package price is the same.', 'Overseas travel with the family and destination-specific procedures: separately agreed.', 'Specialist clinical care, specialist cleaning and duties outside the agreed role are outside the standard household scope unless separately and lawfully arranged.', 'Additional requested services and material scope changes are priced and agreed before acceptance.', 'Applicable tax and the final payable amount are identified in the written quotation.'],
+      ar: ['السكن والطعام للعاملة المقيمة: تسجل المسؤوليات في الاتفاق المنطبق.', 'منتجات التنظيف المنزلية والمعدات: تسجل المسؤوليات في نطاق الخدمة.', 'السكن والنقل للخدمة المقيمة وغير المقيمة: تسجل المسؤوليات في الاتفاق المكتوب؛ وسعر الباقة المنشور واحد.', 'السفر خارج الدولة مع الأسرة وإجراءات بلد الوجهة: يتفق عليها بصورة منفصلة.', 'الرعاية السريرية والتنظيف المتخصص والمهام خارج الدور المتفق عليه ليست ضمن نطاق الخدمة المنزلية القياسية إلا بترتيب منفصل ونظامي.', 'تحدد أسعار الخدمات الإضافية المطلوبة والتغييرات الجوهرية في النطاق، ويتفق عليها قبل قبولها.', 'يبين عرض السعر المكتوب الضريبة المنطبقة والمبلغ النهائي المستحق.']
     }
   },
   payments: {
@@ -120,10 +154,10 @@ export const packageSections: Record<string, PackageSection> = {
     }
   },
   replacement: {
-    title: { en: 'Eligible replacement support in every tier', ar: 'دعم الاستبدال المؤهل في جميع الباقات' },
+    title: { en: 'Eligible replacement support under the monthly agreement', ar: 'دعم الاستبدال المؤهل ضمن الاتفاق الشهري' },
     body: {
-      en: 'Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination.',
-      ar: 'تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور.'
+      en: 'The managed monthly agreement includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Matching coordination and follow-up follow the agreed service plan.',
+      ar: 'يشمل اتفاق الخدمة الشهرية المدارة مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. يتبع تنسيق المطابقة والمتابعة خطة الخدمة المتفق عليها.'
     },
     points: {
       en: ['Share the agreement, agreed duties, relevant dates and a clear description of the concern.', 'INAYA explains the eligibility review, available matching options and next steps.', 'Review the proposed candidate and give consent before a replacement arrangement is confirmed.', 'If a suitable replacement is unavailable, discuss available alternatives and effective cancellation; unused prepaid service is handled under the monthly refund terms.', 'The support includes eligible review, matching coordination and administration, without an unlimited replacement promise or fixed completion deadline.', 'Legally required remedies remain available.'],
@@ -133,8 +167,8 @@ export const packageSections: Record<string, PackageSection> = {
   followUp: {
     title: { en: 'Follow-up schedules and human support hours', ar: 'مواعيد المتابعة وساعات الدعم البشري' },
     body: {
-      en: 'Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up.',
-      ar: 'تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق.'
+      en: 'INAYA coordinates follow-up according to the agreed service plan. The written plan records the contact person, review schedule and how household feedback or replacement concerns will be handled.',
+      ar: 'تنسق عناية المتابعة وفق خطة الخدمة المتفق عليها. تسجل الخطة المكتوبة مسؤول التواصل وجدول المراجعة وطريقة التعامل مع ملاحظات الأسرة أو طلبات الاستبدال.'
     },
     points: {
       en: ['Human support hours: Saturday–Thursday, 9 AM–9 PM; Friday closed.', 'WhatsApp messages may be received outside office hours; this is not a 24/7 human helpline or a guaranteed response time.', 'Office: +971 6 740 0128. WhatsApp: +971 50 203 6767. Email: info@inayadomestic.ae.', 'Visit Grand Mall, ground floor, Al Rashidiya 3, Ajman, and coordinate the visit with the team.', 'For a complaint, share the relevant agreement and concern, keep written communications and use the existing support and official escalation channels.'],
@@ -143,71 +177,80 @@ export const packageSections: Record<string, PackageSection> = {
   }
 };
 
+export const packageQuestions: { question: LocalizedText; answer: LocalizedText }[] = [
+  {
+    question: { en: 'What are the published package prices?', ar: 'ما أسعار الباقات المنشورة؟' },
+    answer: packageSummary
+  },
+  {
+    question: { en: 'Are the six-month and yearly prices per month?', ar: 'هل سعرا باقتي الستة أشهر والسنة شهريان؟' },
+    answer: { en: 'Yes. AED 3,250 is the price per month with a 6-month commitment. AED 3,000 is the price per month with a 12-month commitment. Neither amount is the total price for the entire commitment. Record the commitment and payment schedule in the written agreement.', ar: 'نعم. 3,250 درهماً هو السعر الشهري مع الالتزام لمدة 6 أشهر. و3,000 درهم هو السعر الشهري مع الالتزام لمدة 12 شهراً. لا يمثل أي من المبلغين إجمالي سعر مدة الالتزام كاملة. سجل مدة الالتزام وجدول السداد في الاتفاق المكتوب.' }
+  },
+  {
+    question: { en: 'Does live-out service cost more than live-in?', ar: 'هل سعر الخدمة غير المقيمة أعلى من المقيمة؟' },
+    answer: packageArrangements
+  },
+  {
+    question: { en: 'What do the weekly and monthly durations mean?', ar: 'ماذا تعني مدة الباقة الأسبوعية والشهرية؟' },
+    answer: { en: 'The weekly price covers a 7-day service period and the monthly price a 30-day service period. The agreement records working hours, duties and rest. These durations do not mean continuous work or set daily hours for weekly or monthly arrangements.', ar: 'يغطي السعر الأسبوعي فترة خدمة من 7 أيام، والسعر الشهري فترة خدمة من 30 يوماً. يسجل الاتفاق ساعات العمل والمهام والراحة. لا تعني هذه المدد العمل المتواصل، ولا تحدد ساعات يومية للترتيب الأسبوعي أو الشهري.' }
+  },
+  {
+    question: { en: 'What benefits apply to the managed monthly agreement?', ar: 'ما المزايا التي تسري ضمن اتفاق الخدمة الشهرية المدارة؟' },
+    answer: packageSections.inclusions.body
+  },
+  {
+    question: { en: 'Are materials, transport, accommodation and tax included?', ar: 'هل يشمل السعر المواد والنقل والسكن والضريبة؟' },
+    answer: { en: 'The published package prices are the same for live-in and live-out service. The written agreement identifies responsibility for accommodation, meals, transport, cleaning products and equipment. The price breakdown identifies applicable tax and the final payable amount; do not assume an inclusion that has not been confirmed.', ar: 'أسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة. يحدد الاتفاق المكتوب مسؤولية السكن والطعام والنقل ومواد التنظيف والمعدات. ويبين تفصيل السعر الضريبة المنطبقة والمبلغ النهائي المستحق؛ فلا تفترض شمول بند لم يتم تأكيده.' }
+  },
+  {
+    question: { en: 'What are the managed monthly payment terms?', ar: 'ما شروط سداد الخدمة الشهرية المدارة؟' },
+    answer: packageSections.payments.body
+  },
+  {
+    question: { en: 'How are monthly cancellation and refunds handled?', ar: 'كيف يعالج إلغاء الخدمة الشهرية والاسترداد؟' },
+    answer: packageSections.cancellation.body
+  },
+  {
+    question: { en: 'What follow-up and replacement support applies?', ar: 'ما المتابعة ودعم الاستبدال المنطبقان؟' },
+    answer: { en: packageSections.followUp.body.en + ' ' + packageSections.replacement.body.en, ar: packageSections.followUp.body.ar + ' ' + packageSections.replacement.body.ar }
+  },
+  {
+    question: { en: 'When is a booking confirmed?', ar: 'متى يتم تأكيد الحجز؟' },
+    answer: packageSections.commencement.body
+  }
+];
+
+export function localizedPackageQuestions(lang: Lang): Pair[] {
+  return packageQuestions.map(({ question, answer }) => ({ title: question[lang], text: answer[lang] }));
+}
+
 const managedRoleCopy: Record<string, LocalizedText> = {
   housemaid: { en: 'Housemaid support follows the individual cleaning, laundry, ironing and household duties agreed for the role. A maid role does not automatically include cooking, childcare and caregiving together.', ar: 'تتبع خدمة العاملة المنزلية مهام التنظيف والغسيل والكي والمهام المنزلية المتفق عليها للدور الفردي. ولا يشمل دور العاملة تلقائياً الطبخ ورعاية الأطفال والرعاية المنزلية جميعاً.' },
-  'live-in-maid': { en: 'Live-in maid service is the advertised standard managed monthly arrangement. Agree the individual household duties, accommodation, meals, working hours and rest in writing; living in does not mean continuous work.', ar: 'خدمة العاملة المقيمة هي ترتيب الخدمة الشهرية المدارة القياسي المعلن. اتفق كتابةً على المهام الفردية والسكن والطعام وساعات العمل والراحة؛ فالإقامة لا تعني العمل المستمر.' },
-  'full-time-maid': { en: 'Full-time household support follows an agreed work and rest schedule. INAYA’s standard monthly offer is live-in and salary-included; a live-out full-time arrangement has its own itemised accommodation and transport quotation.', ar: 'يتبع الدعم المنزلي بدوام كامل جدولاً متفقاً عليه للعمل والراحة. عرض عناية الشهري القياسي مقيم ويشمل الراتب؛ وللدوام الكامل غير المقيم عرض مفصل مستقل للسكن والنقل.' },
-  'monthly-maid-contract': { en: 'Choose a managed monthly live-in service with the worker’s agreed salary included. Essential provides routine household support; Signature adds experience assessment and dedicated coordination; Black plans bespoke requirements.', ar: 'اختر خدمة شهرية مقيمة مدارة تشمل راتب العاملة المتفق عليه. تقدم Essential دعماً منزلياً اعتيادياً، وتضيف Signature تقييم الخبرة والتنسيق المخصص، وتخطط Black للاحتياجات حسب الطلب.' },
-  nanny: { en: 'Signature offers nanny options according to the agreed childcare role and individual availability, with additional experience and communication assessment. Agree the children’s routines, duties, supervision and schedule rather than assuming that every nanny also handles all household work.', ar: 'تتيح Signature خيارات للمربية بحسب دور رعاية الأطفال المتفق عليه والتوفر الفردي، مع تقييم إضافي للخبرة والتواصل. اتفق على روتين الأطفال والمهام والإشراف والجدول، دون افتراض أن كل مربية تتولى أيضاً جميع أعمال المنزل.' },
-  'elder-care': { en: 'Signature offers non-clinical caregiver options by agreed role and availability. Define companionship, daily-routine assistance and household support individually. Specialist clinical care is outside the standard household scope unless separately and lawfully arranged.', ar: 'تتيح Signature خيارات لمقدمة رعاية غير سريرية بحسب الدور المتفق عليه والتوفر. حدد المرافقة والمساعدة في الروتين اليومي والدعم المنزلي بصورة فردية. الرعاية السريرية المتخصصة خارج نطاق الخدمة المنزلية القياسية إلا بترتيب منفصل ونظامي.' },
-  'patient-care': { en: 'Household care support is non-clinical and follows the agreed individual duties. Signature offers non-clinical caregiver options by role and availability; the standard package does not provide a licensed nurse, therapist or specialist clinical treatment. Medical treatment, nursing and medication management are outside this service.', ar: 'دعم الرعاية المنزلية غير سريري ويتبع المهام الفردية المتفق عليها. تتيح Signature خيارات لمقدمة رعاية غير سريرية بحسب الدور والتوفر؛ ولا تقدم الباقة القياسية ممرضة مرخصة أو معالجة أو علاجاً سريرياً متخصصاً. لا تشمل هذه الخدمة العلاج الطبي أو التمريض أو إدارة الأدوية.' }
+  'live-in-maid': { en: 'Choose live-in household support at the same published package price as live-out service. Agree the individual duties, accommodation, meals, working hours and rest in writing; living in does not mean continuous work.', ar: 'اختر دعماً منزلياً مع الإقامة بالسعر المنشور نفسه للخدمة غير المقيمة. اتفق كتابةً على المهام الفردية والسكن والطعام وساعات العمل والراحة؛ فالإقامة لا تعني العمل المستمر.' },
+  'live-out-maid': { en: 'Choose live-out household support at the same published package price as live-in service. Agree the duties, work and rest schedule, accommodation and transport responsibilities in writing before confirmation.', ar: 'اختر دعماً منزلياً دون إقامة بالسعر المنشور نفسه للخدمة المقيمة. اتفق كتابةً على المهام وجدول العمل والراحة ومسؤوليات السكن والنقل قبل التأكيد.' },
+  'full-time-maid': { en: 'Full-time household support follows an agreed work and rest schedule. The managed monthly service includes the worker’s agreed salary within its scope. Live-in and live-out arrangements have the same published package price.', ar: 'يتبع الدعم المنزلي بدوام كامل جدولاً متفقاً عليه للعمل والراحة. تشمل الخدمة الشهرية المدارة راتب العاملة المتفق عليه ضمن نطاقها. وسعر الباقة المنشور واحد للخدمة المقيمة وغير المقيمة.' },
+  'monthly-maid-contract': monthlyPackageSummary,
+  nanny: { en: 'Nanny options depend on the agreed childcare role and individual availability. Review relevant experience and communication, then agree the children’s routines, duties, supervision and schedule. A nanny is not automatically a cleaner, cook or licensed nurse.', ar: 'تعتمد خيارات المربية على دور رعاية الأطفال المتفق عليه والتوفر الفردي. راجع الخبرة المناسبة والتواصل، ثم اتفق على روتين الأطفال والمهام والإشراف والجدول. المربية ليست تلقائياً عاملة تنظيف أو طاهية أو ممرضة مرخصة.' },
+  'elder-care': { en: 'Non-clinical caregiver options depend on the agreed role and availability. Define companionship, daily-routine assistance and household support individually. Medical treatment, nursing and medication management are outside this household role.', ar: 'تعتمد خيارات مقدمة الرعاية غير السريرية على الدور المتفق عليه والتوفر. حدد المرافقة والمساعدة في الروتين اليومي والدعم المنزلي بصورة فردية. العلاج الطبي والتمريض وإدارة الأدوية خارج هذا الدور المنزلي.' },
+  'patient-care': { en: 'Household care support is non-clinical and follows the agreed individual duties. It does not provide a licensed nurse, therapist or specialist clinical treatment. Medical treatment, nursing and medication management are outside this service.', ar: 'دعم الرعاية المنزلية غير سريري ويتبع المهام الفردية المتفق عليها. ولا يقدم ممرضة مرخصة أو معالجة أو علاجاً سريرياً متخصصاً. لا تشمل هذه الخدمة العلاج الطبي أو التمريض أو إدارة الأدوية.' }
 };
 
 const separateServiceCopy: Record<string, LocalizedText> = {
-  'experienced-maid': { en: 'For experienced household support, Signature starts from AED 3,000/month for the standard managed, salary-included live-in arrangement. It includes additional assessment of relevant individual experience and communication, a dedicated coordinator and priority follow-up. Duties and suitability are agreed individually; nationality does not establish skill, and no universal experience threshold applies. Live-out accommodation and transport are quoted separately.', ar: 'للدعم المنزلي ذي الخبرة، تبدأ Signature من 3,000 درهم شهرياً للترتيب القياسي المدار والمقيم الذي يشمل الراتب. وتشمل تقييماً إضافياً للخبرة الفردية ذات الصلة والتواصل ومنسقاً مخصصاً وأولوية في المتابعة. يتفق على المهام والملاءمة بصورة فردية؛ فالجنسية لا تثبت المهارة ولا ينطبق حد خبرة موحد. ويكون للسكن والنقل في الترتيب غير المقيم عرض منفصل.' },
-  'newborn-care': { en: 'Signature offers nanny options by agreed role and availability, with additional experience and communication assessment and a detailed household plan. For the standard managed live-in arrangement it starts from AED 3,000/month, with salary and the published core components included. Newborn support follows the individual non-clinical role; it does not establish nursing qualifications or cover specialist clinical care. Separately scheduled visits require their own quotation.', ar: 'تتيح Signature خيارات للمربية بحسب الدور المتفق عليه والتوفر، مع تقييم إضافي للخبرة والتواصل وخطة منزلية مفصلة. تبدأ من 3,000 درهم شهرياً للترتيب القياسي المقيم والمدار، مع شمول الراتب والعناصر الأساسية المنشورة. تتبع مساعدة رعاية المولود الدور الفردي غير السريري؛ ولا تثبت مؤهلاً تمريضياً ولا تشمل رعاية سريرية متخصصة. وللزيارات المجدولة منفصلة عرض مستقل.' },
-  'companion-care': { en: 'Signature offers non-clinical caregiver options according to the agreed role and availability. The standard managed, salary-included live-in arrangement starts from AED 3,000/month with the published core components and fortnightly follow-up after the first-week review. Agree companionship, daily-routine assistance, supervision and rest individually. Clinical treatment is outside the standard household role; scheduled visits and live-out arrangements are separately quoted.', ar: 'تتيح Signature خيارات لمقدمة رعاية غير سريرية بحسب الدور المتفق عليه والتوفر. يبدأ الترتيب القياسي المقيم والمدار والمشمول بالراتب من 3,000 درهم شهرياً، مع العناصر الأساسية المنشورة والمتابعة كل أسبوعين بعد مراجعة الأسبوع الأول. اتفق بصورة فردية على المرافقة والمساعدة في الروتين اليومي والإشراف والراحة. العلاج السريري خارج الدور المنزلي القياسي؛ وللزيارات المجدولة والترتيبات غير المقيمة عروض منفصلة.' },
-  'bespoke-household-management': { en: 'INAYA Black remains Custom Quote for bespoke household staffing and coordination. It includes detailed needs assessment, individual role assessment, a named household account contact, custom onboarding, long-term planning and an agreed review schedule. Training and performance-appraisal guidance stay within the agreed scope. The written quotation records specialist or multiple-worker roles, location-specific availability, costs and role-specific replacement coordination.', ar: 'تبقى INAYA Black بعرض سعر مخصص لتوفير العمالة والتنسيق للاحتياجات المنزلية حسب الطلب. وتشمل تقييماً مفصلاً للاحتياجات وتقييماً فردياً للدور ومسؤول حساب مسمى وتهيئة مخصصة وتخطيطاً طويل الأمد وجدول مراجعة متفقاً عليه. يظل الإرشاد بشأن التدريب وتقييم الأداء ضمن النطاق المتفق عليه. يسجل العرض المكتوب الأدوار المتخصصة أو متعددة العاملين والتوفر بحسب الموقع والتكاليف وتنسيق الاستبدال بحسب الدور.' },
-  'on-demand-domestic-help': { en: 'Scheduled or on-demand household visits are quoted separately by the agreed duties, schedule, location and available arrangement. They are not automatically included in the advertised full-time monthly prices. The standard Essential and Signature monthly offer is managed, salary-included live-in service; confirm the written scope and costs for the particular visit arrangement before acceptance.', ar: 'تقدم للزيارات المنزلية المجدولة أو عند الطلب عروض منفصلة بحسب المهام والجدول والموقع والترتيب المتاح المتفق عليها. ولا تشملها تلقائياً الأسعار الشهرية المعلنة للدوام الكامل. العرض الشهري القياسي في Essential وSignature خدمة مقيمة تديرها عناية وتشمل الراتب؛ أكد النطاق والتكاليف المكتوبة لترتيب الزيارة المحدد قبل قبوله.' },
-  'live-out-maid': { en: 'Live-out service requires a separate itemised quotation covering accommodation and transport. The advertised Essential AED 2,500/month and Signature AED 3,000/month starting prices concern standard live-in service.', ar: 'تتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يشمل بيان السكن والنقل. وتخص أسعار Essential المبدئية من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً الخدمة المقيمة القياسية.' },
-  'part-time-maid': { en: 'Scheduled part-time visits are separately quoted for the agreed duties, visit pattern, location and lawful arrangement. They are not automatically included in the advertised full-time monthly price.', ar: 'تعرض الزيارات المجدولة بدوام جزئي بصورة منفصلة بحسب المهام ونمط الزيارات والموقع والترتيب النظامي المتفق عليها. ولا يشملها تلقائياً السعر الشهري المعلن للدوام الكامل.' },
-  housekeeping: { en: 'Scheduled housekeeping and specialist cleaning need their own written scope and quotation. Routine cleaning can form part of an agreed monthly housemaid role; specialist cleaning and work outside that role are separately arranged.', ar: 'تحتاج خدمات التدبير المنزلي المجدولة والتنظيف المتخصص إلى نطاق وعرض سعر مكتوبين مستقلين. قد يشمل دور العاملة الشهرية المتفق عليه التنظيف الاعتيادي؛ أما التنظيف المتخصص والعمل خارج الدور فيرتبان بصورة منفصلة.' },
-  babysitting: { en: 'Scheduled or occasional babysitting is separately quoted by duties, timing and availability. Do not treat occasional visits as automatically covered by the managed full-time monthly price; a Signature nanny role is agreed separately according to requirements.', ar: 'تعرض مجالسة الأطفال المجدولة أو العرضية بصورة منفصلة بحسب المهام والتوقيت والتوفر. لا تعد الزيارات العرضية مشمولة تلقائياً بالسعر الشهري المدار للدوام الكامل؛ ويتفق على دور المربية في Signature بحسب المتطلبات.' },
-  recruitment: { en: 'Separately contracted recruitment has its own itemised quotation, agreement and applicable statutory remedies. INAYA’s standard managed monthly service includes salary and applicable agency processing with no separate upfront recruitment/setup fee or security deposit; those terms do not automatically govern a separate recruitment contract.', ar: 'للاستقدام المتعاقد عليه منفصلاً عرض مفصل واتفاق وسبل إنصاف قانونية منطبقة خاصة به. تشمل خدمة عناية الشهرية المدارة القياسية الراتب وإجراءات الوكالة المنطبقة دون رسم استقدام أو تجهيز منفصل مقدماً أو تأمين نقدي؛ ولا تحكم هذه الشروط تلقائياً عقد استقدام منفصلاً.' },
-  'maid-visa': { en: 'Applicable agency sponsorship, work-permit/residence, Emirates ID, required medical-fitness processing and the health-insurance premium are included in INAYA’s managed monthly service. Visa-only services are separately contracted and itemised; their requirements, charges and official decisions depend on the actual case.', ar: 'تشمل خدمة عناية الشهرية المدارة الكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة والهوية الإماراتية وفحص اللياقة الطبية المطلوب وقسط التأمين الصحي المنطبق. أما خدمات التأشيرة وحدها فيتعاقد عليها وتفصل تكاليفها بصورة مستقلة؛ وتعتمد المتطلبات والرسوم والقرارات الرسمية على الحالة الفعلية.' },
+  'experienced-maid': { en: 'Review the individual’s relevant household experience, communication and agreed duties. Nationality does not establish skill, and no universal experience threshold applies. Use the published package prices for the agreed service duration and confirm the individual scope and availability.', ar: 'راجع الخبرة المنزلية الفردية المناسبة والتواصل والمهام المتفق عليها. الجنسية لا تثبت المهارة، ولا ينطبق حد خبرة موحد. راجع أسعار الباقات المنشورة لمدة الخدمة المتفق عليها، وأكد النطاق الفردي والتوفر.' },
+  'newborn-care': { en: 'Newborn support follows the individual non-clinical childcare role and the parents’ instructions. Review relevant experience and agree the routine, duties and schedule. The role does not establish nursing qualifications or cover specialist clinical care. Confirm the suitable package and written scope with INAYA.', ar: 'تتبع مساعدة رعاية المولود دور رعاية الأطفال الفردي غير السريري وتعليمات الوالدين. راجع الخبرة المناسبة واتفق على الروتين والمهام والجدول. لا يثبت الدور مؤهلاً تمريضياً ولا يشمل رعاية سريرية متخصصة. أكد الباقة المناسبة والنطاق المكتوب مع عناية.' },
+  'companion-care': { en: 'Non-clinical companionship follows the agreed role and availability. Agree daily-routine assistance, supervision, work and rest individually. Clinical treatment is outside this household role. Review the published package for the chosen service period and record the scope in writing.', ar: 'تتبع المرافقة غير السريرية الدور المتفق عليه والتوفر. اتفق بصورة فردية على المساعدة في الروتين اليومي والإشراف والعمل والراحة. العلاج السريري خارج هذا الدور المنزلي. راجع الباقة المنشورة لفترة الخدمة المختارة وسجل النطاق كتابةً.' },
+  'bespoke-household-management': { en: 'Describe the household staffing and coordination duties that need to be planned. Review each proposed role, the service period, location, availability and written costs. Multiple-worker or specialist requirements are not automatically included in one domestic-worker package.', ar: 'وضح مهام العمالة المنزلية والتنسيق المطلوب تخطيطها. راجع كل دور مقترح وفترة الخدمة والموقع والتوفر والتكاليف المكتوبة. لا تشمل باقة عاملة منزلية واحدة تلقائياً الاحتياجات متعددة العاملين أو المتخصصة.' },
+  'on-demand-domestic-help': { en: shortPackageSummary.en + ' An urgent enquiry does not confirm immediate availability.', ar: shortPackageSummary.ar + ' الاستفسار العاجل لا يؤكد التوفر الفوري.' },
+  'part-time-maid': shortPackageSummary,
+  housekeeping: { en: shortPackageSummary.en + ' Routine housekeeping follows the agreed task list. Specialist deep cleaning and work outside that role require a separate agreed scope.', ar: shortPackageSummary.ar + ' يتبع التنظيف المنزلي المعتاد قائمة المهام المتفق عليها. يحتاج التنظيف العميق المتخصص والعمل خارج الدور إلى نطاق منفصل متفق عليه.' },
+  babysitting: { en: 'Occasional babysitting and ongoing nanny care are different arrangements. Review the individual’s experience with the children’s ages, agree supervision duties and timing, and confirm the applicable published package and written scope. Monthly employment benefits do not automatically apply to a short visit.', ar: 'تختلف مجالسة الأطفال العرضية عن رعاية المربية المستمرة. راجع خبرة الفرد مع أعمار الأطفال، واتفق على مهام الإشراف والتوقيت، وأكد الباقة المنشورة المنطبقة والنطاق المكتوب. لا تسري مزايا التوظيف الشهرية تلقائياً على زيارة قصيرة.' },
+  recruitment: { en: 'Separately contracted recruitment has its own itemised quotation, agreement and applicable statutory remedies. INAYA’s managed monthly service includes salary and applicable agency processing with no separate upfront recruitment/setup fee or security deposit; those terms do not automatically govern a separate recruitment contract.', ar: 'للاستقدام المتعاقد عليه منفصلاً عرض مفصل واتفاق وسبل إنصاف قانونية منطبقة خاصة به. تشمل خدمة عناية الشهرية المدارة الراتب وإجراءات الوكالة المنطبقة دون رسم استقدام أو تجهيز منفصل مقدماً أو تأمين نقدي؛ ولا تحكم هذه الشروط تلقائياً عقد استقدام منفصلاً.' },
+  'maid-visa': { en: 'Applicable government fees, agency sponsorship, work-permit/residence, Emirates ID, required medical-fitness processing and the health-insurance premium are included within INAYA’s applicable managed monthly agreement. Visa-only services are separately contracted and itemised; requirements, charges and official decisions depend on the actual case.', ar: 'تشمل خدمة عناية ضمن اتفاقها الشهري المدار المنطبق الرسوم الحكومية والكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة والهوية الإماراتية وفحص اللياقة الطبية المطلوب وقسط التأمين الصحي المنطبق. أما خدمات التأشيرة وحدها فيتعاقد عليها وتفصل تكاليفها بصورة مستقلة؛ وتعتمد المتطلبات والرسوم والقرارات الرسمية على الحالة الفعلية.' },
   'sponsorship-transfer': { en: 'The managed monthly service uses the applicable agency employment and sponsorship arrangement. A separately requested sponsorship transfer needs its own case review, lawful authorisation, written processing scope and itemised quotation; a monthly package price does not promise approval of a different transfer.', ar: 'تستخدم الخدمة الشهرية المدارة ترتيب التوظيف والكفالة المنطبق لدى الوكالة. ويحتاج طلب نقل كفالة منفصل إلى مراجعة الحالة والتصاريح النظامية ونطاق معالجة مكتوب وعرض مفصل؛ ولا يعني سعر الباقة الشهرية ضمان الموافقة على نقل مختلف.' },
   'maid-replacement': packageSections.replacement.body,
-  'private-chefs': { en: 'Discuss specialist cooking duties through a written custom scope. INAYA Black plans specialist, multiple-worker or complex household requirements on a Custom Quote; routine maid duties do not automatically include a private-chef role.', ar: 'ناقش مهام الطبخ المتخصصة ضمن نطاق مخصص مكتوب. تخطط INAYA Black للاحتياجات المتخصصة أو متعددة العاملين أو المعقدة بعرض سعر مخصص؛ ولا تشمل مهام العاملة الاعتيادية تلقائياً دور الطاهي الخاص.' },
-  'executive-nannies': { en: 'Assess individual childcare experience and communication against the agreed role. Signature offers nanny options by availability; complex household staffing can be planned through INAYA Black on a Custom Quote, without an assumed qualification or universal experience threshold.', ar: 'قيم خبرة رعاية الأطفال الفردية والتواصل وفق الدور المتفق عليه. تتيح Signature خيارات للمربية بحسب التوفر؛ ويمكن تخطيط العمالة للاحتياجات المنزلية المعقدة عبر INAYA Black بعرض سعر مخصص، دون افتراض مؤهل أو حد خبرة موحد.' },
-  'house-managers': { en: 'INAYA Black offers tailored planning for specialist, multiple-worker or complex household needs, individual role assessment and a named household account contact. The custom quotation records coordination duties, onboarding and the agreed review schedule.', ar: 'تقدم INAYA Black تخطيطاً مخصصاً للاحتياجات المنزلية المتخصصة أو متعددة العاملين أو المعقدة، وتقييماً فردياً للدور ومسؤول حساب مسمى. يسجل العرض المخصص مهام التنسيق والتهيئة وجدول المراجعة المتفق عليه.' }
-};
-
-const roleTerms: Record<string, { employer: LocalizedText; payment: LocalizedText; review: LocalizedText }> = {
-  housemaid: {
-    employer: { en: 'For the managed housemaid role, the agency is the employer and handles sponsorship, salary administration and applicable employment obligations. Your household pays the service charge and provides the accommodation, meals and work supplies assigned in the agreement.', ar: 'في دور العاملة المنزلية المدار، تكون الوكالة صاحبة العمل وتتولى الكفالة وإدارة الراتب والتزامات التوظيف المنطبقة. يدفع المنزل رسوم الخدمة ويوفر السكن والطعام ومستلزمات العمل المسندة إليه في الاتفاق.' },
-    payment: { en: 'Prepay the first month of household support, then use the agreed billing date. The standard monthly offer has no separate setup/recruitment fee or deposit. Cancellation returns the unused pre-start payment or the unused prepaid days pro rata after effective cancellation; included costs are not unexpected deductions.', ar: 'ادفع الشهر الأول من الدعم المنزلي مقدماً، ثم التزم بتاريخ الفوترة المتفق عليه. لا يتطلب العرض الشهري القياسي رسم تجهيز أو استقدام منفصلاً أو تأميناً نقدياً. يعيد الإلغاء الدفعة غير المستخدمة قبل البدء أو قيمة الأيام المدفوعة وغير المستخدمة بالتناسب بعد سريان الإلغاء؛ ولا تخصم تكاليف مشمولة بصورة مفاجئة.' },
-    review: { en: 'Use the agreed cleaning, laundry and ironing duties when raising a replacement concern. All tiers review eligible requests: Essential coordinates standard matching, Signature priority matching and Black role-specific matching. The proposed worker needs your consent; no replacement count or completion deadline is promised.', ar: 'استند إلى مهام التنظيف والغسيل والكي المتفق عليها عند طرح ملاحظة للاستبدال. تراجع جميع الباقات الطلبات المؤهلة: تنسق Essential المطابقة الاعتيادية وSignature المطابقة ذات الأولوية وBlack المطابقة بحسب الدور. تحتاج المرشحة المقترحة موافقتك؛ ولا يوجد وعد بعدد استبدالات أو مدة إنجاز.' }
-  },
-  'live-in-maid': {
-    employer: { en: 'Residence in your home does not make work continuous. The agreement identifies the agency employer/sponsor and your household responsibilities for accommodation, meals and work supplies. INAYA administers the included salary and applicable agency employment obligations.', ar: 'الإقامة في منزلك لا تعني العمل المستمر. يحدد الاتفاق الوكالة صاحبة العمل والكفيل ومسؤوليات المنزل عن السكن والطعام ومستلزمات العمل. تدير عناية الراتب المشمول والتزامات التوظيف المنطبقة لدى الوكالة.' },
-    payment: { en: 'The standard live-in offer takes the first month in advance and later payments on the agreed monthly date, without a separate setup fee or security deposit. Before the start, unused service payment is returned. After effective cancellation, the unused prepaid period is refunded proportionately, without hidden cancellation fees or recharging included costs.', ar: 'يسدد الشهر الأول مقدماً في العرض المقيم القياسي، ثم تسدد الدفعات في الموعد الشهري المتفق عليه، دون رسم تجهيز منفصل أو تأمين نقدي. ترد الدفعة غير المستخدمة قبل البدء. وبعد سريان الإلغاء تسترد قيمة الفترة المدفوعة وغير المستخدمة بالتناسب، دون رسوم إلغاء خفية أو إعادة تحميل تكاليف مشمولة.' },
-    review: { en: 'Discuss living arrangements, duty boundaries and any replacement concern with your assigned contact. Essential follows up in week one and monthly thereafter; Signature in week one and every two weeks; Black on the agreed schedule. Eligible replacement administration remains included, with standard, priority or role-specific matching by tier.', ar: 'ناقش ترتيبات الإقامة وحدود المهام وملاحظات الاستبدال مع مسؤول التواصل. تتابع Essential في الأسبوع الأول ثم شهرياً؛ وSignature في الأسبوع الأول ثم كل أسبوعين؛ وBlack وفق الجدول المتفق عليه. تبقى إدارة الاستبدال المؤهل مشمولة، مع مطابقة اعتيادية أو ذات أولوية أو بحسب الدور وفق الباقة.' }
-  },
-  'full-time-maid': {
-    employer: { en: 'A full-time role needs a written work and rest schedule. In INAYA’s managed offer the agency employs and sponsors the worker and administers the salary included in your monthly service payment. The household fulfils its agreed accommodation, meals, equipment and supervision responsibilities.', ar: 'يحتاج دور الدوام الكامل جدول عمل وراحة مكتوباً. في عرض عناية المدار، توظف الوكالة العاملة وتكفلها وتدير الراتب المشمول في دفعة الخدمة الشهرية. يلتزم المنزل بمسؤوليات السكن والطعام والمعدات والإشراف المتفق عليها.' },
-    payment: { en: 'For standard managed full-time live-in service, month one is prepaid; later months follow the agreed billing date. No separate setup/recruitment fee or deposit applies. Unused pre-start payments are returned, and unused prepaid service after effective cancellation is refunded pro rata. Rest and protected leave are not automatic refund events.', ar: 'للخدمة القياسية المدارة والمقيمة بدوام كامل، يسدد الشهر الأول مقدماً ثم تتبع الأشهر اللاحقة تاريخ الفوترة المتفق عليه. لا ينطبق رسم تجهيز أو استقدام منفصل أو تأمين نقدي. ترد الدفعات غير المستخدمة قبل البدء، وتسترد الخدمة المدفوعة وغير المستخدمة بعد سريان الإلغاء بالتناسب. الراحة والإجازة المحمية ليستا سبباً تلقائياً للاسترداد.' },
-    review: { en: 'Follow-up checks the agreed workload and household handover. Essential reviews in the first week then monthly; Signature reviews in the first week then fortnightly; Black agrees a review schedule. Replacement eligibility is assessed against those duties and the employment arrangement, with your consent to an alternative profile.', ar: 'تراجع المتابعة عبء العمل وتسليم احتياجات المنزل المتفق عليهما. تراجع Essential في الأسبوع الأول ثم شهرياً؛ وSignature في الأسبوع الأول ثم كل أسبوعين؛ وتتفق Black على جدول للمراجعة. تقيم أهلية الاستبدال وفق هذه المهام وترتيب التوظيف، مع موافقتك على الملف البديل.' }
-  },
-  'monthly-maid-contract': {
-    employer: { en: 'The monthly service agreement covers a managed live-in role; it is distinct from the worker’s employment contract. The agency remains responsible for its employment and sponsorship duties and included wage administration. The beneficiary household’s duties, hours, rest and accommodation responsibilities are recorded in writing.', ar: 'يغطي اتفاق الخدمة الشهرية دوراً مقيماً مداراً، وهو منفصل عن عقد عمل العاملة. تبقى الوكالة مسؤولة عن واجبات التوظيف والكفالة وإدارة الأجر المشمول. تسجل كتابةً مهام الأسرة المستفيدة والساعات والراحة ومسؤوليات السكن.' },
-    payment: { en: 'The first monthly service period is paid in advance, with subsequent billing on the agreed date. The standard offer requires no separate recruitment/setup payment or security deposit. Your cancellation calculation uses the paid service period and effective cancellation date: unused pre-start payment is returned, or unused prepaid service is refunded pro rata after the start.', ar: 'تسدد فترة الخدمة الشهرية الأولى مقدماً، ثم تفوتر الدفعات اللاحقة في الموعد المتفق عليه. لا يتطلب العرض القياسي دفعة استقدام أو تجهيز منفصلة أو تأميناً نقدياً. يعتمد حساب الإلغاء على فترة الخدمة المدفوعة وتاريخ سريان الإلغاء: ترد الدفعة غير المستخدمة قبل البدء، أو تسترد الخدمة المدفوعة وغير المستخدمة بالتناسب بعد البدء.' },
-    review: { en: 'Renewal and material changes are documented rather than assumed. The plan sets first-week/monthly follow-up for Essential, first-week/fortnightly follow-up for Signature, or the agreed Black schedule. Eligible replacement review includes matching and administration; proposed candidate changes require a revised profile and your consent.', ar: 'يوثق التجديد والتغييرات الجوهرية ولا يفترضان. تحدد الباقة المتابعة في الأسبوع الأول ثم شهرياً لـEssential، وفي الأسبوع الأول ثم كل أسبوعين لـSignature، أو جدول Black المتفق عليه. تشمل مراجعة الاستبدال المؤهل المطابقة وإدارة الإجراءات؛ ويتطلب تغيير المرشحة المقترح ملفاً معدلاً وموافقتك.' }
-  },
-  nanny: {
-    employer: { en: 'For a managed nanny arrangement, the agency handles employment, sponsorship and the included salary. Parents agree childcare duties, supervision and routines in writing and fulfil the household responsibilities assigned in the contract. A nanny is not automatically a cleaner, cook or licensed nurse.', ar: 'في ترتيب المربية المدار، تتولى الوكالة التوظيف والكفالة والراتب المشمول. يتفق الوالدان كتابةً على مهام رعاية الأطفال والإشراف والروتين، ويلتزمان بمسؤوليات المنزل المسندة إليهما في العقد. المربية ليست تلقائياً عاملة تنظيف أو طاهية أو ممرضة مرخصة.' },
-    payment: { en: 'If you select standard managed monthly live-in support, prepay month one and follow the agreed later billing date; there is no separate setup fee or deposit. If service is cancelled before it starts, unused payment is returned. Following effective cancellation after the start, unused prepaid service is refunded pro rata with clear dates and no undisclosed cancellation charge.', ar: 'إذا اخترت الدعم الشهري القياسي المدار والمقيم، ادفع الشهر الأول مقدماً واتبع تاريخ الفوترة اللاحق المتفق عليه؛ فلا رسم تجهيز منفصل أو تأمين نقدي. عند الإلغاء قبل البدء ترد الدفعة غير المستخدمة. وبعد سريان الإلغاء عقب البدء تسترد الخدمة المدفوعة وغير المستخدمة بالتناسب، مع تواريخ واضحة ودون رسم إلغاء غير معلن.' },
-    review: { en: 'Signature’s dedicated coordinator follows up in the first week and fortnightly thereafter. Raise nanny concerns against the agreed childcare duties and routines; eligible requests receive priority replacement matching and administration. Review and consent to an alternative candidate before confirmation, without assuming a guaranteed number or timing of replacements.', ar: 'يتابع منسق Signature المخصص في الأسبوع الأول ثم كل أسبوعين. اطرح ملاحظات المربية وفق مهام رعاية الأطفال والروتين المتفق عليهما؛ وتحصل الطلبات المؤهلة على أولوية في مطابقة الاستبدال وإدارة إجراءاته. راجع المرشحة البديلة ووافق عليها قبل التأكيد، دون افتراض عدد أو توقيت مضمون للاستبدالات.' }
-  },
-  'elder-care': {
-    employer: { en: 'The agency employment arrangement covers the included wage and applicable sponsorship obligations. Your household agrees the older person’s practical daily assistance, supervision, work and rest boundaries and living arrangements. Non-clinical companionship must remain separate from medical treatment or nursing.', ar: 'يغطي ترتيب توظيف الوكالة الأجر المشمول والتزامات الكفالة المنطبقة. يتفق المنزل على المساعدة العملية اليومية للمسن والإشراف وحدود العمل والراحة وترتيبات الإقامة. يجب فصل المرافقة غير السريرية عن العلاج الطبي أو التمريض.' },
-    payment: { en: 'Standard managed live-in caregiver support uses an advance first-month service payment and an agreed later monthly billing date, with no separate setup fee or deposit. Cancellation before commencement returns unused payment; cancellation after commencement returns the unused prepaid period pro rata from its effective date. Included agency costs are not unexpected deductions.', ar: 'يعتمد دعم مقدمة الرعاية المقيمة القياسي والمدار دفعة خدمة مقدمة للشهر الأول وتاريخ فوترة شهرياً لاحقاً متفقاً عليه، دون رسم تجهيز منفصل أو تأمين نقدي. يعيد الإلغاء قبل البدء الدفعة غير المستخدمة؛ ويعيد الإلغاء بعد البدء قيمة الفترة المدفوعة وغير المستخدمة بالتناسب من تاريخ سريانه. لا تخصم تكاليف الوكالة المشمولة بصورة مفاجئة.' },
-    review: { en: 'Signature caregiver enquiries receive additional individual experience/communication assessment and, where the role is available and agreed, a dedicated coordinator with first-week then fortnightly follow-up. Review replacement eligibility against daily-assistance duties; priority matching does not promise a completion date or clinical qualification.', ar: 'تحصل طلبات مقدمة الرعاية في Signature على تقييم إضافي للخبرة الفردية والتواصل، وعند توفر الدور والاتفاق عليه، منسق مخصص ومتابعة في الأسبوع الأول ثم كل أسبوعين. راجع أهلية الاستبدال وفق مهام المساعدة اليومية؛ ولا تعني أولوية المطابقة وعداً بموعد إنجاز أو مؤهل سريري.' }
-  },
-  'patient-care': {
-    employer: { en: 'INAYA’s managed home-support role is non-clinical. The agency administers the included salary and its employment/sponsorship obligations, while the household records daily-assistance duties and supervision. Medical treatment, nursing and medication management are outside this service, regardless of package tier.', ar: 'دور الدعم المنزلي المدار لدى عناية غير سريري. تدير الوكالة الراتب المشمول والتزامات التوظيف والكفالة، بينما يسجل المنزل مهام المساعدة اليومية والإشراف. العلاج الطبي والتمريض وإدارة الأدوية خارج هذه الخدمة، مهما كانت الباقة.' },
-    payment: { en: 'The standard monthly home-support charge includes salary; do not pay that wage a second time. Month one is paid in advance, later invoices use the agreed date, and no separate setup fee or deposit is required. Unused pre-service payment is returned on cancellation; unused prepaid service after effective cancellation is refunded proportionately, with the amount and dates explained.', ar: 'تشمل رسوم الدعم المنزلي الشهرية القياسية الراتب؛ فلا تدفع الأجر نفسه مرة ثانية. يسدد الشهر الأول مقدماً، وتعتمد الفواتير اللاحقة التاريخ المتفق عليه، ولا يتطلب رسم تجهيز منفصل أو تأمين نقدي. ترد الدفعة غير المستخدمة قبل الخدمة عند الإلغاء؛ وتسترد الخدمة المدفوعة وغير المستخدمة بعد سريان الإلغاء بالتناسب، مع شرح المبلغ والتواريخ.' },
-    review: { en: 'Review home-support concerns against the written non-clinical duties. Signature provides priority follow-up and replacement matching, with a first-week review then fortnightly follow-up. Eligible replacement administration includes reviewing an alternative profile and obtaining consent; it does not convert the role into nursing or guarantee timing.', ar: 'راجع ملاحظات الدعم المنزلي وفق المهام غير السريرية المكتوبة. توفر Signature أولوية في المتابعة ومطابقة الاستبدال، مع مراجعة في الأسبوع الأول ثم متابعة كل أسبوعين. تشمل إدارة الاستبدال المؤهل مراجعة ملف بديل والحصول على الموافقة؛ ولا تحول الدور إلى تمريض أو تضمن توقيتاً.' }
-  }
+  'private-chefs': { en: 'Discuss specialist cooking duties through a written service scope. Routine maid duties do not automatically include a private-chef role. Confirm the individual experience, arrangement and written costs for the requested work.', ar: 'ناقش مهام الطبخ المتخصصة ضمن نطاق خدمة مكتوب. لا تشمل مهام العاملة الاعتيادية تلقائياً دور الطاهي الخاص. أكد الخبرة الفردية والترتيب والتكاليف المكتوبة للعمل المطلوب.' },
+  'executive-nannies': { en: 'Assess individual childcare experience and communication against the agreed role. Confirm the routine, duties, package and availability without assuming a qualification or universal experience threshold. Complex household staffing requires its own written scope.', ar: 'قيم خبرة رعاية الأطفال الفردية والتواصل وفق الدور المتفق عليه. أكد الروتين والمهام والباقة والتوفر دون افتراض مؤهل أو حد خبرة موحد. تتطلب العمالة للاحتياجات المنزلية المعقدة نطاقاً مكتوباً خاصاً بها.' },
+  'house-managers': { en: 'Define the household coordination duties, individual role requirements and review schedule in writing. Confirm the service period, availability and costs for the proposed arrangement. A household-management role is not automatically included in a general domestic-worker package.', ar: 'حدد كتابةً مهام التنسيق المنزلي ومتطلبات الدور الفردي وجدول المراجعة. أكد فترة الخدمة والتوفر والتكاليف للترتيب المقترح. لا تشمل باقة العمالة المنزلية العامة تلقائياً دور إدارة المنزل.' }
 };
 
 export function applyManagedServiceContent(slug: string, lang: Lang, copy: ServiceCopy): ServiceCopy {
@@ -215,31 +258,38 @@ export function applyManagedServiceContent(slug: string, lang: Lang, copy: Servi
   const separate = separateServiceCopy[slug];
   if (!role && !separate) return copy;
   const ar = lang === 'ar';
-  const relevantFaqs = [...copy.faqs];
+  const relevantFaqs = copy.faqs.map((faq) => slug === 'on-demand-domestic-help' && ['Is pricing fixed?', 'هل الأسعار ثابتة؟'].includes(faq.title)
+    ? { ...faq, text: shortPackageSummary[lang] + (ar ? ' تحدد الخدمات المتخصصة والإضافات المطلوبة خارج نطاق الباقة في عرض مكتوب منفصل، مع بيان الضريبة المنطبقة والمبلغ النهائي قبل التأكيد.' : ' Specialist services and requested additions outside the package scope are separately quoted in writing, with applicable tax and the final total stated before confirmation.') }
+    : faq);
   if (role) {
-    const terms = roleTerms[slug];
     if (slug !== 'monthly-maid-contract') relevantFaqs.push(
-      { title: ar ? 'هل أدفع راتب العاملة منفصلاً؟' : 'Do I pay the worker’s salary separately?', text: terms.employer[lang] + (ar ? ' لا يدفع العميل الراتب المشمول مرة أخرى.' : ' The customer does not pay the included salary again.') },
-      { title: ar ? 'ما شروط السداد والإلغاء؟' : 'What are the payment and cancellation terms?', text: terms.payment[lang] },
-      { title: ar ? 'ما المتابعة والاستبدال المشمولان؟' : 'What follow-up and replacement support are included?', text: terms.review[lang] }
+      { title: ar ? 'هل أدفع راتب العاملة منفصلاً في الخدمة الشهرية؟' : 'Do I pay the worker’s salary separately in monthly service?', text: packageSections.responsibilities.points[lang][0] },
+      { title: ar ? 'ما شروط السداد والإلغاء الشهري؟' : 'What are the monthly payment and cancellation terms?', text: packageSections.payments.body[lang] + ' ' + packageSections.cancellation.body[lang] },
+      { title: ar ? 'ما المتابعة والاستبدال المشمولان؟' : 'What follow-up and replacement support are included?', text: packageSections.followUp.body[lang] + ' ' + packageSections.replacement.body[lang] }
     );
     return {
       ...copy,
       lead: role[lang],
       cards: [
-        { title: ar ? 'توظيف الوكالة والراتب' : 'Agency employment and salary', text: terms.employer[lang] },
-        { title: ar ? 'قبل التأكيد' : 'Before confirmation', text: terms.payment[lang] },
-        { title: ar ? 'المتابعة بحسب الدور' : 'Follow-up for the role', text: terms.review[lang] }
+        { title: ar ? 'توظيف الوكالة والراتب الشهري' : 'Agency employment and monthly salary', text: packageSections.responsibilities.body[lang] },
+        { title: ar ? 'السداد والإلغاء الشهري' : 'Monthly payment and cancellation', text: packageSections.payments.body[lang] + ' ' + packageSections.cancellation.body[lang] },
+        { title: ar ? 'خطة الخدمة والمتابعة' : 'Service plan and follow-up', text: packageSections.followUp.body[lang] }
       ],
       includedTitle: ar ? 'المهام المتفق عليها وعناصر الخدمة الشهرية المشمولة' : 'Agreed duties and included monthly service components',
       included: [ar ? 'تحدد المهام الفردية في نطاق الدور المكتوب؛ ولا يؤدي كل عامل جميع المهام المذكورة معاً.' : 'Individual duties follow the written role scope; not every worker performs all listed tasks together.', ...copy.included, ...packageSections.inclusions.points[lang]],
-      pricingText: ar ? 'للترتيب الشهري القياسي المقيم، تبدأ Essential من 2,500 درهم وSignature من 3,000 درهم؛ وINAYA Black بعرض سعر مخصص. تشمل الرسوم الراتب والعناصر المبينة أعلاه ضمن الاستثناءات المنشورة. تسجل الساعات والراحة والمهام فردياً، وللخدمة غير المقيمة والزيارات الجزئية عروض منفصلة.' : 'For standard monthly live-in support, Essential starts from AED 2,500 and Signature from AED 3,000; INAYA Black is Custom Quote. Salary and the components above are included within the published exclusions. Hours, rest and duties are agreed individually; live-out support and part-time visits have separate quotations.',
-      pricing: managedPackages.map((plan, index) => ({ title: `${plan.name} — ${plan.price[lang]}`, text: plan.features[lang][index === 0 ? 3 : index === 1 ? 6 : 0], points: [plan.features[lang][index === 0 ? 1 : index === 1 ? 3 : 3], plan.features[lang][index === 0 ? 4 : index === 1 ? 7 : 9], plan.features[lang][index === 0 ? 6 : index === 1 ? 4 : 5]] })),
+      pricingText: monthlyPackageSummary[lang] + ' ' + packageArrangements[lang],
+      pricing: packagePricingCards(lang, 'monthly'),
       journeyText: copy.journeyText + (ar ? ' أكد المرشحة والنطاق كتابةً؛ تبدأ الخدمة بعد الاختيار والتصاريح النظامية المطلوبة. يقدم أي ملف بديل لأخذ موافقتك.' : ' Confirm the candidate and scope in writing; service begins after selection and required lawful authorisation. Any alternative profile is presented for your consent.'),
       finalText: copy.journeyText,
       faqs: relevantFaqs
     };
   }
-  if (slug !== 'maid-replacement') relevantFaqs.push({ title: ar ? 'كيف يختلف هذا الترتيب عن العرض الشهري القياسي؟' : 'How does this arrangement differ from the standard monthly offer?', text: separate[lang] });
-  return { ...copy, pricingText: separate[lang], faqs: relevantFaqs };
+  if (slug !== 'maid-replacement') relevantFaqs.push({ title: ar ? 'ما الباقة والنطاق اللذان يجب تأكيدهما؟' : 'Which package and scope should I confirm?', text: separate[lang] });
+  const shortVisit = ['part-time-maid', 'housekeeping', 'on-demand-domestic-help', 'babysitting'].includes(slug);
+  return {
+    ...copy,
+    pricingText: separate[lang],
+    ...(shortVisit ? { pricing: packagePricingCards(lang, 'short') } : {}),
+    faqs: relevantFaqs
+  };
 }

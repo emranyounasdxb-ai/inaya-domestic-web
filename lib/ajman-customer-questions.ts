@@ -13,26 +13,26 @@ export const ajmanCustomerQuestions: LocationServicePage['faqs'] = [
     links: [{ route: 'services/recruitment', label: { en: 'Domestic worker recruitment', ar: 'استقدام العمالة المنزلية' } }, { route: 'contact', label: { en: 'Contact the Ajman office', ar: 'تواصل مع مكتب عجمان' } }]
   },
   {
-    question: { en: 'Can I arrange a monthly live-in housemaid in Ajman?', ar: 'هل يمكن طلب خادمة مقيمة بعقد شهري في عجمان؟' },
+    question: { en: 'Can I arrange a monthly live-in or live-out housemaid in Ajman?', ar: 'هل يمكن طلب خادمة مقيمة أو غير مقيمة بعقد شهري في عجمان؟' },
     answer: {
-      en: 'INAYA’s published monthly packages cover managed live-in domestic-worker support with salary included within the stated scope and exclusions. Share your Ajman address, household duties and accommodation arrangements. Review the current package price, hours, rest arrangements and replacement terms, then confirm the candidate and start date with the team. Live-out service and part-time visits have separate quotations.',
-      ar: 'تغطي باقات عناية الشهرية المنشورة دعماً منزلياً مداراً مع إقامة العاملة في المنزل وشمول الراتب ضمن النطاق والاستثناءات المحددة. شارك عنوانك في عجمان والمهام وترتيبات السكن. راجع سعر الباقة الحالي والساعات والراحة وشروط الاستبدال، ثم أكد المرشحة وموعد البدء مع الفريق. للخدمة غير المقيمة والزيارات الجزئية عروض أسعار منفصلة.'
+      en: 'INAYA’s monthly package is AED 3,500 for 30 days. A 6-month commitment costs AED 3,250 per month, and a 12-month commitment costs AED 3,000 per month; these are not total contract prices. Live-in and live-out use the same package prices. The managed monthly service includes salary within the stated scope and exclusions. Confirm duties, hours, rest, accommodation and transport responsibilities, candidate availability and replacement terms in writing.',
+      ar: 'باقة عناية الشهرية هي 3,500 درهم لمدة 30 يوماً. يبلغ السعر مع التزام 6 أشهر 3,250 درهماً شهرياً، ومع التزام 12 شهراً 3,000 درهم شهرياً؛ وليسا إجمالي قيمة العقد. تنطبق أسعار الباقات نفسها على الخدمة المقيمة وغير المقيمة. تشمل الخدمة الشهرية المدارة الراتب ضمن النطاق والاستثناءات المحددة. أكد المهام والساعات والراحة ومسؤوليات السكن والنقل وتوفر المرشحة وشروط الاستبدال كتابةً.'
     },
     links: [{ route: 'services/monthly-maid-contract', label: { en: 'Monthly maid arrangements', ar: 'ترتيبات الخادمة الشهرية' } }, { route: 'pricing', label: { en: 'Package prices and inclusions', ar: 'أسعار الباقات وما تشمله' } }]
   },
   {
     question: { en: 'How do I request a live-out nanny or babysitter in Ajman?', ar: 'كيف أطلب مربية غير مقيمة أو جليسة أطفال في عجمان؟' },
     answer: {
-      en: 'INAYA handles nanny and babysitting enquiries from Ajman. For a live-out request, provide the children’s ages, childcare duties, days and hours, and home location. Ongoing nanny care and occasional babysitting are different arrangements. Review the individual’s relevant experience and confirm availability, transport, duties and the separate quotation before booking.',
-      ar: 'تستقبل عناية طلبات المربيات وجليسات الأطفال من عجمان. لطلب مربية غير مقيمة، وضح أعمار الأطفال ومهام الرعاية والأيام والساعات وموقع المنزل. تختلف الرعاية المستمرة بالمربية عن مجالسة الأطفال المؤقتة. راجع الخبرة الفردية المناسبة وأكد التوفر والنقل والمهام وعرض السعر المنفصل قبل الحجز.'
+      en: 'INAYA handles nanny and babysitting enquiries from Ajman. For a live-out request, provide the children’s ages, childcare duties, days and hours, and home location. Ongoing nanny care and occasional babysitting are different arrangements. Review the individual’s relevant experience and confirm availability, transport responsibilities, duties and the applicable package in writing before booking. Live-in and live-out use the same published package prices.',
+      ar: 'تستقبل عناية طلبات المربيات وجليسات الأطفال من عجمان. لطلب مربية غير مقيمة، وضح أعمار الأطفال ومهام الرعاية والأيام والساعات وموقع المنزل. تختلف الرعاية المستمرة بالمربية عن مجالسة الأطفال المؤقتة. راجع الخبرة الفردية المناسبة وأكد التوفر ومسؤوليات النقل والمهام والباقة المنطبقة كتابةً قبل الحجز. تنطبق أسعار الباقات المنشورة نفسها على الخدمة المقيمة وغير المقيمة.'
     },
     links: [{ route: 'services/nanny', label: { en: 'Nanny services', ar: 'خدمات المربيات' } }, { route: 'services/babysitting', label: { en: 'Babysitting services', ar: 'خدمات جليسات الأطفال' } }]
   },
   {
     question: { en: 'Where can I request a part-time or hourly maid in Ajman?', ar: 'أين أطلب خادمة بالساعة أو بدوام جزئي في عجمان؟' },
     answer: {
-      en: `Contact INAYA’s Ajman team on ${siteConfig.phone} to request scheduled part-time help. Share the rooms, cleaning or laundry priorities, preferred hours, visit frequency and address. These visits are quoted separately from full-time monthly packages. Confirm the visit duration, availability, supplies, transport and total cost in writing before relying on a booking.`,
-      ar: `تواصل مع فريق عناية في عجمان على ${siteConfig.phone} لطلب مساعدة مجدولة بدوام جزئي. حدد الغرف وأولويات التنظيف أو الغسيل والساعات المفضلة وتكرار الزيارات والعنوان. لهذه الزيارات عرض مستقل عن باقات الدوام الكامل الشهرية. أكد مدة الزيارة والتوفر والمستلزمات والنقل والتكلفة الإجمالية كتابةً قبل اعتماد الحجز.`
+      en: `Contact INAYA’s Ajman team on ${siteConfig.phone} to request scheduled part-time help. Share the rooms, cleaning or laundry priorities, preferred hours, visit frequency and address. The published visit packages are 4 hours for AED 120 and 8 hours for AED 200; these amounts are package totals. Confirm the visit duration, availability, supplies, transport and total cost in writing before relying on a booking.`,
+      ar: `تواصل مع فريق عناية في عجمان على ${siteConfig.phone} لطلب مساعدة مجدولة بدوام جزئي. حدد الغرف وأولويات التنظيف أو الغسيل والساعات المفضلة وتكرار الزيارات والعنوان. الباقات المنشورة للزيارة هي 4 ساعات مقابل 120 درهماً و8 ساعات مقابل 200 درهم؛ وهذه مبالغ إجمالية للباقات. أكد مدة الزيارة والتوفر والمستلزمات والنقل والتكلفة الإجمالية كتابةً قبل اعتماد الحجز.`
     },
     links: [{ route: 'services/part-time-maid', label: { en: 'Part-time visit scope and booking questions', ar: 'نطاق الزيارات الجزئية وأسئلة الحجز' } }]
   },

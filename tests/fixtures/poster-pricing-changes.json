@@ -1,0 +1,355 @@
+{
+  "approvedDate": "2026-10-19",
+  "approval": "Owner-supplied six-package prices; same published rates for live-in and live-out. Longer commitments are monthly prices.",
+  "sourcePatches": {
+    "lib/services.ts": [
+      [
+        "export type Service = {\n  slug: string;\n  icon: string;\n",
+        "import { packageSummary } from './package-content';\n\nexport type Service = {\n  slug: string;\n  icon: string;\n"
+      ],
+      [
+        "    slug: 'part-time-maid',\n    icon: '🕒',\n    name: { en: 'Part-time Maid Hiring', ar: 'توظيف خادمة بدوام جزئي' },\n    short: { en: 'Flexible hourly maid help.', ar: 'مساعدة مرنة بالساعة.' },\n    description: { en: 'Flexible part-time maids available by the hour for cleaning, laundry, ironing and household tasks whenever you need them.', ar: 'خادمات بدوام جزئي متاحات بالساعة للتنظيف والغسيل والكي والمهام المنزلية عند الحاجة.' }\n  },\n  {\n    slug: 'monthly-maid-contract',\n    icon: '📅',\n    name: { en: 'Monthly Maid Contract', ar: 'عقد خادمة شهري' },\n    short: { en: 'Discuss monthly maid contracts and package terms.', ar: 'ناقش عقود الخادمات الشهرية وشروط الباقات.' },\n    description: {\n  \"en\": \"Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.\",\n  \"ar\": \"تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة.\"\n}\n  },\n  {\n    slug: 'on-demand-domestic-help',\n",
+        "    slug: 'part-time-maid',\n    icon: '🕒',\n    name: { en: 'Part-time Maid Hiring', ar: 'توظيف خادمة بدوام جزئي' },\n    short: { en: '4-hour or 8-hour maid visits.', ar: 'زيارات خادمة لمدة 4 أو 8 ساعات.' },\n    description: { en: 'Part-time maid visits: 4 hours for AED 120 or 8 hours for AED 200. Agree cleaning, laundry, ironing or other household tasks, timing and availability before confirmation.', ar: 'زيارات خادمة بدوام جزئي: 4 ساعات مقابل 120 درهماً أو 8 ساعات مقابل 200 درهم. اتفق على التنظيف أو الغسيل أو الكي أو غيرها من المهام والتوقيت والتوفر قبل التأكيد.' }\n  },\n  {\n    slug: 'monthly-maid-contract',\n    icon: '📅',\n    name: { en: 'Monthly Maid Contract', ar: 'عقد خادمة شهري' },\n    short: { en: 'Discuss monthly maid contracts and package terms.', ar: 'ناقش عقود الخادمات الشهرية وشروط الباقات.' },\n    description: packageSummary\n  },\n  {\n    slug: 'on-demand-domestic-help',\n"
+      ]
+    ],
+    "lib/service-content-briefs.ts": [
+      [
+        "import type { Lang, ServiceCopy } from './service-page-copy';\nimport { getService } from './services';\n\n",
+        "import { packageSummary } from './package-content';\nimport type { Lang, ServiceCopy } from './service-page-copy';\nimport { getService } from './services';\n\n"
+      ],
+      [
+        "    prepare: { en: 'Explain the recurring daily workload and which duties need consistent attention. Clarify accommodation separately before comparing full-time and part-time arrangements.', ar: 'وضح حجم العمل اليومي المتكرر والمهام التي تحتاج اهتماماً مستمراً. ناقش الإقامة بشكل منفصل قبل مقارنة الدوام الكامل والجزئي.' }, related: ['live-in-maid', 'live-out-maid', 'part-time-maid']\n  },\n  'part-time-maid': {\n    overview: { en: 'Part-time help is useful when a defined set of cleaning, laundry or ironing tasks needs scheduled attention. A short task list makes the enquiry clearer than asking for the same scope as a full-time household role.', ar: 'تفيد المساعدة بدوام جزئي عندما تحتاج مهام محددة من التنظيف أو الغسيل أو الكي إلى وقت مجدول. تجعل قائمة مختصرة الطلب أوضح من طلب نطاق عمل مماثل لدور منزلي بدوام كامل.' },\n    prepare: { en: 'State the preferred hours or visits and the tasks that matter most. Compare a monthly contract if the same work repeats regularly, without assuming either option is available on a particular date.', ar: 'حدد الساعات أو الزيارات المفضلة والمهام الأهم. قارن العقد الشهري إذا كان العمل نفسه يتكرر بانتظام، دون افتراض توفر أي خيار في تاريخ معين.' }, related: ['monthly-maid-contract', 'live-out-maid', 'on-demand-domestic-help']\n  },\n  'monthly-maid-contract': {\n    overview: {\n  \"en\": \"Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.\",\n  \"ar\": \"تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة.\"\n},\n    prepare: {\n  \"en\": \"List the individual duties, working hours/rest, household location, accommodation/meals and preferred start. Review the written role, price breakdown, billing date, monthly cancellation terms and eligible replacement coordination before confirmation.\",\n",
+        "    prepare: { en: 'Explain the recurring daily workload and which duties need consistent attention. Clarify accommodation separately before comparing full-time and part-time arrangements.', ar: 'وضح حجم العمل اليومي المتكرر والمهام التي تحتاج اهتماماً مستمراً. ناقش الإقامة بشكل منفصل قبل مقارنة الدوام الكامل والجزئي.' }, related: ['live-in-maid', 'live-out-maid', 'part-time-maid']\n  },\n  'part-time-maid': {\n    overview: { en: 'INAYA offers a 4-hour visit for AED 120 and an 8-hour visit for AED 200. Define the cleaning, laundry or ironing tasks to fit the visit, then confirm availability, the written scope and practical responsibilities.', ar: 'تقدم عناية زيارة لمدة 4 ساعات بسعر 120 درهماً، وزيارة لمدة 8 ساعات بسعر 200 درهم. حدد مهام التنظيف أو الغسيل أو الكي بما يناسب وقت الزيارة، ثم أكد التوفر والنطاق المكتوب والمسؤوليات العملية.' },\n    prepare: { en: 'State the preferred hours or visits and the tasks that matter most. Compare a monthly contract if the same work repeats regularly, without assuming either option is available on a particular date.', ar: 'حدد الساعات أو الزيارات المفضلة والمهام الأهم. قارن العقد الشهري إذا كان العمل نفسه يتكرر بانتظام، دون افتراض توفر أي خيار في تاريخ معين.' }, related: ['monthly-maid-contract', 'live-out-maid', 'on-demand-domestic-help']\n  },\n  'monthly-maid-contract': {\n    overview: {\n  \"en\": packageSummary.en,\n  \"ar\": packageSummary.ar\n},\n    prepare: {\n  \"en\": \"List the individual duties, working hours/rest, household location, accommodation/meals and preferred start. Review the written role, price breakdown, billing date, monthly cancellation terms and eligible replacement coordination before confirmation.\",\n"
+      ]
+    ],
+    "lib/buyer-answers.ts": [
+      [
+        "import { packageSections } from './package-content';\n// Editorial answers grounded in the existing intake, pricing and support guides.\n// Owner-approved monthly terms and enquiry guidance remain separate from statutory rules.\ntype Pair = { en: string; ar: string };\n",
+        "import { packageSections, packageSummary } from './package-content';\n// Editorial answers grounded in the existing intake, pricing and support guides.\n// Owner-approved monthly terms and enquiry guidance remain separate from statutory rules.\ntype Pair = { en: string; ar: string };\n"
+      ],
+      [
+        "  pricing: {\n    question: { en: 'Is the displayed price my final service quote?', ar: 'هل السعر المعروض هو عرض السعر النهائي لخدمتي؟' },\n    answer: {\n  \"en\": \"Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. Request the written final quote, scope, exclusions and applicable tax before confirmation.\",\n  \"ar\": \"تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. اطلب العرض النهائي المكتوب والنطاق والاستثناءات والضريبة المنطبقة قبل التأكيد.\"\n}, detailRoute: 'contact'\n  },\n  'documents-required': {\n    question: { en: 'Which details should I prepare before asking about documents?', ar: 'ما التفاصيل التي أجهزها قبل السؤال عن المستندات؟' },\n",
+        "  pricing: {\n    question: { en: 'Is the displayed price my final service quote?', ar: 'هل السعر المعروض هو عرض السعر النهائي لخدمتي؟' },\n    answer: {\n      en: packageSummary.en + ' Request the written final quote, service scope, inclusions, exclusions and applicable tax before confirmation.',\n      ar: packageSummary.ar + ' اطلب عرض السعر النهائي المكتوب ونطاق الخدمة وما يشمله والاستثناءات والضريبة المنطبقة قبل التأكيد.'\n    }, detailRoute: 'contact'\n  },\n  'documents-required': {\n    question: { en: 'Which details should I prepare before asking about documents?', ar: 'ما التفاصيل التي أجهزها قبل السؤال عن المستندات؟' },\n"
+      ]
+    ],
+    "lib/content-architecture.ts": [
+      [
+        "import { serviceContentBriefs } from './service-content-briefs';\n\nconst relationships: Record<string, string[]> = {\n",
+        "import { packageSummary, packageArrangements } from './package-content';\nimport { serviceContentBriefs } from './service-content-briefs';\n\nconst relationships: Record<string, string[]> = {\n"
+      ],
+      [
+        "  faq: { en: 'Choose the question category that matches your enquiry. General answers explain the service conversation; for case-specific documents, prices or support concerns, follow the linked guide and review your own details with the team.', ar: 'اختر فئة الأسئلة المناسبة لطلبك. توضح الإجابات العامة موضوع الخدمة؛ وللمستندات أو الأسعار أو ملاحظات الدعم الخاصة بالحالة، تابع الدليل المرتبط وراجع تفاصيلك مع الفريق.' },\n  contact: { en: 'Use the listed contact channels to explain the household role, emirate and current situation. If you prefer the booking form, use the request link; if you plan an office visit, contact the team first about the appointment.', ar: 'استخدم وسائل التواصل المذكورة لشرح الدور المنزلي والإمارة والوضع الحالي. إذا كنت تفضل نموذج الحجز، فاستخدم رابط الطلب؛ وإذا كنت تخطط لزيارة المكتب، فتواصل مع الفريق أولاً بشأن الموعد.' },\n  pricing: {\n  \"en\": \"Compare the salary-included managed live-in packages: Essential from AED 2,500/month, Signature from AED 3,000/month and INAYA Black Custom Quote. Review core inclusions, exclusions, tier coordination and written monthly payment, cancellation and replacement terms.\",\n  \"ar\": \"قارن الباقات المقيمة المدارة المشمولة بالراتب: Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً وINAYA Black بعرض سعر مخصص. راجع العناصر الأساسية والاستثناءات وتنسيق الباقات وشروط السداد الشهري والإلغاء والاستبدال المكتوبة.\"\n},\n  'how-it-works': { en: 'Start by defining the role, then use the documents guide to prepare for the selected service path. Recruitment, a scheduled household visit and a visa enquiry are different conversations; the process below helps you choose the relevant next step.', ar: 'ابدأ بتحديد الدور ثم استخدم دليل المستندات للاستعداد لمسار الخدمة المختار. التوظيف والزيارة المنزلية المجدولة وطلب التأشيرة مناقشات مختلفة؛ وتساعدك الخطوات أدناه على اختيار المتابعة المناسبة.' },\n  'documents-required': { en: 'This is a preparation guide, not a final legal checklist. Separate the basic household enquiry from worker-document or sponsorship questions, and ask the team which details apply to the selected service and current situation.', ar: 'هذا دليل للاستعداد وليس قائمة قانونية نهائية. افصل الاستفسار المنزلي الأساسي عن مستندات العاملة أو أسئلة الكفالة، واسأل الفريق عن التفاصيل المناسبة للخدمة المختارة والوضع الحالي.' },\n  'service-guidelines': { en: 'Read these guidelines alongside the duties and agreement for your selected service. Use the preparation guide for information to gather, and the support process for concerns about an existing arrangement rather than mixing both into a new booking enquiry.', ar: 'اقرأ الإرشادات مع المهام والاتفاق الخاص بالخدمة المختارة. استخدم دليل الاستعداد للمعلومات المطلوبة وإجراءات الدعم لملاحظات ترتيب قائم، بدلاً من دمج الموضوعين في طلب حجز جديد.' },\n",
+        "  faq: { en: 'Choose the question category that matches your enquiry. General answers explain the service conversation; for case-specific documents, prices or support concerns, follow the linked guide and review your own details with the team.', ar: 'اختر فئة الأسئلة المناسبة لطلبك. توضح الإجابات العامة موضوع الخدمة؛ وللمستندات أو الأسعار أو ملاحظات الدعم الخاصة بالحالة، تابع الدليل المرتبط وراجع تفاصيلك مع الفريق.' },\n  contact: { en: 'Use the listed contact channels to explain the household role, emirate and current situation. If you prefer the booking form, use the request link; if you plan an office visit, contact the team first about the appointment.', ar: 'استخدم وسائل التواصل المذكورة لشرح الدور المنزلي والإمارة والوضع الحالي. إذا كنت تفضل نموذج الحجز، فاستخدم رابط الطلب؛ وإذا كنت تخطط لزيارة المكتب، فتواصل مع الفريق أولاً بشأن الموعد.' },\n  pricing: {\n    en: packageSummary.en + ' ' + packageArrangements.en + ' Review written payment, cancellation and replacement terms before confirmation.',\n    ar: packageSummary.ar + ' ' + packageArrangements.ar + ' راجع شروط السداد والإلغاء والاستبدال المكتوبة قبل التأكيد.'\n  },\n  'how-it-works': { en: 'Start by defining the role, then use the documents guide to prepare for the selected service path. Recruitment, a scheduled household visit and a visa enquiry are different conversations; the process below helps you choose the relevant next step.', ar: 'ابدأ بتحديد الدور ثم استخدم دليل المستندات للاستعداد لمسار الخدمة المختار. التوظيف والزيارة المنزلية المجدولة وطلب التأشيرة مناقشات مختلفة؛ وتساعدك الخطوات أدناه على اختيار المتابعة المناسبة.' },\n  'documents-required': { en: 'This is a preparation guide, not a final legal checklist. Separate the basic household enquiry from worker-document or sponsorship questions, and ask the team which details apply to the selected service and current situation.', ar: 'هذا دليل للاستعداد وليس قائمة قانونية نهائية. افصل الاستفسار المنزلي الأساسي عن مستندات العاملة أو أسئلة الكفالة، واسأل الفريق عن التفاصيل المناسبة للخدمة المختارة والوضع الحالي.' },\n  'service-guidelines': { en: 'Read these guidelines alongside the duties and agreement for your selected service. Use the preparation guide for information to gather, and the support process for concerns about an existing arrangement rather than mixing both into a new booking enquiry.', ar: 'اقرأ الإرشادات مع المهام والاتفاق الخاص بالخدمة المختارة. استخدم دليل الاستعداد للمعلومات المطلوبة وإجراءات الدعم لملاحظات ترتيب قائم، بدلاً من دمج الموضوعين في طلب حجز جديد.' },\n"
+      ]
+    ],
+    "app/[locale]/booking/page.tsx": [
+      [
+        "import FormTranslations from '@/components/FormTranslations';\nimport BookingForm from '@/components/BookingForm';\nimport PageBreadcrumbs from \"@/components/PageBreadcrumbs\";\n",
+        "import { packageSummary, packageArrangements } from '@/lib/package-content';\nimport FormTranslations from '@/components/FormTranslations';\nimport BookingForm from '@/components/BookingForm';\nimport PageBreadcrumbs from \"@/components/PageBreadcrumbs\";\n"
+      ],
+      [
+        "    title: isArabic ? 'جهز استفسار خدمة العمالة المنزلية' : 'Prepare your domestic service enquiry',\n    subtitle: isArabic ? 'هذا النموذج يراجع البيانات محلياً ولا يرسلها إلى المكتب. تواصل مع عناية بالهاتف أو واتساب لمشاركة احتياجك ومناقشة الخطوة التالية.' : 'This form checks details locally and does not send them to the office. Contact INAYA by phone or WhatsApp to share your requirement and discuss the next step.',\n    sideTitle: isArabic ? 'قبل مراجعة البيانات' : 'Before checking your details',\n    points: isArabic ? [\"اختر الخدمة والدور والباقة المطلوب مناقشتها\",\"Essential من 2,500 درهم شهرياً؛ Signature من 3,000 درهم شهرياً؛ INAYA Black بعرض سعر مخصص\",\"الخدمة الشهرية القياسية مقيمة وتشمل الراتب؛ وتعرض الخدمة غير المقيمة والزيارات الجزئية بصورة منفصلة\",\"حدد المهام والإمارة والبدء المفضل والسكن واحتياجات المنزل\",\"تسلم النطاق وتفصيل السعر ومستندات السداد كتابةً قبل التأكيد\",\"تبدأ الخدمة بعد اختيار المرشحة والتصاريح النظامية المطلوبة والتأكيد المكتوب\"] : [\"Choose the service, role and package you want to discuss\",\"Essential from AED 2,500/month; Signature from AED 3,000/month; INAYA Black Custom Quote\",\"Standard monthly service is salary-included and live-in; live-out and scheduled part-time arrangements are separately quoted\",\"State duties, emirate, preferred start, accommodation and household needs\",\"Receive written scope, price breakdown and payment documents before confirmation\",\"Service starts after candidate selection, required lawful authorisation and written confirmation\"]\n  };\n\n  return (\n",
+        "    title: isArabic ? 'جهز استفسار خدمة العمالة المنزلية' : 'Prepare your domestic service enquiry',\n    subtitle: isArabic ? 'هذا النموذج يراجع البيانات محلياً ولا يرسلها إلى المكتب. تواصل مع عناية بالهاتف أو واتساب لمشاركة احتياجك ومناقشة الخطوة التالية.' : 'This form checks details locally and does not send them to the office. Contact INAYA by phone or WhatsApp to share your requirement and discuss the next step.',\n    sideTitle: isArabic ? 'قبل مراجعة البيانات' : 'Before checking your details',\n    points: isArabic ? [\"اختر الخدمة والدور والباقة المطلوب مناقشتها\",packageSummary.ar,packageArrangements.ar,\"حدد المهام والإمارة والبدء المفضل والسكن واحتياجات المنزل\",\"تسلم النطاق وتفصيل السعر ومستندات السداد كتابةً قبل التأكيد\",\"تبدأ الخدمة بعد اختيار المرشحة والتصاريح النظامية المطلوبة والتأكيد المكتوب\"] : [\"Choose the service, role and package you want to discuss\",packageSummary.en,packageArrangements.en,\"State duties, emirate, preferred start, accommodation and household needs\",\"Receive written scope, price breakdown and payment documents before confirmation\",\"Service starts after candidate selection, required lawful authorisation and written confirmation\"]\n  };\n\n  return (\n"
+      ]
+    ],
+    "lib/structured-data.ts": [
+      [
+        "import { siteConfig } from './site-config';\nimport { faqEntity } from './json-ld';\nimport { getDomesticWorkerGuide, guideAuthor } from './domestic-worker-guides';\n\nexport function pageStructuredData(locale: string, route: string) {\n  const page = getPageSeo(locale, route);\n",
+        "import { siteConfig } from './site-config';\nimport { faqEntity } from './json-ld';\nimport { getDomesticWorkerGuide, guideAuthor } from './domestic-worker-guides';\nimport { packageQuestions } from './package-content';\n\nexport function pageStructuredData(locale: string, route: string) {\n  const page = getPageSeo(locale, route);\n"
+      ],
+      [
+        "    citation: guide[locale === 'ar' ? 'ar' : 'en'].citations ?? guide.sources.map((source) => source.url)\n  });\n  // Questions are reused from the exact data rendered by the corresponding page.\n  if (page.faqs?.length) graph.push(faqEntity(locale, route, page.faqs));\n  return { '@context': 'https://schema.org', '@graph': graph };\n}\n",
+        "    citation: guide[locale === 'ar' ? 'ar' : 'en'].citations ?? guide.sources.map((source) => source.url)\n  });\n  // Questions are reused from the exact data rendered by the corresponding page.\n  if (route === 'pricing') {\n    const lang = locale === 'ar' ? 'ar' : 'en';\n    graph.push(faqEntity(locale, route, packageQuestions.map(({ question, answer }) => ({\n      question: question[lang], answer: answer[lang]\n    }))));\n  }\n  if (page.faqs?.length) graph.push(faqEntity(locale, route, page.faqs));\n  return { '@context': 'https://schema.org', '@graph': graph };\n}\n"
+      ]
+    ],
+    "app/sitemap.ts": [
+      [
+        "\n// Record substantive content updates, not build times. Leave untracked routes undated.\nconst contentUpdatedAt: Record<string, string> = {\n  'maid-services-ajman': '2026-10-19',\n  'services/part-time-maid': '2026-10-19',\n  'services/monthly-maid-contract': '2026-10-19',\n  'services/nanny': '2026-10-19',\n  'services/babysitting': '2026-10-19',\n  'services/housekeeping': '2026-10-19'\n};\n\nexport const dynamic = 'force-static';\n",
+        "\n// Record substantive content updates, not build times. Leave untracked routes undated.\nconst contentUpdatedAt: Record<string, string> = {\n  \"\": '2026-10-19',\n  \"blog\": '2026-10-19',\n  \"blog/agreeing-domestic-worker-household-duties\": '2026-10-19',\n  \"blog/all-inclusive-domestic-worker-packages\": '2026-10-19',\n  \"blog/caregiver-versus-licensed-nurse\": '2026-10-19',\n  \"blog/choosing-domestic-worker-agency-ajman\": '2026-10-19',\n  \"blog/choosing-nanny-newborn-support\": '2026-10-19',\n  \"blog/domestic-worker-complaints-disputes\": '2026-10-19',\n  \"blog/domestic-worker-contracts-renewal\": '2026-10-19',\n  \"blog/domestic-worker-employment-arrangements-uae\": '2026-10-19',\n  \"blog/domestic-worker-hiring-costs-uae\": '2026-10-19',\n  \"blog/domestic-worker-hiring-stages-timelines\": '2026-10-19',\n  \"blog/domestic-worker-interview-trial-probation\": '2026-10-19',\n  \"blog/domestic-worker-package-pricing-factors\": '2026-10-19',\n  \"blog/domestic-worker-replacement-eligibility\": '2026-10-19',\n  \"blog/domestic-worker-skills-language-assessment\": '2026-10-19',\n  \"blog/domestic-worker-sponsorship-responsibilities\": '2026-10-19',\n  \"blog/domestic-worker-verification-checks\": '2026-10-19',\n  \"blog/live-in-live-out-part-time-maid-uae\": '2026-10-19',\n  \"blog/maid-nanny-babysitter-differences\": '2026-10-19',\n  \"blog/monthly-maid-package-inclusions-checklist\": '2026-10-19',\n  \"blog/own-visa-part-time-domestic-work\": '2026-10-19',\n  \"blog/uae-domestic-worker-hiring-process\": '2026-10-19',\n  \"booking\": '2026-10-19',\n  \"documents-required\": '2026-10-19',\n  \"faq\": '2026-10-19',\n  \"how-it-works\": '2026-10-19',\n  \"inaya-advantages\": '2026-10-19',\n  \"maid-services-ajman\": '2026-10-19',\n  \"maid-services-dubai\": '2026-10-19',\n  \"maid-services-sharjah\": '2026-10-19',\n  \"pricing\": '2026-10-19',\n  \"refund-policy\": '2026-10-19',\n  \"service-guidelines\": '2026-10-19',\n  \"services\": '2026-10-19',\n  \"services/babysitting\": '2026-10-19',\n  \"services/bespoke-household-management\": '2026-10-19',\n  \"services/companion-care\": '2026-10-19',\n  \"services/elder-care\": '2026-10-19',\n  \"services/executive-nannies\": '2026-10-19',\n  \"services/experienced-maid\": '2026-10-19',\n  \"services/full-time-maid\": '2026-10-19',\n  \"services/house-managers\": '2026-10-19',\n  \"services/housekeeping\": '2026-10-19',\n  \"services/housemaid\": '2026-10-19',\n  \"services/live-in-maid\": '2026-10-19',\n  \"services/live-out-maid\": '2026-10-19',\n  \"services/maid-replacement\": '2026-10-19',\n  \"services/maid-visa\": '2026-10-19',\n  \"services/monthly-maid-contract\": '2026-10-19',\n  \"services/nanny\": '2026-10-19',\n  \"services/newborn-care\": '2026-10-19',\n  \"services/on-demand-domestic-help\": '2026-10-19',\n  \"services/part-time-maid\": '2026-10-19',\n  \"services/patient-care\": '2026-10-19',\n  \"services/private-chefs\": '2026-10-19',\n  \"services/recruitment\": '2026-10-19',\n  \"services/sponsorship-transfer\": '2026-10-19',\n  \"support-process\": '2026-10-19',\n  \"terms\": '2026-10-19'\n};\n\nexport const dynamic = 'force-static';\n"
+      ]
+    ],
+    "app/[locale]/pricing/page.tsx#hero": [
+      [
+        "<section className=\"container-x pt-24 pb-28 sm:pt-28 sm:pb-32 lg:pt-32 lg:pb-36\">\n        <div className=\"mx-auto max-w-4xl text-center\">\n          <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-[2.25rem] font-bold leading-[1.08] tracking-[-0.02em] text-primary-900 sm:text-[3rem] lg:text-[3.35rem]`}>\n            {copy.hero.title}\n          </h1>\n          <p className=\"mx-auto mt-7 max-w-2xl text-sm leading-7 text-primary-900/80 sm:text-base\">\n            {copy.hero.subtitle}{' '}\n            <Link href={`/${locale}/blog/domestic-worker-package-pricing-factors/`} className=\"font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700\">{copy.hero.guide}</Link>\n          </p>\n        </div>\n      </section>",
+        "<section className=\"container-x pb-12 pt-20 sm:pb-16 sm:pt-24\">\n        <div className=\"mx-auto max-w-4xl text-center\">\n          <p className=\"text-xs font-semibold tracking-wide text-accent-700\">{isArabic ? 'عناية للعمالة المنزلية' : 'INAYA Domestic Workers'}</p>\n          <h1 className={`${heading} mt-5 text-4xl font-bold leading-tight tracking-tight sm:text-5xl`}>\n            {isArabic ? 'باقات وأسعار العمالة المنزلية' : 'Domestic Worker Packages and Pricing'}\n          </h1>\n          <p className=\"mx-auto mt-6 max-w-2xl text-base leading-8 text-primary-900/75\">\n            {isArabic ? 'اختر من ست باقات وفق المدة التي تحتاجها، من زيارة بنصف يوم إلى التزام سنوي. أسعار واضحة، مع الاتفاق على المهام والجدول قبل التأكيد.' : 'Choose from six packages, from a half-day visit to a yearly commitment. Clear published prices, with duties and schedules agreed before confirmation.'}\n          </p>\n          <p data-content=\"equal-arrangement-price\" className=\"mx-auto mt-7 inline-flex max-w-full items-center gap-2 rounded-full border border-accent-500/35 bg-white px-5 py-3 text-sm font-bold leading-6 shadow-sm\">\n            <CheckIcon className=\"h-5 w-5 shrink-0 text-accent-700\" />\n            {isArabic ? 'السعر نفسه للخدمة المقيمة وغير المقيمة' : 'Same price for live-in and live-out'}\n          </p>\n        </div>\n      </section>"
+      ]
+    ]
+  },
+  "messageChanges": {
+    "en": [
+      {
+        "path": [
+          "booking",
+          "planBlack"
+        ],
+        "beforePresent": true,
+        "before": "INAYA Black — Custom Quote",
+        "afterPresent": false
+      },
+      {
+        "path": [
+          "booking",
+          "planDaily"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "Daily — 8 hours — AED 200"
+      },
+      {
+        "path": [
+          "booking",
+          "planDiscuss"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "Help me choose a package"
+      },
+      {
+        "path": [
+          "booking",
+          "planEssential"
+        ],
+        "beforePresent": true,
+        "before": "Essential — from AED 2,500/month",
+        "afterPresent": false
+      },
+      {
+        "path": [
+          "booking",
+          "planHalfDay"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "Half day — 4 hours — AED 120"
+      },
+      {
+        "path": [
+          "booking",
+          "planMonthly"
+        ],
+        "beforePresent": true,
+        "before": "Monthly",
+        "afterPresent": true,
+        "after": "Monthly — 30 days — AED 3,500"
+      },
+      {
+        "path": [
+          "booking",
+          "planSignature"
+        ],
+        "beforePresent": true,
+        "before": "Signature — from AED 3,000/month",
+        "afterPresent": false
+      },
+      {
+        "path": [
+          "booking",
+          "planSixMonth"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "6-month contract — AED 3,250 per month"
+      },
+      {
+        "path": [
+          "booking",
+          "planWeekly"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "Weekly — 7 days — AED 1,120"
+      },
+      {
+        "path": [
+          "booking",
+          "planYearly"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "12-month contract — AED 3,000 per month"
+      },
+      {
+        "path": [
+          "home",
+          "why2Desc"
+        ],
+        "beforePresent": true,
+        "before": "Standard managed monthly live-in service; live-out arrangements and scheduled part-time visits have separate quotations.",
+        "afterPresent": true,
+        "after": "The same published package rates apply to live-in and live-out support, with half-day, daily, weekly, monthly, six-month and twelve-month options."
+      },
+      {
+        "path": [
+          "home",
+          "why3Desc"
+        ],
+        "beforePresent": true,
+        "before": "All tiers include eligible replacement review and administration, with standard, priority or role-specific coordination.",
+        "afterPresent": true,
+        "after": "Eligible replacement requests are reviewed and coordinated according to the service scope and applicable agreement."
+      },
+      {
+        "path": [
+          "pricing",
+          "note"
+        ],
+        "beforePresent": true,
+        "before": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role.",
+        "afterPresent": true,
+        "after": "Half day: AED 120 for 4 hours; daily: AED 200 for 8 hours; weekly: AED 1,120 for 7 days; monthly: AED 3,500 for 30 days; six-month contract: AED 3,250 per month; twelve-month contract: AED 3,000 per month. Live-in and live-out package rates are the same. The agreement records the schedule, duties, accommodation, transport and supplies responsibilities, applicable tax and final payable amount."
+      },
+      {
+        "path": [
+          "pricing",
+          "subtitle"
+        ],
+        "beforePresent": true,
+        "before": "Salary-included managed live-in packages",
+        "afterPresent": true,
+        "after": "The same package rates for live-in and live-out support"
+      }
+    ],
+    "ar": [
+      {
+        "path": [
+          "booking",
+          "planBlack"
+        ],
+        "beforePresent": true,
+        "before": "INAYA Black — عرض سعر مخصص",
+        "afterPresent": false
+      },
+      {
+        "path": [
+          "booking",
+          "planDaily"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "يومي — 8 ساعات — 200 درهم"
+      },
+      {
+        "path": [
+          "booking",
+          "planDiscuss"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "أحتاج مساعدة في اختيار الباقة"
+      },
+      {
+        "path": [
+          "booking",
+          "planEssential"
+        ],
+        "beforePresent": true,
+        "before": "Essential — من 2,500 درهم شهرياً",
+        "afterPresent": false
+      },
+      {
+        "path": [
+          "booking",
+          "planHalfDay"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "نصف يوم — 4 ساعات — 120 درهماً"
+      },
+      {
+        "path": [
+          "booking",
+          "planMonthly"
+        ],
+        "beforePresent": true,
+        "before": "شهري",
+        "afterPresent": true,
+        "after": "شهري — 30 يوماً — 3,500 درهم"
+      },
+      {
+        "path": [
+          "booking",
+          "planSignature"
+        ],
+        "beforePresent": true,
+        "before": "Signature — من 3,000 درهم شهرياً",
+        "afterPresent": false
+      },
+      {
+        "path": [
+          "booking",
+          "planSixMonth"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "عقد 6 أشهر — 3,250 درهماً لكل شهر"
+      },
+      {
+        "path": [
+          "booking",
+          "planWeekly"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "أسبوعي — 7 أيام — 1,120 درهماً"
+      },
+      {
+        "path": [
+          "booking",
+          "planYearly"
+        ],
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "عقد 12 شهراً — 3,000 درهم لكل شهر"
+      },
+      {
+        "path": [
+          "home",
+          "why2Desc"
+        ],
+        "beforePresent": true,
+        "before": "خدمة شهرية مقيمة قياسية تديرها عناية؛ وللخدمة غير المقيمة والزيارات المجدولة الجزئية عروض منفصلة.",
+        "afterPresent": true,
+        "after": "أسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة، مع خيارات نصف يوم ويوم وأسبوع وشهر وعقود 6 و12 شهراً."
+      },
+      {
+        "path": [
+          "home",
+          "why3Desc"
+        ],
+        "beforePresent": true,
+        "before": "تشمل جميع الباقات مراجعة الاستبدال المؤهل وإدارة إجراءاته، بتنسيق اعتيادي أو ذي أولوية أو بحسب الدور.",
+        "afterPresent": true,
+        "after": "مراجعة طلبات الاستبدال المؤهلة وتنسيقها وفق نطاق الخدمة والاتفاق المنطبق."
+      },
+      {
+        "path": [
+          "pricing",
+          "note"
+        ],
+        "beforePresent": true,
+        "before": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار.",
+        "afterPresent": true,
+        "after": "نصف يوم: 120 درهماً لـ4 ساعات؛ يوم: 200 درهم لـ8 ساعات؛ أسبوع: 1,120 درهماً لـ7 أيام؛ شهر: 3,500 درهم لـ30 يوماً؛ عقد 6 أشهر: 3,250 درهماً لكل شهر؛ عقد 12 شهراً: 3,000 درهم لكل شهر. الأسعار واحدة للخدمة المقيمة وغير المقيمة. يحدد الاتفاق الجدول والمهام ومسؤوليات السكن والنقل والمستلزمات والضريبة المنطبقة والمبلغ النهائي."
+      },
+      {
+        "path": [
+          "pricing",
+          "subtitle"
+        ],
+        "beforePresent": true,
+        "before": "باقات مقيمة مدارة تشمل الراتب",
+        "afterPresent": true,
+        "after": "باقات الخدمة المقيمة وغير المقيمة بالأسعار نفسها"
+      }
+    ]
+  },
+  "guideUpdated": {
+    "uae-domestic-worker-hiring-process": "2026-10-19",
+    "domestic-worker-package-pricing-factors": "2026-10-19",
+    "documents-for-domestic-worker-enquiry": "2026-10-12",
+    "live-in-live-out-part-time-maid-uae": "2026-10-19",
+    "monthly-maid-package-inclusions-checklist": "2026-10-19",
+    "maid-nanny-babysitter-differences": "2026-10-19",
+    "domestic-worker-visa-sponsorship-support": "2026-10-12"
+  }
+}

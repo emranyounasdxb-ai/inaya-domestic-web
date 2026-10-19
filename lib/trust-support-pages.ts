@@ -63,15 +63,15 @@ export const trustSupportPages: TrustSupportPage[] = [
     lead: packageSummary,
     highlights: {
   "en": [
-    "Salary-included managed live-in service",
+    "Salary-included monthly service, live-in or live-out",
     "Individual duty matching and written scope",
-    "Tier-specific coordination and follow-up",
+    "Coordination and follow-up under the agreed service plan",
     "Eligible replacement review and administration"
   ],
   "ar": [
-    "خدمة مقيمة مدارة تشمل الراتب",
+    "خدمة شهرية مدارة تشمل الراتب، مقيمة أو غير مقيمة",
     "مطابقة فردية للمهام ونطاق مكتوب",
-    "تنسيق ومتابعة بحسب الباقة",
+    "تنسيق ومتابعة وفق خطة الخدمة المتفق عليها",
     "مراجعة الاستبدال المؤهل وإدارة إجراءاته"
   ]
 },
@@ -117,12 +117,12 @@ export const trustSupportPages: TrustSupportPage[] = [
     faqs: [
   {
     "question": {
-      "en": "What replacement support does each tier include?",
-      "ar": "ما دعم الاستبدال المشمول في كل باقة؟"
+      "en": "What replacement support does the agreed service plan include?",
+      "ar": "ما دعم الاستبدال المشمول في خطة الخدمة المتفق عليها؟"
     },
     "answer": {
-      "en": "Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination.",
-      "ar": "تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور."
+      "en": packageSections.replacement.body.en,
+      "ar": packageSections.replacement.body.ar
     }
   },
   {

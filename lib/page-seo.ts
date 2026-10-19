@@ -1,3 +1,4 @@
+import { packageSummary } from './package-content';
 import type { Metadata } from 'next';
 import { localeAlternates, localizedUrl } from './seo';
 import { siteConfig } from './site-config';
@@ -14,11 +15,11 @@ type Localized = Record<Lang, string>;
 // Concise summaries of existing roles; individual duties and availability are confirmed per enquiry.
 const englishDescriptionRefinements: Record<string, string> = {
   'services/live-in-maid': 'Discuss live-in maid services in the UAE with INAYA. Review household duties, accommodation and work arrangements before choosing a profile.',
-  'services/live-out-maid': 'Explore live-out maid services in the UAE with INAYA. Discuss cleaning, laundry, working hours and access without accommodation in your home.',
+  'services/live-out-maid': 'INAYA live-out maid services at the same package prices as live-in: 30 days AED 3,500; 6-month commitment AED 3,250/month; 12-month commitment AED 3,000/month.',
   'services/housemaid': 'Discuss housemaid support in the UAE with INAYA for cleaning, laundry and daily home tasks. Confirm the duties and arrangement for your household.',
   'services/housekeeping': 'Explore cleaning and housekeeping support in the UAE with INAYA. Describe the rooms, laundry and organization tasks you need.',
   'services/full-time-maid': 'Discuss full-time maid services in the UAE with INAYA. Review daily duties, working hours and accommodation separately before agreeing.',
-  'services/part-time-maid': 'Discuss part-time maid services in the UAE with INAYA. Set cleaning and laundry priorities, preferred hours and the scope of your request.',
+  'services/part-time-maid': 'INAYA part-time maid visits in the UAE: 4 hours for AED 120 or 8 hours for AED 200. Confirm duties, timing, availability and written terms.',
   'services/on-demand-domestic-help': 'Ask INAYA about on-demand household help in the UAE. Describe your occasion, tasks and preferred date to confirm suitable options.',
   'services/nanny': 'Discuss nanny services in the UAE with INAYA. Share your child’s age, routine and care needs, and review relevant individual experience.',
   'services/executive-nannies': 'Explore executive nanny enquiries with INAYA in the UAE. Discuss childcare priorities, household coordination and individual experience.',
@@ -56,9 +57,9 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   '': {
     name: { en: 'Maid & Domestic Worker Services in UAE', ar: 'خدمات الخادمات والعمالة المنزلية في الإمارات' },
     description: {
-  "en": "INAYA-managed, salary-included live-in domestic-worker service: Essential from AED 2,500/month, Signature from AED 3,000/month and Black Custom Quote.",
-  "ar": "خدمة عمالة منزلية مقيمة تديرها عناية وتشمل الراتب: Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً وBlack بعرض سعر مخصص."
-}
+      en: 'INAYA maid services: 4 hours AED 120, 8 hours AED 200, 7 days AED 1,120 or 30 days AED 3,500. Live-in and live-out at the same package price.',
+      ar: 'خدمات عناية: 4 ساعات بـ120 درهماً، 8 ساعات بـ200، 7 أيام بـ1,120 أو 30 يوماً بـ3,500. الإقامة وعدم الإقامة بالسعر نفسه للباقة.'
+    }
   },
   about: {
     name: { en: 'About INAYA Domestic Workers', ar: 'عن عناية للعمالة المنزلية' },
@@ -78,10 +79,7 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   pricing: {
     name: { en: 'Domestic Worker Packages & Pricing', ar: 'باقات وأسعار العمالة المنزلية' },
-    description: {
-  "en": "Compare INAYA’s managed live-in packages from AED 2,500 and AED 3,000/month, with salary inclusions, tier features, exclusions and written commercial terms.",
-  "ar": "قارن باقات عناية المقيمة المدارة من 2,500 و3,000 درهم شهرياً، مع شمول الراتب وعناصر الباقات والاستثناءات والشروط التجارية المكتوبة."
-}
+    description: packageSummary
   },
   blog: {
     name: { en: 'Domestic Service Guides', ar: 'أدلة الخدمات المنزلية' },
@@ -114,7 +112,7 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   'support-process': {
     name: { en: 'Service Support Process', ar: 'إجراءات دعم الخدمات' },
     description: {
-  "en": "INAYA tier follow-up schedules, office response hours, eligible replacement coordination and written complaint review alongside official MOHRE escalation.",
+  "en": "INAYA agreed-plan follow-up schedules, office response hours, eligible replacement coordination and written complaint review alongside official MOHRE escalation.",
   "ar": "مواعيد متابعة باقات عناية وساعات الدعم بالمكتب وتنسيق الاستبدال المؤهل ومراجعة الشكاوى المكتوبة إلى جانب التصعيد الرسمي لدى الوزارة."
 }
   },

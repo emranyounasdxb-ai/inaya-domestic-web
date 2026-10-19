@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 
 // The approved exceptions permit label wiring, focus/scroll presentation and
-// exact booking-service URL preselection and three approved package options.
+// exact booking-service URL preselection and the approved six-package selector.
 // Local validation, existing service options, fields and styling stay exact.
 function assertFormPreserved(current, previous, file) {
   const handler = source => source.match(/  function handleSubmit\([\s\S]*?\n  }/)[0];
@@ -19,12 +19,24 @@ function assertFormPreserved(current, previous, file) {
     assert.match(current, /setSelectedService\(serviceRef\.current\?\.value \?\? services\[0\]\.slug\)/, 'hydration adopts the actual user selection');
   }
   const options = source => [...source.matchAll(/<option\b[\s\S]*?<\/option>/g)].map(m => m[0]);
-  const approvedOptions = file === 'components/BookingForm.tsx' ? [
-    '<option value="Essential">{t(\'planEssential\')}</option>',
-    '<option value="Signature">{t(\'planSignature\')}</option>',
-    '<option value="INAYA Black">{t(\'planBlack\')}</option>'
-  ] : [];
-  assert.deepEqual(options(current), [...options(previous), ...approvedOptions], `${file}: existing options and exact approved package additions`);
+  const expectedOptions = options(previous);
+  if (file === 'components/BookingForm.tsx') {
+    const oldPlans = ['planHourly', 'planPartTime', 'planFullTime', 'planMonthly', 'planLiveIn'].map(key => `<option>{t('${key}')}</option>`);
+    const start = expectedOptions.indexOf(oldPlans[0]);
+    assert.ok(start >= 0, 'original plan selector exists');
+    assert.deepEqual(expectedOptions.slice(start, start + oldPlans.length), oldPlans, 'only the five original package options are replaced');
+    const approvedPlans = [
+      '<option value="Half day — 4 hours">{t(\'planHalfDay\')}</option>',
+      '<option value="Daily — 8 hours">{t(\'planDaily\')}</option>',
+      '<option value="Weekly — 7 days">{t(\'planWeekly\')}</option>',
+      '<option value="Monthly — 30 days">{t(\'planMonthly\')}</option>',
+      '<option value="6-month contract">{t(\'planSixMonth\')}</option>',
+      '<option value="12-month contract">{t(\'planYearly\')}</option>',
+      '<option value="Discuss requirements">{t(\'planDiscuss\')}</option>'
+    ];
+    expectedOptions.splice(start, oldPlans.length, ...approvedPlans);
+  }
+  assert.deepEqual(options(current), expectedOptions, `${file}: unchanged non-package options and exact approved package choices`);
   const styles = source => [...source.matchAll(/className=("[^"]*"|\{[^\n]*\})/g)].map(m => m[0]);
   const confirmationStyles = /className="(?:rounded-2xl border border-green-200 bg-green-50 p-8 text-center text-green-800|mb-2 text-4xl|font-medium)"/;
   assert.deepEqual(styles(current), styles(previous).filter(s => !confirmationStyles.test(s)), `${file}: original form styling`);

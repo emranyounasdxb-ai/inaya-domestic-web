@@ -105,14 +105,13 @@ export default function BookingForm({ locale }: { locale: string }) {
       <div>
         <label htmlFor={fieldId('plan')} className="label">{t('plan')}</label>
         <select {...fieldA11y('plan')} name="plan" className="field">
-          <option>{t('planHourly')}</option>
-          <option>{t('planPartTime')}</option>
-          <option>{t('planFullTime')}</option>
-          <option>{t('planMonthly')}</option>
-          <option>{t('planLiveIn')}</option>
-          <option value="Essential">{t('planEssential')}</option>
-          <option value="Signature">{t('planSignature')}</option>
-          <option value="INAYA Black">{t('planBlack')}</option>
+          <option value="Half day — 4 hours">{t('planHalfDay')}</option>
+          <option value="Daily — 8 hours">{t('planDaily')}</option>
+          <option value="Weekly — 7 days">{t('planWeekly')}</option>
+          <option value="Monthly — 30 days">{t('planMonthly')}</option>
+          <option value="6-month contract">{t('planSixMonth')}</option>
+          <option value="12-month contract">{t('planYearly')}</option>
+          <option value="Discuss requirements">{t('planDiscuss')}</option>
         </select>
       </div>
       <div>
