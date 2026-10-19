@@ -7,6 +7,16 @@ import { localizedUrl, localeAlternates } from '@/lib/seo';
 
 const locales = ['en', 'ar'] as const;
 
+// Record substantive content updates, not build times. Leave untracked routes undated.
+const contentUpdatedAt: Record<string, string> = {
+  'maid-services-ajman': '2026-10-19',
+  'services/part-time-maid': '2026-10-19',
+  'services/monthly-maid-contract': '2026-10-19',
+  'services/nanny': '2026-10-19',
+  'services/babysitting': '2026-10-19',
+  'services/housekeeping': '2026-10-19'
+};
+
 export const dynamic = 'force-static';
 
 const coreRoutes = [
@@ -39,7 +49,7 @@ function localizedEntry(path: string, priority: number, changeFrequency: Metadat
   return locales.map((locale) => {
     return {
       url: localizedUrl(locale, path),
-      // No reliable route-level modification dates are recorded in the source.
+      ...(contentUpdatedAt[path] ? { lastModified: contentUpdatedAt[path] } : {}),
       changeFrequency,
       priority,
       alternates: {

@@ -144,7 +144,11 @@ export default async function LocationServicePage({ params }: { params: Promise<
           <div className="rounded-[26px] border border-white/80 bg-white/82 p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
             <h2 className="font-heading text-2xl font-bold tracking-[-0.035em] text-primary-900">{t.faqTitle}</h2>
             <div className="mt-5 grid gap-3">
-              {location.faqs.map((faq) => <details key={faq.question.en} className="rounded-2xl border border-primary-900/8 bg-white px-4 py-3"><summary className="cursor-pointer text-sm font-bold text-primary-900">{faq.question[lang]}</summary><p className="mt-3 text-xs leading-6 text-primary-900/75">{faq.answer[lang]}</p></details>)}
+              {location.faqs.map((faq) => <details key={faq.question.en} className="rounded-2xl border border-primary-900/8 bg-white px-4 py-3"><summary className="cursor-pointer text-sm font-bold text-primary-900">{faq.question[lang]}</summary><p className="mt-3 text-xs leading-6 text-primary-900/75">{faq.answer[lang]}</p>
+                {faq.links ? <ul className="mt-3 space-y-2">
+                  {faq.links.map((link) => <li key={link.route}><Link href={`/${locale}/${link.route}/`} className="text-xs font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{link.label[lang]}</Link></li>)}
+                </ul> : null}
+              </details>)}
             </div>
           </div>
           <div className="rounded-[26px] bg-primary-900 p-7 text-white shadow-[0_24px_70px_rgba(7,22,74,0.18)]">

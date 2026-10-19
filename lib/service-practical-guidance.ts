@@ -337,6 +337,10 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
   ],
   "faqs": [
     {
+      "title": "How do I request a monthly maid package in Ajman?",
+      "text": "Contact INAYA’s Ajman office with your home location, household duties, accommodation arrangements and preferred start date. Compare the published monthly live-in packages, then confirm the individual profile, written scope, price and start arrangements with the team. Live-out service and scheduled part-time visits require separate quotations."
+    },
+    {
       "title": "What is the advertised standard monthly arrangement?",
       "text": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role."
     },
@@ -399,6 +403,10 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
   ],
   "faqs": [
     {
+      "title": "كيف أطلب باقة خادمة بالشهر في عجمان؟",
+      "text": "تواصل مع مكتب عناية في عجمان وحدد موقع المنزل والمهام المنزلية وترتيبات السكن وتاريخ البدء المفضل. قارن باقات الخدمة الشهرية المقيمة المنشورة، ثم أكد الملف الفردي والنطاق المكتوب والسعر وترتيبات البدء مع الفريق. للخدمة غير المقيمة والزيارات المجدولة بدوام جزئي عروض أسعار منفصلة."
+    },
+    {
       "title": "ما ترتيب الخدمة الشهرية القياسي المعلن؟",
       "text": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار."
     },
@@ -433,6 +441,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
       ],
       quote: ['Children’s ages and agreed childcare responsibilities', 'Required schedule and living arrangement', 'Individual experience requirements and proposed service scope'],
       faqs: [
+        { title: 'How do I request a live-out nanny in Ajman?', text: 'INAYA accepts nanny enquiries from families in Ajman. Share the children’s ages, home location, childcare duties and required days and hours. Ask the team to review live-out availability and relevant individual experience, then confirm the duties, transport, accommodation arrangements and separate quotation in writing. For occasional supervision, compare babysitting instead of an ongoing nanny arrangement.' },
         { title: 'How should I review nanny experience?', text: 'Ask about experience with your child’s age group, daily routines and communication needs. Ask which references or documents can be reviewed; a job title or nationality is not proof of a qualification.' },
         { title: 'Can I combine nanny care and housemaid duties?', text: 'Discuss the priorities and time required for each role. Do not assume general cleaning is included in childcare, or that a housemaid has the required nanny experience.' },
         { title: 'How do parents communicate requirements?', text: 'Prepare a routine and clear instructions for meals, hygiene, activities and handovers. Discuss how updates and changes will be communicated before agreeing.' },
@@ -454,6 +463,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
       ],
       quote: ['أعمار الأطفال ومسؤوليات الرعاية المتفق عليها', 'الجدول المطلوب وترتيب السكن', 'متطلبات الخبرة الفردية ونطاق الخدمة المقترح'],
       faqs: [
+        { title: 'كيف أطلب مربية أطفال غير مقيمة في عجمان؟', text: 'تستقبل عناية طلبات المربيات من الأسر في عجمان. شارك أعمار الأطفال وموقع المنزل ومهام الرعاية والأيام والساعات المطلوبة. اطلب من الفريق مراجعة توفر الترتيب غير المقيم والخبرة الفردية المناسبة، ثم أكد المهام والنقل وترتيبات السكن وعرض السعر المنفصل كتابةً. للإشراف المؤقت، قارن خدمة جليسة الأطفال بدلاً من ترتيب المربية المستمر.' },
         { title: 'كيف أراجع خبرة المربية؟', text: 'اسأل عن الخبرة مع فئة عمر طفلك والروتين اليومي واحتياجات التواصل. اسأل عن المراجع أو المستندات التي يمكن مراجعتها؛ المسمى أو الجنسية ليسا دليلاً على المؤهل.' },
         { title: 'هل يمكن الجمع بين المربية ومهام عاملة المنزل؟', text: 'ناقش الأولويات والوقت اللازم لكل دور. لا تفترض شمول التنظيف العام ضمن الرعاية، أو امتلاك عاملة المنزل خبرة المربية المطلوبة.' },
         { title: 'كيف يوضح الوالدان المتطلبات؟', text: 'جهز الروتين وتعليمات واضحة للوجبات والنظافة والأنشطة وتسليم الرعاية. ناقش طريقة إرسال التحديثات والتغييرات قبل الاتفاق.' },
