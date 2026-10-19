@@ -33,10 +33,12 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   const xml = await readFile(path.join(output, 'sitemap.xml'), 'utf8');
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
-  assert.equal(datedEntries.length, 12, 'only the six bilingual content updates have recorded modification dates');
+  const updatedRoutes = JSON.parse(await readFile('tests/fixtures/poster-pricing-updated-routes.json', 'utf8'));
+  const expectedDatedUrls = ['en', 'ar'].flatMap(locale => updatedRoutes.map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
+  assert.equal(datedEntries.length, 120, 'only the sixty bilingual routes with verified content changes receive the new date');
+  assert.deepEqual(datedEntries.map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedDatedUrls.sort());
   for (const entry of datedEntries) {
     assert.match(entry[1], /<lastmod>2026-10-19<\/lastmod>/);
-    assert.match(entry[1], /\/(maid-services-ajman|services\/(part-time-maid|monthly-maid-contract|nanny|babysitting|housekeeping))\/<\/loc>/);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
   assert.equal(new Set(urls).size, urls.length);

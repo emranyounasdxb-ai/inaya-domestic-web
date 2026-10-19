@@ -1,4 +1,5 @@
 const assert = require('node:assert/strict');
+const { approvedPosterPricing, approvedPosterMessages } = require('./poster-pricing-expectations.cjs');
 
 // Exact source allowances for the owner-approved managed monthly offering.
 // Unrelated source, form handlers, navigation and design remain protected.
@@ -204,7 +205,7 @@ function approvedManagedPackages(file, source) {
     assert.equal(source.split(before).length, 2, file + ': one approved commercial-content anchor');
     source = source.replace(before, after);
   }
-  return source;
+  return approvedPosterPricing(file, source);
 }
 function approvedPackageMessages(locale, data) {
   for (const [keys, before, after] of messageChanges[locale]) {
@@ -214,7 +215,7 @@ function approvedPackageMessages(locale, data) {
     assert.equal(record[key] ?? null, before, keys.join('.') + ': original localized value');
     record[key] = after;
   }
-  return data;
+  return approvedPosterMessages(locale, data);
 }
 const commercial = require('./fixtures/managed-package-copy.json');
 function editorialRepetition(audit) {

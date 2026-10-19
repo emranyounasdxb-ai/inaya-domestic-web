@@ -5,7 +5,9 @@ import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
-const sectionCounts = [7, 9, 5, 6, 12, 5, 5];
+// The monthly checklist replaces three superseded tier sections with one
+// six-package explanation; all eight responsibility/terms sections remain.
+const sectionCounts = [7, 9, 5, 6, 10, 5, 5];
 const slugs = [
   'uae-domestic-worker-hiring-process',
   'domestic-worker-package-pricing-factors',
@@ -55,6 +57,7 @@ test('contextual guide links are rendered on relevant commercial pages in both l
 });
 
 test('seven substantive EN/AR guides have hub links, visible attribution, dates and matching Article schema', async () => {
+  const { guideUpdated } = JSON.parse(await readFile('tests/fixtures/poster-pricing-changes.json', 'utf8'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
   assert.equal(urls.length, 194);
@@ -91,7 +94,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.deepEqual(articleNode.author, { '@type': 'Organization', name: 'INAYA Domestic Workers Editorial Team' });
       assert.ok(text(body).includes(articleNode.author.name), `${route}: editorial author visible`);
       assert.equal(articleNode.datePublished, slugs.indexOf(slug) < 3 ? '2026-10-01' : '2026-10-06');
-      assert.equal(articleNode.dateModified, '2026-10-12');
+      assert.equal(articleNode.dateModified, guideUpdated[slug], `${route}: only substantively revised guides receive the new date`);
       assert.ok(body.includes(`dateTime="${articleNode.datePublished}"`), `${route}: published date visible`);
       assert.ok(body.includes(`dateTime="${articleNode.dateModified}"`), `${route}: updated date visible`);
       assert.match(body, /href="tel:\+97167400128"/, `${route}: approved office phone`);
@@ -118,12 +121,10 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       }
       if (['domestic-worker-package-pricing-factors', 'monthly-maid-package-inclusions-checklist'].includes(slug)) {
         const visible = text(body);
-        assert.match(visible, /2,500/);
-        assert.match(visible, /3,000/);
-        assert.doesNotMatch(visible, /1,500/);
-        assert.match(visible, locale === 'en' ? /Essential.*?2,500/ : /Essential.*?2,500/);
-        assert.match(visible, locale === 'en' ? /Signature.*?3,000/ : /Signature.*?3,000/);
-        assert.match(visible, locale === 'en' ? /Custom Quote/ : /عرض سعر مخصص/);
+        for (const amount of ['120', '200', '1,120', '3,500', '3,250', '3,000']) assert.ok(visible.includes(amount), `${route}: approved package amount ${amount}`);
+        assert.doesNotMatch(visible, /1,500|2,500|\bEssential\b|\bSignature\b|INAYA Black/);
+        assert.match(visible, locale === 'en' ? /3,250.*?(?:month|monthly)/ : /3,250.*?(?:شهر|شهري)/);
+        assert.match(visible, locale === 'en' ? /3,000.*?(?:month|monthly)/ : /3,000.*?(?:شهر|شهري)/);
       }
       if (slug === 'domestic-worker-visa-sponsorship-support') {
         for (const step of locale === 'en' ? ['Document guidance', 'Application submission', 'Status change', 'Medical processing', 'Emirates ID processing', 'Insurance processing', 'End-to-end case processing'] : ['إرشادات المستندات', 'تقديم الطلب', 'تعديل الوضع', 'إجراءات الفحص الطبي', 'إجراءات الهوية الإماراتية', 'إجراءات التأمين', 'متابعة الحالة من البداية إلى النهاية']) assert.ok(text(article).includes(step));
@@ -173,7 +174,7 @@ test('twenty finalized bilingual topics retain exact copy, references and route 
         assert.ok(allowedHosts.has(new URL(link).hostname), `${route}: official or INAYA source`);
         if (new URL(link).origin === origin) assert.ok(new URL(link).pathname.startsWith(`/${locale}/`), `${route}: internal link language`);
       }
-      const languageText = locale === 'ar' ? text(rendered).replace(/INAYA Black|INAYA|Essential|Signature|Black|info@inayadomestic\.ae/g, '') : text(rendered);
+      const languageText = locale === 'ar' ? text(rendered).replace(/INAYA|info@inayadomestic\.ae/g, '') : text(rendered);
       assert.doesNotMatch(languageText, locale === 'ar' ? /[A-Za-z]/ : /[\u0600-\u06ff]/, `${route}: article language with approved brand names`);
       assert.doesNotMatch(text(rendered), /TODO|TBD|editorial notes|source-evidence|pending business facts/i);
       assert.equal([...body.matchAll(/<h1\b/g)].length, 1, `${route}: one primary heading`);
@@ -188,7 +189,7 @@ test('twenty finalized bilingual topics retain exact copy, references and route 
       const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((match) => attrs(match[1]).type === 'application/ld+json').flatMap((match) => JSON.parse(match[2])['@graph'] || []);
       const schema = graph.find((node) => node['@type'] === 'Article');
       assert.equal(schema.url, url); assert.equal(schema.inLanguage, locale); assert.equal(schema.headline, copy.title);
-      assert.equal(schema.datePublished, '2026-10-09'); assert.equal(schema.dateModified, '2026-10-12');
+      assert.equal(schema.datePublished, '2026-10-09'); assert.equal(schema.dateModified, expected.updated);
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
       assert.deepEqual(schema.citation, [...new Set(links.filter((link) => new URL(link).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);

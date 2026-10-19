@@ -11,7 +11,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "choosing-domestic-worker-agency-ajman",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "How to choose a domestic-worker agency in Ajman",
       "description": "Choose an agency by checking its current recruitment licence, the legal arrangement it offers, the worker's suitability and the written contract. A low monthly…",
@@ -40,7 +40,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-hiring-costs-uae",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "What is the total cost of hiring a domestic worker in Ajman?",
       "description": "The total depends on whether you recruit a worker onto your own employer file or buy services from an agency that employs the worker. Build your budget from…",
@@ -71,7 +71,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-employment-arrangements-uae",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "Live-in, live-out or temporary domestic help: which arrangement fits your household?",
       "description": "Choose by considering your household's duties, accommodation and schedule, then confirm the legal employment model. “Live-in” describes residence; “live-out”…",
@@ -104,10 +104,10 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "all-inclusive-domestic-worker-packages",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "What should an all-inclusive domestic-worker package include in writing?",
-      "description": "See INAYA’s salary-included live-in monthly packages, core inclusions, exclusions, tier coordination and written payment terms.",
+      "description": "See INAYA’s contract plans, equal live-in and live-out prices, monthly salary inclusions, service scope and written payment terms.",
       "citations": [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21141",
@@ -119,7 +119,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
     },
     "ar": {
       "title": "ما الذي ينبغي توضيحه كتابةً في باقة عمالة مساعدة شاملة؟",
-      "description": "تعرف على باقات عناية الشهرية المقيمة المشمولة بالراتب وعناصرها واستثناءاتها وتنسيق الباقات وشروط السداد المكتوبة.",
+      "description": "تعرف على باقات عناية وأسعارها الموحدة للمقيمة وغير المقيمة وشمول الراتب الشهري ونطاق الخدمة وشروط السداد المكتوبة.",
       "citations": [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21141",
@@ -133,7 +133,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-sponsorship-responsibilities",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "Who is responsible for a domestic worker's sponsorship and employment?",
       "description": "Identify the employer named in the approved employment arrangement before deciding who handles permits, wages, accommodation and termination. “The agency…",
@@ -197,7 +197,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-hiring-stages-timelines",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "What happens during domestic-worker hiring, and how long does it take?",
       "description": "Hiring has several stages: define the job, identify the employment model, select a suitable worker, sign the relevant agreements and complete the required…",
@@ -236,7 +236,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-skills-language-assessment",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "How to select a domestic worker's skills and language for your household",
       "description": "Select against the tasks and communication your home needs, then check the individual candidate's evidence. Nationality, a job label or a brief profile does not…",
@@ -267,7 +267,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "choosing-nanny-newborn-support",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "How to assess a nanny for a baby or newborn",
       "description": "Assess the individual person's relevant experience, communication and evidenced training, then agree the duties and supervision your family needs. A…",
@@ -300,7 +300,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "caregiver-versus-licensed-nurse",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "Caregiver or licensed nurse: which kind of home support do you need?",
       "description": "Choose according to the tasks, not the job label. Help with companionship and everyday household routines is different from professional clinical care. A…",
@@ -331,7 +331,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "agreeing-domestic-worker-household-duties",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "Can one domestic worker handle cleaning, cooking and childcare?",
       "description": "One person may be able to perform more than one agreed household task, but the scope must match their skills, lawful occupation and a realistic schedule. Do not…",
@@ -366,7 +366,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-verification-checks",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "What should “verified domestic worker” mean?",
       "description": "“Verified” should identify a specific check, its date, who performed it and what the evidence establishes. The word alone does not mean that every background,…",
@@ -393,7 +393,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-interview-trial-probation",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "Interview, trial and probation: what is the difference when hiring a domestic worker?",
       "description": "An interview assesses suitability before an agreement. A commercial trial is a separately defined service or arrangement whose terms must be confirmed. Statutory…",
@@ -428,7 +428,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-replacement-eligibility",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "When can you request a replacement domestic worker?",
       "description": "A replacement request should be assessed against the employment model, the agreed recruitment conditions and the reason for the request. There is no basis to…",
@@ -484,7 +484,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-contracts-renewal",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "Which domestic-worker contracts should you read, and how does renewal work?",
       "description": "Read the agreement for each relationship: the agency's recruitment or service agreement, the worker's employment contract and, for temporary employment, the…",
@@ -556,7 +556,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "own-visa-part-time-domestic-work",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "Can you hire a domestic worker who has their own visa or works part-time?",
       "description": "A residence visa alone does not authorise a person to work for your household. Before hiring, confirm the valid work permit, the employer or licensed agency and…",
@@ -618,7 +618,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-complaints-disputes",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "en": {
       "title": "How do domestic-worker complaints and recruitment-agency disputes proceed?",
       "description": "Identify the parties, the contract and the remedy sought, then use the appropriate MOHRE channel. A worker–employer wage dispute and an employer–agency…",

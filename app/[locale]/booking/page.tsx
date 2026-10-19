@@ -1,3 +1,4 @@
+import { packageSummary, packageArrangements } from '@/lib/package-content';
 import FormTranslations from '@/components/FormTranslations';
 import BookingForm from '@/components/BookingForm';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -13,7 +14,7 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
     title: isArabic ? 'جهز استفسار خدمة العمالة المنزلية' : 'Prepare your domestic service enquiry',
     subtitle: isArabic ? 'هذا النموذج يراجع البيانات محلياً ولا يرسلها إلى المكتب. تواصل مع عناية بالهاتف أو واتساب لمشاركة احتياجك ومناقشة الخطوة التالية.' : 'This form checks details locally and does not send them to the office. Contact INAYA by phone or WhatsApp to share your requirement and discuss the next step.',
     sideTitle: isArabic ? 'قبل مراجعة البيانات' : 'Before checking your details',
-    points: isArabic ? ["اختر الخدمة والدور والباقة المطلوب مناقشتها","Essential من 2,500 درهم شهرياً؛ Signature من 3,000 درهم شهرياً؛ INAYA Black بعرض سعر مخصص","الخدمة الشهرية القياسية مقيمة وتشمل الراتب؛ وتعرض الخدمة غير المقيمة والزيارات الجزئية بصورة منفصلة","حدد المهام والإمارة والبدء المفضل والسكن واحتياجات المنزل","تسلم النطاق وتفصيل السعر ومستندات السداد كتابةً قبل التأكيد","تبدأ الخدمة بعد اختيار المرشحة والتصاريح النظامية المطلوبة والتأكيد المكتوب"] : ["Choose the service, role and package you want to discuss","Essential from AED 2,500/month; Signature from AED 3,000/month; INAYA Black Custom Quote","Standard monthly service is salary-included and live-in; live-out and scheduled part-time arrangements are separately quoted","State duties, emirate, preferred start, accommodation and household needs","Receive written scope, price breakdown and payment documents before confirmation","Service starts after candidate selection, required lawful authorisation and written confirmation"]
+    points: isArabic ? ["اختر الخدمة والدور والباقة المطلوب مناقشتها",packageSummary.ar,packageArrangements.ar,"حدد المهام والإمارة والبدء المفضل والسكن واحتياجات المنزل","تسلم النطاق وتفصيل السعر ومستندات السداد كتابةً قبل التأكيد","تبدأ الخدمة بعد اختيار المرشحة والتصاريح النظامية المطلوبة والتأكيد المكتوب"] : ["Choose the service, role and package you want to discuss",packageSummary.en,packageArrangements.en,"State duties, emirate, preferred start, accommodation and household needs","Receive written scope, price breakdown and payment documents before confirmation","Service starts after candidate selection, required lawful authorisation and written confirmation"]
   };
 
   return (

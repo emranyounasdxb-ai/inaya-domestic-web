@@ -3,6 +3,7 @@ import { localizedUrl } from './seo';
 import { siteConfig } from './site-config';
 import { faqEntity } from './json-ld';
 import { getDomesticWorkerGuide, guideAuthor } from './domestic-worker-guides';
+import { packageQuestions } from './package-content';
 
 export function pageStructuredData(locale: string, route: string) {
   const page = getPageSeo(locale, route);
@@ -64,6 +65,12 @@ export function pageStructuredData(locale: string, route: string) {
     citation: guide[locale === 'ar' ? 'ar' : 'en'].citations ?? guide.sources.map((source) => source.url)
   });
   // Questions are reused from the exact data rendered by the corresponding page.
+  if (route === 'pricing') {
+    const lang = locale === 'ar' ? 'ar' : 'en';
+    graph.push(faqEntity(locale, route, packageQuestions.map(({ question, answer }) => ({
+      question: question[lang], answer: answer[lang]
+    }))));
+  }
   if (page.faqs?.length) graph.push(faqEntity(locale, route, page.faqs));
   return { '@context': 'https://schema.org', '@graph': graph };
 }

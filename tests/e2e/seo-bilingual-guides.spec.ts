@@ -9,7 +9,8 @@ const slugs = [
   'maid-nanny-babysitter-differences',
   'domestic-worker-visa-sponsorship-support'
 ];
-const sectionCounts = [7, 9, 5, 6, 12, 5, 5];
+// The monthly checklist consolidates three former tier sections into one six-plan section.
+const sectionCounts = [7, 9, 5, 6, 10, 5, 5];
 const tableCounts = [0, 1, 0, 2, 1, 1, 1];
 const relatedGuide: Record<string, string> = {
   'uae-domestic-worker-hiring-process': 'domestic-worker-package-pricing-factors',
