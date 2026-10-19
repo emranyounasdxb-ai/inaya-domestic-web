@@ -31,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Test IndexNow notification selection
+        run: node --test tests/indexnow-notify.test.mjs
+
       - name: Prepare static export
         run: |
           cp next.config.cpanel.js next.config.js
@@ -383,4 +386,24 @@ jobs:
           path: ${{ runner.temp }}/inaya-ftp-next-baseline/
           include-hidden-files: true
           if-no-files-found: error
+          retention-days: 30
+
+      # Notify only after upload and baseline persistence succeed. A search
+      # endpoint failure must not turn a successful site deploy into a failure.
+      - name: Notify IndexNow of deployed page changes
+        id: indexnow
+        continue-on-error: true
+        run: |
+          node .github/scripts/indexnow-notify.mjs \
+            "$RUNNER_TEMP/inaya-ftp-selected" "$RUNNER_TEMP/inaya-ftp-restored-baseline" \
+            "$RUNNER_TEMP/inaya-indexnow-result.json"
+
+      - name: Save IndexNow notification result
+        if: always() && steps.indexnow.outcome != 'skipped'
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: inaya-indexnow-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/inaya-indexnow-result.json
+          if-no-files-found: warn
           retention-days: 30

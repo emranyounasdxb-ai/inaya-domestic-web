@@ -6,6 +6,21 @@ import test from 'node:test';
 const output = path.resolve('out');
 const origin = 'https://inayadomestic.ae';
 
+test('Ajman answer links resolve to exported pages in the same language', async () => {
+  for (const locale of ['en', 'ar']) {
+    const html = await readFile(path.join(output, locale, 'maid-services-ajman/index.html'), 'utf8');
+    const details = [...html.matchAll(/<details\b[^>]*>([\s\S]*?)<\/details>/g)];
+    const targets = details.flatMap((block) => [...block[1].matchAll(/href="([^"]+)"/g)].map((link) => link[1]));
+    assert.ok(targets.length >= 8, `${locale}: service answers provide practical next steps`);
+    for (const href of targets) {
+      assert.ok(href.startsWith(`/${locale}/`), `${locale}: preserve language for ${href}`);
+      const destination = await readFile(path.join(output, href.slice(1), 'index.html'), 'utf8');
+      assert.ok(destination.includes(`href="${origin}${href}"`), `${href}: canonical destination exists`);
+      assert.doesNotMatch(destination, /<meta[^>]+name="robots"[^>]+noindex/);
+    }
+  }
+});
+
 test('exported robots allows public pages and advertises production sitemap', async () => {
   const robots = await readFile(path.join(output, 'robots.txt'), 'utf8');
   assert.match(robots, /User-Agent: \*/);
@@ -16,8 +31,13 @@ test('exported robots allows public pages and advertises production sitemap', as
 
 test('export sitemap exactly covers localized HTML with reciprocal canonical alternates', async () => {
   const xml = await readFile(path.join(output, 'sitemap.xml'), 'utf8');
-  assert.doesNotMatch(xml, /<lastmod>/);
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
+  const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
+  assert.equal(datedEntries.length, 12, 'only the six bilingual content updates have recorded modification dates');
+  for (const entry of datedEntries) {
+    assert.match(entry[1], /<lastmod>2026-10-19<\/lastmod>/);
+    assert.match(entry[1], /\/(maid-services-ajman|services\/(part-time-maid|monthly-maid-contract|nanny|babysitting|housekeeping))\/<\/loc>/);
+  }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
   assert.equal(new Set(urls).size, urls.length);
   const exported = [];

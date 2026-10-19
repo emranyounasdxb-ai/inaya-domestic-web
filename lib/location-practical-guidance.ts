@@ -69,7 +69,7 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
     ...location,
     serviceNotes: local.en.map(([slug, title, description], index) => ({ slug, title: { en: title, ar: local.ar[index][1] }, description: { en: description, ar: local.ar[index][2] } })),
     popularServices: [...location.popularServices, { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } }, { slug: 'monthly-maid-contract', title: { en: 'Monthly maid contract enquiries', ar: 'طلبات عقد خادمة شهري' } }],
-    faqs: [...location.faqs.map((faq) => /visa/i.test(faq.question.en) ? { ...faq, answer: {
+    faqs: [...location.faqs.map((faq) => location.slug !== 'maid-services-ajman' && /visa/i.test(faq.question.en) ? { ...faq, answer: {
       en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.',
       ar: 'تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة.'
     } } : faq), {
