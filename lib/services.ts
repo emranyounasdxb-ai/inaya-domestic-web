@@ -1,3 +1,5 @@
+import { packageSummary } from './package-content';
+
 export type Service = {
   slug: string;
   icon: string;
@@ -46,18 +48,15 @@ export const services: Service[] = [
     slug: 'part-time-maid',
     icon: '🕒',
     name: { en: 'Part-time Maid Hiring', ar: 'توظيف خادمة بدوام جزئي' },
-    short: { en: 'Flexible hourly maid help.', ar: 'مساعدة مرنة بالساعة.' },
-    description: { en: 'Flexible part-time maids available by the hour for cleaning, laundry, ironing and household tasks whenever you need them.', ar: 'خادمات بدوام جزئي متاحات بالساعة للتنظيف والغسيل والكي والمهام المنزلية عند الحاجة.' }
+    short: { en: '4-hour or 8-hour maid visits.', ar: 'زيارات خادمة لمدة 4 أو 8 ساعات.' },
+    description: { en: 'Part-time maid visits: 4 hours for AED 120 or 8 hours for AED 200. Agree cleaning, laundry, ironing or other household tasks, timing and availability before confirmation.', ar: 'زيارات خادمة بدوام جزئي: 4 ساعات مقابل 120 درهماً أو 8 ساعات مقابل 200 درهم. اتفق على التنظيف أو الغسيل أو الكي أو غيرها من المهام والتوقيت والتوفر قبل التأكيد.' }
   },
   {
     slug: 'monthly-maid-contract',
     icon: '📅',
     name: { en: 'Monthly Maid Contract', ar: 'عقد خادمة شهري' },
     short: { en: 'Discuss monthly maid contracts and package terms.', ar: 'ناقش عقود الخادمات الشهرية وشروط الباقات.' },
-    description: {
-  "en": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.",
-  "ar": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة."
-}
+    description: packageSummary
   },
   {
     slug: 'on-demand-domestic-help',

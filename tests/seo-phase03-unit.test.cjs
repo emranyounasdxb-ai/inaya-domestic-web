@@ -8,6 +8,28 @@ const { guideContent } = require(base + 'guide-content.js');
 const { getPageSeo, pageBreadcrumbs } = require(base + 'page-seo.js');
 const { pageStructuredData } = require(base + 'structured-data.js');
 const baseline = require('./fixtures/seo-phase03-baseline.json');
+const { managedPackages, packageArrangements, packageSummary, packagePricingCards, packageQuestions } = require(base + 'package-content.js');
+const { expectedPlans } = require('./poster-pricing-contract.cjs');
+
+test('six approved package amounts retain their duration and monthly billing basis in both languages', () => {
+  assert.equal(managedPackages.length, 6);
+  assert.deepEqual(managedPackages.map(({ id, amount, billingUnit, hours, days, commitmentMonths }) => ({ id, amount, billingUnit, hours, days, commitmentMonths })),
+    expectedPlans.map(({ id, amount, billingUnit, hours, days, commitmentMonths }) => ({ id, amount, billingUnit, hours, days, commitmentMonths })));
+  for (const locale of ['en', 'ar']) {
+    for (const [index, plan] of managedPackages.entries()) {
+      assert.equal(plan.price[locale], expectedPlans[index].price[locale]);
+      assert.equal(plan.period[locale], expectedPlans[index].period[locale]);
+      assert.ok(plan.name[locale] && plan.description[locale] && plan.features[locale].length);
+    }
+    assert.equal(packagePricingCards(locale).length, 6);
+    assert.deepEqual(packagePricingCards(locale, 'monthly').map(card => card.title), managedPackages.slice(3).map(plan => `${plan.name[locale]} — ${expectedPlans.find(expected => expected.id === plan.id).price[locale]} — ${expectedPlans.find(expected => expected.id === plan.id).period[locale]}`));
+    assert.equal(packagePricingCards(locale, 'short').length, 3);
+    assert.match(packageArrangements[locale], locale === 'en' ? /Live-in and live-out arrangements have the same published package price/ : /سعر الباقة المنشور واحد للخدمة المقيمة وغير المقيمة/);
+    const faq = pageStructuredData(locale, 'pricing')['@graph'].find(node => node['@type'] === 'FAQPage');
+    assert.deepEqual(faq.mainEntity.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), packageQuestions.map(item => ({ question: item.question[locale], answer: item.answer[locale] })));
+    assert.equal(faq.mainEntity.length, 10, 'all ten published pricing questions are represented');
+  }
+});
 
 test('every dynamic route has a bilingual purpose brief, not a generic fallback', () => {
   assert.equal(Object.keys(serviceContentBriefs).length, 31);
@@ -53,7 +75,7 @@ test('practical guides retain paired sections and link only to existing routes',
   }
 });
 
-test('new editorial copy introduces no numeric facts or positive superlative/approval guarantees', () => {
+test('editorial copy permits only the reviewed package facts and no positive superlative/approval guarantees', () => {
   const texts = [];
   const collect = (value) => {
     if (!value || typeof value !== 'object') return;
@@ -64,7 +86,14 @@ test('new editorial copy introduces no numeric facts or positive superlative/app
   };
   [serviceContentBriefs, countryContentBriefs, locationContentBriefs, informationNotes, guideContent].forEach(collect);
   for (const value of texts) {
-    assert.doesNotMatch(value.replace(/2,500|3,000/g, ''), /[0-9٠-٩]/, value);
+    // Only these exact reviewed commercial sentences may supply new numbers.
+    // Do not globally strip the new amounts/durations from unrelated editorial copy.
+    const packageFacts = [packageSummary.en, packageSummary.ar, packageArrangements.en, packageArrangements.ar,
+      'INAYA offers a 4-hour visit for AED 120 and an 8-hour visit for AED 200. Define the cleaning, laundry or ironing tasks to fit the visit, then confirm availability, the written scope and practical responsibilities.',
+      'تقدم عناية زيارة لمدة 4 ساعات بسعر 120 درهماً، وزيارة لمدة 8 ساعات بسعر 200 درهم. حدد مهام التنظيف أو الغسيل أو الكي بما يناسب وقت الزيارة، ثم أكد التوفر والنطاق المكتوب والمسؤوليات العملية.'];
+    let editorial = value;
+    for (const fact of packageFacts) editorial = editorial.replace(fact, '');
+    assert.doesNotMatch(editorial, /[0-9٠-٩]/, value);
     assert.doesNotMatch(value, /No\.?\s*1|#1|best|top.rated|licensed|award|الأفضل|رقم واحد|مرخص|جوائز/i, value);
     // Explicit disclaimers are not positive guarantees; no other occurrence is allowed.
     const withoutDisclaimers = value.replace(/not a safety guarantee|not a promise of approval|ليس ضماناً للأمان|ليست وعداً بالموافقة/gi, '');

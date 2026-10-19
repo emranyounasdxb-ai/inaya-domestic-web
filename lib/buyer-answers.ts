@@ -1,4 +1,4 @@
-import { packageSections } from './package-content';
+import { packageSections, packageSummary } from './package-content';
 // Editorial answers grounded in the existing intake, pricing and support guides.
 // Owner-approved monthly terms and enquiry guidance remain separate from statutory rules.
 type Pair = { en: string; ar: string };
@@ -14,9 +14,9 @@ export const buyerAnswers: Record<string, { question: Pair; answer: Pair; detail
   pricing: {
     question: { en: 'Is the displayed price my final service quote?', ar: 'هل السعر المعروض هو عرض السعر النهائي لخدمتي؟' },
     answer: {
-  "en": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. Request the written final quote, scope, exclusions and applicable tax before confirmation.",
-  "ar": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. اطلب العرض النهائي المكتوب والنطاق والاستثناءات والضريبة المنطبقة قبل التأكيد."
-}, detailRoute: 'contact'
+      en: packageSummary.en + ' Request the written final quote, service scope, inclusions, exclusions and applicable tax before confirmation.',
+      ar: packageSummary.ar + ' اطلب عرض السعر النهائي المكتوب ونطاق الخدمة وما يشمله والاستثناءات والضريبة المنطبقة قبل التأكيد.'
+    }, detailRoute: 'contact'
   },
   'documents-required': {
     question: { en: 'Which details should I prepare before asking about documents?', ar: 'ما التفاصيل التي أجهزها قبل السؤال عن المستندات؟' },

@@ -53,7 +53,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
     {
       icon: 'chat' as IconName,
       title: isArabic ? 'شارك احتياجك' : 'Share your requirement',
-      desc: isArabic ? "شارك الدور المنزلي والمهام والإمارة والتوقيت المفضل؛ فالعرض الشهري القياسي مقيم." : "Share the household role, agreed duties, emirate and preferred timing; the standard monthly offer is live-in."
+      desc: isArabic ? "شارك الدور المنزلي والمهام والإمارة والتوقيت المفضل، واختر ترتيباً مقيماً أو غير مقيم؛ أسعار الباقات المنشورة واحدة للترتيبين." : "Share the household role, duties, emirate and preferred timing, and choose live-in or live-out support; the published package rates are the same for both."
     },
     {
       icon: 'search' as IconName,
@@ -97,7 +97,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       items: [
         {
           q: isArabic ? 'كيف يتم اقتراح الخدمة المناسبة؟' : 'How do you suggest the right service?',
-          a: isArabic ? "نطابق المهام المنزلية المتفق عليها مع الملفات الفردية. تقدم Essential الدعم المنزلي الاعتيادي، وتضيف Signature تقييماً للخبرة والتواصل لمتطلبات العاملة المنزلية أو المربية أو مقدمة الرعاية غير السريرية، وتخطط Black للأدوار المخصصة أو المعقدة. تحدد المهام والتوفر الاختيار." : "We match agreed household duties to individual profiles. Essential provides routine household support; Signature adds assessment of relevant experience and communication for maid, nanny or non-clinical caregiver requirements; Black plans bespoke or complex roles. Duties and availability govern the selection."
+          a: isArabic ? "نراجع الخبرة الفردية والتواصل وفق المهام المتفق عليها، ثم نختار مدة الخدمة من الباقات المنشورة. تتحدد الملاءمة بالدور والتوفر؛ ولا يثبت طول العقد تأهيلاً لمهمة متخصصة." : "We review individual experience and communication against the agreed duties, then select a service period from the published packages. Suitability depends on the role and availability; a longer contract does not establish a specialist qualification."
         },
         {
           q: isArabic ? 'هل الخدمة متوفرة في كل الإمارات؟' : 'Do you serve all UAE emirates?',
@@ -133,11 +133,11 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       id: 'support',
       icon: 'support' as IconName,
       title: isArabic ? 'الدعم والمتابعة' : 'Support & Follow-up',
-      text: isArabic ? "تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق." : "Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up.",
+      text: isArabic ? packageSections.followUp.body.ar : packageSections.followUp.body.en,
       items: [
         {
           q: isArabic ? 'هل توجد متابعة بعد بدء الخدمة؟' : 'Do you provide follow-up after service starts?',
-          a: isArabic ? "تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق. ساعات الدعم البشري من السبت إلى الخميس، من 9 صباحاً إلى 9 مساءً؛ الجمعة مغلق. يمكن استقبال الرسائل خارج تلك الساعات دون وعد برد بشري على مدار الساعة." : "Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up. Human support is Saturday–Thursday, 9 AM–9 PM; Friday closed. Messages may be received outside those hours without a 24/7 human-response promise."
+          a: isArabic ? packageSections.followUp.body.ar : packageSections.followUp.body.en
         },
         {
           q: isArabic ? 'كيف أتابع ملاحظة على خدمة قائمة؟' : 'How do I follow up on an existing-service concern?',

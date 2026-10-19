@@ -1,3 +1,4 @@
+import { packageSummary, packageSections } from '@/lib/package-content';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/page-seo';
@@ -18,13 +19,13 @@ const homeContent = {
     heroLabel: 'Legacy of Trust',
     heroTitleA: 'Maid & Domestic Worker Services',
     heroTitleB: 'in Ajman and Across the UAE',
-    heroText: "INAYA-managed, salary-included live-in household support: Essential from AED 2,500/month, Signature from AED 3,000/month, and INAYA Black Custom Quote. Review the published scope and exclusions before your written quotation.",
+    heroText: packageSummary.en,
     primaryCta: 'Request Consultation',
     secondaryCta: 'Explore Services',
     trustLabel: 'Logos identify organizations only; no endorsement or approval is claimed',
     conciergeLabel: 'Enquiry & Follow-up',
     conciergeTitle: "Managed Service & Follow-up",
-    conciergeText: "Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up. Support is available during the published office hours.",
+    conciergeText: packageSections.followUp.body.en,
     learnMore: 'Contact INAYA Support',
     safetyTitle: 'Safety & Discretion',
     safetyText: 'Privacy is part of the service experience. Household information, documents and expectations are handled carefully before any step is confirmed.',
@@ -61,22 +62,22 @@ const homeContent = {
       { quote: 'Excellent and transparent service. The team explained every step and followed up professionally.', name: 'Ali Khan', role: 'Business Owner, Sharjah' }
     ],
     imageQuote: 'Our sanctuary is finally managed with the precision it deserves.',
-    blackLabel: "INAYA BLACK",
+    blackLabel: "HOUSEHOLD PLANNING",
     blackTitle: "Bespoke Staffing & Household Support",
-    blackText: "Custom Quote for specialist, multiple-worker or complex household requirements. Receive individual role assessment, a named account contact, personalised coordination, custom onboarding and an agreed review schedule with role-specific replacement coordination.",
+    blackText: "Share your household roles, schedule and requirements. We review availability and explain the service scope, published package rates and any additional requirements before written confirmation.",
     blackCta: 'Enquire About Your Requirements'
   },
   ar: {
     heroLabel: 'إرث من الثقة',
     heroTitleA: 'خدمات الخادمات والعمالة المنزلية',
     heroTitleB: 'في عجمان وجميع أنحاء الإمارات',
-    heroText: "دعم منزلي مقيم تديره عناية ويشمل الراتب: Essential من 2,500 درهم شهرياً، وSignature من 3,000 درهم شهرياً، وINAYA Black بعرض سعر مخصص. راجع النطاق والاستثناءات المنشورة قبل عرضك المكتوب.",
+    heroText: packageSummary.ar,
     primaryCta: 'اطلب استشارة',
     secondaryCta: 'استكشف الخدمات',
     trustLabel: 'الشعارات للتعريف بالجهات فقط ولا تعني اعتماداً أو تأييداً',
     conciergeLabel: 'دعم ومتابعة',
     conciergeTitle: "خدمة مدارة ومتابعة منظمة",
-    conciergeText: "تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق. يتوفر الدعم خلال ساعات المكتب المنشورة.",
+    conciergeText: packageSections.followUp.body.ar,
     learnMore: 'تواصل مع فريق عناية',
     safetyTitle: 'السلامة والخصوصية',
     safetyText: 'الخصوصية جزء أساسي من تجربة الخدمة. يتم التعامل مع معلومات الأسرة والمستندات والتوقعات بعناية قبل تأكيد أي خطوة.',
@@ -113,9 +114,9 @@ const homeContent = {
       { quote: 'خدمة ممتازة وواضحة. شرح الفريق كل خطوة وتابع معنا باحتراف.', name: 'علي خان', role: 'صاحب عمل، الشارقة' }
     ],
     imageQuote: 'أصبح منزلنا أكثر تنظيماً وراحة.',
-    blackLabel: "INAYA BLACK",
+    blackLabel: "تخطيط احتياجات المنزل",
     blackTitle: "عمالة ودعم منزلي حسب الطلب",
-    blackText: "عرض سعر مخصص للاحتياجات المتخصصة أو متعددة العاملين أو المعقدة. تشمل الخدمة تقييماً فردياً للدور ومسؤول حساب مسمى وتنسيقاً شخصياً وتهيئة مخصصة وجدول مراجعة متفقاً عليه مع تنسيق الاستبدال بحسب الدور.",
+    blackText: "شارك الأدوار والجدول واحتياجات منزلك. نراجع التوفر ونوضح نطاق الخدمة والأسعار المنشورة أو أي احتياجات إضافية قبل التأكيد المكتوب.",
     blackCta: 'استفسر عن متطلباتك'
   }
 };

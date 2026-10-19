@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import updatedPaths from '../fixtures/poster-pricing-updated-routes.json';
 
 test('sitemap includes service, country and location SEO pages', async ({ request }) => {
   const response = await request.get('/sitemap.xml');
@@ -33,16 +34,8 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   test.setTimeout(240_000);
   const xml = await (await request.get('/sitemap.xml')).text();
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
-  const updatedPaths = [
-    'maid-services-ajman',
-    'services/part-time-maid',
-    'services/monthly-maid-contract',
-    'services/nanny',
-    'services/babysitting',
-    'services/housekeeping'
-  ];
   const expectedDatedUrls = ['en', 'ar'].flatMap((locale) =>
-    updatedPaths.map((path) => `https://inayadomestic.ae/${locale}/${path}/`)
+    updatedPaths.map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
   );
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())

@@ -1,3 +1,4 @@
+import { packageSummary, packageArrangements, packageSections } from './package-content';
 import type { Lang, Pair, ServiceCopy } from './service-page-copy';
 
 type Guidance = {
@@ -106,7 +107,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     },
     {
       "title": "Does monthly pricing mean full-time work?",
-      "text": "The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role."
+      "text": packageArrangements.en
     },
     {
       "title": "Can duties be changed later?",
@@ -164,7 +165,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     },
     {
       "title": "هل يعني السعر الشهري العمل بدوام كامل؟",
-      "text": "تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار."
+      "text": packageArrangements.ar
     },
     {
       "title": "هل يمكن تغيير المهام لاحقاً؟",
@@ -224,7 +225,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     },
     {
       "title": "Is part-time the same as a monthly plan?",
-      "text": "Scheduled part-time visits have a separate quotation for the agreed work, schedule, location and lawful arrangement. The full-time managed monthly starting price does not automatically cover these visits."
+      "text": "INAYA publishes a 4-hour visit at AED 120 and an 8-hour visit at AED 200. The 7-day weekly package is AED 1,120. Monthly and longer-commitment packages have their own published duration and price. Confirm the tasks, visit schedule, location and written terms for the selected package."
     },
     {
       "title": "Are supplies and extra hours included?",
@@ -282,7 +283,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     },
     {
       "title": "هل الدوام الجزئي هو الخطة الشهرية نفسها؟",
-      "text": "للزيارات المجدولة بدوام جزئي عرض مستقل للعمل والجدول والموقع والترتيب النظامي المتفق عليها. ولا يغطي السعر الشهري المبدئي المدار للدوام الكامل هذه الزيارات تلقائياً."
+      "text": "تعلن عناية عن زيارة لمدة 4 ساعات بسعر 120 درهماً، وزيارة لمدة 8 ساعات بسعر 200 درهم. وسعر الباقة الأسبوعية لمدة 7 أيام هو 1,120 درهماً. للباقات الشهرية والالتزامات الأطول مددها وأسعارها المنشورة. أكد المهام وجدول الزيارات والموقع والشروط المكتوبة للباقة المختارة."
     },
     {
       "title": "هل تشمل الخدمة المستلزمات والساعات الإضافية؟",
@@ -293,13 +294,13 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
   },
   'monthly-maid-contract': {
   "en": {
-  "scope": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.",
-  "arrangement": "The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role.",
+  "scope": packageSummary.en,
+  "arrangement": packageArrangements.en,
   "prepare": "Start with the household role, duties, location and preferred timing. INAYA reviews availability and individual suitability, provides the written scope and quote, and confirms the selected candidate and start arrangements. Service starts after selection, required lawful authorisation and written confirmation.",
   "duties": [
   "Household support matched to the individual agreed role",
   "Written duties and practical household handover",
-  "Tier-specific contact, coordination and follow-up",
+  "Contact, coordination and follow-up under the agreed service plan",
   "Eligible replacement review, matching coordination and administration"
 ],
   "limits": [
@@ -323,7 +324,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     },
     {
       "title": "Compare published pricing",
-      "text": "Review the published monthly starting prices, then request a written proposal for the package you want to discuss."
+      "text": "Review the published monthly prices and commitment periods, then request a written proposal for the package you want to discuss."
     },
     {
       "title": "Confirm the terms",
@@ -331,41 +332,41 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     }
   ],
   "quote": [
-    "Essential — AED 2,500",
-    "Signature — AED 3,000",
-    "INAYA Black — Custom Quote"
+    "30-day monthly package — AED 3,500",
+    "6-month commitment — AED 3,250 per month",
+    "12-month commitment — AED 3,000 per month"
   ],
   "faqs": [
     {
       "title": "How do I request a monthly maid package in Ajman?",
-      "text": "Contact INAYA’s Ajman office with your home location, household duties, accommodation arrangements and preferred start date. Compare the published monthly live-in packages, then confirm the individual profile, written scope, price and start arrangements with the team. Live-out service and scheduled part-time visits require separate quotations."
+      "text": "Contact INAYA’s Ajman office with your home location, household duties, accommodation arrangements and preferred start date. Compare the published monthly packages and commitment periods; live-in and live-out use the same package prices. Confirm the individual profile, written scope, price and start arrangements with the team."
     },
     {
       "title": "What is the advertised standard monthly arrangement?",
-      "text": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement. The advertised monthly prices concern live-in service. Live-out service requires a separate itemised quotation covering accommodation and transport. Scheduled part-time visits are quoted separately and are not automatically covered by the full-time monthly price. Individual duties, hours, weekly rest and any additional work are recorded in the agreement for the selected role."
+      "text": `${packageSummary.en} ${packageArrangements.en}`
     },
     {
       "title": "What payments and salary responsibilities apply?",
       "text": "For the standard managed monthly offer, the first service month is paid in advance and later payments follow the agreed monthly billing date. There is no separate upfront recruitment/setup fee and no security deposit. Separately contracted recruitment and visa-only services have their own quotation and terms. The service payment includes the agreed worker salary; the customer does not pay that same salary separately."
     },
     {
-      "title": "What are the tier differences and follow-up schedules?",
-      "text": "Essential provides routine household matching, an assigned contact and first-week then monthly follow-up. Signature adds experience/communication assessment, a dedicated coordinator, priority matching and first-week then fortnightly follow-up. Black provides bespoke planning, a named contact and an agreed review schedule."
+      "title": "How are service coordination and follow-up agreed?",
+      "text": packageSections.followUp.body.en
     },
     {
       "title": "What happens if I cancel or need replacement?",
-      "text": "Before service commencement, INAYA returns the unused monthly service payment. After commencement, the unused prepaid service period following effective cancellation is refunded on a clear pro-rata basis. The calculation identifies the prepaid amount, service period, effective cancellation date and unused period. Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination."
+      "text": `${packageSections.cancellation.body.en} ${packageSections.replacement.body.en}`
     }
   ]
 },
   "ar": {
-  "scope": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة.",
-  "arrangement": "تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار.",
+  "scope": packageSummary.ar,
+  "arrangement": packageArrangements.ar,
   "prepare": "ابدأ بتحديد الدور المنزلي والمهام والموقع والتوقيت المفضل. تراجع عناية التوفر والملاءمة الفردية، وتقدم النطاق والعرض المكتوبين، ثم تؤكد المرشحة المختارة وترتيبات البدء. تبدأ الخدمة بعد الاختيار والحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.",
   "duties": [
   "دعم منزلي مطابق للدور الفردي المتفق عليه",
   "مهام مكتوبة وتسليم عملي لاحتياجات المنزل",
-  "مسؤول تواصل وتنسيق ومتابعة بحسب الباقة",
+  "مسؤول تواصل وتنسيق ومتابعة وفق خطة الخدمة المتفق عليها",
   "مراجعة الاستبدال المؤهل وتنسيق المطابقة وإدارة الإجراءات"
 ],
   "limits": [
@@ -389,7 +390,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     },
     {
       "title": "قارن الأسعار المنشورة",
-      "text": "راجع الأسعار الشهرية الابتدائية المنشورة، ثم اطلب عرضاً مكتوباً للباقة المطلوب مناقشتها."
+      "text": "راجع الأسعار الشهرية المنشورة ومدد الالتزام، ثم اطلب عرضاً مكتوباً للباقة المطلوب مناقشتها."
     },
     {
       "title": "أكد الشروط",
@@ -397,30 +398,30 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     }
   ],
   "quote": [
-    "Essential — 2,500 درهم",
-    "Signature — 3,000 درهم",
-    "INAYA Black — عرض سعر مخصص"
+    "باقة شهرية لمدة 30 يوماً — 3,500 درهم",
+    "التزام 6 أشهر — 3,250 درهماً شهرياً",
+    "التزام 12 شهراً — 3,000 درهم شهرياً"
   ],
   "faqs": [
     {
       "title": "كيف أطلب باقة خادمة بالشهر في عجمان؟",
-      "text": "تواصل مع مكتب عناية في عجمان وحدد موقع المنزل والمهام المنزلية وترتيبات السكن وتاريخ البدء المفضل. قارن باقات الخدمة الشهرية المقيمة المنشورة، ثم أكد الملف الفردي والنطاق المكتوب والسعر وترتيبات البدء مع الفريق. للخدمة غير المقيمة والزيارات المجدولة بدوام جزئي عروض أسعار منفصلة."
+      "text": "تواصل مع مكتب عناية في عجمان وحدد موقع المنزل والمهام المنزلية وترتيبات السكن وتاريخ البدء المفضل. قارن الباقات الشهرية المنشورة ومدد الالتزام؛ فالأسعار نفسها للخدمة المقيمة وغير المقيمة. أكد الملف الفردي والنطاق المكتوب والسعر وترتيبات البدء مع الفريق."
     },
     {
       "title": "ما ترتيب الخدمة الشهرية القياسي المعلن؟",
-      "text": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة. تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل. وتتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً يبين السكن والنقل. أما الزيارات المجدولة بدوام جزئي فلها عرض مستقل ولا يشملها تلقائياً السعر الشهري للدوام الكامل. تسجل المهام الفردية وساعات العمل والراحة الأسبوعية وأي عمل إضافي في الاتفاق بحسب الدور المختار."
+      "text": `${packageSummary.ar} ${packageArrangements.ar}`
     },
     {
       "title": "ما مسؤوليات السداد والراتب؟",
       "text": "في العرض الشهري القياسي المدار، يسدد الشهر الأول مقدماً، ثم تتبع الدفعات اللاحقة تاريخ الفوترة الشهري المتفق عليه. لا توجد رسوم استقدام أو تجهيز منفصلة مقدماً، ولا تأمين نقدي. وتكون لخدمات الاستقدام أو التأشيرة المتعاقد عليها منفصلة عروضها وشروطها الخاصة. تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى بصورة منفصلة."
     },
     {
-      "title": "ما الفروق بين الباقات ومواعيد المتابعة؟",
-      "text": "تقدم Essential مطابقة للدعم المنزلي الاعتيادي ومسؤول تواصل ومتابعة في الأسبوع الأول ثم شهرياً. تضيف Signature تقييم الخبرة والتواصل ومنسقاً مخصصاً وأولوية في المطابقة ومتابعة في الأسبوع الأول ثم كل أسبوعين. تقدم Black تخطيطاً مخصصاً ومسؤولاً مسمى وجدول مراجعة متفقاً عليه."
+      "title": "كيف يتفق على تنسيق الخدمة ومواعيد المتابعة؟",
+      "text": packageSections.followUp.body.ar
     },
     {
       "title": "ماذا يحدث عند الإلغاء أو الحاجة إلى بديل؟",
-      "text": "قبل بدء الخدمة، تعيد عناية دفعة الخدمة الشهرية غير المستخدمة. وبعد البدء، ترد قيمة الفترة المدفوعة مقدماً وغير المستخدمة بعد سريان الإلغاء، على أساس تناسبي واضح. يبين الحساب المبلغ المدفوع وفترة الخدمة وتاريخ سريان الإلغاء والفترة غير المستخدمة. تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور."
+      "text": `${packageSections.cancellation.body.ar} ${packageSections.replacement.body.ar}`
     }
   ]
 }
@@ -441,7 +442,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
       ],
       quote: ['Children’s ages and agreed childcare responsibilities', 'Required schedule and living arrangement', 'Individual experience requirements and proposed service scope'],
       faqs: [
-        { title: 'How do I request a live-out nanny in Ajman?', text: 'INAYA accepts nanny enquiries from families in Ajman. Share the children’s ages, home location, childcare duties and required days and hours. Ask the team to review live-out availability and relevant individual experience, then confirm the duties, transport, accommodation arrangements and separate quotation in writing. For occasional supervision, compare babysitting instead of an ongoing nanny arrangement.' },
+        { title: 'How do I request a live-out nanny in Ajman?', text: 'INAYA accepts nanny enquiries from families in Ajman. Share the children’s ages, home location, childcare duties and required days and hours. Ask the team to review live-out availability and relevant individual experience, then confirm the duties, transport and accommodation responsibilities, selected package and written terms. Live-in and live-out use the same published package prices. For occasional supervision, compare babysitting instead of an ongoing nanny arrangement.' },
         { title: 'How should I review nanny experience?', text: 'Ask about experience with your child’s age group, daily routines and communication needs. Ask which references or documents can be reviewed; a job title or nationality is not proof of a qualification.' },
         { title: 'Can I combine nanny care and housemaid duties?', text: 'Discuss the priorities and time required for each role. Do not assume general cleaning is included in childcare, or that a housemaid has the required nanny experience.' },
         { title: 'How do parents communicate requirements?', text: 'Prepare a routine and clear instructions for meals, hygiene, activities and handovers. Discuss how updates and changes will be communicated before agreeing.' },
@@ -463,7 +464,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
       ],
       quote: ['أعمار الأطفال ومسؤوليات الرعاية المتفق عليها', 'الجدول المطلوب وترتيب السكن', 'متطلبات الخبرة الفردية ونطاق الخدمة المقترح'],
       faqs: [
-        { title: 'كيف أطلب مربية أطفال غير مقيمة في عجمان؟', text: 'تستقبل عناية طلبات المربيات من الأسر في عجمان. شارك أعمار الأطفال وموقع المنزل ومهام الرعاية والأيام والساعات المطلوبة. اطلب من الفريق مراجعة توفر الترتيب غير المقيم والخبرة الفردية المناسبة، ثم أكد المهام والنقل وترتيبات السكن وعرض السعر المنفصل كتابةً. للإشراف المؤقت، قارن خدمة جليسة الأطفال بدلاً من ترتيب المربية المستمر.' },
+        { title: 'كيف أطلب مربية أطفال غير مقيمة في عجمان؟', text: 'تستقبل عناية طلبات المربيات من الأسر في عجمان. شارك أعمار الأطفال وموقع المنزل ومهام الرعاية والأيام والساعات المطلوبة. اطلب من الفريق مراجعة توفر الترتيب غير المقيم والخبرة الفردية المناسبة، ثم أكد المهام ومسؤوليات النقل والسكن والباقة المختارة والشروط كتابةً. أسعار الباقات المنشورة نفسها للخدمة المقيمة وغير المقيمة. للإشراف المؤقت، قارن خدمة جليسة الأطفال بدلاً من ترتيب المربية المستمر.' },
         { title: 'كيف أراجع خبرة المربية؟', text: 'اسأل عن الخبرة مع فئة عمر طفلك والروتين اليومي واحتياجات التواصل. اسأل عن المراجع أو المستندات التي يمكن مراجعتها؛ المسمى أو الجنسية ليسا دليلاً على المؤهل.' },
         { title: 'هل يمكن الجمع بين المربية ومهام عاملة المنزل؟', text: 'ناقش الأولويات والوقت اللازم لكل دور. لا تفترض شمول التنظيف العام ضمن الرعاية، أو امتلاك عاملة المنزل خبرة المربية المطلوبة.' },
         { title: 'كيف يوضح الوالدان المتطلبات؟', text: 'جهز الروتين وتعليمات واضحة للوجبات والنظافة والأنشطة وتسليم الرعاية. ناقش طريقة إرسال التحديثات والتغييرات قبل الاتفاق.' },
@@ -735,13 +736,27 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
 };
 
 export function applyPracticalGuidance(slug: string, lang: Lang, copy: ServiceCopy): ServiceCopy {
+  if (slug === 'live-out-maid') {
+    const pricingFaqs: Pair[] = lang === 'ar' ? [
+      { title: 'ما أسعار باقات الخادمة غير المقيمة؟', text: packageSummary.ar },
+      { title: 'هل تختلف أسعار الخدمة المقيمة وغير المقيمة؟', text: packageArrangements.ar }
+    ] : [
+      { title: 'What are the live-out maid package prices?', text: packageSummary.en },
+      { title: 'Are live-in and live-out package prices different?', text: packageArrangements.en }
+    ];
+    const otherFaqs = copy.faqs.filter((faq) => !['How is pricing calculated?', 'كيف يتم حساب السعر؟'].includes(faq.title));
+    return { ...copy, faqs: [...pricingFaqs, ...otherFaqs] };
+  }
   const item = guidance[slug]?.[lang];
   if (!item) return copy;
   const ar = lang === 'ar';
   const visa = slug === 'maid-visa';
   const transfer = slug === 'sponsorship-transfer';
   const titles = ar ? ['النطاق', 'ترتيب العمل', 'تفاصيل الاستفسار'] : ['Scope', 'Working arrangement', 'Enquiry details'];
-  const pricingTitles = ar ? ['نطاق الطلب', 'الترتيب المقترح', 'التأكيد المكتوب'] : ['Request scope', 'Proposed arrangement', 'Written confirmation'];
+  const monthly = slug === 'monthly-maid-contract';
+  const pricingTitles = monthly
+    ? (ar ? ['شهر واحد', 'التزام 6 أشهر', 'التزام 12 شهراً'] : ['One month', '6-month commitment', '12-month commitment'])
+    : (ar ? ['نطاق الطلب', 'الترتيب المقترح', 'التأكيد المكتوب'] : ['Request scope', 'Proposed arrangement', 'Written confirmation']);
   const next: ServiceCopy = {
     ...copy,
     whatText: item.scope,
