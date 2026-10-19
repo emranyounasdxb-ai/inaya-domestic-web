@@ -61,15 +61,15 @@ test('core pages answer practical questions and visa exports contain case guidan
   }
 });
 
-test('pricing displays the approved managed monthly amounts and concrete terms', async () => {
+test('pricing displays the approved duration packages and concrete monthly terms', async () => {
   for (const locale of ['en', 'ar']) {
     const body = visible(await htmlFor(locale, 'pricing'));
-    assert.match(text(body), locale === 'ar' ? /Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف/ : /Essential starts from AED 2,500\/month and Signature from AED 3,000\/month, all-inclusive/);
-    assert.match(text(body), locale === 'ar' ? /مهام مكتوبة وتسليم عملي/ : /Written duties and practical household handover/);
-    assert.match(text(body), locale === 'ar' ? /عرض سعر مخصص/ : /Custom Quote/);
-    assert.match(text(body), locale === 'ar' ? /أولوية في المتابعة وتنسيق مطابقة الاستبدال/ : /Priority follow-up and replacement matching coordination/);
-    assert.match(text(body), locale === 'ar' ? /إرشاد بشأن التدريب وتقييم الأداء ضمن النطاق المتفق عليه/ : /Training and performance-appraisal guidance within the agreed scope/);
-    assert.doesNotMatch(text(body), /1,500|AED 4,000|unlimited replacements|استبدال غير محدود مضمون/);
+    for (const amount of ['120', '200', '1,120', '3,500', '3,250', '3,000']) assert.ok(text(body).includes(amount));
+    assert.match(text(body), locale === 'ar' ? /السعر نفسه للخدمة المقيمة وغير المقيمة/ : /Same price for live-in and live-out/);
+    assert.match(text(body), locale === 'ar' ? /جدول العمل والمهام والراحة|ساعات العمل والمهام والراحة/ : /working hours, duties and rest/);
+    assert.match(text(body), locale === 'ar' ? /شروط سداد الخدمة الشهرية/ : /managed monthly payment terms/);
+    assert.match(text(body), locale === 'ar' ? /الاستبدال/ : /replacement support/);
+    assert.doesNotMatch(text(body), /1,500|2,500|\bEssential\b|\bSignature\b|INAYA Black|AED 4,000|unlimited replacements|استبدال غير محدود مضمون/);
   }
 });
 

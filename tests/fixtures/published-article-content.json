@@ -3,8 +3,8 @@
     "slug": "choosing-domestic-worker-agency-ajman",
     "en": {
       "title": "How to choose a domestic-worker agency in Ajman",
-      "body_sha256": "359d98070757bcd7c6e4c25d1e19d1c34c7528d0e05f748e1687f8299659a42b",
-      "visible_sha256": "1c2a655ef8c27e583a1f52aa65ab6161e7707f3f7e62eb6c9eb6030c9464e483",
+      "body_sha256": "82f94f935cfb8c13a83dea908fc340210211a56703c14e2341b94be2f32819c9",
+      "visible_sha256": "f179f6fafc2111662ceb221759b68cb90a7c49a88befccc9d80a43e3d5b6df05",
       "heading_count": 7,
       "list_items": 12,
       "tables": 2,
@@ -27,8 +27,8 @@
     },
     "ar": {
       "title": "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟",
-      "body_sha256": "9ed0b544decb7633c46462fa3b1ef7f5e6dd8fe4ba3bd76cae05ace1627ce036",
-      "visible_sha256": "69e01be363fc26de42b3b0ef72d0e5426e4ad675ca2eb01bba63c27746e5e53a",
+      "body_sha256": "59dd8f953f32e41c7ade7d7bbff4f4b68b2140bc6555503d1524d977a3101bbe",
+      "visible_sha256": "814936ffaa034537d262a5ec1e79ca77711696cbbdf9ea9700e871c4a31fb03a",
       "heading_count": 7,
       "list_items": 12,
       "tables": 2,
@@ -48,17 +48,18 @@
         "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23227"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-hiring-costs-uae",
     "en": {
       "title": "What is the total cost of hiring a domestic worker in Ajman?",
-      "body_sha256": "a190b74abcd4878e9073cfad0e5d060aec4070e29c3950bcbbd441d47b440006",
-      "visible_sha256": "17816bd7092ad70cc421c3cda3f54eb43f7b32b8eceab6ccbbac2ab5d007ac54",
+      "body_sha256": "5b762f77f562ce1694ac6a3412db9fd0886116a261e1d462618e5c66f83cfac7",
+      "visible_sha256": "71e925eee2fdf9226969956ae399a641b5bbc2ef530dc982efd7b94eade45d56",
       "heading_count": 10,
       "list_items": 22,
-      "tables": 1,
+      "tables": 2,
       "links": [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21141",
@@ -80,11 +81,11 @@
     },
     "ar": {
       "title": "ما التكلفة الإجمالية لتوظيف عامل مساعد في عجمان؟",
-      "body_sha256": "871567a751da27519ba6256db95f1b44a4f151702abb3ae68eec3925ac025c31",
-      "visible_sha256": "647860b6c571f6663914a567c4477b5f367a09bc0589c385a18634dd16f237f1",
+      "body_sha256": "99c247318bcdd505e7ff8467e9c552f3e0c1a9c89df77a5dd7d53caf7b496c0b",
+      "visible_sha256": "49599752e1bb11972823e6b74afddf6c6cfa0c4f54483872767d4f0269cc5c1a",
       "heading_count": 10,
       "list_items": 22,
-      "tables": 1,
+      "tables": 2,
       "links": [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21141",
@@ -103,17 +104,18 @@
         "https://www.mohre.gov.ae/assets/download/ae31d28a/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20504%20%D9%84%D8%B3%D9%86%D8%A9%202026%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D9%84%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86%20%D9%81%D9%8A%20%D9%85%D9%86%D8%B4%D8%A2%D8%AA%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.pdf.aspx#page=1",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23230"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-employment-arrangements-uae",
     "en": {
       "title": "Live-in, live-out or temporary domestic help: which arrangement fits your household?",
-      "body_sha256": "e22bf4c2c88df30660921f5955e4c4a9384beeb9bcdc3818c0b9f01e954bca45",
-      "visible_sha256": "438dcd4c8ec331b930ab99d5d0a66e078903fad0bf464ecf9614afae5e24f487",
+      "body_sha256": "3b8490da31e1ed251d0e4224ee901e2564c4438ac061dc03ec6e6e9bd6fcfcd1",
+      "visible_sha256": "4078323fde462f0cacbf197b6c7ab01214f2aab4d5b676817d3ab150342fe7f0",
       "heading_count": 7,
       "list_items": 11,
-      "tables": 1,
+      "tables": 2,
       "links": [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21135",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21148",
@@ -135,11 +137,11 @@
     },
     "ar": {
       "title": "عمالة مقيمة أم غير مقيمة أم مؤقتة: أي ترتيب يناسب أسرتك؟",
-      "body_sha256": "66a99f3e6b435162abb6f706a352b329323230266dacfdaa84104498b22f086e",
-      "visible_sha256": "fc64a7b57f84d93e4765865cc849939e91f352cb4c399eebde81e3270ca17f30",
+      "body_sha256": "c5d8e25e8c9620223f45c65aed5712147d04deaec8eccf1526a82b2c1d39d846",
+      "visible_sha256": "69e7f2894212c8fe7b037d03d1470c1e76c26a852b117bd0a0f7e8a3479a7c67",
       "heading_count": 7,
       "list_items": 11,
-      "tables": 1,
+      "tables": 2,
       "links": [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21148",
@@ -158,14 +160,15 @@
         "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=9",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23235"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "all-inclusive-domestic-worker-packages",
     "en": {
       "title": "What should an all-inclusive domestic-worker package include in writing?",
-      "body_sha256": "474e21b75e34e54d91e51ca3e7466a1e43302f2008efc45f43e61da9cb9621ed",
-      "visible_sha256": "3b104aa0f67575f7f3a0e2381e910dd1e58e5f5777f6843f3bb75be51abd5f32",
+      "body_sha256": "a490515d40a6336a098c62632887f52519026e37ab9ea91e3e199c8a697ef3a8",
+      "visible_sha256": "2baedad5fcf864dc07a44e0acb3b9692f64e7e823e0666956aa50730f8544e88",
       "heading_count": 11,
       "list_items": 25,
       "tables": 2,
@@ -189,8 +192,8 @@
     },
     "ar": {
       "title": "ما الذي ينبغي توضيحه كتابةً في باقة عمالة مساعدة شاملة؟",
-      "body_sha256": "dafc50ee1fb0af1f136be462eb9a53fbf187b15e323b41f0825bfae7fb852a14",
-      "visible_sha256": "328f57dace019ff200dc15a48ca29ed494a0db302ae0999a1da5d70fe01d1f0f",
+      "body_sha256": "3c656f3d3fded949e66f3cb27d3b145a5395579673d41c889dea2531278892e5",
+      "visible_sha256": "75ec6096a47c772cfe411208867de6e8f5998d294de1a9bd52209e84060d5d7f",
       "heading_count": 11,
       "list_items": 25,
       "tables": 2,
@@ -211,14 +214,15 @@
         "https://www.mohre.gov.ae/assets/download/ae31d28a/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20504%20%D9%84%D8%B3%D9%86%D8%A9%202026%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D9%84%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86%20%D9%81%D9%8A%20%D9%85%D9%86%D8%B4%D8%A2%D8%AA%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.pdf.aspx#page=1",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23230"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-sponsorship-responsibilities",
     "en": {
       "title": "Who is responsible for a domestic worker's sponsorship and employment?",
-      "body_sha256": "4f55df2317dee6a2b4982d0aa31debb7946090f99983833514d28dc528581339",
-      "visible_sha256": "a488fbae3ebbe4aaf3be5427318a72ce0767b1d775902d1743815083461deb82",
+      "body_sha256": "6c5f1147fe3a2134bd828dd95356ba5906ddb44c0b2f385c462cc031cba98d62",
+      "visible_sha256": "0476be0c366a1ef1914b8b88d9a2d9a9931b58442ddf51a9c7e795beb3aa5821",
       "heading_count": 7,
       "list_items": 7,
       "tables": 1,
@@ -246,8 +250,8 @@
     },
     "ar": {
       "title": "من المسؤول عن كفالة العامل المساعد وتوظيفه؟",
-      "body_sha256": "35b5f1c4e225f75bc3d6f5fb9fd1660d2d231f0c48947bc1b9f0d8cda0aa1b0e",
-      "visible_sha256": "8ce44df51fdd4b3ab418e720b5325379f9732ccd955d7abd60d580f789023c1c",
+      "body_sha256": "9728afe38fc91945fd5c694207bcc32e175d46c46bd041a0cf6bd2ec24a3c3c5",
+      "visible_sha256": "6828852e2f6dbf6b7b3619d87eb7b152739ec11f2b5bacb3cad5161d840d7585",
       "heading_count": 7,
       "list_items": 7,
       "tables": 1,
@@ -272,7 +276,8 @@
         "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://www.mohre.gov.ae/assets/download/ae31d28a/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20504%20%D9%84%D8%B3%D9%86%D8%A9%202026%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D9%84%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86%20%D9%81%D9%8A%20%D9%85%D9%86%D8%B4%D8%A2%D8%AA%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.pdf.aspx#page=1"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-employer-eligibility-documents",
@@ -339,14 +344,15 @@
         "https://www.mohre.gov.ae/assets/download/ae31d28a/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20504%20%D9%84%D8%B3%D9%86%D8%A9%202026%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D9%84%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86%20%D9%81%D9%8A%20%D9%85%D9%86%D8%B4%D8%A2%D8%AA%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.pdf.aspx#page=1",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135"
       ]
-    }
+    },
+    "updated": "2026-10-12"
   },
   {
     "slug": "domestic-worker-hiring-stages-timelines",
     "en": {
       "title": "What happens during domestic-worker hiring, and how long does it take?",
-      "body_sha256": "6db92313a1fe61ba83179352b73516834ab11b53b99952badbee7d2424b952cd",
-      "visible_sha256": "4a4b35f8bfe5c2b6675b26507826442617eb5e2b27431b38743d86ec43322ae0",
+      "body_sha256": "10762e69a42f93ca5a6c15ed0a97be901b22d298c4b120c326d5d2c024d11cfa",
+      "visible_sha256": "ad7811f7410fc10f52f5ccb411a6c7a3275c10193aca281dd014490211384fbd",
       "heading_count": 11,
       "list_items": 21,
       "tables": 1,
@@ -378,8 +384,8 @@
     },
     "ar": {
       "title": "ما مراحل توظيف العامل المساعد، وكم تستغرق؟",
-      "body_sha256": "987721e401a835b6e530f50dfbb808817e47835ebaa00796ecf2a7b345512e87",
-      "visible_sha256": "86bc52d8ead8378e7dae11f26fcd49e6287d85b4196c7f42bca4052ff1c7f0f8",
+      "body_sha256": "ca046aff1996bef2310b875c3f2920f1084e15f64736df970670f6be2cc37b73",
+      "visible_sha256": "9590a244f62e4ca08a329f75aa05bee0ba1a9f98b14f63f96054d84bb7e91d21",
       "heading_count": 11,
       "list_items": 21,
       "tables": 1,
@@ -408,14 +414,15 @@
         "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-skills-language-assessment",
     "en": {
       "title": "How to select a domestic worker's skills and language for your household",
-      "body_sha256": "102b13e20d94f1159971fe30615f4fb9a1bd28751071b702b14d20b7799ada69",
-      "visible_sha256": "444a5a94079b5cb55dd97011b12c33659c96e6e3175a7f19ef20b181d7edbd0d",
+      "body_sha256": "5d6d075b52f8dabf52af9440489f0a973ce0e1606c7092f256d3ee2cb0422162",
+      "visible_sha256": "c91052fbbaf71e8e349cb2b82551e2a15e5e7ecb7d36b0045ccabd93acac4fdd",
       "heading_count": 7,
       "list_items": 5,
       "tables": 1,
@@ -439,8 +446,8 @@
     },
     "ar": {
       "title": "كيف تختار مهارات العامل المساعد ولغته بما يناسب أسرتك؟",
-      "body_sha256": "29c69ef54492feeed8de9d691345815401a6e55be40f3de4d7a211497748f2bf",
-      "visible_sha256": "278d0e752e0d0a80428913708f86df869a2ff888450a962f0a052cd44a60961c",
+      "body_sha256": "ba99b46084e674439513d9b84f96394ccdf9a23d9877ee83888a716f7e6efc94",
+      "visible_sha256": "c12edba5ec4eb332e4c4729917f7360ac44b4c4e06e4e5a76155f947e0678295",
       "heading_count": 7,
       "list_items": 5,
       "tables": 1,
@@ -461,14 +468,15 @@
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23228"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "choosing-nanny-newborn-support",
     "en": {
       "title": "How to assess a nanny for a baby or newborn",
-      "body_sha256": "0d0b927eeef97eeb3aebda86bc8a4d0eae2aa8ec1107d69d26d3d54eab692a66",
-      "visible_sha256": "14a0a234380ad97644a0fdc269419aecfaf820a28f769f60c826d1e27c3887d3",
+      "body_sha256": "4943acbfbdb61f5729c853139c9934086eb09cd9324d94eae6b863378ea19e0d",
+      "visible_sha256": "e106e16fd596ea44bcaad8b655dadb015f7276c600f305841425cdc947c1c38e",
       "heading_count": 8,
       "list_items": 12,
       "tables": 1,
@@ -494,8 +502,8 @@
     },
     "ar": {
       "title": "كيف تقيّم ملاءمة مربية لرعاية رضيع أو مولود جديد؟",
-      "body_sha256": "044e80b9acb09cd81ef9fc0dffd0862aec4cd64fa8076f13c738ae01fecfa94f",
-      "visible_sha256": "9ad2ea5a31d71d899a6a7bfb9f767e69f0898d7d27cb007395bceabe37dcc253",
+      "body_sha256": "d6990774c9bc7581d2c86ec090d6f8166782762e80515b54b08fc50850fc12fc",
+      "visible_sha256": "1038643f8e1fd188ae5c78469dcbe0802613afb46c44a512713a60fb87750635",
       "heading_count": 8,
       "list_items": 12,
       "tables": 1,
@@ -518,14 +526,15 @@
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
         "https://mohap.gov.ae/documents/20117/1212145/26_License%2Bfor%2BNursing%2Band%2BMedical%2BProfessionals.pdf/996f30e8-c687-871f-014c-079f5567892e?t=1739154916843#page=1"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "caregiver-versus-licensed-nurse",
     "en": {
       "title": "Caregiver or licensed nurse: which kind of home support do you need?",
-      "body_sha256": "ef3d97b09589bfda21bc26f58da79c2b4a9710ce31bf1875ab0bb69e12b791e5",
-      "visible_sha256": "5d4589b9f4245574e0e324a5e6d991964f1d4e62e08fb238b23c80d2eddaaae4",
+      "body_sha256": "79329fac0fd8987dfa064028452482e4f50358a6882958ed27da98c255597dcb",
+      "visible_sha256": "69dc362bd1c79f56da40a096150cac5c0987a7c611276e9f39ae50ceaa8bf992",
       "heading_count": 7,
       "list_items": 7,
       "tables": 1,
@@ -553,8 +562,8 @@
     },
     "ar": {
       "title": "مقدم رعاية أم ممرض مرخص: ما نوع الدعم المنزلي الذي تحتاجه؟",
-      "body_sha256": "93dbcb04f5e91c6babffaf5e377e425fc7c6419f695cd0f627a2115e31af5f1d",
-      "visible_sha256": "7507b5d9f21c594e20db3058b4521d973f098970b530a8485e017aaf56902a3f",
+      "body_sha256": "0afea8ac82e84b8d5ca730268597655f169b175e6b9d63e4db917609b52b75a5",
+      "visible_sha256": "3e929a95a5ef630b047f47b2fdc3300077a7459bff3efb0e136adb290252cd74",
       "heading_count": 7,
       "list_items": 7,
       "tables": 1,
@@ -579,14 +588,15 @@
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
         "https://www.mohre.gov.ae/assets/download/d85c5019/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20675%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%B3%D8%AF%D8%A7%D8%AF%20%D8%A3%D8%AC%D9%88%D8%B1%20%D8%A8%D8%B9%D8%B6%20%D9%85%D9%87%D9%86%20%D8%B9%D9%85%D8%A7%D9%84%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D8%B9%D8%A8%D8%B1%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%AD%D9%85%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A3%D8%AC%D9%88%D8%B1_638944177858469656.pdf.aspx#page=2"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "agreeing-domestic-worker-household-duties",
     "en": {
       "title": "Can one domestic worker handle cleaning, cooking and childcare?",
-      "body_sha256": "55b4882cfe98d480aa9b2073c86a0f07df88931fbc3c074ecc30db88578f92c8",
-      "visible_sha256": "80d2e3b44595ed9b1c1d1c2f27b93aaa706519116a6017a05570d551a18ed9bf",
+      "body_sha256": "1ff025cdc12e4c0beaf387f6383f8ad5e7730711808e3834f5276e82318fad79",
+      "visible_sha256": "07674b7b0b4ba929f68eac36b17371089625b4ba16160f663b33b6029a01338d",
       "heading_count": 8,
       "list_items": 7,
       "tables": 1,
@@ -615,8 +625,8 @@
     },
     "ar": {
       "title": "هل يستطيع عامل مساعد واحد الجمع بين التنظيف والطهي ورعاية الأطفال؟",
-      "body_sha256": "9cee9597c1a0563f4e8162771a298833a5d97686f52fba8f195358414c3c6c65",
-      "visible_sha256": "88d4fd57ae9430e35f29fbc42c5d6aeb1ed8fea2b1514ddd4c022df0661d1bcd",
+      "body_sha256": "fd97d6a1774f82528db08c99817dff24a7acb4d90deef158773cfff86bd213be",
+      "visible_sha256": "bb8e437f8fca5e7a8cc9a222cbe5f36fd42538e04a2a7352323ea6649fe77f84",
       "heading_count": 8,
       "list_items": 7,
       "tables": 1,
@@ -642,14 +652,15 @@
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23236",
         "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-verification-checks",
     "en": {
       "title": "What should “verified domestic worker” mean?",
-      "body_sha256": "eb6b55cbd1dc2b60884578244967529d2b7b1095c9837298a4594f6d94c0f408",
-      "visible_sha256": "4a4669f6e32d7079e7fb79dde4930d9436f854e100bffcc3190fcb7c3bdcbfd8",
+      "body_sha256": "9d4742779ab919f09c7a18b204cee060f39480c0cf5926f01e267408b5483bf0",
+      "visible_sha256": "65d1bc9580ed2ad1f1acfe6db0fbf6ce031e7dea64dfbb3a2f1f325f9d9eda89",
       "heading_count": 8,
       "list_items": 6,
       "tables": 1,
@@ -674,8 +685,8 @@
     },
     "ar": {
       "title": "ماذا ينبغي أن تعني عبارة «عامل مساعد تم التحقق منه»؟",
-      "body_sha256": "0b3c78f5d282dc3e6f783b1d7360c22c3b1cbe63861b29bbb33cb6855f5bc880",
-      "visible_sha256": "9f471558dd5f59ad00d61b05915ed95332ea4e6b08dec2f0dd672e0c096d5cf0",
+      "body_sha256": "c1f6fb63c65e597b80f5dc06dc1721b4112c42cc32aad89bd55898152da9c8a0",
+      "visible_sha256": "ccf03fa3cbe6e89d3e8a135bbfca0eb6f06b9e49c21b6bcebf878f75886ce23c",
       "heading_count": 8,
       "list_items": 6,
       "tables": 1,
@@ -697,14 +708,15 @@
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21139",
         "https://mohap.gov.ae/documents/20117/1212145/26_License%2Bfor%2BNursing%2Band%2BMedical%2BProfessionals.pdf/996f30e8-c687-871f-014c-079f5567892e?t=1739154916843#page=1"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-interview-trial-probation",
     "en": {
       "title": "Interview, trial and probation: what is the difference when hiring a domestic worker?",
-      "body_sha256": "5d6585833b3ae7d71e61b128cc05d76f3c191d53d26dbfb1c070fa953f0cc75e",
-      "visible_sha256": "181b2ea9751bfed4a4ffda01dc4224bc89bbc20ab1f13767f6de2ef609b0c523",
+      "body_sha256": "761788590c7961a2ff7e1b5f1b4fdf0099188e38ef08f08cf261233300f362d1",
+      "visible_sha256": "8e74157b58cfdeaea01db7688ba216d887531ce225997bccc834203410babac9",
       "heading_count": 7,
       "list_items": 5,
       "tables": 1,
@@ -732,8 +744,8 @@
     },
     "ar": {
       "title": "المقابلة والتجربة التجارية وفترة التجربة القانونية: ما الفرق عند توظيف عامل مساعد؟",
-      "body_sha256": "33067b6689732b3c5de35e131079ee6d3f1ee1fb1e9a34e0f742e886c95b50cc",
-      "visible_sha256": "11c4f7ed413b504a295ac188cc70ecd8246ab6d41d26807949ebfc765d029dad",
+      "body_sha256": "c9a9c1d9086129e6a2b8a16fdfde4ebcd6f428a86fd60a08cb8453827a6c990f",
+      "visible_sha256": "5d84b8cb766532ffe7cb611d59dac96ec4cf77d305b8f26c023a1239bae9fe66",
       "heading_count": 7,
       "list_items": 5,
       "tables": 1,
@@ -758,14 +770,15 @@
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21142",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23230"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-replacement-eligibility",
     "en": {
       "title": "When can you request a replacement domestic worker?",
-      "body_sha256": "94e5bc7a6114391bae881013cbd79c9cb3ac70033ba280e762090ae19d8555ed",
-      "visible_sha256": "63379ddf1378182c9985c39f4a8bb3224475466d0fe007828604bf79494ec1b9",
+      "body_sha256": "841d6d9c0c66e1106e55704b1aeb8a471b03affc0e1bbc2481e13ddd0bd807a9",
+      "visible_sha256": "07552221b380ef835ccebf3f0bf7e1e722f24895886b40661a855d23baa01ade",
       "heading_count": 8,
       "list_items": 17,
       "tables": 1,
@@ -790,8 +803,8 @@
     },
     "ar": {
       "title": "متى يمكنك طلب استبدال العامل المساعد؟",
-      "body_sha256": "1c5d840a57375beb34eff186768c1810972f06c5b43850ca4a943b17e352e806",
-      "visible_sha256": "9bb6c54a4c0953c28fc4c4fb6f4093e723fea1fac7c82cd7b9b51f7b1d9dd281",
+      "body_sha256": "e7214141cf114987ac5412d163154e95825b0b03dd86d1a824d8908e1e4faf0e",
+      "visible_sha256": "607590b929ca08d383e699b18719d72fe7401f314575bc2ce4c69f8a0057b761",
       "heading_count": 8,
       "list_items": 17,
       "tables": 1,
@@ -813,7 +826,8 @@
         "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=9",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23230"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-recruitment-refund-rules",
@@ -873,14 +887,15 @@
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
         "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11"
       ]
-    }
+    },
+    "updated": "2026-10-12"
   },
   {
     "slug": "domestic-worker-contracts-renewal",
     "en": {
       "title": "Which domestic-worker contracts should you read, and how does renewal work?",
-      "body_sha256": "549d5ffcb8d8273a77b9b07ae4ec9b5b82bc9223e395e2dbcad5cbc5ecd15dcc",
-      "visible_sha256": "01551c0b899c33ab599c144daafef4524d17700dfddd91fa0f8dbe491b6adc78",
+      "body_sha256": "349e56974711e2beceff4b9a564d2f8ea666aaa5f19c45c6dae9e329fefb0c85",
+      "visible_sha256": "8e939c88185d698d580634a165978feca14821a07154412fde049653def23b7f",
       "heading_count": 7,
       "list_items": 7,
       "tables": 1,
@@ -913,8 +928,8 @@
     },
     "ar": {
       "title": "ما عقود العمالة المساعدة التي يجب قراءتها، وكيف يجري التجديد؟",
-      "body_sha256": "3ec04b83085793638aacbf029476ccfdc8013b3fe58556bf00db1ece0376a1f3",
-      "visible_sha256": "92fc7f4fe6ed96b53ad16092415df7b233daff0543107fc81e92db59a013c860",
+      "body_sha256": "9630b445ae2a192e4f2dfa0931451e95f292166d809e72faa1ab318d0d2d8507",
+      "visible_sha256": "97cab9b856df747c464d6ee4fb1fbefee3baa05cfe0bb4679e6e111125b05e12",
       "heading_count": 7,
       "list_items": 7,
       "tables": 1,
@@ -944,7 +959,8 @@
         "https://mohre.gov.ae/en/services/renewal-of-a-domestic-workers-employment-contract-2022",
         "https://www.mohre.gov.ae/assets/download/ae31d28a/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20504%20%D9%84%D8%B3%D9%86%D8%A9%202026%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D9%84%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86%20%D9%81%D9%8A%20%D9%85%D9%86%D8%B4%D8%A2%D8%AA%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.pdf.aspx#page=1"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-wages-rest-leave",
@@ -1012,14 +1028,15 @@
         "https://www.mohre.gov.ae/assets/download/d85c5019/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20675%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%B3%D8%AF%D8%A7%D8%AF%20%D8%A3%D8%AC%D9%88%D8%B1%20%D8%A8%D8%B9%D8%B6%20%D9%85%D9%87%D9%86%20%D8%B9%D9%85%D8%A7%D9%84%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D8%B9%D8%A8%D8%B1%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%AD%D9%85%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A3%D8%AC%D9%88%D8%B1_638944177858469656.pdf.aspx#page=2",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23231"
       ]
-    }
+    },
+    "updated": "2026-10-12"
   },
   {
     "slug": "own-visa-part-time-domestic-work",
     "en": {
       "title": "Can you hire a domestic worker who has their own visa or works part-time?",
-      "body_sha256": "23f02a5f442eda144bf915bec33be7ae63e9ac2e2032e3138d5d6faaecb35322",
-      "visible_sha256": "3e81b29eb1052da64384b62a9abee632cad1a3690cb716a1a31762ddf078ff3e",
+      "body_sha256": "ba6c3cc33dae567db7797d2871d4b9bf8291eb4b588dfc67408b25b71c52c54a",
+      "visible_sha256": "d862b1343e3e0fc540183e6a6ec573ce8ced8184c72f5a06a70da5b169160bc3",
       "heading_count": 8,
       "list_items": 12,
       "tables": 1,
@@ -1048,8 +1065,8 @@
     },
     "ar": {
       "title": "هل يمكنك توظيف عامل مساعد لديه إقامة خاصة أو يعمل بدوام جزئي؟",
-      "body_sha256": "a623db5dddde51d793af19b26b2f1610f585d70fb5ec2104a5b53cc68ab024c6",
-      "visible_sha256": "a452ca1f23b4d97a5f3ca192602a99f48fa8e424e4c38b7b6a45c7dea114f9ae",
+      "body_sha256": "ca584b54a513492ed2526ff9bd06c61c7d5e276e8d1252da475249f39feb7962",
+      "visible_sha256": "ef7330ccd34e37f388a6287e82f264df9fc5d2e67be62d3fcf0b0244737f0db3",
       "heading_count": 8,
       "list_items": 12,
       "tables": 1,
@@ -1075,7 +1092,8 @@
         "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   },
   {
     "slug": "domestic-worker-leave-travel-planning",
@@ -1130,14 +1148,15 @@
         "https://inayadomestic.ae/ar/contact/",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21144"
       ]
-    }
+    },
+    "updated": "2026-10-12"
   },
   {
     "slug": "domestic-worker-complaints-disputes",
     "en": {
       "title": "How do domestic-worker complaints and recruitment-agency disputes proceed?",
-      "body_sha256": "ce34b9e0b022008080dbf20f42a652112dad4edb8feab54f70e953a864ef11a3",
-      "visible_sha256": "3cc12588516416fb2545bc79ca0de8b5423e1dcb0390b97dfbe7149188632cb7",
+      "body_sha256": "4a419fd37793a5a73a91a520bf4c83276c73c54e1d045a51b6968446158793ef",
+      "visible_sha256": "3e5b515cf0d5a3e94cccd4df873d2c71bcd18bc25785ff24ee4d56263da480f9",
       "heading_count": 8,
       "list_items": 8,
       "tables": 1,
@@ -1169,8 +1188,8 @@
     },
     "ar": {
       "title": "كيف تسير شكاوى العمالة المساعدة ومنازعات مكاتب الاستقدام؟",
-      "body_sha256": "0e54f752b7ac2c4e6271f1ebb6160a5f75cd528f7e581114210df82d68a2fc35",
-      "visible_sha256": "0f09386010981b255c03102bcfdcb30fba9178ef3abcd89baab2ece93a64e2b0",
+      "body_sha256": "2f10e1ddf7d9ff6098005f657f59990558ae74b5261a5a3e994e2dbd9163d48f",
+      "visible_sha256": "c19aa20c44c77890c941c18d4673cb0207275b7bbdb343e684de322dee12d089",
       "heading_count": 8,
       "list_items": 8,
       "tables": 1,
@@ -1199,6 +1218,7 @@
         "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23230"
       ]
-    }
+    },
+    "updated": "2026-10-19"
   }
 ]

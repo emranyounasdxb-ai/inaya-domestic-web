@@ -1,3 +1,4 @@
+import { packageSummary, packageArrangements } from './package-content';
 import type { LocationServicePage } from './location-service-pages';
 
 const notes = {
@@ -67,12 +68,22 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
   }[location.slug as keyof typeof notes];
   return {
     ...location,
-    serviceNotes: local.en.map(([slug, title, description], index) => ({ slug, title: { en: title, ar: local.ar[index][1] }, description: { en: description, ar: local.ar[index][2] } })),
+    serviceNotes: local.en.map(([slug, title, description], index) => ({
+      slug,
+      title: { en: title, ar: local.ar[index][1] },
+      description: {
+        en: description + (slug === 'part-time-maid' ? ' Published visit packages: 4 hours for AED 120 or 8 hours for AED 200.' : slug === 'monthly-maid-contract' ? ' The 30-day package is AED 3,500; a 6-month commitment is AED 3,250 per month and a 12-month commitment is AED 3,000 per month. Live-in and live-out use the same package prices.' : ''),
+        ar: local.ar[index][2] + (slug === 'part-time-maid' ? ' باقات الزيارة المنشورة: 4 ساعات مقابل 120 درهماً أو 8 ساعات مقابل 200 درهم.' : slug === 'monthly-maid-contract' ? ' باقة 30 يوماً مقابل 3,500 درهم؛ والالتزام لمدة 6 أشهر مقابل 3,250 درهماً شهرياً، ولمدة 12 شهراً مقابل 3,000 درهم شهرياً. تنطبق أسعار الباقات نفسها على الخدمة المقيمة وغير المقيمة.' : '')
+      }
+    })),
     popularServices: [...location.popularServices, { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } }, { slug: 'monthly-maid-contract', title: { en: 'Monthly maid contract enquiries', ar: 'طلبات عقد خادمة شهري' } }],
     faqs: [...location.faqs.map((faq) => location.slug !== 'maid-services-ajman' && /visa/i.test(faq.question.en) ? { ...faq, answer: {
       en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.',
       ar: 'تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة.'
     } } : faq), {
+      question: { en: 'What package prices apply, and are live-in and live-out priced differently?', ar: 'ما أسعار الباقات وهل تختلف بين الخدمة المقيمة وغير المقيمة؟' },
+      answer: { en: packageSummary.en + ' ' + packageArrangements.en, ar: packageSummary.ar + ' ' + packageArrangements.ar }
+    }, {
       question: { en: 'Where is the office, and does coverage confirm availability?', ar: 'أين المكتب وهل التغطية تؤكد التوفر؟' },
       answer: { en: `${visitContext.en} INAYA’s office is at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Dubai and Sharjah are service enquiry areas, not additional office locations. Share the exact address and schedule so the team can confirm current options; contact the office before visiting.`, ar: `${visitContext.ar} مكتب عناية في جراند مول، الطابق الأرضي، الراشدية 3، عجمان. دبي والشارقة منطقتان لاستفسارات الخدمة وليستا موقعين لمكاتب إضافية. شارك العنوان والجدول لتأكيد الخيارات الحالية، وتواصل مع المكتب قبل الزيارة.` }
     }, {

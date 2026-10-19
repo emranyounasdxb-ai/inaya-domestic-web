@@ -3,15 +3,17 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import test from 'node:test';
+import { attrs, text } from '../scripts/seo-content-audit.mjs';
+import contract from './poster-pricing-contract.cjs';
 
-test('customer guidance has complete localized cost and statutory refund tables without policy placeholders', async () => {
+test('customer guidance shows six approved packages, explicit billing units and unchanged statutory refund protections', async () => {
   const require = createRequire(import.meta.url);
   const approved = JSON.parse(await readFile('tests/fixtures/managed-package-copy.json', 'utf8'));
   const actual = require('../.next/phase-02-unit/lib/package-content.js');
   assert.deepEqual(actual.managedPackages, approved.packages);
   assert.deepEqual(actual.packageSections, approved.sections);
-  assert.deepEqual(actual.managedPackages.map(pkg => pkg.monthlyFrom), [2500, 3000, null]);
-  assert.deepEqual(actual.managedPackages.map(pkg => pkg.features.en.length), [7, 8, 10]);
+  assert.deepEqual(actual.managedPackages.map(pkg => pkg.amount), [120, 200, 1120, 3500, 3250, 3000]);
+  assert.deepEqual(actual.managedPackages.map(pkg => pkg.billingUnit), ['package', 'package', 'package', 'package', 'month', 'month']);
   for (const locale of ['en', 'ar']) {
     const visibleMain = async route => {
       const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
@@ -20,14 +22,33 @@ test('customer guidance has complete localized cost and statutory refund tables 
     const pricing = await visibleMain('pricing');
     const costs = pricing.match(/<section\b[^>]*data-content="payment-responsibilities"[\s\S]*?<\/section>/)?.[0];
     assert.ok(costs, `${locale}: cost distinctions visible`);
-    assert.equal((costs.match(/<th\b[^>]*scope="row"/g) ?? []).length, 11);
-    for (const amount of ['2,500', '3,000']) assert.ok(pricing.includes(amount), `${locale}: approved monthly price ${amount}`);
-    assert.doesNotMatch(pricing, /1,500/);
-    assert.match(pricing, locale === 'en' ? /all-inclusive/ : /شامل/);
-    assert.match(pricing, locale === 'en' ? /customer does not pay that salary separately/ : /لا يدفع العميل الراتب نفسه منفصلاً/);
+    assert.equal((costs.match(/<dt\b/g) ?? []).length, 5, 'all practical responsibility distinctions remain visible');
+    const cards = [...pricing.matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/g)].filter(match => attrs(match[1])['data-package']);
+    assert.deepEqual(cards.map(match => attrs(match[1])['data-package']), contract.expectedPlans.map(plan => plan.id));
+    for (const [index, card] of cards.entries()) {
+      const plan = contract.expectedPlans[index];
+      assert.equal(text(card[2].match(/<p\b[^>]*data-price="amount"[^>]*>([\s\S]*?)<\/p>/)[1]), plan.price[locale]);
+      assert.equal(text(card[2].match(/<p\b[^>]*data-price="period"[^>]*>([\s\S]*?)<\/p>/)[1]), plan.period[locale]);
+      assert.ok(card[2].includes(`href="/${locale}/booking/"`));
+    }
+    assert.doesNotMatch(pricing, /1,500|2,500|\bEssential\b|\bSignature\b|INAYA Black/);
+    assert.match(text(pricing), locale === 'en' ? /monthly prices with a 6- or 12-month commitment, not totals for the full term/ : /سعران شهريان مع الالتزام لمدة 6 أو 12 شهراً، وليسا إجمالي المدة/);
+    assert.match(text(pricing), locale === 'en' ? /Same price for live-in and live-out/ : /السعر نفسه للخدمة المقيمة وغير المقيمة/);
+    for (const benefit of locale === 'en' ? ['Worker’s salary', 'Government fees', 'Medical insurance', 'Return ticket', 'End-of-service benefits'] : ['راتب العاملة', 'الرسوم الحكومية', 'التأمين الطبي', 'تذكرة العودة', 'مكافأة نهاية الخدمة']) assert.ok(text(pricing).includes(benefit));
+    assert.match(text(pricing), locale === 'en' ? /not automatic benefits of every half-day, daily or weekly visit/ : /ولا تعد مزايا تلقائية لكل زيارة بنصف يوم أو يومية أو أسبوعية/);
     assert.match(pricing, locale === 'en' ? /first month is prepaid|first service month is paid in advance/ : /يسدد الشهر الأول مقدماً/);
     assert.match(pricing, locale === 'en' ? /no separate upfront recruitment\/setup fee and no security deposit/ : /لا توجد رسوم استقدام أو تجهيز منفصلة مقدماً، ولا تأمين نقدي/);
-    assert.match(pricing, locale === 'en' ? /live-out.*?separate itemised quotation.*?part-time visits.*?separately/ : /غير المقيمة.*?عرضاً منفصلاً.*?الزيارات المجدولة.*?عرض مستقل/);
+    assert.match(text(costs), locale === 'en' ? /accommodation, meals, transport, cleaning products and equipment responsibilities/ : /مسؤوليات السكن والطعام والنقل ومواد التنظيف والمعدات/);
+    const details = [...pricing.matchAll(/<details\b[^>]*>([\s\S]*?)<\/details>/g)].map(match => ({
+      question: text(match[1].match(/<summary\b[^>]*>([\s\S]*?)<\/summary>/)[1]).replace(/\s*\+$/, ''),
+      answer: text(match[1].match(/<p\b[^>]*>([\s\S]*?)<\/p>/)[1])
+    }));
+    const fullPricing = await readFile(`out/${locale}/pricing/index.html`, 'utf8');
+    const graphs = [...fullPricing.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(match => JSON.parse(match[1])['@graph'] ?? []);
+    const pricingFaq = graphs.filter(node => node['@type'] === 'FAQPage');
+    assert.equal(pricingFaq.length, 1);
+    assert.deepEqual(pricingFaq[0].mainEntity.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), details, 'pricing FAQ/schema exactly match visible ten questions');
+    assert.equal(details.length, 10);
     const refund = await visibleMain('refund-policy');
     const rules = refund.match(/<section\b[^>]*data-content="refund-scenarios"[\s\S]*?<\/section>/)?.[0];
     assert.ok(rules, `${locale}: official recruitment rules visible`);

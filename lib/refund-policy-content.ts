@@ -1,13 +1,15 @@
+import { packageSections } from './package-content';
+
 export const refundPolicyCopy = {
   "en": {
     "badge": "Refund & Replacement Policy",
     "title": "Refund & Replacement Policy for INAYA Services",
     "lead": "Before service commencement, INAYA returns the unused monthly service payment. After commencement, the unused prepaid service period following effective cancellation is refunded on a clear pro-rata basis. The calculation identifies the prepaid amount, service period, effective cancellation date and unused period.",
-    "updated": "Updated 12 October 2026",
+    "updated": "Updated 19 October 2026",
     "highlights": [
   "Unused pre-service payment returned",
   "Unused prepaid period refunded pro rata",
-  "Eligible replacement administration in every tier",
+  "Eligible replacement administration under the agreed plan",
   "Statutory recruitment remedies kept separate"
 ],
     "sections": [
@@ -24,8 +26,8 @@ export const refundPolicyCopy = {
     ]
   ],
   [
-    "Eligible replacement support in every tier",
-    "Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination.",
+    "Eligible replacement support under the agreed plan",
+    packageSections.replacement.body.en,
     [
       "Share the agreement, agreed duties, relevant dates and a clear description of the concern.",
       "INAYA explains the eligibility review, available matching options and next steps.",
@@ -58,7 +60,7 @@ export const refundPolicyCopy = {
   ],
   [
     "Follow-up schedules and human support hours",
-    "Essential includes a first-week follow-up followed by monthly follow-up. Signature includes a first-week follow-up followed by fortnightly follow-up. INAYA Black follows the agreed review schedule with personalised coordination and private team follow-up.",
+    packageSections.followUp.body.en,
     [
       "Human support hours: Saturday–Thursday, 9 AM–9 PM; Friday closed.",
       "WhatsApp messages may be received outside office hours; this is not a 24/7 human helpline or a guaranteed response time.",
@@ -116,7 +118,7 @@ export const refundPolicyCopy = {
   ],
   [
     "What replacement support is included?",
-    "Every tier includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Essential provides standard matching coordination, Signature priority matching coordination, and INAYA Black role-specific coordination."
+    packageSections.replacement.body.en
   ],
   [
     "What if a suitable replacement is unavailable?",
@@ -146,11 +148,11 @@ export const refundPolicyCopy = {
     "badge": "سياسة الاسترداد والاستبدال",
     "title": "سياسة الاسترداد والاستبدال لخدمات عناية",
     "lead": "قبل بدء الخدمة، تعيد عناية دفعة الخدمة الشهرية غير المستخدمة. وبعد البدء، ترد قيمة الفترة المدفوعة مقدماً وغير المستخدمة بعد سريان الإلغاء، على أساس تناسبي واضح. يبين الحساب المبلغ المدفوع وفترة الخدمة وتاريخ سريان الإلغاء والفترة غير المستخدمة.",
-    "updated": "آخر تحديث: 12 أكتوبر 2026",
+    "updated": "آخر تحديث: 19 أكتوبر 2026",
     "highlights": [
   "إعادة الدفعة غير المستخدمة قبل البدء",
   "رد الفترة المدفوعة غير المستخدمة بالتناسب",
-  "إدارة الاستبدال المؤهل في جميع الباقات",
+  "إدارة الاستبدال المؤهل وفق الخطة المتفق عليها",
   "فصل سبل الإنصاف القانونية للاستقدام"
 ],
     "sections": [
@@ -167,8 +169,8 @@ export const refundPolicyCopy = {
     ]
   ],
   [
-    "دعم الاستبدال المؤهل في جميع الباقات",
-    "تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور.",
+    "دعم الاستبدال المؤهل وفق الخطة المتفق عليها",
+    packageSections.replacement.body.ar,
     [
       "شارك الاتفاق والمهام المتفق عليها والتواريخ ذات الصلة ووصفاً واضحاً للملاحظة.",
       "توضح عناية مراجعة الأهلية وخيارات المطابقة المتاحة والخطوات التالية.",
@@ -201,7 +203,7 @@ export const refundPolicyCopy = {
   ],
   [
     "مواعيد المتابعة وساعات الدعم البشري",
-    "تشمل Essential متابعة في الأسبوع الأول ثم متابعة شهرية. وتشمل Signature متابعة في الأسبوع الأول ثم كل أسبوعين. وتلتزم INAYA Black بجدول المراجعة المتفق عليه مع تنسيق شخصي ومتابعة خاصة من الفريق.",
+    packageSections.followUp.body.ar,
     [
       "ساعات الدعم البشري: من السبت إلى الخميس، من 9 صباحاً إلى 9 مساءً؛ الجمعة مغلق.",
       "يمكن استقبال رسائل واتساب خارج ساعات المكتب؛ ولا يعني ذلك خطاً بشرياً يعمل على مدار الساعة أو وقت رد مضموناً.",
@@ -259,7 +261,7 @@ export const refundPolicyCopy = {
   ],
   [
     "ما دعم الاستبدال المشمول؟",
-    "تشمل جميع الباقات مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها. تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة. توفر Essential تنسيق المطابقة الاعتيادي، وSignature أولوية في تنسيق المطابقة، وINAYA Black تنسيقاً بحسب الدور."
+    packageSections.replacement.body.ar
   ],
   [
     "ماذا إن لم يتوفر بديل مناسب؟",

@@ -1,3 +1,4 @@
+import { packageSummary, packageArrangements } from './package-content';
 import { serviceContentBriefs } from './service-content-briefs';
 
 const relationships: Record<string, string[]> = {
@@ -46,9 +47,9 @@ export const informationNotes: Record<string, { en: string; ar: string }> = {
   faq: { en: 'Choose the question category that matches your enquiry. General answers explain the service conversation; for case-specific documents, prices or support concerns, follow the linked guide and review your own details with the team.', ar: 'اختر فئة الأسئلة المناسبة لطلبك. توضح الإجابات العامة موضوع الخدمة؛ وللمستندات أو الأسعار أو ملاحظات الدعم الخاصة بالحالة، تابع الدليل المرتبط وراجع تفاصيلك مع الفريق.' },
   contact: { en: 'Use the listed contact channels to explain the household role, emirate and current situation. If you prefer the booking form, use the request link; if you plan an office visit, contact the team first about the appointment.', ar: 'استخدم وسائل التواصل المذكورة لشرح الدور المنزلي والإمارة والوضع الحالي. إذا كنت تفضل نموذج الحجز، فاستخدم رابط الطلب؛ وإذا كنت تخطط لزيارة المكتب، فتواصل مع الفريق أولاً بشأن الموعد.' },
   pricing: {
-  "en": "Compare the salary-included managed live-in packages: Essential from AED 2,500/month, Signature from AED 3,000/month and INAYA Black Custom Quote. Review core inclusions, exclusions, tier coordination and written monthly payment, cancellation and replacement terms.",
-  "ar": "قارن الباقات المقيمة المدارة المشمولة بالراتب: Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً وINAYA Black بعرض سعر مخصص. راجع العناصر الأساسية والاستثناءات وتنسيق الباقات وشروط السداد الشهري والإلغاء والاستبدال المكتوبة."
-},
+    en: packageSummary.en + ' ' + packageArrangements.en + ' Review written payment, cancellation and replacement terms before confirmation.',
+    ar: packageSummary.ar + ' ' + packageArrangements.ar + ' راجع شروط السداد والإلغاء والاستبدال المكتوبة قبل التأكيد.'
+  },
   'how-it-works': { en: 'Start by defining the role, then use the documents guide to prepare for the selected service path. Recruitment, a scheduled household visit and a visa enquiry are different conversations; the process below helps you choose the relevant next step.', ar: 'ابدأ بتحديد الدور ثم استخدم دليل المستندات للاستعداد لمسار الخدمة المختار. التوظيف والزيارة المنزلية المجدولة وطلب التأشيرة مناقشات مختلفة؛ وتساعدك الخطوات أدناه على اختيار المتابعة المناسبة.' },
   'documents-required': { en: 'This is a preparation guide, not a final legal checklist. Separate the basic household enquiry from worker-document or sponsorship questions, and ask the team which details apply to the selected service and current situation.', ar: 'هذا دليل للاستعداد وليس قائمة قانونية نهائية. افصل الاستفسار المنزلي الأساسي عن مستندات العاملة أو أسئلة الكفالة، واسأل الفريق عن التفاصيل المناسبة للخدمة المختارة والوضع الحالي.' },
   'service-guidelines': { en: 'Read these guidelines alongside the duties and agreement for your selected service. Use the preparation guide for information to gather, and the support process for concerns about an existing arrangement rather than mixing both into a new booking enquiry.', ar: 'اقرأ الإرشادات مع المهام والاتفاق الخاص بالخدمة المختارة. استخدم دليل الاستعداد للمعلومات المطلوبة وإجراءات الدعم لملاحظات ترتيب قائم، بدلاً من دمج الموضوعين في طلب حجز جديد.' },

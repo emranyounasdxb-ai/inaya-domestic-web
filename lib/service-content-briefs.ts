@@ -1,3 +1,4 @@
+import { packageSummary } from './package-content';
 import type { Lang, ServiceCopy } from './service-page-copy';
 import { getService } from './services';
 
@@ -27,13 +28,13 @@ export const serviceContentBriefs: Record<string, Brief> = {
     prepare: { en: 'Explain the recurring daily workload and which duties need consistent attention. Clarify accommodation separately before comparing full-time and part-time arrangements.', ar: 'وضح حجم العمل اليومي المتكرر والمهام التي تحتاج اهتماماً مستمراً. ناقش الإقامة بشكل منفصل قبل مقارنة الدوام الكامل والجزئي.' }, related: ['live-in-maid', 'live-out-maid', 'part-time-maid']
   },
   'part-time-maid': {
-    overview: { en: 'Part-time help is useful when a defined set of cleaning, laundry or ironing tasks needs scheduled attention. A short task list makes the enquiry clearer than asking for the same scope as a full-time household role.', ar: 'تفيد المساعدة بدوام جزئي عندما تحتاج مهام محددة من التنظيف أو الغسيل أو الكي إلى وقت مجدول. تجعل قائمة مختصرة الطلب أوضح من طلب نطاق عمل مماثل لدور منزلي بدوام كامل.' },
+    overview: { en: 'INAYA offers a 4-hour visit for AED 120 and an 8-hour visit for AED 200. Define the cleaning, laundry or ironing tasks to fit the visit, then confirm availability, the written scope and practical responsibilities.', ar: 'تقدم عناية زيارة لمدة 4 ساعات بسعر 120 درهماً، وزيارة لمدة 8 ساعات بسعر 200 درهم. حدد مهام التنظيف أو الغسيل أو الكي بما يناسب وقت الزيارة، ثم أكد التوفر والنطاق المكتوب والمسؤوليات العملية.' },
     prepare: { en: 'State the preferred hours or visits and the tasks that matter most. Compare a monthly contract if the same work repeats regularly, without assuming either option is available on a particular date.', ar: 'حدد الساعات أو الزيارات المفضلة والمهام الأهم. قارن العقد الشهري إذا كان العمل نفسه يتكرر بانتظام، دون افتراض توفر أي خيار في تاريخ معين.' }, related: ['monthly-maid-contract', 'live-out-maid', 'on-demand-domestic-help']
   },
   'monthly-maid-contract': {
     overview: {
-  "en": "Essential starts from AED 2,500/month and Signature from AED 3,000/month, all-inclusive within the published scope and exclusions. INAYA Black is Custom Quote. The standard monthly offer is an INAYA-managed, salary-included live-in service under the applicable agency employment and sponsorship arrangement.",
-  "ar": "تبدأ Essential من 2,500 درهم شهرياً وSignature من 3,000 درهم شهرياً، شاملتين التكاليف ضمن النطاق والاستثناءات المنشورة. وتبقى INAYA Black بعرض سعر مخصص. العرض الشهري القياسي خدمة مقيمة داخل المنزل تديرها عناية وتشمل الراتب، وفق ترتيب التوظيف والكفالة المنطبق لدى الوكالة."
+  "en": packageSummary.en,
+  "ar": packageSummary.ar
 },
     prepare: {
   "en": "List the individual duties, working hours/rest, household location, accommodation/meals and preferred start. Review the written role, price breakdown, billing date, monthly cancellation terms and eligible replacement coordination before confirmation.",
