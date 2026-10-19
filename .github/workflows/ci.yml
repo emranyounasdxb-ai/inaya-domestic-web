@@ -29,5 +29,7 @@ jobs:
         run: node --test tests/seo-phase02-unit.test.cjs tests/seo-phase03-unit.test.cjs tests/seo-phase04-unit.test.cjs tests/seo-phase05-unit.test.cjs tests/seo-final-remediation-unit.test.cjs tests/final-ux-accessibility-unit.test.cjs tests/seo-export.test.mjs tests/seo-phase02-export.test.mjs tests/seo-phase03-export.test.mjs tests/seo-phase04-export.test.mjs tests/seo-phase05-export.test.mjs tests/seo-bilingual-guides-export.test.mjs tests/seo-visual-content-export.test.mjs tests/final-ux-accessibility-export.test.mjs tests/seo-release-readiness.test.mjs
       - name: Install Chromium for browser regression
         run: node node_modules/@playwright/test/cli.js install --with-deps chromium
+      - name: Check pricing layout before the full browser suite
+        run: node node_modules/@playwright/test/cli.js test tests/e2e/core-page-clarity.spec.ts --grep 'six pricing cards'
       - name: Browser regression
         run: node node_modules/@playwright/test/cli.js test

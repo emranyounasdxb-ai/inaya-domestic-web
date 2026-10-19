@@ -14,10 +14,13 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(page.getByRole('link', { name: arabic ? 'دليل أسعار الباقات' : 'Package pricing guide', exact: true })).toHaveAttribute('href', `/${locale}/blog/domestic-worker-package-pricing-factors/`);
     await page.getByRole('button', { name: arabic ? 'رفض التحليلات' : 'Reject analytics' }).click();
     const firstPlan = page.locator('[data-package="half-day"]');
-    await firstPlan.scrollIntoViewIfNeeded();
+    // Reach the real scroll threshold before dismissing the global offer.
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
     const offer = page.getByTestId('sierra-leone-offer');
     await expect(offer).toBeVisible();
     await offer.getByRole('button').click();
+    await expect(offer).toBeHidden();
+    await firstPlan.scrollIntoViewIfNeeded();
     const cards = [];
     const headings = [];
     const buttons = [];
