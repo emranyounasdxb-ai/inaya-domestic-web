@@ -12,8 +12,8 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
   const copy = {
     badge: isArabic ? 'جهز تفاصيل الاستفسار' : 'Prepare enquiry details',
     title: isArabic ? 'جهز استفسار خدمة العمالة المنزلية' : 'Prepare your domestic service enquiry',
-    subtitle: isArabic ? 'هذا النموذج يراجع البيانات محلياً ولا يرسلها إلى المكتب. تواصل مع عناية بالهاتف أو واتساب لمشاركة احتياجك ومناقشة الخطوة التالية.' : 'This form checks details locally and does not send them to the office. Contact INAYA by phone or WhatsApp to share your requirement and discuss the next step.',
-    sideTitle: isArabic ? 'قبل مراجعة البيانات' : 'Before checking your details',
+    subtitle: isArabic ? 'أرسل احتياجك إلى فريق عناية عبر النموذج. سيتواصل الفريق معك لمناقشة التوفر والخطوات التالية؛ لا يتم تأكيد حجز بمجرد الإرسال.' : 'Send your requirements to the INAYA team using this form. The team will follow up about availability and next steps; submitting does not confirm a booking.',
+    sideTitle: isArabic ? 'قبل إرسال استفسارك' : 'Before sending your enquiry',
     points: isArabic ? ["اختر الخدمة والدور والباقة المطلوب مناقشتها",packageSummary.ar,packageArrangements.ar,"حدد المهام والإمارة والبدء المفضل والسكن واحتياجات المنزل","تسلم النطاق وتفصيل السعر ومستندات السداد كتابةً قبل التأكيد","تبدأ الخدمة بعد اختيار المرشحة والتصاريح النظامية المطلوبة والتأكيد المكتوب"] : ["Choose the service, role and package you want to discuss",packageSummary.en,packageArrangements.en,"State duties, emirate, preferred start, accommodation and household needs","Receive written scope, price breakdown and payment documents before confirmation","Service starts after candidate selection, required lawful authorisation and written confirmation"]
   };
 
