@@ -60,6 +60,110 @@ const patches = {
       "راجع بيانات الاستفسار",
       "إرسال الاستفسار"
     ]
+  ],
+  "lib/buyer-answers.ts": [
+    [
+      "This form checks details locally and does not send a request.",
+      "Submitting this form sends an enquiry to INAYA for review; it does not confirm a booking."
+    ],
+    [
+      "يراجع هذا النموذج البيانات محلياً ولا يرسل طلباً.",
+      "يرسل هذا النموذج استفساراً إلى عناية للمراجعة؛ ولا يؤكد حجزاً."
+    ]
+  ],
+  "app/[locale]/faq/page.tsx": [
+    [
+      "The website form prepares details locally and does not send a request.",
+      "You can also send these details to INAYA using the website enquiry form."
+    ],
+    [
+      "The form only checks details locally; it does not send them to INAYA or confirm an appointment. Contact the team by phone or WhatsApp to share your enquiry and confirm next steps.",
+      "After a successful submission, the form sends your details to info@inayadomestic.ae and displays a reference. The team will review the enquiry; submitting does not confirm an appointment. Contact the team by phone or WhatsApp for urgent enquiries."
+    ],
+    [
+      "يجهز نموذج الموقع البيانات محلياً ولا يرسل طلباً.",
+      "يمكنك أيضاً إرسال هذه البيانات إلى عناية عبر نموذج الاستفسار في الموقع."
+    ],
+    [
+      "يراجع النموذج البيانات محلياً فقط؛ ولا يرسلها إلى عناية أو يؤكد موعداً. تواصل مع الفريق هاتفياً أو عبر واتساب لمشاركة استفسارك وتأكيد الخطوات التالية.",
+      "بعد نجاح الإرسال، يرسل النموذج بياناتك إلى info@inayadomestic.ae ويعرض رقماً مرجعياً. سيراجع الفريق الاستفسار؛ ولا يؤكد الإرسال موعداً. للاستفسارات العاجلة تواصل هاتفياً أو عبر واتساب."
+    ]
+  ],
+  "lib/trust-support-pages.ts": [
+    [
+      "The website enquiry forms prepare and check details locally; they do not send those details to INAYA.",
+      "When you submit a website enquiry form, it sends your entered details to info@inayadomestic.ae for team follow-up."
+    ],
+    [
+      "تجهز نماذج الاستفسار في الموقع البيانات وتراجعها محلياً؛ ولا ترسلها إلى عناية.",
+      "عند إرسال نموذج استفسار في الموقع، ترسل البيانات المدخلة إلى info@inayadomestic.ae لمتابعة الفريق."
+    ],
+    [
+      "checking them locally does not send them to INAYA",
+      "submitting the form sends the entered details to INAYA"
+    ],
+    [
+      "ولا ترسل مراجعتها محلياً هذه البيانات إلى عناية",
+      "ويرسل إرسال النموذج البيانات المدخلة إلى عناية"
+    ],
+    [
+      "Does checking a website form send my information?",
+      "Does submitting a website form send my information?"
+    ],
+    [
+      "هل ترسل مراجعة نموذج الموقع معلوماتي؟",
+      "هل يرسل إرسال نموذج الموقع معلوماتي؟"
+    ],
+    [
+      "No. Contact, booking and careers forms prepare and check details locally; they do not send an enquiry or upload documents. When you choose to contact INAYA through WhatsApp, email or another channel, the information you send is shared through that separate channel.",
+      "Yes. Submitting a contact, booking or careers form sends the entered enquiry details to info@inayadomestic.ae. A successful submission displays a reference; it does not confirm a booking, job or interview. These forms do not upload documents. Information shared through WhatsApp or another channel is sent through that separate channel."
+    ],
+    [
+      "لا. تجهز نماذج التواصل والحجز والوظائف البيانات وتراجعها محلياً؛ ولا ترسل استفساراً أو ترفع مستندات. عندما تختار التواصل مع عناية عبر واتساب أو البريد أو قناة أخرى، تتم مشاركة المعلومات التي ترسلها عبر تلك القناة المنفصلة.",
+      "نعم. يرسل إرسال نموذج التواصل أو الحجز أو الوظائف بيانات الاستفسار المدخلة إلى info@inayadomestic.ae. يعرض الإرسال الناجح رقماً مرجعياً؛ ولا يؤكد حجزاً أو وظيفة أو مقابلة. لا ترفع هذه النماذج مستندات. ترسل المعلومات المشتركة عبر واتساب أو قناة أخرى من خلال تلك القناة المنفصلة."
+    ],
+    [
+      "Website forms only prepare and validate details locally; they do not submit an enquiry or confirm an appointment. Contact INAYA to share your request and confirm availability.",
+      "Website forms send the entered enquiry details to info@inayadomestic.ae when submitted successfully. This does not confirm an appointment or service; the INAYA team must confirm availability and the agreement."
+    ],
+    [
+      "تجهز نماذج الموقع البيانات وتراجعها محلياً فقط؛ ولا ترسل استفساراً أو تؤكد موعداً. تواصل مع عناية لمشاركة طلبك وتأكيد التوفر.",
+      "ترسل نماذج الموقع بيانات الاستفسار المدخلة إلى info@inayadomestic.ae عند نجاح الإرسال. لا يؤكد ذلك موعداً أو خدمة؛ ويجب أن يؤكد فريق عناية التوفر والاتفاق."
+    ]
+  ],
+  "lib/domestic-worker-guides.ts": [
+    [
+      "the website’s booking form prepares details locally and does not send an application.",
+      "the website’s booking form sends an enquiry to the INAYA team; it does not submit an official application."
+    ],
+    [
+      "يساعد نموذج الحجز على تجهيز البيانات محلياً ولا يرسل طلباً.",
+      "يرسل نموذج الحجز استفساراً إلى فريق عناية؛ ولا يقدم طلباً رسمياً."
+    ],
+    [
+      "helps you organise details locally; it does not submit an application or upload documents.",
+      "sends your enquiry details to the INAYA team; it does not submit an official application or upload documents."
+    ],
+    [
+      "يساعدك نموذج الحجز في هذا الموقع على تنظيم البيانات محلياً؛ ولا يرسل طلباً أو يرفع مستندات.",
+      "يرسل نموذج الحجز في هذا الموقع بيانات استفسارك إلى فريق عناية؛ ولا يقدم طلباً رسمياً أو يرفع مستندات."
+    ],
+    [
+      "Preparing details in the website enquiry form does not send them or confirm an appointment.",
+      "Submitting the website enquiry form sends your details to INAYA for review; it does not confirm an appointment."
+    ],
+    [
+      "تجهيز التفاصيل في نموذج الاستفسار لا يرسلها إلى الفريق ولا يؤكد موعداً.",
+      "يرسل إرسال نموذج الاستفسار بياناتك إلى عناية للمراجعة؛ ولا يؤكد موعداً."
+    ],
+    [
+      "The website form prepares information locally and does not transmit a request, confirm an appointment or guarantee a suitable profile.",
+      "Submitting the website form sends an enquiry to INAYA for review; it does not confirm an appointment or guarantee a suitable profile."
+    ],
+    [
+      "يجهز نموذج الموقع البيانات محلياً فقط، ولا يرسل طلباً أو يؤكد موعداً أو يضمن ملفاً مناسباً.",
+      "يرسل إرسال نموذج الموقع استفساراً إلى عناية للمراجعة؛ ولا يؤكد موعداً أو يضمن ملفاً مناسباً."
+    ]
   ]
 };
 const messages = {
