@@ -84,9 +84,9 @@ const content: Record<PageKey, Record<Lang, SeoContent>> = {
         { question: 'Do you answer enquiries from Dubai and Abu Dhabi?', answer: 'Yes. INAYA supports enquiries across UAE emirates, with availability confirmed by service type and area.' }
       ],
       ctaTitle: 'Ready to discuss your requirement?',
-      ctaText: 'Review enquiry details locally. This form does not send them to the office.',
+      ctaText: 'Send your enquiry to the INAYA team. The team will review your requirements before any service is confirmed.',
       ctaHref: '/contact',
-      ctaLabel: 'Check Enquiry Details'
+      ctaLabel: 'Send Enquiry'
     },
     ar: {
       eyebrow: 'التواصل والتوفر',
@@ -106,9 +106,9 @@ const content: Record<PageKey, Record<Lang, SeoContent>> = {
         { question: 'هل تردون على طلبات دبي وأبوظبي؟', answer: 'نعم، تدعم عناية الطلبات في إمارات الدولة ويتم تأكيد التوفر حسب نوع الخدمة والمنطقة.' }
       ],
       ctaTitle: 'جاهز لمناقشة احتياجك؟',
-      ctaText: 'راجع بيانات الاستفسار محلياً. لا يرسل هذا النموذج البيانات إلى المكتب.',
+      ctaText: 'أرسل استفسارك إلى فريق عناية لمراجعة احتياجك قبل تأكيد أي خدمة.',
       ctaHref: '/contact',
-      ctaLabel: 'راجع بيانات الاستفسار'
+      ctaLabel: 'إرسال الاستفسار'
     }
   },
   how: {
