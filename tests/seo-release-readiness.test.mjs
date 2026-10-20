@@ -117,7 +117,8 @@ test('approved identity and hours match visible bilingual content and visa scope
     for (const route of ['terms', 'privacy-policy', 'faq']) {
       const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
       const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
-      assert.match(body, locale === 'en' ? /locally/ : /محلياً/);
+      assert.match(body, /info@inayadomestic\.ae/);
+      assert.match(body, locale === 'en' ? /does not confirm/ : /لا يؤكد/);
       assert.doesNotMatch(body, /You can submit the request form|The team reviews your request, then contacts you|يقوم الفريق بمراجعة الطلب ثم يتواصل معك/);
     }
   }
