@@ -16,8 +16,8 @@ test('exactly four hand-reviewed localized descriptions change; all other source
     const [, locale, route] = correction.route.split('/');
     assert.equal(getPageSeo(locale, route).description, correction.after);
     assert.doesNotMatch(correction.after, /will follow up|will contact|Send INAYA|يتابع الفريق|يتواصل الفريق|أرسل إلى/);
-    assert.match(correction.after, locale === 'en' ? /checks details locally only/ : /البيانات محلياً فقط/);
-    assert.match(correction.after, locale === 'en' ? /phone or WhatsApp/ : /بالهاتف أو واتساب/);
+    assert.match(correction.after, locale === 'en' ? /for review/ : /للمراجعة/);
+    assert.match(correction.after, locale === 'en' ? /confirmation by the team|does not confirm a job or interview/ : /تأكيداً من الفريق|ولا يؤكد الإرسال وظيفة أو مقابلة/);
   }
 });
 test('carousel test additions preserve every original assertion and protected production/measurement sources', () => {
