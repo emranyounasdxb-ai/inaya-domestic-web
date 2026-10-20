@@ -1,0 +1,126 @@
+{
+  "id": "16",
+  "slug": "domestic-worker-hiring-costs-uae",
+  "mode": "update",
+  "question": {
+    "en": "How do I compare two maid quotations without overlooking costs?",
+    "ar": "كيف أقارن عرضي أسعار لخدمة عاملة منزلية دون إغفال التكاليف؟"
+  },
+  "gap": "Improve existing cost URL with usable quote worksheet and exact commitment-price calculation.",
+  "existingMatches": [
+    "domestic-worker-hiring-costs-uae",
+    "all-inclusive-domestic-worker-packages"
+  ],
+  "en": {
+    "title": "How to compare maid quotations and monthly commitment costs",
+    "description": "Compare maid quotations using the same service scope, payment period and responsibilities, with INAYA monthly, six-month and yearly price calculations.",
+    "body": "Compare maid quotations on the same basis: the service period, agreed duties, employment arrangement, included costs and payment obligations. A lower headline amount is useful only when you can see what that amount purchases. Use the worksheet below alongside the [published INAYA prices](https://inayadomestic.ae/en/pricing/) and keep each provider’s written proposal with your comparison.\n\n## Put both offers into one comparison sheet\n\nBegin with your own requirement, rather than with the wording of either advertisement. Write down the household role, address, start date, working schedule, residence arrangement and priority duties. Send the same brief to each provider. Otherwise, one quotation might concern scheduled visits while the other covers an agency-managed monthly arrangement, making the figures unsuitable for a direct comparison.\n\nThe [UAE Government domestic-worker guidance](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) explains that the recruitment agreement records work and financial obligations. For your practical comparison, attach the price breakdown and applicable service terms to the relevant agreement.\n\n| Comparison item | Offer A: record the written answer | Offer B: record the written answer |\n|---|---|---|\n| Service and period | Role, schedule and start/end dates | The same role and period |\n| Employer and arrangement | Named employer and service model | Named employer and service model |\n| Payment due now | First payment and what it covers | First payment and what it covers |\n| Recurring payment | Amount, billing date and commitment | Amount, billing date and commitment |\n| Included components | Salary administration and listed benefits | Salary administration and listed benefits |\n| Other responsibilities | Accommodation, meals, transport and supplies | Accommodation, meals, transport and supplies |\n| Final payable amount | Applicable tax and separately priced items | Applicable tax and separately priced items |\n| Changes and ending service | Written cancellation and replacement terms | Written cancellation and replacement terms |\n\nUse descriptive answers in the sheet. Writing “included” beside several different items does not identify the service period, the responsible party or the documents governing that promise. Ask for a corrected quotation when the description and the price breakdown refer to different arrangements.\n\n## Compare published monthly-price benchmarks\n\nINAYA’s 30-day package is AED 3,500. The six-month commitment is AED 3,250 per month, and the twelve-month commitment is AED 3,000 per month. The following illustration multiplies the published monthly-price figures by six or twelve. It compares price benchmarks, not identical calendar-day coverage or a final tax-inclusive bill. The agreement records the service dates and payment schedule for each arrangement.\n\n| Calculation basis | AED 3,500 monthly-price benchmark | Commitment package calculation | Package-price difference |\n|---|---|---|---|\n| Six monthly-price figures | 3,500 × 6 = AED 21,000 | 3,250 × 6 = AED 19,500 | AED 1,500 |\n| Twelve monthly-price figures | 3,500 × 12 = AED 42,000 | 3,000 × 12 = AED 36,000 | AED 6,000 |\n\nThese calculations help a household see the financial effect of its intended commitment. They do not replace the agreement’s payment schedule, scope or ending-service provisions. Choose a term that matches how long you actually need support, then review the [all-inclusive package checklist](https://inayadomestic.ae/en/blog/all-inclusive-domestic-worker-packages/) for the responsibilities recorded alongside the price.\n\n## Keep service charges separate from worker wages\n\nIn an agency-managed arrangement, compare the amount your household pays the agency with the agency’s documented service scope. Avoid adding the same salary twice when the agreement includes its administration within the monthly service. A separately contracted recruitment or visa service is a different quotation. The [domestic-workers law](https://uaelegislation.gov.ae/en/legislations/1593) provides the employment framework; the written service documents identify the commercial charge for your selected arrangement.\n\n## Check value before choosing the lowest number\n\nCompare the individual worker’s relevant experience, the clarity of the duties, communication arrangements and the practical follow-up process. A price comparison cannot establish that every candidate has the same skills or that every provider offers the same service. Keep a short decision note explaining why the selected proposal fits your household, including any task that requires a different role or specialist service.\n\nBring the completed comparison sheet when you [contact INAYA](https://inayadomestic.ae/en/contact/). Share the exact service, period and duties so the discussion produces a usable written quotation. Retain the proposal, agreement and payment records together; they are more useful for later questions than a screenshot of a headline price.",
+    "faqs": [
+      {
+        "question": "Are the six-month and yearly prices total contract prices?",
+        "answer": "No. The six-month rate is AED 3,250 per month and the twelve-month rate is AED 3,000 per month. Multiply the monthly rate by the stated commitment to compare package prices over that period."
+      },
+      {
+        "question": "Do live-in and live-out arrangements have different INAYA package prices?",
+        "answer": "The published package price is the same for live-in and live-out. The written scope records accommodation, meals, transport, supplies and other responsibilities for the selected arrangement."
+      },
+      {
+        "question": "Should I compare an agency monthly fee with a worker’s salary alone?",
+        "answer": "Compare the full arrangement. A salary alone and an agency-managed service charge are different figures; record employment responsibilities and the items included in each proposal."
+      },
+      {
+        "question": "Does the package-price difference determine my final payable bill?",
+        "answer": "The table compares the stated package rates arithmetically. The final quotation records applicable tax, separately priced services and the payment obligations for your selected agreement."
+      }
+    ],
+    "visual": {
+      "kind": "bars",
+      "title": "Monthly package-price comparison",
+      "caption": "Owner-approved INAYA price figures. The base package covers 30 days; commitment rates are per month for six or twelve months. This is an illustrative package-price comparison, not identical calendar-day coverage or a final bill.",
+      "unit": "AED per month",
+      "items": [
+        {
+          "label": "30-day package",
+          "detail": "Published package price for 30 days",
+          "value": 3500
+        },
+        {
+          "label": "Six-month commitment",
+          "detail": "AED 3,250 each month for the agreed six-month term",
+          "value": 3250
+        },
+        {
+          "label": "Twelve-month commitment",
+          "detail": "AED 3,000 each month for the agreed twelve-month term",
+          "value": 3000
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "كيف تقارن عروض أسعار العمالة المنزلية وتكلفة الالتزام الشهري؟",
+    "description": "قارن عروض أسعار العمالة المنزلية بحسب نطاق الخدمة والمدة والمسؤوليات، مع حساب واضح لباقات عناية الشهرية والتزامي الستة أشهر والسنة. بخطوات عملية للأسرة.",
+    "body": "قارن عروض أسعار العمالة المنزلية على أساس واحد: مدة الخدمة، والمهام المتفق عليها، وترتيب التوظيف، والتكاليف المشمولة، والتزامات السداد. انخفاض الرقم المعلن يفيدك عندما تعرف بدقة ما الذي يشتريه هذا المبلغ. استخدم ورقة المقارنة أدناه مع [أسعار عناية المنشورة](https://inayadomestic.ae/ar/pricing/)، واحتفظ بالعرض المكتوب لكل مقدم خدمة ضمن ملف المقارنة.\n\n## ابدأ بمتطلب واحد وأرسله إلى مقدمي الخدمة\n\nاكتب الدور المطلوب، وعنوان المنزل، وتاريخ البدء، والجدول، وترتيب الإقامة، وأهم المهام. أرسل الوصف نفسه إلى الجهتين. فقد يتناول أحد العرضين زيارات مجدولة، بينما يتناول الآخر خدمة شهرية تديرها الوكالة؛ ولذلك لا تكفي مقارنة الرقمين دون مقارنة محتوى الخدمتين.\n\nيوضح [دليل حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) أن عقد الاستقدام يتضمن العمل والالتزامات المالية. وعند إعداد مقارنتك العملية، احتفظ بتفصيل السعر وشروط الخدمة مع الاتفاق الذي يتعلقان به، حتى تتضح العلاقة بين المبلغ والعمل المطلوب من البداية.\n\n| بند المقارنة | العرض الأول: سجل الإجابة المكتوبة | العرض الثاني: سجل الإجابة المكتوبة |\n|---|---|---|\n| الخدمة والمدة | الدور والجدول وتاريخا البدء والانتهاء | الدور والمدة نفسيهما |\n| صاحب العمل والترتيب | اسم صاحب العمل ونموذج الخدمة | اسم صاحب العمل ونموذج الخدمة |\n| المبلغ المطلوب الآن | الدفعة الأولى وما تغطيه | الدفعة الأولى وما تغطيه |\n| السداد المتكرر | المبلغ وموعد الفوترة ومدة الالتزام | المبلغ وموعد الفوترة ومدة الالتزام |\n| المكونات المشمولة | إدارة الراتب والمزايا المذكورة | إدارة الراتب والمزايا المذكورة |\n| المسؤوليات الأخرى | السكن والطعام والنقل والمستلزمات | السكن والطعام والنقل والمستلزمات |\n| المبلغ النهائي المستحق | الضريبة المنطبقة والبنود المسعرة منفصلة | الضريبة المنطبقة والبنود المسعرة منفصلة |\n| تعديل الخدمة وإنهاؤها | شروط الإلغاء والاستبدال المكتوبة | شروط الإلغاء والاستبدال المكتوبة |\n\nاستخدم إجابات وصفية واضحة في الورقة. فكلمة «مشمول» وحدها أمام عدة بنود لا تبين الفترة أو الطرف المسؤول أو المستند الذي يحدد الالتزام. اطلب نسخة مصححة عندما يصف العرض ترتيباً بينما يشير تفصيل السعر إلى ترتيب مختلف، ثم قارن النسختين على الأساس نفسه.\n\n## قارن الأرقام الشهرية المنشورة حسابياً\n\nسعر باقة عناية لمدة ثلاثين يوماً هو 3,500 درهم. وسعر الالتزام لمدة ستة أشهر هو 3,250 درهماً شهرياً، وسعر الالتزام لمدة اثني عشر شهراً هو 3,000 درهم شهرياً. يضرب المثال الأرقام الشهرية المنشورة في ستة أو اثني عشر. وهو يقارن معايير السعر حسابياً، وليس تغطية متطابقة بعدد أيام التقويم أو فاتورة نهائية شاملة للضريبة. يسجل الاتفاق تواريخ الخدمة وجدول السداد لكل ترتيب.\n\n| أساس الحساب | المعيار الحسابي بسعر 3,500 درهم شهرياً | حساب باقة الالتزام | الفرق في سعر الباقة |\n|---|---|---|---|\n| ستة أرقام شهرية للسعر | 3,500 × 6 = 21,000 درهم | 3,250 × 6 = 19,500 درهم | 1,500 درهم |\n| اثنا عشر رقماً شهرياً للسعر | 3,500 × 12 = 42,000 درهم | 3,000 × 12 = 36,000 درهم | 6,000 درهم |\n\nيساعدك الحساب على رؤية أثر المدة التي تنوي الالتزام بها. وهو لا يستبدل جدول السداد أو نطاق العمل أو شروط إنهاء الخدمة. اختر مدة تناسب احتياج أسرتك الفعلي، ثم راجع [قائمة الباقة الشاملة](https://inayadomestic.ae/ar/blog/all-inclusive-domestic-worker-packages/) للمسؤوليات المسجلة بجانب السعر.\n\n## افصل مبلغ الخدمة عن راتب العاملة\n\nفي الخدمة التي تديرها الوكالة، قارن المبلغ الذي تدفعه الأسرة بنطاق الخدمة المكتوب. تجنب حساب الراتب نفسه مرتين عندما يتضمن الاتفاق إدارته ضمن الخدمة الشهرية. أما خدمة الاستقدام أو التأشيرة المتعاقد عليها بصورة منفصلة فلها عرضها الخاص. يحدد [قانون العمالة المساعدة](https://uaelegislation.gov.ae/ar/legislations/1593) إطار التوظيف، وتحدد مستندات الخدمة المبلغ التجاري للترتيب المختار.\n\n## اجعل القيمة جزءاً من القرار\n\nراجع خبرة المرشحة المناسبة للمهام، ووضوح التعليمات، وطريقة التواصل، ومسار المتابعة. لا تجعل الرقم وحده بديلاً عن تقييم ملاءمة الدور. احتفظ بملاحظة قصيرة تشرح سبب اختيار العرض، وأي مهمة تحتاج إلى دور مختلف أو خدمة متخصصة. وعند [التواصل مع عناية](https://inayadomestic.ae/ar/contact/)، شارك الورقة والخدمة والمدة والمهام المطلوبة. اجمع العرض والاتفاق وإيصالات السداد في ملف واحد؛ فهذا أوضح عند المراجعة من صورة منفردة لسعر إعلاني.",
+    "faqs": [
+      {
+        "question": "هل سعرا الستة أشهر والسنة إجماليان لكامل العقد؟",
+        "answer": "لا. السعر هو 3,250 درهماً لكل شهر عند الالتزام بستة أشهر، و3,000 درهم لكل شهر عند الالتزام باثني عشر شهراً. تضرب القيمة الشهرية في مدة الالتزام عند مقارنة أسعار الباقات."
+      },
+      {
+        "question": "هل تختلف أسعار عناية للمقيمة وغير المقيمة؟",
+        "answer": "سعر الباقة المنشور واحد للمقيمة وغير المقيمة. ويسجل النطاق المكتوب مسؤوليات السكن والطعام والنقل والمستلزمات بحسب الترتيب المختار."
+      },
+      {
+        "question": "هل أقارن رسم الوكالة الشهري براتب العاملة وحده؟",
+        "answer": "قارن الترتيب كاملاً. فالراتب وحده ومبلغ الخدمة التي تديرها الوكالة رقمان مختلفان؛ سجل مسؤوليات التوظيف والبنود المشمولة في كل عرض."
+      },
+      {
+        "question": "هل يحدد فرق سعر الباقة فاتورتي النهائية؟",
+        "answer": "يقارن الجدول أسعار الباقات حسابياً. ويبين عرض السعر النهائي الضريبة المنطبقة والخدمات المسعرة بصورة منفصلة والتزامات السداد في اتفاقك."
+      }
+    ],
+    "visual": {
+      "kind": "bars",
+      "title": "مقارنة سعر الباقة الشهري",
+      "caption": "أرقام أسعار عناية المعتمدة. تغطي الباقة الأساسية ثلاثين يوماً، وأسعار الالتزام شهرية لمدة ستة أو اثني عشر شهراً. هذه مقارنة توضيحية لسعر الباقة وليست تغطية متطابقة بأيام التقويم أو فاتورة نهائية.",
+      "unit": "درهم لكل شهر",
+      "items": [
+        {
+          "label": "باقة ثلاثين يوماً",
+          "detail": "سعر الباقة المنشور لمدة ثلاثين يوماً",
+          "value": 3500
+        },
+        {
+          "label": "التزام ستة أشهر",
+          "detail": "3,250 درهماً كل شهر طوال الالتزام المتفق عليه",
+          "value": 3250
+        },
+        {
+          "label": "التزام اثني عشر شهراً",
+          "detail": "3,000 درهم كل شهر طوال الالتزام المتفق عليه",
+          "value": 3000
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Recruitment agreement identifies work and financial commitments."
+    },
+    {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1593",
+      "supports": "Domestic-worker employment framework; commercial worksheet and arithmetic are original, with owner-approved INAYA prices."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "compare maid agency quotes UAE included costs monthly maid quotation",
+      "url": "https://www.relocate2uae.com/uae-domestic-help-maid-nanny-guide"
+    },
+    {
+      "query": "maid monthly cost quotation comparison UAE",
+      "url": "https://uaewise.com/calculators/domestic-help-calculator/"
+    }
+  ]
+}

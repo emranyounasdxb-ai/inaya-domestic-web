@@ -1,0 +1,130 @@
+{
+  "id": "20",
+  "slug": "domestic-worker-contract-permit-residence-cancellation",
+  "mode": "new",
+  "question": {
+    "en": "How are a domestic worker’s contract, work permit and residence cancelled?",
+    "ar": "كيف يلغى عقد العامل المساعد وتصريح العمل والإقامة؟"
+  },
+  "gap": "No cancellation-service/authority separation guide; official MOHRE/ICP/GDRFA sources required.",
+  "existingMatches": [
+    "domestic-worker-contracts-renewal",
+    "domestic-worker-sponsorship-responsibilities"
+  ],
+  "en": {
+    "title": "Ending a domestic-worker arrangement: contract, permit and residence cancellation",
+    "description": "Separate customer service, employment and residence cancellation. Use the correct MOHRE, ICP or Dubai route and keep a clear record of completed transactions.",
+    "body": "When a domestic-worker arrangement ends, separate three matters: the household’s service agreement, the worker’s employment record and the immigration record. Identify the legal employer and the applicable official cancellation route before submitting documents. A message ending a monthly service is not, by itself, evidence that a worker’s contract, permit or residence has been cancelled.\n\n## Start by identifying whose agreement is ending\n\nRead the names in the service and employment documents. A household buying an agency-managed service and a household named as the worker’s employer have different positions. Ask which record is being closed and who is authorised to handle it. Use the [sponsorship and employment responsibilities guide](https://inayadomestic.ae/en/blog/domestic-worker-sponsorship-responsibilities/) to organise the documents before discussing cancellation.\n\nIf the household is ending a service purchased from an agency, handle that agreement’s payment and service questions through its terms. Separately establish what happens to the worker’s employment arrangement. Avoid treating a service-refund calculation as an immigration application or as a final settlement of the worker’s own entitlements.\n\n## Understand the records without assuming duplicate applications\n\nMOHRE lists dedicated services for [domestic-worker work-permit cancellation](https://www.mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-work-permit-inside-or-outside-of-the-country-2022) and [domestic-worker employment-contract cancellation](https://mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-employment-contract-inside-or-outside-of-the-country-2022). Choose the service for the actual record and case rather than using a private-sector employee checklist.\n\n| Record or decision | What to identify | What to retain |\n|---|---|---|\n| Household service agreement | Parties, ending-service request and agreed payment position | Written communication and service calculation |\n| Employment arrangement | Legal employer, relevant contract and end-of-employment position | Contract reference and settlement record |\n| Work-permit or contract transaction | Applicable MOHRE service and case details | Application reference and completed result |\n| Residence and linked ID | Relevant immigration route and current status | Official cancellation result or related status record |\n| Next arrangement | Departure or a new lawful employment/residence route | The documents and instructions for that next route |\n\nThis table separates records for clear thinking. It is not a requirement to submit a different manual application for every row. An official integrated service can connect related processes.\n\n## Use the relevant official residence route\n\nThe [ICP residence-cancellation service](https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e68) expressly directs domestic-worker residence cancellation through MOHRE or the Domestic Work Bundle, including the linked residence and Emirates ID process. Follow the applicable service instructions and the data requested for the case.\n\nFor a Dubai residence file, refer to the [GDRFA Dubai residence-cancellation service](https://gdrfad.gov.ae/en/services/0613ab0e-5858-11ea-0320-0050569629e8). Its service page identifies digital channels and Amer centres. Identify the issuing authority from the actual residence record, and follow that authority’s applicable route. A move between emirates or a household address does not, on its own, tell you which record needs cancellation.\n\n## Prepare one practical cancellation folder\n\nKeep the worker and employer identity details, relevant contract and permit references, residence information, application receipts and a contact for transaction follow-up together. Provide documents through the official or authorised channel handling the case. Check names, passport details and transaction numbers before submission; errors are easier to identify when every record can be compared with the same document set.\n\nCreate a separate payment sheet showing wages and other amounts being addressed, payments already made and any point requiring resolution. Read declarations before signing and make sure acknowledgements accurately describe what has happened. The [contracts guide](https://inayadomestic.ae/en/blog/domestic-worker-contracts-renewal/) and [complaints guide](https://inayadomestic.ae/en/blog/domestic-worker-complaints-disputes/) provide related context for records and unresolved concerns.\n\n## Close the process using the result, not only the request\n\nAn application receipt shows that a request was submitted. Retain the completed result and review the official instructions for the worker’s next lawful status or departure arrangement. Do not assume that cancellation itself authorises work for a different household.\n\nWhen [contacting INAYA](https://inayadomestic.ae/en/contact/), explain whether the question concerns ending a household service, an employment contract, a work permit or residence. Share the relevant document references through the agreed private channel. This keeps the discussion focused on the right transaction and protects the distinction between the customer’s commercial arrangement and the worker’s employment and immigration records.",
+    "faqs": [
+      {
+        "question": "Does cancelling my monthly maid service automatically cancel the worker’s residence?",
+        "answer": "A service-ending request and an official residence-cancellation result are different records. Identify the employer and the official transaction applicable to the worker’s arrangement."
+      },
+      {
+        "question": "Must every record be cancelled through a separate manual application?",
+        "answer": "No universal manual sequence applies to every case. ICP directs domestic-worker residence cancellation through MOHRE or the Domestic Work Bundle, where linked processes can be handled through the applicable service."
+      },
+      {
+        "question": "Can I use a company employee’s cancellation checklist for a domestic worker?",
+        "answer": "Use the dedicated domestic-worker service and the relevant immigration instructions. Private-sector employee requirements should not automatically be applied to a domestic-worker case."
+      },
+      {
+        "question": "What proves that the cancellation request has finished?",
+        "answer": "Keep the official completed transaction result and check the resulting status and next-step instructions. An application receipt alone records submission, not completion."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "Keep the ending process clear",
+      "caption": "Original record-management workflow. Official integrated services can link transactions; this is not a universal order of separate manual applications.",
+      "items": [
+        {
+          "label": "Identify the arrangement",
+          "detail": "Separate the service customer, legal employer and worker records."
+        },
+        {
+          "label": "Select the official route",
+          "detail": "Use the applicable domestic-worker and residence service."
+        },
+        {
+          "label": "Prepare consistent records",
+          "detail": "Check document details, payment records and application references."
+        },
+        {
+          "label": "Retain the completed result",
+          "detail": "Review the official status and instructions for the next lawful step."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "إنهاء ترتيب العمالة المنزلية: إلغاء العقد والتصريح والإقامة",
+    "description": "افصل بين إنهاء الخدمة وإلغاء التوظيف والإقامة، واستخدم مسار الوزارة أو الهوية والجنسية أو دبي المناسب، واحتفظ بنتائج المعاملات المكتملة. لكل حالة.",
+    "body": "عند انتهاء ترتيب العمالة المنزلية، افصل بين اتفاق خدمة الأسرة وسجل توظيف العاملة وسجل الإقامة. حدد صاحب العمل القانوني ومسار الإلغاء الرسمي المناسب قبل تقديم المستندات. فالرسالة التي تنهي خدمة شهرية لا تثبت وحدها إلغاء عقد العاملة أو تصريحها أو إقامتها.\n\n## حدد الاتفاق الذي ينتهي وأطرافه\n\nراجع الأسماء الواردة في مستندات الخدمة والتوظيف. يختلف وضع الأسرة التي تشتري خدمة تديرها وكالة عن الأسرة المسجلة بوصفها صاحب عمل العاملة. حدد السجل المطلوب إغلاقه والجهة المخولة بالتعامل معه. ويساعدك [دليل مسؤوليات الكفالة والتوظيف](https://inayadomestic.ae/ar/blog/domestic-worker-sponsorship-responsibilities/) على ترتيب المستندات قبل مناقشة الإلغاء.\n\nإذا كانت الأسرة تنهي خدمة اشترتها من وكالة، فتعالج أسئلة الخدمة والسداد وفق الاتفاق الخاص بها، ويحدد بصورة منفصلة ما يحدث لترتيب توظيف العاملة. لا تحول حساب استرداد قيمة الخدمة إلى طلب إقامة، ولا تعتبره تسوية تلقائية لمستحقات العاملة الشخصية.\n\n## افهم السجلات دون افتراض طلبات متكررة\n\nتدرج وزارة الموارد البشرية والتوطين خدمة مخصصة [لإلغاء تصريح عمل العامل المساعد](https://www.mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-work-permit-inside-or-outside-of-the-country-2022)، وأخرى [لإلغاء عقد عمل العامل المساعد](https://mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-employment-contract-inside-or-outside-of-the-country-2022). اختر الخدمة الخاصة بالسجل والحالة الفعليين، بدلاً من استخدام قائمة إلغاء موظف في منشأة خاصة.\n\n| السجل أو القرار | ما الذي يحدد؟ | ما الذي يحتفظ به؟ |\n|---|---|---|\n| اتفاق خدمة الأسرة | الأطراف وطلب الإنهاء ووضع السداد | المراسلات المكتوبة وحساب الخدمة |\n| ترتيب التوظيف | صاحب العمل القانوني والعقد ووضع انتهاء العمل | مرجع العقد وسجل التسوية |\n| معاملة التصريح أو العقد | خدمة الوزارة المناسبة وتفاصيل الحالة | مرجع الطلب ونتيجة المعاملة المكتملة |\n| الإقامة والهوية المرتبطة | مسار الإقامة المناسب والوضع الحالي | نتيجة الإلغاء الرسمية أو سجل الوضع الناتج |\n| الترتيب التالي | المغادرة أو مسار عمل وإقامة قانوني جديد | مستندات وتعليمات المسار التالي |\n\nيفصل الجدول بين السجلات لتسهيل الفهم، ولا يفرض تقديم طلب يدوي مختلف لكل صف. فقد تربط الخدمة الرسمية المتكاملة بين الإجراءات ذات الصلة؛ ولذلك تتبع خطوات الخدمة المطبقة على المعاملة نفسها، مع الاحتفاظ بنتائجها.\n\n## اتبع مسار الإقامة الرسمي المناسب\n\nتوجه [خدمة إلغاء الإقامة لدى الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ](https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e68) إلغاء إقامة العامل المساعد عبر الوزارة أو باقة العمل المنزلي، بما يشمل إجراءات الإقامة والهوية المرتبطة. اتبع تعليمات الخدمة والبيانات المطلوبة للحالة.\n\nولملف الإقامة الصادر في دبي، ارجع إلى [خدمة إلغاء الإقامة لدى الإدارة العامة للإقامة وشؤون الأجانب بدبي](https://gdrfad.gov.ae/en/services/0613ab0e-5858-11ea-0320-0050569629e8)، التي تذكر القنوات الرقمية ومراكز آمر. حدد جهة الإصدار من سجل الإقامة الفعلي، ولا تستنتج نوع السجل المطلوب إلغاؤه من عنوان المنزل أو الانتقال بين إمارتين وحده.\n\n## جهز ملفاً عملياً واحداً للمتابعة\n\nاجمع بيانات هوية العاملة وصاحب العمل ومراجع العقد والتصريح ومعلومات الإقامة وإيصالات الطلب وجهة متابعة المعاملة. قدم المستندات عبر القناة الرسمية أو المخولة التي تتعامل مع الحالة. راجع الأسماء وبيانات الجواز وأرقام المعاملات قبل التقديم؛ فتوحيد مجموعة المستندات يسهل اكتشاف الفروق بين السجلات.\n\nأنشئ ورقة منفصلة للمبالغ التي تعالج، وما سدد منها، وأي نقطة تحتاج إلى حسم. اقرأ الإقرارات قبل توقيعها، وتأكد من أنها تصف ما حدث فعلاً. وراجع [دليل العقود](https://inayadomestic.ae/ar/blog/domestic-worker-contracts-renewal/) و[دليل الشكاوى](https://inayadomestic.ae/ar/blog/domestic-worker-complaints-disputes/) للسياق المتعلق بالمستندات والمسائل التي تحتاج إلى مراجعة.\n\n## أغلق المتابعة بنتيجة المعاملة لا بمجرد تقديمها\n\nإيصال الطلب يثبت تقديم المعاملة. احتفظ بنتيجتها المكتملة، وراجع التعليمات الرسمية الخاصة بالوضع القانوني التالي للعاملة أو ترتيب مغادرتها. ولا تعتبر الإلغاء وحده إذناً بالعمل لدى أسرة أخرى؛ فالمسار التالي له ترتيبه ووثائقه المناسبة.\n\nعند [التواصل مع عناية](https://inayadomestic.ae/ar/contact/)، وضح هل السؤال يتعلق بإنهاء خدمة الأسرة أم عقد التوظيف أم تصريح العمل أم الإقامة، وشارك المراجع عبر القناة الخاصة المتفق عليها. يساعد هذا الفصل على توجيه النقاش إلى المعاملة الصحيحة وحماية الفرق بين اتفاق العميل التجاري وسجلات توظيف العاملة وإقامتها.",
+    "faqs": [
+      {
+        "question": "هل يلغي إنهاء خدمة الخادمة الشهرية إقامة العاملة تلقائياً؟",
+        "answer": "طلب إنهاء الخدمة ونتيجة إلغاء الإقامة الرسمية سجلان مختلفان. حدد صاحب العمل والمعاملة الرسمية المناسبة لترتيب العاملة."
+      },
+      {
+        "question": "هل يلزم تقديم طلب يدوي منفصل لكل سجل؟",
+        "answer": "لا يوجد تسلسل يدوي موحد لكل الحالات. توجه الهيئة إلغاء إقامة العامل المساعد عبر الوزارة أو باقة العمل المنزلي، حيث يمكن ربط الإجراءات ذات الصلة ضمن الخدمة المطبقة."
+      },
+      {
+        "question": "هل أستخدم قائمة إلغاء موظف شركة للعامل المساعد؟",
+        "answer": "استخدم خدمة العمالة المساعدة المخصصة وتعليمات الإقامة ذات الصلة. لا تطبق متطلبات موظف القطاع الخاص تلقائياً على حالة العامل المساعد."
+      },
+      {
+        "question": "ما الذي يثبت اكتمال الإلغاء؟",
+        "answer": "احتفظ بنتيجة المعاملة الرسمية المكتملة، وراجع الوضع الناتج وتعليمات الخطوة التالية. إيصال الطلب وحده يثبت التقديم ولا يثبت الاكتمال."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "حافظ على وضوح إجراءات الإنهاء",
+      "caption": "مسار أصلي لتنظيم السجلات. قد تربط الخدمات الرسمية المتكاملة بين المعاملات؛ وليس هذا ترتيباً موحداً لطلبات يدوية منفصلة.",
+      "items": [
+        {
+          "label": "حدد الترتيب",
+          "detail": "افصل بين عميل الخدمة وصاحب العمل القانوني وسجلات العاملة."
+        },
+        {
+          "label": "اختر المسار الرسمي",
+          "detail": "استخدم خدمة العامل المساعد والإقامة المطبقة على الحالة."
+        },
+        {
+          "label": "جهز سجلات متسقة",
+          "detail": "راجع بيانات المستندات والسداد ومراجع الطلبات."
+        },
+        {
+          "label": "احتفظ بالنتيجة المكتملة",
+          "detail": "راجع الوضع الرسمي وتعليمات الخطوة القانونية التالية."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-work-permit-inside-or-outside-of-the-country-2022",
+      "supports": "Official dedicated domestic-worker work-permit cancellation service listing; no universal requirements inferred."
+    },
+    {
+      "url": "https://mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-employment-contract-inside-or-outside-of-the-country-2022",
+      "supports": "Official dedicated domestic-worker employment-contract cancellation service listing."
+    },
+    {
+      "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e68",
+      "supports": "Domestic-worker residence cancellation provided through MOHRE or Domestic Work Bundle, including linked residence/Emirates ID process."
+    },
+    {
+      "url": "https://gdrfad.gov.ae/en/services/0613ab0e-5858-11ea-0320-0050569629e8",
+      "supports": "Dubai residence-cancellation service provides digital channels and Amer centres. Private-sector-only requirements were not extended to domestic workers."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "how cancel maid visa UAE",
+      "url": "https://maidmatch.ae/guides/cancel-maid-visa"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "08",
+  "slug": "new-maid-first-week-checklist",
+  "mode": "new",
+  "question": {
+    "en": "What should I explain to a new maid during the first week?",
+    "ar": "ما الذي ينبغي شرحه للعاملة المنزلية خلال الأسبوع الأول؟"
+  },
+  "gap": "Brief handover mentions but no sequenced orientation plan.",
+  "existingMatches": [
+    "domestic-worker-hiring-stages-timelines",
+    "domestic-worker-interview-trial-probation"
+  ],
+  "en": {
+    "title": "A new maid’s first week: a practical household orientation checklist",
+    "description": "Welcome a new maid with a clear first-week plan: household routines, equipment demonstrations, priorities, work and rest arrangements, feedback and handovers.",
+    "body": "Use the first week to explain the home, demonstrate the agreed tasks and build a reliable communication routine. Start with a small set of priorities and expand the routine after reviewing what works. A clear orientation helps the family and the worker understand the same job; it is separate from an agency trial, a probation clause or a promise of immediate independent performance.\n\n## Prepare the handover before the first working day\n\nIdentify one family contact who can answer questions and approve changes. Write down the household’s essential routines, the tasks in the agreement and the arrangements for meals, accommodation or arrival where relevant. Prepare access instructions, appliance manuals and a place for work materials. Show the worker how to contact the responsible adult if a task cannot proceed safely.\n\nWork begins through the applicable employment and service arrangement. Keep the signed documents accessible and refer to the [UAE Government domestic-worker guidance](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) for the official framework. INAYA’s [hiring stages guide](https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/) explains the distinction between selecting a candidate and arranging the start of service.\n\n## Use a first-week orientation map\n\nThis is an original example for a seven-day calendar window. Place the touchpoints around the agreed working days and rest; it is not seven consecutive days of work or a fixed training programme.\n\n| Touchpoint | Family demonstration or discussion | Useful record |\n|---|---|---|\n| First working day | Home layout, agreed role, contacts, access and immediate priorities | Contact sheet and a short task list |\n| Next working day | Appliance controls, materials, storage and the preferred result | Simple equipment and task instructions |\n| Middle of the week | Practise the routine and ask the worker to explain it back | Questions, adjustments and priority order |\n| Later working days | Check the workload and coordination with other family responsibilities | Updated handover sheet and rest arrangements |\n| End-of-week review | Discuss what is clear, what needs demonstration and the next routine | Agreed changes and the next review point |\n\n## Demonstrate one task before judging the result\n\nShow a complete example: the correct product, the surface or garment, the expected finish and where tools are put away. Ask the worker to describe the sequence in the language you use together. This identifies unclear instructions without treating a request for explanation as a lack of ability. Photos of a preferred arrangement can help when the family and worker agree to use them; keep personal documents and private images out of a task sheet.\n\nAvoid giving instructions through several family members at once. If one person asks for ironing while another requests kitchen preparation, the named contact should resolve the priority. Read the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) before expanding the role or adding competing tasks.\n\n## Make the working relationship clear\n\nDiscuss when instructions are shared, how breaks and rest fit the arrangement, which areas are private and what information stays within the household. Where childcare forms part of the role, explain the child’s routine and the parent’s escalation instructions separately from general cleaning. The [Abu Dhabi ECA competency framework](https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3) highlights respectful communication with families and attention to children’s safety; it is a useful assessment reference, not evidence that an individual holds a particular certificate.\n\nKeep orientation distinct from legal probation or a proposed trial. Use the [interview, trial and probation guide](https://inayadomestic.ae/en/blog/domestic-worker-interview-trial-probation/) to understand those separate concepts. A first-week checklist does not replace the contract or alter its terms.\n\n## Hold a short two-way review\n\nAsk four practical questions: Which instructions are clear? Which task needs another demonstration? Is the priority list realistic within the agreed schedule? What should change before the next working day? Record the answer and the person responsible for each action. Recognise tasks performed well as well as points needing improvement. If a service issue requires coordination, use the [INAYA support process](https://inayadomestic.ae/en/support-process/) with a factual description and the relevant agreement details.",
+    "faqs": [
+      {
+        "question": "Should a new maid know every household routine immediately?",
+        "answer": "Explain and demonstrate the routines that are specific to your home. Begin with agreed priorities, invite questions and review the result before expanding the routine."
+      },
+      {
+        "question": "Does a first-week plan mean a free trial?",
+        "answer": "No. Orientation is the practical introduction to the home after the appropriate start arrangements. Any trial or probation has its own legal and contractual basis."
+      },
+      {
+        "question": "Who should give daily instructions?",
+        "answer": "Choose one family contact to coordinate priorities and approve changes. Other household members can pass requests through that contact to avoid conflicting instructions."
+      },
+      {
+        "question": "What should the end-of-week review cover?",
+        "answer": "Review clear instructions, tasks needing demonstration, the workload and the next changes. Record the agreed actions and give both the family and worker a chance to raise questions."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "The orientation loop",
+      "caption": "Original practical example to use within agreed working days and rest arrangements.",
+      "items": [
+        {
+          "label": "Explain",
+          "detail": "Share the role, household routine and named contact."
+        },
+        {
+          "label": "Demonstrate",
+          "detail": "Show the equipment, method and expected result."
+        },
+        {
+          "label": "Practise",
+          "detail": "Check understanding and resolve conflicting priorities."
+        },
+        {
+          "label": "Review",
+          "detail": "Record feedback and adjust the next agreed routine."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "الأسبوع الأول للعاملة المنزلية: قائمة عملية للتعريف بالمنزل",
+    "description": "استقبل العاملة المنزلية بخطة واضحة للأسبوع الأول تشمل روتين الأسرة والأجهزة والأولويات والعمل والراحة والملاحظات وتسليم المهام وطريقة مراجعة الروتين.",
+    "body": "خصص الأسبوع الأول للتعريف بالمنزل وشرح المهام المتفق عليها وبناء طريقة واضحة للتواصل. ابدأ بأولويات محدودة، ثم وسع الروتين بعد مراجعة ما يناسب الأسرة والعاملة. فالتعريف الجيد يساعد الطرفين على فهم الوظيفة نفسها، ويختلف عن التجربة المقترحة من المكتب أو شرط فترة التجربة في العقد أو توقع إتقان جميع تفاصيل المنزل فوراً.\n\n## جهز المعلومات قبل أول يوم عمل\n\nحدد شخصاً واحداً من الأسرة للإجابة عن الأسئلة والموافقة على التعديلات. اكتب الروتين الأساسي والمهام الواردة في الاتفاق وترتيبات الوجبات والسكن أو الوصول بحسب نوع الخدمة. جهز تعليمات الدخول وأدلة الأجهزة ومكان أدوات العمل، واشرح طريقة التواصل مع الشخص المسؤول إذا تعذر تنفيذ مهمة بأمان أو ظهرت تعليمات متعارضة.\n\nيرتبط بدء العمل بترتيب التوظيف والخدمة المنطبق. احتفظ بالمستندات الموقعة في مكان يسهل الرجوع إليه، وراجع [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) لفهم الإطار الرسمي. ويوضح [دليل مراحل التوظيف لدى عناية](https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/) الفرق بين اختيار المرشحة وترتيب بدء الخدمة.\n\n## استخدم خريطة تعريف خلال الأسبوع الأول\n\nهذا نموذج أصلي لنافذة تقويمية من سبعة أيام. وزع نقاطه حول أيام العمل والراحة المتفق عليها؛ فهو ليس سبعة أيام عمل متواصلة ولا برنامج تدريب ثابتاً.\n\n| نقطة المراجعة | ما توضحه الأسرة عملياً | السجل المفيد |\n|---|---|---|\n| أول يوم عمل | توزيع المنزل والدور ووسائل التواصل والدخول والأولويات | ورقة جهات الاتصال وقائمة مهام قصيرة |\n| يوم العمل التالي | تشغيل الأجهزة والمواد والتخزين والنتيجة المطلوبة | تعليمات مبسطة للأجهزة والمهام |\n| منتصف الأسبوع | تطبيق الروتين وطلب إعادة شرح الخطوات | الأسئلة والتعديلات وترتيب الأولوية |\n| أيام العمل اللاحقة | مراجعة العبء والتنسيق مع التزامات الأسرة | ورقة تسليم محدثة وترتيبات الراحة |\n| مراجعة نهاية الأسبوع | ما اتضح وما يحتاج إلى عرض عملي والروتين التالي | تعديلات متفق عليها وموعد المراجعة المقبلة |\n\n## اعرض المهمة قبل تقييم نتيجتها\n\nقدم مثالاً كاملاً يتضمن المادة المناسبة والسطح أو القطعة والنتيجة المطلوبة ومكان إعادة الأدوات. اطلب من العاملة شرح التسلسل باللغة المستخدمة بينكما. بهذه الطريقة تظهر التعليمات التي تحتاج إلى توضيح، من دون اعتبار السؤال عن الطريقة نقصاً في القدرة. ويمكن استخدام صورة لترتيب مفضل باتفاق الطرفين، مع إبقاء المستندات الشخصية والصور الخاصة خارج ورقة المهام.\n\nتجنب توجيه تعليمات متزامنة من عدة أفراد. فإذا طلب أحدهم الكي وطلب آخر تحضير المطبخ، يحسم الشخص المسؤول ترتيب الأولوية. وراجع [دليل الاتفاق على المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) قبل توسيع الدور أو إضافة أعمال تتنافس على الوقت والانتباه. كما يساعد تسجيل التعديل في منع عودة التعليمات القديمة في اليوم التالي.\n\n## وضح علاقة العمل والحدود اليومية\n\nناقش موعد مشاركة التعليمات، وترتيبات الاستراحة والراحة، والمساحات الخاصة، والمعلومات التي تبقى داخل المنزل. وإذا شمل الدور رعاية طفل، فاشرح روتينه وتعليمات الرجوع إلى الوالدين بصورة مستقلة عن التنظيف. ويبرز [إطار الكفاءات الصادر عن هيئة أبوظبي للطفولة المبكرة](https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3) التواصل المحترم مع الأسرة والاهتمام بسلامة الطفل؛ وهو مرجع للتقييم وليس إثباتاً لشهادة يحملها شخص معين.\n\nيبقى التعريف بالمنزل مختلفاً عن التجربة القانونية أو أي تجربة مقترحة للخدمة. راجع [دليل المقابلة والتجربة وفترة الاختبار](https://inayadomestic.ae/ar/blog/domestic-worker-interview-trial-probation/) لفهم الفروق، ولا تستخدم قائمة الأسبوع الأول بديلاً عن العقد أو وسيلة لتغيير شروطه.\n\n## اختم بمراجعة متبادلة قصيرة\n\nاسأل عن التعليمات الواضحة، والمهمة التي تحتاج إلى شرح آخر، وواقعية الأولويات ضمن الجدول، والتغيير المطلوب قبل يوم العمل التالي. سجل القرار والمسؤول عن كل خطوة، واذكر الأعمال الجيدة إلى جانب نقاط التحسين. وعند الحاجة إلى تنسيق متعلق بالخدمة، استخدم [مسار الدعم لدى عناية](https://inayadomestic.ae/ar/support-process/) مع وصف واقعي للملاحظة وتفاصيل الاتفاق المرتبطة بها.",
+    "faqs": [
+      {
+        "question": "هل ينبغي أن تعرف العاملة كل روتين المنزل فوراً؟",
+        "answer": "اشرح الروتين الخاص بمنزلك واعرضه عملياً. ابدأ بالأولويات المتفق عليها، وشجع الأسئلة، ثم راجع النتيجة قبل توسيع الروتين."
+      },
+      {
+        "question": "هل تعني خطة الأسبوع الأول تجربة مجانية؟",
+        "answer": "لا. التعريف هو تقديم المنزل وروتينه بعد ترتيبات البدء المناسبة. أما أي تجربة أو فترة اختبار فلها أساس قانوني وتعاقدي مستقل."
+      },
+      {
+        "question": "من يعطي التعليمات اليومية؟",
+        "answer": "حدد شخصاً من الأسرة لتنسيق الأولويات والموافقة على التغييرات، وتمرر بقية الطلبات من خلاله لتجنب التعارض."
+      },
+      {
+        "question": "ماذا تشمل مراجعة نهاية الأسبوع؟",
+        "answer": "تشمل وضوح التعليمات والمهام التي تحتاج إلى عرض عملي وحجم العمل والتعديلات المقبلة، مع تسجيل القرارات وإتاحة الأسئلة للطرفين."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "دورة التعريف بالمنزل",
+      "caption": "نموذج عملي أصلي يطبق ضمن أيام العمل وترتيبات الراحة المتفق عليها.",
+      "items": [
+        {
+          "label": "اشرح",
+          "detail": "وضح الدور وروتين المنزل والشخص المسؤول."
+        },
+        {
+          "label": "اعرض عملياً",
+          "detail": "قدم الأجهزة والطريقة والنتيجة المطلوبة."
+        },
+        {
+          "label": "طبق وراجع",
+          "detail": "تحقق من الفهم واحسم تعارض الأولويات."
+        },
+        {
+          "label": "عدل الروتين",
+          "detail": "سجل الملاحظات وخطة العمل التالية المتفق عليها."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Official domestic-worker employment/contract framework; no new timelines or contractual promises."
+    },
+    {
+      "url": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Arabic official domestic-worker guidance."
+    },
+    {
+      "url": "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3",
+      "supports": "Respectful communication and attention to child safety, not an assertion of individual certification."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "new maid first week checklist UAE",
+      "url": "https://maidmatch.ae/guides/new-maid-first-week"
+    },
+    {
+      "query": "first month new maid Dubai onboarding checklist",
+      "url": "https://www.rufy.ae/blog/first-month-new-maid-dubai-onboarding-2026"
+    }
+  ]
+}

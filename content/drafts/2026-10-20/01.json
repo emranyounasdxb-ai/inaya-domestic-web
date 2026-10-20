@@ -1,0 +1,120 @@
+{
+  "id": "01",
+  "slug": "four-hour-eight-hour-maid-visit-plan",
+  "mode": "new",
+  "question": {
+    "en": "What can a maid complete in a 4-hour or 8-hour visit?",
+    "ar": "ما المهام التي يمكن ترتيبها في زيارة عاملة منزلية لمدة 4 أو 8 ساعات؟"
+  },
+  "gap": "Prices exist; practical task-priority and time-budget planning does not.",
+  "existingMatches": [
+    "live-in-live-out-part-time-maid-uae",
+    "agreeing-domestic-worker-household-duties"
+  ],
+  "en": {
+    "title": "Four-hour or eight-hour maid visit: how to plan the work",
+    "description": "Choose a four-hour or eight-hour INAYA maid visit using a task-priority table, preparation checklist and clear handover, with the published package prices.",
+    "body": "A four-hour maid visit works best with a short, ranked task list; an eight-hour visit provides a larger window for agreed household work. Choose the duration from the condition of the home, the tasks and the access arrangements. Bedroom count alone cannot describe the work. INAYA’s published half-day package is AED 120 for four hours and its daily package is AED 200 for eight hours.\n\n## Start with the result your household needs\n\nWrite down the three outcomes that matter most today. “Kitchen worktops and sink, two bathrooms, then accessible floors” is a clearer brief than “clean everything.” Tell the team about laundry, ironing or cooking before choosing the visit; each competes for time with cleaning. For a role comparison, use the existing [live-in, live-out and part-time guide](https://inayadomestic.ae/en/blog/live-in-live-out-part-time-maid-uae/).\n\nA first visit also needs orientation: access, product locations, appliance controls and surface-care instructions. Include those activities when discussing scope. A familiar recurring visit and a first visit to an unfamiliar home do not begin with the same information. Photographs shared with permission can explain the work, but exclude private documents and people who have not agreed to appear.\n\n## Compare priorities rather than promising a room count\n\nThe following is an original planning example. It helps order work; it is not a completion guarantee or a fixed task allowance for a package.\n\n| Planning point | Four-hour visit | Eight-hour visit |\n|---|---|---|\n| Main objective | Concentrate on a small set of important outcomes | Plan a broader sequence of agreed outcomes |\n| Kitchen and bathrooms | Put the areas used most at the top of the list | Add further agreed areas after the main priorities |\n| Floors and dusting | Select accessible rooms and surfaces | Plan additional rooms or a rotating detail task |\n| Laundry or ironing | Replace a lower-priority cleaning task when included in scope | Reserve a separate work block within the agreed plan |\n| End-of-visit handover | Record completed and carried-forward tasks | Review the wider list and the next visit’s priorities |\n\nThe [published pricing page](https://inayadomestic.ae/en/pricing/) explains the package periods and the equal live-in/live-out prices. The written quotation records the selected work and responsibilities. Four and eight hours describe these visits; the weekly and monthly service-period labels are a different basis for planning.\n\n## Identify work that changes the estimate\n\nTell the coordinator about heavy clutter, accumulated grease, several occupied bathrooms, delicate finishes and additional floors. Explain whether cupboards are full, whether laundry needs sorting, and whether rooms will be available throughout the visit. Waiting for access or moving personal belongings changes the usable work sequence.\n\nUse the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) to separate routine work from additional responsibilities. High exterior windows, repairs, pest treatment, lifting heavy furniture and clinical care require their own assessment. A longer booking does not turn an ordinary household role into specialist work.\n\n## Prepare the home before the visit\n\nPut the agreed products and working equipment in an accessible place, with instructions for unfamiliar appliances. Clear the surfaces you want cleaned and decide where items may be moved. Keep a short list of delicate or restricted areas. The [CDC’s home-cleaning guidance](https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html) recommends surface-appropriate products and their label instructions; the task plan should allow that care rather than encourage rushed cleaning.\n\nThe [UAE Government’s domestic-worker guidance](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) identifies the nature of agreed work within the contractual relationship. Use a written task list alongside the applicable agreement, with proper work and rest arrangements.\n\n## Review the visit and improve the next booking\n\nAt handover, mark each priority completed, partly completed or carried forward, and note why. The next booking can then address a real pattern: a recurring ironing backlog, more kitchen preparation, or a need to rotate less-used rooms. Discuss the next scope before adding hours or duties. To arrange the right visit, share your location, priorities and preferred timing with [INAYA’s team](https://inayadomestic.ae/en/contact/).",
+    "faqs": [
+      {
+        "question": "Does four hours guarantee that every room will be cleaned?",
+        "answer": "The visit is planned around the agreed task list, property condition and access. Rank the essential outcomes and record any work carried forward at handover."
+      },
+      {
+        "question": "What are INAYA’s four-hour and eight-hour prices?",
+        "answer": "The published half-day package is AED 120 for four hours. The daily package is AED 200 for eight hours. Review the written scope, responsibilities and final price breakdown before booking."
+      },
+      {
+        "question": "Can laundry or ironing be included in the visit?",
+        "answer": "Include those duties in the proposed scope before booking and reserve time for them within the visit. Explain the load and care instructions so they can be prioritised alongside cleaning."
+      },
+      {
+        "question": "Should I book eight hours for deep cleaning?",
+        "answer": "Describe the exact work first. A longer household visit is not a substitute for a specialist assessment of high-access cleaning, heavy lifting, restoration or other work outside the agreed role."
+      }
+    ],
+    "visual": {
+      "kind": "bars",
+      "title": "Published visit-package prices",
+      "caption": "INAYA’s approved package prices: AED 120 for four hours and AED 200 for eight hours. These are visit prices, not a separate hourly tariff.",
+      "unit": "AED",
+      "items": [
+        {
+          "label": "Four-hour half-day visit",
+          "detail": "4-hour service period",
+          "value": 120
+        },
+        {
+          "label": "Eight-hour daily visit",
+          "detail": "8-hour service period",
+          "value": 200
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "زيارة عاملة منزلية لأربع أم ثماني ساعات: كيف تخطط للعمل؟",
+    "description": "اختر زيارة عناية لأربع أو ثماني ساعات باستخدام جدول للأولويات وقائمة للتجهيز وتسليم واضح، مع التعرف على أسعار الباقات المنشورة وحدود تنظيم المهام.",
+    "body": "تناسب زيارة العاملة المنزلية لمدة أربع ساعات قائمة قصيرة من المهام المرتبة حسب الأولوية، بينما تمنح زيارة الثماني ساعات وقتاً أوسع للأعمال المتفق عليها. اختر المدة بحسب حالة المنزل والمهام وترتيبات الدخول، فعدد غرف النوم وحده لا يصف حجم العمل. سعر باقة نصف اليوم المنشور لدى عناية هو 120 درهماً لأربع ساعات، وسعر الباقة اليومية 200 درهم لثماني ساعات.\n\n## ابدأ بالنتيجة التي تحتاجها أسرتك\n\nاكتب أهم ثلاث نتائج تريد إنجازها اليوم. عبارة «أسطح المطبخ والحوض، ثم الحمامان، ثم الأرضيات المتاحة» أوضح من طلب «تنظيف كل شيء». اذكر الغسيل والكي والطهي قبل اختيار الزيارة، لأن هذه الأعمال تتشارك الوقت مع التنظيف. ويمكن الرجوع إلى [دليل المقارنة بين الخدمة المقيمة وغير المقيمة والجزئية](https://inayadomestic.ae/ar/blog/live-in-live-out-part-time-maid-uae/) لفهم ترتيب الخدمة المناسب.\n\nتحتاج الزيارة الأولى أيضاً إلى تعريف العاملة بطريقة الدخول وأماكن الأدوات وتشغيل الأجهزة والعناية بالأسطح. أدرج هذه الخطوات عند مناقشة نطاق العمل. فالزيارة المتكررة لمنزل مألوف تختلف في بدايتها عن أول زيارة لمنزل جديد. ويمكن للصور المرسلة بموافقة أصحابها توضيح المطلوب، مع استبعاد المستندات الخاصة والأشخاص الذين لم يوافقوا على التصوير.\n\n## قارن الأولويات بدلاً من تحديد عدد مضمون من الغرف\n\nالجدول التالي مثال تنظيمي أصلي لترتيب العمل، وليس وعداً بإكمال مهام محددة أو قائمة ثابتة لكل باقة.\n\n| عنصر التخطيط | زيارة أربع ساعات | زيارة ثماني ساعات |\n|---|---|---|\n| الهدف الأساسي | التركيز على نتائج قليلة ومهمة | ترتيب مجموعة أوسع من النتائج المتفق عليها |\n| المطبخ والحمامات | إعطاء الأولوية للأماكن الأكثر استخداماً | إضافة مناطق أخرى بعد الأولويات الأساسية |\n| الأرضيات وإزالة الغبار | اختيار الغرف والأسطح المتاحة | إضافة غرف أخرى أو مهمة تفصيلية دورية |\n| الغسيل أو الكي | استبدال مهمة أقل أولوية إذا كان ضمن النطاق | تخصيص جزء مستقل من خطة العمل |\n| التسليم في نهاية الزيارة | تسجيل المنجز والمهام المؤجلة | مراجعة القائمة الأوسع وأولويات الزيارة التالية |\n\nتوضح [صفحة الأسعار المنشورة](https://inayadomestic.ae/ar/pricing/) مدد الباقات وتساوي السعر للخدمة المقيمة وغير المقيمة. ويسجل عرض السعر المكتوب العمل المختار والمسؤوليات. تصف الأربع والثماني ساعات مدة هاتين الزيارتين، بينما تصف الباقات الأسبوعية والشهرية فترات خدمة مختلفة في أساس تنظيمها.\n\n## حدد ما يغير تقدير حجم العمل\n\nأخبر المنسق عن الأغراض المتراكمة والدهون القديمة وكثرة الحمامات المستخدمة والأسطح الحساسة وتعدد الطوابق. وضح إن كانت الخزائن ممتلئة أو كان الغسيل يحتاج إلى فرز، وما إذا كانت الغرف متاحة طوال الزيارة. فانتظار السماح بالدخول أو نقل المتعلقات الشخصية يغير ترتيب الوقت المتاح للعمل.\n\nيساعد [دليل مهام العاملة المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) على فصل العمل المعتاد عن المسؤوليات الإضافية. أما النوافذ الخارجية المرتفعة والإصلاحات ومكافحة الآفات ونقل الأثاث الثقيل والرعاية السريرية فتحتاج إلى تقييم مستقل. زيادة مدة الزيارة لا تحول الدور المنزلي المعتاد إلى عمل تخصصي.\n\n## جهز المنزل قبل الزيارة\n\nضع المنتجات والمعدات الصالحة المتفق عليها في مكان يسهل الوصول إليه، واشرح تشغيل الأجهزة غير المألوفة. أخل الأسطح المطلوب تنظيفها وحدد الأماكن المسموح بنقل الأغراض إليها. وجهز قائمة قصيرة بالأسطح الحساسة والمناطق المقيدة. توصي [إرشادات مراكز مكافحة الأمراض لتنظيف المنزل](https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html) بمنتجات مناسبة للأسطح واتباع تعليمات الملصق، لذلك ينبغي أن تسمح الخطة بالعناية المطلوبة دون استعجال.\n\nوتوضح [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) مكانة طبيعة العمل المتفق عليه في العلاقة التعاقدية. استخدم قائمة مكتوبة إلى جانب الاتفاق المنطبق، مع تنظيم العمل والراحة بصورة سليمة.\n\n## راجع الزيارة لتحسين الموعد التالي\n\nعند التسليم، سجل أمام كل أولوية أنها منجزة أو منجزة جزئياً أو مؤجلة، مع السبب. يساعد ذلك على معرفة الاحتياج الفعلي للزيارة التالية، مثل تراكم الكي أو زيادة أعمال المطبخ أو تدوير تنظيف الغرف الأقل استخداماً. ناقش النطاق التالي قبل إضافة الوقت أو المسؤوليات. ولترتيب الزيارة المناسبة، شارك موقع المنزل والأولويات والموعد المفضل مع [فريق عناية](https://inayadomestic.ae/ar/contact/).",
+    "faqs": [
+      {
+        "question": "هل تضمن الأربع ساعات تنظيف جميع الغرف؟",
+        "answer": "تنظم الزيارة وفق قائمة المهام المتفق عليها وحالة المنزل وترتيبات الدخول. رتب النتائج الأساسية حسب الأولوية، وسجل ما ينتقل إلى الزيارة التالية عند التسليم."
+      },
+      {
+        "question": "ما سعر الأربع والثماني ساعات لدى عناية؟",
+        "answer": "سعر باقة نصف اليوم المنشور 120 درهماً لأربع ساعات، وسعر الباقة اليومية 200 درهم لثماني ساعات. راجع النطاق والمسؤوليات وتفصيل المبلغ النهائي في العرض المكتوب قبل الحجز."
+      },
+      {
+        "question": "هل يمكن إضافة الغسيل أو الكي إلى الزيارة؟",
+        "answer": "أدرج هذه الأعمال في النطاق المقترح قبل الحجز وخصص لها وقتاً داخل الزيارة. وضح كمية الملابس وتعليمات العناية لترتيبها مع أعمال التنظيف."
+      },
+      {
+        "question": "هل أحجز ثماني ساعات للتنظيف العميق؟",
+        "answer": "صف العمل المطلوب أولاً. الزيارة المنزلية الأطول لا تغني عن تقييم متخصص للأعمال المرتفعة أو نقل الأثاث الثقيل أو الترميم أو غيرها من الأعمال خارج الدور المتفق عليه."
+      }
+    ],
+    "visual": {
+      "kind": "bars",
+      "title": "أسعار باقات الزيارة المنشورة",
+      "caption": "أسعار باقات عناية المعتمدة: 120 درهماً لأربع ساعات و200 درهم لثماني ساعات. هذه أسعار زيارات وليست تسعيرة مستقلة للساعة.",
+      "unit": "درهم",
+      "items": [
+        {
+          "label": "زيارة نصف يوم",
+          "detail": "فترة خدمة أربع ساعات",
+          "value": 120
+        },
+        {
+          "label": "زيارة يومية",
+          "detail": "فترة خدمة ثماني ساعات",
+          "value": 200
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+      "supports": "Use products appropriate to the surface and follow label directions; short safety reference only."
+    },
+    {
+      "url": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Agreed nature of work is part of the domestic-worker contractual relationship."
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "English-language counterpart of the official UAE domestic-worker contractual-work guidance."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "Dubai maid 4 hours 8 hours how many hours cleaning apartment villa",
+      "url": "https://www.homemaids.ae/blog/hourly-maid-service-dubai-how-many-hours-does-your-home-actually-need/"
+    },
+    {
+      "query": "Dubai maid 4 hours 8 hours how many hours cleaning apartment villa",
+      "url": "https://www.luminacare.ae/blog/how-many-hours-to-clean-an-apartment"
+    }
+  ]
+}

@@ -60,7 +60,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
   const { guideUpdated } = JSON.parse(await readFile('tests/fixtures/poster-pricing-changes.json', 'utf8'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 194);
+  assert.equal(urls.length, 228);
   for (const locale of ['en', 'ar']) {
     const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
     const hubBody = hub.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
@@ -139,42 +139,66 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
 
 
 // Independent hashes and structure counts come from the finalized publication package.
-// They protect all forty approved versions against omission or accidental rewriting.
-test('twenty finalized bilingual topics retain exact copy, references and route identity', async () => {
+// They protect all forty original versions against omission or accidental
+// rewriting. The three approved supplements and their visuals are additive;
+// the customer-series test independently checks their complete exported copy.
+test('twenty original bilingual topics retain exact copy and references alongside the approved customer-series additions', async () => {
   const approved = JSON.parse(await readFile('tests/fixtures/published-article-content.json', 'utf8'));
   const contentModule = await readFile('lib/published-article-content.ts', 'utf8');
   const publishedArticles = JSON.parse(contentModule.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
+  const manifest = JSON.parse(await readFile('content/research/2026-10-20/article-manifest.json', 'utf8'));
+  const supplements = new Map(manifest.filter((entry) => entry.mode === 'update').map((entry) => [entry.slug, entry]));
+  assert.deepEqual([...supplements.keys()].sort(), ['agreeing-domestic-worker-household-duties', 'domestic-worker-hiring-costs-uae', 'domestic-worker-leave-travel-planning']);
   const sha = (value) => createHash('sha256').update(value).digest('hex');
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   assert.equal(approved.length, 20);
-  assert.equal(publishedArticles.length, 20);
-  assert.equal(new Set(publishedArticles.map((article) => article.slug)).size, 20);
+  assert.equal(publishedArticles.length, 37, 'twenty preserved publications plus seventeen non-duplicate new topics');
+  assert.equal(new Set(publishedArticles.map((article) => article.slug)).size, 37);
   const allowedHosts = new Set(['inayadomestic.ae', 'uaelegislation.gov.ae', 'mohre.gov.ae', 'www.mohre.gov.ae', 'mohap.gov.ae', 'u.ae']);
-  for (const article of publishedArticles) {
-    const expected = approved.find((entry) => entry.slug === article.slug);
-    assert.ok(expected, article.slug);
+  for (const expected of approved) {
+    const article = publishedArticles.find((entry) => entry.slug === expected.slug);
+    assert.ok(article, `${expected.slug}: original publication retained`);
     for (const locale of ['en', 'ar']) {
       const route = `/${locale}/blog/${article.slug}/`;
       const url = `${origin}${route}`;
       const copy = article[locale];
       const snapshot = expected[locale];
+      const supplement = supplements.get(article.slug)?.languages[locale];
+      let originalMarkdown = copy.body;
+      if (supplement) {
+        const separator = `\n\n${supplement.supplementSeparator}\n\n`;
+        const parts = copy.body.split(separator);
+        assert.equal(parts.length, 2, `${route}: one explicit approved supplement boundary`);
+        assert.ok(parts[1].trim(), `${route}: substantive addition retained after the original`);
+        originalMarkdown = parts[0];
+      }
       assert.equal(copy.title, snapshot.title, `${route}: approved title`);
-      assert.equal(sha(copy.body), snapshot.body_sha256, `${route}: complete approved Markdown`);
+      assert.equal(sha(originalMarkdown), snapshot.body_sha256, `${route}: complete original Markdown unchanged`);
       const html = await readFile(`out${route}index.html`, 'utf8');
       const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
       const rendered = body.match(/<article\b[^>]*data-published-article="content"[^>]*>([\s\S]*?)<\/article>/)?.[1];
       assert.ok(rendered, `${route}: complete visible article`);
-      assert.equal(sha(text(rendered)), snapshot.visible_sha256, `${route}: every word, figure and condition rendered`);
-      assert.equal([...rendered.matchAll(/<h2\b/g)].length, snapshot.heading_count, `${route}: all headings`);
-      assert.equal([...rendered.matchAll(/<li\b/g)].length, snapshot.list_items, `${route}: all list items`);
-      assert.equal([...rendered.matchAll(/<table\b/g)].length, snapshot.tables, `${route}: all tables`);
-      const links = [...rendered.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href);
+      // The new chart is separately asserted as visible by the series test. Its
+      // descriptive text must not change the original manuscript fingerprint.
+      let originalRendered = rendered.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/g, '');
+      if (supplement) {
+        const boundary = [...originalRendered.matchAll(/<h2\b([^>]*)>/g)]
+          .find((match) => attrs(match[1]).id === `article-section-${snapshot.heading_count + 1}`);
+        assert.ok(boundary, `${route}: the supplement follows every original heading`);
+        originalRendered = originalRendered.slice(0, boundary.index);
+      }
+      assert.equal(sha(text(originalRendered)), snapshot.visible_sha256, `${route}: every original word, figure and condition rendered`);
+      assert.equal([...originalRendered.matchAll(/<h2\b/g)].length, snapshot.heading_count, `${route}: all original headings`);
+      assert.equal([...originalRendered.matchAll(/<li\b/g)].length, snapshot.list_items, `${route}: all original list items`);
+      assert.equal([...originalRendered.matchAll(/<table\b/g)].length, snapshot.tables, `${route}: all original tables`);
+      const links = [...originalRendered.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href);
+      const fullLinks = [...rendered.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href);
       assert.deepEqual(links, snapshot.links, `${route}: all original clickable references and internal links`);
       for (const link of links) {
         assert.ok(allowedHosts.has(new URL(link).hostname), `${route}: official or INAYA source`);
         if (new URL(link).origin === origin) assert.ok(new URL(link).pathname.startsWith(`/${locale}/`), `${route}: internal link language`);
       }
-      const languageText = locale === 'ar' ? text(rendered).replace(/INAYA|info@inayadomestic\.ae/g, '') : text(rendered);
+      const languageText = locale === 'ar' ? text(originalRendered).replace(/INAYA|info@inayadomestic\.ae/g, '') : text(originalRendered);
       assert.doesNotMatch(languageText, locale === 'ar' ? /[A-Za-z]/ : /[\u0600-\u06ff]/, `${route}: article language with approved brand names`);
       assert.doesNotMatch(text(rendered), /TODO|TBD|editorial notes|source-evidence|pending business facts/i);
       assert.equal([...body.matchAll(/<h1\b/g)].length, 1, `${route}: one primary heading`);
@@ -189,9 +213,9 @@ test('twenty finalized bilingual topics retain exact copy, references and route 
       const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((match) => attrs(match[1]).type === 'application/ld+json').flatMap((match) => JSON.parse(match[2])['@graph'] || []);
       const schema = graph.find((node) => node['@type'] === 'Article');
       assert.equal(schema.url, url); assert.equal(schema.inLanguage, locale); assert.equal(schema.headline, copy.title);
-      assert.equal(schema.datePublished, '2026-10-09'); assert.equal(schema.dateModified, expected.updated);
+      assert.equal(schema.datePublished, '2026-10-09'); assert.equal(schema.dateModified, supplement ? '2026-10-20' : expected.updated);
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
-      assert.deepEqual(schema.citation, [...new Set(links.filter((link) => new URL(link).origin !== origin))]);
+      assert.deepEqual(schema.citation, [...new Set(fullLinks.filter((link) => new URL(link).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);
       const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
       assert.ok(hub.includes(`href="${route}"`), `${route}: localized listing`);

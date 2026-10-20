@@ -1,0 +1,125 @@
+{
+  "id": "04",
+  "slug": "regular-maid-service-deep-move-in-cleaning",
+  "mode": "new",
+  "question": {
+    "en": "Is regular maid service the same as deep cleaning or move-in cleaning?",
+    "ar": "هل خدمة العاملة المنزلية المعتادة هي نفسها التنظيف العميق أو تنظيف ما قبل السكن؟"
+  },
+  "gap": "No regular versus specialist/moving-clean scope guide. Do not advertise an unapproved specialist service.",
+  "existingMatches": [
+    "agreeing-domestic-worker-household-duties"
+  ],
+  "en": {
+    "title": "Regular maid service, deep cleaning or move-in cleaning?",
+    "description": "Choose the right cleaning brief by comparing routine maid tasks, intensive work and moving-home requirements, with a clear scope and handover checklist.",
+    "body": "Regular maid visits, deep-cleaning jobs and move-in cleaning should be compared by the written task list, equipment, access and condition of the property. They are not interchangeable labels. A longer maid visit gives more time for agreed household work; it does not automatically include specialist machinery, restoration, high-access work or a landlord’s handover requirements.\n\n## Describe the job before choosing the service name\n\nStart with what you can see. Is the home occupied and maintained, empty before a move, or affected by renovation debris? Which surfaces need ordinary attention, and which have staining, damage or a maintenance problem? Explain these points with a room list and suitable photographs instead of asking only for a “deep clean.”\n\nUse the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) to distinguish the worker’s agreed role from additional services. For INAYA, discuss the proposed ordinary household work through the [housekeeping service page](https://inayadomestic.ae/en/services/housekeeping/). Work needing specialist equipment or skills should be assessed separately with the relevant provider.\n\n## Compare three different job briefs\n\nThis original table explains how to prepare a request. The final task list comes from the selected provider’s written scope, rather than the service label alone.\n\n| Job brief | Main planning objective | Details to identify | Separate assessment to discuss |\n|---|---|---|---|\n| Regular household visit | Maintain agreed occupied areas | Priorities, accessible surfaces, floors and routine tasks | Additional tasks outside the normal role |\n| Detailed or deep-cleaning request | Address named areas requiring more intensive work | Exact surfaces, buildup, access, products and equipment | Heavy lifting, restoration, high access or specialist treatment |\n| Move-in or move-out request | Prepare an empty or changing home for the agreed handover | Cupboards, appliances, utilities, keys and inspection checklist | Contractor residue, repairs, exterior work and tenancy conditions |\n\nA room can need routine cleaning while another area needs a different assessment. Split the request rather than treating every part of the property as one identical task. This makes quotations easier to compare and lets the household coordinate the work in a sensible order.\n\n## Keep cleaning, disinfecting and repairs distinct\n\nThe [CDC explains that cleaning and disinfecting are different processes](https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html). A stronger smell is not a useful standard for a completed job. Identify the actual surface result and the product instructions instead of requesting extra chemicals as a substitute for suitable work.\n\nA recurring leak, damaged seal, broken fitting or area affected by persistent moisture needs more than a new cleaning instruction. The [EPA’s indoor-environment guidance](https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment) identifies fixing leaks and controlling moisture as separate actions. Raise building or maintenance issues with the owner, manager or appropriate specialist before scheduling cleaning around them.\n\n## Prepare a move-in handover carefully\n\nCheck that water, electricity and safe access are available for the agreed work. Say whether the property is empty, furnished or still receiving deliveries. List cupboards or appliances to be addressed and explain what must remain untouched. Keep a contact person available to answer questions about belongings and access.\n\nIf an inspection is involved, obtain its checklist before booking and share the relevant items. A cleaning task list and a tenancy decision are separate records: the tenancy agreement and property condition govern the handover discussion. Keep before-and-after notes focused on the agreed work and take photographs only with appropriate permission.\n\n## Agree a sequence and review the actual scope\n\nComplete repairs and other work that creates dust or residue before arranging the relevant follow-on cleaning wherever practical. Then identify the household priorities that remain. For routine visit planning, use the [four-hour and eight-hour guide](https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/) rather than assuming that every job can be fitted into a published visit length.\n\nAt quotation stage, record the areas, task boundaries, equipment responsibility and exclusions, together with the price and timing. Send the property condition, location and required outcome to [INAYA](https://inayadomestic.ae/en/contact/) to discuss the household role and the appropriate next step.",
+    "faqs": [
+      {
+        "question": "Is deep cleaning automatically included in a longer maid visit?",
+        "answer": "The written task list determines the work. Extra visit time does not add specialist machinery, restoration, high-access tasks or other duties outside the agreed household role."
+      },
+      {
+        "question": "What should I send for a move-in cleaning discussion?",
+        "answer": "Describe whether the home is empty or furnished, the condition of surfaces, utilities, cupboards, appliances, access and any relevant inspection checklist. Identify repairs or contractor work separately."
+      },
+      {
+        "question": "Does a cleaning booking determine the return of my tenancy deposit?",
+        "answer": "Cleaning records show the agreed work performed. The tenancy agreement, property condition and the landlord or manager’s handover process govern the separate deposit discussion."
+      },
+      {
+        "question": "What should I do about leaks or recurring damp areas?",
+        "answer": "Report the underlying building or maintenance issue to the owner, manager or relevant specialist, then coordinate the appropriate cleaning around that work. Do not treat repeated cleaning as a repair."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "Choose the service from the actual job",
+      "caption": "Original scope-selection workflow. Specialist work needs its own assessment and written scope.",
+      "items": [
+        {
+          "label": "Describe condition",
+          "detail": "Occupied, empty, moving or affected by other work."
+        },
+        {
+          "label": "Name the tasks",
+          "detail": "List surfaces, priorities and access requirements."
+        },
+        {
+          "label": "Separate specialist work",
+          "detail": "Identify repairs, high access and specialist equipment."
+        },
+        {
+          "label": "Agree the scope",
+          "detail": "Record tasks, responsibilities, price and handover."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "خدمة عاملة معتادة أم تنظيف عميق أم تنظيف عند الانتقال؟",
+    "description": "اختر طلب التنظيف المناسب بمقارنة الأعمال المنزلية المعتادة والعمل المكثف ومتطلبات الانتقال، مع جدول للنطاق وخطوات واضحة لتجهيز المنزل وتسليمه.",
+    "body": "قارن الزيارة المنزلية المعتادة والتنظيف العميق وتنظيف ما قبل السكن من خلال قائمة المهام والمعدات وترتيبات الدخول وحالة العقار. فهذه التسميات ليست متطابقة. تزيد الزيارة الأطول الوقت المتاح للأعمال المنزلية المتفق عليها، لكنها لا تضيف تلقائياً معدات تخصصية أو أعمال ترميم أو وصولاً مرتفعاً أو متطلبات تسليم يضعها المالك.\n\n## صف العمل قبل اختيار اسم الخدمة\n\nابدأ بما تراه فعلياً. هل المنزل مشغول ويخضع للعناية المعتادة، أم فارغ قبل الانتقال، أم توجد فيه مخلفات تجديد؟ ما الأسطح التي تحتاج إلى تنظيف عادي، وما المناطق التي تحمل بقعاً أو تلفاً أو مشكلة صيانة؟ وضح ذلك بقائمة للغرف وصور مناسبة بدلاً من الاكتفاء بطلب «تنظيف عميق».\n\nيساعد [دليل مهام العاملة المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) على التمييز بين الدور المتفق عليه والخدمات الإضافية. ويمكن مناقشة العمل المنزلي المعتاد المقترح عبر [صفحة التنظيف وترتيب المنزل لدى عناية](https://inayadomestic.ae/ar/services/housekeeping/). أما الأعمال التي تحتاج إلى معدات أو خبرة تخصصية فتناقش في تقييم مستقل مع مقدم الخدمة المناسب.\n\n## قارن ثلاثة أنواع من طلبات العمل\n\nيوضح الجدول الأصلي التالي كيفية تجهيز الطلب. وتحدد القائمة النهائية وفق النطاق المكتوب لمقدم الخدمة المختار، وليس من اسم الخدمة وحده.\n\n| نوع الطلب | الهدف التنظيمي | التفاصيل التي تذكرها | ما يناقش بتقييم مستقل |\n|---|---|---|---|\n| زيارة منزلية معتادة | المحافظة على المناطق المشغولة المتفق عليها | الأولويات والأسطح المتاحة والأرضيات والأعمال اليومية | الأعمال الإضافية خارج الدور المعتاد |\n| طلب تنظيف تفصيلي أو عميق | معالجة مناطق مسماة تحتاج إلى عمل أكثر كثافة | الأسطح والتراكم والدخول والمنتجات والمعدات | نقل الأثاث الثقيل والترميم والارتفاعات والمعالجة التخصصية |\n| طلب تنظيف عند الانتقال | تجهيز المنزل المتغير أو الفارغ للتسليم المتفق عليه | الخزائن والأجهزة والمرافق والمفاتيح وقائمة الفحص | مخلفات المقاول والإصلاحات والخارج وشروط الإيجار |\n\nقد تحتاج غرفة إلى تنظيف اعتيادي، بينما تتطلب منطقة أخرى تقييماً مختلفاً. قسم الطلب بدلاً من اعتبار كل أجزاء العقار مهمة واحدة متطابقة. يسهل ذلك مقارنة العروض وتنسيق العمل بتسلسل منطقي، ويحدد لكل مقدم خدمة ما هو مطلوب منه بدقة.\n\n## افصل التنظيف عن التطهير والإصلاح\n\nتوضح [مراكز مكافحة الأمراض أن التنظيف والتطهير عمليتان مختلفتان](https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html). ولا تعد الرائحة الأقوى معياراً مفيداً لإنجاز العمل. حدد النتيجة المطلوبة على السطح وتعليمات المنتج بدلاً من طلب مواد إضافية كبديل عن طريقة العناية المناسبة.\n\nويحتاج التسرب المتكرر أو العازل التالف أو التجهيز المكسور أو الرطوبة المستمرة إلى إجراء يتجاوز تغيير تعليمات التنظيف. تذكر [إرشادات وكالة حماية البيئة للبيئة الداخلية](https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment) إصلاح التسرب والتحكم في الرطوبة كإجراءات مستقلة. ناقش مشكلات المبنى والصيانة مع المالك أو المدير أو المتخصص المناسب قبل تنظيم التنظيف حولها.\n\n## جهز تسليم المنزل عند الانتقال\n\nتحقق من توفر الماء والكهرباء والدخول الآمن للعمل المطلوب. ووضح إن كان العقار فارغاً أو مفروشاً أو ما زال يستقبل التوصيلات. اكتب الخزائن والأجهزة المطلوب التعامل معها، وحدد ما ينبغي عدم لمسه. واجعل شخصاً مسؤولاً متاحاً للإجابة عن الأسئلة المتعلقة بالأغراض والدخول.\n\nإذا كان هناك فحص للتسليم، احصل على قائمته قبل الحجز وشارك البنود ذات الصلة. فتنفيذ أعمال التنظيف وقرار تسليم العقار سجلان مختلفان؛ وتخضع مناقشة التسليم لاتفاق الإيجار وحالة العقار. احتفظ بملاحظات عن العمل المتفق عليه قبل الزيارة وبعدها، والتقط الصور بالموافقة المناسبة فقط.\n\n## اتفق على التسلسل وراجع النطاق الفعلي\n\nأنجز الإصلاحات والأعمال المنتجة للغبار أو المخلفات قبل التنظيف اللاحق المرتبط بها متى كان ذلك عملياً. ثم حدد الأولويات المنزلية المتبقية. ولتنظيم الزيارات المعتادة، استخدم [دليل الأربع والثماني ساعات](https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/) بدلاً من افتراض إمكان إدراج كل عمل ضمن مدة زيارة منشورة.\n\nوعند إعداد العرض، سجل المناطق وحدود العمل ومسؤولية المعدات والاستثناءات، إلى جانب السعر والتوقيت. أرسل حالة المنزل وموقعه والنتيجة المطلوبة إلى [عناية](https://inayadomestic.ae/ar/contact/) لمناقشة الدور المنزلي والخطوة المناسبة.",
+    "faqs": [
+      {
+        "question": "هل يشمل حجز زيارة أطول التنظيف العميق تلقائياً؟",
+        "answer": "تحدد قائمة المهام المكتوبة العمل المطلوب. زيادة الوقت لا تضيف معدات تخصصية أو ترميماً أو أعمالاً مرتفعة أو مسؤوليات أخرى خارج الدور المنزلي المتفق عليه."
+      },
+      {
+        "question": "ماذا أرسل عند مناقشة تنظيف منزل قبل السكن؟",
+        "answer": "وضح إن كان المنزل فارغاً أو مفروشاً وحالة الأسطح والمرافق والخزائن والأجهزة وترتيبات الدخول وقائمة الفحص ذات الصلة. وافصل الإصلاحات وأعمال المقاول عن طلب التنظيف."
+      },
+      {
+        "question": "هل يحدد حجز التنظيف استرجاع تأمين الإيجار؟",
+        "answer": "توضح سجلات التنظيف العمل المتفق عليه والمنفذ. أما مناقشة التأمين فتخضع بصورة مستقلة لاتفاق الإيجار وحالة العقار وإجراءات التسليم لدى المالك أو المدير."
+      },
+      {
+        "question": "ماذا أفعل عند وجود تسرب أو رطوبة متكررة؟",
+        "answer": "أبلغ المالك أو المدير أو المتخصص المناسب بالمشكلة الأصلية، ثم نسق التنظيف الملائم حول أعمال المعالجة. لا يعتبر تكرار التنظيف إصلاحاً للتسرب أو سبب الرطوبة."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "اختر الخدمة انطلاقاً من العمل الفعلي",
+      "caption": "خطوات أصلية لاختيار نطاق الخدمة. يحتاج العمل التخصصي إلى تقييمه ونطاقه المكتوب المستقل.",
+      "items": [
+        {
+          "label": "صف حالة العقار",
+          "detail": "مشغول أو فارغ أو عند الانتقال أو بعد أعمال أخرى."
+        },
+        {
+          "label": "سم المهام",
+          "detail": "حدد الأسطح والأولويات ومتطلبات الدخول."
+        },
+        {
+          "label": "افصل العمل التخصصي",
+          "detail": "وضح الإصلاحات والارتفاعات والمعدات الخاصة."
+        },
+        {
+          "label": "اتفق على النطاق",
+          "detail": "سجل المهام والمسؤوليات والسعر والتسليم."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html",
+      "supports": "Cleaning and disinfecting are distinct processes; reference is limited to that distinction."
+    },
+    {
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment",
+      "supports": "Fixing leaks and controlling moisture are separate indoor-environment actions."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "regular cleaning deep cleaning move in cleaning difference UAE",
+      "url": "https://www.homeworkuae.com/blog/deep-cleaning-vs-regular-cleaning-dubai"
+    },
+    {
+      "query": "regular cleaning deep cleaning move in cleaning difference UAE",
+      "url": "https://www.reddit.com/r/abudhabi/comments/1lto6on"
+    }
+  ]
+}
