@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
+const publicationSchedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
 // The monthly checklist replaces three superseded tier sections with one
 // six-package explanation; all eight responsibility/terms sections remain.
 const sectionCounts = [7, 9, 5, 6, 10, 5, 5];
@@ -93,7 +94,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.ok(text(body).includes(articleNode.headline), `${route}: schema headline visible`);
       assert.deepEqual(articleNode.author, { '@type': 'Organization', name: 'INAYA Domestic Workers Editorial Team' });
       assert.ok(text(body).includes(articleNode.author.name), `${route}: editorial author visible`);
-      assert.equal(articleNode.datePublished, slugs.indexOf(slug) < 3 ? '2026-10-01' : '2026-10-06');
+      assert.equal(articleNode.datePublished, publicationSchedule[slug]);
       assert.equal(articleNode.dateModified, guideUpdated[slug], `${route}: only substantively revised guides receive the new date`);
       assert.ok(body.includes(`dateTime="${articleNode.datePublished}"`), `${route}: published date visible`);
       assert.ok(body.includes(`dateTime="${articleNode.dateModified}"`), `${route}: updated date visible`);
@@ -213,7 +214,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((match) => attrs(match[1]).type === 'application/ld+json').flatMap((match) => JSON.parse(match[2])['@graph'] || []);
       const schema = graph.find((node) => node['@type'] === 'Article');
       assert.equal(schema.url, url); assert.equal(schema.inLanguage, locale); assert.equal(schema.headline, copy.title);
-      assert.equal(schema.datePublished, '2026-10-09'); assert.equal(schema.dateModified, supplement ? '2026-10-20' : expected.updated);
+      assert.equal(schema.datePublished, publicationSchedule[article.slug]); assert.equal(schema.dateModified, supplement ? '2026-10-20' : expected.updated);
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
       assert.deepEqual(schema.citation, [...new Set(fullLinks.filter((link) => new URL(link).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);
