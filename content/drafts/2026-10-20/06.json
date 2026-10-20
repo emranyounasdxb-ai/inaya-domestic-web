@@ -1,0 +1,129 @@
+{
+  "id": "06",
+  "slug": "maid-laundry-ironing-task-checklist",
+  "mode": "new",
+  "question": {
+    "en": "How do I arrange maid help for laundry and ironing?",
+    "ar": "كيف أرتب مساعدة العاملة المنزلية في الغسيل والكي؟"
+  },
+  "gap": "Laundry/ironing are labels only; no garment-priority or handover workflow.",
+  "existingMatches": [
+    "agreeing-domestic-worker-household-duties"
+  ],
+  "en": {
+    "title": "How to arrange maid help for laundry and ironing",
+    "description": "Build a clear laundry and ironing plan for your UAE home: garment priorities, care labels, appliance instructions, specialist items and an easy handover.",
+    "body": "Arrange laundry and ironing as a defined household task, with a prioritised garment list, care-label instructions, an agreed finish standard and enough space for drying and storage. Tell INAYA whether the main need is washing, folding, ironing or a combination. A basket of shirts, a bedding change and delicate garments are different workloads, even when they occupy the same amount of floor space.\n\n## Describe the work before selecting a visit\n\nStart with what is waiting, rather than a general request to “finish the laundry.” List everyday clothes, school uniforms, bedding and any items needed by a particular time. Separate the pieces that require a professional laundry or a decision from the owner. Agree whether putting clothes away is part of the task and show the correct storage locations.\n\nThis is a task-planning guide. For the wider job scope, read [how to agree household duties](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/). Use the [maid skills assessment guide](https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/) when discussing experience with your fabrics, appliances and preferred finishing methods.\n\n## Use a simple garment handover table\n\nThe following is an original household worksheet, rather than a promise about the number of pieces completed during a visit.\n\n| Priority | What to show the worker | Finish or handover required |\n|---|---|---|\n| Next-day clothing | The exact uniforms, shirts or outfits needed | Washed or ironed as the label allows; placed in the agreed location |\n| Everyday machine wash | Care labels, sorting preferences and approved detergent | Correct programme followed; drying status reported |\n| Bedding and towels | Which rooms, replacement sets and storage shelves | Agreed beds changed; cleaned items separated from items awaiting drying |\n| Delicate or valuable items | Label, existing marks and owner instructions | Set aside for an owner decision or a professional service |\n| Ironing only | Clean, dry items and priority order | Agreed finish, safe cooling and hanging or folding |\n\n## Let care labels lead the process\n\n[GINETEX’s care-symbol guidance](https://www.ginetex.net/gb/labelling/care-symbols.asp) explains that labels distinguish washing, drying, ironing and professional textile care. Show the worker the label before treatment; a familiar fabric name alone is not a complete instruction. Keep a separate basket for items whose instructions need discussion.\n\n[Bosch UAE’s dryer guidance](https://www.bosch-home.com/ae/en/customer-service/get-support/what-to-put-in-dryer) also directs users to garment care instructions when deciding whether and how an item can be tumble-dried. Introduce the actual appliance in your home. Demonstrate its controls, where the manual is kept and the settings you normally use, then ask the worker to explain the sequence back. Do not ask someone to guess an unfamiliar control or repair a faulty machine.\n\n## Plan around the whole laundry cycle\n\nA wash cycle, drying, ironing and wardrobe storage do not necessarily finish together. Agree which tasks take priority while the machine runs and what happens to a load still drying at the end of a visit. Leave a short note identifying the load, its location and the next action. That prevents a second person from repeating a wash or ironing an item still waiting for an owner decision.\n\nPrepare a stable ironing surface, suitable hangers, clear storage space and the products specified for the garments. Keep hot equipment and trailing cables away from children and pets. Demonstrate how equipment is switched off and stored after use. Existing stains or damage should be noted before work begins; explain the reporting route for any new problem without encouraging concealment or blame.\n\n## Review priorities and the result together\n\nEnd the visit with a short review: which priority items are ready, what remains wet, what was set aside and what supplies need replenishing. Judge the agreed work rather than the size of an empty basket. If the recurring workload exceeds the planned visit, adjust the scope or schedule before adding further tasks.\n\nINAYA’s [housemaid service page](https://inayadomestic.ae/en/services/housemaid/) explains the household roles you can discuss. Share the garment categories, equipment and preferred schedule through the [contact page](https://inayadomestic.ae/en/contact/) so laundry and ironing responsibilities are recorded alongside the rest of the service.",
+    "faqs": [
+      {
+        "question": "Can I request ironing without washing?",
+        "answer": "Yes, describe ironing as the task you want to discuss, including clean dry garments, priority items and the finish required. Record the selected scope and schedule in the service agreement."
+      },
+      {
+        "question": "How many garments can be ironed in one visit?",
+        "answer": "Plan from garment type, condition, care instructions, equipment and the other agreed duties. Use a priority list and review the actual workload rather than a universal garment count."
+      },
+      {
+        "question": "Should delicate clothes go into the normal laundry basket?",
+        "answer": "Keep delicate, valuable and specialist-care items separately. Show their labels and owner instructions before a treatment is chosen."
+      },
+      {
+        "question": "What if a load is still drying when the visit ends?",
+        "answer": "Record where the load is drying and who will complete the next step. Agree this handover before the visit so wet items are not forgotten or treated twice."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "A clear laundry handover",
+      "caption": "Original INAYA planning workflow: use the garment label and your appliance instructions at each stage.",
+      "items": [
+        {
+          "label": "Prioritise",
+          "detail": "List the garments and the time-sensitive items."
+        },
+        {
+          "label": "Check",
+          "detail": "Review labels, condition, products and equipment."
+        },
+        {
+          "label": "Process",
+          "detail": "Follow the agreed wash, dry or ironing sequence."
+        },
+        {
+          "label": "Handover",
+          "detail": "Record ready, drying and owner-decision items."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "كيف أرتب مساعدة العاملة المنزلية في الغسيل والكي؟",
+    "description": "نظم الغسيل والكي في منزلك: حدد أولوية الملابس، وتعليمات العناية، وطريقة استخدام الأجهزة، والقطع المتخصصة، وخطوات التسليم الواضحة ومراجعة نهاية الزيارة.",
+    "body": "رتب الغسيل والكي بوصفهما مهمتين واضحتين لهما أولويات وتعليمات عناية وطريقة تسليم محددة. اشرح لعناية هل تحتاج إلى الغسيل، أم الطي، أم الكي، أم مجموعة من هذه الأعمال. فسلة القمصان وتغيير أغطية الأسرّة والملابس الحساسة تتطلب أعمالاً مختلفة، حتى عندما تبدو الكميات متقاربة. ويساعد تحديد المطلوب مسبقاً على اختيار نطاق عملي يناسب منزلك والوقت المتاح.\n\n## ابدأ بقائمة الملابس والنتيجة المطلوبة\n\nبدلاً من طلب «إنهاء الغسيل» بصورة عامة، حدد الملابس اليومية والزي المدرسي والمفروشات والقطع المطلوبة في موعد معين. افصل القطع التي تحتاج إلى مغسلة متخصصة أو إلى قرار منك. اشرح أيضاً هل يشمل العمل إعادة الملابس إلى الخزائن، وأين توضع كل مجموعة، ومن يتولى الخطوة التالية إذا بقي بعض الغسيل في مرحلة التجفيف.\n\nراجع [دليل الاتفاق على المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) لتحديد دور العاملة ضمن أعمال المنزل. ويساعدك [دليل تقييم المهارات والتواصل](https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/) على مناقشة خبرتها في الأقمشة والأجهزة وطريقة التشطيب التي تفضلها، اعتماداً على العمل الفعلي وليس المسمى الوظيفي وحده.\n\n## استخدم جدولاً بسيطاً للتسليم\n\nهذا نموذج أصلي لتنظيم المهام داخل المنزل، وليس وعداً بعدد ثابت من القطع التي تنجز خلال الزيارة.\n\n| الأولوية | المعلومات التي توضحها للعاملة | النتيجة أو التسليم المطلوب |\n|---|---|---|\n| ملابس اليوم التالي | القطع المدرسية أو القمصان المطلوبة تحديداً | غسلها أو كيها وفق الملصق ووضعها في المكان المتفق عليه |\n| الغسيل اليومي | ملصقات العناية وطريقة الفرز والمنظف المخصص | استخدام البرنامج المناسب وتسجيل مرحلة التجفيف |\n| المفروشات والمناشف | الغرف المقصودة والأطقم البديلة وأماكن التخزين | تغيير الأسرّة المتفق عليها وفصل الجاهز عما لا يزال يجف |\n| القطع الحساسة أو القيّمة | الملصق والعلامات الموجودة وتعليمات المالك | فصلها لقرار صاحبها أو لخدمة متخصصة |\n| الكي فقط | قطع نظيفة وجافة وترتيب الأولوية | التشطيب والتبريد الآمن ثم التعليق أو الطي |\n\n## اجعل ملصق العناية أساس القرار\n\nتوضح [إرشادات رموز العناية من GINETEX](https://www.ginetex.net/gb/labelling/care-symbols.asp) أن الملصقات تميز بين الغسيل والتجفيف والكي والعناية المهنية بالمنسوجات. اقرأ الملصق مع العاملة قبل المعالجة؛ فمعرفة اسم القماش لا تغني عن التعليمات. خصص سلة مستقلة للقطع التي تحتاج إلى مراجعة، حتى لا تدخل في دورة غسيل عادية بالخطأ.\n\nوتؤكد [إرشادات بوش الإمارات للمجفف](https://www.bosch-home.com/ae/ar/customer-service/get-support/what-to-put-in-dryer) أهمية تعليمات القطعة عند اختيار التجفيف الآلي. عرّف العاملة بالجهاز الموجود فعلياً في منزلك، واشرح الأزرار والبرنامج المستخدم ومكان دليل التشغيل. اطلب منها إعادة شرح الخطوات للتأكد من وضوحها، ولا تطلب تخمين وظيفة زر غير مألوف أو إصلاح جهاز معطل.\n\n## خطط لدورة العمل كاملة\n\nالغسيل والتجفيف والكي وإعادة الملابس إلى الخزائن مراحل مختلفة. اتفق على المهام التي تنفذ أثناء تشغيل الغسالة، وعلى طريقة تسليم أي حمولة لم تنتهِ عند نهاية الزيارة. تكفي ملاحظة قصيرة تحدد نوع الملابس ومكانها والخطوة التالية والمسؤول عنها. وبذلك لا يعاد غسل حمولة نظيفة، ولا تعالج قطعة كانت تنتظر قرار صاحبها.\n\nجهز سطحاً ثابتاً للكي، وعلاقات مناسبة، ومساحة تخزين واضحة، والمنتجات المخصصة للقطع. أبعد الأدوات الساخنة والأسلاك عن الأطفال والحيوانات الأليفة، واشرح طريقة إطفاء الجهاز وتخزينه. سجل البقع أو التلف الموجود مسبقاً، وحدد كيف تبلغ العاملة عن أي مشكلة جديدة بصورة مباشرة ومحترمة.\n\n## راجع الأولويات بعد الزيارة\n\nتحقق من الملابس الجاهزة، وما بقي في التجفيف، والقطع المفصولة، والمواد التي تحتاج إلى تعويض. قيّم العمل المتفق عليه بدلاً من الاكتفاء بشكل السلة. وإذا زادت الكمية المتكررة، فعدّل الجدول أو الأولويات قبل إضافة مهام أخرى. ناقش حاجتك عبر [خدمات عاملات المنازل](https://inayadomestic.ae/ar/services/housemaid/) أو [صفحة التواصل مع عناية](https://inayadomestic.ae/ar/contact/)، مع بيان أنواع الملابس والأجهزة والجدول المطلوب.",
+    "faqs": [
+      {
+        "question": "هل يمكن طلب الكي من دون الغسيل؟",
+        "answer": "اشرح أن المهمة المطلوبة هي الكي، مع تحديد القطع النظيفة والجافة والأولوية وطريقة التشطيب، ثم سجل النطاق والجدول ضمن اتفاق الخدمة."
+      },
+      {
+        "question": "كم قطعة يمكن كيها خلال الزيارة؟",
+        "answer": "يبنى التخطيط على نوع القطع وحالتها وتعليمات العناية والأجهزة والمهام الأخرى. استخدم قائمة أولوية وراجع حجم العمل الفعلي بدلاً من الاعتماد على عدد موحد."
+      },
+      {
+        "question": "أين أضع الملابس الحساسة؟",
+        "answer": "ضع القطع الحساسة والقيّمة والمخصصة للعناية المهنية بصورة منفصلة، مع إظهار الملصق وتعليمات صاحب القطعة قبل اختيار المعالجة."
+      },
+      {
+        "question": "ماذا يحدث إذا لم يجف الغسيل قبل نهاية الزيارة؟",
+        "answer": "سجل مكانه والخطوة التالية والمسؤول عن تنفيذها. اتفق على هذا التسليم مسبقاً حتى لا ينسى الغسيل أو يعالج مرتين."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "تسليم واضح للغسيل والكي",
+      "caption": "تسلسل أصلي من عناية لتنظيم العمل؛ يرجع في كل مرحلة إلى ملصق القطعة ودليل الجهاز.",
+      "items": [
+        {
+          "label": "حدد الأولوية",
+          "detail": "اكتب أنواع الملابس والقطع المطلوبة في موعد محدد."
+        },
+        {
+          "label": "راجع التعليمات",
+          "detail": "افحص الملصقات والحالة والمواد والأجهزة."
+        },
+        {
+          "label": "نفذ التسلسل",
+          "detail": "اتبع خطوات الغسيل أو التجفيف أو الكي المتفق عليها."
+        },
+        {
+          "label": "سلم النتيجة",
+          "detail": "ميز الجاهز عما يجف وما ينتظر قرار صاحبه."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.ginetex.net/gb/labelling/care-symbols.asp",
+      "supports": "Care labels distinguish washing, drying, ironing and professional textile care; no symbols reproduced."
+    },
+    {
+      "url": "https://www.bosch-home.com/ae/en/customer-service/get-support/what-to-put-in-dryer",
+      "supports": "Manufacturer instructs users to follow garment care instructions for tumble drying."
+    },
+    {
+      "url": "https://www.bosch-home.com/ae/ar/customer-service/get-support/what-to-put-in-dryer",
+      "supports": "Arabic counterpart of Bosch UAE garment dryer guidance."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid laundry ironing checklist Dubai care labels",
+      "url": "https://www.swabilaundry.ae/blog/how-to-read-laundry-care-labels-dubai"
+    },
+    {
+      "query": "household help laundry ironing UAE",
+      "url": "https://www.urbancompany.com/dubai-live-out-ptm"
+    }
+  ]
+}

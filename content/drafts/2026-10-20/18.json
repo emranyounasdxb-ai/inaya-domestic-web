@@ -1,0 +1,125 @@
+{
+  "id": "18",
+  "slug": "agreeing-domestic-worker-household-duties",
+  "mode": "update",
+  "question": {
+    "en": "Can I add childcare, cooking or extra duties after hiring a maid?",
+    "ar": "هل يمكن إضافة رعاية الأطفال أو الطهي أو مهام أخرى بعد توظيف العاملة المنزلية؟"
+  },
+  "gap": "Add concrete change-request and priority worksheet to existing URL.",
+  "existingMatches": [
+    "agreeing-domestic-worker-household-duties"
+  ],
+  "en": {
+    "title": "Adding childcare, cooking or new maid duties: a fair change checklist",
+    "description": "Use a clear change request when adding childcare, cooking or other maid duties. Review role, skills, schedule, priorities and written service terms.",
+    "body": "Adding childcare, cooking or other duties starts with a review of the existing role, the worker’s relevant skills and the time available. Describe the proposed change, identify what it replaces or adds, and record the agreed arrangement before treating it as part of the routine. A longer task list is not, by itself, a revised service plan.\n\n## Describe the change as an outcome, not a vague instruction\n\nWrite one clear request: for example, preparing an agreed family meal, handling a laundry priority or taking responsibility for an agreed childcare routine. Explain the frequency, location, deadline, equipment and the person who will provide instructions. This makes it easier to distinguish a small adjustment within an existing task from a meaningful change of role.\n\nThe [UAE Government guidance on discrimination and domestic-worker protections](https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies) identifies assignment outside the contract as a prohibited practice. Keep the proposed role within the applicable lawful arrangement rather than relying on an informal assumption that all household work is interchangeable.\n\n## Use a change-request worksheet\n\nThis is an original household planning tool. Complete it with the worker and, for an agency-managed service, the service contact. Keep the final version with the agreement so each party can refer to the same duties and priorities.\n\n| Review point | What to write down | Example question to resolve |\n|---|---|---|\n| Proposed duty | The actual task and frequency | Which meal or childcare routine is being added? |\n| Role and skills | Relevant experience and applicable scope | Is this appropriate for the agreed role? |\n| Time and location | When attention is needed and where | Does it conflict with another fixed duty? |\n| Existing priorities | Work to move, reduce or remove | Which cleaning task will happen later? |\n| Resources and instructions | Supplies, demonstration and named contact | Who explains the household method? |\n| Service terms | Updated scope and any agreed price change | Which written document records the change? |\n| Review point | A practical follow-up conversation | How will the household and worker discuss the new routine? |\n\nAvoid changing several duties at once without separating them. A request to “help more with the children and kitchen” can contain different responsibilities, different experience needs and competing demands. Work through each task so the discussion produces a manageable role.\n\n## Protect fixed supervision and rest from task creep\n\nCheck the busiest part of the day, not just the total list. Active cooking and supervision in another room can compete for attention. Move flexible cleaning rather than assuming one person can perform both fixed responsibilities simultaneously. The [one-helper or additional-help planner](https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/) provides a practical way to map that overlap.\n\nThe [domestic-workers law](https://uaelegislation.gov.ae/en/legislations/1593) provides the employment framework for agreed work and protections. Build the new routine around the applicable work and rest arrangement. Residence inside the home does not make personal time an unused pool for additional duties.\n\n## Match the request to the right kind of support\n\nGeneral household assistance, childcare and licensed clinical work are different scopes. Review the [maid, nanny and babysitter comparison](https://inayadomestic.ae/en/blog/maid-nanny-babysitter-differences/) when childcare becomes a meaningful part of the role. For clinical needs, use the [caregiver versus nurse guide](https://inayadomestic.ae/en/blog/caregiver-versus-licensed-nurse/) and seek the appropriate licensed service rather than adding medical tasks to a housekeeping list.\n\nFor cooking, describe the actual dishes, household preferences and kitchen responsibilities. A worker who has cleaned a kitchen has not necessarily undertaken the same cooking role your family requires. Use relevant individual experience and a clear handover to assess the task.\n\n## Record the decision and review the result respectfully\n\nThe written outcome should state the revised duty, the schedule, the task that moves, the resources provided and the person responsible for questions. In an agency-managed arrangement, discuss any service-scope or price implications with the agency before changing the routine. Keep the earlier version so everyone can see what changed.\n\nAfter the new routine begins, review concrete observations: whether instructions were clear, resources were ready and the agreed workload fits the day. Address a scheduling problem by revising the plan rather than treating every unfinished task as a performance failure. [Contact INAYA](https://inayadomestic.ae/en/contact/) with the current scope and the proposed change to discuss the suitable next step.",
+    "faqs": [
+      {
+        "question": "Can I add a new duty simply because it takes place inside the home?",
+        "answer": "Review the existing role, contract, relevant skills and schedule first. Different household tasks can involve different responsibilities and cannot be treated as automatically interchangeable."
+      },
+      {
+        "question": "What should happen when the new duty conflicts with cleaning time?",
+        "answer": "Identify which flexible work moves, is reduced or is removed. Record the updated priorities rather than adding the new responsibility to an unchanged task list."
+      },
+      {
+        "question": "Should I discuss a scope change with the agency?",
+        "answer": "For an agency-managed service, share the proposed change with the service contact so role, schedule, resources and any revised commercial terms are recorded together."
+      },
+      {
+        "question": "Does adding duties mean the worker must perform clinical care?",
+        "answer": "No. Household assistance and licensed clinical care have different scopes. Use the appropriate licensed healthcare service for clinical needs."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "A clear route for changing household duties",
+      "caption": "Original change-request workflow; any revised task remains within the applicable agreement and lawful role.",
+      "items": [
+        {
+          "label": "Describe the request",
+          "detail": "Name the task, frequency, timing and intended outcome."
+        },
+        {
+          "label": "Review skills and overlap",
+          "detail": "Check the role and the work that must move or be reduced."
+        },
+        {
+          "label": "Record the revised scope",
+          "detail": "Document responsibilities, resources and applicable service terms."
+        },
+        {
+          "label": "Review the routine",
+          "detail": "Discuss clear observations and adjust the plan respectfully."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "إضافة رعاية الأطفال أو الطهي أو مهام جديدة: قائمة لتعديل الدور بوضوح",
+    "description": "نظم إضافة مهام جديدة للعاملة المنزلية بمراجعة الدور والخبرة والجدول والأولويات ونطاق الخدمة المكتوب قبل تغيير الروتين اليومي. مع قائمة عملية لطلب التعديل.",
+    "body": "تبدأ إضافة رعاية الأطفال أو الطهي أو مهام أخرى بمراجعة الدور الحالي وخبرة العاملة والوقت المتاح. صف التغيير المقترح، وحدد ما الذي يضيفه أو يستبدله، وسجل الترتيب المتفق عليه قبل اعتباره جزءاً من الروتين. زيادة عدد البنود في القائمة لا تكفي وحدها لإنشاء خطة خدمة معدلة.\n\n## صف المهمة بنتيجة واضحة\n\nاكتب طلباً محدداً، مثل إعداد وجبة متفق عليها، أو ترتيب أولوية للغسيل، أو تحمل مسؤولية روتين محدد لرعاية الطفل. وضح التكرار والمكان والموعد والأدوات والشخص الذي يقدم التعليمات. يساعد ذلك على التمييز بين تعديل بسيط ضمن مهمة قائمة وتغيير جوهري في الدور المطلوب.\n\nتشير [إرشادات حكومة الإمارات بشأن الحماية من التمييز وحقوق العمالة المساعدة](https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies) إلى حظر إسناد مهام خارج العقد. لذلك اربط الدور المقترح بالترتيب القانوني المطبق، بدلاً من افتراض أن جميع الأعمال الواقعة داخل المنزل متبادلة تلقائياً.\n\n## استخدم ورقة لطلب تعديل المهام\n\nهذه أداة أصلية لتخطيط العمل المنزلي. أكملها مع العاملة ومع جهة التواصل في الخدمة التي تديرها الوكالة. احتفظ بالنسخة النهائية مع الاتفاق حتى يرجع الجميع إلى الوصف نفسه عند مناقشة المسؤوليات والأولويات.\n\n| نقطة المراجعة | ما الذي يسجل؟ | سؤال عملي لحسم التفصيل |\n|---|---|---|\n| المهمة المقترحة | العمل الفعلي وعدد مرات تكراره | أي وجبة أو روتين للطفل سيضاف؟ |\n| الدور والخبرة | الخبرة المناسبة ونطاق العمل | هل المهمة مناسبة للدور المتفق عليه؟ |\n| الوقت والمكان | وقت الحاجة إلى الاهتمام وموقعها | هل تتعارض مع مسؤولية ثابتة أخرى؟ |\n| الأولويات القائمة | ما ينقل أو يقلل أو يلغى | أي مهمة تنظيف ستؤجل؟ |\n| الموارد والتعليمات | الأدوات والشرح وجهة التواصل | من يوضح طريقة الأسرة؟ |\n| شروط الخدمة | النطاق المعدل وأي تغيير متفق عليه في السعر | أين يوثق التعديل؟ |\n| المراجعة العملية | موعد مناسب لمناقشة الروتين | كيف تناقش الأسرة والعاملة نتيجة الترتيب؟ |\n\nافصل الطلبات عندما يشمل التغيير عدة أعمال. فعبارة «المساعدة أكثر مع الأطفال والمطبخ» قد تتضمن مسؤوليات وخبرات مختلفة وأوقاتاً متعارضة. ناقش كل مهمة على حدة حتى يتحول الطلب إلى دور واقعي يمكن تنظيمه ومراجعته.\n\n## احم مسؤوليات الإشراف والراحة من تراكم الأعمال\n\nراجع أكثر فترات اليوم ازدحاماً، وليس مجموع القائمة فقط. قد يتعارض الطهي الذي يتطلب متابعة مع الإشراف على طفل في غرفة أخرى. انقل التنظيف المرن بدلاً من افتراض قدرة شخص واحد على متابعة المسؤوليتين في اللحظة نفسها. ويساعدك [دليل عاملة واحدة أم مساعدة إضافية](https://inayadomestic.ae/ar/blog/one-maid-two-helpers-workload/) على رسم هذا التعارض.\n\nيضع [قانون العمالة المساعدة](https://uaelegislation.gov.ae/ar/legislations/1593) إطار التوظيف والعمل المتفق عليه والحماية المطبقة. ابن الروتين المعدل حول ترتيب العمل والراحة؛ فالسكن داخل المنزل لا يحول الوقت الشخصي إلى وقت متاح تلقائياً لإضافة المهام.\n\n## اختر نوع الدعم المناسب للطلب\n\nتختلف المساعدة المنزلية العامة ورعاية الأطفال والعمل السريري المرخص في نطاقها. راجع [الفروق بين العاملة والمربية وجليسة الأطفال](https://inayadomestic.ae/ar/blog/maid-nanny-babysitter-differences/) عندما تصبح رعاية الأطفال جزءاً أساسياً من الدور. وللاحتياجات السريرية، ارجع إلى [دليل المرافقة والتمريض المرخص](https://inayadomestic.ae/ar/blog/caregiver-versus-licensed-nurse/) بدلاً من إضافة أعمال طبية إلى قائمة التنظيف.\n\nوعند إضافة الطهي، صف الأطباق وتفضيلات الأسرة ومسؤوليات المطبخ الفعلية. تنظيف المطبخ وحده لا يثبت خبرة الشخص في نوع الطهي المطلوب. قيم الخبرة الفردية المناسبة، وقدم شرحاً واضحاً للأدوات والطريقة والأولويات.\n\n## وثق القرار وراجع النتيجة باحترام\n\nاذكر في القرار المكتوب المهمة الجديدة وجدولها والعمل الذي سينقل والموارد المتاحة والشخص المسؤول عن الإجابة. وفي الخدمة التي تديرها الوكالة، ناقش أثر التعديل على النطاق والسعر قبل تغيير الروتين. احتفظ بالنسخة السابقة لتظهر الفروق بين الترتيبين.\n\nبعد بدء الخطة، ناقش ملاحظات محددة: هل كانت التعليمات واضحة؟ وهل كانت الأدوات جاهزة؟ وهل يناسب العمل المتفق عليه الجدول؟ عالج مشكلة التنظيم بتعديل الخطة بدلاً من اعتبار كل عمل مؤجل تقصيراً تلقائياً. وعند [التواصل مع عناية](https://inayadomestic.ae/ar/contact/)، أرسل وصف النطاق الحالي والتغيير المطلوب لمناقشة الخطوة المناسبة.",
+    "faqs": [
+      {
+        "question": "هل أضيف أي مهمة لمجرد أنها داخل المنزل؟",
+        "answer": "راجع الدور الحالي والعقد والخبرة والجدول أولاً. تختلف مسؤوليات الأعمال المنزلية، ولا تعد جميعها متبادلة تلقائياً."
+      },
+      {
+        "question": "ماذا أفعل إذا تعارضت المهمة الجديدة مع التنظيف؟",
+        "answer": "حدد العمل المرن الذي سينقل أو يقلل أو يلغى، وسجل الأولويات المعدلة بدلاً من إضافة المسؤولية إلى قائمة ثابتة دون تغيير."
+      },
+      {
+        "question": "هل أناقش تعديل النطاق مع الوكالة؟",
+        "answer": "في الخدمة التي تديرها الوكالة، شارك التغيير المقترح مع جهة التواصل لتوثيق الدور والجدول والموارد وأي شروط تجارية معدلة معاً."
+      },
+      {
+        "question": "هل تعني إضافة المهام تكليف العاملة برعاية سريرية؟",
+        "answer": "لا. يختلف نطاق المساعدة المنزلية عن نطاق الرعاية السريرية المرخصة. تستخدم الخدمة الصحية المرخصة المناسبة عند الحاجة إلى أعمال سريرية."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "مسار واضح لتعديل المهام المنزلية",
+      "caption": "خطة أصلية لمناقشة التغيير؛ تبقى المهمة المعدلة ضمن الاتفاق المطبق والدور القانوني المناسب.",
+      "items": [
+        {
+          "label": "صف الطلب",
+          "detail": "حدد المهمة وتكرارها وتوقيتها والنتيجة المطلوبة."
+        },
+        {
+          "label": "راجع الخبرة والتعارض",
+          "detail": "تحقق من الدور والعمل الذي ينقل أو يقلل."
+        },
+        {
+          "label": "سجل النطاق المعدل",
+          "detail": "وثق المسؤوليات والموارد وشروط الخدمة المنطبقة."
+        },
+        {
+          "label": "راجع الروتين",
+          "detail": "ناقش الملاحظات الواضحة وعدل الخطة باحترام."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+      "supports": "Official portal identifies assignment of domestic-worker tasks outside the contract as prohibited."
+    },
+    {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1593",
+      "supports": "Domestic-worker employment framework for agreed work and protections; practical change worksheet is original editorial advice."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "can add childcare cooking duties to maid UAE contract scope",
+      "url": "https://choosemaid.com/blog/what-are-the-key-responsibilities-of-a-domestic-helper"
+    },
+    {
+      "query": "housemaid duties responsibilities checklist UAE",
+      "url": "https://www.gccdomestic.com/en/blog/housemaid-duties-responsibilities-checklist-2026/"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "14",
+  "slug": "domestic-worker-leave-travel-planning",
+  "mode": "update",
+  "question": {
+    "en": "How do I arrange household cover during my maid’s annual leave?",
+    "ar": "كيف أرتب بديلاً للمساعدة المنزلية أثناء الإجازة السنوية للعاملة؟"
+  },
+  "gap": "Expand existing URL with cover-handover table and workflow; do not duplicate.",
+  "existingMatches": [
+    "domestic-worker-leave-travel-planning"
+  ],
+  "en": {
+    "title": "Arranging household cover during a maid’s annual leave",
+    "description": "Use a practical cover plan for your maid’s annual leave: separate essential duties, prepare the handover and record the temporary service and return routine.",
+    "body": "Arrange annual-leave cover as a separate household project: settle the leave plan, identify the duties that must continue, then organise lawful help for those duties. Complete the handover before leave begins so the worker can use the agreed leave period without becoming the family's remote coordinator. The following practical supplement works alongside the employment and travel guidance in this article.\n\n## Reduce the cover brief to essential household needs\n\nMake two lists. The first contains duties that must continue while the worker is away, such as agreed childcare support or essential household cleaning. The second contains work the family can handle, defer or reduce. This is a workload decision, not a reason to change the worker's leave entitlement.\n\nAvoid asking one temporary person to reproduce every detail of a long-established routine immediately. Identify the relevant experience and the instructions needed for the role. Where childcare or support for an older person is involved, specify the actual tasks and distinguish everyday household support from licensed clinical work.\n\nUse the [role comparison guide](https://inayadomestic.ae/en/blog/maid-nanny-babysitter-differences/) and [replacement eligibility guide](https://inayadomestic.ae/en/blog/domestic-worker-replacement-eligibility/) for separate questions about role selection and replacement requests. Planned holiday cover and a replacement claim are not interchangeable.\n\n## Write a cover-handover table before the leave starts\n\n| Handover topic | What the household prepares | What the cover arrangement records |\n|---|---|---|\n| Dates | Agreed leave period and expected household routine | Cover start/end dates and service schedule |\n| Priority work | Prioritised duties and tasks the family will handle | Specific responsibilities and excluded work |\n| Person and role | Required experience and communication needs | Selected worker and lawful employment/service route |\n| Access | Building procedure, authorised contact and private areas | Entry, keys/cards and return record |\n| Equipment | Products, appliance instructions and supplies | Who provides each item and reports a problem |\n| Support | Family decision-maker and service contact | How questions and changes are raised |\n| Return | A practical re-entry handover for the regular worker | End of temporary duties and any outstanding items |\n\nThis original worksheet helps organise the service. It is not a promise that a free replacement, the same worker or a particular notice period forms part of every INAYA agreement.\n\n## Separate the employment record from the cover-service record\n\nKeep the worker's leave dates, employment entitlements and travel arrangements in the employment file. Keep temporary service dates, duties, price and customer payment documents in the cover-service file. This prevents an agency package charge being mistaken for the worker's personal wage or a new cover booking being mistaken for an amendment to the original employment contract.\n\nThe [domestic-workers law](https://uaelegislation.gov.ae/en/legislations/1593#item21144) and [UAE Government domestic-worker guide](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) provide the legal context for leave and employment. Use the practical worksheet to organise the home around that framework, while retaining the existing agreement and records.\n\n## Set up temporary cover before sharing household access\n\nReview the proposed worker's identity, relevant experience, assigned role and employment or beneficiary arrangement. The household should know who is expected and who has authority to change instructions. A personal recommendation or residence document alone does not settle the work-permission question.\n\nComplete the access and task handover through the agreed provider. Let the temporary worker ask questions before the family assumes that a household routine is self-explanatory. Use the [first-week orientation guide](https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/) selectively: a short assignment still benefits from a home tour, appliance demonstration and clear priorities.\n\n## Close the temporary arrangement and welcome the worker back\n\nAt the end of cover, record completed work, remaining tasks and the return of keys or equipment. Give the regular worker a short update on changes made during the absence. Do not turn the first day back into an unexplained backlog; agree the priority order and restore the normal routine.\n\nFor INAYA, prepare the leave dates, emirate, household duties and selected service route. Review the [published packages](https://inayadomestic.ae/en/pricing/), then [contact the team](https://inayadomestic.ae/en/contact/) to discuss a separate written cover scope and price. This creates a clear customer record without changing the worker's protected leave rights.",
+    "faqs": [
+      {
+        "question": "Is annual-leave cover automatically free under a monthly package?",
+        "answer": "Use the actual monthly agreement for the service terms and arrange any additional cover through a separate written scope and price. Employment leave rights and customer cover charges are different records."
+      },
+      {
+        "question": "Can the worker keep answering daily work questions during annual leave?",
+        "answer": "Prepare the task handover and decision contacts before leave begins. Direct everyday operational questions to the family contact or cover-service coordinator rather than relying on the worker throughout the leave."
+      },
+      {
+        "question": "Is a temporary cover booking the same as a replacement request?",
+        "answer": "No. Planned cover addresses a defined absence and task list. Replacement eligibility concerns the applicable employment/service conditions and should be reviewed through its own process."
+      },
+      {
+        "question": "What should I prepare when the regular worker returns?",
+        "answer": "Record the end of the cover service, keys and equipment returned, any household changes and the next priority list. Use a short return handover to resume the normal arrangement."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "From leave dates to a clear return handover",
+      "caption": "Original operational planning sequence; leave rights and commercial cover terms remain separate.",
+      "items": [
+        {
+          "label": "Plan leave",
+          "detail": "Keep the agreed dates and employment record together."
+        },
+        {
+          "label": "Select essentials",
+          "detail": "Choose the duties that need lawful temporary help."
+        },
+        {
+          "label": "Arrange cover",
+          "detail": "Record the person, service, scope, access and price."
+        },
+        {
+          "label": "Close and resume",
+          "detail": "Return access items and brief the regular worker on changes."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "ترتيب المساعدة البديلة أثناء الإجازة السنوية للعاملة المنزلية",
+    "description": "نظم المساعدة أثناء الإجازة السنوية للعاملة بقائمة للمهام الأساسية وجدول تسليم واضح واتفاق مستقل للخدمة المؤقتة وخطة للعودة.",
+    "body": "رتب المساعدة أثناء الإجازة السنوية كمشروع منزلي مستقل: استكمل خطة الإجازة، وحدد المهام التي يجب استمرارها، ثم نظم مساعدة نظامية لإنجازها. أنجز التسليم قبل بدء الإجازة حتى تستفيد العاملة من الفترة المتفق عليها، بدلاً من أن تصبح منسقة للأسرة عن بعد. ويكمل هذا القسم العملي إرشادات التوظيف والسفر الواردة في المقال.\n\n## اختصر طلب المساعدة إلى احتياجات المنزل الأساسية\n\nأنشئ قائمتين: الأولى للأعمال التي يلزم استمرارها، مثل دعم رعاية الأطفال المتفق عليه أو التنظيف المنزلي الأساسي، والثانية لما تستطيع الأسرة إنجازه أو تأجيله أو تقليله. هذا قرار لتنظيم العبء المنزلي، وليس سبباً لتغيير استحقاق العاملة للإجازة.\n\nلا تتوقع من شخص مؤقت إعادة كل تفاصيل روتين مستقر منذ سنوات فوراً. حدد الخبرة ذات الصلة والتعليمات اللازمة للدور. وإذا شملت الحاجة رعاية طفل أو مساعدة شخص كبير في السن، فاكتب الأعمال الفعلية وميز بين المساندة المنزلية اليومية والعمل السريري المرخص.\n\nاستخدم [دليل مقارنة الأدوار](https://inayadomestic.ae/ar/blog/maid-nanny-babysitter-differences/) و[دليل أهلية الاستبدال](https://inayadomestic.ae/ar/blog/domestic-worker-replacement-eligibility/) لمسألتي اختيار الدور وطلبات الاستبدال المستقلتين. فالتغطية المخططة خلال الإجازة وطلب الاستبدال ليسا الإجراء نفسه.\n\n## اكتب جدول التسليم قبل بدء الإجازة\n\n| بند التسليم | ما تجهزه الأسرة | ما يسجل في ترتيب المساعدة المؤقتة |\n|---|---|---|\n| التواريخ | فترة الإجازة المتفق عليها وروتين المنزل المتوقع | بداية الخدمة البديلة ونهايتها وجدولها |\n| العمل الأساسي | المهام ذات الأولوية وما ستنجزه الأسرة | المسؤوليات المحددة والأعمال المستثناة |\n| الشخص والدور | الخبرة المطلوبة وطريقة التواصل | الشخص المختار ومسار التوظيف أو الخدمة النظامي |\n| الدخول | إجراءات المبنى ومسؤول التواصل والأماكن الخاصة | الدخول والمفاتيح والبطاقات وسجل الإعادة |\n| المعدات | المنتجات وتعليمات الأجهزة والمستلزمات | مسؤول توفير كل بند والإبلاغ عن المشكلة |\n| الدعم | صاحب القرار الأسري ومسؤول الخدمة | طريقة طرح الأسئلة والتعديلات |\n| العودة | تسليم عملي عند عودة العاملة الأساسية | انتهاء المهام المؤقتة وما بقي منها |\n\nيساعد هذا النموذج الأصلي على تنظيم الخدمة. ولا يعد وعداً بأن بديلاً مجانياً أو العاملة نفسها أو مهلة إشعار محددة تدخل ضمن كل اتفاق مع عناية.\n\n## افصل سجل التوظيف عن سجل الخدمة البديلة\n\nاحفظ تواريخ إجازة العاملة واستحقاقاتها الوظيفية وترتيبات سفرها في ملف التوظيف. واحفظ مواعيد الخدمة المؤقتة والمهام والسعر ومستندات سداد العميل في ملف الخدمة البديلة. بذلك لا تختلط رسوم باقة المكتب بالأجر الشخصي للعاملة، ولا يفسر حجز بديل جديد على أنه تعديل تلقائي لعقد التوظيف الأصلي.\n\nيقدم [قانون العمالة المساعدة](https://uaelegislation.gov.ae/ar/legislations/1593#item21144) و[دليل حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) الخلفية النظامية للإجازة والتوظيف. استخدم الجدول لتنظيم المنزل داخل هذا الإطار، مع الاحتفاظ بالاتفاق والسجلات الأصلية.\n\n## نظم الخدمة المؤقتة قبل مشاركة صلاحية الدخول\n\nراجع هوية الشخص المقترح وخبرته المناسبة ودوره وترتيب توظيفه أو استخدامه. تعرف الأسرة من سيصل، ومن يستطيع تعديل التعليمات. فالتوصية الشخصية أو وثيقة الإقامة وحدهما لا تحسمان مسألة التصريح بالعمل.\n\nأنجز تسليم الدخول والمهام عبر مقدم الخدمة المتفق عليه. وأتح للشخص المؤقت طرح الأسئلة قبل افتراض أن روتين المنزل مفهوم تلقائياً. استفد من [دليل التعريف بالمنزل في الأسبوع الأول](https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/) بما يناسب مدة المهمة؛ فالعمل القصير يستفيد أيضاً من جولة بالمنزل وشرح الأجهزة وترتيب الأولويات.\n\n## أغلق الترتيب المؤقت ورحب بعودة العاملة\n\nعند انتهاء المساعدة البديلة، سجل الأعمال المنجزة والمهام المتبقية وإعادة المفاتيح والمعدات. وقدم للعاملة الأساسية تحديثاً مختصراً عن التغييرات التي حدثت خلال غيابها. لا تجعل اليوم الأول بعد العودة قائمة متراكمة بلا شرح؛ بل اتفق على الأولويات واستعد الروتين المعتاد.\n\nلاستفسارك لدى عناية، جهز تواريخ الإجازة والإمارة والمهام ونوع الخدمة. راجع [الباقات المنشورة](https://inayadomestic.ae/ar/pricing/)، ثم [تواصل مع الفريق](https://inayadomestic.ae/ar/contact/) لمناقشة نطاق بديل مكتوب وسعر مستقل. ينشئ ذلك سجلاً واضحاً للعميل مع الحفاظ على حقوق العاملة في الإجازة.",
+    "faqs": [
+      {
+        "question": "هل تكون المساعدة البديلة خلال الإجازة مجانية تلقائياً في الباقة الشهرية؟",
+        "answer": "ارجع إلى اتفاق الخدمة الشهرية، ورتب أي مساعدة إضافية بنطاق وسعر مكتوبين بصورة مستقلة. فحقوق الإجازة الوظيفية ورسوم تغطية العميل مسألتان مختلفتان."
+      },
+      {
+        "question": "هل تستمر العاملة بالإجابة عن أسئلة العمل اليومية أثناء إجازتها؟",
+        "answer": "جهز تسليم المهام ومسؤولي القرارات قبل بدء الإجازة. ووجه الأسئلة التشغيلية اليومية إلى مسؤول الأسرة أو منسق الخدمة البديلة بدلاً من الاعتماد على العاملة طوال الإجازة."
+      },
+      {
+        "question": "هل الحجز البديل المؤقت هو نفسه طلب الاستبدال؟",
+        "answer": "لا. تعالج التغطية المخططة غياباً محدداً وقائمة مهام. أما أهلية الاستبدال، فترتبط بشروط التوظيف أو الخدمة المنطبقة وتراجع بمسارها المستقل."
+      },
+      {
+        "question": "ماذا أجهز عند عودة العاملة الأساسية؟",
+        "answer": "سجل انتهاء الخدمة البديلة وإعادة المفاتيح والمعدات والتغييرات المنزلية وقائمة الأولويات التالية. ويساعد التسليم المختصر على استئناف الترتيب المعتاد."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "من تواريخ الإجازة إلى تسليم العودة",
+      "caption": "تسلسل تشغيلي من إعداد عناية؛ تبقى حقوق الإجازة وشروط الخدمة البديلة التجارية منفصلة.",
+      "items": [
+        {
+          "label": "خطط للإجازة",
+          "detail": "اجمع التواريخ المتفق عليها وسجل التوظيف."
+        },
+        {
+          "label": "اختر الأساسيات",
+          "detail": "حدد الأعمال التي تحتاج إلى مساعدة مؤقتة نظامية."
+        },
+        {
+          "label": "رتب الخدمة",
+          "detail": "سجل الشخص والنطاق والدخول والسعر."
+        },
+        {
+          "label": "أغلق واستأنف",
+          "detail": "أعد وسائل الدخول وأطلع العاملة الأساسية على التغييرات."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1593#item21144",
+      "supports": "Existing article retains the annual-leave rules; this supplement adds an original operational cover worksheet without rewriting those rules."
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Domestic-worker employment framework and role/contract context; temporary commercial service terms remain separate."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid annual leave replacement cover UAE family",
+      "url": "https://maidmatch.ae/guides/maid-day-off-and-working-hours"
+    },
+    {
+      "query": "maid employer family holiday worker stays home UAE",
+      "url": "https://www.housekeepingco.com/cleaning-service-terms-conditions"
+    }
+  ]
+}

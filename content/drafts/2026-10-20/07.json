@@ -1,0 +1,125 @@
+{
+  "id": "07",
+  "slug": "home-cooking-weekly-meal-prep-plan",
+  "mode": "new",
+  "question": {
+    "en": "How do I plan home cooking and weekly meal preparation with a domestic worker?",
+    "ar": "كيف أخطط للطهي المنزلي وتحضير وجبات الأسبوع مع عاملة منزلية؟"
+  },
+  "gap": "No meal-plan, shopping and kitchen handover tool.",
+  "existingMatches": [
+    "domestic-worker-skills-language-assessment"
+  ],
+  "en": {
+    "title": "How to plan home cooking and weekly meal preparation with a domestic worker",
+    "description": "Create a practical cooking brief for your UAE home: menus, portions, shopping, food preferences, kitchen tasks, safe storage and a useful weekly handover.",
+    "body": "Plan home cooking by agreeing the dishes, portions, shopping responsibilities, preparation tasks and food handover before choosing a service. Cooking a family meal, preparing ingredients for later and managing a full weekly menu are different assignments. Describe the result you need, then match the person’s actual cooking experience and the household schedule to that work.\n\n## Write a menu brief that somebody else can follow\n\nChoose a short set of familiar dishes for the first routine. Record the number of portions, the intended meal, preferred style and ingredients your household avoids. Supply recipes or a demonstration for dishes where taste, texture or presentation matters. A cuisine label is a starting point for conversation; it does not establish an individual worker’s ability to prepare every dish in that cuisine.\n\nUse INAYA’s [skills and language assessment guide](https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/) to discuss relevant experience. Compare the [home-cooking service](https://inayadomestic.ae/en/services/home-cooking/) with the [private-chef service](https://inayadomestic.ae/en/services/private-chefs/) when the household needs different levels of menu planning or kitchen responsibility. Keep the requested role and duties explicit.\n\n## Build a weekly preparation worksheet\n\nThis original planning example organises decisions; it is not a fixed menu, nutrition prescription or promise of output in a particular visit.\n\n| Part of the plan | Household instruction | End-of-visit handover |\n|---|---|---|\n| Menu and portions | Dish, number of servings and intended meal | What was prepared and any agreed recipe change |\n| Ingredients | Shopping list, substitutions and budget responsibility | Purchases, receipts and items still needed |\n| Preparation | Washing, cutting, cooking or assembly tasks | Ingredients prepared for the next named meal |\n| Family requirements | Written ingredient restrictions and preferences | Any question requiring a parent or owner decision |\n| Storage | Containers, labels and designated fridge or freezer space | Dish name, preparation date and relevant instructions |\n| Kitchen reset | Agreed washing-up and work-surface tasks | Equipment switched off and kitchen left in the agreed condition |\n\n## Separate cooking time from competing duties\n\nMap the times at which meals must be served and the tasks that require attention. Put childcare supervision, school collection or other fixed responsibilities on the same schedule. If they overlap with hands-on cooking, change the task allocation rather than expecting one person to be in two places. The [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) explains how to record combined roles and later changes.\n\nMake the shopping arrangement equally clear. State who approves purchases, how receipts are kept and what happens when an ingredient is unavailable. Give an agreed substitution route instead of leaving the worker to improvise around a significant restriction. Medical dietary instructions should come from the household’s qualified healthcare adviser; domestic cooking support follows those instructions rather than creating treatment plans.\n\n## Keep food preparation and storage organised\n\nThe [World Health Organization’s Five Keys to Safer Food](https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food) emphasise cleanliness, separating raw and cooked food, thorough cooking, appropriate storage temperatures and safe ingredients. Use those principles alongside appliance instructions and the requirements for the particular dish. A weekly preparation plan does not mean every cooked food should stay refrigerated for a whole week.\n\nThe [FDA’s home-storage guidance](https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely) explains covered storage and food-specific limits. Keep the handover practical: identify the dish, date and intended use, and refer to authoritative storage guidance rather than inventing one shelf life for all meals. Clear fridge space before the visit and show where separate ingredients and finished dishes belong.\n\n## Review the routine before expanding it\n\nAfter the first planned cooking session, review portions, flavour preferences, waste, shopping gaps and the workload left for the family. Adjust the written menu before adding more dishes. Include the kitchen reset in the workload so that a meal plan does not leave an unexpected second job afterwards. For an INAYA enquiry, share your menu examples, household size, language needs, kitchen equipment and schedule through the [contact page](https://inayadomestic.ae/en/contact/).",
+    "faqs": [
+      {
+        "question": "Can a domestic worker prepare meals for several days?",
+        "answer": "Describe the dishes and preparation you need, then plan cooking, cooling and storage for each food using appropriate safety guidance. A weekly menu is not a single storage period for every dish."
+      },
+      {
+        "question": "Does home cooking automatically include grocery shopping?",
+        "answer": "Record shopping, purchase approval, receipts and ingredient responsibilities as part of the selected scope. Keep those duties separate from cooking and kitchen cleaning in your worksheet."
+      },
+      {
+        "question": "Can I request a particular cuisine?",
+        "answer": "Provide example dishes and discuss the individual worker’s relevant experience. Agree recipes, portions and preferences rather than using nationality as evidence of cooking skill."
+      },
+      {
+        "question": "Can cooking be combined with childcare?",
+        "answer": "Plan the two roles together and identify overlapping supervision and cooking demands. Assign a responsible person for childcare whenever cooking requires separate attention."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "From weekly menu to clear food handover",
+      "caption": "Original household planning sequence; food handling and storage follow dish-specific authoritative guidance.",
+      "items": [
+        {
+          "label": "Brief",
+          "detail": "Choose dishes, portions and household requirements."
+        },
+        {
+          "label": "Prepare",
+          "detail": "Assign shopping, equipment and cooking tasks."
+        },
+        {
+          "label": "Organise",
+          "detail": "Plan the meal schedule and appropriate storage."
+        },
+        {
+          "label": "Review",
+          "detail": "Record prepared food, kitchen reset and next changes."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "كيف أخطط للطهي المنزلي وتحضير وجبات الأسبوع مع عاملة منزلية؟",
+    "description": "ضع خطة طهي واضحة لمنزلك تشمل الأطباق والحصص والمشتريات وتفضيلات الأسرة ومهام المطبخ والتخزين وتسليم الوجبات بصورة منظمة مع مراجعة أسبوعية سهلة.",
+    "body": "يبدأ تنظيم الطهي المنزلي بالاتفاق على الأطباق والحصص ومسؤولية المشتريات ومهام التحضير وطريقة تسليم الطعام. فطهي وجبة للأسرة، وتجهيز مكونات لاستخدامها لاحقاً، وإدارة قائمة أسبوعية كاملة تكليفات مختلفة. صف النتيجة المطلوبة، ثم ناقش خبرة الشخص الفعلية في الطهي والجدول المناسب لإنجاز هذه الأعمال ضمن نطاق الخدمة المنزلية.\n\n## اكتب قائمة طعام قابلة للتنفيذ\n\nاختر في بداية الروتين مجموعة محدودة من الأطباق المألوفة. سجل عدد الحصص والوجبة المقصودة وطريقة التقديم والمكونات التي تتجنبها أسرتك. قدم وصفة أو شرحاً عملياً للأطباق التي تهمك تفاصيل مذاقها وقوامها. واسم المطبخ وحده لا يثبت قدرة شخص بعينه على إعداد جميع أطباقه؛ الأفضل مناقشة أمثلة محددة وخبرات سابقة ذات صلة.\n\nاستعن [بدليل تقييم المهارات والتواصل](https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/) عند مناقشة الخبرة. وقارن بين [خدمات الطهي المنزلي](https://inayadomestic.ae/ar/services/home-cooking/) و[الطهاة الخاصين](https://inayadomestic.ae/ar/services/private-chefs/) إذا اختلف مستوى تخطيط القائمة أو إدارة المطبخ المطلوب. اكتب المهام والمسؤوليات بدقة، حتى لا تختلط المساعدة في التحضير بإدارة جميع وجبات المنزل.\n\n## جهز جدول التحضير الأسبوعي\n\nهذا نموذج أصلي لتنظيم القرارات، وليس قائمة طعام ثابتة أو وصفة تغذية علاجية أو وعداً بعدد أطباق خلال زيارة معينة.\n\n| جزء الخطة | تعليمات الأسرة | التسليم في نهاية الزيارة |\n|---|---|---|\n| القائمة والحصص | اسم الطبق وعدد الحصص والوجبة المقصودة | ما أعد والتعديل المتفق عليه في الوصفة |\n| المكونات | قائمة الشراء والبدائل ومسؤولية الميزانية | المشتريات والإيصالات والنواقص |\n| التحضير | مهام الغسل والتقطيع والطهي أو التجميع | المكونات المجهزة للوجبة التالية المحددة |\n| احتياجات الأسرة | قيود المكونات والتفضيلات مكتوبة | أي نقطة تحتاج إلى قرار من أحد الوالدين أو صاحب المنزل |\n| التخزين | العبوات والملصقات وأماكن الثلاجة أو المجمد | اسم الطبق وتاريخ التحضير والتعليمات اللازمة |\n| ترتيب المطبخ | أعمال التنظيف والغسل المتفق عليها | إطفاء الأجهزة وترك المطبخ بالحالة المطلوبة |\n\n## وزع الطهي والمهام الأخرى بوضوح\n\nحدد مواعيد تقديم الوجبات والخطوات التي تحتاج إلى متابعة مباشرة. ضع رعاية الأطفال واستلامهم من المدرسة وأي التزامات ثابتة على الجدول نفسه. إذا تداخلت مع الطهي الذي يتطلب انتباهاً منفصلاً، فعدل توزيع المسؤوليات بدلاً من توقع وجود شخص واحد في مكانين. ويوضح [دليل الاتفاق على المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) طريقة تسجيل الأدوار المشتركة وتعديلها لاحقاً.\n\nاشرح أيضاً من يوافق على المشتريات، وكيف تحفظ الإيصالات، وما الإجراء عند غياب أحد المكونات. ضع طريقة واضحة للموافقة على البدائل، خاصة عند وجود قيود مهمة. أما التعليمات الغذائية الطبية فتصدر عن المختص الصحي الذي يتابع الأسرة، وتنفذ المساعدة المنزلية التعليمات المكتوبة ضمن دورها في الطهي، من دون وضع خطط علاجية.\n\n## نظم سلامة التحضير والتخزين\n\nتؤكد [المفاتيح الخمسة لغذاء أكثر أماناً من منظمة الصحة العالمية](https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food) النظافة، وفصل النيئ عن المطهو، والطهي الجيد، ودرجات التخزين المناسبة، والمكونات الآمنة. طبق هذه المبادئ مع تعليمات الأجهزة ومتطلبات كل طبق. ولا تعني القائمة الأسبوعية أن كل طعام مطهو يحفظ في الثلاجة طوال الأسبوع.\n\nوتشرح [إرشادات هيئة الغذاء والدواء الأمريكية للتخزين المنزلي](https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely) استخدام عبوات مغطاة واختلاف مدد الحفظ باختلاف الطعام. اجعل التسليم واضحاً: اسم الطبق وتاريخ التحضير والاستخدام المقصود، مع الرجوع إلى الإرشادات المناسبة بدلاً من اعتماد مدة واحدة لجميع الوجبات. جهز مساحة كافية ووضح أماكن المكونات والأطعمة الجاهزة.\n\n## راجع الخطة قبل زيادة الأطباق\n\nبعد تنفيذ القائمة الأولى، راجع الحصص والمذاق والهدر ونواقص المشتريات وما تبقى على الأسرة من أعمال. عدل الخطة المكتوبة قبل توسيعها، واحتسب ترتيب المطبخ ضمن عبء العمل. ولمناقشة احتياجك مع عناية، أرسل أمثلة الأطباق وحجم الأسرة والأجهزة واللغة والجدول عبر [صفحة التواصل](https://inayadomestic.ae/ar/contact/).",
+    "faqs": [
+      {
+        "question": "هل يمكن تحضير وجبات لعدة أيام؟",
+        "answer": "حدد الأطباق المطلوبة، ثم خطط للطهي والتبريد والتخزين بحسب كل نوع من الطعام وإرشاداته. لا تمثل القائمة الأسبوعية مدة حفظ واحدة لكل الوجبات."
+      },
+      {
+        "question": "هل يشمل الطهي شراء المواد الغذائية تلقائياً؟",
+        "answer": "سجل مسؤولية الشراء والموافقة على المصروفات والإيصالات ضمن النطاق المختار. افصلها في الجدول عن الطهي وتنظيف المطبخ."
+      },
+      {
+        "question": "هل أستطيع طلب مطبخ معين؟",
+        "answer": "قدم أمثلة الأطباق وناقش خبرة الشخص فيها، ثم اتفق على الوصفات والحصص والتفضيلات. الجنسية ليست دليلاً على مهارة الطهي."
+      },
+      {
+        "question": "هل يمكن الجمع بين الطهي ورعاية الأطفال؟",
+        "answer": "ضع الدورين على جدول واحد وحدد أوقات التداخل. خصص مسؤولاً عن رعاية الطفل عندما يتطلب الطهي انتباهاً منفصلاً."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "من قائمة الأسبوع إلى تسليم الطعام",
+      "caption": "تسلسل أصلي لتنظيم المنزل؛ تتبع مناولة الطعام وتخزينه الإرشادات المناسبة لكل طبق.",
+      "items": [
+        {
+          "label": "حدد المطلوب",
+          "detail": "اختر الأطباق والحصص واحتياجات الأسرة."
+        },
+        {
+          "label": "جهز العمل",
+          "detail": "وزع المشتريات والأجهزة ومهام الطهي."
+        },
+        {
+          "label": "نظم التسليم",
+          "detail": "رتب مواعيد الوجبات والتخزين المناسب."
+        },
+        {
+          "label": "راجع النتيجة",
+          "detail": "سجل الطعام الجاهز وترتيب المطبخ والتعديلات التالية."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food",
+      "supports": "Brief paraphrase of WHO food-handling principles; no shelf-life or nutrition prescription."
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+      "supports": "Covered storage and food-specific storage limits; weekly-menu does not mean universal weekly refrigeration."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid weekly meal preparation Dubai home cooking plan",
+      "url": "https://www.mychef.ae/weekly-meal-prep-dubai"
+    },
+    {
+      "query": "meal planning with a maid Middle East",
+      "url": "https://mealside.app/guides/meal-planning-with-maids-middle-east"
+    }
+  ]
+}
