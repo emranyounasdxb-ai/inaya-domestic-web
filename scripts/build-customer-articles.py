@@ -7,7 +7,8 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '2026-10-20'
-BASE = '1245fc07ffbf6249055bb1a5297c8e2c935b2f00'
+# Published parent revision, reachable in fresh repository checkouts.
+BASE = 'b7f236857a709677d712a955b0b6bada12d9e0f5'
 ORIGIN = 'https://inayadomestic.ae'
 LANGUAGES = ('en', 'ar')
 

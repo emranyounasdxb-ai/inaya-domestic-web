@@ -4,21 +4,29 @@ import csv
 import html
 import json
 import re
+import shutil
 import textwrap
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '2026-10-20'
 OUT = ROOT.parent / 'output' / 'inaya-20-articles'
-OUT.mkdir(parents=True, exist_ok=True)
 KIT = OUT / 'INAYA-20-Articles'
-for part in ('articles-en', 'articles-ar', 'charts', 'research'):
-    (KIT / part).mkdir(parents=True, exist_ok=True)
 drafts = [json.loads(p.read_text()) for p in sorted((ROOT / f'content/drafts/{DATE}').glob('[0-9][0-9].json'))]
 manifest = json.loads((ROOT / f'content/research/{DATE}/article-manifest.json').read_text())
+assert len(drafts) == len(manifest) == 20, 'Expected twenty drafts and twenty manifest entries'
+assert [d['id'] for d in drafts] == [f'{n:02}' for n in range(1, 21)], 'Draft IDs must cover 01 through 20 in order'
+assert len({d['slug'] for d in drafts}) == 20, 'Draft slugs must be unique'
+assert all((d['id'], d['slug']) == (m['id'], m['slug']) for d, m in zip(drafts, manifest)), 'Draft and manifest IDs/slugs must match in order'
 source = (ROOT / 'lib/published-article-content.ts').read_text()
 articles = json.JSONDecoder().raw_decode(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].lstrip())[0]
 articles = {a['slug']: a for a in articles}
+assert all(d['slug'] in articles for d in drafts), 'Each draft must have compiled article content'
+OUT.mkdir(parents=True, exist_ok=True)
+if KIT.exists():
+    shutil.rmtree(KIT)
+for part in ('articles-en', 'articles-ar', 'charts', 'research'):
+    (KIT / part).mkdir(parents=True, exist_ok=True)
 esc = html.escape
 
 
