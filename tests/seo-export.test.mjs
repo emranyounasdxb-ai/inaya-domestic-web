@@ -34,11 +34,19 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
   const updatedRoutes = JSON.parse(await readFile('tests/fixtures/poster-pricing-updated-routes.json', 'utf8'));
-  const expectedDatedUrls = ['en', 'ar'].flatMap(locale => updatedRoutes.map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
-  assert.equal(datedEntries.length, 120, 'only the sixty bilingual routes with verified content changes receive the new date');
+  const articleManifest = JSON.parse(await readFile('content/research/2026-10-20/article-manifest.json', 'utf8'));
+  assert.equal(articleManifest.length, 20, 'twenty distinct article outputs');
+  const todayRoutes = new Set(['blog', ...articleManifest.map(article => `blog/${article.slug}`)]);
+  const datedRoutes = new Set([...updatedRoutes, ...todayRoutes]);
+  const expectedDatedUrls = ['en', 'ar'].flatMap(locale => [...datedRoutes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
+  assert.equal(datedEntries.length, 156, 'the sixty previously dated pairs, seventeen new article pairs and the newly revised leave/travel pair');
   assert.deepEqual(datedEntries.map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedDatedUrls.sort());
+  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 42, 'twenty article pairs and their bilingual hub receive today’s date');
   for (const entry of datedEntries) {
-    assert.match(entry[1], /<lastmod>2026-10-19<\/lastmod>/);
+    const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)[1]).pathname;
+    const route = pathname.split('/').slice(2).filter(Boolean).join('/');
+    const expectedDate = todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
+    assert.ok(entry[1].includes(`<lastmod>${expectedDate}</lastmod>`), `${pathname}: only a substantive update changes the recorded date`);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
   assert.equal(new Set(urls).size, urls.length);

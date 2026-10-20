@@ -40,7 +40,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-hiring-costs-uae",
     "published": "2026-10-09",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "en": {
       "title": "What is the total cost of hiring a domestic worker in Ajman?",
       "description": "The total depends on whether you recruit a worker onto your own employer file or buy services from an agency that employs the worker. Build your budget from…",
@@ -51,7 +51,9 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21145",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21148",
         "https://www.mohre.gov.ae/assets/download/22d1c7aa/Ministerial%20Resolution%20No.%20504%20of%202026%20Concerning%20the%20Procedures%20or%20Subscribing%20to%20Health%20Insurance%20for%20Workers%20Employed%20by%20Private%20Sector%20Establishments%20and%20Domestic%20Workers.pdf.aspx#page=1",
-        "https://uaelegislation.gov.ae/en/legislations/1620#item23230"
+        "https://uaelegislation.gov.ae/en/legislations/1620#item23230",
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://uaelegislation.gov.ae/en/legislations/1593"
       ]
     },
     "ar": {
@@ -64,7 +66,9 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21145",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21148",
         "https://www.mohre.gov.ae/assets/download/ae31d28a/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20504%20%D9%84%D8%B3%D9%86%D8%A9%202026%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D9%84%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86%20%D9%81%D9%8A%20%D9%85%D9%86%D8%B4%D8%A2%D8%AA%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.pdf.aspx#page=1",
-        "https://uaelegislation.gov.ae/ar/legislations/1620#item23230"
+        "https://uaelegislation.gov.ae/ar/legislations/1620#item23230",
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://uaelegislation.gov.ae/ar/legislations/1593"
       ]
     }
   },
@@ -331,7 +335,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "agreeing-domestic-worker-household-duties",
     "published": "2026-10-09",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "en": {
       "title": "Can one domestic worker handle cleaning, cooking and childcare?",
       "description": "One person may be able to perform more than one agreed household task, but the scope must match their skills, lawful occupation and a realistic schedule. Do not…",
@@ -344,7 +348,9 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://mohap.gov.ae/documents/20117/1212145/26_License%2Bfor%2BNursing%2Band%2BMedical%2BProfessionals.pdf/996f30e8-c687-871f-014c-079f5567892e?t=1739154916843#page=1",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21143",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23236",
-        "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11"
+        "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11",
+        "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+        "https://uaelegislation.gov.ae/en/legislations/1593"
       ]
     },
     "ar": {
@@ -359,7 +365,9 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://mohap.gov.ae/documents/20117/1212145/26_License%2Bfor%2BNursing%2Band%2BMedical%2BProfessionals.pdf/996f30e8-c687-871f-014c-079f5567892e?t=1739154916843#page=1",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21143",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23236",
-        "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11"
+        "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11",
+        "https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+        "https://uaelegislation.gov.ae/ar/legislations/1593"
       ]
     }
   },
@@ -591,7 +599,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-leave-travel-planning",
     "published": "2026-10-09",
-    "updated": "2026-10-12",
+    "updated": "2026-10-20",
     "en": {
       "title": "How should a household plan a domestic worker's annual leave and travel?",
       "description": "Plan leave dates, pay, cover and travel responsibility before booking. Annual leave, travel accompanying the employer and return travel after termination are…",
@@ -600,7 +608,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21156",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21157",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21137",
-        "https://uaelegislation.gov.ae/en/legislations/1593#item21145"
+        "https://uaelegislation.gov.ae/en/legislations/1593#item21145",
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
       ]
     },
     "ar": {
@@ -611,7 +620,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21156",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21157",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21137",
-        "https://uaelegislation.gov.ae/ar/legislations/1593#item21145"
+        "https://uaelegislation.gov.ae/ar/legislations/1593#item21145",
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
       ]
     }
   },
@@ -643,6 +653,367 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23230",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21162",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23234"
+      ]
+    }
+  },
+  {
+    "slug": "four-hour-eight-hour-maid-visit-plan",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Four-hour or eight-hour maid visit: how to plan the work",
+      "description": "Choose a four-hour or eight-hour INAYA maid visit using a task-priority table, preparation checklist and clear handover, with the published package prices.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    },
+    "ar": {
+      "title": "زيارة عاملة منزلية لأربع أم ثماني ساعات: كيف تخطط للعمل؟",
+      "description": "اختر زيارة عناية لأربع أو ثماني ساعات باستخدام جدول للأولويات وقائمة للتجهيز وتسليم واضح، مع التعرف على أسعار الباقات المنشورة وحدود تنظيم المهام.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    }
+  },
+  {
+    "slug": "maid-visit-frequency-planner",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "How often should you book a maid? A household visit planner",
+      "description": "Plan weekly, twice-weekly or more frequent maid support from your household workload, with a visit-frequency table and clear INAYA package distinctions.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    },
+    "ar": {
+      "title": "كم مرة تحتاج إلى خدمة عاملة منزلية؟ دليل لتنظيم الزيارات",
+      "description": "نظم الزيارات الأسبوعية أو المتعددة بحسب أعمال أسرتك، باستخدام جدول للتكرار ومراجعة عملية للمهام، مع التمييز بين الزيارات ومدد باقات عناية المنشورة.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    }
+  },
+  {
+    "slug": "apartment-villa-maid-task-plan",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Apartment or villa: how to plan a maid’s household tasks",
+      "description": "Compare apartment and villa maid tasks with a practical layout table, surface-care instructions, rotating priorities and a clear end-of-visit handover.",
+      "citations": [
+        "https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality",
+        "https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment"
+      ]
+    },
+    "ar": {
+      "title": "الشقة أم الفيلا: كيف تخطط لمهام العاملة المنزلية؟",
+      "description": "قارن أعمال العاملة في الشقة والفيلا بجدول عملي لتوزيع المساحات وتعليمات الأسطح والأولويات الدورية، مع طريقة واضحة لتسليم المهام ومراجعة الزيارة.",
+      "citations": [
+        "https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality",
+        "https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment"
+      ]
+    }
+  },
+  {
+    "slug": "regular-maid-service-deep-move-in-cleaning",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Regular maid service, deep cleaning or move-in cleaning?",
+      "description": "Choose the right cleaning brief by comparing routine maid tasks, intensive work and moving-home requirements, with a clear scope and handover checklist.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html",
+        "https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment"
+      ]
+    },
+    "ar": {
+      "title": "خدمة عاملة معتادة أم تنظيف عميق أم تنظيف عند الانتقال؟",
+      "description": "اختر طلب التنظيف المناسب بمقارنة الأعمال المنزلية المعتادة والعمل المكثف ومتطلبات الانتقال، مع جدول للنطاق وخطوات واضحة لتجهيز المنزل وتسليمه.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html",
+        "https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment"
+      ]
+    }
+  },
+  {
+    "slug": "prepare-cleaning-supplies-maid-visit",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "What to prepare before a maid visit: supplies and equipment",
+      "description": "Prepare suitable products, working equipment and surface-care instructions for a maid visit, using a practical checklist and clear supply responsibilities.",
+      "citations": [
+        "https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality",
+        "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html"
+      ]
+    },
+    "ar": {
+      "title": "ماذا تجهز قبل زيارة العاملة المنزلية؟ قائمة الأدوات والمواد",
+      "description": "جهز منتجات مناسبة ومعدات صالحة وتعليمات واضحة للأسطح قبل زيارة العاملة المنزلية، باستخدام قائمة عملية وتحديد مكتوب لمسؤولية توفير المستلزمات.",
+      "citations": [
+        "https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality",
+        "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html"
+      ]
+    }
+  },
+  {
+    "slug": "maid-laundry-ironing-task-checklist",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "How to arrange maid help for laundry and ironing",
+      "description": "Build a clear laundry and ironing plan for your UAE home: garment priorities, care labels, appliance instructions, specialist items and an easy handover.",
+      "citations": [
+        "https://www.ginetex.net/gb/labelling/care-symbols.asp",
+        "https://www.bosch-home.com/ae/en/customer-service/get-support/what-to-put-in-dryer"
+      ]
+    },
+    "ar": {
+      "title": "كيف أرتب مساعدة العاملة المنزلية في الغسيل والكي؟",
+      "description": "نظم الغسيل والكي في منزلك: حدد أولوية الملابس، وتعليمات العناية، وطريقة استخدام الأجهزة، والقطع المتخصصة، وخطوات التسليم الواضحة ومراجعة نهاية الزيارة.",
+      "citations": [
+        "https://www.ginetex.net/gb/labelling/care-symbols.asp",
+        "https://www.bosch-home.com/ae/ar/customer-service/get-support/what-to-put-in-dryer"
+      ]
+    }
+  },
+  {
+    "slug": "home-cooking-weekly-meal-prep-plan",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "How to plan home cooking and weekly meal preparation with a domestic worker",
+      "description": "Create a practical cooking brief for your UAE home: menus, portions, shopping, food preferences, kitchen tasks, safe storage and a useful weekly handover.",
+      "citations": [
+        "https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food",
+        "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely"
+      ]
+    },
+    "ar": {
+      "title": "كيف أخطط للطهي المنزلي وتحضير وجبات الأسبوع مع عاملة منزلية؟",
+      "description": "ضع خطة طهي واضحة لمنزلك تشمل الأطباق والحصص والمشتريات وتفضيلات الأسرة ومهام المطبخ والتخزين وتسليم الوجبات بصورة منظمة مع مراجعة أسبوعية سهلة.",
+      "citations": [
+        "https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food",
+        "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely"
+      ]
+    }
+  },
+  {
+    "slug": "new-maid-first-week-checklist",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "A new maid’s first week: a practical household orientation checklist",
+      "description": "Welcome a new maid with a clear first-week plan: household routines, equipment demonstrations, priorities, work and rest arrangements, feedback and handovers.",
+      "citations": [
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
+      ]
+    },
+    "ar": {
+      "title": "الأسبوع الأول للعاملة المنزلية: قائمة عملية للتعريف بالمنزل",
+      "description": "استقبل العاملة المنزلية بخطة واضحة للأسبوع الأول تشمل روتين الأسرة والأجهزة والأولويات والعمل والراحة والملاحظات وتسليم المهام وطريقة مراجعة الروتين.",
+      "citations": [
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
+      ]
+    }
+  },
+  {
+    "slug": "nanny-school-routine-child-handover",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "How to plan a nanny’s school routine and safe child handovers",
+      "description": "Create a clear school-day brief for your nanny: authorised collection, transport arrangements, daily changes, school bags, parent contacts and home handovers.",
+      "citations": [
+        "https://www.adek.gov.ae/-/media/Project/TAMM/ADEK/Policies/School-Policies/Teaching-and-Learning/ADEK_S_Parent-Engagement-Policy_EN-12.pdf",
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
+      ]
+    },
+    "ar": {
+      "title": "كيف أنظم روتين المدرسة وتسليم الأطفال واستلامهم مع المربية؟",
+      "description": "ضع خطة واضحة ليوم المدرسة تشمل تفويض الاستلام وترتيبات النقل والتغييرات اليومية وحقيبة الطفل وجهات اتصال الوالدين وتسليم المسؤولية وتنسيق الأسرة والمدرسة.",
+      "citations": [
+        "https://www.adek.gov.ae/-/media/Project/TAMM/ADEK/Policies/School-Policies/Teaching-and-Learning/ADEK_S_Parent-Engagement-Policy_EN-12.pdf",
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
+      ]
+    }
+  },
+  {
+    "slug": "maid-household-with-pets",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "How to choose household help for a home with pets",
+      "description": "Choose pet-aware household help with a practical brief covering experience, agreed pet duties, safe introductions, home access, cleaning and owner handovers.",
+      "citations": [
+        "https://science.rspca.org.uk/en/web/rspca/adviceandwelfare/pets/dogs/company",
+        "https://www.rspca.org.uk/adviceandwelfare/pets/general/holiday"
+      ]
+    },
+    "ar": {
+      "title": "كيف أختار مساعدة منزلية لبيت توجد فيه حيوانات أليفة؟",
+      "description": "اختر مساعدة منزلية مناسبة لبيت فيه حيوانات أليفة، وحدد الخبرة والمهام والتعارف الآمن والدخول والتنظيف وتسليم المسؤولية مع المالك وتوزيع الأدوار اليومية.",
+      "citations": [
+        "https://science.rspca.org.uk/en/web/rspca/adviceandwelfare/pets/dogs/company",
+        "https://www.rspca.org.uk/adviceandwelfare/pets/general/holiday"
+      ]
+    }
+  },
+  {
+    "slug": "maid-home-access-keys-privacy",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Maid home access, keys and privacy: a household checklist",
+      "description": "Plan keys, arrival instructions, private areas and handovers with your maid. Use a practical access record that protects your household and the worker.",
+      "citations": [
+        "https://uaelegislation.gov.ae/en/legislations/1593",
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    },
+    "ar": {
+      "title": "دخول العاملة المنزلية والمفاتيح والخصوصية: قائمة عملية للأسرة",
+      "description": "نظم دخول العاملة المنزلية وتسليم المفاتيح وحدود الخصوصية والتسليم اليومي باستخدام سجل واضح يحمي الأسرة والعاملة ويقلل سوء الفهم.",
+      "citations": [
+        "https://uaelegislation.gov.ae/ar/legislations/1593",
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    }
+  },
+  {
+    "slug": "maid-help-family-guests-gathering",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Booking maid help before guests: a practical family gathering plan",
+      "description": "Organise household help before guests arrive with a before/during/after task plan, clear priorities and a practical handover for your family gathering.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    },
+    "ar": {
+      "title": "ترتيب المساعدة المنزلية قبل الضيوف: خطة عملية للتجمع العائلي",
+      "description": "نظم المساعدة المنزلية قبل استقبال الضيوف بخطة للمهام قبل التجمع وأثناءه وبعده، مع أولويات واضحة وتسليم عملي يناسب احتياجات أسرتك.",
+      "citations": [
+        "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    }
+  },
+  {
+    "slug": "maid-duties-family-holiday",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Maid duties while your family is on holiday: a home-stays-occupied plan",
+      "description": "Prepare a practical household plan when your family travels and the maid stays in the UAE. Organise duties, living arrangements, access and a return handover.",
+      "citations": [
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://uaelegislation.gov.ae/en/legislations/1593"
+      ]
+    },
+    "ar": {
+      "title": "مهام العاملة المنزلية أثناء سفر الأسرة: خطة للمنزل خلال الغياب",
+      "description": "جهز خطة واضحة عندما تسافر الأسرة وتبقى العاملة في الإمارات، تشمل المهام والسكن والدخول والتواصل المحلي وتسليم المنزل عند العودة.",
+      "citations": [
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://uaelegislation.gov.ae/ar/legislations/1593"
+      ]
+    }
+  },
+  {
+    "slug": "moving-home-emirate-with-domestic-worker",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Moving home or emirate with a maid: what to review first",
+      "description": "Review the employer, address records, service agreement, access, living arrangements and duties before moving home or to another UAE emirate with a maid.",
+      "citations": [
+        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5c",
+        "https://taqyeem.mohre.gov.ae/en/services/updating-the-details-of-a-domestic-workers-work-permit-2022"
+      ]
+    },
+    "ar": {
+      "title": "الانتقال إلى منزل أو إمارة أخرى مع العاملة المنزلية: ما الذي تراجعه أولاً؟",
+      "description": "راجع صاحب العمل والبيانات الرسمية واتفاق الخدمة والدخول والسكن والمهام قبل انتقالك مع العاملة المنزلية إلى بيت جديد أو إمارة أخرى داخل الإمارات.",
+      "citations": [
+        "https://icp.gov.ae/services-details/?serviceid=64afe3c1035448005bd52e5c",
+        "https://taqyeem.mohre.gov.ae/en/services/updating-the-details-of-a-domestic-workers-work-permit-2022"
+      ]
+    }
+  },
+  {
+    "slug": "one-maid-two-helpers-workload",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "One maid or two helpers? A household workload planner",
+      "description": "Map overlapping childcare, cooking and cleaning duties to decide whether your home needs one helper, different visit times or separate household roles.",
+      "citations": [
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3",
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    },
+    "ar": {
+      "title": "عاملة واحدة أم مساعدتان؟ دليل تخطيط عبء العمل المنزلي",
+      "description": "حدد المهام المتزامنة لرعاية الأطفال والطهي والتنظيف لتختار بين عاملة واحدة أو زيارات بتوقيت مختلف أو أدوار منزلية منفصلة بوضوح. دون نسب مفترضة لعدد العاملات.",
+      "citations": [
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3",
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+      ]
+    }
+  },
+  {
+    "slug": "maid-daily-instructions-handover-template",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Daily maid instructions and a household handover template",
+      "description": "Write a practical daily maid handover with priorities, task locations, household methods, completion notes and a clear contact for questions.",
+      "citations": [
+        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
+      ]
+    },
+    "ar": {
+      "title": "تعليمات يومية واضحة للعاملة المنزلية ونموذج لتسليم المهام",
+      "description": "اكتب تسليماً يومياً عملياً يتضمن الأولويات ومواقع المهام وطريقة الأسرة وملاحظات الإنجاز وجهة واضحة للأسئلة وتغيير التعليمات. بأسلوب واضح ومحترم للجميع.",
+      "citations": [
+        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
+      ]
+    }
+  },
+  {
+    "slug": "domestic-worker-contract-permit-residence-cancellation",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "en": {
+      "title": "Ending a domestic-worker arrangement: contract, permit and residence cancellation",
+      "description": "Separate customer service, employment and residence cancellation. Use the correct MOHRE, ICP or Dubai route and keep a clear record of completed transactions.",
+      "citations": [
+        "https://www.mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-work-permit-inside-or-outside-of-the-country-2022",
+        "https://mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-employment-contract-inside-or-outside-of-the-country-2022",
+        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e68",
+        "https://gdrfad.gov.ae/en/services/0613ab0e-5858-11ea-0320-0050569629e8"
+      ]
+    },
+    "ar": {
+      "title": "إنهاء ترتيب العمالة المنزلية: إلغاء العقد والتصريح والإقامة",
+      "description": "افصل بين إنهاء الخدمة وإلغاء التوظيف والإقامة، واستخدم مسار الوزارة أو الهوية والجنسية أو دبي المناسب، واحتفظ بنتائج المعاملات المكتملة. لكل حالة.",
+      "citations": [
+        "https://www.mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-work-permit-inside-or-outside-of-the-country-2022",
+        "https://mohre.gov.ae/en/services/cancellation-of-a-domestic-workers-employment-contract-inside-or-outside-of-the-country-2022",
+        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e68",
+        "https://gdrfad.gov.ae/en/services/0613ab0e-5858-11ea-0320-0050569629e8"
       ]
     }
   }

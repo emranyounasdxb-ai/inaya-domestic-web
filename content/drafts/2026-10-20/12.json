@@ -1,0 +1,125 @@
+{
+  "id": "12",
+  "slug": "maid-help-family-guests-gathering",
+  "mode": "new",
+  "question": {
+    "en": "How should I book household help before guests or a family gathering?",
+    "ar": "كيف أرتب المساعدة المنزلية قبل استقبال الضيوف أو اجتماع عائلي؟"
+  },
+  "gap": "No private-household guest preparation plan; distinguish commercial event staffing.",
+  "existingMatches": [
+    "agreeing-domestic-worker-household-duties"
+  ],
+  "en": {
+    "title": "Booking maid help before guests: a practical family gathering plan",
+    "description": "Organise household help before guests arrive with a before/during/after task plan, clear priorities and a practical handover for your family gathering.",
+    "body": "For a family gathering, book around a defined household task list: the rooms guests will use, the preparation needed before arrival and the reset after they leave. Give the provider the actual address, date, access arrangements and preferred service period. A clear brief is more useful than asking for “everything ready” without setting priorities.\n\n## Separate preparation, hosting and the next-day reset\n\nThese are different workloads. Cleaning bathrooms and preparing the living room before guests arrive are not the same as serving food during a gathering or washing dishes afterwards. List each requirement separately, then decide which work your family will handle and which work belongs in the proposed service.\n\nFor example, a household may put guest bathroom preparation first, dining-area preparation second and laundry last. This is an original planning example, not a promise that a worker will finish every task in a particular visit. The home layout, condition, available equipment and competing duties all affect the work plan.\n\nRead the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) before combining cleaning, cooking and childcare. If a child needs active supervision, that responsibility should have a named adult rather than becoming an extra task alongside a rushed kitchen clean-up.\n\n## Build a before/during/after task table\n\n| Stage | Example household priorities | What to settle in advance |\n|---|---|---|\n| Before guests arrive | Guest bathroom, living areas, dining surfaces and agreed kitchen preparation | Priority order, available products and rooms ready for access |\n| During the gathering | Only the duties expressly included in the arrangement | Who supervises children, who handles food and who directs changes |\n| After guests leave | Dishes, waste, agreed surfaces and restoring the room | Finish time, tasks carried forward and safe storage |\n| Following visit | Remaining routine work and a normal household reset | A separate schedule and revised priority list |\n\nIdentify delicate furnishings, items that need special handling and cupboards that are private. Set aside the correct cleaning products and explain appliance controls before the gathering begins. This helps the worker follow one clear routine instead of receiving different instructions from several family members.\n\n## Keep cleaning practical and appropriate to surfaces\n\nA guest-ready home does not require every cleaning chemical to be used on every surface. Choose the product intended for the material and follow its label. The [CDC's household-cleaning guidance](https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html) distinguishes routine cleaning from sanitising and disinfecting; it also advises against mixing products.\n\nPlan storage for dishes, rubbish and fragile items so work can proceed without blocking family movement. Keep children and pets out of the immediate work area when products, hot appliances or breakable items are being handled. Specialist stain treatment, high-level access or heavy moving needs a separate scope discussion rather than an assumption that it is part of ordinary domestic help.\n\n## Choose the visit period after setting the priorities\n\nINAYA's published short-visit options are AED 120 for four hours and AED 200 for eight hours. Use the [pricing page](https://inayadomestic.ae/en/pricing/) to compare the actual packages, then explain the gathering timetable and required duties. These are duration-based prices; they do not establish a fixed number of rooms or guests that one person will serve.\n\nReview [on-demand domestic help](https://inayadomestic.ae/en/services/on-demand-domestic-help/) or [part-time maid enquiries](https://inayadomestic.ae/en/services/part-time-maid/) according to your household need. Keep private-home support separate from commercial event staffing, catering, specialist cleaning or professional childcare requirements. Each has its own role and responsibility discussion.\n\n## Give the provider one usable brief\n\nSend the date, emirate, guest arrival and departure window, rooms involved and the task priorities. Add whether the family needs support before, during or after the gathering, and identify the person responsible for decisions. Explain access, products, equipment and any household sensitivities at the same time.\n\nFor the employment background, the [UAE Government domestic-worker guide](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) explains the written arrangement. Your gathering plan then records the practical work within that arrangement. [Contact INAYA](https://inayadomestic.ae/en/contact/) with this brief so the proposed scope, schedule and service price can be put together before the event.",
+    "faqs": [
+      {
+        "question": "Can I book help only before guests arrive?",
+        "answer": "Describe the preparation-only task list and required visit period. The proposed arrangement should identify the rooms, priorities, access and time window without adding hosting duties automatically."
+      },
+      {
+        "question": "Does a maid booking include cooking or serving guests?",
+        "answer": "Record cooking, food preparation and guest-related duties separately in the service scope. A general cleaning request does not itself assign those roles."
+      },
+      {
+        "question": "Should I choose four hours or eight hours for a gathering?",
+        "answer": "Start with the work required before, during and after the gathering. Compare the published packages, then select a service period against the agreed priorities rather than a fixed guest-count rule."
+      },
+      {
+        "question": "What if the gathering runs longer than planned?",
+        "answer": "Discuss any revised service period and duties with the coordinator. Keep the original finish arrangement clear and obtain the revised scope and price before adding work."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "Plan around the gathering, not a vague cleaning request",
+      "caption": "An original planning flow for a private family gathering; it does not represent a fixed completion-time promise.",
+      "items": [
+        {
+          "label": "Map",
+          "detail": "Separate before, during and after-event duties."
+        },
+        {
+          "label": "Prioritise",
+          "detail": "Choose the rooms and tasks that matter first."
+        },
+        {
+          "label": "Arrange",
+          "detail": "Record the role, visit period, products and access."
+        },
+        {
+          "label": "Handover",
+          "detail": "Review completed work and the remaining reset."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "ترتيب المساعدة المنزلية قبل الضيوف: خطة عملية للتجمع العائلي",
+    "description": "نظم المساعدة المنزلية قبل استقبال الضيوف بخطة للمهام قبل التجمع وأثناءه وبعده، مع أولويات واضحة وتسليم عملي يناسب احتياجات أسرتك.",
+    "body": "عند ترتيب تجمع عائلي، ابدأ بقائمة مهام منزلية محددة: الأماكن التي سيستخدمها الضيوف، والتحضير المطلوب قبل وصولهم، وإعادة ترتيب المنزل بعد مغادرتهم. أعط مقدم الخدمة العنوان والتاريخ وإجراء الدخول وفترة الخدمة المطلوبة. يفيد هذا الملخص أكثر من طلب «تجهيز كل شيء» من دون تحديد الأولويات.\n\n## افصل التحضير عن الاستضافة وإعادة الترتيب\n\nتنظيف حمام الضيوف وتجهيز غرفة المعيشة قبل الوصول يختلفان عن تقديم الطعام أثناء التجمع أو غسل الأطباق بعده. سجل كل احتياج مستقلاً، ثم حدد ما ستنجزه الأسرة وما سيدخل ضمن نطاق الخدمة المقترحة.\n\nيمكن للأسرة مثلاً إعطاء الأولوية لحمام الضيوف، ثم منطقة الطعام، ثم تأجيل الغسيل إلى زيارة أخرى. هذا مثال تنظيمي من إعداد عناية، وليس وعداً بإنجاز جميع المهام خلال زيارة محددة. فحالة المنزل وتوزيع الغرف والمعدات المتاحة والمهام المتزامنة تؤثر في الخطة.\n\nراجع [دليل توزيع المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) قبل جمع التنظيف والطهي ورعاية الأطفال. وعندما يحتاج الطفل إلى إشراف مباشر، حدد الشخص المسؤول عنه بدلاً من جعله مهمة إضافية أثناء الانشغال بتنظيف المطبخ.\n\n## أنشئ جدولاً لما قبل التجمع وأثناءه وبعده\n\n| المرحلة | أمثلة للأولويات المنزلية | ما يرتب مسبقاً |\n|---|---|---|\n| قبل وصول الضيوف | حمام الضيوف وغرفة المعيشة وأسطح الطعام وتحضير المطبخ المتفق عليه | ترتيب الأولويات والمنتجات والأماكن المتاحة للدخول |\n| أثناء التجمع | المهام المسجلة صراحة في الاتفاق | مسؤول الأطفال والطعام والشخص المخول بتغيير التعليمات |\n| بعد مغادرة الضيوف | الأطباق والنفايات والأسطح المتفق عليها وإعادة ترتيب المكان | وقت الانتهاء والمهام المؤجلة والتخزين الآمن |\n| الزيارة التالية | ما تبقى من الروتين وإعادة المنزل إلى ترتيبه المعتاد | موعد مستقل وقائمة أولويات محدثة |\n\nبين الأثاث الحساس والقطع التي تحتاج إلى عناية والخزائن الخاصة. وجهز المنتجات المناسبة واشرح تشغيل الأجهزة قبل بدء التجمع، حتى تتبع العاملة تعليمات موحدة بدلاً من تلقي طلبات متعارضة من عدة أفراد في الأسرة.\n\n## اجعل التنظيف مناسباً للأسطح\n\nتهيئة المنزل للضيوف لا تعني استخدام جميع المنظفات على كل سطح. اختر المنتج الملائم للمادة واتبع تعليمات ملصقه. يميز [إرشاد CDC للتنظيف المنزلي](https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html) بين التنظيف المعتاد والتطهير، وينبه إلى عدم خلط المنتجات.\n\nحدد مكان وضع الأطباق والنفايات والقطع القابلة للكسر، بحيث لا تعيق حركة الأسرة. وأبعد الأطفال والحيوانات الأليفة عن منطقة العمل المباشرة عند استخدام المنتجات أو الأجهزة الساخنة أو حمل القطع الهشة. أما معالجة البقع المتخصصة أو الوصول إلى أماكن مرتفعة أو نقل الأثاث الثقيل، فتحتاج إلى نطاق عمل مستقل ولا تدرج تلقائياً ضمن المساعدة المنزلية المعتادة.\n\n## اختر مدة الزيارة بعد تحديد المهام\n\nتبلغ أسعار الزيارات القصيرة المنشورة لدى عناية 120 درهماً لأربع ساعات و200 درهم لثماني ساعات. استخدم [صفحة الأسعار](https://inayadomestic.ae/ar/pricing/) للمقارنة بين الباقتين، ثم اشرح جدول التجمع والمهام المطلوبة. فهذه أسعار لفترات خدمة محددة، وليست قاعدة لعدد الغرف أو الضيوف الذين يخدمهم شخص واحد.\n\nراجع [المساعدة المنزلية عند الطلب](https://inayadomestic.ae/ar/services/on-demand-domestic-help/) أو [خدمة العاملة بدوام جزئي](https://inayadomestic.ae/ar/services/part-time-maid/) بحسب احتياج المنزل. وافصل خدمة المنزل الخاص عن طاقم الفعاليات التجارية والتموين والتنظيف المتخصص والرعاية المهنية للأطفال؛ فلكل منها مهام ومسؤوليات تناقش على حدة.\n\n## قدم ملخصاً واحداً قابلاً للتنفيذ\n\nأرسل التاريخ والإمارة ووقت وصول الضيوف ومغادرتهم والأماكن المعنية وأولوية الأعمال. وحدد إن كانت المساعدة مطلوبة قبل التجمع أو أثناءه أو بعده، وسم الشخص المسؤول عن القرارات. وأضف ترتيب الدخول والمنتجات والمعدات وأي احتياطات منزلية.\n\nيشرح [دليل حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) خلفية العلاقة المكتوبة، ثم تسجل خطة التجمع العمل العملي داخل هذا الترتيب. [تواصل مع عناية](https://inayadomestic.ae/ar/contact/) بهذا الملخص لترتيب نطاق الخدمة والجدول والسعر قبل المناسبة.",
+    "faqs": [
+      {
+        "question": "هل أرتب المساعدة قبل وصول الضيوف فقط؟",
+        "answer": "حدد مهام التحضير وفترة الزيارة المطلوبة. ويسجل الترتيب المقترح الغرف والأولويات والدخول والتوقيت، من دون إضافة مهام الاستضافة تلقائياً."
+      },
+      {
+        "question": "هل يشمل حجز العاملة الطهي أو تقديم الطعام للضيوف؟",
+        "answer": "سجل الطهي وتحضير الطعام والمهام المرتبطة بالضيوف بصورة مستقلة في النطاق. فطلب التنظيف العام لا يسند هذه الأدوار تلقائياً."
+      },
+      {
+        "question": "هل أختار أربع ساعات أم ثماني ساعات للتجمع؟",
+        "answer": "ابدأ بالعمل المطلوب قبل التجمع وأثناءه وبعده. ثم قارن الباقتين المنشورتين واختر فترة الخدمة وفق الأولويات المتفق عليها، وليس وفق قاعدة ثابتة لعدد الضيوف."
+      },
+      {
+        "question": "ماذا لو استمر التجمع أكثر من الوقت المخطط؟",
+        "answer": "ناقش أي تعديل في المدة أو المهام مع المنسق. وأبق وقت الانتهاء الأصلي واضحاً، واحصل على النطاق والسعر المعدلين قبل إضافة العمل."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "خطط حول التجمع بدلاً من طلب تنظيف عام",
+      "caption": "مسار تنظيمي من إعداد عناية لتجمع عائلي خاص، ولا يمثل وعداً بمدة إنجاز ثابتة.",
+      "items": [
+        {
+          "label": "قسم",
+          "detail": "افصل مهام ما قبل التجمع وأثناءه وبعده."
+        },
+        {
+          "label": "رتب",
+          "detail": "اختر الغرف والمهام الأهم أولاً."
+        },
+        {
+          "label": "اتفق",
+          "detail": "سجل الدور والمدة والمنتجات وطريقة الدخول."
+        },
+        {
+          "label": "سلم",
+          "detail": "راجع المنجز وما تبقى لإعادة ترتيب المنزل."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+      "supports": "Use surface-appropriate products following labels; avoid mixing cleaning products. No dilution recipes or clinical claims are used."
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Official context for recording the work arrangement; gathering worksheets are original practical advice."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid help family gathering home Dubai cleaning before guests",
+      "url": "https://www.pureshinecleaningservices.ae/services/maid-service"
+    },
+    {
+      "query": "maid before guests arrive Dubai after party cleaning",
+      "url": "https://elitemaids.ae/after-party-cleaning"
+    }
+  ]
+}

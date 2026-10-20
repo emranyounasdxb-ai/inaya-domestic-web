@@ -1,4 +1,5 @@
 import { packageSummary } from './package-content';
+import { customerArticleFaqs } from './customer-article-faqs';
 import type { Metadata } from 'next';
 import { localeAlternates, localizedUrl } from './seo';
 import { siteConfig } from './site-config';
@@ -138,6 +139,7 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
       name: guide[lang].title,
       title: guide[lang].title,
       description: guide[lang].description,
+      faqs: customerArticleFaqs[slug]?.[lang],
       image: image?.src,
       imageAlt: image?.alt[lang]
     };

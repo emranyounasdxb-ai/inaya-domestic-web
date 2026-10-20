@@ -1,0 +1,125 @@
+{
+  "id": "10",
+  "slug": "maid-household-with-pets",
+  "mode": "new",
+  "question": {
+    "en": "How do I choose household help for a home with pets?",
+    "ar": "كيف أختار مساعدة منزلية لبيت توجد فيه حيوانات أليفة؟"
+  },
+  "gap": "No pet-aware matching, access or household handover content.",
+  "existingMatches": [
+    "domestic-worker-skills-language-assessment"
+  ],
+  "en": {
+    "title": "How to choose household help for a home with pets",
+    "description": "Choose pet-aware household help with a practical brief covering experience, agreed pet duties, safe introductions, home access, cleaning and owner handovers.",
+    "body": "Choose household help by discussing the individual’s comfort and experience with your actual pets, then agree the pet-related tasks separately from cleaning or childcare. Tell INAYA the species, number of animals, usual routine and the work you need. Living in a home with a pet, cleaning around a pet and taking responsibility for that animal are different assignments.\n\n## Describe the home honestly before matching\n\nExplain where the animals spend time, how they respond to visitors and which areas must remain separate. Ask about the person’s relevant experience without assuming that a general maid or nanny role includes animal handling. Discuss comfort with the proposed tasks respectfully. A successful arrangement needs a safe environment for the worker and the animal, not simply someone who says they like pets.\n\nUse the [skills and communication assessment guide](https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/) to ask about actual previous duties. INAYA’s [pet-care enquiry page](https://inayadomestic.ae/en/services/pet-care-specialists/) is the appropriate place to describe pet-specific support. Read the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) when combining it with other responsibilities.\n\n## Separate ordinary household work from pet responsibility\n\nThe following original planning matrix helps record the scope; it does not list automatic package inclusions.\n\n| Proposed task | What the owner explains | What the agreement records |\n|---|---|---|\n| Cleaning near pets | Safe access, pet-free cleaning area and suitable products | Household cleaning scope and separation arrangement |\n| Food and water routine | The owner’s written instructions and where supplies are kept | Named duties, timing and reporting |\n| Doors and gates | Which exits stay secured and how visitors enter | Access and escape-prevention procedure |\n| Outdoor exercise | Handling experience, equipment, approved route and conditions | Explicitly assigned exercise duties and responsible person |\n| Owner absence | Contact order, routine and nominated backup | The selected cover period and handover |\n| Health or behaviour concerns | Vet or qualified professional contact and owner instructions | Escalation route rather than improvised treatment or training |\n\n## Let the owner lead the introduction\n\nArrange an initial introduction with the owner present and the animal managed appropriately. Show the worker where to stand, which doors remain closed and how the pet normally moves through the home. Avoid forcing interaction or treating the meeting as a test of bravery. If the arrangement feels unsafe, change the plan and obtain appropriate professional advice before assigning handling tasks.\n\n[RSPCA guidance on dog companionship](https://science.rspca.org.uk/en/web/rspca/adviceandwelfare/pets/dogs/company) advises careful introductions and responsible care when owners are away. It also directs owners towards professional advice for fearful or aggressive behaviour. Use that principle to organise a calm handover rather than asking a household worker to solve a behaviour problem.\n\n## Coordinate cleaning, children and pet routines\n\nShow how to create a safe working area before cleaning begins. Explain where equipment and products are stored and follow their labels. Keep pet items separate from the family’s kitchen equipment in the household plan. Record what the worker should do when a delivery arrives, a gate is open or a pet enters an area being cleaned.\n\nMap responsibilities when children and animals are present together. Child supervision, a pet walk and cleaning another room can compete for attention. Assign the responsible adult at each point, and move a task when it leaves a gap. A more detailed schedule is useful for visiting help because the owner may need to manage pet access before the worker arrives.\n\n## Plan cover and the end-of-visit report\n\nWhen the family travels, decide who remains responsible for each animal throughout the absence. A cleaning visit is not continuous pet supervision. The [RSPCA’s holiday-care guidance](https://www.rspca.org.uk/adviceandwelfare/pets/general/holiday) discusses arranging appropriate care around the animal’s needs. Keep the owner’s instructions, contact route and backup person together.\n\nAsk for a factual handover covering completed tasks, supplies running low, access issues and anything the owner needs to review. Review the scope after the first agreed routine before adding duties. Share the home setup, pet requirements and preferred schedule through [INAYA’s contact page](https://inayadomestic.ae/en/contact/) so the proposed household and pet responsibilities can be discussed clearly.",
+    "faqs": [
+      {
+        "question": "Does a maid package automatically include pet care?",
+        "answer": "Record pet-related work as part of the selected scope. Cleaning a home with pets and taking responsibility for feeding, exercise or cover are different tasks."
+      },
+      {
+        "question": "What should I explain before the first visit?",
+        "answer": "Describe the animals, visitor response, access controls, usual routine and exact duties. Arrange an owner-led introduction and show the safe working areas."
+      },
+      {
+        "question": "Can household help replace a vet or behaviour specialist?",
+        "answer": "A household support role follows the agreed routine and reports concerns. Veterinary treatment and behaviour problems belong with the appropriate qualified professional."
+      },
+      {
+        "question": "Can a visiting maid look after pets while I travel?",
+        "answer": "Plan the animal’s whole care arrangement, including time between visits, the responsible person and backup. A cleaning visit by itself is not continuous supervision."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "A pet-aware household brief",
+      "caption": "Original scope-planning sequence for the owner, worker and service discussion.",
+      "items": [
+        {
+          "label": "Describe",
+          "detail": "Explain the animals, home setup and requested duties."
+        },
+        {
+          "label": "Match",
+          "detail": "Discuss relevant experience and comfort with the role."
+        },
+        {
+          "label": "Introduce",
+          "detail": "Owner demonstrates access and the agreed routine."
+        },
+        {
+          "label": "Handover",
+          "detail": "Record completed tasks, concerns and the next responsible person."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "كيف أختار مساعدة منزلية لبيت توجد فيه حيوانات أليفة؟",
+    "description": "اختر مساعدة منزلية مناسبة لبيت فيه حيوانات أليفة، وحدد الخبرة والمهام والتعارف الآمن والدخول والتنظيف وتسليم المسؤولية مع المالك وتوزيع الأدوار اليومية.",
+    "body": "اختر المساعدة المنزلية بعد مناقشة راحتها وخبرتها مع الحيوانات الموجودة فعلياً في بيتك، ثم حدد المهام المتعلقة بها بصورة منفصلة عن التنظيف أو رعاية الأطفال. أخبر عناية بأنواع الحيوانات وعددها وروتينها وما تحتاج إليه من أعمال. فوجود حيوان في المنزل، والتنظيف حوله، وتحمل مسؤولية العناية به تكليفات مختلفة تتطلب وصفاً واضحاً.\n\n## صف بيئة المنزل قبل اختيار الشخص\n\nاشرح أين تقضي الحيوانات وقتها وكيف تتعامل مع الزوار والمساحات التي يجب فصلها. اسأل عن الخبرة السابقة في المهام المقترحة، من دون افتراض أن مسمى العاملة أو المربية يشمل التعامل مع الحيوانات. ناقش الراحة تجاه الدور باحترام؛ فالترتيب الجيد يقوم على بيئة آمنة للشخص والحيوان، وليس على مجرد التعبير عن حب الحيوانات الأليفة.\n\nاستخدم [دليل تقييم المهارات والتواصل](https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/) لطرح أسئلة عن العمل الفعلي السابق. وشارك احتياجك المتخصص عبر [صفحة الاستفسار عن رعاية الحيوانات الأليفة](https://inayadomestic.ae/ar/services/pet-care-specialists/). وعند الجمع مع أعمال أخرى، ارجع إلى [دليل الاتفاق على المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) لتحديد المسؤوليات والأولوية.\n\n## افصل العمل المنزلي عن مسؤولية الحيوان\n\nيساعد هذا الجدول الأصلي على تسجيل نطاق العمل، ولا يمثل قائمة مزايا تلقائية في الباقة.\n\n| المهمة المقترحة | ما يوضحه المالك | ما يسجل في الاتفاق |\n|---|---|---|\n| التنظيف قرب الحيوانات | الدخول الآمن ومساحة العمل والمواد المناسبة | نطاق التنظيف وترتيب فصل الحيوان عن منطقة العمل |\n| الطعام والماء | التعليمات المكتوبة وأماكن المستلزمات | المهام المسندة والتوقيت وطريقة الإبلاغ |\n| الأبواب والبوابات | المخارج التي تبقى مغلقة ودخول الزوار | خطوات الدخول ومنع خروج الحيوان |\n| الخروج للتمرين | الخبرة والأدوات والطريق والظروف المناسبة | المهمة الصريحة والشخص المسؤول عنها |\n| غياب المالك | ترتيب التواصل والروتين والشخص الاحتياطي | فترة المساندة المختارة وطريقة التسليم |\n| مشكلة صحية أو سلوكية | وسيلة التواصل مع البيطري أو المختص وتعليمات المالك | الرجوع للمسؤول بدلاً من العلاج أو التدريب المرتجل |\n\n## اجعل المالك يقود التعارف الأول\n\nرتب التعارف بحضور المالك مع إدارة الحيوان بالطريقة المناسبة. وضح مكان الوقوف والأبواب التي تبقى مغلقة ومسار الحركة المعتاد. تجنب فرض التفاعل أو تحويل اللقاء إلى اختبار للشجاعة. وإذا لم يكن الترتيب آمناً، فعدله واطلب المشورة المهنية المناسبة قبل إسناد مهمة التعامل المباشر مع الحيوان.\n\nوتنصح [إرشادات الجمعية الملكية للرفق بالحيوان بشأن صحبة الكلاب](https://science.rspca.org.uk/en/web/rspca/adviceandwelfare/pets/dogs/company) بالتعارف المدروس والرعاية المسؤولة عند غياب المالك، والرجوع إلى المختص عند الخوف أو السلوك العدواني. استخدم هذا المبدأ لتسليم هادئ، بدلاً من تكليف المساعدة المنزلية بحل مشكلة سلوكية متخصصة.\n\n## نسق بين التنظيف والأطفال وروتين الحيوانات\n\nاشرح كيف تجهز مساحة عمل آمنة قبل التنظيف، وأين تحفظ الأدوات والمنتجات، مع اتباع ملصقات استخدامها. افصل أدوات الحيوان عن أدوات مطبخ الأسرة في الخطة، وحدد التصرف عند وصول مندوب أو فتح بوابة أو دخول الحيوان إلى مكان يجري تنظيفه. توحيد التعليمات يقلل تضارب الطلبات بين أفراد المنزل.\n\nوعند وجود أطفال وحيوانات معاً، حدد البالغ المسؤول في كل وقت. فمراقبة طفل، والخروج مع حيوان، وتنظيف غرفة أخرى مهام تتنافس على الانتباه. عدل التوقيت إذا ترك الجمع بينها فجوة في الرعاية. وتفيد الخطة المكتوبة خصوصاً في الزيارات المحددة، إذ يتولى المالك تنظيم حركة الحيوان قبل وصول العاملة.\n\n## رتب الغياب وتسليم نهاية الزيارة\n\nعند سفر الأسرة، حدد المسؤول عن كل حيوان طوال فترة الغياب، بما يشمل الوقت بين الزيارات. فزيارة التنظيف ليست إشرافاً متواصلاً. وتناقش [إرشادات رعاية الحيوان أثناء الإجازة](https://www.rspca.org.uk/adviceandwelfare/pets/general/holiday) ترتيب الرعاية المناسبة لاحتياجاته. اجمع تعليمات المالك وجهات الاتصال والشخص الاحتياطي في مرجع واحد.\n\nاطلب تسليماً واقعياً للأعمال المنفذة والنواقص ومشكلات الدخول وأي أمر يحتاج إلى مراجعة. راجع النطاق بعد تطبيق الروتين الأول قبل زيادة المهام. وشارك تفاصيل المنزل والحيوانات والجدول عبر [صفحة التواصل مع عناية](https://inayadomestic.ae/ar/contact/) لمناقشة مسؤوليات المنزل ورعاية الحيوانات بوضوح.",
+    "faqs": [
+      {
+        "question": "هل تشمل باقة العاملة رعاية الحيوانات تلقائياً؟",
+        "answer": "سجل المهام المتعلقة بالحيوانات ضمن النطاق المختار. فتنظيف المنزل الذي يوجد فيه حيوان يختلف عن مسؤولية الطعام أو التمرين أو التغطية أثناء الغياب."
+      },
+      {
+        "question": "ماذا أوضح قبل الزيارة الأولى؟",
+        "answer": "أنواع الحيوانات واستجابتها للزوار وإجراءات الدخول والروتين والمهام المحددة، مع تعارف يقوده المالك وعرض أماكن العمل الآمنة."
+      },
+      {
+        "question": "هل تغني المساعدة المنزلية عن البيطري أو مختص السلوك؟",
+        "answer": "ينفذ الدعم المنزلي الروتين المتفق عليه ويبلغ عن الملاحظات. أما العلاج والمشكلات السلوكية فترجع إلى المختص المناسب."
+      },
+      {
+        "question": "هل تكفي زيارة العاملة لرعاية الحيوان أثناء السفر؟",
+        "answer": "خطط للرعاية طوال فترة الغياب، بما يشمل الوقت بين الزيارات والشخص المسؤول والبديل. زيارة التنظيف وحدها ليست إشرافاً مستمراً."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "وصف منزلي يراعي الحيوانات الأليفة",
+      "caption": "تسلسل أصلي لتحديد النطاق بين المالك والعاملة وعند مناقشة الخدمة.",
+      "items": [
+        {
+          "label": "صف الاحتياج",
+          "detail": "وضح الحيوانات وبيئة المنزل والمهام المطلوبة."
+        },
+        {
+          "label": "ناقش الملاءمة",
+          "detail": "راجع الخبرة والراحة تجاه الدور المقترح."
+        },
+        {
+          "label": "قدم التعارف",
+          "detail": "يعرض المالك الدخول والروتين المتفق عليه."
+        },
+        {
+          "label": "سلم المسؤولية",
+          "detail": "سجل الأعمال والملاحظات والمسؤول التالي."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://science.rspca.org.uk/en/web/rspca/adviceandwelfare/pets/dogs/company",
+      "supports": "Careful introductions, responsible care during absence and professional advice for fearful/aggressive behaviour; brief paraphrase only."
+    },
+    {
+      "url": "https://www.rspca.org.uk/adviceandwelfare/pets/general/holiday",
+      "supports": "Appropriate responsible care planned around animal needs when owners travel; no treatment or fixed supervision interval advice."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid pets dog cat UAE household help pet care",
+      "url": "https://maidmatch.ae/services"
+    },
+    {
+      "query": "household helper pet sitting UAE",
+      "url": "https://choosemaid.com/pet-sitters"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "02",
+  "slug": "maid-visit-frequency-planner",
+  "mode": "new",
+  "question": {
+    "en": "How often should I book a maid: weekly, twice weekly or more?",
+    "ar": "كم مرة أحتاج إلى خدمة عاملة منزلية أسبوعياً؟"
+  },
+  "gap": "No visit-frequency decision tool.",
+  "existingMatches": [
+    "domestic-worker-employment-arrangements-uae"
+  ],
+  "en": {
+    "title": "How often should you book a maid? A household visit planner",
+    "description": "Plan weekly, twice-weekly or more frequent maid support from your household workload, with a visit-frequency table and clear INAYA package distinctions.",
+    "body": "Choose maid-visit frequency by the work that builds up between visits, the tasks your household handles itself and the time-sensitive duties that need support. A weekly visit, several shorter visits and a more continuous arrangement solve different problems. Begin with a realistic task record, then review the schedule against completed work instead of copying another household’s booking pattern.\n\n## Record what happens between visits\n\nFor a normal household week, note the jobs you cannot keep up with: bathrooms, cooking-related cleaning, floors, laundry, ironing or general organisation. Mark which need attention at a particular time and which can wait for a planned visit. A basket of ironing is different from a childcare duty that must happen while a parent is away.\n\nInclude the work the family already does. If someone maintains the kitchen each evening, the booked visit can focus elsewhere. If every task waits for the next booking, a single weekly list can become too large. The [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) helps turn a general request into a defined scope.\n\n## Compare recurring patterns using the same workload\n\nThis table is an original discussion tool, not a required frequency or a promise of a particular visit schedule.\n\n| Pattern to discuss | Suitable planning question | Work to allocate clearly | Review signal |\n|---|---|---|---|\n| One visit each week | Can the family maintain essentials between visits? | Main weekly priorities and one realistic carry-forward list | Important tasks repeatedly wait until the next week |\n| Two visits each week | Would splitting the work reduce the backlog? | Divide tasks between visits rather than repeat an unclear full-house request | Both visits have distinct useful outcomes |\n| More frequent support | Are there regular duties tied to daily routines? | Set the role, schedule, duties and rest in the agreement | Priority daily work remains uncovered |\n| Occasional extra visit | Is the need caused by a temporary change? | Identify the additional tasks and dates | The household returns to its normal pattern |\n\nFor visit duration, see the [four-hour and eight-hour planning guide](https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/). Frequency and duration should be decided together: adding more dates without a useful task split can reproduce the same problem more often.\n\n## Separate routine cleaning from continuous supervision\n\nA recurring cleaning visit is not a substitute for a person assigned to supervise a child or support an older relative during a defined period. Match those needs to the proper role and its agreed responsibilities. Likewise, a room that is rarely used can be placed on a rotation while regularly used areas remain priorities.\n\nThe [CDC’s home-cleaning guidance](https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html) distinguishes regularly used touchpoints from surfaces cleaned when dirty or needed. It does not prescribe a universal paid-maid visit count. Your task record converts that distinction into a service discussion specific to your home.\n\n## Keep package periods separate from visit frequency\n\nINAYA’s weekly price is AED 1,120 for a seven-day service period; it is not the price of one weekly visit. The monthly package covers a thirty-day service period. The agreement records the actual schedule, duties and rest for those arrangements. Read the [package prices](https://inayadomestic.ae/en/pricing/) alongside the [employment-arrangement comparison](https://inayadomestic.ae/en/blog/domestic-worker-employment-arrangements-uae/) before comparing them with individual half-day or daily visits.\n\nThe [UAE Government’s domestic-worker guidance](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) places the work and rest arrangements within the contractual framework. A household’s preferred frequency should be translated into the applicable written agreement.\n\n## Review the pattern after real visits\n\nKeep a simple record of priorities completed, tasks deferred, access delays and changes in household routine. If the backlog is mostly ironing, allocate that work explicitly rather than increasing general cleaning. If the home was prepared differently, note that before judging the duration. Share the revised task pattern, emirate and preferred dates with [INAYA](https://inayadomestic.ae/en/contact/) to arrange the next discussion.",
+    "faqs": [
+      {
+        "question": "Is one maid visit per week enough?",
+        "answer": "Use your task record to decide. List what the family maintains between visits and check whether important work repeatedly carries forward. There is no single visit count that fits every home."
+      },
+      {
+        "question": "Is INAYA’s weekly package one visit per week?",
+        "answer": "No. The published weekly package is AED 1,120 for a seven-day service period. The written agreement records its schedule, duties and rest; individual recurring visits are a separate scheduling discussion."
+      },
+      {
+        "question": "Should I add another visit or choose a longer visit?",
+        "answer": "Identify the cause of the backlog first. Tasks linked to different days favour a discussion about frequency; a larger task list on one day requires a discussion about visit duration and priorities."
+      },
+      {
+        "question": "Does recurring booking guarantee the same worker?",
+        "answer": "Record a preferred continuity arrangement with the coordinator and include the task handover and contact route. The selected agreement and available staffing determine the actual allocation."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "A practical frequency decision",
+      "caption": "Original household-planning workflow: review actual work rather than adopting a universal visit count.",
+      "items": [
+        {
+          "label": "Record the workload",
+          "detail": "List the tasks that accumulate in a normal week."
+        },
+        {
+          "label": "Separate timed duties",
+          "detail": "Identify work tied to daily supervision or a particular day."
+        },
+        {
+          "label": "Choose a visit pattern",
+          "detail": "Discuss frequency and duration together with the coordinator."
+        },
+        {
+          "label": "Review the result",
+          "detail": "Use completed and carried-forward tasks to improve the next plan."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "كم مرة تحتاج إلى خدمة عاملة منزلية؟ دليل لتنظيم الزيارات",
+    "description": "نظم الزيارات الأسبوعية أو المتعددة بحسب أعمال أسرتك، باستخدام جدول للتكرار ومراجعة عملية للمهام، مع التمييز بين الزيارات ومدد باقات عناية المنشورة.",
+    "body": "اختر عدد زيارات العاملة المنزلية بحسب الأعمال التي تتراكم بين المواعيد، وما تنجزه الأسرة بنفسها، والمهام المرتبطة بوقت محدد. فالزيارة الأسبوعية والزيارات المتعددة والترتيب الأكثر استمرارية تعالج احتياجات مختلفة. ابدأ بسجل واقعي للمهام، ثم راجع الجدول بناءً على العمل المنجز بدلاً من نسخ نمط الحجز لدى أسرة أخرى.\n\n## سجل ما يتراكم بين الزيارات\n\nخلال أسبوع اعتيادي للأسرة، سجل الأعمال التي يصعب مواكبتها: الحمامات وتنظيف المطبخ والأرضيات والغسيل والكي وترتيب الأغراض. ميز بين المهمة التي تحتاج إلى تنفيذ في وقت محدد والمهمة التي تنتظر موعداً مخططاً. فسلة الكي تختلف عن مسؤولية رعاية طفل أثناء غياب أحد الوالدين.\n\nأضف الأعمال التي تنجزها الأسرة بالفعل. فإذا كان أحد أفرادها يحافظ على المطبخ مساءً، يمكن توجيه الزيارة إلى أولويات أخرى. أما إذا كانت كل المهام تنتظر الحجز التالي، فقد تصبح القائمة الأسبوعية أكبر من الوقت المخصص. ويساعد [دليل مهام العاملة المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) على تحويل الطلب العام إلى نطاق عمل واضح.\n\n## قارن أنماط الزيارة على أساس حجم العمل نفسه\n\nالجدول التالي أداة أصلية للمناقشة، وليس عدداً إلزامياً من الزيارات أو وعداً بجدول معين.\n\n| النمط المقترح للمناقشة | سؤال التخطيط | العمل الذي ينبغي توزيعه بوضوح | مؤشر المراجعة |\n|---|---|---|---|\n| زيارة واحدة أسبوعياً | هل تستطيع الأسرة الحفاظ على الأساسيات بين الزيارات؟ | الأولويات الأسبوعية وقائمة واقعية للمهام المؤجلة | تكرار تأجيل المهام المهمة إلى الأسبوع التالي |\n| زيارتان أسبوعياً | هل يقلل تقسيم العمل من التراكم؟ | توزيع مختلف للمهام بين الموعدين | وجود نتائج مفيدة ومحددة لكل زيارة |\n| مساعدة أكثر تكراراً | هل توجد مهام منتظمة مرتبطة بالروتين اليومي؟ | تحديد الدور والجدول والمهام والراحة في الاتفاق | بقاء أعمال يومية أساسية دون تغطية |\n| زيارة إضافية مؤقتة | هل نتج الاحتياج عن تغيير عابر؟ | تسمية الأعمال والتواريخ الإضافية | عودة الأسرة إلى نمطها المعتاد |\n\nولمناقشة مدة الزيارة، راجع [دليل التخطيط للأربع والثماني ساعات](https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/). ينبغي تحديد المدة والتكرار معاً؛ فإضافة مواعيد دون تقسيم مفيد للمهام قد تكرر المشكلة بدلاً من حلها.\n\n## افصل التنظيف المعتاد عن الإشراف المستمر\n\nزيارة التنظيف المتكررة لا تحل محل شخص مكلف بالإشراف على طفل أو مساعدة مسن خلال فترة محددة. اربط هذه الاحتياجات بالدور المناسب ومسؤولياته المتفق عليها. وفي المقابل، يمكن تدوير العمل في غرفة قليلة الاستخدام مع إبقاء المناطق المستخدمة باستمرار ضمن الأولويات.\n\nتميز [إرشادات مراكز مكافحة الأمراض لتنظيف المنزل](https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html) بين مواضع اللمس المتكررة والأسطح التي تنظف عند اتساخها أو الحاجة إليها. ولا تحدد عدداً واحداً مناسباً لزيارات العاملة في جميع المنازل. ويترجم سجل مهامك هذا الفرق إلى مناقشة عملية لخدمة منزلك.\n\n## افصل فترة الباقة عن عدد الزيارات\n\nسعر باقة عناية الأسبوعية 1,120 درهماً لفترة خدمة من سبعة أيام، وليس سعر زيارة واحدة كل أسبوع. وتغطي الباقة الشهرية فترة خدمة من ثلاثين يوماً. ويسجل الاتفاق الجدول الفعلي والمهام والراحة لهذه الترتيبات. راجع [أسعار الباقات](https://inayadomestic.ae/ar/pricing/) مع [دليل مقارنة ترتيبات التوظيف](https://inayadomestic.ae/ar/blog/domestic-worker-employment-arrangements-uae/) قبل مقارنتها بزيارات نصف اليوم أو الزيارات اليومية.\n\nوتضع [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) العمل والراحة ضمن الإطار التعاقدي. لذلك ينبغي تحويل نمط الزيارات الذي تفضله الأسرة إلى الاتفاق المكتوب المنطبق عليه.\n\n## راجع النمط بعد الزيارات الفعلية\n\nاحتفظ بسجل بسيط للأولويات المنجزة والمؤجلة، وأسباب تأخر الدخول، والتغيرات في روتين المنزل. إذا كان التراكم في الكي تحديداً، خصص له وقتاً واضحاً بدلاً من زيادة طلبات التنظيف العامة. وإذا اختلف تجهيز المنزل، سجل ذلك قبل الحكم على المدة. شارك النمط المعدل للمهام والإمارة والتواريخ المفضلة مع [عناية](https://inayadomestic.ae/ar/contact/) لمناقشة الخطوة التالية.",
+    "faqs": [
+      {
+        "question": "هل تكفي زيارة عاملة منزلية واحدة أسبوعياً؟",
+        "answer": "حدد ذلك من سجل المهام. اكتب ما تحافظ عليه الأسرة بين الزيارات، ثم راجع الأعمال المهمة التي تتأجل باستمرار. لا يوجد عدد واحد من الزيارات يناسب جميع المنازل."
+      },
+      {
+        "question": "هل تعني باقة عناية الأسبوعية زيارة واحدة في الأسبوع؟",
+        "answer": "لا. السعر المنشور للباقة الأسبوعية 1,120 درهماً لفترة خدمة من سبعة أيام. ويسجل الاتفاق المكتوب الجدول والمهام والراحة، بينما يناقش ترتيب الزيارات المتكررة بصورة مستقلة."
+      },
+      {
+        "question": "هل أضيف زيارة أخرى أم أختار زيارة أطول؟",
+        "answer": "حدد سبب التراكم أولاً. إذا ارتبطت المهام بأيام مختلفة، فناقش تكرار الزيارات. وإذا كانت قائمة العمل أكبر في يوم واحد، فناقش مدة الزيارة وترتيب الأولويات."
+      },
+      {
+        "question": "هل يضمن الحجز المتكرر حضور العاملة نفسها؟",
+        "answer": "سجل تفضيل استمرارية العاملة مع المنسق، وحدد طريقة تسليم المهام وقناة التواصل. يحدد الاتفاق المختار وترتيب العاملات المتاح التخصيص الفعلي للخدمة."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "خطوات عملية لاختيار تكرار الزيارات",
+      "caption": "مسار أصلي لتخطيط أعمال الأسرة، يقوم على العمل الفعلي بدلاً من افتراض عدد موحد من الزيارات.",
+      "items": [
+        {
+          "label": "سجل حجم العمل",
+          "detail": "اكتب المهام التي تتراكم خلال أسبوع اعتيادي."
+        },
+        {
+          "label": "ميز المهام المرتبطة بوقت",
+          "detail": "حدد ما يحتاج إلى إشراف يومي أو موعد معين."
+        },
+        {
+          "label": "اختر نمط الزيارات",
+          "detail": "ناقش التكرار والمدة معاً مع المنسق."
+        },
+        {
+          "label": "راجع النتيجة",
+          "detail": "استفد من سجل المنجز والمؤجل لتحسين الخطة التالية."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
+      "supports": "High-touch surfaces and other surfaces have different cleaning needs; no universal paid-maid visit count is prescribed."
+    },
+    {
+      "url": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Work and rest arrangements belong in the domestic-worker contractual framework."
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "English-language counterpart of the official UAE domestic-worker contractual-work guidance."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "Dubai how often book maid once twice weekly cleaning",
+      "url": "https://www.homeworkuae.com/blog/how-often-book-cleaning-services-dubai"
+    },
+    {
+      "query": "Dubai how often book maid once twice weekly cleaning",
+      "url": "https://www.reddit.com/r/dubai/comments/1v7syzc/looking_for_a_house_cleanermaid/"
+    }
+  ]
+}

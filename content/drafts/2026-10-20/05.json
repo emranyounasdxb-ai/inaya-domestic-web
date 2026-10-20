@@ -1,0 +1,125 @@
+{
+  "id": "05",
+  "slug": "prepare-cleaning-supplies-maid-visit",
+  "mode": "new",
+  "question": {
+    "en": "What supplies and equipment should I prepare before a maid visit?",
+    "ar": "ما أدوات ومواد التنظيف التي أجهزها قبل زيارة العاملة المنزلية؟"
+  },
+  "gap": "Who supplies items is covered; practical preparation and safe handover are not.",
+  "existingMatches": [
+    "monthly-maid-package-inclusions-checklist"
+  ],
+  "en": {
+    "title": "What to prepare before a maid visit: supplies and equipment",
+    "description": "Prepare suitable products, working equipment and surface-care instructions for a maid visit, using a practical checklist and clear supply responsibilities.",
+    "body": "Prepare for a maid visit by matching the agreed tasks with suitable products, working equipment and clear surface-care instructions. Put the items in an accessible place and identify who supplies each one in the written service scope. A useful preparation list prevents the worker from spending the visit searching for tools or guessing which product belongs on a delicate surface.\n\n## Begin with the task list, not a shopping basket\n\nList the work you want to discuss before collecting supplies. Cleaning accessible floors, preparing laundry and caring for a kitchen each need different equipment and instructions. For a focused visit, the [four-hour and eight-hour guide](https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/) helps keep the chosen tasks realistic. Buying more products does not increase the time available or add specialist work to a booking.\n\nCheck the [monthly package inclusions guide](https://inayadomestic.ae/en/blog/monthly-maid-package-inclusions-checklist/) alongside the quotation for supply responsibilities. INAYA’s published live-in and live-out package prices are the same; the written agreement records accommodation, transport, products and equipment responsibilities. Use that record to decide what should be ready at the home.\n\n## Use a practical preparation checklist\n\nThis original checklist is organised by purpose. Select the items relevant to your agreed work rather than treating it as a requirement to buy every item.\n\n| Task or area | Items to prepare or identify | Handover detail |\n|---|---|---|\n| Accessible floors | Suitable working vacuum or other agreed floor tool; mop and compatible product | Floor material, controls, attachments and areas to avoid |\n| Kitchen surfaces | Surface-appropriate product and clearly identified cloths | Worktop material, appliance instructions and food-preparation boundaries |\n| Bathrooms | Appropriate labelled product and separate cleaning tools | Delicate fittings, ventilation and any maintenance issue |\n| Dusting and mirrors | Suitable cloths and products for the named surfaces | Fragile objects and items the family will move |\n| Laundry or ironing | Agreed detergent, care instructions and working equipment | Garment priorities, special-care items and settings |\n| Waste and finishing | Correct bags and the agreed disposal location | Recycling arrangements, access and storage after use |\n\nAn inventory should also show items supplied by the provider under the selected agreement. Avoid duplicate purchases by checking that list before the visit.\n\n## Explain surfaces and demonstrate equipment\n\nPoint out natural stone, wood finishes, sensitive coatings and equipment with special care instructions. Keep manufacturer guidance accessible. Show the worker how unfamiliar appliances are operated, where approved attachments are kept and how to stop the equipment safely. Damaged plugs, leaking appliances or other faults should be addressed before that equipment is used.\n\nThe [EPA’s household-product guidance](https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality) recommends following product directions and keeping products away from children and pets. Keep labels readable and avoid presenting unidentified decanted liquids as ready-to-use cleaning products. Set aside products the household does not want used.\n\n## Keep product safety separate from cleaning intensity\n\nThe [CDC’s bleach-safety guidance](https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html) warns against mixing bleach or disinfectants with other cleaners. A worker should not be asked to combine products to make them “stronger.” Read the selected product’s directions for its intended surface, protective equipment and ventilation.\n\nShare household preferences or restrictions clearly, including fragrance preferences and products to keep away from particular areas. Medical treatment decisions belong with qualified healthcare professionals; the household task list should simply communicate the relevant instructions supplied for the home. Specialist treatment, pest control or damaged-surface restoration needs its own assessment.\n\n## Make the arrival and handover straightforward\n\nClear the surfaces being addressed and identify a safe place for personal belongings. Explain the water supply, usable sockets, waste route and storage area. List a contact person who can answer questions about the scope rather than leaving the worker to make decisions about private possessions or unfamiliar materials.\n\nAt the end, return products to their agreed storage and record shortages, equipment faults and tasks that need different preparation. Use the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) to keep later additions within the agreed role. Share the tasks, location and supply arrangements with [INAYA’s team](https://inayadomestic.ae/en/contact/) before planning the next visit.",
+    "faqs": [
+      {
+        "question": "Does INAYA always supply cleaning products and equipment?",
+        "answer": "The written agreement records who provides the products and equipment for the selected work. Review that list alongside the scope before preparing the home or buying supplies."
+      },
+      {
+        "question": "Do I need every product in a cleaning checklist?",
+        "answer": "Prepare items that match the agreed tasks and surface instructions. A focused visit benefits from suitable, clearly identified products rather than a large collection of unnecessary cleaners."
+      },
+      {
+        "question": "Can different cleaning products be mixed for stronger results?",
+        "answer": "Do not mix bleach or disinfectants with other cleaners. Follow the selected product’s instructions for its surface, use, protection and ventilation instead of combining chemicals."
+      },
+      {
+        "question": "What should I do if the vacuum or another appliance is faulty?",
+        "answer": "Address the fault before the appliance is used and tell the coordinator how it affects the planned tasks. Discuss a safe working alternative or a revised task sequence."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "Prepare, explain, use and record",
+      "caption": "Original preparation workflow. Product directions and the written service scope guide the selected tasks.",
+      "items": [
+        {
+          "label": "Match tools to tasks",
+          "detail": "List the products and equipment for the agreed work."
+        },
+        {
+          "label": "Check condition and labels",
+          "detail": "Prepare working items and readable care directions."
+        },
+        {
+          "label": "Explain access and use",
+          "detail": "Show storage, surfaces and unfamiliar controls."
+        },
+        {
+          "label": "Record what changes",
+          "detail": "Note shortages, faults and the next preparation needs."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "ماذا تجهز قبل زيارة العاملة المنزلية؟ قائمة الأدوات والمواد",
+    "description": "جهز منتجات مناسبة ومعدات صالحة وتعليمات واضحة للأسطح قبل زيارة العاملة المنزلية، باستخدام قائمة عملية وتحديد مكتوب لمسؤولية توفير المستلزمات.",
+    "body": "جهز زيارة العاملة المنزلية بربط المهام المتفق عليها بمنتجات مناسبة ومعدات صالحة وتعليمات واضحة للعناية بالأسطح. ضع الأدوات في مكان يسهل الوصول إليه، وسجل في نطاق الخدمة المكتوب من يوفر كل عنصر. تمنع قائمة التجهيز المفيدة ضياع وقت الزيارة في البحث عن الأدوات أو تخمين المنتج المناسب لسطح حساس.\n\n## ابدأ بالمهام قبل جمع المنتجات\n\nاكتب الأعمال التي تريد مناقشتها أولاً. فتنظيف الأرضيات المتاحة وتجهيز الغسيل والعناية بالمطبخ يحتاج إلى أدوات وتعليمات مختلفة. ويساعد [دليل الأربع والثماني ساعات](https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/) على جعل مهام الزيارة المركزة واقعية. شراء منتجات أكثر لا يزيد الوقت المتاح ولا يضيف عملاً تخصصياً إلى الحجز.\n\nراجع [دليل محتويات الباقة الشهرية](https://inayadomestic.ae/ar/blog/monthly-maid-package-inclusions-checklist/) مع عرض السعر لمعرفة مسؤولية توفير المستلزمات. أسعار باقات عناية المنشورة واحدة للخدمة المقيمة وغير المقيمة، ويسجل الاتفاق مسؤوليات السكن والنقل والمنتجات والمعدات. استخدم هذا السجل لتحديد ما ينبغي تجهيزه في المنزل قبل الموعد.\n\n## استخدم قائمة تجهيز عملية\n\nنظم الجدول الأصلي التالي بحسب الغرض من الأدوات. اختر العناصر المتعلقة بالعمل المتفق عليه، ولا تعتبره قائمة تلزم بشراء كل ما ورد فيها.\n\n| المهمة أو المنطقة | الأدوات التي تجهز أو تحدد | ما يوضح عند التسليم |\n|---|---|---|\n| الأرضيات المتاحة | مكنسة صالحة أو أداة متفق عليها وممسحة ومنتج ملائم | خامة الأرضية والتشغيل والملحقات والمناطق المستثناة |\n| أسطح المطبخ | منتج مناسب للخامة وأقمشة محددة الاستخدام | نوع السطح وتعليمات الأجهزة وحدود مناطق إعداد الطعام |\n| الحمامات | منتج ملصقه واضح وأدوات تنظيف منفصلة | التجهيزات الحساسة والتهوية وأي مشكلة صيانة |\n| الغبار والمرايا | أقمشة ومنتجات ملائمة للأسطح المسماة | الأغراض القابلة للكسر وما تنقله الأسرة بنفسها |\n| الغسيل أو الكي | المنظف المتفق عليه وتعليمات العناية ومعدات صالحة | أولوية الملابس والعناية الخاصة والإعدادات |\n| المخلفات ونهاية العمل | أكياس مناسبة ومكان التخلص المتفق عليه | الفرز والدخول وتخزين الأدوات بعد الاستخدام |\n\nينبغي أن تبين القائمة أيضاً العناصر التي يوفرها مقدم الخدمة ضمن الاتفاق المختار. راجعها قبل الزيارة لتجنب شراء أدوات مكررة أو تجهيز منتجات لن تستخدم في العمل المقصود.\n\n## اشرح الأسطح وشغل الأجهزة أمام العاملة\n\nحدد الحجر الطبيعي والتشطيبات الخشبية والطلاءات الحساسة والأجهزة ذات التعليمات الخاصة. احتفظ بإرشادات المصنع في مكان واضح. واشرح تشغيل الأجهزة غير المألوفة وأماكن الملحقات المسموح بها وطريقة إيقافها. عالج القوابس التالفة أو التسرب أو الأعطال الأخرى قبل استخدام المعدة المعنية في الزيارة.\n\nتوصي [إرشادات وكالة حماية البيئة للمنتجات المنزلية](https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality) باتباع تعليمات المنتج وإبعاده عن الأطفال والحيوانات الأليفة. أبق الملصقات مقروءة، وتجنب تقديم سوائل منقولة إلى عبوات مجهولة كمنتجات جاهزة للاستخدام. واعزل المنتجات التي لا تريد الأسرة استعمالها.\n\n## افصل سلامة المنتجات عن شدة التنظيف\n\nتحذر [إرشادات مراكز مكافحة الأمراض لاستخدام المبيضات](https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html) من خلط المبيض أو المطهرات مع منظفات أخرى. لا تطلب من العاملة جمع المنتجات لجعلها «أقوى». ارجع إلى تعليمات المنتج المختار لمعرفة الأسطح المناسبة ووسائل الوقاية والتهوية المطلوبة.\n\nشارك تفضيلات المنزل والقيود بوضوح، ومنها تفضيلات الروائح والمنتجات التي تبعد عن مناطق معينة. تبقى القرارات العلاجية لدى المختصين الصحيين؛ وتقتصر قائمة العمل على نقل التعليمات ذات الصلة بالمنزل. أما المعالجة التخصصية أو مكافحة الآفات أو ترميم الأسطح التالفة فتحتاج إلى تقييم مستقل.\n\n## سهل الوصول والتسليم\n\nأخل الأسطح المطلوب التعامل معها وحدد مكاناً آمناً للمتعلقات الشخصية. وضح مصدر الماء والمقابس الصالحة ومسار المخلفات ومكان تخزين الأدوات. وحدد شخصاً للتواصل يجيب عن الأسئلة المتعلقة بالنطاق، بدلاً من ترك العاملة تتخذ قرارات بشأن أغراض خاصة أو خامات غير مألوفة.\n\nوفي النهاية، أعد المنتجات إلى أماكنها وسجل النواقص وأعطال المعدات والمهام التي تحتاج إلى تجهيز آخر. استخدم [دليل مهام العاملة المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) لضبط أي إضافات لاحقة. وشارك المهام والموقع وترتيبات الأدوات مع [فريق عناية](https://inayadomestic.ae/ar/contact/) قبل تخطيط الزيارة التالية.",
+    "faqs": [
+      {
+        "question": "هل توفر عناية مواد التنظيف والمعدات دائماً؟",
+        "answer": "يسجل الاتفاق المكتوب من يوفر المنتجات والمعدات للأعمال المختارة. راجع القائمة مع نطاق الخدمة قبل تجهيز المنزل أو شراء المستلزمات."
+      },
+      {
+        "question": "هل أحتاج إلى كل المنتجات الواردة في قائمة التنظيف؟",
+        "answer": "جهز ما يناسب المهام المتفق عليها وتعليمات الأسطح. تستفيد الزيارة المركزة من منتجات مناسبة وواضحة الاستخدام بدلاً من مجموعة كبيرة من المنظفات غير اللازمة."
+      },
+      {
+        "question": "هل يمكن خلط المنظفات للحصول على نتيجة أقوى؟",
+        "answer": "لا تخلط المبيضات أو المطهرات مع منظفات أخرى. اتبع تعليمات المنتج المختار للأسطح والاستخدام والوقاية والتهوية بدلاً من جمع المواد الكيميائية."
+      },
+      {
+        "question": "ماذا أفعل إذا كانت المكنسة أو أي معدة أخرى معطلة؟",
+        "answer": "عالج العطل قبل الاستخدام، وأبلغ المنسق بأثره على المهام المخططة. ناقش بديلاً صالحاً وآمناً أو عدل تسلسل العمل وفق الأدوات المتاحة."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "جهز واشرح واستخدم وسجل",
+      "caption": "خطوات أصلية لتجهيز الزيارة، تستند المهام المختارة فيها إلى تعليمات المنتجات ونطاق الخدمة المكتوب.",
+      "items": [
+        {
+          "label": "اربط الأدوات بالمهام",
+          "detail": "حدد المنتجات والمعدات للعمل المتفق عليه."
+        },
+        {
+          "label": "راجع الصلاحية والملصقات",
+          "detail": "جهز أدوات صالحة وتعليمات عناية مقروءة."
+        },
+        {
+          "label": "اشرح الدخول والتشغيل",
+          "detail": "وضح التخزين والأسطح وأجهزة التشغيل غير المألوفة."
+        },
+        {
+          "label": "سجل التغييرات",
+          "detail": "دون النواقص والأعطال وتجهيزات الزيارة التالية."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality",
+      "supports": "Follow household-product directions and keep products out of reach of children and pets."
+    },
+    {
+      "url": "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html",
+      "supports": "Never mix bleach or disinfectants with other cleaners; use label-directed ventilation and protection."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "what cleaning supplies prepare before maid visit Dubai materials",
+      "url": "https://dubaihousekeeping.com/essential-cleaning-supplies-list-for-cleaning-service/"
+    },
+    {
+      "query": "what cleaning supplies prepare before maid visit Dubai materials",
+      "url": "https://justmaid.ae/faq"
+    }
+  ]
+}

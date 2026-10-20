@@ -1,0 +1,125 @@
+{
+  "id": "03",
+  "slug": "apartment-villa-maid-task-plan",
+  "mode": "new",
+  "question": {
+    "en": "How should maid tasks differ between an apartment and a villa?",
+    "ar": "كيف تختلف خطة أعمال العاملة المنزلية بين الشقة والفيلا؟"
+  },
+  "gap": "No floor-plan or apartment/villa workload comparison.",
+  "existingMatches": [
+    "agreeing-domestic-worker-household-duties"
+  ],
+  "en": {
+    "title": "Apartment or villa: how to plan a maid’s household tasks",
+    "description": "Compare apartment and villa maid tasks with a practical layout table, surface-care instructions, rotating priorities and a clear end-of-visit handover.",
+    "body": "Plan apartment and villa maid work by the areas actually used, the surfaces to care for and the route through the property. A villa is not simply an apartment with more bedrooms: stairs, additional entrances and separate living zones change the task sequence. An apartment can also carry a demanding workload when its kitchen, bathrooms and laundry are used heavily.\n\n## Map the home before discussing the booking\n\nCreate a short zone list: bedrooms in use, bathrooms in use, cooking area, living areas, entrances and other agreed spaces. Mark rooms that should not be entered and surfaces that require particular care. Add practical access information such as building entry, lift access or where products are stored. These details help explain the work without sharing unnecessary private information.\n\nFor a villa, identify the floor on which each priority is located. Repeated trips for tools or forgotten instructions interrupt the sequence. For an apartment, explain whether furniture restricts access and where the family will be during the visit. A compact floor plan is not the same as an empty, easy-to-access home.\n\n## Compare the task plan by layout\n\nThis is an original planning matrix, not a statement that a particular property size takes a fixed number of hours.\n\n| Area or constraint | Apartment planning | Villa planning | Information to provide |\n|---|---|---|---|\n| Living and bedroom zones | Order rooms around current occupancy | Group agreed work by floor or wing | Used rooms and restricted spaces |\n| Bathrooms | Count those in regular use | Prioritise used bathrooms across floors | Condition and main priorities |\n| Kitchen | Describe cooking activity and accessible surfaces | Explain any separate preparation or service kitchen | Tasks included in the visit |\n| Floors | Identify material changes and clear routes | Plan stairs and different floor finishes | Product and care instructions |\n| Entrances | Arrange reception or building access | Identify the correct gate and entrance | Safe arrival and exit route |\n| Balconies or outdoor spaces | Define accessible work separately | Separate household tasks from garden, pool or high-access work | Exact boundaries and required assessment |\n\nUse the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) to record the final responsibilities. The property label alone should not add duties to a worker’s role.\n\n## Give surfaces and access their own instructions\n\nIdentify natural stone, wood, delicate fittings and appliances with special care requirements. Keep the manufacturer’s directions with the relevant product or equipment. The [EPA’s guidance on household products](https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality) emphasises following product directions and precautions. Use those instructions rather than asking a worker to experiment with a stronger product because a mark remains.\n\nHigh exterior glazing, roof access, pool systems, electrical work and repairs need separate assessment by the relevant provider. Clear those boundaries before the visit. Where household access involves stairs, keep the route clear and plan equipment movement sensibly; the booking should not depend on carrying heavy items without a safe arrangement.\n\n## Put routine work and rotating work on separate lists\n\nYour core list might cover the occupied kitchen, bathrooms and main living areas. A rotating list can cover an agreed less-used room or accessible detail task on another visit. Write which list comes first and who can authorise a change. This avoids a familiar problem: work starts in a seldom-used guest area while the kitchen remains untouched.\n\nThe [EPA’s indoor-environment guidance](https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment) includes reducing clutter and managing household dust. In the booking plan, distinguish moving personal possessions from cleaning the surface underneath them. Decide where belongings belong before the visit so the worker does not need to guess.\n\n## Match the plan to the visit and review the handover\n\nCompare the ranked list with the [four-hour or eight-hour visit guide](https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/) and the [recurring-visit planner](https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/). Discuss a different duration, sequence or frequency when essential tasks repeatedly carry forward. Do not solve every mismatch by adding more areas to the same visit.\n\nAt the end, record completed zones, unfinished priorities and anything needing a different product or specialist assessment. Share the property layout, agreed tasks, emirate and preferred dates with [INAYA’s team](https://inayadomestic.ae/en/contact/) to plan household support around your actual home.",
+    "faqs": [
+      {
+        "question": "Does a villa always need more cleaning hours than an apartment?",
+        "answer": "Assess the actual occupied areas, condition, duties and access. Additional floors can change the sequence, while a heavily used apartment can also have a demanding workload."
+      },
+      {
+        "question": "Are garden and pool jobs part of ordinary maid work?",
+        "answer": "List those tasks separately for the relevant provider to assess. A villa address does not add garden maintenance, pool-system work, repairs or high-access cleaning to the agreed household role."
+      },
+      {
+        "question": "How can I organise rooms that are rarely used?",
+        "answer": "Create a rotating list for less-used areas and give the everyday priorities their own list. Record which comes first and how unfinished work will be carried forward."
+      },
+      {
+        "question": "What details should I send when discussing the visit?",
+        "answer": "Describe occupied rooms, used bathrooms, floors, delicate surfaces, access restrictions and the most important outcomes. Share the emirate, preferred timing and equipment arrangements as well."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "From floor plan to useful task plan",
+      "caption": "Original planning workflow for apartments and villas. No room-to-hours or staffing ratio is implied.",
+      "items": [
+        {
+          "label": "Map occupied zones",
+          "detail": "List rooms in use, floors and restricted spaces."
+        },
+        {
+          "label": "Choose the essentials",
+          "detail": "Put everyday priorities before rotating details."
+        },
+        {
+          "label": "Prepare access and tools",
+          "detail": "Explain routes, surfaces and equipment."
+        },
+        {
+          "label": "Record the handover",
+          "detail": "Track finished zones and the next useful action."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "الشقة أم الفيلا: كيف تخطط لمهام العاملة المنزلية؟",
+    "description": "قارن أعمال العاملة في الشقة والفيلا بجدول عملي لتوزيع المساحات وتعليمات الأسطح والأولويات الدورية، مع طريقة واضحة لتسليم المهام ومراجعة الزيارة.",
+    "body": "نظم أعمال العاملة المنزلية في الشقة أو الفيلا بحسب المساحات المستخدمة فعلياً والأسطح وطريقة الانتقال داخل العقار. فالفيلا ليست مجرد شقة ذات غرف أكثر؛ إذ يغير وجود السلالم والمداخل المتعددة ومناطق المعيشة المنفصلة ترتيب العمل. وقد تحمل الشقة أيضاً عبئاً كبيراً إذا كان استخدام المطبخ والحمامات والغسيل مكثفاً.\n\n## ارسم خريطة مبسطة للمنزل قبل مناقشة الحجز\n\nجهز قائمة بالمناطق: غرف النوم المستخدمة والحمامات والمطبخ والمعيشة والمداخل والمساحات الأخرى المقترحة. حدد الغرف التي لا يدخلها العامل والأسطح التي تحتاج إلى عناية خاصة. وأضف معلومات عملية مثل دخول المبنى واستخدام المصعد ومكان تخزين الأدوات. توضح هذه البيانات العمل دون مشاركة معلومات شخصية لا تخدم الخدمة.\n\nفي الفيلا، حدد الطابق الذي توجد فيه كل أولوية. فتكرار التنقل لإحضار الأدوات أو استكمال التعليمات يقطع تسلسل العمل. وفي الشقة، وضح إن كان الأثاث يعيق الوصول وأين ستكون الأسرة أثناء الزيارة. صغر المساحة لا يعني أن المنزل فارغ أو أن الوصول إلى جميع أجزائه سهل.\n\n## قارن الخطة بحسب توزيع المساحات\n\nهذا جدول أصلي لتنظيم المهام، وليس تقديراً ثابتاً لساعات التنظيف بحسب نوع العقار أو حجمه.\n\n| المنطقة أو العائق | التخطيط للشقة | التخطيط للفيلا | المعلومات المطلوب توضيحها |\n|---|---|---|---|\n| غرف النوم والمعيشة | ترتيب العمل حول إشغال الغرف | تجميع العمل المتفق عليه بحسب الطابق أو الجناح | الغرف المستخدمة والمناطق المقيدة |\n| الحمامات | حصر الحمامات المستخدمة بانتظام | ترتيب الأولويات بين الطوابق | الحالة والأعمال الأهم |\n| المطبخ | وصف استخدامه والأسطح المتاحة | توضيح وجود مطبخ تحضير أو خدمة منفصل | الأعمال المدرجة في الزيارة |\n| الأرضيات | تحديد الخامات ومسارات الحركة | تنظيم السلالم واختلاف الخامات | تعليمات العناية والمنتجات |\n| المداخل | ترتيب الدخول من الاستقبال أو المبنى | تحديد البوابة والمدخل الصحيحين | مسار وصول ومغادرة آمن |\n| الشرفات والخارج | تحديد العمل المتاح بصورة مستقلة | فصل المهام المنزلية عن الحديقة والمسبح والأعمال المرتفعة | الحدود الدقيقة والتقييم المطلوب |\n\nاستخدم [دليل المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) لتسجيل المسؤوليات النهائية. فتسمية العقار لا تضيف وحدها واجبات جديدة إلى دور العاملة.\n\n## خصص تعليمات مستقلة للأسطح والدخول\n\nحدد الحجر الطبيعي والخشب والتجهيزات الحساسة والأجهزة التي لها تعليمات خاصة. احتفظ بتوجيهات المصنع إلى جانب المنتج أو المعدة المعنية. وتؤكد [إرشادات وكالة حماية البيئة للمنتجات المنزلية](https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality) اتباع التعليمات والتحذيرات. اعتمد عليها بدلاً من مطالبة العاملة بتجربة منتج أقوى لمجرد بقاء علامة على السطح.\n\nأما الزجاج الخارجي المرتفع والوصول إلى السطح وأنظمة المسابح والكهرباء والإصلاحات فتحتاج إلى تقييم منفصل من مقدم الخدمة المناسب. حدد هذه الحدود قبل الموعد. وعند استخدام السلالم، أخل مسار الحركة ونظم نقل المعدات بصورة سليمة؛ فلا ينبغي أن تعتمد الخطة على حمل أشياء ثقيلة دون ترتيب آمن.\n\n## افصل الأعمال الأساسية عن الأعمال الدورية\n\nيمكن أن تتضمن القائمة الأساسية المطبخ والحمامات ومناطق المعيشة المستخدمة. أما القائمة الدورية فتشمل غرفة أقل استخداماً أو مهمة تفصيلية متاحة في زيارة أخرى. اكتب أي القائمتين تبدأ أولاً، ومن يوافق على تعديلها. يمنع ذلك بدء العمل في غرفة ضيوف قليلة الاستخدام بينما يبقى المطبخ دون عناية.\n\nتشمل [إرشادات وكالة حماية البيئة للبيئة الداخلية](https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment) تقليل التكدس والتعامل مع الغبار المنزلي. وفي خطة الزيارة، ميز بين نقل المتعلقات الشخصية وتنظيف السطح تحتها. حدد أماكن الأغراض مسبقاً حتى لا تضطر العاملة إلى التخمين أو اتخاذ قرار يخص الأسرة.\n\n## اربط الخطة بمدة الزيارة وراجع التسليم\n\nقارن الأولويات مع [دليل زيارة الأربع أو الثماني ساعات](https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/) و[دليل تكرار الزيارات](https://inayadomestic.ae/ar/blog/maid-visit-frequency-planner/). ناقش تعديل المدة أو التسلسل أو التكرار إذا استمر تأجيل العمل الأساسي. لا تعالج كل اختلاف بإضافة مناطق جديدة إلى الزيارة نفسها.\n\nوفي نهاية الموعد، سجل المناطق المنجزة والأولويات المتبقية وما يحتاج إلى منتج آخر أو تقييم متخصص. شارك توزيع المنزل والمهام المتفق عليها والإمارة والتواريخ المفضلة مع [فريق عناية](https://inayadomestic.ae/ar/contact/) لتخطيط المساعدة وفق منزلك الفعلي.",
+    "faqs": [
+      {
+        "question": "هل تحتاج الفيلا دائماً إلى ساعات تنظيف أكثر من الشقة؟",
+        "answer": "قيم المساحات المشغولة وحالتها والمهام وترتيبات الدخول. قد يغير تعدد الطوابق تسلسل العمل، كما أن الشقة كثيرة الاستخدام قد تتطلب عملاً كبيراً."
+      },
+      {
+        "question": "هل تشمل الأعمال المنزلية المعتادة مهام الحديقة والمسبح؟",
+        "answer": "أدرج هذه الأعمال بصورة مستقلة ليقيمها مقدم الخدمة المناسب. عنوان الفيلا لا يضيف صيانة الحديقة أو أنظمة المسبح أو الإصلاحات أو التنظيف المرتفع إلى الدور المتفق عليه."
+      },
+      {
+        "question": "كيف أنظم الغرف قليلة الاستخدام؟",
+        "answer": "جهز قائمة دورية لهذه المناطق وقائمة أخرى للأولويات اليومية. سجل أيهما تبدأ أولاً وكيف تنتقل الأعمال المتبقية إلى الزيارة التالية."
+      },
+      {
+        "question": "ما المعلومات التي أرسلها عند مناقشة الزيارة؟",
+        "answer": "وضح الغرف المشغولة والحمامات المستخدمة والطوابق والأسطح الحساسة وقيود الدخول والنتائج الأهم. وأضف الإمارة والموعد المفضل وترتيبات الأدوات والمعدات."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "من توزيع المنزل إلى خطة عمل مفيدة",
+      "caption": "مسار أصلي لتنظيم العمل في الشقق والفلل، دون افتراض نسبة ثابتة بين الغرف والساعات أو عدد العاملات.",
+      "items": [
+        {
+          "label": "حدد المناطق المشغولة",
+          "detail": "سجل الغرف والطوابق والأماكن المقيدة."
+        },
+        {
+          "label": "اختر الأولويات",
+          "detail": "قدم الاحتياجات الأساسية على التفاصيل الدورية."
+        },
+        {
+          "label": "جهز الدخول والأدوات",
+          "detail": "وضح المسارات والأسطح وتشغيل المعدات."
+        },
+        {
+          "label": "سجل التسليم",
+          "detail": "تابع المناطق المنجزة والخطوة المفيدة التالية."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality",
+      "supports": "Household products should be used according to manufacturer directions and precautions."
+    },
+    {
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/improving-your-indoor-environment",
+      "supports": "Decluttering and household dust management are practical indoor-environment measures; task zoning is original editorial planning."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid apartment villa cleaning task checklist Dubai",
+      "url": "https://www.homemaids.ae/blog/villa-cleaning-in-dubai-a-complete-cleaning-checklist-for-large-homes/"
+    },
+    {
+      "query": "maid apartment villa cleaning task checklist Dubai",
+      "url": "https://www.luminacare.ae/blog/how-many-hours-to-clean-an-apartment"
+    }
+  ]
+}

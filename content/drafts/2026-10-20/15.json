@@ -1,0 +1,130 @@
+{
+  "id": "15",
+  "slug": "moving-home-emirate-with-domestic-worker",
+  "mode": "new",
+  "question": {
+    "en": "What should I review when moving home or emirate with a maid?",
+    "ar": "ما الذي أراجعه عند الانتقال إلى منزل آخر أو إمارة أخرى مع العاملة المنزلية؟"
+  },
+  "gap": "No moving-house/relocation workflow. Do not assume one universal address or permit procedure.",
+  "existingMatches": [
+    "domestic-worker-sponsorship-responsibilities",
+    "domestic-worker-contracts-renewal"
+  ],
+  "en": {
+    "title": "Moving home or emirate with a maid: what to review first",
+    "description": "Review the employer, address records, service agreement, access, living arrangements and duties before moving home or to another UAE emirate with a maid.",
+    "body": "Before moving home with a domestic worker, review three things separately: the employment or agency arrangement, the official records relevant to the case, and the practical work at the new address. A move can change the commute, accommodation, building access and household workload even when the family and worker remain the same. Record those changes before expecting the old routine to continue unchanged.\n\n## Start with the named employer and the service agreement\n\nIdentify who employs the worker and which agreement records the household's service. A family-sponsored employment arrangement and a service supplied by an agency have different administrative contacts. Use the [sponsorship responsibility guide](https://inayadomestic.ae/en/blog/domestic-worker-sponsorship-responsibilities/) to organise this first review.\n\nWrite down the old and new addresses, move date, intended duties and whether the legal employer is changing. Moving the family's home and changing the worker's employer are separate questions. Do not choose a cancellation or transfer route merely because the property address has changed; take the actual documents and proposed arrangement to the appropriate official service or authorised provider for review.\n\n## Review the address and permit records through the right channels\n\nICP provides [Data Update](https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5c) for contact information including the address. Keep it separate from MOHRE's [domestic-worker permit-details correction service](https://taqyeem.mohre.gov.ae/en/services/updating-the-details-of-a-domestic-workers-work-permit-2022), which addresses incorrect information registered in a visa application. That correction service is not a general moving-house procedure. These official records have different purposes; select the one that matches the actual issue in your file.\n\nUse the channel and category attached to your own file. Prepare the existing contract and permit information, identity documents and the new-address evidence requested for the relevant service. Keep the application reference and outcome with the household file. Check the service's actual document list and charges when applying rather than borrowing a fee, deadline or sponsor rule from another family's case.\n\n## Use a moving-house responsibility checklist\n\n| Area to review | Question for the household | Record to keep |\n|---|---|---|\n| Employment or agency service | Does the employer remain the same, and who handles the review? | Existing agreement and named contact |\n| Official records | Which address, contact or permit information needs updating? | Relevant application reference and outcome |\n| Live-in arrangement | Where will the worker stay during and after the move? | Agreed accommodation and meals arrangement |\n| Live-out arrangement | Does the new location change the commute or arrival plan? | Written schedule and transport responsibilities |\n| Building or community | What entry registration and moving-access rules apply? | New arrival route and authorised contact |\n| Household tasks | Which rooms, appliances and priorities have changed? | Updated duty list and equipment instructions |\n| Old-home closure | Which keys, cards and items must be returned? | Handover and return record |\n\nThis is an original planning checklist. It helps you organise decisions without implying that every listed action is a government requirement for every move.\n\n## Give moving-day work its own safe scope\n\nPacking, ordinary household organisation and settling in are different from heavy lifting, electrical work, appliance installation or specialist cleaning. Explain which tasks you want considered and which belong to movers or other professionals. Do not turn the worker's normal duties into an unrestricted instruction to handle every box and contractor.\n\nFor a larger home, review travel between rooms, stairs, storage areas and the equipment needed. For a smaller home, decide which belongings and tasks remain priorities. Use the [apartment and villa task-planning guide](https://inayadomestic.ae/en/blog/apartment-villa-maid-task-plan/) and update the [written household duties](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) instead of relying on the previous property's layout.\n\n## Orient the worker to the new home\n\nShow the worker the entry route, work areas, appliance controls, product storage and private areas. Explain household contacts and how to report an access or maintenance problem. Arrange a realistic priority order for the first visits: urgent everyday needs first, then the rest of the settling-in list within the agreed scope and schedule.\n\nClose the old-address access record and create the new one. Avoid leaving old keys or permissions in circulation simply because everyone is busy with the move. A short [home-access handover](https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/) makes the change easier to track.\n\n## Prepare the move brief for INAYA\n\nSend the current arrangement, new emirate and area, proposed move date, live-in or live-out plan and the changes to duties or timing. [Contact INAYA](https://inayadomestic.ae/en/contact/) to review the service scope and administrative support for the actual case. Keep official application records, customer service documents and moving-day instructions together but clearly labelled, so each question reaches the correct person.",
+    "faqs": [
+      {
+        "question": "Does moving to another emirate automatically mean changing the maid’s employer?",
+        "answer": "No. First identify whether the legal employer is actually changing. A household address move, an agency service change and a change of employer are separate matters to review against the documents."
+      },
+      {
+        "question": "Which official record should I update after moving?",
+        "answer": "Review the records attached to the actual arrangement. ICP's contact-data update covers address information. MOHRE's cited permit-details service concerns incorrect visa-application information, so it should not be treated as an automatic moving-house step."
+      },
+      {
+        "question": "Can the maid do all the heavy moving work?",
+        "answer": "Keep the worker’s duties, suitability and safety in view. Assign heavy lifting, installations and specialist work to the appropriate professionals, and record any agreed household packing or settling-in tasks separately."
+      },
+      {
+        "question": "What should I send INAYA before changing the service address?",
+        "answer": "Prepare the current service arrangement, new emirate and area, move date, accommodation or commute plan and any revised duties or schedule. Discuss the written changes before using the new routine."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "Review the move in three connected layers",
+      "caption": "An original moving-house decision flow; the applicable official procedure follows the actual employer and file category.",
+      "items": [
+        {
+          "label": "Identify",
+          "detail": "Separate address relocation from a change of employer or service."
+        },
+        {
+          "label": "Review records",
+          "detail": "Use the relevant official channels for the actual file."
+        },
+        {
+          "label": "Rewrite the scope",
+          "detail": "Update living arrangements, access, duties and schedule."
+        },
+        {
+          "label": "Handover",
+          "detail": "Close old access and orient the worker to the new home."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "الانتقال إلى منزل أو إمارة أخرى مع العاملة المنزلية: ما الذي تراجعه أولاً؟",
+    "description": "راجع صاحب العمل والبيانات الرسمية واتفاق الخدمة والدخول والسكن والمهام قبل انتقالك مع العاملة المنزلية إلى بيت جديد أو إمارة أخرى داخل الإمارات.",
+    "body": "قبل الانتقال إلى منزل جديد مع العاملة المنزلية، راجع ثلاثة أمور بصورة مستقلة: ترتيب التوظيف أو الخدمة مع المكتب، والسجلات الرسمية المرتبطة بالحالة، والعمل العملي في العنوان الجديد. فقد يتغير التنقل والسكن ودخول المبنى وحجم المهام حتى عندما تبقى الأسرة والعاملة نفسيهما. سجل هذه التغييرات قبل توقع استمرار الروتين السابق كما هو.\n\n## ابدأ بصاحب العمل المسمى واتفاق الخدمة\n\nحدد الجهة التي توظف العاملة، والاتفاق الذي يسجل خدمة الأسرة. فترتيب التوظيف على كفالة الأسرة والخدمة التي يوفرها مكتب لهما جهات متابعة إدارية مختلفة. استخدم [دليل مسؤوليات الكفالة والتوظيف](https://inayadomestic.ae/ar/blog/domestic-worker-sponsorship-responsibilities/) لتنظيم هذه المراجعة الأولى.\n\nاكتب العنوانين القديم والجديد وتاريخ الانتقال والمهام المقترحة، وحدد إن كان صاحب العمل القانوني سيتغير. فانتقال بيت الأسرة وتغيير صاحب عمل العاملة مسألتان منفصلتان. لا تختَر مسار الإلغاء أو النقل لمجرد تغير عنوان العقار؛ بل قدم المستندات والترتيب المقترح إلى الخدمة الرسمية المناسبة أو مقدم الخدمة المخول لمراجعتهما.\n\n## راجع بيانات العنوان والتصريح عبر القنوات المناسبة\n\nتوفر الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ [خدمة تحديث البيانات](https://icp.gov.ae/services-details/?serviceid=64afe3c1035448005bd52e5c)، ومنها العنوان وبيانات التواصل. افصلها عن [خدمة تصحيح بيانات تصريح العامل المساعد لدى الوزارة](https://taqyeem.mohre.gov.ae/en/services/updating-the-details-of-a-domestic-workers-work-permit-2022)، التي تعالج المعلومات المسجلة خطأ في طلب التأشيرة؛ فهي ليست إجراء عاماً للانتقال إلى بيت جديد. لكل سجل رسمي غرض مختلف، فاختر ما يطابق المسألة الفعلية في ملفك.\n\nاستخدم القناة والفئة المرتبطتين بملفك. جهز بيانات العقد والتصريح والمستندات التعريفية وإثبات العنوان الجديد الذي تطلبه الخدمة المعنية. واحتفظ بمرجع الطلب ونتيجته في ملف الأسرة. راجع قائمة المستندات والرسوم الفعلية عند التقديم، بدلاً من استعارة مبلغ أو مهلة أو شرط كفالة من حالة أسرة أخرى.\n\n## استخدم قائمة مسؤوليات الانتقال\n\n| مجال المراجعة | السؤال الذي تجيب عنه الأسرة | السجل المحتفظ به |\n|---|---|---|\n| التوظيف أو خدمة المكتب | هل يبقى صاحب العمل نفسه ومن يتابع المراجعة؟ | الاتفاق الحالي ومسؤول التواصل |\n| البيانات الرسمية | ما بيانات العنوان أو التواصل أو التصريح التي تحتاج إلى تعديل؟ | مرجع الطلب المعني ونتيجته |\n| الخدمة المقيمة | أين تقيم العاملة أثناء الانتقال وبعده؟ | ترتيب السكن والطعام المتفق عليه |\n| الخدمة غير المقيمة | هل يغير الموقع الجديد التنقل أو موعد الوصول؟ | الجدول المكتوب ومسؤوليات النقل |\n| المبنى أو المجمع | ما تسجيل الدخول وتصاريح نقل الأثاث المطلوبة للموقع؟ | مسار الوصول الجديد والشخص المخول |\n| المهام المنزلية | ما الغرف والأجهزة والأولويات التي تغيرت؟ | قائمة مهام وتعليمات معدات محدثة |\n| إغلاق المنزل القديم | ما المفاتيح والبطاقات والأدوات التي تعاد؟ | سجل التسليم والإعادة |\n\nهذه قائمة تنظيمية من إعداد عناية. تساعدك على ترتيب القرارات، ولا تعني أن كل بند فيها متطلب حكومي لكل انتقال.\n\n## حدد نطاقاً آمناً لعمل يوم الانتقال\n\nالتعبئة والتنظيم المنزلي المعتاد والاستقرار في البيت تختلف عن حمل الأثاث الثقيل والأعمال الكهربائية وتركيب الأجهزة والتنظيف المتخصص. اشرح ما ترغب في مناقشته ضمن الخدمة، وما سيتولاه عمال النقل أو المختصون. ولا تحول مهام العاملة المعتادة إلى تكليف مفتوح للتعامل مع كل صندوق ومقاول.\n\nفي المنزل الأكبر، راجع التنقل بين الغرف والسلالم والمخازن والمعدات اللازمة. وفي المنزل الأصغر، حدد المتعلقات والمهام ذات الأولوية. استخدم [دليل تخطيط مهام الشقة والفيلا](https://inayadomestic.ae/ar/blog/apartment-villa-maid-task-plan/)، وعدل [المهام المنزلية المكتوبة](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) بدلاً من الاعتماد على توزيع العقار السابق.\n\n## عرف العاملة بالمنزل الجديد\n\nاشرح طريق الدخول وأماكن العمل وتشغيل الأجهزة وتخزين المنتجات والأماكن الخاصة. وحدد مسؤولي التواصل وكيفية الإبلاغ عن مشكلة دخول أو صيانة. ورتب أولويات واقعية للزيارات الأولى: الاحتياجات اليومية العاجلة أولاً، ثم بقية قائمة الاستقرار ضمن النطاق والجدول المتفق عليهما.\n\nأغلق سجل دخول العنوان القديم وأنشئ سجل العنوان الجديد. ولا تترك المفاتيح أو الصلاحيات القديمة متداولة لمجرد انشغال الجميع بالانتقال. يساعد [تسليم صلاحيات الدخول](https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/) على متابعة التغيير بوضوح.\n\n## جهز ملخص الانتقال لعناية\n\nأرسل نوع الترتيب الحالي والإمارة والمنطقة الجديدتين وتاريخ الانتقال المقترح وخطة الإقامة أو عدم الإقامة وتغييرات المهام والتوقيت. [تواصل مع عناية](https://inayadomestic.ae/ar/contact/) لمراجعة نطاق الخدمة والدعم الإداري للحالة الفعلية. واحتفظ بالسجلات الرسمية ومستندات خدمة العميل وتعليمات يوم الانتقال معاً، مع تسمية كل مجموعة بوضوح حتى يصل السؤال إلى المسؤول المناسب.",
+    "faqs": [
+      {
+        "question": "هل الانتقال إلى إمارة أخرى يعني تلقائياً تغيير صاحب عمل العاملة؟",
+        "answer": "لا. حدد أولاً إن كان صاحب العمل القانوني سيتغير فعلياً. فانتقال عنوان الأسرة وتعديل خدمة المكتب وتغيير صاحب العمل مسائل مستقلة تراجع وفق المستندات."
+      },
+      {
+        "question": "ما السجل الرسمي الذي أحدثه بعد الانتقال؟",
+        "answer": "راجع سجلات الترتيب الفعلي. تشمل خدمة تحديث بيانات التواصل لدى الهيئة العنوان. أما خدمة بيانات التصريح المذكورة لدى الوزارة، فتعالج معلومات طلب التأشيرة المسجلة خطأ، ولا تعامل كخطوة تلقائية للانتقال إلى بيت جديد."
+      },
+      {
+        "question": "هل تتولى العاملة جميع أعمال النقل الثقيلة؟",
+        "answer": "راع مهام العاملة وملاءمتها وسلامتها. أسند الحمل الثقيل والتركيب والأعمال المتخصصة إلى المختصين، وسجل ما تتفق عليه من تعبئة وتنظيم منزلي بصورة مستقلة."
+      },
+      {
+        "question": "ماذا أرسل إلى عناية قبل تعديل عنوان الخدمة؟",
+        "answer": "جهز الترتيب الحالي والإمارة والمنطقة الجديدتين وتاريخ الانتقال وخطة السكن أو التنقل وأي تعديل في المهام أو الجدول. ناقش التغييرات المكتوبة قبل بدء الروتين الجديد."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "راجع الانتقال في طبقات مترابطة",
+      "caption": "مسار تنظيمي من إعداد عناية للانتقال؛ يتبع الإجراء الرسمي صاحب العمل الفعلي وفئة الملف.",
+      "items": [
+        {
+          "label": "حدد",
+          "detail": "افصل تغيير العنوان عن تغيير صاحب العمل أو الخدمة."
+        },
+        {
+          "label": "راجع السجلات",
+          "detail": "استخدم القنوات الرسمية المعنية بالملف الفعلي."
+        },
+        {
+          "label": "حدث النطاق",
+          "detail": "راجع السكن والدخول والمهام والجدول."
+        },
+        {
+          "label": "سلم",
+          "detail": "أغلق صلاحيات المنزل القديم وعرف العاملة بالمنزل الجديد."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://taqyeem.mohre.gov.ae/en/services/updating-the-details-of-a-domestic-workers-work-permit-2022",
+      "supports": "Official service corrects incorrect visa-application information; it is not presented as the routine address-update route. Final source check caught and corrected that distinction."
+    },
+    {
+      "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5c",
+      "supports": "ICP Data Update explicitly covers non-essential contact data including address; it is distinct from residence-data amendment."
+    },
+    {
+      "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e67",
+      "supports": "Separate residence-permit-data amendment service confirms that official data services should not be conflated."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "moving house with maid Dubai another emirate maid address change",
+      "url": "https://yallamaids.ae/blogs/maid-visa-sponsor-relocation-uae-what-stays-resets"
+    },
+    {
+      "query": "maid move another emirate address checklist UAE",
+      "url": "https://yallamaids.ae/blogs/maid-visa-uae-does-tph-cover-abu-dhabi-sharjah-other-emirates"
+    }
+  ]
+}

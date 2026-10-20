@@ -1,0 +1,126 @@
+{
+  "id": "09",
+  "slug": "nanny-school-routine-child-handover",
+  "mode": "new",
+  "question": {
+    "en": "How do I arrange a nanny’s school routine and child handovers?",
+    "ar": "كيف أنظم روتين المدرسة وتسليم الأطفال واستلامهم مع المربية؟"
+  },
+  "gap": "No school-age routine or authorised handover checklist.",
+  "existingMatches": [
+    "choosing-nanny-newborn-support",
+    "maid-nanny-babysitter-differences"
+  ],
+  "en": {
+    "title": "How to plan a nanny’s school routine and safe child handovers",
+    "description": "Create a clear school-day brief for your nanny: authorised collection, transport arrangements, daily changes, school bags, parent contacts and home handovers.",
+    "body": "Plan a nanny’s school routine around named responsibilities: who prepares the child, who collects or receives them, how the school authorises that person, and how the parent receives an update. Write the routine before the first school day. School collection, transport, homework support and housekeeping are separate tasks that need a clear place in the agreed role and schedule.\n\n## Start with the child and the actual school procedure\n\nRecord each child’s age, school or nursery, class, usual arrival and departure arrangements and the parent’s contact order. Obtain the school’s current collection instructions directly. Complete its authorisation process before assigning collection, and explain the location, identification or access procedure it uses. A family’s verbal request is not a substitute for the school’s own release process.\n\nFor Abu Dhabi private and charter schools, [ADEK’s Parent Engagement Policy](https://www.adek.gov.ae/-/media/Project/TAMM/ADEK/Policies/School-Policies/Teaching-and-Learning/ADEK_S_Parent-Engagement-Policy_EN-12.pdf) addresses communication about authorised persons, transport protocols and changes to collection arrangements. Families in other emirates should use their school’s applicable handbook and instructions. Do not transfer one school’s access rules to another.\n\n## Build one standing school-day sheet\n\nThis original worksheet gives the nanny and parent one reliable reference. Store it securely and share only the information needed for the role.\n\n| Stage | Information to record | Responsible handover |\n|---|---|---|\n| Before departure | Uniform, bag, approved food items and that day’s timetable | Parent or named adult checks any change |\n| School arrival | Agreed route, arrival point and school procedure | Named adult follows the school’s process |\n| Collection or bus arrival | Authorised person, location, time and contact route | Child passes to the designated responsible adult |\n| After school | Meal, rest, activities and agreed homework routine | Nanny gives a concise parent update |\n| Change or delay | Parent contact order and school notification route | Responsible adult authorises the revised arrangement |\n\n## Separate transport from supervision\n\nState how the child travels and who provides lawful, suitable transport. A nanny role does not automatically include driving, a vehicle or permission to collect a child. Discuss the individual’s experience with the child’s age group and the exact route or handover needed. If school collection overlaps with caring for a younger child at home, assign another responsible adult or change the schedule.\n\nUse INAYA’s [maid, nanny and babysitter comparison](https://inayadomestic.ae/en/blog/maid-nanny-babysitter-differences/) when deciding the role. The [nanny selection guide](https://inayadomestic.ae/en/blog/choosing-nanny-newborn-support/) explains individual suitability questions; school-age routines need their own practical discussion even when the same person has infant-care experience.\n\n## Keep daily changes short and explicit\n\nMaintain a standing sheet for the normal routine, then send a separate update for changes such as an activity, early finish or a different authorised collector. Write the date and ask the receiver to acknowledge the change. Identify who informs the school; do not assume a message to the nanny also updates school records.\n\nMake responsibility explicit whenever the child passes between the school, transport provider, nanny and parent. If the expected adult is absent or an unfamiliar person requests the child, follow the school’s process and the parent’s escalation instructions. Never resolve a disputed handover by guessing. Health information and any medicine arrangements should follow the parent’s instructions and the relevant school or healthcare procedures, without turning a childcare role into clinical treatment.\n\n## Review the home handover as carefully as collection\n\nAgree what the parent needs to know: collection completed, relevant school messages, food or belongings requiring attention and the next day’s change. Keep the report factual and protect the child’s privacy. The [Abu Dhabi ECA competency framework](https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3) provides a useful reference for family communication and child-safety awareness; it does not certify an individual worker through this article.\n\nDescribe school-day duties alongside the other work through INAYA’s [nanny service page](https://inayadomestic.ae/en/services/nanny/) and [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/). Include the emirate, actual school routine and any overlapping childcare needs when discussing the schedule.",
+    "faqs": [
+      {
+        "question": "Does hiring a nanny automatically include school collection?",
+        "answer": "Record collection as an explicit duty and complete the school’s authorisation process. Agree the schedule and transport separately."
+      },
+      {
+        "question": "Can the nanny also look after a younger child during collection?",
+        "answer": "Map the overlap before deciding. A responsible adult must cover the child remaining at home while another adult handles collection."
+      },
+      {
+        "question": "How should I communicate an early school finish?",
+        "answer": "Send a dated change, obtain acknowledgement and identify who informs the school. Keep the normal standing routine separate from the day’s exception."
+      },
+      {
+        "question": "What information should a school handover include?",
+        "answer": "Include the designated adult, collection or arrival location, applicable school process and parent contact order. Share relevant school messages and belongings at the home handover."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "One chain of responsibility across the school day",
+      "caption": "Original planning workflow; collection and transport use the actual school’s applicable procedures.",
+      "items": [
+        {
+          "label": "Authorise",
+          "detail": "Register the responsible adult through the school."
+        },
+        {
+          "label": "Prepare",
+          "detail": "Check the dated routine, bag and travel arrangement."
+        },
+        {
+          "label": "Handover",
+          "detail": "Follow the agreed school and home release process."
+        },
+        {
+          "label": "Update",
+          "detail": "Tell the parent what changed and what comes next."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "كيف أنظم روتين المدرسة وتسليم الأطفال واستلامهم مع المربية؟",
+    "description": "ضع خطة واضحة ليوم المدرسة تشمل تفويض الاستلام وترتيبات النقل والتغييرات اليومية وحقيبة الطفل وجهات اتصال الوالدين وتسليم المسؤولية وتنسيق الأسرة والمدرسة.",
+    "body": "نظم يوم المدرسة حول مسؤوليات محددة: من يجهز الطفل، ومن يستلمه أو يستقبله، وكيف تعتمد المدرسة هذا الشخص، وكيف تصل المعلومة إلى الوالدين. اكتب الروتين قبل أول يوم دراسي. فالاستلام والنقل ومساندة الواجبات والأعمال المنزلية مهام مختلفة، ويحتاج كل منها إلى مكان واضح في الدور والجدول المتفق عليهما مع المربية.\n\n## ابدأ باحتياجات الطفل وإجراء مدرسته الفعلي\n\nسجل عمر كل طفل ومدرسته أو حضانته وصفه وترتيبات الحضور والانصراف المعتادة وتسلسل التواصل مع الوالدين. احصل على تعليمات الاستلام الحالية من المدرسة مباشرة، وأكمل إجراءات التفويض قبل تكليف المربية بالاستلام. وضح نقطة اللقاء ومتطلبات التعريف أو الدخول؛ فالطلب الشفهي من الأسرة لا يحل محل إجراء المدرسة لتسليم الطفل.\n\nوتتناول [سياسة مشاركة أولياء الأمور لدى دائرة التعليم والمعرفة](https://www.adek.gov.ae/-/media/Project/TAMM/ADEK/Policies/School-Policies/Teaching-and-Learning/ADEK_S_Parent-Engagement-Policy_EN-12.pdf) للمدارس الخاصة ومدارس الشراكات التعليمية في أبوظبي التواصل بشأن الأشخاص المخولين وإجراءات النقل وتغيير ترتيبات الاستلام. أما الأسر في الإمارات الأخرى فتتبع الدليل والتعليمات المنطبقة في مدرسة الطفل، من دون تعميم نظام الدخول في مؤسسة على أخرى.\n\n## أنشئ ورقة ثابتة ليوم المدرسة\n\nيوفر هذا النموذج الأصلي مرجعاً واحداً للمربية والوالدين. احفظه بأمان وشارك المعلومات اللازمة للدور فقط، مع تحديثه عند تغيير الروتين الأساسي.\n\n| المرحلة | المعلومات المسجلة | تسليم المسؤولية |\n|---|---|---|\n| قبل المغادرة | الزي والحقيبة والطعام المسموح وجدول اليوم | يراجع أحد الوالدين أو الشخص المحدد أي تغيير |\n| الوصول إلى المدرسة | الطريق ونقطة الوصول وإجراء المؤسسة | يتبع الشخص المسؤول النظام المدرسي |\n| الاستلام أو وصول الحافلة | الشخص المخول والمكان والوقت وطريقة التواصل | ينتقل الطفل إلى البالغ المسؤول المحدد |\n| بعد المدرسة | الوجبة والراحة والأنشطة وروتين الواجبات | تقدم المربية تحديثاً موجزاً للوالدين |\n| التغيير أو التأخر | ترتيب الاتصال بالوالدين وإبلاغ المدرسة | يعتمد المسؤول الترتيب المعدل |\n\n## افصل النقل عن رعاية الطفل\n\nوضح وسيلة انتقال الطفل والمسؤول عن توفير نقل مناسب ونظامي. لا يتضمن دور المربية تلقائياً القيادة أو المركبة أو تفويض الاستلام. ناقش خبرة الشخص مع عمر الطفل والطريق أو التسليم المطلوب تحديداً. وإذا تداخل الاستلام مع رعاية طفل أصغر في المنزل، فخصص بالغاً مسؤولاً آخر أو عدل الجدول قبل بدء الروتين.\n\nاستعن [بالمقارنة بين العاملة والمربية وجليسة الأطفال](https://inayadomestic.ae/ar/blog/maid-nanny-babysitter-differences/) لاختيار الدور. ويوضح [دليل اختيار المربية](https://inayadomestic.ae/ar/blog/choosing-nanny-newborn-support/) أسئلة الملاءمة الفردية؛ وتحتاج مهام المدرسة إلى نقاش مستقل، حتى عندما تكون للشخص نفسه خبرة سابقة مع الرضع.\n\n## اجعل التغييرات اليومية قصيرة وصريحة\n\nاحتفظ بورقة للروتين المعتاد، وأرسل تحديثاً مستقلاً عند وجود نشاط أو انصراف مبكر أو شخص مخول مختلف. اكتب التاريخ واطلب الإقرار باستلام التعديل. حدد من يبلغ المدرسة؛ فالرسالة المرسلة إلى المربية لا تحدث سجلات المؤسسة تلقائياً. ويقل الالتباس عندما يميز الجميع التعليمات الثابتة عن استثناء اليوم الواحد.\n\nحدد المسؤول بوضوح عند انتقال الطفل بين المدرسة وناقل الطفل والمربية والوالدين. إذا غاب الشخص المتوقع أو طلب شخص غير مألوف الاستلام، فاتبع إجراء المدرسة وتعليمات الرجوع إلى الوالدين، ولا تحسم الموقف بالتخمين. وتتبع المعلومات الصحية وترتيبات الدواء تعليمات الوالدين والإجراءات المدرسية أو الصحية المناسبة، من دون تحويل رعاية الطفل إلى علاج سريري.\n\n## راجع التسليم في المنزل أيضاً\n\nاتفق على تحديث موجز يشمل اكتمال الاستلام ورسائل المدرسة والأغراض التي تحتاج إلى متابعة وتغيير اليوم التالي. حافظ على الوقائع وخصوصية الطفل. ويقدم [إطار هيئة أبوظبي للطفولة المبكرة](https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3) مرجعاً للتواصل مع الأسرة والوعي بسلامة الطفل، وليس شهادة لفرد بعينه.\n\nناقش هذه الأعمال مع بقية المسؤوليات عبر [خدمات المربيات](https://inayadomestic.ae/ar/services/nanny/) و[دليل المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/)، مع تحديد الإمارة والروتين المدرسي الفعلي واحتياجات الأطفال المتزامنة عند إعداد الجدول.",
+    "faqs": [
+      {
+        "question": "هل يشمل توظيف المربية استلام الطفل من المدرسة تلقائياً؟",
+        "answer": "سجل الاستلام بوصفه مهمة صريحة وأكمل تفويض المدرسة، ثم اتفق على الجدول ووسيلة النقل بصورة مستقلة."
+      },
+      {
+        "question": "هل يمكن رعاية طفل أصغر أثناء استلام أخيه؟",
+        "answer": "راجع التداخل الزمني مسبقاً. يجب أن يغطي بالغ مسؤول رعاية الطفل الباقي في المنزل بينما يتولى شخص آخر الاستلام."
+      },
+      {
+        "question": "كيف أبلغ المربية بالانصراف المبكر؟",
+        "answer": "أرسل تغييراً مؤرخاً واطلب الإقرار باستلامه وحدد من يبلغ المدرسة، مع فصل الاستثناء اليومي عن الروتين الثابت."
+      },
+      {
+        "question": "ما المعلومات الأساسية في تسليم الطفل؟",
+        "answer": "الشخص المسؤول ومكان الاستلام أو الوصول وإجراء المدرسة وتسلسل الاتصال بالوالدين، ثم رسائل المدرسة والأغراض المهمة عند التسليم في المنزل."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "تسلسل واضح للمسؤولية خلال يوم المدرسة",
+      "caption": "خطة أصلية للتنظيم؛ يتبع الاستلام والنقل إجراءات المدرسة الفعلية المنطبقة.",
+      "items": [
+        {
+          "label": "اعتمد المسؤول",
+          "detail": "سجل الشخص المخول وفق إجراء المدرسة."
+        },
+        {
+          "label": "جهز اليوم",
+          "detail": "راجع الروتين المؤرخ والحقيبة وترتيب النقل."
+        },
+        {
+          "label": "سلم المسؤولية",
+          "detail": "اتبع إجراء تسليم الطفل في المدرسة والمنزل."
+        },
+        {
+          "label": "حدث الوالدين",
+          "detail": "انقل التغييرات وما يحتاج إلى متابعة لاحقة."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.adek.gov.ae/-/media/Project/TAMM/ADEK/Policies/School-Policies/Teaching-and-Learning/ADEK_S_Parent-Engagement-Policy_EN-12.pdf",
+      "supports": "Abu Dhabi private/charter school communications about authorisation, pick-up changes and transport protocols; jurisdiction explicitly limited."
+    },
+    {
+      "url": "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3",
+      "supports": "Family communication and child-safety awareness as assessment references, not individual certificates."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "nanny school pickup handover checklist UAE",
+      "url": "https://heyraha.com/blog/nanny-briefing-template-uae"
+    },
+    {
+      "query": "help nanny school routine UAE",
+      "url": "https://peekaboo-nannies.com/help-nanny-school-routine/"
+    }
+  ]
+}
