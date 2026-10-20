@@ -3,7 +3,8 @@ import { buyerAnswers } from '../../lib/buyer-answers';
 import { siteConfig } from '../../lib/site-config';
 
 for (const locale of ['en', 'ar'] as const) {
-  test(`${locale}: local form completion never claims delivery or booking confirmation`, async ({ page }) => {
+  test(`${locale}: accepted enquiry confirms submission without confirming booking`, async ({ page }) => {
+    await page.route('**/inaya-enquiry.php', route => route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:true,reference:'INAYA-QA-BOOKING'})}));
     await page.goto(`/${locale}/booking/`);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     const offer = page.getByTestId('sierra-leone-offer');
@@ -11,9 +12,9 @@ for (const locale of ['en', 'ar'] as const) {
     await offer.getByRole('button').click();
     await page.locator('input[name="name"]').fill('Local validation');
     await page.locator('input[name="phone"]').fill('+971500000000');
-    await page.getByRole('button', { name: locale === 'ar' ? 'مراجعة بيانات الاستفسار' : 'Check Enquiry Details' }).click();
-    await expect(page.getByText(locale === 'ar' ? /لم ترسل إلى المكتب/ : /not sent to the office/)).toBeVisible();
-    await expect(page.getByText(locale === 'ar' ? /لم يتم تأكيد أي حجز/ : /No booking is confirmed/)).toBeVisible();
+    await page.getByRole('button', { name: locale === 'ar' ? 'إرسال الاستفسار' : 'Send Enquiry' }).click();
+    await expect(page.getByText(locale === 'ar' ? /تم إرسال استفسارك/ : /submitted to INAYA/)).toBeVisible();
+    await expect(page.getByText(locale === 'ar' ? /لا يؤكد هذا الإرسال حجزاً/ : /does not confirm a booking/)).toBeVisible();
   });
   test(`${locale}: enquiry, pricing and replacement answers are localized and linked`, async ({ page }) => {
     for (const route of ['booking', 'pricing', 'refund-policy']) {
