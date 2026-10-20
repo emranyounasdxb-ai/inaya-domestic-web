@@ -3,8 +3,127 @@ type BlogImage = {
   alt: { en: string; ar: string };
 };
 
-// Each supplied filename matches its guide's English title; translations share the same image.
+// Topic-specific artwork is shared by English and Arabic pages with localized descriptions.
 const blogImages: Record<string, BlogImage> = {
+  'domestic-worker-contract-permit-residence-cancellation': {
+    src: "/images/blogs/domestic-worker-contract-permit-residence-cancellation-20261020.webp",
+    alt: {
+      en: "A service adviser, householder and domestic worker review separate administrative records.",
+      ar: "مستشارة خدمات وصاحبة منزل وعاملة منزلية يراجعن ملفات إدارية منفصلة."
+    }
+  },
+  'maid-daily-instructions-handover-template': {
+    src: "/images/blogs/maid-daily-instructions-handover-template-20261020.webp",
+    alt: {
+      en: "A domestic worker and householder review completed tasks in a daily handover notebook.",
+      ar: "عاملة منزلية وصاحبة المنزل تراجعان المهام المنجزة في دفتر التسليم اليومي."
+    }
+  },
+  'one-maid-two-helpers-workload': {
+    src: "/images/blogs/one-maid-two-helpers-workload-20261020.webp",
+    alt: {
+      en: "A householder and two domestic helpers review a shared household workload planner.",
+      ar: "صاحبة منزل ومساعدتان منزليتان يراجعن جدولاً لتوزيع أعمال المنزل."
+    }
+  },
+  'moving-home-emirate-with-domestic-worker': {
+    src: "/images/blogs/moving-home-emirate-with-domestic-worker-20261020.webp",
+    alt: {
+      en: "A householder and domestic worker review a room plan and new-home keys among moving boxes.",
+      ar: "صاحبة المنزل وعاملة منزلية تراجعان مخطط الغرف ومفاتيح المنزل الجديد بين صناديق الانتقال."
+    }
+  },
+  'maid-duties-family-holiday': {
+    src: "/images/blogs/maid-duties-family-holiday-20261020.webp",
+    alt: {
+      en: "A domestic worker waters a houseplant beside a household checklist while caring for an occupied home.",
+      ar: "عاملة منزلية تسقي نباتاً داخلياً بجوار قائمة مهام أثناء العناية بمنزل تواصل الإقامة فيه."
+    }
+  },
+  'maid-help-family-guests-gathering': {
+    src: "/images/blogs/maid-help-family-guests-gathering-20261020.webp",
+    alt: {
+      en: "A householder and domestic worker prepare a dining table for a private family gathering.",
+      ar: "صاحبة المنزل وعاملة منزلية تجهزان طاولة الطعام لاستقبال تجمع عائلي خاص."
+    }
+  },
+  'maid-home-access-keys-privacy': {
+    src: "/images/blogs/maid-home-access-keys-privacy-20261020.webp",
+    alt: {
+      en: "Homeowner hands a single home key to a domestic worker at a secure indoor entrance.",
+      ar: "صاحبة المنزل تسلّم مفتاح المنزل لعاملة منزلية عند مدخل داخلي آمن."
+    }
+  },
+  'maid-household-with-pets': {
+    src: "/images/blogs/maid-household-with-pets-20261020.webp",
+    alt: {
+      en: "Homeowner explains household routines to a domestic worker while a calm dog rests on its mat.",
+      ar: "صاحبة المنزل تشرح الروتين المنزلي لعاملة منزلية بينما يستريح كلب هادئ على فراشه."
+    }
+  },
+  'nanny-school-routine-child-handover': {
+    src: "/images/blogs/nanny-school-routine-child-handover-20261020.webp",
+    alt: {
+      en: "Mother hands a school backpack to the nanny while her child stands beside her inside the home.",
+      ar: "أم تسلّم الحقيبة المدرسية للمربية وطفلها يقف بجانبها داخل المنزل."
+    }
+  },
+  'new-maid-first-week-checklist': {
+    src: "/images/blogs/new-maid-first-week-checklist-20261020.webp",
+    alt: {
+      en: "Homeowner shows a new domestic worker how to use the washing machine during household orientation.",
+      ar: "صاحبة المنزل تشرح للعاملة المنزلية الجديدة كيفية استخدام الغسالة خلال التعريف بالمنزل."
+    }
+  },
+  'home-cooking-weekly-meal-prep-plan': {
+    src: "/images/blogs/home-cooking-weekly-meal-prep-plan-20261020.webp",
+    alt: {
+      en: "Domestic worker and homeowner plan balanced weekly meals in a bright home kitchen.",
+      ar: "عاملة منزلية وصاحبة المنزل تخططان لوجبات أسبوعية متوازنة في مطبخ مضيء."
+    }
+  },
+  'maid-laundry-ironing-task-checklist': {
+    src: "/images/blogs/maid-laundry-ironing-task-checklist-20261020.webp",
+    alt: {
+      en: "Domestic worker checks a shirt care label beside sorted laundry and a safely positioned iron.",
+      ar: "عاملة منزلية تقرأ ملصق العناية بقميص بجانب غسيل مفروز ومكواة موضوعة بأمان."
+    }
+  },
+  'prepare-cleaning-supplies-maid-visit': {
+    src: "/images/blogs/prepare-cleaning-supplies-maid-visit-20261020.webp",
+    alt: {
+      en: "Domestic worker checks a mop beside organised cloths, gloves, bottles and cleaning equipment.",
+      ar: "عاملة منزلية تفحص ممسحة بجانب أقمشة وقفازات وعبوات وأدوات تنظيف مرتبة."
+    }
+  },
+  'regular-maid-service-deep-move-in-cleaning': {
+    src: "/images/blogs/regular-maid-service-deep-move-in-cleaning-20261020.webp",
+    alt: {
+      en: "Domestic worker and household coordinator review kitchen surfaces in an apartment prepared for moving in.",
+      ar: "عاملة منزلية ومنسقة منزل تراجعان أسطح المطبخ في شقة يجري تجهيزها للسكن."
+    }
+  },
+  'apartment-villa-maid-task-plan': {
+    src: "/images/blogs/apartment-villa-maid-task-plan-20261020.webp",
+    alt: {
+      en: "Household coordinator and domestic worker review a villa floor plan and the rooms across its floors.",
+      ar: "منسقة منزل وعاملة منزلية تراجعان مخطط فيلا والغرف في طوابقها."
+    }
+  },
+  'maid-visit-frequency-planner': {
+    src: "/images/blogs/maid-visit-frequency-planner-20261020.webp",
+    alt: {
+      en: "Household coordinator and domestic worker plan recurring visits using coloured calendar markers.",
+      ar: "منسقة منزل وعاملة منزلية تخططان للزيارات الدورية باستخدام علامات ملونة على جدول."
+    }
+  },
+  'four-hour-eight-hour-maid-visit-plan': {
+    src: "/images/blogs/four-hour-eight-hour-maid-visit-plan-20261020.webp",
+    alt: {
+      en: "A householder and domestic worker plan cleaning priorities beside a clock and cleaning supplies.",
+      ar: "صاحبة منزل وعاملة منزلية تخططان لأولويات التنظيف بجوار ساعة ومستلزمات التنظيف."
+    }
+  },
   'uae-domestic-worker-hiring-process': {
     src: '/images/blogs/questions-to-ask-before-hiring-a-domestic-worker-in-the-uae.webp',
     alt: {
@@ -62,10 +181,10 @@ const blogImages: Record<string, BlogImage> = {
     }
   },
   'domestic-worker-hiring-costs-uae': {
-    src: '/images/blogs/what-is-the-total-cost-of-hiring-a-domestic-worker-in-ajman.webp',
+    src: "/images/blogs/domestic-worker-hiring-costs-uae-20261020.webp",
     alt: {
-      en: 'Couple comparing domestic worker hiring costs with paperwork and a calculator.',
-      ar: 'زوجان يقارنان تكاليف توظيف عامل مساعد باستخدام المستندات وآلة حاسبة.'
+      en: "A couple and adviser compare domestic-worker quotations using a calculator and monthly planning calendar.",
+      ar: "زوجان ومستشارة يقارنون عروض توظيف عاملة منزلية باستخدام آلة حاسبة وتقويم للتخطيط الشهري."
     }
   },
   'domestic-worker-employment-arrangements-uae': {
@@ -125,10 +244,10 @@ const blogImages: Record<string, BlogImage> = {
     }
   },
   'agreeing-domestic-worker-household-duties': {
-    src: '/images/blogs/can-one-domestic-worker-handle-cleaning-cooking-and-childcare.webp',
+    src: "/images/blogs/agreeing-domestic-worker-household-duties-20261020.webp",
     alt: {
-      en: 'Woman and domestic worker planning kitchen duties while a parent supervises a child nearby.',
-      ar: 'امرأة وعاملة منزلية تخططان لمهام المطبخ بينما يعتني والد بطفلته بالقرب منهما.'
+      en: "A householder and domestic worker discuss household duties while a parent supervises a child nearby.",
+      ar: "صاحبة منزل وعاملة منزلية تناقشان المهام بينما يشرف الأب على طفله بالقرب منهما."
     }
   },
   'domestic-worker-verification-checks': {
@@ -181,10 +300,10 @@ const blogImages: Record<string, BlogImage> = {
     }
   },
   'domestic-worker-leave-travel-planning': {
-    src: '/images/blogs/how-should-a-household-plan-a-domestic-workers-annual-leave-and-travel.webp',
+    src: "/images/blogs/domestic-worker-leave-travel-planning-20261020.webp",
     alt: {
-      en: 'Domestic worker holding a passport and suitcase while saying goodbye before travel.',
-      ar: 'عاملة منزلية تحمل جواز سفر وحقيبة سفر وتتلقى الوداع قبل مغادرتها.'
+      en: "A domestic worker keeps her own passport beside her suitcase while discussing annual-leave dates with a householder.",
+      ar: "عاملة منزلية تحتفظ بجواز سفرها بجوار حقيبتها أثناء مناقشة مواعيد إجازتها السنوية مع صاحبة المنزل."
     }
   },
   'domestic-worker-complaints-disputes': {

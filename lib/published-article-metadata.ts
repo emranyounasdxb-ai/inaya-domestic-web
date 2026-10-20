@@ -10,7 +10,7 @@ type PublishedArticleMetadata = {
 export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "choosing-domestic-worker-agency-ajman",
-    "published": "2026-10-09",
+    "published": "2026-09-18",
     "updated": "2026-10-19",
     "en": {
       "title": "How to choose a domestic-worker agency in Ajman",
@@ -39,7 +39,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-hiring-costs-uae",
-    "published": "2026-10-09",
+    "published": "2026-09-19",
     "updated": "2026-10-20",
     "en": {
       "title": "What is the total cost of hiring a domestic worker in Ajman?",
@@ -74,7 +74,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-employment-arrangements-uae",
-    "published": "2026-10-09",
+    "published": "2026-09-20",
     "updated": "2026-10-19",
     "en": {
       "title": "Live-in, live-out or temporary domestic help: which arrangement fits your household?",
@@ -107,7 +107,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "all-inclusive-domestic-worker-packages",
-    "published": "2026-10-09",
+    "published": "2026-09-21",
     "updated": "2026-10-19",
     "en": {
       "title": "What should an all-inclusive domestic-worker package include in writing?",
@@ -136,7 +136,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-sponsorship-responsibilities",
-    "published": "2026-10-09",
+    "published": "2026-09-22",
     "updated": "2026-10-19",
     "en": {
       "title": "Who is responsible for a domestic worker's sponsorship and employment?",
@@ -171,7 +171,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-employer-eligibility-documents",
-    "published": "2026-10-09",
+    "published": "2026-09-23",
     "updated": "2026-10-12",
     "en": {
       "title": "Who can apply for a domestic-worker permit, and which documents are needed?",
@@ -200,7 +200,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-hiring-stages-timelines",
-    "published": "2026-10-09",
+    "published": "2026-09-24",
     "updated": "2026-10-19",
     "en": {
       "title": "What happens during domestic-worker hiring, and how long does it take?",
@@ -239,7 +239,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-skills-language-assessment",
-    "published": "2026-10-09",
+    "published": "2026-09-25",
     "updated": "2026-10-19",
     "en": {
       "title": "How to select a domestic worker's skills and language for your household",
@@ -270,7 +270,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "choosing-nanny-newborn-support",
-    "published": "2026-10-09",
+    "published": "2026-09-26",
     "updated": "2026-10-19",
     "en": {
       "title": "How to assess a nanny for a baby or newborn",
@@ -303,7 +303,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "caregiver-versus-licensed-nurse",
-    "published": "2026-10-09",
+    "published": "2026-09-27",
     "updated": "2026-10-19",
     "en": {
       "title": "Caregiver or licensed nurse: which kind of home support do you need?",
@@ -334,7 +334,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "agreeing-domestic-worker-household-duties",
-    "published": "2026-10-09",
+    "published": "2026-09-28",
     "updated": "2026-10-20",
     "en": {
       "title": "Can one domestic worker handle cleaning, cooking and childcare?",
@@ -373,7 +373,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-verification-checks",
-    "published": "2026-10-09",
+    "published": "2026-09-29",
     "updated": "2026-10-19",
     "en": {
       "title": "What should “verified domestic worker” mean?",
@@ -400,7 +400,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-interview-trial-probation",
-    "published": "2026-10-09",
+    "published": "2026-09-30",
     "updated": "2026-10-19",
     "en": {
       "title": "Interview, trial and probation: what is the difference when hiring a domestic worker?",
@@ -435,7 +435,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-replacement-eligibility",
-    "published": "2026-10-09",
+    "published": "2026-10-01",
     "updated": "2026-10-19",
     "en": {
       "title": "When can you request a replacement domestic worker?",
@@ -464,7 +464,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-recruitment-refund-rules",
-    "published": "2026-10-09",
+    "published": "2026-10-02",
     "updated": "2026-10-12",
     "en": {
       "title": "When are domestic-worker recruitment fees refundable?",
@@ -491,7 +491,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-contracts-renewal",
-    "published": "2026-10-09",
+    "published": "2026-10-03",
     "updated": "2026-10-19",
     "en": {
       "title": "Which domestic-worker contracts should you read, and how does renewal work?",
@@ -526,7 +526,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-wages-rest-leave",
-    "published": "2026-10-09",
+    "published": "2026-10-04",
     "updated": "2026-10-12",
     "en": {
       "title": "Domestic-worker wages, rest and leave: what must an employer plan for?",
@@ -563,7 +563,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "own-visa-part-time-domestic-work",
-    "published": "2026-10-09",
+    "published": "2026-10-05",
     "updated": "2026-10-19",
     "en": {
       "title": "Can you hire a domestic worker who has their own visa or works part-time?",
@@ -598,7 +598,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-leave-travel-planning",
-    "published": "2026-10-09",
+    "published": "2026-10-06",
     "updated": "2026-10-20",
     "en": {
       "title": "How should a household plan a domestic worker's annual leave and travel?",
@@ -627,7 +627,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-complaints-disputes",
-    "published": "2026-10-09",
+    "published": "2026-10-07",
     "updated": "2026-10-19",
     "en": {
       "title": "How do domestic-worker complaints and recruitment-agency disputes proceed?",
@@ -658,7 +658,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "four-hour-eight-hour-maid-visit-plan",
-    "published": "2026-10-20",
+    "published": "2026-09-01",
     "updated": "2026-10-20",
     "en": {
       "title": "Four-hour or eight-hour maid visit: how to plan the work",
@@ -679,7 +679,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "maid-visit-frequency-planner",
-    "published": "2026-10-20",
+    "published": "2026-09-02",
     "updated": "2026-10-20",
     "en": {
       "title": "How often should you book a maid? A household visit planner",
@@ -700,7 +700,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "apartment-villa-maid-task-plan",
-    "published": "2026-10-20",
+    "published": "2026-09-03",
     "updated": "2026-10-20",
     "en": {
       "title": "Apartment or villa: how to plan a maid’s household tasks",
@@ -721,7 +721,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "regular-maid-service-deep-move-in-cleaning",
-    "published": "2026-10-20",
+    "published": "2026-09-04",
     "updated": "2026-10-20",
     "en": {
       "title": "Regular maid service, deep cleaning or move-in cleaning?",
@@ -742,7 +742,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "prepare-cleaning-supplies-maid-visit",
-    "published": "2026-10-20",
+    "published": "2026-09-05",
     "updated": "2026-10-20",
     "en": {
       "title": "What to prepare before a maid visit: supplies and equipment",
@@ -763,7 +763,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "maid-laundry-ironing-task-checklist",
-    "published": "2026-10-20",
+    "published": "2026-09-06",
     "updated": "2026-10-20",
     "en": {
       "title": "How to arrange maid help for laundry and ironing",
@@ -784,7 +784,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "home-cooking-weekly-meal-prep-plan",
-    "published": "2026-10-20",
+    "published": "2026-09-07",
     "updated": "2026-10-20",
     "en": {
       "title": "How to plan home cooking and weekly meal preparation with a domestic worker",
@@ -805,7 +805,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "new-maid-first-week-checklist",
-    "published": "2026-10-20",
+    "published": "2026-09-08",
     "updated": "2026-10-20",
     "en": {
       "title": "A new maid’s first week: a practical household orientation checklist",
@@ -826,7 +826,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "nanny-school-routine-child-handover",
-    "published": "2026-10-20",
+    "published": "2026-09-09",
     "updated": "2026-10-20",
     "en": {
       "title": "How to plan a nanny’s school routine and safe child handovers",
@@ -847,7 +847,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "maid-household-with-pets",
-    "published": "2026-10-20",
+    "published": "2026-09-10",
     "updated": "2026-10-20",
     "en": {
       "title": "How to choose household help for a home with pets",
@@ -868,7 +868,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "maid-home-access-keys-privacy",
-    "published": "2026-10-20",
+    "published": "2026-09-11",
     "updated": "2026-10-20",
     "en": {
       "title": "Maid home access, keys and privacy: a household checklist",
@@ -889,7 +889,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "maid-help-family-guests-gathering",
-    "published": "2026-10-20",
+    "published": "2026-09-12",
     "updated": "2026-10-20",
     "en": {
       "title": "Booking maid help before guests: a practical family gathering plan",
@@ -910,7 +910,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "maid-duties-family-holiday",
-    "published": "2026-10-20",
+    "published": "2026-09-13",
     "updated": "2026-10-20",
     "en": {
       "title": "Maid duties while your family is on holiday: a home-stays-occupied plan",
@@ -931,7 +931,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "moving-home-emirate-with-domestic-worker",
-    "published": "2026-10-20",
+    "published": "2026-09-14",
     "updated": "2026-10-20",
     "en": {
       "title": "Moving home or emirate with a maid: what to review first",
@@ -952,7 +952,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "one-maid-two-helpers-workload",
-    "published": "2026-10-20",
+    "published": "2026-09-15",
     "updated": "2026-10-20",
     "en": {
       "title": "One maid or two helpers? A household workload planner",
@@ -973,7 +973,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "maid-daily-instructions-handover-template",
-    "published": "2026-10-20",
+    "published": "2026-09-16",
     "updated": "2026-10-20",
     "en": {
       "title": "Daily maid instructions and a household handover template",
@@ -994,7 +994,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   },
   {
     "slug": "domestic-worker-contract-permit-residence-cancellation",
-    "published": "2026-10-20",
+    "published": "2026-09-17",
     "updated": "2026-10-20",
     "en": {
       "title": "Ending a domestic-worker arrangement: contract, permit and residence cancellation",
