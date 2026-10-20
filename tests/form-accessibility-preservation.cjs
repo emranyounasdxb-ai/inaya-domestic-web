@@ -4,7 +4,12 @@ const assert = require('node:assert/strict');
 // exact booking-service URL preselection and the approved six-package selector.
 // Local validation, existing service options, fields and styling stay exact.
 function assertFormPreserved(current, previous, file) {
-  const handler = source => source.match(/  function handleSubmit\([\s\S]*?\n  }/)[0];
+  const handler = source => source.match(/  (?:async )?function handleSubmit\([\s\S]*?\n  }/)[0]
+    .replace('async function handleSubmit', 'function handleSubmit')
+    .replace(' && await delivery.send(data)', '')
+    .replace('    const data = new FormData(e.currentTarget);\n    if (await delivery.send(data)) setDone(true);', '    setDone(true);');
+  assert.match(current, /await delivery\.send\(data\)/, `${file}: delivery acceptance precedes confirmation`);
+  assert.match(current, /disabled=\{delivery.pending\}/, `${file}: duplicate submit disabled`);
   assert.equal(handler(current), handler(previous), `${file}: exact local validation logic`);
   const fields = source => [...source.matchAll(/<(input|select|textarea)\b[^>]*name="([^"]+)"[^>]*>/g)]
     .map(m => {
@@ -39,7 +44,7 @@ function assertFormPreserved(current, previous, file) {
   assert.deepEqual(options(current), expectedOptions, `${file}: unchanged non-package options and exact approved package choices`);
   const styles = source => [...source.matchAll(/className=("[^"]*"|\{[^\n]*\})/g)].map(m => m[0]);
   const confirmationStyles = /className="(?:rounded-2xl border border-green-200 bg-green-50 p-8 text-center text-green-800|mb-2 text-4xl|font-medium)"/;
-  assert.deepEqual(styles(current), styles(previous).filter(s => !confirmationStyles.test(s)), `${file}: original form styling`);
+  assert.deepEqual(styles(current).filter(s => s !== 'className="sm:col-span-2 text-xs text-primary-900/75"'), styles(previous).filter(s => !confirmationStyles.test(s)), `${file}: original form styling`);
   assert.doesNotMatch(current, /fetch\(|XMLHttpRequest|sendBeacon|trackEvent/);
 }
 module.exports = { assertFormPreserved };
