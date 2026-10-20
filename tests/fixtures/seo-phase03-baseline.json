@@ -309,7 +309,7 @@
       "route": "booking",
       "family": "information/hub",
       "title": "Request a Domestic Worker Service | INAYA",
-      "description": "Prepare household service requirements with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your enquiry.",
+      "description": "Send your household service enquiry to INAYA for review. Availability, written terms and booking require confirmation by the team.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -326,7 +326,7 @@
       "route": "booking",
       "family": "information/hub",
       "title": "طلب خدمة عمالة منزلية | عناية",
-      "description": "جهز متطلبات الخدمة المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة استفسارك.",
+      "description": "أرسل استفسارك عن الخدمة المنزلية إلى عناية للمراجعة. يتطلب التوفر والشروط المكتوبة والحجز تأكيداً من الفريق.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -343,7 +343,7 @@
       "route": "careers",
       "family": "information/hub",
       "title": "Domestic Worker Opportunities | INAYA",
-      "description": "Prepare a domestic-work application with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your experience.",
+      "description": "Send a domestic-work career enquiry to INAYA for review. Share your experience and preferred role; submission does not confirm a job or interview.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
@@ -360,7 +360,7 @@
       "route": "careers",
       "family": "information/hub",
       "title": "فرص العمل في الخدمات المنزلية | عناية",
-      "description": "جهز طلباً للعمل في الخدمات المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة خبرتك.",
+      "description": "أرسل استفسار عمل في الخدمات المنزلية إلى عناية للمراجعة. شارك خبرتك والدور المفضل؛ ولا يؤكد الإرسال وظيفة أو مقابلة.",
       "schemaIds": [
         "https://inayadomestic.ae/#organization",
         "https://inayadomestic.ae/#website",
