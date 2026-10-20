@@ -1,0 +1,70 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
+export function useFormDelivery(kind: 'contact' | 'booking' | 'careers', locale: string) {
+  const arabic = locale === 'ar';
+  const locked = useRef(false);
+  const requestId = useRef<string | null>(null);
+  const lastPayload = useRef('');
+  const startedAt = useRef(0);
+  useEffect(() => { startedAt.current = Date.now(); }, []);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState('');
+  const [reference, setReference] = useState('');
+
+  async function send(data: FormData) {
+    if (locked.current) return false;
+    locked.current = true;
+    setPending(true);
+    setError('');
+    const fields = Object.fromEntries(data.entries());
+    const payloadKey = JSON.stringify(fields);
+    if (!requestId.current || lastPayload.current !== payloadKey) {
+      requestId.current = crypto.randomUUID();
+      lastPayload.current = payloadKey;
+    }
+    try {
+      const response = await fetch('/inaya-enquiry.php', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          kind, locale: arabic ? 'ar' : 'en',
+          requestId: requestId.current, startedAt: startedAt.current,
+          fields
+        })
+      });
+      const result = await response.json();
+      if (!response.ok || result.ok !== true || typeof result.reference !== 'string') {
+        throw new Error('Delivery was not accepted');
+      }
+      setReference(result.reference);
+      return true;
+    } catch {
+      setError(arabic
+        ? 'لم يتم تأكيد إرسال الاستفسار. يرجى المحاولة مرة أخرى أو التواصل معنا على 06 740 0128. بياناتك ما زالت في النموذج.'
+        : 'Your enquiry could not be confirmed. Please try again or call 06 740 0128. Your details are still in the form.');
+      return false;
+    } finally {
+      locked.current = false;
+      setPending(false);
+    }
+  }
+
+  const confirmation = arabic
+    ? `تم إرسال استفسارك إلى عناية. الرقم المرجعي: ${reference}. سيتولى الفريق مراجعته؛ لا يؤكد هذا الإرسال حجزاً أو وظيفة أو مقابلة.`
+    : `Your enquiry has been submitted to INAYA. Reference: ${reference}. The team will review it; this does not confirm a booking, job or interview.`;
+
+  return {
+    send, pending, error, confirmation,
+    submitLabel: pending ? (arabic ? 'جارٍ الإرسال…' : 'Sending…') : (arabic ? 'إرسال الاستفسار' : 'Send Enquiry'),
+    privacy: arabic
+      ? 'يرسل هذا النموذج بيانات الاستفسار إلى info@inayadomestic.ae للمتابعة. يرجى عدم إدخال وثائق هوية أو معلومات حساسة.'
+      : 'This form sends your enquiry details to info@inayadomestic.ae for follow-up. Do not include identity documents or sensitive information.'
+  };
+}
+
+export function DeliveryFeedback({ error }: { error: string }) {
+  return <>{error && <p role="alert" className="sm:col-span-2 text-sm text-red-700">{error}</p>}</>;
+}
