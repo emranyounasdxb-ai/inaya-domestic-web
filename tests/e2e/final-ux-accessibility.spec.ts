@@ -112,6 +112,10 @@ for (const locale of ['en','ar'] as const) {
    await route.fulfill({status:requests.length===1 ? 503 : 200, contentType:'application/json',body:JSON.stringify(requests.length===1 ? {ok:false} : {ok:true,reference:'INAYA-QA-RETRY'})});
   });
   await page.goto(`/${locale}/careers/`);
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  const offer=page.getByTestId('sierra-leone-offer');
+  await expect(offer).toBeVisible();
+  await offer.getByRole('button').click();
   const form=page.locator('form');
   await form.locator('[name="name"]').fill('Retry QA');
   await form.locator('[name="phone"]').fill('+971500000000');
