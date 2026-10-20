@@ -55,12 +55,12 @@ test('Phase 4 snapshot exceptions remain precisely four titles and two descripti
   assert.deepEqual({ ...after, pages: [] }, { ...before, pages: [] });
 });
 
-test('local-only forms have accurate completion copy and unchanged booking/careers logic', () => {
+test('delivered forms have accurate completion copy and unchanged local validation', () => {
   for (const locale of ['en', 'ar']) {
     const messages = JSON.parse(current(`messages/${locale}.json`));
     for (const key of ['booking', 'contact', 'careers']) {
-      assert.match(messages[key].success, locale === 'en' ? /not sent|has not sent/ : /لم ترسل|لم يرسل/);
-      assert.doesNotMatch(messages[key].success, /has been received|has been sent|تم استلام|تم إرسال/);
+      assert.match(messages[key].success, locale === 'en' ? /submitted to INAYA for review/ : /تم إرسال استفسارك إلى عناية للمراجعة/);
+      assert.match(messages[key].success, locale === 'en' ? /does not confirm a booking, job or interview/ : /لا يؤكد هذا الإرسال حجزاً أو وظيفة أو مقابلة/);
     }
   }
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx']) assertFormPreserved(current(file), previous(file), file);
