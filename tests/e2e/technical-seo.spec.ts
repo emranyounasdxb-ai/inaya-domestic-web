@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import updatedPaths from '../fixtures/poster-pricing-updated-routes.json';
+import articleManifest from '../../content/research/2026-10-20/article-manifest.json';
 
 test('sitemap includes service, country and location SEO pages', async ({ request }) => {
   const response = await request.get('/sitemap.xml');
@@ -34,14 +35,22 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   test.setTimeout(240_000);
   const xml = await (await request.get('/sitemap.xml')).text();
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
+  expect(articleManifest).toHaveLength(20);
+  const todayPaths = new Set(['blog', ...articleManifest.map((article) => `blog/${article.slug}`)]);
+  const datedPaths = new Set([...updatedPaths, ...todayPaths]);
   const expectedDatedUrls = ['en', 'ar'].flatMap((locale) =>
-    updatedPaths.map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
+    [...datedPaths].map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
   );
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
+  expect(datedEntries).toHaveLength(156);
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual(expectedDatedUrls.sort());
+  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(42);
   for (const entry of datedEntries) {
-    expect(entry[1].match(/<lastmod>(.*?)<\/lastmod>/g)).toEqual(['<lastmod>2026-10-19</lastmod>']);
+    const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)![1]).pathname;
+    const path = pathname.split('/').slice(2).filter(Boolean).join('/');
+    const expectedDate = todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
+    expect(entry[1].match(/<lastmod>(.*?)<\/lastmod>/g), pathname).toEqual([`<lastmod>${expectedDate}</lastmod>`]);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]);
   expect(urls.length).toBeGreaterThan(100);
