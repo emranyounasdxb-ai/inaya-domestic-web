@@ -2,7 +2,9 @@ import Link from 'next/link';
 import BlogImage from './BlogImage';
 import PageBreadcrumbs from './PageBreadcrumbs';
 import RouteSeo from './RouteSeo';
+import ArticleVisual from './ArticleVisual';
 import { articleBlocks, articleInline } from '@/lib/article-markdown';
+import { getCustomerArticleVisual } from '@/lib/customer-article-visuals';
 import { guideAuthor, type DomesticWorkerGuide, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { siteConfig } from '@/lib/site-config';
 
@@ -17,6 +19,8 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
   const isArabic = lang === 'ar';
   const copy = guide[lang];
   const blocks = articleBlocks(body);
+  const visual = getCustomerArticleVisual(guide.slug, lang);
+  const firstParagraphIndex = blocks.findIndex((block) => block.type === 'paragraph');
   const headings = blocks.filter((block) => block.type === 'heading');
   const route = `blog/${guide.slug}`;
   const formatDate = (value: string) => new Intl.DateTimeFormat(isArabic ? 'ar-AE' : 'en-AE', {
@@ -53,7 +57,12 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
         <article data-published-article="content" className={`min-w-0 rounded-[24px] border border-primary-900/10 bg-white/85 px-5 pb-8 pt-7 shadow-[0_18px_55px_rgba(7,22,74,0.04)] [overflow-wrap:anywhere] sm:px-9 sm:pb-12 sm:pt-9 ${isArabic ? 'font-arabic text-[17px] leading-[2.1]' : 'text-base leading-8'}`}>
           {blocks.map((block, index) => {
             if (block.type === 'heading') return <h2 key={index} id={block.id} className={`mb-5 mt-10 scroll-mt-24 border-t border-accent-500/30 pt-8 text-2xl font-bold leading-snug text-primary-900 sm:text-[28px] ${headingFont}`}><Inline text={block.text} /></h2>;
-            if (block.type === 'paragraph') return <p key={index} className={`mb-5 text-primary-900/85 ${index === 0 ? 'text-lg font-medium leading-[1.9]' : ''}`}><Inline text={block.text} /></p>;
+            if (block.type === 'paragraph') {
+              const paragraph = <p className={`mb-5 text-primary-900/85 ${index === 0 ? 'text-lg font-medium leading-[1.9]' : ''}`}><Inline text={block.text} /></p>;
+              return visual && index === firstParagraphIndex
+                ? <div key={index}>{paragraph}<ArticleVisual visual={visual} lang={lang} id={`${guide.slug}-visual`} /></div>
+                : <p key={index} className={`mb-5 text-primary-900/85 ${index === 0 ? 'text-lg font-medium leading-[1.9]' : ''}`}><Inline text={block.text} /></p>;
+            }
             if (block.type === 'list') return <ul key={index} className="mb-6 list-disc space-y-3 ps-6 text-primary-900/85 marker:text-accent-700">{block.items.map((item, itemIndex) => <li key={itemIndex} className="ps-1"><Inline text={item} /></li>)}</ul>;
             return <div key={index} role="region" aria-labelledby={block.headingId} tabIndex={0} className="mb-7 max-w-full overflow-x-auto rounded-2xl border border-primary-900/15 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-700">
               <table aria-labelledby={block.headingId} className="w-full min-w-[36rem] border-collapse text-start text-sm leading-7 text-primary-900">

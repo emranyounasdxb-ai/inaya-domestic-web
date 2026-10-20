@@ -1,0 +1,125 @@
+{
+  "id": "19",
+  "slug": "maid-daily-instructions-handover-template",
+  "mode": "new",
+  "question": {
+    "en": "How do I write clear daily instructions and handovers for a maid?",
+    "ar": "كيف أكتب تعليمات يومية واضحة وأسجل التسليم مع العاملة المنزلية؟"
+  },
+  "gap": "No reusable daily instruction and completion-report template.",
+  "existingMatches": [
+    "domestic-worker-skills-language-assessment"
+  ],
+  "en": {
+    "title": "Daily maid instructions and a household handover template",
+    "description": "Write a practical daily maid handover with priorities, task locations, household methods, completion notes and a clear contact for questions.",
+    "body": "Good daily instructions tell a domestic worker what matters, where the task happens, how your household wants it done and whom to contact when something changes. Use one short handover sheet alongside demonstrations and respectful conversation. A long message containing several unrelated requests is harder to act on than a clear set of priorities.\n\n## Begin with the outcome and the priority\n\nWrite instructions for the day’s actual work, not an unlimited description of everything that could be done in the home. Put essential duties first, then list flexible work that can move. A useful instruction is “prepare the agreed school bag using the list in the drawer,” rather than “get everything ready.” Add the relevant location and the household method where those details make the instruction usable.\n\nThe [UAE Government domestic-worker guidance](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) links instructions to agreed work and safety. Keep this daily sheet within the existing role; a handover note does not replace the contract or establish a different occupation.\n\n## Copy this daily handover structure\n\nThe example below is an original organisational tool. Adapt it to the duties already agreed for your household. Put private access codes and sensitive family documents in an appropriate separate channel, rather than copying them into a general task list shared with several people.\n\n| Field | What to record | Example of a clear entry |\n|---|---|---|\n| Date and main contact | The day and the adult directing changes | Today’s date; agreed household contact |\n| First priority | The task that takes precedence | Prepare the agreed child handover items |\n| Task and location | The action and the area involved | Fold the dry towels in the laundry area |\n| Household method | A demonstrated preference or relevant label | Follow the garment care label and shown method |\n| Timing or trigger | A genuine deadline or sequence | Complete the preparation before the agreed handover |\n| Flexible task | Work to move if priorities change | Cupboard organisation after essential tasks |\n| Completion note | Done, moved, or a question needing a decision | Laundry completed; damaged item set aside for review |\n| Follow-up | The next decision and responsible contact | Ask the household contact before changing the method |\n\nDescribe exceptions clearly. If an appliance is not working or an item needs a specialist, the useful instruction is to set the task aside and contact the named adult. It is not to find an unfamiliar workaround simply to complete the list.\n\n## Demonstrate the method, then check shared understanding\n\nShow the worker the relevant appliance, storage location or household routine. Use a short written note as a reminder after the demonstration. Invite the worker to describe the next step in their own words or show the agreed method. This checks whether the instruction was understandable without turning the conversation into a test of accent, nationality or confidence.\n\nFor a new arrangement, use the [first-week orientation guide](https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/) to introduce the home gradually. Where communication needs affected candidate selection, the [skills and language assessment guide](https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/) addresses that separate decision.\n\n## Keep the completion note factual and useful\n\nAsk for a brief account of completed work, tasks moved because of a changed priority and practical issues needing attention. A factual handover might record a missing supply, a broken handle or a delayed delivery. It should help the next person continue the routine, rather than invite personal criticism or require unnecessary photographs of the household.\n\nFor childcare duties, the [Early Childhood Authority competency framework](https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3) highlights communication and confidentiality. Share child-related information with the appropriate adults and use the agreed communication channel. Record a parent’s actual instructions without expanding the worker’s role into clinical advice.\n\n## Have one person coordinate changes\n\nWhen several adults give instructions, agree who resolves conflicts. A new request should identify which earlier priority moves. Review recurring unfinished tasks together: the cause might be unclear instructions, unavailable supplies or a schedule that needs adjustment. Update the sheet rather than adding the same unresolved task repeatedly.\n\nUse the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) when a change alters the role itself. [Contact INAYA](https://inayadomestic.ae/en/contact/) with the current routine and the support you need so the service discussion starts with a clear, practical description.",
+    "faqs": [
+      {
+        "question": "Should I write every household task on the daily sheet?",
+        "answer": "Write the agreed priorities for that day and separate flexible work. Keep the full household routine in a wider plan so the daily sheet remains usable."
+      },
+      {
+        "question": "How can I check that an instruction is understood?",
+        "answer": "Demonstrate the relevant method, then invite the worker to explain the next step or show the agreed approach. Use the written note as a reminder rather than relying on a long verbal list."
+      },
+      {
+        "question": "What should be recorded when a task is not completed?",
+        "answer": "Record the practical reason, such as a changed priority, missing supply or appliance issue, and identify who will make the next decision."
+      },
+      {
+        "question": "Does a handover note authorise new duties?",
+        "answer": "No. Keep instructions within the agreed role. Review any meaningful change of responsibility through the applicable service and employment arrangement."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "A practical daily communication cycle",
+      "caption": "Original household handover workflow: a short cycle supports clear priorities without creating a new employment term.",
+      "items": [
+        {
+          "label": "Set the priorities",
+          "detail": "Identify essential tasks, flexible work and the contact for questions."
+        },
+        {
+          "label": "Show the method",
+          "detail": "Demonstrate equipment, locations and household preferences."
+        },
+        {
+          "label": "Record the handover",
+          "detail": "Note completed work, moved tasks and practical issues."
+        },
+        {
+          "label": "Resolve and update",
+          "detail": "Agree the next decision and revise the plan where needed."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "تعليمات يومية واضحة للعاملة المنزلية ونموذج لتسليم المهام",
+    "description": "اكتب تسليماً يومياً عملياً يتضمن الأولويات ومواقع المهام وطريقة الأسرة وملاحظات الإنجاز وجهة واضحة للأسئلة وتغيير التعليمات. بأسلوب واضح ومحترم للجميع.",
+    "body": "توضح التعليمات اليومية الجيدة للعاملة المنزلية ما الأهم، وأين تنفذ المهمة، وكيف تريد الأسرة إنجازها، ومع من تتواصل عند تغير الظروف. استخدم ورقة قصيرة للتسليم بجانب الشرح العملي والحوار باحترام. فمجموعة أولويات واضحة أسهل في التنفيذ من رسالة طويلة تضم طلبات متفرقة وغير مرتبة.\n\n## ابدأ بالنتيجة والأولوية\n\nاكتب تعليمات العمل الفعلي لليوم، وليس وصفاً غير محدود لكل ما يمكن عمله في المنزل. ضع المسؤوليات الأساسية أولاً، ثم الأعمال المرنة التي يمكن نقلها. فعبارة «جهزي الحقيبة المدرسية المتفق عليها باستخدام القائمة داخل الدرج» أوضح من «جهزي كل شيء». أضف موقع الأدوات وطريقة الأسرة عندما يساعد ذلك على فهم المطلوب.\n\nيربط [دليل حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) التعليمات بالعمل المتفق عليه والسلامة. أبق الورقة اليومية ضمن الدور القائم؛ فهي لا تستبدل العقد ولا تنشئ مهنة مختلفة أو نطاقاً جديداً للعمل.\n\n## انسخ هذا الهيكل للتسليم اليومي\n\nالنموذج التالي أداة تنظيمية أصلية يمكن تكييفها مع مهام أسرتك المتفق عليها. احتفظ برموز الدخول الخاصة والمستندات العائلية الحساسة في قناة مناسبة منفصلة، بدلاً من إضافتها إلى قائمة عامة ترسل إلى عدة أشخاص. ولا تحتاج الورقة العملية إلى جمع بيانات شخصية لا تساعد على أداء المهمة.\n\n| البند | ما الذي يسجل؟ | مثال على إجابة واضحة |\n|---|---|---|\n| التاريخ وجهة التواصل | اليوم والبالغ المسؤول عن التغييرات | تاريخ اليوم وجهة التواصل المتفق عليها |\n| الأولوية الأولى | المهمة التي تسبق غيرها | تجهيز أغراض تسليم الطفل المتفق عليها |\n| المهمة والمكان | العمل والمساحة المقصودة | طي المناشف الجافة في منطقة الغسيل |\n| طريقة الأسرة | تفضيل موضح أو تعليمات بطاقة المنتج | اتباع بطاقة العناية بالطريقة المشروحة |\n| التوقيت أو الحدث | موعد فعلي أو ترتيب للتنفيذ | إنهاء التجهيز قبل موعد التسليم المتفق عليه |\n| المهمة المرنة | عمل ينقل عند تغير الأولويات | تنظيم الخزانة بعد المهام الأساسية |\n| ملاحظة الإنجاز | ما اكتمل أو نقل أو يحتاج إلى قرار | اكتمل الغسيل ووضع الغرض التالف للمراجعة |\n| المتابعة | القرار التالي والشخص المسؤول | سؤال جهة التواصل قبل تغيير الطريقة |\n\nاشرح الاستثناءات بوضوح. عندما يتعطل جهاز أو يحتاج غرض إلى خدمة متخصصة، تكون التعليمات العملية هي إيقاف المهمة والتواصل مع الشخص المحدد، بدلاً من تجربة حل غير مألوف فقط لإنهاء القائمة. سجل أيضاً المكان المناسب لوضع الغرض إلى حين مراجعته.\n\n## اشرح الطريقة ثم تحقق من الفهم المشترك\n\nاعرض الجهاز أو مكان التخزين أو الروتين المطلوب عملياً، ثم استخدم الملاحظة المكتوبة للتذكير. ادع العاملة إلى وصف الخطوة التالية بكلماتها أو عرض الطريقة المتفق عليها. تتحقق بذلك من وضوح التعليمات دون تحويل الحديث إلى حكم على اللهجة أو الجنسية أو الثقة في الكلام.\n\nفي بداية الترتيب، استخدم [دليل الأسبوع الأول](https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/) للتعريف بالمنزل تدريجياً. وإذا كانت احتياجات التواصل جزءاً من اختيار المرشحة، فإن [دليل تقييم المهارات واللغة](https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/) يتناول ذلك القرار المنفصل.\n\n## اجعل ملاحظة الإنجاز واقعية ومفيدة\n\nاطلب وصفاً مختصراً للعمل المكتمل، والمهام المنقولة بسبب تغير الأولوية، والمشكلات العملية التي تحتاج إلى متابعة. قد تسجل الملاحظة نقص مادة أو مقبضاً مكسوراً أو تأخر توصيل. والهدف هو مساعدة الشخص التالي على متابعة الروتين، لا النقد الشخصي أو طلب صور منزلية لا حاجة إليها.\n\nويبرز [إطار كفاءات هيئة الطفولة المبكرة](https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3) التواصل والسرية في دور رعاية الطفل. شارك المعلومات مع البالغين المعنيين عبر القناة المتفق عليها، وسجل تعليمات الوالد الفعلية دون توسيع الدور إلى تقديم نصائح سريرية.\n\n## عين شخصاً لتنسيق التغييرات\n\nعندما يقدم عدة بالغين التعليمات، حدد من يحسم التعارض. يجب أن يوضح الطلب الجديد أي أولوية سابقة ستنقل. ناقش المهام المتأخرة المتكررة؛ فقد تحتاج التعليمات أو المستلزمات أو الجدول إلى تعديل. راجع [دليل المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) عند تغير الدور نفسه، و[تواصل مع عناية](https://inayadomestic.ae/ar/contact/) بوصف واضح للروتين والدعم المطلوب.",
+    "faqs": [
+      {
+        "question": "هل أضع كل مهام المنزل في الورقة اليومية؟",
+        "answer": "اكتب أولويات ذلك اليوم المتفق عليها، وافصل الأعمال المرنة. احتفظ بالروتين الكامل في خطة أوسع كي تبقى الورقة اليومية سهلة الاستخدام."
+      },
+      {
+        "question": "كيف أتحقق من فهم التعليمات؟",
+        "answer": "اشرح الطريقة عملياً، ثم اطلب من العاملة وصف الخطوة التالية أو عرض الأسلوب المتفق عليه. استخدم الملاحظة المكتوبة للتذكير بدلاً من الاعتماد على قائمة شفهية طويلة."
+      },
+      {
+        "question": "ماذا يسجل عند عدم إكمال مهمة؟",
+        "answer": "يسجل السبب العملي، مثل تغير الأولوية أو نقص المستلزمات أو عطل الجهاز، مع تحديد الشخص الذي سيتخذ القرار التالي."
+      },
+      {
+        "question": "هل تسمح ورقة التسليم بإضافة مهام جديدة؟",
+        "answer": "لا. تبقى التعليمات ضمن الدور المتفق عليه. وتراجع التغييرات الجوهرية في المسؤولية من خلال ترتيب الخدمة والتوظيف المطبق."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "دورة عملية للتواصل اليومي",
+      "caption": "مسار أصلي لتسليم مهام المنزل؛ تدعم الخطوات وضوح الأولويات دون إنشاء شرط توظيف جديد.",
+      "items": [
+        {
+          "label": "حدد الأولويات",
+          "detail": "وضح المهام الأساسية والأعمال المرنة وجهة الأسئلة."
+        },
+        {
+          "label": "اشرح الطريقة",
+          "detail": "اعرض الأدوات والمواقع وتفضيلات الأسرة عملياً."
+        },
+        {
+          "label": "سجل التسليم",
+          "detail": "دون العمل المكتمل والمهام المنقولة والمشكلات العملية."
+        },
+        {
+          "label": "احسم وحدث",
+          "detail": "اتفق على القرار التالي وعدل الخطة عند الحاجة."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Instructions relate to agreed work and safety; daily worksheet is original organisational advice."
+    },
+    {
+      "url": "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3",
+      "supports": "Childcare competency framework includes communication and confidentiality; no candidate certification claim."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid daily instructions checklist handover household",
+      "url": "https://taskhomi.com/ae/blog/uae-domestic-worker-task-handover-family-instructions?lang=zh-CN"
+    },
+    {
+      "query": "maid household routine instructions template",
+      "url": "https://peekaboo-nannies.com/how-to-train-your-maid-or-nanny-to-follow-your-home-routine-with-free-template/"
+    }
+  ]
+}

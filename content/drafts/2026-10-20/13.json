@@ -1,0 +1,126 @@
+{
+  "id": "13",
+  "slug": "maid-duties-family-holiday",
+  "mode": "new",
+  "question": {
+    "en": "What should happen to the maid’s duties when my family goes on holiday?",
+    "ar": "كيف أرتب مهام العاملة المنزلية عندما تسافر الأسرة في إجازة؟"
+  },
+  "gap": "Family-away home-occupied duties differ from worker annual leave/travel; no practical home plan exists.",
+  "existingMatches": [
+    "domestic-worker-leave-travel-planning",
+    "domestic-worker-wages-rest-leave"
+  ],
+  "en": {
+    "title": "Maid duties while your family is on holiday: a home-stays-occupied plan",
+    "description": "Prepare a practical household plan when your family travels and the maid stays in the UAE. Organise duties, living arrangements, access and a return handover.",
+    "body": "When your family goes on holiday and the domestic worker remains in the UAE, agree a separate home plan before departure. Record the duties that continue, tasks that pause, living arrangements, work and rest schedule, access and the responsible contact. Your family's travel dates do not by themselves rewrite the worker's employment terms or the agency service agreement.\n\nThis guide concerns a worker staying at the UAE home or in an agreed local arrangement. For the worker's own annual leave or travel accompanying your family, use the separate [leave and travel guide](https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/).\n\n## Decide what the home actually needs while you are away\n\nStart with the work that remains when normal family routines stop. There may be less cooking and laundry, while agreed routine cleaning still continues. Identify rooms that will be closed, appliances that should not be used and household items that need ordinary care. Give clear instructions for anything you want left untouched.\n\nAvoid filling the quieter period with an unlimited backlog. Heavy moving, specialist cleaning, repair work and responsibility for contractors are distinct tasks, with their own suitability and safety considerations. Use the [household duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) to decide which changes belong in a revised scope rather than a verbal instruction at the airport.\n\n## Use a family-away duty and responsibility table\n\nThe table is an original planning template, not a new package inclusion or an instruction to keep the worker continuously available.\n\n| Area | Before the family leaves | During the agreed period |\n|---|---|---|\n| Routine duties | List the tasks that continue and those that pause | Follow the recorded priorities and schedule |\n| Living arrangements | Record accommodation, meals and the responsible party | Keep the agreed arrangements accessible and usable |\n| Home entry | Identify authorised visitors and a family decision-maker | Refer unexpected visits to that contact |\n| Supplies | Prepare the agreed products and replenishment method | Report what is needed through the agreed channel |\n| Household issue | Name a local contact and professional service route | Report the issue; do not improvise repairs or specialist work |\n| Family return | Set a practical handover time | Review the home and resume the agreed routine |\n\nIf the worker will not remain at the home, arrange the alternative with the legal employer or agency before travel. Record where the person will stay, who manages that arrangement and how the period affects the customer service. Keep these operational points separate from the worker's protected employment rights.\n\n## Provide one local contact and clear boundaries\n\nChoose someone who can make decisions in the UAE, not merely a relative who is also travelling. Explain which issues require prompt contact and which can go into a routine update. The worker should know where to report a failed appliance, an unexpected visitor or an access problem without becoming the property's security guard or maintenance contractor.\n\nUse a brief update format: date, agreed work completed, supplies needed and decisions requested. Keep keys and household information within the [home-access and privacy arrangement](https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/). Do not ask for passwords, bank details or identity documents in a public travel group.\n\n## Keep holiday planning separate from employment changes\n\nIf you want to reduce, pause or change an agency service, raise that request through the service agreement. If you want to arrange the worker's annual leave, treat that as its own employment discussion. Sending the worker to another household is also a different arrangement and needs the appropriate provider and official review.\n\nThe [UAE Government domestic-worker guide](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) and [domestic-workers legislation](https://uaelegislation.gov.ae/en/legislations/1593) provide the employment framework. A family holiday checklist is a practical supplement, not a replacement for the applicable contracts.\n\n## Plan the return handover before departure\n\nAgree how the family will receive the keys, the final update and any decisions that were left open. Check food, laundry and room-readiness priorities for the first day back, then return to the normal task list rather than carrying holiday instructions forward indefinitely.\n\n[Contact INAYA](https://inayadomestic.ae/en/contact/) with the travel dates, selected service arrangement, living plan and proposed duties. The team can discuss the written service scope and responsibilities with you while you keep a clear record of the family's home plan.",
+    "faqs": [
+      {
+        "question": "Is my family holiday automatically the maid’s annual leave?",
+        "answer": "Keep the two calendars separate. Record whether the worker is taking annual leave, continuing agreed work locally or travelling with the family, then follow the applicable employment and service arrangements."
+      },
+      {
+        "question": "Can the maid stay in our home while we travel?",
+        "answer": "Settle the living arrangement with the legal employer or agency and record accommodation, meals, access, duties, work/rest schedule and the responsible local contact before departure."
+      },
+      {
+        "question": "Can I send the worker to help a friend during our holiday?",
+        "answer": "Treat work for another household as a separate employment or beneficiary arrangement. Discuss the proposed change with the provider and follow the applicable official route before assigning work."
+      },
+      {
+        "question": "Should the worker supervise repairs while we are away?",
+        "answer": "Do not assume maintenance supervision is part of routine household help. Name a family representative for contractor decisions and include only the specific, suitable tasks agreed in the worker’s scope."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "A practical family-away home plan",
+      "caption": "Original household-planning sequence for the family travelling while the worker remains in an agreed UAE arrangement.",
+      "items": [
+        {
+          "label": "Separate",
+          "detail": "Distinguish family travel, worker leave and service changes."
+        },
+        {
+          "label": "Record",
+          "detail": "Write duties, living arrangements, access and work/rest schedule."
+        },
+        {
+          "label": "Connect",
+          "detail": "Name a local decision-maker and update channel."
+        },
+        {
+          "label": "Resume",
+          "detail": "Complete the return handover and restore the normal routine."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "مهام العاملة المنزلية أثناء سفر الأسرة: خطة للمنزل خلال الغياب",
+    "description": "جهز خطة واضحة عندما تسافر الأسرة وتبقى العاملة في الإمارات، تشمل المهام والسكن والدخول والتواصل المحلي وتسليم المنزل عند العودة.",
+    "body": "عندما تسافر الأسرة في إجازة وتبقى العاملة المنزلية داخل الإمارات، ضع خطة مستقلة للمنزل قبل المغادرة. سجل المهام المستمرة والأعمال المتوقفة والسكن وجدول العمل والراحة وطريقة الدخول ومسؤول التواصل. تواريخ سفر الأسرة لا تعدل وحدها شروط توظيف العاملة أو اتفاق الخدمة مع المكتب.\n\nيتناول هذا الدليل بقاء العاملة في المنزل داخل الإمارات أو في ترتيب محلي متفق عليه. أما إجازة العاملة نفسها أو سفرها برفقة الأسرة، فلهما [دليل الإجازات والسفر](https://inayadomestic.ae/ar/blog/domestic-worker-leave-travel-planning/) المستقل.\n\n## حدد احتياج المنزل الفعلي خلال غيابكم\n\nابدأ بما يبقى من العمل عند توقف روتين الأسرة المعتاد. فقد تقل أعمال الطبخ والغسيل، بينما يستمر التنظيف الروتيني المتفق عليه. حدد الغرف المغلقة والأجهزة التي لا تستخدم والقطع المنزلية التي تحتاج إلى عناية عادية. واشرح بوضوح الأشياء التي ترغب في تركها دون تغيير.\n\nلا تحول انخفاض الأعمال اليومية إلى قائمة مؤجلة بلا حدود. فنقل الأثاث الثقيل والتنظيف المتخصص والإصلاحات والإشراف على المقاولين مهام مختلفة، ولكل منها اعتبارات الملاءمة والسلامة. استخدم [دليل المهام المنزلية](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) لتحديد ما يستلزم تعديل النطاق المكتوب، بدلاً من إعطاء تعليمات شفوية جديدة قبل السفر مباشرة.\n\n## استخدم جدول المهام والمسؤوليات أثناء غياب الأسرة\n\nالجدول نموذج تنظيمي من إعداد عناية، وليس إضافة تلقائية إلى الباقة أو تكليفاً بالبقاء متاحة للعمل طوال الوقت.\n\n| المجال | قبل سفر الأسرة | خلال الفترة المتفق عليها |\n|---|---|---|\n| المهام المعتادة | سجل الأعمال المستمرة وما سيتوقف | اتبع الأولويات والجدول المكتوبين |\n| ترتيبات المعيشة | حدد السكن والطعام والمسؤول عنهما | أبق الترتيبات المتفق عليها متاحة وقابلة للاستخدام |\n| دخول المنزل | حدد الزوار المصرح لهم وصاحب القرار | ارجع إلى مسؤول التواصل عند وصول شخص غير متوقع |\n| المستلزمات | جهز المنتجات وطريقة توفير النواقص | أبلغ عن الاحتياج بالقناة المتفق عليها |\n| مشكلة منزلية | حدد جهة محلية ومسار طلب المختص | أبلغ عن المشكلة دون ارتجال إصلاح أو عمل متخصص |\n| عودة الأسرة | رتب موعداً عملياً للتسليم | راجع المنزل ثم استأنف الروتين المعتاد |\n\nإذا لم تبق العاملة في المنزل، فرتب البديل مع صاحب العمل القانوني أو المكتب قبل السفر. سجل مكان الإقامة والمسؤول عنه وأثر الفترة في خدمة العميل. وافصل هذه النقاط التشغيلية عن حقوق العاملة الوظيفية المحمية.\n\n## وفر مسؤول تواصل محلياً وحدوداً واضحة\n\nاختر شخصاً يستطيع اتخاذ القرار داخل الإمارات، لا قريباً يسافر معكم أيضاً. وضح ما يستلزم التواصل السريع وما يسجل في تحديث روتيني. تعرف العاملة جهة الإبلاغ عن عطل جهاز أو زائر غير متوقع أو مشكلة دخول، من دون أن تتحول إلى حارسة للعقار أو مقاولة صيانة.\n\nاستخدم صيغة تحديث مختصرة: التاريخ، والعمل المتفق عليه الذي أنجز، والمستلزمات المطلوبة، والقرارات المنتظرة. وأبق المفاتيح والمعلومات المنزلية داخل [ترتيب الدخول والخصوصية](https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/). لا تطلب كلمات المرور أو البيانات المصرفية أو صور الهويات في مجموعة سفر عامة.\n\n## افصل خطة الإجازة عن تغيير علاقة العمل\n\nإذا رغبت في تقليل خدمة المكتب أو إيقافها مؤقتاً أو تعديلها، فقدم الطلب وفق اتفاق الخدمة. وإذا رغبت في ترتيب الإجازة السنوية للعاملة، فناقشها بصورة مستقلة بوصفها مسألة توظيف. وإرسال العاملة إلى منزل آخر ترتيب مختلف كذلك، يحتاج إلى مراجعة مقدم الخدمة والمسار الرسمي المناسب.\n\nيقدم [دليل حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) و[التشريع المنظم للعمالة المساعدة](https://uaelegislation.gov.ae/ar/legislations/1593) الإطار الوظيفي. وتكمل قائمة سفر الأسرة التنظيم العملي، ولا تحل محل العقود المنطبقة.\n\n## خطط لتسليم العودة قبل المغادرة\n\nاتفق على طريقة استلام المفاتيح والتحديث الأخير والقرارات التي بقيت معلقة. حدد أولويات الطعام والغسيل وتجهيز الغرف لليوم الأول بعد العودة، ثم ارجع إلى قائمة المهام المعتادة بدلاً من إبقاء تعليمات الإجازة مستمرة بلا نهاية.\n\n[تواصل مع عناية](https://inayadomestic.ae/ar/contact/) بتواريخ السفر ونوع الخدمة وخطة المعيشة والمهام المقترحة. ناقش النطاق المكتوب والمسؤوليات مع الفريق، واحتفظ بسجل واضح لخطة المنزل خلال غياب الأسرة.",
+    "faqs": [
+      {
+        "question": "هل تعد إجازة الأسرة تلقائياً إجازة سنوية للعاملة؟",
+        "answer": "افصل الجدولين. سجل إن كانت العاملة تأخذ إجازتها أو تواصل العمل المتفق عليه محلياً أو تسافر مع الأسرة، ثم اتبع ترتيب التوظيف والخدمة المنطبق."
+      },
+      {
+        "question": "هل تبقى العاملة في منزلنا أثناء السفر؟",
+        "answer": "رتب المعيشة مع صاحب العمل القانوني أو المكتب، وسجل السكن والطعام والدخول والمهام وجدول العمل والراحة ومسؤول التواصل المحلي قبل المغادرة."
+      },
+      {
+        "question": "هل أرسل العاملة إلى منزل صديق خلال إجازتنا؟",
+        "answer": "تعامل مع العمل لمنزل آخر بوصفه ترتيب توظيف أو استخدام مستقلاً. ناقش التغيير المقترح مع مقدم الخدمة واتبع المسار الرسمي المنطبق قبل إسناد العمل."
+      },
+      {
+        "question": "هل تشرف العاملة على الإصلاحات أثناء غيابنا؟",
+        "answer": "لا تدرج الإشراف على الصيانة تلقائياً ضمن المساعدة المنزلية المعتادة. حدد ممثلاً للأسرة لقرارات المقاولين، واقتصر على المهام المحددة والملائمة المسجلة في النطاق."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "خطة عملية للمنزل أثناء سفر الأسرة",
+      "caption": "تسلسل تنظيمي من إعداد عناية عندما تسافر الأسرة وتبقى العاملة ضمن ترتيب متفق عليه داخل الإمارات.",
+      "items": [
+        {
+          "label": "افصل",
+          "detail": "ميز بين سفر الأسرة وإجازة العاملة وتعديل الخدمة."
+        },
+        {
+          "label": "سجل",
+          "detail": "اكتب المهام والسكن والدخول وجدول العمل والراحة."
+        },
+        {
+          "label": "اربط",
+          "detail": "حدد صاحب قرار محلياً وقناة للتحديثات."
+        },
+        {
+          "label": "استأنف",
+          "detail": "أكمل تسليم العودة وارجع إلى الروتين المعتاد."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Employment and agreed work are recorded separately from a family travel plan; the household-away worksheet is original editorial guidance."
+    },
+    {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1593",
+      "supports": "Domestic-worker employment obligations remain the framework; family travel does not itself replace contracts."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid employer family holiday worker stays home UAE",
+      "url": "https://www.housekeepingco.com/cleaning-service-terms-conditions"
+    },
+    {
+      "query": "domestic worker family holidays leave work UAE",
+      "url": "https://maidmatch.ae/guides/maid-day-off-and-working-hours"
+    }
+  ]
+}

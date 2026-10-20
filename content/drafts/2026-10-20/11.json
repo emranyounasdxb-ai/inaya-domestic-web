@@ -1,0 +1,125 @@
+{
+  "id": "11",
+  "slug": "maid-home-access-keys-privacy",
+  "mode": "new",
+  "question": {
+    "en": "How should I manage keys, home access and privacy with a maid?",
+    "ar": "كيف أنظم المفاتيح ودخول المنزل والخصوصية مع العاملة المنزلية؟"
+  },
+  "gap": "No key/access record or reciprocal privacy workflow. No unsupported CCTV legal advice.",
+  "existingMatches": [
+    "domestic-worker-verification-checks"
+  ],
+  "en": {
+    "title": "Maid home access, keys and privacy: a household checklist",
+    "description": "Plan keys, arrival instructions, private areas and handovers with your maid. Use a practical access record that protects your household and the worker.",
+    "body": "Agree home access before the first visit: who opens the door, which areas the worker needs, how keys are recorded and who handles a problem. A simple written arrangement protects the household and the worker from misunderstandings. Access should follow the agreed work, rather than giving someone responsibility for every room, visitor or security decision in the home.\n\n## Match access to the actual household duties\n\nWalk through the route from the building entrance to the work areas. Explain reception registration, parking or lift arrangements, restricted rooms and the agreed arrival window. Identify one family contact and one alternative who can make decisions when the first person is unavailable. A person who answers the door should know which worker is expected and which service has been arranged.\n\nUse your [agreed household duties](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) as the starting point. A laundry assignment does not automatically require access to locked document storage. Childcare access needs its own parent instructions; a cleaner should not decide independently who may collect a child.\n\n## Keep a short key and access record\n\nThe following is an original household planning worksheet. Store the completed version privately; public messages and group chats are not suitable places for security codes.\n\n| Access item | What to record privately | Handover check |\n|---|---|---|\n| Physical key or access card | Item description, person receiving it and date | Count items together at issue and return |\n| Building or community entry | Approved arrival route and registration contact | Check the current building procedure |\n| Temporary digital access | Authorised user and agreed access period | Review access when the assignment changes |\n| Restricted room or cupboard | Clear boundary and who can authorise entry | Explain the boundary during orientation |\n| Lost key or failed entry | Family contact and service coordinator | Report the problem promptly; record the action taken |\n\nDo not attach the full home address to a key label. Avoid sharing a household account or master login when a more limited access arrangement is available. Keep personal banking, identity and medical records outside the work handover unless a particular task genuinely requires access and the responsible person has authorised it.\n\n## Make privacy expectations reciprocal and clear\n\nDiscuss family photographs, children's information, private correspondence and social-media boundaries respectfully. Explain that household information is for the agreed work, not for public sharing. The same courtesy applies to the worker's personal information and private belongings. Do not circulate copies of personal documents as a substitute for following the appropriate verification process.\n\nThe [UAE domestic-workers framework](https://uaelegislation.gov.ae/en/legislations/1593) addresses workplace privacy and employment duties. For cameras or recording systems, obtain advice for the actual setup before using them; this checklist does not provide permission to record private spaces. Keep surveillance decisions separate from ordinary key and entry instructions.\n\n## Use a calm arrival and departure handover\n\nAt arrival, identify the day's priorities, any occupied rooms and changes to access. At departure, review completed work, return arrangements and anything requiring a family decision. For recurring visits, update the written instructions instead of expecting each worker to infer a new routine from an old conversation.\n\n- Record keys or cards issued and returned.\n- Share only the information needed for the agreed tasks.\n- Report a missing item or access problem through the named contact.\n- Review permissions at the end of an assignment or after a change of worker.\n\nTreat a discrepancy as something to establish with records and a respectful discussion. Avoid public accusations, photographs of identity documents or posting a worker's personal details online.\n\n## Prepare your INAYA access brief\n\nBefore contacting INAYA, prepare the emirate, building entry process, task list and whether a family member will be at home. Read the [worker-verification guide](https://inayadomestic.ae/en/blog/domestic-worker-verification-checks/) for the separate question of identity and relevant experience. Use the [UAE Government's domestic-worker guide](https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) for the employment background.\n\n[Contact INAYA](https://inayadomestic.ae/en/contact/) to put the service scope and access arrangement together. Send operational instructions through the agreed contact channel and retain your own private copy of the handover record.",
+    "faqs": [
+      {
+        "question": "Should I give my maid a house key?",
+        "answer": "Choose an access arrangement that fits the agreed work and your household routine. If a key or card is issued, record the item, recipient, date and return arrangement privately."
+      },
+      {
+        "question": "What should I do if the worker cannot enter the building?",
+        "answer": "Use the named family contact and building registration process. Resolve entry before asking the worker to wait or change the service schedule, and record any revised arrangement with the coordinator."
+      },
+      {
+        "question": "Can I post identity documents in a family group to identify the worker?",
+        "answer": "Use the agreed verification channel and share only what the authorised people need. Keep personal documents out of public posts and unnecessary group circulation."
+      },
+      {
+        "question": "What happens to access when the service ends?",
+        "answer": "Check the key/card return record, review temporary permissions and remove access no longer needed. Keep this separate from any employment, payment or official cancellation process."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "A clear home-access handover",
+      "caption": "An original household planning sequence, to adapt to the agreed service and building procedure.",
+      "items": [
+        {
+          "label": "Define",
+          "detail": "Name the work areas, restrictions and arrival contact."
+        },
+        {
+          "label": "Record",
+          "detail": "Log the key, card or limited access arrangement privately."
+        },
+        {
+          "label": "Handover",
+          "detail": "Review access changes at arrival and departure."
+        },
+        {
+          "label": "Close",
+          "detail": "Check returns and review permissions when the assignment ends."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "title": "دخول العاملة المنزلية والمفاتيح والخصوصية: قائمة عملية للأسرة",
+    "description": "نظم دخول العاملة المنزلية وتسليم المفاتيح وحدود الخصوصية والتسليم اليومي باستخدام سجل واضح يحمي الأسرة والعاملة ويقلل سوء الفهم.",
+    "body": "اتفق على دخول المنزل قبل الزيارة الأولى: من يفتح الباب، وما الأماكن اللازمة للعمل، وكيف تسجل المفاتيح، ومن يتولى حل مشكلة الدخول. يحمي الاتفاق المكتوب الأسرة والعاملة من سوء الفهم. وترتبط صلاحية الدخول بالمهام المتفق عليها، ولا تعني تكليف العاملة بإدارة جميع الغرف والزوار والقرارات الأمنية في المنزل.\n\n## اربط الدخول بالمهام المنزلية الفعلية\n\nاشرح المسار من مدخل المبنى إلى أماكن العمل، وإجراءات الاستقبال والمصعد وموقف المركبة والغرف التي لا تدخل ضمن الخدمة ووقت الوصول المتفق عليه. حدد شخصاً من الأسرة للتواصل وآخر بديلاً يستطيع اتخاذ القرار عند غيابه. ويعرف من يستقبل العاملة هوية الشخص المتوقع ونوع الخدمة التي جرى ترتيبها.\n\nابدأ من [قائمة المهام المنزلية المتفق عليها](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/). فمهمة الغسيل لا تستلزم تلقائياً الدخول إلى خزانة المستندات المقفلة. كما أن رعاية الأطفال تحتاج إلى تعليمات الوالدين الخاصة؛ ولا تتخذ عاملة التنظيف من تلقاء نفسها قرار تسليم طفل لأي شخص.\n\n## احتفظ بسجل مختصر للمفاتيح والدخول\n\nالجدول التالي نموذج تنظيمي من إعداد عناية لتكييفه مع منزلك. احفظ النسخة المكتملة بصورة خاصة، ولا تضع رموز الدخول في منشورات عامة أو محادثات جماعية واسعة.\n\n| وسيلة الدخول | ما يسجل بصورة خاصة | إجراء التسليم |\n|---|---|---|\n| مفتاح أو بطاقة دخول | وصف القطعة واسم المستلم وتاريخ التسليم | عد القطع معاً عند التسليم والإعادة |\n| مدخل المبنى أو المجمع | المسار المعتمد وجهة التسجيل | راجع إجراء المبنى الحالي |\n| صلاحية دخول رقمية مؤقتة | المستخدم المصرح له والفترة المتفق عليها | راجع الصلاحية عند تغير المهمة |\n| غرفة أو خزانة خاصة | الحد الواضح والشخص الذي يأذن بالدخول | اشرح الحدود أثناء التعريف بالمنزل |\n| مفتاح مفقود أو تعذر الدخول | مسؤول الأسرة ومنسق الخدمة | أبلغ عن المشكلة وسجل الإجراء المتخذ |\n\nلا تضع عنوان المنزل الكامل على ملصق المفتاح. وتجنب مشاركة حساب الأسرة الرئيسي عندما تتوفر وسيلة دخول محدودة تناسب المهمة. أبعد المستندات المصرفية والهوية والسجلات الطبية عن ملف التعليمات اليومية، إلا عندما تستلزم مهمة محددة الاطلاع عليها ويأذن المسؤول بذلك.\n\n## اجعل توقعات الخصوصية واضحة ومتبادلة\n\nناقش باحترام صور الأسرة ومعلومات الأطفال والمراسلات الخاصة وحدود استخدام وسائل التواصل. وضح أن المعلومات المنزلية تستخدم لإنجاز العمل المتفق عليه ولا تنشر للعامة. ويسري الاحترام نفسه على معلومات العاملة الشخصية ومقتنياتها الخاصة. لا تحول تداول نسخ المستندات إلى بديل عن اتباع مسار التحقق المناسب.\n\nيتناول [الإطار التشريعي للعمالة المساعدة](https://uaelegislation.gov.ae/ar/legislations/1593) خصوصية مكان العمل والواجبات المرتبطة بالوظيفة. أما الكاميرات وأنظمة التسجيل، فتحتاج إلى مراجعة الترتيب الفعلي والحصول على الإرشاد المناسب قبل استخدامها؛ وهذه القائمة لا تمنح إذناً بتسجيل الأماكن الخاصة. افصل قرارات التسجيل عن تعليمات المفاتيح والدخول العادية.\n\n## نظم الاستلام والتسليم بهدوء\n\nعند الوصول، اشرح أولويات اليوم والغرف المشغولة وأي تغيير في الدخول. وعند المغادرة، راجع الأعمال المنجزة وترتيب إعادة الأدوات والنقاط التي تحتاج إلى قرار من الأسرة. وفي الزيارات المتكررة، عدل التعليمات المكتوبة بدلاً من توقع استنتاج روتين جديد من محادثة قديمة.\n\n- سجل المفاتيح أو البطاقات المسلمة والمعادة.\n- شارك المعلومات اللازمة للمهام فقط.\n- ارفع مشكلة الدخول أو فقدان قطعة إلى مسؤول التواصل المحدد.\n- راجع الصلاحيات عند انتهاء المهمة أو تغير العاملة.\n\nإذا ظهر اختلاف في السجل، فابدأ بالتحقق من الوقائع ومناقشتها باحترام. تجنب الاتهامات العامة ونشر صور الهوية أو المعلومات الشخصية على الإنترنت.\n\n## جهز ملخص الدخول لاستفسارك لدى عناية\n\nجهز الإمارة وإجراء دخول المبنى وقائمة المهام ووجود أحد أفراد الأسرة أثناء الزيارة. وراجع [دليل التحقق من بيانات العاملة](https://inayadomestic.ae/ar/blog/domestic-worker-verification-checks/) لمسألة الهوية والخبرة ذات الصلة، و[دليل حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers) لخلفية التوظيف.\n\n[تواصل مع عناية](https://inayadomestic.ae/ar/contact/) لترتيب نطاق الخدمة وآلية الدخول. أرسل التعليمات التشغيلية عبر قناة التواصل المتفق عليها، واحتفظ بنسختك الخاصة من سجل التسليم.",
+    "faqs": [
+      {
+        "question": "هل أسلم العاملة مفتاح المنزل؟",
+        "answer": "اختر وسيلة دخول تناسب المهام وروتين الأسرة. وعند تسليم مفتاح أو بطاقة، سجل القطعة والمستلم والتاريخ وطريقة الإعادة بصورة خاصة."
+      },
+      {
+        "question": "ماذا أفعل إذا تعذر دخول العاملة إلى المبنى؟",
+        "answer": "ارجع إلى مسؤول الأسرة وإجراء التسجيل في المبنى. عالج الدخول قبل تغيير الجدول أو مطالبة العاملة بالانتظار، وسجل أي ترتيب معدل مع منسق الخدمة."
+      },
+      {
+        "question": "هل أنشر صورة الهوية في مجموعة الأسرة للتعريف بالعاملة؟",
+        "answer": "استخدم قناة التحقق المتفق عليها، وشارك القدر اللازم فقط مع الأشخاص المخولين. أبعد المستندات الشخصية عن المنشورات العامة والتداول الجماعي غير الضروري."
+      },
+      {
+        "question": "كيف أتعامل مع صلاحيات الدخول عند انتهاء الخدمة؟",
+        "answer": "راجع سجل إعادة المفاتيح والبطاقات والصلاحيات المؤقتة، وأوقف الدخول الذي انتهت الحاجة إليه. افصل ذلك عن أي إجراء خاص بالتوظيف أو السداد أو الإلغاء الرسمي."
+      }
+    ],
+    "visual": {
+      "kind": "steps",
+      "title": "تسليم واضح لصلاحية دخول المنزل",
+      "caption": "تسلسل تنظيمي من إعداد عناية يكيف مع نطاق الخدمة وإجراءات المبنى.",
+      "items": [
+        {
+          "label": "حدد",
+          "detail": "أماكن العمل وحدود الدخول ومسؤول الاستقبال."
+        },
+        {
+          "label": "سجل",
+          "detail": "المفتاح أو البطاقة أو صلاحية الدخول المحدودة بصورة خاصة."
+        },
+        {
+          "label": "راجع",
+          "detail": "تغييرات الدخول عند الوصول والمغادرة."
+        },
+        {
+          "label": "أغلق",
+          "detail": "سجل الإعادة وراجع الصلاحيات عند انتهاء المهمة."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1593",
+      "supports": "Domestic-worker duties include respecting workplace privacy; the operational key worksheet is original editorial guidance."
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+      "supports": "Official background on written work arrangements and domestic-worker obligations."
+    }
+  ],
+  "searchEvidence": [
+    {
+      "query": "maid keys privacy home access checklist domestic worker Dubai",
+      "url": "https://smartluck.ae/blogs/news/smart-lock-maid-driver-access-dubai"
+    },
+    {
+      "query": "nanny home keys privacy household Dubai",
+      "url": "https://vicekeeper.com/en/blog/security-tips-when-hiring-a-nanny"
+    }
+  ]
+}
