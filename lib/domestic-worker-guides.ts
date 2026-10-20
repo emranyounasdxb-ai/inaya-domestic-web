@@ -36,7 +36,7 @@ export const guideAuthor = 'INAYA Domestic Workers Editorial Team';
 export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   {
     "slug": "uae-domestic-worker-hiring-process",
-    "published": "2026-10-01",
+    "published": "2026-10-13",
     "updated": "2026-10-19",
     "en": {
       "title": "Questions to ask before hiring a domestic worker in the UAE",
@@ -264,7 +264,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   },
   {
     "slug": "domestic-worker-package-pricing-factors",
-    "published": "2026-10-01",
+    "published": "2026-10-14",
     "updated": "2026-10-19",
     "en": {
       "title": "Domestic worker costs: package prices, wages and fees",
@@ -638,7 +638,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   },
   {
     "slug": "documents-for-domestic-worker-enquiry",
-    "published": "2026-10-01",
+    "published": "2026-10-12",
     "updated": "2026-10-12",
     "en": {
       "title": "Documents to prepare for a domestic worker enquiry",
@@ -816,7 +816,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   },
   {
     "slug": "live-in-live-out-part-time-maid-uae",
-    "published": "2026-10-06",
+    "published": "2026-10-08",
     "updated": "2026-10-19",
     "en": {
       "title": "Live-in, live-out or part-time maid: comparing arrangements",
@@ -1126,7 +1126,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   },
   {
     "slug": "monthly-maid-package-inclusions-checklist",
-    "published": "2026-10-06",
+    "published": "2026-10-09",
     "updated": "2026-10-19",
     "en": {
       "title": "What is included in a monthly maid package?",
@@ -1550,7 +1550,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   },
   {
     "slug": "maid-nanny-babysitter-differences",
-    "published": "2026-10-06",
+    "published": "2026-10-10",
     "updated": "2026-10-19",
     "en": {
       "title": "Maid, nanny or babysitter: choosing the right role",
@@ -1754,7 +1754,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   },
   {
     "slug": "domestic-worker-visa-sponsorship-support",
-    "published": "2026-10-06",
+    "published": "2026-10-11",
     "updated": "2026-10-12",
     "en": {
       "title": "Preparing a domestic worker visa or sponsorship case",

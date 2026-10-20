@@ -1,5 +1,6 @@
 """Compile the audited 20-question manuscript series without rewriting old copy."""
 from pathlib import Path
+from datetime import date, timedelta
 import hashlib
 import json
 import re
@@ -11,6 +12,11 @@ DATE = '2026-10-20'
 BASE = 'b7f236857a709677d712a955b0b6bada12d9e0f5'
 ORIGIN = 'https://inayadomestic.ae'
 LANGUAGES = ('en', 'ar')
+PUBLICATION_SCHEDULE = json.loads((ROOT / 'content/article-publication-schedule.json').read_text())
+assert len(PUBLICATION_SCHEDULE) == 44
+assert sorted(PUBLICATION_SCHEDULE.values()) == [
+    (date(2026, 9, 1) + timedelta(days=offset)).isoformat() for offset in range(44)
+], 'Publication dates must cover one topic per day from 1 September 2026'
 
 
 def baseline(path):
@@ -96,6 +102,9 @@ for draft in drafts:
     manifest.append(entry)
 
 assert len(articles) == 37 and len(metadata) == 37
+for article in articles + metadata:
+    article['published'] = PUBLICATION_SCHEDULE[article['slug']]
+    assert article['published'] <= article['updated'], f"{article['slug']}: publication must not follow its unchanged Updated date"
 (ROOT / 'lib/published-article-content.ts').write_text(content_source.split(content_declaration)[0] + content_declaration + json.dumps(articles, ensure_ascii=False, indent=2) + ';\n')
 (ROOT / 'lib/published-article-metadata.ts').write_text(metadata_source.split(metadata_declaration)[0] + metadata_declaration + json.dumps(metadata, ensure_ascii=False, indent=2) + ';\n')
 visual_source = (ROOT / 'lib/customer-article-visuals.ts').read_text()
