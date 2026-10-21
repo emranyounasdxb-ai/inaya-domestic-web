@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,5 +37,41 @@ jobs:
         run: node node_modules/@playwright/test/cli.js test tests/e2e/core-page-clarity.spec.ts --grep 'six pricing cards'
       - name: Check customer article tables, visuals and translation before the full browser suite
         run: node node_modules/@playwright/test/cli.js test tests/e2e/customer-question-series.spec.ts
+  browser:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Install Chromium for browser regression
+        run: node node_modules/@playwright/test/cli.js install --with-deps chromium
       - name: Browser regression
-        run: node node_modules/@playwright/test/cli.js test
+        run: node node_modules/@playwright/test/cli.js test --shard=${{ matrix.shard }}/4
+      - name: Save browser diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-diagnostics-${{ matrix.shard }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  # Keep the existing required check: every shard and quality check must pass.
+  validate:
+    if: always()
+    needs: [quality, browser]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all checks
+        env:
+          QUALITY_RESULT: ${{ needs.quality.result }}
+          BROWSER_RESULT: ${{ needs.browser.result }}
+        run: test "$QUALITY_RESULT" = success && test "$BROWSER_RESULT" = success
