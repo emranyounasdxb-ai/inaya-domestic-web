@@ -13,7 +13,7 @@ await mkdir(out, { recursive: true });
 const issues = [];
 const assets = new Map();
 const external = new Set();
-const tags = (html, tag) => [...html.matchAll(new RegExp(`<${tag}\\b[^>]*>`, 'gi'))].map(m => attrs(m[0]));
+const tags = (html, tag) => [...html.matchAll(new RegExp(`<${tag}\\b[^>]*>`, 'gi'))].map(m => Object.fromEntries(Object.entries(attrs(m[0])).map(([key, value]) => [key.toLowerCase(), value])));
 async function request(url) {
   const response = await fetch(url, { signal: AbortSignal.timeout(25000), headers: { 'User-Agent': 'INAYA-owner-image-audit/1.0' } });
   if (new URL(response.url).origin !== origin) throw new Error(`Unexpected redirect: ${url}`);
@@ -61,6 +61,7 @@ const pages = await pool(urls, async (url, i) => {
     addAsset(img.src, url, 'img');
     for (const part of (img.srcset ?? '').split(',')) addAsset(part.trim().split(/\s+/)[0], url, 'srcset');
   }
+  for (const source of tags(body, 'source')) for (const part of (source.srcset ?? '').split(',')) addAsset(part.trim().split(/\s+/)[0], url, 'picture_srcset');
   const links = tags(html, 'link');
   const css = [];
   for (const link of links) {
