@@ -64,7 +64,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
     const floatingLabelClass = 'pointer-events-none absolute start-4 top-4 text-sm text-primary-900/75 transition-all peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent-700 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs';
 
     return (
-      <form aria-describedby={`${formId}-help`} onSubmit={handleSubmit} className="space-y-5">
+      <form data-clarity-mask="true" aria-describedby={`${formId}-help`} onSubmit={handleSubmit} className="space-y-5">
       <DeliveryFeedback error={delivery.error} />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
@@ -129,7 +129,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
   }
 
   return (
-    <form aria-describedby={`${formId}-help`} onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <form data-clarity-mask="true" aria-describedby={`${formId}-help`} onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       <DeliveryFeedback error={delivery.error} />
       <div>
         <label htmlFor={fieldId('name')} className="label">{t('name')} *</label>
