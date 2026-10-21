@@ -17,6 +17,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Audit all production and development dependencies
+        run: npm audit --audit-level=low
       - name: Dependency security and compatibility checks
         run: npm run test:dependencies
       - run: npm run lint
