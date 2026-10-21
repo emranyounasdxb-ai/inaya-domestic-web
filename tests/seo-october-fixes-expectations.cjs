@@ -2,7 +2,8 @@ const { approvedDeliverySource } = require('./form-delivery-expectations.cjs');
 const { approvedRemediation } = require('./seo-audit-remediation-expectations.cjs');
 const assert = require('node:assert/strict');
 
-// Exact reviewed corrections for 5 October; historical source guards still protect
+// Exact reviewed corrections for October, including 21 October image descriptions;
+// historical source guards still protect
 // every line outside these changes, including carousel behavior and all form fields.
 const patches = {
   "components/Navbar.tsx": [
@@ -38,6 +39,18 @@ const patches = {
     ]
   ],
   "components/HomeGoogleReviewsShowcase.tsx": [
+    [
+      "function ReviewAvatar({ name, photoUrl = '' }: { name: string; photoUrl?: string }) {",
+      "function ReviewAvatar({ name, photoUrl = '', locale }: { name: string; photoUrl?: string; locale: 'en' | 'ar' }) {"
+    ],
+    [
+      '<img src={photoUrl} alt="" loading="lazy"',
+      '<img src={photoUrl} alt={locale === \'ar\' ? `صورة الملف الشخصي على Google للمراجع ${name}` : `Google profile image for reviewer ${name}`} loading="lazy"'
+    ],
+    [
+      '<ReviewAvatar name={review.name} photoUrl={review.profilePhotoUrl} />',
+      '<ReviewAvatar name={review.name} photoUrl={review.profilePhotoUrl} locale={locale} />'
+    ],
     [
       "\nfunction Stars({ label }: { label: string }) {\n  return (\n    <span className=\"google-review-stars\" aria-label={label}>\n      <span aria-hidden=\"true\">★★★★★</span>\n    </span>\n  );",
       "\nfunction Stars({ label }: { label: string }) {\n  return (\n    <span className=\"google-review-stars\" role=\"img\" aria-label={label}>\n      <span aria-hidden=\"true\">★★★★★</span>\n    </span>\n  );"
