@@ -2,18 +2,24 @@
   "name": "inaya-domestic-web",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "postinstall": "node scripts/patch-braces.mjs",
+    "test:backend": "node scripts/test-backend.mjs",
+    "test:dependencies": "node --test tests/dependency-security.test.cjs",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
-    "@next/third-parties": "16.3.3",
-    "next": "16.3.3",
+    "@next/third-parties": "16.3.8",
+    "next": "16.3.8",
     "next-intl": "4.14.2",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -25,9 +31,17 @@
     "@types/react-dom": "19.2.7",
     "autoprefixer": "^10.4.19",
     "eslint": "9.39.5",
-    "eslint-config-next": "16.3.3",
+    "eslint-config-next": "16.3.8",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3"
+  },
+  "overrides": {
+    "brace-expansion@1": "1.1.21",
+    "brace-expansion@5": "5.0.12",
+    "braces": "3.0.3",
+    "postcss-selector-parser": "7.1.7",
+    "sharp": "0.35.5",
+    "source-map-js": "1.2.2"
   }
 }

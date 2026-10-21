@@ -102,5 +102,5 @@ test('page and CTA sources permit only the approved localized copy replacements'
 });
 
 test('PHP delivery validates, limits and deduplicates without sending real email', () => {
-  execFileSync('python3', ['tests/form-delivery-backend.py'], {stdio:'pipe'});
+  execFileSync(process.execPath, ['scripts/test-backend.mjs'], {stdio:'pipe'});
 });
