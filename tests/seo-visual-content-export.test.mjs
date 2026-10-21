@@ -69,6 +69,12 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     if (file === 'lib/service-content-briefs.ts' || file === 'lib/services.ts') before = corePageCopy.approvedCorePageCopy(file, before);
     before = octoberFixes.approvedSeoFixes(file, before);
     if (file === 'app/globals.css') {
+      // The dependency-removal migration replaces only the v3 compiler header.
+      // Keep the entire protected stylesheet below it byte-for-byte checked.
+      const originalHeader = '@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n';
+      assert.ok(before.startsWith(originalHeader), 'original Tailwind compiler header');
+      const migratedHeader = await readFile('tests/fixtures/tailwind-v4-prefix.css', 'utf8');
+      before = migratedHeader.replace(/\r\n/g, '\n') + before.slice(originalHeader.length);
       // Only the approved off-screen rendering block may extend the protected stylesheet.
       before += '\n/* Defer off-screen rendering; keep Heroes, accessible content and print intact. */\n@supports (content-visibility: auto) and (overflow-clip-margin: 200px) {\n  @media screen {\n    main section:not(:has(h1)) {\n      content-visibility: auto;\n      contain-intrinsic-block-size: auto 800px;\n      overflow-clip-margin: 200px;\n    }\n    main section:focus-within {\n      content-visibility: visible;\n    }\n  }\n}\n';
     }
