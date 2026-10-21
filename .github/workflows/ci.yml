@@ -17,6 +17,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Dependency security and compatibility checks
+        run: npm run test:dependencies
       - run: npm run lint
       - run: node node_modules/typescript/bin/tsc --noEmit --incremental false
       - name: PHP delivery syntax and isolated HTTP checks (no real email)
