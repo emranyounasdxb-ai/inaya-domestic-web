@@ -13,8 +13,11 @@ for (const locale of ['en', 'ar'] as const) {
     await page.locator('input[name="name"]').fill('Local validation');
     await page.locator('input[name="phone"]').fill('+971500000000');
     await page.getByRole('button', { name: locale === 'ar' ? 'إرسال الاستفسار' : 'Send Enquiry' }).click();
-    await expect(page.getByText(locale === 'ar' ? /تم إرسال استفسارك/ : /submitted to INAYA/)).toBeVisible();
-    await expect(page.getByText(locale === 'ar' ? /لا يؤكد هذا الإرسال حجزاً/ : /does not confirm a booking/)).toBeVisible();
+    const confirmation = page.getByRole('status');
+    await expect(confirmation).toBeVisible();
+    await expect(confirmation).toContainText('INAYA-QA-BOOKING');
+    await expect(confirmation).toContainText(locale === 'ar' ? /تم إرسال استفسارك/ : /submitted to INAYA/);
+    await expect(confirmation).toContainText(locale === 'ar' ? /لا يؤكد هذا الإرسال حجزاً/ : /does not confirm a booking/);
   });
   test(`${locale}: enquiry, pricing and replacement answers are localized and linked`, async ({ page }) => {
     for (const route of ['booking', 'pricing', 'refund-policy']) {
