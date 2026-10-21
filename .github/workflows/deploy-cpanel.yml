@@ -42,6 +42,9 @@ jobs:
       - name: Test IndexNow notification selection
         run: node --test tests/indexnow-notify.test.mjs
 
+      - name: Verify dependency security mitigation
+        run: npm run test:dependencies
+
       - name: Prepare static export
         run: |
           cp next.config.cpanel.js next.config.js
@@ -58,7 +61,7 @@ jobs:
 
       - name: Optimize exported images
         run: |
-          npm install --no-save sharp
+          node -e "require('sharp')"
           node <<'NODE'
           const fs = require('fs/promises');
           const path = require('path');
