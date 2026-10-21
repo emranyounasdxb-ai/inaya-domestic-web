@@ -37,11 +37,18 @@ export function pageStructuredData(locale: string, route: string) {
       '@type': 'WebPage', '@id': `${url}#webpage`, url,
       name: page.name, description: page.description, inLanguage: locale,
       isPartOf: { '@id': websiteId }, about: { '@id': organizationId },
+      ...(page.image ? { primaryImageOfPage: { '@id': `${url}#primaryimage` } } : {}),
       ...(route ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
       ...(page.service ? { mainEntity: { '@id': `${url}#service` } } : {}),
       ...(route.startsWith('blog/') ? { mainEntity: { '@id': `${url}#article` } } : {})
     }
   ];
+  if (page.image) graph.push({
+    '@type': 'ImageObject', '@id': `${url}#primaryimage`,
+    contentUrl: `${siteConfig.url}${page.image}`,
+    caption: page.imageAlt ?? page.name, inLanguage: locale,
+    representativeOfPage: true
+  });
   if (route) graph.push({
     '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`,
     itemListElement: pageBreadcrumbs(locale, route).map((crumb, index) => ({
@@ -52,6 +59,7 @@ export function pageStructuredData(locale: string, route: string) {
     '@type': 'Service', '@id': `${url}#service`, url,
     name: page.service.name, serviceType: page.service.name, description: page.service.description,
     provider: { '@id': organizationId }, mainEntityOfPage: { '@id': `${url}#webpage` },
+    ...(page.image ? { image: { '@id': `${url}#primaryimage` } } : {}),
     ...(page.service.area ? { areaServed: { '@type': 'AdministrativeArea', name: page.service.area } } : {})
   });
   const guide = route.startsWith('blog/') ? getDomesticWorkerGuide(route.slice('blog/'.length)) : undefined;
