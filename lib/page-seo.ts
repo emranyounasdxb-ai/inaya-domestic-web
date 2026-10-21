@@ -12,6 +12,7 @@ import { getTrustSupportPage } from './trust-support-pages';
 import { getDomesticWorkerGuide } from './domestic-worker-guides';
 import { getBlogImage } from './blog-images';
 import { serviceImageAlt } from './image-alt';
+import { articleSearchTitles } from './article-search-titles';
 
 type Localized = Record<Lang, string>;
 // These are the actual visible Heroes, not a generic logo on text-only pages.
@@ -156,7 +157,7 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
     const image = getBlogImage(slug);
     if (guide) return {
       name: guide[lang].title,
-      title: guide[lang].title,
+      title: articleSearchTitles[slug]?.[lang] ?? guide[lang].title,
       description: guide[lang].description,
       faqs: customerArticleFaqs[slug]?.[lang],
       image: image?.src,
