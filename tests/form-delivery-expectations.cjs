@@ -1,6 +1,12 @@
 const assert = require('node:assert/strict');
 // Exact owner-authorized form delivery copy; all other snapshot guards remain.
 const patches = {
+  "tests/fixtures/seo-phase03-baseline.json": [
+    ["Prepare household service requirements with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your enquiry.", "Send your household service enquiry to INAYA for review. Availability, written terms and booking require confirmation by the team."],
+    ["جهز متطلبات الخدمة المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة استفسارك.", "أرسل استفسارك عن الخدمة المنزلية إلى عناية للمراجعة. يتطلب التوفر والشروط المكتوبة والحجز تأكيداً من الفريق."],
+    ["Prepare a domestic-work application with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your experience.", "Send a domestic-work career enquiry to INAYA for review. Share your experience and preferred role; submission does not confirm a job or interview."],
+    ["جهز طلباً للعمل في الخدمات المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة خبرتك.", "أرسل استفسار عمل في الخدمات المنزلية إلى عناية للمراجعة. شارك خبرتك والدور المفضل؛ ولا يؤكد الإرسال وظيفة أو مقابلة."]
+  ],
   "app/[locale]/contact/page.tsx": [
     [
       "'راجع بيانات الاستفسار' : 'Check Enquiry Details'",

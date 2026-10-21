@@ -50,6 +50,10 @@ try:
     expect('Missing required fields are rejected', 422, missing)
     bad_email = dict(payload, fields=dict(payload['fields'], email='not-an-email'))
     expect('Invalid email is rejected', 422, bad_email)
+    assert request(bad_email)[1]['field'] == 'email'
+    stale = dict(payload, startedAt=int(time.time() * 1000) - 172800000)
+    expired = expect('Old tab receives a recoverable server timestamp', 422, stale)
+    assert expired['code'] == 'form_time' and isinstance(expired['serverTime'], int)
     rate_dir = root / 'tmp/inaya-website-forms'
     rate_dir.mkdir(parents=True, exist_ok=True)
     rate_path = rate_dir / ('rate-' + hashlib.sha256(b'127.0.0.1').hexdigest() + '.json')
@@ -64,7 +68,22 @@ try:
     expect('Identifier cannot be reused for different data', 409, modified)
     assert len(capture.read_text().split('END-INAYA-MAIL')) - 1 == 1, 'duplicate must not send a second mail'
     assert 'info@inayadomestic.ae' in capture.read_text()
-    result = {'tests': results, 'passed': len(results), 'mailTransportAccepted': True, 'inboxDeliveryConfirmed': False, 'reference': accepted['reference'], 'expectedRealMessages': 1, 'privateTestServer': '127.0.0.1:18473'}
+    recovered = dict(stale, requestId=str(uuid.uuid4()), startedAt=expired['serverTime'] - 2000,
+        fields=dict(payload['fields'], phone='(050) 000-0000'))
+    expect('Refreshed timestamp and parenthesized phone are accepted', 200, recovered)
+    blocked = dict(payload, requestId=str(uuid.uuid4()))
+    blocked_path = rate_dir / ('request-' + hashlib.sha256(blocked['requestId'].encode()).hexdigest() + '.json')
+    Path(str(blocked_path) + '.tmp').mkdir()
+    expect('Reservation write failure rejects before mail', 503, blocked)
+    assert capture.read_text().count('END-INAYA-MAIL') == 2
+    Path(str(blocked_path) + '.tmp').rmdir()
+    # Simulate quota/storage failure after transport acceptance, before final receipt.
+    sendmail.write_text(sendmail.read_text() + 'mkdir "' + str(blocked_path) + '.tmp"\n')
+    expect('Final receipt write failure is not reported as success', 503, blocked)
+    expect('Uncertain delivery is never mailed again on retry', 503, blocked)
+    assert capture.read_text().count('END-INAYA-MAIL') == 3
+    assert json.loads(blocked_path.read_text())['ok'] is False
+    result = {'tests': results, 'passed': len(results), 'mailTransportAccepted': True, 'inboxDeliveryConfirmed': False, 'reference': accepted['reference'], 'expectedRealMessages': 3, 'privateTestServer': '127.0.0.1:18473'}
     print('BACKEND_TESTS_PASS', len(results), 'MAIL_REFERENCE', accepted['reference'], flush=True)
 finally:
     process.terminate()
