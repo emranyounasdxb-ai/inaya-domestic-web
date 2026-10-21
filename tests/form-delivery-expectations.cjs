@@ -276,6 +276,12 @@ const messages = {
 };
 function approvedDeliverySource(file, source) {
  for (const [before, after] of patches[file] ?? []) {
+  // Later checkpoints already apply these four reviewed metadata descriptions
+  // through approvedDescriptions; earlier checkpoints need the transition here.
+  if (file === 'tests/fixtures/seo-phase03-baseline.json' && !source.includes(before)) {
+   assert.equal(source.split(after).length, 2, 'exactly one approved form description');
+   continue;
+  }
   assert.ok(source.includes(before), file + ': reviewed delivery copy anchor');
   source = source.replaceAll(before, after);
  }
