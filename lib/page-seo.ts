@@ -11,8 +11,24 @@ import { getCountrySourcePage } from './country-source-pages';
 import { getTrustSupportPage } from './trust-support-pages';
 import { getDomesticWorkerGuide } from './domestic-worker-guides';
 import { getBlogImage } from './blog-images';
+import { serviceImageAlt } from './image-alt';
 
 type Localized = Record<Lang, string>;
+// These are the actual visible Heroes, not a generic logo on text-only pages.
+const corePageImages: Record<string, { src: string; alt: Localized }> = {
+  '': {
+    src: '/images/home/inaya-home-hero-family.webp',
+    alt: { en: 'Illustration of a domestic worker beside a table with the Dubai skyline in the background', ar: 'صورة توضيحية لعاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' }
+  },
+  about: {
+    src: '/images/about/about-hero-domestic-service.webp',
+    alt: { en: 'Illustration of a domestic worker serving tea to a family in a living room', ar: 'صورة توضيحية لعاملة منزلية تقدم الشاي لأسرة في غرفة المعيشة' }
+  },
+  services: {
+    src: '/images/home/home-concierge-support.webp',
+    alt: { en: 'Illustration of a domestic worker arranging sofa cushions near a mother and child', ar: 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' }
+  }
+};
 // Concise summaries of existing roles; individual duties and availability are confirmed per enquiry.
 const englishDescriptionRefinements: Record<string, string> = {
   'services/live-in-maid': 'Discuss live-in maid services in the UAE with INAYA. Review household duties, accommodation and work arrangements before choosing a profile.',
@@ -129,7 +145,10 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
 export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
   const entry = pages[route];
-  if (entry) return { name: entry.name[lang], title: entry.name[lang], description: entry.description[lang] };
+  if (entry) return {
+    name: entry.name[lang], title: entry.name[lang], description: entry.description[lang],
+    ...(corePageImages[route] ? { image: corePageImages[route].src, imageAlt: corePageImages[route].alt[lang] } : {})
+  };
 
   if (route.startsWith('blog/')) {
     const slug = route.slice('blog/'.length);
@@ -161,6 +180,7 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
     if (service && copy) return {
       name: service.name[lang], title: copy.title, description: lang === 'en' ? englishDescriptionRefinements[route] ?? copy.meta : copy.meta,
       image: getServiceImage(slug),
+      imageAlt: serviceImageAlt(lang, slug),
       service: { name: service.name[lang], description: copy.lead },
       faqs: copy.faqs.map((faq) => ({ question: faq.title, answer: faq.text }))
     };
