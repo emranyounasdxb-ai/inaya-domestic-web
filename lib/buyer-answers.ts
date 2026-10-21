@@ -5,7 +5,7 @@ type Pair = { en: string; ar: string };
 export const buyerAnswers: Record<string, { question: Pair; answer: Pair; detailRoute: string }> = {
   booking: {
     question: { en: 'Does sending this request confirm a booking?', ar: 'هل إرسال هذا الطلب يؤكد الحجز؟' },
-    answer: { en: 'No. This form checks details locally and does not send a request. Contact INAYA by phone or WhatsApp with your role, emirate, duties and preferred timing. Review candidate availability, costs, documents and the agreement before confirming a service.', ar: 'لا. يراجع هذا النموذج البيانات محلياً ولا يرسل طلباً. تواصل مع عناية بالهاتف أو واتساب وشارك الدور والإمارة والمهام والتوقيت المفضل. راجع توفر المرشحات والتكاليف والمستندات والاتفاق قبل تأكيد الخدمة.' }, detailRoute: 'how-it-works'
+    answer: { en: 'No. Submitting this form sends an enquiry to INAYA for review; it does not confirm a booking. Contact INAYA by phone or WhatsApp with your role, emirate, duties and preferred timing. Review candidate availability, costs, documents and the agreement before confirming a service.', ar: 'لا. يرسل هذا النموذج استفساراً إلى عناية للمراجعة؛ ولا يؤكد حجزاً. تواصل مع عناية بالهاتف أو واتساب وشارك الدور والإمارة والمهام والتوقيت المفضل. راجع توفر المرشحات والتكاليف والمستندات والاتفاق قبل تأكيد الخدمة.' }, detailRoute: 'how-it-works'
   },
   'how-it-works': {
     question: { en: 'What happens after I make a service enquiry?', ar: 'ماذا يحدث بعد الاستفسار عن الخدمة؟' },

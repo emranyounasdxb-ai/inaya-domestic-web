@@ -1,3 +1,4 @@
+const { approvedDeliverySource } = require('./form-delivery-expectations.cjs');
 const { approvedRemediation } = require('./seo-audit-remediation-expectations.cjs');
 const assert = require('node:assert/strict');
 
@@ -131,7 +132,7 @@ function approvedSeoFixes(file, source) {
     assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed consent interaction anchor`);
     source = source.replace(before, after);
   }
-  return approvedManagedPackages(file, source);
+  return approvedDeliverySource(file, approvedManagedPackages(file, source));
 }
 
 module.exports = { approvedSeoFixes };

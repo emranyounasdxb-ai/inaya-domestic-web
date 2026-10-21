@@ -74,7 +74,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "heading": "4. Keep a clear record after confirmation",
           "paragraphs": [
             "Keep copies of the confirmed agreement, payment details and the contact channel for follow-up. If a detail changes, ask for the revised term in writing. Raise questions about the agreed duties or service promptly so both sides can refer to the same record.",
-            "For an INAYA enquiry, the website’s booking form prepares details locally and does not send an application. Contact the team by phone or WhatsApp to discuss the request and confirm the next step."
+            "For an INAYA enquiry, the website’s booking form sends an enquiry to the INAYA team; it does not submit an official application. Contact the team by phone or WhatsApp to discuss the request and confirm the next step."
           ]
         },
         {
@@ -177,7 +177,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "heading": "٤. احتفظ بسجل واضح بعد التأكيد",
           "paragraphs": [
             "احتفظ بنسخ من الاتفاق المؤكد وتفاصيل الدفع ووسيلة التواصل للمتابعة. إذا تغير أي تفصيل، اطلب توثيق الشرط المعدل كتابةً. اطرح الأسئلة حول المهام أو الخدمة المتفق عليها مبكراً حتى يرجع الطرفان إلى السجل نفسه.",
-            "في موقع عناية، يساعد نموذج الحجز على تجهيز البيانات محلياً ولا يرسل طلباً. تواصل مع الفريق هاتفياً أو عبر واتساب لمناقشة احتياجك وتأكيد الخطوة التالية."
+            "في موقع عناية، يرسل نموذج الحجز استفساراً إلى فريق عناية؛ ولا يقدم طلباً رسمياً. تواصل مع الفريق هاتفياً أو عبر واتساب لمناقشة احتياجك وتأكيد الخطوة التالية."
           ]
         },
         {
@@ -675,7 +675,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           "heading": "Use INAYA’s enquiry channels appropriately",
           "paragraphs": [
-            "The booking form on this website helps you organise details locally; it does not submit an application or upload documents. Contact the INAYA team by phone or WhatsApp for the next step and ask how sensitive documents should be shared if they become necessary.",
+            "The booking form on this website sends your enquiry details to the INAYA team; it does not submit an official application or upload documents. Contact the INAYA team by phone or WhatsApp for the next step and ask how sensitive documents should be shared if they become necessary.",
             "If you are unsure whether a document is required, ask before sending it. The current official MOHRE service instructions should guide the final application checklist."
           ]
         },
@@ -753,7 +753,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           "heading": "استخدم قنوات استفسار عناية بالشكل المناسب",
           "paragraphs": [
-            "يساعدك نموذج الحجز في هذا الموقع على تنظيم البيانات محلياً؛ ولا يرسل طلباً أو يرفع مستندات. تواصل مع فريق عناية هاتفياً أو عبر واتساب لمعرفة الخطوة التالية، واسأل عن طريقة مشاركة المستندات الحساسة عند الحاجة إليها.",
+            "يرسل نموذج الحجز في هذا الموقع بيانات استفسارك إلى فريق عناية؛ ولا يقدم طلباً رسمياً أو يرفع مستندات. تواصل مع فريق عناية هاتفياً أو عبر واتساب لمعرفة الخطوة التالية، واسأل عن طريقة مشاركة المستندات الحساسة عند الحاجة إليها.",
             "إذا لم تتأكد من ضرورة وثيقة معينة، فاسأل قبل إرسالها. ينبغي أن توجه تعليمات خدمة الوزارة الحالية القائمة النهائية للطلب."
           ]
         },
@@ -873,7 +873,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "heading": "Obtain the written terms before deciding",
           "paragraphs": [
             "INAYA’s published contract plans are AED 120 for 4 hours, AED 200 for 8 hours, AED 1,120 for 7 days and AED 3,500 for 30 days. A six-month contract costs AED 3,250 per month; a twelve-month contract costs AED 3,000 per month. The published rates are the same for live-in and live-out arrangements. Confirm the selected role, schedule, responsibilities and final written quotation before booking. The published plan prices are the same for live-in and live-out service. Record accommodation, meals, transport, cleaning supplies, equipment and applicable tax in the written scope and quotation; equal plan prices do not establish that every related expense is included. The 4-hour and 8-hour plans specify visit duration. Agree working hours, weekly rest and additional duties for longer plans; a 7-day plan does not mean seven consecutive working days.",
-            "Call or WhatsApp INAYA with your preferred arrangement and questions. Request the agreed scope, schedule, payment basis and relevant support policy in writing. Preparing details in the website enquiry form does not send them or confirm an appointment."
+            "Call or WhatsApp INAYA with your preferred arrangement and questions. Request the agreed scope, schedule, payment basis and relevant support policy in writing. Submitting the website enquiry form sends your details to INAYA for review; it does not confirm an appointment."
           ]
         },
         {
@@ -1017,7 +1017,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "heading": "اطلب الشروط مكتوبة قبل الاختيار",
           "paragraphs": [
             "باقات عناية المنشورة هي 120 درهماً لأربع ساعات، و200 درهم لثماني ساعات، و1,120 درهماً لسبعة أيام، و3,500 درهم لثلاثين يوماً. تبلغ تكلفة عقد الستة أشهر 3,250 درهماً شهرياً، وعقد الاثني عشر شهراً 3,000 درهم شهرياً. الأسعار المنشورة واحدة للخدمة المقيمة وغير المقيمة. أكد الدور المختار والجدول والمسؤوليات وعرض السعر النهائي المكتوب قبل الحجز. أسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة. سجل السكن والطعام والنقل ومواد التنظيف والمعدات والضريبة المنطبقة في النطاق وعرض السعر المكتوبين؛ فتساوي سعر الباقة لا يثبت شمول كل نفقة مرتبطة بها. تحدد باقتا الأربع والثماني ساعات مدة الزيارة. اتفق على ساعات العمل والراحة الأسبوعية والمهام الإضافية للباقات الأطول؛ ولا تعني باقة السبعة أيام العمل سبعة أيام متتالية.",
-            "تواصل مع عناية هاتفياً أو عبر واتساب لشرح الترتيب المفضل وأسئلتك. اطلب النطاق والجدول وأساس الدفع وسياسة الدعم ذات الصلة كتابةً. تجهيز التفاصيل في نموذج الاستفسار لا يرسلها إلى الفريق ولا يؤكد موعداً."
+            "تواصل مع عناية هاتفياً أو عبر واتساب لشرح الترتيب المفضل وأسئلتك. اطلب النطاق والجدول وأساس الدفع وسياسة الدعم ذات الصلة كتابةً. يرسل إرسال نموذج الاستفسار بياناتك إلى عناية للمراجعة؛ ولا يؤكد موعداً."
           ]
         },
         {
@@ -1607,7 +1607,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "heading": "Prepare a focused enquiry to INAYA",
           "paragraphs": [
             "Share your emirate, preferred dates, main responsibilities and any experience preferences. INAYA receives UAE enquiries from its single Ajman office subject to service availability. Ask the team to confirm the proposed individual, duties, schedule and terms before making a decision.",
-            "Use the maid, nanny or babysitting service page for the appropriate enquiry. Call or WhatsApp to discuss availability and an appointment. The website form prepares information locally and does not transmit a request, confirm an appointment or guarantee a suitable profile."
+            "Use the maid, nanny or babysitting service page for the appropriate enquiry. Call or WhatsApp to discuss availability and an appointment. Submitting the website form sends an enquiry to INAYA for review; it does not confirm an appointment or guarantee a suitable profile."
           ]
         },
         {
@@ -1698,7 +1698,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "heading": "جهز استفساراً واضحاً لعناية",
           "paragraphs": [
             "شارك إمارتك والتواريخ المفضلة والمسؤوليات الأساسية وتفضيلات الخبرة. تستقبل عناية استفسارات من الإمارات عبر مكتبها الوحيد في عجمان بحسب التوفر. اطلب تأكيد الشخص المقترح والمهام والجدول والشروط قبل الاختيار.",
-            "استخدم صفحة الخدمة المناسبة للعاملة أو المربية أو جليسة الأطفال، وتواصل هاتفياً أو عبر واتساب لمناقشة التوفر والموعد. يجهز نموذج الموقع البيانات محلياً فقط، ولا يرسل طلباً أو يؤكد موعداً أو يضمن ملفاً مناسباً."
+            "استخدم صفحة الخدمة المناسبة للعاملة أو المربية أو جليسة الأطفال، وتواصل هاتفياً أو عبر واتساب لمناقشة التوفر والموعد. يرسل إرسال نموذج الموقع استفساراً إلى عناية للمراجعة؛ ولا يؤكد موعداً أو يضمن ملفاً مناسباً."
           ]
         },
         {

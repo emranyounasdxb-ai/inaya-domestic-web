@@ -65,7 +65,7 @@
   },
   "booking": {
     "title": "Book a Service",
-    "subtitle": "Prepare your details here, then contact the office by phone or WhatsApp to send your enquiry.",
+    "subtitle": "Send your requirements to INAYA using this form. The team will contact you to discuss next steps.",
     "name": "Full Name",
     "phone": "Phone Number",
     "email": "Email Address",
@@ -79,8 +79,8 @@
     "date": "Preferred Date",
     "area": "Your Area / Emirate",
     "message": "Additional Details",
-    "submit": "Check Enquiry Details",
-    "success": "Your details were checked on this page only, not sent to the office. Please contact INAYA by phone or WhatsApp to share your request. No booking is confirmed.",
+    "submit": "Send Enquiry",
+    "success": "Your enquiry has been submitted to INAYA for review. This does not confirm a booking, job or interview.",
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email",
     "invalidPhone": "Please enter a valid phone number",
@@ -99,7 +99,7 @@
     "phone": "Phone Number",
     "message": "Your Message",
     "submit": "Send Message",
-    "success": "Your details were checked on this page only. This form has not sent a message. Please contact INAYA by phone or WhatsApp to share your enquiry.",
+    "success": "Your enquiry has been submitted to INAYA for review. This does not confirm a booking, job or interview.",
     "addressTitle": "Address",
     "address": "Ajman, United Arab Emirates",
     "phoneTitle": "Phone",
@@ -167,8 +167,8 @@
     "experience": "Years of Experience",
     "nationality": "Nationality",
     "message": "Tell us about yourself",
-    "submit": "Check Career Enquiry Details",
-    "success": "This form has not sent your application. Please contact INAYA by phone or WhatsApp to discuss how to share your details. No job or placement is confirmed."
+    "submit": "Send Career Enquiry",
+    "success": "Your enquiry has been submitted to INAYA for review. This does not confirm a booking, job or interview."
   },
   "legal": {
     "privacyTitle": "Privacy Policy",

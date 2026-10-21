@@ -3,17 +3,28 @@ import { expect, test } from '@playwright/test';
 for (const locale of ['en', 'ar'] as const) {
   for (const route of ['booking', 'careers', 'contact'] as const) {
     for (const reducedMotion of ['reduce', 'no-preference'] as const) {
-      test(`${locale} ${route}: labelled local validation focuses visible confirmation (${reducedMotion})`, async ({ page }) => {
+      test(`${locale} ${route}: accepted enquiry focuses visible confirmation (${reducedMotion})`, async ({ page }) => {
         await page.emulateMedia({ reducedMotion });
         const outbound: string[] = [];
+        const deliveries: Record<string, unknown>[] = [];
+        await page.route('**/inaya-enquiry.php', async intercepted => {
+          expect(intercepted.request().method()).toBe('POST');
+          const payload = intercepted.request().postDataJSON();
+          expect(payload.kind).toBe(route);
+          expect(payload.locale).toBe(locale);
+          expect(payload.requestId).toMatch(/^[0-9a-f-]{36}$/);
+          expect(payload.fields.name).toBe('Local QA');
+          expect(payload.fields.phone).toBe('+971500000000');
+          deliveries.push(payload);
+          await intercepted.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ok:true,reference:'INAYA-QA-123'}) });
+        });
         page.on('request', request => {
-          // The unchanged Contact map iframe makes its own RPC POST requests.
-          // No main-frame form delivery, analytics, or QA field data in ANY
-          // frame/request is allowed; map RPCs are not form submissions.
+          // Form data may go only to the same-origin delivery endpoint.
           const payload = `${request.url()} ${request.postData() || ''}`;
-          if ((request.frame() === page.mainFrame() && request.method() !== 'GET') ||
+          if (!request.url().endsWith('/inaya-enquiry.php') &&
+            ((request.frame() === page.mainFrame() && request.method() !== 'GET') ||
             /google-analytics|googletagmanager/.test(request.url()) ||
-            /Local QA|Local-only QA details|local@example.invalid|971500000000/.test(payload)) outbound.push(request.url());
+            /Local QA|Local-only QA details|local@example.invalid|971500000000/.test(payload))) outbound.push(request.url());
         });
         await page.goto(`/${locale}/${route}/`);
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
@@ -36,13 +47,15 @@ for (const locale of ['en', 'ar'] as const) {
           await form.getByLabel(locale === 'ar' ? 'الخدمة المطلوبة' : 'Select Service').selectOption('live-in-maid');
           await form.getByLabel(locale === 'ar' ? 'رسالتك' : 'Your Message', { exact: false }).fill('Local-only QA details');
         }
-        const buttonCopy = route === 'careers' ? (locale === 'ar' ? 'مراجعة بيانات استفسار العمل' : 'Check Career Enquiry Details') : (locale === 'ar' ? 'مراجعة بيانات الاستفسار' : 'Check Enquiry Details');
+        const buttonCopy = locale === 'ar' ? 'إرسال الاستفسار' : 'Send Enquiry';
         await form.getByRole('button', { name: buttonCopy, exact: true }).click();
         const confirmation = page.getByRole('status');
         await expect(confirmation).toBeVisible();
         await expect(confirmation).toBeFocused();
-        await expect(confirmation).toContainText(locale === 'ar' ? /لم ترسل|لم يرسل/ : /not sent|has not sent/);
-        await expect(confirmation).not.toContainText(/received|sent successfully|تم إرسال|تم استلام/);
+        await expect(confirmation).toContainText(locale === 'ar' ? /تم إرسال استفسارك/ : /submitted to INAYA/);
+        await expect(confirmation).toContainText('INAYA-QA-123');
+        await expect(confirmation).toContainText(locale === 'ar' ? /لا يؤكد هذا الإرسال/ : /does not confirm a booking/);
+        expect(deliveries).toHaveLength(1);
         await expect.poll(() => confirmation.evaluate(node => {
           const rect = node.getBoundingClientRect();
           return rect.top >= 56 && rect.bottom <= window.innerHeight;
@@ -72,15 +85,15 @@ for (const locale of ['en', 'ar'] as const) {
       }
       if (route === 'contact') {
         const helpId = await page.locator('form').getAttribute('aria-describedby');
-        await expect(page.locator(`[id="${helpId}"]`)).toContainText(locale === 'ar' ? 'لا يرسل هذا النموذج' : 'This form does not send');
+        await expect(page.locator(`[id="${helpId}"]`)).toContainText('info@inayadomestic.ae');
       }
     }
   });
-  test(`${locale}: navigation and local-check copy stay truthful and localized`, async ({ page, isMobile }) => {
+  test(`${locale}: navigation and delivery copy stay truthful and localized`, async ({ page, isMobile }) => {
     await page.goto(`/${locale}/contact/`);
-    await expect(page.locator('main')).not.toContainText(/Send Request|Send your requirement|Submit Application|أرسل طلبك|أرسل الطلب|أرسل لنا متطلباتك|إرسال الطلب/);
+    await expect(page.locator('main')).not.toContainText(/Send Request|Submit Application|أرسل طلبك|أرسل الطلب|أرسل لنا متطلباتك|إرسال الطلب/);
     await page.goto(`/${locale}/careers/`);
-    await expect(page.locator('form button')).toHaveText(locale === 'ar' ? 'مراجعة بيانات استفسار العمل' : 'Check Career Enquiry Details');
+    await expect(page.locator('form button')).toHaveText(locale === 'ar' ? 'إرسال الاستفسار' : 'Send Enquiry');
     if (isMobile) {
       const menu = page.getByRole('button', { name: locale === 'ar' ? 'القائمة' : 'Menu', exact: true });
       await expect(menu).toHaveText(locale === 'ar' ? 'القائمة' : 'Menu');
@@ -89,4 +102,59 @@ for (const locale of ['en', 'ar'] as const) {
       await expect(page.locator('header').getByRole('link', { name: locale === 'ar' ? 'اتصل بنا' : 'Contact Us', exact: true }).last()).toBeVisible();
     }
   });
+}
+
+for (const locale of ['en','ar'] as const) {
+ test(`${locale}: stale form and field validation errors give actionable retries`, async ({page}) => {
+  const requests: { requestId: string; startedAt: number }[] = [];
+  const serverTime = Date.now() + 172800000;
+  await page.route('**/inaya-enquiry.php', async route => {
+   requests.push(route.request().postDataJSON());
+   const response = requests.length === 1 ? {ok:false,code:'form_time',serverTime}
+    : requests.length === 2 ? {ok:false,field:'phone'} : {ok:true,reference:'INAYA-QA-VALIDATED'};
+   await route.fulfill({status:requests.length < 3 ? 422 : 200,contentType:'application/json',body:JSON.stringify(response)});
+  });
+  await page.goto(`/${locale}/careers/`);
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  const offer = page.getByTestId('sierra-leone-offer');
+  await expect(offer).toBeVisible();
+  await offer.getByRole('button').click();
+  const form = page.locator('form');
+  await form.locator('[name="name"]').fill('Validation QA');
+  await form.locator('[name="phone"]').fill('invalid phone');
+  await form.locator('button[type="submit"]').click();
+  await expect(form.getByRole('alert')).toContainText(locale === 'ar' ? 'إعادة إرسال' : 'submit the form again');
+  await form.locator('button[type="submit"]').click();
+  await expect(form.getByRole('alert')).toContainText(locale === 'ar' ? 'رقم الهاتف' : 'phone number');
+  expect(requests[1].startedAt).toBe(serverTime - 2000);
+  expect(requests[1].requestId).toBe(requests[0].requestId);
+  await expect(form.locator('[name="name"]')).toHaveValue('Validation QA');
+  await form.locator('[name="phone"]').fill('(050) 000-0000');
+  await form.locator('button[type="submit"]').click();
+  await expect(page.getByRole('status')).toContainText('INAYA-QA-VALIDATED');
+  expect(requests[2].requestId).not.toBe(requests[1].requestId);
+ });
+ test(`${locale}: failed delivery retains values and retry reuses request identifier`, async ({page}) => {
+  const requests: string[] = [];
+  await page.route('**/inaya-enquiry.php', async route => {
+   requests.push(route.request().postDataJSON().requestId);
+   await route.fulfill({status:requests.length===1 ? 503 : 200, contentType:'application/json',body:JSON.stringify(requests.length===1 ? {ok:false} : {ok:true,reference:'INAYA-QA-RETRY'})});
+  });
+  await page.goto(`/${locale}/careers/`);
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  const offer=page.getByTestId('sierra-leone-offer');
+  await expect(offer).toBeVisible();
+  await offer.getByRole('button').click();
+  const form=page.locator('form');
+  await form.locator('[name="name"]').fill('Retry QA');
+  await form.locator('[name="phone"]').fill('+971500000000');
+  await form.locator('button[type="submit"]').click();
+  await expect(form.getByRole('alert')).toBeVisible();
+  await expect(form.locator('[name="name"]')).toHaveValue('Retry QA');
+  await expect(page.getByRole('status')).toHaveCount(0);
+  await form.locator('button[type="submit"]').click();
+  await expect(page.getByRole('status')).toContainText('INAYA-QA-RETRY');
+  expect(requests).toHaveLength(2);
+  expect(requests[1]).toBe(requests[0]);
+ });
 }
