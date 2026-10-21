@@ -45,7 +45,7 @@ if (!is_string($requestId) || !preg_match('/^[a-zA-Z0-9-]{16,80}$/D', $requestId
 }
 $started = $request['startedAt'] ?? 0;
 if (!is_numeric($started) || time() - (int)floor((float)$started / 1000) < 2 || time() - (int)floor((float)$started / 1000) > 86400) {
-    reply(422, ['ok' => false, 'error' => 'Please review and submit the form again']);
+    reply(422, ['ok' => false, 'code' => 'form_time', 'serverTime' => time() * 1000, 'error' => 'Please review and submit the form again']);
 }
 $fields = $request['fields'];
 if (isset($fields['website']) && $fields['website'] !== '') {
@@ -56,15 +56,19 @@ $clean = [];
 foreach ($limits as $key => $limit) {
     $value = $fields[$key] ?? '';
     if (!is_string($value) || strlen($value) > $limit || !preg_match('//u', $value)) {
-        reply(422, ['ok' => false, 'error' => 'Invalid field: ' . $key]);
+        reply(422, ['ok' => false, 'field' => $key, 'error' => 'Invalid field: ' . $key]);
     }
     $clean[$key] = trim(preg_replace('/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/u', '', $value) ?? '');
 }
-if ($clean['name'] === '' || !preg_match('/^[+\d][\d\s()-]{6,39}$/D', $clean['phone'])) {
-    reply(422, ['ok' => false, 'error' => 'Name and valid phone required']);
+if ($clean['name'] === '') {
+    reply(422, ['ok' => false, 'field' => 'name', 'error' => 'Name required']);
+}
+if (!preg_match('/^[+\d(][\d\s()-]{6,39}$/D', $clean['phone']) || strlen(preg_replace('/\D/', '', $clean['phone'])) < 7) {
+    reply(422, ['ok' => false, 'field' => 'phone', 'error' => 'Valid phone required']);
 }
 if (($kind === 'contact' && ($clean['email'] === '' || $clean['service'] === '' || $clean['message'] === '')) || ($clean['email'] !== '' && !filter_var($clean['email'], FILTER_VALIDATE_EMAIL))) {
-    reply(422, ['ok' => false, 'error' => 'Valid enquiry details required']);
+    $field = ($clean['email'] === '' || !filter_var($clean['email'], FILTER_VALIDATE_EMAIL)) ? 'email' : ($clean['service'] === '' ? 'service' : 'message');
+    reply(422, ['ok' => false, 'field' => $field, 'error' => 'Valid enquiry details required']);
 }
 
 $private = dirname(__DIR__) . '/tmp/inaya-website-forms';
@@ -78,6 +82,21 @@ if (!$lock || !flock($lock, LOCK_EX)) {
 }
 $receiptPath = $private . '/request-' . $key . '.json';
 $payloadHash = hash('sha256', json_encode([$kind, $request['locale'] ?? 'en', $clean]));
+function persistReceipt(string $path, array $receipt): bool {
+    $json = json_encode($receipt);
+    $temporary = $path . '.tmp';
+    $file = @fopen($temporary, 'wb');
+    if (!$file) return false;
+    @chmod($temporary, 0600);
+    $written = fwrite($file, $json);
+    $saved = $written === strlen($json) && fflush($file) && fsync($file);
+    fclose($file);
+    if (!$saved || !@rename($temporary, $path)) {
+        @unlink($temporary);
+        return false;
+    }
+    return true;
+}
 if (is_file($receiptPath)) {
     $receipt = json_decode((string)file_get_contents($receiptPath), true);
     if (is_array($receipt) && ($receipt['ok'] ?? false) === true) {
@@ -86,6 +105,8 @@ if (is_file($receiptPath)) {
         }
         reply(200, ['ok' => true, 'reference' => $receipt['reference']]);
     }
+    // An interrupted/uncertain send must never automatically send again.
+    reply(503, ['ok' => false, 'error' => 'Delivery requires office confirmation']);
 }
 
 // Limit by the actual remote address, never an untrusted forwarding header.
@@ -119,11 +140,18 @@ $body .= "Submitted through https://inayadomestic.ae/. This enquiry does not con
 $headers = "From: INAYA Website <info@inayadomestic.ae>\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit";
 if ($clean['email'] !== '') $headers .= "\r\nReply-To: " . $clean['email'];
 
+// Reserve this identifier durably BEFORE mail, retaining it if the final save fails.
+if (!persistReceipt($receiptPath, ['ok' => false, 'reference' => $reference, 'payloadHash' => $payloadHash])) {
+    reply(503, ['ok' => false, 'error' => 'Delivery temporarily unavailable']);
+}
 if (!@mail('info@inayadomestic.ae', $subject, $body, $headers, '-finfo@inayadomestic.ae')) {
+    @unlink($receiptPath);
     error_log('INAYA website mail transport rejected reference ' . $reference);
     reply(503, ['ok' => false, 'error' => 'Delivery temporarily unavailable']);
 }
 $receipt = ['ok' => true, 'reference' => $reference];
-file_put_contents($receiptPath, json_encode($receipt + ['payloadHash' => $payloadHash]), LOCK_EX);
-@chmod($receiptPath, 0600);
+if (!persistReceipt($receiptPath, $receipt + ['payloadHash' => $payloadHash])) {
+    error_log('INAYA receipt needs office verification: ' . $reference);
+    reply(503, ['ok' => false, 'error' => 'Delivery requires office confirmation']);
+}
 reply(200, $receipt);

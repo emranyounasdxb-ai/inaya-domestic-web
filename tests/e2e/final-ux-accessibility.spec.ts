@@ -105,6 +105,35 @@ for (const locale of ['en', 'ar'] as const) {
 }
 
 for (const locale of ['en','ar'] as const) {
+ test(`${locale}: stale form and field validation errors give actionable retries`, async ({page}) => {
+  const requests: { requestId: string; startedAt: number }[] = [];
+  const serverTime = Date.now() + 172800000;
+  await page.route('**/inaya-enquiry.php', async route => {
+   requests.push(route.request().postDataJSON());
+   const response = requests.length === 1 ? {ok:false,code:'form_time',serverTime}
+    : requests.length === 2 ? {ok:false,field:'phone'} : {ok:true,reference:'INAYA-QA-VALIDATED'};
+   await route.fulfill({status:requests.length < 3 ? 422 : 200,contentType:'application/json',body:JSON.stringify(response)});
+  });
+  await page.goto(`/${locale}/careers/`);
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  const offer = page.getByTestId('sierra-leone-offer');
+  await expect(offer).toBeVisible();
+  await offer.getByRole('button').click();
+  const form = page.locator('form');
+  await form.locator('[name="name"]').fill('Validation QA');
+  await form.locator('[name="phone"]').fill('invalid phone');
+  await form.locator('button[type="submit"]').click();
+  await expect(form.getByRole('alert')).toContainText(locale === 'ar' ? 'إعادة إرسال' : 'submit the form again');
+  await form.locator('button[type="submit"]').click();
+  await expect(form.getByRole('alert')).toContainText(locale === 'ar' ? 'رقم الهاتف' : 'phone number');
+  expect(requests[1].startedAt).toBe(serverTime - 2000);
+  expect(requests[1].requestId).toBe(requests[0].requestId);
+  await expect(form.locator('[name="name"]')).toHaveValue('Validation QA');
+  await form.locator('[name="phone"]').fill('(050) 000-0000');
+  await form.locator('button[type="submit"]').click();
+  await expect(page.getByRole('status')).toContainText('INAYA-QA-VALIDATED');
+  expect(requests[2].requestId).not.toBe(requests[1].requestId);
+ });
  test(`${locale}: failed delivery retains values and retry reuses request identifier`, async ({page}) => {
   const requests: string[] = [];
   await page.route('**/inaya-enquiry.php', async route => {

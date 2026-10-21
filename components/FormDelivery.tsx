@@ -36,6 +36,21 @@ export function useFormDelivery(kind: 'contact' | 'booking' | 'careers', locale:
         })
       });
       const result = await response.json();
+      if (response.status === 422) {
+        if (result.code === 'form_time' && typeof result.serverTime === 'number') {
+          startedAt.current = result.serverTime - 2000;
+          setError(arabic ? 'يرجى إعادة إرسال النموذج الآن. بياناتك ما زالت محفوظة.' : 'Please submit the form again now. Your details are still in the form.');
+        } else {
+          const field = typeof result.field === 'string' ? result.field : '';
+          const labels: Record<string, string> = arabic
+            ? { name: 'الاسم', phone: 'رقم الهاتف', email: 'البريد الإلكتروني', service: 'الخدمة', message: 'الرسالة' }
+            : { name: 'name', phone: 'phone number', email: 'email address', service: 'service', message: 'message' };
+          setError(arabic
+            ? `يرجى مراجعة ${labels[field] || 'بيانات النموذج'} وتصحيحها ثم الإرسال مجدداً. بياناتك ما زالت محفوظة.`
+            : `Please check and correct your ${labels[field] || 'form details'}, then submit again. Your details are still in the form.`);
+        }
+        return false;
+      }
       if (!response.ok || result.ok !== true || typeof result.reference !== 'string') {
         throw new Error('Delivery was not accepted');
       }
