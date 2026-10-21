@@ -28,7 +28,7 @@ export default function CareersForm({ locale }: { locale: string }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:grid-cols-2">
+    <form data-clarity-mask="true" onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:grid-cols-2">
       <DeliveryFeedback error={delivery.error} />
       <div>
         <label htmlFor={fieldId('name')} className="label">{t('name')} *</label>

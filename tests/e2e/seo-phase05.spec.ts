@@ -25,7 +25,7 @@ for (const locale of ['en', 'ar']) {
 
   test(`${locale}: cookie banner saves rejection and allows consent to be changed`, async ({ page }) => {
     const ar = locale === 'ar';
-    await page.route(/www\.googletagmanager\.com\/gtag\/js/, route => route.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
+    await page.route(/www\.googletagmanager\.com\/(gtag\/js|gtm\.js)/, route => route.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
     await page.goto(`/${locale}/pricing/`);
     const banner = page.getByRole('region', { name: ar ? 'تفضيلات ملفات تعريف الارتباط' : 'Your cookie preferences' });
     await expect(banner).toBeVisible();
@@ -35,7 +35,7 @@ for (const locale of ['en', 'ar']) {
     const accept = ar ? 'السماح بالتحليلات' : 'Accept analytics';
     await banner.getByRole('button', { name: reject }).click();
     await expect(banner).toBeHidden();
-    expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent'))).toBe('denied');
+    expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent.v2'))).toBe('denied');
     await page.reload();
     await expect.poll(() => page.evaluate(() => typeof window.inayaMeasurementConsent)).toBe('function');
     await expect(banner).toBeHidden();
@@ -54,7 +54,7 @@ for (const locale of ['en', 'ar']) {
     await settings.click();
     await banner.getByRole('button', { name: reject }).click();
     expect(await page.evaluate(() => window['ga-disable-G-986STCSR37'])).toBe(true);
-    expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent'))).toBe('denied');
+    expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent.v2'))).toBe('denied');
     await page.reload();
     await expect(banner).toBeHidden();
     await expect(page.locator('script[src*="googletagmanager.com/gtag/js"]')).toHaveCount(0);
@@ -62,7 +62,7 @@ for (const locale of ['en', 'ar']) {
 }
 
 test('GA4 consent loads once, survives a language switch and can be revoked', async ({ page }) => {
-  await page.route(/www\.googletagmanager\.com\/gtag\/js/, route => route.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
+  await page.route(/www\.googletagmanager\.com\/(gtag\/js|gtm\.js)/, route => route.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
   await page.goto('/en/');
   const englishTitle = await page.title();
   expect(englishTitle).toBeTruthy();
@@ -71,14 +71,14 @@ test('GA4 consent loads once, survives a language switch and can be revoked', as
   await page.evaluate(() => window.inayaMeasurementConsent?.(true));
   await expect(page.locator('script[src*="googletagmanager.com/gtag/js?id=G-986STCSR37"]')).toHaveCount(1);
   await expect.poll(() => page.evaluate(() => Array.from((window as unknown as { dataLayer?: ArrayLike<ArrayLike<unknown>> }).dataLayer ?? []).filter(call => call[0] === 'config' && call[1] === 'G-986STCSR37').length)).toBe(1);
-  expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent'))).toBe('granted');
+  expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent.v2'))).toBe('granted');
   await page.getByRole('link', { name: 'العربية' }).first().click();
   await expect(page).toHaveURL(/\/ar\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
   expect(await page.title()).not.toBe(englishTitle);
   expect(await page.evaluate(() => window['ga-disable-G-986STCSR37'])).toBe(false);
   await page.evaluate(() => window.inayaMeasurementConsent?.(false));
-  expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent'))).toBe('denied');
+  expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent.v2'))).toBe('denied');
   expect(await page.evaluate(() => window['ga-disable-G-986STCSR37'])).toBe(true);
   await page.reload();
   expect(await page.locator('script[src*="googletagmanager.com/gtag/js"]').count()).toBe(0);

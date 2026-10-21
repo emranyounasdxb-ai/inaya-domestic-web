@@ -22,7 +22,7 @@ export default function LocalFormConfirmation({ message, symbol }: { message: st
   }, []);
 
   return (
-    <div ref={confirmation} tabIndex={-1} role="status" aria-live="polite" aria-atomic="true"
+    <div data-clarity-mask="true" ref={confirmation} tabIndex={-1} role="status" aria-live="polite" aria-atomic="true"
       className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center text-green-800">
       <div className="mb-2 text-4xl" aria-hidden="true">{symbol}</div>
       <p className="font-medium">{message}</p>

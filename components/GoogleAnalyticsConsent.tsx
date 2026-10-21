@@ -1,17 +1,17 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import Link from 'next/link';
+import { analyticsConsentKey as consentKey, syncClarityConsent } from '@/lib/analytics-consent';
 
 const measurementId = 'G-986STCSR37';
-const consentKey = 'inaya.analytics-consent';
 const settingsEvent = 'inaya:analytics-settings';
 
 const labels = {
   en: {
     title: 'Your cookie preferences',
-    description: 'With your permission, we use Google Analytics cookies to understand which pages visitors use and improve our website. You can reject analytics and still use the site.',
+    description: 'With your permission, we use Google Analytics and Microsoft Clarity to understand page visits and masked interactions, including heatmaps and session recordings. You can reject analytics and still use the site.',
     privacy: 'Privacy policy',
     accept: 'Accept analytics',
     reject: 'Reject analytics',
@@ -20,7 +20,7 @@ const labels = {
   },
   ar: {
     title: 'تفضيلات ملفات تعريف الارتباط',
-    description: 'بموافقتك، نستخدم ملفات تعريف الارتباط من Google Analytics لفهم الصفحات التي يزورها المستخدمون وتحسين موقعنا. يمكنك رفض التحليلات ومواصلة استخدام الموقع.',
+    description: 'بموافقتك، نستخدم Google Analytics وMicrosoft Clarity لفهم زيارات الصفحات والتفاعلات مع إخفاء البيانات، بما يشمل الخرائط الحرارية وتسجيلات الجلسات. يمكنك رفض التحليلات ومواصلة استخدام الموقع.',
     privacy: 'سياسة الخصوصية',
     accept: 'السماح بالتحليلات',
     reject: 'رفض التحليلات',
@@ -64,6 +64,7 @@ export default function GoogleAnalyticsConsent({ locale }: { locale: string }) {
       try { saved = localStorage.getItem(consentKey); } catch { /* Ask again when storage is unavailable. */ }
       const known = saved === 'granted' || saved === 'denied';
       window['ga-disable-G-986STCSR37'] = saved !== 'granted';
+      syncClarityConsent(saved === 'granted');
       setGranted(saved === 'granted');
       setHasChoice(known);
       setVisible(!known);
@@ -71,6 +72,7 @@ export default function GoogleAnalyticsConsent({ locale }: { locale: string }) {
     const consent = (allowed: boolean) => {
       const next = allowed === true;
       window['ga-disable-G-986STCSR37'] = !next;
+      syncClarityConsent(next);
       try { localStorage.setItem(consentKey, next ? 'granted' : 'denied'); } catch { /* The choice still applies to this document. */ }
       setGranted(next);
       setHasChoice(true);
@@ -102,7 +104,10 @@ export default function GoogleAnalyticsConsent({ locale }: { locale: string }) {
 
   return (
     <>
-      {granted ? <GoogleAnalytics gaId={measurementId} /> : null}
+      {granted ? <>
+        <GoogleAnalytics gaId={measurementId} />
+        <GoogleTagManager gtmId="GTM-MDBQLVGJ" dataLayerName="inayaClarityDataLayer" />
+      </> : null}
       {visible ? (
         <section role="region" aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-description" dir={locale === 'ar' ? 'rtl' : 'ltr'} className="fixed inset-x-0 bottom-0 z-[110] max-h-[70dvh] overflow-y-auto border-t border-accent-500/40 bg-[#fbfaf7] px-4 pt-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-primary-900 shadow-[0_-8px_40px_rgba(7,22,74,0.12)] sm:px-6" onKeyDown={(event) => { if (event.key === 'Escape' && hasChoice) dismiss(); }}>
           <div className="mx-auto flex max-w-6xl flex-col gap-4 lg:flex-row lg:items-center lg:gap-8">
