@@ -12,10 +12,10 @@ for (const locale of ['en', 'ar'] as const) {
     await page.goto(`/${locale}/faq/`);
     await page.getByRole('button', { name: ar ? 'الحجز والخطوات' : 'Booking Process', exact: true }).click();
     await expect(page.locator('[data-faq-panel="booking"]')).toBeVisible();
-    await expect(page.locator('[data-faq-panel="booking"]')).toContainText(ar ? 'ولا يرسلها إلى عناية أو يؤكد موعداً' : 'it does not send them to INAYA or confirm an appointment');
+    await expect(page.locator('[data-faq-panel="booking"]')).toContainText(ar ? 'ولا يؤكد الإرسال موعداً' : 'submitting does not confirm an appointment');
     for (const route of ['terms', 'privacy-policy']) {
       await page.goto(`/${locale}/${route}/`);
-      await expect(page.locator('main main')).toContainText(ar ? 'محلياً' : 'locally');
+      await expect(page.locator('main main')).toContainText('info@inayadomestic.ae');
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
     }
   });

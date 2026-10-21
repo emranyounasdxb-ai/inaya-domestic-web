@@ -11,7 +11,7 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
   const copy = {
     badge: isArabic ? 'انضم إلى شبكة عناية' : 'Join the INAYA network',
     title: isArabic ? 'قدّم للعمل في خدمات العمالة المنزلية' : 'Apply for domestic worker opportunities',
-    subtitle: isArabic ? 'هذا النموذج لا يرسل طلباً. تواصل مع عناية بالهاتف أو واتساب لمناقشة طريقة مشاركة خبرتك واهتمامك. الاستفسار لا يؤكد وظيفة أو مقابلة.' : 'This form does not send an application. Contact INAYA by phone or WhatsApp to discuss how to share your experience and interest. An enquiry does not confirm a job or interview.',
+    subtitle: isArabic ? 'أرسل خبرتك واهتمامك إلى فريق عناية عبر هذا النموذج. سيتولى الفريق مراجعة الاستفسار؛ لا يؤكد الإرسال وظيفة أو مقابلة.' : 'Send your experience and interest to the INAYA team using this form. The team will review your enquiry; submitting does not confirm a job or interview.',
     sideTitle: isArabic ? 'ما نراجعه' : 'What we review',
     points: isArabic ? ['الخبرة السابقة', 'نوع الخدمة المناسبة', 'اللغة والتوفر', 'المستندات المطلوبة'] : ['Previous experience', 'Suitable service type', 'Language and availability', 'Required documents']
   };

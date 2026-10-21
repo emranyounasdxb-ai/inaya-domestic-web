@@ -18,7 +18,7 @@ test('all form variants retain exact validation, fields, options and styling wit
     const source = current(file);
     assertFormPreserved(source, previous(file), file);
     assert.match(source, /const formId = useId\(\)/);
-    assert.match(source, /<LocalFormConfirmation message=\{t\('success'\)\}/);
+    assert.match(source, /<LocalFormConfirmation message=\{delivery.confirmation\}/);
     assert.equal((source.match(/<label /g) || []).length, (source.match(/<label htmlFor=\{fieldId\(/g) || []).length);
     for (const match of source.matchAll(/<(?:input|select|textarea)\b[^>]*name="([^"]+)"/g)) {
       assert.ok(source.includes(`htmlFor={fieldId('${match[1]}')}`), `${file} ${match[1]}`);
@@ -99,4 +99,8 @@ test('page and CTA sources permit only the approved localized copy replacements'
     for (const [before, after] of pairs) expected = expected.replace(before, after);
     assert.equal(current(file), approvedSeoFixes(file, expected), file);
   }
+});
+
+test('PHP delivery validates, limits and deduplicates without sending real email', () => {
+  execFileSync('python3', ['tests/form-delivery-backend.py'], {stdio:'pipe'});
 });

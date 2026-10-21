@@ -72,11 +72,11 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   booking: {
     name: { en: 'Request a Domestic Worker Service', ar: 'طلب خدمة عمالة منزلية' },
-    description: { en: 'Prepare household service requirements with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your enquiry.', ar: 'جهز متطلبات الخدمة المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة استفسارك.' }
+    description: { en: 'Send your household service enquiry to INAYA for review. Availability, written terms and booking require confirmation by the team.', ar: 'أرسل استفسارك عن الخدمة المنزلية إلى عناية للمراجعة. يتطلب التوفر والشروط المكتوبة والحجز تأكيداً من الفريق.' }
   },
   careers: {
     name: { en: 'Domestic Worker Opportunities', ar: 'فرص العمل في الخدمات المنزلية' },
-    description: { en: 'Prepare a domestic-work application with INAYA guidance. This form checks details locally only; contact the office by phone or WhatsApp to discuss your experience.', ar: 'جهز طلباً للعمل في الخدمات المنزلية مع إرشادات عناية. يتحقق هذا النموذج من البيانات محلياً فقط؛ تواصل مع المكتب بالهاتف أو واتساب لمناقشة خبرتك.' }
+    description: { en: 'Send a domestic-work career enquiry to INAYA for review. Share your experience and preferred role; submission does not confirm a job or interview.', ar: 'أرسل استفسار عمل في الخدمات المنزلية إلى عناية للمراجعة. شارك خبرتك والدور المفضل؛ ولا يؤكد الإرسال وظيفة أو مقابلة.' }
   },
   pricing: {
     name: { en: 'Domestic Worker Packages & Pricing', ar: 'باقات وأسعار العمالة المنزلية' },

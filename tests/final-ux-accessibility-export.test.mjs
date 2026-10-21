@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all six localized form exports have one unique programmatic label per control and truthful local-check CTAs', async () => {
+test('all six localized form exports have one unique programmatic label per control and truthful enquiry CTAs', async () => {
   for (const locale of ['en', 'ar']) {
     for (const route of ['booking', 'careers', 'contact']) {
       const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
@@ -20,7 +20,9 @@ test('all six localized form exports have one unique programmatic label per cont
         assert.equal(associated.length, 1);
         assert.ok(associated[0].text);
       }
-      assert.doesNotMatch(text(body), /Submit Application|Send Request|Send your requirement|Before you submit|أرسل طلبك|أرسل الطلب|أرسل لنا متطلباتك|إرسال الطلب|قبل الإرسال/);
+      assert.doesNotMatch(text(body), /Submit Application|Send Request|Before you submit|أرسل طلبك|أرسل الطلب|أرسل لنا متطلباتك|إرسال الطلب|قبل الإرسال/);
+      assert.match(text(form[2]), locale === 'ar' ? /إرسال الاستفسار/ : /Send Enquiry/);
+      assert.match(text(form[2]), /info@inayadomestic\.ae/);
       const menu = body.match(/<button\b([^>]*aria-expanded[^>]*)>([\s\S]*?)<\/button>/);
       assert.equal(attrs(menu[1])['aria-label'], locale === 'ar' ? 'القائمة' : 'Menu');
       assert.equal(text(menu[2]), locale === 'ar' ? 'القائمة' : 'Menu');

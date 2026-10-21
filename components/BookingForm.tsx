@@ -2,12 +2,14 @@
 
 import { useEffect, useId, useRef, useState } from 'react';
 import LocalFormConfirmation from './LocalFormConfirmation';
+import { DeliveryFeedback, useFormDelivery } from './FormDelivery';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
 
 export default function BookingForm({ locale }: { locale: string }) {
   const t = useTranslations('booking');
   const lang = locale === 'ar' ? 'ar' : 'en';
+  const delivery = useFormDelivery('booking', locale);
   const formId = useId();
   const fieldId = (name: string) => `${formId}-${name}`;
   const fieldA11y = (name: string) => ({
@@ -52,7 +54,7 @@ export default function BookingForm({ locale }: { locale: string }) {
     setSelectedService(event.target.value);
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const next: Record<string, string> = {};
@@ -63,17 +65,18 @@ export default function BookingForm({ locale }: { locale: string }) {
     const email = String(data.get('email') || '');
     if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) next.email = t('invalidEmail');
     setErrors(next);
-    if (Object.keys(next).length === 0) setDone(true);
+    if (Object.keys(next).length === 0 && await delivery.send(data)) setDone(true);
   }
 
   if (done) {
     return (
-      <LocalFormConfirmation message={t('success')} symbol="✅" />
+      <LocalFormConfirmation message={delivery.confirmation} symbol="✅" />
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:grid-cols-2">
+      <DeliveryFeedback error={delivery.error} />
       <div>
         <label htmlFor={fieldId('name')} className="label">{t('name')} *</label>
         <input {...fieldA11y('name')} name="name" className="field" />
@@ -123,8 +126,9 @@ export default function BookingForm({ locale }: { locale: string }) {
         <textarea {...fieldA11y('message')} name="message" rows={4} className="field" />
       </div>
       <div className="sm:col-span-2">
-        <button type="submit" className="btn-primary w-full">{t('submit')}</button>
+        <button type="submit" disabled={delivery.pending} className="btn-primary w-full">{delivery.submitLabel}</button>
       </div>
+      <p className="sm:col-span-2 text-xs text-primary-900/75">{delivery.privacy}</p>
     </form>
   );
 }

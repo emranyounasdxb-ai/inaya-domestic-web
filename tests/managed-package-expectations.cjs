@@ -1,3 +1,4 @@
+const { approvedDeliveryMessages } = require('./form-delivery-expectations.cjs');
 const assert = require('node:assert/strict');
 const { approvedPosterPricing, approvedPosterMessages } = require('./poster-pricing-expectations.cjs');
 
@@ -215,7 +216,7 @@ function approvedPackageMessages(locale, data) {
     assert.equal(record[key] ?? null, before, keys.join('.') + ': original localized value');
     record[key] = after;
   }
-  return approvedPosterMessages(locale, data);
+  return approvedDeliveryMessages(locale, approvedPosterMessages(locale, data));
 }
 const commercial = require('./fixtures/managed-package-copy.json');
 function editorialRepetition(audit) {
