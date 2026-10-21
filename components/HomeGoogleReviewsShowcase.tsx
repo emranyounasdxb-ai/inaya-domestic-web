@@ -75,7 +75,7 @@ function initials(name: string) {
     .toUpperCase();
 }
 
-function ReviewAvatar({ name, photoUrl = '' }: { name: string; photoUrl?: string }) {
+function ReviewAvatar({ name, photoUrl = '', locale }: { name: string; photoUrl?: string; locale: 'en' | 'ar' }) {
   const [photoFailed, setPhotoFailed] = useState(false);
   const showPhoto = Boolean(photoUrl) && !photoFailed;
 
@@ -84,7 +84,7 @@ function ReviewAvatar({ name, photoUrl = '' }: { name: string; photoUrl?: string
       {showPhoto ? (
         // Google supplies reviewer photos dynamically; raw images keep static export compatible without broad remote-host configuration.
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={photoUrl} alt="" loading="lazy" referrerPolicy="no-referrer" onError={() => setPhotoFailed(true)} />
+        <img src={photoUrl} alt={locale === 'ar' ? `صورة الملف الشخصي على Google للمراجع ${name}` : `Google profile image for reviewer ${name}`} loading="lazy" referrerPolicy="no-referrer" onError={() => setPhotoFailed(true)} />
       ) : (
         <span aria-hidden="true">{initials(name) || 'G'}</span>
       )}
@@ -109,7 +109,7 @@ function ReviewCard({ review, locale, sourceLabel, starLabel, clone = false }: {
       aria-hidden={clone || undefined}
     >
       <div className="google-review-card-head">
-        <ReviewAvatar name={review.name} photoUrl={review.profilePhotoUrl} />
+        <ReviewAvatar name={review.name} photoUrl={review.profilePhotoUrl} locale={locale} />
         <h4>{review.name}</h4>
         <GoogleG className="google-card-source" />
       </div>
