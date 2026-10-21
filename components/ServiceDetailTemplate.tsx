@@ -446,7 +446,7 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
                 <span className="relative block h-[232px] overflow-hidden bg-[#f7f8fb] max-sm:h-[210px]">
                   <Image
                     src={getServiceImage(relatedSlug)}
-                    alt=""
+                    alt={serviceImageAlt(lang, relatedSlug)}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"

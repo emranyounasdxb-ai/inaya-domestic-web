@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { serviceImageAlt } from '@/lib/image-alt';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/page-seo';
@@ -183,7 +184,7 @@ function ServiceImageCard({
       <div className="relative h-52 overflow-hidden bg-[#f7f8fb]">
         <Image
           src={getServiceImage(slug)}
-          alt=""
+          alt={serviceImageAlt(lang, slug)}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover transition duration-500 group-hover:scale-[1.04]"
