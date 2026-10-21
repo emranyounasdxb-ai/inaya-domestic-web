@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+    # These files cannot change the exported website. Manual deploy stays available.
+    paths-ignore:
+      - '**/*.md'
+      - 'tests/**'
+      - 'playwright.config.ts'
+      - '.github/workflows/ci.yml'
+      - '.github/workflows/deploy-cpanel.yml'
   workflow_dispatch:
 
 permissions:
@@ -26,10 +33,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: .nvmrc
+          cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Test IndexNow notification selection
         run: node --test tests/indexnow-notify.test.mjs
@@ -365,7 +373,7 @@ jobs:
           set net:max-retries 3
           set net:timeout 30
           set mirror:parallel-directories true
-          mirror --reverse --verbose --parallel=2 --overwrite --transfer-all --ignore-time --recursion=always \
+          mirror --reverse --verbose --parallel=4 --overwrite --transfer-all --ignore-time --recursion=always \
             --exclude-glob .well-known \
             --exclude-glob .well-known/** \
             --exclude-glob .ftp-deploy-sync-state.json \
