@@ -12,21 +12,26 @@ import { getDomesticWorkerGuide } from './domestic-worker-guides';
 import { getBlogImage } from './blog-images';
 import { serviceImageAlt } from './image-alt';
 import { articleSearchTitles } from './article-search-titles';
+import { companyGalleryHero } from './company-gallery';
 
 type Localized = Record<Lang, string>;
 // These are the actual visible Heroes, not a generic logo on text-only pages.
 const corePageImages: Record<string, { src: string; alt: Localized }> = {
   '': {
     src: '/images/home/inaya-home-hero-family.webp',
-    alt: { en: 'Illustration of a domestic worker beside a table with the Dubai skyline in the background', ar: 'صورة توضيحية لعاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' }
+    alt: { en: 'A domestic worker beside a table with the Dubai skyline in the background', ar: 'عاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' }
   },
   about: {
-    src: '/images/about/about-hero-domestic-service.webp',
-    alt: { en: 'Illustration of a domestic worker serving tea to a family in a living room', ar: 'صورة توضيحية لعاملة منزلية تقدم الشاي لأسرة في غرفة المعيشة' }
+    src: companyGalleryHero.src,
+    alt: companyGalleryHero.alt
+  },
+  gallery: {
+    src: companyGalleryHero.src,
+    alt: companyGalleryHero.alt
   },
   services: {
     src: '/images/home/home-concierge-support.webp',
-    alt: { en: 'Illustration of a domestic worker arranging sofa cushions near a mother and child', ar: 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' }
+    alt: { en: 'A domestic worker arranging sofa cushions near a mother and child', ar: 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' }
   }
 };
 // Concise summaries of existing roles; individual duties and availability are confirmed per enquiry.
@@ -81,6 +86,10 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   about: {
     name: { en: 'About INAYA Domestic Workers', ar: 'عن عناية للعمالة المنزلية' },
     description: { en: 'Learn about INAYA Domestic Workers, its household service approach, consultation process and support for families across the UAE.', ar: 'تعرف على عناية للعمالة المنزلية ونهجها في الخدمات المنزلية والاستشارة ودعم الأسر في جميع أنحاء الإمارات.' }
+  },
+  gallery: {
+    name: { en: 'INAYA Photo Gallery', ar: 'معرض صور عناية' },
+    description: { en: 'Explore INAYA’s Ajman office, reception and household-support photo gallery. Open larger images and contact the team about your service needs.', ar: 'تصفح صور مكتب عناية في عجمان والاستقبال والدعم المنزلي. افتح الصور بالحجم الأكبر وتواصل مع الفريق بشأن احتياج أسرتك.' }
   },
   services: {
     name: { en: 'Domestic Worker Services in UAE', ar: 'خدمات العمالة المنزلية في الإمارات' },
@@ -199,8 +208,8 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   if (location) return {
     name: location.heroTitle[lang], title: location.metaTitle[lang], description: location.metaDescription[lang],
     ...(route === 'maid-services-ajman' ? {
-      image: '/images/service-areas/ajman-household-planning-ai.webp',
-      imageAlt: lang === 'ar' ? 'مشهد توضيحي مولّد بالذكاء الاصطناعي لتخطيط مهام المنزل؛ ليس تصويراً لموظفي عناية أو عملائها' : 'AI-generated illustrative household-planning scene; not actual INAYA employees or customers'
+      image: companyGalleryHero.src,
+      imageAlt: companyGalleryHero.alt[lang]
     } : {}),
     service: { name: location.heroTitle[lang], description: location.lead[lang], area: location.city[lang] },
     faqs: location.faqs.map((faq) => ({ question: faq.question[lang], answer: faq.answer[lang] }))

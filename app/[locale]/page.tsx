@@ -34,7 +34,7 @@ const homeContent = {
       { title: 'Family Privacy', text: 'Communication remains respectful, private and relevant to the household.' }
     ],
     spotlightTitle: 'Which household roles can I discuss?',
-    spotlightText: 'These illustrations describe service roles, not identified candidates or current availability.',
+    spotlightText: 'Explore childcare, cooking and household coordination. Ask the team for individual profiles and current availability.',
     candidates: [
       { name: 'Childcare', role: 'Executive Nanny Role', text: 'Discuss childcare experience and the family routine when reviewing individual profiles.' },
       { name: 'Cooking', role: 'Private Chef • Home Dining', text: 'Explain meal preferences and kitchen duties before comparing profiles.' },
@@ -86,7 +86,7 @@ const homeContent = {
       { title: 'خصوصية الأسرة', text: 'يبقى التواصل محترماً وخاصاً ومرتبطاً باحتياج المنزل.' }
     ],
     spotlightTitle: 'ما الأدوار المنزلية التي يمكنني مناقشتها؟',
-    spotlightText: 'توضح الصور أدوار الخدمات وليست مرشحات محددات أو تأكيداً للتوفر الحالي.',
+    spotlightText: 'استكشف رعاية الأطفال والطهي وتنسيق المنزل. اطلب من الفريق الملفات الفردية والتوفر الحالي.',
     candidates: [
       { name: 'رعاية الأطفال', role: 'دور المربية التنفيذية', text: 'ناقش خبرة رعاية الأطفال وروتين الأسرة عند مراجعة الملفات الفردية.' },
       { name: 'الطبخ', role: 'شيف خاص • طبخ منزلي', text: 'وضح تفضيلات الوجبات ومهام المطبخ قبل مقارنة الملفات.' },
@@ -295,7 +295,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="absolute inset-0 overflow-hidden bg-[#f7f8fb]">
           <ResponsiveImage
             src={homeImages.hero}
-            alt={isArabic ? 'صورة توضيحية لعاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'Illustration of a domestic worker beside a table with the Dubai skyline in the background'}
+            alt={isArabic ? 'عاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'A domestic worker beside a table with the Dubai skyline in the background'}
             priority
             sizes="100vw"
             imageClassName="object-cover object-center"
@@ -343,7 +343,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {copy.learnMore}
               </Link>
             </div>
-            <HomeImage alt={isArabic ? 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'Illustration of a domestic worker arranging sofa cushions near a mother and child'} src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
+            <HomeImage alt={isArabic ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'} src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
           </div>
         </div>
       </section>

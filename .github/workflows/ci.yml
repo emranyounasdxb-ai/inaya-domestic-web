@@ -43,7 +43,7 @@ jobs:
           fi
           python3 tests/cpanel-migration.py
       - name: Verify image discovery, primary images and favicon files
-        run: node --test tests/image-search-export.test.mjs
+        run: node --test tests/image-search-export.test.mjs tests/company-gallery-export.test.mjs tests/cpanel-gallery-assets.test.mjs
       - name: Verify concise unique search titles
         run: node --test tests/search-title-export.test.mjs
       - name: Unit and export checks

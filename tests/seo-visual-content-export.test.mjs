@@ -1,5 +1,6 @@
 import octoberFixes from './seo-october-fixes-expectations.cjs';
 import ajmanOffice from './ajman-office-expectations.cjs';
+import companyGallery from './company-gallery-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -10,12 +11,12 @@ import corePageCopy from './core-page-copy-expectations.cjs';
 import posterPricing from './poster-pricing-expectations.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all 228 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
+test('all 230 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 228);
+  assert.equal(audit.pages.length, 230);
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(audit.linkCoverage[locale].reachable, 114);
+    assert.equal(audit.linkCoverage[locale].reachable, 115);
     assert.ok(audit.linkCoverage[locale].maximumDepth <= 3);
     assert.ok(audit.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
@@ -113,6 +114,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       expected = expected.replace(original, 'fill loading="eager" fetchPriority="high" sizes=');
     }
     expected = ajmanOffice.approvedAjmanOfficeCopy(`${file}#hero`, expected);
+    expected = companyGallery.approvedGalleryCopy(`${file}#hero`, expected);
     assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling with approved additions`);
   }
 });

@@ -32,6 +32,18 @@ const updatedSlugs = [
   'domestic-worker-hiring-costs-uae',
   'domestic-worker-leave-travel-planning'
 ];
+// Retain the audited manuscript; only the reviewed neutral chart-caption
+// wording changes at publication. Price figures and qualification stay exact.
+const approvedPriceCaptions = {
+  en: [
+    'Owner-approved INAYA price figures. The base package covers 30 days; commitment rates are per month for six or twelve months. This is an illustrative package-price comparison, not identical calendar-day coverage or a final bill.',
+    'Owner-approved INAYA price figures. The base package covers 30 days; commitment rates are per month for six or twelve months. This is a package-price comparison, not identical calendar-day coverage or a final bill.'
+  ],
+  ar: [
+    'أرقام أسعار عناية المعتمدة. تغطي الباقة الأساسية ثلاثين يوماً، وأسعار الالتزام شهرية لمدة ستة أو اثني عشر شهراً. هذه مقارنة توضيحية لسعر الباقة وليست تغطية متطابقة بأيام التقويم أو فاتورة نهائية.',
+    'أرقام أسعار عناية المعتمدة. تغطي الباقة الأساسية ثلاثين يوماً، وأسعار الالتزام شهرية لمدة ستة أو اثني عشر شهراً. هذه مقارنة لسعر الباقة وليست تغطية متطابقة بأيام التقويم أو فاتورة نهائية.'
+  ]
+};
 
 const drafts = await Promise.all((await readdir(directory))
   .filter((file) => /^\d{2}\.json$/.test(file)).sort()
@@ -125,7 +137,13 @@ test('exported twenty-article series renders its tables, charts, Q&A and working
       assert.ok(visible.includes(plainMarkdown(copy.body.split(/\r?\n\s*\r?\n/)[0])), `${route}: direct answer rendered`);
       assert.ok((article.match(/<table\b/g) ?? []).length >= 1, `${route}: practical table rendered`);
       assert.ok(article.includes(`data-article-visual="${copy.visual.kind}"`), `${route}: chart rendered`);
-      assert.ok(visible.includes(copy.visual.title) && visible.includes(copy.visual.caption), `${route}: chart text and source context visible`);
+      let caption = copy.visual.caption;
+      if (draft.slug === 'domestic-worker-hiring-costs-uae') {
+        const [before, after] = approvedPriceCaptions[locale];
+        assert.equal(caption, before, `${route}: exact audited chart-caption anchor`);
+        caption = after;
+      }
+      assert.ok(visible.includes(copy.visual.title) && visible.includes(caption), `${route}: chart text and source context visible`);
       for (const item of copy.visual.items) assert.ok(visible.includes(item.label) && visible.includes(item.detail), `${route}: complete chart translation`);
       for (const faq of copy.faqs) {
         assert.ok(visible.includes(plainMarkdown(faq.question)), `${route}: FAQ question visible`);
