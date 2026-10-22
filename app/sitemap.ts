@@ -9,6 +9,7 @@ const locales = ['en', 'ar'] as const;
 
 // Record substantive content updates, not build times. Leave untracked routes undated.
 const contentUpdatedAt: Record<string, string> = {
+  "gallery": '2026-10-22',
   "about": '2026-10-22',
   "contact": '2026-10-22',
   "blog/domestic-worker-contract-permit-residence-cancellation": '2026-10-20',
@@ -157,7 +158,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
 
-  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages]) {
+  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly')]) {
     uniqueEntries.set(entry.url, entry);
   }
 

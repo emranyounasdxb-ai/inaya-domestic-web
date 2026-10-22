@@ -7,7 +7,7 @@ on:
 
 jobs:
   quality:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,6 +17,19 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Configure bounded Ubuntu package downloads
+        timeout-minutes: 2
+        run: |
+          test -f /etc/apt/apt-mirrors.txt
+          printf '%s\tpriority:%s\n' \
+            'https://archive.ubuntu.com/ubuntu/' 1 \
+            'https://security.ubuntu.com/ubuntu/' 2 \
+            | sudo tee /etc/apt/apt-mirrors.txt >/dev/null
+          printf '%s\n' \
+            'Acquire::Retries "1";' \
+            'Acquire::http::Timeout "20";' \
+            'Acquire::https::Timeout "20";' \
+            | sudo tee /etc/apt/apt.conf.d/99-inaya-ci-network >/dev/null
       - name: Audit all production and development dependencies
         run: npm audit --audit-level=low
       - name: Dependency security and compatibility checks
@@ -43,19 +56,20 @@ jobs:
           fi
           python3 tests/cpanel-migration.py
       - name: Verify image discovery, primary images and favicon files
-        run: node --test tests/image-search-export.test.mjs
+        run: node --test tests/image-search-export.test.mjs tests/company-gallery-export.test.mjs tests/cpanel-gallery-assets.test.mjs
       - name: Verify concise unique search titles
         run: node --test tests/search-title-export.test.mjs
       - name: Unit and export checks
         run: node --test tests/seo-phase02-unit.test.cjs tests/seo-phase03-unit.test.cjs tests/seo-phase04-unit.test.cjs tests/seo-phase05-unit.test.cjs tests/seo-final-remediation-unit.test.cjs tests/final-ux-accessibility-unit.test.cjs tests/seo-export.test.mjs tests/seo-phase02-export.test.mjs tests/seo-phase03-export.test.mjs tests/seo-phase04-export.test.mjs tests/seo-phase05-export.test.mjs tests/seo-bilingual-guides-export.test.mjs tests/seo-visual-content-export.test.mjs tests/final-ux-accessibility-export.test.mjs tests/seo-release-readiness.test.mjs tests/customer-question-series.test.mjs tests/article-publication-schedule.test.mjs
       - name: Install Chromium for browser regression
+        timeout-minutes: 10
         run: node node_modules/@playwright/test/cli.js install --with-deps chromium
       - name: Check pricing layout before the full browser suite
         run: node node_modules/@playwright/test/cli.js test tests/e2e/core-page-clarity.spec.ts --grep 'six pricing cards'
       - name: Check customer article tables, visuals and translation before the full browser suite
         run: node node_modules/@playwright/test/cli.js test tests/e2e/customer-question-series.spec.ts
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
@@ -67,7 +81,21 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Configure bounded Ubuntu package downloads
+        timeout-minutes: 2
+        run: |
+          test -f /etc/apt/apt-mirrors.txt
+          printf '%s\tpriority:%s\n' \
+            'https://archive.ubuntu.com/ubuntu/' 1 \
+            'https://security.ubuntu.com/ubuntu/' 2 \
+            | sudo tee /etc/apt/apt-mirrors.txt >/dev/null
+          printf '%s\n' \
+            'Acquire::Retries "1";' \
+            'Acquire::http::Timeout "20";' \
+            'Acquire::https::Timeout "20";' \
+            | sudo tee /etc/apt/apt.conf.d/99-inaya-ci-network >/dev/null
       - name: Install Chromium for browser regression
+        timeout-minutes: 10
         run: node node_modules/@playwright/test/cli.js install --with-deps chromium
       - name: Browser regression
         run: node node_modules/@playwright/test/cli.js test --shard=${{ matrix.shard }}/4

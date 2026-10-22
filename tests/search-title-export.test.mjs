@@ -3,10 +3,10 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { auditExport, attrs } from '../scripts/seo-content-audit.mjs';
 
-test('all 228 search titles are unique, within Bing scan length and consistent with sharing metadata', async () => {
+test('all 230 search titles are unique, within Bing scan length and consistent with sharing metadata', async () => {
   const {pages} = await auditExport();
-  assert.equal(pages.length, 228);
-  assert.equal(new Set(pages.map(page => page.title)).size, 228);
+  assert.equal(pages.length, 230);
+  assert.equal(new Set(pages.map(page => page.title)).size, 230);
   for (const page of pages) {
     assert.ok(page.title.length <= 70, `${page.url}: title has ${page.title.length} characters`);
     assert.match(page.title, /INAYA|عناية/);

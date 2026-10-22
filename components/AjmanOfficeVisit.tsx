@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
+import { companyGalleryOfficePhotos } from '@/lib/company-gallery';
+
+const officeReception = companyGalleryOfficePhotos.find(photo => photo.id === 'office-037')!;
 
 // Office access and transport arrangements confirmed by the business owner on 22 October 2026.
 export default function AjmanOfficeVisit({ locale }: { locale: string }) {
@@ -17,8 +20,7 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
     appointment: 'طلب موعد أو ملفات مناسبة',
     whatsapp: 'اطلب الخيارات عبر واتساب',
     directions: 'الاتجاهات إلى مكتب عجمان',
-    caption: 'مشهد توضيحي مولّد بالذكاء الاصطناعي؛ لا يصوّر مكتب عناية أو موظفيها أو عملاءها الفعليين.',
-    alt: 'مشهد توضيحي مولّد بالذكاء الاصطناعي لاستقبال زائرة وتسليم تذكرة انتظار في مكتب خدمات'
+    gallery: 'صور المكتب والخدمات المنزلية'
   } : {
     title: 'Visit INAYA in Ajman or start your enquiry online',
     intro: 'Our office is at Grand Mall, ground floor, Sheikh Khalifa Bin Zayed Street, Al Rashidiya 3, Ajman. Walk in or request an appointment to discuss your household needs.',
@@ -31,8 +33,7 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
     appointment: 'Request a visit or suitable profiles',
     whatsapp: 'Ask about profiles on WhatsApp',
     directions: 'Directions to the Ajman office',
-    caption: 'AI-generated illustrative scene; not the actual INAYA office, employees or customers.',
-    alt: 'AI-generated illustrative scene of a service coordinator handing a queue ticket to an office visitor'
+    gallery: 'Office and household photo gallery'
   };
   const message = ar
     ? 'مرحباً عناية، أود مراجعة الملفات المناسبة لأسرتي. الدور: __. المنطقة: __. المهام: __. الأيام والساعات: __. تاريخ البدء المفضل: __. يرجى تأكيد التوفر والنقل والتكاليف.'
@@ -56,10 +57,11 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
             <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`} className="rounded-full border border-accent-500/40 px-5 py-3 text-sm font-bold text-primary-900">{copy.whatsapp}</a>
           </div>
           <a href={siteConfig.directionsUrl} className="mt-5 inline-block text-sm font-semibold text-primary-900 underline underline-offset-4">{copy.directions}</a>
+          <p className="mt-3"><Link href={`/${locale}/gallery/`} className="text-sm font-semibold text-primary-900 underline underline-offset-4">{copy.gallery}</Link></p>
         </div>
         <figure>
-          <Image src="/images/service-areas/ajman-walk-in-reception-ai.webp" alt={copy.alt} width={1536} height={1024} sizes="(max-width: 1024px) 100vw, 40vw" className="h-auto w-full rounded-[26px]" />
-          <figcaption className="mt-3 text-xs leading-6 text-primary-900/70">{copy.caption}</figcaption>
+          <Image src={officeReception.src} alt={officeReception.alt[ar ? 'ar' : 'en']} width={officeReception.width} height={officeReception.height} sizes="(max-width: 1024px) 100vw, 40vw" className="h-auto w-full rounded-[26px]" />
+          <figcaption className="mt-3 text-xs leading-6 text-primary-900/70">{officeReception.caption[ar ? 'ar' : 'en']}</figcaption>
         </figure>
       </div>
     </section>

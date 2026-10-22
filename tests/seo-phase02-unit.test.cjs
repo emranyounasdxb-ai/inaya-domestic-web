@@ -44,8 +44,11 @@ test('FAQ schema faithfully retains exact supplied localized questions and answe
 });
 
 test('meaningful service image descriptions are localized and generic fallback is not mislabelled', () => {
-  assert.match(serviceImageAlt('en', 'live-in-maid'), /Household service illustration:/);
-  assert.match(serviceImageAlt('ar', 'live-in-maid'), /^صورة توضيحية لخدمة /);
+  assert.match(serviceImageAlt('en', 'live-in-maid'), /^Household service: /);
+  assert.match(serviceImageAlt('ar', 'live-in-maid'), /^خدمة /);
   assert.match(serviceImageAlt('en', 'unknown-service'), /serving tea to a family/);
   assert.match(serviceImageAlt('ar', 'unknown-service'), /تقدم الشاي لأسرة/);
+  for (const locale of ['en', 'ar']) for (const slug of ['live-in-maid', 'unknown-service']) {
+    assert.doesNotMatch(serviceImageAlt(locale, slug), /illustration|صورة توضيحية/i);
+  }
 });

@@ -83,7 +83,7 @@ export default async function ServicesPage({ params }: PageProps) {
           <div className="relative min-h-[330px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_26px_70px_rgba(7,22,74,0.14)]">
             <Image
               src="/images/home/home-concierge-support.webp"
-              alt={lang === 'ar' ? 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'Illustration of a domestic worker arranging sofa cushions near a mother and child'}
+              alt={lang === 'ar' ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 40vw"
