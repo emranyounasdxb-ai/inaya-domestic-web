@@ -38,15 +38,24 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   assert.equal(articleManifest.length, 20, 'twenty distinct article outputs');
   const todayRoutes = new Set(['blog', ...articleManifest.map(article => `blog/${article.slug}`)]);
   const officeUpdatedRoutes = new Set(['about', 'contact', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah', 'pricing']);
-  const datedRoutes = new Set([...updatedRoutes, ...todayRoutes, ...officeUpdatedRoutes]);
+  const worksheetUpdatedRoutes = new Set([
+    'blog/domestic-worker-hiring-costs-uae',
+    'blog/domestic-worker-skills-language-assessment',
+    'blog/agreeing-domestic-worker-household-duties',
+    'blog/domestic-worker-interview-trial-probation',
+    'blog/new-maid-first-week-checklist',
+    'blog/maid-daily-instructions-handover-template',
+  ]);
+  const datedRoutes = new Set([...updatedRoutes, ...todayRoutes, ...officeUpdatedRoutes, ...worksheetUpdatedRoutes]);
   const expectedDatedUrls = ['en', 'ar'].flatMap(locale => [...datedRoutes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
   assert.equal(datedEntries.length, 160, 'the previously dated routes and the newly revised bilingual About and Contact pages');
   assert.deepEqual(datedEntries.map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedDatedUrls.sort());
-  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 42, 'twenty article pairs and their bilingual hub receive today’s date');
+  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 34, 'sixteen article pairs and their bilingual hub retain 20 October after four pairs receive worksheets');
+  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-22</lastmod>')).length, 24, 'six office/service route pairs and six worksheet-guide pairs receive their substantive update date');
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)[1]).pathname;
     const route = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = officeUpdatedRoutes.has(route) ? '2026-10-22' : todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = officeUpdatedRoutes.has(route) || worksheetUpdatedRoutes.has(route) ? '2026-10-22' : todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
     assert.ok(entry[1].includes(`<lastmod>${expectedDate}</lastmod>`), `${pathname}: only a substantive update changes the recorded date`);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)[1]);

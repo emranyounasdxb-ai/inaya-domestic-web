@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { sendGAEvent } from '@next/third-parties/google';
+import { createAcceptedFormMeasurement, isAcceptedFormDelivery } from '@/lib/form-delivery-measurement';
 
 export function useFormDelivery(kind: 'contact' | 'booking' | 'careers', locale: string) {
   const arabic = locale === 'ar';
@@ -8,6 +10,7 @@ export function useFormDelivery(kind: 'contact' | 'booking' | 'careers', locale:
   const requestId = useRef<string | null>(null);
   const lastPayload = useRef('');
   const startedAt = useRef(0);
+  const acceptedMeasurement = useRef<ReturnType<typeof createAcceptedFormMeasurement> | null>(null);
   useEffect(() => { startedAt.current = Date.now(); }, []);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState('');
@@ -51,10 +54,16 @@ export function useFormDelivery(kind: 'contact' | 'booking' | 'careers', locale:
         }
         return false;
       }
-      if (!response.ok || result.ok !== true || typeof result.reference !== 'string') {
+      if (!isAcceptedFormDelivery(response.ok, result)) {
         throw new Error('Delivery was not accepted');
       }
       setReference(result.reference);
+      acceptedMeasurement.current ??= createAcceptedFormMeasurement({
+        // The active consent component owns this flag; an absent flag is denied.
+        hasConsent: () => window['ga-disable-G-986STCSR37'] === false && Array.isArray(window.dataLayer),
+        sendEvent: (event, parameters) => sendGAEvent('event', event, parameters),
+      });
+      acceptedMeasurement.current(kind, arabic ? 'ar' : 'en', requestId.current, response.ok, result);
       return true;
     } catch {
       setError(arabic

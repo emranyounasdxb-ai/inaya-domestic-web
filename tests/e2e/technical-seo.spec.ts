@@ -38,7 +38,15 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   expect(articleManifest).toHaveLength(20);
   const todayPaths = new Set(['blog', ...articleManifest.map((article) => `blog/${article.slug}`)]);
   const officeUpdatedPaths = new Set(['about', 'contact', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah', 'pricing']);
-  const datedPaths = new Set([...updatedPaths, ...todayPaths, ...officeUpdatedPaths]);
+  const worksheetUpdatedPaths = new Set([
+    'blog/domestic-worker-hiring-costs-uae',
+    'blog/domestic-worker-skills-language-assessment',
+    'blog/agreeing-domestic-worker-household-duties',
+    'blog/domestic-worker-interview-trial-probation',
+    'blog/new-maid-first-week-checklist',
+    'blog/maid-daily-instructions-handover-template',
+  ]);
+  const datedPaths = new Set([...updatedPaths, ...todayPaths, ...officeUpdatedPaths, ...worksheetUpdatedPaths]);
   const expectedDatedUrls = ['en', 'ar'].flatMap((locale) =>
     [...datedPaths].map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
   );
@@ -46,11 +54,12 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   expect(datedEntries).toHaveLength(160);
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual(expectedDatedUrls.sort());
-  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(42);
+  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(34);
+  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-22</lastmod>'))).toHaveLength(24);
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)![1]).pathname;
     const path = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = officeUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = officeUpdatedPaths.has(path) || worksheetUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
     expect(entry[1].match(/<lastmod>(.*?)<\/lastmod>/g), pathname).toEqual([`<lastmod>${expectedDate}</lastmod>`]);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]);

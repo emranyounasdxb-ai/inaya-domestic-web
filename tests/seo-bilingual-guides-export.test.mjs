@@ -149,6 +149,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
   const publishedArticles = JSON.parse(contentModule.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
   const manifest = JSON.parse(await readFile('content/research/2026-10-20/article-manifest.json', 'utf8'));
   const supplements = new Map(manifest.filter((entry) => entry.mode === 'update').map((entry) => [entry.slug, entry]));
+  const worksheetGuides = new Set(['domestic-worker-hiring-costs-uae', 'domestic-worker-skills-language-assessment', 'agreeing-domestic-worker-household-duties', 'domestic-worker-interview-trial-probation', 'new-maid-first-week-checklist', 'maid-daily-instructions-handover-template']);
   assert.deepEqual([...supplements.keys()].sort(), ['agreeing-domestic-worker-household-duties', 'domestic-worker-hiring-costs-uae', 'domestic-worker-leave-travel-planning']);
   const sha = (value) => createHash('sha256').update(value).digest('hex');
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
@@ -182,6 +183,13 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       // The new chart is separately asserted as visible by the series test. Its
       // descriptive text must not change the original manuscript fingerprint.
       let originalRendered = rendered.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/g, '');
+      // The separate workbook download is additive, not a manuscript edit.
+      originalRendered = originalRendered.replace(/<section\b[^>]*data-guide-worksheets="true"[^>]*>[\s\S]*?<\/section>/g, '');
+      if (worksheetGuides.has(article.slug)) {
+        assert.match(rendered, /data-guide-worksheets="true"/);
+        assert.match(rendered, /href="\/downloads\/inaya-household-planning-worksheets\.xlsx"[^>]*download/);
+        assert.ok((await readFile('out/downloads/inaya-household-planning-worksheets.xlsx')).length > 0);
+      }
       if (supplement) {
         const boundary = [...originalRendered.matchAll(/<h2\b([^>]*)>/g)]
           .find((match) => attrs(match[1]).id === `article-section-${snapshot.heading_count + 1}`);
@@ -214,9 +222,9 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((match) => attrs(match[1]).type === 'application/ld+json').flatMap((match) => JSON.parse(match[2])['@graph'] || []);
       const schema = graph.find((node) => node['@type'] === 'Article');
       assert.equal(schema.url, url); assert.equal(schema.inLanguage, locale); assert.equal(schema.headline, copy.title);
-      assert.equal(schema.datePublished, publicationSchedule[article.slug]); assert.equal(schema.dateModified, supplement ? '2026-10-20' : expected.updated);
+      assert.equal(schema.datePublished, publicationSchedule[article.slug]); assert.equal(schema.dateModified, worksheetGuides.has(article.slug) ? '2026-10-22' : supplement ? '2026-10-20' : expected.updated);
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
-      assert.deepEqual(schema.citation, [...new Set(fullLinks.filter((link) => new URL(link).origin !== origin))]);
+      assert.deepEqual(schema.citation, [...new Set(fullLinks.filter((link) => new URL(link, origin).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);
       const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
       assert.ok(hub.includes(`href="${route}"`), `${route}: localized listing`);

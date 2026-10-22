@@ -6,14 +6,16 @@ Owner instruction: continue through the authorised overnight scope, work sequent
 
 | Order | Work | Status | Completion evidence |
 | --- | --- | --- | --- |
-| 1 | Google legacy URL migration: classify retained GSC examples, fix relevant missing redirects and intentionally retired endpoints | ACTIVE | Fresh URL-level status/redirect report; appropriate destination or deliberate 404/410; no unrelated blanket redirects |
-| 2 | Validate every current sitemap page, canonical, language alternate, indexability and internal discovery | IN PROGRESS: automated post-deploy crawl | All 228 current sitemap URLs covered; actual HTTP/meta/link results retained |
+| 1 | Google legacy URL migration: classify retained GSC examples, fix relevant missing redirects and intentionally retired endpoints | PR55 MERGED; FTP IN PROGRESS | All CI passed; real Apache test passed 283 requests including all 228 current routes; production status checks follow FTP |
+| 2 | Validate every current sitemap page, canonical, language alternate, indexability and internal discovery | POST-FIRST-BATCH CRAWL PASSED | All 228 sitemap URLs covered; zero failed requests/findings in query-excluded scope; does not establish Google indexing |
 | 3 | Search Console current-sitemap index status, failed validation details and appropriate live inspection/submission | BLOCKED LIVE ACCESS; saved exports usable | Dated current account observations; submitted, indexed and waiting distinguished; no permission bypass |
-| 4 | Cross-check and address every actionable BeyondSEO finding | FIRST BATCH DEPLOYED; reconciliation pending | Finding-by-finding disposition; real photography explicitly deferred by owner; no generic copy padding |
-| 5 | Bing favicon technical and public-result re-audit | QUEUED | Icon URLs/content, crawl access, markup and dated result observation; cache wait distinguished |
-| 6 | Brave favicon technical and public-result re-audit | QUEUED | Same domain identity and dated public result; no fabricated refresh outcome |
-| 7 | GitHub checks, merge, incremental FTP deployment | FIRST BATCH COMPLETE; migration batch queued | Checks and deployment run success; actual live verification |
-| 8 | Final re-audit, updated report, clean synced local/Git state | QUEUED | Evidence-backed completion table, genuine external waits and owner dependencies |
+| 4 | Cross-check and address every actionable BeyondSEO finding | FIRST BATCH DEPLOYED; measurement/workbook batch implemented | Existing monthly/live-in/visa and guide content already substantial. Accepted-enquiry analytics and four blank bilingual planning worksheets added; CI/deployment pending |
+| 5 | Bing favicon technical and public-result re-audit | TECHNICAL PASS; BRANDED ICON OBSERVED | 28 production probes pass; dated public search screenshot shows INAYA branding, not proof of the exact newest cache bytes |
+| 6 | Brave favicon technical and public-result re-audit | SITE PASS; PROVIDER CACHE STILL FAILS | Public result still globe; observed Brave icon proxy returns 404 while INAYA icons pass. Owner previously chose waiting, no support outreach |
+| 7 | GitHub checks, merge, incremental FTP deployment | FIRST BATCH COMPLETE; MIGRATION DEPLOYING | PR55 main 38779ad; CI 39812959888 success; FTP 39816208739 active |
+| 8 | Existing Google Business Profile images: audit ownership/publication and website image discovery across engines | ADDED BY OWNER; INVENTORY IN PROGRESS | Distinguish GBP publication from Google/Bing/Brave image indexing; reuse owned originals with truthful captions; never certify all images indexed from a submission |
+| 9 | Complete signed-in Pinterest professionally and publish appropriate existing GBP imagery | ADDED BY OWNER; EXISTING PROFILE REVIEWED | Existing Team 34 pins, Office 22, Staff 0; avoid duplicate pins, preserve actual business facts and distinguish illustrations from business proof |
+| 10 | Final re-audit, updated report, clean synced local/Git state | QUEUED | Evidence-backed completion table, genuine external waits and owner dependencies |
 
 ## Verified first batch
 
@@ -43,4 +45,4 @@ Bing/Brave support outreach remains unauthorised after the owner's earlier instr
 
 ## Next action
 
-Implement reviewed legacy routing on the actual static Apache/cPanel deployment. Preserve current URLs, public assets, enquiry handler and exact old favicon redirect. Verify live status and targets after deployment before marking migration fixes complete.
+Verify PR55 production routing after FTP. Complete checks and deployment for accepted-enquiry measurement and downloadable guide worksheets, then continue the newly requested GBP/Pinterest image work. Mazyoon category update was explicitly deferred by the owner on 22 October; a more suitable public activity exists, but it was not changed.
