@@ -69,7 +69,6 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     }
     if (file === 'lib/service-content-briefs.ts' || file === 'lib/services.ts') before = corePageCopy.approvedCorePageCopy(file, before);
     before = octoberFixes.approvedSeoFixes(file, before);
-    before = ajmanOffice.approvedAjmanOfficeCopy(file, before);
     if (file === 'app/globals.css') {
       // The dependency-removal migration replaces only the v3 compiler header.
       // Keep the entire protected stylesheet below it byte-for-byte checked.

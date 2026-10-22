@@ -148,4 +148,5 @@ function approvedSeoFixes(file, source) {
   return approvedDeliverySource(file, approvedManagedPackages(file, source));
 }
 
-module.exports = { approvedSeoFixes };
+const { approvedAjmanOfficeCopy } = require('./ajman-office-expectations.cjs');
+module.exports = { approvedSeoFixes: (file, source) => approvedAjmanOfficeCopy(file, approvedSeoFixes(file, source)) };

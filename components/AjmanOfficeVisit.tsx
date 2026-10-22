@@ -26,7 +26,7 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
       ['Request an appointment online', 'Send your preferred time and household requirements through the contact form. The team confirms the appointment with you; submitting the form alone does not reserve a confirmed slot.'],
       ['Walk in and take a counter token', 'You can visit during office hours without a prior appointment. Collect a queue token at the counter on arrival; waiting time depends on the visitors being served.'],
       ['Transport with our own drivers', 'INAYA arranges domestic-worker transport using its own drivers. Confirm the pickup and drop-off locations, timings, charges and package inclusions before agreeing the arrangement.'],
-      ['Prepare a suitable-profile request', 'Share the role, duties, home area, days and hours, and preferred start date. Ask the team for suitable available profiles to review; availability and the start date require confirmation.']
+      ['Prepare a suitable-profile request', 'Share the role, duties, home area, days and hours, and preferred start date. Ask the team which individual profiles match your household and are currently available. Confirm availability and the start date with the team.']
     ],
     appointment: 'Request a visit or suitable profiles',
     whatsapp: 'Ask about profiles on WhatsApp',
