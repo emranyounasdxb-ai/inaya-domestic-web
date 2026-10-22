@@ -12,6 +12,14 @@ export const family = (route) => route.startsWith('maid-source-countries/') ? 'c
   : route.startsWith('services/') && route !== 'services/countries-we-source-from' ? 'service' : 'information/hub';
 const shingles = (s) => { const words = tokens(s); return new Set(words.slice(0, -4).map((_, i) => words.slice(i, i + 5).join(' '))); };
 const hash = (s) => createHash('sha256').update(s).digest('hex');
+const worksheetRoutes = new Set([
+  'blog/domestic-worker-hiring-costs-uae',
+  'blog/domestic-worker-skills-language-assessment',
+  'blog/agreeing-domestic-worker-household-duties',
+  'blog/domestic-worker-interview-trial-probation',
+  'blog/new-maid-first-week-checklist',
+  'blog/maid-daily-instructions-handover-template',
+]);
 
 export async function auditExport() {
   const xml = await readFile('out/sitemap.xml', 'utf8');
@@ -26,7 +34,17 @@ export async function auditExport() {
     const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
     const start = body.indexOf('<main'); const end = body.lastIndexOf('</main>');
     const main = body.slice(start, end + 7).replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/g, '');
-    const paragraphs = [...main.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map((m) => tokens(text(m[1])).join(' ')).filter((s) => s.length >= 60 && tokens(s).length >= 8);
+    // The separately tested shared download control is functional UI, not
+    // repeated editorial prose. Keep it in all full-text/link/price metrics.
+    let worksheetSections = 0;
+    const editorialMain = main.replace(/<section\b[^>]*data-guide-worksheets="true"[^>]*>[\s\S]*?<\/section>/g, (section) => {
+      if (!worksheetRoutes.has(route) || ++worksheetSections !== 1
+        || !/<a\b[^>]*href="\/downloads\/inaya-household-planning-worksheets\.xlsx"[^>]*\bdownload(?:[\s=>])/.test(section)) {
+        throw new Error(`${url}: unexpected shared worksheet section`);
+      }
+      return '';
+    });
+    const paragraphs = [...editorialMain.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map((m) => tokens(text(m[1])).join(' ')).filter((s) => s.length >= 60 && tokens(s).length >= 8);
     const links = [...body.matchAll(/<a\b[^>]*>/g)].flatMap((m) => {
       const a = attrs(m[0]); if (!a.href || /^(mailto|tel|javascript):/.test(a.href)) return [];
       const target = new URL(a.href, url); if (target.origin !== origin) return [];
