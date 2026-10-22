@@ -9,10 +9,10 @@ Owner instruction: continue through the authorised overnight scope, work sequent
 | 1 | Google legacy URL migration: classify retained GSC examples, fix relevant missing redirects and intentionally retired endpoints | DEPLOYED AND VERIFIED | PR55/main 38779ad; FTP 39816208739 success; 340 live GET checks, zero issues; real Apache test passed 283 requests |
 | 2 | Validate every current sitemap page, canonical, language alternate, indexability and internal discovery | POST-FIRST-BATCH CRAWL PASSED | All 228 sitemap URLs covered; zero failed requests/findings in query-excluded scope; does not establish Google indexing |
 | 3 | Search Console current-sitemap index status, failed validation details and appropriate live inspection/submission | BLOCKED LIVE ACCESS; saved exports usable | Dated current account observations; submitted, indexed and waiting distinguished; no permission bypass |
-| 4 | Cross-check and address every actionable BeyondSEO finding | FIRST BATCH DEPLOYED; measurement/workbook CI ACTIVE | PR56 head 67d54a7/run 39821510123; accepted-enquiry analytics, four blank bilingual worksheets on six guides per language and Pinterest verification file; do not call these live before FTP |
+| 4 | Cross-check and address every actionable BeyondSEO finding | PR54/55/56 DEPLOYED; GALLERY CI PENDING | PR56 merged as 9d10fcc; CI 39821510123 and FTP 39825299322 success. Accepted-enquiry analytics, four blank bilingual worksheets on six guides per language and Pinterest proof deployed. |
 | 5 | Bing favicon technical and public-result re-audit | TECHNICAL PASS; BRANDED ICON OBSERVED | 28 production probes pass; dated public search screenshot shows INAYA branding, not proof of the exact newest cache bytes |
 | 6 | Brave favicon technical and public-result re-audit | SITE PASS; PROVIDER CACHE STILL FAILS | Public result still globe; observed Brave icon proxy returns 404 while INAYA icons pass. Owner previously chose waiting, no support outreach |
-| 7 | GitHub checks, merge, incremental FTP deployment | PR54/55 COMPLETE; PR56 CI ACTIVE | Merge only the tested head after every check passes; retain the existing incremental FTP and deployment baseline |
+| 7 | GitHub checks, merge, incremental FTP deployment | PR54/55/56 COMPLETE; PR57 SECURITY RECHECK | Merge only the tested head after every check passes; retain the existing incremental FTP and deployment baseline |
 | 8 | Existing Google Business Profile images: audit ownership/publication and website image discovery across engines | WEBSITE BATCH BUILT; NOT YET DEPLOYED | 188 public owner images acquired; 30 owner-confirmed office photos. Nine crop variants consolidated into 179 gallery representatives; bilingual gallery adds two canonical pages. Local export: 230 pages, 263 image URLs, 1118 image associations |
 | 9 | Complete signed-in Pinterest professionally and publish appropriate existing GBP imagery | PROFILE SAVED; WEBSITE CLAIM AND IMPORT PENDING | Public business profile saved; private profile/search privacy both off. Existing 56 pins represent 49 gallery images; 130 missing images prepared in four supported public RSS feeds. Local uploads blocked by Chrome file-URL permission; no workaround through hidden APIs |
 | 10 | Final re-audit, updated report, clean synced local/Git state | QUEUED | Evidence-backed completion table, genuine external waits and owner dependencies |
@@ -45,7 +45,7 @@ Bing/Brave support outreach remains unauthorised after the owner's earlier instr
 
 ## Next action
 
-Complete PR56 checks/merge/deployment, verify the Pinterest proof file and claim the website. Ship the tested bilingual gallery and four static photo RSS feeds, connect them through Pinterest's supported interface, and verify actual published Pins separately from accepted/processing imports. Mazyoon category update was explicitly deferred by the owner on 22 October; a more suitable public activity exists, but it was not changed.
+PR56 is merged and deployed; its proof file returns HTTP 200 with the exact verification tag. Complete the Pinterest website claim. Ship the tested bilingual gallery and four static photo RSS feeds, connect them through Pinterest's supported interface, and verify actual published Pins separately from accepted/processing imports. Mazyoon category update was explicitly deferred by the owner on 22 October; a more suitable public activity exists, but it was not changed.
 
 ## Latest migration and image evidence
 
@@ -54,3 +54,10 @@ Complete PR56 checks/merge/deployment, verify the Pinterest proof file and claim
 - Local gallery batch: full production export and lint pass; 62 distinct focused/core/export/image checks pass, including exact prepared JPEG preservation and the real deployment optimizer fixture. No local browser preview was used after the prior denial.
 - Public captions use plain subject descriptions per the owner's instruction. Metadata provenance and untouched source files remain preserved; no pictured person is certified as an available candidate or identified employee.
 - RSS imports can take up to 24 hours according to Pinterest. Accepted feeds are not proof of 130 published Pins; record actual public URLs and never upload the manual CSV again without checking RSS outcomes first.
+
+## Current security refresh
+
+- The first PR57 CI run correctly stopped at the full dependency audit after new Next advisories appeared. The audit gate was not disabled or relaxed.
+- Next, @next/third-parties and eslint-config-next are pinned to 16.4.2; npm audit reports zero vulnerabilities across production and development dependencies. The dependency regression baseline follows the fixed release.
+- The project Node version is raised from 22.23.2 to the official security release 22.23.4. Local verification uses an isolated portable runtime checked against the official SHA-256; no global runtime or other project was changed.
+- Production export and full lint pass under Node 22.23.4/Next 16.4.2. Focused export checks and the new GitHub run must pass before PR57 merge/deployment.
