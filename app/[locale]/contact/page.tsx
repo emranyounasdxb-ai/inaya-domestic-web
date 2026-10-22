@@ -62,7 +62,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     formTitle: isArabic ? 'أرسل استفسارك إلى عناية' : 'Send your enquiry to INAYA',
     formText: isArabic ? 'أرسل الخدمة والإمارة والتفاصيل إلى فريق عناية عبر هذا النموذج. سيتواصل الفريق معك لمناقشة الخطوات التالية؛ لا يتم تأكيد خدمة بمجرد الإرسال.' : 'Send your service, emirate and enquiry details to the INAYA team using this form. The team will follow up to discuss next steps; submitting does not confirm a service.',
     locationTitle: isArabic ? 'موقع المكتب الرئيسي' : 'Main office location',
-    locationText: isArabic ? 'مكتبنا في جراند مول، عجمان، ونقدم خدمات العمالة المنزلية في جميع أنحاء الإمارات. يرجى التواصل معنا لتأكيد الموعد قبل الزيارة.' : 'Our office is at Grand Mall, Ajman, and we provide domestic worker services across the UAE. Please contact us to confirm timing before your visit.',
+    locationText: isArabic ? 'مكتبنا في جراند مول، الطابق الأرضي، الراشدية 3، عجمان. زرنا مباشرة خلال ساعات العمل وخذ تذكرة انتظار من الكاونتر، أو اطلب موعداً عبر الإنترنت ليؤكده الفريق.' : 'Our office is at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Walk in during office hours and take a counter token, or request an appointment online for our team to confirm.',
     trustTitle: isArabic ? 'تجربة تواصل واضحة وموثوقة في الإمارات' : 'A clear and trusted UAE contact experience',
     ctaTitle: isArabic ? 'هل تحتاج إلى متابعة سريعة؟' : 'Need a faster response?',
     ctaText: isArabic ? 'راسل فريقنا عبر واتساب لمعرفة التوفر والخطوات التالية في إمارتك.' : 'Chat with our team on WhatsApp for availability and next steps in your emirate.',
@@ -89,7 +89,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const faqs = [
     { question: isArabic ? 'هل تقدمون الخدمة في جميع الإمارات؟' : 'Do you serve all UAE emirates?', answer: isArabic ? 'نعم، نقدم خدمات الخادمات والعمالة المنزلية في جميع إمارات الدولة. تواصل معنا لتأكيد التوفر حسب منطقتك ونوع الخدمة.' : 'Yes, we provide maid and domestic worker services across all UAE emirates. Contact us to confirm availability by area and service type.' },
     { question: isArabic ? 'ما أسرع طريقة للتواصل؟' : 'What is the fastest way to contact you?', answer: isArabic ? 'يمكنك مشاركة متطلباتك عبر واتساب؛ يعتمد وقت الرد على الفريق.' : 'WhatsApp lets you share your requirement; response timing depends on the team.' },
-    { question: isArabic ? 'هل يمكن زيارة المكتب؟' : 'Can I visit the office?', answer: isArabic ? 'نعم، يمكن زيارة المكتب في جراند مول بعجمان، ويفضل التواصل معنا قبل الزيارة لتأكيد الموعد.' : 'Yes, you can visit our office at Grand Mall in Ajman. Please contact us first to confirm timing.' }
+    { question: isArabic ? 'هل يمكن زيارة المكتب؟' : 'Can I visit the office?', answer: isArabic ? 'نعم، زر مكتبنا في جراند مول بعجمان خلال ساعات العمل وخذ تذكرة انتظار من الكاونتر. يمكنك أيضاً طلب موعد عبر الإنترنت ليؤكد الفريق التوقيت؛ إرسال النموذج وحده لا يؤكد الموعد.' : 'Yes. Walk into our Grand Mall office in Ajman during office hours and collect a counter token. You can also request an appointment online; the team must confirm the time. Submitting the form alone does not confirm a slot.' }
   ];
 
   return (

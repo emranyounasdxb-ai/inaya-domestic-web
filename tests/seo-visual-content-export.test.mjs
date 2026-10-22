@@ -1,4 +1,5 @@
 import octoberFixes from './seo-october-fixes-expectations.cjs';
+import ajmanOffice from './ajman-office-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -111,6 +112,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       assert.equal(expected.split(original).length, 2, 'one service hero loading anchor');
       expected = expected.replace(original, 'fill loading="eager" fetchPriority="high" sizes=');
     }
-    assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling`);
+    expected = ajmanOffice.approvedAjmanOfficeCopy(`${file}#hero`, expected);
+    assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling with approved additions`);
   }
 });

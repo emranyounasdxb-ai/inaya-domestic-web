@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import remediation from './seo-audit-remediation-expectations.cjs';
 import managed from './managed-package-expectations.cjs';
+import ajmanOffice from './ajman-office-expectations.cjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -45,16 +46,16 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
-    const approved = managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
+    const approved = ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
     assert.equal(page.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
     if (page.route !== 'blog') assert.equal(page.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     const additions = [];
     if (page.route === 'pricing') additions.push(`${page.url}#faq`);
-    // Only the three pictured core pages and service detail Heroes gain an
+    // The pictured core/Ajman pages and service detail Heroes gain an
     // ImageObject; every historical entity ID remains checked exactly.
-    if (['', 'about', 'services'].includes(page.route) || (page.route.startsWith('services/') && page.route !== 'services/countries-we-source-from')) additions.push(`${page.url}#primaryimage`);
+    if (['', 'about', 'services', 'maid-services-ajman'].includes(page.route) || (page.route.startsWith('services/') && page.route !== 'services/countries-we-source-from')) additions.push(`${page.url}#primaryimage`);
     const expectedSchemaIds = [...before.schemaIds, ...additions].sort();
     assert.deepEqual(page.schemaIds, expectedSchemaIds, `${page.url}: preserved IDs plus the approved pricing FAQ and visible primary image`);
     const expectedPrices = managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
