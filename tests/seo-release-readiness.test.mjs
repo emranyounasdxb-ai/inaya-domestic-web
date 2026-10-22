@@ -126,8 +126,8 @@ test('approved identity and hours match visible bilingual content and visa scope
 
 test('cPanel root uses a language-aware HTTP redirect and preserves proven FTP deployment', async () => {
   const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
-  const htaccess = workflow.match(/cat > out\/\.htaccess <<'EOF'\r?\n([\s\S]*?)\r?\n\s*EOF/)?.[1];
-  assert.ok(htaccess, 'generated cPanel .htaccess found');
+  const htaccess = await readFile('.github/cpanel.htaccess', 'utf8');
+  assert.match(workflow, /cp \.github\/cpanel\.htaccess out\/\.htaccess/);
   assert.match(htaccess, /RewriteCond %\{HTTP_HOST\} \^www\\\.inayadomestic\\\.ae\$ \[NC\]/);
   assert.match(htaccess, /RewriteRule \^ https:\/\/inayadomestic\.ae%\{REQUEST_URI\} \[R=301,L,NE\]/);
   assert.ok(htaccess.indexOf('RewriteCond %{HTTP_HOST}') < htaccess.indexOf('RewriteCond %{HTTP:Accept-Language}'));
@@ -158,9 +158,7 @@ test('five retired article URLs permanently redirect to relevant existing canoni
     ['mohre-domestic-worker-rules-2025-complete-guide-to-legal-hiring-in-uae', 'blog/uae-domestic-worker-hiring-process'],
     ['domestic-worker-training-skills-ajman', 'blog/domestic-worker-skills-language-assessment'],
   ];
-  const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
-  const htaccess = workflow.match(/cat > out\/\.htaccess <<'EOF'\r?\n([\s\S]*?)\r?\n\s*EOF/)?.[1];
-  assert.ok(htaccess);
+  const htaccess = await readFile('.github/cpanel.htaccess', 'utf8');
   const rules = [...htaccess.matchAll(/^\s*RewriteRule (\S+) (\S+) \[([^\]]+)\]/gm)];
   for (const [oldSlug, target] of replacements) {
     const rule = rules.find(m => m[1] === `^${oldSlug}/?$`);

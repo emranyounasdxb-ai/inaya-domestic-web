@@ -84,8 +84,10 @@ test('three emirates link practical local notes to all six services without inve
 
 test('cPanel redirect uses an unconditional permanent legacy About rule before language selection', async () => {
   const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
+  const htaccess = await readFile('.github/cpanel.htaccess', 'utf8');
   const rule = 'RewriteRule ^about-us/?$ https://inayadomestic.ae/en/about/ [R=301,L]';
-  assert.ok(workflow.includes(rule));
-  assert.ok(workflow.indexOf(rule) < workflow.indexOf('RewriteCond %{HTTP:Accept-Language}'));
+  assert.ok(htaccess.includes(rule));
+  assert.ok(htaccess.indexOf(rule) < htaccess.indexOf('RewriteCond %{HTTP:Accept-Language}'));
+  assert.match(workflow, /cp \.github\/cpanel\.htaccess out\/\.htaccess/);
   assert.match(workflow, /inaya-home-hero-family\.webp' \? 65 : 70/);
 });

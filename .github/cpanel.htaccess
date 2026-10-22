@@ -1,0 +1,99 @@
+Options -Indexes
+DirectoryIndex index.html
+
+# The root is a language chooser, not an indexable duplicate of /en/.
+# Use a temporary HTTP redirect because the target varies by visitor language.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.inayadomestic\.ae$ [NC]
+  RewriteRule ^ https://inayadomestic.ae%{REQUEST_URI} [R=301,L,NE]
+  RewriteRule ^about-us/?$ https://inayadomestic.ae/en/about/ [R=301,L]
+  RewriteRule ^contact/?$ https://inayadomestic.ae/en/contact/ [R=301,L]
+
+  # Observed genuine WordPress URLs with relevant replacements on the new site.
+  RewriteRule ^home/?$ https://inayadomestic.ae/en/ [R=301,L]
+  RewriteRule ^ar-الرئيسية/?$ https://inayadomestic.ae/ar/ [R=301,L]
+  RewriteRule ^ar/blog/-الأدلة/?$ https://inayadomestic.ae/ar/blog/ [R=301,L]
+  RewriteRule ^ar/services-الخدمات/?$ https://inayadomestic.ae/ar/services/ [R=301,L]
+  RewriteRule ^en/why-choose-inaya/?$ https://inayadomestic.ae/en/about/ [R=301,L]
+  RewriteRule ^ar/why-choose-inaya/?$ https://inayadomestic.ae/ar/about/ [R=301,L]
+  RewriteRule ^ar/domestic-worker-services-uae/?$ https://inayadomestic.ae/ar/services/ [R=301,L]
+  RewriteRule ^domestic-worker-services-ajman/?$ https://inayadomestic.ae/en/maid-services-ajman/ [R=301,L]
+  RewriteRule ^ar/domestic-worker-services-ajman/?$ https://inayadomestic.ae/ar/maid-services-ajman/ [R=301,L]
+  RewriteRule ^professional-maid-agency-ajman/?$ https://inayadomestic.ae/en/maid-services-ajman/ [R=301,L]
+  RewriteRule ^privacy-policy/?$ https://inayadomestic.ae/en/privacy-policy/ [R=301,L]
+  RewriteRule ^terms-and-conditions/?$ https://inayadomestic.ae/en/terms/ [R=301,L]
+  RewriteRule ^ar/terms-and-conditions/?$ https://inayadomestic.ae/ar/terms/ [R=301,L]
+  RewriteRule ^top-10-maid-hiring-mistakes-in-uae-and-how-to-avoid-them/?$ https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/ [R=301,L]
+
+  # Retired archives/assets and unrelated old product URLs have no replacement.
+  # 410 is intentional: never turn deleted/spam URLs into a homepage soft 404.
+  RewriteRule ^(?:product|tag|category|author|wp-includes)(?:/|$) - [G,L]
+  RewriteRule ^(?:ar/)?disclaimer/?$ - [G,L]
+  # These observed WordPress query endpoints are gone, not new homepage aliases.
+  RewriteCond %{QUERY_STRING} (^|&)feed=rss2(&|$) [NC,OR]
+  RewriteCond %{QUERY_STRING} (^|&)p=1(&|$) [NC]
+  RewriteRule ^(?:en/|ar/)?$ - [G,L]
+  # Relevant replacements for retired WordPress articles and backlinks.
+  RewriteRule ^domestic-worker-enquiry-in-uae-step-by-step-process-explained-by-experts-2025/?$ https://inayadomestic.ae/en/how-it-works/ [R=301,L]
+  RewriteRule ^verify-a-maids-background/?$ https://inayadomestic.ae/en/services/background-verification/ [R=301,L]
+  RewriteRule ^hire-maid-service-ajman/?$ https://inayadomestic.ae/en/maid-services-ajman/ [R=301,L]
+  RewriteRule ^mohre-domestic-worker-rules-2025-complete-guide-to-legal-hiring-in-uae/?$ https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/ [R=301,L]
+  RewriteRule ^domestic-worker-training-skills-ajman/?$ https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/ [R=301,L]
+  # Preserve the exact old favicon URL still recorded by Bing.
+  RewriteRule ^wp-content/uploads/2025/10/inaya-favicon-512x512-1-150x150\.png$ /favicon-48x48.png [R=301,L]
+  RewriteCond %{HTTP:Accept-Language} ^ar([-,;]|$) [NC]
+  RewriteRule ^$ /ar/ [R=302,L]
+  RewriteRule ^$ /en/ [R=302,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# Override the MIME-wide year-long Expires header for stable icon URLs.
+# Cache-Control and Expires must agree, including for older icon caches.
+<FilesMatch "^(?:favicon\.ico|favicon-48x48\.png|apple-touch-icon\.png|icon\.png)$">
+  <IfModule mod_expires.c>
+    ExpiresByType image/png "access plus 1 day"
+    ExpiresByType image/x-icon "access plus 1 day"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 day"
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always merge Vary Accept-Language "expr=%{REQUEST_URI} == '/'"
+  Header always set Cache-Control "private, no-store" "expr=%{REQUEST_URI} == '/'"
+  <FilesMatch "\.(?:css|js|mjs|webp|avif|png|jpe?g|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # These stable branding URLs must be able to refresh after an update.
+  <FilesMatch "^(?:favicon\.ico|favicon-48x48\.png|apple-touch-icon\.png|icon\.png)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(?:html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
