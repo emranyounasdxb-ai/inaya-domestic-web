@@ -64,8 +64,26 @@ test('localized pages advertise usable standard favicons made from the approved 
     const size = [16, 32, 48][i];
     assert.equal(ico[start], size); assert.equal(ico[start + 1], size);
     const length = ico.readUInt32LE(start + 8), offset = ico.readUInt32LE(start + 12);
-    const frame = await sharp(ico.subarray(offset, offset + length)).metadata();
-    assert.equal(frame.width, size); assert.equal(frame.height, size);
+    const frame = ico.subarray(offset, offset + length);
+    assert.equal(frame.readUInt32LE(0), 40, 'legacy-compatible BITMAPINFOHEADER');
+    assert.equal(frame.readInt32LE(4), size);
+    assert.equal(frame.readInt32LE(8), size * 2);
+    assert.equal(frame.readUInt16LE(12), 1);
+    assert.equal(frame.readUInt16LE(14), 32);
+    assert.equal(frame.readUInt32LE(16), 0, 'uncompressed DIB');
+    const maskStride = Math.ceil(size / 32) * 4;
+    assert.equal(length, 40 + size * size * 4 + maskStride * size);
+    const expected = await sharp('app/icon.png').resize(size, size).ensureAlpha().raw().toBuffer();
+    // Independently decode the bottom-up BGRA frame and its transparency mask.
+    const decoded = Buffer.alloc(size * size * 4);
+    for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
+      const row = size - y - 1, src = 40 + (row * size + x) * 4, dst = (y * size + x) * 4;
+      decoded[dst] = frame[src + 2]; decoded[dst + 1] = frame[src + 1];
+      decoded[dst + 2] = frame[src]; decoded[dst + 3] = frame[src + 3];
+      const masked = Boolean(frame[40 + size * size * 4 + row * maskStride + Math.floor(x / 8)] & (128 >> (x % 8)));
+      assert.equal(masked, expected[dst + 3] === 0, `${size}px mask at ${x},${y}`);
+    }
+    assert.deepEqual(decoded, expected, `${size}px approved logo pixels preserved`);
   }
   for (const [name, size] of [['favicon-48x48.png', 48], ['apple-touch-icon.png', 180]]) {
     const metadata = await sharp(`out/${name}`).metadata();
