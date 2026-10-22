@@ -1,5 +1,13 @@
 # Phase 5 measurement plan
 
+## Current-state addendum — 22 October 2026
+
+The September implementation notes below are historical. Real contact, booking and careers delivery now uses the PHP enquiry endpoint; a successful HTTP response must explicitly contain `ok: true` and a valid nonempty INAYA reference before the form confirms acceptance. The existing `GoogleAnalyticsConsent` component alone controls optional GA4/Clarity consent. The earlier `Measurement` collector remains unmounted.
+
+Accepted contact/booking receipts now emit GA4 `generate_lead`; careers receipts use the separate `career_enquiry_submitted` event. These mean accepted website enquiries, not qualified leads, confirmed bookings, jobs or verified inbox delivery. Measurement checks the active consent flag and initialized GA data layer at acceptance, drops denied/unavailable events without replay, and deduplicates accepted retries by request ID privately within the mounted form. Analytics errors never invalidate successful delivery.
+
+Event parameters contain only an allowlisted form kind, EN/AR language, a fixed canonical form URL and an empty referrer override. No form fields, enquiry/request references, customer identifiers, entered service values or URL queries are passed. Consent withdrawal, failed/invalid receipts, retry deduplication and careers separation are covered by focused checks. This establishes the site event boundary; GA4 receipt and account key-event/report settings require separate live verification. Existing automatic/enhanced vendor measurement is not newly enabled or certified by this change.
+
 2026-09-19. Local repository work only. No analytics account, external profile or production configuration was accessed or changed.
 
 ## Existing integration audit and implementation boundary

@@ -40,7 +40,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-hiring-costs-uae",
     "published": "2026-09-19",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "en": {
       "title": "What is the total cost of hiring a domestic worker in Ajman?",
       "description": "The total depends on whether you recruit a worker onto your own employer file or buy services from an agency that employs the worker. Build your budget from…",
@@ -240,7 +240,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-skills-language-assessment",
     "published": "2026-09-25",
-    "updated": "2026-10-19",
+    "updated": "2026-10-22",
     "en": {
       "title": "How to select a domestic worker's skills and language for your household",
       "description": "Select against the tasks and communication your home needs, then check the individual candidate's evidence. Nationality, a job label or a brief profile does not…",
@@ -335,7 +335,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "agreeing-domestic-worker-household-duties",
     "published": "2026-09-28",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "en": {
       "title": "Can one domestic worker handle cleaning, cooking and childcare?",
       "description": "One person may be able to perform more than one agreed household task, but the scope must match their skills, lawful occupation and a realistic schedule. Do not…",
@@ -401,7 +401,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-interview-trial-probation",
     "published": "2026-09-30",
-    "updated": "2026-10-19",
+    "updated": "2026-10-22",
     "en": {
       "title": "Interview, trial and probation: what is the difference when hiring a domestic worker?",
       "description": "An interview assesses suitability before an agreement. A commercial trial is a separately defined service or arrangement whose terms must be confirmed. Statutory…",
@@ -806,7 +806,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "new-maid-first-week-checklist",
     "published": "2026-09-08",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "en": {
       "title": "A new maid’s first week: a practical household orientation checklist",
       "description": "Welcome a new maid with a clear first-week plan: household routines, equipment demonstrations, priorities, work and rest arrangements, feedback and handovers.",
@@ -974,7 +974,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "maid-daily-instructions-handover-template",
     "published": "2026-09-16",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "en": {
       "title": "Daily maid instructions and a household handover template",
       "description": "Write a practical daily maid handover with priorities, task locations, household methods, completion notes and a clear contact for questions.",
