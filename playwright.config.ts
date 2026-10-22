@@ -24,7 +24,9 @@ export default defineConfig({
     command: `npm run dev -- --webpack --port ${port}`,
     url: `${baseURL}/en`,
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000
+    // Cold CI workers can spend longer compiling the first route than local dev.
+    timeout: process.env.CI ? 240_000 : 120_000,
+    stdout: 'pipe'
   },
   projects: [
     {
