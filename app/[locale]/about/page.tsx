@@ -2,6 +2,7 @@ import Image from 'next/image';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
+import { companyGalleryHero } from '@/lib/company-gallery';
 
 type PageProps = {
   params: Promise<{
@@ -10,7 +11,7 @@ type PageProps = {
 };
 
 const aboutImages = {
-  hero: '/images/about/about-hero-domestic-service.webp',
+  hero: companyGalleryHero.src,
   support: '/images/home/home-concierge-support.webp',
   family: '/images/home/inaya-home-hero-family.webp'
 };
@@ -133,7 +134,7 @@ export default async function AboutPage({ params }: PageProps) {
             </div>
           </div>
           <div className="relative min-h-[360px] overflow-hidden rounded-[30px] border border-primary-900/10 bg-white shadow-[0_28px_78px_rgba(7,22,74,0.15)]">
-            <Image src={aboutImages.hero} alt={isArabic ? 'صورة توضيحية لعاملة منزلية تقدم الشاي لأسرة في غرفة المعيشة' : 'Illustration of a domestic worker serving tea to a family in a living room'} fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
+            <Image src={aboutImages.hero} alt={companyGalleryHero.alt[isArabic ? 'ar' : 'en']} fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
           </div>
         </div>
       </section>
@@ -142,13 +143,14 @@ export default async function AboutPage({ params }: PageProps) {
       <section className="bg-white px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-[#f7f8fb] shadow-[0_22px_60px_rgba(7,22,74,0.10)]">
-            <Image src={aboutImages.family} alt={isArabic ? 'صورة توضيحية لعاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'Illustration of a domestic worker beside a table with the Dubai skyline in the background'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+            <Image src={aboutImages.family} alt={isArabic ? 'عاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'A domestic worker beside a table with the Dubai skyline in the background'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
           </div>
           <div>
             <h2 className={`${headingClass} text-[2.2rem] font-bold tracking-[-0.035em] text-primary-900 sm:text-[3rem]`}>{copy.storyTitle}</h2>
             <div className="mt-6 space-y-5 text-[1rem] leading-8 text-primary-900/85">
               {copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               <Link className="inline-block font-semibold underline underline-offset-4" href={`/${locale}/contact/`}>{isArabic ? 'تواصل مع فريق عناية في عجمان' : 'Contact the INAYA team in Ajman'}</Link>
+              <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/gallery/`}>{isArabic ? 'صور مكتب عناية والخدمات المنزلية' : 'Explore INAYA office and household photos'}</Link></p>
               <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/careers/`}>{isArabic ? 'فرص العمل وطلبات التوظيف' : 'Careers and work enquiries'}</Link></p>
             </div>
             <div className="mt-8 rounded-[24px] border border-accent-500/22 bg-[#fffdf8] p-6 shadow-[0_16px_42px_rgba(7,22,74,0.07)]">
@@ -231,7 +233,7 @@ export default async function AboutPage({ params }: PageProps) {
             </div>
           </div>
           <div className="relative min-h-[380px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_22px_60px_rgba(7,22,74,0.10)]">
-            <Image src={aboutImages.support} alt={isArabic ? 'صورة توضيحية لعاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'Illustration of a domestic worker arranging sofa cushions near a mother and child'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+            <Image src={aboutImages.support} alt={isArabic ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
           </div>
         </div>
       </section>

@@ -724,7 +724,7 @@ export const customerArticleVisuals: Record<string, BilingualArticleVisual> = {
     "en": {
       "kind": "bars",
       "title": "Monthly package-price comparison",
-      "caption": "Owner-approved INAYA price figures. The base package covers 30 days; commitment rates are per month for six or twelve months. This is an illustrative package-price comparison, not identical calendar-day coverage or a final bill.",
+      "caption": "Owner-approved INAYA price figures. The base package covers 30 days; commitment rates are per month for six or twelve months. This is a package-price comparison, not identical calendar-day coverage or a final bill.",
       "unit": "AED per month",
       "items": [
         {
@@ -747,7 +747,7 @@ export const customerArticleVisuals: Record<string, BilingualArticleVisual> = {
     "ar": {
       "kind": "bars",
       "title": "مقارنة سعر الباقة الشهري",
-      "caption": "أرقام أسعار عناية المعتمدة. تغطي الباقة الأساسية ثلاثين يوماً، وأسعار الالتزام شهرية لمدة ستة أو اثني عشر شهراً. هذه مقارنة توضيحية لسعر الباقة وليست تغطية متطابقة بأيام التقويم أو فاتورة نهائية.",
+      "caption": "أرقام أسعار عناية المعتمدة. تغطي الباقة الأساسية ثلاثين يوماً، وأسعار الالتزام شهرية لمدة ستة أو اثني عشر شهراً. هذه مقارنة لسعر الباقة وليست تغطية متطابقة بأيام التقويم أو فاتورة نهائية.",
       "unit": "درهم لكل شهر",
       "items": [
         {

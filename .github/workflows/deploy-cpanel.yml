@@ -136,6 +136,9 @@ jobs:
 
             const webPath = toWebPath(filePath);
             if (webPath.startsWith('optimized/')) return;
+            // Prepared gallery originals and thumbnails already have suitable sizes.
+            // Preserve their verified metadata and avoid redundant variants.
+            if (webPath.startsWith('images/company-gallery/')) return;
 
             const maxWidth = maxWidthFor(webPath);
             const metadata = await sharp(filePath).metadata();

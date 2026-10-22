@@ -61,7 +61,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
   const { guideUpdated } = JSON.parse(await readFile('tests/fixtures/poster-pricing-changes.json', 'utf8'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 228);
+  assert.equal(urls.length, 230);
   for (const locale of ['en', 'ar']) {
     const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
     const hubBody = hub.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');

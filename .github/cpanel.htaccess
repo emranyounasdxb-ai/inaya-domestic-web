@@ -40,6 +40,8 @@ DirectoryIndex index.html
   RewriteRule ^hire-maid-service-ajman/?$ https://inayadomestic.ae/en/maid-services-ajman/ [R=301,L]
   RewriteRule ^mohre-domestic-worker-rules-2025-complete-guide-to-legal-hiring-in-uae/?$ https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/ [R=301,L]
   RewriteRule ^domestic-worker-training-skills-ajman/?$ https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/ [R=301,L]
+  # Preserve the exact legacy image whose cached Bing thumbnail matches this gallery image.
+  RewriteRule ^wp-content/uploads/2025/10/inaya-dishwashing-maid-ajman-cleaning-service\.png$ https://inayadomestic.ae/images/company-gallery/inaya-home-support-079.jpg [R=301,L]
   # Preserve the exact old favicon URL still recorded by Bing.
   RewriteRule ^wp-content/uploads/2025/10/inaya-favicon-512x512-1-150x150\.png$ /favicon-48x48.png [R=301,L]
   RewriteCond %{HTTP:Accept-Language} ^ar([-,;]|$) [NC]
