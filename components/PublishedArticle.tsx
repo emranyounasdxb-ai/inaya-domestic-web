@@ -3,6 +3,7 @@ import BlogImage from './BlogImage';
 import PageBreadcrumbs from './PageBreadcrumbs';
 import RouteSeo from './RouteSeo';
 import ArticleVisual from './ArticleVisual';
+import GuidePlanningDownload from './GuidePlanningDownload';
 import { articleBlocks, articleInline } from '@/lib/article-markdown';
 import { getCustomerArticleVisual } from '@/lib/customer-article-visuals';
 import { guideAuthor, type DomesticWorkerGuide, type GuideLanguage } from '@/lib/domestic-worker-guides';
@@ -73,6 +74,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
               </table>
             </div>;
           })}
+          <GuidePlanningDownload slug={guide.slug} locale={lang} />
         </article>
 
         <aside className="min-w-0 space-y-6 lg:sticky lg:top-20 lg:self-start">
