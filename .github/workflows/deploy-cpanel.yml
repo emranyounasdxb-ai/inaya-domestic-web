@@ -24,14 +24,14 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -226,7 +226,7 @@ jobs:
 
       - name: Find last successful deployment baseline
         id: baseline
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9.0.0
         with:
           script: |
             // A rerun may follow a partial transfer from this same run ID.
@@ -268,7 +268,7 @@ jobs:
         id: restore-baseline
         if: steps.baseline.outputs.run_id != ''
         continue-on-error: true
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8.0.2
         with:
           name: ${{ steps.baseline.outputs.artifact_name }}
           run-id: ${{ steps.baseline.outputs.run_id }}
@@ -344,7 +344,7 @@ jobs:
           node .github/scripts/cpanel-incremental.mjs snapshot ./out "$RUNNER_TEMP/inaya-ftp-next-baseline"
 
       - name: Save successful deployment baseline
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: inaya-cpanel-baseline-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/inaya-ftp-next-baseline/
@@ -365,7 +365,7 @@ jobs:
       - name: Save IndexNow notification result
         if: always() && steps.indexnow.outcome != 'skipped'
         continue-on-error: true
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: inaya-indexnow-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/inaya-indexnow-result.json
