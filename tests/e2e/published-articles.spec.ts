@@ -1,6 +1,15 @@
 import { expect, test } from '@playwright/test';
 import { publishedArticles } from '../../lib/published-article-content';
 
+const worksheetGuides = new Set([
+  'domestic-worker-hiring-costs-uae',
+  'domestic-worker-skills-language-assessment',
+  'agreeing-domestic-worker-household-duties',
+  'domestic-worker-interview-trial-probation',
+  'new-maid-first-week-checklist',
+  'maid-daily-instructions-handover-template',
+]);
+
 for (const locale of ['en', 'ar'] as const) {
   for (const article of publishedArticles) {
     test(`${locale} published ${article.slug} preserves responsive reading and translation`, async ({ page }) => {
@@ -18,9 +27,24 @@ for (const locale of ['en', 'ar'] as const) {
       await expect(page.locator('main h1')).toHaveText(article[locale].title);
       const content = page.locator('[data-published-article="content"]');
       await expect(content).toBeVisible();
-      await expect(content.locator('h2')).toHaveCount((article[locale].body.match(/^## /gm) || []).length);
+      const worksheets = content.locator('section[data-guide-worksheets="true"]');
+      await expect(worksheets).toHaveCount(worksheetGuides.has(article.slug) ? 1 : 0);
+      // The separately checked download control adds a heading without changing
+      // the manuscript. Keep the exact original editorial heading count.
+      await expect(content.locator('h2:not(section[data-guide-worksheets="true"] h2)')).toHaveCount((article[locale].body.match(/^## /gm) || []).length);
       await expect(content.locator('li')).toHaveCount((article[locale].body.match(/^- /gm) || []).length);
       await expect(content.locator('table')).toHaveCount((article[locale].body.match(/^\|\s*:?-+/gm) || []).length);
+      if (worksheetGuides.has(article.slug)) {
+        await expect(worksheets.getByRole('heading', { level: 2 })).toHaveText(locale === 'ar' ? 'أوراق عمل لتخطيط احتياجات أسرتك' : 'Worksheets for your household planning');
+        const downloadLink = worksheets.getByRole('link', { name: locale === 'ar' ? 'تحميل أوراق التخطيط (Excel)' : 'Download planning worksheets (Excel)', exact: true });
+        await expect(downloadLink).toHaveAttribute('href', '/downloads/inaya-household-planning-worksheets.xlsx');
+        await expect(downloadLink).toHaveAttribute('download', '');
+        const downloadReady = page.waitForEvent('download');
+        await downloadLink.click();
+        const download = await downloadReady;
+        expect(download.suggestedFilename()).toBe('inaya-household-planning-worksheets.xlsx');
+        expect(await download.failure()).toBeNull();
+      }
       await page.evaluate(() => document.fonts.ready);
       expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
       await expect(page.locator(`header a[href="/${locale}/blog/"][aria-current="page"]`).first()).toBeAttached();
