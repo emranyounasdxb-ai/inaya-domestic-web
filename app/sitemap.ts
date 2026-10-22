@@ -9,6 +9,8 @@ const locales = ['en', 'ar'] as const;
 
 // Record substantive content updates, not build times. Leave untracked routes undated.
 const contentUpdatedAt: Record<string, string> = {
+  "about": '2026-10-22',
+  "contact": '2026-10-22',
   "blog/domestic-worker-contract-permit-residence-cancellation": '2026-10-20',
   "blog/maid-daily-instructions-handover-template": '2026-10-20',
   "blog/one-maid-two-helpers-workload": '2026-10-20',
@@ -55,10 +57,10 @@ const contentUpdatedAt: Record<string, string> = {
   "faq": '2026-10-19',
   "how-it-works": '2026-10-19',
   "inaya-advantages": '2026-10-19',
-  "maid-services-ajman": '2026-10-19',
-  "maid-services-dubai": '2026-10-19',
-  "maid-services-sharjah": '2026-10-19',
-  "pricing": '2026-10-19',
+  "maid-services-ajman": '2026-10-22',
+  "maid-services-dubai": '2026-10-22',
+  "maid-services-sharjah": '2026-10-22',
+  "pricing": '2026-10-22',
   "refund-policy": '2026-10-19',
   "service-guidelines": '2026-10-19',
   "services": '2026-10-19',

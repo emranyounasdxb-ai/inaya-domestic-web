@@ -1,4 +1,3 @@
-import { packageSummary } from './package-content';
 import { customerArticleFaqs } from './customer-article-faqs';
 import type { Metadata } from 'next';
 import { localeAlternates, localizedUrl } from './seo';
@@ -97,7 +96,10 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   pricing: {
     name: { en: 'Domestic Worker Packages & Pricing', ar: 'باقات وأسعار العمالة المنزلية' },
-    description: packageSummary
+    description: {
+      en: 'Compare INAYA maid packages: 4 hours AED 120, 8 hours AED 200 and monthly options from AED 3,000 with a 12-month commitment. Review inclusions and terms.',
+      ar: 'قارن باقات عناية: 4 ساعات مقابل 120 درهماً و8 ساعات مقابل 200 درهم، وباقات شهرية من 3,000 درهم مع التزام 12 شهراً. راجع المشمول والشروط.'
+    }
   },
   blog: {
     name: { en: 'Domestic Service Guides', ar: 'أدلة الخدمات المنزلية' },
@@ -196,6 +198,10 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   const location = getLocationServicePage(route);
   if (location) return {
     name: location.heroTitle[lang], title: location.metaTitle[lang], description: location.metaDescription[lang],
+    ...(route === 'maid-services-ajman' ? {
+      image: '/images/service-areas/ajman-household-planning-ai.webp',
+      imageAlt: lang === 'ar' ? 'مشهد توضيحي مولّد بالذكاء الاصطناعي لتخطيط مهام المنزل؛ ليس تصويراً لموظفي عناية أو عملائها' : 'AI-generated illustrative household-planning scene; not actual INAYA employees or customers'
+    } : {}),
     service: { name: location.heroTitle[lang], description: location.lead[lang], area: location.city[lang] },
     faqs: location.faqs.map((faq) => ({ question: faq.question[lang], answer: faq.answer[lang] }))
   };

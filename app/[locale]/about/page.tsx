@@ -147,11 +147,9 @@ export default async function AboutPage({ params }: PageProps) {
           <div>
             <h2 className={`${headingClass} text-[2.2rem] font-bold tracking-[-0.035em] text-primary-900 sm:text-[3rem]`}>{copy.storyTitle}</h2>
             <div className="mt-6 space-y-5 text-[1rem] leading-8 text-primary-900/85">
-              {copy.story.map((paragraph) => {
-                const phrase = isArabic ? 'فريقنا' : 'Our team';
-                const parts = paragraph.split(phrase);
-                return <p key={paragraph}>{parts[0]}{parts.length > 1 ? <><Link className="underline underline-offset-4" href={`/${locale}/careers/`}>{phrase}</Link>{parts[1]}</> : null}</p>;
-              })}
+              {copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <Link className="inline-block font-semibold underline underline-offset-4" href={`/${locale}/contact/`}>{isArabic ? 'تواصل مع فريق عناية في عجمان' : 'Contact the INAYA team in Ajman'}</Link>
+              <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/careers/`}>{isArabic ? 'فرص العمل وطلبات التوظيف' : 'Careers and work enquiries'}</Link></p>
             </div>
             <div className="mt-8 rounded-[24px] border border-accent-500/22 bg-[#fffdf8] p-6 shadow-[0_16px_42px_rgba(7,22,74,0.07)]">
               <h3 className={`${headingClass} text-xl font-bold text-primary-900`}>{copy.principlesTitle}</h3>
