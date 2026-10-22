@@ -205,6 +205,8 @@ jobs:
             RewriteRule ^ https://inayadomestic.ae%{REQUEST_URI} [R=301,L,NE]
             RewriteRule ^about-us/?$ https://inayadomestic.ae/en/about/ [R=301,L]
             RewriteRule ^contact/?$ https://inayadomestic.ae/en/contact/ [R=301,L]
+            # Preserve the exact old favicon URL still recorded by Bing.
+            RewriteRule ^wp-content/uploads/2025/10/inaya-favicon-512x512-1-150x150\.png$ /favicon-48x48.png [R=301,L]
             RewriteCond %{HTTP:Accept-Language} ^ar([-,;]|$) [NC]
             RewriteRule ^$ /ar/ [R=302,L]
             RewriteRule ^$ /en/ [R=302,L]
@@ -225,6 +227,16 @@ jobs:
             ExpiresByType font/woff2 "access plus 1 year"
             ExpiresByType application/font-woff2 "access plus 1 year"
           </IfModule>
+
+          # Override the MIME-wide year-long Expires header for stable icon URLs.
+          # Cache-Control and Expires must agree, including for older icon caches.
+          <FilesMatch "^(?:favicon\.ico|favicon-48x48\.png|apple-touch-icon\.png|icon\.png)$">
+            <IfModule mod_expires.c>
+              ExpiresByType image/png "access plus 1 day"
+              ExpiresByType image/x-icon "access plus 1 day"
+              ExpiresByType image/vnd.microsoft.icon "access plus 1 day"
+            </IfModule>
+          </FilesMatch>
 
           <IfModule mod_headers.c>
             Header always merge Vary Accept-Language "expr=%{REQUEST_URI} == '/'"
