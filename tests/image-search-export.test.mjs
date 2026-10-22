@@ -51,7 +51,7 @@ test('primary image schema and social images match visible image files on both l
     assert.ok(metadata.width >= 600 && metadata.height >= 300, pageUrl);
     described++;
   }
-  assert.equal(described, 156);
+  assert.equal(described, 158);
 });
 
 test('localized pages advertise usable standard favicons made from the approved icon', async () => {

@@ -5,6 +5,21 @@ import { siteConfig } from './site-config';
 // Candidate availability and driver recruitment are not established by these answers.
 export const ajmanCustomerQuestions: LocationServicePage['faqs'] = [
   {
+    question: { en: 'Can I walk in, or request an Ajman office appointment online?', ar: 'هل يمكن زيارة مكتب عجمان مباشرة أو طلب موعد عبر الإنترنت؟' },
+    answer: {
+      en: 'Both options are available. Walk into INAYA at Grand Mall, ground floor, Al Rashidiya 3, Ajman, during office hours and collect a queue token at the counter. Alternatively, send your preferred appointment time through the contact form; the team must confirm the slot. Form submission alone does not confirm an appointment. Waiting time for walk-ins depends on the visitors being served.',
+      ar: 'الخياران متاحان. زر مكتب عناية في جراند مول، الطابق الأرضي، الراشدية 3، عجمان خلال ساعات العمل وخذ تذكرة انتظار من الكاونتر. أو أرسل الموعد المفضل عبر نموذج التواصل ليؤكده الفريق؛ إرسال النموذج وحده لا يؤكد الموعد. ويعتمد وقت انتظار الزيارة المباشرة على عدد المراجعين.'
+    },
+    links: [{ route: 'contact', label: { en: 'Request an office appointment', ar: 'طلب موعد في المكتب' } }]
+  },
+  {
+    question: { en: 'Does INAYA arrange domestic-worker transport?', ar: 'هل ترتب عناية نقل العمالة المنزلية؟' },
+    answer: {
+      en: 'Yes. INAYA arranges transport using its own drivers. Share the pickup and drop-off addresses and required times so the team can confirm the arrangement. Check the charges and whether transport is included in your selected package before confirming the service.',
+      ar: 'نعم، ترتب عناية النقل بواسطة سائقيها. شارك عنوان الاستلام والتوصيل والأوقات المطلوبة ليؤكد الفريق الترتيب. راجع التكلفة وما إذا كان النقل مشمولاً في الباقة المختارة قبل تأكيد الخدمة.'
+    }
+  },
+  {
     question: { en: 'How can I hire a housemaid or domestic worker in Ajman?', ar: 'كيف أوظف خادمة أو عاملة منزلية في عجمان؟' },
     answer: {
       en: `INAYA Domestic Workers has an office at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Contact the team on ${siteConfig.phone} with your household duties, area and preferred schedule. Compare the individual profile, working arrangement and written costs before confirming recruitment or a managed service.`,

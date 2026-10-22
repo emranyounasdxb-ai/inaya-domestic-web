@@ -37,15 +37,16 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   const articleManifest = JSON.parse(await readFile('content/research/2026-10-20/article-manifest.json', 'utf8'));
   assert.equal(articleManifest.length, 20, 'twenty distinct article outputs');
   const todayRoutes = new Set(['blog', ...articleManifest.map(article => `blog/${article.slug}`)]);
-  const datedRoutes = new Set([...updatedRoutes, ...todayRoutes]);
+  const officeUpdatedRoutes = new Set(['about', 'contact', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah', 'pricing']);
+  const datedRoutes = new Set([...updatedRoutes, ...todayRoutes, ...officeUpdatedRoutes]);
   const expectedDatedUrls = ['en', 'ar'].flatMap(locale => [...datedRoutes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
-  assert.equal(datedEntries.length, 156, 'the sixty previously dated pairs, seventeen new article pairs and the newly revised leave/travel pair');
+  assert.equal(datedEntries.length, 160, 'the previously dated routes and the newly revised bilingual About and Contact pages');
   assert.deepEqual(datedEntries.map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedDatedUrls.sort());
   assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 42, 'twenty article pairs and their bilingual hub receive today’s date');
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)[1]).pathname;
     const route = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = officeUpdatedRoutes.has(route) ? '2026-10-22' : todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
     assert.ok(entry[1].includes(`<lastmod>${expectedDate}</lastmod>`), `${pathname}: only a substantive update changes the recorded date`);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
