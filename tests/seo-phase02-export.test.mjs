@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, realpath } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 
@@ -10,6 +10,8 @@ const decode = (text) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').rep
 const text = (html) => decode(html.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
 const attrs = (tag) => Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map((match) => [match[1].toLowerCase(), decode(match[2])]));
 const counts = { Organization: 0, LocalBusiness: 0, WebSite: 0, WebPage: 0, Service: 0, BreadcrumbList: 0, FAQPage: 0 };
+const publicRoot = await realpath('public');
+const exportRoot = await realpath('out');
 
 test('all exported EN/AR pages have unique localized metadata, one H1, valid graphs and links', async () => {
   const titles = new Set();
@@ -73,6 +75,19 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
       if (!href || href.startsWith('#') || /^(tel|mailto|javascript):/.test(href)) continue;
       const target = new URL(href, url);
       if (target.origin !== origin || target.pathname === '/') continue;
+      if (target.pathname.startsWith('/downloads/') && target.pathname.endsWith('.xlsx')) {
+        const downloadPath = decodeURIComponent(target.pathname);
+        assert.match(downloadPath, /^\/downloads\/[A-Za-z0-9][A-Za-z0-9._-]*\.xlsx$/, `${url}: safe public download path`);
+        assert.equal(target.search, '', `${url}: a public workbook does not receive query parameters`);
+        const sourceFile = await realpath(path.resolve(publicRoot, '.' + downloadPath));
+        const exportedFile = await realpath(path.resolve(exportRoot, '.' + downloadPath));
+        assert.ok(sourceFile.startsWith(publicRoot + path.sep), `${url}: download stays inside public`);
+        assert.ok(exportedFile.startsWith(exportRoot + path.sep), `${url}: download stays inside export`);
+        const source = await readFile(sourceFile);
+        assert.ok(source.length > 0, `${url}: public download is not empty`);
+        assert.deepEqual(await readFile(exportedFile), source, `${url}: exact public download was exported`);
+        continue;
+      }
       const canonical = `${origin}${target.pathname.replace(/\/$/, '')}/`;
       assert.ok(urls.includes(canonical), `${url}: broken internal link ${href}`);
     }
