@@ -16,6 +16,10 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / '.github' / 'cpanel.htaccess'
 ORIGIN = 'https://inayadomestic.ae'
+LEGACY_MEDIA_ALIAS = (
+    '/wp-content/uploads/2025/10/inaya-dishwashing-maid-ajman-cleaning-service.png',
+    '/images/company-gallery/inaya-home-support-079.jpg',
+)
 ALIASES = {
     '/home': '/en/',
     '/ar-الرئيسية': '/ar/',
@@ -44,7 +48,11 @@ def contract():
     text = CONFIG.read_text(encoding='utf-8')
     targets = re.findall(r'^\s*RewriteRule \S+ https://inayadomestic\.ae(/\S+) \[R=301,L\]$',
                          text, re.M)
+    media_target = ROOT / 'out' / LEGACY_MEDIA_ALIAS[1].lstrip('/')
+    assert media_target.is_file(), 'Observed legacy image requires its exported replacement'
     for target in targets:
+        if target == LEGACY_MEDIA_ALIAS[1]:
+            continue  # This one verified image alias is an asset, not a sitemap page.
         assert target in pages, f'Redirect target absent from sitemap: {target}'
         assert (ROOT / 'out' / target.lstrip('/') / 'index.html').is_file(), target
     workflow = (ROOT / '.github' / 'workflows' / 'deploy-cpanel.yml').read_text(encoding='utf-8')
@@ -76,6 +84,9 @@ def apache_checks(pages):
             target = document / asset
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text('fixture asset', encoding='utf-8')
+        media_target = document / LEGACY_MEDIA_ALIAS[1].lstrip('/')
+        media_target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / 'out' / LEGACY_MEDIA_ALIAS[1].lstrip('/'), media_target)
         shutil.copyfile(CONFIG, document / '.htaccess')
         # The CI process and Apache run as the same unprivileged user.
         user = pwd.getpwuid(os.getuid()).pw_name
@@ -153,6 +164,9 @@ def apache_checks(pages):
             expect('/en/', 301, ORIGIN + '/en/', host='www.inayadomestic.ae')
             expect('/wp-content/uploads/2025/10/inaya-favicon-512x512-1-150x150.png',
                    301, '/favicon-48x48.png', path_only=True)
+            expect(LEGACY_MEDIA_ALIAS[0], 301, ORIGIN + LEGACY_MEDIA_ALIAS[1])
+            expect(LEGACY_MEDIA_ALIAS[1], 200)
+            expect('/wp-content/uploads/2025/10/another-unmatched-image.png', 404)
             expect('/unknown-unrelated-page/', 404)
             print(f'Apache integration passed: {count} requests; {len(pages)} current routes intact.')
         finally:
