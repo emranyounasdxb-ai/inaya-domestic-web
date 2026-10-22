@@ -150,6 +150,34 @@ test('cPanel root uses a language-aware HTTP redirect and preserves proven FTP d
   assert.doesNotMatch(workflow, /set ssl:verify-certificate yes/);
 });
 
+test('five retired article URLs permanently redirect to relevant existing canonical pages', async () => {
+  const replacements = [
+    ['domestic-worker-enquiry-in-uae-step-by-step-process-explained-by-experts-2025', 'how-it-works'],
+    ['verify-a-maids-background', 'services/background-verification'],
+    ['hire-maid-service-ajman', 'maid-services-ajman'],
+    ['mohre-domestic-worker-rules-2025-complete-guide-to-legal-hiring-in-uae', 'blog/uae-domestic-worker-hiring-process'],
+    ['domestic-worker-training-skills-ajman', 'blog/domestic-worker-skills-language-assessment'],
+  ];
+  const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
+  const htaccess = workflow.match(/cat > out\/\.htaccess <<'EOF'\r?\n([\s\S]*?)\r?\n\s*EOF/)?.[1];
+  assert.ok(htaccess);
+  const rules = [...htaccess.matchAll(/^\s*RewriteRule (\S+) (\S+) \[([^\]]+)\]/gm)];
+  for (const [oldSlug, target] of replacements) {
+    const rule = rules.find(m => m[1] === `^${oldSlug}/?$`);
+    assert.ok(rule, `${oldSlug}: exact rule with optional trailing slash`);
+    assert.equal(rule[2], `https://inayadomestic.ae/en/${target}/`);
+    assert.equal(rule[3], 'R=301,L');
+    const pattern = new RegExp(rule[1]);
+    assert.ok(pattern.test(oldSlug) && pattern.test(`${oldSlug}/`));
+    assert.ok(!pattern.test(`${oldSlug}/unrelated`) && !pattern.test(`en/${oldSlug}/`));
+    const html = await readFile(`out/en/${target}/index.html`, 'utf8');
+    const canonical = [...html.matchAll(/<link\b[^>]*>/g)].map(m => attrs(m[0])).find(a => a.rel === 'canonical');
+    assert.equal(canonical?.href, rule[2], `${oldSlug}: current self-canonical replacement`);
+    assert.match(html, /<h1\b[^>]*>[^]*?<\/h1>/);
+    assert.ok(!replacements.some(([slug]) => rule[2].endsWith(`/${slug}/`)), 'no redirect chains between retired URLs');
+  }
+});
+
 test('exported pages remove shared visa promises, retain neutral transfer FAQs and prioritize the service hero once', async () => {
   for (const locale of ['en', 'ar']) {
     for (const route of ['services', 'services/recruitment', 'services/maid-visa', 'services/maid-replacement', 'services/sponsorship-transfer', 'services/background-verification']) {
