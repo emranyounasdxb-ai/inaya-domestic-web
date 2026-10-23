@@ -27,7 +27,7 @@ test('six approved package amounts retain their duration and monthly billing bas
     assert.match(packageArrangements[locale], locale === 'en' ? /Live-in and live-out arrangements have the same published package price/ : /سعر الباقة المنشور واحد للخدمة المقيمة وغير المقيمة/);
     const faq = pageStructuredData(locale, 'pricing')['@graph'].find(node => node['@type'] === 'FAQPage');
     assert.deepEqual(faq.mainEntity.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), packageQuestions.map(item => ({ question: item.question[locale], answer: item.answer[locale] })));
-    assert.equal(faq.mainEntity.length, 10, 'all ten published pricing questions are represented');
+    assert.equal(faq.mainEntity.length, 11, 'all eleven published pricing questions are represented');
   }
 });
 

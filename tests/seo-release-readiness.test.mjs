@@ -47,8 +47,8 @@ test('customer guidance shows six approved packages, explicit billing units and 
     const graphs = [...fullPricing.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(match => JSON.parse(match[1])['@graph'] ?? []);
     const pricingFaq = graphs.filter(node => node['@type'] === 'FAQPage');
     assert.equal(pricingFaq.length, 1);
-    assert.deepEqual(pricingFaq[0].mainEntity.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), details, 'pricing FAQ/schema exactly match visible ten questions');
-    assert.equal(details.length, 10);
+    assert.deepEqual(pricingFaq[0].mainEntity.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), details, 'pricing FAQ/schema exactly match visible eleven questions');
+    assert.equal(details.length, 11);
     const refund = await visibleMain('refund-policy');
     const rules = refund.match(/<section\b[^>]*data-content="refund-scenarios"[\s\S]*?<\/section>/)?.[0];
     assert.ok(rules, `${locale}: official recruitment rules visible`);
