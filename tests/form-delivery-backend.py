@@ -54,6 +54,9 @@ try:
     stale = dict(payload, startedAt=int(time.time() * 1000) - 172800000)
     expired = expect('Old tab receives a recoverable server timestamp', 422, stale)
     assert expired['code'] == 'form_time' and isinstance(expired['serverTime'], int)
+    for name, started in [('Out-of-range timestamp stays valid JSON', 1e300), ('Nonfinite numeric timestamp stays valid JSON', '1e309')]:
+        rejected = expect(name, 422, dict(payload, startedAt=started))
+        assert rejected['code'] == 'form_time' and isinstance(rejected['serverTime'], int)
     rate_dir = root / 'tmp/inaya-website-forms'
     rate_dir.mkdir(parents=True, exist_ok=True)
     rate_path = rate_dir / ('rate-' + hashlib.sha256(b'127.0.0.1').hexdigest() + '.json')
