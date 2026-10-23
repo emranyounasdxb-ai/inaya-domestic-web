@@ -207,6 +207,10 @@ export const packageQuestions: { question: LocalizedText; answer: LocalizedText 
     answer: packageSections.payments.body
   },
   {
+    question: { en: 'Does INAYA accept Tabby?', ar: 'هل تقبل عناية الدفع عبر تابي؟' },
+    answer: { en: 'INAYA accepts Tabby. Contact the INAYA office for current payment options.', ar: 'تقبل عناية الدفع عبر تابي. تواصل مع مكتب عناية لمعرفة خيارات الدفع المتاحة حالياً.' }
+  },
+  {
     question: { en: 'How are monthly cancellation and refunds handled?', ar: 'كيف يعالج إلغاء الخدمة الشهرية والاسترداد؟' },
     answer: packageSections.cancellation.body
   },

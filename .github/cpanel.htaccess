@@ -39,6 +39,7 @@ DirectoryIndex index.html
   RewriteRule ^verify-a-maids-background/?$ https://inayadomestic.ae/en/services/background-verification/ [R=301,L]
   RewriteRule ^hire-maid-service-ajman/?$ https://inayadomestic.ae/en/maid-services-ajman/ [R=301,L]
   RewriteRule ^mohre-domestic-worker-rules-2025-complete-guide-to-legal-hiring-in-uae/?$ https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/ [R=301,L]
+  RewriteRule ^ar/mohre-domestic-worker-rules-2025-complete-guide-to-legal-hiring-in-uae/?$ https://inayadomestic.ae/ar/blog/uae-domestic-worker-hiring-process/ [R=301,L]
   RewriteRule ^domestic-worker-training-skills-ajman/?$ https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/ [R=301,L]
   # Preserve the exact legacy image whose cached Bing thumbnail matches this gallery image.
   RewriteRule ^wp-content/uploads/2025/10/inaya-dishwashing-maid-ajman-cleaning-service\.png$ https://inayadomestic.ae/images/company-gallery/inaya-home-support-079.jpg [R=301,L]
