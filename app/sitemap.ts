@@ -61,7 +61,7 @@ const contentUpdatedAt: Record<string, string> = {
   "maid-services-ajman": '2026-10-22',
   "maid-services-dubai": '2026-10-22',
   "maid-services-sharjah": '2026-10-22',
-  "pricing": '2026-10-22',
+  "pricing": '2026-10-23',
   "refund-policy": '2026-10-19',
   "service-guidelines": '2026-10-19',
   "services": '2026-10-19',
