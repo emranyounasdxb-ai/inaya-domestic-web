@@ -138,6 +138,9 @@ function approvedSeoFixes(file, source) {
       assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed cookie settings anchor`);
       source = source.replace(before, after);
     }
+    const guidesLink = "    { label: isArabic ? 'الأدلة' : 'Guides', href: `/${locale}/blog/` },\n";
+    assert.equal(source.split(guidesLink).length, 2, `${file}: exactly one reviewed gallery-link placement`);
+    source = source.replace(guidesLink, guidesLink + "    { label: isArabic ? 'معرض الصور' : 'Photo gallery', href: `/${locale}/gallery/` },\n");
   }
   if (file === 'tests/e2e/sierra-leone-offer-controls.spec.ts') {
     const before = "  test('shows Back to Top near the page bottom and returns to the top', async ({ page }) => {\n";
