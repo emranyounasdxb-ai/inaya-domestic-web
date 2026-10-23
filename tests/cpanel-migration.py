@@ -36,6 +36,8 @@ ALIASES = {
     '/ar/terms-and-conditions': '/ar/terms/',
     '/top-10-maid-hiring-mistakes-in-uae-and-how-to-avoid-them':
         '/en/blog/uae-domestic-worker-hiring-process/',
+    '/ar/mohre-domestic-worker-rules-2025-complete-guide-to-legal-hiring-in-uae':
+        '/ar/blog/uae-domestic-worker-hiring-process/',
 }
 
 
