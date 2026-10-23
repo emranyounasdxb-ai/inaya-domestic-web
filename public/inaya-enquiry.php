@@ -44,7 +44,8 @@ if (!is_string($requestId) || !preg_match('/^[a-zA-Z0-9-]{16,80}$/D', $requestId
     reply(422, ['ok' => false, 'error' => 'Invalid request reference']);
 }
 $started = $request['startedAt'] ?? 0;
-if (!is_numeric($started) || time() - (int)floor((float)$started / 1000) < 2 || time() - (int)floor((float)$started / 1000) > 86400) {
+$startedSeconds = is_numeric($started) ? floor((float)$started / 1000) : null;
+if ($startedSeconds === null || !is_finite($startedSeconds) || time() - $startedSeconds < 2 || time() - $startedSeconds > 86400) {
     reply(422, ['ok' => false, 'code' => 'form_time', 'serverTime' => time() * 1000, 'error' => 'Please review and submit the form again']);
 }
 $fields = $request['fields'];
