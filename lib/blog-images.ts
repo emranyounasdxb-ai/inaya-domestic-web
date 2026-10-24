@@ -1,8 +1,10 @@
-import { keywordArticleMetadata } from './keyword-article-metadata';
+import { keywordArticleImages } from './keyword-article-images';
 
 type BlogImage = {
   src: string;
   alt: { en: string; ar: string };
+  width?: number;
+  height?: number;
 };
 
 // Topic-specific artwork is shared by English and Arabic pages with localized descriptions.
@@ -318,9 +320,5 @@ const blogImages: Record<string, BlogImage> = {
 };
 
 export function getBlogImage(slug: string): BlogImage | undefined {
-  if (keywordArticleMetadata.some(article => article.slug === slug)) return {
-    src: '/images/company-gallery/inaya-office-037.jpg',
-    alt: { en: 'INAYA Ajman reception desk and waiting area', ar: 'مكتب الاستقبال ومنطقة الانتظار في عناية عجمان' }
-  };
-  return blogImages[slug];
+  return keywordArticleImages[slug] ?? blogImages[slug];
 }
