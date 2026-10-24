@@ -14,6 +14,7 @@ import ServiceIcon from '@/components/ServiceIcon';
 import { getServiceWithExtras } from '@/lib/service-helpers';
 import { getServiceImage, serviceGroups } from '@/lib/service-presentation';
 import type { Lang } from '@/lib/service-page-copy-all';
+import { domesticServiceSummaries } from '@/lib/domestic-service-content';
 
 type PageProps = {
   params: Promise<{
@@ -132,7 +133,7 @@ export default async function ServicesPage({ params }: PageProps) {
                     locale={locale}
                     lang={lang}
                     title={service.name[lang]}
-                    text={service.short[lang]}
+                    text={domesticServiceSummaries[service.slug]?.[lang] ?? service.short[lang]}
                     slug={service.slug}
                     cta={copy.learnMore}
                   />

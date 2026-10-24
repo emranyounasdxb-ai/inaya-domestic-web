@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import updatedPaths from '../fixtures/poster-pricing-updated-routes.json';
 import articleManifest from '../../content/research/2026-10-20/article-manifest.json';
 import domesticRefresh from '../../content/research/2026-10-24/article-refreshes.json';
+import ajmanRefresh from '../../content/research/2026-10-24/ajman-intent-refreshes.json';
 
 test('sitemap includes service, country and location SEO pages', async ({ request }) => {
   const response = await request.get('/sitemap.xml');
@@ -43,6 +44,8 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   const galleryUpdatedPaths = new Set(['gallery']);
   const domesticRefreshPaths = new Set(domesticRefresh.routeChanges.map((entry) => entry.path));
   expect(domesticRefreshPaths.size).toBe(9);
+  const ajmanRefreshPaths = new Set(ajmanRefresh.routeChanges.map((entry) => entry.path));
+  expect(ajmanRefreshPaths.size).toBe(4);
   const worksheetUpdatedPaths = new Set([
     'blog/domestic-worker-hiring-costs-uae',
     'blog/domestic-worker-skills-language-assessment',
@@ -51,12 +54,12 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
     'blog/new-maid-first-week-checklist',
     'blog/maid-daily-instructions-handover-template',
   ]);
-  const datedPaths = new Set([...updatedPaths, ...todayPaths, ...officeUpdatedPaths, ...worksheetUpdatedPaths, ...galleryUpdatedPaths, ...paymentUpdatedPaths, ...domesticRefreshPaths]);
+  const datedPaths = new Set([...updatedPaths, ...todayPaths, ...officeUpdatedPaths, ...worksheetUpdatedPaths, ...galleryUpdatedPaths, ...paymentUpdatedPaths, ...domesticRefreshPaths, ...ajmanRefreshPaths]);
   const expectedDatedUrls = ['en', 'ar'].flatMap((locale) =>
     [...datedPaths].map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
   );
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
-  expect(datedEntries).toHaveLength(162);
+  expect(datedEntries).toHaveLength(164);
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual(expectedDatedUrls.sort());
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(30);
@@ -64,11 +67,11 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-23</lastmod>'))).toHaveLength(2);
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-24</lastmod>'))
     .map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
-    .toEqual(domesticRefresh.routeChanges.flatMap((entry) => entry.urls).sort());
+    .toEqual([...new Set([...domesticRefresh.routeChanges, ...ajmanRefresh.routeChanges].flatMap((entry) => entry.urls))].sort());
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)![1]).pathname;
     const path = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = domesticRefreshPaths.has(path) ? domesticRefresh.date : paymentUpdatedPaths.has(path) ? '2026-10-23' : officeUpdatedPaths.has(path) || worksheetUpdatedPaths.has(path) || galleryUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = ajmanRefreshPaths.has(path) ? ajmanRefresh.date : domesticRefreshPaths.has(path) ? domesticRefresh.date : paymentUpdatedPaths.has(path) ? '2026-10-23' : officeUpdatedPaths.has(path) || worksheetUpdatedPaths.has(path) || galleryUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
     expect(entry[1].match(/<lastmod>(.*?)<\/lastmod>/g), pathname).toEqual([`<lastmod>${expectedDate}</lastmod>`]);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]);

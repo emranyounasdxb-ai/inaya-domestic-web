@@ -35,7 +35,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23227",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
-        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -77,7 +78,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-employment-arrangements-uae",
     "published": "2026-09-20",
-    "updated": "2026-10-19",
+    "updated": "2026-10-24",
     "en": {
       "title": "Live-in, live-out or temporary domestic help: which arrangement fits your household?",
       "description": "Choose by considering your household's duties, accommodation and schedule, then confirm the legal employment model. “Live-in” describes residence; “live-out”…",
@@ -89,7 +90,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21143",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21146",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23235",
-        "https://uaelegislation.gov.ae/en/legislations/1620#item23233"
+        "https://uaelegislation.gov.ae/en/legislations/1620#item23233",
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -103,7 +105,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21143",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21146",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23235",
-        "https://uaelegislation.gov.ae/ar/legislations/1620#item23233"
+        "https://uaelegislation.gov.ae/ar/legislations/1620#item23233",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -174,7 +177,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-employer-eligibility-documents",
     "published": "2026-09-23",
-    "updated": "2026-10-12",
+    "updated": "2026-10-24",
     "en": {
       "title": "Who can apply for a domestic-worker permit, and which documents are needed?",
       "description": "Eligibility depends on the applicant category and the permit route. For a domestic worker recruited onto a household employer's file, follow MOHRE's current…",
@@ -219,7 +222,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21146",
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
-        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
+        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -237,7 +241,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21146",
         "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
-        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
+        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
