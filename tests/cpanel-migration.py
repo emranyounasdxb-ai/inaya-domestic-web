@@ -46,7 +46,7 @@ def contract():
     pages = [urllib.parse.urlsplit(n.text).path for n in xml.findall(
         '{http://www.sitemaps.org/schemas/sitemap/0.9}url/'
         '{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-    assert len(pages) == 232, f'Unexpected current sitemap inventory: {len(pages)}'
+    assert len(pages) == 274, f'Unexpected current sitemap inventory: {len(pages)}'
     text = CONFIG.read_text(encoding='utf-8')
     targets = re.findall(r'^\s*RewriteRule \S+ https://inayadomestic\.ae(/\S+) \[R=301,L\]$',
                          text, re.M)

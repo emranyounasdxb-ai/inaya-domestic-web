@@ -11,7 +11,7 @@ const xml = await readFile('out/sitemap.xml', 'utf8');
 const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
 
 test('every image sitemap entry matches visible content, with no lost canonical pages or responsive duplicates', async () => {
-  assert.equal(entries.length, 232);
+  assert.equal(entries.length, 274);
   assert.ok(xml.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'), 'image sitemap namespace');
   const unique = new Set();
   for (const entry of entries) {
@@ -51,7 +51,7 @@ test('primary image schema and social images match visible image files on both l
     assert.ok(metadata.width >= 600 && metadata.height >= 300, pageUrl);
     described++;
   }
-  assert.equal(described, 160);
+  assert.equal(described, 202, 'the original 160 pictured pages plus 42 reviewed articles with the original Ajman office photo');
 });
 
 test('localized pages advertise usable standard favicons made from the approved icon', async () => {

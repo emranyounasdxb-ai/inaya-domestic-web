@@ -122,12 +122,12 @@ const homeContent = {
 };
 
 const authorityLogos = [
-  { name: 'MOHRE', file: 'Ministry-logo.png' },
-  { name: 'Tadbeer', file: 'ajman-tadbeer-logo.png' },
-  { name: 'Ajman Chamber', file: 'Ajman-Chamber-logo.png' },
-  { name: 'UAE Pass', file: 'ajman-UAE-Pass-Logo.png' },
-  { name: 'Ajman Gold', file: 'Ajman-Gold-logo.png' },
-  { name: 'Ajman', file: 'Ajman-logo.png' }
+  { name: 'MOHRE', nameAr: 'وزارة الموارد البشرية والتوطين', file: 'Ministry-logo.png' },
+  { name: 'Tadbeer', nameAr: 'تدبير', file: 'ajman-tadbeer-logo.png' },
+  { name: 'Ajman Chamber', nameAr: 'غرفة عجمان', file: 'Ajman-Chamber-logo.png' },
+  { name: 'UAE Pass', nameAr: 'الهوية الرقمية', file: 'ajman-UAE-Pass-Logo.png' },
+  { name: 'Ajman Gold', nameAr: 'عجمان جولد', file: 'Ajman-Gold-logo.png' },
+  { name: 'Ajman', nameAr: 'عجمان', file: 'Ajman-logo.png' }
 ];
 
 const homeImages = {
@@ -261,7 +261,7 @@ function AuthorityLogoCarousel({ isArabic }: { isArabic: boolean }) {
     <div className="relative mt-9 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]" dir="ltr">
       <div className="home-logo-track flex w-max gap-4 py-2" style={{ animation: `${animationName} 30s linear infinite` }}>
         {logos.map((logo, index) => (
-          <AuthorityLogoCard key={`${logo.file}-${index}`} {...logo} />
+          <AuthorityLogoCard key={`${logo.file}-${index}`} name={isArabic ? logo.nameAr : logo.name} file={logo.file} />
         ))}
       </div>
     </div>

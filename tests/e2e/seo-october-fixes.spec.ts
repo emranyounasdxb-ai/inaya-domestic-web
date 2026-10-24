@@ -34,7 +34,7 @@ for (const locale of ['en', 'ar'] as const) {
     if (isMobile) await page.getByRole('button', { name: ar ? 'القائمة' : 'Menu', exact: true }).click();
     const header = page.locator('header');
     await expect(header.getByRole('link', { name: ar ? 'الأدلة' : 'Guides', exact: true }).last()).toBeVisible();
-    await expect(header.getByRole('link', { name: ar ? 'English' : 'العربية', exact: true })).toHaveAttribute('href', new RegExp(`^/${ar ? 'en' : 'ar'}/?$`));
+    await expect(header.getByRole('link', { name: ar ? 'الإنجليزية' : 'Arabic', exact: true })).toHaveAttribute('href', new RegExp(`^/${ar ? 'en' : 'ar'}/?$`));
     await expect(header.getByRole('link', { name: ar ? 'جهز استفسارك' : 'Prepare enquiry', exact: true }).last()).toBeVisible();
   });
 

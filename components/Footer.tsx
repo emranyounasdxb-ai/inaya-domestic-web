@@ -94,7 +94,7 @@ export default function Footer({ locale }: { locale: string }) {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 px-7 py-3.5 text-[0.8rem] text-primary-900/75 sm:px-10 lg:flex-row lg:px-14">
-          <p>© {year} INAYA Domestic Workers. {t('rights')}</p>
+          <p>© {year} {isArabic ? 'عناية للعمالة المنزلية.' : 'INAYA Domestic Workers.'} {t('rights')}</p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <Link href={`/${locale}/privacy-policy`} className="transition hover:text-primary-900">{t('privacy')}</Link>
             <span className="text-accent-700/70">|</span>

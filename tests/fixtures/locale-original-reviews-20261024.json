@@ -1,0 +1,30 @@
+{
+  "source": "lib/curated-google-reviews.ts",
+  "reason": "The existing source contract preserves six original public Google reviewer names and quotations exactly; these are quotations, not Arabic site UI. Exceptions are bounded to /ar/ exact text nodes and exact names in Arabic profile labels.",
+  "reviews": [
+    {
+      "name": "Hanan",
+      "text": "Amazing service from INAYA Domestic Workers! I hired a nanny through them, and she is caring, trustworthy, and very professional. My kids absolutely love her. The agency made the whole process easy and stress-free. Highly recommended!"
+    },
+    {
+      "name": "shadi el-aker",
+      "text": "A great service with Inaya, the management, staff are exceptional, starting from front desk all the way to top management."
+    },
+    {
+      "name": "Jamic Jamic",
+      "text": "INAYA Domestic Workers is very professional and reliable. They provided me with a housemaid who is efficient, polite, and trustworthy. My home has never felt so organized!"
+    },
+    {
+      "name": "clarisa Delfin",
+      "text": "I'm applicant of riaza she is very good madam and she assist the applicante good and give them proper bed to sleep I like her how her heart ❤️ good"
+    },
+    {
+      "name": "Hayfa Ebrahim",
+      "text": "Professional maids and am greatly happy with service i get. Keep it up"
+    },
+    {
+      "name": "Md Trend",
+      "text": "One of the best Center in UAE"
+    }
+  ]
+}

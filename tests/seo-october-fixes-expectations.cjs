@@ -163,4 +163,5 @@ function approvedSeoFixes(file, source) {
 }
 
 const { approvedAjmanOfficeCopy } = require('./ajman-office-expectations.cjs');
-module.exports = { approvedSeoFixes: (file, source) => approvedAjmanOfficeCopy(file, approvedSeoFixes(file, source)) };
+const { approvedGlobalLocale } = require('./global-locale-source-expectations.cjs');
+module.exports = { approvedSeoFixes: (file, source) => approvedGlobalLocale(file, approvedAjmanOfficeCopy(file, approvedSeoFixes(file, source))) };

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-test('all 44 bilingual topics follow a complete daily publication schedule without exceeding Updated', async () => {
+test('the preserved 44-topic cohort retains its complete original daily publication schedule', async () => {
   const schedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
   const metadataSource = await readFile('lib/published-article-metadata.ts', 'utf8');
   const metadata = JSON.parse(metadataSource.split('export const publishedArticleMetadata: PublishedArticleMetadata[] = ')[1].trim().replace(/;$/, ''));
@@ -30,5 +30,19 @@ test('all 44 bilingual topics follow a complete daily publication schedule witho
     assert.ok(meta, `${article.slug}: metadata exists`);
     assert.equal(article.published, meta.published, `${article.slug}: full content and metadata publication dates agree`);
     assert.equal(article.updated, meta.updated, `${article.slug}: full content and metadata Updated dates agree`);
+  }
+});
+
+test('the separately reviewed 21-topic batch adds 42 copies dated 24 October without rewriting the historical schedule', async () => {
+  const schedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
+  const batch = JSON.parse(await readFile('content/keyword-articles-20261024.json', 'utf8'));
+  assert.equal(Object.keys(schedule).length, 44);
+  assert.equal(batch.length, 21);
+  assert.equal(Object.keys(schedule).length + batch.length, 65);
+  for (const article of batch) {
+    assert.equal(article.published, '2026-10-24');
+    assert.equal(article.updated, '2026-10-24');
+    assert.ok(!Object.hasOwn(schedule, article.slug), `${article.slug}: the new batch does not impersonate the historical daily schedule`);
+    assert.ok(article.en.body?.trim() && article.ar.body?.trim(), `${article.slug}: both complete copies exist`);
   }
 });

@@ -68,7 +68,7 @@ for (const locale of ['en', 'ar']) {
       const article = graph.find((node: { '@type': string }) => node['@type'] === 'Article');
       expect(article?.inLanguage).toBe(locale);
       expect(article?.url).toBe(`https://inayadomestic.ae${route}`);
-      expect(article?.author).toEqual({ '@type': 'Organization', name: 'INAYA Domestic Workers Editorial Team' });
+      expect(article?.author).toEqual({ '@type': 'Organization', name: locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team' });
       await expect(page.locator('[data-guide="attribution"]')).toContainText(article.author.name);
       await expect(page.locator('[data-guide="attribution"] time').nth(0)).toHaveAttribute('datetime', article.datePublished);
       await expect(page.locator('[data-guide="attribution"] time').nth(1)).toHaveAttribute('datetime', article.dateModified);

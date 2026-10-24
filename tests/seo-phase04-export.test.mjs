@@ -9,14 +9,15 @@ const require = createRequire(import.meta.url);
 const { buyerAnswers } = require('../.next/phase-02-unit/lib/buyer-answers.js');
 const { siteConfig } = require('../.next/phase-02-unit/lib/site-config.js');
 
-test('all 232 routes omit unsupported statistics, approval and ranking labels and retain business identity', async () => {
+test('all 274 routes omit unsupported statistics, approval and ranking labels and retain business identity', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 232);
-  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 232);
-  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 232);
+  assert.equal(audit.pages.length, 274);
+  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 274);
+  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 274);
   assert.deepEqual(audit.orphans, []);
   assert.equal(audit.nearPairs.length, 0);
-  assert.ok(managed.editorialRepetition(audit).repeatedTokens <= 8300, 'retain the editorial repetition budget alongside exact approved commercial copy');
+  const editorial = managed.editorialRepetition(audit);
+  assert.ok(editorial.repeatedTokens <= 8300, 'retain the editorial repetition budget alongside exact approved commercial copy and counted presentation placements');
   for (const page of audit.pages) {
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const visible = text(file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, ''));
@@ -34,5 +35,5 @@ test('all 232 routes omit unsupported statistics, approval and ranking labels an
       assert.ok(visible.includes(answer.answer[page.locale]));
     }
   }
-  console.log(JSON.stringify({ routes: 232, localizedBuyerAnswers: 16, orphans: 0, nearPairs: 0, repeatedTokens: audit.repeatedTokens }));
+  console.log(JSON.stringify({ routes: 274, localizedBuyerAnswers: 16, orphans: 0, nearPairs: 0, repeatedTokens: audit.repeatedTokens, editorial }));
 });

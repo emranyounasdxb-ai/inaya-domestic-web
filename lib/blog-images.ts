@@ -1,3 +1,5 @@
+import { keywordArticleMetadata } from './keyword-article-metadata';
+
 type BlogImage = {
   src: string;
   alt: { en: string; ar: string };
@@ -316,5 +318,9 @@ const blogImages: Record<string, BlogImage> = {
 };
 
 export function getBlogImage(slug: string): BlogImage | undefined {
+  if (keywordArticleMetadata.some(article => article.slug === slug)) return {
+    src: '/images/company-gallery/inaya-office-037.jpg',
+    alt: { en: 'INAYA Ajman reception desk and waiting area', ar: 'مكتب الاستقبال ومنطقة الانتظار في عناية عجمان' }
+  };
   return blogImages[slug];
 }

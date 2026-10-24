@@ -1,5 +1,6 @@
 const assert = require('node:assert/strict');
 const { approvedSeoFixes } = require('./seo-october-fixes-expectations.cjs');
+const { approvedGlobalLocale } = require('./global-locale-source-expectations.cjs');
 const { assertFormPreserved } = require('./form-accessibility-preservation.cjs');
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
@@ -26,9 +27,9 @@ test('buyer answers have unique paired questions, contextual answers and real lo
   }
 });
 
-test('protected popup differs only in two approved localized copy replacements', () => {
+test('protected popup differs only in two approved copy replacements and its exact localized logo description', () => {
   const file = 'components/SierraLeoneOfferControls.tsx';
-  assert.equal(current(file), previous(file).replace("'Available Profiles'", "'Candidate Profiles'").replace("'ملفات متاحة'", "'ملفات المرشحات'"));
+  assert.equal(current(file), approvedGlobalLocale(file, previous(file).replace("'Available Profiles'", "'Candidate Profiles'").replace("'ملفات متاحة'", "'ملفات المرشحات'")));
   for (const file of ['components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx']) {
     assert.equal(current(file), approvedSeoFixes(file, previous(file)), `${file}: protected behavior/test`);
   }
