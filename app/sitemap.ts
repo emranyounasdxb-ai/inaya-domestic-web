@@ -5,11 +5,14 @@ import { locationServicePages } from '@/lib/location-service-pages';
 import { domesticWorkerGuides } from '@/lib/domestic-worker-guides';
 import { localizedUrl, localeAlternates } from '@/lib/seo';
 import { companyInformation } from '@/lib/company-information';
+import { keywordArticleMetadata } from '@/lib/keyword-article-metadata';
+import { keywordArticleSlugs } from '@/lib/keyword-article-guides';
 
 const locales = ['en', 'ar'] as const;
 
 // Record substantive content updates, not build times. Leave untracked routes undated.
 const contentUpdatedAt: Record<string, string> = {
+  ...Object.fromEntries(keywordArticleMetadata.map(article => [`blog/${article.slug}`, article.updated])),
   [companyInformation.route]: companyInformation.updated,
   "gallery": '2026-10-22',
   "about": '2026-10-22',
@@ -155,13 +158,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     localizedEntry(location.slug, 0.82)
   ));
 
-  const guidePages = domesticWorkerGuides.flatMap((guide) => (
+  const guidePages = domesticWorkerGuides.filter(guide => !keywordArticleSlugs.has(guide.slug)).flatMap((guide) => (
     localizedEntry(`blog/${guide.slug}`, 0.76, 'monthly')
   ));
 
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
+  const keywordPages = keywordArticleMetadata.flatMap(article => localizedEntry(`blog/${article.slug}`, 0.76, 'monthly'));
 
-  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly'), ...localizedEntry(companyInformation.route, 0.72, 'monthly')]) {
+  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly'), ...localizedEntry(companyInformation.route, 0.72, 'monthly'), ...keywordPages]) {
     uniqueEntries.set(entry.url, entry);
   }
 

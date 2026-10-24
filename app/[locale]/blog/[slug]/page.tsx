@@ -5,6 +5,8 @@ import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import RouteSeo from '@/components/RouteSeo';
 import PublishedArticle from '@/components/PublishedArticle';
 import BlogImage from '@/components/BlogImage';
+import KeywordArticle from '@/components/KeywordArticle';
+import { getKeywordArticle } from '@/lib/keyword-article-content';
 import { publishedArticles } from '@/lib/published-article-content';
 import { domesticWorkerGuides, getDomesticWorkerGuide, guideAuthor, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { pageMetadata } from '@/lib/page-seo';
@@ -29,6 +31,8 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
   const lang: GuideLanguage = locale === 'ar' ? 'ar' : 'en';
   const isArabic = lang === 'ar';
   const copy = guide[lang];
+  const keywordArticle = getKeywordArticle(slug);
+  if (keywordArticle) return <KeywordArticle article={keywordArticle} lang={lang} />;
   if (guide.publication) {
     const article = publishedArticles.find((entry) => entry.slug === slug);
     if (!article) notFound();
@@ -55,7 +59,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
             </h1>
             <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-ink/75 sm:text-lg">{copy.lead}</p>
             <dl className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm leading-6 text-primary-900/75" data-guide="attribution">
-              <div><dt className="font-semibold">{isArabic ? 'إعداد' : 'By'}</dt><dd><bdi>{guideAuthor}</bdi></dd></div>
+              <div><dt className="font-semibold">{isArabic ? 'إعداد' : 'By'}</dt><dd>{isArabic ? 'فريق تحرير عناية للعمالة المنزلية' : guideAuthor}</dd></div>
               <div><dt className="font-semibold">{isArabic ? 'تاريخ النشر' : 'Published'}</dt><dd><time dateTime={guide.published}>{formatDate(guide.published)}</time></dd></div>
               <div><dt className="font-semibold">{isArabic ? 'آخر تحديث' : 'Updated'}</dt><dd><time dateTime={guide.updated}>{formatDate(guide.updated)}</time></dd></div>
             </dl>

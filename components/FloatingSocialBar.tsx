@@ -98,15 +98,16 @@ function IconLink({ href, label, children }: { href: string; label: string; chil
   );
 }
 
-export default function FloatingSocialBar() {
+export default function FloatingSocialBar({ locale }: { locale: string }) {
+  const isArabic = locale === 'ar';
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const emailHref = `mailto:${siteConfig.email}`;
   const whatsappHref = `https://wa.me/${siteConfig.whatsapp}`;
 
   const links = [
-    { href: phoneHref, label: 'Call INAYA Domestic Workers', icon: <PhoneIcon />, tone: 'text-gray-800' },
-    { href: whatsappHref, label: 'WhatsApp INAYA Domestic Workers', icon: <WhatsAppIcon /> },
-    { href: emailHref, label: 'Email INAYA Domestic Workers', icon: <EmailIcon />, tone: 'text-gray-800' },
+    { href: phoneHref, label: isArabic ? 'اتصل بعناية للعمالة المنزلية' : 'Call INAYA Domestic Workers', icon: <PhoneIcon />, tone: 'text-gray-800' },
+    { href: whatsappHref, label: isArabic ? 'تواصل مع عناية عبر واتساب' : 'WhatsApp INAYA Domestic Workers', icon: <WhatsAppIcon /> },
+    { href: emailHref, label: isArabic ? 'راسل عناية بالبريد الإلكتروني' : 'Email INAYA Domestic Workers', icon: <EmailIcon />, tone: 'text-gray-800' },
     { href: 'https://www.snapchat.com/@inayadomestic', label: 'Snapchat', icon: <SnapchatIcon /> },
     { href: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/', label: 'LinkedIn', icon: <LinkedInIcon /> },
     { href: 'https://www.tiktok.com/@inayadomesticworkers', label: 'TikTok', icon: <TikTokIcon /> },
@@ -130,8 +131,8 @@ export default function FloatingSocialBar() {
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="WhatsApp INAYA Domestic Workers"
-        title="WhatsApp INAYA Domestic Workers"
+        aria-label={isArabic ? 'تواصل مع عناية عبر واتساب' : 'WhatsApp INAYA Domestic Workers'}
+        title={isArabic ? 'تواصل مع عناية عبر واتساب' : 'WhatsApp INAYA Domestic Workers'}
         className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/80 bg-white shadow-[0_16px_40px_rgba(37,211,102,0.35)] transition hover:-translate-y-1 hover:scale-105 lg:hidden"
       >
         <span className="[&>svg]:h-9 [&>svg]:w-9">

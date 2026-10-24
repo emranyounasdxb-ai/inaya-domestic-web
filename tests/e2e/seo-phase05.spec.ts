@@ -72,7 +72,7 @@ test('GA4 consent loads once, survives a language switch and can be revoked', as
   await expect(page.locator('script[src*="googletagmanager.com/gtag/js?id=G-986STCSR37"]')).toHaveCount(1);
   await expect.poll(() => page.evaluate(() => Array.from((window as unknown as { dataLayer?: ArrayLike<ArrayLike<unknown>> }).dataLayer ?? []).filter(call => call[0] === 'config' && call[1] === 'G-986STCSR37').length)).toBe(1);
   expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent.v2'))).toBe('granted');
-  await page.getByRole('link', { name: 'العربية' }).first().click();
+  await page.getByRole('link', { name: 'Arabic', exact: true }).first().click();
   await expect(page).toHaveURL(/\/ar\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
   expect(await page.title()).not.toBe(englishTitle);

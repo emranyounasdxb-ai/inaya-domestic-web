@@ -220,6 +220,7 @@ function approvedPackageMessages(locale, data) {
 }
 const commercial = require('./fixtures/managed-package-copy.json');
 const { hubSummaries } = require('./domestic-service-refresh-expectations.cjs');
+const { withoutKeywordPresentation } = require('./keyword-article-presentation-expectations.cjs');
 function editorialRepetition(audit) {
   // Mandatory, exact owner-approved commercial wording is protected separately.
   // Retain the existing budgets for editorial prose; no arbitrary paragraph,
@@ -240,16 +241,27 @@ function editorialRepetition(audit) {
     if (hubCopy.length) assert.deepEqual(hubCopy.map(copy => page.paragraphs.filter(p => p === copy).length), [1, 1, 1], `${page.url}: exact three approved hub-summary placements`);
     return { ...page, paragraphs: page.paragraphs.filter(p => !approved.includes(p) && !hubCopy.includes(p)) };
   });
-  const frequency = new Map();
-  for (const page of pages) for (const p of new Set(page.paragraphs)) {
-    const key = page.locale + ':' + p;
-    frequency.set(key, (frequency.get(key) ?? 0) + 1);
+  function repeatedContent(values) {
+    const frequency = new Map();
+    for (const page of values) for (const p of new Set(page.paragraphs)) {
+      const key = page.locale + ':' + p;
+      frequency.set(key, (frequency.get(key) ?? 0) + 1);
+    }
+    let repeatedParagraphs = 0, repeatedTokens = 0;
+    for (const page of values) for (const p of page.paragraphs) if (frequency.get(page.locale + ':' + p) > 1) {
+      repeatedParagraphs++;
+      repeatedTokens += p.split(' ').length;
+    }
+    return { repeatedParagraphs, repeatedTokens };
   }
-  let repeatedParagraphs = 0, repeatedTokens = 0;
-  for (const page of pages) for (const p of page.paragraphs) if (frequency.get(page.locale + ':' + p) > 1) {
-    repeatedParagraphs++;
-    repeatedTokens += p.split(' ').length;
-  }
-  return { repeatedParagraphs, repeatedTokens };
+  const raw = repeatedContent(pages);
+  const presentation = withoutKeywordPresentation(pages);
+  return {
+    ...repeatedContent(presentation.pages),
+    rawEditorialRepeatedParagraphs: raw.repeatedParagraphs,
+    rawEditorialRepeatedTokens: raw.repeatedTokens,
+    classifiedPresentationParagraphs: presentation.excludedParagraphs,
+    classifiedPresentationTokens: presentation.excludedTokens
+  };
 }
 module.exports = { approvedManagedPackages, approvedPackageMessages, editorialRepetition, metadata: commercial.metadata, priceMentions: commercial.priceMentions };

@@ -11,12 +11,12 @@ import corePageCopy from './core-page-copy-expectations.cjs';
 import posterPricing from './poster-pricing-expectations.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all 232 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
+test('all 274 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 232);
+  assert.equal(audit.pages.length, 274);
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(audit.linkCoverage[locale].reachable, 116);
+    assert.equal(audit.linkCoverage[locale].reachable, 137);
     assert.ok(audit.linkCoverage[locale].maximumDepth <= 3);
     assert.ok(audit.linkCoverage[locale].minimumOtherPageInbound > 0);
   }

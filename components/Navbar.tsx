@@ -26,7 +26,7 @@ export default function Navbar({ locale, labels, logo }: { locale: string; label
   return (
     <header className="sticky top-0 z-50 border-b border-primary-700/10 bg-ivory/80 shadow-[0_1px_0_rgba(255,255,255,0.75)_inset] backdrop-blur-2xl">
       <nav className="container-x flex h-14 items-center justify-between gap-6">
-        <Link href={`/${locale}`} className="flex shrink-0 items-center" aria-label="INAYA Domestic Workers home">
+        <Link href={`/${locale}`} className="flex shrink-0 items-center" aria-label={locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers home'}>
           {logo}
         </Link>
 
@@ -52,6 +52,7 @@ export default function Navbar({ locale, labels, logo }: { locale: string; label
         <div className="flex shrink-0 items-center gap-2.5">
           <Link
             href={switchedPath}
+            hrefLang={otherLocale}
             prefetch={false}
             className="rounded-full border border-primary-700/10 bg-white/45 px-3 py-1.5 text-[12px] font-semibold leading-none text-primary-900 shadow-sm transition hover:border-accent-500 hover:bg-white/80"
           >

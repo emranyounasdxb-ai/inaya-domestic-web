@@ -1,0 +1,513 @@
+{
+  "reviewedDate": "2026-10-24",
+  "source": "Independently reviewed English gate and Arabic cross-review manuscript files; not derived from production metadata.",
+  "previousCanonicalUrls": [
+    "https://inayadomestic.ae/en/",
+    "https://inayadomestic.ae/ar/",
+    "https://inayadomestic.ae/en/about/",
+    "https://inayadomestic.ae/ar/about/",
+    "https://inayadomestic.ae/en/services/",
+    "https://inayadomestic.ae/ar/services/",
+    "https://inayadomestic.ae/en/contact/",
+    "https://inayadomestic.ae/ar/contact/",
+    "https://inayadomestic.ae/en/how-it-works/",
+    "https://inayadomestic.ae/ar/how-it-works/",
+    "https://inayadomestic.ae/en/service-areas/",
+    "https://inayadomestic.ae/ar/service-areas/",
+    "https://inayadomestic.ae/en/services/countries-we-source-from/",
+    "https://inayadomestic.ae/ar/services/countries-we-source-from/",
+    "https://inayadomestic.ae/en/booking/",
+    "https://inayadomestic.ae/ar/booking/",
+    "https://inayadomestic.ae/en/careers/",
+    "https://inayadomestic.ae/ar/careers/",
+    "https://inayadomestic.ae/en/pricing/",
+    "https://inayadomestic.ae/ar/pricing/",
+    "https://inayadomestic.ae/en/blog/",
+    "https://inayadomestic.ae/ar/blog/",
+    "https://inayadomestic.ae/en/faq/",
+    "https://inayadomestic.ae/ar/faq/",
+    "https://inayadomestic.ae/en/documents-required/",
+    "https://inayadomestic.ae/ar/documents-required/",
+    "https://inayadomestic.ae/en/inaya-advantages/",
+    "https://inayadomestic.ae/ar/inaya-advantages/",
+    "https://inayadomestic.ae/en/reviews/",
+    "https://inayadomestic.ae/ar/reviews/",
+    "https://inayadomestic.ae/en/privacy-policy/",
+    "https://inayadomestic.ae/ar/privacy-policy/",
+    "https://inayadomestic.ae/en/terms/",
+    "https://inayadomestic.ae/ar/terms/",
+    "https://inayadomestic.ae/en/refund-policy/",
+    "https://inayadomestic.ae/ar/refund-policy/",
+    "https://inayadomestic.ae/en/service-guidelines/",
+    "https://inayadomestic.ae/ar/service-guidelines/",
+    "https://inayadomestic.ae/en/support-process/",
+    "https://inayadomestic.ae/ar/support-process/",
+    "https://inayadomestic.ae/en/services/live-in-maid/",
+    "https://inayadomestic.ae/ar/services/live-in-maid/",
+    "https://inayadomestic.ae/en/services/live-out-maid/",
+    "https://inayadomestic.ae/ar/services/live-out-maid/",
+    "https://inayadomestic.ae/en/services/housemaid/",
+    "https://inayadomestic.ae/ar/services/housemaid/",
+    "https://inayadomestic.ae/en/services/housekeeping/",
+    "https://inayadomestic.ae/ar/services/housekeeping/",
+    "https://inayadomestic.ae/en/services/full-time-maid/",
+    "https://inayadomestic.ae/ar/services/full-time-maid/",
+    "https://inayadomestic.ae/en/services/part-time-maid/",
+    "https://inayadomestic.ae/ar/services/part-time-maid/",
+    "https://inayadomestic.ae/en/services/monthly-maid-contract/",
+    "https://inayadomestic.ae/ar/services/monthly-maid-contract/",
+    "https://inayadomestic.ae/en/services/on-demand-domestic-help/",
+    "https://inayadomestic.ae/ar/services/on-demand-domestic-help/",
+    "https://inayadomestic.ae/en/services/nanny/",
+    "https://inayadomestic.ae/ar/services/nanny/",
+    "https://inayadomestic.ae/en/services/executive-nannies/",
+    "https://inayadomestic.ae/ar/services/executive-nannies/",
+    "https://inayadomestic.ae/en/services/babysitting/",
+    "https://inayadomestic.ae/ar/services/babysitting/",
+    "https://inayadomestic.ae/en/services/newborn-care/",
+    "https://inayadomestic.ae/ar/services/newborn-care/",
+    "https://inayadomestic.ae/en/services/home-cooking/",
+    "https://inayadomestic.ae/ar/services/home-cooking/",
+    "https://inayadomestic.ae/en/services/private-chefs/",
+    "https://inayadomestic.ae/ar/services/private-chefs/",
+    "https://inayadomestic.ae/en/services/personal-chef/",
+    "https://inayadomestic.ae/ar/services/personal-chef/",
+    "https://inayadomestic.ae/en/services/kitchen-helper/",
+    "https://inayadomestic.ae/ar/services/kitchen-helper/",
+    "https://inayadomestic.ae/en/services/house-managers/",
+    "https://inayadomestic.ae/ar/services/house-managers/",
+    "https://inayadomestic.ae/en/services/elder-care/",
+    "https://inayadomestic.ae/ar/services/elder-care/",
+    "https://inayadomestic.ae/en/services/patient-care/",
+    "https://inayadomestic.ae/ar/services/patient-care/",
+    "https://inayadomestic.ae/en/services/companion-care/",
+    "https://inayadomestic.ae/ar/services/companion-care/",
+    "https://inayadomestic.ae/en/services/recruitment/",
+    "https://inayadomestic.ae/ar/services/recruitment/",
+    "https://inayadomestic.ae/en/services/maid-visa/",
+    "https://inayadomestic.ae/ar/services/maid-visa/",
+    "https://inayadomestic.ae/en/services/maid-replacement/",
+    "https://inayadomestic.ae/ar/services/maid-replacement/",
+    "https://inayadomestic.ae/en/services/sponsorship-transfer/",
+    "https://inayadomestic.ae/ar/services/sponsorship-transfer/",
+    "https://inayadomestic.ae/en/services/experienced-maid/",
+    "https://inayadomestic.ae/ar/services/experienced-maid/",
+    "https://inayadomestic.ae/en/services/background-verification/",
+    "https://inayadomestic.ae/ar/services/background-verification/",
+    "https://inayadomestic.ae/en/services/bespoke-household-management/",
+    "https://inayadomestic.ae/ar/services/bespoke-household-management/",
+    "https://inayadomestic.ae/en/services/floral-styling/",
+    "https://inayadomestic.ae/ar/services/floral-styling/",
+    "https://inayadomestic.ae/en/services/relocation-support/",
+    "https://inayadomestic.ae/ar/services/relocation-support/",
+    "https://inayadomestic.ae/en/services/pet-care-specialists/",
+    "https://inayadomestic.ae/ar/services/pet-care-specialists/",
+    "https://inayadomestic.ae/en/services/event-staffing/",
+    "https://inayadomestic.ae/ar/services/event-staffing/",
+    "https://inayadomestic.ae/en/maid-source-countries/philippines-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/philippines-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/sri-lankan-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/sri-lankan-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/nepali-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/nepali-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/indian-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/indian-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/bangladeshi-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/bangladeshi-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/ethiopian-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/ethiopian-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/kenyan-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/kenyan-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/ugandan-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/ugandan-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/ghanaian-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/ghanaian-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/sierra-leone-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/sierra-leone-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/indonesian-maid-uae/",
+    "https://inayadomestic.ae/en/maid-source-countries/myanmar-maid-uae/",
+    "https://inayadomestic.ae/ar/maid-source-countries/myanmar-maid-uae/",
+    "https://inayadomestic.ae/en/maid-services-ajman/",
+    "https://inayadomestic.ae/ar/maid-services-ajman/",
+    "https://inayadomestic.ae/en/maid-services-dubai/",
+    "https://inayadomestic.ae/ar/maid-services-dubai/",
+    "https://inayadomestic.ae/en/maid-services-sharjah/",
+    "https://inayadomestic.ae/ar/maid-services-sharjah/",
+    "https://inayadomestic.ae/en/maid-services-abu-dhabi/",
+    "https://inayadomestic.ae/ar/maid-services-abu-dhabi/",
+    "https://inayadomestic.ae/en/maid-services-ras-al-khaimah/",
+    "https://inayadomestic.ae/ar/maid-services-ras-al-khaimah/",
+    "https://inayadomestic.ae/en/maid-services-fujairah/",
+    "https://inayadomestic.ae/ar/maid-services-fujairah/",
+    "https://inayadomestic.ae/en/maid-services-umm-al-quwain/",
+    "https://inayadomestic.ae/ar/maid-services-umm-al-quwain/",
+    "https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/",
+    "https://inayadomestic.ae/ar/blog/uae-domestic-worker-hiring-process/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-package-pricing-factors/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-package-pricing-factors/",
+    "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/",
+    "https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/",
+    "https://inayadomestic.ae/en/blog/live-in-live-out-part-time-maid-uae/",
+    "https://inayadomestic.ae/ar/blog/live-in-live-out-part-time-maid-uae/",
+    "https://inayadomestic.ae/en/blog/monthly-maid-package-inclusions-checklist/",
+    "https://inayadomestic.ae/ar/blog/monthly-maid-package-inclusions-checklist/",
+    "https://inayadomestic.ae/en/blog/maid-nanny-babysitter-differences/",
+    "https://inayadomestic.ae/ar/blog/maid-nanny-babysitter-differences/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-visa-sponsorship-support/",
+    "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/",
+    "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-costs-uae/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-employment-arrangements-uae/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-employment-arrangements-uae/",
+    "https://inayadomestic.ae/en/blog/all-inclusive-domestic-worker-packages/",
+    "https://inayadomestic.ae/ar/blog/all-inclusive-domestic-worker-packages/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-sponsorship-responsibilities/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-sponsorship-responsibilities/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-employer-eligibility-documents/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-employer-eligibility-documents/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/",
+    "https://inayadomestic.ae/en/blog/choosing-nanny-newborn-support/",
+    "https://inayadomestic.ae/ar/blog/choosing-nanny-newborn-support/",
+    "https://inayadomestic.ae/en/blog/caregiver-versus-licensed-nurse/",
+    "https://inayadomestic.ae/ar/blog/caregiver-versus-licensed-nurse/",
+    "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/",
+    "https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-verification-checks/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-verification-checks/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-interview-trial-probation/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-interview-trial-probation/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-replacement-eligibility/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-replacement-eligibility/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-recruitment-refund-rules/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-recruitment-refund-rules/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-contracts-renewal/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-contracts-renewal/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-wages-rest-leave/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-wages-rest-leave/",
+    "https://inayadomestic.ae/en/blog/own-visa-part-time-domestic-work/",
+    "https://inayadomestic.ae/ar/blog/own-visa-part-time-domestic-work/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-leave-travel-planning/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-complaints-disputes/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-complaints-disputes/",
+    "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/",
+    "https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/",
+    "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/",
+    "https://inayadomestic.ae/ar/blog/maid-visit-frequency-planner/",
+    "https://inayadomestic.ae/en/blog/apartment-villa-maid-task-plan/",
+    "https://inayadomestic.ae/ar/blog/apartment-villa-maid-task-plan/",
+    "https://inayadomestic.ae/en/blog/regular-maid-service-deep-move-in-cleaning/",
+    "https://inayadomestic.ae/ar/blog/regular-maid-service-deep-move-in-cleaning/",
+    "https://inayadomestic.ae/en/blog/prepare-cleaning-supplies-maid-visit/",
+    "https://inayadomestic.ae/ar/blog/prepare-cleaning-supplies-maid-visit/",
+    "https://inayadomestic.ae/en/blog/maid-laundry-ironing-task-checklist/",
+    "https://inayadomestic.ae/ar/blog/maid-laundry-ironing-task-checklist/",
+    "https://inayadomestic.ae/en/blog/home-cooking-weekly-meal-prep-plan/",
+    "https://inayadomestic.ae/ar/blog/home-cooking-weekly-meal-prep-plan/",
+    "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/",
+    "https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/",
+    "https://inayadomestic.ae/en/blog/nanny-school-routine-child-handover/",
+    "https://inayadomestic.ae/ar/blog/nanny-school-routine-child-handover/",
+    "https://inayadomestic.ae/en/blog/maid-household-with-pets/",
+    "https://inayadomestic.ae/ar/blog/maid-household-with-pets/",
+    "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/",
+    "https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/",
+    "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/",
+    "https://inayadomestic.ae/ar/blog/maid-help-family-guests-gathering/",
+    "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/",
+    "https://inayadomestic.ae/ar/blog/maid-duties-family-holiday/",
+    "https://inayadomestic.ae/en/blog/moving-home-emirate-with-domestic-worker/",
+    "https://inayadomestic.ae/ar/blog/moving-home-emirate-with-domestic-worker/",
+    "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/",
+    "https://inayadomestic.ae/ar/blog/one-maid-two-helpers-workload/",
+    "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/",
+    "https://inayadomestic.ae/ar/blog/maid-daily-instructions-handover-template/",
+    "https://inayadomestic.ae/en/blog/domestic-worker-contract-permit-residence-cancellation/",
+    "https://inayadomestic.ae/ar/blog/domestic-worker-contract-permit-residence-cancellation/",
+    "https://inayadomestic.ae/en/gallery/",
+    "https://inayadomestic.ae/ar/gallery/",
+    "https://inayadomestic.ae/en/company-information/",
+    "https://inayadomestic.ae/ar/company-information/"
+  ],
+  "articles": [
+    {
+      "id": "K01",
+      "keyword": "Maid agency Ajman",
+      "slug": "maid-agency-ajman-quote-comparison-workbook",
+      "en": {
+        "reviewedManuscriptSha256": "63e49f25e24af4b8bfba27553957c533d07022634818c3dc850218118fc3b7f8",
+        "contentSha256": "aea8e9658c531b3b119b912a8e5e7005cf23c7a03ee1771c999d6aef5d5bb7fa"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "358c660540778caadf4d927826faf5c4cca4d60f3169dbffde20efd8f770819a",
+        "contentSha256": "d95cfdf4fec3390bb3a462dd446ca26a1990e947f08ac483e970800cabaebfd0"
+      }
+    },
+    {
+      "id": "K02",
+      "keyword": "Tadbeer center Ajman",
+      "slug": "tadbeer-center-ajman-first-visit-service-routing",
+      "en": {
+        "reviewedManuscriptSha256": "69796551c409b17014f27fb33d90721d7a3788fee4e35104a7da5e01b13a4498",
+        "contentSha256": "2527560f1db5f2e749db86d002fda3b3a8629111101d187e413cdfa959e1b6b6"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "fe57495f158fd91fecb7663c0a51207136146c1f54f77e9242df0fc3acd0a231",
+        "contentSha256": "b481701bd73f42f9447f0a90f4dd4aaccc2f1fba04dfe8b7a7cb7c6acfcf76b7"
+      }
+    },
+    {
+      "id": "K03",
+      "keyword": "Domestic workers Ajman",
+      "slug": "domestic-workers-ajman-household-role-design-canvas",
+      "en": {
+        "reviewedManuscriptSha256": "75362474c0726b29b4479110f4aed6d834c38c30fc67299d8661bf72493264b2",
+        "contentSha256": "e843a300805c2aef766e24f1e623c746454fddfe17ff4192dc1db4243897ab6d"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "8c2a2c2c2153841b14a808ef7891592ff6cf1525d5d89708bb7ecc2156df4237",
+        "contentSha256": "29067632ade2867a190fb01b2d43941fde30614882d74accd17a623faff925da"
+      }
+    },
+    {
+      "id": "K04",
+      "keyword": "Housemaid visa Ajman",
+      "slug": "housemaid-visa-ajman-application-readiness-ledger",
+      "en": {
+        "reviewedManuscriptSha256": "9647b31e94e2e3a8c9b7f1f97aa71372da77ed6cc646f553c46d97c7d816619f",
+        "contentSha256": "961a8553fc771d51631d4bc930baa9270c209d0b51628ea96834e235aa1c2e76"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "0c0cb632a2df7978d9c825d413a4a50b5018bb8be906067f66039b939a6cfe42",
+        "contentSha256": "63f0961642581c28b51d8cc1404a4ee1a99f61fa07b87763ea830678367d4739"
+      }
+    },
+    {
+      "id": "K05",
+      "keyword": "Live-in maid Ajman",
+      "slug": "live-in-maid-ajman-home-start-readiness-walkthrough",
+      "en": {
+        "reviewedManuscriptSha256": "421399cc5a49abcd2e407df3fda5e5a01aba59753146001adb2e59b55c31a931",
+        "contentSha256": "9b54a783551943e851fcd8901384e0d06b3e2f56dbcdd9e6a36cc5acb0846844"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "99405702c5b4244664ec0b9d43102b8d436d79f5f96ef45219237875e8009489",
+        "contentSha256": "88bcb78a1423a8353b17df6c1c5c0c8b5e65f3d29375fa2a7c69c09f6691a6d3"
+      }
+    },
+    {
+      "id": "K06",
+      "keyword": "Housemaid recruitment Ajman",
+      "slug": "housemaid-recruitment-ajman-candidate-evidence-cards",
+      "en": {
+        "reviewedManuscriptSha256": "ec7eea70b5c8a916b0b9a5fcf01e34a53b00b0f98b5b292c6bb4016f7dbdc1cf",
+        "contentSha256": "f9c14a4e879abc73c1237a04f93b8d7ae66e5404dc9f975317cb784d5207bd26"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "82f84b427eaf4a7ddd482c62d833bcdb43fda950a0a64d01d5d04f79e1d8031d",
+        "contentSha256": "74cb0d6d71656d520d153388af4c6938b6fe86214364749873d93e7695a4e80f"
+      }
+    },
+    {
+      "id": "K07",
+      "keyword": "Filipino maid Ajman",
+      "slug": "filipino-maid-ajman-task-communication-workbook",
+      "en": {
+        "reviewedManuscriptSha256": "249d32b69b4ffd52428539bc798deab5c36582e89630d0ec1a72c297b517a467",
+        "contentSha256": "94905608d3e5ade169df60009efd4ff0b31417e56c7b8fa85cc8b40f24a194f3"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "d19a6fe9dfe5018fc9f1dab9de427621880577f31b2696ac11ea53278bb91949",
+        "contentSha256": "91d0a0510afabae2356113091f10669a28837b1445f8480caa87deeb4d9c7455"
+      }
+    },
+    {
+      "id": "K08",
+      "keyword": "Ethiopian maid Ajman",
+      "slug": "ethiopian-maid-ajman-language-onboarding-plan",
+      "en": {
+        "reviewedManuscriptSha256": "1c34ec1f4ff8c4f03123b8a16d498f3242123bfdfb8be870979e22054f38898d",
+        "contentSha256": "ad22c9813defd1562be720369b480de3d54de6a5767b6dcd722ac912614b296e"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "6ee2d1407fccf7416db7fb3947f966ebc4568c07293a8984d27cf1548e9ee1f4",
+        "contentSha256": "db76c352ea39284fed39555a8f9bfaa69d5f49b1609dce8306d43107a74362b8"
+      }
+    },
+    {
+      "id": "K09",
+      "keyword": "Nanny agency Ajman",
+      "slug": "nanny-agency-ajman-childcare-evidence-handover",
+      "en": {
+        "reviewedManuscriptSha256": "aee37bc48fdefbac448edb4ac1ee41f2d4ad928b126536c6c3135690885c1b3c",
+        "contentSha256": "a52a07ed7bfdf92046b638ebad6e61954a817ee2a2ac359e686953a40584a13e"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "9565f1480f365f60bb5b649ddac1bfaf8228ee2890573253ebbc5c21e548088d",
+        "contentSha256": "8bea6ef1d3adc8f93c214f477fa3c107336e54ee1d61197c787677e65c79ee7e"
+      }
+    },
+    {
+      "id": "K10",
+      "keyword": "Monthly maid service Ajman",
+      "slug": "monthly-maid-service-ajman-commitment-budget",
+      "en": {
+        "reviewedManuscriptSha256": "9db8edb1250a22ff9bdd5dda1524df827e224940b3195f120a12d44e369815ec",
+        "contentSha256": "1cc4359d30f09c599a5c7032374fe0822318aa83be331ba92d53f72be9ff6468"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "58734b2e2f15797f026b458b55f082440b7b1d9c6548fc55850ae0b2fde915e1",
+        "contentSha256": "37fec631bb6db9c05bcbd24dee955062c94dc33800d2b8db3fd60e6066f5d84f"
+      }
+    },
+    {
+      "id": "K11",
+      "keyword": "Part-time maid Ajman",
+      "slug": "part-time-maid-ajman-priorities-carry-over",
+      "en": {
+        "reviewedManuscriptSha256": "3e6867d5ea5769f6504e39620ac6f090bddfd597ac183c74a2ce7206218197bc",
+        "contentSha256": "0a1dcca7dc3c1e46b3d14364a44a8cffc12db78adf7f8a466063de0eecd1dc84"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "5211bed19a57f4b78aa21a4930cb3c1eb32b31a3e4d65ced01b387dbc87de997",
+        "contentSha256": "294aae4a5985631500f2031f704304411dc41ab8ae8576bd110a76831efff94d"
+      }
+    },
+    {
+      "id": "K12",
+      "keyword": "Maid agency Sharjah",
+      "slug": "maid-agency-sharjah-ajman-office-logistics",
+      "en": {
+        "reviewedManuscriptSha256": "e75f8ed0ef2ea07a39cc6d9b1145f4cf5ebc67102ed11644ba587e05dcd9ab18",
+        "contentSha256": "0d87b2e5b091be810e983a1f70c8311870f4ed925f5135648fa0ab2bdb175745"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "eff6806e26c411eb29eb463391ed76f67c09b23c39d1f8478d664786b4d8b2bd",
+        "contentSha256": "5d2bc9ce5b03e29149548330b44e00fd80528f38a55cbeeea1b43319b33eaaa8"
+      }
+    },
+    {
+      "id": "K13",
+      "keyword": "Maid services Dubai",
+      "slug": "maid-services-dubai-household-access-scope-plan",
+      "en": {
+        "reviewedManuscriptSha256": "5e4970835607a0cbc8f5643167ae6ad81439340980da11289f6dc80f5bfb331c",
+        "contentSha256": "63779c8a3ab8e015f14bdcc0bd24fd2b5b1d541a287a0ebaf5bee201152c2962"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "6768fb50fa5aefe04f0a242e0bae00d11d36ca0d95941ef7807cdc48baff4479",
+        "contentSha256": "4d054e0a2c689ce313de6032d7abb7d73fcfdd2fc01c078293b63aafed861b65"
+      }
+    },
+    {
+      "id": "K14",
+      "keyword": "Tadbeer near me",
+      "slug": "tadbeer-near-me-location-identity-visit-check",
+      "en": {
+        "reviewedManuscriptSha256": "fa8f53df2f502502b7d6ba62a6103fc3989fa0d50a2b757e5ada53e315a867ce",
+        "contentSha256": "e162706bbc6c5958199c1f80e6ab431d2dca50b02f3e1d22293eac9854f12b32"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "3be4a100d3f877b599401b29ea11a95b53adc3549f04c503315a6ca8408562d9",
+        "contentSha256": "3d0f9c83c4ca9d56f225c90bc1da267e25f59857fb9a4b867130f055d3fa47c2"
+      }
+    },
+    {
+      "id": "K15",
+      "keyword": "خادمات عجمان",
+      "slug": "ajman-household-weekly-maid-priorities-handover",
+      "en": {
+        "reviewedManuscriptSha256": "42d74ee9249f350cba8d631fb09ac0d4d66fcc8a2717e5f71bed26beb6972fb1",
+        "contentSha256": "08bce1551364f9b7542073cefbe157859c706e9c487f0d802584e2bb4752e5be"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "4194a7083b0c94b6b140074fedaf2314ebfd0d35880504fc0a8d6b391f846a9a",
+        "contentSha256": "e6a9cacaf853b65fd8ea025495716375d1f2f6cf545661168d5d7308e2a72678"
+      }
+    },
+    {
+      "id": "K16",
+      "keyword": "مكتب استقدام خادمات عجمان",
+      "slug": "ajman-maid-recruitment-agreement-receipts-evidence",
+      "en": {
+        "reviewedManuscriptSha256": "99efedb2a2ed285cb2248e2cd5e156f25ec002eb1c6b64bd5af9f40937ec4c71",
+        "contentSha256": "d9a4382c3f097490784253087e11b9aef8ed3f72fd6700b19bb0467aab0c6030"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "a8d7bcad20477742786660752de6b6f5e23f48f573871753efea98c3a79699a7",
+        "contentSha256": "815ef294f74a47b90353a327beff22b641be6c51dc34fc54e98712d5db9ea31f"
+      }
+    },
+    {
+      "id": "K17",
+      "keyword": "مركز تدبير عجمان",
+      "slug": "ajman-tadbeer-case-status-follow-up-record",
+      "en": {
+        "reviewedManuscriptSha256": "d35e10eded66f0980796ce54870d961885faab6da8c258899398e8e3b6b1f9d7",
+        "contentSha256": "f3ed94074a1bbb77af1cf058694443251337064df25da07d81504978124e8b1c"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "cc1f9feac84dd88647806a87d3136ec522a3c5166c3b6647457674efbecc286c",
+        "contentSha256": "f502b05b6fb5264c25c440eab45dbdaa3cfa45c0317e3019da92149709503a03"
+      }
+    },
+    {
+      "id": "K18",
+      "keyword": "تأشيرة خادمة عجمان",
+      "slug": "ajman-housemaid-visa-document-name-status-check",
+      "en": {
+        "reviewedManuscriptSha256": "f6261f74d03d8dec88b2c44a3cb32d6d8b0af290992784f7abefd31d94aca142",
+        "contentSha256": "7c925279daeac844e4c837b27ce3a6efdaf2fb15a2b2a1b5954247805414f98f"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "7c757275af249902030ef1dcfd7f496a71b54ae89b0ef0035af27677aee759a6",
+        "contentSha256": "ae047684b10323869cd7a0d6cc54b12dafd5585e440a2c2f2e405c95849a3154"
+      }
+    },
+    {
+      "id": "K19",
+      "keyword": "خادمات بالشهر عجمان",
+      "slug": "ajman-monthly-maid-service-review-evidence-log",
+      "en": {
+        "reviewedManuscriptSha256": "8db6ee33cd1c3eca931a8d6eb6d54c8f0ceff4415c248b70fcffb6f1687e3094",
+        "contentSha256": "aa2f8ea32010d00437559b3b8fb7b67d028740c4e2ba804c81f487c5c6ca6ee7"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "0a3b74351d9ad88d93cf308f8e4dcd1e21afed18ce1baea94f7f3fa611a90e08",
+        "contentSha256": "b01a796d89fe7e008edceaefdb8ede37f4faa9daa9424099b8c1e6e8cf827b22"
+      }
+    },
+    {
+      "id": "K20",
+      "keyword": "عاملات منزلية عجمان",
+      "slug": "ajman-domestic-worker-communication-privacy-boundaries",
+      "en": {
+        "reviewedManuscriptSha256": "7f8aa3cd5023e88bed93bb64111e79acb2dcdfc1496e05d72b25e0935ec2bd92",
+        "contentSha256": "b327d305691b937c6497ed3051d140a56d29d7fb944ac965c38c7202463ccc11"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "9890feb83f7b3290042dd1f12507ef242d3f9bc0d9379e42fb237ac212e1af5e",
+        "contentSha256": "83475d5ce211bc38e41de4c9653e747bc44e3cbcf3c897e13030d01eb8a3532f"
+      }
+    },
+    {
+      "id": "K21",
+      "keyword": "Domestic worker recruitment Ajman",
+      "slug": "ajman-domestic-worker-recruitment-milestone-decisions",
+      "en": {
+        "reviewedManuscriptSha256": "54eb169d1002831b57a732f7f12f0ac4c68be1a8e96dc41ff2cc490ab1a4cd70",
+        "contentSha256": "6f30957c8d2bbd80168332418206eade341870673063809e76354868766a31b7"
+      },
+      "ar": {
+        "reviewedManuscriptSha256": "b5dbc5e3bfa51b810f1d5a026db98b2af030e1935c50f2a59b319128336d10b0",
+        "contentSha256": "0ba2265ad801cafb3a1b8d8e1bda45df3190cbb779ac0ef7b763ddab7527b4a8"
+      }
+    }
+  ]
+}

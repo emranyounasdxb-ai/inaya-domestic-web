@@ -1,0 +1,1373 @@
+{
+  "reviewedDate": "2026-10-24",
+  "purpose": "Exact presentation-only placements, derived from independently reviewed original manuscripts and one exact shared new English UI instruction. No entire route or substantive article paragraph is exempt.",
+  "expectedExcludedParagraphs": 147,
+  "expectedExcludedTokens": 2347,
+  "placements": [
+    {
+      "id": "K01",
+      "locale": "en",
+      "route": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "kind": "article-summary",
+      "sourceSha256": "63e49f25e24af4b8bfba27553957c533d07022634818c3dc850218118fc3b7f8",
+      "paragraph": "compare maid agency quotations in ajman using a practical scope evidence cost and responsibility workbook before committing",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "63e49f25e24af4b8bfba27553957c533d07022634818c3dc850218118fc3b7f8",
+      "paragraph": "compare maid agency quotations in ajman using a practical scope evidence cost and responsibility workbook before committing",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "en",
+      "route": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "63e49f25e24af4b8bfba27553957c533d07022634818c3dc850218118fc3b7f8",
+      "paragraph": "original editorial planning tool not an official mandatory process or a guaranteed outcome",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "en",
+      "route": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "63e49f25e24af4b8bfba27553957c533d07022634818c3dc850218118fc3b7f8",
+      "paragraph": "editorial relationship map showing which records inform the household decision",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "en",
+      "route": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "ar",
+      "route": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "kind": "article-summary",
+      "sourceSha256": "358c660540778caadf4d927826faf5c4cca4d60f3169dbffde20efd8f770819a",
+      "paragraph": "قارن عروض مكاتب الخدم في عجمان بورقة عملية للنطاق والأدلة والتكاليف والمسؤوليات قبل الالتزام",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "358c660540778caadf4d927826faf5c4cca4d60f3169dbffde20efd8f770819a",
+      "paragraph": "قارن عروض مكاتب الخدم في عجمان بورقة عملية للنطاق والأدلة والتكاليف والمسؤوليات قبل الالتزام",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "ar",
+      "route": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "358c660540778caadf4d927826faf5c4cca4d60f3169dbffde20efd8f770819a",
+      "paragraph": "أداة تخطيط تحريرية أصلية ليست إجراء رسميا إلزاميا ولا ضمانا لنتيجة",
+      "count": 1
+    },
+    {
+      "id": "K01",
+      "locale": "ar",
+      "route": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "358c660540778caadf4d927826faf5c4cca4d60f3169dbffde20efd8f770819a",
+      "paragraph": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "en",
+      "route": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "kind": "article-summary",
+      "sourceSha256": "69796551c409b17014f27fb33d90721d7a3788fee4e35104a7da5e01b13a4498",
+      "paragraph": "prepare a first tadbeer centre visit in ajman with a recruitment managed service and domestic worker typing routing sheet",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "69796551c409b17014f27fb33d90721d7a3788fee4e35104a7da5e01b13a4498",
+      "paragraph": "prepare a first tadbeer centre visit in ajman with a recruitment managed service and domestic worker typing routing sheet",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "en",
+      "route": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "69796551c409b17014f27fb33d90721d7a3788fee4e35104a7da5e01b13a4498",
+      "paragraph": "original editorial planning tool not an official mandatory process or a guaranteed outcome",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "en",
+      "route": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "69796551c409b17014f27fb33d90721d7a3788fee4e35104a7da5e01b13a4498",
+      "paragraph": "editorial relationship map showing which records inform the household decision",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "en",
+      "route": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "ar",
+      "route": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "kind": "article-summary",
+      "sourceSha256": "fe57495f158fd91fecb7663c0a51207136146c1f54f77e9242df0fc3acd0a231",
+      "paragraph": "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "fe57495f158fd91fecb7663c0a51207136146c1f54f77e9242df0fc3acd0a231",
+      "paragraph": "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "ar",
+      "route": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "fe57495f158fd91fecb7663c0a51207136146c1f54f77e9242df0fc3acd0a231",
+      "paragraph": "أداة تخطيط تحريرية أصلية ليست إجراء رسميا إلزاميا ولا ضمانا لنتيجة",
+      "count": 1
+    },
+    {
+      "id": "K02",
+      "locale": "ar",
+      "route": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "fe57495f158fd91fecb7663c0a51207136146c1f54f77e9242df0fc3acd0a231",
+      "paragraph": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "en",
+      "route": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "kind": "article-summary",
+      "sourceSha256": "75362474c0726b29b4479110f4aed6d834c38c30fc67299d8661bf72493264b2",
+      "paragraph": "design a practical domestic worker role for an ajman household using workload responsibilities task boundaries and communication tools",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "75362474c0726b29b4479110f4aed6d834c38c30fc67299d8661bf72493264b2",
+      "paragraph": "design a practical domestic worker role for an ajman household using workload responsibilities task boundaries and communication tools",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "en",
+      "route": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "75362474c0726b29b4479110f4aed6d834c38c30fc67299d8661bf72493264b2",
+      "paragraph": "original editorial planning tool not an official mandatory process or a guaranteed outcome",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "en",
+      "route": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "75362474c0726b29b4479110f4aed6d834c38c30fc67299d8661bf72493264b2",
+      "paragraph": "editorial relationship map showing which records inform the household decision",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "en",
+      "route": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "ar",
+      "route": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "kind": "article-summary",
+      "sourceSha256": "8c2a2c2c2153841b14a808ef7891592ff6cf1525d5d89708bb7ecc2156df4237",
+      "paragraph": "صمم دورا عمليا للعمالة المنزلية في عجمان بأدوات لعبء العمل والمسؤوليات وحدود المهام والتواصل",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "8c2a2c2c2153841b14a808ef7891592ff6cf1525d5d89708bb7ecc2156df4237",
+      "paragraph": "صمم دورا عمليا للعمالة المنزلية في عجمان بأدوات لعبء العمل والمسؤوليات وحدود المهام والتواصل",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "ar",
+      "route": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "8c2a2c2c2153841b14a808ef7891592ff6cf1525d5d89708bb7ecc2156df4237",
+      "paragraph": "أداة تخطيط تحريرية أصلية ليست إجراء رسميا إلزاميا ولا ضمانا لنتيجة",
+      "count": 1
+    },
+    {
+      "id": "K03",
+      "locale": "ar",
+      "route": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "8c2a2c2c2153841b14a808ef7891592ff6cf1525d5d89708bb7ecc2156df4237",
+      "paragraph": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "en",
+      "route": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "kind": "article-summary",
+      "sourceSha256": "9647b31e94e2e3a8c9b7f1f97aa71372da77ed6cc646f553c46d97c7d816619f",
+      "paragraph": "organise a housemaid visa enquiry in ajman with separate new renewal cancellation and follow up records without assuming approval",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "9647b31e94e2e3a8c9b7f1f97aa71372da77ed6cc646f553c46d97c7d816619f",
+      "paragraph": "organise a housemaid visa enquiry in ajman with separate new renewal cancellation and follow up records without assuming approval",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "en",
+      "route": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "9647b31e94e2e3a8c9b7f1f97aa71372da77ed6cc646f553c46d97c7d816619f",
+      "paragraph": "original editorial planning tool not an official mandatory process or a guaranteed outcome",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "en",
+      "route": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "9647b31e94e2e3a8c9b7f1f97aa71372da77ed6cc646f553c46d97c7d816619f",
+      "paragraph": "editorial relationship map showing which records inform the household decision",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "en",
+      "route": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "ar",
+      "route": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "kind": "article-summary",
+      "sourceSha256": "0c0cb632a2df7978d9c825d413a4a50b5018bb8be906067f66039b939a6cfe42",
+      "paragraph": "نظم استفسار تأشيرة خادمة في عجمان بسجلات مستقلة للطلب الجديد والتجديد والإلغاء والمتابعة دون افتراض الموافقة",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "0c0cb632a2df7978d9c825d413a4a50b5018bb8be906067f66039b939a6cfe42",
+      "paragraph": "نظم استفسار تأشيرة خادمة في عجمان بسجلات مستقلة للطلب الجديد والتجديد والإلغاء والمتابعة دون افتراض الموافقة",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "ar",
+      "route": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "0c0cb632a2df7978d9c825d413a4a50b5018bb8be906067f66039b939a6cfe42",
+      "paragraph": "أداة تخطيط تحريرية أصلية ليست إجراء رسميا إلزاميا ولا ضمانا لنتيجة",
+      "count": 1
+    },
+    {
+      "id": "K04",
+      "locale": "ar",
+      "route": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "0c0cb632a2df7978d9c825d413a4a50b5018bb8be906067f66039b939a6cfe42",
+      "paragraph": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "en",
+      "route": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "kind": "article-summary",
+      "sourceSha256": "421399cc5a49abcd2e407df3fda5e5a01aba59753146001adb2e59b55c31a931",
+      "paragraph": "prepare a live in maid arrangement in ajman with accommodation privacy duties rest coverage and a practical household handover",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "421399cc5a49abcd2e407df3fda5e5a01aba59753146001adb2e59b55c31a931",
+      "paragraph": "prepare a live in maid arrangement in ajman with accommodation privacy duties rest coverage and a practical household handover",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "en",
+      "route": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "421399cc5a49abcd2e407df3fda5e5a01aba59753146001adb2e59b55c31a931",
+      "paragraph": "original editorial planning tool not an official mandatory process or a guaranteed outcome",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "en",
+      "route": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "421399cc5a49abcd2e407df3fda5e5a01aba59753146001adb2e59b55c31a931",
+      "paragraph": "editorial relationship map showing which records inform the household decision",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "en",
+      "route": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "ar",
+      "route": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "kind": "article-summary",
+      "sourceSha256": "99405702c5b4244664ec0b9d43102b8d436d79f5f96ef45219237875e8009489",
+      "paragraph": "جهز ترتيب عاملة منزلية مقيمة في عجمان بالسكن والخصوصية والمهام وتغطية الراحة وتسليم التعليمات العملي",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "99405702c5b4244664ec0b9d43102b8d436d79f5f96ef45219237875e8009489",
+      "paragraph": "جهز ترتيب عاملة منزلية مقيمة في عجمان بالسكن والخصوصية والمهام وتغطية الراحة وتسليم التعليمات العملي",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "ar",
+      "route": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "99405702c5b4244664ec0b9d43102b8d436d79f5f96ef45219237875e8009489",
+      "paragraph": "أداة تخطيط تحريرية أصلية ليست إجراء رسميا إلزاميا ولا ضمانا لنتيجة",
+      "count": 1
+    },
+    {
+      "id": "K05",
+      "locale": "ar",
+      "route": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "99405702c5b4244664ec0b9d43102b8d436d79f5f96ef45219237875e8009489",
+      "paragraph": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "en",
+      "route": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "kind": "article-summary",
+      "sourceSha256": "ec7eea70b5c8a916b0b9a5fcf01e34a53b00b0f98b5b292c6bb4016f7dbdc1cf",
+      "paragraph": "use respectful interview evidence cards for housemaid recruitment in ajman with individual skills clear unknowns and a practical handover",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "ec7eea70b5c8a916b0b9a5fcf01e34a53b00b0f98b5b292c6bb4016f7dbdc1cf",
+      "paragraph": "use respectful interview evidence cards for housemaid recruitment in ajman with individual skills clear unknowns and a practical handover",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "en",
+      "route": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "ec7eea70b5c8a916b0b9a5fcf01e34a53b00b0f98b5b292c6bb4016f7dbdc1cf",
+      "paragraph": "original editorial planning tool not an official mandatory process or a guaranteed outcome",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "en",
+      "route": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "ec7eea70b5c8a916b0b9a5fcf01e34a53b00b0f98b5b292c6bb4016f7dbdc1cf",
+      "paragraph": "editorial relationship map showing which records inform the household decision",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "en",
+      "route": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "ar",
+      "route": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "kind": "article-summary",
+      "sourceSha256": "82f84b427eaf4a7ddd482c62d833bcdb43fda950a0a64d01d5d04f79e1d8031d",
+      "paragraph": "استخدم بطاقات أدلة لمقابلات تحترم المرشحات عند استقدام الخادمات في عجمان مع مهارات فردية وأسئلة واضحة وتسليم عملي",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "82f84b427eaf4a7ddd482c62d833bcdb43fda950a0a64d01d5d04f79e1d8031d",
+      "paragraph": "استخدم بطاقات أدلة لمقابلات تحترم المرشحات عند استقدام الخادمات في عجمان مع مهارات فردية وأسئلة واضحة وتسليم عملي",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "ar",
+      "route": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "82f84b427eaf4a7ddd482c62d833bcdb43fda950a0a64d01d5d04f79e1d8031d",
+      "paragraph": "أداة تخطيط تحريرية أصلية ليست إجراء رسميا إلزاميا ولا ضمانا لنتيجة",
+      "count": 1
+    },
+    {
+      "id": "K06",
+      "locale": "ar",
+      "route": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "82f84b427eaf4a7ddd482c62d833bcdb43fda950a0a64d01d5d04f79e1d8031d",
+      "paragraph": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "en",
+      "route": "blog/filipino-maid-ajman-task-communication-workbook",
+      "kind": "article-summary",
+      "sourceSha256": "249d32b69b4ffd52428539bc798deab5c36582e89630d0ec1a72c297b517a467",
+      "paragraph": "plan a filipino maid enquiry in ajman around individual experience practical task communication and a respectful household learning plan",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "249d32b69b4ffd52428539bc798deab5c36582e89630d0ec1a72c297b517a467",
+      "paragraph": "plan a filipino maid enquiry in ajman around individual experience practical task communication and a respectful household learning plan",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "en",
+      "route": "blog/filipino-maid-ajman-task-communication-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "249d32b69b4ffd52428539bc798deab5c36582e89630d0ec1a72c297b517a467",
+      "paragraph": "original editorial planning tool not an official mandatory process or a guaranteed outcome",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "en",
+      "route": "blog/filipino-maid-ajman-task-communication-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "249d32b69b4ffd52428539bc798deab5c36582e89630d0ec1a72c297b517a467",
+      "paragraph": "editorial relationship map showing which records inform the household decision",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "en",
+      "route": "blog/filipino-maid-ajman-task-communication-workbook",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "ar",
+      "route": "blog/filipino-maid-ajman-task-communication-workbook",
+      "kind": "article-summary",
+      "sourceSha256": "d19a6fe9dfe5018fc9f1dab9de427621880577f31b2696ac11ea53278bb91949",
+      "paragraph": "خطط لاستفسار عن خادمة فلبينية في عجمان وفق الخبرة الفردية والتواصل العملي وخطة محترمة لتعلم طرق المنزل",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "d19a6fe9dfe5018fc9f1dab9de427621880577f31b2696ac11ea53278bb91949",
+      "paragraph": "خطط لاستفسار عن خادمة فلبينية في عجمان وفق الخبرة الفردية والتواصل العملي وخطة محترمة لتعلم طرق المنزل",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "ar",
+      "route": "blog/filipino-maid-ajman-task-communication-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "d19a6fe9dfe5018fc9f1dab9de427621880577f31b2696ac11ea53278bb91949",
+      "paragraph": "أداة تخطيط تحريرية أصلية ليست إجراء رسميا إلزاميا ولا ضمانا لنتيجة",
+      "count": 1
+    },
+    {
+      "id": "K07",
+      "locale": "ar",
+      "route": "blog/filipino-maid-ajman-task-communication-workbook",
+      "kind": "diagram-provenance",
+      "visualId": "relationships",
+      "sourceSha256": "d19a6fe9dfe5018fc9f1dab9de427621880577f31b2696ac11ea53278bb91949",
+      "paragraph": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة",
+      "count": 1
+    },
+    {
+      "id": "K08",
+      "locale": "en",
+      "route": "blog/ethiopian-maid-ajman-language-onboarding-plan",
+      "kind": "article-summary",
+      "sourceSha256": "1c34ec1f4ff8c4f03123b8a16d498f3242123bfdfb8be870979e22054f38898d",
+      "paragraph": "prepare a practical onboarding plan for an individual ethiopian domestic worker in ajman using demonstrations clear instructions and respectful feedback",
+      "count": 1
+    },
+    {
+      "id": "K08",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "1c34ec1f4ff8c4f03123b8a16d498f3242123bfdfb8be870979e22054f38898d",
+      "paragraph": "prepare a practical onboarding plan for an individual ethiopian domestic worker in ajman using demonstrations clear instructions and respectful feedback",
+      "count": 1
+    },
+    {
+      "id": "K08",
+      "locale": "en",
+      "route": "blog/ethiopian-maid-ajman-language-onboarding-plan",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K08",
+      "locale": "ar",
+      "route": "blog/ethiopian-maid-ajman-language-onboarding-plan",
+      "kind": "article-summary",
+      "sourceSha256": "6ee2d1407fccf7416db7fb3947f966ebc4568c07293a8984d27cf1548e9ee1f4",
+      "paragraph": "جهز خطة عملية لتهيئة عاملة منزلية إثيوبية في عجمان وفق لغتها وخبرتها الفردية باستخدام الشرح التطبيقي والتعليمات الواضحة والملاحظات المحترمة",
+      "count": 1
+    },
+    {
+      "id": "K08",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "6ee2d1407fccf7416db7fb3947f966ebc4568c07293a8984d27cf1548e9ee1f4",
+      "paragraph": "جهز خطة عملية لتهيئة عاملة منزلية إثيوبية في عجمان وفق لغتها وخبرتها الفردية باستخدام الشرح التطبيقي والتعليمات الواضحة والملاحظات المحترمة",
+      "count": 1
+    },
+    {
+      "id": "K09",
+      "locale": "en",
+      "route": "blog/nanny-agency-ajman-childcare-evidence-handover",
+      "kind": "article-summary",
+      "sourceSha256": "aee37bc48fdefbac448edb4ac1ee41f2d4ad928b126536c6c3135690885c1b3c",
+      "paragraph": "compare nanny suitability using the child s age actual experience family supervision and a written handover with clear non clinical role boundaries",
+      "count": 1
+    },
+    {
+      "id": "K09",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "aee37bc48fdefbac448edb4ac1ee41f2d4ad928b126536c6c3135690885c1b3c",
+      "paragraph": "compare nanny suitability using the child s age actual experience family supervision and a written handover with clear non clinical role boundaries",
+      "count": 1
+    },
+    {
+      "id": "K09",
+      "locale": "en",
+      "route": "blog/nanny-agency-ajman-childcare-evidence-handover",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K09",
+      "locale": "ar",
+      "route": "blog/nanny-agency-ajman-childcare-evidence-handover",
+      "kind": "article-summary",
+      "sourceSha256": "9565f1480f365f60bb5b649ddac1bfaf8228ee2890573253ebbc5c21e548088d",
+      "paragraph": "قارن ملاءمة المربية وفق عمر الطفل والخبرة الفعلية وإشراف الأسرة وتسليم المسؤولية المكتوب مع تحديد واضح لحدود الدور غير السريري",
+      "count": 1
+    },
+    {
+      "id": "K09",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "9565f1480f365f60bb5b649ddac1bfaf8228ee2890573253ebbc5c21e548088d",
+      "paragraph": "قارن ملاءمة المربية وفق عمر الطفل والخبرة الفعلية وإشراف الأسرة وتسليم المسؤولية المكتوب مع تحديد واضح لحدود الدور غير السريري",
+      "count": 1
+    },
+    {
+      "id": "K10",
+      "locale": "en",
+      "route": "blog/monthly-maid-service-ajman-commitment-budget",
+      "kind": "article-summary",
+      "sourceSha256": "9db8edb1250a22ff9bdd5dda1524df827e224940b3195f120a12d44e369815ec",
+      "paragraph": "compare inaya s verified monthly service prices commitment periods and household responsibilities using a practical budget and scope worksheet",
+      "count": 1
+    },
+    {
+      "id": "K10",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "9db8edb1250a22ff9bdd5dda1524df827e224940b3195f120a12d44e369815ec",
+      "paragraph": "compare inaya s verified monthly service prices commitment periods and household responsibilities using a practical budget and scope worksheet",
+      "count": 1
+    },
+    {
+      "id": "K10",
+      "locale": "en",
+      "route": "blog/monthly-maid-service-ajman-commitment-budget",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K10",
+      "locale": "ar",
+      "route": "blog/monthly-maid-service-ajman-commitment-budget",
+      "kind": "article-summary",
+      "sourceSha256": "58734b2e2f15797f026b458b55f082440b7b1d9c6548fc55850ae0b2fde915e1",
+      "paragraph": "قارن أسعار الخدمة الشهرية الموثقة لدى عناية ومدد الالتزام ومسؤوليات الأسرة باستخدام ورقة عملية للميزانية ونطاق الخدمة",
+      "count": 1
+    },
+    {
+      "id": "K10",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "58734b2e2f15797f026b458b55f082440b7b1d9c6548fc55850ae0b2fde915e1",
+      "paragraph": "قارن أسعار الخدمة الشهرية الموثقة لدى عناية ومدد الالتزام ومسؤوليات الأسرة باستخدام ورقة عملية للميزانية ونطاق الخدمة",
+      "count": 1
+    },
+    {
+      "id": "K11",
+      "locale": "en",
+      "route": "blog/part-time-maid-ajman-priorities-carry-over",
+      "kind": "article-summary",
+      "sourceSha256": "3e6867d5ea5769f6504e39620ac6f090bddfd597ac183c74a2ce7206218197bc",
+      "paragraph": "plan a four or eight hour household visit in ajman with a priority ladder clear scope suitable supplies and an honest carry over record",
+      "count": 1
+    },
+    {
+      "id": "K11",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "3e6867d5ea5769f6504e39620ac6f090bddfd597ac183c74a2ce7206218197bc",
+      "paragraph": "plan a four or eight hour household visit in ajman with a priority ladder clear scope suitable supplies and an honest carry over record",
+      "count": 1
+    },
+    {
+      "id": "K11",
+      "locale": "en",
+      "route": "blog/part-time-maid-ajman-priorities-carry-over",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K11",
+      "locale": "ar",
+      "route": "blog/part-time-maid-ajman-priorities-carry-over",
+      "kind": "article-summary",
+      "sourceSha256": "5211bed19a57f4b78aa21a4930cb3c1eb32b31a3e4d65ced01b387dbc87de997",
+      "paragraph": "خطط لزيارة منزلية من أربع أو ثماني ساعات في عجمان بقائمة أولويات ونطاق واضح ومستلزمات مناسبة وسجل دقيق للمهام المؤجلة",
+      "count": 1
+    },
+    {
+      "id": "K11",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "5211bed19a57f4b78aa21a4930cb3c1eb32b31a3e4d65ced01b387dbc87de997",
+      "paragraph": "خطط لزيارة منزلية من أربع أو ثماني ساعات في عجمان بقائمة أولويات ونطاق واضح ومستلزمات مناسبة وسجل دقيق للمهام المؤجلة",
+      "count": 1
+    },
+    {
+      "id": "K12",
+      "locale": "en",
+      "route": "blog/maid-agency-sharjah-ajman-office-logistics",
+      "kind": "article-summary",
+      "sourceSha256": "e75f8ed0ef2ea07a39cc6d9b1145f4cf5ebc67102ed11644ba587e05dcd9ab18",
+      "paragraph": "prepare a sharjah household enquiry with accurate office identity service availability access transport and written confirmation without assuming a local branch",
+      "count": 1
+    },
+    {
+      "id": "K12",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "e75f8ed0ef2ea07a39cc6d9b1145f4cf5ebc67102ed11644ba587e05dcd9ab18",
+      "paragraph": "prepare a sharjah household enquiry with accurate office identity service availability access transport and written confirmation without assuming a local branch",
+      "count": 1
+    },
+    {
+      "id": "K12",
+      "locale": "en",
+      "route": "blog/maid-agency-sharjah-ajman-office-logistics",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K12",
+      "locale": "ar",
+      "route": "blog/maid-agency-sharjah-ajman-office-logistics",
+      "kind": "article-summary",
+      "sourceSha256": "eff6806e26c411eb29eb463391ed76f67c09b23c39d1f8478d664786b4d8b2bd",
+      "paragraph": "جهز استفسار أسرة في الشارقة مع التحقق من المكتب وتوفر الخدمة والدخول والنقل والتأكيد المكتوب دون افتراض وجود فرع محلي",
+      "count": 1
+    },
+    {
+      "id": "K12",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "eff6806e26c411eb29eb463391ed76f67c09b23c39d1f8478d664786b4d8b2bd",
+      "paragraph": "جهز استفسار أسرة في الشارقة مع التحقق من المكتب وتوفر الخدمة والدخول والنقل والتأكيد المكتوب دون افتراض وجود فرع محلي",
+      "count": 1
+    },
+    {
+      "id": "K13",
+      "locale": "en",
+      "route": "blog/maid-services-dubai-household-access-scope-plan",
+      "kind": "article-summary",
+      "sourceSha256": "5e4970835607a0cbc8f5643167ae6ad81439340980da11289f6dc80f5bfb331c",
+      "paragraph": "prepare a dubai household service enquiry with clear ordinary cleaning duties building access transport questions and the right route for specialist work",
+      "count": 1
+    },
+    {
+      "id": "K13",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "5e4970835607a0cbc8f5643167ae6ad81439340980da11289f6dc80f5bfb331c",
+      "paragraph": "prepare a dubai household service enquiry with clear ordinary cleaning duties building access transport questions and the right route for specialist work",
+      "count": 1
+    },
+    {
+      "id": "K13",
+      "locale": "en",
+      "route": "blog/maid-services-dubai-household-access-scope-plan",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K13",
+      "locale": "ar",
+      "route": "blog/maid-services-dubai-household-access-scope-plan",
+      "kind": "article-summary",
+      "sourceSha256": "6768fb50fa5aefe04f0a242e0bae00d11d36ca0d95941ef7807cdc48baff4479",
+      "paragraph": "جهز استفسار خدمة منزلية في دبي بمهام تنظيف عادية واضحة ودخول منظم للمبنى وأسئلة عن النقل ومسار مناسب للأعمال المتخصصة",
+      "count": 1
+    },
+    {
+      "id": "K13",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "6768fb50fa5aefe04f0a242e0bae00d11d36ca0d95941ef7807cdc48baff4479",
+      "paragraph": "جهز استفسار خدمة منزلية في دبي بمهام تنظيف عادية واضحة ودخول منظم للمبنى وأسئلة عن النقل ومسار مناسب للأعمال المتخصصة",
+      "count": 1
+    },
+    {
+      "id": "K14",
+      "locale": "en",
+      "route": "blog/tadbeer-near-me-location-identity-visit-check",
+      "kind": "article-summary",
+      "sourceSha256": "fa8f53df2f502502b7d6ba62a6103fc3989fa0d50a2b757e5ada53e315a867ce",
+      "paragraph": "use a practical identity and location check when searching tadbeer near me then prepare the right questions for an inaya ajman office visit",
+      "count": 1
+    },
+    {
+      "id": "K14",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "fa8f53df2f502502b7d6ba62a6103fc3989fa0d50a2b757e5ada53e315a867ce",
+      "paragraph": "use a practical identity and location check when searching tadbeer near me then prepare the right questions for an inaya ajman office visit",
+      "count": 1
+    },
+    {
+      "id": "K14",
+      "locale": "en",
+      "route": "blog/tadbeer-near-me-location-identity-visit-check",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K14",
+      "locale": "ar",
+      "route": "blog/tadbeer-near-me-location-identity-visit-check",
+      "kind": "article-summary",
+      "sourceSha256": "3be4a100d3f877b599401b29ea11a95b53adc3549f04c503315a6ca8408562d9",
+      "paragraph": "استخدم تحققا عمليا من الهوية والموقع عند البحث عن تدبير بالقرب مني ثم جهز الأسئلة المناسبة لزيارة مكتب عناية في عجمان",
+      "count": 1
+    },
+    {
+      "id": "K14",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "3be4a100d3f877b599401b29ea11a95b53adc3549f04c503315a6ca8408562d9",
+      "paragraph": "استخدم تحققا عمليا من الهوية والموقع عند البحث عن تدبير بالقرب مني ثم جهز الأسئلة المناسبة لزيارة مكتب عناية في عجمان",
+      "count": 1
+    },
+    {
+      "id": "K15",
+      "locale": "en",
+      "route": "blog/ajman-household-weekly-maid-priorities-handover",
+      "kind": "article-summary",
+      "sourceSha256": "42d74ee9249f350cba8d631fb09ac0d4d66fcc8a2717e5f71bed26beb6972fb1",
+      "paragraph": "a practical weekly priorities and handover worksheet for ajman households with task dependencies realistic carry over two way reviews and clear boundaries",
+      "count": 1
+    },
+    {
+      "id": "K15",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "42d74ee9249f350cba8d631fb09ac0d4d66fcc8a2717e5f71bed26beb6972fb1",
+      "paragraph": "a practical weekly priorities and handover worksheet for ajman households with task dependencies realistic carry over two way reviews and clear boundaries",
+      "count": 1
+    },
+    {
+      "id": "K15",
+      "locale": "en",
+      "route": "blog/ajman-household-weekly-maid-priorities-handover",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "42d74ee9249f350cba8d631fb09ac0d4d66fcc8a2717e5f71bed26beb6972fb1",
+      "paragraph": "an original editorial planning aid it is not an official application sequence required form or promise of completion",
+      "count": 1
+    },
+    {
+      "id": "K15",
+      "locale": "en",
+      "route": "blog/ajman-household-weekly-maid-priorities-handover",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K15",
+      "locale": "ar",
+      "route": "blog/ajman-household-weekly-maid-priorities-handover",
+      "kind": "article-summary",
+      "sourceSha256": "4194a7083b0c94b6b140074fedaf2314ebfd0d35880504fc0a8d6b391f846a9a",
+      "paragraph": "ورقة عملية للأولويات الأسبوعية وتسليم المهام لأسر عجمان تشمل ترابط الأعمال والمهام المؤجلة والمراجعة المتبادلة والحدود الواضحة",
+      "count": 1
+    },
+    {
+      "id": "K15",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "4194a7083b0c94b6b140074fedaf2314ebfd0d35880504fc0a8d6b391f846a9a",
+      "paragraph": "ورقة عملية للأولويات الأسبوعية وتسليم المهام لأسر عجمان تشمل ترابط الأعمال والمهام المؤجلة والمراجعة المتبادلة والحدود الواضحة",
+      "count": 1
+    },
+    {
+      "id": "K15",
+      "locale": "ar",
+      "route": "blog/ajman-household-weekly-maid-priorities-handover",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "4194a7083b0c94b6b140074fedaf2314ebfd0d35880504fc0a8d6b391f846a9a",
+      "paragraph": "أداة تخطيط تحريرية أصلية وليست تسلسلا رسميا للمعاملة أو نموذجا إلزاميا أو وعدا بإتمامها",
+      "count": 1
+    },
+    {
+      "id": "K16",
+      "locale": "en",
+      "route": "blog/ajman-maid-recruitment-agreement-receipts-evidence",
+      "kind": "article-summary",
+      "sourceSha256": "99efedb2a2ed285cb2248e2cd5e156f25ec002eb1c6b64bd5af9f40937ec4c71",
+      "paragraph": "create a practical evidence folder for an ajman recruitment enquiry keeping agreements payment categories and replacement or refund questions distinct",
+      "count": 1
+    },
+    {
+      "id": "K16",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "99efedb2a2ed285cb2248e2cd5e156f25ec002eb1c6b64bd5af9f40937ec4c71",
+      "paragraph": "create a practical evidence folder for an ajman recruitment enquiry keeping agreements payment categories and replacement or refund questions distinct",
+      "count": 1
+    },
+    {
+      "id": "K16",
+      "locale": "en",
+      "route": "blog/ajman-maid-recruitment-agreement-receipts-evidence",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "99efedb2a2ed285cb2248e2cd5e156f25ec002eb1c6b64bd5af9f40937ec4c71",
+      "paragraph": "an original editorial planning aid it is not an official application sequence required form or promise of completion",
+      "count": 1
+    },
+    {
+      "id": "K16",
+      "locale": "en",
+      "route": "blog/ajman-maid-recruitment-agreement-receipts-evidence",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K16",
+      "locale": "ar",
+      "route": "blog/ajman-maid-recruitment-agreement-receipts-evidence",
+      "kind": "article-summary",
+      "sourceSha256": "a8d7bcad20477742786660752de6b6f5e23f48f573871753efea98c3a79699a7",
+      "paragraph": "أنشئ ملف أدلة عمليا لاستفسار استقدام في عجمان مع الفصل بين الاتفاقات وأنواع المدفوعات وأسئلة الاستبدال أو الاسترداد",
+      "count": 1
+    },
+    {
+      "id": "K16",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "a8d7bcad20477742786660752de6b6f5e23f48f573871753efea98c3a79699a7",
+      "paragraph": "أنشئ ملف أدلة عمليا لاستفسار استقدام في عجمان مع الفصل بين الاتفاقات وأنواع المدفوعات وأسئلة الاستبدال أو الاسترداد",
+      "count": 1
+    },
+    {
+      "id": "K16",
+      "locale": "ar",
+      "route": "blog/ajman-maid-recruitment-agreement-receipts-evidence",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "a8d7bcad20477742786660752de6b6f5e23f48f573871753efea98c3a79699a7",
+      "paragraph": "أداة تخطيط تحريرية أصلية وليست تسلسلا رسميا للمعاملة أو نموذجا إلزاميا أو وعدا بإتمامها",
+      "count": 1
+    },
+    {
+      "id": "K17",
+      "locale": "en",
+      "route": "blog/ajman-tadbeer-case-status-follow-up-record",
+      "kind": "article-summary",
+      "sourceSha256": "d35e10eded66f0980796ce54870d961885faab6da8c258899398e8e3b6b1f9d7",
+      "paragraph": "track a domestic worker enquiry with precise status labels application references and next actions separating submission information requests and issued results",
+      "count": 1
+    },
+    {
+      "id": "K17",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "d35e10eded66f0980796ce54870d961885faab6da8c258899398e8e3b6b1f9d7",
+      "paragraph": "track a domestic worker enquiry with precise status labels application references and next actions separating submission information requests and issued results",
+      "count": 1
+    },
+    {
+      "id": "K17",
+      "locale": "en",
+      "route": "blog/ajman-tadbeer-case-status-follow-up-record",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "d35e10eded66f0980796ce54870d961885faab6da8c258899398e8e3b6b1f9d7",
+      "paragraph": "an original editorial planning aid it is not an official application sequence required form or promise of completion",
+      "count": 1
+    },
+    {
+      "id": "K17",
+      "locale": "en",
+      "route": "blog/ajman-tadbeer-case-status-follow-up-record",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K17",
+      "locale": "ar",
+      "route": "blog/ajman-tadbeer-case-status-follow-up-record",
+      "kind": "article-summary",
+      "sourceSha256": "cc1f9feac84dd88647806a87d3136ec522a3c5166c3b6647457674efbecc286c",
+      "paragraph": "تابع استفسار العمالة المنزلية بحالات دقيقة ومراجع الطلبات والخطوات التالية مع الفصل بين التقديم وطلب المعلومات والنتائج الصادرة",
+      "count": 1
+    },
+    {
+      "id": "K17",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "cc1f9feac84dd88647806a87d3136ec522a3c5166c3b6647457674efbecc286c",
+      "paragraph": "تابع استفسار العمالة المنزلية بحالات دقيقة ومراجع الطلبات والخطوات التالية مع الفصل بين التقديم وطلب المعلومات والنتائج الصادرة",
+      "count": 1
+    },
+    {
+      "id": "K17",
+      "locale": "ar",
+      "route": "blog/ajman-tadbeer-case-status-follow-up-record",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "cc1f9feac84dd88647806a87d3136ec522a3c5166c3b6647457674efbecc286c",
+      "paragraph": "أداة تخطيط تحريرية أصلية وليست تسلسلا رسميا للمعاملة أو نموذجا إلزاميا أو وعدا بإتمامها",
+      "count": 1
+    },
+    {
+      "id": "K18",
+      "locale": "en",
+      "route": "blog/ajman-housemaid-visa-document-name-status-check",
+      "kind": "article-summary",
+      "sourceSha256": "f6261f74d03d8dec88b2c44a3cb32d6d8b0af290992784f7abefd31d94aca142",
+      "paragraph": "a careful document comparison worksheet for domestic worker applications with mismatch questions genuine information requests and secure version control",
+      "count": 1
+    },
+    {
+      "id": "K18",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "f6261f74d03d8dec88b2c44a3cb32d6d8b0af290992784f7abefd31d94aca142",
+      "paragraph": "a careful document comparison worksheet for domestic worker applications with mismatch questions genuine information requests and secure version control",
+      "count": 1
+    },
+    {
+      "id": "K18",
+      "locale": "en",
+      "route": "blog/ajman-housemaid-visa-document-name-status-check",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "f6261f74d03d8dec88b2c44a3cb32d6d8b0af290992784f7abefd31d94aca142",
+      "paragraph": "an original editorial planning aid it is not an official application sequence required form or promise of completion",
+      "count": 1
+    },
+    {
+      "id": "K18",
+      "locale": "en",
+      "route": "blog/ajman-housemaid-visa-document-name-status-check",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K18",
+      "locale": "ar",
+      "route": "blog/ajman-housemaid-visa-document-name-status-check",
+      "kind": "article-summary",
+      "sourceSha256": "7c757275af249902030ef1dcfd7f496a71b54ae89b0ef0035af27677aee759a6",
+      "paragraph": "ورقة دقيقة لمقارنة مستندات معاملات العمالة المنزلية تشمل اختلاف البيانات وطلبات الاستكمال الفعلية وضبط النسخ وحمايتها",
+      "count": 1
+    },
+    {
+      "id": "K18",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "7c757275af249902030ef1dcfd7f496a71b54ae89b0ef0035af27677aee759a6",
+      "paragraph": "ورقة دقيقة لمقارنة مستندات معاملات العمالة المنزلية تشمل اختلاف البيانات وطلبات الاستكمال الفعلية وضبط النسخ وحمايتها",
+      "count": 1
+    },
+    {
+      "id": "K18",
+      "locale": "ar",
+      "route": "blog/ajman-housemaid-visa-document-name-status-check",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "7c757275af249902030ef1dcfd7f496a71b54ae89b0ef0035af27677aee759a6",
+      "paragraph": "أداة تخطيط تحريرية أصلية وليست تسلسلا رسميا للمعاملة أو نموذجا إلزاميا أو وعدا بإتمامها",
+      "count": 1
+    },
+    {
+      "id": "K19",
+      "locale": "en",
+      "route": "blog/ajman-monthly-maid-service-review-evidence-log",
+      "kind": "article-summary",
+      "sourceSha256": "8db6ee33cd1c3eca931a8d6eb6d54c8f0ceff4415c248b70fcffb6f1687e3094",
+      "paragraph": "use a balanced monthly service log to review agreed duties obstacles scope changes and billing questions without confusing package payments with worker wages",
+      "count": 1
+    },
+    {
+      "id": "K19",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "8db6ee33cd1c3eca931a8d6eb6d54c8f0ceff4415c248b70fcffb6f1687e3094",
+      "paragraph": "use a balanced monthly service log to review agreed duties obstacles scope changes and billing questions without confusing package payments with worker wages",
+      "count": 1
+    },
+    {
+      "id": "K19",
+      "locale": "en",
+      "route": "blog/ajman-monthly-maid-service-review-evidence-log",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "8db6ee33cd1c3eca931a8d6eb6d54c8f0ceff4415c248b70fcffb6f1687e3094",
+      "paragraph": "an original editorial planning aid it is not an official application sequence required form or promise of completion",
+      "count": 1
+    },
+    {
+      "id": "K19",
+      "locale": "en",
+      "route": "blog/ajman-monthly-maid-service-review-evidence-log",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K19",
+      "locale": "ar",
+      "route": "blog/ajman-monthly-maid-service-review-evidence-log",
+      "kind": "article-summary",
+      "sourceSha256": "0a3b74351d9ad88d93cf308f8e4dcd1e21afed18ce1baea94f7f3fa611a90e08",
+      "paragraph": "استخدم سجلا متوازنا للخدمة الشهرية لمراجعة المهام والعوائق وتغير النطاق وأسئلة الفاتورة دون الخلط بين قيمة الباقة وأجر العاملة",
+      "count": 1
+    },
+    {
+      "id": "K19",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "0a3b74351d9ad88d93cf308f8e4dcd1e21afed18ce1baea94f7f3fa611a90e08",
+      "paragraph": "استخدم سجلا متوازنا للخدمة الشهرية لمراجعة المهام والعوائق وتغير النطاق وأسئلة الفاتورة دون الخلط بين قيمة الباقة وأجر العاملة",
+      "count": 1
+    },
+    {
+      "id": "K19",
+      "locale": "ar",
+      "route": "blog/ajman-monthly-maid-service-review-evidence-log",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "0a3b74351d9ad88d93cf308f8e4dcd1e21afed18ce1baea94f7f3fa611a90e08",
+      "paragraph": "أداة تخطيط تحريرية أصلية وليست تسلسلا رسميا للمعاملة أو نموذجا إلزاميا أو وعدا بإتمامها",
+      "count": 1
+    },
+    {
+      "id": "K20",
+      "locale": "en",
+      "route": "blog/ajman-domestic-worker-communication-privacy-boundaries",
+      "kind": "article-summary",
+      "sourceSha256": "7f8aa3cd5023e88bed93bb64111e79acb2dcdfc1496e05d72b25e0935ec2bd92",
+      "paragraph": "build a respectful household communication agreement covering instructions private information access overlapping duties and responsible escalation",
+      "count": 1
+    },
+    {
+      "id": "K20",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "7f8aa3cd5023e88bed93bb64111e79acb2dcdfc1496e05d72b25e0935ec2bd92",
+      "paragraph": "build a respectful household communication agreement covering instructions private information access overlapping duties and responsible escalation",
+      "count": 1
+    },
+    {
+      "id": "K20",
+      "locale": "en",
+      "route": "blog/ajman-domestic-worker-communication-privacy-boundaries",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "7f8aa3cd5023e88bed93bb64111e79acb2dcdfc1496e05d72b25e0935ec2bd92",
+      "paragraph": "an original editorial planning aid it is not an official application sequence required form or promise of completion",
+      "count": 1
+    },
+    {
+      "id": "K20",
+      "locale": "en",
+      "route": "blog/ajman-domestic-worker-communication-privacy-boundaries",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K20",
+      "locale": "ar",
+      "route": "blog/ajman-domestic-worker-communication-privacy-boundaries",
+      "kind": "article-summary",
+      "sourceSha256": "9890feb83f7b3290042dd1f12507ef242d3f9bc0d9379e42fb237ac212e1af5e",
+      "paragraph": "أعد اتفاق تواصل منزليا محترما للتعليمات والمعلومات الخاصة والدخول وتداخل المهام وإحالة القرارات إلى المسؤول المناسب",
+      "count": 1
+    },
+    {
+      "id": "K20",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "9890feb83f7b3290042dd1f12507ef242d3f9bc0d9379e42fb237ac212e1af5e",
+      "paragraph": "أعد اتفاق تواصل منزليا محترما للتعليمات والمعلومات الخاصة والدخول وتداخل المهام وإحالة القرارات إلى المسؤول المناسب",
+      "count": 1
+    },
+    {
+      "id": "K20",
+      "locale": "ar",
+      "route": "blog/ajman-domestic-worker-communication-privacy-boundaries",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "9890feb83f7b3290042dd1f12507ef242d3f9bc0d9379e42fb237ac212e1af5e",
+      "paragraph": "أداة تخطيط تحريرية أصلية وليست تسلسلا رسميا للمعاملة أو نموذجا إلزاميا أو وعدا بإتمامها",
+      "count": 1
+    },
+    {
+      "id": "K21",
+      "locale": "en",
+      "route": "blog/ajman-domestic-worker-recruitment-milestone-decisions",
+      "kind": "article-summary",
+      "sourceSha256": "54eb169d1002831b57a732f7f12f0ac4c68be1a8e96dc41ff2cc490ab1a4cd70",
+      "paragraph": "an evidence led recruitment milestone board for ajman families keeping selection agreements applications uncertainty and confirmed start readiness separate",
+      "count": 1
+    },
+    {
+      "id": "K21",
+      "locale": "en",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "54eb169d1002831b57a732f7f12f0ac4c68be1a8e96dc41ff2cc490ab1a4cd70",
+      "paragraph": "an evidence led recruitment milestone board for ajman families keeping selection agreements applications uncertainty and confirmed start readiness separate",
+      "count": 1
+    },
+    {
+      "id": "K21",
+      "locale": "en",
+      "route": "blog/ajman-domestic-worker-recruitment-milestone-decisions",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "54eb169d1002831b57a732f7f12f0ac4c68be1a8e96dc41ff2cc490ab1a4cd70",
+      "paragraph": "an original editorial planning aid it is not an official application sequence required form or promise of completion",
+      "count": 1
+    },
+    {
+      "id": "K21",
+      "locale": "en",
+      "route": "blog/ajman-domestic-worker-recruitment-milestone-decisions",
+      "kind": "shared-coordination-ui",
+      "source": "components/KeywordArticle.tsx exact new English sidebar instruction",
+      "paragraph": "confirm the scope availability and written terms with the inaya team",
+      "count": 1
+    },
+    {
+      "id": "K21",
+      "locale": "ar",
+      "route": "blog/ajman-domestic-worker-recruitment-milestone-decisions",
+      "kind": "article-summary",
+      "sourceSha256": "b5dbc5e3bfa51b810f1d5a026db98b2af030e1935c50f2a59b319128336d10b0",
+      "paragraph": "لوحة مراحل قائمة على الأدلة لأسر عجمان تفصل اختيار المرشحة والاتفاقات والطلبات وعدم اليقين عن الجاهزية المؤكدة للبدء",
+      "count": 1
+    },
+    {
+      "id": "K21",
+      "locale": "ar",
+      "route": "blog",
+      "kind": "hub-summary",
+      "sourceSha256": "b5dbc5e3bfa51b810f1d5a026db98b2af030e1935c50f2a59b319128336d10b0",
+      "paragraph": "لوحة مراحل قائمة على الأدلة لأسر عجمان تفصل اختيار المرشحة والاتفاقات والطلبات وعدم اليقين عن الجاهزية المؤكدة للبدء",
+      "count": 1
+    },
+    {
+      "id": "K21",
+      "locale": "ar",
+      "route": "blog/ajman-domestic-worker-recruitment-milestone-decisions",
+      "kind": "diagram-provenance",
+      "visualId": "process",
+      "sourceSha256": "b5dbc5e3bfa51b810f1d5a026db98b2af030e1935c50f2a59b319128336d10b0",
+      "paragraph": "أداة تخطيط تحريرية أصلية وليست تسلسلا رسميا للمعاملة أو نموذجا إلزاميا أو وعدا بإتمامها",
+      "count": 1
+    }
+  ]
+}

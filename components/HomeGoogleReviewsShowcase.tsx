@@ -114,7 +114,11 @@ function ReviewCard({ review, locale, sourceLabel, starLabel, clone = false }: {
         <GoogleG className="google-card-source" />
       </div>
       <Stars label={starLabel} />
-      <blockquote dir="auto">{review.text}</blockquote>
+      {locale === 'ar' ? <>
+        <p className="google-source-label">ترجمة عربية للتقييم الأصلي</p>
+        <blockquote lang="ar" dir="rtl">{review.textAr}</blockquote>
+        <details data-original-review="true" className="mt-3 text-sm leading-7"><summary tabIndex={clone ? -1 : undefined} className="cursor-pointer underline underline-offset-4">النص الأصلي بالإنجليزية</summary><blockquote lang="en" dir="ltr">{review.text}</blockquote></details>
+      </> : <blockquote lang="en" dir="ltr">{review.text}</blockquote>}
       <p className="google-source-label"><GoogleG /> {sourceLabel}</p>
     </article>
   );
