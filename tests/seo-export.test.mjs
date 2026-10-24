@@ -35,6 +35,8 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
   const updatedRoutes = JSON.parse(await readFile('tests/fixtures/poster-pricing-updated-routes.json', 'utf8'));
   const articleManifest = JSON.parse(await readFile('content/research/2026-10-20/article-manifest.json', 'utf8'));
+  const domesticRefresh = JSON.parse(await readFile('content/research/2026-10-24/article-refreshes.json', 'utf8'));
+  const domesticUpdatedRoutes = new Set(domesticRefresh.substantivelyChangedRoutes);
   assert.equal(articleManifest.length, 20, 'twenty distinct article outputs');
   const todayRoutes = new Set(['blog', ...articleManifest.map(article => `blog/${article.slug}`)]);
   const officeUpdatedRoutes = new Set(['about', 'contact', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah']);
@@ -52,13 +54,14 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   const expectedDatedUrls = ['en', 'ar'].flatMap(locale => [...datedRoutes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
   assert.equal(datedEntries.length, 162, 'retain all previously dated routes and add the bilingual gallery');
   assert.deepEqual(datedEntries.map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedDatedUrls.sort());
-  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 34, 'sixteen article pairs and their bilingual hub retain 20 October after four pairs receive worksheets');
-  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-22</lastmod>')).length, 24, 'five office/service route pairs, six worksheet-guide pairs and the gallery pair retain their substantive update date');
+  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 30, 'unchanged customer articles retain their substantive date');
+  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-22</lastmod>')).length, 22, 'unchanged office, worksheet and gallery pairs retain their substantive date');
   assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-23</lastmod>')).length, 2, 'only the bilingual pricing pair receives the confirmed payment-content update date');
+  assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-24</lastmod>')).length, 18, 'only nine substantively revised domestic-service route pairs receive24October');
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)[1]).pathname;
     const route = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = paymentUpdatedRoutes.has(route) ? '2026-10-23' : officeUpdatedRoutes.has(route) || worksheetUpdatedRoutes.has(route) || galleryUpdatedRoutes.has(route) ? '2026-10-22' : todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = domesticUpdatedRoutes.has(route) ? domesticRefresh.date : paymentUpdatedRoutes.has(route) ? '2026-10-23' : officeUpdatedRoutes.has(route) || worksheetUpdatedRoutes.has(route) || galleryUpdatedRoutes.has(route) ? '2026-10-22' : todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
     assert.ok(entry[1].includes(`<lastmod>${expectedDate}</lastmod>`), `${pathname}: only a substantive update changes the recorded date`);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
