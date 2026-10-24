@@ -19,7 +19,8 @@ test('vulnerable braces chains are absent from every locked installation', () =>
 test('retained dependency families meet the security baseline', () => {
   const minimum = {
     next: '16.4.2', '@next/third-parties': '16.4.2', 'eslint-config-next': '16.4.2',
-    sharp: '0.35.5', 'source-map-js': '1.2.2', tailwindcss: '4.3.3', '@tailwindcss/postcss': '4.3.3'
+    sharp: '0.35.5', 'source-map-js': '1.2.2', tailwindcss: '4.3.3', '@tailwindcss/postcss': '4.3.3',
+    zod: '4.6.6' // GHSA-mrhx-c7xc-m3w5
   };
   for (const [location, item] of Object.entries(lock.packages)) {
     for (const [name, version] of Object.entries(minimum)) {

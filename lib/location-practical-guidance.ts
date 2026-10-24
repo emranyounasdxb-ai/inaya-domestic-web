@@ -68,6 +68,20 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
   }[location.slug as keyof typeof notes];
   return {
     ...location,
+    ...(location.slug === 'maid-services-ajman' ? {
+      lead: {
+        en: 'INAYA Tadbeer centre at Grand Mall, Ajman, supports domestic-worker recruitment, home cleaning and related visa typing and document processing. Describe your household or existing-worker case so the team can confirm the appropriate service.',
+        ar: 'يدعم مركز عناية تدبير في جراند مول بعجمان استقدام العمالة المنزلية وتنظيف المنازل والطباعة ومعالجة المستندات المرتبطة بها. صف احتياج المنزل أو حالة العاملة الموجودة ليؤكد الفريق الخدمة المناسبة.'
+      },
+      intro: {
+        en: 'Choose the request before comparing offers: recruitment begins with the role and individual profile, cleaning with tasks and visit length, and domestic-worker typing with the application and sponsor situation. INAYA confirms availability, responsibilities, case requirements and costs in the written scope; an enquiry does not confirm a booking or government approval.',
+        ar: 'حدد الطلب قبل مقارنة العروض: يبدأ الاستقدام بالدور والملف الفردي، والتنظيف بالمهام ومدة الزيارة، وطباعة معاملات العمالة المنزلية بنوع الطلب ووضع الكفيل. تؤكد عناية التوفر والمسؤوليات ومتطلبات الحالة والتكاليف في النطاق المكتوب؛ فالاستفسار لا يثبت الحجز أو الموافقة الرسمية.'
+      },
+      metaDescription: {
+        en: 'INAYA Tadbeer centre in Ajman for domestic-worker recruitment, cleaning visits and related visa typing. Confirm duties, availability and case-specific written scope.',
+        ar: 'مركز عناية تدبير في عجمان للاستقدام والتنظيف وطباعة معاملات العمالة المنزلية. أكد المهام والتوفر والنطاق المكتوب المناسب لحالتك.'
+      }
+    } : {}),
     serviceNotes: local.en.map(([slug, title, description], index) => ({
       slug,
       title: { en: title, ar: local.ar[index][1] },

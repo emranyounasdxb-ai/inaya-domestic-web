@@ -7,6 +7,7 @@ import { getServiceWithExtras } from '@/lib/service-helpers';
 import { servicePageCopies, type Lang, type Pair, type ServiceCopy } from '@/lib/service-page-copy-all';
 import { countryProfiles, getServiceImage, usesCountryMatching } from '@/lib/service-presentation';
 import { siteConfig } from '@/lib/site-config';
+import { domesticServiceReferences } from '@/lib/domestic-service-content';
 import ServiceSeoBlock from './ServiceSeoBlock';
 import ServiceIcon from './ServiceIcon';
 
@@ -118,6 +119,9 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
         <div className="mx-auto max-w-4xl rounded-[26px] border border-accent-500/25 bg-white p-7 shadow-[0_20px_54px_rgba(7,22,74,0.08)] sm:p-10">
           <SectionTitle title={copy.whatTitle} lang={lang} />
           <p className="mt-6 max-w-3xl text-[1rem] leading-8 text-primary-900/85">{copy.whatText}</p>
+          {domesticServiceReferences[slug]?.map((reference) => <p key={reference.href} className="mt-4 text-sm leading-7 text-primary-900/75">
+            <a href={reference.href} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{reference.label[lang]}</a>
+          </p>)}
           {guideContexts[slug] ? <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-900/75">
             <Link href={`/${locale}/blog/${guideContexts[slug].slug}/`} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{guideContexts[slug].label[lang]}</Link>
           </p> : null}

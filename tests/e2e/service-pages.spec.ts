@@ -57,3 +57,26 @@ test('Arabic service template is localized and RTL', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'أسئلة خادمة بدوام كامل' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'خدمات خادمات ذات صلة' })).toBeVisible();
 });
+
+for (const locale of ['en', 'ar'] as const) {
+  test(`${locale} domestic-worker Tadbeer, cleaning and typing pages remain readable`, async ({ page }) => {
+    const titles = locale === 'en'
+      ? ['Tadbeer Domestic Worker Recruitment in Ajman', 'Home Cleaning in Ajman: Four or Eight Hours', 'Domestic Worker Visa Typing and Processing in Ajman']
+      : ['تدبير واستقدام العمالة المنزلية في عجمان', 'تنظيف المنازل في عجمان لأربع أو ثماني ساعات', 'طباعة وإجراءات تأشيرة العمالة المنزلية في عجمان'];
+    for (const [index, slug] of ['recruitment', 'housekeeping', 'maid-visa'].entries()) {
+      const response = await page.goto(`/${locale}/services/${slug}/`);
+      expect(response?.status()).toBeLessThan(400);
+      await expect(page.locator('main h1')).toHaveText(titles[index]);
+      await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
+      await expect(page.locator(`header a[href="/${locale === 'ar' ? 'en' : 'ar'}/services/${slug}/"]`)).toBeVisible();
+      await page.evaluate(() => document.fonts.ready);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+      if (slug === 'recruitment') await expect(page.locator('main a[href="https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"]')).toBeAttached();
+      if (slug === 'maid-visa') {
+        const question = page.getByText(locale === 'ar' ? 'هل الطباعة وتقديم الطلب يعنيان الموافقة؟' : 'Do typing and submission mean the application is approved?', { exact: true });
+        await question.scrollIntoViewIfNeeded();
+        await expect(question).toBeVisible();
+      }
+    }
+  });
+}

@@ -5,6 +5,18 @@ import { siteConfig } from './site-config';
 // Candidate availability and driver recruitment are not established by these answers.
 export const ajmanCustomerQuestions: LocationServicePage['faqs'] = [
   {
+    question: { en: 'Which domestic-worker services does INAYA Tadbeer centre provide in Ajman?', ar: 'ما خدمات العمالة المنزلية لدى مركز عناية تدبير في عجمان؟' },
+    answer: {
+      en: 'INAYA provides domestic-worker recruitment and household services, including scheduled cleaning and related visa typing and document processing. Tell the team whether you need a candidate, a household visit or processing for an existing worker. The scope, availability, fees and responsibilities are confirmed for that request; official decisions remain with the relevant authorities.',
+      ar: 'تقدم عناية استقدام العمالة المنزلية وخدمات المنزل، ومنها زيارات التنظيف والطباعة ومعالجة المستندات المتعلقة بتأشيرة العمالة المنزلية. وضح هل تحتاج مرشحة أو زيارة منزلية أو معاملة لعاملة موجودة. يؤكد النطاق والتوفر والرسوم والمسؤوليات للطلب المحدد، وتبقى القرارات الرسمية للجهات المختصة.'
+    },
+    links: [
+      { route: 'services/recruitment', label: { en: 'Recruitment and Tadbeer service enquiries', ar: 'طلبات الاستقدام وخدمات تدبير' } },
+      { route: 'services/housekeeping', label: { en: 'Cleaning visit planning', ar: 'تخطيط زيارة التنظيف' } },
+      { route: 'services/maid-visa', label: { en: 'Domestic-worker typing and processing', ar: 'طباعة ومعالجة معاملات العمالة المنزلية' } }
+    ]
+  },
+  {
     question: { en: 'Can I walk in, or request an Ajman office appointment online?', ar: 'هل يمكن زيارة مكتب عجمان مباشرة أو طلب موعد عبر الإنترنت؟' },
     answer: {
       en: 'Both options are available. Walk into INAYA at Grand Mall, ground floor, Al Rashidiya 3, Ajman, during office hours and collect a queue token at the counter. Alternatively, send your preferred appointment time through the contact form; the team must confirm the slot. Form submission alone does not confirm an appointment. Waiting time for walk-ins depends on the visitors being served.',
