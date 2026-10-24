@@ -11,7 +11,7 @@ const xml = await readFile('out/sitemap.xml', 'utf8');
 const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
 
 test('every image sitemap entry matches visible content, with no lost canonical pages or responsive duplicates', async () => {
-  assert.equal(entries.length, 230);
+  assert.equal(entries.length, 232);
   assert.ok(xml.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'), 'image sitemap namespace');
   const unique = new Set();
   for (const entry of entries) {
