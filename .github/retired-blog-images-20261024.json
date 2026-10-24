@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "retiredOn": "2026-10-24",
+  "reason": "Unused former blog illustrations; the 65 owner-approved current topic images are preserved.",
+  "variantWidths": [480, 768, 960, 1200],
+  "images": [
+    {
+      "path": "images/blogs/can-one-domestic-worker-handle-cleaning-cooking-and-childcare.webp",
+      "removedSha256": "baa40eec362be17986e5b7595b4889d53b397c9354e6b3a64c21a76d0d854f84"
+    },
+    {
+      "path": "images/blogs/how-should-a-household-plan-a-domestic-workers-annual-leave-and-travel.webp",
+      "removedSha256": "aa85f6f8ff850275663423ba48667878addda1d11551b028a91a54e53cfe6ab0"
+    },
+    {
+      "path": "images/blogs/what-is-the-total-cost-of-hiring-a-domestic-worker-in-ajman.webp",
+      "removedSha256": "5f1b2703d28f4e074825ef846833958e8bced8a1679acf75e447aa43fb74fb06"
+    }
+  ]
+}
