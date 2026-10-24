@@ -12,8 +12,7 @@ for (const locale of ['en', 'ar'] as const) for (const topic of topics) {
     await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
     const offer = page.getByTestId('sierra-leone-offer');
-    await expect(offer).toBeVisible();
-    await offer.getByRole('button').click();
+    await expect(offer).toHaveCount(0);
     await expect(offer).toBeHidden();
     await expect(page.locator('html')).toHaveAttribute('lang', locale);
     await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');

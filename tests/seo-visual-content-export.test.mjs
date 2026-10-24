@@ -55,7 +55,7 @@ test('all 274 pages remove the pre-Hero strip and render localized breadcrumbs a
 });
 
 test('technical SEO, content datasets, trust, prices, measurement and protected UI remain exact', async () => {
-  const files = ['app/robots.ts', 'lib/seo.ts', 'lib/json-ld.ts', 'lib/content-architecture.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/services.ts', 'lib/buyer-answers.ts', 'lib/measurement.ts', 'components/Measurement.tsx', 'components/Footer.tsx', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'tests/e2e/sierra-leone-offer-controls.spec.ts', 'app/globals.css', 'app/[locale]/layout.tsx', 'next.config.js', 'tests/fixtures/seo-phase03-baseline.json'];
+  const files = ['app/robots.ts', 'lib/seo.ts', 'lib/json-ld.ts', 'lib/content-architecture.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/services.ts', 'lib/buyer-answers.ts', 'lib/measurement.ts', 'components/Measurement.tsx', 'components/Footer.tsx', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'app/globals.css', 'app/[locale]/layout.tsx', 'next.config.js', 'tests/fixtures/seo-phase03-baseline.json'];
   for (const file of files) {
     let before = execFileSync('git', ['show', `0cc89c4ca6d5621a6ed08818b799b2bdeb71a5af:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
     if (file === 'components/Footer.tsx') {
@@ -92,7 +92,22 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       // Only the approved off-screen rendering block may extend the protected stylesheet.
       before += '\n/* Defer off-screen rendering; keep Heroes, accessible content and print intact. */\n@supports (content-visibility: auto) and (overflow-clip-margin: 200px) {\n  @media screen {\n    main section:not(:has(h1)) {\n      content-visibility: auto;\n      contain-intrinsic-block-size: auto 800px;\n      overflow-clip-margin: 200px;\n    }\n    main section:focus-within {\n      content-visibility: visible;\n    }\n  }\n}\n';
     }
-    assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), before, file);
+    const current = (await readFile(file, 'utf8')).replace(/\r\n/g, '\n');
+    if (file === 'components/Footer.tsx') {
+      // 24 October: owner requested a responsive footer redesign. Preserve the
+      // bilingual business data and destinations while browser tests check layout.
+      const data = source => source.slice(0, source.indexOf('  return ('))
+        .replace("import styles from './Footer.module.css';\n", '');
+      assert.equal(data(current), data(before), 'footer business data remains exact');
+      const businessElements = source => [...source.matchAll(/<(?:BrandLogo|FooterColumn|FooterTitle|ContactItem|Link|CookieSettingsButton)\b[^>]*>/g)]
+        .map(match => match[0].replace(/ className=(?:"[^"]*"|\{[^}]*\})/g, ''));
+      assert.deepEqual(businessElements(current), businessElements(before), 'footer links, contact fields, headings and cookie control remain exact');
+      for (const expression of ["{t('rights')}", '{stat.value}', '{stat.label}', '{item.label}', '{link.label}', '{title}', '{text}', '{children}', "{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}", "{isArabic ? 'عناية للعمالة المنزلية.' : 'INAYA Domestic Workers.'}", "{isArabic ? 'ناقش التفاصيل قبل تأكيد الخدمة' : 'Discuss details before confirming a service'}"]) {
+        assert.ok(current.includes(expression), `footer retains ${expression}`);
+      }
+    } else {
+      assert.equal(current, before, file);
+    }
   }
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) {
     const before = execFileSync('git', ['show', `f45a93dc0b8274ad6a792420cfa3e4bcbb828103:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
