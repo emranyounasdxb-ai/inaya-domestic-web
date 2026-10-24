@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -96,5 +97,138 @@ test('localized pages advertise usable standard favicons made from the approved 
     assert.ok(icons.some(a => a.href === '/favicon-48x48.png' && a.sizes === '48x48'));
     assert.ok(icons.some(a => a.href === '/apple-touch-icon.png' && a.sizes === '180x180'));
     for (const icon of icons) await access(path.join('out', new URL(icon.href, origin).pathname));
+  }
+});
+
+// This release input records the actual owner-approved bytes and localized
+// descriptions independently of the production image lookup/rendering code.
+let remainingImageApproval;
+const remainingApproval = () => remainingImageApproval ??= readFile('content/research/2026-10-24/remaining-blog-owner-approved-images.json', 'utf8').then(JSON.parse);
+const imageSha256 = bytes => createHash('sha256').update(bytes).digest('hex');
+const visibleImageHtml = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+const imageTags = html => [...visibleImageHtml(html).matchAll(/<img\b[^>]*>/gi)].map(match => ({ ...attrs(match[0]), index: match.index }));
+const imageGraph = html => [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
+  .filter(match => attrs(match[1]).type === 'application/ld+json')
+  .flatMap(match => { const data = JSON.parse(match[2]); return data['@graph'] ?? [data]; });
+
+function assertExactRenderedImage(image, entry, locale, renderedSrc, label) {
+  assert.ok(image, `${label}: image is present`);
+  assert.equal(image.src, renderedSrc, `${label}: exact approved image and cache version`);
+  assert.equal(image.alt, entry.alt[locale], `${label}: exact ${locale} description`);
+  assert.equal(Number(image.width), entry.width, `${label}: intrinsic width`);
+  assert.equal(Number(image.height), entry.height, `${label}: intrinsic height`);
+}
+
+function assertCanonicalImageMetadata(html, entry, locale, route) {
+  const label = `${locale}/${entry.slug}`;
+  const canonicalImage = origin + entry.src;
+  const metadata = [...html.matchAll(/<meta\b[^>]*>/gi)].map(match => attrs(match[0]));
+  for (const [key, value] of [['property', 'og:image'], ['name', 'twitter:image']]) {
+    assert.equal(metadata.find(meta => meta[key] === value)?.content, canonicalImage, `${label}: ${value} preserves the canonical image path`);
+  }
+  assert.equal(metadata.find(meta => meta.property === 'og:image:alt')?.content, entry.alt[locale], `${label}: localized Open Graph image description`);
+  assert.equal(metadata.find(meta => meta.name === 'twitter:image:alt')?.content, entry.alt[locale], `${label}: localized Twitter image description`);
+  const canonical = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attrs(match[0])).find(link => link.rel === 'canonical');
+  assert.equal(canonical?.href, origin + route, `${label}: page canonical remains unchanged`);
+  const graph = imageGraph(html);
+  const page = graph.find(node => node['@type'] === 'WebPage');
+  const primary = graph.find(node => node['@id'] === page?.primaryImageOfPage?.['@id']);
+  assert.equal(primary?.['@type'], 'ImageObject', `${label}: primary image entity`);
+  assert.equal(primary.contentUrl, canonicalImage, `${label}: primary image keeps an unversioned canonical URL`);
+  assert.equal(primary.caption, entry.alt[locale], `${label}: primary image caption matches visible locale`);
+  assert.equal(primary.inLanguage, locale, `${label}: primary image language`);
+  assert.equal(graph.find(node => node['@type'] === 'Article')?.image, canonicalImage, `${label}: article image is canonical`);
+}
+
+function blogCard(indexHtml, locale, slug) {
+  const route = `/${locale}/blog/${slug}/`;
+  const cards = [...visibleImageHtml(indexHtml).matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/gi)]
+    .map(match => match[1]).filter(card => [...card.matchAll(/<a\b[^>]*>/gi)].some(match => attrs(match[0]).href === route));
+  assert.equal(cards.length, 1, `${route}: one index card in the unpaginated blog index`);
+  return cards[0];
+}
+
+test('all 44 approved legacy blog assets preserve their paths and contain the reviewed 1600×900 WebP bytes', async () => {
+  const approved = await remainingApproval();
+  assert.equal(approved.date, '2026-10-24');
+  assert.equal(approved.ownerApproved, true, 'publication has actual owner approval');
+  assert.equal(approved.images.length, 44);
+  assert.deepEqual(approved.images.map(image => image.id).sort(), Array.from({ length: 44 }, (_, index) => `R${String(index + 1).padStart(2, '0')}`));
+  for (const field of ['slug', 'src', 'sha256']) assert.equal(new Set(approved.images.map(image => image[field])).size, 44, `44 distinct approved ${field} values`);
+  for (const image of approved.images) {
+    assert.match(image.src, /^\/images\/blogs\/(?!keyword-21-20261024\/)[^/?#]+\.webp$/, `${image.id}: preserved legacy asset path`);
+    assert.match(image.sha256, /^[a-f0-9]{64}$/, image.id);
+    assert.equal(image.cacheVersion, image.sha256.slice(0, 12), `${image.id}: browser cache version comes from the approved WebP bytes`);
+    assert.equal(image.width, 1600); assert.equal(image.height, 900);
+    assert.ok(image.alt.en?.trim() && image.alt.ar?.trim(), `${image.id}: both descriptions exist`);
+    assert.doesNotMatch(image.alt.en, /[\u0600-\u06ff]/, `${image.id}: English image description`);
+    assert.match(image.alt.ar, /[\u0600-\u06ff]/, `${image.id}: Arabic image description`);
+    for (const folder of ['public', 'out']) {
+      const bytes = await readFile(path.join(folder, image.src));
+      assert.equal(imageSha256(bytes), image.sha256, `${image.id}: ${folder} contains approved bytes`);
+      const metadata = await sharp(bytes).metadata();
+      assert.deepEqual([metadata.format, metadata.width, metadata.height], ['webp', 1600, 900], `${image.id}: ${folder} image dimensions`);
+    }
+  }
+});
+
+test('all 88 refreshed article heroes and all 88 index cards use the matching versioned image and localized description', async () => {
+  const approved = await remainingApproval();
+  let heroes = 0, cards = 0;
+  for (const locale of ['en', 'ar']) {
+    const indexHtml = await readFile(`out/${locale}/blog/index.html`, 'utf8');
+    // app/[locale]/blog/page.tsx renders every guide directly; there is no pagination.
+    const topicCards = [...visibleImageHtml(indexHtml).matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/gi)]
+      .filter(card => [...card[1].matchAll(/<a\b[^>]*>/gi)].some(link => new RegExp(`^/${locale}/blog/[^/?#]+/$`).test(attrs(link[0]).href ?? '')));
+    assert.equal(topicCards.length, 65, `${locale}: all 44 legacy and 21 keyword cards remain visible`);
+    for (const entry of approved.images) {
+      const route = `/${locale}/blog/${entry.slug}/`;
+      const html = await readFile(path.join('out', route, 'index.html'), 'utf8');
+      const expectedSrc = `${entry.src}?v=${entry.cacheVersion}`;
+      const matches = imageTags(html).filter(image => new URL(image.src, origin).pathname === entry.src);
+      assert.equal(matches.length, 1, `${route}: one matching hero image`);
+      assertExactRenderedImage(matches[0], entry, locale, expectedSrc, `${route} hero`);
+      const visible = visibleImageHtml(html);
+      const breadcrumb = visible.indexOf('data-seo="breadcrumbs"');
+      assert.ok(breadcrumb >= 0 && matches[0].index < breadcrumb, `${route}: approved image is in the hero before breadcrumbs`);
+      assertCanonicalImageMetadata(html, entry, locale, route);
+      const sitemapEntry = entries.filter(item => decode(item[1].match(/<loc>(.*?)<\/loc>/)?.[1] ?? '') === origin + route);
+      assert.equal(sitemapEntry.length, 1, `${route}: exact canonical sitemap entry`);
+      const sitemapImages = [...sitemapEntry[0][1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map(match => decode(match[1]));
+      assert.equal(sitemapImages.filter(url => url === origin + entry.src).length, 1, `${route}: sitemap retains the unversioned image URL`);
+      assert.ok(sitemapImages.every(url => !new URL(url).search), `${route}: no cache query leaks into the image sitemap`);
+      const cardImages = imageTags(blogCard(indexHtml, locale, entry.slug));
+      assert.equal(cardImages.length, 1, `${route}: one card image`);
+      assertExactRenderedImage(cardImages[0], entry, locale, expectedSrc, `${route} index card`);
+      heroes++; cards++;
+    }
+  }
+  assert.equal(heroes, 88); assert.equal(cards, 88);
+});
+
+test('the 21 previously approved keyword images retain their original bytes and remain unversioned in both languages', async () => {
+  const legacy = await remainingApproval();
+  const keyword = JSON.parse(await readFile('content/research/2026-10-24/keyword-21-owner-approved-images.json', 'utf8'));
+  assert.equal(keyword.ownerApprovedWebsitePublication, true);
+  assert.equal(keyword.images.length, 21);
+  const legacyPaths = new Set(legacy.images.map(image => image.src));
+  const legacySlugs = new Set(legacy.images.map(image => image.slug));
+  for (const entry of keyword.images) {
+    assert.ok(!legacyPaths.has(entry.src) && !legacySlugs.has(entry.slug), `${entry.id}: excluded from the 44-image refresh`);
+    for (const folder of ['public', 'out']) {
+      const bytes = await readFile(path.join(folder, entry.src));
+      assert.equal(imageSha256(bytes), entry.webpSha256, `${entry.id}: original ${folder} bytes preserved`);
+    }
+    for (const locale of ['en', 'ar']) {
+      const route = `/${locale}/blog/${entry.slug}/`;
+      const html = await readFile(path.join('out', route, 'index.html'), 'utf8');
+      const matches = imageTags(html).filter(image => new URL(image.src, origin).pathname === entry.src);
+      assert.equal(matches.length, 1, `${route}: one original keyword hero`);
+      assertExactRenderedImage(matches[0], entry, locale, entry.src, `${route} keyword hero`);
+      const indexHtml = await readFile(`out/${locale}/blog/index.html`, 'utf8');
+      const cardImages = imageTags(blogCard(indexHtml, locale, entry.slug));
+      assert.equal(cardImages.length, 1, `${route}: one original keyword card image`);
+      assertExactRenderedImage(cardImages[0], entry, locale, entry.src, `${route} keyword card`);
+    }
   }
 });

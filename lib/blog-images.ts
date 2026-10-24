@@ -3,6 +3,8 @@ import { keywordArticleImages } from './keyword-article-images';
 type BlogImage = {
   src: string;
   alt: { en: string; ar: string };
+  // Refresh display requests after same-filename artwork replacements.
+  cacheVersion?: string;
   width?: number;
   height?: number;
 };
@@ -11,111 +13,127 @@ type BlogImage = {
 const blogImages: Record<string, BlogImage> = {
   'domestic-worker-contract-permit-residence-cancellation': {
     src: "/images/blogs/domestic-worker-contract-permit-residence-cancellation-20261020.webp",
+    cacheVersion: "272a6833baca",
     alt: {
-      en: "A service adviser, householder and domestic worker review separate administrative records.",
-      ar: "مستشارة خدمات وصاحبة منزل وعاملة منزلية يراجعن ملفات إدارية منفصلة."
+      en: "Hands sort separate closed administrative folders into different office trays.",
+      ar: "يدان ترتبان ملفات إدارية مغلقة ومنفصلة في صوان مختلفة بالمكتب."
     }
   },
   'maid-daily-instructions-handover-template': {
     src: "/images/blogs/maid-daily-instructions-handover-template-20261020.webp",
+    cacheVersion: "cea625ff4a16",
     alt: {
-      en: "A domestic worker and householder review completed tasks in a daily handover notebook.",
-      ar: "عاملة منزلية وصاحبة المنزل تراجعان المهام المنجزة في دفتر التسليم اليومي."
+      en: "A housemaid and householder review a simple household handover notebook.",
+      ar: "عاملة منزلية وأحد أفراد الأسرة يراجعان دفتراً بسيطاً لتسليم مهام المنزل."
     }
   },
   'one-maid-two-helpers-workload': {
     src: "/images/blogs/one-maid-two-helpers-workload-20261020.webp",
+    cacheVersion: "119f45bcef19",
     alt: {
-      en: "A householder and two domestic helpers review a shared household workload planner.",
-      ar: "صاحبة منزل ومساعدتان منزليتان يراجعن جدولاً لتوزيع أعمال المنزل."
+      en: "A cleaner in blue and a cook in pink handle separate tasks in different home areas.",
+      ar: "عاملة تنظيف بزي أزرق وعاملة طهي بزي وردي تنجزان مهام منفصلة في منطقتين بالمنزل."
     }
   },
   'moving-home-emirate-with-domestic-worker': {
     src: "/images/blogs/moving-home-emirate-with-domestic-worker-20261020.webp",
+    cacheVersion: "5f9729a731a2",
     alt: {
-      en: "A householder and domestic worker review a room plan and new-home keys among moving boxes.",
-      ar: "صاحبة المنزل وعاملة منزلية تراجعان مخطط الغرف ومفاتيح المنزل الجديد بين صناديق الانتقال."
+      en: "A housemaid unpacks clean towels beside sealed moving boxes in a new home.",
+      ar: "عاملة منزلية ترتب مناشف نظيفة بجوار صناديق انتقال مغلقة في المنزل الجديد."
     }
   },
   'maid-duties-family-holiday': {
     src: "/images/blogs/maid-duties-family-holiday-20261020.webp",
+    cacheVersion: "812269a885f3",
     alt: {
-      en: "A domestic worker waters a houseplant beside a household checklist while caring for an occupied home.",
-      ar: "عاملة منزلية تسقي نباتاً داخلياً بجوار قائمة مهام أثناء العناية بمنزل تواصل الإقامة فيه."
+      en: "A housemaid in pink waters an indoor plant in an occupied home.",
+      ar: "عاملة منزلية بزي وردي تسقي نباتاً داخلياً في منزل مأهول."
     }
   },
   'maid-help-family-guests-gathering': {
     src: "/images/blogs/maid-help-family-guests-gathering-20261020.webp",
+    cacheVersion: "5da09ab09fd9",
     alt: {
-      en: "A householder and domestic worker prepare a dining table for a private family gathering.",
-      ar: "صاحبة المنزل وعاملة منزلية تجهزان طاولة الطعام لاستقبال تجمع عائلي خاص."
+      en: "A housemaid in pink and a householder prepare a family dining table before guests arrive.",
+      ar: "عاملة منزلية بزي وردي وصاحبة المنزل تجهزان طاولة عائلية قبل وصول الضيوف."
     }
   },
   'maid-home-access-keys-privacy': {
     src: "/images/blogs/maid-home-access-keys-privacy-20261020.webp",
+    cacheVersion: "3fd05df09619",
     alt: {
-      en: "Homeowner hands a single home key to a domestic worker at a secure indoor entrance.",
-      ar: "صاحبة المنزل تسلّم مفتاح المنزل لعاملة منزلية عند مدخل داخلي آمن."
+      en: "A householder hands a single home key to a housemaid in pink at an indoor entrance.",
+      ar: "صاحبة المنزل تسلم مفتاحاً واحداً لعاملة منزلية بزي وردي عند المدخل الداخلي."
     }
   },
   'maid-household-with-pets': {
     src: "/images/blogs/maid-household-with-pets-20261020.webp",
+    cacheVersion: "cf19f838b47a",
     alt: {
-      en: "Homeowner explains household routines to a domestic worker while a calm dog rests on its mat.",
-      ar: "صاحبة المنزل تشرح الروتين المنزلي لعاملة منزلية بينما يستريح كلب هادئ على فراشه."
+      en: "A householder explains the pet area while a housemaid observes a calm dog from a distance.",
+      ar: "صاحب المنزل يشرح منطقة الحيوان الأليف بينما تراقب العاملة كلباً هادئاً من مسافة مناسبة."
     }
   },
   'nanny-school-routine-child-handover': {
     src: "/images/blogs/nanny-school-routine-child-handover-20261020.webp",
+    cacheVersion: "271a32adf0e4",
     alt: {
-      en: "Mother hands a school backpack to the nanny while her child stands beside her inside the home.",
-      ar: "أم تسلّم الحقيبة المدرسية للمربية وطفلها يقف بجانبها داخل المنزل."
+      en: "A parent hands a school backpack to a nanny in beige inside the home.",
+      ar: "أحد الوالدين يسلم حقيبة مدرسية لمربية بزي بيج داخل المنزل."
     }
   },
   'new-maid-first-week-checklist': {
     src: "/images/blogs/new-maid-first-week-checklist-20261020.webp",
+    cacheVersion: "55e30495275d",
     alt: {
-      en: "Homeowner shows a new domestic worker how to use the washing machine during household orientation.",
-      ar: "صاحبة المنزل تشرح للعاملة المنزلية الجديدة كيفية استخدام الغسالة خلال التعريف بالمنزل."
+      en: "A householder shows a new housemaid how to use the washing-machine controls.",
+      ar: "صاحبة المنزل تشرح للعاملة الجديدة استخدام أدوات التحكم في الغسالة."
     }
   },
   'home-cooking-weekly-meal-prep-plan': {
     src: "/images/blogs/home-cooking-weekly-meal-prep-plan-20261020.webp",
+    cacheVersion: "c4dc3a064105",
     alt: {
-      en: "Domestic worker and homeowner plan balanced weekly meals in a bright home kitchen.",
-      ar: "عاملة منزلية وصاحبة المنزل تخططان لوجبات أسبوعية متوازنة في مطبخ مضيء."
+      en: "A cook in pink prepares an everyday vegetable meal in a home kitchen.",
+      ar: "عاملة طهي بزي وردي تجهز وجبة خضار يومية في مطبخ منزلي."
     }
   },
   'maid-laundry-ironing-task-checklist': {
     src: "/images/blogs/maid-laundry-ironing-task-checklist-20261020.webp",
+    cacheVersion: "2e9a3ac8200b",
     alt: {
-      en: "Domestic worker checks a shirt care label beside sorted laundry and a safely positioned iron.",
-      ar: "عاملة منزلية تقرأ ملصق العناية بقميص بجانب غسيل مفروز ومكواة موضوعة بأمان."
+      en: "A housemaid checks a garment-care label beside sorted laundry and an upright iron.",
+      ar: "عاملة منزلية تراجع ملصق العناية بقطعة ملابس بجوار غسيل مفروز ومكواة قائمة بأمان."
     }
   },
   'prepare-cleaning-supplies-maid-visit': {
     src: "/images/blogs/prepare-cleaning-supplies-maid-visit-20261020.webp",
+    cacheVersion: "9d83da67cdcf",
     alt: {
-      en: "Domestic worker checks a mop beside organised cloths, gloves, bottles and cleaning equipment.",
-      ar: "عاملة منزلية تفحص ممسحة بجانب أقمشة وقفازات وعبوات وأدوات تنظيف مرتبة."
+      en: "Cleaning cloths, gloves and closed bottles are organised beside a mop fitting.",
+      ar: "أقمشة تنظيف وقفازات وعبوات مغلقة مرتبة بجوار جزء الممسحة."
     }
   },
   'regular-maid-service-deep-move-in-cleaning': {
     src: "/images/blogs/regular-maid-service-deep-move-in-cleaning-20261020.webp",
+    cacheVersion: "2163a2cdacad",
     alt: {
-      en: "Domestic worker and household coordinator review kitchen surfaces in an apartment prepared for moving in.",
-      ar: "عاملة منزلية ومنسقة منزل تراجعان أسطح المطبخ في شقة يجري تجهيزها للسكن."
+      en: "An INAYA cleaner in royal blue wipes an empty kitchen cupboard in a home prepared for moving in.",
+      ar: "عاملة تنظيف من عناية بزي أزرق ملكي تمسح خزانة مطبخ فارغة في منزل يُجهز للانتقال إليه."
     }
   },
   'apartment-villa-maid-task-plan': {
     src: "/images/blogs/apartment-villa-maid-task-plan-20261020.webp",
+    cacheVersion: "c7bedbb0f03e",
     alt: {
-      en: "Household coordinator and domestic worker review a villa floor plan and the rooms across its floors.",
-      ar: "منسقة منزل وعاملة منزلية تراجعان مخطط فيلا والغرف في طوابقها."
+      en: "An INAYA cleaner in royal blue mops a villa entrance with stairs and multiple rooms.",
+      ar: "عاملة تنظيف من عناية بزي أزرق ملكي تنظف مدخل فيلا بالممسحة بجوار درج وغرف متعددة."
     }
   },
   'maid-visit-frequency-planner': {
     src: "/images/blogs/maid-visit-frequency-planner-20261020.webp",
+    cacheVersion: "55234e2e01b1",
     alt: {
       en: "Household coordinator and domestic worker plan recurring visits using coloured calendar markers.",
       ar: "منسقة منزل وعاملة منزلية تخططان للزيارات الدورية باستخدام علامات ملونة على جدول."
@@ -123,6 +141,7 @@ const blogImages: Record<string, BlogImage> = {
   },
   'four-hour-eight-hour-maid-visit-plan': {
     src: "/images/blogs/four-hour-eight-hour-maid-visit-plan-20261020.webp",
+    cacheVersion: "ee43b05a725f",
     alt: {
       en: "A householder and domestic worker plan cleaning priorities beside a clock and cleaning supplies.",
       ar: "صاحبة منزل وعاملة منزلية تخططان لأولويات التنظيف بجوار ساعة ومستلزمات التنظيف."
@@ -130,191 +149,218 @@ const blogImages: Record<string, BlogImage> = {
   },
   'uae-domestic-worker-hiring-process': {
     src: '/images/blogs/questions-to-ask-before-hiring-a-domestic-worker-in-the-uae.webp',
+    cacheVersion: "f07f29f54cc4",
     alt: {
-      en: 'Family discussing domestic worker hiring questions with an adviser.',
-      ar: 'أسرة تناقش أسئلة توظيف عامل مساعد مع مستشارة.'
+      en: "A visitor uses a notebook while speaking with an adviser at a numbered blue-and-white INAYA counter.",
+      ar: "زائرة تستخدم دفتراً أثناء الحديث مع مستشارة عند منضدة عناية المرقمة باللونين الأزرق والأبيض."
     }
   },
   'domestic-worker-package-pricing-factors': {
     src: '/images/blogs/domestic-worker-costs-package-prices-wages-and-fees.webp',
+    cacheVersion: "698028a75cfc",
     alt: {
-      en: 'Woman reviewing household service costs with documents and a calculator.',
-      ar: 'امرأة تراجع تكاليف الخدمات المنزلية باستخدام مستندات وآلة حاسبة.'
+      en: "Hands compare blank cards beside a notebook and calculator on a kitchen counter.",
+      ar: "أيدٍ تقارن بطاقات خالية من الكتابة بجوار دفتر وآلة حاسبة على سطح مطبخ."
     }
   },
   'documents-for-domestic-worker-enquiry': {
     src: '/images/blogs/documents-to-prepare-for-a-domestic-worker-enquiry.webp',
+    cacheVersion: "9741c0f01abb",
     alt: {
-      en: 'Woman organising paperwork and a passport for a domestic worker enquiry.',
-      ar: 'امرأة ترتب المستندات وجواز سفر استعداداً للاستفسار عن توظيف عامل مساعد.'
+      en: "An adult sorts papers into a folder beside a closed document wallet on an entryway console.",
+      ar: "شخص بالغ يرتب أوراقاً في ملف بجوار محفظة وثائق مغلقة على طاولة عند المدخل."
     }
   },
   'live-in-live-out-part-time-maid-uae': {
     src: '/images/blogs/live-in-live-out-or-part-time-maid-comparing-arrangements.webp',
+    cacheVersion: "9186988d215f",
     alt: {
-      en: 'Domestic worker carrying a bag and discussing household arrangements with a woman.',
-      ar: 'عاملة منزلية تحمل حقيبة وتناقش ترتيبات العمل المنزلي مع امرأة.'
+      en: "A woman in a pink INAYA uniform carries a tote as a householder welcomes her beside a shoe rack.",
+      ar: "امرأة بزي عناية الوردي تحمل حقيبة قماشية، بينما ترحب بها صاحبة المنزل بجوار رف أحذية."
     }
   },
   'monthly-maid-package-inclusions-checklist': {
     src: '/images/blogs/what-is-included-in-a-monthly-maid-package.webp',
+    cacheVersion: "7d1c7b4dd9b3",
     alt: {
-      en: 'Domestic worker and a woman reviewing a household task checklist in a kitchen.',
-      ar: 'عاملة منزلية وامرأة تراجعان قائمة المهام المنزلية في المطبخ.'
+      en: "A woman in a pink INAYA uniform checks a blank task sheet while placing a folded towel on a cupboard shelf.",
+      ar: "امرأة بزي عناية الوردي تراجع ورقة مهام خالية من الكتابة أثناء وضع منشفة مطوية على رف خزانة."
     }
   },
   'maid-nanny-babysitter-differences': {
     src: '/images/blogs/maid-nanny-or-babysitter-choosing-the-right-role.webp',
+    cacheVersion: "c5da96110fdf",
     alt: {
-      en: 'Childcare worker helping a child with a wooden puzzle while a parent watches.',
-      ar: 'مربية تساعد طفلة في تركيب أحجية خشبية بينما تتابعها والدتها.'
+      en: "A woman in a beige INAYA uniform shares a picture book with a back-facing child while another woman sits nearby.",
+      ar: "امرأة بزي عناية البيج تشارك طفلاً يظهر من الخلف قراءة كتاب مصور، وإلى جانبهما امرأة تحمل كتاباً آخر."
     }
   },
   'domestic-worker-visa-sponsorship-support': {
     src: '/images/blogs/preparing-a-domestic-worker-visa-or-sponsorship-case.webp',
+    cacheVersion: "641be7efb52b",
     alt: {
-      en: 'Couple reviewing sponsorship paperwork and a passport at a desk.',
-      ar: 'زوجان يراجعان مستندات الكفالة وجواز سفر على مكتب.'
+      en: "Hands place blank papers in document trays beside a closed wallet and phone at a service counter.",
+      ar: "يدان تضعان أوراقاً خالية من الكتابة في صواني مستندات بجوار محفظة مغلقة وهاتف على منضدة خدمة."
     }
   },
   'choosing-domestic-worker-agency-ajman': {
     src: '/images/blogs/how-to-choose-a-domestic-worker-agency-in-ajman.webp',
+    cacheVersion: "820fff43cbe8",
     alt: {
-      en: 'Woman reviewing a domestic worker profile folder with an agency adviser.',
-      ar: 'امرأة تراجع ملف عامل مساعد مع مستشارة في مكتب استقدام.'
+      en: "A visitor checks her visit details inside the office reception.",
+      ar: "زائرة تتحقق من تفاصيل زيارتها داخل منطقة الاستقبال بالمكتب."
     }
   },
   'domestic-worker-hiring-costs-uae': {
     src: "/images/blogs/domestic-worker-hiring-costs-uae-20261020.webp",
+    cacheVersion: "29ae37bf6625",
     alt: {
-      en: "A couple and adviser compare domestic-worker quotations using a calculator and monthly planning calendar.",
-      ar: "زوجان ومستشارة يقارنون عروض توظيف عاملة منزلية باستخدام آلة حاسبة وتقويم للتخطيط الشهري."
+      en: "Hands compare two quotations with a household budget notebook and calculator.",
+      ar: "يدان تقارنان عرضين باستخدام دفتر ميزانية الأسرة وآلة حاسبة."
     }
   },
   'domestic-worker-employment-arrangements-uae': {
     src: '/images/blogs/live-in-live-out-or-temporary-domestic-help-which-arrangement-fits-your-household.webp',
+    cacheVersion: "abdc3a1c75a4",
     alt: {
-      en: 'Domestic worker arriving with a bag and being greeted at a home entrance.',
-      ar: 'عاملة منزلية تصل وهي تحمل حقيبة وتتلقى الترحيب عند مدخل المنزل.'
+      en: "A prepared private room with a single bed, a plain timetable and a key.",
+      ar: "غرفة خاصة مجهزة بسرير مفرد، وبجوارها ورقة جدول ومفتاح."
     }
   },
   'all-inclusive-domestic-worker-packages': {
     src: '/images/blogs/what-should-an-all-inclusive-domestic-worker-package-include-in-writing.webp',
+    cacheVersion: "d5a6c92ced6b",
     alt: {
-      en: 'Two women reviewing the written terms of a domestic worker service package.',
-      ar: 'امرأتان تراجعان الشروط المكتوبة لباقة خدمات العمالة المساعدة.'
+      en: "Hands review separate papers in a binder of household-service terms.",
+      ar: "يدان تراجعان أوراقاً منفصلة في ملف لشروط الخدمة المنزلية."
     }
   },
   'domestic-worker-sponsorship-responsibilities': {
     src: '/images/blogs/who-is-responsible-for-a-domestic-workers-sponsorship-and-employment.webp',
+    cacheVersion: "324228648823",
     alt: {
-      en: 'Domestic worker, employer and adviser reviewing employment paperwork together.',
-      ar: 'عاملة منزلية وصاحبة عمل ومستشارة يراجعن مستندات التوظيف معاً.'
+      en: "An adviser and householder discuss separate folders at the office counter.",
+      ar: "مستشارة وأحد أفراد الأسرة يناقشان ملفات منفصلة عند منضدة المكتب."
     }
   },
   'domestic-worker-employer-eligibility-documents': {
     src: '/images/blogs/who-can-apply-for-a-domestic-worker-permit-and-which-documents-are-needed.webp',
+    cacheVersion: "6ba759bb5e4a",
     alt: {
-      en: 'Man and adviser reviewing permit application documents with a passport on the desk.',
-      ar: 'رجل ومستشارة يراجعان مستندات طلب التصريح مع وجود جواز سفر على المكتب.'
+      en: "A householder places closed document folders into a fabric organiser.",
+      ar: "أحد أفراد الأسرة يضع ملفات مستندات مغلقة في حافظة قماشية."
     }
   },
   'domestic-worker-hiring-stages-timelines': {
     src: '/images/blogs/what-happens-during-domestic-worker-hiring-and-how-long-does-it-take.webp',
+    cacheVersion: "d94bf706349a",
     alt: {
-      en: 'Adviser explaining domestic worker hiring stages to a couple beside a desk calendar.',
-      ar: 'مستشارة تشرح مراحل توظيف عامل مساعد لزوجين بجوار تقويم مكتبي.'
+      en: "An adviser follows up a case beside a calendar and closed folder.",
+      ar: "مستشارة تتابع معاملة بجوار تقويم وملف مغلق."
     }
   },
   'domestic-worker-skills-language-assessment': {
     src: '/images/blogs/how-to-select-a-domestic-workers-skills-and-language-for-your-household.webp',
+    cacheVersion: "d36c4d3638a8",
     alt: {
-      en: 'Woman and domestic worker discussing household skills using a notebook in the kitchen.',
-      ar: 'امرأة وعاملة منزلية تناقشان المهارات المنزلية باستخدام دفتر في المطبخ.'
+      en: "A housemaid in pink explains a practical linen-folding task to a householder.",
+      ar: "عاملة منزلية بزي وردي تشرح طريقة طي الأغطية لصاحبة المنزل."
     }
   },
   'choosing-nanny-newborn-support': {
     src: '/images/blogs/how-to-assess-a-nanny-for-a-baby-or-newborn.webp',
+    cacheVersion: "204a49a039dc",
     alt: {
-      en: 'Parent discussing infant care with a nanny beside a sleeping baby in a bassinet.',
-      ar: 'والدة تناقش رعاية الرضيع مع مربية بجوار طفل نائم في سرير الرضع.'
+      en: "A nanny in beige and a parent discuss an empty bassinet in a nursery.",
+      ar: "مربية بزي بيج وأحد الوالدين يناقشان تجهيز سرير رضيع فارغ."
     }
   },
   'caregiver-versus-licensed-nurse': {
     src: '/images/blogs/caregiver-or-licensed-nurse-which-kind-of-home-support-do-you-need.webp',
+    cacheVersion: "091bc02e0bdf",
     alt: {
-      en: 'Care professional discussing home support with an older woman and a family member.',
-      ar: 'مختصة رعاية تناقش الدعم المنزلي مع امرأة مسنة وامرأة من أسرتها.'
+      en: "A caregiver in maroon and an older woman share a quiet conversation at home.",
+      ar: "مقدمة رعاية بزي خمري وامرأة مسنة تتحادثان بهدوء في المنزل."
     }
   },
   'agreeing-domestic-worker-household-duties': {
     src: "/images/blogs/agreeing-domestic-worker-household-duties-20261020.webp",
+    cacheVersion: "589c2248ff7e",
     alt: {
-      en: "A householder and domestic worker discuss household duties while a parent supervises a child nearby.",
-      ar: "صاحبة منزل وعاملة منزلية تناقشان المهام بينما يشرف الأب على طفله بالقرب منهما."
+      en: "A housemaid in pink prepares ingredients while a parent supervises the child nearby.",
+      ar: "عاملة منزلية بزي وردي تجهز المكونات بينما يشرف أحد الوالدين على الطفل بالقرب منها."
     }
   },
   'domestic-worker-verification-checks': {
     src: '/images/blogs/what-should-verified-domestic-worker-mean.webp',
+    cacheVersion: "1205b474ac41",
     alt: {
-      en: 'Woman and domestic worker reviewing a folder of profile documents.',
-      ar: 'امرأة وعاملة منزلية تراجعان ملفاً يحتوي على مستندات التعريف بالعامل.'
+      en: "A blank checklist card and closed folders support an evidence-review discussion.",
+      ar: "بطاقة مراجعة خالية من البيانات وملفات مغلقة لتوضيح مناقشة المستندات."
     }
   },
   'domestic-worker-interview-trial-probation': {
     src: '/images/blogs/interview-trial-and-probation-what-is-the-difference-when-hiring-a-domestic-worker.webp',
+    cacheVersion: "5c0f56f2dc9f",
     alt: {
-      en: 'Couple interviewing a domestic worker in a living room.',
-      ar: 'زوجان يجريان مقابلة مع عاملة منزلية في غرفة المعيشة.'
+      en: "A housemaid candidate and householder speak with an adviser in an office seating area.",
+      ar: "مرشحة للعمل المنزلي وصاحبة منزل تتحدثان مع مستشارة في منطقة جلوس بالمكتب."
     }
   },
   'domestic-worker-replacement-eligibility': {
     src: '/images/blogs/when-can-you-request-a-replacement-domestic-worker.webp',
+    cacheVersion: "686d4ca8fabe",
     alt: {
-      en: 'Woman discussing a domestic worker replacement request with an adviser over paperwork.',
-      ar: 'امرأة تناقش طلب استبدال عاملة منزلية مع مستشارة أثناء مراجعة المستندات.'
+      en: "A visitor discusses notes in an open folder with an adviser in INAYA’s waiting area.",
+      ar: "زائر يناقش ملاحظات في ملف مفتوح مع مستشارة في منطقة الانتظار لدى عناية."
     }
   },
   'domestic-worker-recruitment-refund-rules': {
     src: '/images/blogs/when-are-domestic-worker-recruitment-fees-refundable.webp',
+    cacheVersion: "494fd1bcb028",
     alt: {
-      en: 'Two women reviewing recruitment fee paperwork together at a desk.',
-      ar: 'امرأتان تراجعان مستندات رسوم الاستقدام معاً على مكتب.'
+      en: "Hands arrange paperwork beside a pen, calculator and water glass on a home table.",
+      ar: "يدان ترتبان أوراقاً بجوار قلم وآلة حاسبة وكوب ماء على طاولة منزلية."
     }
   },
   'domestic-worker-contracts-renewal': {
     src: '/images/blogs/which-domestic-worker-contracts-should-you-read-and-how-does-renewal-work.webp',
+    cacheVersion: "cb63ddac4eb8",
     alt: {
-      en: 'Woman signing employment paperwork with an adviser and a desk calendar nearby.',
-      ar: 'امرأة توقع مستندات التوظيف بحضور مستشارة وبجوار تقويم مكتبي.'
+      en: "A woman reviews papers beside a closed folder in a glass-partitioned office.",
+      ar: "امرأة تراجع أوراقاً بجوار ملف مغلق داخل مكتب ذي فواصل زجاجية."
     }
   },
   'domestic-worker-wages-rest-leave': {
     src: '/images/blogs/domestic-worker-wages-rest-and-leave-what-must-an-employer-plan-for.webp',
+    cacheVersion: "4cf74c0250d9",
     alt: {
-      en: 'Domestic worker resting in an armchair with a cup beside a calendar and notebook.',
-      ar: 'عاملة منزلية تستريح على كرسي بذراعين وتحمل كوباً بجوار تقويم ودفتر.'
+      en: "A woman in a pink INAYA uniform rests in an armchair holding a cup.",
+      ar: "امرأة بزي عناية الوردي تستريح على كرسي بذراعين وهي تحمل كوباً."
     }
   },
   'own-visa-part-time-domestic-work': {
     src: '/images/blogs/can-you-hire-a-domestic-worker-who-has-their-own-visa-or-works-part-time.webp',
+    cacheVersion: "860c80a3720f",
     alt: {
-      en: 'Adviser and domestic worker reviewing a passport and employment documents.',
-      ar: 'مستشارة وعاملة منزلية تراجعان جواز سفر ومستندات التوظيف.'
+      en: "A hand points to a blank card between a closed document wallet and a folder at a service counter.",
+      ar: "يد تشير إلى بطاقة خالية من الكتابة بين محفظة وثائق مغلقة وملف أوراق على منضدة خدمة."
     }
   },
   'domestic-worker-leave-travel-planning': {
     src: "/images/blogs/domestic-worker-leave-travel-planning-20261020.webp",
+    cacheVersion: "a1edfc17c8cd",
     alt: {
-      en: "A domestic worker keeps her own passport beside her suitcase while discussing annual-leave dates with a householder.",
-      ar: "عاملة منزلية تحتفظ بجواز سفرها بجوار حقيبتها أثناء مناقشة مواعيد إجازتها السنوية مع صاحبة المنزل."
+      en: "A woman in a pink INAYA uniform holds a closed wallet while packing a suitcase beside a woman with a notebook.",
+      ar: "امرأة بزي عناية الوردي تحمل محفظة مغلقة أثناء ترتيب حقيبة سفر، وبجانبها امرأة تحمل دفتراً."
     }
   },
   'domestic-worker-complaints-disputes': {
     src: '/images/blogs/how-do-domestic-worker-complaints-and-recruitment-agency-disputes-proceed.webp',
+    cacheVersion: "0c62ff4db942",
     alt: {
-      en: 'Domestic worker and a woman discussing a concern with an adviser taking notes.',
-      ar: 'عاملة منزلية وامرأة تناقشان مشكلة مع مستشارة تدون الملاحظات.'
+      en: "A woman in a pink INAYA uniform speaks with two men around a table in a glass-partitioned office.",
+      ar: "امرأة بزي عناية الوردي تتحدث مع رجلين حول طاولة داخل مكتب ذي فواصل زجاجية."
     }
   }
 };
