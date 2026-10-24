@@ -959,6 +959,198 @@ export const customerArticleVisuals: Record<string, BilingualArticleVisual> = {
         }
       ]
     }
+  },
+  "choosing-domestic-worker-agency-ajman": {
+    "en": {
+      "kind": "steps",
+      "title": "Compare answers with a consistent evidence record",
+      "caption": "An original enquiry-planning workflow. These steps do not grade a worker or establish an approval or booking.",
+      "items": [
+        {
+          "label": "Write one household brief",
+          "detail": "Keep the same duties, arrangement and location when comparing answers."
+        },
+        {
+          "label": "Ask for the relevant answer",
+          "detail": "Separate the role, candidate evidence, agreement and start conditions."
+        },
+        {
+          "label": "Record what is established",
+          "detail": "Mark supplied information and questions still needing clarification."
+        },
+        {
+          "label": "Confirm the next action",
+          "detail": "Keep a written recap with the quotation and service scope."
+        }
+      ]
+    },
+    "ar": {
+      "kind": "steps",
+      "title": "قارن الإجابات بسجل واضح للمعلومات",
+      "caption": "مسار أصلي لتخطيط الاستفسار. لا يمنح درجات للعاملة ولا يثبت الموافقة أو تأكيد الحجز.",
+      "items": [
+        {
+          "label": "اكتب طلباً منزلياً واحداً",
+          "detail": "استخدم المهام وترتيب العمل والمنطقة نفسها عند مقارنة الإجابات."
+        },
+        {
+          "label": "اطلب الإجابة المناسبة",
+          "detail": "افصل الدور ودليل الخبرة والاتفاق وشروط البدء."
+        },
+        {
+          "label": "سجل ما اتضح",
+          "detail": "ميز المعلومات المقدمة والأسئلة التي تحتاج إلى توضيح."
+        },
+        {
+          "label": "أكد الخطوة التالية",
+          "detail": "احتفظ بملخص مكتوب مع عرض السعر ونطاق الخدمة."
+        }
+      ]
+    }
+  },
+  "domestic-worker-employer-eligibility-documents": {
+    "en": {
+      "kind": "steps",
+      "title": "From a visa question to a case-specific document request",
+      "caption": "An original preparation workflow. The applicable authority decides eligibility and the official outcome.",
+      "items": [
+        {
+          "label": "Describe the intended transaction",
+          "detail": "Explain the current arrangement and what needs to change."
+        },
+        {
+          "label": "Confirm the applicant and record",
+          "detail": "Identify the relevant official service before assuming a checklist."
+        },
+        {
+          "label": "Request the case-specific list",
+          "detail": "Clarify each requested item and a private delivery channel."
+        },
+        {
+          "label": "Keep the transaction record",
+          "detail": "Retain references, receipts and questions still under review."
+        }
+      ]
+    },
+    "ar": {
+      "kind": "steps",
+      "title": "من سؤال عن التأشيرة إلى طلب وثائق يناسب الحالة",
+      "caption": "مسار أصلي للاستعداد. تحدد الجهة المختصة الأهلية والنتيجة الرسمية.",
+      "items": [
+        {
+          "label": "صف المعاملة المطلوبة",
+          "detail": "وضح الترتيب الحالي وما ترغب في تغييره."
+        },
+        {
+          "label": "أكد مقدم الطلب والسجل",
+          "detail": "حدد الخدمة الرسمية قبل افتراض قائمة المستندات."
+        },
+        {
+          "label": "اطلب قائمة الحالة",
+          "detail": "وضح سبب كل وثيقة وقناة تسليمها الخاصة."
+        },
+        {
+          "label": "احتفظ بسجل المعاملة",
+          "detail": "احفظ المراجع والإيصالات والأسئلة التي لا تزال قيد المراجعة."
+        }
+      ]
+    }
+  },
+  "domestic-worker-employment-arrangements-uae": {
+    "en": {
+      "kind": "steps",
+      "title": "Prepare the home before the live-in handover",
+      "caption": "An original household-planning workflow, with no fixed timetable or assumed unlimited duties.",
+      "items": [
+        {
+          "label": "Describe the home routine",
+          "detail": "Explain accommodation, priorities and the busiest periods."
+        },
+        {
+          "label": "Resolve overlapping requests",
+          "detail": "Agree task boundaries and who covers responsibilities that conflict."
+        },
+        {
+          "label": "Prepare a clear handover",
+          "detail": "Introduce the household contact, access and equipment instructions."
+        },
+        {
+          "label": "Review instructions together",
+          "detail": "Record agreed changes while keeping the arrangement and rest provisions clear."
+        }
+      ]
+    },
+    "ar": {
+      "kind": "steps",
+      "title": "جهز المنزل قبل تسليم مهام الخدمة المقيمة",
+      "caption": "مسار أصلي لتخطيط احتياج الأسرة، دون جدول ثابت أو افتراض مهام غير محدودة.",
+      "items": [
+        {
+          "label": "صف روتين المنزل",
+          "detail": "وضح السكن والأولويات والأوقات الأكثر ازدحاماً."
+        },
+        {
+          "label": "نظم الطلبات المتداخلة",
+          "detail": "اتفق على حدود المهام ومن يغطي المسؤوليات المتعارضة."
+        },
+        {
+          "label": "جهز تسليماً واضحاً",
+          "detail": "حدد جهة اتصال الأسرة وتعليمات الدخول والأجهزة."
+        },
+        {
+          "label": "راجع التعليمات معاً",
+          "detail": "سجل التعديلات مع إبقاء الترتيب وأحكام الراحة واضحة."
+        }
+      ]
+    }
+  },
+  "domestic-worker-hiring-stages-timelines": {
+    "en": {
+      "kind": "steps",
+      "title": "Follow recruitment through an evidence-based update",
+      "caption": "An original coordination workflow. It does not assign a fixed duration or guarantee a candidate or official outcome.",
+      "items": [
+        {
+          "label": "Identify the current milestone",
+          "detail": "Keep the update tied to the actual candidate and arrangement."
+        },
+        {
+          "label": "Record the supporting information",
+          "detail": "Note what was confirmed, by whom and on which date."
+        },
+        {
+          "label": "Name the outstanding action",
+          "detail": "Clarify the responsible party and what still needs review."
+        },
+        {
+          "label": "Review before moving forward",
+          "detail": "Retain changes and confirm the next milestone on its own evidence."
+        }
+      ]
+    },
+    "ar": {
+      "kind": "steps",
+      "title": "تابع الاستقدام بتحديث يستند إلى معلومات واضحة",
+      "caption": "مسار أصلي للتنسيق، لا يحدد مدة ثابتة ولا يضمن مرشحة أو نتيجة رسمية.",
+      "items": [
+        {
+          "label": "حدد المرحلة الحالية",
+          "detail": "اربط التحديث بالمرشحة والترتيب الفعليين."
+        },
+        {
+          "label": "سجل المعلومات المؤيدة",
+          "detail": "وضح ما تأكد ومن أكده وتاريخ التحديث."
+        },
+        {
+          "label": "سم الإجراء المتبقي",
+          "detail": "حدد الطرف المسؤول وما يحتاج إلى مراجعة."
+        },
+        {
+          "label": "راجع قبل الانتقال",
+          "detail": "احتفظ بالتغييرات وأكد المرحلة التالية بمعلوماتها الخاصة."
+        }
+      ]
+    }
   }
 };
 

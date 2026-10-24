@@ -37,8 +37,28 @@ const metadata = {
 
 // Existing package cards and FAQs remain. The new cleaning lead repeats only
 // the two already-approved visit totals, adding one mention of each.
+// The services hub's cleaning card also displays each approved visit total once.
 const priceMentions = {
+  'en/services': ['AED 120', 'AED 200'],
+  'ar/services': ['120 درهم', '200 درهم'],
   'en/services/housekeeping': [...Array(3).fill('AED 1,120'), ...Array(5).fill('AED 120'), ...Array(5).fill('AED 200')],
   'ar/services/housekeeping': [...Array(3).fill('1,120 درهم'), ...Array(5).fill('120 درهم'), ...Array(5).fill('200 درهم')]
 };
-module.exports = { metadata, priceMentions };
+
+// Full reviewed hub summaries are a bounded commercial-copy fixture, not an
+// allowance for arbitrary editorial repetition or additional placements.
+const hubSummaries = {
+  recruitment: {
+    en: 'INAYA Tadbeer centre in Ajman supports domestic-worker recruitment, individual profile review and household service enquiries. Confirm the role, availability, employment arrangement and written terms.',
+    ar: 'يدعم مركز عناية تدبير في عجمان استقدام العمالة المنزلية ومراجعة الملفات الفردية وطلبات الخدمة المنزلية. أكد الدور والتوفر وترتيب التوظيف والشروط المكتوبة.'
+  },
+  housekeeping: {
+    en: 'Cleaning and housekeeping visits for agreed household tasks: 4 hours for AED 120 or 8 hours for AED 200. Confirm priorities, access, supplies, availability and the final written scope.',
+    ar: 'زيارات لتنظيف المنزل وترتيبه وفق المهام المتفق عليها: 4 ساعات مقابل 120 درهماً أو 8 ساعات مقابل 200 درهم. أكد الأولويات والدخول والمستلزمات والتوفر والنطاق النهائي كتابةً.'
+  },
+  'maid-visa': {
+    en: 'Domestic-worker visa typing and document processing in Ajman: applications, renewal, cancellation, status and contract-related requests, with Emirates ID, medical and insurance processing as applicable. Scope, fees and official outcomes depend on the case.',
+    ar: 'طباعة طلبات تأشيرة العمالة المنزلية ومعالجة مستنداتها في عجمان: الطلبات والتجديد والإلغاء وتعديل الوضع ومعاملات العقد، مع إجراءات الهوية والفحص الطبي والتأمين بحسب الحالة. يعتمد النطاق والرسوم والقرار الرسمي على الحالة.'
+  }
+};
+module.exports = { metadata, priceMentions, hubSummaries };

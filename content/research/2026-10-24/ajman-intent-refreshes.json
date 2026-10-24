@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "title": "INAYA Ajman keyword articles — additive draft",
+  "date": "2026-10-24",
+  "status": "Draft only; not applied or published",
+  "sourceCommit": "a38293bf2b350998c413e9502587e1594504d36d",
+  "scope": "Four existing PublishedArticle routes in English and Arabic. All previous manuscript text, titles, publication dates and routes must remain intact. New body follows the unique separator; charts are separate editorial content.",
+  "factsPolicy": "Practical planning tools only. No new fees, fixed timings, eligibility rules, guaranteed availability, qualifications, licensing conclusions or ranking claims.",
+  "entries": [
+    {
+      "slug": "choosing-domestic-worker-agency-ajman",
+      "keywordIntents": [
+        "Tadbeer center Ajman",
+        "Maid agency Ajman"
+      ],
+      "distinctionFromPr62": "Adds evidence-status comparison of actual agency answers and a worked household-brief review. Does not reproduce the three-service routing table or generic identity sheet.",
+      "en": {
+        "separator": "## Compare Ajman agency answers against one household brief",
+        "body": "Before contacting a Tadbeer centre or maid agency in Ajman, write one short household brief and use it for every discussion. Describe the duties, preferred working arrangement, location and start preference. Keep essential needs separate from preferences. This makes an agency’s answer easier to assess without comparing unrelated services or treating a polished profile as a complete offer.\n\nFor example, a household may need daily cleaning and meal preparation during the same busy period. Ask how the proposed role and schedule address that overlap. Record the answer rather than assuming that a broad job title includes every task. This is a planning example, not a description of a particular available worker.\n\n## Record the answer and its evidence\n\n| Decision point | Useful answer to record | Evidence status to note |\n|---|---|---|\n| Individual role | Agreed duties and tasks needing separate discussion | Written scope supplied or clarification outstanding |\n| Candidate suitability | Relevant experience and communication discussed | Individual evidence reviewed or still to be checked |\n| Employment arrangement | Named contracting parties and responsibilities | Agreement received or explanation requested |\n| Start arrangements | Availability and prerequisites confirmed for this case | Current confirmation or an unresolved condition |\n\nUse the same evidence labels for each provider: supplied, needs clarification or not yet supplied. An unanswered question is a follow-up item. It is not proof that the answer is favourable, or evidence of misconduct. Compare the practical consequences of each answer rather than awarding a score to a person.\n\nAfter a discussion, send a short written recap: the request understood, documents or explanations still needed, and the next action. Ask the team to correct any misunderstanding before you rely on it. Store the quotation, scope and relevant correspondence together; keep personal identity records outside a general comparison sheet.\n\nUse the [Ajman service page](https://inayadomestic.ae/en/maid-services-ajman/), [candidate interview guide](https://inayadomestic.ae/en/blog/domestic-worker-interview-trial-probation/) and [INAYA contact page](https://inayadomestic.ae/en/contact/) for the next discussion. The [UAE Government’s domestic-worker guidance](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers) provides official context; confirm the current route for the actual agreement.",
+        "visual": {
+          "kind": "steps",
+          "title": "Compare answers with a consistent evidence record",
+          "caption": "An original enquiry-planning workflow. These steps do not grade a worker or establish an approval or booking.",
+          "items": [
+            {
+              "label": "Write one household brief",
+              "detail": "Keep the same duties, arrangement and location when comparing answers."
+            },
+            {
+              "label": "Ask for the relevant answer",
+              "detail": "Separate the role, candidate evidence, agreement and start conditions."
+            },
+            {
+              "label": "Record what is established",
+              "detail": "Mark supplied information and questions still needing clarification."
+            },
+            {
+              "label": "Confirm the next action",
+              "detail": "Keep a written recap with the quotation and service scope."
+            }
+          ]
+        },
+        "baseBodySha256": "a77f19461a891d2388b6ad0229e89a42d4215052aade70fb8353508725c33232",
+        "wordCount": 337,
+        "baseBodyWords": 1290,
+        "baseBodyIsCompletePrefix": true
+      },
+      "ar": {
+        "separator": "## قارن إجابات مكاتب عجمان وفق طلب منزلي واحد",
+        "body": "قبل التواصل مع مركز تدبير أو مكتب عمالة منزلية في عجمان، اكتب ملخصاً واضحاً لاحتياج أسرتك واستخدمه في كل مناقشة. حدد المهام وترتيب العمل المفضل والمنطقة وموعد البدء الذي ترغب فيه. افصل الاحتياجات الأساسية عن التفضيلات التي يمكن مناقشتها. يساعد ذلك على تقييم إجابة المكتب ومقارنة الخدمة نفسها، بدلاً من الاعتماد على عرض جذاب لا يوضح تفاصيل العمل أو مسؤوليات الأطراف.\n\nمثلاً، قد تحتاج أسرة إلى التنظيف اليومي وتحضير الوجبات خلال الفترة المزدحمة نفسها. اسأل كيف يراعي الدور والجدول المقترحان هذا التداخل، وسجل الإجابة بدلاً من افتراض أن المسمى العام يشمل كل مهمة. هذا مثال للتخطيط، وليس وصفاً لعاملة محددة متوفرة حالياً لدى عناية أو أي مكتب آخر.\n\n## سجل الإجابة وحالة الدليل\n\n| نقطة القرار | الإجابة المفيدة للتسجيل | حالة المعلومات التي تراجعها |\n|---|---|---|\n| الدور الفردي | المهام المتفق عليها وما يحتاج إلى مناقشة مستقلة | نطاق مكتوب متوفر أو توضيح مطلوب |\n| ملاءمة المرشحة | الخبرة المناسبة وطريقة التواصل التي نوقشت | دليل فردي روجع أو ما زال يحتاج إلى تحقق |\n| ترتيب التوظيف | أطراف التعاقد والمسؤوليات المسماة | اتفاق مستلم أو شرح مطلوب |\n| ترتيبات البدء | التوفر والشروط اللازمة للحالة | تأكيد حالي أو شرط لم يحسم بعد |\n\nاستخدم أوصاف الحالة نفسها لكل جهة: تم تقديم المعلومات، أو تحتاج إلى توضيح، أو لم تقدم بعد. السؤال غير المحسوم بند للمتابعة؛ لا يعني أن الإجابة مناسبة تلقائياً، ولا يثبت مخالفة. قارن أثر الإجابة على احتياج منزلك، وتجنب تحويل النموذج إلى درجات لتقييم الأشخاص أو استنتاج مهارات لم تراجع بصورة فردية.\n\nبعد المناقشة، أرسل ملخصاً قصيراً لما فهمه الطرفان، والتوضيحات أو المستندات المطلوبة، والخطوة التالية. اطلب تصحيح أي فهم مختلف قبل الاعتماد عليه. احتفظ بعرض السعر ونطاق الخدمة والمراسلات معاً، واترك وثائق الهوية الشخصية خارج ورقة المقارنة العامة. وإذا تغير الطلب، سجل التغيير قبل مقارنة إجابة جديدة بإجابة سابقة.\n\nراجع [خدمات عناية في عجمان](https://inayadomestic.ae/ar/maid-services-ajman/)، و[دليل مقابلة العاملة](https://inayadomestic.ae/ar/blog/domestic-worker-interview-trial-probation/)، و[صفحة التواصل](https://inayadomestic.ae/ar/contact/) للمناقشة التالية. توفر [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers) السياق الرسمي؛ وأكد المسار الحالي الملائم للاتفاق الفعلي.",
+        "visual": {
+          "kind": "steps",
+          "title": "قارن الإجابات بسجل واضح للمعلومات",
+          "caption": "مسار أصلي لتخطيط الاستفسار. لا يمنح درجات للعاملة ولا يثبت الموافقة أو تأكيد الحجز.",
+          "items": [
+            {
+              "label": "اكتب طلباً منزلياً واحداً",
+              "detail": "استخدم المهام وترتيب العمل والمنطقة نفسها عند مقارنة الإجابات."
+            },
+            {
+              "label": "اطلب الإجابة المناسبة",
+              "detail": "افصل الدور ودليل الخبرة والاتفاق وشروط البدء."
+            },
+            {
+              "label": "سجل ما اتضح",
+              "detail": "ميز المعلومات المقدمة والأسئلة التي تحتاج إلى توضيح."
+            },
+            {
+              "label": "أكد الخطوة التالية",
+              "detail": "احتفظ بملخص مكتوب مع عرض السعر ونطاق الخدمة."
+            }
+          ]
+        },
+        "baseBodySha256": "db65f255b9dc0eae46135a48be5d189089644c25c854e0d56f20b1c37d1abf72",
+        "wordCount": 325,
+        "baseBodyWords": 1144,
+        "baseBodyIsCompletePrefix": true
+      },
+      "keywords": [
+        "Tadbeer center Ajman",
+        "Maid agency Ajman"
+      ],
+      "preservedTitle": {
+        "en": "How to choose a domestic-worker agency in Ajman",
+        "ar": "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟"
+      },
+      "preservedPublished": "2026-09-18"
+    },
+    {
+      "slug": "domestic-worker-employer-eligibility-documents",
+      "keywordIntents": [
+        "Housemaid visa Ajman"
+      ],
+      "distinctionFromPr62": "Transaction-routing and applicant-record worksheet for a housemaid-visa enquiry, not the generic legal eligibility checklist or B6 typing-stage table.",
+      "en": {
+        "separator": "## Route a housemaid visa enquiry in Ajman before gathering documents",
+        "body": "Start a housemaid visa enquiry in Ajman by explaining what you want to change and the present arrangement. A new household-employer request, an agency-managed service and a transaction concerning an existing worker need different questions. Give the team a brief description first so that it can identify the relevant service and request the documents needed for that case.\n\nKeep the transaction you want separate from a document you already hold. For example, possessing a residence document does not by itself explain whether the enquiry concerns a work permit, contract, renewal, transfer or cancellation. Ask which record is being reviewed and which authority’s current requirements apply.\n\n## Use a transaction-routing worksheet\n\n| Enquiry situation | Information to describe initially | Confirmation to request |\n|---|---|---|\n| New household-employer request | Proposed applicant and household arrangement | Applicable applicant category and official service |\n| Agency-managed household service | Requested role and named agency arrangement | Employer, beneficiary and document responsibilities |\n| Existing worker’s renewal | Current arrangement and record requiring renewal | Relevant transaction and case-specific document list |\n| Change or end of an arrangement | Intended change and current sponsor or employer situation | Separate records affected and the next supported action |\n\nThis worksheet organises the first conversation. It is not an application form, a complete document list or a decision on eligibility. Leave an uncertain field marked for review rather than guessing the applicant category. Do not copy another household’s income, fee or timing assumptions into your case.\n\nOnce the route is identified, maintain a private document record with the item requested, the reason it is needed, the agreed delivery channel and any clarification outstanding. Avoid putting passport, identity or medical details into a public planning sheet. Keep application references and receipts with the related transaction; an enquiry message is separate from an official submission.\n\nRead [INAYA’s visa-processing scope](https://inayadomestic.ae/en/services/maid-visa/), [document-enquiry guide](https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/) and [cancellation guide](https://inayadomestic.ae/en/blog/domestic-worker-contract-permit-residence-cancellation/) as relevant. Check the [current MoHRE new-permit service](https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022) when that is the confirmed route, rather than applying it automatically to every request.",
+        "visual": {
+          "kind": "steps",
+          "title": "From a visa question to a case-specific document request",
+          "caption": "An original preparation workflow. The applicable authority decides eligibility and the official outcome.",
+          "items": [
+            {
+              "label": "Describe the intended transaction",
+              "detail": "Explain the current arrangement and what needs to change."
+            },
+            {
+              "label": "Confirm the applicant and record",
+              "detail": "Identify the relevant official service before assuming a checklist."
+            },
+            {
+              "label": "Request the case-specific list",
+              "detail": "Clarify each requested item and a private delivery channel."
+            },
+            {
+              "label": "Keep the transaction record",
+              "detail": "Retain references, receipts and questions still under review."
+            }
+          ]
+        },
+        "baseBodySha256": "1c03cbc6ef5cb6df392e8e8d595d1fc0821d2ef271755d378ba396b623084fbc",
+        "wordCount": 340,
+        "baseBodyWords": 773,
+        "baseBodyIsCompletePrefix": true
+      },
+      "ar": {
+        "separator": "## حدد مسار استفسار تأشيرة العاملة المنزلية في عجمان قبل جمع الوثائق",
+        "body": "ابدأ استفسار تأشيرة العاملة المنزلية في عجمان بتوضيح الإجراء المطلوب وترتيب العمل الحالي. فالطلب الجديد باسم صاحب عمل منزلي، والخدمة المنزلية التي تديرها وكالة، ومعاملة عاملة موجودة تحتاج إلى أسئلة مختلفة. قدم وصفاً مختصراً أولاً حتى يحدد الفريق الخدمة المناسبة ويطلب المستندات اللازمة للحالة، بدلاً من جمع ملفات كثيرة قد لا تخص المسار المقصود.\n\nافصل الإجراء الذي تريده عن الوثيقة التي تملكها بالفعل. فوجود وثيقة إقامة، مثلاً، لا يوضح وحده ما إذا كان استفسارك عن تصريح عمل أو عقد أو تجديد أو نقل أو إلغاء. اسأل عن السجل الجاري مراجعته، وعن الجهة التي تنطبق متطلباتها الحالية على ذلك الإجراء، ثم سجل ما يحتاج إلى تأكيد بدلاً من افتراض الإجابة.\n\n## استخدم ورقة لتوجيه المعاملة\n\n| حالة الاستفسار | ما توضحه في البداية | ما تطلب تأكيده |\n|---|---|---|\n| طلب جديد لصاحب عمل منزلي | مقدم الطلب المقترح وترتيب الأسرة | فئة مقدم الطلب والخدمة الرسمية المناسبة |\n| خدمة منزلية تديرها وكالة | الدور المطلوب وترتيب الوكالة المسماة | صاحب العمل والمستفيد ومسؤوليات المستندات |\n| تجديد لعاملة موجودة | الترتيب الحالي والسجل المراد تجديده | المعاملة المناسبة وقائمة وثائق الحالة |\n| تغيير ترتيب قائم أو إنهاؤه | التغيير المطلوب ووضع الكفيل أو صاحب العمل | السجلات المتأثرة والخطوة التي يمكن دعمها |\n\nتنظم هذه الورقة المحادثة الأولى؛ فهي ليست نموذج طلب أو قائمة نهائية للوثائق أو قراراً بشأن الأهلية. اترك الحقل غير المؤكد للمراجعة، ولا تخمن فئة مقدم الطلب. لا تنقل افتراضات الدخل أو الرسوم أو مدة الإنجاز من معاملة أسرة أخرى، حتى لو بدا عنوان الخدمة متشابهاً.\n\nبعد تحديد المسار، احتفظ بسجل خاص يوضح الوثيقة المطلوبة وسبب طلبها وقناة تسليمها المتفق عليها وأي توضيح ما زال مطلوباً. تجنب وضع بيانات الجواز أو الهوية أو الفحص الطبي في ورقة تخطيط عامة. اربط مراجع الطلب والإيصالات بالمعاملة الصحيحة، وميز رسالة الاستفسار عن الطلب الرسمي المقدم. وإذا ظهرت معلومات جديدة، اطلب مراجعة القائمة قبل إرسال مستندات إضافية.\n\nراجع [نطاق إجراءات التأشيرة لدى عناية](https://inayadomestic.ae/ar/services/maid-visa/)، و[دليل تجهيز الاستفسار](https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/)، و[دليل الإلغاء](https://inayadomestic.ae/ar/blog/domestic-worker-contract-permit-residence-cancellation/) بحسب الحاجة. ارجع إلى [خدمة التصريح الجديد لدى الوزارة](https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022) عندما يكون هذا هو المسار المؤكد، دون تعميم متطلباتها على كل استفسار.",
+        "visual": {
+          "kind": "steps",
+          "title": "من سؤال عن التأشيرة إلى طلب وثائق يناسب الحالة",
+          "caption": "مسار أصلي للاستعداد. تحدد الجهة المختصة الأهلية والنتيجة الرسمية.",
+          "items": [
+            {
+              "label": "صف المعاملة المطلوبة",
+              "detail": "وضح الترتيب الحالي وما ترغب في تغييره."
+            },
+            {
+              "label": "أكد مقدم الطلب والسجل",
+              "detail": "حدد الخدمة الرسمية قبل افتراض قائمة المستندات."
+            },
+            {
+              "label": "اطلب قائمة الحالة",
+              "detail": "وضح سبب كل وثيقة وقناة تسليمها الخاصة."
+            },
+            {
+              "label": "احتفظ بسجل المعاملة",
+              "detail": "احفظ المراجع والإيصالات والأسئلة التي لا تزال قيد المراجعة."
+            }
+          ]
+        },
+        "baseBodySha256": "dcaabdf1456802976cf8ee735789b5b1deec87421031496bc49a2085a669c925",
+        "wordCount": 340,
+        "baseBodyWords": 739,
+        "baseBodyIsCompletePrefix": true
+      },
+      "keywords": [
+        "Housemaid visa Ajman"
+      ],
+      "preservedTitle": {
+        "en": "Who can apply for a domestic-worker permit, and which documents are needed?",
+        "ar": "من يمكنه طلب تصريح عامل مساعد، وما المستندات المطلوبة؟"
+      },
+      "preservedPublished": "2026-09-23"
+    },
+    {
+      "slug": "domestic-worker-employment-arrangements-uae",
+      "keywordIntents": [
+        "Live-in maid Ajman"
+      ],
+      "distinctionFromPr62": "Practical accommodation, overlapping duties, rest coverage and first-week handover worksheet for an Ajman live-in enquiry. No new legal or price table.",
+      "en": {
+        "separator": "## Plan a live-in maid arrangement for your Ajman home",
+        "body": "A live-in maid enquiry in Ajman starts with the home’s daily routine. Describe the accommodation available, the tasks needing regular attention and the times when instructions or duties may overlap. Discuss those points before treating a preferred start date as a confirmed arrangement.\n\nFor example, a family may want meal preparation while another task needs focused attention elsewhere in the home. Put both requests on the plan and decide which takes priority, what can move to another time and when a family member must take responsibility. This planning example is not a proposed workload or a promise of every role.\n\n## Prepare an accommodation and handover worksheet\n\n| Planning area | Household preparation | What to record together |\n|---|---|---|\n| Accommodation and privacy | Explain the proposed living space and practical facilities | Agreed arrangements and any question still open |\n| Competing duties | List tasks that need attention at the same time | Priorities, boundaries and another responsible person where needed |\n| Rest and absence coverage | Identify household tasks needing alternative cover | Who takes responsibility during agreed rest or leave |\n| First-week handover | Prepare access, equipment instructions and a family contact | A short task list and a mutually discussed review point |\n\nKeep the first handover manageable. Demonstrate unfamiliar equipment, explain where supplies are stored and ask whether instructions are clear. Introduce one household contact for resolving conflicting requests. If the work cannot fit the agreed scope, discuss priorities with INAYA rather than adding an open-ended duty list.\n\nDuring the first review, compare the instructions given with the work actually requested. Record agreed changes and retain earlier notes so that everyone can see what changed. Keep private family information and personal records out of a shared task sheet. An orientation discussion supports a clearer routine; it does not replace the contract or alter agreed rights.\n\nUse [INAYA’s live-in service page](https://inayadomestic.ae/en/services/live-in-maid/), [first-week checklist](https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/) and [household-duties guide](https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/) to prepare. Consult the [UAE Government’s domestic-worker guidance](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers) for the official employment context and confirm the terms applicable to the actual arrangement.",
+        "visual": {
+          "kind": "steps",
+          "title": "Prepare the home before the live-in handover",
+          "caption": "An original household-planning workflow, with no fixed timetable or assumed unlimited duties.",
+          "items": [
+            {
+              "label": "Describe the home routine",
+              "detail": "Explain accommodation, priorities and the busiest periods."
+            },
+            {
+              "label": "Resolve overlapping requests",
+              "detail": "Agree task boundaries and who covers responsibilities that conflict."
+            },
+            {
+              "label": "Prepare a clear handover",
+              "detail": "Introduce the household contact, access and equipment instructions."
+            },
+            {
+              "label": "Review instructions together",
+              "detail": "Record agreed changes while keeping the arrangement and rest provisions clear."
+            }
+          ]
+        },
+        "baseBodySha256": "3b8490da31e1ed251d0e4224ee901e2564c4438ac061dc03ec6e6e9bd6fcfcd1",
+        "wordCount": 346,
+        "baseBodyWords": 932,
+        "baseBodyIsCompletePrefix": true
+      },
+      "ar": {
+        "separator": "## خطط لترتيب خادمة مقيمة في منزلك بعجمان",
+        "body": "يبدأ الاستفسار المفيد عن خادمة مقيمة في عجمان بوصف طريقة عمل المنزل في يوم عادي. وضح السكن المتاح والمهام التي تحتاج إلى اهتمام منتظم والأوقات التي قد تتداخل فيها التعليمات أو المسؤوليات. ناقش هذه التفاصيل قبل التعامل مع موعد البدء المفضل بوصفه ترتيباً مؤكداً، حتى يفهم الفريق احتياج الأسرة ويصبح الاتفاق العملي أوضح للجميع.\n\nمثلاً، قد ترغب أسرة في تحضير وجبة أثناء وجود مهمة أخرى تحتاج إلى تركيز في مكان مختلف من المنزل. ضع الطلبين في الخطة، وحدد الأولوية وما يمكن نقله إلى وقت آخر ومتى يتولى أحد أفراد الأسرة المسؤولية. هذا مثال للمناقشة، وليس عبئاً مقترحاً للعمل أو وعداً بأن عاملة واحدة تستطيع أداء جميع الأدوار في الوقت نفسه.\n\n## جهز ورقة للسكن وتسليم المهام\n\n| مجال التخطيط | ما تجهزه الأسرة | ما تسجلونه معاً |\n|---|---|---|\n| السكن والخصوصية | وصف المساحة والمرافق العملية المقترحة | الترتيب المتفق عليه والأسئلة غير المحسومة |\n| المهام المتداخلة | تحديد الأعمال التي تتطلب الانتباه في الوقت نفسه | الأولويات والحدود وشخص مسؤول آخر عند الحاجة |\n| تغطية الراحة والغياب | تحديد الأعمال التي تحتاج إلى بديل | من يتولى المسؤولية خلال الراحة أو الإجازة المتفق عليها |\n| التسليم في الأسبوع الأول | تجهيز الدخول وتعليمات الأجهزة وجهة اتصال الأسرة | قائمة مهام قصيرة ونقطة مراجعة تناقشونها معاً |\n\nاجعل التسليم الأول واضحاً وقابلاً للتنفيذ. اعرض طريقة استخدام الأجهزة غير المألوفة، واشرح مكان الأدوات والمواد، واسأل عما يحتاج إلى شرح إضافي. حدد شخصاً واحداً من الأسرة لحسم التعليمات المتعارضة. إذا تعذر إنجاز العمل ضمن النطاق المتفق عليه، ناقش الأولويات مع عناية بدلاً من إضافة قائمة مفتوحة من المهام دون مراجعة.\n\nعند المراجعة الأولى، قارن التعليمات التي قدمت بالعمل الذي طلب فعلياً. سجل التعديلات المتفق عليها واحتفظ بالملاحظات السابقة ليظهر ما تغير. اترك المعلومات العائلية الخاصة والوثائق الشخصية خارج ورقة المهام المشتركة. يساعد التعريف بالمنزل على وضوح الروتين، لكنه لا يستبدل العقد أو يغير الحقوق المتفق عليها. اسأل أيضاً عن التعليمات التي كانت واضحة وما يحتاج إلى عرض عملي آخر.\n\nاستخدم [صفحة خدمة الخادمة المقيمة](https://inayadomestic.ae/ar/services/live-in-maid/)، و[قائمة الأسبوع الأول](https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/)، و[دليل الاتفاق على المهام](https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/) للاستعداد. وراجع [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers) للسياق الرسمي، ثم أكد الشروط التي تخص الترتيب الفعلي.",
+        "visual": {
+          "kind": "steps",
+          "title": "جهز المنزل قبل تسليم مهام الخدمة المقيمة",
+          "caption": "مسار أصلي لتخطيط احتياج الأسرة، دون جدول ثابت أو افتراض مهام غير محدودة.",
+          "items": [
+            {
+              "label": "صف روتين المنزل",
+              "detail": "وضح السكن والأولويات والأوقات الأكثر ازدحاماً."
+            },
+            {
+              "label": "نظم الطلبات المتداخلة",
+              "detail": "اتفق على حدود المهام ومن يغطي المسؤوليات المتعارضة."
+            },
+            {
+              "label": "جهز تسليماً واضحاً",
+              "detail": "حدد جهة اتصال الأسرة وتعليمات الدخول والأجهزة."
+            },
+            {
+              "label": "راجع التعليمات معاً",
+              "detail": "سجل التعديلات مع إبقاء الترتيب وأحكام الراحة واضحة."
+            }
+          ]
+        },
+        "baseBodySha256": "c5d8e25e8c9620223f45c65aed5712147d04deaec8eccf1526a82b2c1d39d846",
+        "wordCount": 349,
+        "baseBodyWords": 863,
+        "baseBodyIsCompletePrefix": true
+      },
+      "keywords": [
+        "Live-in maid Ajman"
+      ],
+      "preservedTitle": {
+        "en": "Live-in, live-out or temporary domestic help: which arrangement fits your household?",
+        "ar": "عمالة مقيمة أم غير مقيمة أم مؤقتة: أي ترتيب يناسب أسرتك؟"
+      },
+      "preservedPublished": "2026-09-20"
+    },
+    {
+      "slug": "domestic-worker-hiring-stages-timelines",
+      "keywordIntents": [
+        "Domestic worker recruitment Ajman"
+      ],
+      "distinctionFromPr62": "A candidate-specific milestone, responsibility and evidence ledger, distinct from PR62's typing preparation/submission/approval table.",
+      "en": {
+        "separator": "## Keep a candidate-specific recruitment progress record in Ajman",
+        "body": "For domestic-worker recruitment in Ajman, ask for an update that identifies the current step, what supports that status and who carries out the next action. An update is easier to understand when attached to an actual milestone. Keep the record for the actual candidate and arrangement.\n\nRecord only what the team has confirmed about current availability and whether travel or another case-specific step is involved. A profile being reviewed, a candidate being selected and a start being authorised describe different points. If the proposed candidate changes, keep the earlier record and begin a clearly identified update rather than transferring assumptions to another person.\n\n## Use a recruitment milestone ledger\n\n| Milestone | Useful evidence or record | Next-action responsibility |\n|---|---|---|\n| Household requirement | Duties, arrangement, location and priorities recorded | Household clarifies outstanding needs |\n| Candidate review | Relevant profile discussion and unanswered questions | Team and household confirm what still needs review |\n| Written terms | Scope, quotation and applicable agreements available | Named parties resolve terms before relying on confirmation |\n| Authorisation and start | Required case steps and written start confirmation checked | Responsible party confirms the outstanding prerequisite |\n| Household handover | Practical instructions and a contact recorded | Household and team agree the next review |\n\nAdd the date of each update, its information source and the action still outstanding. Use status descriptions such as under review, clarification needed or confirmed for this case. Do not use the ledger to infer a completion date, promise availability or expose a worker’s personal documents in a shared sheet.\n\nWhen following up, ask one focused question: which action remains before the next milestone can be confirmed? Record the answer and the agreed review point. INAYA’s coordination concerns the actual recruitment and service arrangement; official requirements and outcomes remain subject to the responsible authorities. A payment receipt or an informal expected date does not replace the relevant confirmation.\n\nReview the [recruitment service](https://inayadomestic.ae/en/services/recruitment/), [skills and communication guide](https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/) and [first-week checklist](https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/). The [UAE Government’s domestic-worker guidance](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers) provides official context for the employment arrangement.",
+        "visual": {
+          "kind": "steps",
+          "title": "Follow recruitment through an evidence-based update",
+          "caption": "An original coordination workflow. It does not assign a fixed duration or guarantee a candidate or official outcome.",
+          "items": [
+            {
+              "label": "Identify the current milestone",
+              "detail": "Keep the update tied to the actual candidate and arrangement."
+            },
+            {
+              "label": "Record the supporting information",
+              "detail": "Note what was confirmed, by whom and on which date."
+            },
+            {
+              "label": "Name the outstanding action",
+              "detail": "Clarify the responsible party and what still needs review."
+            },
+            {
+              "label": "Review before moving forward",
+              "detail": "Retain changes and confirm the next milestone on its own evidence."
+            }
+          ]
+        },
+        "baseBodySha256": "1e43673d47eda5e9ef0b99086c44d0b84e4e0681657b82b29628b8eb3ea08730",
+        "wordCount": 348,
+        "baseBodyWords": 1583,
+        "baseBodyIsCompletePrefix": true
+      },
+      "ar": {
+        "separator": "## احتفظ بسجل تقدم الاستقدام للمرشحة المعنية في عجمان",
+        "body": "في طلب استقدام العمالة المنزلية بعجمان، اطلب تحديثاً يحدد الخطوة الحالية وما يؤيد حالتها ومن ينفذ الإجراء التالي. يصبح وصف تقدم الطلب أوضح عندما يرتبط بمرحلة فعلية يمكن الرجوع إليها. خصص السجل للمرشحة والترتيب الجاري مناقشتهما، ولا تجمع معلومات طلبات مختلفة في صف واحد يصعب فهمه لاحقاً.\n\nسجل فقط ما أكده الفريق عن التوفر الحالي، وما إذا كانت الحالة تتضمن سفراً أو خطوة خاصة أخرى. فمراجعة ملف المرشحة واختيارها وتأكيد السماح ببدء الخدمة نقاط مختلفة. إذا تغيرت المرشحة المقترحة، احتفظ بالسجل السابق وابدأ تحديثاً واضحاً للملف الجديد، بدلاً من نقل افتراضات أو إجابات من شخص إلى آخر دون مراجعة مستقلة.\n\n## استخدم سجل مراحل الاستقدام\n\n| المرحلة | الدليل أو السجل المفيد | مسؤولية الإجراء التالي |\n|---|---|---|\n| احتياج الأسرة | المهام والترتيب والمنطقة والأولويات | توضح الأسرة الاحتياجات غير المحسومة |\n| مراجعة المرشحة | مناقشة الملف والأسئلة التي تحتاج إلى إجابة | يؤكد الفريق والأسرة ما يحتاج إلى مراجعة |\n| الشروط المكتوبة | النطاق وعرض السعر والاتفاقات المناسبة | تحسم الأطراف المسماة الشروط قبل الاعتماد على التأكيد |\n| الإذن والبدء | خطوات الحالة اللازمة وتأكيد البدء المكتوب | يؤكد الطرف المسؤول الشرط المتبقي |\n| تسليم المهام | التعليمات العملية وجهة الاتصال | تتفق الأسرة والفريق على المراجعة التالية |\n\nأضف تاريخ كل تحديث ومصدر المعلومة والإجراء الذي ما زال مطلوباً. استخدم وصفاً واضحاً مثل قيد المراجعة أو يحتاج إلى توضيح أو مؤكد لهذه الحالة. لا تستنتج من السجل موعد إنجاز أو ضمان توفر، ولا تضع وثائق العاملة الشخصية في ورقة مشتركة. يكفي تسجيل حالة المراجعة دون نسخ البيانات الحساسة التي لا يحتاجها التخطيط.\n\nعند المتابعة، اسأل سؤالاً محدداً: ما الإجراء المتبقي قبل تأكيد المرحلة التالية؟ سجل الإجابة ونقطة المراجعة المتفق عليها، ثم حدث السجل عند توفر معلومة جديدة. يتعلق تنسيق عناية بترتيب الاستقدام والخدمة الفعلي؛ وتظل المتطلبات والنتائج الرسمية خاضعة للجهات المسؤولة. لا يستبدل إيصال الدفع أو الموعد المتوقع شفهياً التأكيد المناسب، ولا يجعل خطوة إدارية مكتملة دليلاً على اكتمال خطوات أخرى.\n\nراجع [خدمة الاستقدام](https://inayadomestic.ae/ar/services/recruitment/)، و[دليل تقييم المهارات والتواصل](https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/)، و[قائمة الأسبوع الأول](https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/). توفر [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers) السياق الرسمي لترتيب التوظيف، مع تأكيد الخطوات المناسبة للحالة الفردية.",
+        "visual": {
+          "kind": "steps",
+          "title": "تابع الاستقدام بتحديث يستند إلى معلومات واضحة",
+          "caption": "مسار أصلي للتنسيق، لا يحدد مدة ثابتة ولا يضمن مرشحة أو نتيجة رسمية.",
+          "items": [
+            {
+              "label": "حدد المرحلة الحالية",
+              "detail": "اربط التحديث بالمرشحة والترتيب الفعليين."
+            },
+            {
+              "label": "سجل المعلومات المؤيدة",
+              "detail": "وضح ما تأكد ومن أكده وتاريخ التحديث."
+            },
+            {
+              "label": "سم الإجراء المتبقي",
+              "detail": "حدد الطرف المسؤول وما يحتاج إلى مراجعة."
+            },
+            {
+              "label": "راجع قبل الانتقال",
+              "detail": "احتفظ بالتغييرات وأكد المرحلة التالية بمعلوماتها الخاصة."
+            }
+          ]
+        },
+        "baseBodySha256": "4e3f8b1107038119ab5e2467ad806738f8ffe5222d611b478a6bf02d6e9ce7b8",
+        "wordCount": 344,
+        "baseBodyWords": 1437,
+        "baseBodyIsCompletePrefix": true
+      },
+      "keywords": [
+        "Domestic worker recruitment Ajman"
+      ],
+      "preservedTitle": {
+        "en": "What happens during domestic-worker hiring, and how long does it take?",
+        "ar": "ما مراحل توظيف العامل المساعد، وكم تستغرق؟"
+      },
+      "preservedPublished": "2026-09-24"
+    }
+  ],
+  "validation": {
+    "currentRepoReadOnly": true,
+    "noNewRoutes": true,
+    "noRepositoryFilesEdited": true,
+    "publicationStatus": "Not published by this artifact",
+    "primarySources": "Existing source URLs; final direct verification review is assigned separately."
+  },
+  "baseCommit": "a38293bf2b350998c413e9502587e1594504d36d",
+  "sourceRegister": "OFFICIAL-REFERENCES-AND-BILINGUAL-BRIEF-20261024.json",
+  "routeChanges": [
+    {
+      "path": "blog/choosing-domestic-worker-agency-ajman",
+      "date": "2026-10-24",
+      "urls": [
+        "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/",
+        "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/"
+      ],
+      "reason": "Owner-requested additive Ajman keyword decision aid; original full manuscript preserved."
+    },
+    {
+      "path": "blog/domestic-worker-employer-eligibility-documents",
+      "date": "2026-10-24",
+      "urls": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-employer-eligibility-documents/",
+        "https://inayadomestic.ae/ar/blog/domestic-worker-employer-eligibility-documents/"
+      ],
+      "reason": "Owner-requested additive Ajman keyword decision aid; original full manuscript preserved."
+    },
+    {
+      "path": "blog/domestic-worker-employment-arrangements-uae",
+      "date": "2026-10-24",
+      "urls": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-employment-arrangements-uae/",
+        "https://inayadomestic.ae/ar/blog/domestic-worker-employment-arrangements-uae/"
+      ],
+      "reason": "Owner-requested additive Ajman keyword decision aid; original full manuscript preserved."
+    },
+    {
+      "path": "blog/domestic-worker-hiring-stages-timelines",
+      "date": "2026-10-24",
+      "urls": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/",
+        "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/"
+      ],
+      "reason": "Owner-requested additive Ajman keyword decision aid; original full manuscript preserved."
+    }
+  ],
+  "unchangedBodySha256": {
+    "domestic-worker-hiring-costs-uae": {
+      "en": "af884dcac3437b29b35a807e46704bd36b22b355a19f9edeea6dbe5229dc37f2",
+      "ar": "71781111b5e0ac6c474b9fcf93665881baa118dc5d0419929db4ae58bc27474d"
+    },
+    "all-inclusive-domestic-worker-packages": {
+      "en": "a490515d40a6336a098c62632887f52519026e37ab9ea91e3e199c8a697ef3a8",
+      "ar": "3c656f3d3fded949e66f3cb27d3b145a5395579673d41c889dea2531278892e5"
+    },
+    "domestic-worker-sponsorship-responsibilities": {
+      "en": "6c5f1147fe3a2134bd828dd95356ba5906ddb44c0b2f385c462cc031cba98d62",
+      "ar": "9728afe38fc91945fd5c694207bcc32e175d46c46bd041a0cf6bd2ec24a3c3c5"
+    },
+    "domestic-worker-skills-language-assessment": {
+      "en": "5d6d075b52f8dabf52af9440489f0a973ce0e1606c7092f256d3ee2cb0422162",
+      "ar": "ba99b46084e674439513d9b84f96394ccdf9a23d9877ee83888a716f7e6efc94"
+    },
+    "choosing-nanny-newborn-support": {
+      "en": "4943acbfbdb61f5729c853139c9934086eb09cd9324d94eae6b863378ea19e0d",
+      "ar": "d6990774c9bc7581d2c86ec090d6f8166782762e80515b54b08fc50850fc12fc"
+    },
+    "caregiver-versus-licensed-nurse": {
+      "en": "79329fac0fd8987dfa064028452482e4f50358a6882958ed27da98c255597dcb",
+      "ar": "0afea8ac82e84b8d5ca730268597655f169b175e6b9d63e4db917609b52b75a5"
+    },
+    "agreeing-domestic-worker-household-duties": {
+      "en": "ec341beb6f77418d693a3c311a14f78ee11f6228c04b82bc4d6ef0ca8c994361",
+      "ar": "167b36a8f08303fdd2faf0bde3a70624ef0c0120098e743a882704d3753cf1f1"
+    },
+    "domestic-worker-verification-checks": {
+      "en": "9d4742779ab919f09c7a18b204cee060f39480c0cf5926f01e267408b5483bf0",
+      "ar": "c1f6fb63c65e597b80f5dc06dc1721b4112c42cc32aad89bd55898152da9c8a0"
+    },
+    "domestic-worker-interview-trial-probation": {
+      "en": "761788590c7961a2ff7e1b5f1b4fdf0099188e38ef08f08cf261233300f362d1",
+      "ar": "c9a9c1d9086129e6a2b8a16fdfde4ebcd6f428a86fd60a08cb8453827a6c990f"
+    },
+    "domestic-worker-replacement-eligibility": {
+      "en": "841d6d9c0c66e1106e55704b1aeb8a471b03affc0e1bbc2481e13ddd0bd807a9",
+      "ar": "e7214141cf114987ac5412d163154e95825b0b03dd86d1a824d8908e1e4faf0e"
+    },
+    "domestic-worker-recruitment-refund-rules": {
+      "en": "47bc105559a0cb7bb33c2df9a127962fc107f84798cfbf0db376763545572483",
+      "ar": "8f78f3f22d236dd0bf6e8d6eb53439046585eda8bdc5a2912e96e2ad4ccbd88b"
+    },
+    "domestic-worker-contracts-renewal": {
+      "en": "349e56974711e2beceff4b9a564d2f8ea666aaa5f19c45c6dae9e329fefb0c85",
+      "ar": "9630b445ae2a192e4f2dfa0931451e95f292166d809e72faa1ab318d0d2d8507"
+    },
+    "domestic-worker-wages-rest-leave": {
+      "en": "687b8da7454238024dfc44e57573e17cf466d83aa1e2709c4a9cdea6d5f11178",
+      "ar": "63c68a9af8983a9aa4ffa0ece8294bcbb6d0fc81ee19fb04a85bbfacfe0b646b"
+    },
+    "own-visa-part-time-domestic-work": {
+      "en": "ba6c3cc33dae567db7797d2871d4b9bf8291eb4b588dfc67408b25b71c52c54a",
+      "ar": "ca584b54a513492ed2526ff9bd06c61c7d5e276e8d1252da475249f39feb7962"
+    },
+    "domestic-worker-leave-travel-planning": {
+      "en": "04ef2f3ab74bc1a2cb12e042887cf6802a6cd7808636e7030974ec21cf6e17e9",
+      "ar": "db39a124c894134d9c76e504a509420b5d79f9d5cc2ec152afc40f4cc8be6be4"
+    },
+    "domestic-worker-complaints-disputes": {
+      "en": "4a419fd37793a5a73a91a520bf4c83276c73c54e1d045a51b6968446158793ef",
+      "ar": "2f10e1ddf7d9ff6098005f657f59990558ae74b5261a5a3e994e2dbd9163d48f"
+    },
+    "four-hour-eight-hour-maid-visit-plan": {
+      "en": "c9accca25accfd32dd49df1ec7e2d800b1075b50b4e8cae1569003fb2f5d0df7",
+      "ar": "6c7ff91d0ec479ffe46b6c38076ba3bbefb7f446d403b94c5d7d513f14c16020"
+    },
+    "maid-visit-frequency-planner": {
+      "en": "3bfc58245229ae714a4f07eb9e28f92ab9b05cf5fecb3ef94c07142626dff76c",
+      "ar": "1211fdf386bf704655b5838272fe6eb265ca230844bffd20657dc13f17a3150b"
+    },
+    "apartment-villa-maid-task-plan": {
+      "en": "45330a36b4620602aab197d2103de381300da3018806b34ddae1446467b12eef",
+      "ar": "34f4b81adb7604a0a713728fa8946cff5ca2fc6cd24b070d00cf9fbe350fcc1e"
+    },
+    "regular-maid-service-deep-move-in-cleaning": {
+      "en": "1cb14ae61ccac706935e82c8dcee5758034134193c050cd7becfc2302044e27d",
+      "ar": "f7bae372d330786f2ac950608aa9d7e79cd20878dc9e2ff433cbaaa184d50485"
+    },
+    "prepare-cleaning-supplies-maid-visit": {
+      "en": "befdb618611ed1137707077d251f2a6a1a6cf9f94ae5e4eaf293b16d2fdceedc",
+      "ar": "a0bf4fbb59614db3edf84ff090836136f5b78fc72ece26dde5658af31dfb0ca2"
+    },
+    "maid-laundry-ironing-task-checklist": {
+      "en": "519eb5f15fabb107bebf82f5988526855402aacacaa1d00d8e2ddc9f096c5a5b",
+      "ar": "8b25a4763ef8a858ba4fd435c7397bbf8541ba896657e8bee0f9f9112b581b7a"
+    },
+    "home-cooking-weekly-meal-prep-plan": {
+      "en": "9399ea4f16da3e40d9dd344d8d9f06a58430c53caf1907160e3bcee700aec817",
+      "ar": "12588774d4aa9ac3b72d20ee5298edef9ed9f7cbd8d4284e8d11460bf484e2ef"
+    },
+    "new-maid-first-week-checklist": {
+      "en": "105a3f51d3595e9f816a5e6d5456599442f8fbdf556193ffc3f218fa445a490a",
+      "ar": "92a5d8afc4e230ec7ee7aa48b34279d7d699dd9193f03a1b5b5e38b0f9bdf39f"
+    },
+    "nanny-school-routine-child-handover": {
+      "en": "39a99b6d6f9b55fe4916787c1db1bb3e2592c1f5c6e13bb01c6c898ba880b5cf",
+      "ar": "6e1105c4f96951fd31da7135395e0842f2d136a1e4cc77fabc46f1c46dd1010b"
+    },
+    "maid-household-with-pets": {
+      "en": "461f022fd6b01830c72e9791b7b9dc86be4caf2f3eff515b2645b533863d4be9",
+      "ar": "8dab9cff478c819bea39d9aa83dd21136bb3880ce3faaa498ad247fb1c85c5d4"
+    },
+    "maid-home-access-keys-privacy": {
+      "en": "8173bd8fbbc7c43a03245a2afe8230b028fba03afd83a38db86cf317da189907",
+      "ar": "ee6d79fa2332dbac92bcc32cc0b0117a9a80bfb127bd06862ab92be23ee7a045"
+    },
+    "maid-help-family-guests-gathering": {
+      "en": "a5e76414848ac56025faca4e14ff442f8ee86e10ae5b9e121019870c2e963743",
+      "ar": "32b6e726f890cb352468caa3f1c46fc1ee15b3a6f1de9e6e1766589a13309f82"
+    },
+    "maid-duties-family-holiday": {
+      "en": "3343a7716203eca06648eb706359d698a7e6aab49a3c85e4d8f17f7ce7e2c6b5",
+      "ar": "2034ce8aa8dc589904a812d834df3500ebe24566f5256bdc508ac952a9a950c7"
+    },
+    "moving-home-emirate-with-domestic-worker": {
+      "en": "1f4cb476b31871daa189f33b597d7ac7a851bba4d7d2c4b58410940f37ee1344",
+      "ar": "f24d133b586425fcf5a63bd7e6d03ce0156f31e5f67a35554149e7e6442346c2"
+    },
+    "one-maid-two-helpers-workload": {
+      "en": "b86cde5c268b5ea0741fc5fa023348ecec01711b9309aa40c6d0b52ac4e1b8ab",
+      "ar": "0d922fbbdb5c9ddbfc3fe47ef1302b3e13df7881d916b4f1d5baa2ba6db21c99"
+    },
+    "maid-daily-instructions-handover-template": {
+      "en": "535bdf022978d79d27ccffe55c7c9d1b6384cd45ef227daf5cf69fc4c7f24692",
+      "ar": "2da576e698477e886bd1e990603b4f8ced78e420c9756c3c3e76cd7450fc645b"
+    },
+    "domestic-worker-contract-permit-residence-cancellation": {
+      "en": "ec5a51a70f316824fc27117537e0e94e5885edf836871961703cb82c806bbee4",
+      "ar": "084cc456d762a3bcd2c10c946b4644df83ee3c1fd75800124239ef47feb5ef34"
+    }
+  }
+}
