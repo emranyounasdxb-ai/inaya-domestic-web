@@ -1,9 +1,54 @@
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { pathToFileURL } from 'node:url';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { retirementPaths, deletionCommands, parseRemoteInventory, prepareRetirement, verifyRemoteInventory } from '../.github/scripts/retired-gallery-images.mjs';
+
+const execFileAsync = promisify(execFile);
+
+// Run the real client's protocol-independent directory walker against synthetic
+// local files. The file protocol is supported by the official lftp manual:
+// https://lftp.yar.ru/lftp-man.html . No business server or credentials are used.
+test('real lftp depth reaches nested thumbnails and exact cleanup preserves an unknown fixture file', { timeout: 30000 }, async context => {
+  try { await execFileAsync('lftp', ['--version']); }
+  catch (error) {
+    if (error.code === 'ENOENT' && !process.env.CI) { context.skip('Local lftp is unavailable; CI installs and requires the real client.'); return; }
+    throw error;
+  }
+  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), 'inaya-lftp-gallery-depth-'));
+  try {
+    const original = 'images/company-gallery/inaya-office-003.jpg';
+    const thumbnail = 'images/company-gallery/thumbs/inaya-office-003.jpg';
+    const unknown = 'images/company-gallery/server-owned.txt';
+    await mkdir(path.join(temporaryRoot, 'images/company-gallery/thumbs'), { recursive: true });
+    for (const relative of [original, thumbnail, unknown]) await writeFile(path.join(temporaryRoot, relative), 'Synthetic nested inventory fixture; no photo bytes.');
+    const open = `open "${pathToFileURL(temporaryRoot + path.sep).href}"; set cmd:fail-exit yes; `;
+    const inventory = async depth => {
+      const { stdout } = await execFileAsync('lftp', ['--norc', '-c', `${open}find -d ${depth} images/company-gallery; bye`], { timeout: 10000 });
+      return parseRemoteInventory(stdout);
+    };
+    const shallow = await inventory(2);
+    assert.deepEqual(shallow.files, [original, unknown], 'depth2 reproduces the original omission of nested thumbnail files');
+    const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
+    const depths = [...workflow.matchAll(/find -d (\d+) images\/company-gallery/g)].map(match => Number(match[1]));
+    assert.deepEqual(depths, [3, 3], 'before and after inventories both use the demonstrated complete depth');
+    const deep = await inventory(depths[0]);
+    assert.deepEqual(deep.files, [original, thumbnail, unknown].sort());
+    const commandsPath = path.join(temporaryRoot, 'delete-fixtures.lftp');
+    await writeFile(commandsPath, await deletionCommands(deep.files.filter(relative => relative !== unknown)));
+    await execFileAsync('lftp', ['--norc', '-c', `${open}source "${commandsPath}"; bye`], { timeout: 10000 });
+    assert.deepEqual((await inventory(depths[1])).files, [unknown], 'both nested and original files are removed, while the unknown file is retained');
+    console.log('Real lftp nested gallery regression: depth2=2rootfiles, depth3=3files, after exact cleanup=1unknownpreserved.');
+  } finally {
+    const resolved = path.resolve(temporaryRoot);
+    assert.ok(resolved.startsWith(path.resolve(os.tmpdir()) + path.sep) && path.basename(resolved).startsWith('inaya-lftp-gallery-depth-'));
+    await rm(resolved, { recursive: true, force: true });
+  }
+});
 
 test('the positive gallery deletion allowlist contains exactly 179 originals and their 179 thumbnails, with no broad commands', async () => {
   const paths = await retirementPaths();
@@ -74,7 +119,7 @@ test('deployment validates before upload, prunes exact gallery paths after uploa
   const end = workflow.indexOf('- name: Prepare successful deployment baseline');
   const cleanup = workflow.slice(start, end);
   assert.ok(prepare > 0 && prepare < workflow.indexOf('- name: Deploy to cPanel') && workflow.indexOf('- name: Deploy to cPanel') < start && end > start);
-  assert.match(cleanup, /find -d 2 images\/company-gallery/);
+  assert.match(cleanup, /find -d 3 images\/company-gallery/);
   assert.match(cleanup, /source "\$RUNNER_TEMP\/inaya-retired-gallery-images\/delete.lftp"/);
   assert.match(cleanup, /verify-before/);
   assert.match(cleanup, /verify-after/);

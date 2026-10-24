@@ -39,6 +39,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install FTP client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
       - name: Test IndexNow notification selection
         run: node --test tests/indexnow-notify.test.mjs
 
@@ -281,11 +286,6 @@ jobs:
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/inaya-ftp-restored-baseline
 
-      - name: Install FTP client
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y lftp
-
       - name: Compare against current deployed files when no retained baseline exists
         if: steps.restore-baseline.outcome != 'success'
         env:
@@ -414,7 +414,7 @@ jobs:
           set net:timeout 30
           cache off
           cd "$CPANEL_FTP_SERVER_DIR"
-          find -d 2 images/company-gallery > "$RUNNER_TEMP/inaya-retired-gallery-images/remote-before.txt"
+          find -d 3 images/company-gallery > "$RUNNER_TEMP/inaya-retired-gallery-images/remote-before.txt"
           bye
           EOF
           node .github/scripts/retired-gallery-images.mjs verify-before "$RUNNER_TEMP/inaya-retired-gallery-images"
@@ -427,7 +427,7 @@ jobs:
           cache off
           cd "$CPANEL_FTP_SERVER_DIR"
           source "$RUNNER_TEMP/inaya-retired-gallery-images/delete.lftp"
-          find -d 2 images/company-gallery > "$RUNNER_TEMP/inaya-retired-gallery-images/remote-after.txt"
+          find -d 3 images/company-gallery > "$RUNNER_TEMP/inaya-retired-gallery-images/remote-after.txt"
           bye
           EOF
           node .github/scripts/retired-gallery-images.mjs verify-after "$RUNNER_TEMP/inaya-retired-gallery-images"
