@@ -139,7 +139,7 @@ test('retirement preflight refuses references, resurrected files, missing curren
 test('production workflow performs reviewed cleanup after upload and before saving its baseline, with bounded metadata evidence', async () => {
   const workflow = (await readFile(path.join(projectRoot, '.github/workflows/deploy-cpanel.yml'), 'utf8')).replaceAll('\r\n', '\n');
   const start = workflow.indexOf('      - name: Prepare exact retired blog image cleanup\n');
-  const end = workflow.indexOf('      - name: Prepare successful deployment baseline\n');
+  const end = workflow.indexOf('      - name: Inventory and remove only reviewed retired gallery image files\n');
   assert.ok(workflow.indexOf('      - name: Deploy to cPanel\n') < start && start < end);
   const cleanup = workflow.slice(start, end);
   assert.equal((cleanup.match(/find -d 3 images\/blogs optimized\/images\/blogs/g) ?? []).length, 2);

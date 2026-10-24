@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import CompanyGallery from '@/components/CompanyGallery';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import RouteSeo from '@/components/RouteSeo';
 import { pageMetadata } from '@/lib/page-seo';
@@ -25,12 +24,11 @@ export default async function GalleryPage({ params }: Props) {
             {ar ? 'معرض صور عناية' : 'INAYA photo gallery'}
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-8 text-primary-900/80">
-            {ar ? 'تصفح صور مكتب عناية في عجمان وصور الدعم المنزلي. اختر أي صورة لعرضها بالحجم الأكبر.' : 'Browse photos of INAYA’s Ajman office and household support. Select an image to see the larger version.'}
+            {ar ? 'يجري تحديث معرض الصور. يمكنك استكشاف خدماتنا أو التواصل مع مكتب عناية في عجمان أثناء إعداد المعرض الجديد.' : 'Our photo gallery is being updated. You can explore our services or contact INAYA’s Ajman office while the new gallery is prepared.'}
           </p>
         </div>
       </section>
       <PageBreadcrumbs locale={locale} route="gallery" />
-      <CompanyGallery locale={locale} />
       <section className="border-t border-primary-900/10 bg-white px-6 py-10 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <h2 className={`${ar ? 'font-arabic' : 'font-heading'} text-2xl font-bold`}>
@@ -41,6 +39,7 @@ export default async function GalleryPage({ params }: Props) {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href={`/${locale}/contact/`} className="rounded-full bg-primary-900 px-5 py-3 text-sm font-bold text-white">{ar ? 'تواصل مع عناية' : 'Contact INAYA'}</Link>
+            <Link href={`/${locale}/services/`} className="rounded-full border border-accent-500/40 px-5 py-3 text-sm font-bold text-primary-900">{ar ? 'استكشف الخدمات' : 'Explore services'}</Link>
             <Link href={`/${locale}/maid-services-ajman/`} className="rounded-full border border-accent-500/40 px-5 py-3 text-sm font-bold text-primary-900">{ar ? 'زيارة مكتب عجمان والخدمات' : 'Ajman office and services'}</Link>
           </div>
         </div>

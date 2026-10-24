@@ -86,9 +86,10 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     const additions = [];
     if (page.route === 'pricing') additions.push(`${page.url}#faq`);
-    // The pictured core/Ajman pages and service detail Heroes gain an
-    // ImageObject; every historical entity ID remains checked exactly.
-    if (['', 'about', 'services', 'maid-services-ajman'].includes(page.route) || (page.route.startsWith('services/') && page.route !== 'services/countries-we-source-from')) additions.push(`${page.url}#primaryimage`);
+    // About/Ajman no longer advertise retired gallery photos. Only the
+    // remaining pictured core/service pages gain an ImageObject; all
+    // other historical entity IDs remain checked exactly.
+    if (['', 'services'].includes(page.route) || (page.route.startsWith('services/') && page.route !== 'services/countries-we-source-from')) additions.push(`${page.url}#primaryimage`);
     const expectedSchemaIds = [...before.schemaIds, ...additions].sort();
     assert.deepEqual(page.schemaIds, expectedSchemaIds, `${page.url}: preserved IDs plus the approved pricing FAQ and visible primary image`);
     const expectedPrices = domesticServices.priceMentions[`${page.locale}/${page.route}`] ?? managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]

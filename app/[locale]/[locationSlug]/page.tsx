@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import { companyGalleryHero } from '@/lib/company-gallery';
 import AjmanOfficeVisit from '@/components/AjmanOfficeVisit';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { pageMetadata } from '@/lib/page-seo';
@@ -87,10 +85,6 @@ export default async function LocationServicePage({ params }: { params: Promise<
             </div>
           </div>
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">
-            {locationSlug === 'maid-services-ajman' ? <figure className="mb-5">
-              <Image src={companyGalleryHero.src} alt={companyGalleryHero.alt[lang]} width={companyGalleryHero.width} height={companyGalleryHero.height} sizes="(max-width: 1024px) 100vw, 40vw" className="h-auto w-full rounded-[24px]" />
-              <figcaption className="mt-3 text-xs leading-6 text-primary-900/70">{companyGalleryHero.caption[lang]}</figcaption>
-            </figure> : null}
             <div className="rounded-[24px] bg-[linear-gradient(135deg,#07164A,#10266c)] p-6 text-white shadow-[0_20px_50px_rgba(7,22,74,0.18)]">
               <p className="text-[0.62rem] font-bold uppercase tracking-[0.24em] text-accent-300">{t.areaBadge}</p>
               <h2 className={`${lang === 'ar' ? 'font-arabic' : 'font-heading'} mt-3 text-3xl font-bold tracking-[-0.04em]`}>{location.city[lang]}</h2>

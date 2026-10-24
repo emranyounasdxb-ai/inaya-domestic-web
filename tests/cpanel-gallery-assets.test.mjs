@@ -51,70 +51,49 @@ async function deployedOptimizer() {
   return match[2].split('\n').map((line) => line.startsWith(indentation) ? line.slice(indentation.length) : line).join('\n');
 }
 
-test('cPanel optimizer preserves prepared gallery JPEGs and provenance while optimizing ordinary household images', { timeout: 60000 }, async () => {
+test('cPanel optimizer rejects retired gallery inputs while ordinary household image optimization remains intact', { timeout: 60000 }, async () => {
   const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), 'inaya-cpanel-gallery-'));
   try {
     const out = path.join(temporaryRoot, 'out');
-    const fullRelative = 'images/company-gallery/inaya-office-003.jpg';
-    const thumbRelative = 'images/company-gallery/thumbs/inaya-office-003.jpg';
     const householdRelative = 'images/services/household.jpg';
-    const full = await jpegFixture(1600, 1000);
-    const thumbnail = await jpegFixture(480, 300);
     const household = await jpegFixture(1300, 650);
-    for (const [relative, bytes] of [[fullRelative, full], [thumbRelative, thumbnail], [householdRelative, household]]) {
-      const destination = path.join(out, relative);
-      await mkdir(path.dirname(destination), { recursive: true });
-      await writeFile(destination, bytes);
-    }
-    const originalMetadata = await sharp(full).metadata();
-    assert.ok(originalMetadata.exif?.length, 'The fixture must exercise EXIF preservation');
-    assert.ok(originalMetadata.xmp?.length, 'The fixture must exercise XMP provenance preservation');
-    assert.ok(originalMetadata.icc?.length, 'The fixture must exercise colour-profile preservation');
-    assert.match(originalMetadata.xmp.toString('utf8'), /INAYA synthetic optimizer regression fixture/);
-
-    const { stdout, stderr } = await execFileAsync(process.execPath, ['-e', await deployedOptimizer()], {
+    const destination = path.join(out, householdRelative);
+    await mkdir(path.dirname(destination), { recursive: true });
+    await writeFile(destination, household);
+    const options = {
       cwd: temporaryRoot,
-      env: {
-        ...process.env,
-        NODE_PATH: [path.join(projectRoot, 'node_modules'), process.env.NODE_PATH].filter(Boolean).join(path.delimiter),
-      },
-      timeout: 45000,
-      maxBuffer: 1024 * 1024,
-    });
+      env: { ...process.env, NODE_PATH: [path.join(projectRoot, 'node_modules'), process.env.NODE_PATH].filter(Boolean).join(path.delimiter) },
+      timeout: 45000, maxBuffer: 1024 * 1024,
+    };
+    const { stdout, stderr } = await execFileAsync(process.execPath, ['-e', await deployedOptimizer()], options);
     assert.match(stdout, /Optimized exported images and generated responsive variants/);
-    assert.doesNotMatch(stderr, /Skipped image optimization/, 'A swallowed optimizer failure must fail this integration test');
-
-    for (const [relative, original] of [[fullRelative, full], [thumbRelative, thumbnail]]) {
-      const after = await readFile(path.join(out, relative));
-      assert.equal(sha256(after), sha256(original), `${relative} must remain byte-for-byte unchanged`);
-      const beforeMetadata = await sharp(original).metadata();
-      const afterMetadata = await sharp(after).metadata();
-      assert.deepEqual([afterMetadata.width, afterMetadata.height], [beforeMetadata.width, beforeMetadata.height]);
-      for (const key of ['exif', 'xmp', 'icc']) {
-        assert.deepEqual(afterMetadata[key], beforeMetadata[key], `${relative} must retain its ${key} metadata`);
-      }
-    }
+    assert.doesNotMatch(stderr, /Skipped image optimization/);
     const files = await relativeFiles(out);
-    assert.deepEqual(files.filter((file) => file.startsWith('images/company-gallery/')), [fullRelative, thumbRelative]);
-    assert.ok(!files.some((file) => file.startsWith('optimized/images/company-gallery/')), 'Gallery originals and thumbnails must not acquire redundant responsive variants');
-
-    const householdAfter = await readFile(path.join(out, householdRelative));
-    const householdMetadata = await sharp(householdAfter).metadata();
-    assert.notEqual(sha256(householdAfter), sha256(household), 'The gallery exception must not disable ordinary JPEG optimization');
-    assert.equal(householdMetadata.format, 'jpeg');
-    assert.deepEqual([householdMetadata.width, householdMetadata.height], [900, 450]);
-    assert.equal(householdMetadata.isProgressive, true);
-    const expectedVariants = [480, 768, 900].map((width) => `optimized/images/services/household-${width}.webp`);
-    assert.deepEqual(files.filter((file) => file.startsWith('optimized/')), expectedVariants);
+    assert.deepEqual(files.filter(file => file.startsWith('images/company-gallery/')), []);
+    assert.ok(!files.some(file => file.startsWith('optimized/images/company-gallery/')));
+    const after = await readFile(destination);
+    assert.notEqual(sha256(after), sha256(household));
+    const metadata = await sharp(after).metadata();
+    assert.equal(metadata.format, 'jpeg');
+    assert.deepEqual([metadata.width, metadata.height], [900, 450]);
+    assert.equal(metadata.isProgressive, true);
+    assert.deepEqual(files.filter(file => file.startsWith('optimized/')), [480, 768, 900].map(width => `optimized/images/services/household-${width}.webp`));
     for (const width of [480, 768, 900]) {
       const variant = await sharp(await readFile(path.join(out, `optimized/images/services/household-${width}.webp`))).metadata();
       assert.equal(variant.format, 'webp');
       assert.deepEqual([variant.width, variant.height], [width, width / 2]);
     }
+    // Synthetic bytes exercise fail-closed retirement without restoring any old photo.
+    const stale = path.join(out, 'images/company-gallery/inaya-office-003.jpg');
+    await mkdir(path.dirname(stale), { recursive: true });
+    await writeFile(stale, await jpegFixture(480, 300));
+    await assert.rejects(execFileAsync(process.execPath, ['-e', await deployedOptimizer()], options), error => {
+      assert.match(error.stderr, /Retired gallery assets must never be published again/);
+      return error.code === 1;
+    });
   } finally {
-    const resolvedTemporaryRoot = path.resolve(temporaryRoot);
-    const expectedPrefix = path.resolve(os.tmpdir()) + path.sep;
-    assert.ok(resolvedTemporaryRoot.startsWith(expectedPrefix) && path.basename(resolvedTemporaryRoot).startsWith('inaya-cpanel-gallery-'));
-    await rm(resolvedTemporaryRoot, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
+    const resolved = path.resolve(temporaryRoot);
+    assert.ok(resolved.startsWith(path.resolve(os.tmpdir()) + path.sep) && path.basename(resolved).startsWith('inaya-cpanel-gallery-'));
+    await rm(resolved, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
   }
 });
