@@ -99,9 +99,14 @@ test('approved identity and hours match visible bilingual content and visa scope
       .flatMap(match => JSON.parse(match[1])['@graph'] ?? []);
     const organization = nodes.find(node => node['@id'] === 'https://inayadomestic.ae/#organization');
     assert.equal(organization.legalName, legalName);
-    assert.deepEqual(organization.openingHoursSpecification.dayOfWeek, ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']);
-    assert.equal(organization.openingHoursSpecification.opens, '09:00');
-    assert.equal(organization.openingHoursSpecification.closes, '21:00');
+    const hours = organization.openingHoursSpecification;
+    assert.equal(hours.length, 2, 'office hours explicitly distinguish Friday closure');
+    const open = hours.find(specification => specification.opens === '09:00');
+    const closed = hours.find(specification => specification.opens === '00:00');
+    assert.deepEqual([...open.dayOfWeek].sort(), ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'].sort());
+    assert.equal(open.closes, '21:00');
+    assert.deepEqual([closed.dayOfWeek].flat(), ['Friday']);
+    assert.equal(closed.closes, '00:00');
     const visible = contact.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
     assert.match(visible, locale === 'en' ? /Saturday–Thursday: 9:00 AM–9:00 PM\. Friday: Closed/ : /السبت إلى الخميس: 9 صباحاً إلى 9 مساءً\. الجمعة: مغلق/);
     for (const route of ['maid-visa', 'sponsorship-transfer']) {

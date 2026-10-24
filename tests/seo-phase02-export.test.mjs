@@ -20,7 +20,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
   const titles = new Set();
   const descriptions = new Set();
   const primaryHeadings = new Set();
-  assert.equal(urls.length, 230);
+  assert.equal(urls.length, 232);
   for (const url of urls) {
     const pathname = new URL(url).pathname;
     const locale = pathname.split('/')[1];
@@ -107,6 +107,14 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
         assert.deepEqual(await readFile(exportedFile), source, `${url}: exact public download was exported`);
         continue;
       }
+      if (target.pathname === '/company-information.json') {
+        assert.equal(target.search, '', `${url}: company facts endpoint has no query`);
+        assert.equal(target.hash, '', `${url}: company facts endpoint has no fragment`);
+        const record = JSON.parse(await readFile(path.join('out', 'company-information.json'), 'utf8'));
+        assert.equal(record.schemaVersion, 1, `${url}: reviewed public JSON contract`);
+        assert.equal(record.organization.legalName, 'INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)');
+        continue;
+      }
       const canonical = `${origin}${target.pathname.replace(/\/$/, '')}/`;
       assert.ok(urls.includes(canonical), `${url}: broken internal link ${href}`);
     }
@@ -158,13 +166,17 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
         assert.ok(text(body).includes(question.acceptedAnswer.text), `${url}: FAQ answer not rendered`);
       }
     }
-    const inspect = (value, key = '') => {
+    const inspect = (value, key = '', parentType = '') => {
       assert.ok(!['aggregateRating', 'review', 'ratingValue', 'offers', 'price', 'availability', 'award', 'hasCertification'].includes(key), `${url}: unsupported ${key}`);
       if (typeof value === 'string' && ['url', '@id', 'item', 'logo'].includes(key)) {
-        const parsed = new URL(value); assert.equal(parsed.origin, origin);
-        if (key === 'url' || key === 'item') assert.ok(urls.includes(value), `${url}: schema URL ${value}`);
+        if (key === 'url' && parentType === 'ContactPoint') {
+          assert.equal(value, 'https://wa.me/971502036767', `${url}: only the reviewed WhatsApp contact URL`);
+        } else {
+          const parsed = new URL(value); assert.equal(parsed.origin, origin);
+          if (key === 'url' || key === 'item') assert.ok(urls.includes(value), `${url}: schema URL ${value}`);
+        }
       }
-      if (value && typeof value === 'object') for (const [nextKey, entry] of Object.entries(value)) inspect(entry, nextKey);
+      if (value && typeof value === 'object') for (const [nextKey, entry] of Object.entries(value)) inspect(entry, nextKey, value['@type']);
     };
     nodes.forEach((node) => inspect(node));
   }

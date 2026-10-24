@@ -30,7 +30,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     ar: [...Array(6).fill('1,500 درهم'), ...Array(6).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
   };
   const current = await auditExport();
-  assert.equal(current.pages.length, 230);
+  assert.equal(current.pages.length, 232);
   for (const page of current.pages) {
     assert.doesNotMatch(page.mainText + '\n' + page.description, /\bEssential\b|\bSignature\b|INAYA Black|(?:AED\s*)?2,500\b/, `${page.url}: superseded package prices and tiers cannot survive the export`);
     assert.doesNotMatch(page.mainText, /Live-out service requires a separate itemised quotation|advertised monthly prices concern live-in service|تتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً|تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل/, `${page.url}: no obsolete live-out price distinction`);
@@ -38,7 +38,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.deepEqual(current.pages.slice(0, 140).map((p) => p.url), baseline.pages.map((p) => p.url));
   assert.deepEqual(current.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(current.linkCoverage[locale].reachable, 115);
+    assert.equal(current.linkCoverage[locale].reachable, 116);
     assert.ok(current.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
   const editorial = managed.editorialRepetition(current);
@@ -86,5 +86,5 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
       assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), details, `${page.url}: visible FAQ/schema`);
     }
   }
-  console.log(JSON.stringify({ routes: 230, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
+  console.log(JSON.stringify({ routes: 232, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
 });

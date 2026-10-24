@@ -13,6 +13,7 @@ import { getBlogImage } from './blog-images';
 import { serviceImageAlt } from './image-alt';
 import { articleSearchTitles } from './article-search-titles';
 import { companyGalleryHero } from './company-gallery';
+import { companyInformationCopy } from './company-information';
 
 type Localized = Record<Lang, string>;
 // These are the actual visible Heroes, not a generic logo on text-only pages.
@@ -86,6 +87,10 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   about: {
     name: { en: 'About INAYA Domestic Workers', ar: 'عن عناية للعمالة المنزلية' },
     description: { en: 'Learn about INAYA Domestic Workers, its household service approach, consultation process and support for families across the UAE.', ar: 'تعرف على عناية للعمالة المنزلية ونهجها في الخدمات المنزلية والاستشارة ودعم الأسر في جميع أنحاء الإمارات.' }
+  },
+  'company-information': {
+    name: { en: companyInformationCopy.en.title, ar: companyInformationCopy.ar.title },
+    description: { en: companyInformationCopy.en.description, ar: companyInformationCopy.ar.description }
   },
   gallery: {
     name: { en: 'INAYA Photo Gallery', ar: 'معرض صور عناية' },

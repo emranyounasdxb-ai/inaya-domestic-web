@@ -4,30 +4,17 @@ import { siteConfig } from './site-config';
 import { faqEntity } from './json-ld';
 import { getDomesticWorkerGuide, guideAuthor } from './domestic-worker-guides';
 import { packageQuestions } from './package-content';
+import { organizationEntity, organizationId } from './organization';
+import { companyInformation } from './company-information';
 
 export function pageStructuredData(locale: string, route: string) {
   const page = getPageSeo(locale, route);
   if (!page) return undefined;
   const url = localizedUrl(locale, route);
   const home = localizedUrl('en');
-  const organizationId = `${siteConfig.url}/#organization`;
   const websiteId = `${siteConfig.url}/#website`;
   const graph: Record<string, unknown>[] = [
-    {
-      // One entity, two compatible types; details verified in site-config/contact.
-      '@type': ['Organization', 'LocalBusiness'], '@id': organizationId,
-      name: locale === 'ar' ? 'عناية للعمالة المنزلية' : siteConfig.name,
-      legalName: siteConfig.legalName,
-      openingHoursSpecification: {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-        opens: '09:00', closes: '21:00'
-      },
-      url: home, telephone: siteConfig.phone, email: siteConfig.email,
-      sameAs: ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/'],
-      logo: `${siteConfig.url}/brand/inaya-domestic-workers-logo.webp`,
-      address: { '@type': 'PostalAddress', streetAddress: siteConfig.address, addressLocality: 'Ajman', addressCountry: 'AE' }
-    },
+    organizationEntity(locale),
     {
       '@type': 'WebSite', '@id': websiteId, url: home,
       name: locale === 'ar' ? 'عناية للعمالة المنزلية' : siteConfig.name,
@@ -37,6 +24,11 @@ export function pageStructuredData(locale: string, route: string) {
       '@type': 'WebPage', '@id': `${url}#webpage`, url,
       name: page.name, description: page.description, inLanguage: locale,
       isPartOf: { '@id': websiteId }, about: { '@id': organizationId },
+      ...(route === companyInformation.route ? {
+        mainEntity: { '@id': organizationId },
+        dateModified: companyInformation.updated,
+        lastReviewed: companyInformation.reviewed
+      } : {}),
       ...(page.image ? { primaryImageOfPage: { '@id': `${url}#primaryimage` } } : {}),
       ...(route ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
       ...(page.service ? { mainEntity: { '@id': `${url}#service` } } : {}),

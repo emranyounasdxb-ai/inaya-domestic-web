@@ -45,7 +45,7 @@ test('five Ajman intents use four existing bilingual publications and preserve e
 test('Ajman decision aids render complete bilingual worksheets, useful process charts and canonical references', async () => {
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const canonicalUrls = new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]));
-  assert.equal(canonicalUrls.size, 230);
+  assert.equal(canonicalUrls.size, 232);
   const plain = (value) => tokens(value.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1').replace(/\*\*/g, '')).join(' ');
   for (const entry of ajmanRefreshes.entries) for (const locale of ['en', 'ar']) {
     const copy = entry[locale];
@@ -107,7 +107,7 @@ test('domestic-service refreshes preserve the original manuscripts and render co
   const source = await readFile('lib/published-article-content.ts', 'utf8');
   const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
-  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 230, 'existing canonical route count preserved');
+  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 232, 'original 230 canonicals plus the approved company-information pair');
   assert.equal(articles.length, 37, 'refresh existing publications instead of adding duplicate topics');
   assert.deepEqual(currentRefreshes.entries.map(({ slug }) => slug).sort(), [
     'choosing-domestic-worker-agency-ajman', 'domestic-worker-hiring-stages-timelines', 'four-hour-eight-hour-maid-visit-plan'
@@ -250,7 +250,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
   const { guideUpdated } = JSON.parse(await readFile('tests/fixtures/poster-pricing-changes.json', 'utf8'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 230);
+  assert.equal(urls.length, 232);
   for (const locale of ['en', 'ar']) {
     const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
     const hubBody = hub.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');

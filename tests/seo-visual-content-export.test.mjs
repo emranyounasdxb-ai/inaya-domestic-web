@@ -11,12 +11,12 @@ import corePageCopy from './core-page-copy-expectations.cjs';
 import posterPricing from './poster-pricing-expectations.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all 230 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
+test('all 232 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 230);
+  assert.equal(audit.pages.length, 232);
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(audit.linkCoverage[locale].reachable, 115);
+    assert.equal(audit.linkCoverage[locale].reachable, 116);
     assert.ok(audit.linkCoverage[locale].maximumDepth <= 3);
     assert.ok(audit.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
@@ -70,6 +70,18 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     }
     if (file === 'lib/service-content-briefs.ts' || file === 'lib/services.ts') before = corePageCopy.approvedCorePageCopy(file, before);
     before = octoberFixes.approvedSeoFixes(file, before);
+    if (file === 'components/Footer.tsx') {
+      // Retain the entire protected footer, allowing only the reviewed address
+      // centralization and localized link to the official company reference.
+      const patches = [
+        ["    ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'", '    ? siteConfig.addressAr'],
+        ['            <CookieSettingsButton locale={locale} />', '            <Link href={`/${locale}/company-information/`} className="transition hover:text-primary-900">{isArabic ? \'معلومات الشركة\' : \'Company information\'}</Link>\n            <span className="text-accent-700/70">|</span>\n            <CookieSettingsButton locale={locale} />']
+      ];
+      for (const [anchor, reviewed] of patches) {
+        assert.equal(before.split(anchor).length, 2, `${file}: exactly one approved company-reference anchor`);
+        before = before.replace(anchor, reviewed);
+      }
+    }
     if (file === 'app/globals.css') {
       // The dependency-removal migration replaces only the v3 compiler header.
       // Keep the entire protected stylesheet below it byte-for-byte checked.

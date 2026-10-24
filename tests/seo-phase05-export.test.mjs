@@ -21,11 +21,11 @@ test('Phase 5 retains all prior routes and protected sources while serving seven
     assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), expected, `${file}: exact checkpoint protection with reviewed remediation only`);
   }
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 230);
-  assert.equal(audit.pages.filter((p) => p.locale === 'en').length, 115);
-  assert.equal(audit.pages.filter((p) => p.locale === 'ar').length, 115);
-  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 230);
-  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 230);
+  assert.equal(audit.pages.length, 232);
+  assert.equal(audit.pages.filter((p) => p.locale === 'en').length, 116);
+  assert.equal(audit.pages.filter((p) => p.locale === 'ar').length, 116);
+  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 232);
+  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 232);
   const editorial = managed.editorialRepetition(audit);
   assert.ok(editorial.repeatedTokens <= 8300);
   assert.ok(editorial.repeatedParagraphs <= 660);
@@ -35,10 +35,10 @@ test('Phase 5 retains all prior routes and protected sources while serving seven
   assert.ok(audit.paragraphTokens >= 31900);
   assert.equal(audit.nearPairs.length, 0);
   assert.deepEqual(audit.orphans, []);
-  for (const locale of ['en', 'ar']) { assert.equal(audit.linkCoverage[locale].reachable, 115); assert.ok(audit.linkCoverage[locale].maximumDepth <= 3); }
+  for (const locale of ['en', 'ar']) { assert.equal(audit.linkCoverage[locale].reachable, 116); assert.ok(audit.linkCoverage[locale].maximumDepth <= 3); }
   for (const page of audit.pages) {
     const html = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     assert.doesNotMatch(html, /<script[^>]+src=["'][^"']*(?:googletagmanager|google-analytics)/);
   }
-  console.log(JSON.stringify({ routes: 230, locales: 2, orphans: 0, repeatedTokens: audit.repeatedTokens, nearPairs: 0 }));
+  console.log(JSON.stringify({ routes: 232, locales: 2, orphans: 0, repeatedTokens: audit.repeatedTokens, nearPairs: 0 }));
 });
