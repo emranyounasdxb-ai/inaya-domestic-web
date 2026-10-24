@@ -18,7 +18,7 @@ CONFIG = ROOT / '.github' / 'cpanel.htaccess'
 ORIGIN = 'https://inayadomestic.ae'
 LEGACY_MEDIA_ALIAS = (
     '/wp-content/uploads/2025/10/inaya-dishwashing-maid-ajman-cleaning-service.png',
-    '/images/company-gallery/inaya-home-support-079.jpg',
+    '/images/services/housekeeping.webp',
 )
 ALIASES = {
     '/home': '/en/',

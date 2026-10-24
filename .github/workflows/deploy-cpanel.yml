@@ -43,7 +43,7 @@ jobs:
         run: node --test tests/indexnow-notify.test.mjs
 
       - name: Test reviewed blog image retirement guards
-        run: node --test tests/retired-blog-images.test.mjs
+        run: node --test tests/retired-blog-images.test.mjs tests/retired-gallery-images.test.mjs
 
       - name: Verify dependency security and compatibility
         run: npm run test:dependencies
@@ -139,9 +139,9 @@ jobs:
 
             const webPath = toWebPath(filePath);
             if (webPath.startsWith('optimized/')) return;
-            // Prepared gallery originals and thumbnails already have suitable sizes.
-            // Preserve their verified metadata and avoid redundant variants.
-            if (webPath.startsWith('images/company-gallery/')) return;
+            // The owner retired the complete old gallery. Fail closed if a stale
+            // input ever tries to republish any image in that namespace.
+            if (webPath.startsWith('images/company-gallery/')) throw new Error('Retired gallery asset in export: ' + webPath);
 
             const maxWidth = maxWidthFor(webPath);
             const metadata = await sharp(filePath).metadata();
@@ -187,6 +187,9 @@ jobs:
 
           (async () => {
             const files = await walk(outDir);
+            if (files.some(file => toWebPath(file).startsWith('images/company-gallery/'))) {
+              throw new Error('Retired gallery assets must never be published again.');
+            }
             for (const file of files) {
               try { await optimizeImage(file); }
               catch (error) { console.warn(`Skipped image optimization for ${file}: ${error.message}`); }
@@ -317,6 +320,11 @@ jobs:
           node .github/scripts/cpanel-incremental.mjs compare \
             ./out "$RUNNER_TEMP/inaya-ftp-restored-baseline" "$RUNNER_TEMP/inaya-ftp-selected"
 
+      - name: Prepare exact retired gallery image cleanup
+        id: retired-gallery-plan
+        run: |
+          node .github/scripts/retired-gallery-images.mjs prepare ./out "$RUNNER_TEMP/inaya-retired-gallery-images"
+
       - name: Deploy to cPanel
         if: steps.selection.outputs.selected_files != '0'
         env:
@@ -386,6 +394,50 @@ jobs:
         with:
           name: inaya-retired-blog-images-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/inaya-retired-blog-images/
+          if-no-files-found: error
+          retention-days: 30
+
+      # Keep the gallery directories; only the 358 exact reviewed image files
+      # may be removed. Unknown server-owned paths are inventoried and preserved.
+      - name: Inventory and remove only reviewed retired gallery image files
+        env:
+          CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
+          CPANEL_FTP_USER: ${{ secrets.CPANEL_FTP_USER }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_SERVER_DIR: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
+        run: |
+          lftp -u "$CPANEL_FTP_USER","$CPANEL_FTP_PASSWORD" "$CPANEL_FTP_HOST" <<EOF
+          set cmd:fail-exit yes
+          set ftp:ssl-allow no
+          set ftp:list-options -a
+          set net:max-retries 3
+          set net:timeout 30
+          cache off
+          cd "$CPANEL_FTP_SERVER_DIR"
+          find -d 2 images/company-gallery > "$RUNNER_TEMP/inaya-retired-gallery-images/remote-before.txt"
+          bye
+          EOF
+          node .github/scripts/retired-gallery-images.mjs verify-before "$RUNNER_TEMP/inaya-retired-gallery-images"
+          lftp -u "$CPANEL_FTP_USER","$CPANEL_FTP_PASSWORD" "$CPANEL_FTP_HOST" <<EOF
+          set cmd:fail-exit yes
+          set ftp:ssl-allow no
+          set ftp:list-options -a
+          set net:max-retries 3
+          set net:timeout 30
+          cache off
+          cd "$CPANEL_FTP_SERVER_DIR"
+          source "$RUNNER_TEMP/inaya-retired-gallery-images/delete.lftp"
+          find -d 2 images/company-gallery > "$RUNNER_TEMP/inaya-retired-gallery-images/remote-after.txt"
+          bye
+          EOF
+          node .github/scripts/retired-gallery-images.mjs verify-after "$RUNNER_TEMP/inaya-retired-gallery-images"
+
+      - name: Save scoped gallery image cleanup metadata
+        if: always() && steps.retired-gallery-plan.outcome == 'success'
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: inaya-retired-gallery-images-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/inaya-retired-gallery-images/
           if-no-files-found: error
           retention-days: 30
 

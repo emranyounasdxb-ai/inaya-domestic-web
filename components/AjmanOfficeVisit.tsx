@@ -1,9 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
-import { companyGalleryOfficePhotos } from '@/lib/company-gallery';
-
-const officeReception = companyGalleryOfficePhotos.find(photo => photo.id === 'office-037')!;
 
 // Office access and transport arrangements confirmed by the business owner on 22 October 2026.
 export default function AjmanOfficeVisit({ locale }: { locale: string }) {
@@ -20,7 +16,7 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
     appointment: 'طلب موعد أو ملفات مناسبة',
     whatsapp: 'اطلب الخيارات عبر واتساب',
     directions: 'الاتجاهات إلى مكتب عجمان',
-    gallery: 'صور المكتب والخدمات المنزلية'
+    gallery: 'معرض صور عناية'
   } : {
     title: 'Visit INAYA in Ajman or start your enquiry online',
     intro: 'Our office is at Grand Mall, ground floor, Sheikh Khalifa Bin Zayed Street, Al Rashidiya 3, Ajman. Walk in or request an appointment to discuss your household needs.',
@@ -33,7 +29,7 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
     appointment: 'Request a visit or suitable profiles',
     whatsapp: 'Ask about profiles on WhatsApp',
     directions: 'Directions to the Ajman office',
-    gallery: 'Office and household photo gallery'
+    gallery: 'INAYA photo gallery'
   };
   const message = ar
     ? 'مرحباً عناية، أود مراجعة الملفات المناسبة لأسرتي. الدور: __. المنطقة: __. المهام: __. الأيام والساعات: __. تاريخ البدء المفضل: __. يرجى تأكيد التوفر والنقل والتكاليف.'
@@ -41,7 +37,7 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
 
   return (
     <section aria-labelledby="ajman-office-heading" className="bg-white px-6 py-12 lg:px-10">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+      <div className="mx-auto max-w-6xl">
         <div>
           <h2 id="ajman-office-heading" className={`${ar ? 'font-arabic' : 'font-heading'} text-3xl font-bold tracking-[-0.035em] text-primary-900`}>{copy.title}</h2>
           <p className="mt-4 text-sm leading-7 text-primary-900/80">{copy.intro}</p>
@@ -59,10 +55,6 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
           <a href={siteConfig.directionsUrl} className="mt-5 inline-block text-sm font-semibold text-primary-900 underline underline-offset-4">{copy.directions}</a>
           <p className="mt-3"><Link href={`/${locale}/gallery/`} className="text-sm font-semibold text-primary-900 underline underline-offset-4">{copy.gallery}</Link></p>
         </div>
-        <figure>
-          <Image src={officeReception.src} alt={officeReception.alt[ar ? 'ar' : 'en']} width={officeReception.width} height={officeReception.height} sizes="(max-width: 1024px) 100vw, 40vw" className="h-auto w-full rounded-[26px]" />
-          <figcaption className="mt-3 text-xs leading-6 text-primary-900/70">{officeReception.caption[ar ? 'ar' : 'en']}</figcaption>
-        </figure>
       </div>
     </section>
   );

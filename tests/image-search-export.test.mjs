@@ -52,7 +52,7 @@ test('primary image schema and social images match visible image files on both l
     assert.ok(metadata.width >= 600 && metadata.height >= 300, pageUrl);
     described++;
   }
-  assert.equal(described, 202, 'the original 160 pictured pages plus 42 reviewed articles with their owner-approved topic images');
+  assert.equal(described, 196, 'the gallery, About and Ajman routes no longer advertise retired gallery primary images; the other 196 pictured pages retain matching primary images');
 });
 
 test('localized pages advertise usable standard favicons made from the approved icon', async () => {

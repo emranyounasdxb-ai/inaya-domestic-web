@@ -1,72 +1,87 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
-import sharp from 'sharp';
 import { attrs, decode, text } from '../scripts/seo-content-audit.mjs';
 import { pageImageUrls } from '../scripts/enrich-image-sitemap.mjs';
 
 const origin = 'https://inayadomestic.ae';
-const source = await readFile('lib/company-gallery.ts', 'utf8');
-const photos = JSON.parse(source.match(/export const companyGalleryPhotos: CompanyGalleryPhoto\[\] = (\[[\s\S]*?\n\]);/)[1]);
-const lowerAttrs = tag => Object.fromEntries(Object.entries(attrs(tag)).map(([key,value]) => [key.toLowerCase(), value]));
+const manifest = JSON.parse(await readFile('.github/retired-gallery-images-20261025.json', 'utf8'));
+const stripScripts = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
 
-test('curated JPEGs and thumbnails are complete, readable and exactly preserved in the static export', async () => {
-  assert.equal(photos.length, 179);
-  assert.equal(new Set(photos.map(photo => photo.id)).size, 179);
-  assert.equal(new Set(photos.map(photo => photo.src)).size, 179);
-  assert.equal(photos[0].id, 'office-003');
-  assert.doesNotMatch(source, /googleusercontent|localFile|localThumbnailFile|existing_site_match|[A-Za-z]:[\\/]/);
-  for (const photo of photos) {
-    for (const [url,width,height] of [[photo.src,photo.width,photo.height],[photo.thumbnailSrc,photo.thumbnailWidth,photo.thumbnailHeight]]) {
-      assert.match(url, /^\/images\/company-gallery\/(?:thumbs\/)?inaya-(?:office|home-support|cooking|childcare|general|design)-\d{3}\.jpg$/);
-      const original = await readFile(path.join('public', url));
-      const exported = await readFile(path.join('out', url));
-      assert.deepEqual(exported, original, `${url}: exact prepared JPEG copied to export`);
-      const meta = await sharp(original).metadata();
-      assert.equal(meta.format, 'jpeg', url);
-      assert.equal(meta.width, width, url);
-      assert.equal(meta.height, height, url);
-    }
-    assert.match(photo.caption.ar, /[\u0600-\u06ff]/);
-    assert.ok(photo.caption.en.length > 10 && photo.alt.en.length > 10 && photo.alt.ar.length > 5);
+async function filesIn(directory, prefix = '') {
+  const files = [];
+  for (const entry of await readdir(path.join(directory, prefix), { withFileTypes: true })) {
+    const relative = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) files.push(...await filesIn(directory, relative));
+    else files.push(relative);
+  }
+  return files;
+}
+
+test('all 358 retired image files are absent from public/export and every published page and sitemap drops their references', async () => {
+  assert.equal(manifest.images.length, 358);
+  for (const root of ['public', 'out']) {
+    const files = await filesIn(root);
+    assert.deepEqual(files.filter(relative => relative.startsWith('images/company-gallery/') || relative.startsWith('optimized/images/company-gallery/')), []);
+  }
+  const xml = await readFile('out/sitemap.xml', 'utf8');
+  const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => decode(match[1]));
+  assert.equal(urls.length, 274);
+  assert.doesNotMatch(xml, /images\/company-gallery/);
+  for (const url of urls) {
+    const html = await readFile(path.join('out', new URL(url).pathname, 'index.html'), 'utf8');
+    assert.doesNotMatch(html, /images\/company-gallery|images\\\/company-gallery/, url);
   }
 });
 
-test('both gallery pages render every representative with localized captions, native full-image links and crawlable originals', async () => {
+test('both gallery URLs remain localized and useful with no old images, captions, category records or photo anchors', async () => {
   const xml = await readFile('out/sitemap.xml', 'utf8');
-  const expectedImages = photos.map(photo => origin + photo.src).sort();
-  for (const locale of ['en','ar']) {
+  for (const locale of ['en', 'ar']) {
     const url = `${origin}/${locale}/gallery/`;
     const html = await readFile(`out/${locale}/gallery/index.html`, 'utf8');
-    const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
-    assert.equal([...body.matchAll(/<main\b/g)].length, 1, 'locale layout owns the single main landmark');
+    const body = stripScripts(html);
+    const main = body.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
+    assert.ok(main);
+    assert.equal([...body.matchAll(/<main\b/g)].length, 1);
     assert.equal([...body.matchAll(/<h1\b/g)].length, 1);
-    assert.doesNotMatch(text(body), /illustration|illustrative|صورة توضيحية|مشهد توضيحي/i);
-    const figures = [...body.matchAll(/<figure\b([^>]*)>([\s\S]*?)<\/figure>/g)];
-    assert.equal(figures.length, photos.length);
-    for (const photo of photos) {
-      const figure = figures.find(item => lowerAttrs(item[1]).id === `photo-${photo.id}`);
-      assert.ok(figure, `per-image landing anchor ${photo.id}`);
-      const image = lowerAttrs(figure[2].match(/<img\b[^>]*>/)[0]);
-      assert.equal(image.src, photo.src);
-      assert.equal(image.alt, photo.alt[locale]);
-      assert.equal(image.loading, photo.id === 'office-003' ? 'eager' : 'lazy');
-      assert.equal(image.width, String(photo.width));
-      assert.equal(image.height, String(photo.height));
-      const link = lowerAttrs(figure[2].match(/<a\b[^>]*>/)[0]);
-      assert.equal(link.href, photo.src);
-      const responsive = lowerAttrs(figure[2].match(/<source\b[^>]*>/)[0]);
-      assert.equal(responsive.srcset, `${photo.thumbnailSrc} ${photo.thumbnailWidth}w, ${photo.src} ${photo.width}w`);
-      assert.equal(text(figure[2].match(/<figcaption\b[^>]*>([\s\S]*?)<\/figcaption>/)[1]), photo.caption[locale]);
+    assert.doesNotMatch(main, /<img\b|<picture\b|<figure\b|googleusercontent|maps\.google/i);
+    assert.match(text(main), locale === 'en' ? /photo gallery is being updated/ : /يجري تحديث معرض الصور/);
+    assert.doesNotMatch(html, /photo-(?:office|home-support|cooking|childcare|general|design)-[0-9]{3}|data-retired-photo-anchor|companyGalleryPhotos|companyGalleryGroups|galleryDestinations/);
+    for (const route of ['contact', 'services', 'maid-services-ajman']) {
+      assert.ok(main.includes(`href="/${locale}/${route}/"`), `${locale}: useful ${route} destination`);
+      await readFile(`out/${locale}/${route}/index.html`);
     }
-    assert.deepEqual(await pageImageUrls(html,url,'out'), expectedImages);
+    assert.deepEqual(await pageImageUrls(html, url, 'out'), []);
     const entry = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(item => decode(item[1].match(/<loc>(.*?)<\/loc>/)[1]) === url);
-    assert.ok(entry, 'gallery canonical in sitemap');
-    assert.deepEqual([...entry[1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map(item=>decode(item[1])).sort(),expectedImages);
-    for (const route of ['about','maid-services-ajman']) {
-      const related = await readFile(`out/${locale}/${route}/index.html`,'utf8');
-      assert.ok(related.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').includes(`href="/${locale}/gallery/"`),`${route}: visible gallery link`);
+    assert.ok(entry);
+    assert.doesNotMatch(entry[1], /<image:loc>/);
+    assert.match(entry[1], /<lastmod>2026-10-25<\/lastmod>/);
+    const social = [...html.matchAll(/<meta\b[^>]*>/g)].map(match => attrs(match[0]));
+    assert.ok(!social.some(meta => meta.property === 'og:image' || meta.name === 'twitter:image'));
+  }
+});
+
+test('shared About and Ajman slots contain no retired media and preserve visible office/contact information', async () => {
+  for (const locale of ['en', 'ar']) {
+    for (const route of ['about', 'maid-services-ajman']) {
+      const html = await readFile(`out/${locale}/${route}/index.html`, 'utf8');
+      const body = stripScripts(html);
+      assert.doesNotMatch(html, /company-gallery/);
+      assert.match(text(body), locale === 'en' ? /Grand Mall/ : /جراند مول/);
+      assert.ok(body.includes(`href="/${locale}/contact/"`));
+      assert.ok(body.includes(`href="/${locale}/gallery/"`));
     }
+  }
+});
+
+test('all four inactive Pinterest RSS URLs remain valid empty feeds with no retired photo records', async () => {
+  for (const name of ['ajman-office', 'home-cooking', 'household-services', 'nanny-family-support']) {
+    const source = await readFile(`public/pinterest-feeds/${name}.xml`, 'utf8');
+    const exported = await readFile(`out/pinterest-feeds/${name}.xml`, 'utf8');
+    assert.equal(exported, source);
+    assert.match(source, /<rss\b[\s\S]*<channel>/);
+    assert.match(source, /No image items are published/);
+    assert.doesNotMatch(source, /<item>|<media:content|company-gallery|#photo-|urn:inaya:company-photo:/);
   }
 });

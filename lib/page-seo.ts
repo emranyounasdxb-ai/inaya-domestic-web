@@ -12,7 +12,6 @@ import { getDomesticWorkerGuide } from './domestic-worker-guides';
 import { getBlogImage } from './blog-images';
 import { serviceImageAlt } from './image-alt';
 import { articleSearchTitles } from './article-search-titles';
-import { companyGalleryHero } from './company-gallery';
 import { companyInformationCopy } from './company-information';
 
 type Localized = Record<Lang, string>;
@@ -21,14 +20,6 @@ const corePageImages: Record<string, { src: string; alt: Localized }> = {
   '': {
     src: '/images/home/inaya-home-hero-family.webp',
     alt: { en: 'A domestic worker beside a table with the Dubai skyline in the background', ar: 'عاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' }
-  },
-  about: {
-    src: companyGalleryHero.src,
-    alt: companyGalleryHero.alt
-  },
-  gallery: {
-    src: companyGalleryHero.src,
-    alt: companyGalleryHero.alt
   },
   services: {
     src: '/images/home/home-concierge-support.webp',
@@ -94,7 +85,7 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   gallery: {
     name: { en: 'INAYA Photo Gallery', ar: 'معرض صور عناية' },
-    description: { en: 'Explore INAYA’s Ajman office, reception and household-support photo gallery. Open larger images and contact the team about your service needs.', ar: 'تصفح صور مكتب عناية في عجمان والاستقبال والدعم المنزلي. افتح الصور بالحجم الأكبر وتواصل مع الفريق بشأن احتياج أسرتك.' }
+    description: { en: 'The INAYA photo gallery is being updated. Explore domestic-worker services or contact our Ajman office while the new gallery is prepared.', ar: 'يجري تحديث معرض صور عناية. استكشف خدمات العمالة المنزلية أو تواصل مع مكتبنا في عجمان أثناء إعداد المعرض الجديد.' }
   },
   services: {
     name: { en: 'Domestic Worker Services in UAE', ar: 'خدمات العمالة المنزلية في الإمارات' },
@@ -212,10 +203,6 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   const location = getLocationServicePage(route);
   if (location) return {
     name: location.heroTitle[lang], title: location.metaTitle[lang], description: location.metaDescription[lang],
-    ...(route === 'maid-services-ajman' ? {
-      image: companyGalleryHero.src,
-      imageAlt: companyGalleryHero.alt[lang]
-    } : {}),
     service: { name: location.heroTitle[lang], description: location.lead[lang], area: location.city[lang] },
     faqs: location.faqs.map((faq) => ({ question: faq.question[lang], answer: faq.answer[lang] }))
   };

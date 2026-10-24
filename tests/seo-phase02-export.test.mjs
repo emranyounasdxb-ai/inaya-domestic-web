@@ -12,9 +12,6 @@ const attrs = (tag) => Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g
 const counts = { Organization: 0, LocalBusiness: 0, WebSite: 0, WebPage: 0, Service: 0, BreadcrumbList: 0, FAQPage: 0 };
 const publicRoot = await realpath('public');
 const exportRoot = await realpath('out');
-const gallerySource = await readFile('lib/company-gallery.ts', 'utf8');
-const galleryPhotos = JSON.parse(gallerySource.match(/export const companyGalleryPhotos: CompanyGalleryPhoto\[\] = (\[[\s\S]*?\n\]);/)[1]);
-const galleryImagePaths = new Set(galleryPhotos.map(photo => photo.src));
 
 test('all exported EN/AR pages have unique localized metadata, one H1, valid graphs and links', async () => {
   const titles = new Set();
@@ -78,22 +75,6 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
       if (!href || href.startsWith('#') || /^(tel|mailto|javascript):/.test(href)) continue;
       const target = new URL(href, url);
       if (target.origin !== origin || target.pathname === '/') continue;
-      // Only the gallery's exact reviewed full-JPEG registry may link to image
-      // files. All ordinary internal-page links retain the canonical-route guard.
-      if (route === 'gallery' && galleryImagePaths.has(target.pathname)) {
-        assert.match(target.pathname, /^\/images\/company-gallery\/inaya-(?:office|home-support|cooking|childcare|general|design)-\d{3}\.jpg$/);
-        assert.equal(target.search, '', `${url}: gallery JPEG has no query`);
-        assert.equal(target.hash, '', `${url}: gallery JPEG has no fragment`);
-        const sourceFile = await realpath(path.resolve(publicRoot, '.' + target.pathname));
-        const exportedFile = await realpath(path.resolve(exportRoot, '.' + target.pathname));
-        assert.ok(sourceFile.startsWith(publicRoot + path.sep), `${url}: JPEG remains in public`);
-        assert.ok(exportedFile.startsWith(exportRoot + path.sep), `${url}: JPEG remains in export`);
-        const imageBytes = await readFile(sourceFile);
-        assert.ok(imageBytes.length > 4, `${url}: gallery JPEG is not empty`);
-        assert.equal(imageBytes.readUInt16BE(0), 0xffd8, `${url}: JPEG start marker`);
-        assert.deepEqual(await readFile(exportedFile), imageBytes, `${url}: prepared JPEG copied exactly`);
-        continue;
-      }
       if (target.pathname.startsWith('/downloads/') && target.pathname.endsWith('.xlsx')) {
         const downloadPath = decodeURIComponent(target.pathname);
         assert.match(downloadPath, /^\/downloads\/[A-Za-z0-9][A-Za-z0-9._-]*\.xlsx$/, `${url}: safe public download path`);

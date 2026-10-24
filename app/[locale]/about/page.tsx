@@ -2,7 +2,6 @@ import Image from 'next/image';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
-import { companyGalleryHero } from '@/lib/company-gallery';
 
 type PageProps = {
   params: Promise<{
@@ -11,7 +10,6 @@ type PageProps = {
 };
 
 const aboutImages = {
-  hero: companyGalleryHero.src,
   support: '/images/home/home-concierge-support.webp',
   family: '/images/home/inaya-home-hero-family.webp'
 };
@@ -133,9 +131,12 @@ export default async function AboutPage({ params }: PageProps) {
               </Link>
             </div>
           </div>
-          <div className="relative min-h-[360px] overflow-hidden rounded-[30px] border border-primary-900/10 bg-white shadow-[0_28px_78px_rgba(7,22,74,0.15)]">
-            <Image src={aboutImages.hero} alt={companyGalleryHero.alt[isArabic ? 'ar' : 'en']} fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
-          </div>
+          <aside className="rounded-[30px] border border-primary-900/10 bg-white p-7 shadow-[0_28px_78px_rgba(7,22,74,0.10)]" aria-label={isArabic ? 'مكتب عناية في عجمان' : 'INAYA Ajman office'}>
+            <h2 className={`${headingClass} text-2xl font-bold`}>{isArabic ? 'مكتب عناية في عجمان' : 'INAYA Ajman office'}</h2>
+            <address className="mt-5 text-sm not-italic leading-7">{isArabic ? siteConfig.addressAr : siteConfig.address}</address>
+            <p className="mt-4 text-sm leading-7">{siteConfig.hours[isArabic ? 'ar' : 'en']}</p>
+            <Link href={`/${locale}/contact/`} className="mt-5 inline-block text-sm font-semibold underline underline-offset-4">{copy.contact}</Link>
+          </aside>
         </div>
       </section>
       <PageBreadcrumbs locale={locale} route="about" />
@@ -150,7 +151,7 @@ export default async function AboutPage({ params }: PageProps) {
             <div className="mt-6 space-y-5 text-[1rem] leading-8 text-primary-900/85">
               {copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               <Link className="inline-block font-semibold underline underline-offset-4" href={`/${locale}/contact/`}>{isArabic ? 'تواصل مع فريق عناية في عجمان' : 'Contact the INAYA team in Ajman'}</Link>
-              <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/gallery/`}>{isArabic ? 'صور مكتب عناية والخدمات المنزلية' : 'Explore INAYA office and household photos'}</Link></p>
+              <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/gallery/`}>{isArabic ? 'معرض صور عناية' : 'INAYA photo gallery'}</Link></p>
               <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/careers/`}>{isArabic ? 'فرص العمل وطلبات التوظيف' : 'Careers and work enquiries'}</Link></p>
             </div>
             <div className="mt-8 rounded-[24px] border border-accent-500/22 bg-[#fffdf8] p-6 shadow-[0_16px_42px_rgba(7,22,74,0.07)]">
