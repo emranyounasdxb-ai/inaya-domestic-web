@@ -3,14 +3,16 @@ import { expect, test } from '@playwright/test';
 for (const locale of ['en', 'ar'] as const) {
   test(`${locale}: footer stays readable and aligned on phones, tablets and laptops`, async ({ page }) => {
     await page.goto(`/${locale}/about/`);
+    await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
     const footer = page.getByRole('contentinfo');
     await expect(footer.getByRole('heading', { level: 2 })).toHaveCount(3);
     await expect(footer.getByRole('link', { name: 'info@inayadomestic.ae', exact: true })).toHaveAttribute('href', 'mailto:info@inayadomestic.ae');
     for (const width of [320, 390, 640, 768, 978, 1024, 1440]) {
       await page.setViewportSize({ width, height: 900 });
-      await footer.scrollIntoViewIfNeeded();
+      await footer.getByText(locale === 'ar' ? 'ناقش التفاصيل قبل تأكيد الخدمة' : 'Discuss details before confirming a service', { exact: true }).scrollIntoViewIfNeeded();
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
       const backToTop = page.getByTestId('back-to-top');
-      await expect(backToTop).toBeVisible();
+      await expect(backToTop).toHaveAttribute('aria-hidden', 'false');
       if (width < 1024) {
         const whatsapp = page.getByRole('link', { name: locale === 'ar' ? 'تواصل مع عناية عبر واتساب' : 'WhatsApp INAYA Domestic Workers', exact: true });
         // The floating WhatsApp and Back to Top utilities share the footer area
@@ -18,6 +20,16 @@ for (const locale of ['en', 'ar'] as const) {
         const back = (await backToTop.boundingBox())!;
         const chat = (await whatsapp.boundingBox())!;
         expect(back.x + back.width <= chat.x || chat.x + chat.width <= back.x || back.y + back.height <= chat.y || chat.y + chat.height <= back.y, `${locale}/${width}: contact controls overlap`).toBe(true);
+        const readable = await footer.locator('a, button, p').evaluateAll(elements => elements.map(element => {
+          const range = document.createRange();
+          range.selectNodeContents(element);
+          const r = element.tagName === 'P' ? range.getBoundingClientRect() : element.getBoundingClientRect();
+          return { label: element.textContent?.trim(), x: r.x, y: r.y, width: r.width, height: r.height };
+        }));
+        const note = (await footer.getByText(locale === 'ar' ? 'ناقش التفاصيل قبل تأكيد الخدمة' : 'Discuss details before confirming a service', { exact: true }).boundingBox())!;
+        for (const content of [...readable, note]) for (const floating of [back, chat]) {
+          expect(content.x + content.width <= floating.x || floating.x + floating.width <= content.x || content.y + content.height <= floating.y || floating.y + floating.height <= content.y, `${locale}/${width}: floating control covers ${'label' in content ? content.label : 'footer note'}`).toBe(true);
+        }
       }
       const layout = await footer.evaluate(element => {
         const shell = element.firstElementChild!;
