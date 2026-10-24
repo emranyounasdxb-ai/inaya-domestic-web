@@ -42,6 +42,9 @@ jobs:
       - name: Test IndexNow notification selection
         run: node --test tests/indexnow-notify.test.mjs
 
+      - name: Test reviewed blog image retirement guards
+        run: node --test tests/retired-blog-images.test.mjs
+
       - name: Verify dependency security and compatibility
         run: npm run test:dependencies
 
@@ -337,7 +340,56 @@ jobs:
           bye
           EOF
 
-      # These steps run only after a successful transfer (or an unchanged export).
+      # Retire only these reviewed files, even when the incremental upload is empty.
+      # A normal mirror --delete could remove unrelated server-owned files.
+      - name: Prepare exact retired blog image cleanup
+        id: retired-blog-plan
+        run: |
+          node .github/scripts/retired-blog-images.mjs prepare ./out "$RUNNER_TEMP/inaya-retired-blog-images"
+
+      - name: Inventory and remove only reviewed retired blog image files
+        env:
+          CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
+          CPANEL_FTP_USER: ${{ secrets.CPANEL_FTP_USER }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_SERVER_DIR: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
+        run: |
+          lftp -u "$CPANEL_FTP_USER","$CPANEL_FTP_PASSWORD" "$CPANEL_FTP_HOST" <<EOF
+          set cmd:fail-exit yes
+          set ftp:ssl-allow no
+          set ftp:list-options -a
+          set net:max-retries 3
+          set net:timeout 30
+          cache off
+          cd "$CPANEL_FTP_SERVER_DIR"
+          find -d 3 images/blogs optimized/images/blogs > "$RUNNER_TEMP/inaya-retired-blog-images/remote-before.txt"
+          bye
+          EOF
+          node .github/scripts/retired-blog-images.mjs verify-before "$RUNNER_TEMP/inaya-retired-blog-images"
+          lftp -u "$CPANEL_FTP_USER","$CPANEL_FTP_PASSWORD" "$CPANEL_FTP_HOST" <<EOF
+          set cmd:fail-exit yes
+          set ftp:ssl-allow no
+          set ftp:list-options -a
+          set net:max-retries 3
+          set net:timeout 30
+          cache off
+          cd "$CPANEL_FTP_SERVER_DIR"
+          source "$RUNNER_TEMP/inaya-retired-blog-images/delete.lftp"
+          find -d 3 images/blogs optimized/images/blogs > "$RUNNER_TEMP/inaya-retired-blog-images/remote-after.txt"
+          bye
+          EOF
+          node .github/scripts/retired-blog-images.mjs verify-after "$RUNNER_TEMP/inaya-retired-blog-images"
+
+      - name: Save scoped blog image cleanup metadata
+        if: always() && steps.retired-blog-plan.outcome == 'success'
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: inaya-retired-blog-images-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/inaya-retired-blog-images/
+          if-no-files-found: error
+          retention-days: 30
+
+      # These steps run only after a successful transfer and exact-path cleanup.
       # The next run also requires this entire workflow to have completed successfully.
       - name: Prepare successful deployment baseline
         run: |

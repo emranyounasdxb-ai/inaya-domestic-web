@@ -8,8 +8,13 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '2026-10-20'
-# Published parent revision, reachable in fresh repository checkouts.
-BASE = 'b7f236857a709677d712a955b0b6bada12d9e0f5'
+# The published content baseline before/after the owner-approved image-history
+# cleanup. Both revisions contain identical article source; never use HEAD as
+# a fallback because that would weaken the preservation baseline.
+BASELINES = (
+    '14b89f46c32bb4c74c1f732150431007670a8d6c',
+    'b7f236857a709677d712a955b0b6bada12d9e0f5',
+)
 ORIGIN = 'https://inayadomestic.ae'
 LANGUAGES = ('en', 'ar')
 PUBLICATION_SCHEDULE = json.loads((ROOT / 'content/article-publication-schedule.json').read_text())
@@ -20,7 +25,12 @@ assert sorted(PUBLICATION_SCHEDULE.values()) == [
 
 
 def baseline(path):
-    return subprocess.check_output(['git', 'show', f'{BASE}:{path}'], cwd=ROOT, text=True)
+    for revision in BASELINES:
+        result = subprocess.run(['git', 'show', f'{revision}:{path}'], cwd=ROOT,
+                                capture_output=True, text=True, encoding='utf-8')
+        if result.returncode == 0:
+            return result.stdout
+    raise RuntimeError(f'Published article baseline is unavailable for {path}')
 
 
 def literal_array(source, declaration):
