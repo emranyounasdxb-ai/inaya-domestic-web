@@ -55,6 +55,12 @@ jobs:
             sudo apt-get install -y apache2
           fi
           python3 tests/cpanel-migration.py
+      - name: Install real FTP client for nested gallery inventory regression
+        run: |
+          if ! command -v lftp >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y lftp
+          fi
       - name: Verify image discovery, primary images and favicon files
         run: node --test tests/image-search-export.test.mjs tests/company-gallery-export.test.mjs tests/cpanel-gallery-assets.test.mjs tests/retired-blog-images.test.mjs tests/retired-gallery-images.test.mjs
       - name: Verify concise unique search titles
