@@ -1,0 +1,448 @@
+{
+  "preparedAtUtc": "2026-10-24T13:13:36.301Z",
+  "status": "owner_approved_images_prepared_for_publication",
+  "articlePairs": 21,
+  "localePages": 42,
+  "sourceImages": 21,
+  "uniqueImagePaths": 21,
+  "sourceDimensions": [
+    1536,
+    1024
+  ],
+  "sourcePngBytes": 41962624,
+  "deliveredWebpBytes": 2628054,
+  "originalDownloadImagesUnchanged": true,
+  "imageCreation": "built-in image_gen; owner-directed uniform revisions",
+  "encodingOnly": "Sharp WebP quality86 effort6; dimensions/composition preserved",
+  "ownerApprovedWebsitePublication": true,
+  "publicationVerified": false,
+  "contentCopyChanged": false,
+  "images": [
+    {
+      "id": "K01",
+      "slug": "maid-agency-ajman-quote-comparison-workbook",
+      "src": "/images/blogs/keyword-21-20261024/k01-maid-agency-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a visitor and adviser comparing quotation sheets at a blue-and-white desk.",
+        "ar": "مشهد توضيحي لزائرة ومستشارة تقارنان أوراق عرض أسعار على مكتب بالأزرق والأبيض."
+      },
+      "sourceOriginalFilename": "K01-maid-agency-ajman.png",
+      "sourcePngSha256": "0d032220e35727227da031d94c5c403d9c5247d2f6426d01722fd46aeafb2ab4",
+      "sourcePngBytes": 1991280,
+      "webpSha256": "959818216f463d530902643dcbfa6bd016e1c41d6cb47d46de4a33f32d0e8514",
+      "webpBytes": 117272
+    },
+    {
+      "id": "K02",
+      "slug": "tadbeer-center-ajman-first-visit-service-routing",
+      "src": "/images/blogs/keyword-21-20261024/k02-tadbeer-center-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a visitor carrying a folder speaking with a receptionist at a curved white counter.",
+        "ar": "مشهد توضيحي لزائرة تحمل ملفاً وتتحدث مع موظفة استقبال عند مكتب أبيض منحني."
+      },
+      "sourceOriginalFilename": "K02-tadbeer-center-ajman.png",
+      "sourcePngSha256": "61d509d4d76bcafbd88bd69fa44446d912e9b47ddb4a484ccbe05cf989991c0b",
+      "sourcePngBytes": 2047694,
+      "webpSha256": "19d1da0ac34ef83503a9cfa5df3fb7f7f98ec063cff8d83408fe68562c26bc36",
+      "webpBytes": 142680
+    },
+    {
+      "id": "K03",
+      "slug": "domestic-workers-ajman-household-role-design-canvas",
+      "src": "/images/blogs/keyword-21-20261024/k03-domestic-workers-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink planning household tasks with two adults at a dining table.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي تخطط للمهام مع شخصين بالغين حول طاولة الطعام."
+      },
+      "sourceOriginalFilename": "K03-domestic-workers-ajman.png",
+      "sourcePngSha256": "d5865edc0d7caffe745b24974e317714041d1b17744c5c96256cb724a275a2d7",
+      "sourcePngBytes": 1937032,
+      "webpSha256": "686bdecddd49b0dbcfc9385176706b3ffcf3fe5288bc6650f348f30123c10e43",
+      "webpBytes": 122814,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K04",
+      "slug": "housemaid-visa-ajman-application-readiness-ledger",
+      "src": "/images/blogs/keyword-21-20261024/k04-housemaid-visa-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of hands sorting blank document sleeves at a blue-and-white office desk.",
+        "ar": "مشهد توضيحي ليدين ترتبان حوافظ مستندات خالية من البيانات على مكتب بالأزرق والأبيض."
+      },
+      "sourceOriginalFilename": "K04-housemaid-visa-ajman.png",
+      "sourcePngSha256": "43280d7b8a19aadfad9a01c9cde0c6529068699713738516a57b11db6aa41d04",
+      "sourcePngBytes": 1909561,
+      "webpSha256": "56931b6371d4bf5599c058951f2bdec84005beedd6b2c95440cd1d344365a07d",
+      "webpBytes": 82278
+    },
+    {
+      "id": "K05",
+      "slug": "live-in-maid-ajman-home-start-readiness-walkthrough",
+      "src": "/images/blogs/keyword-21-20261024/k05-live-in-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder reviewing a prepared private bedroom.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تتفقدان غرفة خاصة مجهزة للإقامة."
+      },
+      "sourceOriginalFilename": "K05-live-in-maid-ajman.png",
+      "sourcePngSha256": "68d54e993f118d2f0a35b7e7684531526647c2e98e06c67c77ea9b0c1a528696",
+      "sourcePngBytes": 1940426,
+      "webpSha256": "3fafcf9c24e64357f3b4186c1116acf8d99719684d01806023a892d4ff5a2531",
+      "webpBytes": 107272,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K06",
+      "slug": "housemaid-recruitment-ajman-candidate-evidence-cards",
+      "src": "/images/blogs/keyword-21-20261024/k06-housemaid-recruitment-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink, an adviser and a householder discussing experience at a desk.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي تناقش الخبرة مع مستشارة وصاحبة منزل عند مكتب."
+      },
+      "sourceOriginalFilename": "K06-housemaid-recruitment-ajman.png",
+      "sourcePngSha256": "42d43954be114500bd64b79f04dd2d23c39609900d432673c36f74c95f4ddc9a",
+      "sourcePngBytes": 1928601,
+      "webpSha256": "94f12683473552a2a32e5e8e41e81f6821caa2fd8adb06928684e07f7bd4a92c",
+      "webpBytes": 113540,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K07",
+      "slug": "filipino-maid-ajman-task-communication-workbook",
+      "src": "/images/blogs/keyword-21-20261024/k07-filipino-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink preparing vegetables while discussing a kitchen task with a householder.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي تحضر الخضراوات وتناقش مهمة في المطبخ مع صاحبة المنزل."
+      },
+      "sourceOriginalFilename": "K07-filipino-maid-ajman.png",
+      "sourcePngSha256": "c83d0ddb27f1b3376474fdcba14c9a83be030fe53018dfb60194cdd5c57c2a50",
+      "sourcePngBytes": 2106204,
+      "webpSha256": "cc97b8623db0daa611c92a0310bcb823daf419de282ac130822ee9ffc7522f44",
+      "webpBytes": 144316,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid / cooking",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K08",
+      "slug": "ethiopian-maid-ajman-language-onboarding-plan",
+      "src": "/images/blogs/keyword-21-20261024/k08-ethiopian-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a worker in royal blue and a householder reviewing washing-machine controls.",
+        "ar": "مشهد توضيحي لعاملة بالزي الأزرق الملكي وصاحبة المنزل تراجعان أدوات التحكم في الغسالة."
+      },
+      "sourceOriginalFilename": "K08-ethiopian-maid-ajman.png",
+      "sourcePngSha256": "b74eb17855c7998deb5d1244f104a9ccfd17c9e17424e0a22ea96cab12808dd1",
+      "sourcePngBytes": 2101906,
+      "webpSha256": "0a6b4ea62960feaf17e282c713bbd7c436b22d30b9acc8579cb035775afc4c72",
+      "webpBytes": 130166,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "cleaning staff / laundry",
+        "color": "royal blue",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K09",
+      "slug": "nanny-agency-ajman-childcare-evidence-handover",
+      "src": "/images/blogs/keyword-21-20261024/k09-nanny-agency-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a nanny in beige and a parent discussing childcare beside toys and a notebook.",
+        "ar": "مشهد توضيحي لمربية بالزي البيج ووالدة تناقشان رعاية الأطفال بجانب ألعاب ودفتر ملاحظات."
+      },
+      "sourceOriginalFilename": "K09-nanny-agency-ajman.png",
+      "sourcePngSha256": "12a50772c8687b4e9defee910bbf190570ecd1efad23357ab39a332147de3990",
+      "sourcePngBytes": 2012975,
+      "webpSha256": "d3be3d1426b57b20018019fa7c2eaadd4965973fb15a1e7ca7ce849a002d4340",
+      "webpBytes": 141084,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "nanny",
+        "color": "beige",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K10",
+      "slug": "monthly-maid-service-ajman-commitment-budget",
+      "src": "/images/blogs/keyword-21-20261024/k10-monthly-maid-service-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative overhead scene of hands arranging budget cards beside a calculator, notebook and house keys.",
+        "ar": "مشهد توضيحي من الأعلى لأيد ترتب بطاقات ميزانية بجانب آلة حاسبة ودفتر ومفاتيح منزل."
+      },
+      "sourceOriginalFilename": "K10-monthly-maid-service-ajman.png",
+      "sourcePngSha256": "59e905250722877f5cea9227c27277e95959f261376be89c2d89ebf94da676da",
+      "sourcePngBytes": 2945540,
+      "webpSha256": "1c5f36f3abe5808df7da01fcdd1703278ab705fb554d35fadcbb9759d72d6e0a",
+      "webpBytes": 280472
+    },
+    {
+      "id": "K11",
+      "slug": "part-time-maid-ajman-priorities-carry-over",
+      "src": "/images/blogs/keyword-21-20261024/k11-part-time-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a cleaner in royal blue wiping a kitchen counter while a householder discusses tasks.",
+        "ar": "مشهد توضيحي لعاملة نظافة بالزي الأزرق الملكي تمسح سطح المطبخ وتناقش المهام مع صاحبة المنزل."
+      },
+      "sourceOriginalFilename": "K11-part-time-maid-ajman.png",
+      "sourcePngSha256": "b4523d640562d06306c45ed320b80b0e7a7432a0a029b2a3443d26752bf44e32",
+      "sourcePngBytes": 1923066,
+      "webpSha256": "d78d0cb5b09baaf4398f1ddaa798c0e408843b10a3d8e069ede1f6698641742f",
+      "webpBytes": 107508,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "cleaning staff",
+        "color": "royal blue",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K12",
+      "slug": "maid-agency-sharjah-ajman-office-logistics",
+      "src": "/images/blogs/keyword-21-20261024/k12-maid-agency-sharjah.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of an adviser making a phone call and taking notes while a visitor waits across the desk.",
+        "ar": "مشهد توضيحي لمستشارة تجري مكالمة وتدون ملاحظات بينما تنتظر زائرة في الجهة المقابلة للمكتب."
+      },
+      "sourceOriginalFilename": "K12-maid-agency-sharjah.png",
+      "sourcePngSha256": "6e1e8700bb3923d05674280e4c584514a02ab02e83228b7f39374ff44fd52fb0",
+      "sourcePngBytes": 1802950,
+      "webpSha256": "822b725a6a64adcafc73f52e11410f9e44977c1cad15ad49de96c635b092ece2",
+      "webpBytes": 99432,
+      "uniformRevision": {
+        "scope": "background poster uniforms only",
+        "role": "depicted service roles",
+        "color": "role-dependent owner palette",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K13",
+      "slug": "maid-services-dubai-household-access-scope-plan",
+      "src": "/images/blogs/keyword-21-20261024/k13-maid-services-dubai.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a householder explaining an entry intercom to a cleaner in royal blue holding a supply caddy.",
+        "ar": "مشهد توضيحي لصاحبة منزل تشرح جهاز الدخول لعاملة نظافة بالزي الأزرق الملكي تحمل سلة أدوات."
+      },
+      "sourceOriginalFilename": "K13-maid-services-dubai.png",
+      "sourcePngSha256": "19d97d6a0d57d5d7fcab536268633f993b291e5bf3574e8d624782e2ba1eb2ab",
+      "sourcePngBytes": 1840156,
+      "webpSha256": "8517f258e693d499b166d82c48e09184bddfa81e1e96496f4629eb5f337b47f5",
+      "webpBytes": 102082,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "cleaning staff",
+        "color": "royal blue",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K14",
+      "slug": "tadbeer-near-me-location-identity-visit-check",
+      "src": "/images/blogs/keyword-21-20261024/k14-tadbeer-near-me.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a visitor checking a phone while approaching a reception area with tan seating.",
+        "ar": "مشهد توضيحي لزائرة تراجع هاتفها أثناء اقترابها من منطقة استقبال ذات مقاعد بلون بني فاتح."
+      },
+      "sourceOriginalFilename": "K14-tadbeer-near-me.png",
+      "sourcePngSha256": "68737e6c4092e6000bc055d5ecf1629f29ab1b5f217c7da25418e274e9151e58",
+      "sourcePngBytes": 1924164,
+      "webpSha256": "4d7865cac7caf62d91be624a2e9c793b2009c2a44bfcd36b42aad2e9c1712fc9",
+      "webpBytes": 104720
+    },
+    {
+      "id": "K15",
+      "slug": "ajman-household-weekly-maid-priorities-handover",
+      "src": "/images/blogs/keyword-21-20261024/k15-maids-ajman-weekly-plan.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder reviewing a weekly plan at a table.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تراجعان خطة أسبوعية على طاولة."
+      },
+      "sourceOriginalFilename": "K15-maids-ajman-weekly-plan.png",
+      "sourcePngSha256": "0cc4c242e5b34e712dfdaa45951e43e913cc98944e9f4e70a293608bc1bd09e6",
+      "sourcePngBytes": 2087377,
+      "webpSha256": "bb3abc4b868c0377b0d213d536f575fde4a413c2f161e8a974af5593df8eac75",
+      "webpBytes": 150618,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K16",
+      "slug": "ajman-maid-recruitment-agreement-receipts-evidence",
+      "src": "/images/blogs/keyword-21-20261024/k16-maid-recruitment-agreements.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a visitor and adviser placing plain papers into an accordion document organiser.",
+        "ar": "مشهد توضيحي لزائرة ومستشارة تضعان أوراقاً خالية من البيانات في حافظة مستندات مقسمة."
+      },
+      "sourceOriginalFilename": "K16-maid-recruitment-agreements.png",
+      "sourcePngSha256": "b3a95a174f7c88a4cf6b85c1f2fffbbd39a0794befc3bd4120cbe4760e5f1d90",
+      "sourcePngBytes": 1985913,
+      "webpSha256": "fba2558924411973a4f0d42e3652e74bab2c8f352be2b4959043f0b8d696c8f3",
+      "webpBytes": 122940,
+      "uniformRevision": {
+        "scope": "background poster uniforms only",
+        "role": "depicted service roles",
+        "color": "role-dependent owner palette",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K17",
+      "slug": "ajman-tadbeer-case-status-follow-up-record",
+      "src": "/images/blogs/keyword-21-20261024/k17-tadbeer-case-follow-up.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a headset-wearing adviser recording follow-up notes beside a laptop at an office desk.",
+        "ar": "مشهد توضيحي لمستشارة ترتدي سماعة وتدون ملاحظات متابعة بجانب حاسوب محمول على مكتب."
+      },
+      "sourceOriginalFilename": "K17-tadbeer-case-follow-up.png",
+      "sourcePngSha256": "901c555303dc347ff0defc45ea8a498abf0210b80864e91b22b70e0b2039a4e6",
+      "sourcePngBytes": 1809256,
+      "webpSha256": "a0ddc52a83e59eff738d8fcb5428faf924c107e706e44b989b4299272902a19a",
+      "webpBytes": 112038,
+      "uniformRevision": {
+        "scope": "background poster uniforms only",
+        "role": "depicted service roles",
+        "color": "role-dependent owner palette",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K18",
+      "slug": "ajman-housemaid-visa-document-name-status-check",
+      "src": "/images/blogs/keyword-21-20261024/k18-housemaid-visa-document-check.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of hands comparing two sample sheets with a magnifying glass and ruler at an office desk.",
+        "ar": "مشهد توضيحي لأيد تقارن ورقتين نموذجيتين باستخدام عدسة مكبرة ومسطرة على مكتب."
+      },
+      "sourceOriginalFilename": "K18-housemaid-visa-document-check.png",
+      "sourcePngSha256": "a9ab1cd937a2eb76ae20a5d1a9296e74b2a2b33beb873faa24c038b8aecfd3ac",
+      "sourcePngBytes": 1796878,
+      "webpSha256": "c276ffc968940f0bab4d5cc1116827dac37d75f17e270bebad2b3072954c1aa2",
+      "webpBytes": 94814
+    },
+    {
+      "id": "K19",
+      "slug": "ajman-monthly-maid-service-review-evidence-log",
+      "src": "/images/blogs/keyword-21-20261024/k19-monthly-maid-service-review.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder reviewing a tablet together on a shaded terrace.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تراجعان جهازاً لوحياً على شرفة مظللة."
+      },
+      "sourceOriginalFilename": "K19-monthly-maid-service-review.png",
+      "sourcePngSha256": "1dcb4967b80bc82838f4552a2f296e8dd1caf3e4eee601f4c5790fc34c82db03",
+      "sourcePngBytes": 2161706,
+      "webpSha256": "abb1c063e5d61acfee62e3ac105bec144ce1064c135ba4dbd0872f6002fd03db",
+      "webpBytes": 151382,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K20",
+      "slug": "ajman-domestic-worker-communication-privacy-boundaries",
+      "src": "/images/blogs/keyword-21-20261024/k20-domestic-worker-privacy.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder discussing a private-room doorway beside a key tray.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تتحدثان قرب باب غرفة خاصة وصينية مفاتيح."
+      },
+      "sourceOriginalFilename": "K20-domestic-worker-privacy.png",
+      "sourcePngSha256": "dbbaa461617d8b2ac49af52d6bebc95d7f69dbcb112d955d8522e4c9fdc279d3",
+      "sourcePngBytes": 1789050,
+      "webpSha256": "bbfdae0ff4a911c439afcff78c0041dac5e3a553e5b518f8750556360e7ef899",
+      "webpBytes": 93252,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    },
+    {
+      "id": "K21",
+      "slug": "ajman-domestic-worker-recruitment-milestone-decisions",
+      "src": "/images/blogs/keyword-21-20261024/k21-recruitment-start-readiness.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": {
+        "en": "Illustrative scene of an adviser introducing a housemaid in pink carrying a bag to two adults in a reception area.",
+        "ar": "مشهد توضيحي لمستشارة تقدم عاملة منزلية بالزي الوردي تحمل حقيبة إلى شخصين بالغين في الاستقبال."
+      },
+      "sourceOriginalFilename": "K21-recruitment-start-readiness.png",
+      "sourcePngSha256": "5cd4f75fc5d5f271a52175f666f8f3da6a088b349b8757af2587b00986c176b5",
+      "sourcePngBytes": 1920889,
+      "webpSha256": "8e4f918573003450a5000af8fa63ebc9775ceb4b0613d8ef70eac481de484851",
+      "webpBytes": 107374,
+      "uniformRevision": {
+        "scope": "foreground domestic worker",
+        "role": "housemaid",
+        "color": "pink",
+        "referenceSet": "owner-uploaded-20261024"
+      }
+    }
+  ]
+}
