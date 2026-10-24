@@ -16,7 +16,7 @@ export default function Footer({ locale }: { locale: string }) {
   const logoAlt = isArabic ? 'شعار عناية للعمالة المنزلية' : 'INAYA Domestic Workers logo';
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const contactAddress = isArabic
-    ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'
+    ? siteConfig.addressAr
     : siteConfig.address;
 
   const quickLinks = [
@@ -101,6 +101,8 @@ export default function Footer({ locale }: { locale: string }) {
             <Link href={`/${locale}/terms`} className="transition hover:text-primary-900">{t('terms')}</Link>
             <span className="text-accent-700/70">|</span>
             <Link href={`/${locale}/refund-policy`} className="transition hover:text-primary-900">{t('refund')}</Link>
+            <span className="text-accent-700/70">|</span>
+            <Link href={`/${locale}/company-information/`} className="transition hover:text-primary-900">{isArabic ? 'معلومات الشركة' : 'Company information'}</Link>
             <span className="text-accent-700/70">|</span>
             <CookieSettingsButton locale={locale} />
           </div>

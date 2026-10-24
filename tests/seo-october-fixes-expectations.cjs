@@ -142,6 +142,17 @@ function approvedSeoFixes(file, source) {
     assert.equal(source.split(guidesLink).length, 2, `${file}: exactly one reviewed gallery-link placement`);
     source = source.replace(guidesLink, guidesLink + "    { label: isArabic ? 'معرض الصور' : 'Photo gallery', href: `/${locale}/gallery/` },\n");
   }
+  if (file === 'app/[locale]/contact/page.tsx') {
+    // The displayed approved facts stay exact; only their shared data source
+    // replaces these two historical literals.
+    for (const [before, after] of [
+      ["    ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'", '    ? siteConfig.addressAr'],
+      ["  const whatsappDisplay = isArabic ? <ArabicNumber type=\"whatsapp\" /> : '+971 50 203 6767';", '  const whatsappDisplay = isArabic ? <ArabicNumber type="whatsapp" /> : siteConfig.whatsappDisplay;']
+    ]) {
+      assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed company-fact source anchor`);
+      source = source.replace(before, after);
+    }
+  }
   if (file === 'tests/e2e/sierra-leone-offer-controls.spec.ts') {
     const before = "  test('shows Back to Top near the page bottom and returns to the top', async ({ page }) => {\n";
     const after = before + "    await page.getByRole('button', { name: 'Reject analytics', exact: true }).click();\n    await expect(page.getByRole('region', { name: 'Your cookie preferences' })).toBeHidden();\n";

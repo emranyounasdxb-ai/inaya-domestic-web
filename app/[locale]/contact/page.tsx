@@ -39,10 +39,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
   const whatsappHref = `https://wa.me/${siteConfig.whatsapp}`;
   const address = isArabic
-    ? 'جراند مول - الطابق الأرضي - شارع الشيخ خليفة بن زايد - الراشدية 3 - عجمان'
+    ? siteConfig.addressAr
     : siteConfig.address;
   const phoneDisplay = isArabic ? <ArabicNumber type="phone" /> : siteConfig.phone;
-  const whatsappDisplay = isArabic ? <ArabicNumber type="whatsapp" /> : '+971 50 203 6767';
+  const whatsappDisplay = isArabic ? <ArabicNumber type="whatsapp" /> : siteConfig.whatsappDisplay;
   const headingClass = isArabic
     ? 'font-arabic text-4xl font-bold leading-[1.32] text-primary-900 sm:text-5xl lg:text-6xl'
     : 'font-heading text-5xl font-bold leading-[0.95] text-primary-900 sm:text-6xl lg:text-7xl';

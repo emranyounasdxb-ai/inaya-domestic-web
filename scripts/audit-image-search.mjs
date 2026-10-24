@@ -46,7 +46,7 @@ const sitemapResponse = await request(`${origin}/sitemap.xml`);
 const sitemap = await sitemapResponse.text();
 if (sitemapResponse.status !== 200) throw new Error('Sitemap unavailable');
 const urls = [...new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => decode(m[1])))];
-if (urls.length !== 230 || urls.some(u => !/^https:\/\/inayadomestic\.ae\/(en|ar)\//.test(u))) throw new Error('Inspect changed page scope');
+if (urls.length !== 232 || urls.some(u => !/^https:\/\/inayadomestic\.ae\/(en|ar)\//.test(u))) throw new Error('Inspect changed page scope');
 const pages = await pool(urls, async (url, i) => {
   const response = await request(url), html = await response.text();
   await writeFile(path.join(out, `${String(i).padStart(3, '0')}.html`), html);
@@ -98,6 +98,6 @@ const results = await pool([...assets.values()], async entry => {
   if (/\b(noindex|noimageindex|none)\b/i.test(xRobots ?? '')) issues.push({ type: 'image_index_block', url: entry.url, xRobots });
   return { url: entry.url, pages: [...entry.pages], kinds: [...entry.kinds], status: response.status, contentType, xRobots, cacheControl: response.headers.get('cache-control'), bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex'), ...dimensions };
 }, 'images');
-const report = { observedAt: new Date().toISOString(), scope: 'All 230 sitemap pages, img/srcset/social/icon references and linked CSS images on the same origin. Third-party assets recorded only. No search indexing guarantee.', nativeCrawler: 'Python launcher unavailable; own read-only HTTP/media audit used', robots, pageCount: pages.length, imageElements: pages.reduce((n, p) => n + (p.imageElements ?? 0), 0), uniqueImageUrls: assets.size, pagesWithSocialImage: pages.filter(p => p.socialImage).length, pagesWithPrimaryImageSchema: pages.filter(p => p.primaryImageOfPage).length, sitemapImageReferences: [...sitemap.matchAll(/<image:loc>/g)].length, issues, pages, images: results, externalImageUrls: [...external] };
+const report = { observedAt: new Date().toISOString(), scope: 'All 232 sitemap pages, img/srcset/social/icon references and linked CSS images on the same origin. Third-party assets recorded only. No search indexing guarantee.', nativeCrawler: 'Python launcher unavailable; own read-only HTTP/media audit used', robots, pageCount: pages.length, imageElements: pages.reduce((n, p) => n + (p.imageElements ?? 0), 0), uniqueImageUrls: assets.size, pagesWithSocialImage: pages.filter(p => p.socialImage).length, pagesWithPrimaryImageSchema: pages.filter(p => p.primaryImageOfPage).length, sitemapImageReferences: [...sitemap.matchAll(/<image:loc>/g)].length, issues, pages, images: results, externalImageUrls: [...external] };
 await writeFile(path.join(out, 'report.json'), JSON.stringify(report, null, 2));
 console.log(JSON.stringify({ ...Object.fromEntries(['observedAt', 'pageCount', 'imageElements', 'uniqueImageUrls', 'pagesWithSocialImage', 'pagesWithPrimaryImageSchema', 'sitemapImageReferences'].map(k => [k, report[k]])), issues }));

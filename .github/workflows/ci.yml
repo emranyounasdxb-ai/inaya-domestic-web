@@ -60,7 +60,7 @@ jobs:
       - name: Verify concise unique search titles
         run: node --test tests/search-title-export.test.mjs
       - name: Unit and export checks
-        run: node --test tests/seo-phase02-unit.test.cjs tests/seo-phase03-unit.test.cjs tests/seo-phase04-unit.test.cjs tests/seo-phase05-unit.test.cjs tests/seo-final-remediation-unit.test.cjs tests/final-ux-accessibility-unit.test.cjs tests/seo-export.test.mjs tests/seo-phase02-export.test.mjs tests/seo-phase03-export.test.mjs tests/seo-phase04-export.test.mjs tests/seo-phase05-export.test.mjs tests/seo-bilingual-guides-export.test.mjs tests/seo-visual-content-export.test.mjs tests/final-ux-accessibility-export.test.mjs tests/seo-release-readiness.test.mjs tests/customer-question-series.test.mjs tests/article-publication-schedule.test.mjs
+        run: node --test tests/seo-phase02-unit.test.cjs tests/seo-phase03-unit.test.cjs tests/seo-phase04-unit.test.cjs tests/seo-phase05-unit.test.cjs tests/seo-final-remediation-unit.test.cjs tests/final-ux-accessibility-unit.test.cjs tests/seo-export.test.mjs tests/company-information-export.test.mjs tests/seo-phase02-export.test.mjs tests/seo-phase03-export.test.mjs tests/seo-phase04-export.test.mjs tests/seo-phase05-export.test.mjs tests/seo-bilingual-guides-export.test.mjs tests/seo-visual-content-export.test.mjs tests/final-ux-accessibility-export.test.mjs tests/seo-release-readiness.test.mjs tests/customer-question-series.test.mjs tests/article-publication-schedule.test.mjs
       - name: Install Chromium for browser regression
         timeout-minutes: 10
         run: node node_modules/@playwright/test/cli.js install --with-deps chromium

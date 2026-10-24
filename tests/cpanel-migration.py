@@ -46,7 +46,7 @@ def contract():
     pages = [urllib.parse.urlsplit(n.text).path for n in xml.findall(
         '{http://www.sitemaps.org/schemas/sitemap/0.9}url/'
         '{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-    assert len(pages) == 230, f'Unexpected current sitemap inventory: {len(pages)}'
+    assert len(pages) == 232, f'Unexpected current sitemap inventory: {len(pages)}'
     text = CONFIG.read_text(encoding='utf-8')
     targets = re.findall(r'^\s*RewriteRule \S+ https://inayadomestic\.ae(/\S+) \[R=301,L\]$',
                          text, re.M)
@@ -89,6 +89,7 @@ def apache_checks(pages):
         media_target = document / LEGACY_MEDIA_ALIAS[1].lstrip('/')
         media_target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / 'out' / LEGACY_MEDIA_ALIAS[1].lstrip('/'), media_target)
+        shutil.copyfile(ROOT / 'out' / 'company-information.json', document / 'company-information.json')
         shutil.copyfile(CONFIG, document / '.htaccess')
         # The CI process and Apache run as the same unprivileged user.
         user = pwd.getpwuid(os.getuid()).pw_name
@@ -147,6 +148,16 @@ def apache_checks(pages):
             # Every current canonical route must survive the retirement rules.
             for route in pages:
                 expect(route, 200)
+            # The shared data representation must remain a real JSON file under
+            # Apache's production rewrite rules, independent of language routing.
+            for language in ['en', 'ar-AE,ar;q=0.9']:
+                req = urllib.request.Request(f'http://127.0.0.1:{port}/company-information.json', headers={
+                    'Host': 'inayadomestic.ae', 'Accept-Language': language})
+                with opener.open(req, timeout=5) as response:
+                    assert response.status == 200
+                    assert response.headers.get_content_type() == 'application/json'
+                    assert response.read() == (ROOT / 'out' / 'company-information.json').read_bytes()
+                count += 1
             for source, target in ALIASES.items():
                 for suffix in ['', '/']:
                     expect(source + suffix, 301, ORIGIN + target)

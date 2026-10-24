@@ -4,11 +4,13 @@ import { countrySourcePages } from '@/lib/country-source-pages';
 import { locationServicePages } from '@/lib/location-service-pages';
 import { domesticWorkerGuides } from '@/lib/domestic-worker-guides';
 import { localizedUrl, localeAlternates } from '@/lib/seo';
+import { companyInformation } from '@/lib/company-information';
 
 const locales = ['en', 'ar'] as const;
 
 // Record substantive content updates, not build times. Leave untracked routes undated.
 const contentUpdatedAt: Record<string, string> = {
+  [companyInformation.route]: companyInformation.updated,
   "gallery": '2026-10-22',
   "about": '2026-10-22',
   "contact": '2026-10-22',
@@ -159,7 +161,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
 
-  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly')]) {
+  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly'), ...localizedEntry(companyInformation.route, 0.72, 'monthly')]) {
     uniqueEntries.set(entry.url, entry);
   }
 
