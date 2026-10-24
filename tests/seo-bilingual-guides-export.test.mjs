@@ -8,6 +8,86 @@ import domesticServices from './domestic-service-refresh-expectations.cjs';
 const origin = 'https://inayadomestic.ae';
 const publicationSchedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
 const currentRefreshes = JSON.parse(await readFile('content/research/2026-10-24/article-refreshes.json', 'utf8'));
+const ajmanRefreshes = JSON.parse(await readFile('content/research/2026-10-24/ajman-intent-refreshes.json', 'utf8'));
+
+function beforeAjmanRefresh(slug, locale, body) {
+  const copy = ajmanRefreshes.entries.find((entry) => entry.slug === slug)?.[locale];
+  if (!copy) return body;
+  const parts = body.split(`\n\n${copy.separator}\n\n`);
+  assert.equal(parts.length, 2, `${locale}/${slug}: one additive Ajman decision-aid boundary`);
+  assert.equal(createHash('sha256').update(parts[0]).digest('hex'), copy.baseBodySha256, `${locale}/${slug}: complete released manuscript preserved`);
+  assert.equal(parts[1], copy.body, `${locale}/${slug}: reviewed Ajman addition retained`);
+  return parts[0];
+}
+
+test('five Ajman intents use four existing bilingual publications and preserve every released manuscript', async () => {
+  const source = await readFile('lib/published-article-content.ts', 'utf8');
+  const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
+  assert.equal(articles.length, 37, 'no duplicate keyword routes added');
+  assert.deepEqual(ajmanRefreshes.entries.map(({ slug }) => slug).sort(), [
+    'choosing-domestic-worker-agency-ajman', 'domestic-worker-employer-eligibility-documents',
+    'domestic-worker-employment-arrangements-uae', 'domestic-worker-hiring-stages-timelines'
+  ]);
+  assert.deepEqual([...new Set(ajmanRefreshes.entries.flatMap(({ keywords }) => keywords))].sort(), [
+    'Domestic worker recruitment Ajman', 'Housemaid visa Ajman', 'Live-in maid Ajman', 'Maid agency Ajman', 'Tadbeer center Ajman'
+  ]);
+  for (const article of articles) for (const locale of ['en', 'ar']) {
+    const addition = ajmanRefreshes.entries.find((entry) => entry.slug === article.slug);
+    if (addition) {
+      beforeAjmanRefresh(article.slug, locale, article[locale].body);
+      assert.equal(article.updated, ajmanRefreshes.date);
+    } else {
+      assert.equal(createHash('sha256').update(article[locale].body).digest('hex'), ajmanRefreshes.unchangedBodySha256[article.slug][locale], `${article.slug}/${locale}: unrelated manuscript unchanged`);
+    }
+  }
+});
+
+test('Ajman decision aids render complete bilingual worksheets, useful process charts and canonical references', async () => {
+  const sitemap = await readFile('out/sitemap.xml', 'utf8');
+  const canonicalUrls = new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]));
+  assert.equal(canonicalUrls.size, 230);
+  const plain = (value) => tokens(value.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1').replace(/\*\*/g, '')).join(' ');
+  for (const entry of ajmanRefreshes.entries) for (const locale of ['en', 'ar']) {
+    const copy = entry[locale];
+    const url = `${origin}/${locale}/blog/${entry.slug}/`;
+    const html = await readFile(`out/${locale}/blog/${entry.slug}/index.html`, 'utf8');
+    const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+    const article = body.match(/<article\b[^>]*data-published-article="content"[^>]*>([\s\S]*?)<\/article>/)?.[1];
+    assert.ok(article, `${url}: actual article content exists`);
+    const boundary = [...article.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)].find((match) => text(match[1]) === copy.separator.slice(3));
+    assert.ok(boundary, `${url}: addition itself is visible`);
+    const addition = article.slice(boundary.index);
+    const visible = tokens(text(addition.replace(/<\/?(?:a|strong)\b[^>]*>/g, ''))).join(' ');
+    for (const block of copy.body.split('\n\n')) {
+      if (block.startsWith('|')) {
+        for (const row of block.split('\n').filter((line) => !/^\|[\s:|-]+\|$/.test(line))) {
+          assert.ok(visible.includes(row.slice(1, -1).split('|').map(plain).join(' ')), `${url}: complete worksheet row`);
+        }
+      } else assert.ok(visible.includes(plain(block.replace(/^## /, ''))), `${url}: complete added paragraph or heading`);
+    }
+    assert.match(addition, /<table\b/, `${url}: useful new table is in the addition`);
+    const chart = article.match(/<figure\b[^>]*data-article-visual="steps"[^>]*>([\s\S]*?)<\/figure>/)?.[1];
+    assert.ok(chart, `${url}: the process chart is actually rendered`);
+    assert.equal(copy.visual.items.length, 4);
+    for (const value of [copy.visual.title, copy.visual.caption, ...copy.visual.items.flatMap((item) => [item.label, item.detail])]) {
+      assert.ok(tokens(text(chart)).join(' ').includes(plain(value)), `${url}: complete accessible process-chart text`);
+    }
+    const links = [...copy.body.matchAll(/\[[^\]]+\]\((https:\/\/[^)]+)\)/g)].map((match) => match[1]);
+    assert.ok(links.filter((link) => new URL(link).origin === origin).length >= 3, `${url}: contextual internal navigation`);
+    assert.ok(links.some((link) => new URL(link).origin !== origin), `${url}: primary external reference`);
+    for (const link of links) {
+      assert.ok(addition.includes(`href="${link.replace(/&/g, '&amp;')}"`), `${url}: source is clickable`);
+      const target = new URL(link);
+      if (target.origin === origin) {
+        assert.ok(target.pathname.startsWith(`/${locale}/`), `${url}: translation-correct internal link`);
+        assert.ok(canonicalUrls.has(link), `${url}: linked destination is canonical`);
+      } else assert.ok(['u.ae', 'mohre.gov.ae', 'www.mohre.gov.ae', 'icp.gov.ae'].includes(target.hostname), `${url}: reviewed government source`);
+    }
+    assert.doesNotMatch(text(addition), /TODO|TBD|Golden Visa|tourist visa|company formation|guaranteed ranking/i);
+    const sitemapEntry = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].find((match) => match[1].includes(`<loc>${url}</loc>`));
+    assert.ok(sitemapEntry?.[1].includes('<lastmod>2026-10-24</lastmod>'), `${url}: substantive modification date`);
+  }
+});
 
 test('services hubs render all three complete approved summaries in their matching cards', async () => {
   for (const locale of ['en', 'ar']) {
@@ -37,7 +117,7 @@ test('domestic-service refreshes preserve the original manuscripts and render co
     assert.equal(article.updated, '2026-10-24');
     for (const locale of ['en', 'ar']) {
       const copy = refresh[locale];
-      const parts = article[locale].body.split(`\n\n${copy.separator}\n\n`);
+      const parts = beforeAjmanRefresh(article.slug, locale, article[locale].body).split(`\n\n${copy.separator}\n\n`);
       assert.equal(parts.length, 2, `${locale}/${refresh.slug}: unique addition boundary`);
       assert.equal(createHash('sha256').update(parts[0]).digest('hex'), copy.baseBodySha256, 'original complete body preserved');
       assert.equal(parts[1], copy.body, 'complete reviewed addition retained');
@@ -276,7 +356,8 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       const snapshot = expected[locale];
       const supplement = supplements.get(article.slug)?.languages[locale];
       const refresh = currentRefreshes.entries.find((entry) => entry.slug === article.slug)?.[locale];
-      let originalMarkdown = copy.body;
+      const ajmanRefresh = ajmanRefreshes.entries.find((entry) => entry.slug === article.slug)?.[locale];
+      let originalMarkdown = beforeAjmanRefresh(article.slug, locale, copy.body);
       if (refresh) {
         const parts = originalMarkdown.split(`\n\n${refresh.separator}\n\n`);
         assert.equal(parts.length, 2, `${route}: one current additive refresh boundary`);
@@ -301,6 +382,12 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       let originalRendered = rendered.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/g, '');
       // The separate workbook download is additive, not a manuscript edit.
       originalRendered = originalRendered.replace(/<section\b[^>]*data-guide-worksheets="true"[^>]*>[\s\S]*?<\/section>/g, '');
+      if (ajmanRefresh) {
+        const boundary = [...originalRendered.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)]
+          .find((match) => text(match[1]) === ajmanRefresh.separator.slice(3));
+        assert.ok(boundary, `${route}: Ajman addition follows the entire released manuscript`);
+        originalRendered = originalRendered.slice(0, boundary.index);
+      }
       if (refresh) {
         const boundary = [...originalRendered.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)]
           .find((match) => text(match[1]) === refresh.separator.slice(3));
@@ -344,7 +431,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((match) => attrs(match[1]).type === 'application/ld+json').flatMap((match) => JSON.parse(match[2])['@graph'] || []);
       const schema = graph.find((node) => node['@type'] === 'Article');
       assert.equal(schema.url, url); assert.equal(schema.inLanguage, locale); assert.equal(schema.headline, copy.title);
-      assert.equal(schema.datePublished, publicationSchedule[article.slug]); assert.equal(schema.dateModified, refresh ? currentRefreshes.date : worksheetGuides.has(article.slug) ? '2026-10-22' : supplement ? '2026-10-20' : expected.updated);
+      assert.equal(schema.datePublished, publicationSchedule[article.slug]); assert.equal(schema.dateModified, ajmanRefresh ? ajmanRefreshes.date : refresh ? currentRefreshes.date : worksheetGuides.has(article.slug) ? '2026-10-22' : supplement ? '2026-10-20' : expected.updated);
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
       assert.deepEqual(schema.citation, [...new Set(fullLinks.filter((link) => new URL(link, origin).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);
