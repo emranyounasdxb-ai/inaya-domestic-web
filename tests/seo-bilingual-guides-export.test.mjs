@@ -6,6 +6,100 @@ import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
 const publicationSchedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
+const currentRefreshes = JSON.parse(await readFile('content/research/2026-10-24/article-refreshes.json', 'utf8'));
+
+test('domestic-service refreshes preserve the original manuscripts and render complete language-matched additions', async () => {
+  const source = await readFile('lib/published-article-content.ts', 'utf8');
+  const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
+  const sitemap = await readFile('out/sitemap.xml', 'utf8');
+  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 230, 'existing canonical route count preserved');
+  assert.equal(articles.length, 37, 'refresh existing publications instead of adding duplicate topics');
+  assert.deepEqual(currentRefreshes.entries.map(({ slug }) => slug).sort(), [
+    'choosing-domestic-worker-agency-ajman', 'domestic-worker-hiring-stages-timelines', 'four-hour-eight-hour-maid-visit-plan'
+  ]);
+  for (const refresh of currentRefreshes.entries) {
+    const article = articles.find(({ slug }) => slug === refresh.slug);
+    assert.equal(article.updated, '2026-10-24');
+    for (const locale of ['en', 'ar']) {
+      const copy = refresh[locale];
+      const parts = article[locale].body.split(`\n\n${copy.separator}\n\n`);
+      assert.equal(parts.length, 2, `${locale}/${refresh.slug}: unique addition boundary`);
+      assert.equal(createHash('sha256').update(parts[0]).digest('hex'), copy.baseBodySha256, 'original complete body preserved');
+      assert.equal(parts[1], copy.body, 'complete reviewed addition retained');
+      assert.ok(copy.body.split(/\s+/).length >= 250, 'substantive practical addition');
+      const html = await readFile(`out/${locale}/blog/${refresh.slug}/index.html`, 'utf8');
+      const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+      const renderedArticle = body.match(/<article\b[^>]*data-published-article="content"[^>]*>([\s\S]*?)<\/article>/)?.[1];
+      assert.ok(renderedArticle, 'published article is rendered');
+      const boundary = [...renderedArticle.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)]
+        .find((match) => text(match[1]) === copy.separator.slice(3));
+      assert.ok(boundary, 'new section heading is visible');
+      const addition = renderedArticle.slice(boundary.index);
+      // Inline anchors must not introduce spaces into Arabic clitics such as
+      // و[التنظيف](...). Block boundaries still receive normal text spacing.
+      const visible = text(addition.replace(/<\/?(?:a|strong)\b[^>]*>/g, ''));
+      const plain = (value) => tokens(value.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1').replace(/\*\*/g, '')).join(' ');
+      const renderedTokens = tokens(visible).join(' ');
+      for (const block of copy.body.split('\n\n')) {
+        if (block.startsWith('|')) {
+          for (const row of block.split('\n').filter((line) => !/^\|[\s:|-]+\|$/.test(line))) {
+            const cells = row.slice(1, -1).split('|').map((cell) => plain(cell));
+            assert.ok(renderedTokens.includes(cells.join(' ')), 'new worksheet/comparison row rendered in full');
+          }
+        } else {
+          assert.ok(renderedTokens.includes(plain(block.replace(/^## /, ''))), 'complete new paragraph or heading is visible');
+        }
+      }
+      assert.match(addition, /<table\b/, 'the new addition itself contains its practical table');
+      for (const [, link] of copy.body.matchAll(/\[[^\]]+\]\((https:\/\/[^)]+)\)/g)) {
+        assert.ok(body.includes(`href="${link.replace(/&/g, '&amp;')}"`), `clickable source/destination ${link}`);
+        const target = new URL(link);
+        if (target.origin === origin) {
+          assert.ok(target.pathname.startsWith(`/${locale}/`), 'internal link keeps language');
+          assert.ok(sitemap.includes(`<loc>${link}</loc>`), 'internal destination is canonical');
+        }
+      }
+      assert.ok(html.includes(`href="${origin}/${locale}/blog/${refresh.slug}/"`), 'same existing canonical retained');
+      assert.doesNotMatch(visible, /TODO|TBD|pending scope|awaiting approval|Golden Visa|tourist visa|company formation/i);
+    }
+  }
+});
+
+test('Tadbeer, cleaning and domestic-worker typing are visible with matching factual FAQs', async () => {
+  const targets = {
+    recruitment: { en: /Tadbeer centre in Ajman/, ar: /مركز عناية تدبير في عجمان/ },
+    housekeeping: { en: /4 hours for AED 120 or 8 hours for AED 200/, ar: /4 ساعات مقابل 120 درهماً أو 8 ساعات مقابل 200 درهم/ },
+    'maid-visa': { en: /Domestic-worker application typing and data review before submission/, ar: /طباعة الطلبات المرتبطة بالعمالة المنزلية ومراجعة البيانات قبل التقديم/ }
+  };
+  for (const locale of ['en', 'ar']) {
+    for (const [slug, expected] of Object.entries(targets)) {
+      const html = await readFile(`out/${locale}/services/${slug}/index.html`, 'utf8');
+      const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+      const visible = text(body);
+      assert.match(visible, expected[locale], `${locale}/${slug}: actual service scope visible`);
+      const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)]
+        .filter((match) => attrs(match[1]).type === 'application/ld+json')
+        .flatMap((match) => JSON.parse(match[2])['@graph'] || []);
+      const faq = graph.find((node) => node['@type'] === 'FAQPage');
+      assert.ok(faq, 'FAQ schema is present');
+      assert.ok(faq.mainEntity?.length, 'FAQ schema contains actual questions');
+      if (slug === 'recruitment') assert.ok(faq.mainEntity.some((item) => item.name === (locale === 'en' ? 'How do I choose the right Tadbeer service for my request?' : 'كيف أختار خدمة تدبير المناسبة لطلبي؟')), 'new Tadbeer question is included');
+      if (slug === 'maid-visa') assert.ok(faq.mainEntity.some((item) => item.name === (locale === 'en' ? 'Do typing and submission mean the application is approved?' : 'هل الطباعة وتقديم الطلب يعنيان الموافقة؟')), 'new typing question is included');
+      for (const question of faq.mainEntity) {
+        assert.ok(visible.includes(question.name), 'schema question visible');
+        assert.ok(visible.includes(question.acceptedAnswer.text), 'schema answer matches rendered facts');
+      }
+      assert.doesNotMatch(visible, /government-owned|official Amer centre|ICP-authorised centre|Golden Visa|tourist visa|company formation/i);
+      if (slug === 'recruitment') assert.ok(body.includes('href="https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"'), 'exact official centre record linked');
+      if (slug === 'maid-visa') {
+        assert.match(visible, locale === 'en' ? /approval and completion dates are not guaranteed/ : /لا توجد ضمانات للموافقة أو تاريخ الإنجاز/);
+        for (const phrase of locale === 'en' ? ['renewal', 'cancellation', 'status change', 'contract-related', 'Emirates ID', 'medical', 'insurance'] : ['التجديد', 'الإلغاء', 'تعديل الوضع', 'العقد', 'الهوية الإماراتية', 'الفحص الطبي', 'التأمين']) assert.ok(visible.includes(phrase), `domestic-worker step ${phrase}`);
+      }
+    }
+    const ajman = text((await readFile(`out/${locale}/maid-services-ajman/index.html`, 'utf8')).replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, ''));
+    assert.match(ajman, locale === 'en' ? /INAYA Tadbeer centre at Grand Mall, Ajman/ : /مركز عناية تدبير في جراند مول بعجمان/);
+  }
+});
 // The monthly checklist replaces three superseded tier sections with one
 // six-package explanation; all eight responsibility/terms sections remain.
 const sectionCounts = [7, 9, 5, 6, 10, 5, 5];
@@ -166,10 +260,17 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       const copy = article[locale];
       const snapshot = expected[locale];
       const supplement = supplements.get(article.slug)?.languages[locale];
+      const refresh = currentRefreshes.entries.find((entry) => entry.slug === article.slug)?.[locale];
       let originalMarkdown = copy.body;
+      if (refresh) {
+        const parts = originalMarkdown.split(`\n\n${refresh.separator}\n\n`);
+        assert.equal(parts.length, 2, `${route}: one current additive refresh boundary`);
+        assert.equal(parts[1], refresh.body, `${route}: complete approved current addition`);
+        originalMarkdown = parts[0];
+      }
       if (supplement) {
         const separator = `\n\n${supplement.supplementSeparator}\n\n`;
-        const parts = copy.body.split(separator);
+        const parts = originalMarkdown.split(separator);
         assert.equal(parts.length, 2, `${route}: one explicit approved supplement boundary`);
         assert.ok(parts[1].trim(), `${route}: substantive addition retained after the original`);
         originalMarkdown = parts[0];
@@ -185,6 +286,12 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       let originalRendered = rendered.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/g, '');
       // The separate workbook download is additive, not a manuscript edit.
       originalRendered = originalRendered.replace(/<section\b[^>]*data-guide-worksheets="true"[^>]*>[\s\S]*?<\/section>/g, '');
+      if (refresh) {
+        const boundary = [...originalRendered.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)]
+          .find((match) => text(match[1]) === refresh.separator.slice(3));
+        assert.ok(boundary, `${route}: current addition follows preserved copy`);
+        originalRendered = originalRendered.slice(0, boundary.index);
+      }
       if (worksheetGuides.has(article.slug)) {
         assert.match(rendered, /data-guide-worksheets="true"/);
         assert.match(rendered, /href="\/downloads\/inaya-household-planning-worksheets\.xlsx"[^>]*download/);
@@ -222,7 +329,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((match) => attrs(match[1]).type === 'application/ld+json').flatMap((match) => JSON.parse(match[2])['@graph'] || []);
       const schema = graph.find((node) => node['@type'] === 'Article');
       assert.equal(schema.url, url); assert.equal(schema.inLanguage, locale); assert.equal(schema.headline, copy.title);
-      assert.equal(schema.datePublished, publicationSchedule[article.slug]); assert.equal(schema.dateModified, worksheetGuides.has(article.slug) ? '2026-10-22' : supplement ? '2026-10-20' : expected.updated);
+      assert.equal(schema.datePublished, publicationSchedule[article.slug]); assert.equal(schema.dateModified, refresh ? currentRefreshes.date : worksheetGuides.has(article.slug) ? '2026-10-22' : supplement ? '2026-10-20' : expected.updated);
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
       assert.deepEqual(schema.citation, [...new Set(fullLinks.filter((link) => new URL(link, origin).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);

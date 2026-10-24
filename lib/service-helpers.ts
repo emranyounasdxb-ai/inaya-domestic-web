@@ -1,4 +1,5 @@
-import { getService, services, type Service } from './services';
+import { services, type Service } from './services';
+import { domesticServiceSummaries } from './domestic-service-content';
 
 export const extraServices: Service[] = [
   {
@@ -10,8 +11,12 @@ export const extraServices: Service[] = [
   }
 ];
 
-export const allServices = [...services, ...extraServices];
+export const allServices = [...services, ...extraServices].map((service) => (
+  domesticServiceSummaries[service.slug]
+    ? { ...service, description: domesticServiceSummaries[service.slug] }
+    : service
+));
 
 export function getServiceWithExtras(slug: string) {
-  return getService(slug) ?? extraServices.find((service) => service.slug === slug);
+  return allServices.find((service) => service.slug === slug);
 }

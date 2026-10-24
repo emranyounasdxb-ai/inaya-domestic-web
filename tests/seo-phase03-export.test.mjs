@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import remediation from './seo-audit-remediation-expectations.cjs';
 import managed from './managed-package-expectations.cjs';
 import ajmanOffice from './ajman-office-expectations.cjs';
+import domesticServices from './domestic-service-refresh-expectations.cjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -46,7 +47,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
-    const approved = ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
+    const approved = domesticServices.metadata[`${page.locale}/${page.route}`] ?? ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
     assert.equal(page.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
     if (page.route !== 'blog') assert.equal(page.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
@@ -58,7 +59,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     if (['', 'about', 'services', 'maid-services-ajman'].includes(page.route) || (page.route.startsWith('services/') && page.route !== 'services/countries-we-source-from')) additions.push(`${page.url}#primaryimage`);
     const expectedSchemaIds = [...before.schemaIds, ...additions].sort();
     assert.deepEqual(page.schemaIds, expectedSchemaIds, `${page.url}: preserved IDs plus the approved pricing FAQ and visible primary image`);
-    const expectedPrices = managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
+    const expectedPrices = domesticServices.priceMentions[`${page.locale}/${page.route}`] ?? managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
       : page.route === 'faq' ? page.locale === 'en' ? ['AED 1,500', 'AED 1,500', 'AED 2,500', 'AED 2,500'] : ['1,500 درهم', '1,500 درهم', '2,500 درهم', '2,500 درهم']
       : page.route === 'services/monthly-maid-contract' ? page.locale === 'en' ? ['AED 1,500', 'AED 2,500'] : ['1,500 درهم', '2,500 درهم']
       : before.prices);

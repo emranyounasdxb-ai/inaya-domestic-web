@@ -11,29 +11,31 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "choosing-domestic-worker-agency-ajman",
     "published": "2026-09-18",
-    "updated": "2026-10-19",
+    "updated": "2026-10-24",
     "en": {
       "title": "How to choose a domestic-worker agency in Ajman",
-      "description": "Choose an agency by checking its current recruitment licence, the legal arrangement it offers, the worker's suitability and the written contract. A low monthly…",
+      "description": "Compare Tadbeer domestic-worker services in Ajman with an agency-identity worksheet, clear recruitment, cleaning and visa-typing enquiries, and written terms.",
       "citations": [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21138",
         "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21135",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23227",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
-        "https://uaelegislation.gov.ae/en/legislations/1620#item23228"
+        "https://uaelegislation.gov.ae/en/legislations/1620#item23228",
+        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
       ]
     },
     "ar": {
       "title": "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟",
-      "description": "اختر المكتب بعد التحقق من ترخيصه الحالي، ونوع التعاقد الذي يقدمه، وملاءمة العامل لاحتياجات أسرتك، وشروط العقد المكتوبة. فالسعر الشهري المنخفض أو الملف التعريفي…",
+      "description": "قارن خدمات تدبير للعمالة المنزلية في عجمان بنموذج للتحقق من الجهة، وافصل الاستقدام والتنظيف وطباعة التأشيرة مع مراجعة الشروط المكتوبة.",
       "citations": [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21138",
         "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23227",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
-        "https://uaelegislation.gov.ae/ar/legislations/1620#item23228"
+        "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
+        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
       ]
     }
   },
@@ -201,10 +203,10 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-hiring-stages-timelines",
     "published": "2026-09-24",
-    "updated": "2026-10-19",
+    "updated": "2026-10-24",
     "en": {
       "title": "What happens during domestic-worker hiring, and how long does it take?",
-      "description": "Hiring has several stages: define the job, identify the employment model, select a suitable worker, sign the relevant agreements and complete the required…",
+      "description": "Follow domestic-worker hiring stages and related visa typing in Ajman, with clear preparation, submission, follow-up and authority-decision records.",
       "citations": [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21135",
@@ -216,12 +218,13 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1620#item23233",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21146",
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
-        "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+        "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
+        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
       ]
     },
     "ar": {
       "title": "ما مراحل توظيف العامل المساعد، وكم تستغرق؟",
-      "description": "يمر التوظيف بمراحل تشمل تحديد العمل، واختيار نموذج التوظيف، وانتقاء عامل مناسب، وتوقيع الاتفاقات ذات الصلة، واستكمال الإجراءات الرسمية المطلوبة. وتعتمد المدة…",
+      "description": "تابع مراحل توظيف العاملة المنزلية وطباعة طلباتها في عجمان، مع الفصل بين الإعداد والتقديم والمتابعة وقرار الجهة المختصة.",
       "citations": [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
@@ -233,7 +236,8 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23233",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21146",
         "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
-        "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+        "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
+        "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
       ]
     }
   },
@@ -659,10 +663,10 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "four-hour-eight-hour-maid-visit-plan",
     "published": "2026-09-01",
-    "updated": "2026-10-20",
+    "updated": "2026-10-24",
     "en": {
       "title": "Four-hour or eight-hour maid visit: how to plan the work",
-      "description": "Choose a four-hour or eight-hour INAYA maid visit using a task-priority table, preparation checklist and clear handover, with the published package prices.",
+      "description": "Plan INAYA four-hour or eight-hour cleaning visits with a task worksheet, access and supplies checklist, published package prices and a clear handover.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
         "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
@@ -670,7 +674,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
     },
     "ar": {
       "title": "زيارة عاملة منزلية لأربع أم ثماني ساعات: كيف تخطط للعمل؟",
-      "description": "اختر زيارة عناية لأربع أو ثماني ساعات باستخدام جدول للأولويات وقائمة للتجهيز وتسليم واضح، مع التعرف على أسعار الباقات المنشورة وحدود تنظيم المهام.",
+      "description": "نظم زيارة تنظيف لأربع أو ثماني ساعات من عناية بنموذج للأولويات والدخول والمستلزمات وأسعار الباقات، مع تسليم واضح ومراجعة للمهام.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
         "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
