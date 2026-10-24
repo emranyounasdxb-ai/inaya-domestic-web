@@ -1,0 +1,676 @@
+{
+  "date": "2026-10-24",
+  "ownerApproved": true,
+  "approval": "Owner approved all 44 article image previews for website publication on 24 October 2026.",
+  "recordedAtUtc": "2026-10-24T16:39:34.603Z",
+  "scope": {
+    "topics": 44,
+    "localizedPages": 88,
+    "excludedKeywordTopics": 21
+  },
+  "provenance": "AI-generated illustrative scenes with fictional people; owner office, uniform and logo references guided appearance. Not documentary staff/customer photographs.",
+  "canonicalFilenamesPreserved": true,
+  "displayVersionPurpose": "Refresh cached same-name illustrations; metadata and image sitemap retain the canonical file URLs.",
+  "images": [
+    {
+      "id": "R01",
+      "slug": "four-hour-eight-hour-maid-visit-plan",
+      "src": "/images/blogs/four-hour-eight-hour-maid-visit-plan-20261020.webp",
+      "cacheVersion": "ee43b05a725f",
+      "width": 1600,
+      "height": 900,
+      "sha256": "ee43b05a725f4340a2fbbb0482c152db7eeccc307d774634b00c18a11df70542",
+      "alt": {
+        "en": "A householder and domestic worker plan cleaning priorities beside a clock and cleaning supplies.",
+        "ar": "صاحبة منزل وعاملة منزلية تخططان لأولويات التنظيف بجوار ساعة ومستلزمات التنظيف."
+      },
+      "role": "royal-blue cleaning staff",
+      "setting": "Ajman apartment task planning"
+    },
+    {
+      "id": "R02",
+      "slug": "maid-visit-frequency-planner",
+      "src": "/images/blogs/maid-visit-frequency-planner-20261020.webp",
+      "cacheVersion": "55234e2e01b1",
+      "width": 1600,
+      "height": 900,
+      "sha256": "55234e2e01b1ef754add5bd7d4530fc0e8eec98b58cb7636bba58023f9b96cf2",
+      "alt": {
+        "en": "Household coordinator and domestic worker plan recurring visits using coloured calendar markers.",
+        "ar": "منسقة منزل وعاملة منزلية تخططان للزيارات الدورية باستخدام علامات ملونة على جدول."
+      },
+      "role": "royal-blue cleaning staff",
+      "setting": "Ajman apartment weekly visit planner"
+    },
+    {
+      "id": "R03",
+      "slug": "apartment-villa-maid-task-plan",
+      "src": "/images/blogs/apartment-villa-maid-task-plan-20261020.webp",
+      "cacheVersion": "c7bedbb0f03e",
+      "width": 1600,
+      "height": 900,
+      "sha256": "c7bedbb0f03ec0d667294767db7acec22fa10a8a8f005fd44e02590553be1e8d",
+      "alt": {
+        "en": "An INAYA cleaner in royal blue mops a villa entrance with stairs and multiple rooms.",
+        "ar": "عاملة تنظيف من عناية بزي أزرق ملكي تنظف مدخل فيلا بالممسحة بجوار درج وغرف متعددة."
+      },
+      "role": "royal-blue cleaning staff",
+      "setting": "home_large_layout"
+    },
+    {
+      "id": "R04",
+      "slug": "regular-maid-service-deep-move-in-cleaning",
+      "src": "/images/blogs/regular-maid-service-deep-move-in-cleaning-20261020.webp",
+      "cacheVersion": "2163a2cdacad",
+      "width": 1600,
+      "height": 900,
+      "sha256": "2163a2cdacad21014af3c49e00931f5ca44f1abaf17778635e50c1d3c56dfe05",
+      "alt": {
+        "en": "An INAYA cleaner in royal blue wipes an empty kitchen cupboard in a home prepared for moving in.",
+        "ar": "عاملة تنظيف من عناية بزي أزرق ملكي تمسح خزانة مطبخ فارغة في منزل يُجهز للانتقال إليه."
+      },
+      "role": "royal-blue cleaning staff",
+      "setting": "empty_home_cleaning"
+    },
+    {
+      "id": "R05",
+      "slug": "prepare-cleaning-supplies-maid-visit",
+      "src": "/images/blogs/prepare-cleaning-supplies-maid-visit-20261020.webp",
+      "cacheVersion": "9d83da67cdcf",
+      "width": 1600,
+      "height": 900,
+      "sha256": "9d83da67cdcff9ecbd9b783c13075053e3a263cc5d734a66faace028aab77f6a",
+      "alt": {
+        "en": "Cleaning cloths, gloves and closed bottles are organised beside a mop fitting.",
+        "ar": "أقمشة تنظيف وقفازات وعبوات مغلقة مرتبة بجوار جزء الممسحة."
+      },
+      "role": "royal blue cleaning staff",
+      "setting": "home_object_led_cleaning_kit"
+    },
+    {
+      "id": "R06",
+      "slug": "maid-laundry-ironing-task-checklist",
+      "src": "/images/blogs/maid-laundry-ironing-task-checklist-20261020.webp",
+      "cacheVersion": "2e9a3ac8200b",
+      "width": 1600,
+      "height": 900,
+      "sha256": "2e9a3ac8200b5204ef03b929469b6eaba85c076e3cff9068ef033cc0814461b9",
+      "alt": {
+        "en": "A housemaid checks a garment-care label beside sorted laundry and an upright iron.",
+        "ar": "عاملة منزلية تراجع ملصق العناية بقطعة ملابس بجوار غسيل مفروز ومكواة قائمة بأمان."
+      },
+      "role": "pink housemaid",
+      "setting": "home_laundry_detail"
+    },
+    {
+      "id": "R07",
+      "slug": "home-cooking-weekly-meal-prep-plan",
+      "src": "/images/blogs/home-cooking-weekly-meal-prep-plan-20261020.webp",
+      "cacheVersion": "c4dc3a064105",
+      "width": 1600,
+      "height": 900,
+      "sha256": "c4dc3a0641057931409823af5df2c59a9793993a7bf25a014f13a23f133329c9",
+      "alt": {
+        "en": "A cook in pink prepares an everyday vegetable meal in a home kitchen.",
+        "ar": "عاملة طهي بزي وردي تجهز وجبة خضار يومية في مطبخ منزلي."
+      },
+      "role": "pink housemaid and cook",
+      "setting": "home_kitchen_cooking"
+    },
+    {
+      "id": "R08",
+      "slug": "new-maid-first-week-checklist",
+      "src": "/images/blogs/new-maid-first-week-checklist-20261020.webp",
+      "cacheVersion": "55e30495275d",
+      "width": 1600,
+      "height": 900,
+      "sha256": "55e30495275db9b4e285d15d49bda1ed61e845324a98645d6e38ab0f889ae53a",
+      "alt": {
+        "en": "A householder shows a new housemaid how to use the washing-machine controls.",
+        "ar": "صاحبة المنزل تشرح للعاملة الجديدة استخدام أدوات التحكم في الغسالة."
+      },
+      "role": "pink housemaid",
+      "setting": "home_orientation"
+    },
+    {
+      "id": "R09",
+      "slug": "nanny-school-routine-child-handover",
+      "src": "/images/blogs/nanny-school-routine-child-handover-20261020.webp",
+      "cacheVersion": "271a32adf0e4",
+      "width": 1600,
+      "height": 900,
+      "sha256": "271a32adf0e4706ddd099002358cc8e489faf61855b6cabe2338d51a45f88b7b",
+      "alt": {
+        "en": "A parent hands a school backpack to a nanny in beige inside the home.",
+        "ar": "أحد الوالدين يسلم حقيبة مدرسية لمربية بزي بيج داخل المنزل."
+      },
+      "role": "beige nanny",
+      "setting": "home_school_morning"
+    },
+    {
+      "id": "R10",
+      "slug": "maid-household-with-pets",
+      "src": "/images/blogs/maid-household-with-pets-20261020.webp",
+      "cacheVersion": "cf19f838b47a",
+      "width": 1600,
+      "height": 900,
+      "sha256": "cf19f838b47af2139792fd8df37b7de1e6e07336bcae18e1f2db12a38392fd1f",
+      "alt": {
+        "en": "A householder explains the pet area while a housemaid observes a calm dog from a distance.",
+        "ar": "صاحب المنزل يشرح منطقة الحيوان الأليف بينما تراقب العاملة كلباً هادئاً من مسافة مناسبة."
+      },
+      "role": "pink housemaid",
+      "setting": "home_safe_pet_introduction"
+    },
+    {
+      "id": "R11",
+      "slug": "maid-home-access-keys-privacy",
+      "src": "/images/blogs/maid-home-access-keys-privacy-20261020.webp",
+      "cacheVersion": "3fd05df09619",
+      "width": 1600,
+      "height": 900,
+      "sha256": "3fd05df0961986e32b04cf7f155bacba4e11c5d1dbedad640fe2ab1c652101cd",
+      "alt": {
+        "en": "A householder hands a single home key to a housemaid in pink at an indoor entrance.",
+        "ar": "صاحبة المنزل تسلم مفتاحاً واحداً لعاملة منزلية بزي وردي عند المدخل الداخلي."
+      },
+      "role": "pink housemaid",
+      "setting": "home_entry_object_led"
+    },
+    {
+      "id": "R12",
+      "slug": "maid-help-family-guests-gathering",
+      "src": "/images/blogs/maid-help-family-guests-gathering-20261020.webp",
+      "cacheVersion": "5da09ab09fd9",
+      "width": 1600,
+      "height": 900,
+      "sha256": "5da09ab09fd9f4cf5aae1e0f8fb66e73542cb72e69cca42260370b469cc42efb",
+      "alt": {
+        "en": "A housemaid in pink and a householder prepare a family dining table before guests arrive.",
+        "ar": "عاملة منزلية بزي وردي وصاحبة المنزل تجهزان طاولة عائلية قبل وصول الضيوف."
+      },
+      "role": "pink housemaid",
+      "setting": "home_dining_preparation"
+    },
+    {
+      "id": "R13",
+      "slug": "maid-duties-family-holiday",
+      "src": "/images/blogs/maid-duties-family-holiday-20261020.webp",
+      "cacheVersion": "812269a885f3",
+      "width": 1600,
+      "height": 900,
+      "sha256": "812269a885f3df052c3ef99bb5b148ff930785593ffe5576e0a9172f2f9173c7",
+      "alt": {
+        "en": "A housemaid in pink waters an indoor plant in an occupied home.",
+        "ar": "عاملة منزلية بزي وردي تسقي نباتاً داخلياً في منزل مأهول."
+      },
+      "role": "pink housemaid",
+      "setting": "home_occupied_during_travel"
+    },
+    {
+      "id": "R14",
+      "slug": "moving-home-emirate-with-domestic-worker",
+      "src": "/images/blogs/moving-home-emirate-with-domestic-worker-20261020.webp",
+      "cacheVersion": "5f9729a731a2",
+      "width": 1600,
+      "height": 900,
+      "sha256": "5f9729a731a2fc1c147fee5120ca997175feead98b75ff318e9b6e7b4b815510",
+      "alt": {
+        "en": "A housemaid unpacks clean towels beside sealed moving boxes in a new home.",
+        "ar": "عاملة منزلية ترتب مناشف نظيفة بجوار صناديق انتقال مغلقة في المنزل الجديد."
+      },
+      "role": "pink housemaid",
+      "setting": "new_home_object_led_moving"
+    },
+    {
+      "id": "R15",
+      "slug": "one-maid-two-helpers-workload",
+      "src": "/images/blogs/one-maid-two-helpers-workload-20261020.webp",
+      "cacheVersion": "119f45bcef19",
+      "width": 1600,
+      "height": 900,
+      "sha256": "119f45bcef19fab7c05c84d95de05495c38baa6fee3de9aaed1308b0f9b879ec",
+      "alt": {
+        "en": "A cleaner in blue and a cook in pink handle separate tasks in different home areas.",
+        "ar": "عاملة تنظيف بزي أزرق وعاملة طهي بزي وردي تنجزان مهام منفصلة في منطقتين بالمنزل."
+      },
+      "role": "royal blue cleaning staff; pink housemaid and cook",
+      "setting": "home_separate_roles"
+    },
+    {
+      "id": "R16",
+      "slug": "maid-daily-instructions-handover-template",
+      "src": "/images/blogs/maid-daily-instructions-handover-template-20261020.webp",
+      "cacheVersion": "cea625ff4a16",
+      "width": 1600,
+      "height": 900,
+      "sha256": "cea625ff4a1663c5751d5ea094a91e4ba053bf0bb73deb5fb8f0956f835e05b4",
+      "alt": {
+        "en": "A housemaid and householder review a simple household handover notebook.",
+        "ar": "عاملة منزلية وأحد أفراد الأسرة يراجعان دفتراً بسيطاً لتسليم مهام المنزل."
+      },
+      "role": "housemaid / pink",
+      "setting": "home_object_led_handover"
+    },
+    {
+      "id": "R17",
+      "slug": "domestic-worker-contract-permit-residence-cancellation",
+      "src": "/images/blogs/domestic-worker-contract-permit-residence-cancellation-20261020.webp",
+      "cacheVersion": "272a6833baca",
+      "width": 1600,
+      "height": 900,
+      "sha256": "272a6833baca816111165557c174292fc4531a8d84e2f8c42b4f17beba83048e",
+      "alt": {
+        "en": "Hands sort separate closed administrative folders into different office trays.",
+        "ar": "يدان ترتبان ملفات إدارية مغلقة ومنفصلة في صوان مختلفة بالمكتب."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "reference_matched_office_object_led_closing_records"
+    },
+    {
+      "id": "R18",
+      "slug": "choosing-domestic-worker-agency-ajman",
+      "src": "/images/blogs/how-to-choose-a-domestic-worker-agency-in-ajman.webp",
+      "cacheVersion": "820fff43cbe8",
+      "width": 1600,
+      "height": 900,
+      "sha256": "820fff43cbe88dc388746e1780354343ecb8e2952a8c87d643349f5ea2d931ed",
+      "alt": {
+        "en": "A visitor checks her visit details inside the office reception.",
+        "ar": "زائرة تتحقق من تفاصيل زيارتها داخل منطقة الاستقبال بالمكتب."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "reference_matched_INAYA_office"
+    },
+    {
+      "id": "R19",
+      "slug": "domestic-worker-hiring-costs-uae",
+      "src": "/images/blogs/domestic-worker-hiring-costs-uae-20261020.webp",
+      "cacheVersion": "29ae37bf6625",
+      "width": 1600,
+      "height": 900,
+      "sha256": "29ae37bf66258d9e01a7978b151d3d48371eed2e7d0d293b8e60d89b0573620d",
+      "alt": {
+        "en": "Hands compare two quotations with a household budget notebook and calculator.",
+        "ar": "يدان تقارنان عرضين باستخدام دفتر ميزانية الأسرة وآلة حاسبة."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "home_budget_detail"
+    },
+    {
+      "id": "R20",
+      "slug": "domestic-worker-employment-arrangements-uae",
+      "src": "/images/blogs/live-in-live-out-or-temporary-domestic-help-which-arrangement-fits-your-household.webp",
+      "cacheVersion": "abdc3a1c75a4",
+      "width": 1600,
+      "height": 900,
+      "sha256": "abdc3a1c75a42c1289db0277a4927c6fcb449f267aa70582e3515050574c79b4",
+      "alt": {
+        "en": "A prepared private room with a single bed, a plain timetable and a key.",
+        "ar": "غرفة خاصة مجهزة بسرير مفرد، وبجوارها ورقة جدول ومفتاح."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "UAE_home_room_preparation_object_led"
+    },
+    {
+      "id": "R21",
+      "slug": "all-inclusive-domestic-worker-packages",
+      "src": "/images/blogs/what-should-an-all-inclusive-domestic-worker-package-include-in-writing.webp",
+      "cacheVersion": "d5a6c92ced6b",
+      "width": 1600,
+      "height": 900,
+      "sha256": "d5a6c92ced6b8fed9aff64cc34746e81e727c4a9165080881e602a97bfc1eb02",
+      "alt": {
+        "en": "Hands review separate papers in a binder of household-service terms.",
+        "ar": "يدان تراجعان أوراقاً منفصلة في ملف لشروط الخدمة المنزلية."
+      },
+      "role": "administrative clothes / no service uniform",
+      "setting": "reference_matched_office_object_led"
+    },
+    {
+      "id": "R22",
+      "slug": "domestic-worker-sponsorship-responsibilities",
+      "src": "/images/blogs/who-is-responsible-for-a-domestic-workers-sponsorship-and-employment.webp",
+      "cacheVersion": "324228648823",
+      "width": 1600,
+      "height": 900,
+      "sha256": "32422864882346008629a4f67db6163fcc0aec04d2234fa0950eb4fd76cff44c",
+      "alt": {
+        "en": "An adviser and householder discuss separate folders at the office counter.",
+        "ar": "مستشارة وأحد أفراد الأسرة يناقشان ملفات منفصلة عند منضدة المكتب."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "reference_matched_INAYA_office"
+    },
+    {
+      "id": "R23",
+      "slug": "domestic-worker-employer-eligibility-documents",
+      "src": "/images/blogs/who-can-apply-for-a-domestic-worker-permit-and-which-documents-are-needed.webp",
+      "cacheVersion": "6ba759bb5e4a",
+      "width": 1600,
+      "height": 900,
+      "sha256": "6ba759bb5e4ab9504608094234e66d2703e7ea89a45ceaf5e3e8ff1ae9a1dc5a",
+      "alt": {
+        "en": "A householder places closed document folders into a fabric organiser.",
+        "ar": "أحد أفراد الأسرة يضع ملفات مستندات مغلقة في حافظة قماشية."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "home_administrative_detail"
+    },
+    {
+      "id": "R24",
+      "slug": "domestic-worker-hiring-stages-timelines",
+      "src": "/images/blogs/what-happens-during-domestic-worker-hiring-and-how-long-does-it-take.webp",
+      "cacheVersion": "d94bf706349a",
+      "width": 1600,
+      "height": 900,
+      "sha256": "d94bf706349ae23d8496a8af81bae4521ca9b6e2feaa1fec3f98a7807bad0480",
+      "alt": {
+        "en": "An adviser follows up a case beside a calendar and closed folder.",
+        "ar": "مستشارة تتابع معاملة بجوار تقويم وملف مغلق."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "reference_matched_INAYA_office"
+    },
+    {
+      "id": "R25",
+      "slug": "domestic-worker-skills-language-assessment",
+      "src": "/images/blogs/how-to-select-a-domestic-workers-skills-and-language-for-your-household.webp",
+      "cacheVersion": "d36c4d3638a8",
+      "width": 1600,
+      "height": 900,
+      "sha256": "d36c4d3638a8cab20a26af5e7f8905bc069d740e730507f5076aa53ae077122f",
+      "alt": {
+        "en": "A housemaid in pink explains a practical linen-folding task to a householder.",
+        "ar": "عاملة منزلية بزي وردي تشرح طريقة طي الأغطية لصاحبة المنزل."
+      },
+      "role": "housemaid / pink",
+      "setting": "home_practical_demonstration"
+    },
+    {
+      "id": "R26",
+      "slug": "choosing-nanny-newborn-support",
+      "src": "/images/blogs/how-to-assess-a-nanny-for-a-baby-or-newborn.webp",
+      "cacheVersion": "204a49a039dc",
+      "width": 1600,
+      "height": 900,
+      "sha256": "204a49a039dc1046876efcaafc2f936522f5a99a481b3630a431473207a087c3",
+      "alt": {
+        "en": "A nanny in beige and a parent discuss an empty bassinet in a nursery.",
+        "ar": "مربية بزي بيج وأحد الوالدين يناقشان تجهيز سرير رضيع فارغ."
+      },
+      "role": "nanny / beige",
+      "setting": "home_nursery_preparation"
+    },
+    {
+      "id": "R27",
+      "slug": "caregiver-versus-licensed-nurse",
+      "src": "/images/blogs/caregiver-or-licensed-nurse-which-kind-of-home-support-do-you-need.webp",
+      "cacheVersion": "091bc02e0bdf",
+      "width": 1600,
+      "height": 900,
+      "sha256": "091bc02e0bdfa5742a77ab030a1d07e196f3e9b01e3c023e12bcd24d672562a3",
+      "alt": {
+        "en": "A caregiver in maroon and an older woman share a quiet conversation at home.",
+        "ar": "مقدمة رعاية بزي خمري وامرأة مسنة تتحادثان بهدوء في المنزل."
+      },
+      "role": "elderly nonclinical care / maroon",
+      "setting": "home_nonclinical_companionship"
+    },
+    {
+      "id": "R28",
+      "slug": "agreeing-domestic-worker-household-duties",
+      "src": "/images/blogs/agreeing-domestic-worker-household-duties-20261020.webp",
+      "cacheVersion": "589c2248ff7e",
+      "width": 1600,
+      "height": 900,
+      "sha256": "589c2248ff7e122d8e2364b13d25f9554b0ccf745a0940b3ea28d8cfb58b3dac",
+      "alt": {
+        "en": "A housemaid in pink prepares ingredients while a parent supervises the child nearby.",
+        "ar": "عاملة منزلية بزي وردي تجهز المكونات بينما يشرف أحد الوالدين على الطفل بالقرب منها."
+      },
+      "role": "housemaid and cook / pink",
+      "setting": "home_kitchen_routine"
+    },
+    {
+      "id": "R29",
+      "slug": "domestic-worker-verification-checks",
+      "src": "/images/blogs/what-should-verified-domestic-worker-mean.webp",
+      "cacheVersion": "1205b474ac41",
+      "width": 1600,
+      "height": 900,
+      "sha256": "1205b474ac41dc03260584be2e7389bb6f0b27019b98b15de24e7751ec7312a6",
+      "alt": {
+        "en": "A blank checklist card and closed folders support an evidence-review discussion.",
+        "ar": "بطاقة مراجعة خالية من البيانات وملفات مغلقة لتوضيح مناقشة المستندات."
+      },
+      "role": "no service uniform; household/admin",
+      "setting": "office_object_led_evidence"
+    },
+    {
+      "id": "R30",
+      "slug": "domestic-worker-interview-trial-probation",
+      "src": "/images/blogs/interview-trial-and-probation-what-is-the-difference-when-hiring-a-domestic-worker.webp",
+      "cacheVersion": "5c0f56f2dc9f",
+      "width": 1600,
+      "height": 900,
+      "sha256": "5c0f56f2dc9fcfb5cb84e735f7efeef301b38fc428d13203f2fca2c24cb7ff92",
+      "alt": {
+        "en": "A housemaid candidate and householder speak with an adviser in an office seating area.",
+        "ar": "مرشحة للعمل المنزلي وصاحبة منزل تتحدثان مع مستشارة في منطقة جلوس بالمكتب."
+      },
+      "role": "housemaid candidate / pink",
+      "setting": "reference_matched_office_conversation_corner"
+    },
+    {
+      "id": "R31",
+      "slug": "domestic-worker-replacement-eligibility",
+      "src": "/images/blogs/when-can-you-request-a-replacement-domestic-worker.webp",
+      "cacheVersion": "686d4ca8fabe",
+      "width": 1600,
+      "height": 900,
+      "sha256": "686d4ca8fabe48a575ab33d6a46934f0428319eb7ef759ef99a05b267eb53d1b",
+      "alt": {
+        "en": "A visitor discusses notes in an open folder with an adviser in INAYA’s waiting area.",
+        "ar": "زائر يناقش ملاحظات في ملف مفتوح مع مستشارة في منطقة الانتظار لدى عناية."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "reference_matched_office_followup"
+    },
+    {
+      "id": "R32",
+      "slug": "domestic-worker-recruitment-refund-rules",
+      "src": "/images/blogs/when-are-domestic-worker-recruitment-fees-refundable.webp",
+      "cacheVersion": "494fd1bcb028",
+      "width": 1600,
+      "height": 900,
+      "sha256": "494fd1bcb028841ad91f7998e3c270d861550d01d1d4bce262e7646f799aa845",
+      "alt": {
+        "en": "Hands arrange paperwork beside a pen, calculator and water glass on a home table.",
+        "ar": "يدان ترتبان أوراقاً بجوار قلم وآلة حاسبة وكوب ماء على طاولة منزلية."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "home_object_led_records"
+    },
+    {
+      "id": "R33",
+      "slug": "domestic-worker-contracts-renewal",
+      "src": "/images/blogs/which-domestic-worker-contracts-should-you-read-and-how-does-renewal-work.webp",
+      "cacheVersion": "cb63ddac4eb8",
+      "width": 1600,
+      "height": 900,
+      "sha256": "cb63ddac4eb8a1fe53ac91569e1cf501eaf223dbc809cdd3a9191bfdfbeebfae",
+      "alt": {
+        "en": "A woman reviews papers beside a closed folder in a glass-partitioned office.",
+        "ar": "امرأة تراجع أوراقاً بجوار ملف مغلق داخل مكتب ذي فواصل زجاجية."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "reference_matched_office_reading"
+    },
+    {
+      "id": "R34",
+      "slug": "domestic-worker-wages-rest-leave",
+      "src": "/images/blogs/domestic-worker-wages-rest-and-leave-what-must-an-employer-plan-for.webp",
+      "cacheVersion": "4cf74c0250d9",
+      "width": 1600,
+      "height": 900,
+      "sha256": "4cf74c0250d9224ae219f026eda73052c13dc2e695acfeee67a4bace14151402",
+      "alt": {
+        "en": "A woman in a pink INAYA uniform rests in an armchair holding a cup.",
+        "ar": "امرأة بزي عناية الوردي تستريح على كرسي بذراعين وهي تحمل كوباً."
+      },
+      "role": "Pink — housemaid",
+      "setting": "home_rest_space"
+    },
+    {
+      "id": "R35",
+      "slug": "own-visa-part-time-domestic-work",
+      "src": "/images/blogs/can-you-hire-a-domestic-worker-who-has-their-own-visa-or-works-part-time.webp",
+      "cacheVersion": "860c80a3720f",
+      "width": 1600,
+      "height": 900,
+      "sha256": "860c80a3720f91e61b1af435de628ad17a666ffae8bed575f59919a16f365229",
+      "alt": {
+        "en": "A hand points to a blank card between a closed document wallet and a folder at a service counter.",
+        "ar": "يد تشير إلى بطاقة خالية من الكتابة بين محفظة وثائق مغلقة وملف أوراق على منضدة خدمة."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "office_object_led_question"
+    },
+    {
+      "id": "R36",
+      "slug": "domestic-worker-leave-travel-planning",
+      "src": "/images/blogs/domestic-worker-leave-travel-planning-20261020.webp",
+      "cacheVersion": "a1edfc17c8cd",
+      "width": 1600,
+      "height": 900,
+      "sha256": "a1edfc17c8cd4d079dd42674053cea596e763182a13bc3431d8fa92a80eb75a4",
+      "alt": {
+        "en": "A woman in a pink INAYA uniform holds a closed wallet while packing a suitcase beside a woman with a notebook.",
+        "ar": "امرأة بزي عناية الوردي تحمل محفظة مغلقة أثناء ترتيب حقيبة سفر، وبجانبها امرأة تحمل دفتراً."
+      },
+      "role": "Pink — housemaid",
+      "setting": "home_personal_packing"
+    },
+    {
+      "id": "R37",
+      "slug": "domestic-worker-complaints-disputes",
+      "src": "/images/blogs/how-do-domestic-worker-complaints-and-recruitment-agency-disputes-proceed.webp",
+      "cacheVersion": "0c62ff4db942",
+      "width": 1600,
+      "height": 900,
+      "sha256": "0c62ff4db942214b64dffa0121c8db4f337c8e9655085ff8aafa487175f8905c",
+      "alt": {
+        "en": "A woman in a pink INAYA uniform speaks with two men around a table in a glass-partitioned office.",
+        "ar": "امرأة بزي عناية الوردي تتحدث مع رجلين حول طاولة داخل مكتب ذي فواصل زجاجية."
+      },
+      "role": "Pink — housemaid",
+      "setting": "reference_matched_office_neutral_conversation"
+    },
+    {
+      "id": "R38",
+      "slug": "live-in-live-out-part-time-maid-uae",
+      "src": "/images/blogs/live-in-live-out-or-part-time-maid-comparing-arrangements.webp",
+      "cacheVersion": "9186988d215f",
+      "width": 1600,
+      "height": 900,
+      "sha256": "9186988d215f5ff4e60b75d3c81bada300f24d2ef4df67dd8cf36a5220d8435f",
+      "alt": {
+        "en": "A woman in a pink INAYA uniform carries a tote as a householder welcomes her beside a shoe rack.",
+        "ar": "امرأة بزي عناية الوردي تحمل حقيبة قماشية، بينما ترحب بها صاحبة المنزل بجوار رف أحذية."
+      },
+      "role": "Pink — housemaid",
+      "setting": "UAE_home_entrance"
+    },
+    {
+      "id": "R39",
+      "slug": "monthly-maid-package-inclusions-checklist",
+      "src": "/images/blogs/what-is-included-in-a-monthly-maid-package.webp",
+      "cacheVersion": "7d1c7b4dd9b3",
+      "width": 1600,
+      "height": 900,
+      "sha256": "7d1c7b4dd9b34ac5b4674d6fde7177513c7cca9d4b5b24c87458096f9de35e0d",
+      "alt": {
+        "en": "A woman in a pink INAYA uniform checks a blank task sheet while placing a folded towel on a cupboard shelf.",
+        "ar": "امرأة بزي عناية الوردي تراجع ورقة مهام خالية من الكتابة أثناء وضع منشفة مطوية على رف خزانة."
+      },
+      "role": "Pink — housemaid",
+      "setting": "home_housekeeping"
+    },
+    {
+      "id": "R40",
+      "slug": "maid-nanny-babysitter-differences",
+      "src": "/images/blogs/maid-nanny-or-babysitter-choosing-the-right-role.webp",
+      "cacheVersion": "c5da96110fdf",
+      "width": 1600,
+      "height": 900,
+      "sha256": "c5da96110fdfff9bfb9e8f1e0ea511acccb6a998638d02e994111be395243729",
+      "alt": {
+        "en": "A woman in a beige INAYA uniform shares a picture book with a back-facing child while another woman sits nearby.",
+        "ar": "امرأة بزي عناية البيج تشارك طفلاً يظهر من الخلف قراءة كتاب مصور، وإلى جانبهما امرأة تحمل كتاباً آخر."
+      },
+      "role": "Beige — nanny",
+      "setting": "home_childcare_corner"
+    },
+    {
+      "id": "R41",
+      "slug": "domestic-worker-visa-sponsorship-support",
+      "src": "/images/blogs/preparing-a-domestic-worker-visa-or-sponsorship-case.webp",
+      "cacheVersion": "641be7efb52b",
+      "width": 1600,
+      "height": 900,
+      "sha256": "641be7efb52b879e1360f84cc00becab8dad1a5eaf6f2c3ed6b3bc361e83fcbe",
+      "alt": {
+        "en": "Hands place blank papers in document trays beside a closed wallet and phone at a service counter.",
+        "ar": "يدان تضعان أوراقاً خالية من الكتابة في صواني مستندات بجوار محفظة مغلقة وهاتف على منضدة خدمة."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "reference_matched_INAYA_office_object_led"
+    },
+    {
+      "id": "R42",
+      "slug": "documents-for-domestic-worker-enquiry",
+      "src": "/images/blogs/documents-to-prepare-for-a-domestic-worker-enquiry.webp",
+      "cacheVersion": "9741c0f01abb",
+      "width": 1600,
+      "height": 900,
+      "sha256": "9741c0f01abbd739f297b9495019153589abb0204fb30abc77ff9fa67e2aad50",
+      "alt": {
+        "en": "An adult sorts papers into a folder beside a closed document wallet on an entryway console.",
+        "ar": "شخص بالغ يرتب أوراقاً في ملف بجوار محفظة وثائق مغلقة على طاولة عند المدخل."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "home_object_led"
+    },
+    {
+      "id": "R43",
+      "slug": "uae-domestic-worker-hiring-process",
+      "src": "/images/blogs/questions-to-ask-before-hiring-a-domestic-worker-in-the-uae.webp",
+      "cacheVersion": "f07f29f54cc4",
+      "width": 1600,
+      "height": 900,
+      "sha256": "f07f29f54cc44f89230d4bde3d19d2b4f2a4eab9765fe54b5dca67f0b12a75be",
+      "alt": {
+        "en": "A visitor uses a notebook while speaking with an adviser at a numbered blue-and-white INAYA counter.",
+        "ar": "زائرة تستخدم دفتراً أثناء الحديث مع مستشارة عند منضدة عناية المرقمة باللونين الأزرق والأبيض."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "reference_matched_INAYA_office"
+    },
+    {
+      "id": "R44",
+      "slug": "domestic-worker-package-pricing-factors",
+      "src": "/images/blogs/domestic-worker-costs-package-prices-wages-and-fees.webp",
+      "cacheVersion": "698028a75cfc",
+      "width": 1600,
+      "height": 900,
+      "sha256": "698028a75cfc4a50edad89cc275a74d14839295181b03746621996d9627a6245",
+      "alt": {
+        "en": "Hands compare blank cards beside a notebook and calculator on a kitchen counter.",
+        "ar": "أيدٍ تقارن بطاقات خالية من الكتابة بجوار دفتر وآلة حاسبة على سطح مطبخ."
+      },
+      "role": "No domestic-worker uniform depicted",
+      "setting": "home_object_led"
+    }
+  ]
+}

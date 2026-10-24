@@ -14,7 +14,7 @@ export default function BlogImage({ slug, locale, hero = false, className = '' }
   return (
     <div className={`${fullFrame ? '' : 'aspect-video'} overflow-hidden ${className}`} style={fullFrame ? { aspectRatio: `${image.width} / ${image.height}` } : undefined}>
       <Image
-        src={image.src}
+        src={image.cacheVersion ? `${image.src}?v=${image.cacheVersion}` : image.src}
         alt={image.alt[locale === 'ar' ? 'ar' : 'en']}
         width={image.width ?? 1600}
         height={image.height ?? 900}
