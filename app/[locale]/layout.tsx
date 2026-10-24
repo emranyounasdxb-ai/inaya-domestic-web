@@ -9,7 +9,7 @@ import Navbar from '@/components/Navbar';
 import BrandLogo from '@/components/BrandLogo';
 import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
-import SierraLeoneOfferControls from '@/components/SierraLeoneOfferControls';
+import BackToTop from '@/components/BackToTop';
 import GoogleAnalyticsConsent from '@/components/GoogleAnalyticsConsent';
 import '../globals.css';
 import '../arabic-body-font.css';
@@ -51,7 +51,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           <GoogleAnalyticsConsent locale={locale} />
           <Navbar locale={locale} labels={labels} logo={<BrandLogo locale={locale} alt={locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers — Home'} width={156} className="h-7 w-auto max-w-[132px] object-contain sm:max-w-[156px]" />} />
           <FloatingSocialBar locale={locale} />
-          <SierraLeoneOfferControls locale={locale} />
+          <BackToTop locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />
       </body>

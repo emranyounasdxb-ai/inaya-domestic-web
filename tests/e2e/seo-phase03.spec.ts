@@ -22,8 +22,7 @@ for (const locale of ['en', 'ar']) {
     await page.goto(`/${locale}/how-it-works/`);
     const blog = page.locator(`main a[href="/${locale}/blog/"]`);
     await blog.scrollIntoViewIfNeeded();
-    await expect(page.getByTestId('sierra-leone-offer')).toBeVisible();
-    await page.getByTestId('sierra-leone-offer').getByRole('button').click();
+    await expect(page.getByTestId('sierra-leone-offer')).toHaveCount(0);
     await expect(page.getByTestId('sierra-leone-offer-backdrop')).toHaveCount(0);
     await blog.click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/blog/$`));
@@ -32,8 +31,7 @@ for (const locale of ['en', 'ar']) {
     await page.goto(`/${locale}/about/`);
     const careers = page.locator(`main a[href="/${locale}/careers/"]`);
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-    await expect(page.getByTestId('sierra-leone-offer')).toBeVisible();
-    await page.getByTestId('sierra-leone-offer').getByRole('button').click();
+    await expect(page.getByTestId('sierra-leone-offer')).toHaveCount(0);
     await expect(page.getByTestId('sierra-leone-offer-backdrop')).toHaveCount(0);
     await careers.click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/careers/$`));
@@ -50,12 +48,10 @@ for (const locale of ['en', 'ar']) {
       const faq = graph.find((node: Record<string, unknown>) => node['@type'] === 'FAQPage');
       const details = page.locator('details');
       expect(await details.count()).toBe(faq.mainEntity.length);
-      // The existing global offer appears after scroll on internal pages too.
-      // Dismiss it through its real user control; do not hide/disable it or force clicks.
+      // The retired global offer must remain absent on internal pages.
       await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
       const offer = page.getByTestId('sierra-leone-offer');
-      await expect(offer).toBeVisible();
-      await offer.getByRole('button').click();
+      await expect(offer).toHaveCount(0);
       await expect(offer).toBeHidden();
       for (const [index, item] of faq.mainEntity.entries()) {
         await expect(details.nth(index).locator('summary')).toHaveText(item.name);

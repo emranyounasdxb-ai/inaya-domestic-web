@@ -26,10 +26,9 @@ for (const locale of ['en', 'ar']) {
     const faq = page.locator('main details').filter({ hasText: ar ? 'ما الدعم الذي يمكن مناقشته مع عناية؟' : 'What support can I discuss with INAYA?' });
     const summary = faq.locator('summary');
     await summary.scrollIntoViewIfNeeded();
-    // Scrolling to this FAQ opens the existing offer; use its normal close control.
+    // The expired promotion must not obscure the FAQ after scrolling.
     const offer = page.getByTestId('sierra-leone-offer');
-    await expect(offer).toBeVisible();
-    await offer.getByRole('button', { name: ar ? 'إغلاق عرض سيراليون' : 'Close Sierra Leone offer', exact: true }).click();
+    await expect(offer).toHaveCount(0);
     await expect(offer).toHaveCount(0);
     await summary.click();
     for (const phrase of ar

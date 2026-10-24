@@ -29,8 +29,7 @@ for (const locale of ['en', 'ar'] as const) {
         await page.goto(`/${locale}/${route}/`);
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
         const offer = page.getByTestId('sierra-leone-offer');
-        await expect(offer).toBeVisible();
-        await offer.getByRole('button', { name: locale === 'ar' ? 'إغلاق عرض سيراليون' : 'Close Sierra Leone offer' }).click();
+        await expect(offer).toHaveCount(0);
         await expect(page.getByTestId('sierra-leone-offer-backdrop')).toHaveCount(0);
         const form = page.locator('form');
         const associations = await form.locator('input, select, textarea').evaluateAll(controls => controls.map(control => {
@@ -72,8 +71,7 @@ for (const locale of ['en', 'ar'] as const) {
       await page.goto(`/${locale}/${route}/`);
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       const offer = page.getByTestId('sierra-leone-offer');
-      await expect(offer).toBeVisible();
-      await offer.getByRole('button').click();
+      await expect(offer).toHaveCount(0);
       await page.locator('form button[type="submit"]').click();
       const fields = page.locator('form [aria-invalid="true"]');
       expect(await fields.count()).toBe(route === 'booking' ? 2 : 5);
@@ -117,8 +115,7 @@ for (const locale of ['en','ar'] as const) {
   await page.goto(`/${locale}/careers/`);
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   const offer = page.getByTestId('sierra-leone-offer');
-  await expect(offer).toBeVisible();
-  await offer.getByRole('button').click();
+  await expect(offer).toHaveCount(0);
   const form = page.locator('form');
   await form.locator('[name="name"]').fill('Validation QA');
   await form.locator('[name="phone"]').fill('invalid phone');
@@ -143,8 +140,7 @@ for (const locale of ['en','ar'] as const) {
   await page.goto(`/${locale}/careers/`);
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   const offer=page.getByTestId('sierra-leone-offer');
-  await expect(offer).toBeVisible();
-  await offer.getByRole('button').click();
+  await expect(offer).toHaveCount(0);
   const form=page.locator('form');
   await form.locator('[name="name"]').fill('Retry QA');
   await form.locator('[name="phone"]').fill('+971500000000');
