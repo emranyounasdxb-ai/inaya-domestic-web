@@ -27,7 +27,7 @@ assert sorted(PUBLICATION_SCHEDULE.values()) == [
 def baseline(path):
     for revision in BASELINES:
         result = subprocess.run(['git', 'show', f'{revision}:{path}'], cwd=ROOT,
-                                capture_output=True, text=True)
+                                capture_output=True, text=True, encoding='utf-8')
         if result.returncode == 0:
             return result.stdout
     raise RuntimeError(f'Published article baseline is unavailable for {path}')
