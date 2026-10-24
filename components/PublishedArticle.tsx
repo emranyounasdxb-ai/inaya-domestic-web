@@ -40,7 +40,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
             <Link href={`/${lang}/blog/`} className="inline-flex rounded-full border border-primary-700/10 bg-white/65 px-4 py-2 text-xs font-semibold text-primary-900 shadow-sm transition hover:border-accent-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-700 sm:text-sm">{isArabic ? 'أدلة العائلات' : 'Family guides'}</Link>
             <h1 className={`mt-6 text-3xl font-bold text-primary-900 sm:text-4xl lg:text-5xl ${headingFont} ${isArabic ? 'leading-[1.55]' : 'leading-[1.18]'}`}>{copy.title}</h1>
             <dl className="mt-7 flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm leading-7 text-primary-900/75" data-guide="attribution">
-              <div><dt className="font-semibold">{isArabic ? 'إعداد' : 'By'}</dt><dd>{guide.author?.[lang] ?? guideAuthor}</dd></div>
+              <div><dt className="font-semibold">{isArabic ? 'إعداد' : 'By'}</dt><dd>{guide.author?.[lang] ?? (isArabic ? 'فريق تحرير عناية للعمالة المنزلية' : guideAuthor)}</dd></div>
               <div><dt className="font-semibold">{isArabic ? 'تاريخ النشر' : 'Published'}</dt><dd><time dateTime={guide.published}>{formatDate(guide.published)}</time></dd></div>
               <div><dt className="font-semibold">{isArabic ? 'آخر تحديث' : 'Updated'}</dt><dd><time dateTime={guide.updated}>{formatDate(guide.updated)}</time></dd></div>
             </dl>

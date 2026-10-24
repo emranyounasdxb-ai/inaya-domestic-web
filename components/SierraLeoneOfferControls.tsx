@@ -112,7 +112,7 @@ export default function SierraLeoneOfferControls({ locale }: { locale: string })
               <div className={styles.brandRow} dir="ltr">
                 <Image
                   src={isArabic ? '/brand/inaya-arabic-logo.webp' : '/brand/inaya-domestic-workers-logo.webp'}
-                  alt={isArabic ? 'INAYA Arabic logo' : 'INAYA Domestic Workers'}
+                  alt={isArabic ? 'شعار عناية للعمالة المنزلية' : 'INAYA Domestic Workers'}
                   width={isArabic ? 140 : 150}
                   height={isArabic ? 60 : 43}
                   className={styles.logo}

@@ -148,7 +148,16 @@ test('curated Google reviews remain static and preserve Arabic RTL', async ({ pa
 
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
   await expect(page.getByRole('heading', { name: 'تقييمات Google' })).toBeVisible();
-  await expect(page.locator('[data-review-card][data-carousel-clone="false"][data-review-id="hanan"]')).toContainText('Amazing service from INAYA Domestic Workers!');
+  for (const review of CURATED_GOOGLE_REVIEWS) {
+    const card = page.locator(`[data-review-card][data-carousel-clone="false"][data-review-id="${review.id}"]`);
+    await expect(card).toContainText(review.textAr);
+    await expect(card).toContainText('ترجمة عربية للتقييم الأصلي');
+    const disclosure = card.locator('details[data-original-review="true"]');
+    await expect(disclosure).not.toHaveAttribute('open', '');
+    const original = disclosure.locator('blockquote[lang="en"][dir="ltr"]');
+    await expect(original).toHaveText(review.text);
+    await expect(original).not.toBeVisible();
+  }
   await expect(page.getByText('تقييمات Google غير متاحة مؤقتاً', { exact: true })).toHaveCount(0);
 
   const section = page.locator('.google-reviews-section');

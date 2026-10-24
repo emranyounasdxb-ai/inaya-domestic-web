@@ -1,0 +1,71 @@
+{
+  "provenance": "Exact six user-requested English-only Arabic keyword removals; original 21-English gate and immutable reviewed-copy fixture preserved. Current manuscripts independently checked against exact receipt, then reconstructed original full copy hash.",
+  "amendments": [
+    {
+      "id": "K15",
+      "locale": "en",
+      "field": "body",
+      "keyword": "خادمات عجمان",
+      "originalManuscriptSha256": "42d74ee9249f350cba8d631fb09ac0d4d66fcc8a2717e5f71bed26beb6972fb1",
+      "amendedManuscriptSha256": "1664da35004c7dfb3f4f5d38876b4c4cc74615f86ce707847382a9c101181e0f",
+      "beforeBodySha256": "ba2e7a36644e9264713f6145d7b779645772401bfd92d429eef760dd2f34b2ea",
+      "afterBodySha256": "036df181fc417cf1a20824e76e83fefd8e6d24600cd1e9346c4655190e45da3c",
+      "amendedContentSha256": "ce8d143c448cacfb7381e6b942cdd84bc646b4931aba4b5cff8bd8697722445a"
+    },
+    {
+      "id": "K16",
+      "locale": "en",
+      "field": "body",
+      "keyword": "مكتب استقدام خادمات عجمان",
+      "originalManuscriptSha256": "99efedb2a2ed285cb2248e2cd5e156f25ec002eb1c6b64bd5af9f40937ec4c71",
+      "amendedManuscriptSha256": "564cc7ca4c77bb8a69df3d6a00964a5e85956e993e715e42fe90ea44e6395e64",
+      "beforeBodySha256": "7b165ef761902f64375f53ed3805858bb2ef54959bb1912b775dc7890a035fbf",
+      "afterBodySha256": "541d4f8f487d92b1cb50975ef179bb493b3f8d938fd72746a148067df1d1369d",
+      "amendedContentSha256": "51ee431f19171a3f2ce0d680a25623a1319d52359d45384855338106ffbba864"
+    },
+    {
+      "id": "K17",
+      "locale": "en",
+      "field": "body",
+      "keyword": "مركز تدبير عجمان",
+      "originalManuscriptSha256": "d35e10eded66f0980796ce54870d961885faab6da8c258899398e8e3b6b1f9d7",
+      "amendedManuscriptSha256": "9b6a7086efbdd05a3b37a755a0a11831bfdafda8f4d755b934271c895f342ced",
+      "beforeBodySha256": "a063954a772f0606ac54b1d377a796a9f37f91c63e422928883f93a68119b47b",
+      "afterBodySha256": "20e30fd103deca3bcbc1bebde9c52dcfcbadd57161b0466094b3a449f316689d",
+      "amendedContentSha256": "d627f3b098df62202ca58f2903a72755bfffc24136ef51a81059c15873bf8662"
+    },
+    {
+      "id": "K18",
+      "locale": "en",
+      "field": "body",
+      "keyword": "تأشيرة خادمة عجمان",
+      "originalManuscriptSha256": "f6261f74d03d8dec88b2c44a3cb32d6d8b0af290992784f7abefd31d94aca142",
+      "amendedManuscriptSha256": "e6e481dac89191f75e6dcdd3dde4f67982e8b2111b2a53e9ff6ac5d9026a3adc",
+      "beforeBodySha256": "9a5ef0ec18111d21bae8d838405e19111819c60b2db8be5acb53621bbdf8b72c",
+      "afterBodySha256": "afc0432a8cbfd9f3eb8ea6d4a78226abb1732b3885f465a19ebe7bb222a13f79",
+      "amendedContentSha256": "8d410113357951b1453c1c565bb12773746b36489f95bb07732f26afac7f91f9"
+    },
+    {
+      "id": "K19",
+      "locale": "en",
+      "field": "body",
+      "keyword": "خادمات بالشهر عجمان",
+      "originalManuscriptSha256": "8db6ee33cd1c3eca931a8d6eb6d54c8f0ceff4415c248b70fcffb6f1687e3094",
+      "amendedManuscriptSha256": "6e8f1686fd486bcad0274b438805a087f6f47ec6b8e57bde967a9cf35038bd04",
+      "beforeBodySha256": "da03907b923cee7ce4606c9dc4a8775652aa8588d84b1396ef11f23ad15e6e11",
+      "afterBodySha256": "763a15fb496529fa5ff12c8bc359a878ea123ab286cef5c44cd3e67a9d927a48",
+      "amendedContentSha256": "0ea326df3d0130ea7a16761cb60229154721cf1d24d94b687d708c6ac0e04b31"
+    },
+    {
+      "id": "K20",
+      "locale": "en",
+      "field": "body",
+      "keyword": "عاملات منزلية عجمان",
+      "originalManuscriptSha256": "7f8aa3cd5023e88bed93bb64111e79acb2dcdfc1496e05d72b25e0935ec2bd92",
+      "amendedManuscriptSha256": "f56cd1b88fc4c69ad5cff1029af00db0c5574c1e72b659e66391f3e3e5722bbe",
+      "beforeBodySha256": "9c2286a80b52727927f78f2596ade21ed3f3afe773c1d151cb04a97892c22acb",
+      "afterBodySha256": "29351a66dcc4fa2c9eda6b0b070dc648121be03569b46c925976825ae12c6fcd",
+      "amendedContentSha256": "a7a04eb2bbfd5dcb79bf1fb34c54f74cd181af716c1436a34010bb65c160cdab"
+    }
+  ]
+}

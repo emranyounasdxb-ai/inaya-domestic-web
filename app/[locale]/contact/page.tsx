@@ -230,7 +230,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </div>
           </div>
           <div className="overflow-hidden rounded-[24px] border border-primary-700/10 bg-white/70 shadow-glass backdrop-blur-xl">
-            <LocationMap src={mapEmbedUrl} title={copy.mapTitle} />
+            <LocationMap src={isArabic ? mapEmbedUrl.replaceAll('!1sen', '!1sar') : mapEmbedUrl} title={copy.mapTitle} />
           </div>
         </div>
       </section>

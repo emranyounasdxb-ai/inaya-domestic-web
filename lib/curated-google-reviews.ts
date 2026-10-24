@@ -2,6 +2,7 @@ export type CuratedGoogleReview = {
   id: string;
   name: string;
   text: string;
+  textAr: string;
   rating: 5;
   profilePhotoUrl?: string;
 };
@@ -16,6 +17,7 @@ export const CURATED_GOOGLE_REVIEWS = [
     id: 'hanan',
     name: 'Hanan',
     text: 'Amazing service from INAYA Domestic Workers! I hired a nanny through them, and she is caring, trustworthy, and very professional. My kids absolutely love her. The agency made the whole process easy and stress-free. Highly recommended!',
+    textAr: 'خدمة رائعة من عناية للعمالة المنزلية! وظفت مربية عن طريقهم، وهي حنونة وجديرة بالثقة ومحترفة للغاية. أطفالي يحبونها كثيراً. جعل المكتب العملية كلها سهلة وخالية من التوتر. أوصي بهم بشدة!',
     rating: 5,
     profilePhotoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocJ_oqfwppRUvQP7llv2kjHNYH-qcp8itVwIZDxWwZAfSSvl=w36-h36-p-rp-mo-br100'
   },
@@ -23,6 +25,7 @@ export const CURATED_GOOGLE_REVIEWS = [
     id: 'shadi-el-aker',
     name: 'shadi el-aker',
     text: 'A great service with Inaya, the management, staff are exceptional, starting from front desk all the way to top management.',
+    textAr: 'خدمة رائعة مع عناية. الإدارة والموظفون متميزون، من مكتب الاستقبال وصولاً إلى الإدارة العليا.',
     rating: 5,
     profilePhotoUrl: 'https://lh3.googleusercontent.com/a-/ALV-UjWveaa1ql1SyryTIN0Sb61bUnLdwMdAsW0rp14EGqob-TvB_CO5=w36-h36-p-rp-mo-ba12-br100'
   },
@@ -30,6 +33,7 @@ export const CURATED_GOOGLE_REVIEWS = [
     id: 'jamic-jamic',
     name: 'Jamic Jamic',
     text: 'INAYA Domestic Workers is very professional and reliable. They provided me with a housemaid who is efficient, polite, and trustworthy. My home has never felt so organized!',
+    textAr: 'عناية للعمالة المنزلية محترفون للغاية ويمكن الاعتماد عليهم. وفروا لي عاملة منزلية تتسم بالكفاءة والأدب والجدارة بالثقة. لم أشعر من قبل بأن منزلي بهذا القدر من التنظيم!',
     rating: 5,
     profilePhotoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocKtCptQQ0HR-i1nxD2a4Ie5jHUeoh2EN_L5Del37qVHMC_8dQ=w36-h36-p-rp-mo-br100'
   },
@@ -37,6 +41,7 @@ export const CURATED_GOOGLE_REVIEWS = [
     id: 'clarisa-delfin',
     name: 'clarisa Delfin',
     text: "I'm applicant of riaza she is very good madam and she assist the applicante good and give them proper bed to sleep I like her how her heart ❤️ good",
+    textAr: 'أنا متقدمة لدى ريازا. إنها سيدة طيبة جداً، وتساعد المتقدمات جيداً وتوفر لهن سريراً مناسباً للنوم. أحب طيبة قلبها ❤️',
     rating: 5,
     profilePhotoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocJ6zVuqMeS-i27NrB_PGNHV1kRpJ2mabEPqSARtGwwoyHZ-wg=w36-h36-p-rp-mo-br100'
   },
@@ -44,6 +49,7 @@ export const CURATED_GOOGLE_REVIEWS = [
     id: 'hayfa-ebrahim',
     name: 'Hayfa Ebrahim',
     text: 'Professional maids and am greatly happy with service i get. Keep it up',
+    textAr: 'عاملات منزليات محترفات، وأنا سعيدة جداً بالخدمة التي أحصل عليها. واصلوا هذا المستوى.',
     rating: 5,
     profilePhotoUrl: 'https://lh3.googleusercontent.com/a-/ALV-UjWDvYH64Wa6jABBHwOkKPYnfULZrEVxuz3EC2SdNiCZpffWWtc5fQ=w36-h36-p-rp-mo-br100'
   },
@@ -51,6 +57,7 @@ export const CURATED_GOOGLE_REVIEWS = [
     id: 'md-trend',
     name: 'Md Trend',
     text: 'One of the best Center in UAE',
+    textAr: 'أحد أفضل المراكز في الإمارات.',
     rating: 5,
     profilePhotoUrl: 'https://lh3.googleusercontent.com/a-/ALV-UjUaRAY3fS-nOC_SiBx6Ol9QBTTD0rRlpjNvf04OTPeH7zqh96jgrg=w36-h36-p-rp-mo-ba12-br100'
   }

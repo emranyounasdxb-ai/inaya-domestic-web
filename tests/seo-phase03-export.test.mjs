@@ -8,6 +8,38 @@ import path from 'node:path';
 import test from 'node:test';
 import { auditExport, origin, attrs, text } from '../scripts/seo-content-audit.mjs';
 
+const obsoletePackageLabels = /\bEssential\b|\bSignature\b|INAYA Black|(?:AED\s*)?2,500\b/;
+const reviewedOrdinaryTableLabels = {
+  'blog/housemaid-recruitment-ajman-candidate-evidence-cards': 'Essential task fit',
+  'blog/maid-services-dubai-household-access-scope-plan': 'Essential tasks and optional work',
+  'blog/ajman-household-weekly-maid-priorities-handover': 'Essential work finished and items identified'
+};
+function pricingGuardText(page) {
+  const value = page.mainText + '\n' + page.description;
+  // Three independently reviewed worksheets use the ordinary adjective in one
+  // exact table cell each. Preserve the original guard everywhere else,
+  // including every legacy page and every other occurrence on these new pages.
+  const approved = page.locale === 'en' ? reviewedOrdinaryTableLabels[page.route] : undefined;
+  if (approved) {
+    assert.equal(value.split(approved).length, 2, `${page.url}: exactly one reviewed ordinary-language table label`);
+    return value.replace(approved, approved.replace('Essential', 'Required'));
+  }
+  return value;
+}
+
+test('obsolete package detection permits only three exact reviewed table cells, retaining all pricing guards', () => {
+  for (const [route, mainText] of Object.entries(reviewedOrdinaryTableLabels)) {
+    const page = { locale: 'en', route, url: route, mainText, description: '' };
+    assert.doesNotMatch(pricingGuardText(page), obsoletePackageLabels);
+    for (const forbidden of ['Essential package', 'Signature', 'INAYA Black', 'AED 2,500']) {
+      assert.match(pricingGuardText({ ...page, mainText: `${page.mainText} ${forbidden}` }), obsoletePackageLabels);
+    }
+    assert.match(pricingGuardText({ ...page, route: 'services/recruitment' }), obsoletePackageLabels, 'the phrase allowance does not extend to any legacy route');
+    assert.match(pricingGuardText({ ...page, locale: 'ar' }), obsoletePackageLabels, 'the allowance does not extend to another language');
+    assert.throws(() => pricingGuardText({ ...page, mainText: `${mainText} ${mainText}` }), /exactly one reviewed/);
+  }
+});
+
 test('Phase 3 preserves all route identities, reduces measured repetition and removes all orphans', async () => {
   const correctedCareMetadata = {
     en: { title: 'Non-clinical Home Support in UAE for Daily Routines | INAYA', description: 'Discuss non-clinical home support with INAYA for daily routines, practical household help and companionship in the UAE. Medical and nursing care are not included.' },
@@ -30,15 +62,15 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     ar: [...Array(6).fill('1,500 درهم'), ...Array(6).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
   };
   const current = await auditExport();
-  assert.equal(current.pages.length, 232);
+  assert.equal(current.pages.length, 274);
   for (const page of current.pages) {
-    assert.doesNotMatch(page.mainText + '\n' + page.description, /\bEssential\b|\bSignature\b|INAYA Black|(?:AED\s*)?2,500\b/, `${page.url}: superseded package prices and tiers cannot survive the export`);
+    assert.doesNotMatch(pricingGuardText(page), obsoletePackageLabels, `${page.url}: superseded package prices and tiers cannot survive the export`);
     assert.doesNotMatch(page.mainText, /Live-out service requires a separate itemised quotation|advertised monthly prices concern live-in service|تتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً|تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل/, `${page.url}: no obsolete live-out price distinction`);
   }
   assert.deepEqual(current.pages.slice(0, 140).map((p) => p.url), baseline.pages.map((p) => p.url));
   assert.deepEqual(current.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(current.linkCoverage[locale].reachable, 116);
+    assert.equal(current.linkCoverage[locale].reachable, 137);
     assert.ok(current.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
   const editorial = managed.editorialRepetition(current);
@@ -73,7 +105,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
       const target = new URL(href, page.url);
       if (target.origin !== origin || !/^\/(en|ar)\//.test(target.pathname)) continue;
       const targetLocale = target.pathname.split('/')[1];
-      if (targetLocale !== page.locale) assert.match(text(match[2]), /^(English|العربية)$/i, `${page.url}: unintended locale link ${href}`);
+      if (targetLocale !== page.locale) assert.equal(text(match[2]), page.locale === 'en' ? 'Arabic' : 'الإنجليزية', `${page.url}: the locale link is labelled in the current page language`);
     }
     if (['service', 'country', 'location'].includes(page.family)) {
       const blocks = [...file.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter((m) => attrs(m[1]).type === 'application/ld+json');
@@ -86,5 +118,5 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
       assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), details, `${page.url}: visible FAQ/schema`);
     }
   }
-  console.log(JSON.stringify({ routes: 232, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
+  console.log(JSON.stringify({ routes: 274, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
 });

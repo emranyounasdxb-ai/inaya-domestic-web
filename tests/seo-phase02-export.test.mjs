@@ -20,7 +20,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
   const titles = new Set();
   const descriptions = new Set();
   const primaryHeadings = new Set();
-  assert.equal(urls.length, 232);
+  assert.equal(urls.length, 274);
   for (const url of urls) {
     const pathname = new URL(url).pathname;
     const locale = pathname.split('/')[1];

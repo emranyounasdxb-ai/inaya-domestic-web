@@ -23,7 +23,7 @@ function beforeAjmanRefresh(slug, locale, body) {
 test('five Ajman intents use four existing bilingual publications and preserve every released manuscript', async () => {
   const source = await readFile('lib/published-article-content.ts', 'utf8');
   const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
-  assert.equal(articles.length, 37, 'no duplicate keyword routes added');
+  assert.equal(articles.length, 37, 'the legacy publication family remains unchanged; the new keyword batch is separate');
   assert.deepEqual(ajmanRefreshes.entries.map(({ slug }) => slug).sort(), [
     'choosing-domestic-worker-agency-ajman', 'domestic-worker-employer-eligibility-documents',
     'domestic-worker-employment-arrangements-uae', 'domestic-worker-hiring-stages-timelines'
@@ -45,7 +45,7 @@ test('five Ajman intents use four existing bilingual publications and preserve e
 test('Ajman decision aids render complete bilingual worksheets, useful process charts and canonical references', async () => {
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const canonicalUrls = new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]));
-  assert.equal(canonicalUrls.size, 232);
+  assert.equal(canonicalUrls.size, 274);
   const plain = (value) => tokens(value.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1').replace(/\*\*/g, '')).join(' ');
   for (const entry of ajmanRefreshes.entries) for (const locale of ['en', 'ar']) {
     const copy = entry[locale];
@@ -107,8 +107,8 @@ test('domestic-service refreshes preserve the original manuscripts and render co
   const source = await readFile('lib/published-article-content.ts', 'utf8');
   const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
-  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 232, 'original 230 canonicals plus the approved company-information pair');
-  assert.equal(articles.length, 37, 'refresh existing publications instead of adding duplicate topics');
+  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 274, 'the prior 232 canonicals plus only the 42 reviewed keyword copies');
+  assert.equal(articles.length, 37, 'domestic-service refreshes remain in the preserved 37-publication family');
   assert.deepEqual(currentRefreshes.entries.map(({ slug }) => slug).sort(), [
     'choosing-domestic-worker-agency-ajman', 'domestic-worker-hiring-stages-timelines', 'four-hour-eight-hour-maid-visit-plan'
   ]);
@@ -250,7 +250,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
   const { guideUpdated } = JSON.parse(await readFile('tests/fixtures/poster-pricing-changes.json', 'utf8'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 232);
+  assert.equal(urls.length, 274);
   for (const locale of ['en', 'ar']) {
     const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
     const hubBody = hub.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
@@ -281,7 +281,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.equal(articleNode.url, url);
       assert.equal(articleNode.inLanguage, locale);
       assert.ok(text(body).includes(articleNode.headline), `${route}: schema headline visible`);
-      assert.deepEqual(articleNode.author, { '@type': 'Organization', name: 'INAYA Domestic Workers Editorial Team' });
+      assert.deepEqual(articleNode.author, { '@type': 'Organization', name: locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team' });
       assert.ok(text(body).includes(articleNode.author.name), `${route}: editorial author visible`);
       assert.equal(articleNode.datePublished, publicationSchedule[slug]);
       assert.equal(articleNode.dateModified, guideUpdated[slug], `${route}: only substantively revised guides receive the new date`);
