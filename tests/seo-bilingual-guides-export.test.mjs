@@ -3,10 +3,25 @@ import { readFile, readdir } from 'node:fs/promises';
 import test from 'node:test';
 import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
+import domesticServices from './domestic-service-refresh-expectations.cjs';
 
 const origin = 'https://inayadomestic.ae';
 const publicationSchedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
 const currentRefreshes = JSON.parse(await readFile('content/research/2026-10-24/article-refreshes.json', 'utf8'));
+
+test('services hubs render all three complete approved summaries in their matching cards', async () => {
+  for (const locale of ['en', 'ar']) {
+    const html = await readFile(`out/${locale}/services/index.html`, 'utf8');
+    const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+    const cards = [...body.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].filter((match) => /<h3\b/.test(match[2]));
+    for (const [slug, copy] of Object.entries(domesticServices.hubSummaries)) {
+      const matches = cards.filter((match) => attrs(match[1]).href?.replace(/\/$/, '') === `/${locale}/services/${slug}`);
+      assert.equal(matches.length, 1, `${locale}/${slug}: one actual service card`);
+      const paragraphs = [...matches[0][2].matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map((match) => text(match[1]));
+      assert.deepEqual(paragraphs, [copy[locale]], `${locale}/${slug}: complete approved summary is visibly rendered in the matching card`);
+    }
+  }
+});
 
 test('domestic-service refreshes preserve the original manuscripts and render complete language-matched additions', async () => {
   const source = await readFile('lib/published-article-content.ts', 'utf8');

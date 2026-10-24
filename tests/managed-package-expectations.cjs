@@ -219,6 +219,7 @@ function approvedPackageMessages(locale, data) {
   return approvedDeliveryMessages(locale, approvedPosterMessages(locale, data));
 }
 const commercial = require('./fixtures/managed-package-copy.json');
+const { hubSummaries } = require('./domestic-service-refresh-expectations.cjs');
 function editorialRepetition(audit) {
   // Mandatory, exact owner-approved commercial wording is protected separately.
   // Retain the existing budgets for editorial prose; no arbitrary paragraph,
@@ -233,7 +234,11 @@ function editorialRepetition(audit) {
     // The allowance is bounded to the reviewed placements too: missing copy or
     // another copy of an approved paragraph must fail, not disappear from the metric.
     assert.deepEqual(occurrences, commercial.paragraphCounts[page.route]?.[page.locale] ?? {}, `${page.url}: exact approved commercial paragraph placements`);
-    return { ...page, paragraphs: page.paragraphs.filter(p => !approved.includes(p)) };
+    const hubCopy = page.route === 'services' ? Object.values(hubSummaries).map(copy => copy[page.locale].toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ')) : [];
+    // Only the three exact service-card summaries on each localized hub are
+    // excluded. Missing, changed or duplicated placements still fail.
+    if (hubCopy.length) assert.deepEqual(hubCopy.map(copy => page.paragraphs.filter(p => p === copy).length), [1, 1, 1], `${page.url}: exact three approved hub-summary placements`);
+    return { ...page, paragraphs: page.paragraphs.filter(p => !approved.includes(p) && !hubCopy.includes(p)) };
   });
   const frequency = new Map();
   for (const page of pages) for (const p of new Set(page.paragraphs)) {
