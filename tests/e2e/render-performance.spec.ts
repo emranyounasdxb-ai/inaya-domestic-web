@@ -12,7 +12,7 @@ for (const locale of ['en', 'ar']) {
         for (const section of await sections.all()) {
           await section.scrollIntoViewIfNeeded();
           const offer = page.getByTestId('sierra-leone-offer');
-          if (await offer.isVisible()) await offer.getByRole('button').click();
+          await expect(offer).toHaveCount(0);
           await page.evaluate(() => document.fonts.ready);
           // Read the rendered content after scroll activation, not its estimated off-screen height.
           await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));

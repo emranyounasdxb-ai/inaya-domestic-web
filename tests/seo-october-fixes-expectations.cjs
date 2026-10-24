@@ -153,15 +153,10 @@ function approvedSeoFixes(file, source) {
       source = source.replace(before, after);
     }
   }
-  if (file === 'tests/e2e/sierra-leone-offer-controls.spec.ts') {
-    const before = "  test('shows Back to Top near the page bottom and returns to the top', async ({ page }) => {\n";
-    const after = before + "    await page.getByRole('button', { name: 'Reject analytics', exact: true }).click();\n    await expect(page.getByRole('region', { name: 'Your cookie preferences' })).toBeHidden();\n";
-    assert.equal(source.split(before).length, 2, `${file}: exactly one reviewed consent interaction anchor`);
-    source = source.replace(before, after);
-  }
   return approvedDeliverySource(file, approvedManagedPackages(file, source));
 }
 
 const { approvedAjmanOfficeCopy } = require('./ajman-office-expectations.cjs');
 const { approvedGlobalLocale } = require('./global-locale-source-expectations.cjs');
-module.exports = { approvedSeoFixes: (file, source) => approvedGlobalLocale(file, approvedAjmanOfficeCopy(file, approvedSeoFixes(file, source))) };
+const { approvedExpiredOfferRemoval } = require('./expired-offer-removal-expectations.cjs');
+module.exports = { approvedSeoFixes: (file, source) => approvedExpiredOfferRemoval(file, approvedGlobalLocale(file, approvedAjmanOfficeCopy(file, approvedSeoFixes(file, source)))) };

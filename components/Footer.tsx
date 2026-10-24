@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
 import { siteConfig } from '@/lib/site-config';
+import styles from './Footer.module.css';
 
 type IconName = 'phone' | 'mail' | 'pin' | 'clock' | 'shield' | 'users' | 'refresh' | 'headset' | 'globe' | 'lock';
 
@@ -50,12 +51,12 @@ export default function Footer({ locale }: { locale: string }) {
   return (
     <footer className="bg-[#f8f6f0] px-3 py-4 text-primary-900 lg:px-5">
       <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[18px] border border-primary-900/8 bg-white/78 shadow-[0_24px_80px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10 backdrop-blur-xl">
-        <div className="grid items-stretch gap-5 px-7 py-5 sm:px-10 lg:grid-cols-[1.18fr_0.92fr_1.04fr_1.23fr] lg:px-12 lg:py-6 xl:px-14">
-          <div className="lg:flex lg:h-full lg:flex-col">
-            <BrandLogo locale={locale} alt={logoAlt} width={280} className="h-16 w-auto max-w-[280px] object-contain" />
+        <div className={styles.columns}>
+          <div className={styles.brand}>
+            <BrandLogo locale={locale} alt={logoAlt} width={280} className={styles.logo} />
             <p className="mt-3 max-w-[310px] text-[0.9rem] leading-5 text-ink/72">{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}</p>
             <div className="mt-3 h-px w-12 bg-[#c98700]" />
-            <div className="mt-3 space-y-2.5 lg:flex lg:flex-1 lg:flex-col lg:justify-between lg:space-y-0">
+            <div className={styles.features}>
               {featureItems.map((item) => (
                 <div key={item.label} className="flex items-center gap-3 text-[0.9rem] leading-tight text-primary-900/88">
                   <span className="text-[#c98700]"><Icon name={item.icon} size={19} /></span>
@@ -68,9 +69,9 @@ export default function Footer({ locale }: { locale: string }) {
           <FooterColumn title={t('quickLinks')} links={quickLinks} />
           <FooterColumn title={t('ourServices')} links={serviceLinks} />
 
-          <div className="lg:flex lg:h-full lg:flex-col">
+          <div className={styles.contact}>
             <FooterTitle>{t('contactInfo')}</FooterTitle>
-            <div className="mt-4 divide-y divide-primary-900/10 text-[0.8rem] lg:grid lg:flex-1 lg:grid-rows-4">
+            <div className={styles.contactItems}>
               <ContactItem icon="phone" title={siteConfig.phone} text={isArabic ? 'هاتف المكتب' : 'Office telephone'} href={phoneHref} isArabic={isArabic} titleDirection="ltr" />
               <ContactItem icon="mail" title={siteConfig.email} text="" href={`mailto:${siteConfig.email}`} isArabic={isArabic} titleDirection="ltr" />
               <ContactItem icon="pin" title={isArabic ? 'مكتب عناية' : 'INAYA Office'} text={contactAddress} isArabic={isArabic} />
@@ -79,34 +80,28 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <div className="border-y border-primary-900/8 bg-[#fbfaf7]/70 px-7 py-3 sm:px-10 lg:px-14">
-          <div className="grid gap-3 lg:grid-cols-4">
-            {stats.map((stat, index) => (
-              <div key={stat.label} className={`flex items-center justify-center gap-4 ${index > 0 ? 'lg:border-s lg:border-primary-900/10' : ''}`}>
-                <span className="text-[#c98700]"><Icon name={stat.icon} size={34} /></span>
-                <div>
-                  <p className="font-heading text-[1.45rem] font-bold leading-none tracking-[-0.04em] text-primary-900">{stat.value}</p>
-                  <p className="mt-0.5 text-[0.82rem] leading-tight text-primary-900/75">{stat.label}</p>
-                </div>
+        <div className={styles.stats}>
+          {stats.map((stat) => (
+            <div key={stat.label} className={styles.stat}>
+              <span className={styles.statIcon}><Icon name={stat.icon} size={30} /></span>
+              <div className="min-w-0">
+                <p className={styles.statValue}>{stat.value}</p>
+                <p className={styles.statLabel}>{stat.label}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 px-7 py-3.5 text-[0.8rem] text-primary-900/75 sm:px-10 lg:flex-row lg:px-14">
+        <div className={styles.bottom}>
           <p>© {year} {isArabic ? 'عناية للعمالة المنزلية.' : 'INAYA Domestic Workers.'} {t('rights')}</p>
-          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+          <div className={styles.legal}>
             <Link href={`/${locale}/privacy-policy`} className="transition hover:text-primary-900">{t('privacy')}</Link>
-            <span className="text-accent-700/70">|</span>
             <Link href={`/${locale}/terms`} className="transition hover:text-primary-900">{t('terms')}</Link>
-            <span className="text-accent-700/70">|</span>
             <Link href={`/${locale}/refund-policy`} className="transition hover:text-primary-900">{t('refund')}</Link>
-            <span className="text-accent-700/70">|</span>
             <Link href={`/${locale}/company-information/`} className="transition hover:text-primary-900">{isArabic ? 'معلومات الشركة' : 'Company information'}</Link>
-            <span className="text-accent-700/70">|</span>
             <CookieSettingsButton locale={locale} />
           </div>
-          <div className="flex items-center gap-3 text-primary-900/75">
+          <div className={styles.note}>
             <span className="text-[#c98700]"><Icon name="lock" size={20} /></span>
             <span>{isArabic ? 'ناقش التفاصيل قبل تأكيد الخدمة' : 'Discuss details before confirming a service'}</span>
           </div>
@@ -119,7 +114,7 @@ export default function Footer({ locale }: { locale: string }) {
 function FooterTitle({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <h2 style={{ fontFamily: 'var(--font-heading), "Plus Jakarta Sans", Inter, system-ui, sans-serif' }} className="font-heading text-[0.96rem] font-bold uppercase tracking-[0.08em] text-primary-900">{children}</h2>
+      <h2 className={styles.title}>{children}</h2>
       <div className="mt-2.5 h-[2px] w-14 bg-[#c98700]" />
     </div>
   );
@@ -127,13 +122,13 @@ function FooterTitle({ children }: { children: React.ReactNode }) {
 
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
-    <div className="lg:flex lg:h-full lg:flex-col">
+    <div className={styles.linkColumn}>
       <FooterTitle>{title}</FooterTitle>
-      <ul className="mt-4 space-y-2.5 text-[0.88rem] leading-tight text-ink/75 lg:flex lg:flex-1 lg:flex-col lg:justify-between lg:space-y-0">
+      <ul className={styles.links}>
         {links.map((link) => (
           <li key={`${link.href}-${link.label}`}>
-            <Link href={link.href} className="group inline-flex items-center gap-3 transition hover:text-primary-900">
-              <span className="text-lg leading-none text-[#c98700] transition group-hover:translate-x-0.5">›</span>
+            <Link href={link.href} className="group inline-flex items-start gap-2 py-1 transition hover:text-primary-900">
+              <span aria-hidden="true" className="shrink-0 text-lg leading-none text-[#c98700] transition group-hover:translate-x-0.5 rtl:rotate-180">›</span>
               <span>{link.label}</span>
             </Link>
           </li>
@@ -162,7 +157,7 @@ function ContactItem({
     <>
       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#c98700]/55 text-[#c98700]"><Icon name={icon} size={15} /></span>
       <span className={`min-w-0 flex-1 ${isArabic ? 'text-right' : 'text-left'}`}>
-        <span dir={titleDirection} className="block font-semibold leading-tight text-primary-900">{title}</span>
+        <span dir={titleDirection} className="block font-semibold leading-tight text-primary-900 [overflow-wrap:anywhere]">{title}</span>
         {text ? <span className="mt-0.5 block leading-tight text-primary-900/75">{text}</span> : null}
       </span>
     </>

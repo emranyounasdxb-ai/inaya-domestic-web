@@ -15,8 +15,7 @@ for (const locale of ['en', 'ar']) {
     expect(await page.locator('script[src*="googletagmanager"], script[src*="google-analytics"]').count()).toBe(0);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     const offer = page.getByTestId('sierra-leone-offer');
-    await expect(offer).toBeVisible();
-    await offer.getByRole('button').click();
+    await expect(offer).toHaveCount(0);
     await page.locator('input[name="name"]').fill('Private browser test');
     await page.locator('input[name="name"]').fill('Another private value');
     expect(await page.evaluate(() => (window as unknown as { phase05Events: unknown[] }).phase05Events)).toEqual([]);
@@ -43,8 +42,7 @@ for (const locale of ['en', 'ar']) {
     const settings = page.getByRole('button', { name: ar ? 'إعدادات ملفات تعريف الارتباط' : 'Cookie settings', exact: true });
     await settings.scrollIntoViewIfNeeded();
     const offer = page.getByTestId('sierra-leone-offer');
-    await expect(offer).toBeVisible();
-    await offer.getByRole('button').click();
+    await expect(offer).toHaveCount(0);
     await settings.click();
     await expect(banner.getByRole('button', { name: accept })).toBeFocused();
     await banner.getByRole('button', { name: accept }).click();

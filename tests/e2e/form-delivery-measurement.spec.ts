@@ -14,8 +14,7 @@ async function acceptedEvents(page: Page) {
 async function fillForm(page: Page, kind: 'contact' | 'booking' | 'careers') {
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   const offer = page.getByTestId('sierra-leone-offer');
-  await expect(offer).toBeVisible();
-  await offer.getByRole('button').click();
+  await expect(offer).toHaveCount(0);
   const form = page.locator('main form');
   await form.locator('[name="name"]').fill('Synthetic measurement QA');
   await form.locator('[name="phone"]').fill('+971500000000');

@@ -25,8 +25,7 @@ for (const locale of ['en', 'ar']) {
       // Newly added links stay within the current host, including local previews.
       await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
       const offer = page.getByTestId('sierra-leone-offer');
-      await expect(offer).toBeVisible();
-      await offer.getByRole('button').click();
+      await expect(offer).toHaveCount(0);
       await expect(offer).toHaveCount(0);
       await expect(page.getByTestId('sierra-leone-offer-backdrop')).toHaveCount(0);
       await nav.locator('a').first().click();
