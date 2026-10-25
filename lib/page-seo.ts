@@ -8,14 +8,15 @@ import { getServiceImage } from './service-presentation';
 import { getLocationServicePage } from './location-service-pages';
 import { getCountrySourcePage } from './country-source-pages';
 import { getTrustSupportPage } from './trust-support-pages';
-import { getDomesticWorkerGuide } from './domestic-worker-guides';
+import { domesticWorkerGuides, getDomesticWorkerGuide } from './domestic-worker-guides';
 import { getBlogImage } from './blog-images';
+import { homeAboutImages } from './home-about-images';
 import { serviceImageAlt } from './image-alt';
 import { articleSearchTitles } from './article-search-titles';
 import { companyInformationCopy } from './company-information';
 
 type Localized = Record<Lang, string>;
-// These are the actual visible Heroes, not a generic logo on text-only pages.
+// Only actual visible page photos belong in primary-image structured data.
 const corePageImages: Record<string, { src: string; alt: Localized }> = {
   '': {
     src: '/images/home/inaya-home-hero-family.webp',
@@ -25,6 +26,7 @@ const corePageImages: Record<string, { src: string; alt: Localized }> = {
     src: '/images/home/home-concierge-support.webp',
     alt: { en: 'A domestic worker arranging sofa cushions near a mother and child', ar: 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' }
   },
+  about: homeAboutImages.aboutStory,
   gallery: {
     src: '/images/home/inaya-home-hero-family.webp',
     alt: { en: 'Five women in blue, pink, beige, maroon and white INAYA uniforms', ar: 'خمس نساء بأزياء عناية الزرقاء والوردية والبيج والعنابية والبيضاء' }
@@ -212,11 +214,33 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   };
 }
 
+// Text pages can still suggest a relevant preview without claiming a visible primary photo.
+function pagePreviewImage(lang: Lang, route: string, page: PageSeo) {
+  if (page.image) return { url: `${siteConfig.url}${page.image}`, alt: page.imageAlt ?? page.name };
+
+  if (route === 'blog') {
+    const latestGuide = [...domesticWorkerGuides].sort((a, b) => b.published.localeCompare(a.published))[0];
+    const image = latestGuide && getBlogImage(latestGuide.slug);
+    if (image) return { url: `${siteConfig.url}${image.src}`, alt: image.alt[lang] };
+  }
+
+  const serviceSlug = route.startsWith('maid-source-countries/') || route === 'services/countries-we-source-from'
+    ? 'countries-we-source-from'
+    : getLocationServicePage(route) ? 'housemaid' : undefined;
+  if (serviceSlug) return {
+    url: `${siteConfig.url}${getServiceImage(serviceSlug)}`,
+    alt: serviceImageAlt(lang, serviceSlug)
+  };
+
+  const image = homeAboutImages.aboutLeadership;
+  return { url: `${siteConfig.url}${image.src}`, alt: image.alt[lang] };
+}
+
 export function pageMetadata(locale: string, route: string): Metadata {
   const page = getPageSeo(locale, route);
   if (!page) return {};
   const title = /INAYA|عناية/i.test(page.title) ? page.title : `${page.title} | ${locale === 'ar' ? 'عناية' : 'INAYA'}`;
-  const images = page.image ? [{ url: `${siteConfig.url}${page.image}`, alt: page.imageAlt ?? page.name }] : undefined;
+  const images = [pagePreviewImage(locale === 'ar' ? 'ar' : 'en', route, page)];
   return {
     title: { absolute: title }, description: page.description,
     alternates: localeAlternates(locale, route),
@@ -225,7 +249,7 @@ export function pageMetadata(locale: string, route: string): Metadata {
       url: localizedUrl(locale, route), siteName: locale === 'ar' ? 'عناية للعمالة المنزلية' : siteConfig.name,
       locale: locale === 'ar' ? 'ar_AE' : 'en_AE', alternateLocale: locale === 'ar' ? 'en_AE' : 'ar_AE', images
     },
-    twitter: { card: images ? 'summary_large_image' : 'summary', title, description: page.description, images }
+    twitter: { card: 'summary_large_image', title, description: page.description, images }
   };
 }
 

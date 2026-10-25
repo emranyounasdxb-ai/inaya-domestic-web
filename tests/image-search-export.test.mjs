@@ -65,27 +65,114 @@ test('the dedicated image sitemap covers every pictured canonical page and all11
   assert.deepEqual([...robots.matchAll(/^Sitemap: (.+)$/gm)].map(match => match[1].trim()), [origin + '/sitemap.xml', origin + '/image-sitemap.xml']);
 });
 
-test('primary image schema and social images match visible image files on both languages', async () => {
+// Independent fingerprints from the 2026-10-25 live-page and approved-source
+// audit before this metadata-only release. Keep existing assignments and bytes.
+const fingerprint = rows => createHash('sha256').update(JSON.stringify(rows.sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))).digest('hex');
+
+test('all274 pages have localized previews while only200 visible photos become primary image schema', async () => {
+  const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
+  const approved = new Map(catalog.images.map(image => [origin + image.src, image]));
+  const dimensions = new Map();
+  const preservedMappings = [], preservedPageMetadata = [];
+  const fallbackCounts = { blog: 0, countries: 0, locations: 0, information: 0 };
   let described = 0;
   for (const entry of entries) {
     const pageUrl = decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
-    const html = await readFile(path.join('out', new URL(pageUrl).pathname, 'index.html'), 'utf8');
-    const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(m => attrs(m[1]).type === 'application/ld+json').flatMap(m => JSON.parse(m[2])['@graph'] ?? []);
+    const pathname = new URL(pageUrl).pathname;
+    const [, locale, ...segments] = pathname.split('/');
+    const route = segments.filter(Boolean).join('/');
+    const html = await readFile(path.join('out', pathname, 'index.html'), 'utf8');
+    const metadata = [...html.matchAll(/<meta\b[^>]*>/gi)].map(match => attrs(match[0]));
+    const links = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attrs(match[0]));
+    const values = (key, value) => metadata.filter(meta => meta[key] === value).map(meta => meta.content);
+    const ogImages = values('property', 'og:image'), ogAlt = values('property', 'og:image:alt');
+    const twitterImages = values('name', 'twitter:image'), twitterAlt = values('name', 'twitter:image:alt');
+    for (const [label, values] of [['Open Graph image', ogImages], ['Open Graph alt', ogAlt], ['Twitter image', twitterImages], ['Twitter alt', twitterAlt]]) {
+      assert.equal(values.length, 1, `${pageUrl}: exactly one ${label}`);
+      assert.ok(values[0]?.trim(), `${pageUrl}: nonempty ${label}`);
+    }
+    assert.deepEqual(twitterImages, ogImages, `${pageUrl}: matching preview photo`);
+    assert.deepEqual(twitterAlt, ogAlt, `${pageUrl}: matching localized description`);
+    assert.deepEqual(values('name', 'twitter:card'), ['summary_large_image'], pageUrl);
+    assert.match(ogAlt[0], locale === 'ar' ? /[\u0600-\u06ff]/ : /[A-Za-z]/, `${pageUrl}: localized preview description`);
+    if (locale === 'en') assert.doesNotMatch(ogAlt[0], /[\u0600-\u06ff]/, `${pageUrl}: English description stays English`);
+    const source = approved.get(ogImages[0]);
+    assert.ok(source, `${pageUrl}: preview uses a current approved canonical source without a cache query`);
+    if (!dimensions.has(source.src)) dimensions.set(source.src, await sharp(path.join('out', source.src)).metadata());
+    const size = dimensions.get(source.src);
+    assert.ok(size.width >= 600 && size.height >= 300, `${pageUrl}: usable preview dimensions`);
+    const robots = values('name', 'robots').join(', ');
+    assert.match(robots, /max-image-preview:large/, `${pageUrl}: permits large image previews`);
+    assert.doesNotMatch(robots, /(?:^|[,\s])(?:noindex|noimageindex)(?:[,\s]|$)/, pageUrl);
+    const canonical = links.filter(link => link.rel === 'canonical').map(link => link.href);
+    assert.deepEqual(canonical, [pageUrl], `${pageUrl}: stable self canonical`);
+    const icons = links.filter(link => /icon/.test(link.rel));
+    assert.ok(icons.some(icon => icon.href === '/favicon.ico' && icon.rel === 'icon'), pageUrl);
+    assert.ok(icons.some(icon => icon.href === '/favicon-48x48.png' && icon.sizes === '48x48'), pageUrl);
+    assert.ok(icons.some(icon => icon.href === '/apple-touch-icon.png' && icon.sizes === '180x180'), pageUrl);
+    preservedPageMetadata.push([
+      pageUrl, decode(html.match(/<title>([\s\S]*?)<\/title>/)[1]), values('name', 'description')[0], canonical,
+      icons.map(icon => [icon.rel, icon.href, icon.type ?? null, icon.sizes ?? null]),
+    ]);
+    const graph = imageGraph(html);
     const page = graph.find(n => n['@type'] === 'WebPage');
-    const social = [...html.matchAll(/<meta\b[^>]*>/g)].map(m => attrs(m[0])).find(m => m.property === 'og:image');
-    if (!social) { assert.equal(page?.primaryImageOfPage, undefined, pageUrl); continue; }
-    const image = graph.find(n => n['@id'] === page.primaryImageOfPage?.['@id']);
+    assert.ok(page, `${pageUrl}: page schema remains present`);
+    if (!page.primaryImageOfPage) {
+      assert.ok(!graph.some(node => node['@id'] === `${pageUrl}#primaryimage`), `${pageUrl}: social fallback does not invent a primary photo`);
+      let expected;
+      if (route === 'blog') {
+        const main = visibleImageHtml(html).match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1];
+        assert.ok(main, `${pageUrl}: visible blog content`);
+        const firstGuideImage = imageTags(main).find(image => new URL(image.src, origin).pathname.startsWith('/images/blogs/'));
+        assert.ok(firstGuideImage, `${pageUrl}: first displayed guide has a photo`);
+        expected = approved.get(origin + new URL(firstGuideImage.src, origin).pathname);
+        assert.equal(ogAlt[0], firstGuideImage.alt, `${pageUrl}: preview describes the latest displayed article`);
+        fallbackCounts.blog++;
+      } else if (route.startsWith('maid-source-countries/') || route === 'services/countries-we-source-from') {
+        expected = approved.get(origin + '/images/about/about-hero-domestic-service.webp');
+        fallbackCounts.countries++;
+      } else if (/^maid-services-[^/]+$/.test(route)) {
+        expected = approved.get(origin + '/images/services/housemaid.webp');
+        fallbackCounts.locations++;
+      } else {
+        expected = approved.get(origin + '/images/about/about-team-leadership.webp');
+        fallbackCounts.information++;
+      }
+      assert.ok(expected, `${pageUrl}: approved fallback is known`);
+      assert.equal(ogImages[0], origin + expected.src, `${pageUrl}: relevant social-only preview`);
+      assert.equal(ogAlt[0], expected.alt[locale], `${pageUrl}: approved localized fallback description`);
+      continue;
+    }
+    const image = graph.find(n => n['@id'] === page.primaryImageOfPage['@id']);
     assert.equal(image?.['@type'], 'ImageObject', pageUrl);
-    assert.equal(image.contentUrl, social.content, pageUrl);
-    assert.ok(image.caption?.trim(), pageUrl);
-    assert.equal(image.inLanguage, new URL(pageUrl).pathname.split('/')[1]);
+    assert.equal(image.contentUrl, ogImages[0], pageUrl);
+    assert.equal(image.caption, ogAlt[0], `${pageUrl}: primary caption matches the preview description`);
+    assert.equal(image.inLanguage, locale);
     const visible = await pageImageUrls(html, pageUrl, 'out');
     assert.ok(visible.includes(image.contentUrl), `${pageUrl}: schema refers to visible image`);
-    const metadata = await sharp(path.join('out', new URL(image.contentUrl).pathname)).metadata();
-    assert.ok(metadata.width >= 600 && metadata.height >= 300, pageUrl);
+    if (route === 'about') {
+      assert.equal(image.contentUrl, origin + '/images/about/about-team-story.webp', `${pageUrl}: actual About story photo`);
+      assert.equal(image.caption, source.alt[locale], `${pageUrl}: approved About photo description`);
+    } else preservedMappings.push([pageUrl, ogImages, ogAlt, twitterImages, twitterAlt, [image.contentUrl]]);
     described++;
   }
-  assert.equal(described, 198, 'the two current gallery pages gain a visible approved primary image; the other 196 pictured pages keep their matching primary images');
+  assert.equal(described, 200, 'the About pair gains its visible story photo; all198 previously assigned primary photos remain');
+  assert.deepEqual(fallbackCounts, { blog: 2, countries: 26, locations: 14, information: 32 }, 'all74 remaining pages get social previews without false primary-image schema');
+  assert.equal(preservedMappings.length, 198);
+  assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 previous primary/social photo assignments and localized descriptions remain exact');
+  assert.equal(preservedPageMetadata.length, 274);
+  assert.equal(fingerprint(preservedPageMetadata), 'ff1d4ce117376ba175b0c13cca3557eca6a994177108dc249a0f936fa1ea36a6', 'all274 titles, descriptions, canonical URLs and icon declarations remain exact');
+});
+
+test('preview metadata changes preserve all111 approved original photos and all four deployed favicon files', async () => {
+  const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
+  assert.equal(catalog.images.length, 111);
+  for (const folder of ['public', 'out']) {
+    const photos = await Promise.all(catalog.images.map(async image => [image.src, imageSha256(await readFile(path.join(folder, image.src)))]));
+    assert.equal(fingerprint(photos), '3647afad9d5239502e941dbd9e564b997f315fa3e9d701054724c52d70682dcc', `${folder}: all111 approved original photo bytes are unchanged`);
+  }
+  const icons = await Promise.all(['/apple-touch-icon.png', '/favicon-48x48.png', '/favicon.ico', '/icon.png'].map(async file => [file, imageSha256(await readFile(path.join('out', file)))]));
+  assert.equal(fingerprint(icons), '356790abc5298eef968d053c11f107d662de6fba42d6f0354f03c7d65d3fa339', 'all four currently deployed favicon files remain unchanged');
 });
 
 test('localized pages advertise usable standard favicons made from the approved icon', async () => {
