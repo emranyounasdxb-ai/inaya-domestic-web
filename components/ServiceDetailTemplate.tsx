@@ -205,7 +205,7 @@ function ServiceHero({
           </div>
         </div>
         <div className="relative aspect-[4/3] min-h-[350px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]">
-          <Image src={withServiceImageVersion(image)} alt={serviceImageAlt(lang, slug)} fill loading="eager" fetchPriority="high" sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
+          <Image src={withServiceImageVersion(image)} unoptimized alt={serviceImageAlt(lang, slug)} fill loading="eager" fetchPriority="high" sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
         </div>
       </div>
     </section>
@@ -451,6 +451,7 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
                 <span className="relative block h-[232px] overflow-hidden bg-[#f7f8fb] max-sm:h-[210px]">
                   <Image
                     src={withServiceImageVersion(getServiceImage(relatedSlug))}
+                    unoptimized
                     alt={serviceImageAlt(lang, relatedSlug)}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

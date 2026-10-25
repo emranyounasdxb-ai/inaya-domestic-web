@@ -235,7 +235,7 @@ export default async function AboutPage({ params }: PageProps) {
             </div>
           </div>
           <div className="relative min-h-[380px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_22px_60px_rgba(7,22,74,0.10)]">
-            <Image src={withServiceImageVersion(aboutImages.support)} alt={isArabic ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+            <Image src={withServiceImageVersion(aboutImages.support)} unoptimized alt={isArabic ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
           </div>
         </div>
       </section>

@@ -85,6 +85,7 @@ export default async function ServicesPage({ params }: PageProps) {
           <div className="relative min-h-[330px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_26px_70px_rgba(7,22,74,0.14)]">
             <Image
               src={withServiceImageVersion('/images/home/home-concierge-support.webp')}
+              unoptimized
               alt={lang === 'ar' ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'}
               fill
               priority
@@ -186,6 +187,7 @@ function ServiceImageCard({
       <div className="relative h-52 overflow-hidden bg-[#f7f8fb]">
         <Image
           src={withServiceImageVersion(getServiceImage(slug))}
+          unoptimized
           alt={serviceImageAlt(lang, slug)}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
