@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-25",
+  "ownerApprovedWebsitePublication": true,
+  "authorization": "Owner supplied six images and requested publication on Home/About with unique slots and preserved existing URLs.",
+  "conversion": "Full frame PNG to WebP; no cropping, compositing, retouching or generation. Supported source metadata retained.",
+  "images": [
+    {
+      "slot": "homeHero",
+      "sourceFilename": "INAYA Five-Uniform Studio Portrait-Hero.png",
+      "sourceSha256": "8409fdedf554472fce922d674f21bae0ae660f854b0f1a5b89eafb8f00f9f597",
+      "src": "/images/home/inaya-home-hero-family.webp",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "afbe41a72b02e21259a3decfade48dbc1915d051210a97d40affc1c4482feb6b",
+      "previousSha256": "79bbe5b30a1e66c1130e202fa13f9bef2650b43bcc707b05d2ea16238845846c",
+      "cacheVersion": "afbe41a72b02",
+      "alt": {
+        "en": "Five women in pink, beige, royal-blue, maroon and white INAYA uniforms",
+        "ar": "خمس نساء بأزياء عناية بالوردي والبيج والأزرق الملكي والعنابي والأبيض"
+      },
+      "sourceWidth": 1536,
+      "sourceHeight": 1024
+    },
+    {
+      "slot": "homeFollowUp",
+      "sourceFilename": "INAYA office team in white uniforms.png",
+      "sourceSha256": "8bf8cf42fbba135825527439dcf92d60eaf05b2506a8db9b6ec9388540860b73",
+      "src": "/images/home/home-team-follow-up.webp",
+      "width": 1672,
+      "height": 941,
+      "webpSha256": "cfb2a2e90aa612327b7b07d1032dea096042565cb7d015188de61e613c3ea69e",
+      "previousSha256": null,
+      "cacheVersion": "cfb2a2e90aa6",
+      "alt": {
+        "en": "Four women in white INAYA uniforms beside a woman in office attire",
+        "ar": "أربع نساء بأزياء عناية البيضاء بجوار امرأة بملابس مكتبية"
+      },
+      "sourceWidth": 1672,
+      "sourceHeight": 941
+    },
+    {
+      "slot": "aboutStory",
+      "sourceFilename": "Inaya Team Celebration Portrait.png",
+      "sourceSha256": "a0598460511c5f171fdeddb8d12c4ce154e6a5ea5c4d318acf58e2a53e09c502",
+      "src": "/images/about/about-team-story.webp",
+      "width": 1672,
+      "height": 941,
+      "webpSha256": "c2579b99b91d6a272961a2779b2cb8acea15aa3c3ccfa13c1736c0fa136403b9",
+      "previousSha256": null,
+      "cacheVersion": "c2579b99b91d",
+      "alt": {
+        "en": "Women in several INAYA uniform colours standing behind two seated women beside a blue bench",
+        "ar": "نساء بألوان مختلفة من أزياء عناية يقفن خلف امرأتين جالستين بجوار مقعد أزرق"
+      },
+      "sourceWidth": 1672,
+      "sourceHeight": 941
+    },
+    {
+      "slot": "aboutMission",
+      "sourceFilename": "INAYA team portrait in royal blue.png",
+      "sourceSha256": "c7fa57ef715ea58b1fa16202da88f40ee23c3a3ba9298adfb55017cbfea9d20a",
+      "src": "/images/about/about-team-mission.webp",
+      "width": 1672,
+      "height": 941,
+      "webpSha256": "45f5f0441aa12a4341166a38e6f6246ccea019f398a640d09e8e4e479541ae7a",
+      "previousSha256": null,
+      "cacheVersion": "45f5f0441aa1",
+      "alt": {
+        "en": "A group of women in royal-blue INAYA uniforms, some wearing white headscarves",
+        "ar": "مجموعة نساء بأزياء عناية الزرقاء الملكية، بعضهن يرتدين أغطية رأس بيضاء"
+      },
+      "sourceWidth": 1672,
+      "sourceHeight": 941
+    },
+    {
+      "slot": "aboutVision",
+      "sourceFilename": "Ten INAYA staff on a royal-blue bench.png",
+      "sourceSha256": "5f53a985f607f27f73ee70bb2d70ca4b7db049d304ec3f5d03f1f7fefbfd8ca8",
+      "src": "/images/about/about-team-vision.webp",
+      "width": 1672,
+      "height": 941,
+      "webpSha256": "50dfc8d34c2b3dab5f30523268281abfec9d0a09aef1cd5680ad0f1f3908abd7",
+      "previousSha256": null,
+      "cacheVersion": "50dfc8d34c2b",
+      "alt": {
+        "en": "Ten women in royal-blue INAYA uniforms seated along a blue bench",
+        "ar": "عشر نساء بأزياء عناية الزرقاء الملكية جالسات على مقعد أزرق"
+      },
+      "sourceWidth": 1672,
+      "sourceHeight": 941
+    },
+    {
+      "slot": "aboutLeadership",
+      "sourceFilename": "INAYA team portrait with manager centered.png",
+      "sourceSha256": "c540867a6ad4b30c1d493717c25bc0cf45163b39cd75feaf7739f3d2eaa6c8ac",
+      "src": "/images/about/about-team-leadership.webp",
+      "width": 1672,
+      "height": 941,
+      "webpSha256": "dec720a4daa360ba6fad93ee9336504c91da7d978b9a1371c1a38a7c0213e519",
+      "previousSha256": null,
+      "cacheVersion": "dec720a4daa3",
+      "alt": {
+        "en": "Women in five INAYA uniform colours beside a woman in navy office attire",
+        "ar": "نساء بخمسة ألوان من أزياء عناية بجوار امرأة بملابس مكتبية كحلية"
+      },
+      "sourceWidth": 1672,
+      "sourceHeight": 941
+    }
+  ]
+}

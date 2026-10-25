@@ -1,4 +1,5 @@
-import { withServiceImageVersion } from '@/lib/service-image-versions';
+import { withPageImageVersion } from '@/lib/home-about-images';
+import HomeAboutPortrait from '@/components/HomeAboutPortrait';
 import { packageSummary, packageSections } from '@/lib/package-content';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -132,19 +133,16 @@ const authorityLogos = [
 ];
 
 const homeImages = {
-  hero: '/images/home/inaya-home-hero-family.webp',
-  concierge: '/images/home/home-concierge-support.webp',
   candidates: [
-    '/images/services/executive-nannies.webp',
-    '/images/services/private-chefs.webp',
-    '/images/services/house-managers.webp'
+    '/images/services/nanny.webp',
+    '/images/services/home-cooking.webp',
+    '/images/services/bespoke-household-management.webp'
   ],
   disciplines: [
     '/images/services/executive-nannies.webp',
     '/images/services/private-chefs.webp',
     '/images/services/house-managers.webp'
-  ],
-  testimonial: '/images/home/inaya-home-hero-family.webp'
+  ]
 };
 
 const homeImageWidths = [480, 768, 960, 1200, 1400];
@@ -153,7 +151,7 @@ const useOptimizedImageVariants = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'tru
 
 function optimizedVariant(src: string, width: number) {
   const cleanSrc = src.replace(/^\//, '').replace(/\.[^.]+$/i, '');
-  return withServiceImageVersion(`/optimized/${cleanSrc}-${width}.webp`, src);
+  return withPageImageVersion(`/optimized/${cleanSrc}-${width}.webp`, src);
 }
 
 function optimizedSrcSet(src: string) {
@@ -178,10 +176,10 @@ function ResponsiveImage({
     <picture className="absolute inset-0 block">
       {useOptimizedImageVariants ? <source type="image/webp" srcSet={optimizedSrcSet(src)} sizes={sizes} /> : null}
       <img
-        src={withServiceImageVersion(src)}
+        src={withPageImageVersion(src)}
         alt={alt}
-        width={src === '/images/home/inaya-home-hero-family.webp' ? 1513 : 1400}
-        height={src === '/images/home/inaya-home-hero-family.webp' ? 851 : 900}
+        width={1586}
+        height={992}
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : undefined}
         decoding={priority ? 'sync' : 'async'}
@@ -292,22 +290,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         }
       `}</style>
 
-      <section className="relative min-h-[82vh] overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden bg-[#f7f8fb]">
-          <ResponsiveImage
-            src={homeImages.hero}
-            alt={isArabic ? 'عاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'A domestic worker beside a table with the Dubai skyline in the background'}
-            priority
-            sizes="100vw"
-            imageClassName="object-cover object-center"
-          />
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_24%,rgba(191,164,106,0.18),transparent_22rem),linear-gradient(90deg,rgba(252,248,250,0.96)_0%,rgba(252,248,250,0.72)_48%,rgba(255,255,255,0.10)_100%)]" />
+      <section className="relative overflow-hidden px-6 py-12 sm:py-16 lg:px-10 lg:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_24%,rgba(191,164,106,0.18),transparent_22rem)]" />
         <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-accent-500/40 to-transparent" />
-        <div className="relative mx-auto flex min-h-[82vh] max-w-7xl items-center px-6 py-24 lg:px-10">
-          <div className="max-w-3xl rounded-[28px] border border-white/55 bg-white/[0.22] p-6 shadow-[0_28px_85px_rgba(7,22,74,0.08)] backdrop-blur-[10px] sm:p-8 lg:bg-white/[0.16]">
+        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="min-w-0 rounded-[28px] border border-white/55 bg-white/[0.22] p-6 shadow-[0_28px_85px_rgba(7,22,74,0.08)] backdrop-blur-[10px] sm:p-8 lg:bg-white/[0.16]">
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-accent-700">{copy.heroLabel}</p>
-            <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-[2.65rem] font-bold leading-[1.05] tracking-[-0.055em] text-primary-900 sm:text-[4.4rem] lg:text-[5rem]`}>
+            <h1 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-6 text-[2.65rem] font-bold leading-[1.05] tracking-[-0.055em] text-primary-900 sm:text-[4.4rem] lg:text-[3.8rem]`}>
               {copy.heroTitleA}{' '}<br />
               <span className="font-light italic text-primary-900/88">{copy.heroTitleB}</span>
             </h1>
@@ -321,6 +310,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </Link>
             </div>
           </div>
+          <HomeAboutPortrait slot="homeHero" isArabic={isArabic} priority sizes="(max-width: 1023px) 100vw, 50vw" className="order-first border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)] lg:order-none" />
         </div>
       </section>
 
@@ -344,7 +334,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {copy.learnMore}
               </Link>
             </div>
-            <HomeImage alt={isArabic ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'} src={homeImages.concierge} className="min-h-[320px] rounded-[22px] border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
+            <HomeAboutPortrait slot="homeFollowUp" isArabic={isArabic} className="border border-primary-900/10 shadow-[0_18px_50px_rgba(7,22,74,0.10)]" />
           </div>
         </div>
       </section>
@@ -380,7 +370,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="grid gap-6 md:grid-cols-3">
             {copy.candidates.map((item, index) => (
               <div key={item.name} className="overflow-hidden rounded-[24px] border border-white/70 bg-white/68 shadow-[0_22px_70px_rgba(7,22,74,0.075)] ring-1 ring-accent-500/10 backdrop-blur-xl transition hover:-translate-y-1 hover:border-accent-500/30">
-                <HomeImage alt={isArabic ? ['مربية بزي بيج تساعد طفلاً في ترتيب حقيبة المدرسة', 'عاملة بزي وردي تجهز الطعام في مطبخ منزلي', 'عاملة بزي وردي ترتب المنزل بمساعدة عاملة تنظيف بزي أزرق'][index] : ['A nanny in a beige uniform helping a child organise a school bag', 'A worker in a pink uniform preparing food in a home kitchen', 'A worker in a pink uniform organising a home with a cleaner in a blue uniform'][index]} src={homeImages.candidates[index]} className="h-64 border-b border-primary-900/10" />
+                <HomeImage alt={isArabic ? ['مربية بزي بيج تلعب بالمكعبات مع طفل', 'عاملة بزي وردي تقطع الخضراوات في مطبخ منزلي', 'عاملات بأزياء وردية وزرقاء وبيج يرتبن أغطية وكتباً في المنزل'][index] : ['A nanny in a beige uniform playing with blocks beside a child', 'A worker in a pink uniform chopping vegetables in a home kitchen', 'Workers in pink, blue and beige uniforms organising blankets and books at home'][index]} src={homeImages.candidates[index]} className="h-64 border-b border-primary-900/10" />
                 <div className="p-7">
                   <h3 className="font-heading text-xl font-bold text-primary-900">{item.name}</h3>
                   <p className="mt-1 text-sm font-semibold text-accent-700">{item.role}</p>
