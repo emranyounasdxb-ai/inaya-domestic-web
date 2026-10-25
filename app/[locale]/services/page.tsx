@@ -1,3 +1,4 @@
+import { withServiceImageVersion } from '@/lib/service-image-versions';
 import Image from 'next/image';
 import { serviceImageAlt } from '@/lib/image-alt';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -83,7 +84,7 @@ export default async function ServicesPage({ params }: PageProps) {
           </div>
           <div className="relative min-h-[330px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_26px_70px_rgba(7,22,74,0.14)]">
             <Image
-              src="/images/home/home-concierge-support.webp"
+              src={withServiceImageVersion('/images/home/home-concierge-support.webp')}
               alt={lang === 'ar' ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'}
               fill
               priority
@@ -184,7 +185,7 @@ function ServiceImageCard({
     >
       <div className="relative h-52 overflow-hidden bg-[#f7f8fb]">
         <Image
-          src={getServiceImage(slug)}
+          src={withServiceImageVersion(getServiceImage(slug))}
           alt={serviceImageAlt(lang, slug)}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"

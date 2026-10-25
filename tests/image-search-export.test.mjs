@@ -232,3 +232,84 @@ test('the 21 previously approved keyword images retain their original bytes and 
     }
   }
 });
+
+
+const serviceApproval = JSON.parse(await readFile('content/research/2026-10-25/service-owner-approved-images.json', 'utf8'));
+const serviceSlug = image => image.id === 'S28' ? 'countries-we-source-from' : path.basename(image.src, '.webp');
+const renderedServiceSrc = image => `${image.src}?v=${image.cacheVersion}`;
+
+test('the exact 33 owner-approved V2 service files retain their original paths and bytes', async () => {
+  assert.equal(serviceApproval.ownerApprovedWebsitePublication, true);
+  assert.equal(serviceApproval.images.length, 33);
+  assert.equal(new Set(serviceApproval.images.map(image => image.src)).size, 33);
+  assert.equal(new Set(serviceApproval.images.map(image => image.webpSha256)).size, 33);
+  for (const image of serviceApproval.images) {
+    assert.match(image.id, /^S(?:0[1-9]|[12][0-9]|3[0-3])$/);
+    assert.match(image.src, /^\/images\/(?:services|about|home)\/[a-z-]+\.webp$/);
+    assert.equal(image.cacheVersion, image.webpSha256.slice(0, 12));
+    assert.notEqual(image.webpSha256, image.previousSha256);
+    for (const root of ['public', 'out']) {
+      const bytes = await readFile(path.join(root, image.src));
+      assert.equal(imageSha256(bytes), image.webpSha256, `${root}${image.src}: approved bytes`);
+      const metadata = await sharp(bytes).metadata();
+      assert.equal(metadata.format, 'webp');
+      assert.equal(metadata.width, image.width);
+      assert.equal(metadata.height, image.height);
+    }
+  }
+});
+
+test('both languages map all32 service cards and31 existing detail heroes to their approved images', async () => {
+  for (const locale of ['en', 'ar']) {
+    const hub = visibleImageHtml(await readFile(`out/${locale}/services/index.html`, 'utf8'));
+    const banner = serviceApproval.images.find(image => image.id === 'S33');
+    assert.equal(imageTags(hub).filter(image => image.src === renderedServiceSrc(banner)).length, 1);
+    for (const image of serviceApproval.images.filter(image => image.id !== 'S33')) {
+      const slug = serviceSlug(image);
+      const link = [...hub.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)]
+        .find(match => attrs(match[1]).href === `/${locale}/services/${slug}/` && /<img\b/.test(match[2]));
+      assert.ok(link, `${locale}/${slug}: service image card`);
+      const cardImage = imageTags(link[2])[0];
+      assert.equal(cardImage.src, renderedServiceSrc(image), `${locale}/${slug}: exact card mapping`);
+      assert.ok(cardImage.alt.trim());
+      const detail = await readFile(`out/${locale}/services/${slug}/index.html`, 'utf8');
+      // The countries route intentionally remains its existing flag directory;
+      // its approved household illustration belongs to the services-hub card.
+      if (image.id === 'S28') continue;
+      const hero = imageTags(detail).find(candidate => candidate.fetchPriority === 'high' && candidate.src === renderedServiceSrc(image));
+      assert.ok(hero, `${locale}/${slug}: correct eager detail hero`);
+      const social = [...detail.matchAll(/<meta\b[^>]*>/g)].map(match => attrs(match[0])).find(meta => meta.property === 'og:image');
+      assert.equal(social.content, origin + image.src, `${locale}/${slug}: stable canonical image`);
+      for (const candidate of imageTags(detail)) {
+        const selected = serviceApproval.images.find(item => new URL(candidate.src, origin).pathname === item.src);
+        if (selected) assert.equal(candidate.src, renderedServiceSrc(selected), `${locale}/${slug}: versioned related image`);
+      }
+    }
+    for (const route of ['', 'about/']) {
+      const html = await readFile(`out/${locale}/${route}index.html`, 'utf8');
+      assert.ok(imageTags(html).some(image => image.src === renderedServiceSrc(banner)), `${locale}/${route}: shared approved banner`);
+    }
+    const home = await readFile(`out/${locale}/index.html`, 'utf8');
+    for (const source of [...home.matchAll(/<source\b[^>]*>/g)].map(match => attrs(match[0]))) {
+      for (const entry of (source.srcset ?? '').split(',').filter(Boolean)) {
+        const url = new URL(entry.trim().split(/\s+/)[0], origin);
+        const original = url.pathname.replace(/^\/optimized/, '').replace(/-\d+\.webp$/, '.webp');
+        const selected = serviceApproval.images.find(image => image.src === original);
+        if (selected) assert.equal(url.searchParams.get('v'), selected.cacheVersion, `${locale}: responsive cache version`);
+        else assert.equal(url.searchParams.has('v'), false, `${locale}: unrelated source preserved`);
+      }
+    }
+  }
+});
+
+test('deployment keeps supported provenance metadata for approved service originals and responsive variants', async () => {
+  const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
+  assert.match(workflow, /if \(approvedServiceImages\.has\(webPath\)\) variant = variant\.keepMetadata\(\)/);
+  assert.match(workflow, /if \(approvedServiceImages\.has\(webPath\)\) image = image\.keepMetadata\(\)/);
+  for (const image of serviceApproval.images) {
+    const bytes = await readFile(path.join('public', image.src));
+    const before = await sharp(bytes).metadata();
+    const after = await sharp(await sharp(bytes).resize({ width: 480 }).webp({ quality: 70, effort: 6 }).keepMetadata().toBuffer()).metadata();
+    if (before.xmp) assert.deepEqual(after.xmp, before.xmp, `${image.id}: retained XMP, without claiming original signatures remain valid`);
+  }
+});

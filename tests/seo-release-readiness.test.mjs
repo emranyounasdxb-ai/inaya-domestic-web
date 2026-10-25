@@ -193,11 +193,11 @@ test('exported pages remove shared visa promises, retain neutral transfer FAQs a
     assert.doesNotMatch(body, /Request Matching|اطلب المطابقة|Transfer step guidance|Document checklist review|إرشاد خطوات النقل|مراجعة قائمة المستندات/);
     assert.doesNotMatch(body, /not (?:yet )?confirmed|لم يتأكد|غير مؤكد هنا/);
     const monthly = await readFile(`out/${locale}/services/monthly-maid-contract/index.html`, 'utf8');
-    const hero = monthly.match(/<img\b[^>]*src="\/images\/services\/monthly-maid-contract\.webp"[^>]*>/)?.[0];
+    const hero = monthly.match(/<img\b[^>]*src="\/images\/services\/monthly-maid-contract\.webp(?:\?v=[a-f0-9]{12})?"[^>]*>/)?.[0];
     assert.ok(hero);
     assert.match(hero, /fetchPriority="high"/i);
     assert.match(hero, /loading="eager"/);
-    assert.equal([...monthly.matchAll(/<link\b[^>]*rel="preload"[^>]*href="\/images\/services\/monthly-maid-contract\.webp"[^>]*>/g)].length, 1, 'one hero preload');
+    assert.equal([...monthly.matchAll(/<link\b[^>]*rel="preload"[^>]*href="\/images\/services\/monthly-maid-contract\.webp(?:\?v=[a-f0-9]{12})?"[^>]*>/g)].length, 1, 'one hero preload');
     for (const route of ['', 'maid-services-ajman', 'services/monthly-maid-contract']) {
       const html = await readFile(`out/${locale}/${route ? route + '/' : ''}index.html`, 'utf8');
       const fontPreloads = [...html.matchAll(/<link\b[^>]*rel="preload"[^>]*as="font"[^>]*>/g)].map(match => match[0]);

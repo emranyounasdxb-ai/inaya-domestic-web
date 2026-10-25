@@ -1,3 +1,4 @@
+import { withServiceImageVersion } from '@/lib/service-image-versions';
 import { packageSummary, packageSections } from '@/lib/package-content';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -152,7 +153,7 @@ const useOptimizedImageVariants = process.env.NEXT_PUBLIC_STATIC_EXPORT === 'tru
 
 function optimizedVariant(src: string, width: number) {
   const cleanSrc = src.replace(/^\//, '').replace(/\.[^.]+$/i, '');
-  return `/optimized/${cleanSrc}-${width}.webp`;
+  return withServiceImageVersion(`/optimized/${cleanSrc}-${width}.webp`, src);
 }
 
 function optimizedSrcSet(src: string) {
@@ -177,7 +178,7 @@ function ResponsiveImage({
     <picture className="absolute inset-0 block">
       {useOptimizedImageVariants ? <source type="image/webp" srcSet={optimizedSrcSet(src)} sizes={sizes} /> : null}
       <img
-        src={src}
+        src={withServiceImageVersion(src)}
         alt={alt}
         width={src === '/images/home/inaya-home-hero-family.webp' ? 1513 : 1400}
         height={src === '/images/home/inaya-home-hero-family.webp' ? 851 : 900}
@@ -379,7 +380,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="grid gap-6 md:grid-cols-3">
             {copy.candidates.map((item, index) => (
               <div key={item.name} className="overflow-hidden rounded-[24px] border border-white/70 bg-white/68 shadow-[0_22px_70px_rgba(7,22,74,0.075)] ring-1 ring-accent-500/10 backdrop-blur-xl transition hover:-translate-y-1 hover:border-accent-500/30">
-                <HomeImage alt={`${item.name} — ${item.role}`} src={homeImages.candidates[index]} className="h-64 border-b border-primary-900/10" />
+                <HomeImage alt={isArabic ? ['مربية بزي بيج تساعد طفلاً في ترتيب حقيبة المدرسة', 'عاملة بزي وردي تجهز الطعام في مطبخ منزلي', 'عاملة بزي وردي ترتب المنزل بمساعدة عاملة تنظيف بزي أزرق'][index] : ['A nanny in a beige uniform helping a child organise a school bag', 'A worker in a pink uniform preparing food in a home kitchen', 'A worker in a pink uniform organising a home with a cleaner in a blue uniform'][index]} src={homeImages.candidates[index]} className="h-64 border-b border-primary-900/10" />
                 <div className="p-7">
                   <h3 className="font-heading text-xl font-bold text-primary-900">{item.name}</h3>
                   <p className="mt-1 text-sm font-semibold text-accent-700">{item.role}</p>
