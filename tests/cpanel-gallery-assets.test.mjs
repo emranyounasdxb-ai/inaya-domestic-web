@@ -48,18 +48,25 @@ async function deployedOptimizer() {
   const match = section.match(/^([ ]*)node <<'NODE'\n([\s\S]*?)^\1NODE[ ]*$/m);
   assert.ok(match, 'Extract the Node heredoc from the actual deployment step');
   const indentation = match[1];
-  return match[2].split('\n').map((line) => line.startsWith(indentation) ? line.slice(indentation.length) : line).join('\n');
+  // Disable libvips' file-handle cache in the temporary fixture process so
+  // Windows can replace the WebP it just read. The encoding pipeline is unchanged.
+  return "require('sharp').cache(false);\n" + match[2].split('\n').map((line) => line.startsWith(indentation) ? line.slice(indentation.length) : line).join('\n');
 }
 
 test('cPanel optimizer rejects retired gallery inputs while ordinary household image optimization remains intact', { timeout: 60000 }, async () => {
   const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), 'inaya-cpanel-gallery-'));
   try {
     const out = path.join(temporaryRoot, 'out');
+    const approvalPath = 'content/research/2026-10-25/service-owner-approved-images.json';
+    await mkdir(path.dirname(path.join(temporaryRoot, approvalPath)), { recursive: true });
+    await writeFile(path.join(temporaryRoot, approvalPath), await readFile(path.join(projectRoot, approvalPath)));
     const householdRelative = 'images/services/household.jpg';
     const household = await jpegFixture(1300, 650);
     const destination = path.join(out, householdRelative);
     await mkdir(path.dirname(destination), { recursive: true });
     await writeFile(destination, household);
+    const selected = path.join(out, 'images/services/live-in-maid.webp');
+    await writeFile(selected, await sharp(household).webp().keepMetadata().toBuffer());
     const options = {
       cwd: temporaryRoot,
       env: { ...process.env, NODE_PATH: [path.join(projectRoot, 'node_modules'), process.env.NODE_PATH].filter(Boolean).join(path.delimiter) },
@@ -77,11 +84,17 @@ test('cPanel optimizer rejects retired gallery inputs while ordinary household i
     assert.equal(metadata.format, 'jpeg');
     assert.deepEqual([metadata.width, metadata.height], [900, 450]);
     assert.equal(metadata.isProgressive, true);
-    assert.deepEqual(files.filter(file => file.startsWith('optimized/')), [480, 768, 900].map(width => `optimized/images/services/household-${width}.webp`));
+    assert.deepEqual(files.filter(file => file.startsWith('optimized/images/services/household-')), [480, 768, 900].map(width => `optimized/images/services/household-${width}.webp`));
+    assert.equal(metadata.xmp, undefined, 'Unrelated images retain their existing encoding behaviour');
+    const selectedMetadata = await sharp(await readFile(selected)).metadata();
+    assert.equal(selectedMetadata.width, 900);
+    assert.equal(selectedMetadata.xmp.toString(), provenance, 'The actual optimizer retains approved-image provenance');
     for (const width of [480, 768, 900]) {
       const variant = await sharp(await readFile(path.join(out, `optimized/images/services/household-${width}.webp`))).metadata();
       assert.equal(variant.format, 'webp');
       assert.deepEqual([variant.width, variant.height], [width, width / 2]);
+      const selectedVariant = await sharp(await readFile(path.join(out, `optimized/images/services/live-in-maid-${width}.webp`))).metadata();
+      assert.equal(selectedVariant.xmp.toString(), provenance, 'Responsive approved-image provenance is retained');
     }
     // Synthetic bytes exercise fail-closed retirement without restoring any old photo.
     const stale = path.join(out, 'images/company-gallery/inaya-office-003.jpg');

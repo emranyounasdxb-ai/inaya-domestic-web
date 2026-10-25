@@ -142,6 +142,18 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     }
     expected = ajmanOffice.approvedAjmanOfficeCopy(`${file}#hero`, expected);
     expected = companyGallery.approvedGalleryCopy(`${file}#hero`, expected);
+    // The owner-approved service-image release adds only display cache versions;
+    // all surrounding protected hero markup and styling must remain exact.
+    if (file === 'app/[locale]/services/page.tsx') {
+      const original = 'src="/images/home/home-concierge-support.webp"';
+      assert.equal(expected.split(original).length, 2, 'one approved services banner');
+      expected = expected.replace(original, "src={withServiceImageVersion('/images/home/home-concierge-support.webp')}\n              unoptimized");
+    }
+    if (file === 'components/ServiceDetailTemplate.tsx') {
+      const original = 'src={image} alt={serviceImageAlt';
+      assert.equal(expected.split(original).length, 2, 'one approved service detail hero');
+      expected = expected.replace(original, 'src={withServiceImageVersion(image)} unoptimized alt={serviceImageAlt');
+    }
     assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling with approved additions`);
   }
 });

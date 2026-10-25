@@ -1,0 +1,340 @@
+{
+  "date": "2026-10-25",
+  "ownerApprovedWebsitePublication": true,
+  "authorization": "Explicit owner instruction in the current thread to publish all33 selected V2 service images.",
+  "sourcePackage": "INAYA-Service-Image-Previews-20261025",
+  "selection": "V2",
+  "scope": "32 service-card images plus the shared services banner, exact existing filenames and paths. Existing Downloads originals and all versions preserved.",
+  "images": [
+    {
+      "id": "S01",
+      "title": "Live-in Maid Services",
+      "src": "/images/services/live-in-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "a113ff88aad81d5c32d6f35765fc7600ffce8836cc8cc4cf49f086690ce8b63a",
+      "previousSha256": "2e1d0f7133d9c6259fd969e9032a14998d13803f61339647e5c7e30418f2cbbf",
+      "cacheVersion": "a113ff88aad8"
+    },
+    {
+      "id": "S02",
+      "title": "Live-out Maid Services",
+      "src": "/images/services/live-out-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "6c15410e8dd102e3290ca29e637162880f097dbee63638696b3d6fdc60d48671",
+      "previousSha256": "b2e506a3e15158a82e629026b4bf9399185d98c48049a83729db3acecda53a6a",
+      "cacheVersion": "6c15410e8dd1"
+    },
+    {
+      "id": "S03",
+      "title": "Housemaid Services",
+      "src": "/images/services/housemaid.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "ea8c5e3c68e69c8052f65578ca5b4bd610f1fdda6f6f95ea13f1b80e0be69a5d",
+      "previousSha256": "f30a37f783d8c5c45ac1bd1a5a8bbf5d4519c653ee4e0dd88e7307ae1369241e",
+      "cacheVersion": "ea8c5e3c68e6"
+    },
+    {
+      "id": "S04",
+      "title": "Cleaning & Housekeeping Services",
+      "src": "/images/services/housekeeping.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "507bd20de996e52b176404ee5485bf265ea06d8cc97172c5c92e25c311e3e5e9",
+      "previousSha256": "be9e8c2a7dfab19dde6e628b7a405b0ee8b1fd91bf66f2de1732fe6ad09ebc9e",
+      "cacheVersion": "507bd20de996"
+    },
+    {
+      "id": "S05",
+      "title": "Full-time Maid Hiring",
+      "src": "/images/services/full-time-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "1ae3362c984ea981783867d31717d39ef7c4e603b3fdff1c66f64a69a5431854",
+      "previousSha256": "e8c68e7c77a389ff184333cf5ddaa33f3022a548472280210369dd1d210e339a",
+      "cacheVersion": "1ae3362c984e"
+    },
+    {
+      "id": "S06",
+      "title": "Part-time Maid Hiring",
+      "src": "/images/services/part-time-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "31373ca6ceb65b96272f648cd415d556c19ed2be7d3f428015bea2d350d46d25",
+      "previousSha256": "9e12f95a6814db2ec95b54fb207b48f568b9c18b19098f6cd33d22152572010c",
+      "cacheVersion": "31373ca6ceb6"
+    },
+    {
+      "id": "S07",
+      "title": "Monthly Maid Contract",
+      "src": "/images/services/monthly-maid-contract.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "342607df85fb1197cb3e4ef8c3443f6a36419da137e8a71f4cee415e4a793cab",
+      "previousSha256": "ced0b41a6e5e1c42a10266b5d34d6ac4d39a5f5a7104abd0a5cf531ece01e18c",
+      "cacheVersion": "342607df85fb"
+    },
+    {
+      "id": "S08",
+      "title": "On-demand Domestic Help",
+      "src": "/images/services/on-demand-domestic-help.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "09167e1ea52088a2fac36098274219b78665af71129c8b67d63ca0c4e8f38936",
+      "previousSha256": "5cb383ba16dea4f8c954bd2dfece6fe646e5a57c86bca44663a7610b3ae58fc5",
+      "cacheVersion": "09167e1ea520"
+    },
+    {
+      "id": "S09",
+      "title": "Nanny Services",
+      "src": "/images/services/nanny.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "cc2f9b0bdddd7535ff033af02bcdfeb3af31f71853d7d4b7630f3bd7c11e69b6",
+      "previousSha256": "3a0ba49f9b28c67efdf8274f477c96e6209117c98e60aeeedcab449115458632",
+      "cacheVersion": "cc2f9b0bdddd"
+    },
+    {
+      "id": "S10",
+      "title": "Executive Nannies",
+      "src": "/images/services/executive-nannies.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "6d9073bf261311d64da72a5215e62d12bf016747568669c2bc1bbeb5e7b36c0e",
+      "previousSha256": "90cdd9d32b53842ece74477136d554f067caf4da820e65e4077f0f8ace164bc0",
+      "cacheVersion": "6d9073bf2613"
+    },
+    {
+      "id": "S11",
+      "title": "Babysitting Services",
+      "src": "/images/services/babysitting.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "c4947caeb00fcf4dd00ff6ee9f8646d13e2a6a47359a3e3bf983bc3014443d3f",
+      "previousSha256": "0f8a99f6dbfb10d285795339f71b8afe9bd78d09412888b1c409bbfafb9e2ab5",
+      "cacheVersion": "c4947caeb00f"
+    },
+    {
+      "id": "S12",
+      "title": "Newborn Care Services",
+      "src": "/images/services/newborn-care.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "3a2355856cb08aef416f66c58e8c014dd2d474283baa8e4aac814952332244c8",
+      "previousSha256": "fbbc04edc6ab50f7273501644a2ed0a6f41e99245a0bc97109ce6f819d1c8d0a",
+      "cacheVersion": "3a2355856cb0"
+    },
+    {
+      "id": "S13",
+      "title": "Home Cooking Services",
+      "src": "/images/services/home-cooking.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "53a0c74d84a72650b3284a0768ce96f01fb750c2c8fcb73cc8235625b61f8d4a",
+      "previousSha256": "014c9003782a30a55eabe20913d19b0b3944d6841b8f98fbcfdafd6072b724f6",
+      "cacheVersion": "53a0c74d84a7"
+    },
+    {
+      "id": "S14",
+      "title": "Private Chefs",
+      "src": "/images/services/private-chefs.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "09853e467eacf2da3ea08dc77f1169fd852dc723a2bcc75adefd7d5d7f01c6bd",
+      "previousSha256": "03751482b20e7ab5c78dd319ed1d34833b7bacf8965e8a5a3488978e2690efd1",
+      "cacheVersion": "09853e467eac"
+    },
+    {
+      "id": "S15",
+      "title": "Cook / Personal Chef Hiring",
+      "src": "/images/services/personal-chef.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "bb0cc28545c72d0f67dc2e8b4402f9561eb33551020779b0df3502fcfa30c27d",
+      "previousSha256": "4d7ebbf33e4e951ad660ed37117a9ab1ede30468c0195b27f4f116402de4798d",
+      "cacheVersion": "bb0cc28545c7"
+    },
+    {
+      "id": "S16",
+      "title": "Kitchen Helper Services",
+      "src": "/images/services/kitchen-helper.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "8dff1101a2b1ca388607e6522962473691ab798a48963954a7c04a0b2e44e02a",
+      "previousSha256": "18b61424f3e2c06bc04f2f3fd69e0bee68c480a8a888f6616c8dc67f4e1839b2",
+      "cacheVersion": "8dff1101a2b1"
+    },
+    {
+      "id": "S17",
+      "title": "House Managers",
+      "src": "/images/services/house-managers.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "a444ffefef6085913654643d87a1ed47db3dd885af183e1afc3a0aa3f4148b3e",
+      "previousSha256": "3ff2ef9b9ad9e126a996291704ed5d290ceb178db466472eadf0420ab953652e",
+      "cacheVersion": "a444ffefef60"
+    },
+    {
+      "id": "S18",
+      "title": "Bespoke Household Management",
+      "src": "/images/services/bespoke-household-management.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "1a5e9e70e6f8ef867d6109066f23a6ded46612b3466fdeb3a519b9284e59b083",
+      "previousSha256": "7b7f319f0d74d98642f9523f063f3b4d1204bd7dc2beb7bfd1dd72228a3094af",
+      "cacheVersion": "1a5e9e70e6f8"
+    },
+    {
+      "id": "S19",
+      "title": "Elder Care Services",
+      "src": "/images/services/elder-care.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "05d5e300f945cba8c9f7a6ab2b811a5a4751c49f96e472fa1edc5493e283901e",
+      "previousSha256": "ac8f7dde1e2e947d32c76f206697638ebc08a9318d4b07498bdecb6e22c65378",
+      "cacheVersion": "05d5e300f945"
+    },
+    {
+      "id": "S20",
+      "title": "Non-clinical Home Support",
+      "src": "/images/services/patient-care.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "be556c496a328670d8818cd619a4929b80678121f47b164d1d172b8dfb3c8797",
+      "previousSha256": "1d5d49d453437f663f6d8fc0711d6fbeef733655ea49f7b907b5afcdecfbc382",
+      "cacheVersion": "be556c496a32"
+    },
+    {
+      "id": "S21",
+      "title": "Companion Care Services",
+      "src": "/images/services/companion-care.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "dddc105613df2bf67840c3abe4595bc52992adf039678aeb7fb0a8c62092ef0a",
+      "previousSha256": "de56fc5e742948c6317dd3df19f3decea084db8a98518f9cbc8974e8edd02f11",
+      "cacheVersion": "dddc105613df"
+    },
+    {
+      "id": "S22",
+      "title": "Domestic Worker Recruitment",
+      "src": "/images/services/recruitment.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "a4f0ca350594164da75884b22c219cc0a5659b45a87cfd494d940dfd90ab6558",
+      "previousSha256": "dc4da529d4c2a5c82f8a304fa9060d6750d5e5b75d6b0e1bbfc7d070f81119cb",
+      "cacheVersion": "a4f0ca350594"
+    },
+    {
+      "id": "S23",
+      "title": "Maid Visa Assistance",
+      "src": "/images/services/maid-visa.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "c0a0172646fa1e0bb667e5ab2e85e3ddeaa4d4f0413216abff2887ce05b8b228",
+      "previousSha256": "225bfe54269a78c8c1fbe03b5ed5fdddc9e065c8794938a44cf42e726383be7a",
+      "cacheVersion": "c0a0172646fa"
+    },
+    {
+      "id": "S24",
+      "title": "Maid Replacement Services",
+      "src": "/images/services/maid-replacement.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "9f24ce17f9ba22ff71b6d88a2199436f88b8cfd7509c7b889a3b7db276c5d22f",
+      "previousSha256": "965d4a27b706a6fe059f836d94a48cbe6206dc9103cc38ca525a7fca85c92209",
+      "cacheVersion": "9f24ce17f9ba"
+    },
+    {
+      "id": "S25",
+      "title": "Maid Transfer / Sponsorship Change",
+      "src": "/images/services/sponsorship-transfer.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "82b7929b6a2021eb250cbe38428722a3041d394fc44336ef301bf4d0c1cdd777",
+      "previousSha256": "81106ef11582c5e7b06b329a3f792de320202deda29dce4c8a7930fd8fd6b48a",
+      "cacheVersion": "82b7929b6a20"
+    },
+    {
+      "id": "S26",
+      "title": "Experienced / Trained Maid Hiring",
+      "src": "/images/services/experienced-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "0d0957703a01dca0b0a464a376e572cf70e915c9cb0aef609af851547b574877",
+      "previousSha256": "418178f68b6df01bc16eb96f7b9106c100d64d10aab5396914554d482aea60f9",
+      "cacheVersion": "0d0957703a01"
+    },
+    {
+      "id": "S27",
+      "title": "Background Verification Services",
+      "src": "/images/services/background-verification.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "904e082fc76ef3e2325b7be11167730eeb2f33f0524794db055688ecbfd9ce14",
+      "previousSha256": "3b0c2860c9d637989d4a30e5daa79d362fd2e973d8cd556b971e2e39669ed8ae",
+      "cacheVersion": "904e082fc76e"
+    },
+    {
+      "id": "S28",
+      "title": "Countries We Source From",
+      "src": "/images/about/about-hero-domestic-service.webp",
+      "width": 1536,
+      "height": 960,
+      "webpSha256": "964813adb925eb3836e1519316d41f89976eeb445b8e39e6a9b44a038a0e8575",
+      "previousSha256": "4bcf1a9215c8033c3061bb0dbda21ec5ec9184e21d64615d95d20245cc78a360",
+      "cacheVersion": "964813adb925"
+    },
+    {
+      "id": "S29",
+      "title": "Floral Styling",
+      "src": "/images/services/floral-styling.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "695e9d8cb9c7a4b33662bd0e961f2a463ac6470f52e04739ca38b419d4c57289",
+      "previousSha256": "f990acaed99802defa6b2ca54e81ce7d57549b8d81ef50e57b4510398c201ccb",
+      "cacheVersion": "695e9d8cb9c7"
+    },
+    {
+      "id": "S30",
+      "title": "Relocation Support",
+      "src": "/images/services/relocation-support.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "355774c9982368e768fb6bbedfe39aeca8b382643739dfc7b1f07b54dd6a04d6",
+      "previousSha256": "b3cac3104b9bab852bf275370f2ede9cba8c916e391c45bbec347a0fe5f59370",
+      "cacheVersion": "355774c99823"
+    },
+    {
+      "id": "S31",
+      "title": "Pet Care Specialists",
+      "src": "/images/services/pet-care-specialists.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "8d0517a1fa2824a10b0857af8422ddd7a6f13abbd267bea016b402f7ff67e35d",
+      "previousSha256": "6011c55a72937112b7c4ebc5836892966099a875ef2660a1158aae3d2d8413eb",
+      "cacheVersion": "8d0517a1fa28"
+    },
+    {
+      "id": "S32",
+      "title": "Event Staffing",
+      "src": "/images/services/event-staffing.webp",
+      "width": 1586,
+      "height": 992,
+      "webpSha256": "1f38ec24113c0e22fdb1e90f988a3399aff0293a941454ef5de27969327b4516",
+      "previousSha256": "9499f2ea4dc54ac45e9a07b5379453ddc0f3424ef6deb8affc138746b67ee069",
+      "cacheVersion": "1f38ec24113c"
+    },
+    {
+      "id": "S33",
+      "title": "Domestic Worker Services for Every Household Need",
+      "src": "/images/home/home-concierge-support.webp",
+      "width": 1380,
+      "height": 863,
+      "webpSha256": "0b76c3c89f74290df3a9280bbc82db729c8144ac76179b3b9d57209ae6c6944b",
+      "previousSha256": "ffa34ffca4f7b0fac76f20c34803ec9f9ab6519699321ea449727586cdbdbacd",
+      "cacheVersion": "0b76c3c89f74"
+    }
+  ]
+}
