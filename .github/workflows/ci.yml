@@ -62,7 +62,7 @@ jobs:
             sudo apt-get install -y lftp
           fi
       - name: Verify image discovery, primary images and favicon files
-        run: node --test tests/image-search-export.test.mjs tests/company-gallery-export.test.mjs tests/cpanel-gallery-assets.test.mjs tests/retired-blog-images.test.mjs tests/retired-gallery-images.test.mjs
+        run: node --test tests/image-sitemap-unit.test.mjs tests/image-search-export.test.mjs tests/company-gallery-export.test.mjs tests/cpanel-gallery-assets.test.mjs tests/retired-blog-images.test.mjs tests/retired-gallery-images.test.mjs
       - name: Verify concise unique search titles
         run: node --test tests/search-title-export.test.mjs
       - name: Unit and export checks

@@ -24,6 +24,10 @@ const corePageImages: Record<string, { src: string; alt: Localized }> = {
   services: {
     src: '/images/home/home-concierge-support.webp',
     alt: { en: 'A domestic worker arranging sofa cushions near a mother and child', ar: 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' }
+  },
+  gallery: {
+    src: '/images/home/inaya-home-hero-family.webp',
+    alt: { en: 'Five women in blue, pink, beige, maroon and white INAYA uniforms', ar: 'خمس نساء بأزياء عناية الزرقاء والوردية والبيج والعنابية والبيضاء' }
   }
 };
 // Concise summaries of existing roles; individual duties and availability are confirmed per enquiry.
@@ -85,7 +89,7 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   },
   gallery: {
     name: { en: 'INAYA Photo Gallery', ar: 'معرض صور عناية' },
-    description: { en: 'The INAYA photo gallery is being updated. Explore domestic-worker services or contact our Ajman office while the new gallery is prepared.', ar: 'يجري تحديث معرض صور عناية. استكشف خدمات العمالة المنزلية أو تواصل مع مكتبنا في عجمان أثناء إعداد المعرض الجديد.' }
+    description: { en: 'Explore INAYA services, uniforms and household guides in our photo gallery. Browse childcare, cooking, cleaning, care and recruitment images by category.', ar: 'استكشف صور خدمات عناية وأزيائها وأدلة الأسرة. تصفح صور رعاية الأطفال والطبخ والتنظيف والرعاية والتوظيف حسب الفئة.' }
   },
   services: {
     name: { en: 'Domestic Worker Services in UAE', ar: 'خدمات العمالة المنزلية في الإمارات' },

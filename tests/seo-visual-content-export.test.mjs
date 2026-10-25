@@ -58,6 +58,11 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
   const files = ['app/robots.ts', 'lib/seo.ts', 'lib/json-ld.ts', 'lib/content-architecture.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/services.ts', 'lib/buyer-answers.ts', 'lib/measurement.ts', 'components/Measurement.tsx', 'components/Footer.tsx', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'app/globals.css', 'app/[locale]/layout.tsx', 'next.config.js', 'tests/fixtures/seo-phase03-baseline.json'];
   for (const file of files) {
     let before = execFileSync('git', ['show', `0cc89c4ca6d5621a6ed08818b799b2bdeb71a5af:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
+    if (file === 'app/robots.ts') {
+      const original = '    sitemap: `${siteConfig.url}/sitemap.xml`,';
+      assert.equal(before.split(original).length, 2, 'one protected robots sitemap declaration');
+      before = before.replace(original, '    sitemap: [`${siteConfig.url}/sitemap.xml`, `${siteConfig.url}/image-sitemap.xml`],');
+    }
     if (file === 'components/Footer.tsx') {
       const faqLink = "    { label: tn('faq'), href: `/${locale}/faq` },\n";
       assert.equal(before.split(faqLink).length, 2, 'one Footer FAQ anchor in checkpoint');

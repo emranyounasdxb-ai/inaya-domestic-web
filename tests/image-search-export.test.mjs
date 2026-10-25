@@ -32,6 +32,39 @@ test('every image sitemap entry matches visible content, with no lost canonical 
   assert.ok(unique.size >= 80, `substantive image coverage: ${unique.size}`);
 });
 
+test('the dedicated image sitemap covers every pictured canonical page and all111 current site photos', async () => {
+  const dedicatedXml = await readFile('out/image-sitemap.xml', 'utf8');
+  assert.match(dedicatedXml, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
+  assert.doesNotMatch(dedicatedXml, /company-gallery|#photo-|urn:inaya:company-photo:/);
+  const imageEntries = [...dedicatedXml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
+  const parsed = blocks => blocks.map(entry => ({
+    page: decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1]),
+    images: [...entry[1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map(match => decode(match[1])),
+  }));
+  const mainPicturedPages = parsed(entries).filter(entry => entry.images.length);
+  const dedicatedPages = parsed(imageEntries);
+  assert.deepEqual(dedicatedPages, mainPicturedPages, 'no pictured canonical page is omitted or invented');
+  assert.equal(new Set(dedicatedPages.map(entry => entry.page)).size, dedicatedPages.length);
+  const allImages = new Set();
+  for (const entry of dedicatedPages) {
+    assert.match(entry.page, /^https:\/\/inayadomestic\.ae\/(?:en|ar)\//);
+    assert.equal(new Set(entry.images).size, entry.images.length, entry.page);
+    for (const image of entry.images) {
+      const url = new URL(image);
+      assert.equal(url.origin, origin);
+      assert.ok(url.pathname.startsWith('/images/'));
+      assert.equal(url.search, '', 'discovery URLs keep the canonical image path without display versions');
+      allImages.add(image);
+      await access(path.join('out', url.pathname));
+    }
+  }
+  const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
+  assert.equal(allImages.size, 111);
+  assert.deepEqual([...allImages].sort(), catalog.images.map(image => origin + image.src).sort());
+  const robots = await readFile('out/robots.txt', 'utf8');
+  assert.deepEqual([...robots.matchAll(/^Sitemap: (.+)$/gm)].map(match => match[1].trim()), [origin + '/sitemap.xml', origin + '/image-sitemap.xml']);
+});
+
 test('primary image schema and social images match visible image files on both languages', async () => {
   let described = 0;
   for (const entry of entries) {
@@ -52,7 +85,7 @@ test('primary image schema and social images match visible image files on both l
     assert.ok(metadata.width >= 600 && metadata.height >= 300, pageUrl);
     described++;
   }
-  assert.equal(described, 196, 'the gallery, About and Ajman routes no longer advertise retired gallery primary images; the other 196 pictured pages retain matching primary images');
+  assert.equal(described, 198, 'the two current gallery pages gain a visible approved primary image; the other 196 pictured pages keep their matching primary images');
 });
 
 test('localized pages advertise usable standard favicons made from the approved icon', async () => {
