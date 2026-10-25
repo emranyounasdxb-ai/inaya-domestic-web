@@ -3,6 +3,9 @@ import Link from 'next/link';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import RouteSeo from '@/components/RouteSeo';
 import { pageMetadata } from '@/lib/page-seo';
+import SiteImageGallery from '@/components/SiteImageGallery';
+import { siteGalleryCategories, siteGalleryImages } from '@/lib/site-image-gallery';
+import '../../site-gallery.css';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -24,11 +27,12 @@ export default async function GalleryPage({ params }: Props) {
             {ar ? 'معرض صور عناية' : 'INAYA photo gallery'}
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-8 text-primary-900/80">
-            {ar ? 'يجري تحديث معرض الصور. يمكنك استكشاف خدماتنا أو التواصل مع مكتب عناية في عجمان أثناء إعداد المعرض الجديد.' : 'Our photo gallery is being updated. You can explore our services or contact INAYA’s Ajman office while the new gallery is prepared.'}
+            {ar ? 'استكشف صور خدمات عناية وأزيائها وأدلة الأسرة. اختر الفئة المناسبة أو ابحث عن موضوع، وافتح أي صورة لمشاهدتها كاملة.' : 'Explore INAYA services, uniforms and household guides in pictures. Choose a category or search a topic, then open any photo to see it in full.'}
           </p>
         </div>
       </section>
       <PageBreadcrumbs locale={locale} route="gallery" />
+      <SiteImageGallery locale={ar ? 'ar' : 'en'} images={siteGalleryImages} categories={siteGalleryCategories} />
       <section className="border-t border-primary-900/10 bg-white px-6 py-10 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <h2 className={`${ar ? 'font-arabic' : 'font-heading'} text-2xl font-bold`}>

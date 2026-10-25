@@ -1,0 +1,2590 @@
+{
+  "categories": [
+    {
+      "id": "inaya",
+      "label": {
+        "en": "INAYA & uniforms",
+        "ar": "عناية والأزياء"
+      }
+    },
+    {
+      "id": "domestic",
+      "label": {
+        "en": "Domestic services",
+        "ar": "الخدمات المنزلية"
+      }
+    },
+    {
+      "id": "childcare",
+      "label": {
+        "en": "Childcare",
+        "ar": "رعاية الأطفال"
+      }
+    },
+    {
+      "id": "cooking",
+      "label": {
+        "en": "Cooking & household management",
+        "ar": "الطبخ وإدارة المنزل"
+      }
+    },
+    {
+      "id": "care",
+      "label": {
+        "en": "Elderly & everyday support",
+        "ar": "كبار السن والدعم اليومي"
+      }
+    },
+    {
+      "id": "support",
+      "label": {
+        "en": "Recruitment & support",
+        "ar": "التوظيف والدعم"
+      }
+    },
+    {
+      "id": "lifestyle",
+      "label": {
+        "en": "Lifestyle services",
+        "ar": "خدمات نمط الحياة"
+      }
+    },
+    {
+      "id": "countries",
+      "label": {
+        "en": "Source-country guide portraits",
+        "ar": "صور أدلة دول المصدر"
+      }
+    },
+    {
+      "id": "guides",
+      "label": {
+        "en": "Family guides",
+        "ar": "أدلة الأسرة"
+      }
+    }
+  ],
+  "images": [
+    {
+      "id": "site-image-about-leadership",
+      "src": "/images/about/about-team-leadership.webp",
+      "width": 1672,
+      "height": 941,
+      "title": {
+        "en": "INAYA management portrait",
+        "ar": "صورة لإدارة عناية"
+      },
+      "alt": {
+        "en": "Women in five INAYA uniform colours beside a woman in navy office attire",
+        "ar": "نساء بخمسة ألوان من أزياء عناية بجوار امرأة بملابس مكتبية كحلية"
+      },
+      "category": "inaya",
+      "relatedRoute": "about",
+      "cacheVersion": "dec720a4daa3",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-about-mission",
+      "src": "/images/about/about-team-mission.webp",
+      "width": 1672,
+      "height": 941,
+      "title": {
+        "en": "Group portrait in blue uniforms",
+        "ar": "صورة جماعية بالأزياء الزرقاء"
+      },
+      "alt": {
+        "en": "A group of women in royal-blue INAYA uniforms, some wearing white headscarves",
+        "ar": "مجموعة نساء بأزياء عناية الزرقاء الملكية، بعضهن يرتدين أغطية رأس بيضاء"
+      },
+      "category": "inaya",
+      "relatedRoute": "about",
+      "cacheVersion": "45f5f0441aa1",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-about-story",
+      "src": "/images/about/about-team-story.webp",
+      "width": 1672,
+      "height": 941,
+      "title": {
+        "en": "INAYA group celebration",
+        "ar": "احتفال جماعي لعناية"
+      },
+      "alt": {
+        "en": "Women in several INAYA uniform colours standing behind two seated women beside a blue bench",
+        "ar": "نساء بألوان مختلفة من أزياء عناية يقفن خلف امرأتين جالستين بجوار مقعد أزرق"
+      },
+      "category": "inaya",
+      "relatedRoute": "about",
+      "cacheVersion": "c2579b99b91d",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-about-vision",
+      "src": "/images/about/about-team-vision.webp",
+      "width": 1672,
+      "height": 941,
+      "title": {
+        "en": "INAYA uniform group portrait",
+        "ar": "صورة جماعية بأزياء عناية"
+      },
+      "alt": {
+        "en": "Ten women in royal-blue INAYA uniforms seated along a blue bench",
+        "ar": "عشر نساء بأزياء عناية الزرقاء الملكية جالسات على مقعد أزرق"
+      },
+      "category": "inaya",
+      "relatedRoute": "about",
+      "cacheVersion": "50dfc8d34c2b",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-home-follow-up",
+      "src": "/images/home/home-team-follow-up.webp",
+      "width": 1672,
+      "height": 941,
+      "title": {
+        "en": "White-uniform group portrait",
+        "ar": "صورة جماعية بالأزياء البيضاء"
+      },
+      "alt": {
+        "en": "Four women in white INAYA uniforms beside a woman in office attire",
+        "ar": "أربع نساء بأزياء عناية البيضاء بجوار امرأة بملابس مكتبية"
+      },
+      "category": "inaya",
+      "relatedRoute": "",
+      "cacheVersion": "cfb2a2e90aa6",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200,
+        1400
+      ]
+    },
+    {
+      "id": "site-image-home-hero",
+      "src": "/images/home/inaya-home-hero-family.webp",
+      "width": 1672,
+      "height": 941,
+      "title": {
+        "en": "INAYA uniforms on the patio",
+        "ar": "أزياء عناية على الشرفة"
+      },
+      "alt": {
+        "en": "Five women in blue, pink, beige, maroon and white INAYA uniforms on a patio at sunset",
+        "ar": "خمس نساء بأزياء عناية الزرقاء والوردية والبيج والعنابية والبيضاء على شرفة وقت الغروب"
+      },
+      "category": "inaya",
+      "relatedRoute": "",
+      "cacheVersion": "389c2830a017",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200,
+        1400,
+        1672
+      ]
+    },
+    {
+      "id": "site-image-home-mobile-studio",
+      "src": "/images/home/inaya-home-hero-mobile.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "INAYA five-uniform studio portrait",
+        "ar": "صورة استوديو بألوان أزياء عناية الخمسة"
+      },
+      "alt": {
+        "en": "Five women in pink, beige, royal-blue, maroon and white INAYA uniforms in a bright studio",
+        "ar": "خمس نساء بأزياء عناية بالوردي والبيج والأزرق الملكي والعنابي والأبيض في استوديو مضيء"
+      },
+      "category": "inaya",
+      "relatedRoute": "",
+      "cacheVersion": "afbe41a72b02",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200,
+        1400
+      ]
+    },
+    {
+      "id": "site-image-service-s01",
+      "src": "/images/services/live-in-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Live-in Maid Services",
+        "ar": "خدمات الخادمات المقيمات"
+      },
+      "alt": {
+        "en": "Household service: Live-in Maid Services",
+        "ar": "خدمة خدمات الخادمات المقيمات"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/live-in-maid",
+      "cacheVersion": "a113ff88aad8",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s02",
+      "src": "/images/services/live-out-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Live-out Maid Services",
+        "ar": "خدمات الخادمات غير المقيمات"
+      },
+      "alt": {
+        "en": "Household service: Live-out Maid Services",
+        "ar": "خدمة خدمات الخادمات غير المقيمات"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/live-out-maid",
+      "cacheVersion": "6c15410e8dd1",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s03",
+      "src": "/images/services/housemaid.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Housemaid Services",
+        "ar": "خدمات عاملات المنازل"
+      },
+      "alt": {
+        "en": "Household service: Housemaid Services",
+        "ar": "خدمة خدمات عاملات المنازل"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/housemaid",
+      "cacheVersion": "ea8c5e3c68e6",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s04",
+      "src": "/images/services/housekeeping.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Cleaning & Housekeeping Services",
+        "ar": "خدمات التنظيف وترتيب المنزل"
+      },
+      "alt": {
+        "en": "Household service: Cleaning & Housekeeping Services",
+        "ar": "خدمة خدمات التنظيف وترتيب المنزل"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/housekeeping",
+      "cacheVersion": "507bd20de996",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s05",
+      "src": "/images/services/full-time-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Full-time Maid Hiring",
+        "ar": "توظيف خادمة بدوام كامل"
+      },
+      "alt": {
+        "en": "Household service: Full-time Maid Hiring",
+        "ar": "خدمة توظيف خادمة بدوام كامل"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/full-time-maid",
+      "cacheVersion": "1ae3362c984e",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s06",
+      "src": "/images/services/part-time-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Part-time Maid Hiring",
+        "ar": "توظيف خادمة بدوام جزئي"
+      },
+      "alt": {
+        "en": "Household service: Part-time Maid Hiring",
+        "ar": "خدمة توظيف خادمة بدوام جزئي"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/part-time-maid",
+      "cacheVersion": "31373ca6ceb6",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s07",
+      "src": "/images/services/monthly-maid-contract.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Monthly Maid Contract",
+        "ar": "عقد خادمة شهري"
+      },
+      "alt": {
+        "en": "Household service: Monthly Maid Contract",
+        "ar": "خدمة عقد خادمة شهري"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/monthly-maid-contract",
+      "cacheVersion": "342607df85fb",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s08",
+      "src": "/images/services/on-demand-domestic-help.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "On-demand Domestic Help",
+        "ar": "مساعدة منزلية عند الطلب"
+      },
+      "alt": {
+        "en": "Household service: On-demand Domestic Help",
+        "ar": "خدمة مساعدة منزلية عند الطلب"
+      },
+      "category": "domestic",
+      "relatedRoute": "services/on-demand-domestic-help",
+      "cacheVersion": "09167e1ea520",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s33",
+      "src": "/images/home/home-concierge-support.webp",
+      "width": 1380,
+      "height": 863,
+      "title": {
+        "en": "Everyday household support",
+        "ar": "الدعم المنزلي اليومي"
+      },
+      "alt": {
+        "en": "A domestic worker arranging sofa cushions near a mother and child",
+        "ar": "عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها"
+      },
+      "category": "domestic",
+      "relatedRoute": "services",
+      "cacheVersion": "0b76c3c89f74",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200,
+        1400
+      ]
+    },
+    {
+      "id": "site-image-service-s09",
+      "src": "/images/services/nanny.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Nanny Services",
+        "ar": "خدمات المربيات"
+      },
+      "alt": {
+        "en": "Household service: Nanny Services",
+        "ar": "خدمة خدمات المربيات"
+      },
+      "category": "childcare",
+      "relatedRoute": "services/nanny",
+      "cacheVersion": "cc2f9b0bdddd",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s10",
+      "src": "/images/services/executive-nannies.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Executive Nannies",
+        "ar": "مربيات تنفيذيات"
+      },
+      "alt": {
+        "en": "Household service: Executive Nannies",
+        "ar": "خدمة مربيات تنفيذيات"
+      },
+      "category": "childcare",
+      "relatedRoute": "services/executive-nannies",
+      "cacheVersion": "6d9073bf2613",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s11",
+      "src": "/images/services/babysitting.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Babysitting Services",
+        "ar": "خدمات جليسات الأطفال"
+      },
+      "alt": {
+        "en": "Household service: Babysitting Services",
+        "ar": "خدمة خدمات جليسات الأطفال"
+      },
+      "category": "childcare",
+      "relatedRoute": "services/babysitting",
+      "cacheVersion": "c4947caeb00f",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s12",
+      "src": "/images/services/newborn-care.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Newborn Care Services",
+        "ar": "خدمات رعاية المواليد"
+      },
+      "alt": {
+        "en": "Household service: Newborn Care Services",
+        "ar": "خدمة خدمات رعاية المواليد"
+      },
+      "category": "childcare",
+      "relatedRoute": "services/newborn-care",
+      "cacheVersion": "3a2355856cb0",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s13",
+      "src": "/images/services/home-cooking.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Home Cooking Services",
+        "ar": "خدمات الطبخ المنزلي"
+      },
+      "alt": {
+        "en": "Household service: Home Cooking Services",
+        "ar": "خدمة خدمات الطبخ المنزلي"
+      },
+      "category": "cooking",
+      "relatedRoute": "services/home-cooking",
+      "cacheVersion": "53a0c74d84a7",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s14",
+      "src": "/images/services/private-chefs.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Private Chefs",
+        "ar": "طهاة خاصون"
+      },
+      "alt": {
+        "en": "Household service: Private Chefs",
+        "ar": "خدمة طهاة خاصون"
+      },
+      "category": "cooking",
+      "relatedRoute": "services/private-chefs",
+      "cacheVersion": "09853e467eac",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s15",
+      "src": "/images/services/personal-chef.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Cook / Personal Chef Hiring",
+        "ar": "توظيف طاهٍ / شيف خاص"
+      },
+      "alt": {
+        "en": "Household service: Cook / Personal Chef Hiring",
+        "ar": "خدمة توظيف طاهٍ / شيف خاص"
+      },
+      "category": "cooking",
+      "relatedRoute": "services/personal-chef",
+      "cacheVersion": "bb0cc28545c7",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s16",
+      "src": "/images/services/kitchen-helper.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Kitchen Helper Services",
+        "ar": "خدمات مساعد المطبخ"
+      },
+      "alt": {
+        "en": "Household service: Kitchen Helper Services",
+        "ar": "خدمة خدمات مساعد المطبخ"
+      },
+      "category": "cooking",
+      "relatedRoute": "services/kitchen-helper",
+      "cacheVersion": "8dff1101a2b1",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s17",
+      "src": "/images/services/house-managers.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "House Managers",
+        "ar": "مديرو المنازل"
+      },
+      "alt": {
+        "en": "Household service: House Managers",
+        "ar": "خدمة مديرو المنازل"
+      },
+      "category": "cooking",
+      "relatedRoute": "services/house-managers",
+      "cacheVersion": "a444ffefef60",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s18",
+      "src": "/images/services/bespoke-household-management.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Bespoke Household Management",
+        "ar": "إدارة منزلية مخصصة"
+      },
+      "alt": {
+        "en": "Household service: Bespoke Household Management",
+        "ar": "خدمة إدارة منزلية مخصصة"
+      },
+      "category": "cooking",
+      "relatedRoute": "services/bespoke-household-management",
+      "cacheVersion": "1a5e9e70e6f8",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s19",
+      "src": "/images/services/elder-care.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Elder Care Services",
+        "ar": "خدمات رعاية المسنين"
+      },
+      "alt": {
+        "en": "Household service: Elder Care Services",
+        "ar": "خدمة خدمات رعاية المسنين"
+      },
+      "category": "care",
+      "relatedRoute": "services/elder-care",
+      "cacheVersion": "05d5e300f945",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s20",
+      "src": "/images/services/patient-care.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Non-clinical Home Support",
+        "ar": "دعم منزلي غير طبي"
+      },
+      "alt": {
+        "en": "Household service: Non-clinical Home Support",
+        "ar": "خدمة دعم منزلي غير طبي"
+      },
+      "category": "care",
+      "relatedRoute": "services/patient-care",
+      "cacheVersion": "be556c496a32",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s21",
+      "src": "/images/services/companion-care.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Companion Care Services",
+        "ar": "خدمات رعاية المرافقة"
+      },
+      "alt": {
+        "en": "Household service: Companion Care Services",
+        "ar": "خدمة خدمات رعاية المرافقة"
+      },
+      "category": "care",
+      "relatedRoute": "services/companion-care",
+      "cacheVersion": "dddc105613df",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s22",
+      "src": "/images/services/recruitment.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Domestic Worker Recruitment",
+        "ar": "توظيف العمالة المنزلية"
+      },
+      "alt": {
+        "en": "Household service: Domestic Worker Recruitment",
+        "ar": "خدمة توظيف العمالة المنزلية"
+      },
+      "category": "support",
+      "relatedRoute": "services/recruitment",
+      "cacheVersion": "a4f0ca350594",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s23",
+      "src": "/images/services/maid-visa.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Maid Visa Assistance",
+        "ar": "المساعدة في تأشيرة الخادمة"
+      },
+      "alt": {
+        "en": "Household service: Maid Visa Assistance",
+        "ar": "خدمة المساعدة في تأشيرة الخادمة"
+      },
+      "category": "support",
+      "relatedRoute": "services/maid-visa",
+      "cacheVersion": "c0a0172646fa",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s24",
+      "src": "/images/services/maid-replacement.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Maid Replacement Services",
+        "ar": "خدمات استبدال الخادمة"
+      },
+      "alt": {
+        "en": "Household service: Maid Replacement Services",
+        "ar": "خدمة خدمات استبدال الخادمة"
+      },
+      "category": "support",
+      "relatedRoute": "services/maid-replacement",
+      "cacheVersion": "9f24ce17f9ba",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s25",
+      "src": "/images/services/sponsorship-transfer.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Maid Transfer / Sponsorship Change",
+        "ar": "نقل الخادمة / تغيير الكفالة"
+      },
+      "alt": {
+        "en": "Household service: Maid Transfer / Sponsorship Change",
+        "ar": "خدمة نقل الخادمة / تغيير الكفالة"
+      },
+      "category": "support",
+      "relatedRoute": "services/sponsorship-transfer",
+      "cacheVersion": "82b7929b6a20",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s26",
+      "src": "/images/services/experienced-maid.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Experienced / Trained Maid Hiring",
+        "ar": "توظيف خادمة ذات خبرة / مدربة"
+      },
+      "alt": {
+        "en": "Household service: Experienced / Trained Maid Hiring",
+        "ar": "خدمة توظيف خادمة ذات خبرة / مدربة"
+      },
+      "category": "support",
+      "relatedRoute": "services/experienced-maid",
+      "cacheVersion": "0d0957703a01",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s27",
+      "src": "/images/services/background-verification.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Background Verification Services",
+        "ar": "خدمات التحقق من الخلفية"
+      },
+      "alt": {
+        "en": "Household service: Background Verification Services",
+        "ar": "خدمة خدمات التحقق من الخلفية"
+      },
+      "category": "support",
+      "relatedRoute": "services/background-verification",
+      "cacheVersion": "904e082fc76e",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s28",
+      "src": "/images/about/about-hero-domestic-service.webp",
+      "width": 1536,
+      "height": 960,
+      "title": {
+        "en": "Countries We Source From",
+        "ar": "الدول التي نوفر منها العمالة"
+      },
+      "alt": {
+        "en": "Illustrative household scene with domestic workers performing separate tasks in role-specific uniforms",
+        "ar": "مشهد توضيحي لعاملات منزليات يؤدين مهام مختلفة في المنزل بأزياء مخصصة لأدوارهن"
+      },
+      "category": "support",
+      "relatedRoute": "services",
+      "cacheVersion": "964813adb925",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-service-s29",
+      "src": "/images/services/floral-styling.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Floral Styling",
+        "ar": "تنسيق الزهور"
+      },
+      "alt": {
+        "en": "Household service: Floral Styling",
+        "ar": "خدمة تنسيق الزهور"
+      },
+      "category": "lifestyle",
+      "relatedRoute": "services/floral-styling",
+      "cacheVersion": "695e9d8cb9c7",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s30",
+      "src": "/images/services/relocation-support.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Relocation Support",
+        "ar": "دعم الانتقال"
+      },
+      "alt": {
+        "en": "Household service: Relocation Support",
+        "ar": "خدمة دعم الانتقال"
+      },
+      "category": "lifestyle",
+      "relatedRoute": "services/relocation-support",
+      "cacheVersion": "355774c99823",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s31",
+      "src": "/images/services/pet-care-specialists.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Pet Care Specialists",
+        "ar": "متخصصو رعاية الحيوانات الأليفة"
+      },
+      "alt": {
+        "en": "Household service: Pet Care Specialists",
+        "ar": "خدمة متخصصو رعاية الحيوانات الأليفة"
+      },
+      "category": "lifestyle",
+      "relatedRoute": "services/pet-care-specialists",
+      "cacheVersion": "8d0517a1fa28",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-service-s32",
+      "src": "/images/services/event-staffing.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Event Staffing",
+        "ar": "طاقم للمناسبات"
+      },
+      "alt": {
+        "en": "Household service: Event Staffing",
+        "ar": "خدمة طاقم للمناسبات"
+      },
+      "category": "lifestyle",
+      "relatedRoute": "services/event-staffing",
+      "cacheVersion": "1f38ec24113c",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-country-india",
+      "src": "/images/countries/maid-india.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "India guide portrait",
+        "ar": "صورة دليل الهند"
+      },
+      "alt": {
+        "en": "A woman in a beige and brown uniform standing near a sofa with blue cushions",
+        "ar": "امرأة بزي بيج وبني تقف قرب أريكة ذات وسائد زرقاء"
+      },
+      "category": "countries",
+      "relatedRoute": "services/live-in-maid",
+      "cacheVersion": "92eb2ac5c678",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-country-indonesia",
+      "src": "/images/countries/maid-indonesia.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Indonesia guide portrait",
+        "ar": "صورة دليل إندونيسيا"
+      },
+      "alt": {
+        "en": "A woman in a beige and brown uniform standing near orchids and a sofa",
+        "ar": "امرأة بزي بيج وبني تقف قرب زهور الأوركيد وأريكة"
+      },
+      "category": "countries",
+      "relatedRoute": "services/live-in-maid",
+      "cacheVersion": "85ca6b404e10",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-country-kenya-uganda",
+      "src": "/images/countries/maid-kenya-uganda.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Kenya / Uganda guide portrait",
+        "ar": "صورة دليل كينيا / أوغندا"
+      },
+      "alt": {
+        "en": "A woman in a beige and brown uniform standing near a sofa and a tall indoor plant",
+        "ar": "امرأة بزي بيج وبني تقف قرب أريكة ونبات داخلي طويل"
+      },
+      "category": "countries",
+      "relatedRoute": "services/live-in-maid",
+      "cacheVersion": "30a47cb83f55",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-country-nepal",
+      "src": "/images/countries/maid-nepal.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Nepal guide portrait",
+        "ar": "صورة دليل نيبال"
+      },
+      "alt": {
+        "en": "A woman in a beige and brown uniform standing with her hands together in a living room",
+        "ar": "امرأة بزي بيج وبني تقف ويداها متشابكتان في غرفة معيشة"
+      },
+      "category": "countries",
+      "relatedRoute": "services/live-in-maid",
+      "cacheVersion": "6e9b025bab8a",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-country-philippines",
+      "src": "/images/countries/maid-philippines.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Philippines guide portrait",
+        "ar": "صورة دليل الفلبين"
+      },
+      "alt": {
+        "en": "A woman in a brown uniform with beige trim standing beside a sofa in a bright living room",
+        "ar": "امرأة بزي بني ذي حواف بيج تقف بجوار أريكة في غرفة معيشة مضيئة"
+      },
+      "category": "countries",
+      "relatedRoute": "services/live-in-maid",
+      "cacheVersion": "121c00ce2a65",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-country-sri-lanka",
+      "src": "/images/countries/maid-sri-lanka.webp",
+      "width": 1586,
+      "height": 992,
+      "title": {
+        "en": "Sri Lanka guide portrait",
+        "ar": "صورة دليل سريلانكا"
+      },
+      "alt": {
+        "en": "A woman in a beige and brown uniform standing beside a neutral sofa and indoor plants",
+        "ar": "امرأة بزي بيج وبني تقف بجوار أريكة بألوان هادئة ونباتات داخلية"
+      },
+      "category": "countries",
+      "relatedRoute": "services/live-in-maid",
+      "cacheVersion": "c304f5be60b1",
+      "responsiveWidths": [
+        480,
+        768,
+        900
+      ]
+    },
+    {
+      "id": "site-image-guide-agreeing-domestic-worker-household-duties",
+      "src": "/images/blogs/agreeing-domestic-worker-household-duties-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Can one domestic worker handle cleaning, cooking and childcare?",
+        "ar": "هل يستطيع عامل مساعد واحد الجمع بين التنظيف والطهي ورعاية الأطفال؟"
+      },
+      "alt": {
+        "en": "A housemaid in pink prepares ingredients while a parent supervises the child nearby.",
+        "ar": "عاملة منزلية بزي وردي تجهز المكونات بينما يشرف أحد الوالدين على الطفل بالقرب منها."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/agreeing-domestic-worker-household-duties",
+      "cacheVersion": "589c2248ff7e",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ajman-domestic-worker-communication-privacy-boundaries",
+      "src": "/images/blogs/keyword-21-20261024/k20-domestic-worker-privacy.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Domestic Workers in Ajman: Agree Communication, Privacy and Responsibility Boundaries",
+        "ar": "عاملات منزلية في عجمان: الاتفاق على التواصل والخصوصية وحدود المسؤولية"
+      },
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder discussing a private-room doorway beside a key tray.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تتحدثان قرب باب غرفة خاصة وصينية مفاتيح."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ajman-domestic-worker-communication-privacy-boundaries",
+      "cacheVersion": "bbfdae0ff4a9",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ajman-domestic-worker-recruitment-milestone-decisions",
+      "src": "/images/blogs/keyword-21-20261024/k21-recruitment-start-readiness.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Domestic Worker Recruitment in Ajman: Manage Milestones, Decisions and Start-Readiness",
+        "ar": "استقدام العمالة المنزلية في عجمان: إدارة المراحل والقرارات والجاهزية للبدء"
+      },
+      "alt": {
+        "en": "Illustrative scene of an adviser introducing a housemaid in pink carrying a bag to two adults in a reception area.",
+        "ar": "مشهد توضيحي لمستشارة تقدم عاملة منزلية بالزي الوردي تحمل حقيبة إلى شخصين بالغين في الاستقبال."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ajman-domestic-worker-recruitment-milestone-decisions",
+      "cacheVersion": "8e4f91857300",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ajman-household-weekly-maid-priorities-handover",
+      "src": "/images/blogs/keyword-21-20261024/k15-maids-ajman-weekly-plan.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Maids in Ajman: Build a Weekly Household Plan That Can Adapt",
+        "ar": "خادمات عجمان: إعداد خطة أسبوعية للمنزل تتكيف مع التغييرات"
+      },
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder reviewing a weekly plan at a table.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تراجعان خطة أسبوعية على طاولة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ajman-household-weekly-maid-priorities-handover",
+      "cacheVersion": "bb3abc4b868c",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ajman-housemaid-visa-document-name-status-check",
+      "src": "/images/blogs/keyword-21-20261024/k18-housemaid-visa-document-check.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Housemaid Visa in Ajman: Check Names, Documents and Status Before Responding",
+        "ar": "تأشيرة خادمة في عجمان: مراجعة الأسماء والمستندات والحالة قبل الرد"
+      },
+      "alt": {
+        "en": "Illustrative scene of hands comparing two sample sheets with a magnifying glass and ruler at an office desk.",
+        "ar": "مشهد توضيحي لأيد تقارن ورقتين نموذجيتين باستخدام عدسة مكبرة ومسطرة على مكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ajman-housemaid-visa-document-name-status-check",
+      "cacheVersion": "c276ffc96894",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ajman-maid-recruitment-agreement-receipts-evidence",
+      "src": "/images/blogs/keyword-21-20261024/k16-maid-recruitment-agreements.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Choosing a Maid Recruitment Office in Ajman: Organise Agreements, Receipts and Follow-Up Evidence",
+        "ar": "مكتب استقدام خادمات في عجمان: تنظيم الاتفاقات والإيصالات وأدلة المتابعة"
+      },
+      "alt": {
+        "en": "Illustrative scene of a visitor and adviser placing plain papers into an accordion document organiser.",
+        "ar": "مشهد توضيحي لزائرة ومستشارة تضعان أوراقاً خالية من البيانات في حافظة مستندات مقسمة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ajman-maid-recruitment-agreement-receipts-evidence",
+      "cacheVersion": "fba255892441",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ajman-monthly-maid-service-review-evidence-log",
+      "src": "/images/blogs/keyword-21-20261024/k19-monthly-maid-service-review.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Monthly Maids in Ajman: Review the Service Before the Next Billing Conversation",
+        "ar": "خادمات بالشهر في عجمان: مراجعة الخدمة قبل مناقشة الفاتورة التالية"
+      },
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder reviewing a tablet together on a shaded terrace.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تراجعان جهازاً لوحياً على شرفة مظللة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ajman-monthly-maid-service-review-evidence-log",
+      "cacheVersion": "abb1c063e5d6",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ajman-tadbeer-case-status-follow-up-record",
+      "src": "/images/blogs/keyword-21-20261024/k17-tadbeer-case-follow-up.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Tadbeer Centre in Ajman: Keep a Clear Case Status and Follow-Up Record",
+        "ar": "مركز تدبير في عجمان: الاحتفاظ بسجل واضح لحالة المعاملة ومتابعتها"
+      },
+      "alt": {
+        "en": "Illustrative scene of a headset-wearing adviser recording follow-up notes beside a laptop at an office desk.",
+        "ar": "مشهد توضيحي لمستشارة ترتدي سماعة وتدون ملاحظات متابعة بجانب حاسوب محمول على مكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ajman-tadbeer-case-status-follow-up-record",
+      "cacheVersion": "a0ddc52a83e5",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-all-inclusive-domestic-worker-packages",
+      "src": "/images/blogs/what-should-an-all-inclusive-domestic-worker-package-include-in-writing.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "What should an all-inclusive domestic-worker package include in writing?",
+        "ar": "ما الذي ينبغي توضيحه كتابةً في باقة عمالة مساعدة شاملة؟"
+      },
+      "alt": {
+        "en": "Hands review separate papers in a binder of household-service terms.",
+        "ar": "يدان تراجعان أوراقاً منفصلة في ملف لشروط الخدمة المنزلية."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/all-inclusive-domestic-worker-packages",
+      "cacheVersion": "d5a6c92ced6b",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-apartment-villa-maid-task-plan",
+      "src": "/images/blogs/apartment-villa-maid-task-plan-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Apartment or villa: how to plan a maid’s household tasks",
+        "ar": "الشقة أم الفيلا: كيف تخطط لمهام العاملة المنزلية؟"
+      },
+      "alt": {
+        "en": "An INAYA cleaner in royal blue mops a villa entrance with stairs and multiple rooms.",
+        "ar": "عاملة تنظيف من عناية بزي أزرق ملكي تنظف مدخل فيلا بالممسحة بجوار درج وغرف متعددة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/apartment-villa-maid-task-plan",
+      "cacheVersion": "c7bedbb0f03e",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-caregiver-versus-licensed-nurse",
+      "src": "/images/blogs/caregiver-or-licensed-nurse-which-kind-of-home-support-do-you-need.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Caregiver or licensed nurse: which kind of home support do you need?",
+        "ar": "مقدم رعاية أم ممرض مرخص: ما نوع الدعم المنزلي الذي تحتاجه؟"
+      },
+      "alt": {
+        "en": "A caregiver in maroon and an older woman share a quiet conversation at home.",
+        "ar": "مقدمة رعاية بزي خمري وامرأة مسنة تتحادثان بهدوء في المنزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/caregiver-versus-licensed-nurse",
+      "cacheVersion": "091bc02e0bdf",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-choosing-domestic-worker-agency-ajman",
+      "src": "/images/blogs/how-to-choose-a-domestic-worker-agency-in-ajman.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How to choose a domestic-worker agency in Ajman",
+        "ar": "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟"
+      },
+      "alt": {
+        "en": "A visitor checks her visit details inside the office reception.",
+        "ar": "زائرة تتحقق من تفاصيل زيارتها داخل منطقة الاستقبال بالمكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/choosing-domestic-worker-agency-ajman",
+      "cacheVersion": "820fff43cbe8",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-choosing-nanny-newborn-support",
+      "src": "/images/blogs/how-to-assess-a-nanny-for-a-baby-or-newborn.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How to assess a nanny for a baby or newborn",
+        "ar": "كيف تقيّم ملاءمة مربية لرعاية رضيع أو مولود جديد؟"
+      },
+      "alt": {
+        "en": "A nanny in beige and a parent discuss an empty bassinet in a nursery.",
+        "ar": "مربية بزي بيج وأحد الوالدين يناقشان تجهيز سرير رضيع فارغ."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/choosing-nanny-newborn-support",
+      "cacheVersion": "204a49a039dc",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-documents-for-domestic-worker-enquiry",
+      "src": "/images/blogs/documents-to-prepare-for-a-domestic-worker-enquiry.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Documents to prepare for a domestic worker enquiry",
+        "ar": "المستندات التي تجهزها للاستفسار عن العمالة المنزلية"
+      },
+      "alt": {
+        "en": "An adult sorts papers into a folder beside a closed document wallet on an entryway console.",
+        "ar": "شخص بالغ يرتب أوراقاً في ملف بجوار محفظة وثائق مغلقة على طاولة عند المدخل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/documents-for-domestic-worker-enquiry",
+      "cacheVersion": "9741c0f01abb",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-complaints-disputes",
+      "src": "/images/blogs/how-do-domestic-worker-complaints-and-recruitment-agency-disputes-proceed.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How do domestic-worker complaints and recruitment-agency disputes proceed?",
+        "ar": "كيف تسير شكاوى العمالة المساعدة ومنازعات مكاتب الاستقدام؟"
+      },
+      "alt": {
+        "en": "A woman in a pink INAYA uniform speaks with two men around a table in a glass-partitioned office.",
+        "ar": "امرأة بزي عناية الوردي تتحدث مع رجلين حول طاولة داخل مكتب ذي فواصل زجاجية."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-complaints-disputes",
+      "cacheVersion": "0c62ff4db942",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-contract-permit-residence-cancellation",
+      "src": "/images/blogs/domestic-worker-contract-permit-residence-cancellation-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Ending a domestic-worker arrangement: contract, permit and residence cancellation",
+        "ar": "إنهاء ترتيب العمالة المنزلية: إلغاء العقد والتصريح والإقامة"
+      },
+      "alt": {
+        "en": "Hands sort separate closed administrative folders into different office trays.",
+        "ar": "يدان ترتبان ملفات إدارية مغلقة ومنفصلة في صوان مختلفة بالمكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-contract-permit-residence-cancellation",
+      "cacheVersion": "272a6833baca",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-contracts-renewal",
+      "src": "/images/blogs/which-domestic-worker-contracts-should-you-read-and-how-does-renewal-work.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Which domestic-worker contracts should you read, and how does renewal work?",
+        "ar": "ما عقود العمالة المساعدة التي يجب قراءتها، وكيف يجري التجديد؟"
+      },
+      "alt": {
+        "en": "A woman reviews papers beside a closed folder in a glass-partitioned office.",
+        "ar": "امرأة تراجع أوراقاً بجوار ملف مغلق داخل مكتب ذي فواصل زجاجية."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-contracts-renewal",
+      "cacheVersion": "cb63ddac4eb8",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-employer-eligibility-documents",
+      "src": "/images/blogs/who-can-apply-for-a-domestic-worker-permit-and-which-documents-are-needed.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Who can apply for a domestic-worker permit, and which documents are needed?",
+        "ar": "من يمكنه طلب تصريح عامل مساعد، وما المستندات المطلوبة؟"
+      },
+      "alt": {
+        "en": "A householder places closed document folders into a fabric organiser.",
+        "ar": "أحد أفراد الأسرة يضع ملفات مستندات مغلقة في حافظة قماشية."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-employer-eligibility-documents",
+      "cacheVersion": "6ba759bb5e4a",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-employment-arrangements-uae",
+      "src": "/images/blogs/live-in-live-out-or-temporary-domestic-help-which-arrangement-fits-your-household.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Live-in, live-out or temporary domestic help: which arrangement fits your household?",
+        "ar": "عمالة مقيمة أم غير مقيمة أم مؤقتة: أي ترتيب يناسب أسرتك؟"
+      },
+      "alt": {
+        "en": "A prepared private room with a single bed, a plain timetable and a key.",
+        "ar": "غرفة خاصة مجهزة بسرير مفرد، وبجوارها ورقة جدول ومفتاح."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-employment-arrangements-uae",
+      "cacheVersion": "abdc3a1c75a4",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-hiring-costs-uae",
+      "src": "/images/blogs/domestic-worker-hiring-costs-uae-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "What is the total cost of hiring a domestic worker in Ajman?",
+        "ar": "ما التكلفة الإجمالية لتوظيف عامل مساعد في عجمان؟"
+      },
+      "alt": {
+        "en": "Hands compare two quotations with a household budget notebook and calculator.",
+        "ar": "يدان تقارنان عرضين باستخدام دفتر ميزانية الأسرة وآلة حاسبة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-hiring-costs-uae",
+      "cacheVersion": "29ae37bf6625",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-hiring-stages-timelines",
+      "src": "/images/blogs/what-happens-during-domestic-worker-hiring-and-how-long-does-it-take.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "What happens during domestic-worker hiring, and how long does it take?",
+        "ar": "ما مراحل توظيف العامل المساعد، وكم تستغرق؟"
+      },
+      "alt": {
+        "en": "An adviser follows up a case beside a calendar and closed folder.",
+        "ar": "مستشارة تتابع معاملة بجوار تقويم وملف مغلق."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-hiring-stages-timelines",
+      "cacheVersion": "d94bf706349a",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-interview-trial-probation",
+      "src": "/images/blogs/interview-trial-and-probation-what-is-the-difference-when-hiring-a-domestic-worker.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Interview, trial and probation: what is the difference when hiring a domestic worker?",
+        "ar": "المقابلة والتجربة التجارية وفترة التجربة القانونية: ما الفرق عند توظيف عامل مساعد؟"
+      },
+      "alt": {
+        "en": "A housemaid candidate and householder speak with an adviser in an office seating area.",
+        "ar": "مرشحة للعمل المنزلي وصاحبة منزل تتحدثان مع مستشارة في منطقة جلوس بالمكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-interview-trial-probation",
+      "cacheVersion": "5c0f56f2dc9f",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-leave-travel-planning",
+      "src": "/images/blogs/domestic-worker-leave-travel-planning-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How should a household plan a domestic worker's annual leave and travel?",
+        "ar": "كيف تخطط الأسرة لإجازة العامل المساعد السنوية وسفره؟"
+      },
+      "alt": {
+        "en": "A woman in a pink INAYA uniform holds a closed wallet while packing a suitcase beside a woman with a notebook.",
+        "ar": "امرأة بزي عناية الوردي تحمل محفظة مغلقة أثناء ترتيب حقيبة سفر، وبجانبها امرأة تحمل دفتراً."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-leave-travel-planning",
+      "cacheVersion": "a1edfc17c8cd",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-package-pricing-factors",
+      "src": "/images/blogs/domestic-worker-costs-package-prices-wages-and-fees.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Domestic worker costs: package prices, wages and fees",
+        "ar": "تكاليف العمالة المنزلية: أسعار الباقات والأجور والرسوم"
+      },
+      "alt": {
+        "en": "Hands compare blank cards beside a notebook and calculator on a kitchen counter.",
+        "ar": "أيدٍ تقارن بطاقات خالية من الكتابة بجوار دفتر وآلة حاسبة على سطح مطبخ."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-package-pricing-factors",
+      "cacheVersion": "698028a75cfc",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-recruitment-refund-rules",
+      "src": "/images/blogs/when-are-domestic-worker-recruitment-fees-refundable.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "When are domestic-worker recruitment fees refundable?",
+        "ar": "متى تُرد رسوم استقدام العامل المساعد؟"
+      },
+      "alt": {
+        "en": "Hands arrange paperwork beside a pen, calculator and water glass on a home table.",
+        "ar": "يدان ترتبان أوراقاً بجوار قلم وآلة حاسبة وكوب ماء على طاولة منزلية."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-recruitment-refund-rules",
+      "cacheVersion": "494fd1bcb028",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-replacement-eligibility",
+      "src": "/images/blogs/when-can-you-request-a-replacement-domestic-worker.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "When can you request a replacement domestic worker?",
+        "ar": "متى يمكنك طلب استبدال العامل المساعد؟"
+      },
+      "alt": {
+        "en": "A visitor discusses notes in an open folder with an adviser in INAYA’s waiting area.",
+        "ar": "زائر يناقش ملاحظات في ملف مفتوح مع مستشارة في منطقة الانتظار لدى عناية."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-replacement-eligibility",
+      "cacheVersion": "686d4ca8fabe",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-skills-language-assessment",
+      "src": "/images/blogs/how-to-select-a-domestic-workers-skills-and-language-for-your-household.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How to select a domestic worker's skills and language for your household",
+        "ar": "كيف تختار مهارات العامل المساعد ولغته بما يناسب أسرتك؟"
+      },
+      "alt": {
+        "en": "A housemaid in pink explains a practical linen-folding task to a householder.",
+        "ar": "عاملة منزلية بزي وردي تشرح طريقة طي الأغطية لصاحبة المنزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-skills-language-assessment",
+      "cacheVersion": "d36c4d3638a8",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-sponsorship-responsibilities",
+      "src": "/images/blogs/who-is-responsible-for-a-domestic-workers-sponsorship-and-employment.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Who is responsible for a domestic worker's sponsorship and employment?",
+        "ar": "من المسؤول عن كفالة العامل المساعد وتوظيفه؟"
+      },
+      "alt": {
+        "en": "An adviser and householder discuss separate folders at the office counter.",
+        "ar": "مستشارة وأحد أفراد الأسرة يناقشان ملفات منفصلة عند منضدة المكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-sponsorship-responsibilities",
+      "cacheVersion": "324228648823",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-verification-checks",
+      "src": "/images/blogs/what-should-verified-domestic-worker-mean.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "What should “verified domestic worker” mean?",
+        "ar": "ماذا ينبغي أن تعني عبارة «عامل مساعد تم التحقق منه»؟"
+      },
+      "alt": {
+        "en": "A blank checklist card and closed folders support an evidence-review discussion.",
+        "ar": "بطاقة مراجعة خالية من البيانات وملفات مغلقة لتوضيح مناقشة المستندات."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-verification-checks",
+      "cacheVersion": "1205b474ac41",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-visa-sponsorship-support",
+      "src": "/images/blogs/preparing-a-domestic-worker-visa-or-sponsorship-case.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Preparing a domestic worker visa or sponsorship case",
+        "ar": "تجهيز حالة تأشيرة أو كفالة للعمالة المنزلية"
+      },
+      "alt": {
+        "en": "Hands place blank papers in document trays beside a closed wallet and phone at a service counter.",
+        "ar": "يدان تضعان أوراقاً خالية من الكتابة في صواني مستندات بجوار محفظة مغلقة وهاتف على منضدة خدمة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-visa-sponsorship-support",
+      "cacheVersion": "641be7efb52b",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-worker-wages-rest-leave",
+      "src": "/images/blogs/domestic-worker-wages-rest-and-leave-what-must-an-employer-plan-for.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Domestic-worker wages, rest and leave: what must an employer plan for?",
+        "ar": "أجور العامل المساعد وراحته وإجازاته: ما الذي يجب أن يخطط له صاحب العمل؟"
+      },
+      "alt": {
+        "en": "A woman in a pink INAYA uniform rests in an armchair holding a cup.",
+        "ar": "امرأة بزي عناية الوردي تستريح على كرسي بذراعين وهي تحمل كوباً."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-worker-wages-rest-leave",
+      "cacheVersion": "4cf74c0250d9",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-domestic-workers-ajman-household-role-design-canvas",
+      "src": "/images/blogs/keyword-21-20261024/k03-domestic-workers-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Domestic workers Ajman: build a clear household role before choosing",
+        "ar": "العمالة المنزلية في عجمان: صمم دوراً واضحاً قبل الاختيار"
+      },
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink planning household tasks with two adults at a dining table.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي تخطط للمهام مع شخصين بالغين حول طاولة الطعام."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/domestic-workers-ajman-household-role-design-canvas",
+      "cacheVersion": "686bdecddd49",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-ethiopian-maid-ajman-language-onboarding-plan",
+      "src": "/images/blogs/keyword-21-20261024/k08-ethiopian-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Ethiopian Maid in Ajman: A Respectful Language and Household Onboarding Plan",
+        "ar": "خادمة إثيوبية في عجمان: خطة محترمة للتواصل والتعريف بمهام المنزل"
+      },
+      "alt": {
+        "en": "Illustrative scene of a worker in royal blue and a householder reviewing washing-machine controls.",
+        "ar": "مشهد توضيحي لعاملة بالزي الأزرق الملكي وصاحبة المنزل تراجعان أدوات التحكم في الغسالة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/ethiopian-maid-ajman-language-onboarding-plan",
+      "cacheVersion": "0a6b4ea62960",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-filipino-maid-ajman-task-communication-workbook",
+      "src": "/images/blogs/keyword-21-20261024/k07-filipino-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Filipino maid Ajman: assess individual experience and task communication",
+        "ar": "خادمة فلبينية في عجمان: قيم الخبرة الفردية والتواصل حول المهام"
+      },
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink preparing vegetables while discussing a kitchen task with a householder.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي تحضر الخضراوات وتناقش مهمة في المطبخ مع صاحبة المنزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/filipino-maid-ajman-task-communication-workbook",
+      "cacheVersion": "cc97b8623db0",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-four-hour-eight-hour-maid-visit-plan",
+      "src": "/images/blogs/four-hour-eight-hour-maid-visit-plan-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Four-hour or eight-hour maid visit: how to plan the work",
+        "ar": "زيارة عاملة منزلية لأربع أم ثماني ساعات: كيف تخطط للعمل؟"
+      },
+      "alt": {
+        "en": "A householder and domestic worker plan cleaning priorities beside a clock and cleaning supplies.",
+        "ar": "صاحبة منزل وعاملة منزلية تخططان لأولويات التنظيف بجوار ساعة ومستلزمات التنظيف."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/four-hour-eight-hour-maid-visit-plan",
+      "cacheVersion": "ee43b05a725f",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-home-cooking-weekly-meal-prep-plan",
+      "src": "/images/blogs/home-cooking-weekly-meal-prep-plan-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How to plan home cooking and weekly meal preparation with a domestic worker",
+        "ar": "كيف أخطط للطهي المنزلي وتحضير وجبات الأسبوع مع عاملة منزلية؟"
+      },
+      "alt": {
+        "en": "A cook in pink prepares an everyday vegetable meal in a home kitchen.",
+        "ar": "عاملة طهي بزي وردي تجهز وجبة خضار يومية في مطبخ منزلي."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/home-cooking-weekly-meal-prep-plan",
+      "cacheVersion": "c4dc3a064105",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-housemaid-recruitment-ajman-candidate-evidence-cards",
+      "src": "/images/blogs/keyword-21-20261024/k06-housemaid-recruitment-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Housemaid recruitment Ajman: compare candidates with evidence cards",
+        "ar": "استقدام خادمات في عجمان: قارن المرشحات ببطاقات الأدلة"
+      },
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink, an adviser and a householder discussing experience at a desk.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي تناقش الخبرة مع مستشارة وصاحبة منزل عند مكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/housemaid-recruitment-ajman-candidate-evidence-cards",
+      "cacheVersion": "94f126834735",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-housemaid-visa-ajman-application-readiness-ledger",
+      "src": "/images/blogs/keyword-21-20261024/k04-housemaid-visa-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Housemaid visa Ajman: create a case-specific application readiness ledger",
+        "ar": "تأشيرة خادمة في عجمان: أنشئ سجل استعداد خاصاً بمعاملتك"
+      },
+      "alt": {
+        "en": "Illustrative scene of hands sorting blank document sleeves at a blue-and-white office desk.",
+        "ar": "مشهد توضيحي ليدين ترتبان حوافظ مستندات خالية من البيانات على مكتب بالأزرق والأبيض."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/housemaid-visa-ajman-application-readiness-ledger",
+      "cacheVersion": "56931b6371d4",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-live-in-live-out-part-time-maid-uae",
+      "src": "/images/blogs/live-in-live-out-or-part-time-maid-comparing-arrangements.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Live-in, live-out or part-time maid: comparing arrangements",
+        "ar": "عاملة مقيمة أم غير مقيمة أم بدوام جزئي؟"
+      },
+      "alt": {
+        "en": "A woman in a pink INAYA uniform carries a tote as a householder welcomes her beside a shoe rack.",
+        "ar": "امرأة بزي عناية الوردي تحمل حقيبة قماشية، بينما ترحب بها صاحبة المنزل بجوار رف أحذية."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/live-in-live-out-part-time-maid-uae",
+      "cacheVersion": "9186988d215f",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-live-in-maid-ajman-home-start-readiness-walkthrough",
+      "src": "/images/blogs/keyword-21-20261024/k05-live-in-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Live-in maid Ajman: a home and family start-readiness walkthrough",
+        "ar": "عاملة منزلية مقيمة في عجمان: جولة لجاهزية المنزل والأسرة قبل البدء"
+      },
+      "alt": {
+        "en": "Illustrative scene of a housemaid in pink and a householder reviewing a prepared private bedroom.",
+        "ar": "مشهد توضيحي لعاملة منزلية بالزي الوردي وصاحبة المنزل تتفقدان غرفة خاصة مجهزة للإقامة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/live-in-maid-ajman-home-start-readiness-walkthrough",
+      "cacheVersion": "3fafcf9c24e6",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-agency-ajman-quote-comparison-workbook",
+      "src": "/images/blogs/keyword-21-20261024/k01-maid-agency-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Maid agency Ajman: compare written quotes with a household decision workbook",
+        "ar": "مكتب خدم في عجمان: قارن العروض المكتوبة بورقة قرار للأسرة"
+      },
+      "alt": {
+        "en": "Illustrative scene of a visitor and adviser comparing quotation sheets at a blue-and-white desk.",
+        "ar": "مشهد توضيحي لزائرة ومستشارة تقارنان أوراق عرض أسعار على مكتب بالأزرق والأبيض."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-agency-ajman-quote-comparison-workbook",
+      "cacheVersion": "959818216f46",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-agency-sharjah-ajman-office-logistics",
+      "src": "/images/blogs/keyword-21-20261024/k12-maid-agency-sharjah.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Maid Agency for a Sharjah Household: Coordinate the Enquiry with INAYA’s Ajman Office",
+        "ar": "مكتب خادمات لأسرة في الشارقة: نسق الاستفسار مع مكتب عناية في عجمان"
+      },
+      "alt": {
+        "en": "Illustrative scene of an adviser making a phone call and taking notes while a visitor waits across the desk.",
+        "ar": "مشهد توضيحي لمستشارة تجري مكالمة وتدون ملاحظات بينما تنتظر زائرة في الجهة المقابلة للمكتب."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-agency-sharjah-ajman-office-logistics",
+      "cacheVersion": "822b725a6a64",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-daily-instructions-handover-template",
+      "src": "/images/blogs/maid-daily-instructions-handover-template-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Daily maid instructions and a household handover template",
+        "ar": "تعليمات يومية واضحة للعاملة المنزلية ونموذج لتسليم المهام"
+      },
+      "alt": {
+        "en": "A housemaid and householder review a simple household handover notebook.",
+        "ar": "عاملة منزلية وأحد أفراد الأسرة يراجعان دفتراً بسيطاً لتسليم مهام المنزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-daily-instructions-handover-template",
+      "cacheVersion": "cea625ff4a16",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-duties-family-holiday",
+      "src": "/images/blogs/maid-duties-family-holiday-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Maid duties while your family is on holiday: a home-stays-occupied plan",
+        "ar": "مهام العاملة المنزلية أثناء سفر الأسرة: خطة للمنزل خلال الغياب"
+      },
+      "alt": {
+        "en": "A housemaid in pink waters an indoor plant in an occupied home.",
+        "ar": "عاملة منزلية بزي وردي تسقي نباتاً داخلياً في منزل مأهول."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-duties-family-holiday",
+      "cacheVersion": "812269a885f3",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-help-family-guests-gathering",
+      "src": "/images/blogs/maid-help-family-guests-gathering-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Booking maid help before guests: a practical family gathering plan",
+        "ar": "ترتيب المساعدة المنزلية قبل الضيوف: خطة عملية للتجمع العائلي"
+      },
+      "alt": {
+        "en": "A housemaid in pink and a householder prepare a family dining table before guests arrive.",
+        "ar": "عاملة منزلية بزي وردي وصاحبة المنزل تجهزان طاولة عائلية قبل وصول الضيوف."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-help-family-guests-gathering",
+      "cacheVersion": "5da09ab09fd9",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-home-access-keys-privacy",
+      "src": "/images/blogs/maid-home-access-keys-privacy-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Maid home access, keys and privacy: a household checklist",
+        "ar": "دخول العاملة المنزلية والمفاتيح والخصوصية: قائمة عملية للأسرة"
+      },
+      "alt": {
+        "en": "A householder hands a single home key to a housemaid in pink at an indoor entrance.",
+        "ar": "صاحبة المنزل تسلم مفتاحاً واحداً لعاملة منزلية بزي وردي عند المدخل الداخلي."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-home-access-keys-privacy",
+      "cacheVersion": "3fd05df09619",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-household-with-pets",
+      "src": "/images/blogs/maid-household-with-pets-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How to choose household help for a home with pets",
+        "ar": "كيف أختار مساعدة منزلية لبيت توجد فيه حيوانات أليفة؟"
+      },
+      "alt": {
+        "en": "A householder explains the pet area while a housemaid observes a calm dog from a distance.",
+        "ar": "صاحب المنزل يشرح منطقة الحيوان الأليف بينما تراقب العاملة كلباً هادئاً من مسافة مناسبة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-household-with-pets",
+      "cacheVersion": "cf19f838b47a",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-laundry-ironing-task-checklist",
+      "src": "/images/blogs/maid-laundry-ironing-task-checklist-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How to arrange maid help for laundry and ironing",
+        "ar": "كيف أرتب مساعدة العاملة المنزلية في الغسيل والكي؟"
+      },
+      "alt": {
+        "en": "A housemaid checks a garment-care label beside sorted laundry and an upright iron.",
+        "ar": "عاملة منزلية تراجع ملصق العناية بقطعة ملابس بجوار غسيل مفروز ومكواة قائمة بأمان."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-laundry-ironing-task-checklist",
+      "cacheVersion": "2e9a3ac8200b",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-nanny-babysitter-differences",
+      "src": "/images/blogs/maid-nanny-or-babysitter-choosing-the-right-role.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Maid, nanny or babysitter: choosing the right role",
+        "ar": "عاملة منزلية أم مربية أم جليسة أطفال؟"
+      },
+      "alt": {
+        "en": "A woman in a beige INAYA uniform shares a picture book with a back-facing child while another woman sits nearby.",
+        "ar": "امرأة بزي عناية البيج تشارك طفلاً يظهر من الخلف قراءة كتاب مصور، وإلى جانبهما امرأة تحمل كتاباً آخر."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-nanny-babysitter-differences",
+      "cacheVersion": "c5da96110fdf",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-services-dubai-household-access-scope-plan",
+      "src": "/images/blogs/keyword-21-20261024/k13-maid-services-dubai.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Maid Services for a Dubai Home: Plan Scope, Access and Specialist Boundaries",
+        "ar": "خدمات خادمات لمنزل في دبي: خطط للنطاق والدخول وحدود الأعمال المتخصصة"
+      },
+      "alt": {
+        "en": "Illustrative scene of a householder explaining an entry intercom to a cleaner in royal blue holding a supply caddy.",
+        "ar": "مشهد توضيحي لصاحبة منزل تشرح جهاز الدخول لعاملة نظافة بالزي الأزرق الملكي تحمل سلة أدوات."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-services-dubai-household-access-scope-plan",
+      "cacheVersion": "8517f258e693",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-maid-visit-frequency-planner",
+      "src": "/images/blogs/maid-visit-frequency-planner-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How often should you book a maid? A household visit planner",
+        "ar": "كم مرة تحتاج إلى خدمة عاملة منزلية؟ دليل لتنظيم الزيارات"
+      },
+      "alt": {
+        "en": "Household coordinator and domestic worker plan recurring visits using coloured calendar markers.",
+        "ar": "منسقة منزل وعاملة منزلية تخططان للزيارات الدورية باستخدام علامات ملونة على جدول."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/maid-visit-frequency-planner",
+      "cacheVersion": "55234e2e01b1",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-monthly-maid-package-inclusions-checklist",
+      "src": "/images/blogs/what-is-included-in-a-monthly-maid-package.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "What is included in a monthly maid package?",
+        "ar": "ما الذي تشمله باقة العاملة المنزلية الشهرية؟"
+      },
+      "alt": {
+        "en": "A woman in a pink INAYA uniform checks a blank task sheet while placing a folded towel on a cupboard shelf.",
+        "ar": "امرأة بزي عناية الوردي تراجع ورقة مهام خالية من الكتابة أثناء وضع منشفة مطوية على رف خزانة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/monthly-maid-package-inclusions-checklist",
+      "cacheVersion": "7d1c7b4dd9b3",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-monthly-maid-service-ajman-commitment-budget",
+      "src": "/images/blogs/keyword-21-20261024/k10-monthly-maid-service-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Monthly Maid Service in Ajman: Compare Commitments with a Clear Budget Sheet",
+        "ar": "خدمة خادمة بالشهر في عجمان: قارن مدد الالتزام بورقة ميزانية واضحة"
+      },
+      "alt": {
+        "en": "Illustrative overhead scene of hands arranging budget cards beside a calculator, notebook and house keys.",
+        "ar": "مشهد توضيحي من الأعلى لأيد ترتب بطاقات ميزانية بجانب آلة حاسبة ودفتر ومفاتيح منزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/monthly-maid-service-ajman-commitment-budget",
+      "cacheVersion": "1c5f36f3abe5",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-moving-home-emirate-with-domestic-worker",
+      "src": "/images/blogs/moving-home-emirate-with-domestic-worker-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Moving home or emirate with a maid: what to review first",
+        "ar": "الانتقال إلى منزل أو إمارة أخرى مع العاملة المنزلية: ما الذي تراجعه أولاً؟"
+      },
+      "alt": {
+        "en": "A housemaid unpacks clean towels beside sealed moving boxes in a new home.",
+        "ar": "عاملة منزلية ترتب مناشف نظيفة بجوار صناديق انتقال مغلقة في المنزل الجديد."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/moving-home-emirate-with-domestic-worker",
+      "cacheVersion": "5f9729a731a2",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-nanny-agency-ajman-childcare-evidence-handover",
+      "src": "/images/blogs/keyword-21-20261024/k09-nanny-agency-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Nanny Agency in Ajman: Build an Age-Specific Childcare Brief and Handover",
+        "ar": "مكتب مربيات في عجمان: جهز وصفاً للرعاية حسب عمر الطفل وسجلاً للتسليم"
+      },
+      "alt": {
+        "en": "Illustrative scene of a nanny in beige and a parent discussing childcare beside toys and a notebook.",
+        "ar": "مشهد توضيحي لمربية بالزي البيج ووالدة تناقشان رعاية الأطفال بجانب ألعاب ودفتر ملاحظات."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/nanny-agency-ajman-childcare-evidence-handover",
+      "cacheVersion": "d3be3d1426b5",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-nanny-school-routine-child-handover",
+      "src": "/images/blogs/nanny-school-routine-child-handover-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "How to plan a nanny’s school routine and safe child handovers",
+        "ar": "كيف أنظم روتين المدرسة وتسليم الأطفال واستلامهم مع المربية؟"
+      },
+      "alt": {
+        "en": "A parent hands a school backpack to a nanny in beige inside the home.",
+        "ar": "أحد الوالدين يسلم حقيبة مدرسية لمربية بزي بيج داخل المنزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/nanny-school-routine-child-handover",
+      "cacheVersion": "271a32adf0e4",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-new-maid-first-week-checklist",
+      "src": "/images/blogs/new-maid-first-week-checklist-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "A new maid’s first week: a practical household orientation checklist",
+        "ar": "الأسبوع الأول للعاملة المنزلية: قائمة عملية للتعريف بالمنزل"
+      },
+      "alt": {
+        "en": "A householder shows a new housemaid how to use the washing-machine controls.",
+        "ar": "صاحبة المنزل تشرح للعاملة الجديدة استخدام أدوات التحكم في الغسالة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/new-maid-first-week-checklist",
+      "cacheVersion": "55e30495275d",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-one-maid-two-helpers-workload",
+      "src": "/images/blogs/one-maid-two-helpers-workload-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "One maid or two helpers? A household workload planner",
+        "ar": "عاملة واحدة أم مساعدتان؟ دليل تخطيط عبء العمل المنزلي"
+      },
+      "alt": {
+        "en": "A cleaner in blue and a cook in pink handle separate tasks in different home areas.",
+        "ar": "عاملة تنظيف بزي أزرق وعاملة طهي بزي وردي تنجزان مهام منفصلة في منطقتين بالمنزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/one-maid-two-helpers-workload",
+      "cacheVersion": "119f45bcef19",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-own-visa-part-time-domestic-work",
+      "src": "/images/blogs/can-you-hire-a-domestic-worker-who-has-their-own-visa-or-works-part-time.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Can you hire a domestic worker who has their own visa or works part-time?",
+        "ar": "هل يمكنك توظيف عامل مساعد لديه إقامة خاصة أو يعمل بدوام جزئي؟"
+      },
+      "alt": {
+        "en": "A hand points to a blank card between a closed document wallet and a folder at a service counter.",
+        "ar": "يد تشير إلى بطاقة خالية من الكتابة بين محفظة وثائق مغلقة وملف أوراق على منضدة خدمة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/own-visa-part-time-domestic-work",
+      "cacheVersion": "860c80a3720f",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-part-time-maid-ajman-priorities-carry-over",
+      "src": "/images/blogs/keyword-21-20261024/k11-part-time-maid-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Part-Time Maid in Ajman: Set Visit Priorities and Manage Unfinished Tasks",
+        "ar": "خادمة بدوام جزئي في عجمان: رتب أولويات الزيارة وتعامل مع المهام المؤجلة"
+      },
+      "alt": {
+        "en": "Illustrative scene of a cleaner in royal blue wiping a kitchen counter while a householder discusses tasks.",
+        "ar": "مشهد توضيحي لعاملة نظافة بالزي الأزرق الملكي تمسح سطح المطبخ وتناقش المهام مع صاحبة المنزل."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/part-time-maid-ajman-priorities-carry-over",
+      "cacheVersion": "d78d0cb5b09b",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-prepare-cleaning-supplies-maid-visit",
+      "src": "/images/blogs/prepare-cleaning-supplies-maid-visit-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "What to prepare before a maid visit: supplies and equipment",
+        "ar": "ماذا تجهز قبل زيارة العاملة المنزلية؟ قائمة الأدوات والمواد"
+      },
+      "alt": {
+        "en": "Cleaning cloths, gloves and closed bottles are organised beside a mop fitting.",
+        "ar": "أقمشة تنظيف وقفازات وعبوات مغلقة مرتبة بجوار جزء الممسحة."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/prepare-cleaning-supplies-maid-visit",
+      "cacheVersion": "9d83da67cdcf",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-regular-maid-service-deep-move-in-cleaning",
+      "src": "/images/blogs/regular-maid-service-deep-move-in-cleaning-20261020.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Regular maid service, deep cleaning or move-in cleaning?",
+        "ar": "خدمة عاملة معتادة أم تنظيف عميق أم تنظيف عند الانتقال؟"
+      },
+      "alt": {
+        "en": "An INAYA cleaner in royal blue wipes an empty kitchen cupboard in a home prepared for moving in.",
+        "ar": "عاملة تنظيف من عناية بزي أزرق ملكي تمسح خزانة مطبخ فارغة في منزل يُجهز للانتقال إليه."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/regular-maid-service-deep-move-in-cleaning",
+      "cacheVersion": "2163a2cdacad",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-tadbeer-center-ajman-first-visit-service-routing",
+      "src": "/images/blogs/keyword-21-20261024/k02-tadbeer-center-ajman.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Tadbeer center Ajman: plan a first visit around the right service route",
+        "ar": "مركز تدبير في عجمان: خطط للزيارة الأولى وفق مسار الخدمة الصحيح"
+      },
+      "alt": {
+        "en": "Illustrative scene of a visitor carrying a folder speaking with a receptionist at a curved white counter.",
+        "ar": "مشهد توضيحي لزائرة تحمل ملفاً وتتحدث مع موظفة استقبال عند مكتب أبيض منحني."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/tadbeer-center-ajman-first-visit-service-routing",
+      "cacheVersion": "19d1da0ac34e",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-tadbeer-near-me-location-identity-visit-check",
+      "src": "/images/blogs/keyword-21-20261024/k14-tadbeer-near-me.webp",
+      "width": 1536,
+      "height": 1024,
+      "title": {
+        "en": "Tadbeer Near Me: Check the Centre’s Identity, Location and Visit Readiness",
+        "ar": "تدبير بالقرب مني: تحقق من هوية المركز وموقعه والاستعداد لزيارته"
+      },
+      "alt": {
+        "en": "Illustrative scene of a visitor checking a phone while approaching a reception area with tan seating.",
+        "ar": "مشهد توضيحي لزائرة تراجع هاتفها أثناء اقترابها من منطقة استقبال ذات مقاعد بلون بني فاتح."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/tadbeer-near-me-location-identity-visit-check",
+      "cacheVersion": "4d7865cac7ca",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    },
+    {
+      "id": "site-image-guide-uae-domestic-worker-hiring-process",
+      "src": "/images/blogs/questions-to-ask-before-hiring-a-domestic-worker-in-the-uae.webp",
+      "width": 1600,
+      "height": 900,
+      "title": {
+        "en": "Questions to ask before hiring a domestic worker in the UAE",
+        "ar": "أسئلة قبل اختيار مكتب للعمالة المنزلية في الإمارات"
+      },
+      "alt": {
+        "en": "A visitor uses a notebook while speaking with an adviser at a numbered blue-and-white INAYA counter.",
+        "ar": "زائرة تستخدم دفتراً أثناء الحديث مع مستشارة عند منضدة عناية المرقمة باللونين الأزرق والأبيض."
+      },
+      "category": "guides",
+      "relatedRoute": "blog/uae-domestic-worker-hiring-process",
+      "cacheVersion": "f07f29f54cc4",
+      "responsiveWidths": [
+        480,
+        768,
+        960,
+        1200
+      ]
+    }
+  ]
+}

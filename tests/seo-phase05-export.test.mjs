@@ -15,6 +15,11 @@ test('Phase 5 retains all prior routes and protected sources while serving seven
   // The retired promotion's old browser suite is replaced by absence/back-to-top coverage.
   for (const file of ['app/robots.ts', 'lib/seo.ts', 'lib/buyer-answers.ts', 'lib/service-content-briefs.ts', 'lib/profile-content-briefs.ts', 'lib/content-architecture.ts', 'components/SierraLeoneOfferControls.tsx', 'components/SierraLeoneOfferControls.module.css', 'components/HomeGoogleReviews.tsx', 'components/HomeGoogleReviewsShowcase.tsx', 'tests/e2e/home.spec.ts', 'tests/fixtures/seo-phase03-baseline.json', 'next.config.js']) {
     let expected = execFileSync('git', ['show', `${checkpoint}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
+    if (file === 'app/robots.ts') {
+      const original = '    sitemap: `${siteConfig.url}/sitemap.xml`,';
+      assert.equal(expected.split(original).length, 2, 'one original sitemap declaration');
+      expected = expected.replace(original, '    sitemap: [`${siteConfig.url}/sitemap.xml`, `${siteConfig.url}/image-sitemap.xml`],');
+    }
     if (file === 'tests/fixtures/seo-phase03-baseline.json') expected = remediation.approvedDescriptions(expected);
     if (file === 'tests/e2e/home.spec.ts') expected = remediation.approvedHomeFlow(expected);
     if (file === 'lib/service-content-briefs.ts') expected = corePageCopy.approvedCorePageCopy(file, expected);
