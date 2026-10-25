@@ -236,6 +236,11 @@ test('the 21 previously approved keyword images retain their original bytes and 
 
 const serviceApproval = JSON.parse(await readFile('content/research/2026-10-25/service-owner-approved-images.json', 'utf8'));
 const pageApproval = JSON.parse(await readFile('content/research/2026-10-25/home-about-owner-approved-images.json', 'utf8'));
+const retainedMobileHero = {
+  src: '/images/home/inaya-home-hero-mobile.webp',
+  webpSha256: 'afbe41a72b02e21259a3decfade48dbc1915d051210a97d40affc1c4482feb6b',
+  cacheVersion: 'afbe41a72b02',
+};
 const serviceSlug = image => image.id === 'S28' ? 'countries-we-source-from' : path.basename(image.src, '.webp');
 const renderedServiceSrc = image => `${image.src}?v=${image.cacheVersion}`;
 
@@ -293,7 +298,7 @@ test('both languages map all32 service cards and31 existing detail heroes to the
       for (const entry of (source.srcSet ?? source.srcset ?? '').split(',').filter(Boolean)) {
         const url = new URL(entry.trim().split(/\s+/)[0], origin);
         const original = url.pathname.replace(/^\/optimized/, '').replace(/-\d+\.webp$/, '.webp');
-        const selected = [...serviceApproval.images, ...pageApproval.images].find(image => image.src === original);
+        const selected = [...serviceApproval.images, ...pageApproval.images, retainedMobileHero].find(image => image.src === original);
         if (selected) assert.equal(url.searchParams.get('v'), selected.cacheVersion, `${locale}: responsive cache version`);
         else assert.equal(url.searchParams.has('v'), false, `${locale}: unrelated source preserved`);
       }
@@ -343,7 +348,7 @@ test('six owner-supplied portraits retain full-frame dimensions, exact approved 
         assert.equal(url.searchParams.get('v'), approved.cacheVersion);
         assert.ok(image.alt.trim());
         if (pageApproval.images.includes(approved)) {
-          assert.match(image.class, /object-contain/);
+          assert.match(image.class, approved.slot === 'homeHero' ? /home-hero__photo/ : /object-contain/);
           assert.equal(image.alt, approved.alt[locale]);
           assert.equal(image.width, String(approved.width));
           assert.equal(image.height, String(approved.height));
@@ -360,5 +365,24 @@ test('six owner-supplied portraits retain full-frame dimensions, exact approved 
     }
     assert.equal(acrossPages.length, 12);
     assert.equal(new Set(acrossPages).size, 12, `${locale}: no portrait/action repeated across Home/About`);
+  }
+});
+
+test('mobile/tablet art direction preserves the previously approved studio hero bytes', async () => {
+  for (const root of ['public', 'out']) {
+    const bytes = await readFile(path.join(root, retainedMobileHero.src));
+    assert.equal(imageSha256(bytes), retainedMobileHero.webpSha256, `${root}: exact retained studio image`);
+    const metadata = await sharp(bytes).metadata();
+    assert.deepEqual([metadata.format, metadata.width, metadata.height], ['webp', 1536, 1024]);
+  }
+  const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
+  assert.ok(workflow.includes("approvedPageImages.add('images/home/inaya-home-hero-mobile.webp');"));
+  for (const locale of ['en', 'ar']) {
+    const html = visibleImageHtml(await readFile(`out/${locale}/index.html`, 'utf8'));
+    const mobile = [...html.matchAll(/<source\b[^>]*>/g)].map(match => attrs(match[0])).find(source => source.media === '(max-width: 1279px)');
+    assert.ok(mobile);
+    assert.equal(mobile.width, '1536');
+    assert.equal(mobile.height, '1024');
+    assert.match(mobile.srcSet, /inaya-home-hero-mobile-768\.webp\?v=afbe41a72b02 768w/);
   }
 });
