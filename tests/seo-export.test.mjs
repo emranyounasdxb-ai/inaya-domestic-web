@@ -6,6 +6,32 @@ import test from 'node:test';
 const output = path.resolve('out');
 const origin = 'https://inayadomestic.ae';
 
+test('Pinterest verification is present once in every public page head and the root fallback', async () => {
+  const verificationTags = html => {
+    const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] ?? '';
+    return [...head.matchAll(/<meta\b[^>]*>/gi)]
+      .map(match => Object.fromEntries([...match[0].matchAll(/([\w:-]+)="([^"]*)"/g)].map(attribute => [attribute[1], attribute[2]])))
+      .filter(tag => tag.name === 'p:domain_verify');
+  };
+  const verificationFile = await readFile('public/pinterest-dbb07.html', 'utf8');
+  const [verification] = verificationTags(verificationFile);
+  assert.match(verification?.content ?? '', /^[a-f0-9]{32}$/, 'the existing public verification token is valid');
+  const assertVerification = (html, source) => {
+    assert.deepEqual(verificationTags(html), [verification], `${source}: one matching tag inside head`);
+  };
+  assertVerification(await readFile(path.join(output, 'pinterest-dbb07.html'), 'utf8'), 'exported verification file');
+  const sitemap = await readFile(path.join(output, 'sitemap.xml'), 'utf8');
+  const pages = [...sitemap.matchAll(/<url>\s*<loc>([^<]+)<\/loc>/g)].map(match => new URL(match[1]).pathname);
+  assert.ok(pages.length > 0, 'verify the complete exported public page inventory');
+  for (const route of pages) {
+    assertVerification(await readFile(path.join(output, route, 'index.html'), 'utf8'), route);
+  }
+  const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
+  const fallback = workflow.match(/cat > out\/index\.html <<'EOF'\r?\n([\s\S]*?)\r?\n\s*EOF/)?.[1];
+  assert.ok(fallback, 'deployment retains the static root language fallback');
+  assertVerification(fallback, 'deployment root fallback');
+});
+
 test('Ajman answer links resolve to exported pages in the same language', async () => {
   for (const locale of ['en', 'ar']) {
     const html = await readFile(path.join(output, locale, 'maid-services-ajman/index.html'), 'utf8');

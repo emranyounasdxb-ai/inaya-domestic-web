@@ -3,6 +3,9 @@ import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   robots: { 'max-image-preview': 'large' },
+  verification: {
+    other: { 'p:domain_verify': 'dbb073ff2d38fb2bc786d6835253d579' },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon', sizes: '16x16 32x32 48x48' },
