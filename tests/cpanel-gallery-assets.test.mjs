@@ -60,6 +60,8 @@ test('cPanel optimizer rejects retired gallery inputs while ordinary household i
     const approvalPath = 'content/research/2026-10-25/service-owner-approved-images.json';
     await mkdir(path.dirname(path.join(temporaryRoot, approvalPath)), { recursive: true });
     await writeFile(path.join(temporaryRoot, approvalPath), await readFile(path.join(projectRoot, approvalPath)));
+    const pageApprovalPath = 'content/research/2026-10-25/home-about-owner-approved-images.json';
+    await writeFile(path.join(temporaryRoot, pageApprovalPath), await readFile(path.join(projectRoot, pageApprovalPath)));
     const householdRelative = 'images/services/household.jpg';
     const household = await jpegFixture(1300, 650);
     const destination = path.join(out, householdRelative);
@@ -67,6 +69,9 @@ test('cPanel optimizer rejects retired gallery inputs while ordinary household i
     await writeFile(destination, household);
     const selected = path.join(out, 'images/services/live-in-maid.webp');
     await writeFile(selected, await sharp(household).webp().keepMetadata().toBuffer());
+    const selectedPage = path.join(out, 'images/about/about-team-story.webp');
+    await mkdir(path.dirname(selectedPage), { recursive: true });
+    await writeFile(selectedPage, await sharp(household).webp().keepMetadata().toBuffer());
     const options = {
       cwd: temporaryRoot,
       env: { ...process.env, NODE_PATH: [path.join(projectRoot, 'node_modules'), process.env.NODE_PATH].filter(Boolean).join(path.delimiter) },
@@ -89,6 +94,13 @@ test('cPanel optimizer rejects retired gallery inputs while ordinary household i
     const selectedMetadata = await sharp(await readFile(selected)).metadata();
     assert.equal(selectedMetadata.width, 900);
     assert.equal(selectedMetadata.xmp.toString(), provenance, 'The actual optimizer retains approved-image provenance');
+    const selectedPageMetadata = await sharp(await readFile(selectedPage)).metadata();
+    assert.equal(selectedPageMetadata.width, 1200);
+    assert.equal(selectedPageMetadata.xmp.toString(), provenance, 'Home/About approved-image provenance retained');
+    for (const width of [480, 768, 960, 1200]) {
+      const variant = await sharp(await readFile(path.join(out, `optimized/images/about/about-team-story-${width}.webp`))).metadata();
+      assert.equal(variant.xmp.toString(), provenance, 'Home/About derivative provenance retained');
+    }
     for (const width of [480, 768, 900]) {
       const variant = await sharp(await readFile(path.join(out, `optimized/images/services/household-${width}.webp`))).metadata();
       assert.equal(variant.format, 'webp');

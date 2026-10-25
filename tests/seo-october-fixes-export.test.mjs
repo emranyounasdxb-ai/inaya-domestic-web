@@ -17,9 +17,10 @@ test('both home exports have descriptive H1, prioritized responsive LCP, smaller
     const hero = [...body.matchAll(/<img\b([^>]*)>/g)].map(m => attrs(m[1])).find(img => img.src.includes('inaya-home-hero-family'));
     assert.equal(hero.fetchPriority, 'high');
     assert.equal(hero.loading, 'eager');
-    assert.equal(hero.width, '1513');
-    assert.equal(hero.height, '851');
-    assert.match(body, /inaya-home-hero-family-768\.webp 768w/);
+    assert.equal(hero.width, '1536');
+    assert.equal(hero.height, '1024');
+    assert.match(hero.class, /object-contain/);
+    assert.match(body, /inaya-home-hero-family-768\.webp\?v=[a-f0-9]{12} 768w/);
     const header = body.match(/<header\b[^>]*>([\s\S]*?)<\/header>/)[1];
     const logo = attrs(header.match(/<img\b([^>]*)>/)[1]);
     const logoSource = attrs(header.match(/<source\b([^>]*)>/)[1]);

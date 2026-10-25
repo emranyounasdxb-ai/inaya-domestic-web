@@ -83,6 +83,9 @@ jobs:
           const approval = require('./content/research/2026-10-25/service-owner-approved-images.json');
           if (!approval.ownerApprovedWebsitePublication || approval.images.length !== 33) throw new Error('Invalid approved service-image release');
           const approvedServiceImages = new Set(approval.images.map((image) => image.src.slice(1)));
+          const pageApproval = require('./content/research/2026-10-25/home-about-owner-approved-images.json');
+          if (!pageApproval.ownerApprovedWebsitePublication || pageApproval.images.length !== 6) throw new Error('Invalid approved Home/About image release');
+          const approvedPageImages = new Set(pageApproval.images.map((image) => image.src.slice(1)));
 
           async function walk(dir) {
             const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -140,7 +143,7 @@ jobs:
               let variant = sharp(filePath)
                 .resize({ width, withoutEnlargement: true })
                 .webp({ quality: webPath.startsWith('authority-logos/') || webPath.startsWith('brand/') ? 78 : webPath === 'images/home/inaya-home-hero-family.webp' ? 65 : 70, effort: 6 });
-              if (approvedServiceImages.has(webPath)) variant = variant.keepMetadata();
+              if (approvedServiceImages.has(webPath) || approvedPageImages.has(webPath)) variant = variant.keepMetadata();
               await variant.toFile(targetPath);
             }
           }
@@ -176,7 +179,7 @@ jobs:
 
             const tempFile = `${filePath}.optimized`;
             let image = sharp(filePath).resize({ width: maxWidth, withoutEnlargement: true });
-            if (approvedServiceImages.has(webPath)) image = image.keepMetadata();
+            if (approvedServiceImages.has(webPath) || approvedPageImages.has(webPath)) image = image.keepMetadata();
 
             if (ext === '.webp') image = image.webp({ quality: 72, effort: 6 });
             if (ext === '.jpg' || ext === '.jpeg') image = image.jpeg({ quality: 74, progressive: true, mozjpeg: true });

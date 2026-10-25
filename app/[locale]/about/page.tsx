@@ -1,5 +1,4 @@
-import { withServiceImageVersion } from '@/lib/service-image-versions';
-import Image from 'next/image';
+import HomeAboutPortrait from '@/components/HomeAboutPortrait';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
@@ -8,11 +7,6 @@ type PageProps = {
   params: Promise<{
     locale: string;
   }>;
-};
-
-const aboutImages = {
-  support: '/images/home/home-concierge-support.webp',
-  family: '/images/home/inaya-home-hero-family.webp'
 };
 
 export default async function AboutPage({ params }: PageProps) {
@@ -144,9 +138,7 @@ export default async function AboutPage({ params }: PageProps) {
 
       <section className="bg-white px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-[#f7f8fb] shadow-[0_22px_60px_rgba(7,22,74,0.10)]">
-            <Image src={aboutImages.family} alt={isArabic ? 'عاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' : 'A domestic worker beside a table with the Dubai skyline in the background'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
-          </div>
+          <HomeAboutPortrait slot="aboutStory" isArabic={isArabic} className="border border-primary-900/10 shadow-[0_22px_60px_rgba(7,22,74,0.10)]" />
           <div>
             <h2 className={`${headingClass} text-[2.2rem] font-bold tracking-[-0.035em] text-primary-900 sm:text-[3rem]`}>{copy.storyTitle}</h2>
             <div className="mt-6 space-y-5 text-[1rem] leading-8 text-primary-900/85">
@@ -178,11 +170,13 @@ export default async function AboutPage({ params }: PageProps) {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div className="rounded-[26px] border border-primary-900/10 bg-white p-8 shadow-[0_18px_50px_rgba(7,22,74,0.08)]">
-              <p className="text-sm font-bold text-accent-700">{copy.missionLabel}</p>
+              <HomeAboutPortrait slot="aboutMission" isArabic={isArabic} sizes="(max-width: 1023px) 100vw, 50vw" />
+              <p className="mt-6 text-sm font-bold text-accent-700">{copy.missionLabel}</p>
               <h3 className={`${headingClass} mt-5 text-[1.6rem] font-bold tracking-[-0.03em] text-primary-900 sm:text-[2rem]`}>{copy.mission}</h3>
             </div>
             <div className="rounded-[26px] border border-primary-900/10 bg-white p-8 shadow-[0_18px_50px_rgba(7,22,74,0.08)]">
-              <p className="text-sm font-bold text-accent-700">{copy.visionLabel}</p>
+              <HomeAboutPortrait slot="aboutVision" isArabic={isArabic} sizes="(max-width: 1023px) 100vw, 50vw" />
+              <p className="mt-6 text-sm font-bold text-accent-700">{copy.visionLabel}</p>
               <h3 className={`${headingClass} mt-5 text-[1.6rem] font-bold tracking-[-0.03em] text-primary-900 sm:text-[2rem]`}>{copy.vision}</h3>
             </div>
           </div>
@@ -234,9 +228,7 @@ export default async function AboutPage({ params }: PageProps) {
               ))}
             </div>
           </div>
-          <div className="relative min-h-[380px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_22px_60px_rgba(7,22,74,0.10)]">
-            <Image src={withServiceImageVersion(aboutImages.support)} unoptimized alt={isArabic ? 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' : 'A domestic worker arranging sofa cushions near a mother and child'} fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
-          </div>
+          <HomeAboutPortrait slot="aboutLeadership" isArabic={isArabic} className="border border-primary-900/10 shadow-[0_22px_60px_rgba(7,22,74,0.10)]" />
         </div>
       </section>
 

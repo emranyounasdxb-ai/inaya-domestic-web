@@ -235,6 +235,7 @@ test('the 21 previously approved keyword images retain their original bytes and 
 
 
 const serviceApproval = JSON.parse(await readFile('content/research/2026-10-25/service-owner-approved-images.json', 'utf8'));
+const pageApproval = JSON.parse(await readFile('content/research/2026-10-25/home-about-owner-approved-images.json', 'utf8'));
 const serviceSlug = image => image.id === 'S28' ? 'countries-we-source-from' : path.basename(image.src, '.webp');
 const renderedServiceSrc = image => `${image.src}?v=${image.cacheVersion}`;
 
@@ -285,16 +286,14 @@ test('both languages map all32 service cards and31 existing detail heroes to the
         if (selected) assert.equal(candidate.src, renderedServiceSrc(selected), `${locale}/${slug}: versioned related image`);
       }
     }
-    for (const route of ['', 'about/']) {
-      const html = await readFile(`out/${locale}/${route}index.html`, 'utf8');
-      assert.ok(imageTags(html).some(image => image.src === renderedServiceSrc(banner)), `${locale}/${route}: shared approved banner`);
-    }
+    // S33 remains the Services banner; Home/About now have their own approved
+    // portraits so the same household scene is not repeated across these pages.
     const home = await readFile(`out/${locale}/index.html`, 'utf8');
     for (const source of [...home.matchAll(/<source\b[^>]*>/g)].map(match => attrs(match[0]))) {
-      for (const entry of (source.srcset ?? '').split(',').filter(Boolean)) {
+      for (const entry of (source.srcSet ?? source.srcset ?? '').split(',').filter(Boolean)) {
         const url = new URL(entry.trim().split(/\s+/)[0], origin);
         const original = url.pathname.replace(/^\/optimized/, '').replace(/-\d+\.webp$/, '.webp');
-        const selected = serviceApproval.images.find(image => image.src === original);
+        const selected = [...serviceApproval.images, ...pageApproval.images].find(image => image.src === original);
         if (selected) assert.equal(url.searchParams.get('v'), selected.cacheVersion, `${locale}: responsive cache version`);
         else assert.equal(url.searchParams.has('v'), false, `${locale}: unrelated source preserved`);
       }
@@ -304,12 +303,62 @@ test('both languages map all32 service cards and31 existing detail heroes to the
 
 test('deployment keeps supported provenance metadata for approved service originals and responsive variants', async () => {
   const workflow = await readFile('.github/workflows/deploy-cpanel.yml', 'utf8');
-  assert.match(workflow, /if \(approvedServiceImages\.has\(webPath\)\) variant = variant\.keepMetadata\(\)/);
-  assert.match(workflow, /if \(approvedServiceImages\.has\(webPath\)\) image = image\.keepMetadata\(\)/);
+  assert.match(workflow, /if \(approvedServiceImages\.has\(webPath\) \|\| approvedPageImages\.has\(webPath\)\) variant = variant\.keepMetadata\(\)/);
+  assert.match(workflow, /if \(approvedServiceImages\.has\(webPath\) \|\| approvedPageImages\.has\(webPath\)\) image = image\.keepMetadata\(\)/);
   for (const image of serviceApproval.images) {
     const bytes = await readFile(path.join('public', image.src));
     const before = await sharp(bytes).metadata();
     const after = await sharp(await sharp(bytes).resize({ width: 480 }).webp({ quality: 70, effort: 6 }).keepMetadata().toBuffer()).metadata();
     if (before.xmp) assert.deepEqual(after.xmp, before.xmp, `${image.id}: retained XMP, without claiming original signatures remain valid`);
+  }
+});
+
+test('six owner-supplied portraits retain full-frame dimensions, exact approved bytes and unique Home/About slots', async () => {
+  assert.equal(pageApproval.ownerApprovedWebsitePublication, true);
+  assert.equal(pageApproval.images.length, 6);
+  assert.equal(new Set(pageApproval.images.map(image => image.src)).size, 6);
+  assert.equal(new Set(pageApproval.images.map(image => image.sourceSha256)).size, 6);
+  for (const image of pageApproval.images) {
+    assert.equal(image.cacheVersion, image.webpSha256.slice(0, 12));
+    assert.deepEqual([image.width, image.height], [image.sourceWidth, image.sourceHeight]);
+    for (const root of ['public', 'out']) {
+      const bytes = await readFile(path.join(root, image.src));
+      assert.equal(imageSha256(bytes), image.webpSha256, `${root}${image.src}: approved conversion`);
+      const metadata = await sharp(bytes).metadata();
+      assert.deepEqual([metadata.format, metadata.width, metadata.height], ['webp', image.width, image.height]);
+    }
+  }
+  const homeServiceSources = ['nanny', 'home-cooking', 'bespoke-household-management', 'executive-nannies', 'private-chefs', 'house-managers'].map(slug => `/images/services/${slug}.webp`);
+  const allApproved = [...serviceApproval.images, ...pageApproval.images];
+  for (const locale of ['en', 'ar']) {
+    const acrossPages = [];
+    for (const route of ['', 'about/']) {
+      const html = visibleImageHtml(await readFile(`out/${locale}/${route}index.html`, 'utf8'));
+      const expected = route ? pageApproval.images.filter(image => image.slot.startsWith('about')).map(image => image.src) : [...pageApproval.images.filter(image => image.slot.startsWith('home')).map(image => image.src), ...homeServiceSources];
+      const selected = imageTags(html).filter(image => allApproved.some(item => item.src === new URL(image.src, origin).pathname));
+      assert.deepEqual(selected.map(image => new URL(image.src, origin).pathname).sort(), expected.sort(), `${locale}/${route}: unique exact slot mapping`);
+      acrossPages.push(...selected.map(image => new URL(image.src, origin).pathname));
+      for (const image of selected) {
+        const url = new URL(image.src, origin), approved = allApproved.find(item => item.src === url.pathname);
+        assert.equal(url.searchParams.get('v'), approved.cacheVersion);
+        assert.ok(image.alt.trim());
+        if (pageApproval.images.includes(approved)) {
+          assert.match(image.class, /object-contain/);
+          assert.equal(image.alt, approved.alt[locale]);
+          assert.equal(image.width, String(approved.width));
+          assert.equal(image.height, String(approved.height));
+        }
+      }
+      for (const source of [...html.matchAll(/<source\b[^>]*>/g)].map(match => attrs(match[0]))) {
+        for (const entry of (source.srcSet ?? source.srcset ?? '').split(',').filter(Boolean)) {
+          const url = new URL(entry.trim().split(/\s+/)[0], origin);
+          const original = url.pathname.replace(/^\/optimized/, '').replace(/-\d+\.webp$/, '.webp');
+          const approved = allApproved.find(image => image.src === original);
+          if (approved) assert.equal(url.searchParams.get('v'), approved.cacheVersion, `${locale}/${route}: derivative version`);
+        }
+      }
+    }
+    assert.equal(acrossPages.length, 12);
+    assert.equal(new Set(acrossPages).size, 12, `${locale}: no portrait/action repeated across Home/About`);
   }
 });

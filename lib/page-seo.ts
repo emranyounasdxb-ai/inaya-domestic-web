@@ -19,7 +19,7 @@ type Localized = Record<Lang, string>;
 const corePageImages: Record<string, { src: string; alt: Localized }> = {
   '': {
     src: '/images/home/inaya-home-hero-family.webp',
-    alt: { en: 'A domestic worker beside a table with the Dubai skyline in the background', ar: 'عاملة منزلية بجوار طاولة مع أفق دبي في الخلفية' }
+    alt: { en: 'Five women in pink, beige, royal-blue, maroon and white INAYA uniforms', ar: 'خمس نساء بأزياء عناية بالوردي والبيج والأزرق الملكي والعنابي والأبيض' }
   },
   services: {
     src: '/images/home/home-concierge-support.webp',
