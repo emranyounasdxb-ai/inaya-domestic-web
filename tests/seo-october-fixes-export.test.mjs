@@ -17,10 +17,13 @@ test('both home exports have descriptive H1, prioritized responsive LCP, smaller
     const hero = [...body.matchAll(/<img\b([^>]*)>/g)].map(m => attrs(m[1])).find(img => img.src.includes('inaya-home-hero-family'));
     assert.equal(hero.fetchPriority, 'high');
     assert.equal(hero.loading, 'eager');
-    assert.equal(hero.width, '1536');
-    assert.equal(hero.height, '1024');
-    assert.match(hero.class, /object-contain/);
+    assert.equal(hero.width, '1672');
+    assert.equal(hero.height, '941');
+    assert.match(hero.class, /home-hero__photo/);
+    assert.match(body, /data-home-hero-photo/);
     assert.match(body, /inaya-home-hero-family-768\.webp\?v=[a-f0-9]{12} 768w/);
+    assert.match(body, /inaya-home-hero-family-1672\.webp\?v=[a-f0-9]{12} 1672w/);
+    assert.match(body, /media="\(max-width: 1279px\)"[^>]*inaya-home-hero-mobile-768\.webp\?v=afbe41a72b02 768w/);
     const header = body.match(/<header\b[^>]*>([\s\S]*?)<\/header>/)[1];
     const logo = attrs(header.match(/<img\b([^>]*)>/)[1]);
     const logoSource = attrs(header.match(/<source\b([^>]*)>/)[1]);
@@ -90,5 +93,8 @@ test('cPanel redirect uses an unconditional permanent legacy About rule before l
   assert.ok(htaccess.includes(rule));
   assert.ok(htaccess.indexOf(rule) < htaccess.indexOf('RewriteCond %{HTTP:Accept-Language}'));
   assert.match(workflow, /cp \.github\/cpanel\.htaccess out\/\.htaccess/);
-  assert.match(workflow, /inaya-home-hero-family\.webp' \? 65 : 70/);
+  assert.match(workflow, /if \(webPath === 'images\/home\/inaya-home-hero-family\.webp'\) return 1672;/);
+  assert.match(workflow, /if \(webPath === 'images\/home\/inaya-home-hero-family\.webp'\) return \[480, 768, 960, 1200, 1400, 1672\];/);
+  assert.match(workflow, /inaya-home-hero-family\.webp' \? 80 : 70/);
+  assert.match(workflow, /inaya-home-hero-family\.webp' \? 82 : 72/);
 });

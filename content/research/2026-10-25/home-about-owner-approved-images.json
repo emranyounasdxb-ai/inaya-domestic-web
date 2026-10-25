@@ -6,20 +6,20 @@
   "images": [
     {
       "slot": "homeHero",
-      "sourceFilename": "INAYA Five-Uniform Studio Portrait-Hero.png",
-      "sourceSha256": "8409fdedf554472fce922d674f21bae0ae660f854b0f1a5b89eafb8f00f9f597",
+      "sourceFilename": "Golden-hour patio with five women from INAYA.png",
+      "sourceSha256": "3c2337776e879c2edb640ec1bb935f03ce23bc7ee3f95d40343b6e1e304abbe0",
       "src": "/images/home/inaya-home-hero-family.webp",
-      "width": 1536,
-      "height": 1024,
-      "webpSha256": "afbe41a72b02e21259a3decfade48dbc1915d051210a97d40affc1c4482feb6b",
-      "previousSha256": "79bbe5b30a1e66c1130e202fa13f9bef2650b43bcc707b05d2ea16238845846c",
-      "cacheVersion": "afbe41a72b02",
+      "width": 1672,
+      "height": 941,
+      "webpSha256": "389c2830a017381b7ea3df9b177f0185c2b71540a7a41f41673131b5e412cd29",
+      "previousSha256": "afbe41a72b02e21259a3decfade48dbc1915d051210a97d40affc1c4482feb6b",
+      "cacheVersion": "389c2830a017",
       "alt": {
-        "en": "Five women in pink, beige, royal-blue, maroon and white INAYA uniforms",
-        "ar": "خمس نساء بأزياء عناية بالوردي والبيج والأزرق الملكي والعنابي والأبيض"
+        "en": "Five women in blue, pink, beige, maroon and white INAYA uniforms",
+        "ar": "خمس نساء بأزياء عناية الزرقاء والوردية والبيج والعنابية والبيضاء"
       },
-      "sourceWidth": 1536,
-      "sourceHeight": 1024
+      "sourceWidth": 1672,
+      "sourceHeight": 941
     },
     {
       "slot": "homeFollowUp",
