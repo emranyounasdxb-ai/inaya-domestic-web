@@ -156,7 +156,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     }
     // Exact owner-approved split Hero keeps the full five-person portrait clear
     // of copy at every viewport; all other Heroes retain their existing guards.
-    if (file === 'app/[locale]/page.tsx') expected = (await readFile('tests/fixtures/home-hero-owner-approved-20261025.html', 'utf8')).trimEnd();
+    if (file === 'app/[locale]/page.tsx') expected = (await readFile('tests/fixtures/home-hero-owner-approved-20261025.html', 'utf8')).replace(/\r\n/g, '\n').trimEnd();
     assert.equal(heroSource((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: original Hero markup and styling with approved additions`);
   }
 });
