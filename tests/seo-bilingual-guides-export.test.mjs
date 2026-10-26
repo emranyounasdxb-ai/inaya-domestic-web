@@ -10,6 +10,17 @@ const publicationSchedule = JSON.parse(await readFile('content/article-publicati
 const currentRefreshes = JSON.parse(await readFile('content/research/2026-10-24/article-refreshes.json', 'utf8'));
 const ajmanRefreshes = JSON.parse(await readFile('content/research/2026-10-24/ajman-intent-refreshes.json', 'utf8'));
 
+// Keep the historical manuscript fingerprints while allowing only the reviewed
+// 26 October Arabic heading correction. All surrounding policy copy stays exact.
+function beforeReplacementHeadingCorrection(slug, locale, copy) {
+  if (slug !== 'domestic-worker-replacement-eligibility' || locale !== 'ar') return copy;
+  const heading = 'دعم الاستبدال المؤهل في الخدمة الشهرية المدارة';
+  const previous = 'دعم الاستبدال المؤهل في جميع الباقات';
+  assert.equal(copy.split(heading).length, 2, 'one monthly-scoped Arabic replacement heading');
+  assert.ok(!copy.includes(previous), 'the broader all-package heading is absent');
+  return copy.replace(heading, previous);
+}
+
 function beforeAjmanRefresh(slug, locale, body) {
   const copy = ajmanRefreshes.entries.find((entry) => entry.slug === slug)?.[locale];
   if (!copy) return body;
@@ -37,7 +48,7 @@ test('five Ajman intents use four existing bilingual publications and preserve e
       beforeAjmanRefresh(article.slug, locale, article[locale].body);
       assert.equal(article.updated, ajmanRefreshes.date);
     } else {
-      assert.equal(createHash('sha256').update(article[locale].body).digest('hex'), ajmanRefreshes.unchangedBodySha256[article.slug][locale], `${article.slug}/${locale}: unrelated manuscript unchanged`);
+      assert.equal(createHash('sha256').update(beforeReplacementHeadingCorrection(article.slug, locale, article[locale].body)).digest('hex'), ajmanRefreshes.unchangedBodySha256[article.slug][locale], `${article.slug}/${locale}: unrelated manuscript unchanged`);
     }
   }
 });
@@ -372,7 +383,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
         originalMarkdown = parts[0];
       }
       assert.equal(copy.title, snapshot.title, `${route}: approved title`);
-      assert.equal(sha(originalMarkdown), snapshot.body_sha256, `${route}: complete original Markdown unchanged`);
+      assert.equal(sha(beforeReplacementHeadingCorrection(article.slug, locale, originalMarkdown)), snapshot.body_sha256, `${route}: original Markdown preserved apart from the reviewed heading correction`);
       const html = await readFile(`out${route}index.html`, 'utf8');
       const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
       const rendered = body.match(/<article\b[^>]*data-published-article="content"[^>]*>([\s\S]*?)<\/article>/)?.[1];
@@ -405,7 +416,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
         assert.ok(boundary, `${route}: the supplement follows every original heading`);
         originalRendered = originalRendered.slice(0, boundary.index);
       }
-      assert.equal(sha(text(originalRendered)), snapshot.visible_sha256, `${route}: every original word, figure and condition rendered`);
+      assert.equal(sha(beforeReplacementHeadingCorrection(article.slug, locale, text(originalRendered))), snapshot.visible_sha256, `${route}: every original word, figure and condition rendered apart from the reviewed heading correction`);
       assert.equal([...originalRendered.matchAll(/<h2\b/g)].length, snapshot.heading_count, `${route}: all original headings`);
       assert.equal([...originalRendered.matchAll(/<li\b/g)].length, snapshot.list_items, `${route}: all original list items`);
       assert.equal([...originalRendered.matchAll(/<table\b/g)].length, snapshot.tables, `${route}: all original tables`);

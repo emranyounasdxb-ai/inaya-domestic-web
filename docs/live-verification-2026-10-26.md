@@ -1,0 +1,27 @@
+# Current live website verification — 26 October 2026
+
+The supplied AI-visibility PDF was used as investigation leads. Findings below are based on fresh production responses, rendered Chrome content and the repository, starting from clean `main` at `63a59a299ae1deb91d1991824539222a0227e37c`.
+
+| Target | Classification | Verified result / action |
+| --- | --- | --- |
+| `/ar/blog/domestic-worker-replacement-eligibility/` | Confirmed issue; fixed locally | The live H2 and article contents said `دعم الاستبدال المؤهل في جميع الباقات`. Its adjacent body and English heading limit this support to the managed monthly service. Change only the Arabic H2 to `دعم الاستبدال المؤهل في الخدمة الشهرية المدارة` in `lib/published-article-content.ts`. The contents link derives from that heading. No eligibility or benefit was expanded. |
+| `/en/blog/documents-for-domestic-worker-enquiry/` | Already correct — skipped | Ordinary HTTP GET returned 200 at the requested URL with the full article; normal Chrome rendered the article. Arabic counterpart also returned 200 and contains the corresponding source blocks. The historical 406 was not reproduced. |
+| `/en/blog/domestic-worker-leave-travel-planning/` | Already correct — skipped | Ordinary HTTP GET returned 200 at the requested URL with the full article; normal Chrome rendered the article. Arabic counterpart also returned 200 and contains the corresponding source blocks. No routing or security change is indicated. |
+| EN/AR pricing, services, terms, refund policy and contact; monthly guide and contract service | Already correct — skipped in the reviewed scope | Fourteen production pages returned 200. Six amounts and their duration/billing bases match the owner-confirmed 19 October poster record: 120/4h, 200/8h, 1,120/7-day period, 3,500/30-day period, 3,250/month with 6-month commitment, 3,000/month with 12-month commitment. Live-in/out prices remain equal. Monthly inclusions, salary versus service payment, pro-rata unused-service refunds, replacement qualifications and Saturday–Thursday 09:00–21:00 / Friday closed remain qualified consistently. No additional material conflict was confirmed in the sampled live and repository copy. |
+| Four requested EN/AR article pairs: documents, leave/travel, replacement eligibility, wages/rest/leave | Already correct — skipped for technical metadata | All eight returned 200. Self canonicals, reciprocal EN/AR and x-default hreflang, corresponding header language switches, language/direction, robots access, sitemap inclusion and visible Article/FAQ structured-data fields passed. Referenced internal page destinations are present in the captured 274-URL sitemap. This does not establish search indexing or ranking. |
+| `/en/blog/domestic-worker-wages-rest-leave/` and Arabic counterpart | Unable to verify governing legal wording; pending review | Both live articles and repository versions say a quarter of the wage. Direct reads of the official English and Arabic legislation 1593 pages returned 403. The current applicable version and official-language discrepancy remain unresolved. No legal wording changed; qualified legal review and owner approval are required before replacing it. |
+
+The monthly scope is supported by the existing approved publication copy and `lib/package-content.ts` replacement terms; the owner-confirmed price record is `docs/poster-pricing-update-2026-10-19.md`. Source captures and before/after screenshots are retained outside Git in the local `INAYA-Live-Verification-20261026` evidence folder. This is a bounded website verification, not completion of the external six-model audit or a complete legal audit.
+
+## Validation
+
+- ESLint: pass, zero errors; one existing `@next/next/no-img-element` warning at `components/SiteImageGallery.tsx:99`.
+- TypeScript `--noEmit --incremental false`: pass.
+- Production build and deployment-mode static production export: both pass; 280 framework outputs, including 274 canonical localized sitemap entries.
+- Existing bilingual/source-preservation, customer-series, publication-schedule and export checks: 17/17 pass. The historical manuscript fixtures were preserved. The existing hash checks now allow only this exact heading correction for the specified Arabic article and still reject every other copy change.
+- Targeted existing Playwright checks cover replacement, leave/travel and documents in EN/AR on desktop and mobile: all 12 distinct checks passed. The first parallel run timed out on three desktop consent-button waits; those three passed unchanged in an isolated single-worker run. No timeout, assertion or consent implementation was weakened; the initial timeout cause was not established.
+- Manual local static-preview checks confirmed the corrected Arabic H2/contents link, responsive RTL layout, matching English LTR page and language switch, with no horizontal overflow. Branding, images, layout, forms and policy body are unchanged. No real enquiry or booking was submitted.
+
+## Release status
+
+The correction is local and proposed for review. It has not been deployed. The existing workflow deploys `main` pushes to cPanel; merging this change therefore requires explicit production release approval. After an authorized deployment, require the actual deployment job to succeed and recheck both public replacement URLs before describing the fix as live. No security configuration, legacy redirects, indexing requests or external-model sessions were changed.
