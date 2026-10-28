@@ -66,15 +66,33 @@ test('the dedicated image sitemap covers every pictured canonical page and all11
 });
 
 // Independent fingerprints from the 2026-10-25 live-page and approved-source
-// audit before this metadata-only release. Keep existing assignments and bytes.
+// audit before the country-page photo release. Keep existing assignments and bytes.
 const fingerprint = rows => createHash('sha256').update(JSON.stringify(rows.sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))).digest('hex');
 
-test('all274 pages have localized previews while only200 visible photos become primary image schema', async () => {
+// Independent route expectations: do not import the production image selector.
+const countryPagePhotos = {
+  'services/countries-we-source-from': '/images/about/about-hero-domestic-service.webp',
+  'maid-source-countries/philippines-maid-uae': '/images/countries/maid-philippines.webp',
+  'maid-source-countries/sri-lankan-maid-uae': '/images/countries/maid-sri-lanka.webp',
+  'maid-source-countries/nepali-maid-uae': '/images/countries/maid-nepal.webp',
+  'maid-source-countries/indian-maid-uae': '/images/countries/maid-india.webp',
+  'maid-source-countries/indonesian-maid-uae': '/images/countries/maid-indonesia.webp',
+  'maid-source-countries/kenyan-maid-uae': '/images/countries/maid-kenya-uganda.webp',
+  'maid-source-countries/ugandan-maid-uae': '/images/countries/maid-kenya-uganda.webp',
+  'maid-source-countries/bangladeshi-maid-uae': '/images/about/about-hero-domestic-service.webp',
+  'maid-source-countries/ethiopian-maid-uae': '/images/about/about-hero-domestic-service.webp',
+  'maid-source-countries/ghanaian-maid-uae': '/images/about/about-hero-domestic-service.webp',
+  'maid-source-countries/sierra-leone-maid-uae': '/images/about/about-hero-domestic-service.webp',
+  'maid-source-countries/myanmar-maid-uae': '/images/about/about-hero-domestic-service.webp',
+};
+
+test('all274 pages have localized previews while226 visible photos become primary image schema', async () => {
   const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
   const approved = new Map(catalog.images.map(image => [origin + image.src, image]));
   const dimensions = new Map();
   const preservedMappings = [], preservedPageMetadata = [];
   const fallbackCounts = { blog: 0, countries: 0, locations: 0, information: 0 };
+  const picturedCountryPages = [];
   let described = 0;
   for (const entry of entries) {
     const pageUrl = decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
@@ -117,6 +135,8 @@ test('all274 pages have localized previews while only200 visible photos become p
     const graph = imageGraph(html);
     const page = graph.find(n => n['@type'] === 'WebPage');
     assert.ok(page, `${pageUrl}: page schema remains present`);
+    const countryImagePath = countryPagePhotos[route];
+    if (countryImagePath) assert.ok(page.primaryImageOfPage, `${pageUrl}: visible country photo has primary-image schema`);
     if (!page.primaryImageOfPage) {
       assert.ok(!graph.some(node => node['@id'] === `${pageUrl}#primaryimage`), `${pageUrl}: social fallback does not invent a primary photo`);
       let expected;
@@ -128,9 +148,6 @@ test('all274 pages have localized previews while only200 visible photos become p
         expected = approved.get(origin + new URL(firstGuideImage.src, origin).pathname);
         assert.equal(ogAlt[0], firstGuideImage.alt, `${pageUrl}: preview describes the latest displayed article`);
         fallbackCounts.blog++;
-      } else if (route.startsWith('maid-source-countries/') || route === 'services/countries-we-source-from') {
-        expected = approved.get(origin + '/images/about/about-hero-domestic-service.webp');
-        fallbackCounts.countries++;
       } else if (/^maid-services-[^/]+$/.test(route)) {
         expected = approved.get(origin + '/images/services/housemaid.webp');
         fallbackCounts.locations++;
@@ -153,11 +170,36 @@ test('all274 pages have localized previews while only200 visible photos become p
     if (route === 'about') {
       assert.equal(image.contentUrl, origin + '/images/about/about-team-story.webp', `${pageUrl}: actual About story photo`);
       assert.equal(image.caption, source.alt[locale], `${pageUrl}: approved About photo description`);
+    } else if (countryImagePath) {
+      const expected = approved.get(origin + countryImagePath);
+      assert.ok(expected, `${pageUrl}: country photo is in the approved catalog`);
+      assert.equal(image.contentUrl, origin + countryImagePath, `${pageUrl}: correct country photo in primary/social metadata`);
+      assert.equal(ogAlt[0], expected.alt[locale], `${pageUrl}: approved localized country photo description`);
+      const main = visibleImageHtml(html).match(/<main\b[^>]*>([\s\S]*)<\/main>/i)?.[1];
+      assert.ok(main, `${pageUrl}: visible main content`);
+      const mainPhotos = imageTags(main).filter(photo => new URL(photo.src, origin).pathname === countryImagePath);
+      assert.equal(mainPhotos.length, 1, `${pageUrl}: one matching country photo in main content`);
+      assert.equal(mainPhotos[0].alt, expected.alt[locale], `${pageUrl}: visible photo uses its approved localized description`);
+      const breadcrumb = main.indexOf('data-seo="breadcrumbs"');
+      assert.ok(breadcrumb >= 0 && mainPhotos[0].index > breadcrumb, `${pageUrl}: country photo follows the protected hero and breadcrumbs`);
+      const figure = [...main.matchAll(/<figure\b[^>]*>([\s\S]*?)<\/figure>/gi)]
+        .find(match => imageTags(match[1]).some(photo => new URL(photo.src, origin).pathname === countryImagePath));
+      assert.ok(figure, `${pageUrl}: country photo has a visible figure`);
+      const caption = decode((figure[1].match(/<figcaption\b[^>]*>([\s\S]*?)<\/figcaption>/i)?.[1] ?? '').replace(/<[^>]*>/g, '')).trim();
+      assert.ok(caption, `${pageUrl}: country photo has a nonempty visible caption`);
+      assert.match(caption, locale === 'ar' ? /[\u0600-\u06ff]/ : /[A-Za-z]/, `${pageUrl}: visible caption is localized`);
+      if (locale === 'en') assert.doesNotMatch(caption, /[\u0600-\u06ff]/, `${pageUrl}: English caption stays English`);
+      const advertised = [...entry[1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map(match => decode(match[1]));
+      assert.equal(advertised.filter(url => url === origin + countryImagePath).length, 1, `${pageUrl}: sitemap discovers the same canonical country photo once`);
+      assert.deepEqual([...entry[1].matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], `${pageUrl}: substantive country photo update has its exact modification date`);
+      picturedCountryPages.push(pageUrl);
     } else preservedMappings.push([pageUrl, ogImages, ogAlt, twitterImages, twitterAlt, [image.contentUrl]]);
     described++;
   }
-  assert.equal(described, 200, 'the About pair gains its visible story photo; all198 previously assigned primary photos remain');
-  assert.deepEqual(fallbackCounts, { blog: 2, countries: 26, locations: 14, information: 32 }, 'all74 remaining pages get social previews without false primary-image schema');
+  assert.equal(described, 226, 'all26 country pages gain visible primary photos; all200 previous primary photos remain');
+  assert.deepEqual(picturedCountryPages.sort(), Object.keys(countryPagePhotos).flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`)).sort(), 'all26 expected country pages have matching visible, social, schema and sitemap photos');
+  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), picturedCountryPages.sort(), 'only the26 pictured country pages receive the28October modification date');
+  assert.deepEqual(fallbackCounts, { blog: 2, countries: 0, locations: 14, information: 32 }, 'all48 remaining pages get social previews without false primary-image schema');
   assert.equal(preservedMappings.length, 198);
   assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 previous primary/social photo assignments and localized descriptions remain exact');
   assert.equal(preservedPageMetadata.length, 274);
