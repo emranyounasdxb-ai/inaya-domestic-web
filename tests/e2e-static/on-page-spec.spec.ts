@@ -22,11 +22,19 @@ for (const locale of ['en', 'ar'] as const) {
     expect(failedSegments, 'the actual Linux release must serve its Next export segment files').toEqual([]);
     await nav.getByRole('link', { name: locale === 'ar' ? 'الصفحة السابقة' : 'Previous page', exact: true }).click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/blog/$`));
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://inayadomestic.ae/${locale}/blog/`);
+    expect(documents, 'reverse pagination also retains the browser document').toBe(1);
+    expect(failedSegments).toEqual([]);
     expect(await page.locator('[data-blog-guide]').first().getAttribute('data-blog-guide')).toBe(first);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 
   test(`${locale}: commercial guide links support keyboard navigation in the production export`, async ({ page }) => {
+    let documents = 0;
+    const failedSegments: string[] = [];
+    page.on('request', request => { if (request.isNavigationRequest() && request.frame() === page.mainFrame()) documents++; });
+    page.on('response', response => { if (new URL(response.url()).pathname.endsWith('.txt') && !response.ok()) failedSegments.push(response.url()); });
     for (const [route, guide] of [
       ['services/live-in-maid', 'live-in-live-out-part-time-maid-uae'],
       ['services/maid-visa', 'domestic-worker-visa-sponsorship-support'],
@@ -40,10 +48,14 @@ for (const locale of ['en', 'ar'] as const) {
       await expect(link).toHaveCount(1);
       await link.focus();
       await expect(link).toBeFocused();
+      const documentsBeforeClick = documents;
       await link.press('Enter');
       await expect(page).toHaveURL(new RegExp(`/${locale}/blog/${guide}/$`));
       await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
       await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://inayadomestic.ae/${locale}/blog/${guide}/`);
+      expect(documents, `${route}: keyboard navigation retains the browser document`).toBe(documentsBeforeClick);
+      expect(failedSegments).toEqual([]);
     }
   });
 
