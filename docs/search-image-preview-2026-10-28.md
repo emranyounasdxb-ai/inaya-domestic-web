@@ -55,8 +55,8 @@ markup remain covered by the prior regression fingerprints.
 
 ## Release and Google processing
 
-This branch is not a production deployment. After owner release approval, merge
-only the reviewed head after required CI passes, then verify the actual existing
+This branch is not a production deployment. Merge only the reviewed head after
+required CI passes, then verify the actual existing
 incremental cPanel deployment and the live affected pages. Do not manually resend
 unchanged indexing notifications.
 

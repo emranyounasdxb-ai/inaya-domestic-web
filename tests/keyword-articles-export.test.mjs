@@ -52,7 +52,19 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
   const expectedNewUrls = review.articles.flatMap(article => locales.map(locale => `${origin}/${locale}/blog/${article.slug}/`));
   assert.deepEqual(urls.slice(232), expectedNewUrls, 'only the 42 reviewed new language copies are appended');
   assert.ok(expectedNewUrls.every(url => !review.previousCanonicalUrls.includes(url)), 'new slugs do not replace old publications');
-  assert.equal(entries.filter(entry => entry.includes('<lastmod>')).length, 208);
+  const datedEntries = entries.filter(entry => entry.includes('<lastmod>'));
+  const countryPhotoRoutes = ['services/countries-we-source-from', ...[
+    'philippines', 'sri-lankan', 'nepali', 'indian', 'bangladeshi', 'ethiopian',
+    'kenyan', 'ugandan', 'ghanaian', 'sierra-leone', 'indonesian', 'myanmar',
+  ].map(country => `maid-source-countries/${country}-maid-uae`)];
+  const countryPhotoUrls = countryPhotoRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`));
+  const countryPhotoEntries = datedEntries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>'));
+  assert.equal(datedEntries.length, 234, 'retain 208 historical dated URLs and add only 26 country-photo pages');
+  assert.deepEqual(countryPhotoEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), countryPhotoUrls.sort(), 'only the 26 explicitly reviewed country-photo URLs receive 28 October');
+  for (const entry of countryPhotoEntries) {
+    assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], 'country-photo pages have one exact substantive modification date');
+  }
+  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 208, 'the historical dated-page count remains unchanged');
   assert.equal(receipt.articlePairs, 21);
   assert.equal(receipt.localePages, 42);
   assert.equal(receipt.manuscriptHashes.length, 42);
