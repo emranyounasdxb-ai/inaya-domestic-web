@@ -33,7 +33,7 @@ test('all 358 retired image files are absent from public/export and every publis
   }
   const xml = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => decode(match[1]));
-  assert.equal(urls.length, 274);
+  assert.equal(urls.length, 284);
   assert.doesNotMatch(xml, /images\/company-gallery/);
   for (const url of urls) {
     const html = await readFile(path.join('out', new URL(url).pathname, 'index.html'), 'utf8');

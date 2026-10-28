@@ -221,12 +221,89 @@ function approvedPackageMessages(locale, data) {
 const commercial = require('./fixtures/managed-package-copy.json');
 const { hubSummaries } = require('./domestic-service-refresh-expectations.cjs');
 const { withoutKeywordPresentation } = require('./keyword-article-presentation-expectations.cjs');
+const { readFileSync } = require('node:fs');
+const { homeFaqAnswers, archiveRoutes, sharedOnPageUiPlacements, sharedOnPageUiCounts } = require('./on-page-spec-expectations.cjs');
+const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
+const commercialBlogSlugs = ['all-inclusive-domestic-worker-packages', 'domestic-worker-package-pricing-factors'];
+const paragraphTokens = value => value.toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ');
+const visibleText = value => value.replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
+
+function withoutReviewedHomeFaq(page) {
+  if (page.route !== '') return page;
+  assert.ok(['https://inayadomestic.ae/en/', 'https://inayadomestic.ae/ar/'].includes(page.url), 'FAQ exemption belongs only to the two canonical Home pages');
+  const html = readFileSync(`out/${page.locale}/index.html`, 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+  const sections = [...html.matchAll(/<section\b[^>]*aria-labelledby="home-faq-heading"[^>]*>([\s\S]*?)<\/section>/g)];
+  assert.equal(sections.length, 1, `${page.url}: exactly one reviewed Home FAQ section`);
+  const answers = [...sections[0][1].matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/g)]
+    .map(match => visibleText(match[1].match(/<p\b[^>]*>([\s\S]*?)<\/p>/)[1]));
+  assert.deepEqual(answers, homeFaqAnswers[page.locale], `${page.url}: exactly the six independently reviewed visible Home answers`);
+  const paragraphs = [...page.paragraphs];
+  for (const answer of answers) {
+    const value = paragraphTokens(answer), index = paragraphs.indexOf(value);
+    assert.ok(index >= 0, `${page.url}: reviewed FAQ answer is present in audit paragraphs`);
+    // Remove precisely one verified FAQ placement; any additional copy elsewhere
+    // remains in the historical exact-placement and editorial repetition checks.
+    paragraphs.splice(index, 1);
+  }
+  return { ...page, paragraphs };
+}
+function withoutReviewedSharedOnPageUi(pages, htmlForPage = page => readFileSync(`out/${page.locale}/${page.route ? page.route + '/' : ''}index.html`, 'utf8')) {
+  const known = new Set(sharedOnPageUiPlacements.map(item => paragraphTokens(item.text)));
+  let excludedParagraphs = 0, excludedTokens = 0;
+  const classified = pages.map(page => {
+    const placements = sharedOnPageUiPlacements.filter(item => item.locale === page.locale && item.route === page.route);
+    if (!placements.length) {
+      assert.ok(!page.paragraphs.some(paragraph => known.has(paragraph)), `${page.locale}/${page.route}: unlisted shared UI placement is not permitted`);
+      return page;
+    }
+    const html = htmlForPage(page).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+    const main = html.slice(html.indexOf('<main'), html.lastIndexOf('</main>') + 7);
+    const visibleParagraphs = [...main.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(match => visibleText(match[1]));
+    const paragraphs = [...page.paragraphs];
+    for (const placement of placements) {
+      assert.equal(visibleParagraphs.filter(value => value === placement.text).length, 1, `${page.locale}/${page.route}: exactly one unchanged reviewed ${placement.kind} UI paragraph`);
+      const paragraph = paragraphTokens(placement.text);
+      assert.equal(paragraphs.filter(value => value === paragraph).length, 1, `${page.locale}/${page.route}: exact counted shared UI placement`);
+      paragraphs.splice(paragraphs.indexOf(paragraph), 1);
+      excludedParagraphs++;
+      excludedTokens += paragraph.split(' ').length;
+    }
+    assert.ok(!paragraphs.some(paragraph => known.has(paragraph)), `${page.locale}/${page.route}: extra shared UI copy is not permitted`);
+    return { ...page, paragraphs };
+  });
+  assert.equal(excludedParagraphs, sharedOnPageUiCounts.paragraphs, 'exact18 reviewed shared UI placements');
+  assert.equal(excludedTokens, sharedOnPageUiCounts.tokens, 'exact236 reviewed shared UI tokens');
+  return { pages: classified, excludedParagraphs, excludedTokens };
+}
+
+function reviewedBlogPlacements(page) {
+  if (!['blog', ...archiveRoutes].includes(page.route)) return null;
+  const approved = commercial.copy.blog[page.locale], expected = {};
+  for (const [index, slug] of commercialBlogSlugs.entries()) {
+    const position = blogOrder.slugs.indexOf(slug);
+    assert.ok(position >= 0, `${slug}: preserved original archive order`);
+    const pageNumber = Math.floor(position / 12) + 1;
+    const route = pageNumber === 1 ? 'blog' : `blog/page/${pageNumber}`;
+    if (page.route !== route) continue;
+    expected[index] = 1;
+    const html = readFileSync(`out/${page.locale}/${page.route}/index.html`, 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+    const cards = [...html.matchAll(/<article\b[^>]*data-blog-guide="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)]
+      .filter(match => match[1] === slug);
+    assert.equal(cards.length, 1, `${page.url}: one preserved ${slug} card`);
+    const description = visibleText(cards[0][2].match(/<p\b[^>]*>([\s\S]*?)<\/p>/)[1]);
+    assert.equal(paragraphTokens(description), approved[index], `${page.url}: exact previously approved commercial card summary`);
+  }
+  return { approved, expected };
+}
+
 function editorialRepetition(audit) {
   // Mandatory, exact owner-approved commercial wording is protected separately.
   // Retain the existing budgets for editorial prose; no arbitrary paragraph,
   // unrelated route or later duplication is covered by this source snapshot.
-  const pages = audit.pages.map(page => {
-    const approved = commercial.copy[page.route]?.[page.locale] ?? [];
+  const pages = audit.pages.map(original => {
+    const page = withoutReviewedHomeFaq(original);
+    const blog = reviewedBlogPlacements(page);
+    const approved = blog?.approved ?? commercial.copy[page.route]?.[page.locale] ?? [];
     const occurrences = {};
     for (const paragraph of page.paragraphs) {
       const index = approved.indexOf(paragraph);
@@ -234,7 +311,7 @@ function editorialRepetition(audit) {
     }
     // The allowance is bounded to the reviewed placements too: missing copy or
     // another copy of an approved paragraph must fail, not disappear from the metric.
-    assert.deepEqual(occurrences, commercial.paragraphCounts[page.route]?.[page.locale] ?? {}, `${page.url}: exact approved commercial paragraph placements`);
+    assert.deepEqual(occurrences, blog?.expected ?? commercial.paragraphCounts[page.route]?.[page.locale] ?? {}, `${page.url}: exact approved commercial paragraph placements`);
     const hubCopy = page.route === 'services' ? Object.values(hubSummaries).map(copy => copy[page.locale].toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ')) : [];
     // Only the three exact service-card summaries on each localized hub are
     // excluded. Missing, changed or duplicated placements still fail.
@@ -255,13 +332,16 @@ function editorialRepetition(audit) {
     return { repeatedParagraphs, repeatedTokens };
   }
   const raw = repeatedContent(pages);
-  const presentation = withoutKeywordPresentation(pages);
+  const onPageUi = withoutReviewedSharedOnPageUi(pages);
+  const presentation = withoutKeywordPresentation(onPageUi.pages);
   return {
     ...repeatedContent(presentation.pages),
     rawEditorialRepeatedParagraphs: raw.repeatedParagraphs,
     rawEditorialRepeatedTokens: raw.repeatedTokens,
     classifiedPresentationParagraphs: presentation.excludedParagraphs,
-    classifiedPresentationTokens: presentation.excludedTokens
+    classifiedPresentationTokens: presentation.excludedTokens,
+    classifiedOnPageUiParagraphs: onPageUi.excludedParagraphs,
+    classifiedOnPageUiTokens: onPageUi.excludedTokens
   };
 }
-module.exports = { approvedManagedPackages, approvedPackageMessages, editorialRepetition, metadata: commercial.metadata, priceMentions: commercial.priceMentions };
+module.exports = { approvedManagedPackages, approvedPackageMessages, editorialRepetition, withoutReviewedSharedOnPageUi, metadata: commercial.metadata, priceMentions: commercial.priceMentions };

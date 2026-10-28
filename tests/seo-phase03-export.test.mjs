@@ -3,6 +3,7 @@ import remediation from './seo-audit-remediation-expectations.cjs';
 import managed from './managed-package-expectations.cjs';
 import ajmanOffice from './ajman-office-expectations.cjs';
 import domesticServices from './domestic-service-refresh-expectations.cjs';
+import onPage from './on-page-spec-expectations.cjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -62,7 +63,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     ar: [...Array(6).fill('1,500 درهم'), ...Array(6).fill('2,500 درهم'), 'AED 1,500', 'AED 2,500']
   };
   const current = await auditExport();
-  assert.equal(current.pages.length, 274);
+  assert.equal(current.pages.length, onPage.canonicalCount);
   for (const page of current.pages) {
     assert.doesNotMatch(pricingGuardText(page), obsoletePackageLabels, `${page.url}: superseded package prices and tiers cannot survive the export`);
     assert.doesNotMatch(page.mainText, /Live-out service requires a separate itemised quotation|advertised monthly prices concern live-in service|تتطلب الخدمة غير المقيمة عرضاً منفصلاً ومفصلاً|تخص الأسعار الشهرية المعلنة الخدمة المقيمة داخل المنزل/, `${page.url}: no obsolete live-out price distinction`);
@@ -70,7 +71,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.deepEqual(current.pages.slice(0, 140).map((p) => p.url), baseline.pages.map((p) => p.url));
   assert.deepEqual(current.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(current.linkCoverage[locale].reachable, 137);
+    assert.equal(current.linkCoverage[locale].reachable, onPage.canonicalCount / 2);
     assert.ok(current.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
   const editorial = managed.editorialRepetition(current);
@@ -79,24 +80,29 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
-    const approved = domesticServices.metadata[`${page.locale}/${page.route}`] ?? ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
+    const approved = onPage.metadata[`${page.locale}/${page.route}`]?.after ?? domesticServices.metadata[`${page.locale}/${page.route}`] ?? ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
     assert.equal(page.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
     if (page.route !== 'blog') assert.equal(page.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     const additions = [];
-    if (page.route === 'pricing') additions.push(`${page.url}#faq`);
+    if (page.route === 'pricing' || page.route === '') additions.push(`${page.url}#faq`);
     // About and country guides describe their visible approved photos. Ajman
     // and other text pages retain their historical schema IDs.
     const countryPhoto = page.route === 'services/countries-we-source-from' || page.route.startsWith('maid-source-countries/');
     if (countryPhoto || ['', 'about', 'services'].includes(page.route) || (page.route.startsWith('services/') && page.route !== 'services/countries-we-source-from')) additions.push(`${page.url}#primaryimage`);
     const expectedSchemaIds = [...before.schemaIds, ...additions].sort();
-    assert.deepEqual(page.schemaIds, expectedSchemaIds, `${page.url}: preserved IDs plus the approved pricing FAQ and visible primary image`);
+    assert.deepEqual(page.schemaIds, expectedSchemaIds, `${page.url}: preserved IDs plus the approved pricing/Home FAQs and visible primary image`);
     const expectedPrices = domesticServices.priceMentions[`${page.locale}/${page.route}`] ?? managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
       : page.route === 'faq' ? page.locale === 'en' ? ['AED 1,500', 'AED 1,500', 'AED 2,500', 'AED 2,500'] : ['1,500 درهم', '1,500 درهم', '2,500 درهم', '2,500 درهم']
       : page.route === 'services/monthly-maid-contract' ? page.locale === 'en' ? ['AED 1,500', 'AED 2,500'] : ['1,500 درهم', '2,500 درهم']
       : before.prices);
-    assert.deepEqual(page.prices, expectedPrices, `${page.url}: displayed prices`);
+    const reviewedFaqPrices = page.route === ''
+      ? page.locale === 'en'
+        ? ['AED 120', 'AED 200', 'AED 1,120', 'AED 3,500', 'AED 3,250', 'AED 3,000']
+        : ['120 درهم', '200 درهم', '1,120 درهم', '3,500 درهم', '3,250 درهم', '3,000 درهم']
+      : [];
+    assert.deepEqual(page.prices, [...expectedPrices, ...reviewedFaqPrices].sort(), `${page.url}: displayed prices plus only the exact six Home FAQ package amounts`);
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const body = file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
     assert.doesNotMatch(body, /data-seo="related-guides"|data-content="page-purpose"/, `${page.url}: removed strip must not render`);
@@ -119,5 +125,5 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
       assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), details, `${page.url}: visible FAQ/schema`);
     }
   }
-  console.log(JSON.stringify({ routes: 274, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
+  console.log(JSON.stringify({ routes: onPage.canonicalCount, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
 });

@@ -462,8 +462,8 @@
         "ar": "مربيات تنفيذيات"
       },
       "alt": {
-        "en": "Household service: Executive Nannies",
-        "ar": "خدمة مربيات تنفيذيات"
+        "en": "Nanny helping a child pack a school bag at a table",
+        "ar": "مربية تساعد طفلة على تجهيز حقيبتها المدرسية عند الطاولة"
       },
       "category": "childcare",
       "relatedRoute": "services/executive-nannies",
@@ -550,8 +550,8 @@
         "ar": "طهاة خاصون"
       },
       "alt": {
-        "en": "Household service: Private Chefs",
-        "ar": "خدمة طهاة خاصون"
+        "en": "Household cook serving chicken and vegetables in a home kitchen",
+        "ar": "طاهية منزلية تقدم الدجاج والخضروات في مطبخ المنزل"
       },
       "category": "cooking",
       "relatedRoute": "services/private-chefs",
@@ -616,8 +616,8 @@
         "ar": "مديرو المنازل"
       },
       "alt": {
-        "en": "Household service: House Managers",
-        "ar": "خدمة مديرو المنازل"
+        "en": "Household supervisor coordinating cleaning tasks with a colleague in a living room",
+        "ar": "مشرفة منزلية تنسق مهام التنظيف مع زميلة في غرفة المعيشة"
       },
       "category": "cooking",
       "relatedRoute": "services/house-managers",

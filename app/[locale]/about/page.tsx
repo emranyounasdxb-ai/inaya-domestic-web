@@ -2,6 +2,7 @@ import HomeAboutPortrait from '@/components/HomeAboutPortrait';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
+import BusinessIdentityLine from '@/components/BusinessIdentityLine';
 
 type PageProps = {
   params: Promise<{
@@ -17,7 +18,7 @@ export default async function AboutPage({ params }: PageProps) {
   const copy = isArabic
     ? {
         badge: 'حول عناية للعمالة المنزلية',
-        title: 'تعريف التميز في خدمات العمالة المنزلية',
+        title: 'عن عناية للعمالة المنزلية — جراند مول، عجمان',
         subtitle: 'تساعد عناية الأسر في دولة الإمارات على اختيار دعم منزلي موثوق من خلال تنسيق محترم، متابعة واضحة، وخدمة تناسب احتياج كل منزل.',
         contact: 'تواصل معنا',
         services: 'استكشف الخدمات',
@@ -62,7 +63,7 @@ export default async function AboutPage({ params }: PageProps) {
       }
     : {
         badge: 'About INAYA Domestic Workers',
-        title: 'Defining Domestic Excellence',
+        title: 'About INAYA Domestic Workers — Grand Mall, Ajman',
         subtitle: 'INAYA helps UAE families choose dependable home support through respectful coordination, practical guidance and service coverage across the UAE.',
         contact: 'Contact Us',
         services: 'Explore Services',
@@ -143,6 +144,7 @@ export default async function AboutPage({ params }: PageProps) {
             <h2 className={`${headingClass} text-[2.2rem] font-bold tracking-[-0.035em] text-primary-900 sm:text-[3rem]`}>{copy.storyTitle}</h2>
             <div className="mt-6 space-y-5 text-[1rem] leading-8 text-primary-900/85">
               {copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <BusinessIdentityLine locale={locale} />
               <Link className="inline-block font-semibold underline underline-offset-4" href={`/${locale}/contact/`}>{isArabic ? 'تواصل مع فريق عناية في عجمان' : 'Contact the INAYA team in Ajman'}</Link>
               <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/gallery/`}>{isArabic ? 'معرض صور عناية' : 'INAYA photo gallery'}</Link></p>
               <p><Link className="font-semibold underline underline-offset-4" href={`/${locale}/careers/`}>{isArabic ? 'فرص العمل وطلبات التوظيف' : 'Careers and work enquiries'}</Link></p>

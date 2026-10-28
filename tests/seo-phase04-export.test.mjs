@@ -9,11 +9,11 @@ const require = createRequire(import.meta.url);
 const { buyerAnswers } = require('../.next/phase-02-unit/lib/buyer-answers.js');
 const { siteConfig } = require('../.next/phase-02-unit/lib/site-config.js');
 
-test('all 274 routes omit unsupported statistics, approval and ranking labels and retain business identity', async () => {
+test('all 284 routes omit unsupported statistics, approval and ranking labels and retain business identity', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 274);
-  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 274);
-  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 274);
+  assert.equal(audit.pages.length, 284);
+  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 284);
+  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 284);
   assert.deepEqual(audit.orphans, []);
   assert.equal(audit.nearPairs.length, 0);
   const editorial = managed.editorialRepetition(audit);
@@ -35,5 +35,5 @@ test('all 274 routes omit unsupported statistics, approval and ranking labels an
       assert.ok(visible.includes(answer.answer[page.locale]));
     }
   }
-  console.log(JSON.stringify({ routes: 274, localizedBuyerAnswers: 16, orphans: 0, nearPairs: 0, repeatedTokens: audit.repeatedTokens, editorial }));
+  console.log(JSON.stringify({ routes: 284, localizedBuyerAnswers: 16, orphans: 0, nearPairs: 0, repeatedTokens: audit.repeatedTokens, editorial }));
 });

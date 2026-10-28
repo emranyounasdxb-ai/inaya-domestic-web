@@ -27,10 +27,23 @@ for (const locale of ['en', 'ar']) {
     await page.goto(`/${locale}/blog/`);
     await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
     await expect(page.locator('main h1')).toHaveCount(1);
-    for (const slug of slugs) {
-      const route = `/${locale}/blog/${slug}/`;
-      await expect(page.locator(`main a[href="${route}"]`)).toHaveCount(1);
+    const found = new Map(slugs.map(slug => [slug, 0]));
+    // Each archive is linked by ordinary href navigation from the first page;
+    // keep complete coverage of the seven original guides across all six pages.
+    for (const number of [2, 3, 4, 5, 6]) {
+      await expect(page.locator(`main nav a[href="/${locale}/blog/page/${number}/"]`).first()).toBeAttached();
     }
+    for (const number of [1, 2, 3, 4, 5, 6]) {
+      if (number > 1) await page.goto(`/${locale}/blog/page/${number}/`);
+      await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
+      await expect(page.locator('main h1')).toHaveCount(1);
+      for (const slug of slugs) {
+        const count = await page.locator(`main article[data-blog-guide="${slug}"] a[href="/${locale}/blog/${slug}/"]`).count();
+        found.set(slug, found.get(slug)! + count);
+      }
+    }
+    for (const slug of slugs) expect(found.get(slug), `${locale}/${slug}: one card across the complete archive`).toBe(1);
+    await page.goto(`/${locale}/blog/`);
     await expect(page.locator(`header a[href="/${locale}/blog/"][aria-current="page"]`).first()).toBeAttached();
   });
   test(`${locale} commercial pages offer useful localized guide links`, async ({ page }) => {
@@ -42,6 +55,9 @@ for (const locale of ['en', 'ar']) {
       ['maid-services-dubai', 'uae-domestic-worker-hiring-process']
     ]) {
       await page.goto(`/${locale}/${route}/`);
+      if (route === 'services/live-in-maid') {
+        await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics' }).click();
+      }
       await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
       const link = page.locator(`main a[href="/${locale}/blog/${guide}/"]`);
       await expect(link).toHaveCount(1);

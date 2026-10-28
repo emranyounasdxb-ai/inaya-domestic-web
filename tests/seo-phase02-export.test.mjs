@@ -17,7 +17,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
   const titles = new Set();
   const descriptions = new Set();
   const primaryHeadings = new Set();
-  assert.equal(urls.length, 274);
+  assert.equal(urls.length, 284);
   for (const url of urls) {
     const pathname = new URL(url).pathname;
     const locale = pathname.split('/')[1];
@@ -68,7 +68,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
     for (const match of body.matchAll(/<img\b[^>]*>/g)) {
       const image = attrs(match[0]);
       assert.ok('alt' in image, `${url}: missing alt`);
-      if (image.src?.includes('flagcdn.com')) assert.match(image.alt, locale === 'ar' ? /^علم / : / flag$/);
+      if (image.src?.startsWith('/flags/')) assert.match(image.alt, locale === 'ar' ? /^علم / : / flag$/);
     }
     for (const match of body.matchAll(/<a\b[^>]*>/g)) {
       const href = attrs(match[0]).href;
@@ -111,7 +111,8 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
     assert.equal(organization['@id'], `${origin}/#organization`);
     assert.equal(organization.telephone, '+971 6 740 0128');
     assert.equal(organization.email, 'info@inayadomestic.ae');
-    assert.deepEqual(organization.sameAs, ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/']);
+    assert.deepEqual(organization.sameAs, ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/', 'https://www.facebook.com/inayadomesticworkersajman/', 'https://www.instagram.com/inayadomesticworkers/']);
+    assert.deepEqual(organization.identifier, { '@type': 'PropertyValue', propertyID: 'MOHRE Facility Number', value: '2637187', url: 'https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c' });
     assert.equal(organization.address.addressLocality, 'Ajman');
     assert.equal(organization.address.addressCountry, 'AE');
     assert.equal(ofType('WebSite')[0]['@id'], `${origin}/#website`);
@@ -152,6 +153,8 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
       if (typeof value === 'string' && ['url', '@id', 'item', 'logo'].includes(key)) {
         if (key === 'url' && parentType === 'ContactPoint') {
           assert.equal(value, 'https://wa.me/971502036767', `${url}: only the reviewed WhatsApp contact URL`);
+        } else if (key === 'url' && parentType === 'PropertyValue') {
+          assert.equal(value, 'https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c', `${url}: exact independently verified MOHRE facility source only`);
         } else {
           const parsed = new URL(value); assert.equal(parsed.origin, origin);
           if (key === 'url' || key === 'item') assert.ok(urls.includes(value), `${url}: schema URL ${value}`);

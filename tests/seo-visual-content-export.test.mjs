@@ -1,6 +1,7 @@
 import octoberFixes from './seo-october-fixes-expectations.cjs';
 import ajmanOffice from './ajman-office-expectations.cjs';
 import companyGallery from './company-gallery-expectations.cjs';
+import onPage from './on-page-spec-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -11,12 +12,12 @@ import corePageCopy from './core-page-copy-expectations.cjs';
 import posterPricing from './poster-pricing-expectations.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all 274 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
+test('all284 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 274);
+  assert.equal(audit.pages.length, onPage.canonicalCount);
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(audit.linkCoverage[locale].reachable, 137);
+    assert.equal(audit.linkCoverage[locale].reachable, onPage.canonicalCount / 2);
     assert.ok(audit.linkCoverage[locale].maximumDepth <= 3);
     assert.ok(audit.linkCoverage[locale].minimumOtherPageInbound > 0);
   }
@@ -75,6 +76,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     }
     if (file === 'lib/service-content-briefs.ts' || file === 'lib/services.ts') before = corePageCopy.approvedCorePageCopy(file, before);
     before = octoberFixes.approvedSeoFixes(file, before);
+    before = onPage.approvedOnPageSource(file, before);
     if (file === 'components/Footer.tsx') {
       // Retain the entire protected footer, allowing only the reviewed address
       // centralization and localized link to the official company reference.
@@ -103,7 +105,9 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       // bilingual business data and destinations while browser tests check layout.
       const data = source => source.slice(0, source.indexOf('  return ('))
         .replace("import styles from './Footer.module.css';\n", '');
-      assert.equal(data(current), data(before), 'footer business data remains exact');
+      assert.equal(data(current), data(before), 'footer business data remains exact with one reviewed facility-component import');
+      const facility = '<BusinessIdentityLine locale={locale} className="mt-3 max-w-[310px] text-sm leading-6 text-primary-900/80" />';
+      assert.equal(current.split(facility).length, 2, 'exactly one reviewed visible facility line');
       const businessElements = source => [...source.matchAll(/<(?:BrandLogo|FooterColumn|FooterTitle|ContactItem|Link|CookieSettingsButton)\b[^>]*>/g)]
         .map(match => match[0].replace(/ className=(?:"[^"]*"|\{[^}]*\})/g, ''));
       assert.deepEqual(businessElements(current), businessElements(before), 'footer links, contact fields, headings and cookie control remain exact');
@@ -147,6 +151,19 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
     }
     expected = ajmanOffice.approvedAjmanOfficeCopy(`${file}#hero`, expected);
     expected = companyGallery.approvedGalleryCopy(`${file}#hero`, expected);
+    if (file === 'app/[locale]/maid-source-countries/[slug]/page.tsx') {
+      const remoteFlag = 'src={`https://flagcdn.com/w160/${country.code}.png`}';
+      assert.equal(expected.split(remoteFlag).length, 2, 'one country hero flag source');
+      expected = expected.replace(remoteFlag, 'src={`/flags/${country.code}.svg`}');
+      const size = 'width={160} height={100} className=';
+      assert.equal(expected.split(size).length, 2, 'one preserved country flag dimension pair');
+      expected = expected.replace(size, 'width={160} height={100} unoptimized className=');
+    }
+    if (file === 'components/ServiceDetailTemplate.tsx') {
+      const originalHeading = '>{copy.title}</h1>';
+      assert.equal(expected.split(originalHeading).length, 2, 'one service H1 expression');
+      expected = expected.replace(originalHeading, '>{serviceHeadingRefinements[slug]?.[lang] ?? copy.title}</h1>');
+    }
     // The owner-approved service-image release adds only display cache versions;
     // all surrounding protected hero markup and styling must remain exact.
     if (file === 'app/[locale]/services/page.tsx') {

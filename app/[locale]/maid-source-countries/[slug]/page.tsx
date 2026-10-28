@@ -82,7 +82,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">
             <div className="flex items-center gap-4">
               <span className="flex h-20 w-28 overflow-hidden rounded-[22px] bg-white p-1 shadow-inner">
-                <Image src={`https://flagcdn.com/w160/${country.code}.png`} alt={lang === 'ar' ? `علم ${country.country.ar}` : `${country.country.en} flag`} width={160} height={100} className="h-full w-full rounded-[18px] object-cover" />
+                <Image src={`/flags/${country.code}.svg`} alt={lang === 'ar' ? `علم ${country.country.ar}` : `${country.country.en} flag`} width={160} height={100} unoptimized className="h-full w-full rounded-[18px] object-cover" />
               </span>
               <div>
                 <p className="text-[0.62rem] font-bold uppercase tracking-[0.22em] text-accent-700">{t.sourceLabel}</p>

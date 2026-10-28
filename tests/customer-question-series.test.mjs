@@ -2,9 +2,19 @@ import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
+import onPageSpec from './on-page-spec-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
+// The original hub now exposes six crawlable, canonical archive pages. Read all
+// six listings without weakening any complete manuscript or reference checks.
+const listingCache = new Map();
+function blogListing(locale) {
+  if (!listingCache.has(locale)) listingCache.set(locale, Promise.all(
+    ['blog', ...onPageSpec.archiveRoutes].map(route => readFile(`out/${locale}/${route}/index.html`, 'utf8'))
+  ).then(pages => pages.join('\n')));
+  return listingCache.get(locale);
+}
 const directory = 'content/drafts/2026-10-20';
 const locales = ['en', 'ar'];
 
@@ -166,7 +176,7 @@ test('exported twenty-article series renders its tables, charts, Q&A and working
       assert.equal(canonicalLink?.href, url);
       const alternate = [...html.matchAll(/<link\b([^>]*)>/g)].map((match) => attrs(match[1])).find((link) => link.rel === 'alternate' && link.hrefLang === (locale === 'en' ? 'ar' : 'en'));
       assert.equal(alternate?.href, `${origin}/${locale === 'en' ? 'ar' : 'en'}/blog/${draft.slug}/`);
-      const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
+      const hub = await blogListing(locale);
       assert.ok(hub.includes(`href="${route}"`), `${route}: discoverable from the localized guide hub`);
     }
   }

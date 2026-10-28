@@ -3,6 +3,7 @@ import ContactForm from '@/components/ContactForm';
 import LocationMap from '@/components/LocationMap';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { siteConfig } from '@/lib/site-config';
+import BusinessIdentityLine from '@/components/BusinessIdentityLine';
 
 const mapEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.365890608938!2d55.43878240000001!3d25.3925602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5942014634c7%3A0xf39f2fefc97933f3!2sINAYA%20Domestic%20Workers%20Ajman!5e0!3m2!1sen!2sae!4v1782223058219!5m2!1sen!2sae';
 const directionsUrl = siteConfig.directionsUrl;
@@ -52,7 +53,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   const copy = {
     badge: isArabic ? 'نخدم العائلات في جميع أنحاء الإمارات' : 'Serving families across the UAE',
-    heroTitle: isArabic ? 'تواصل مع عناية للعمالة المنزلية' : 'Premium UAE domestic care, guided clearly.',
+    heroTitle: isArabic ? 'تواصل مع عناية للعمالة المنزلية — جراند مول، عجمان' : 'Contact INAYA Domestic Workers — Grand Mall, Ajman',
     heroText: isArabic
       ? 'فريقنا يساعدك في اختيار خدمة العمالة المنزلية المناسبة لعائلتك في أي إمارة داخل دولة الإمارات بتواصل واضح وتجربة راقية.'
       : 'Speak with INAYA for trusted maid and domestic worker services across the UAE, with clear guidance and friendly follow-up.',
@@ -157,6 +158,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <div className="glass-panel rounded-[24px] p-6 sm:p-8">
             <h2 className={sectionTitleClass}>{copy.locationTitle}</h2>
             <p className="mt-4 leading-7 text-ink/70">{copy.locationText}</p>
+            <BusinessIdentityLine locale={locale} className="mt-4 text-sm leading-7 text-primary-900/80" />
             <div className="mt-7 space-y-5">
               <div className="flex gap-4">
                 <LineIcon name="pin" className="mt-1 h-6 w-6 shrink-0 text-accent-600" />

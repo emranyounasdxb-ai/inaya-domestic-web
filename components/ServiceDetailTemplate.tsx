@@ -8,6 +8,7 @@ import { getServiceWithExtras } from '@/lib/service-helpers';
 import { servicePageCopies, type Lang, type Pair, type ServiceCopy } from '@/lib/service-page-copy-all';
 import { countryProfiles, getServiceImage, usesCountryMatching } from '@/lib/service-presentation';
 import { siteConfig } from '@/lib/site-config';
+import { serviceHeadingRefinements } from '@/lib/on-page-seo-refinements';
 import { domesticServiceReferences } from '@/lib/domestic-service-content';
 import ServiceSeoBlock from './ServiceSeoBlock';
 import ServiceIcon from './ServiceIcon';
@@ -185,7 +186,7 @@ function ServiceHero({
       <div className="relative mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.88fr] lg:items-center">
         <div className="ps-8 sm:ps-6 lg:ps-4 rtl:ps-0">
           <p className="text-sm font-bold text-accent-700">{copy.badge}</p>
-          <h1 className={`${headingFont(lang)} mt-4 max-w-3xl font-bold text-primary-900`}>{copy.title}</h1>
+          <h1 className={`${headingFont(lang)} mt-4 max-w-3xl font-bold text-primary-900`}>{serviceHeadingRefinements[slug]?.[lang] ?? copy.title}</h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-primary-900/85 sm:text-[1.05rem]">{copy.lead}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link

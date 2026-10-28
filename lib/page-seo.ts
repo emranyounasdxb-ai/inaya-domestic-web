@@ -9,12 +9,14 @@ import { getLocationServicePage } from './location-service-pages';
 import { getCountrySourcePage } from './country-source-pages';
 import { getCountrySourceImage } from './country-source-images';
 import { getTrustSupportPage } from './trust-support-pages';
-import { domesticWorkerGuides, getDomesticWorkerGuide } from './domestic-worker-guides';
+import { getDomesticWorkerGuide } from './domestic-worker-guides';
 import { getBlogImage } from './blog-images';
 import { homeAboutImages } from './home-about-images';
 import { serviceImageAlt } from './image-alt';
 import { articleSearchTitles } from './article-search-titles';
 import { companyInformationCopy } from './company-information';
+import { onPageDescriptionRefinements, onPageSeoRefinements } from './on-page-seo-refinements';
+import { getBlogPage, getBlogPageNumber } from './blog-pagination';
 
 type Localized = Record<Lang, string>;
 // Only actual visible page photos belong in primary-image structured data.
@@ -158,8 +160,19 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   }
 };
 
-export function getPageSeo(locale: string, route: string): PageSeo | undefined {
+function getBasePageSeo(locale: string, route: string): PageSeo | undefined {
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
+  const archivePage = getBlogPageNumber(route);
+  if (archivePage && archivePage > 1) {
+    const archive = getBlogPage(archivePage)!;
+    return {
+      name: lang === 'ar' ? `الأدلة — الصفحة ${archivePage}` : `Guides — Page ${archivePage}`,
+      title: lang === 'ar' ? `أدلة الخدمات المنزلية — الصفحة ${archivePage}` : `Domestic Service Guides — Page ${archivePage}`,
+      description: lang === 'ar'
+        ? `تصفح الصفحة ${archivePage} من ${archive.count} من أدلة عناية حول العمالة المنزلية والأسعار والمستندات للأسر في الإمارات.`
+        : `Browse page ${archivePage} of ${archive.count} of INAYA guides to domestic workers, package pricing and enquiry documents for UAE households.`,
+    };
+  }
   const entry = pages[route];
   if (entry) return {
     name: entry.name[lang], title: entry.name[lang], description: entry.description[lang],
@@ -219,13 +232,24 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   };
 }
 
+export function getPageSeo(locale: string, route: string): PageSeo | undefined {
+  const page = getBasePageSeo(locale, route);
+  if (!page) return page;
+  const refinement = onPageSeoRefinements[route];
+  const lang = locale === 'ar' ? 'ar' : 'en';
+  if (refinement) return { ...page, title: refinement.title[lang], description: refinement.description[lang] };
+  const description = onPageDescriptionRefinements[route]?.[lang];
+  return description ? { ...page, description } : page;
+}
+
 // Text pages can still suggest a relevant preview without claiming a visible primary photo.
 function pagePreviewImage(lang: Lang, route: string, page: PageSeo) {
   if (page.image) return { url: `${siteConfig.url}${page.image}`, alt: page.imageAlt ?? page.name };
 
-  if (route === 'blog') {
-    const latestGuide = [...domesticWorkerGuides].sort((a, b) => b.published.localeCompare(a.published))[0];
-    const image = latestGuide && getBlogImage(latestGuide.slug);
+  const archivePage = getBlogPageNumber(route);
+  if (archivePage) {
+    const firstGuide = getBlogPage(archivePage)?.guides[0];
+    const image = firstGuide && getBlogImage(firstGuide.slug);
     if (image) return { url: `${siteConfig.url}${image.src}`, alt: image.alt[lang] };
   }
 
