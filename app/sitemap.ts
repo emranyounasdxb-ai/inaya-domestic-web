@@ -7,18 +7,20 @@ import { localizedUrl, localeAlternates } from '@/lib/seo';
 import { companyInformation } from '@/lib/company-information';
 import { keywordArticleMetadata } from '@/lib/keyword-article-metadata';
 import { keywordArticleSlugs } from '@/lib/keyword-article-guides';
+import { blogArchiveRoutes } from '@/lib/blog-pagination';
 
 const locales = ['en', 'ar'] as const;
 
 // Record substantive content updates, not build times. Leave untracked routes undated.
 const contentUpdatedAt: Record<string, string> = {
+  ...Object.fromEntries(blogArchiveRoutes.map(route => [route, '2026-10-28'])),
   ...Object.fromEntries(countrySourcePages.map(country => [`maid-source-countries/${country.slug}`, '2026-10-28'])),
   'services/countries-we-source-from': '2026-10-28',
   ...Object.fromEntries(keywordArticleMetadata.map(article => [`blog/${article.slug}`, article.updated])),
   [companyInformation.route]: companyInformation.updated,
   "gallery": '2026-10-25',
-  "about": '2026-10-25',
-  "contact": '2026-10-22',
+  "about": '2026-10-28',
+  "contact": '2026-10-28',
   "blog/domestic-worker-contract-permit-residence-cancellation": '2026-10-20',
   "blog/maid-daily-instructions-handover-template": '2026-10-22',
   "blog/one-maid-two-helpers-workload": '2026-10-20',
@@ -37,8 +39,8 @@ const contentUpdatedAt: Record<string, string> = {
   "blog/apartment-villa-maid-task-plan": '2026-10-20',
   "blog/maid-visit-frequency-planner": '2026-10-20',
   "blog/four-hour-eight-hour-maid-visit-plan": '2026-10-24',
-  "": '2026-10-19',
-  "blog": '2026-10-24',
+  "": '2026-10-28',
+  "blog": '2026-10-28',
   "blog/agreeing-domestic-worker-household-duties": '2026-10-22',
   "blog/all-inclusive-domestic-worker-packages": '2026-10-19',
   "blog/caregiver-versus-licensed-nurse": '2026-10-19',
@@ -66,7 +68,7 @@ const contentUpdatedAt: Record<string, string> = {
   "faq": '2026-10-19',
   "how-it-works": '2026-10-19',
   "inaya-advantages": '2026-10-19',
-  "maid-services-ajman": '2026-10-25',
+  "maid-services-ajman": '2026-10-28',
   "maid-services-dubai": '2026-10-22',
   "maid-services-sharjah": '2026-10-22',
   "pricing": '2026-10-23',
@@ -82,16 +84,16 @@ const contentUpdatedAt: Record<string, string> = {
   "services/full-time-maid": '2026-10-19',
   "services/house-managers": '2026-10-19',
   "services/housekeeping": '2026-10-24',
-  "services/housemaid": '2026-10-19',
+  "services/housemaid": '2026-10-28',
   "services/live-in-maid": '2026-10-19',
   "services/live-out-maid": '2026-10-19',
   "services/maid-replacement": '2026-10-19',
-  "services/maid-visa": '2026-10-24',
+  "services/maid-visa": '2026-10-28',
   "services/monthly-maid-contract": '2026-10-19',
-  "services/nanny": '2026-10-19',
+  "services/nanny": '2026-10-28',
   "services/newborn-care": '2026-10-19',
   "services/on-demand-domestic-help": '2026-10-19',
-  "services/part-time-maid": '2026-10-19',
+  "services/part-time-maid": '2026-10-28',
   "services/patient-care": '2026-10-19',
   "services/private-chefs": '2026-10-19',
   "services/recruitment": '2026-10-24',
@@ -166,8 +168,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
   const keywordPages = keywordArticleMetadata.flatMap(article => localizedEntry(`blog/${article.slug}`, 0.76, 'monthly'));
+  const archivePages = blogArchiveRoutes.flatMap(route => localizedEntry(route, 0.6, 'monthly'));
 
-  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly'), ...localizedEntry(companyInformation.route, 0.72, 'monthly'), ...keywordPages]) {
+  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly'), ...localizedEntry(companyInformation.route, 0.72, 'monthly'), ...keywordPages, ...archivePages]) {
     uniqueEntries.set(entry.url, entry);
   }
 

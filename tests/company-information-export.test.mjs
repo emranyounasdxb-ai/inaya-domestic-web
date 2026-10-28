@@ -2,11 +2,12 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
+import onPageSpec from './on-page-spec-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
 const organizationId = `${origin}/#organization`;
-const reviewed = '2026-10-24';
+const reviewed = '2026-10-28';
 const locales = ['en', 'ar'];
 const sourcePages = Object.fromEntries(locales.map(locale => [locale, `${origin}/${locale}/company-information/`]));
 const approvedServiceSlugs = ['recruitment', 'nanny', 'housekeeping', 'live-in-maid', 'maid-visa'];
@@ -32,16 +33,17 @@ function visibleBody(html) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
 }
 
-test('the exact original 230 canonicals and company pair survive before only the 42 reviewed keyword article URLs', async () => {
+test('the exact original 230 canonicals, company pair and 42 reviewed keyword copies survive before ten archive URLs', async () => {
   const baseline = JSON.parse(await readFile('tests/fixtures/pre-company-information-canonical-routes.json', 'utf8'));
   assert.equal(baseline.urls.length, 230);
   assert.equal(new Set(baseline.urls).size, 230);
-  assert.equal(urls.length, 274);
+  assert.equal(urls.length, 284);
   assert.deepEqual(urls.slice(0, 230), baseline.urls, 'all original routes and their order are preserved');
   assert.deepEqual(urls.slice(230, 232), Object.values(sourcePages), 'company reference stays at its exact original position');
   assert.deepEqual(urls.slice(0, 232), keywordReview.previousCanonicalUrls, 'the complete previous 232-route inventory is unchanged');
   assert.equal(newArticleUrls.length, 42);
-  assert.deepEqual(urls.slice(232), newArticleUrls, 'only the independently reviewed new article pairs are appended');
+  assert.deepEqual(urls.slice(232, onPageSpec.originalCanonicalCount), newArticleUrls, 'reviewed article pairs retain their exact original positions');
+  assert.deepEqual(urls.slice(onPageSpec.originalCanonicalCount), onPageSpec.archiveRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`)), 'only ten reviewed archive URLs follow the complete original inventory');
   assert.ok(!urls.includes(`${origin}/company-information.json`), 'the data representation is not another HTML canonical');
   for (const url of Object.values(sourcePages)) {
     const entry = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(match => match[1].includes(`<loc>${url}</loc>`));
@@ -66,6 +68,16 @@ test('public JSON gives exact approved company facts, fixed review dates and a b
   assert.equal(company.whatsapp.number, '+971 50 203 6767');
   assert.equal(company.whatsapp.url, 'https://wa.me/971502036767');
   assert.equal(company.email, 'info@inayadomestic.ae');
+  assert.deepEqual(company.mohreFacility, {
+    number: '2637187',
+    description: { en: 'MOHRE-listed domestic worker services centre', ar: 'مركز خدمات عمالة منزلية مدرج لدى وزارة الموارد البشرية والتوطين' },
+    sourceUrl: 'https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c'
+  });
+  assert.deepEqual(company.profiles, [
+    { name: 'LinkedIn', nameAr: 'لينكدإن', url: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/' },
+    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/inayadomesticworkersajman/' },
+    { name: 'Instagram', nameAr: 'إنستغرام', url: 'https://www.instagram.com/inayadomesticworkers/' }
+  ]);
   assert.equal(company.office.count, 1);
   for (const fragment of ['Grand Mall', 'Ground Floor', 'Sheikh Khalifa Bin Zayed', 'Al Rashidiya 3', 'Ajman']) assert.ok(company.office.address.en.includes(fragment), fragment);
   assert.match(company.office.address.ar, /جراند مول/);
@@ -104,7 +116,14 @@ test('both visible language pages and their single shared organization graph agr
       assert.ok(visible.includes(value), `${locale}: visible public fact ${value}`);
     }
     assert.ok(visible.includes(reviewed), `${locale}: visible fixed review date`);
-    assert.match(main, /<time\b[^>]*dateTime="2026-10-24"|<time\b[^>]*datetime="2026-10-24"/, `${locale}: machine-readable visible review date`);
+    assert.ok(visible.includes(company.mohreFacility.number), `${locale}: visible independently sourced facility number`);
+    assert.ok(visible.includes(company.mohreFacility.description[locale]), `${locale}: accurate listed-centre description`);
+    assert.ok(main.includes(`href="${company.mohreFacility.sourceUrl}"`), `${locale}: official source is visibly linked`);
+    for (const profile of company.profiles) {
+      assert.ok(main.includes(`href="${profile.url}"`), `${locale}: controlled ${profile.name} profile is visible`);
+      assert.ok(visible.includes(locale === 'ar' ? profile.nameAr : profile.name), `${locale}: localized ${profile.name} label is visible`);
+    }
+    assert.match(main, /<time\b[^>]*dateTime="2026-10-28"|<time\b[^>]*datetime="2026-10-28"/, `${locale}: machine-readable visible review date`);
     assert.match(visible, locale === 'en' ? /Friday.*[Cc]losed|[Cc]losed.*Friday/ : /الجمعة.*مغلق|مغلق.*الجمعة/);
     for (const service of company.services) {
       assert.ok(visible.includes(service.name[locale]), `${locale}: visible service ${service.name[locale]}`);
@@ -123,6 +142,12 @@ test('both visible language pages and their single shared organization graph agr
     assert.equal(organization.legalName, company.legalName);
     assert.equal(organization.telephone, company.officeTelephone);
     assert.equal(organization.email, company.email);
+    assert.deepEqual(organization.identifier, { '@type': 'PropertyValue', propertyID: 'MOHRE Facility Number', value: company.mohreFacility.number, url: company.mohreFacility.sourceUrl });
+    assert.deepEqual(organization.sameAs, company.profiles.map(profile => profile.url));
+    assert.equal(organization.hasMap, 'https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M');
+    assert.deepEqual(organization.areaServed, { '@type': 'Country', name: 'United Arab Emirates' });
+    assert.equal(organization.geo, undefined, 'an embed viewport is not asserted as a verified office pin');
+    assert.equal(organization.aggregateRating, undefined, 'curated reviews are not a proven aggregate');
     assert.equal(organization.address.streetAddress, company.office.address.en);
     const hours = organization.openingHoursSpecification;
     assert.equal(hours.length, 2);

@@ -65,11 +65,15 @@ jobs:
         run: node --test tests/image-sitemap-unit.test.mjs tests/image-search-export.test.mjs tests/company-gallery-export.test.mjs tests/cpanel-gallery-assets.test.mjs tests/retired-blog-images.test.mjs tests/retired-gallery-images.test.mjs
       - name: Verify concise unique search titles
         run: node --test tests/search-title-export.test.mjs
+      - name: Verify on-page audit fixes and complete guide pagination
+        run: node --test tests/on-page-identity-home-faq.test.cjs tests/on-page-editorial-classification-unit.test.cjs tests/on-page-spec-export.test.mjs tests/blog-pagination-unit.test.cjs tests/blog-pagination-export.test.mjs
       - name: Unit and export checks
         run: node --test tests/seo-phase02-unit.test.cjs tests/seo-phase03-unit.test.cjs tests/seo-phase04-unit.test.cjs tests/seo-phase05-unit.test.cjs tests/seo-final-remediation-unit.test.cjs tests/final-ux-accessibility-unit.test.cjs tests/keyword-article-markdown-unit.test.cjs tests/keyword-article-presentation-unit.test.cjs tests/seo-export.test.mjs tests/company-information-export.test.mjs tests/keyword-articles-export.test.mjs tests/locale-content-export.test.mjs tests/seo-phase02-export.test.mjs tests/seo-phase03-export.test.mjs tests/seo-phase04-export.test.mjs tests/seo-phase05-export.test.mjs tests/seo-bilingual-guides-export.test.mjs tests/seo-visual-content-export.test.mjs tests/final-ux-accessibility-export.test.mjs tests/seo-release-readiness.test.mjs tests/customer-question-series.test.mjs tests/article-publication-schedule.test.mjs
       - name: Install Chromium for browser regression
         timeout-minutes: 10
         run: node node_modules/@playwright/test/cli.js install --with-deps chromium
+      - name: Verify navigation, metadata and responsive UI in the actual Linux static export
+        run: node node_modules/@playwright/test/cli.js test --config=playwright.static.config.ts
       - name: Check pricing layout before the full browser suite
         run: node node_modules/@playwright/test/cli.js test tests/e2e/core-page-clarity.spec.ts --grep 'six pricing cards'
       - name: Check customer article tables, visuals and translation before the full browser suite

@@ -4,10 +4,10 @@ import path from 'node:path';
 import test from 'node:test';
 import { authoredSegments, localeViolations, originalReviews } from './locale-content-expectations.mjs';
 
-test('all 274 full page bodies and accessible labels keep the page language with narrowly bounded proper-name exceptions', async () => {
+test('all 284 full page bodies and accessible labels keep the page language with narrowly bounded proper-name exceptions', async () => {
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-  assert.equal(urls.length, 274);
+  assert.equal(urls.length, 284);
   const counts = { en: 0, ar: 0 };
   let textNodes = 0;
   let accessibleLabels = 0;
@@ -25,11 +25,11 @@ test('all 274 full page bodies and accessible labels keep the page language with
     accessibleLabels += segments.filter(segment => segment.kind !== 'text').length;
     problems.push(...localeViolations(html, locale, route).map(segment => ({ route, ...segment })));
   }
-  assert.deepEqual(counts, { en: 137, ar: 137 });
+  assert.deepEqual(counts, { en: 142, ar: 142 });
   assert.ok(textNodes > 20000);
   assert.ok(accessibleLabels > 3000);
   assert.deepEqual(problems, [], `Untranslated authored text or accessible labels:\n${JSON.stringify(problems, null, 2)}`);
-  console.log(`Locale guard inspected ${textNodes} authored text nodes and ${accessibleLabels} accessible labels across all 274 pages.`);
+  console.log(`Locale guard inspected ${textNodes} authored text nodes and ${accessibleLabels} accessible labels across all 284 pages.`);
 });
 
 test('the original review exception preserves exactly six real quoted comments and names only on the Arabic homepage', async () => {

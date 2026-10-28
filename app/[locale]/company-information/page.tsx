@@ -5,6 +5,7 @@ import RouteSeo from '@/components/RouteSeo';
 import { companyInformation, companyInformationCopy } from '@/lib/company-information';
 import { pageMetadata } from '@/lib/page-seo';
 import { siteConfig } from '@/lib/site-config';
+import BusinessIdentityLine from '@/components/BusinessIdentityLine';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -119,6 +120,7 @@ export default async function CompanyInformationPage({ params }: Props) {
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.08fr_0.92fr]">
           <div className="rounded-[26px] border border-primary-900/10 bg-white p-6 shadow-sm sm:p-8">
             <h2 className={`${heading} text-2xl font-bold`}>{words.identity}</h2>
+            <BusinessIdentityLine locale={locale} className="mt-5 text-sm leading-7" showProfiles />
             <dl className="mt-5 divide-y divide-primary-900/10 text-sm leading-7">
               <div className="py-4 first:pt-0"><dt className="text-primary-900/65">{words.brand}</dt><dd className="mt-1 text-base font-bold">{ar ? siteConfig.nameAr : siteConfig.name}</dd></div>
               <div className="py-4"><dt className="text-primary-900/65">{words.legal}</dt><dd className="mt-1 break-words font-semibold"><bdi dir="ltr">{siteConfig.legalName}</bdi></dd></div>

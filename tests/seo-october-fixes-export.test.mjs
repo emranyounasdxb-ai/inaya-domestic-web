@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import test from 'node:test';
+import onPageSpec from './on-page-spec-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const core = ['live-in-maid', 'full-time-maid', 'part-time-maid', 'monthly-maid-contract', 'nanny', 'maid-visa'];
@@ -42,8 +43,14 @@ test('both home exports have descriptive H1, prioritized responsive LCP, smaller
       assert.match(stars[2], /aria-hidden="true"/);
     }
     for (const route of [...core.map(slug => `services/${slug}`), 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah']) assert.ok(body.includes(`href="/${locale}/${route}/"`), route);
-    assert.doesNotMatch(html, /<link\b[^>]*rel="stylesheet"/);
-    assert.match(html, /<style\b[^>]*>[\s\S]*?\.google-review-carousel/);
+    const stylesheets = [...html.matchAll(/<link\b([^>]*)>/g)].map(match => attrs(match[1])).filter(link => link.rel === 'stylesheet');
+    assert.ok(stylesheets.length > 0, 'the reviewed cacheable external CSS is linked');
+    const styles = await Promise.all(stylesheets.map(async link => {
+      assert.match(link.href, /^\/_next\/static\/[^?#]+\.css$/, 'public local export CSS without external or query dependencies');
+      return readFile(`out${link.href}`, 'utf8');
+    }));
+    assert.match(styles.join('\n'), /\.google-review-carousel/, 'the original carousel styling remains in the exported stylesheet');
+    assert.doesNotMatch(html, /<style\b[^>]*>[\s\S]*?\.google-review-carousel/, 'carousel CSS is not duplicated into page HTML');
     assert.doesNotMatch(html, /"messages":\{/);
   }
 });
@@ -56,9 +63,9 @@ test('core pages answer practical questions and visa exports contain case guidan
     assert.ok(body.includes(locale === 'ar' ? 'من الاستفسار إلى التأكيد' : 'From enquiry to confirmation'));
     assert.doesNotMatch(body, /Which roles can I compare when reviewing|ما الأدوار التي أقارنها عند مراجعة/);
     if (slug === 'maid-visa') {
-      const heading = locale === 'ar' ? 'طباعة وإجراءات تأشيرة العمالة المنزلية في عجمان' : 'Domestic Worker Visa Typing and Processing in Ajman';
+      const heading = onPageSpec.headings[`${locale}/services/maid-visa`];
       assert.equal(text(body.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1]), heading);
-      assert.equal(text(body.match(/<title>([\s\S]*?)<\/title>/)[1]), `${heading} | ${locale === 'ar' ? 'عناية' : 'INAYA'}`);
+      assert.equal(text(body.match(/<title>([\s\S]*?)<\/title>/)[1]), onPageSpec.metadata[`${locale}/services/maid-visa`].after.title);
       assert.ok(body.includes(locale === 'ar' ? 'تقدم عناية دعماً متكاملاً لإجراءات التأشيرة' : 'INAYA provides complete visa-processing support'));
       assert.doesNotMatch(body, /maid-filipino|maid-indonesian|maid-srilankan|maid-kenya-uganda|Request Matching|اطلب المطابقة/);
     }

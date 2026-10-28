@@ -112,7 +112,7 @@ export default function FloatingSocialBar({ locale }: { locale: string }) {
     { href: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/', label: 'LinkedIn', icon: <LinkedInIcon /> },
     { href: 'https://www.tiktok.com/@inayadomesticworkers', label: 'TikTok', icon: <TikTokIcon /> },
     { href: 'https://www.youtube.com/@inayadomesticworker', label: 'YouTube', icon: <YouTubeIcon /> },
-    { href: 'https://www.instagram.com/inaya_domestic', label: 'Instagram', icon: <InstagramIcon /> }
+    { href: 'https://www.instagram.com/inayadomesticworkers/', label: 'Instagram', icon: <InstagramIcon /> }
   ];
 
   return (

@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { publishedArticles } from '../../lib/published-article-content';
+import blogOrder from '../fixtures/blog-guide-order-20261028.json';
 
 const worksheetGuides = new Set([
   'domestic-worker-hiring-costs-uae',
@@ -75,14 +76,36 @@ for (const locale of ['en', 'ar'] as const) {
       await expect(page.locator('main h1')).toHaveText(article[targetLocale].title);
     });
   }
-  test(`${locale} blog listing includes all twenty new topics and their localized descriptions`, async ({ page }) => {
-    await page.goto(`/${locale}/blog/`);
-    for (const article of publishedArticles) {
-      const card = page.locator(`main a[href="/${locale}/blog/${article.slug}/"]`);
-      await expect(card).toHaveCount(1);
-      await expect(card).toContainText(article[locale].title);
-      await expect(card).toContainText(article[locale].description);
+  test(`${locale} blog listing includes all 37 published topics and their localized descriptions`, async ({ page }) => {
+    // This collection now includes the original20 plus17 later published guides.
+    expect(publishedArticles).toHaveLength(37);
+    expect(blogOrder.slugs).toHaveLength(65);
+    const seen: string[] = [];
+    const found = new Map(publishedArticles.map(article => [article.slug, 0]));
+    // The independently saved original65-card order pins each archive's exact
+    // contents. No production pagination selector supplies these expectations.
+    for (let number = 1; number <= 6; number++) {
+      const route = number === 1 ? 'blog' : `blog/page/${number}`;
+      await page.goto(`/${locale}/${route}/`);
+      const expectedSlugs = blogOrder.slugs.slice((number - 1) * 12, number * 12);
+      const cards = page.locator('main article[data-blog-guide]');
+      await expect(cards).toHaveCount(expectedSlugs.length);
+      const slugs = await cards.evaluateAll(elements => elements.map(element => element.getAttribute('data-blog-guide') ?? ''));
+      expect(slugs).toEqual(expectedSlugs);
+      seen.push(...slugs);
+      for (const article of publishedArticles) {
+        const card = page.locator(`main a[href="/${locale}/blog/${article.slug}/"]`);
+        const expectedOnPage = expectedSlugs.includes(article.slug);
+        await expect(card).toHaveCount(expectedOnPage ? 1 : 0);
+        if (!expectedOnPage) continue;
+        await expect(card).toContainText(article[locale].title);
+        await expect(card).toContainText(article[locale].description);
+        found.set(article.slug, found.get(article.slug)! + 1);
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
     }
-    expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
+    expect(seen).toEqual(blogOrder.slugs);
+    expect(new Set(seen).size).toBe(65);
+    for (const article of publishedArticles) expect(found.get(article.slug), `${locale}/${article.slug}: exactly one correctly localized archive card`).toBe(1);
   });
 }

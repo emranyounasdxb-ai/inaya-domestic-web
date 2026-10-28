@@ -61,8 +61,8 @@ test('Arabic service template is localized and RTL', async ({ page }) => {
 for (const locale of ['en', 'ar'] as const) {
   test(`${locale} domestic-worker Tadbeer, cleaning and typing pages remain readable`, async ({ page }) => {
     const titles = locale === 'en'
-      ? ['Tadbeer Domestic Worker Recruitment in Ajman', 'Home Cleaning in Ajman: Four or Eight Hours', 'Domestic Worker Visa Typing and Processing in Ajman']
-      : ['تدبير واستقدام العمالة المنزلية في عجمان', 'تنظيف المنازل في عجمان لأربع أو ثماني ساعات', 'طباعة وإجراءات تأشيرة العمالة المنزلية في عجمان'];
+      ? ['Tadbeer Domestic Worker Recruitment in Ajman', 'Home Cleaning in Ajman: Four or Eight Hours', 'Domestic-Worker Visa Typing in Ajman']
+      : ['تدبير واستقدام العمالة المنزلية في عجمان', 'تنظيف المنازل في عجمان لأربع أو ثماني ساعات', 'طباعة معاملات تأشيرة العمالة المنزلية في عجمان'];
     for (const [index, slug] of ['recruitment', 'housekeeping', 'maid-visa'].entries()) {
       const response = await page.goto(`/${locale}/services/${slug}/`);
       expect(response?.status()).toBeLessThan(400);

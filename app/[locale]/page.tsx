@@ -6,6 +6,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/page-seo';
 import RouteSeo from '@/components/RouteSeo';
+import BusinessIdentityLine from '@/components/BusinessIdentityLine';
+import HomeFaqs from '@/components/HomeFaqs';
+import { serviceImageAlt } from '@/lib/image-alt';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -126,7 +129,7 @@ const homeContent = {
 };
 
 const authorityLogos = [
-  { name: 'MOHRE', nameAr: 'وزارة الموارد البشرية والتوطين', file: 'Ministry-logo.png' },
+  { name: 'Ministry of Human Resources and Emiratisation (MOHRE)', nameAr: 'وزارة الموارد البشرية والتوطين', file: 'Ministry-logo.png' },
   { name: 'Tadbeer', nameAr: 'تدبير', file: 'ajman-tadbeer-logo.png' },
   { name: 'Ajman Chamber', nameAr: 'غرفة عجمان', file: 'Ajman-Chamber-logo.png' },
   { name: 'UAE Pass', nameAr: 'الهوية الرقمية', file: 'ajman-UAE-Pass-Logo.png' },
@@ -202,6 +205,7 @@ function HomeImage({ alt, className = '', src, priority = false }: { alt: string
 function CuratedDisciplineCard({
   href,
   image,
+  imageAlt,
   title,
   text,
   cta,
@@ -211,6 +215,7 @@ function CuratedDisciplineCard({
 }: {
   href: string;
   image: string;
+  imageAlt: string;
   title: string;
   text: string;
   cta: string;
@@ -225,7 +230,7 @@ function CuratedDisciplineCard({
     >
       <ResponsiveImage
         src={image}
-        alt={title}
+        alt={imageAlt}
         sizes={featured ? '(max-width: 1024px) 100vw, 58vw' : '(max-width: 1024px) 100vw, 42vw'}
         imageClassName="curated-discipline-card__image object-cover"
       />
@@ -240,15 +245,15 @@ function CuratedDisciplineCard({
   );
 }
 
-function AuthorityLogoCard({ name, file }: { name: string; file: string }) {
+function AuthorityLogoCard({ name, file, decorative = false }: { name: string; file: string; decorative?: boolean }) {
   const src = `/authority-logos/${file}`;
   const base = `/optimized/authority-logos/${file.replace(/\.[^.]+$/i, '')}`;
 
   return (
-    <div className="flex h-20 min-w-[178px] items-center justify-center rounded-[20px] border border-white/70 bg-white/68 px-7 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:bg-white/82">
+    <div aria-hidden={decorative || undefined} className="flex h-20 min-w-[178px] items-center justify-center rounded-[20px] border border-white/70 bg-white/68 px-7 shadow-[0_14px_34px_rgba(7,22,74,0.055)] ring-1 ring-accent-500/8 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent-500/30 hover:bg-white/82">
       <picture>
         {useOptimizedImageVariants ? <source type="image/webp" srcSet={`${base}-160.webp 160w, ${base}-320.webp 320w`} sizes="144px" /> : null}
-        <img src={src} alt={name} width="144" height="44" loading="lazy" decoding="async" className="h-11 w-36 object-contain" />
+        <img src={src} alt={decorative ? '' : name} width="144" height="44" loading="lazy" decoding="async" className="h-11 w-36 object-contain" />
       </picture>
     </div>
   );
@@ -262,7 +267,7 @@ function AuthorityLogoCarousel({ isArabic }: { isArabic: boolean }) {
     <div className="relative mt-9 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]" dir="ltr">
       <div className="home-logo-track flex w-max gap-4 py-2" style={{ animation: `${animationName} 30s linear infinite` }}>
         {logos.map((logo, index) => (
-          <AuthorityLogoCard key={`${logo.file}-${index}`} name={isArabic ? logo.nameAr : logo.name} file={logo.file} />
+          <AuthorityLogoCard key={`${logo.file}-${index}`} name={isArabic ? logo.nameAr : logo.name} file={logo.file} decorative={index >= authorityLogos.length} />
         ))}
       </div>
     </div>
@@ -323,6 +328,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="mx-auto max-w-7xl text-center">
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary-900/75">{copy.trustLabel}</p>
           <AuthorityLogoCarousel isArabic={isArabic} />
+          <BusinessIdentityLine locale={locale} className="mt-6 text-sm leading-7 text-primary-900/80" />
         </div>
       </section>
 
@@ -426,6 +432,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 key={service.slug}
                 href={`/${locale}/services/${service.slug}`}
                 image={homeImages.disciplines[index]}
+                imageAlt={serviceImageAlt(locale, service.slug)}
                 title={service.title}
                 text={service.text}
                 cta={service.cta}
@@ -439,6 +446,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       <HomeGoogleReviews locale={locale} />
+      <HomeFaqs locale={locale} />
 
       <section className="px-6 py-14 lg:px-10">
         <div className="mx-auto max-w-6xl">

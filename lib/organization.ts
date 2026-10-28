@@ -9,6 +9,12 @@ export function organizationEntity(locale: string) {
     '@id': organizationId,
     name: locale === 'ar' ? siteConfig.nameAr : siteConfig.name,
     legalName: siteConfig.legalName,
+    identifier: {
+      '@type': 'PropertyValue',
+      propertyID: 'MOHRE Facility Number',
+      value: siteConfig.mohreFacility.number,
+      url: siteConfig.mohreFacility.sourceUrl
+    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -31,7 +37,9 @@ export function organizationEntity(locale: string) {
       telephone: siteConfig.whatsappDisplay,
       url: `https://wa.me/${siteConfig.whatsapp}`
     },
-    sameAs: ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/'],
+    sameAs: siteConfig.socialProfiles.map(({ url }) => url),
+    hasMap: siteConfig.mapUrl,
+    areaServed: { '@type': 'Country', name: 'United Arab Emirates' },
     logo: `${siteConfig.url}/brand/inaya-domestic-workers-logo.webp`,
     address: {
       '@type': 'PostalAddress',

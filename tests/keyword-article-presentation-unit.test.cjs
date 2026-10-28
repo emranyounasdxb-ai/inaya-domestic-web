@@ -3,13 +3,28 @@ const test = require('node:test');
 const fixture = require('./fixtures/keyword-article-presentation-20261024.json');
 const review = require('./fixtures/keyword-articles-reviewed-20261024.json');
 const { withoutKeywordPresentation } = require('./keyword-article-presentation-expectations.cjs');
+const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
 
 function presentationPages() {
   const pages = new Map();
   for (const placement of fixture.placements) {
-    const key = `${placement.locale}:${placement.route}`;
-    if (!pages.has(key)) pages.set(key, { locale: placement.locale, route: placement.route, paragraphs: [] });
+    let route = placement.route;
+    if (placement.kind === 'hub-summary') {
+      const original = review.articles.find(article => article.id === placement.id);
+      const position = blogOrder.slugs.indexOf(original.slug);
+      assert.ok(position >= 0, `${original.slug}: independently preserved65-guide order`);
+      const pageNumber = Math.floor(position / 12) + 1;
+      route = pageNumber === 1 ? 'blog' : `blog/page/${pageNumber}`;
+    }
+    const key = `${placement.locale}:${route}`;
+    if (!pages.has(key)) pages.set(key, { locale: placement.locale, route, paragraphs: [] });
+    // Reuse the original reviewed paragraph verbatim; only its hub location is
+    // redistributed according to the independently pinned pre-pagination order.
     pages.get(key).paragraphs.push(placement.paragraph);
+  }
+  for (const locale of ['en', 'ar']) for (let page = 1; page <= 6; page++) {
+    const route = page === 1 ? 'blog' : `blog/page/${page}`;
+    if (!pages.has(`${locale}:${route}`)) pages.set(`${locale}:${route}`, { locale, route, paragraphs: [] });
   }
   return [...pages.values()];
 }

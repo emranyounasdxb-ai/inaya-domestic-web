@@ -2,13 +2,18 @@ import { siteConfig } from './site-config';
 import { localizedUrl } from './seo';
 import { organizationId } from './organization';
 
+export const domesticWorkerVisaScope = {
+  en: 'Domestic-worker applications, renewal, cancellation, status and contract-related requests, with Emirates ID, medical coordination and insurance processing as applicable. Confirm the requirements, fees and scope for the case; decisions remain with the responsible authority.',
+  ar: 'طلبات العمالة المنزلية والتجديد والإلغاء وتعديل الوضع ومعاملات العقد، مع إجراءات الهوية وتنسيق الفحص الطبي والتأمين بحسب الحالة. أكد المتطلبات والرسوم والنطاق المناسب للحالة؛ ويبقى القرار للجهة المختصة.'
+};
+
 // Advance these dates only after a substantive edit or an actual factual review.
 // They describe this public reference, not the company's founding date.
 export const companyInformation = {
   route: 'company-information',
   dataPath: '/company-information.json',
-  updated: '2026-10-24',
-  reviewed: '2026-10-24',
+  updated: '2026-10-28',
+  reviewed: '2026-10-28',
   services: [
     {
       slug: 'recruitment',
@@ -45,10 +50,7 @@ export const companyInformation = {
     {
       slug: 'maid-visa',
       name: { en: 'Domestic-worker visa typing and document processing', ar: 'طباعة معاملات تأشيرة العمالة المنزلية ومعالجة المستندات' },
-      description: {
-        en: 'Domestic-worker applications, renewal, cancellation, status and contract-related requests, with Emirates ID, medical coordination and insurance processing as applicable. Confirm the requirements, fees and scope for the case; decisions remain with the responsible authority.',
-        ar: 'طلبات العمالة المنزلية والتجديد والإلغاء وتعديل الوضع ومعاملات العقد، مع إجراءات الهوية وتنسيق الفحص الطبي والتأمين بحسب الحالة. أكد المتطلبات والرسوم والنطاق المناسب للحالة؛ ويبقى القرار للجهة المختصة.'
-      }
+      description: domesticWorkerVisaScope
     }
   ]
 };
@@ -83,6 +85,12 @@ export function companyInformationRecord() {
       id: organizationId,
       name: { en: siteConfig.name, ar: siteConfig.nameAr },
       legalName: siteConfig.legalName,
+      mohreFacility: {
+        number: siteConfig.mohreFacility.number,
+        description: siteConfig.mohreFacility.listedDescription,
+        sourceUrl: siteConfig.mohreFacility.sourceUrl
+      },
+      profiles: siteConfig.socialProfiles,
       website: `${siteConfig.url}/`,
       officeTelephone: siteConfig.phone,
       whatsapp: { number: siteConfig.whatsappDisplay, url: `https://wa.me/${siteConfig.whatsapp}` },

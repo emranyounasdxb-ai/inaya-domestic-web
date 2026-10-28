@@ -1,5 +1,6 @@
 """Exercise the production migration rules with Apache, not Next's dev server."""
 import argparse
+import json
 import os
 from pathlib import Path
 import re
@@ -43,10 +44,25 @@ ALIASES = {
 
 def contract():
     xml = ET.parse(ROOT / 'out' / 'sitemap.xml')
-    pages = [urllib.parse.urlsplit(n.text).path for n in xml.findall(
+    urls = [n.text for n in xml.findall(
         '{http://www.sitemaps.org/schemas/sitemap/0.9}url/'
         '{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-    assert len(pages) == 274, f'Unexpected current sitemap inventory: {len(pages)}'
+    pages = [urllib.parse.urlsplit(url).path for url in urls]
+    assert len(pages) == 284, f'Unexpected current sitemap inventory: {len(pages)}'
+    # Preserve the complete historical inventory and order. Pagination adds only
+    # ten canonical archive URLs; it must not replace or reorder old routes.
+    review = json.loads((ROOT / 'tests' / 'fixtures' /
+                         'keyword-articles-reviewed-20261024.json').read_text(encoding='utf-8'))
+    previous = review['previousCanonicalUrls']
+    assert len(previous) == 232, 'The independently reviewed previous inventory is fixed'
+    original = previous + [f"{ORIGIN}/{locale}/blog/{article['slug']}/"
+                           for article in review['articles'] for locale in ['en', 'ar']]
+    assert len(original) == 274, 'Preserve all original canonical URLs'
+    assert urls[:274] == original, 'Original 274 canonical URLs and order changed'
+    archives = [f'{ORIGIN}/{locale}/blog/page/{page}/'
+                for page in range(2, 7) for locale in ['en', 'ar']]
+    assert urls[274:] == archives, 'Only the ten reviewed archive URLs may be appended'
+    assert len(set(pages)) == len(pages), 'Every canonical route remains distinct'
     text = CONFIG.read_text(encoding='utf-8')
     targets = re.findall(r'^\s*RewriteRule \S+ https://inayadomestic\.ae(/\S+) \[R=301,L\]$',
                          text, re.M)

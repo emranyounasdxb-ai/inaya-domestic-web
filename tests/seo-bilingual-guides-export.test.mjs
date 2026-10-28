@@ -1,11 +1,21 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import test from 'node:test';
+import onPageSpec from './on-page-spec-expectations.cjs';
 import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 import domesticServices from './domestic-service-refresh-expectations.cjs';
 
 const origin = 'https://inayadomestic.ae';
+// The original hub now exposes six crawlable, canonical archive pages. Read all
+// six listings without weakening any complete manuscript or reference checks.
+const listingCache = new Map();
+function blogListing(locale) {
+  if (!listingCache.has(locale)) listingCache.set(locale, Promise.all(
+    ['blog', ...onPageSpec.archiveRoutes].map(route => readFile(`out/${locale}/${route}/index.html`, 'utf8'))
+  ).then(pages => pages.join('\n')));
+  return listingCache.get(locale);
+}
 const publicationSchedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
 const currentRefreshes = JSON.parse(await readFile('content/research/2026-10-24/article-refreshes.json', 'utf8'));
 const ajmanRefreshes = JSON.parse(await readFile('content/research/2026-10-24/ajman-intent-refreshes.json', 'utf8'));
@@ -56,7 +66,7 @@ test('five Ajman intents use four existing bilingual publications and preserve e
 test('Ajman decision aids render complete bilingual worksheets, useful process charts and canonical references', async () => {
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const canonicalUrls = new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]));
-  assert.equal(canonicalUrls.size, 274);
+  assert.equal(canonicalUrls.size, 284);
   const plain = (value) => tokens(value.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1').replace(/\*\*/g, '')).join(' ');
   for (const entry of ajmanRefreshes.entries) for (const locale of ['en', 'ar']) {
     const copy = entry[locale];
@@ -118,7 +128,7 @@ test('domestic-service refreshes preserve the original manuscripts and render co
   const source = await readFile('lib/published-article-content.ts', 'utf8');
   const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
-  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 274, 'the prior 232 canonicals plus only the 42 reviewed keyword copies');
+  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 284, 'the original 274 canonicals plus the ten reviewed archive pages');
   assert.equal(articles.length, 37, 'domestic-service refreshes remain in the preserved 37-publication family');
   assert.deepEqual(currentRefreshes.entries.map(({ slug }) => slug).sort(), [
     'choosing-domestic-worker-agency-ajman', 'domestic-worker-hiring-stages-timelines', 'four-hour-eight-hour-maid-visit-plan'
@@ -261,9 +271,9 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
   const { guideUpdated } = JSON.parse(await readFile('tests/fixtures/poster-pricing-changes.json', 'utf8'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 274);
+  assert.equal(urls.length, 284);
   for (const locale of ['en', 'ar']) {
-    const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
+    const hub = await blogListing(locale);
     const hubBody = hub.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
     assert.doesNotMatch(text(hubBody), /Coming Soon|اقرأ قريباً|موضوعات قادمة/);
     for (const slug of slugs) {
@@ -446,7 +456,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       assert.equal(schema.author.name, locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team');
       assert.deepEqual(schema.citation, [...new Set(fullLinks.filter((link) => new URL(link, origin).origin !== origin))]);
       assert.ok(sitemap.includes(`<loc>${url}</loc>`), `${route}: sitemap entry`);
-      const hub = await readFile(`out/${locale}/blog/index.html`, 'utf8');
+      const hub = await blogListing(locale);
       assert.ok(hub.includes(`href="${route}"`), `${route}: localized listing`);
       const header = body.match(/<header\b[^>]*>([\s\S]*?)<\/header>/)[1];
       assert.ok(header.includes(`href="/${locale === 'en' ? 'ar' : 'en'}/blog/${article.slug}/"`), `${route}: corresponding translation switch`);

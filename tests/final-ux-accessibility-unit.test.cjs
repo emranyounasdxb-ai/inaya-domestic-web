@@ -98,7 +98,13 @@ test('page and CTA sources permit only the approved localized copy replacements'
   for (const [file, pairs] of Object.entries(replacements)) {
     let expected = previous(file);
     for (const [before, after] of pairs) expected = expected.replace(before, after);
-    assert.equal(current(file), approvedSeoFixes(file, expected), file);
+    expected = approvedSeoFixes(file, expected);
+    if (file === 'app/[locale]/contact/page.tsx') {
+      expected = replaceOnce(expected, "import { siteConfig } from '@/lib/site-config';\n", "import { siteConfig } from '@/lib/site-config';\nimport BusinessIdentityLine from '@/components/BusinessIdentityLine';\n");
+      expected = replaceOnce(expected, "    heroTitle: isArabic ? 'تواصل مع عناية للعمالة المنزلية' : 'Premium UAE domestic care, guided clearly.',", "    heroTitle: isArabic ? 'تواصل مع عناية للعمالة المنزلية — جراند مول، عجمان' : 'Contact INAYA Domestic Workers — Grand Mall, Ajman',");
+      expected = replaceOnce(expected, '            <p className="mt-4 leading-7 text-ink/70">{copy.locationText}</p>\n', '            <p className="mt-4 leading-7 text-ink/70">{copy.locationText}</p>\n            <BusinessIdentityLine locale={locale} className="mt-4 text-sm leading-7 text-primary-900/80" />\n');
+    }
+    assert.equal(current(file), expected, file);
   }
 });
 

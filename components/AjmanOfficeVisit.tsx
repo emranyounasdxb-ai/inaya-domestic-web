@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
+import OfficeLocationMap from './OfficeLocationMap';
 
 // Office access and transport arrangements confirmed by the business owner on 22 October 2026.
 export default function AjmanOfficeVisit({ locale }: { locale: string }) {
@@ -54,6 +55,7 @@ export default function AjmanOfficeVisit({ locale }: { locale: string }) {
           </div>
           <a href={siteConfig.directionsUrl} className="mt-5 inline-block text-sm font-semibold text-primary-900 underline underline-offset-4">{copy.directions}</a>
           <p className="mt-3"><Link href={`/${locale}/gallery/`} className="text-sm font-semibold text-primary-900 underline underline-offset-4">{copy.gallery}</Link></p>
+          <OfficeLocationMap locale={locale} />
         </div>
       </div>
     </section>

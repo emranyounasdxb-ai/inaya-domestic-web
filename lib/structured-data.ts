@@ -6,6 +6,7 @@ import { getDomesticWorkerGuide, guideAuthor } from './domestic-worker-guides';
 import { packageQuestions } from './package-content';
 import { organizationEntity, organizationId } from './organization';
 import { companyInformation } from './company-information';
+import { getHomeFaqs } from './home-faqs';
 
 export function pageStructuredData(locale: string, route: string) {
   const page = getPageSeo(locale, route);
@@ -13,6 +14,7 @@ export function pageStructuredData(locale: string, route: string) {
   const url = localizedUrl(locale, route);
   const home = localizedUrl('en');
   const websiteId = `${siteConfig.url}/#website`;
+  const guide = route.startsWith('blog/') ? getDomesticWorkerGuide(route.slice('blog/'.length)) : undefined;
   const graph: Record<string, unknown>[] = [
     organizationEntity(locale),
     {
@@ -32,7 +34,7 @@ export function pageStructuredData(locale: string, route: string) {
       ...(page.image ? { primaryImageOfPage: { '@id': `${url}#primaryimage` } } : {}),
       ...(route ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
       ...(page.service ? { mainEntity: { '@id': `${url}#service` } } : {}),
-      ...(route.startsWith('blog/') ? { mainEntity: { '@id': `${url}#article` } } : {})
+      ...(guide ? { mainEntity: { '@id': `${url}#article` } } : {})
     }
   ];
   if (page.image) graph.push({
@@ -54,7 +56,6 @@ export function pageStructuredData(locale: string, route: string) {
     ...(page.image ? { image: { '@id': `${url}#primaryimage` } } : {}),
     ...(page.service.area ? { areaServed: { '@type': 'AdministrativeArea', name: page.service.area } } : {})
   });
-  const guide = route.startsWith('blog/') ? getDomesticWorkerGuide(route.slice('blog/'.length)) : undefined;
   if (guide) graph.push({
     '@type': 'Article', '@id': `${url}#article`, url,
     headline: page.name, description: page.description, inLanguage: locale,
@@ -65,12 +66,13 @@ export function pageStructuredData(locale: string, route: string) {
     citation: guide[locale === 'ar' ? 'ar' : 'en'].citations ?? guide.sources.map((source) => source.url)
   });
   // Questions are reused from the exact data rendered by the corresponding page.
+  if (route === '') graph.push(faqEntity(locale, route, getHomeFaqs(locale)));
   if (route === 'pricing') {
     const lang = locale === 'ar' ? 'ar' : 'en';
     graph.push(faqEntity(locale, route, packageQuestions.map(({ question, answer }) => ({
       question: question[lang], answer: answer[lang]
     }))));
   }
-  if (page.faqs?.length) graph.push(faqEntity(locale, route, page.faqs));
+  if (route !== '' && page.faqs?.length) graph.push(faqEntity(locale, route, page.faqs));
   return { '@context': 'https://schema.org', '@graph': graph };
 }

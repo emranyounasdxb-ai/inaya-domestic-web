@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
 import { siteConfig } from '@/lib/site-config';
 import styles from './Footer.module.css';
+import BusinessIdentityLine from './BusinessIdentityLine';
 
 type IconName = 'phone' | 'mail' | 'pin' | 'clock' | 'shield' | 'users' | 'refresh' | 'headset' | 'globe' | 'lock';
 
@@ -55,6 +56,7 @@ export default function Footer({ locale }: { locale: string }) {
           <div className={styles.brand}>
             <BrandLogo locale={locale} alt={logoAlt} width={280} className={styles.logo} />
             <p className="mt-3 max-w-[310px] text-[0.9rem] leading-5 text-ink/72">{isArabic ? t('about') : 'Trusted maid and domestic worker services for families across the UAE.'}</p>
+            <BusinessIdentityLine locale={locale} className="mt-3 max-w-[310px] text-sm leading-6 text-primary-900/80" />
             <div className="mt-3 h-px w-12 bg-[#c98700]" />
             <div className={styles.features}>
               {featureItems.map((item) => (

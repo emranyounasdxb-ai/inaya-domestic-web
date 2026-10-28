@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { countrySourcePages } from '@/lib/country-source-pages';
 
 const countries = [
   { code: 'lk', en: 'Sri Lanka', ar: 'سريلانكا' },
@@ -52,17 +53,19 @@ export default function HomeCountryAvailability({ locale }: { locale: string }) 
         <div className="home-country-scroll" dir="ltr">
           {countries.map((country) => {
             const name = lang === 'ar' ? country.ar : country.en;
+            const guide = countrySourcePages.find(page => page.code === country.code);
+            if (!guide) throw new Error(`Missing country guide: ${country.code}`);
 
             return (
-              <article className="home-country-card" key={country.code}>
+              <Link href={`/${locale}/maid-source-countries/${guide.slug}/`} className="home-country-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-700" key={country.code}>
                 <div className="home-country-flag">
-                  <Image src={`https://flagcdn.com/w80/${country.code}.png`} alt={lang === 'ar' ? `علم ${name}` : `${name} flag`} width={80} height={48} />
+                  <Image src={`/flags/${country.code}.svg`} alt={lang === 'ar' ? `علم ${name}` : `${name} flag`} width={80} height={48} unoptimized />
                 </div>
                 <div className="home-country-content">
                   <h3>{name}</h3>
                   <p>{t.tag}</p>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

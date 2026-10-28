@@ -4,6 +4,7 @@ import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 import test from 'node:test';
+import onPage from './on-page-spec-expectations.cjs';
 import { attrs, decode } from '../scripts/seo-content-audit.mjs';
 import { pageImageUrls } from '../scripts/enrich-image-sitemap.mjs';
 
@@ -12,7 +13,7 @@ const xml = await readFile('out/sitemap.xml', 'utf8');
 const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
 
 test('every image sitemap entry matches visible content, with no lost canonical pages or responsive duplicates', async () => {
-  assert.equal(entries.length, 274);
+  assert.equal(entries.length, onPage.canonicalCount);
   assert.ok(xml.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'), 'image sitemap namespace');
   const unique = new Set();
   for (const entry of entries) {
@@ -86,7 +87,7 @@ const countryPagePhotos = {
   'maid-source-countries/myanmar-maid-uae': '/images/about/about-hero-domestic-service.webp',
 };
 
-test('all274 pages have localized previews while226 visible photos become primary image schema', async () => {
+test('all284 pages have localized previews while226 visible photos remain primary image schema', async () => {
   const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
   const approved = new Map(catalog.images.map(image => [origin + image.src, image]));
   const dimensions = new Map();
@@ -94,7 +95,7 @@ test('all274 pages have localized previews while226 visible photos become primar
   const fallbackCounts = { blog: 0, countries: 0, locations: 0, information: 0 };
   const picturedCountryPages = [];
   let described = 0;
-  for (const entry of entries) {
+  for (const [entryIndex, entry] of entries.entries()) {
     const pageUrl = decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1]);
     const pathname = new URL(pageUrl).pathname;
     const [, locale, ...segments] = pathname.split('/');
@@ -128,8 +129,15 @@ test('all274 pages have localized previews while226 visible photos become primar
     assert.ok(icons.some(icon => icon.href === '/favicon.ico' && icon.rel === 'icon'), pageUrl);
     assert.ok(icons.some(icon => icon.href === '/favicon-48x48.png' && icon.sizes === '48x48'), pageUrl);
     assert.ok(icons.some(icon => icon.href === '/apple-touch-icon.png' && icon.sizes === '180x180'), pageUrl);
-    preservedPageMetadata.push([
-      pageUrl, decode(html.match(/<title>([\s\S]*?)<\/title>/)[1]), values('name', 'description')[0], canonical,
+    const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)[1]);
+    const description = values('name', 'description')[0];
+    const metadataChange = onPage.metadata[`${locale}/${route}`];
+    if (metadataChange) assert.deepEqual({ title, description }, metadataChange.after, `${pageUrl}: exact reviewed Ajman/service summary`);
+    // Normalize only the twenty independently reviewed metadata pairs to their
+    // prior values. The original full274-row fingerprint still guards every
+    // other title, description, canonical and favicon declaration.
+    if (entryIndex < onPage.originalCanonicalCount) preservedPageMetadata.push([
+      pageUrl, metadataChange?.before.title ?? title, metadataChange?.before.description ?? description, canonical,
       icons.map(icon => [icon.rel, icon.href, icon.type ?? null, icon.sizes ?? null]),
     ]);
     const graph = imageGraph(html);
@@ -140,7 +148,7 @@ test('all274 pages have localized previews while226 visible photos become primar
     if (!page.primaryImageOfPage) {
       assert.ok(!graph.some(node => node['@id'] === `${pageUrl}#primaryimage`), `${pageUrl}: social fallback does not invent a primary photo`);
       let expected;
-      if (route === 'blog') {
+      if (route === 'blog' || onPage.archiveRoutes.includes(route)) {
         const main = visibleImageHtml(html).match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1];
         assert.ok(main, `${pageUrl}: visible blog content`);
         const firstGuideImage = imageTags(main).find(image => new URL(image.src, origin).pathname.startsWith('/images/blogs/'));
@@ -193,17 +201,29 @@ test('all274 pages have localized previews while226 visible photos become primar
       assert.equal(advertised.filter(url => url === origin + countryImagePath).length, 1, `${pageUrl}: sitemap discovers the same canonical country photo once`);
       assert.deepEqual([...entry[1].matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], `${pageUrl}: substantive country photo update has its exact modification date`);
       picturedCountryPages.push(pageUrl);
-    } else preservedMappings.push([pageUrl, ogImages, ogAlt, twitterImages, twitterAlt, [image.contentUrl]]);
+    } else {
+      const altChange = onPage.roleImageAlts[`${locale}/${route}`];
+      if (altChange) {
+        assert.equal(image.contentUrl, origin + altChange.imagePath, `${pageUrl}: exact retained role photo`);
+        assert.deepEqual(ogAlt, [altChange.after], `${pageUrl}: reviewed scene description`);
+        assert.deepEqual(twitterAlt, [altChange.after], `${pageUrl}: reviewed sharing description`);
+      }
+      const preservedAlt = altChange ? [altChange.before] : ogAlt;
+      const preservedTwitterAlt = altChange ? [altChange.before] : twitterAlt;
+      preservedMappings.push([pageUrl, ogImages, preservedAlt, twitterImages, preservedTwitterAlt, [image.contentUrl]]);
+    }
     described++;
   }
   assert.equal(described, 226, 'all26 country pages gain visible primary photos; all200 previous primary photos remain');
   assert.deepEqual(picturedCountryPages.sort(), Object.keys(countryPagePhotos).flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`)).sort(), 'all26 expected country pages have matching visible, social, schema and sitemap photos');
-  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), picturedCountryPages.sort(), 'only the26 pictured country pages receive the28October modification date');
-  assert.deepEqual(fallbackCounts, { blog: 2, countries: 0, locations: 14, information: 32 }, 'all48 remaining pages get social previews without false primary-image schema');
+  const substantivelyUpdated = [...onPage.onPageUpdatedRoutes, ...onPage.archiveRoutes]
+    .flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route ? route + '/' : ''}`));
+  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].sort(), 'only26 country photos,20 updated content pages and10 new archives have28October dates');
+  assert.deepEqual(fallbackCounts, { blog: 12, countries: 0, locations: 14, information: 32 }, 'all58 text/index pages get social previews without false primary-image schema');
   assert.equal(preservedMappings.length, 198);
-  assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 previous primary/social photo assignments and localized descriptions remain exact');
+  assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 prior photo assignments remain exact, with only the six reviewed descriptions normalized');
   assert.equal(preservedPageMetadata.length, 274);
-  assert.equal(fingerprint(preservedPageMetadata), 'ff1d4ce117376ba175b0c13cca3557eca6a994177108dc249a0f936fa1ea36a6', 'all274 titles, descriptions, canonical URLs and icon declarations remain exact');
+  assert.equal(fingerprint(preservedPageMetadata), 'ff1d4ce117376ba175b0c13cca3557eca6a994177108dc249a0f936fa1ea36a6', 'all274 prior identities remain exact, with only the twenty reviewed metadata pairs normalized');
 });
 
 test('preview metadata changes preserve all111 approved original photos and all four deployed favicon files', async () => {
@@ -306,8 +326,13 @@ function blogCard(indexHtml, locale, slug) {
   const route = `/${locale}/blog/${slug}/`;
   const cards = [...visibleImageHtml(indexHtml).matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/gi)]
     .map(match => match[1]).filter(card => [...card.matchAll(/<a\b[^>]*>/gi)].some(match => attrs(match[0]).href === route));
-  assert.equal(cards.length, 1, `${route}: one index card in the unpaginated blog index`);
+  assert.equal(cards.length, 1, `${route}: one card across the six crawlable archive pages`);
   return cards[0];
+}
+
+async function allBlogArchiveHtml(locale) {
+  const routes = ['blog', ...onPage.archiveRoutes];
+  return (await Promise.all(routes.map(route => readFile(`out/${locale}/${route}/index.html`, 'utf8')))).join('\n');
 }
 
 test('all 44 approved legacy blog assets preserve their paths and contain the reviewed 1600×900 WebP bytes', async () => {
@@ -338,11 +363,11 @@ test('all 88 refreshed article heroes and all 88 index cards use the matching ve
   const approved = await remainingApproval();
   let heroes = 0, cards = 0;
   for (const locale of ['en', 'ar']) {
-    const indexHtml = await readFile(`out/${locale}/blog/index.html`, 'utf8');
-    // app/[locale]/blog/page.tsx renders every guide directly; there is no pagination.
+    const indexHtml = await allBlogArchiveHtml(locale);
+    // Every prior card is still checked once across all six crawlable pages.
     const topicCards = [...visibleImageHtml(indexHtml).matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/gi)]
       .filter(card => [...card[1].matchAll(/<a\b[^>]*>/gi)].some(link => new RegExp(`^/${locale}/blog/[^/?#]+/$`).test(attrs(link[0]).href ?? '')));
-    assert.equal(topicCards.length, 65, `${locale}: all 44 legacy and 21 keyword cards remain visible`);
+    assert.equal(topicCards.length, 65, `${locale}: all44 legacy and21 keyword cards remain discoverable across six pages`);
     for (const entry of approved.images) {
       const route = `/${locale}/blog/${entry.slug}/`;
       const html = await readFile(path.join('out', route, 'index.html'), 'utf8');
@@ -387,7 +412,7 @@ test('the 21 previously approved keyword images retain their original bytes and 
       const matches = imageTags(html).filter(image => new URL(image.src, origin).pathname === entry.src);
       assert.equal(matches.length, 1, `${route}: one original keyword hero`);
       assertExactRenderedImage(matches[0], entry, locale, entry.src, `${route} keyword hero`);
-      const indexHtml = await readFile(`out/${locale}/blog/index.html`, 'utf8');
+      const indexHtml = await allBlogArchiveHtml(locale);
       const cardImages = imageTags(blogCard(indexHtml, locale, entry.slug));
       assert.equal(cardImages.length, 1, `${route}: one original keyword card image`);
       assertExactRenderedImage(cardImages[0], entry, locale, entry.src, `${route} keyword card`);

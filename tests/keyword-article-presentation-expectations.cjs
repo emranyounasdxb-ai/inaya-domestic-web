@@ -1,12 +1,27 @@
 const assert = require('node:assert/strict');
 const fixture = require('./fixtures/keyword-article-presentation-20261024.json');
+const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
+const { archiveRoutes } = require('./on-page-spec-expectations.cjs');
 
 // Only exact, counted presentation placements are classified separately from
 // editorial prose. Every complete manuscript is independently hash-checked by
 // keyword-articles-export; no generic phrase or entire article is excluded.
 function withoutKeywordPresentation(pages) {
   const allowed = new Map();
-  for (const placement of fixture.placements) {
+  for (const original of fixture.placements) {
+    let placement = original;
+    if (original.kind === 'hub-summary') {
+      assert.equal(original.route, 'blog', 'the reviewed fixture retains its original root-hub placement');
+      assert.match(original.id, /^K(?:0[1-9]|1[0-9]|2[01])$/, 'one of the original21 keyword guides');
+      const position = Number(original.id.slice(1)) - 1;
+      assert.ok(blogOrder.slugs[position], `${original.id}: independently pinned original guide order`);
+      const pageNumber = Math.floor(position / 12) + 1;
+      const route = pageNumber === 1 ? 'blog' : `blog/page/${pageNumber}`;
+      placement = { ...original, route };
+      const allArchiveCopies = pages.filter(page => page.locale === original.locale && ['blog', ...archiveRoutes].includes(page.route))
+        .reduce((total, page) => total + page.paragraphs.filter(paragraph => paragraph === original.paragraph).length, 0);
+      assert.equal(allArchiveCopies, original.count, `${original.locale}/${original.id}: exact original summary count across all six archive pages`);
+    }
     const key = `${placement.locale}:${placement.route}`;
     const page = pages.find(candidate => `${candidate.locale}:${candidate.route}` === key);
     assert.ok(page, `${key}: reviewed presentation route exists`);
