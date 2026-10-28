@@ -7,6 +7,7 @@ import { servicePageCopies, type Lang } from './service-page-copy-all';
 import { getServiceImage } from './service-presentation';
 import { getLocationServicePage } from './location-service-pages';
 import { getCountrySourcePage } from './country-source-pages';
+import { getCountrySourceImage } from './country-source-images';
 import { getTrustSupportPage } from './trust-support-pages';
 import { domesticWorkerGuides, getDomesticWorkerGuide } from './domestic-worker-guides';
 import { getBlogImage } from './blog-images';
@@ -27,6 +28,7 @@ const corePageImages: Record<string, { src: string; alt: Localized }> = {
     alt: { en: 'A domestic worker arranging sofa cushions near a mother and child', ar: 'عاملة منزلية ترتب وسائد الأريكة بالقرب من أم وطفلتها' }
   },
   about: homeAboutImages.aboutStory,
+  'services/countries-we-source-from': getCountrySourceImage(),
   gallery: {
     src: '/images/home/inaya-home-hero-family.webp',
     alt: { en: 'Five women in blue, pink, beige, maroon and white INAYA uniforms', ar: 'خمس نساء بأزياء عناية الزرقاء والوردية والبيج والعنابية والبيضاء' }
@@ -201,8 +203,11 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   }
   if (route.startsWith('maid-source-countries/')) {
     const country = getCountrySourcePage(route.slice('maid-source-countries/'.length));
+    const image = country && getCountrySourceImage(country.code);
     if (country) return {
       name: country.workerLabel[lang], title: country.metaTitle[lang], description: lang === 'en' ? englishDescriptionRefinements[route] ?? country.metaDescription[lang] : country.metaDescription[lang],
+      image: image?.src,
+      imageAlt: image?.alt[lang],
       faqs: country.faqs.map((faq) => ({ question: faq.question[lang], answer: faq.answer[lang] }))
     };
   }

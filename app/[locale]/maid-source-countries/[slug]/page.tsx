@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { pageMetadata } from '@/lib/page-seo';
 import RouteSeo from '@/components/RouteSeo';
+import CountryGuidePhoto from '@/components/CountryGuidePhoto';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -101,6 +102,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="rounded-[26px] border border-white/80 bg-white/78 p-7 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
+            <CountryGuidePhoto lang={lang} code={country.code} className="mb-6" />
             <h2 className="font-heading text-2xl font-bold tracking-[-0.035em] text-primary-900">{country.workerLabel[lang]}</h2>
             <p className="mt-4 text-sm leading-7 text-primary-900/70">{country.intro[lang]}</p>
           </article>
