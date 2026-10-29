@@ -179,3 +179,36 @@ a[href*="/services/"] > span[class~="h-48"] img {
     }
   }
 }
+
+/* Blog reading columns must retain real section heights for sticky related cards. */
+[data-blog-layout] section {
+  content-visibility: visible;
+  contain-intrinsic-block-size: none;
+}
+[data-blog-layout] article a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+/* Preserve readable full copy when subgrid is unavailable. */
+@supports not (grid-template-rows: subgrid) {
+  .blog-index-card { display: flex; }
+  .blog-index-card > a { display: flex; flex-direction: column; width: 100%; }
+  .blog-index-card > a > span:last-child { margin-top: auto; padding-top: 1.25rem; }
+}
+
+/* Shared reading hierarchy across structured, editorial and question guides. */
+[data-blog-hero] h1 { font-size: clamp(1.875rem, 3.3vw, 3rem); line-height: 1.2; }
+html[lang='ar'] [data-blog-hero] h1 { line-height: 1.6; }
+[data-blog-layout] article { font-size: 1rem; line-height: 2; }
+html[lang='ar'] [data-blog-layout] article { font-size: 1.0625rem; line-height: 2.1; }
+[data-blog-layout] article > section > p,
+[data-blog-layout] article > section > ul { font-size: inherit; line-height: inherit; }
+[data-blog-layout] article h2 { font-size: clamp(1.5rem, 2vw, 1.75rem); line-height: 1.45; }
+html[lang='ar'] [data-blog-layout] article h2 { line-height: 1.75; }
+
+/* Keep the fixed social rail outside both blog reading columns. */
+[data-blog-layout] { max-width: 72rem; }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  [data-blog-layout] { padding-inline: 5rem; }
+}

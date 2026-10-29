@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import Inline from '@/components/BlogInlineText';
+import RelatedBlogCards from '@/components/RelatedBlogCards';
+import { createBlogInlineParser } from '@/lib/blog-context-links';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
@@ -32,6 +35,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
   const lang: GuideLanguage = locale === 'ar' ? 'ar' : 'en';
   const isArabic = lang === 'ar';
   const copy = guide[lang];
+  const linkedInline = createBlogInlineParser(guide.slug, lang);
   const keywordArticle = getKeywordArticle(slug);
   if (keywordArticle) return <KeywordArticle article={keywordArticle} lang={lang} />;
   if (guide.publication) {
@@ -49,9 +53,9 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
   }).format(new Date(`${value}T00:00:00Z`));
 
   return (
-    <div className="overflow-hidden bg-ivory text-ink" dir={isArabic ? 'rtl' : 'ltr'}>
+    <div className="overflow-x-clip bg-ivory text-ink" dir={isArabic ? 'rtl' : 'ltr'}>
       <RouteSeo locale={locale} route={route} />
-      <section className="relative overflow-hidden pt-12 pb-12 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-20">
+      <section data-blog-hero="true" className="relative overflow-hidden pt-12 pb-12 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_10%_48%,rgba(7,22,74,0.10),transparent_26rem)]" />
         <div className="container-x relative">
           <div className="mx-auto max-w-4xl text-center">
@@ -74,18 +78,18 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
       </section>
       <PageBreadcrumbs locale={locale} route={route} />
 
-      <div className="container-x grid max-w-6xl gap-10 pb-20 pt-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-14">
+      <div data-blog-layout={guide.slug} className="container-x grid max-w-6xl gap-10 pb-20 pt-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-14">
         <article className={`min-w-0 space-y-12 ${expandedCaseGuide ? 'lg:px-9' : ''}`}>
           {copy.sections.map((section) => (
             <section key={section.heading}>
               <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-2xl font-bold leading-snug text-primary-900 sm:text-3xl`}>{section.heading}</h2>
               <div className="mt-4 h-px w-16 bg-accent-500/70" />
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="mt-5 text-base leading-8 text-primary-900/80">{paragraph}</p>
+                <p key={paragraph} className="mt-5 text-base leading-8 text-primary-900/80"><Inline text={paragraph} parse={linkedInline} /></p>
               ))}
               {section.points?.length ? (
                 <ul className="mt-5 list-disc space-y-3 ps-6 text-base leading-8 text-primary-900/80">
-                  {section.points.map((point) => <li key={point}>{point}</li>)}
+                  {section.points.map((point) => <li key={point}><Inline text={point} parse={linkedInline} /></li>)}
                 </ul>
               ) : null}
               {section.table ? (
@@ -101,9 +105,13 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
               ) : null}
             </section>
           ))}
+          {guide.sources.length > 0 && <section data-blog-source-links="true" className="rounded-2xl border border-primary-900/10 bg-white/75 p-6">
+            <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold text-primary-900`}>{copy.sourceIntro}</h2>
+            <ul className="mt-4 list-disc space-y-3 ps-5 text-sm leading-7">{guide.sources.map(source => <li key={source.url}><a className="blog-inline-link font-semibold underline decoration-accent-700 decoration-2 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source[lang]}</a></li>)}</ul>
+          </section>}
         </article>
 
-        <aside className="space-y-7 lg:sticky lg:top-8 lg:self-start">
+        <aside className="min-w-0 space-y-7">
           <section className="glass-panel rounded-[24px] p-6">
             <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold text-primary-900`}>
               {isArabic ? 'خطوات ومعلومات مرتبطة' : 'Related next steps'}
@@ -135,6 +143,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
               {copy.sourceNote}
             </p>
           </section>
+          <RelatedBlogCards slug={guide.slug} lang={lang} />
         </aside>
       </div>
     </div>

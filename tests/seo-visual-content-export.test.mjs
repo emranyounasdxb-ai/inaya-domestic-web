@@ -117,7 +117,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
         assert.ok(current.includes(expression), `footer retains ${expression}`);
       }
     } else {
-      assert.equal(current, before, file);
+      assert.equal((await import('./blog-refresh-expectations.cjs')).default.historicalSource(file, current), before, file);
     }
   }
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) {

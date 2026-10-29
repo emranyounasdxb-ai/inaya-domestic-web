@@ -143,7 +143,7 @@ test('exported twenty-article series renders its tables, charts, Q&A and working
       const body = withoutScripts(html);
       const article = body.match(/<article\b[^>]*data-published-article="content"[^>]*>([\s\S]*?)<\/article>/)?.[1];
       assert.ok(article, `${route}: complete visible publication`);
-      const visible = text(article);
+      const visible = text((await import('./blog-refresh-expectations.cjs')).default.beforeContextLinks(article));
       assert.ok(visible.includes(plainMarkdown(copy.body.split(/\r?\n\s*\r?\n/)[0])), `${route}: direct answer rendered`);
       assert.ok((article.match(/<table\b/g) ?? []).length >= 1, `${route}: practical table rendered`);
       assert.ok(article.includes(`data-article-visual="${copy.visual.kind}"`), `${route}: chart rendered`);

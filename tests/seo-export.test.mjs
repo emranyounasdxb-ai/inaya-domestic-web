@@ -80,7 +80,7 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   ].map(country => `maid-source-countries/${country}-maid-uae`)]);
   const onPageUpdatedRoutes = new Set(onPageSpec.onPageUpdatedRoutes);
   const archiveRoutes = new Set(onPageSpec.archiveRoutes);
-  const step2Routes = new Set([...additions.newSlugs.map(slug => `blog/${slug}`), ...additions.indexRoutes]);
+  const step2Routes = new Set(['gallery', ...additions.newSlugs.map(slug => `blog/${slug}`), ...additions.indexRoutes]);
   const october28Routes = new Set([...countryPhotoRoutes, ...onPageUpdatedRoutes, ...archiveRoutes].filter(route => !step2Routes.has(route)));
   const worksheetUpdatedRoutes = new Set([
     'blog/domestic-worker-hiring-costs-uae',
@@ -108,7 +108,7 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
     .map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(),
     [...new Set([...domesticRefresh.routeChanges, ...ajmanRefresh.routeChanges].flatMap(entry => entry.urls)), ...['en', 'ar'].map(locale => `${origin}/${locale}/company-information/`), ...keywordUrls].filter(url => !new Set([...galleryRetirementRoutes, ...onPageUpdatedRoutes, ...step1Routes]).has(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/'))).sort(),
     'unchanged approved substantive route pairs retain24October');
-  assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-25</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...galleryRetirementRoutes].filter(route => !onPageUpdatedRoutes.has(route)).map(route => `${origin}/${locale}/${route}/`)).sort(), 'the unchanged gallery pair retains 25 October; About and Ajman have reviewed substantive changes');
+  assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-25</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...galleryRetirementRoutes].filter(route => !onPageUpdatedRoutes.has(route) && !step2Routes.has(route)).map(route => `${origin}/${locale}/${route}/`)).sort(), 'the unchanged gallery pair retains 25 October; About and Ajman have reviewed substantive changes');
   assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...october28Routes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`)).sort(), 'unchanged country-photo and on-page URLs retain28October; updated archive memberships receive29October');
   assert.deepEqual(datedEntries.filter(entry => entry[1].includes(`<lastmod>${additions.date}</lastmod>`)).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...new Set([...step1Routes, ...step2Routes, ...privacyRoutes])].map(route => `${origin}/${locale}/${route}/`)).sort(), 'only ten Step1 copies, eight new guides, twelve changed indexes and two privacy notices receive29October');
   for (const entry of datedEntries) {

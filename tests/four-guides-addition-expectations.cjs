@@ -4,6 +4,7 @@ const before = require('./fixtures/four-guides-addition-20261029-before.json');
 const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
 const { privacyUrls } = require('./ahrefs-expectations.cjs');
 
+const refresh = require('./blog-refresh-expectations.cjs');
 const date = '2026-10-29';
 const originalCanonicalCount = 284;
 const canonicalCount = 294;
@@ -19,7 +20,7 @@ const newCanonicalUrls = newSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${
 const blogOrderSlugs = [...newSlugs, ...blogOrder.slugs];
 const indexRoutes = ['blog', ...[2, 3, 4, 5, 6].map(page => `blog/page/${page}`)];
 const indexUrls = indexRoutes.flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`));
-const expectedLastmods = { ...before.lastmods, ...Object.fromEntries([...indexUrls, ...newCanonicalUrls, ...privacyUrls].map(url => [url, date])) };
+const expectedLastmods = { ...before.lastmods, ...Object.fromEntries([...indexUrls, ...newCanonicalUrls, ...privacyUrls, ...refresh.galleryUrls].map(url => [url, date])) };
 const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === 'object'
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const hash = value => createHash('sha256').update(value).digest('hex');
@@ -40,13 +41,14 @@ function assertLastmods(entries) {
   assertInventory(entries.map(entry => entry.url));
   for (const entry of entries) assert.equal(entry.lastmod ?? null, expectedLastmods[entry.url], `${entry.url}: only new articles, changed index memberships and two privacy notices get29October dates`);
   assert.equal(entries.filter(entry => entry.lastmod).length, 260);
-  assert.equal(entries.filter(entry => entry.lastmod === date).length, 34);
+  assert.equal(entries.filter(entry => entry.lastmod === date).length, 36);
   assert.equal(entries.filter(entry => entry.lastmod === '2026-10-28').length, 44);
 }
 
 // This exact inverse is required before the older five-guide provenance chain.
 // Nothing else in the original65-guide module is a permitted source change.
 function beforeCatalogAddition(file, source) {
+  source = refresh.historicalSource(file, source);
   if (!['lib/domestic-worker-guides.ts', 'lib/article-search-titles.ts'].includes(file)) return source;
   source = source.replace(/\r\n/g, '\n');
   if (file === 'lib/article-search-titles.ts') {
@@ -77,6 +79,7 @@ function assertExistingRecords(records, family) {
 }
 
 function beforeImageAliases(source) {
+  source = refresh.historicalSource('lib/blog-images.ts', source);
   source = source.replace(/\r\n/g, '\n');
   const boundary = '\n// These new guides reuse relevant owner-approved illustrations with their exact\n';
   assert.equal(source.split(boundary).length, 2, 'one exact new image-alias boundary');

@@ -20,14 +20,14 @@ export default function BlogIndex({ locale, page = 1 }: { locale: string; page?:
   return (
     <section className="container-x pb-16 sm:pb-20" data-blog-page={page}>
       <p className="mx-auto mb-5 max-w-6xl text-sm text-primary-900/75">{copy.range}</p>
-      <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-x-5 gap-y-4 md:grid-cols-3">
         {archive.guides.map((guide) => (
-          <article key={guide.slug} data-blog-guide={guide.slug} className="glass-panel rounded-[24px] transition hover:-translate-y-1 hover:border-accent-500/40">
-            <Link href={`/${locale}/blog/${guide.slug}/`} className="flex min-h-[240px] flex-col rounded-[24px] p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-700">
-              <BlogImage slug={guide.slug} locale={locale} className="mb-5 rounded-[18px]" />
-              <h2 className={`${isArabic ? 'font-arabic text-xl leading-snug' : 'font-heading text-2xl'} font-bold text-primary-900`}>{guide[isArabic ? 'ar' : 'en'].title}</h2>
-              <p className="mt-2 flex-1 text-sm leading-6 text-primary-900/80">{guide[isArabic ? 'ar' : 'en'].description}</p>
-              <span className="mt-5 text-sm font-bold text-primary-900">{copy.read}</span>
+          <article key={guide.slug} data-blog-guide={guide.slug} className="blog-index-card glass-panel row-span-4 grid grid-rows-subgrid rounded-[24px] transition hover:-translate-y-1 hover:border-accent-500/40">
+            <Link href={`/${locale}/blog/${guide.slug}/`} className="row-span-4 grid grid-rows-subgrid rounded-[24px] p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-700">
+              <BlogImage slug={guide.slug} locale={locale} className="rounded-[18px]" />
+              <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold leading-8 text-primary-900 sm:text-[22px]`}>{guide[isArabic ? 'ar' : 'en'].title}</h2>
+              <p className={`text-sm leading-6 text-primary-900/80 ${isArabic ? 'font-arabic' : ''}`}>{guide[isArabic ? 'ar' : 'en'].description}</p>
+              <span className="text-sm font-bold text-primary-900">{copy.read}</span>
             </Link>
           </article>
         ))}

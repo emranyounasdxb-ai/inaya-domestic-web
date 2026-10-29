@@ -45,7 +45,7 @@ jobs:
         env:
           NEXT_PUBLIC_STATIC_EXPORT: 'true'
       - name: Compile focused unit helpers
-        run: node node_modules/typescript/bin/tsc lib/json-ld.ts lib/structured-data.ts lib/image-alt.ts lib/content-architecture.ts lib/guide-content.ts lib/buyer-answers.ts lib/measurement.ts lib/keyword-article-markdown.ts --outDir .next/phase-02-unit --rootDir . --module commonjs --target es2020 --esModuleInterop --resolveJsonModule --skipLibCheck
+        run: node node_modules/typescript/bin/tsc lib/json-ld.ts lib/structured-data.ts lib/image-alt.ts lib/content-architecture.ts lib/guide-content.ts lib/buyer-answers.ts lib/measurement.ts lib/keyword-article-markdown.ts lib/blog-context-links.ts --outDir .next/phase-02-unit --rootDir . --module commonjs --target es2020 --esModuleInterop --resolveJsonModule --skipLibCheck
       - name: Verify consent-gated accepted enquiry measurement
         run: node --test tests/form-delivery-measurement.test.mjs
       - name: Verify real Apache legacy migration and all current routes
@@ -71,6 +71,8 @@ jobs:
         run: node --test tests/five-guides-amendment-unit.test.cjs tests/five-guides-amendment-export.test.mjs
       - name: Verify four new bilingual guides and preserve the complete previous publication inventory
         run: node --test tests/four-guides-addition-unit.test.cjs tests/four-guides-addition-export.test.mjs tests/office-careers-export.test.mjs
+      - name: Verify all70 unique blog images, bilingual links and related-guide navigation
+        run: node --test tests/blog-refresh.test.mjs
       - name: Verify owner-approved native Ahrefs head and separate privacy disclosure
         run: node --test tests/ahrefs-source-unit.test.cjs tests/ahrefs-head-export.test.mjs
       - name: Unit and export checks
@@ -80,6 +82,15 @@ jobs:
         run: node node_modules/@playwright/test/cli.js install --with-deps chromium
       - name: Verify navigation, metadata and responsive UI in the actual Linux static export
         run: node node_modules/@playwright/test/cli.js test --config=playwright.static.config.ts
+      - name: Save actual public blog layout screenshots
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: blog-refresh-visual-qa
+          path: |
+            test-results/**/archive-*.png
+            test-results/**/reading-*.png
+          retention-days: 7
       - name: Check pricing layout before the full browser suite
         run: node node_modules/@playwright/test/cli.js test tests/e2e/core-page-clarity.spec.ts --grep 'six pricing cards'
       - name: Check customer article tables, visuals and translation before the full browser suite

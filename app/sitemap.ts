@@ -24,7 +24,7 @@ const contentUpdatedAt: Record<string, string> = {
   "blog/documents-for-domestic-worker-enquiry": '2026-10-29',
   "blog/domestic-worker-visa-sponsorship-support": '2026-10-29',
   [companyInformation.route]: companyInformation.updated,
-  "gallery": '2026-10-25',
+  "gallery": '2026-10-29',
   "about": '2026-10-28',
   "contact": '2026-10-28',
   "blog/domestic-worker-contract-permit-residence-cancellation": '2026-10-20',

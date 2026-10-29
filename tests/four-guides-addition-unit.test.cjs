@@ -43,7 +43,7 @@ test('exactly four genuinely new bilingual articles and compact metadata match t
     }
   }
   for (const [file, expectedHash] of Object.entries(approved.sourceModuleSha256)) {
-    assert.equal(additions.hash(readFileSync(file, 'utf8').replace(/\r\n/g, '\n')), expectedHash, `${file}: exact reviewed cohort integration`);
+    assert.equal(additions.hash(require('./blog-refresh-expectations.cjs').historicalSource(file, readFileSync(file, 'utf8'))), expectedHash, `${file}: exact reviewed cohort integration`);
   }
   assert.deepEqual(additions.beforeImageAliases(readFileSync('lib/blog-images.ts', 'utf8')).aliases, { ...approved.imageAliases, 'inaya-office-staff-careers-ajman': 'domestic-worker-contracts-renewal' });
   const contentModule = readFileSync('lib/new-article-content.ts', 'utf8');

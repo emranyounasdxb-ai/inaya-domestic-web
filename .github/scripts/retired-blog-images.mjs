@@ -79,9 +79,15 @@ export async function currentApprovedImages(root = projectRoot) {
     !/^images\/blogs\/(?:keyword-21-20261024\/)?[a-z0-9-]+\.webp$/.test(image.path) || !/^[a-f0-9]{64}$/.test(image.sha256))) {
     throw new Error('Expected exactly 65 distinct approved blog-image paths and hashes.');
   }
+  const refresh = JSON.parse(await fs.readFile(path.join(root, '.github/blog-refresh-images-20261029.json'), 'utf8'));
+  const refreshedSlugs = ['uae-domestic-worker-rights-employer-duties', 'domestic-worker-centre-reviews-checklist', 'domestic-workers-meaning-roles-uae', 'choosing-domestic-worker-centre-across-emirates', 'inaya-office-staff-careers-ajman'];
+  if (refresh.date !== '2026-10-29' || JSON.stringify(refresh.images.map(image => image.path)) !== JSON.stringify(refreshedSlugs.map(slug => `images/blogs/blog-refresh-20261029/${slug}.webp`)) || refresh.images.some(image => !/^[a-f0-9]{64}$/.test(image.sha256))) {
+    throw new Error('Expected exactly five reviewed blog-refresh paths and hashes.');
+  }
+  approved.push(...refresh.images);
   const actual = (await filesIn(path.join(root, 'public/images/blogs'))).map(relative => `images/blogs/${relative}`);
   if (JSON.stringify(actual) !== JSON.stringify(approved.map(image => image.path).sort())) {
-    throw new Error('Current public blog images must be exactly the 65 approved assets; retired or unknown files are forbidden.');
+    throw new Error('Current public blog images must be exactly the 70 approved assets; retired or unknown files are forbidden.');
   }
   for (const image of approved) {
     if (sha256(await fs.readFile(path.join(root, 'public', image.path))) !== image.sha256) {
@@ -109,7 +115,7 @@ export async function prepareRetirement(exportRoot, outputRoot, root = projectRo
   const expected = approved.flatMap(image => [image.path, ...variants(image.path)]).sort();
   const actual = exported.filter(relative => inventoryRoots.some(prefix => relative.startsWith(prefix + '/'))).sort();
   if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-    throw new Error('Optimized export must contain exactly 65 approved originals and their 260 responsive variants, with no retired or unknown images.');
+    throw new Error('Optimized export must contain exactly 70 approved originals and their 280 responsive variants, with no retired or unknown images.');
   }
   const plan = {
     version: 1, preparedAtUtc: new Date().toISOString(), retiredOn: manifest.retiredOn,

@@ -37,7 +37,7 @@ test('the four new bilingual guides append exactly eight canonicals and only the
   additions.assertLastmods(entries);
 });
 
-test('all eight new public articles contain the complete reviewed manuscripts, references, attribution and reused approved images', async () => {
+test('all eight new public articles contain the complete reviewed manuscripts, references, attribution and separately reviewed distinct images', async () => {
   const approved = additions.reviewed();
   for (const article of approved.articles) for (const locale of ['en', 'ar']) {
     const copy = article[locale], metadata = approved.metadata.find(row => row.slug === article.slug)[locale];
@@ -88,7 +88,7 @@ test('all eight new public articles contain the complete reviewed manuscripts, r
       }
     }
     for (const citation of metadata.citations) assert.ok(renderedLinks.includes(citation), `${route}: Article citation has a visible exact reference`);
-    const image = approved.images[article.slug];
+    const image = (await import('./blog-refresh-expectations.cjs')).default.expectedImage(article.slug, approved.images[article.slug]);
     const imageUrl = origin + image.src;
     assert.equal(metas.find(item => item.property === 'og:image')?.content, imageUrl);
     assert.equal(metas.find(item => item.name === 'twitter:image')?.content, imageUrl);
@@ -105,7 +105,7 @@ test('all eight new public articles contain the complete reviewed manuscripts, r
   }
 });
 
-test('all69 guide cards occur once across the six bilingual archives with the original65 relative order preserved', async () => {
+test('all70 guide cards occur once across the six bilingual archives with the original65 relative order preserved', async () => {
   for (const locale of ['en', 'ar']) {
     const seen = [];
     for (let page = 1; page <= 6; page++) {
@@ -113,7 +113,7 @@ test('all69 guide cards occur once across the six bilingual archives with the or
       const html = strip(await readFile(`out/${locale}/${route}/index.html`, 'utf8'));
       const cards = [...html.matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/g)].filter(match => attrs(match[1])['data-blog-guide']);
       const expected = additions.blogOrderSlugs.slice((page - 1) * 12, page * 12);
-      assert.deepEqual(cards.map(match => attrs(match[1])['data-blog-guide']), expected, `${locale}/${route}: independent69-guide order`);
+      assert.deepEqual(cards.map(match => attrs(match[1])['data-blog-guide']), expected, `${locale}/${route}: independent70-guide order`);
       seen.push(...expected);
       for (const card of cards) {
         const slug = attrs(card[1])['data-blog-guide'];

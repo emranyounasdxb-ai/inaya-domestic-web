@@ -12,7 +12,7 @@ const origin = 'https://inayadomestic.ae';
 const manifest = JSON.parse(await readFile('.github/retired-gallery-images-20261025.json', 'utf8'));
 const gallery = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
 const stripScripts = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
-const expectedCategoryCounts = { inaya: 7, domestic: 9, childcare: 4, cooking: 6, care: 3, support: 7, lifestyle: 4, countries: 6, guides: 65 };
+const expectedCategoryCounts = { inaya: 7, domestic: 9, childcare: 4, cooking: 6, care: 3, support: 7, lifestyle: 4, countries: 6, guides: 70 };
 const displayedSource = image => `${image.src}?v=${image.cacheVersion}`;
 const relatedPath = (locale, route) => `/${locale}/${route ? `${route.replace(/^\/+|\/+$/g, '')}/` : ''}`;
 
@@ -42,11 +42,11 @@ test('all 358 retired image files are absent from public/export and every publis
   }
 });
 
-test('the current-site catalog has 111 distinct existing images with bilingual descriptions and matching cache versions', async () => {
-  assert.equal(gallery.images.length, 111);
+test('the current-site catalog has116 distinct approved images with bilingual descriptions and matching cache versions', async () => {
+  assert.equal(gallery.images.length, 116);
   assert.deepEqual(gallery.categories.map(category => category.id).sort(), Object.keys(expectedCategoryCounts).sort());
-  assert.equal(new Set(gallery.images.map(image => image.id)).size, 111);
-  assert.equal(new Set(gallery.images.map(image => image.src)).size, 111);
+  assert.equal(new Set(gallery.images.map(image => image.id)).size, 116);
+  assert.equal(new Set(gallery.images.map(image => image.src)).size, 116);
   const hashes = new Set();
   const counts = Object.fromEntries(gallery.categories.map(category => [category.id, 0]));
   const retiredBasenames = new Set(manifest.images.map(image => path.posix.basename(image.path)));
@@ -71,7 +71,7 @@ test('the current-site catalog has 111 distinct existing images with bilingual d
       await readFile(path.join('out', relatedPath(locale, image.relatedRoute), 'index.html'));
     }
   }
-  assert.equal(hashes.size, 111, 'identical image bytes are not repeated under alias paths');
+  assert.equal(hashes.size, 116, 'identical image bytes are not repeated under alias paths');
   assert.deepEqual(counts, expectedCategoryCounts);
 });
 
@@ -91,8 +91,8 @@ test('both current gallery pages render the complete localized catalog while ret
     assert.doesNotMatch(html, /photo-(?:office|home-support|cooking|childcare|general|design)-[0-9]{3}|data-retired-photo-anchor|companyGalleryPhotos|companyGalleryGroups|galleryDestinations/);
     const cards = [...main.matchAll(/<figure\b([^>]*)>([\s\S]*?)<\/figure>/g)]
       .map(match => ({ attributes: attrs(match[1]), contents: match[2] }));
-    assert.equal(cards.length, 111, `${locale}: all photos are present in server HTML`);
-    assert.equal([...main.matchAll(/<img\b/g)].length, 111, `${locale}: one image per canonical photo`);
+    assert.equal(cards.length, 116, `${locale}: all photos are present in server HTML`);
+    assert.equal([...main.matchAll(/<img\b/g)].length, 116, `${locale}: one image per canonical photo`);
     for (const image of gallery.images) {
       const selected = cards.filter(card => card.attributes['data-site-image-id'] === image.id);
       assert.equal(selected.length, 1, `${locale}/${image.id}: one card`);
@@ -124,7 +124,7 @@ test('both current gallery pages render the complete localized catalog while ret
     const dedicatedEntry = [...imageXml.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(item => decode(item[1].match(/<loc>(.*?)<\/loc>/)[1]) === url);
     assert.ok(dedicatedEntry, `${locale}: gallery is included in the dedicated image sitemap`);
     assert.deepEqual([...dedicatedEntry[1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map(match => decode(match[1])), expectedImages);
-    assert.match(entry[1], /<lastmod>2026-10-25<\/lastmod>/);
+    assert.match(entry[1], /<lastmod>2026-10-29<\/lastmod>/);
     const social = [...html.matchAll(/<meta\b[^>]*>/g)].map(match => attrs(match[0]));
     for (const [attribute, value] of [['property', 'og:image'], ['name', 'twitter:image']]) {
       assert.equal(social.find(meta => meta[attribute] === value)?.content, origin + '/images/home/inaya-home-hero-family.webp');

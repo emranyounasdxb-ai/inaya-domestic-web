@@ -146,7 +146,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
       for (const question of faq.mainEntity) {
         assert.equal(question['@type'], 'Question'); assert.equal(question.acceptedAnswer['@type'], 'Answer');
         assert.ok(text(body).includes(question.name), `${url}: FAQ question not rendered`);
-        assert.ok(text(body).includes(question.acceptedAnswer.text), `${url}: FAQ answer not rendered`);
+        assert.ok(text((await import('./blog-refresh-expectations.cjs')).default.beforeContextLinks(body)).includes(question.acceptedAnswer.text), `${url}: FAQ answer not rendered`);
       }
     }
     const inspect = (value, key = '', parentType = '') => {

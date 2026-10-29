@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-29",
+  "purpose": "Five distinct owner-requested blog illustrations; extends protected assets only. Deletion list stays exactly 15 historical paths.",
+  "images": [
+    {
+      "path": "images/blogs/blog-refresh-20261029/uae-domestic-worker-rights-employer-duties.webp",
+      "sha256": "b9c07548aafe59ea956511b12e0957a282e56178bb4e93b0568f95f666368194"
+    },
+    {
+      "path": "images/blogs/blog-refresh-20261029/domestic-worker-centre-reviews-checklist.webp",
+      "sha256": "a7fa7e8d315a766aa6ebe38763ec243df785634e428e44c9670985a0975ea8ce"
+    },
+    {
+      "path": "images/blogs/blog-refresh-20261029/domestic-workers-meaning-roles-uae.webp",
+      "sha256": "2a554b0a1720e9640c76e4f25b165ae9cdfa4d988726b1dbf5600fee5d79c373"
+    },
+    {
+      "path": "images/blogs/blog-refresh-20261029/choosing-domestic-worker-centre-across-emirates.webp",
+      "sha256": "3bae02fa255ca026bb7ac117b162acdfff272ead1cbc697f00df01e8efcd7424"
+    },
+    {
+      "path": "images/blogs/blog-refresh-20261029/inaya-office-staff-careers-ajman.webp",
+      "sha256": "bf86c705f801b0e638d5bc2740e099a805dbe4d922e9ea405ef1ecf6bb0c8922"
+    }
+  ]
+}

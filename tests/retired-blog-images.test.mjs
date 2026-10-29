@@ -12,6 +12,7 @@ import {
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const metadataPath = '.github/retired-blog-images-20261024.json';
 const approvalPaths = [
+  '.github/blog-refresh-images-20261029.json',
   'content/research/2026-10-24/remaining-blog-owner-approved-images.json',
   'content/research/2026-10-24/keyword-21-owner-approved-images.json',
 ];
@@ -35,10 +36,10 @@ test('cleanup command generation accepts exactly the reviewed 15 files and rejec
   assert.throws(() => deletionCommands(retiredPaths, [retiredPaths[0], retiredPaths[0]]), /distinct subset/);
 });
 
-test('public blog files are exactly the current 65 approved images with unchanged bytes and complete runtime mappings', async () => {
+test('public blog files are exactly the current 70 approved images with unchanged bytes and complete runtime mappings', async () => {
   const images = await currentApprovedImages();
-  assert.equal(images.length, 65);
-  const mapping = (await Promise.all(['lib/blog-images.ts', 'lib/keyword-article-images.ts'].map(relative => readFile(path.join(projectRoot, relative), 'utf8')))).join('\n');
+  assert.equal(images.length, 70);
+  const mapping = (await Promise.all(['lib/blog-images.ts', 'lib/keyword-article-images.ts', 'content/blog-refresh-images-20261029.json'].map(relative => readFile(path.join(projectRoot, relative), 'utf8')))).join('\n');
   const mapped = [...mapping.matchAll(/['"]?src['"]?\s*:\s*['"](\/images\/[^'"?]+)/g)].map(match => match[1].slice(1)).sort();
   assert.deepEqual(mapped, images.map(image => image.path).sort());
   assert.ok(images.every(image => !retiredPaths.includes(image.path)));
@@ -84,10 +85,10 @@ test('retirement preflight refuses references, resurrected files, missing curren
     await assert.rejects(prepareRetirement(out, planRoot, root), /referenced by index.html/);
     await rm(path.join(out, 'index.html'));
     await writeFile(path.join(out, retiredPaths[0]), 'resurrected old export');
-    await assert.rejects(prepareRetirement(out, planRoot, root), /exactly 65 approved originals/);
+    await assert.rejects(prepareRetirement(out, planRoot, root), /exactly 70 approved originals/);
     await rm(path.join(out, retiredPaths[0]));
     await rm(path.join(out, expected[0]));
-    await assert.rejects(prepareRetirement(out, planRoot, root), /exactly 65 approved originals/);
+    await assert.rejects(prepareRetirement(out, planRoot, root), /exactly 70 approved originals/);
     await writeFile(path.join(out, expected[0]), 'current export');
     await writeFile(path.join(root, 'public', images[0].path), 'unapproved changed image');
     await assert.rejects(prepareRetirement(out, planRoot, root), /Approved image bytes changed/);
@@ -99,8 +100,8 @@ test('retirement preflight refuses references, resurrected files, missing curren
     await copyFile(path.join(projectRoot, metadataPath), path.join(root, metadataPath));
 
     const plan = await prepareRetirement(out, planRoot, root);
-    assert.equal(plan.protectedApprovedImages.length, 65);
-    assert.equal(plan.expectedExportPaths.length, 325);
+    assert.equal(plan.protectedApprovedImages.length, 70);
+    assert.equal(plan.expectedExportPaths.length, 350);
     assert.equal(plan.deletePaths.length, 15);
     assert.equal(await readFile(path.join(planRoot, 'delete.lftp'), 'utf8'), deletionCommands(retiredPaths));
     await assert.rejects(prepareRetirement(out, planRoot, root), /EEXIST/);
