@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { publishedArticles } from '../../lib/published-article-content';
 import blogOrder from '../fixtures/blog-guide-order-20261028.json';
+import additions from '../four-guides-addition-expectations.cjs';
 
 const worksheetGuides = new Set([
   'domestic-worker-hiring-costs-uae',
@@ -82,12 +83,12 @@ for (const locale of ['en', 'ar'] as const) {
     expect(blogOrder.slugs).toHaveLength(65);
     const seen: string[] = [];
     const found = new Map(publishedArticles.map(article => [article.slug, 0]));
-    // The independently saved original65-card order pins each archive's exact
-    // contents. No production pagination selector supplies these expectations.
+    // The four new guides precede the immutable original65-card order. No
+    // production pagination selector supplies these archive expectations.
     for (let number = 1; number <= 6; number++) {
       const route = number === 1 ? 'blog' : `blog/page/${number}`;
       await page.goto(`/${locale}/${route}/`);
-      const expectedSlugs = blogOrder.slugs.slice((number - 1) * 12, number * 12);
+      const expectedSlugs = additions.blogOrderSlugs.slice((number - 1) * 12, number * 12);
       const cards = page.locator('main article[data-blog-guide]');
       await expect(cards).toHaveCount(expectedSlugs.length);
       const slugs = await cards.evaluateAll(elements => elements.map(element => element.getAttribute('data-blog-guide') ?? ''));
@@ -104,8 +105,9 @@ for (const locale of ['en', 'ar'] as const) {
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
     }
-    expect(seen).toEqual(blogOrder.slugs);
-    expect(new Set(seen).size).toBe(65);
+    expect(seen).toEqual(additions.blogOrderSlugs);
+    expect(seen.filter(slug => !additions.newSlugs.includes(slug))).toEqual(blogOrder.slugs);
+    expect(new Set(seen).size).toBe(69);
     for (const article of publishedArticles) expect(found.get(article.slug), `${locale}/${article.slug}: exactly one correctly localized archive card`).toBe(1);
   });
 }

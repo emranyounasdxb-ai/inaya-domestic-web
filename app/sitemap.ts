@@ -8,15 +8,18 @@ import { companyInformation } from '@/lib/company-information';
 import { keywordArticleMetadata } from '@/lib/keyword-article-metadata';
 import { keywordArticleSlugs } from '@/lib/keyword-article-guides';
 import { blogArchiveRoutes } from '@/lib/blog-pagination';
+import { newArticleMetadata } from '@/lib/new-article-metadata';
+import { newArticleSlugs } from '@/lib/new-article-guides';
 
 const locales = ['en', 'ar'] as const;
 
 // Record substantive content updates, not build times. Leave untracked routes undated.
 const contentUpdatedAt: Record<string, string> = {
-  ...Object.fromEntries(blogArchiveRoutes.map(route => [route, '2026-10-28'])),
+  ...Object.fromEntries(blogArchiveRoutes.map(route => [route, '2026-10-29'])),
   ...Object.fromEntries(countrySourcePages.map(country => [`maid-source-countries/${country.slug}`, '2026-10-28'])),
   'services/countries-we-source-from': '2026-10-28',
   ...Object.fromEntries(keywordArticleMetadata.map(article => [`blog/${article.slug}`, article.updated])),
+  ...Object.fromEntries(newArticleMetadata.map(article => [`blog/${article.slug}`, article.updated])),
   "blog/documents-for-domestic-worker-enquiry": '2026-10-29',
   "blog/domestic-worker-visa-sponsorship-support": '2026-10-29',
   [companyInformation.route]: companyInformation.updated,
@@ -42,7 +45,7 @@ const contentUpdatedAt: Record<string, string> = {
   "blog/maid-visit-frequency-planner": '2026-10-20',
   "blog/four-hour-eight-hour-maid-visit-plan": '2026-10-24',
   "": '2026-10-28',
-  "blog": '2026-10-28',
+  "blog": '2026-10-29',
   "blog/agreeing-domestic-worker-household-duties": '2026-10-22',
   "blog/all-inclusive-domestic-worker-packages": '2026-10-19',
   "blog/caregiver-versus-licensed-nurse": '2026-10-19',
@@ -164,15 +167,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     localizedEntry(location.slug, 0.82)
   ));
 
-  const guidePages = domesticWorkerGuides.filter(guide => !keywordArticleSlugs.has(guide.slug)).flatMap((guide) => (
+  const guidePages = domesticWorkerGuides.filter(guide => !keywordArticleSlugs.has(guide.slug) && !newArticleSlugs.has(guide.slug)).flatMap((guide) => (
     localizedEntry(`blog/${guide.slug}`, 0.76, 'monthly')
   ));
 
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
   const keywordPages = keywordArticleMetadata.flatMap(article => localizedEntry(`blog/${article.slug}`, 0.76, 'monthly'));
   const archivePages = blogArchiveRoutes.flatMap(route => localizedEntry(route, 0.6, 'monthly'));
+  const newArticlePages = newArticleMetadata.flatMap(article => localizedEntry(`blog/${article.slug}`, 0.76, 'monthly'));
 
-  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly'), ...localizedEntry(companyInformation.route, 0.72, 'monthly'), ...keywordPages, ...archivePages]) {
+  for (const entry of [...corePages, ...trustPages, ...servicePages, ...countryPages, ...locationPages, ...guidePages, ...localizedEntry('gallery', 0.65, 'monthly'), ...localizedEntry(companyInformation.route, 0.72, 'monthly'), ...keywordPages, ...archivePages, ...newArticlePages]) {
     uniqueEntries.set(entry.url, entry);
   }
 

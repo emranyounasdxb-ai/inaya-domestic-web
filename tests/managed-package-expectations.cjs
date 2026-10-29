@@ -232,7 +232,7 @@ const { hubSummaries } = require('./domestic-service-refresh-expectations.cjs');
 const { withoutKeywordPresentation } = require('./keyword-article-presentation-expectations.cjs');
 const { readFileSync } = require('node:fs');
 const { homeFaqAnswers, archiveRoutes, sharedOnPageUiPlacements, sharedOnPageUiCounts } = require('./on-page-spec-expectations.cjs');
-const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
+const { blogOrderSlugs } = require('./four-guides-addition-expectations.cjs');
 const commercialBlogSlugs = ['all-inclusive-domestic-worker-packages', 'domestic-worker-package-pricing-factors'];
 const paragraphTokens = value => value.toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ');
 const visibleText = value => value.replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
@@ -289,7 +289,7 @@ function reviewedBlogPlacements(page) {
   if (!['blog', ...archiveRoutes].includes(page.route)) return null;
   const approved = commercial.copy.blog[page.locale], expected = {};
   for (const [index, slug] of commercialBlogSlugs.entries()) {
-    const position = blogOrder.slugs.indexOf(slug);
+    const position = blogOrderSlugs.indexOf(slug);
     assert.ok(position >= 0, `${slug}: preserved original archive order`);
     const pageNumber = Math.floor(position / 12) + 1;
     const route = pageNumber === 1 ? 'blog' : `blog/page/${pageNumber}`;

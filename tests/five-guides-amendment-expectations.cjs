@@ -3,6 +3,7 @@ const { createHash } = require('node:crypto');
 const before = require('./fixtures/five-guides-amendment-20261029-before.json');
 const after = require('./fixtures/five-guides-amendment-20261029-after.json');
 const beforePages = require('./fixtures/five-guides-amendment-20261029-before-pages.json');
+const { beforeCatalogAddition } = require('./four-guides-addition-expectations.cjs');
 
 const date = '2026-10-29';
 const targetSlugs = [
@@ -86,6 +87,7 @@ function sourceRecords(file, source) {
 }
 
 function historicalSource(file, current) {
+  current = beforeCatalogAddition(file, current);
   const literal = after.additionalSourceAmendments?.find(row => row.file === file);
   if (literal) {
     current = current.replace(/\r\n/g, '\n');

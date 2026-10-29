@@ -5,6 +5,7 @@ import path from 'node:path';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
 import amendment from './five-guides-amendment-expectations.cjs';
+import additions from './four-guides-addition-expectations.cjs';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
@@ -57,12 +58,13 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
   assert.equal(new Set(articles.map(article => article.keyword)).size, 21);
   assert.equal(review.previousCanonicalUrls.length, 232);
   assert.equal(new Set(review.previousCanonicalUrls).size, 232);
-  assert.equal(urls.length, 284);
-  assert.equal(canonicalUrls.size, 284);
+  additions.assertInventory(urls);
+  additions.assertLastmods(entries.map(entry => ({ url: entry.match(/<loc>(.*?)<\/loc>/)[1], lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] })));
   assert.deepEqual(urls.slice(0, 232), review.previousCanonicalUrls, 'the complete prior inventory and order are preserved');
   const expectedNewUrls = review.articles.flatMap(article => locales.map(locale => `${origin}/${locale}/blog/${article.slug}/`));
   assert.deepEqual(urls.slice(232, onPageSpec.originalCanonicalCount), expectedNewUrls, 'the original 42 reviewed copies retain their exact positions');
-  assert.deepEqual(urls.slice(onPageSpec.originalCanonicalCount), onPageSpec.archiveRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`)), 'only ten reviewed archive URLs are appended after all original 274 canonicals');
+  assert.deepEqual(urls.slice(onPageSpec.originalCanonicalCount, additions.originalCanonicalCount), onPageSpec.archiveRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`)), 'the ten reviewed archives retain their original positions after274 canonicals');
+  assert.deepEqual(urls.slice(additions.originalCanonicalCount), additions.newCanonicalUrls, 'only eight separately reviewed new guide URLs follow the complete prior284');
   assert.ok(expectedNewUrls.every(url => !review.previousCanonicalUrls.includes(url)), 'new slugs do not replace old publications');
   const datedEntries = entries.filter(entry => entry.includes('<lastmod>'));
   const countryPhotoRoutes = ['services/countries-we-source-from', ...[
@@ -70,14 +72,14 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
     'kenyan', 'ugandan', 'ghanaian', 'sierra-leone', 'indonesian', 'myanmar',
   ].map(country => `maid-source-countries/${country}-maid-uae`)];
   const countryPhotoUrls = countryPhotoRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`));
-  const updatedUrls = [...countryPhotoUrls, ...[...onPageSpec.onPageUpdatedRoutes, ...onPageSpec.archiveRoutes].flatMap(route => locales.map(locale => `${origin}/${locale}/${route ? `${route}/` : ''}`))];
+  const updatedUrls = [...countryPhotoUrls, ...[...onPageSpec.onPageUpdatedRoutes, ...onPageSpec.archiveRoutes].flatMap(route => locales.map(locale => `${origin}/${locale}/${route ? `${route}/` : ''}`))].filter(url => !additions.indexUrls.includes(url));
   const currentEntries = datedEntries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>'));
-  assert.equal(datedEntries.length, 248, 'retain all244 dated URLs and date only the four previously undated base-guide copies');
-  assert.deepEqual(currentEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), updatedUrls.sort(), 'only 26 country-photo, 20 substantive on-page and ten new archive URLs receive 28 October');
+  assert.equal(datedEntries.length, 256, 'retain all248 dated URLs and date only the eight separately reviewed new guide copies');
+  assert.deepEqual(currentEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), updatedUrls.sort(), 'only unchanged country-photo and on-page routes retain28October; updated archive memberships receive29October');
   for (const entry of currentEntries) {
     assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], 'each reviewed updated page has one exact substantive modification date');
   }
-  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 192, 'historical dates plus four newly dated base copies remain outside28October');
+  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 212, 'historical dates, eight new guide copies and changed archive memberships remain outside28October');
   assert.equal(receipt.articlePairs, 21);
   assert.equal(receipt.localePages, 42);
   assert.equal(receipt.manuscriptHashes.length, 42);

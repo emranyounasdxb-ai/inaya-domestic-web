@@ -1,8 +1,10 @@
 import { keywordArticleMetadata } from './keyword-article-metadata';
+import { newArticleMetadata } from './new-article-metadata';
 
 // Concise search snippets; the full customer questions remain as article headings.
 export const articleSearchTitles: Record<string, Partial<Record<'en' | 'ar', string>>> = {
   ...Object.fromEntries(keywordArticleMetadata.map(article => [article.slug, { en: article.en.searchTitle, ar: article.ar.searchTitle }])),
+  ...Object.fromEntries(newArticleMetadata.map(article => [article.slug, { en: article.en.searchTitle, ar: article.ar.searchTitle }])),
   'domestic-worker-employment-arrangements-uae': { en: 'Live-in, Live-out or Temporary Domestic Help' },
   'all-inclusive-domestic-worker-packages': { en: 'What Does a Domestic Worker Package Include?' },
   'domestic-worker-sponsorship-responsibilities': { en: 'Domestic Worker Sponsorship Responsibilities' },

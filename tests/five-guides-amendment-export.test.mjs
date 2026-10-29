@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import amendment from './five-guides-amendment-expectations.cjs';
+import additions from './four-guides-addition-expectations.cjs';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
@@ -104,14 +105,11 @@ test('all ten amended exports render the complete independently reviewed replace
   }
 });
 
-test('only the ten reviewed existing guide URLs receive the new substantive date, with all284 canonical identities preserved', () => {
-  assert.equal(urls.length, 284);
-  assert.equal(new Set(urls).size, 284);
+test('the ten Step1 guide dates remain exact alongside the eight new guides and changed archive indexes', () => {
+  additions.assertInventory(urls);
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match => match[1]);
-  const dated = entries.filter(entry => entry.includes('<lastmod>'));
-  assert.equal(dated.length, 248, 'only the two previously undated base pairs add date coverage');
+  additions.assertLastmods(entries.map(entry => ({ url: entry.match(/<loc>(.*?)<\/loc>/)[1], lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] ?? null })));
   const actual = entries.filter(entry => entry.includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]);
-  const expected = amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`));
+  const expected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls];
   assert.deepEqual(actual.sort(), expected.sort());
-  assert.equal(entries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>')).length, 56);
 });

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import additions from './four-guides-addition-expectations.cjs';
 import { attrs, decode, text } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
@@ -14,7 +15,7 @@ const visible = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').
 const graph = html => [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(match => attrs(match[1]).type === 'application/ld+json').flatMap(match => { const value = JSON.parse(match[2]); return value['@graph'] ?? [value]; });
 
 test('all public pages show the official facility number and one consistent business identity', async () => {
-  assert.equal(urls.length, 284);
+  additions.assertInventory(urls);
   for (const url of urls) {
     const html = await load(new URL(url).pathname.slice(1));
     const footer = visible(html).match(/<footer\b[^>]*>([\s\S]*?)<\/footer>/)?.[1];

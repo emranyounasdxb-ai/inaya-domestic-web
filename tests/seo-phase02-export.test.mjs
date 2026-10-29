@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, realpath } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
+import additions from './four-guides-addition-expectations.cjs';
 
 const origin = 'https://inayadomestic.ae';
 const xml = await readFile('out/sitemap.xml', 'utf8');
@@ -17,7 +18,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
   const titles = new Set();
   const descriptions = new Set();
   const primaryHeadings = new Set();
-  assert.equal(urls.length, 284);
+  additions.assertInventory(urls);
   for (const url of urls) {
     const pathname = new URL(url).pathname;
     const locale = pathname.split('/')[1];

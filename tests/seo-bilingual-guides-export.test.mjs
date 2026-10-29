@@ -3,6 +3,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
 import amendment from './five-guides-amendment-expectations.cjs';
+import additions from './four-guides-addition-expectations.cjs';
 import './five-guides-amendment-export.test.mjs';
 import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
@@ -68,7 +69,7 @@ test('five Ajman intents use four existing bilingual publications and preserve e
 test('Ajman decision aids render complete bilingual worksheets, useful process charts and canonical references', async () => {
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const canonicalUrls = new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]));
-  assert.equal(canonicalUrls.size, 284);
+  additions.assertInventory([...canonicalUrls]);
   const plain = (value) => tokens(value.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1').replace(/\*\*/g, '')).join(' ');
   for (const entry of ajmanRefreshes.entries) for (const locale of ['en', 'ar']) {
     const copy = entry[locale];
@@ -131,7 +132,7 @@ test('domestic-service refreshes preserve the original manuscripts and render co
   const source = await readFile('lib/published-article-content.ts', 'utf8');
   const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, '')).map(record => amendment.historicalRecord(record, 'published'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
-  assert.equal([...sitemap.matchAll(/<loc>/g)].length, 284, 'the original 274 canonicals plus the ten reviewed archive pages');
+  additions.assertInventory([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]));
   assert.equal(articles.length, 37, 'domestic-service refreshes remain in the preserved 37-publication family');
   assert.deepEqual(currentRefreshes.entries.map(({ slug }) => slug).sort(), [
     'choosing-domestic-worker-agency-ajman', 'domestic-worker-hiring-stages-timelines', 'four-hour-eight-hour-maid-visit-plan'
@@ -275,7 +276,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
   const { guideUpdated } = JSON.parse(await readFile('tests/fixtures/poster-pricing-changes.json', 'utf8'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 284);
+  additions.assertInventory(urls);
   for (const locale of ['en', 'ar']) {
     const hub = await blogListing(locale);
     const hubBody = hub.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
