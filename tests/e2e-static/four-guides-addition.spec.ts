@@ -1,7 +1,7 @@
 import { expect, test } from '../browser-fixture';
 import additions from '../four-guides-addition-expectations.cjs';
 
-for (const locale of ['en', 'ar'] as const) for (const slug of additions.newSlugs) {
+for (const locale of ['en', 'ar'] as const) for (const slug of additions.reviewedSlugs) {
   test(`${locale}: new ${slug} supports real archive navigation, section links, tables and translation`, async ({ page }) => {
     const approved = additions.reviewed();
     const article = approved.articles.find((entry: { slug: string }) => entry.slug === slug);

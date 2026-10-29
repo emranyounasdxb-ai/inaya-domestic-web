@@ -48,7 +48,7 @@ def contract():
         '{http://www.sitemaps.org/schemas/sitemap/0.9}url/'
         '{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
     pages = [urllib.parse.urlsplit(url).path for url in urls]
-    assert len(pages) == 292, f'Unexpected current sitemap inventory: {len(pages)}'
+    assert len(pages) == 294, f'Unexpected current sitemap inventory: {len(pages)}'
     # Preserve the complete historical inventory and order. The new four-guide
     # cohort appends eight URLs after all 284 previously reviewed canonical URLs.
     additions = json.loads((ROOT / 'tests' / 'fixtures' /
@@ -64,7 +64,11 @@ def contract():
     ], 'Exactly the four separately reviewed new topics are permitted'
     new_urls = [f'{ORIGIN}/{locale}/blog/{slug}/'
                 for slug in new_slugs for locale in ['en', 'ar']]
-    assert urls[284:] == new_urls, 'Only the eight reviewed new guide URLs may be appended'
+    assert urls[284:292] == new_urls, 'The original eight reviewed new guide URLs retain their exact positions'
+    office = json.loads((ROOT / 'tests' / 'fixtures' /
+                         'office-careers-20261029.json').read_text(encoding='utf-8'))
+    assert office['slug'] == 'inaya-office-staff-careers-ajman'
+    assert urls[292:] == [f"{ORIGIN}/{locale}/blog/{office['slug']}/" for locale in ['en', 'ar']], 'Only the owner-confirmed bilingual office-careers pair appends'
     review = json.loads((ROOT / 'tests' / 'fixtures' /
                          'keyword-articles-reviewed-20261024.json').read_text(encoding='utf-8'))
     previous = review['previousCanonicalUrls']

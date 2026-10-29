@@ -372,6 +372,7 @@ const newArticleImageAliases: Record<string, string> = {
   'domestic-worker-centre-reviews-checklist': 'maid-agency-ajman-quote-comparison-workbook',
   'domestic-workers-meaning-roles-uae': 'domestic-workers-ajman-household-role-design-canvas',
   'choosing-domestic-worker-centre-across-emirates': 'maid-agency-sharjah-ajman-office-logistics',
+  'inaya-office-staff-careers-ajman': 'domestic-worker-contracts-renewal',
 };
 
 export function getBlogImage(slug: string): BlogImage | undefined {

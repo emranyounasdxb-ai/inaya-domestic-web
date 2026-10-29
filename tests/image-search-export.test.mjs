@@ -218,7 +218,7 @@ test('all292 pages have localized previews with the eight new article photos and
     }
     described++;
   }
-  assert.equal(described, 234, 'all226 prior primary photos remain and eight new locale pages reuse approved source photos');
+  assert.equal(described, 236, 'all226 prior primary photos remain and eight new locale pages reuse approved source photos');
   assert.deepEqual(picturedCountryPages.sort(), Object.keys(countryPagePhotos).flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`)).sort(), 'all26 expected country pages have matching visible, social, schema and sitemap photos');
   const substantivelyUpdated = onPage.onPageUpdatedRoutes.filter(route => !newGuides.indexRoutes.includes(route))
     .flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route ? route + '/' : ''}`));
@@ -371,7 +371,7 @@ test('all 88 refreshed article heroes and all 88 index cards use the matching ve
     // Every prior card is still checked once across all six crawlable pages.
     const topicCards = [...visibleImageHtml(indexHtml).matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/gi)]
       .filter(card => [...card[1].matchAll(/<a\b[^>]*>/gi)].some(link => new RegExp(`^/${locale}/blog/[^/?#]+/$`).test(attrs(link[0]).href ?? '')));
-    assert.equal(topicCards.length, 69, `${locale}: all65 original and four new cards remain discoverable across six pages`);
+    assert.equal(topicCards.length, 70, `${locale}: all65 original and four new cards remain discoverable across six pages`);
     for (const entry of approved.images) {
       const route = `/${locale}/blog/${entry.slug}/`;
       const html = await readFile(path.join('out', route, 'index.html'), 'utf8');

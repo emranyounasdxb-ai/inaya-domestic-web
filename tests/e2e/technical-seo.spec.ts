@@ -78,7 +78,7 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
     [...datedPaths].map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
   );
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
-  expect(datedEntries).toHaveLength(258);
+  expect(datedEntries).toHaveLength(260);
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual(expectedDatedUrls.sort());
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(30);

@@ -111,6 +111,6 @@ test('the ten Step1 guide dates remain exact alongside the eight new guides, cha
   additions.assertLastmods(entries.map(entry => ({ url: entry.match(/<loc>(.*?)<\/loc>/)[1], lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] ?? null })));
   const actual = entries.filter(entry => entry.includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]);
   const expected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls, ...['en', 'ar'].map(locale => `${origin}/${locale}/privacy-policy/`)];
-  assert.equal(expected.length, 32);
+  assert.equal(expected.length, 34);
   assert.deepEqual(actual.sort(), expected.sort());
 });
