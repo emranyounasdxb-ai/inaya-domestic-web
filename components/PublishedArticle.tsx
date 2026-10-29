@@ -1,25 +1,22 @@
+import Inline from './BlogInlineText';
+import RelatedBlogCards from './RelatedBlogCards';
+import { createBlogInlineParser } from '@/lib/blog-context-links';
 import Link from 'next/link';
 import BlogImage from './BlogImage';
 import PageBreadcrumbs from './PageBreadcrumbs';
 import RouteSeo from './RouteSeo';
 import ArticleVisual from './ArticleVisual';
 import GuidePlanningDownload from './GuidePlanningDownload';
-import { articleBlocks, articleInline } from '@/lib/article-markdown';
+import { articleBlocks } from '@/lib/article-markdown';
 import { getCustomerArticleVisual } from '@/lib/customer-article-visuals';
 import { guideAuthor, type DomesticWorkerGuide, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { siteConfig } from '@/lib/site-config';
-
-function Inline({ text }: { text: string }) {
-  return articleInline(text).map((part, index) => part.type === 'link'
-    ? <a key={index} href={part.href} className="font-medium text-primary-900 underline decoration-accent-600/70 decoration-1 underline-offset-4 transition hover:text-accent-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-700">{part.text}</a>
-    : part.type === 'strong' ? <strong key={index} className="font-semibold text-primary-900">{part.text}</strong>
-    : part.text);
-}
 
 export default function PublishedArticle({ guide, body, lang }: { guide: DomesticWorkerGuide; body: string; lang: GuideLanguage }) {
   const isArabic = lang === 'ar';
   const copy = guide[lang];
   const blocks = articleBlocks(body);
+  const linkedInline = createBlogInlineParser(guide.slug, lang, body);
   const visual = getCustomerArticleVisual(guide.slug, lang);
   const firstParagraphIndex = blocks.findIndex((block) => block.type === 'paragraph');
   const headings = blocks.filter((block) => block.type === 'heading');
@@ -33,7 +30,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
   return (
     <div className="bg-ivory text-ink" dir={isArabic ? 'rtl' : 'ltr'} lang={lang}>
       <RouteSeo locale={lang} route={route} />
-      <section className="relative overflow-hidden pb-10 pt-12 sm:pb-14 sm:pt-16 lg:pt-20">
+      <section data-blog-hero="true" className="relative overflow-hidden pb-10 pt-12 sm:pb-14 sm:pt-16 lg:pt-20">
         <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(191,164,106,0.20),transparent_28rem),radial-gradient(circle_at_10%_48%,rgba(7,22,74,0.10),transparent_26rem)]" />
         <div className="container-x relative">
           <div className="mx-auto max-w-4xl text-center">
@@ -50,7 +47,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
       </section>
       <PageBreadcrumbs locale={lang} route={route} />
 
-      <div className="container-x grid max-w-6xl gap-7 pb-16 pt-6 sm:pb-20 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-10">
+      <div data-blog-layout={guide.slug} className="container-x grid max-w-6xl gap-7 pb-16 pt-6 sm:pb-20 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-10">
         <details className="glass-panel rounded-[24px] p-5 lg:hidden">
           <summary className={`cursor-pointer text-lg font-bold text-primary-900 ${headingFont}`}>{isArabic ? 'في هذا المقال' : 'In this article'}</summary>
           {contents}
@@ -59,12 +56,12 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
           {blocks.map((block, index) => {
             if (block.type === 'heading') return <h2 key={index} id={block.id} className={`mb-5 mt-10 scroll-mt-24 border-t border-accent-500/30 pt-8 text-2xl font-bold leading-snug text-primary-900 sm:text-[28px] ${headingFont}`}><Inline text={block.text} /></h2>;
             if (block.type === 'paragraph') {
-              const paragraph = <p className={`mb-5 text-primary-900/85 ${index === 0 ? 'text-lg font-medium leading-[1.9]' : ''}`}><Inline text={block.text} /></p>;
+              const paragraph = <p className={`mb-5 text-primary-900/85 ${index === 0 ? 'text-lg font-medium leading-[1.9]' : ''}`}><Inline text={block.text} parse={linkedInline} /></p>;
               return visual && index === firstParagraphIndex
                 ? <div key={index}>{paragraph}<ArticleVisual visual={visual} lang={lang} id={`${guide.slug}-visual`} /></div>
-                : <p key={index} className={`mb-5 text-primary-900/85 ${index === 0 ? 'text-lg font-medium leading-[1.9]' : ''}`}><Inline text={block.text} /></p>;
+                : <p key={index} className={`mb-5 text-primary-900/85 ${index === 0 ? 'text-lg font-medium leading-[1.9]' : ''}`}><Inline text={block.text} parse={linkedInline} /></p>;
             }
-            if (block.type === 'list') return <ul key={index} className="mb-6 list-disc space-y-3 ps-6 text-primary-900/85 marker:text-accent-700">{block.items.map((item, itemIndex) => <li key={itemIndex} className="ps-1"><Inline text={item} /></li>)}</ul>;
+            if (block.type === 'list') return <ul key={index} className="mb-6 list-disc space-y-3 ps-6 text-primary-900/85 marker:text-accent-700">{block.items.map((item, itemIndex) => <li key={itemIndex} className="ps-1"><Inline text={item} parse={linkedInline} /></li>)}</ul>;
             return <div key={index} role="region" aria-labelledby={block.headingId} tabIndex={0} className="mb-7 max-w-full overflow-x-auto rounded-2xl border border-primary-900/15 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-700">
               <table aria-labelledby={block.headingId} className="w-full min-w-[36rem] border-collapse text-start text-sm leading-7 text-primary-900">
                 <thead className="bg-primary-900/5"><tr>{block.columns.map((column, columnIndex) => <th key={columnIndex} scope="col" className="px-5 py-4 text-start align-top font-semibold"><Inline text={column} /></th>)}</tr></thead>
@@ -77,7 +74,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
           <GuidePlanningDownload slug={guide.slug} locale={lang} />
         </article>
 
-        <aside className="min-w-0 space-y-6 lg:sticky lg:top-20 lg:self-start">
+        <aside className="min-w-0 space-y-6 ">
           <nav aria-label={isArabic ? 'محتويات المقال' : 'Article contents'} className="glass-panel hidden rounded-[24px] p-6 lg:block">
             <h2 className={`text-xl font-bold text-primary-900 ${headingFont}`}>{isArabic ? 'في هذا المقال' : 'In this article'}</h2>
             {contents}
@@ -90,6 +87,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
               <li><a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" className="underline decoration-accent-500/70 underline-offset-4">{isArabic ? 'تواصل عبر واتساب' : 'Enquire on WhatsApp'}</a></li>
             </ul>
           </section>
+          <RelatedBlogCards slug={guide.slug} lang={lang} />
         </aside>
       </div>
     </div>

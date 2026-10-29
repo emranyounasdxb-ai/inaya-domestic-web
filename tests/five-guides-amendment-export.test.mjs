@@ -39,7 +39,8 @@ test('all ten amended exports render the complete independently reviewed replace
     assert.ok(rendered, `${route}: full article exists`);
     assert.doesNotMatch(rendered, /\{\{visual:|<p\b[^>]*>\s*#{1,3}\s|TODO|TBD|pending business/i, `${route}: no manuscript syntax or unfinished copy`);
     const withoutFigures = rendered.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/g, '')
-      .replace(/<section\b[^>]*data-keyword-references="true"[^>]*>[\s\S]*?<\/section>/, '');
+      .replace(/<section\b[^>]*data-keyword-references="true"[^>]*>[\s\S]*?<\/section>/, '')
+      .replace(/<section\b[^>]*data-blog-source-links="true"[^>]*>[\s\S]*?<\/section>/, '');
     const actualParagraphs = [...withoutFigures.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(match => visible(match[1]));
     const actualItems = [...withoutFigures.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)].map(match => visible(match[1]));
     const actualTables = [...withoutFigures.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/g)].map(table =>
@@ -110,7 +111,7 @@ test('the ten Step1 guide dates remain exact alongside the eight new guides, cha
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match => match[1]);
   additions.assertLastmods(entries.map(entry => ({ url: entry.match(/<loc>(.*?)<\/loc>/)[1], lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] ?? null })));
   const actual = entries.filter(entry => entry.includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]);
-  const expected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls, ...['en', 'ar'].map(locale => `${origin}/${locale}/privacy-policy/`)];
-  assert.equal(expected.length, 34);
+  const expected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls, ...['en', 'ar'].map(locale => `${origin}/${locale}/gallery/`), ...['en', 'ar'].map(locale => `${origin}/${locale}/privacy-policy/`)];
+  assert.equal(expected.length, 36);
   assert.deepEqual(actual.sort(), expected.sort());
 });

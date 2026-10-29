@@ -1,4 +1,5 @@
 import { keywordArticleImages } from './keyword-article-images';
+import refreshedImages from '../content/blog-refresh-images-20261029.json';
 
 type BlogImage = {
   src: string;
@@ -376,6 +377,8 @@ const newArticleImageAliases: Record<string, string> = {
 };
 
 export function getBlogImage(slug: string): BlogImage | undefined {
+  const refreshed = (refreshedImages as Record<string, BlogImage>)[slug];
+  if (refreshed) return refreshed;
   const imageSlug = newArticleImageAliases[slug] ?? slug;
   return keywordArticleImages[imageSlug] ?? blogImages[imageSlug];
 }

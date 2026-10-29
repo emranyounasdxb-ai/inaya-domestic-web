@@ -1,0 +1,66 @@
+{
+  "mode": "built-in image_gen; five separate assets; no paid CLI",
+  "purpose": "Replace five cross-topic hero-image reuses; one image shared only by EN/AR copies of its own article",
+  "assets": [
+    {
+      "id": "A03",
+      "slug": "uae-domestic-worker-rights-employer-duties",
+      "prompt": "Use case: photorealistic-natural. Create ONE landscape editorial photograph illustration for an INAYA UAE domestic-worker guide titled 'UAE domestic-worker rights and employer duties'. A respectful private consultation at a sunlit contemporary UAE home: an adult woman household employer in modest navy clothing and an adult domestic worker in a neat pink polo sit at equal height on opposite sides of a small round table, reviewing a plain agreement folder and a simple blank weekly planner together. The worker retains her own closed personal-document wallet in her hand. Warm natural light, realistic skin and hands, refined navy/pink/ivory palette, candid balanced composition, eye-level medium-wide framing, both faces and all key props fully inside the frame. Distinct rights-and-responsibilities discussion, not a recruitment counter or a government office. Landscape about 16:10, suitable for a high-quality blog cover and small thumbnail. No text, no labels, no readable personal data, no logos, no seals, no uniforms implying government affiliation, no watermark. Fictional people; illustrative scene rather than a claim to portray actual INAYA staff or clients.",
+      "publicSrc": "/images/blogs/blog-refresh-20261029/uae-domestic-worker-rights-employer-duties.webp",
+      "width": 1586,
+      "height": 992,
+      "originalSha256": "780886e6be17c061989d555536caa68a0b85b100814f7a7b0aa4438c0d1dcd15",
+      "publicSha256": "b9c07548aafe59ea956511b12e0957a282e56178bb4e93b0568f95f666368194",
+      "bytes": 159086,
+      "generatedFile": "exec-2d662479-0dad-4df0-a377-a6cb84598505.png"
+    },
+    {
+      "id": "A07",
+      "slug": "domestic-worker-centre-reviews-checklist",
+      "prompt": "Use case: photorealistic-natural. Create ONE landscape editorial photograph illustration for a UAE domestic-worker service-centre reviews checklist. Close over-the-shoulder composition of an adult woman at a warm home study desk reviewing a laptop beside a paper checklist and two plain service folders. Laptop screen is a deliberately generic unbranded interface with softly blurred short review blocks, not readable words, numbers, ratings or real businesses. Her hand uses a pencil to note questions on a blank checklist, not a fake endorsement. Natural daylight, realistic hands and textures, refined navy, ivory and muted pink accents. Entire laptop and hand action comfortably inside the frame, landscape about16:10 for blog cover and thumbnail. Scene must look distinctly different from a consultation at a recruitment counter. No readable text, logos, seals, watermark, personal data or invented actual review scores. Fictional editorial scene.",
+      "publicSrc": "/images/blogs/blog-refresh-20261029/domestic-worker-centre-reviews-checklist.webp",
+      "width": 1586,
+      "height": 992,
+      "originalSha256": "36a526994d4834e54996e98ebacc98033139ab758da8a7676b9b8db350137a13",
+      "publicSha256": "a7fa7e8d315a766aa6ebe38763ec243df785634e428e44c9670985a0975ea8ce",
+      "bytes": 125724,
+      "generatedFile": "exec-6b4f55df-60c4-43cc-a324-ef7f6d5bbfcc.png"
+    },
+    {
+      "id": "A08",
+      "slug": "domestic-workers-meaning-roles-uae",
+      "prompt": "Use case: photorealistic-natural. Create ONE landscape editorial photograph illustration for 'Domestic workers in the UAE: meaning, roles and household arrangements'. Bright contemporary UAE home kitchen/dining boundary. An adult domestic worker in a neat vivid pink polo stands beside a small rolling household trolley with folded linen and a closed task notebook; an adult woman homeowner in modest casual navy clothing gestures naturally between the kitchen and living area as they discuss the work scope. Both are engaged equals, relaxed professional expressions, realistic human hands, natural candid medium-wide photography. Distinct composition: standing people and visible household areas, not a seated document consultation or office counter. Warm daylight, ivory interiors and navy/pink palette. All key subjects and trolley fully in landscape16:10 frame. No text or numbers, logos, government seals, private documents, clinical equipment or watermark. Fictional illustration, no implication of actual staff or clients.",
+      "publicSrc": "/images/blogs/blog-refresh-20261029/domestic-workers-meaning-roles-uae.webp",
+      "width": 1586,
+      "height": 992,
+      "originalSha256": "cb9ee12a1e2c7a5f294bf74d2c3bb811c406f7618ca0490158fc02df12976e1b",
+      "publicSha256": "2a554b0a1720e9640c76e4f25b165ae9cdfa4d988726b1dbf5600fee5d79c373",
+      "bytes": 148634,
+      "generatedFile": "exec-8b8fc12f-9cef-4dc7-bf6d-ebf6be6b04c7.png"
+    },
+    {
+      "id": "A14",
+      "slug": "choosing-domestic-worker-centre-across-emirates",
+      "prompt": "Use case: photorealistic-natural. Create ONE high-quality landscape editorial photograph illustration for 'Choosing a domestic-worker centre in Ajman or another emirate'. Oblique overhead travel-planning still life on a cream dining table: two adult people's hands compare two plain service-quote folders beside a tablet showing a minimal unlabeled abstract road-route graphic, car keys, a small closed notebook and two coffee cups. One hand points to the route, another to a blank checklist. No visible faces, no readable text, no city labels, no identifiable map claims or location pins implying INAYA branches. A clean refined household decision scene, distinct from the other covers showing office desks or reception consultations. Warm UAE daylight, navy stationery, tiny muted pink accent, authentic material textures and realistic hands. Balanced landscape about16:10 with all props framed safely for a thumbnail. No logos, watermarks, personal data, readable amounts or promises.",
+      "publicSrc": "/images/blogs/blog-refresh-20261029/choosing-domestic-worker-centre-across-emirates.webp",
+      "width": 1586,
+      "height": 992,
+      "originalSha256": "0094b4f3666dc200f5ed460fa52f3b1d6bc3fbe33c8944f6424af51aa5b00d67",
+      "publicSha256": "3bae02fa255ca026bb7ac117b162acdfff272ead1cbc697f00df01e8efcd7424",
+      "bytes": 176294,
+      "generatedFile": "exec-a07fb3e9-bc9a-498c-996b-fca359d77255.png"
+    },
+    {
+      "id": "A16",
+      "slug": "inaya-office-staff-careers-ajman",
+      "prompt": "Use case: photorealistic-natural. Create ONE landscape editorial photograph illustration for office-staff careers at INAYA Domestic Workers in Ajman. A modest contemporary private-company office reception and interview setting, an adult woman recruiter in a navy blazer welcomes two adult office-job candidates, one man and one woman in tidy business-casual clothes, carrying closed CV folders. Friendly professional eye contact, realistic skin and hands, desk with laptop and plain stationery, subtle ivory/navy interior and a pink accent chair. These are office staff and applicants, NOT domestic workers doing housework and NOT government officials. Wide eye-level candid composition with everyone fully framed, landscape about16:10 suitable for blog cover and small card. No text, logos, badges, seals, readable CV data, watermarks or fictional vacancy numbers. Fictional editorial illustration; not a claim to depict actual INAYA employees or applicants.",
+      "publicSrc": "/images/blogs/blog-refresh-20261029/inaya-office-staff-careers-ajman.webp",
+      "width": 1586,
+      "height": 992,
+      "originalSha256": "378f281b5a98b4ad365e584ce742cfbb7efe8544e8b1cbfb53e4aa84f3cb6e39",
+      "publicSha256": "bf86c705f801b0e638d5bc2740e099a805dbe4d922e9ea405ef1ecf6bb0c8922",
+      "bytes": 130202,
+      "generatedFile": "exec-385cd7ef-7ef7-4209-a73a-6f786dbe2a46.png"
+    }
+  ]
+}

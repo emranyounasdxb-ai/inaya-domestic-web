@@ -1,3 +1,4 @@
+import additionsRefresh from './blog-refresh-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import test from 'node:test';
@@ -288,7 +289,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.ok(hubBody.includes(`href="${route}"`), `${route}: linked from hub`);
       const html = await readFile(`out${route}index.html`, 'utf8');
       const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
-      const article = body.match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1];
+      const article = body.match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1]?.replace(/<section\b[^>]*data-blog-source-links="true"[^>]*>[\s\S]*?<\/section>/, '');
       assert.ok(article, `${route}: visible article`);
       assert.ok(body.includes(`href="/${locale}/blog/${relatedGuide[slug]}/"`), `${route}: related guide link`);
       assert.ok(tokens(text(article)).length >= 200, `${route}: substantive article copy`);
@@ -442,11 +443,11 @@ test('twenty original bilingual topics retain exact copy and references alongsid
         assert.ok(boundary, `${route}: the supplement follows every original heading`);
         originalRendered = originalRendered.slice(0, boundary.index);
       }
-      assert.equal(sha(beforeReplacementHeadingCorrection(article.slug, locale, text(originalRendered))), snapshot.visible_sha256, `${route}: every original word, figure and condition rendered apart from the reviewed heading correction`);
+      assert.equal(sha(beforeReplacementHeadingCorrection(article.slug, locale, text(additionsRefresh.beforeContextLinks(originalRendered)))), snapshot.visible_sha256, `${route}: every original word, figure and condition rendered apart from the reviewed heading correction`);
       assert.equal([...originalRendered.matchAll(/<h2\b/g)].length, snapshot.heading_count, `${route}: all original headings`);
       assert.equal([...originalRendered.matchAll(/<li\b/g)].length, snapshot.list_items, `${route}: all original list items`);
       assert.equal([...originalRendered.matchAll(/<table\b/g)].length, snapshot.tables, `${route}: all original tables`);
-      const links = [...originalRendered.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href);
+      const links = [...additionsRefresh.beforeContextLinks(originalRendered).matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href);
       const fullLinks = [...rendered.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href);
       assert.deepEqual(links, snapshot.links, `${route}: all original clickable references and internal links`);
       for (const link of links) {

@@ -35,7 +35,7 @@ test('every image sitemap entry matches visible content, with no lost canonical 
   assert.ok(unique.size >= 80, `substantive image coverage: ${unique.size}`);
 });
 
-test('the dedicated image sitemap covers every pictured canonical page and all111 current site photos', async () => {
+test('the dedicated image sitemap covers every pictured canonical page and all116 current site photos', async () => {
   const dedicatedXml = await readFile('out/image-sitemap.xml', 'utf8');
   assert.match(dedicatedXml, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
   assert.doesNotMatch(dedicatedXml, /company-gallery|#photo-|urn:inaya:company-photo:/);
@@ -62,7 +62,7 @@ test('the dedicated image sitemap covers every pictured canonical page and all11
     }
   }
   const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
-  assert.equal(allImages.size, 111);
+  assert.equal(allImages.size, 116);
   assert.deepEqual([...allImages].sort(), catalog.images.map(image => origin + image.src).sort());
   const robots = await readFile('out/robots.txt', 'utf8');
   assert.deepEqual([...robots.matchAll(/^Sitemap: (.+)$/gm)].map(match => match[1].trim()), [origin + '/sitemap.xml', origin + '/image-sitemap.xml']);
@@ -232,9 +232,9 @@ test('all292 pages have localized previews with the eight new article photos and
 
 test('preview metadata changes preserve all111 approved original photos and all four deployed favicon files', async () => {
   const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
-  assert.equal(catalog.images.length, 111);
+  assert.equal(catalog.images.length, 116);
   for (const folder of ['public', 'out']) {
-    const photos = await Promise.all(catalog.images.map(async image => [image.src, imageSha256(await readFile(path.join(folder, image.src)))]));
+    const photos = await Promise.all(catalog.images.filter(image => !image.id.startsWith('site-image-blog-refresh-')).map(async image => [image.src, imageSha256(await readFile(path.join(folder, image.src)))]));
     assert.equal(fingerprint(photos), '3647afad9d5239502e941dbd9e564b997f315fa3e9d701054724c52d70682dcc', `${folder}: all111 approved original photo bytes are unchanged`);
   }
   const icons = await Promise.all(['/apple-touch-icon.png', '/favicon-48x48.png', '/favicon.ico', '/icon.png'].map(async file => [file, imageSha256(await readFile(path.join('out', file)))]));
