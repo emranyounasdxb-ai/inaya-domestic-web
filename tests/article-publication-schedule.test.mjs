@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import amendment from './five-guides-amendment-expectations.cjs';
 
 test('the preserved 44-topic cohort retains its complete original daily publication schedule', async () => {
   const schedule = JSON.parse(await readFile('content/article-publication-schedule.json', 'utf8'));
@@ -41,7 +42,7 @@ test('the separately reviewed 21-topic batch adds 42 copies dated 24 October wit
   assert.equal(Object.keys(schedule).length + batch.length, 65);
   for (const article of batch) {
     assert.equal(article.published, '2026-10-24');
-    assert.equal(article.updated, '2026-10-24');
+    assert.equal(article.updated, amendment.dateFor(article.slug, '2026-10-24'));
     assert.ok(!Object.hasOwn(schedule, article.slug), `${article.slug}: the new batch does not impersonate the historical daily schedule`);
     assert.ok(article.en.body?.trim() && article.ar.body?.trim(), `${article.slug}: both complete copies exist`);
   }

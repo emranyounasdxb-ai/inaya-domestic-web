@@ -2,12 +2,13 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 const fixture = require('./fixtures/keyword-article-presentation-20261024.json');
 const review = require('./fixtures/keyword-articles-reviewed-20261024.json');
-const { withoutKeywordPresentation } = require('./keyword-article-presentation-expectations.cjs');
+const { withoutKeywordPresentation, reviewedPresentationPlacement } = require('./keyword-article-presentation-expectations.cjs');
 const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
 
 function presentationPages() {
   const pages = new Map();
-  for (const placement of fixture.placements) {
+  for (const originalPlacement of fixture.placements) {
+    const placement = reviewedPresentationPlacement(originalPlacement);
     let route = placement.route;
     if (placement.kind === 'hub-summary') {
       const original = review.articles.find(article => article.id === placement.id);
@@ -18,8 +19,8 @@ function presentationPages() {
     }
     const key = `${placement.locale}:${route}`;
     if (!pages.has(key)) pages.set(key, { locale: placement.locale, route, paragraphs: [] });
-    // Reuse the original reviewed paragraph verbatim; only its hub location is
-    // redistributed according to the independently pinned pre-pagination order.
+    // Reuse original reviewed copy except the four separately pinned K02
+    // descriptions; preserve each independently reviewed archive location.
     pages.get(key).paragraphs.push(placement.paragraph);
   }
   for (const locale of ['en', 'ar']) for (let page = 1; page <= 6; page++) {
@@ -50,7 +51,7 @@ test('presentation classification is exactly 147 reviewed placements with origin
   }
   const classified = withoutKeywordPresentation(presentationPages());
   assert.equal(classified.excludedParagraphs, 147);
-  assert.equal(classified.excludedTokens, 2347);
+  assert.equal(classified.excludedTokens, 2355);
   assert.ok(classified.pages.every(page => page.paragraphs.length === 0));
 });
 

@@ -7,7 +7,7 @@ export const articleSearchTitles: Record<string, Partial<Record<'en' | 'ar', str
   'all-inclusive-domestic-worker-packages': { en: 'What Does a Domestic Worker Package Include?' },
   'domestic-worker-sponsorship-responsibilities': { en: 'Domestic Worker Sponsorship Responsibilities' },
   'domestic-worker-employer-eligibility-documents': { en: 'Domestic Worker Permit Eligibility & Documents' },
-  'domestic-worker-hiring-stages-timelines': { en: 'Domestic Worker Hiring Stages & Timelines' },
+  'domestic-worker-hiring-stages-timelines': { en: 'Domestic Worker Hiring in Ajman: Stages & Timelines' },
   'domestic-worker-skills-language-assessment': { en: "Choosing a Domestic Worker's Skills & Language" },
   'caregiver-versus-licensed-nurse': { en: 'Caregiver or Licensed Nurse: Which Do You Need?' },
   'agreeing-domestic-worker-household-duties': {

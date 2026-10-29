@@ -11,32 +11,31 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "choosing-domestic-worker-agency-ajman",
     "published": "2026-09-18",
-    "updated": "2026-10-24",
+    "updated": "2026-10-29",
     "en": {
-      "title": "How to choose a domestic-worker agency in Ajman",
-      "description": "Compare Tadbeer domestic-worker services in Ajman with an agency-identity worksheet, clear recruitment, cleaning and visa-typing enquiries, and written terms.",
+      "title": "How to choose a licensed domestic-worker agency in Ajman",
+      "description": "Choose a domestic-worker agency in Ajman using licence checks, an employer-arrangement worksheet, candidate questions and written price comparisons.",
       "citations": [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21138",
         "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21135",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23227",
-        "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23228",
-        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+        "https://uaelegislation.gov.ae/en/legislations/1593#item21140"
       ]
     },
     "ar": {
-      "title": "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟",
-      "description": "قارن خدمات تدبير للعمالة المنزلية في عجمان بنموذج للتحقق من الجهة، وافصل الاستقدام والتنظيف وطباعة التأشيرة مع مراجعة الشروط المكتوبة.",
+      "title": "كيف تختار مكتب عمالة مساعدة مرخصاً في عجمان؟",
+      "description": "اختر مكتب عمالة مساعدة في عجمان بمراجعة الترخيص وترتيب التوظيف وملاءمة المرشح، واستخدم نموذجاً عملياً لمقارنة النطاق والأسعار والشروط المكتوبة.",
       "citations": [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21138",
-        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+        "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23227",
-        "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
-        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c",
-        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        "https://uaelegislation.gov.ae/ar/legislations/1593#item21140"
       ]
     }
   },
@@ -206,20 +205,16 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "domestic-worker-hiring-stages-timelines",
     "published": "2026-09-24",
-    "updated": "2026-10-24",
+    "updated": "2026-10-29",
     "en": {
-      "title": "What happens during domestic-worker hiring, and how long does it take?",
-      "description": "Follow domestic-worker hiring stages and related visa typing in Ajman, with clear preparation, submission, follow-up and authority-decision records.",
+      "title": "Domestic-worker hiring stages and timelines in Ajman",
+      "description": "Track domestic-worker hiring in Ajman with a milestone worksheet, case examples and clear distinctions between preparation, submission, approval and start.",
       "citations": [
-        "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21135",
-        "https://uaelegislation.gov.ae/en/legislations/1593#item21148",
-        "https://uaelegislation.gov.ae/en/legislations/1593#item21139",
+        "https://uaelegislation.gov.ae/en/legislations/1620#item23233",
+        "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21138",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23228",
-        "https://uaelegislation.gov.ae/en/legislations/1593#item21141",
-        "https://uaelegislation.gov.ae/en/legislations/1620#item23233",
-        "https://uaelegislation.gov.ae/en/legislations/1593#item21146",
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
         "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
@@ -227,22 +222,18 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       ]
     },
     "ar": {
-      "title": "ما مراحل توظيف العامل المساعد، وكم تستغرق؟",
-      "description": "تابع مراحل توظيف العاملة المنزلية وطباعة طلباتها في عجمان، مع الفصل بين الإعداد والتقديم والمتابعة وقرار الجهة المختصة.",
+      "title": "مراحل توظيف العمالة المنزلية ومددها في عجمان",
+      "description": "تابع مراحل توظيف العمالة المنزلية في عجمان بنموذج عملي وأمثلة، وافصل إعداد الطلب وتقديمه والقرار الرسمي وتأكيد بدء الخدمة لكل حالة.",
       "citations": [
-        "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
-        "https://uaelegislation.gov.ae/ar/legislations/1593#item21148",
-        "https://uaelegislation.gov.ae/ar/legislations/1593#item21139",
+        "https://uaelegislation.gov.ae/ar/legislations/1620#item23233",
+        "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21138",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
-        "https://uaelegislation.gov.ae/ar/legislations/1593#item21141",
-        "https://uaelegislation.gov.ae/ar/legislations/1620#item23233",
-        "https://uaelegislation.gov.ae/ar/legislations/1593#item21146",
-        "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
+        "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
         "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
-        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },

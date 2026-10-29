@@ -39,6 +39,10 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
     return <PublishedArticle guide={guide} body={article[lang].body} lang={lang} />;
   }
   const route = `blog/${slug}`;
+  // Give these expanded case worksheets room beside the existing desktop
+  // contact rail without changing the five other preserved guide layouts.
+  const expandedCaseGuide = slug === 'documents-for-domestic-worker-enquiry'
+    || slug === 'domestic-worker-visa-sponsorship-support';
   const formatDate = (value: string) => new Intl.DateTimeFormat(isArabic ? 'ar-AE' : 'en-AE', {
     year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
   }).format(new Date(`${value}T00:00:00Z`));
@@ -70,7 +74,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
       <PageBreadcrumbs locale={locale} route={route} />
 
       <div className="container-x grid max-w-6xl gap-10 pb-20 pt-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-14">
-        <article className="min-w-0 space-y-12">
+        <article className={`min-w-0 space-y-12 ${expandedCaseGuide ? 'lg:px-9' : ''}`}>
           {copy.sections.map((section) => (
             <section key={section.heading}>
               <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-2xl font-bold leading-snug text-primary-900 sm:text-3xl`}>{section.heading}</h2>

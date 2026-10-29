@@ -4,6 +4,7 @@ import managed from './managed-package-expectations.cjs';
 import ajmanOffice from './ajman-office-expectations.cjs';
 import domesticServices from './domestic-service-refresh-expectations.cjs';
 import onPage from './on-page-spec-expectations.cjs';
+import fiveGuides from './five-guides-amendment-expectations.cjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -80,10 +81,11 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
+    const beforeGuideRefresh = fiveGuides.pageBefore(page.url, page.title, page.description);
     const approved = onPage.metadata[`${page.locale}/${page.route}`]?.after ?? domesticServices.metadata[`${page.locale}/${page.route}`] ?? ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
-    assert.equal(page.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
-    if (page.route !== 'blog') assert.equal(page.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
+    assert.equal(beforeGuideRefresh.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);
+    if (page.route !== 'blog') assert.equal(beforeGuideRefresh.description, approved?.description ?? (page.route === 'services/maid-visa' ? visaDescriptions[page.locale] : correctedCare?.description ?? before.description), page.url);
     else assert.match(page.description, page.locale === 'en' ? /bilingual INAYA guides/ : /أدلة عناية/);
     const additions = [];
     if (page.route === 'pricing' || page.route === '') additions.push(`${page.url}#faq`);
@@ -93,7 +95,14 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
     if (countryPhoto || ['', 'about', 'services'].includes(page.route) || (page.route.startsWith('services/') && page.route !== 'services/countries-we-source-from')) additions.push(`${page.url}#primaryimage`);
     const expectedSchemaIds = [...before.schemaIds, ...additions].sort();
     assert.deepEqual(page.schemaIds, expectedSchemaIds, `${page.url}: preserved IDs plus the approved pricing/Home FAQs and visible primary image`);
-    const expectedPrices = domesticServices.priceMentions[`${page.locale}/${page.route}`] ?? managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
+    // The agency guide now presents each approved plan once in its comparison
+    // table, instead of duplicating all six amounts in an introductory paragraph.
+    const refreshedGuidePrices = page.route === 'blog/choosing-domestic-worker-agency-ajman'
+      ? page.locale === 'en'
+        ? ['AED 120', 'AED 200', 'AED 1,120', 'AED 3,500', 'AED 3,250', 'AED 3,000']
+        : ['120 درهم', '200 درهم', '1,120 درهم', '3,500 درهم', '3,250 درهم', '3,000 درهم']
+      : undefined;
+    const expectedPrices = refreshedGuidePrices ?? domesticServices.priceMentions[`${page.locale}/${page.route}`] ?? managed.priceMentions[`${page.locale}/${page.route}`] ?? (page.route === 'pricing' ? pricingMentions[page.locale]
       : page.route === 'faq' ? page.locale === 'en' ? ['AED 1,500', 'AED 1,500', 'AED 2,500', 'AED 2,500'] : ['1,500 درهم', '1,500 درهم', '2,500 درهم', '2,500 درهم']
       : page.route === 'services/monthly-maid-contract' ? page.locale === 'en' ? ['AED 1,500', 'AED 2,500'] : ['1,500 درهم', '2,500 درهم']
       : before.prices);
@@ -125,5 +134,28 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
       assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), details, `${page.url}: visible FAQ/schema`);
     }
   }
+  // The changed commercial allowances remain exact. Removed historical copy
+  // cannot be silently reintroduced, and retained copy cannot vanish/duplicate.
+  const commercialCopy = JSON.parse(await readFile('tests/fixtures/managed-package-copy.json', 'utf8'));
+  for (const [route, index, mode] of [
+    ['blog/documents-for-domestic-worker-enquiry', 0, 'duplicate'],
+    ['blog/domestic-worker-visa-sponsorship-support', 1, 'remove'],
+    ['blog/choosing-domestic-worker-agency-ajman', 2, 'restore-removed'],
+  ]) {
+    const mutated = structuredClone(current);
+    const page = mutated.pages.find(page => page.locale === 'en' && page.route === route);
+    const paragraph = commercialCopy.copy[route].en[index];
+    if (mode === 'remove') page.paragraphs.splice(page.paragraphs.indexOf(paragraph), 1);
+    else page.paragraphs.push(paragraph);
+    assert.throws(() => managed.editorialRepetition(mutated), /exact approved commercial paragraph placements/, `${route}: ${mode} must fail`);
+  }
+  const duplicatedEditorial = structuredClone(current);
+  const sourceGuide = duplicatedEditorial.pages.find(page => page.locale === 'en' && page.route === 'blog/choosing-domestic-worker-agency-ajman');
+  const targetGuide = duplicatedEditorial.pages.find(page => page.locale === 'en' && page.route === 'blog/domestic-worker-hiring-stages-timelines');
+  const substantiveParagraph = sourceGuide.paragraphs.find(paragraph => paragraph.startsWith('choose a domestic worker agency'));
+  assert.ok(substantiveParagraph, 'reviewed substantive guide introduction is still counted');
+  targetGuide.paragraphs.push(substantiveParagraph);
+  assert.ok(managed.editorialRepetition(duplicatedEditorial).repeatedTokens > editorial.repeatedTokens,
+    'the five refreshed articles remain inside the unchanged editorial repetition metric');
   console.log(JSON.stringify({ routes: onPage.canonicalCount, preservedRoutes: 140, orphans: current.orphans.length, repeatedParagraphs: [baseline.repeatedParagraphs, current.repeatedParagraphs], repeatedTokens: [baseline.repeatedTokens, current.repeatedTokens], nearPairs: [baseline.nearPairs, current.nearPairs.length] }));
 });

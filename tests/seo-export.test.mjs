@@ -3,6 +3,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
+import amendment from './five-guides-amendment-expectations.cjs';
 
 const output = path.resolve('out');
 const origin = 'https://inayadomestic.ae';
@@ -92,23 +93,24 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   assert.equal(keywordArticles.length, 21);
   const keywordRoutes = new Set(keywordArticles.map(article => `blog/${article.slug}`));
   const keywordUrls = ['en', 'ar'].flatMap(locale => [...keywordRoutes].map(route => `${origin}/${locale}/${route}/`));
-  const datedRoutes = new Set([...onPageUpdatedRoutes, ...archiveRoutes, ...countryPhotoRoutes, ...keywordRoutes, ...companyInformationRoutes, ...updatedRoutes, ...todayRoutes, ...officeUpdatedRoutes, ...worksheetUpdatedRoutes, ...galleryUpdatedRoutes, ...paymentUpdatedRoutes, ...domesticUpdatedRoutes, ...ajmanUpdatedRoutes]);
+  const step1Routes = new Set(amendment.targetSlugs.map(slug => `blog/${slug}`));
+  const datedRoutes = new Set([...step1Routes, ...onPageUpdatedRoutes, ...archiveRoutes, ...countryPhotoRoutes, ...keywordRoutes, ...companyInformationRoutes, ...updatedRoutes, ...todayRoutes, ...officeUpdatedRoutes, ...worksheetUpdatedRoutes, ...galleryUpdatedRoutes, ...paymentUpdatedRoutes, ...domesticUpdatedRoutes, ...ajmanUpdatedRoutes]);
   const expectedDatedUrls = ['en', 'ar'].flatMap(locale => [...datedRoutes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
-  assert.equal(datedEntries.length, 244, 'retain all 234 dated URLs and add only the ten canonical archive pages');
+  assert.equal(datedEntries.length, 248, 'only four previously undated base-guide copies add date coverage');
   assert.deepEqual(datedEntries.map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedDatedUrls.sort());
   assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 30, 'unchanged customer articles retain their substantive date');
   assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-22</lastmod>')).length, 16, 'only unchanged office and worksheet pairs retain 22 October; contact now has substantive on-page changes');
   assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-23</lastmod>')).length, 2, 'only the bilingual pricing pair receives the confirmed payment-content update date');
   assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-24</lastmod>'))
     .map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(),
-    [...new Set([...domesticRefresh.routeChanges, ...ajmanRefresh.routeChanges].flatMap(entry => entry.urls)), ...['en', 'ar'].map(locale => `${origin}/${locale}/company-information/`), ...keywordUrls].filter(url => !new Set([...galleryRetirementRoutes, ...onPageUpdatedRoutes]).has(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/'))).sort(),
+    [...new Set([...domesticRefresh.routeChanges, ...ajmanRefresh.routeChanges].flatMap(entry => entry.urls)), ...['en', 'ar'].map(locale => `${origin}/${locale}/company-information/`), ...keywordUrls].filter(url => !new Set([...galleryRetirementRoutes, ...onPageUpdatedRoutes, ...step1Routes]).has(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/'))).sort(),
     'unchanged approved substantive route pairs retain24October');
   assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-25</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...galleryRetirementRoutes].filter(route => !onPageUpdatedRoutes.has(route)).map(route => `${origin}/${locale}/${route}/`)).sort(), 'the unchanged gallery pair retains 25 October; About and Ajman have reviewed substantive changes');
   assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...october28Routes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`)).sort(), 'only the exact country-photo, substantive on-page and new archive URLs receive 28 October');
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)[1]).pathname;
     const route = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = october28Routes.has(route) ? '2026-10-28' : galleryRetirementRoutes.has(route) ? '2026-10-25' : keywordRoutes.has(route) || companyInformationRoutes.has(route) ? '2026-10-24' : ajmanUpdatedRoutes.has(route) ? ajmanRefresh.date : domesticUpdatedRoutes.has(route) ? domesticRefresh.date : paymentUpdatedRoutes.has(route) ? '2026-10-23' : officeUpdatedRoutes.has(route) || worksheetUpdatedRoutes.has(route) || galleryUpdatedRoutes.has(route) ? '2026-10-22' : todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = step1Routes.has(route) ? '2026-10-29' : october28Routes.has(route) ? '2026-10-28' : galleryRetirementRoutes.has(route) ? '2026-10-25' : keywordRoutes.has(route) || companyInformationRoutes.has(route) ? '2026-10-24' : ajmanUpdatedRoutes.has(route) ? ajmanRefresh.date : domesticUpdatedRoutes.has(route) ? domesticRefresh.date : paymentUpdatedRoutes.has(route) ? '2026-10-23' : officeUpdatedRoutes.has(route) || worksheetUpdatedRoutes.has(route) || galleryUpdatedRoutes.has(route) ? '2026-10-22' : todayRoutes.has(route) ? '2026-10-20' : '2026-10-19';
     assert.ok(entry[1].includes(`<lastmod>${expectedDate}</lastmod>`), `${pathname}: only a substantive update changes the recorded date`);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)[1]);

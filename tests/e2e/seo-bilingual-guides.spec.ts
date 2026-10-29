@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import amendment from '../five-guides-amendment-expectations.cjs';
 
 const slugs = [
   'uae-domestic-worker-hiring-process',
@@ -22,7 +23,7 @@ const relatedGuide: Record<string, string> = {
   'domestic-worker-visa-sponsorship-support': 'documents-for-domestic-worker-enquiry'
 };
 
-for (const locale of ['en', 'ar']) {
+for (const locale of ['en', 'ar'] as const) {
   test(`${locale} blog hub opens substantive localized guides`, async ({ page }) => {
     await page.goto(`/${locale}/blog/`);
     await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
@@ -76,9 +77,11 @@ for (const locale of ['en', 'ar']) {
       await page.goto(route);
       await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
       await expect(page.locator('main h1')).toHaveCount(1);
-      await expect(page.locator('main article h2')).toHaveCount(sectionCounts[slugs.indexOf(slug)]);
+      const reviewedSections = amendment.getAmendment(slug)?.after.record[locale].sections;
+      await expect(page.locator('main article h2')).toHaveCount(reviewedSections?.length ?? sectionCounts[slugs.indexOf(slug)]);
       await expect(page.locator(`main aside a[href="/${locale}/blog/${relatedGuide[slug]}/"]`)).toHaveCount(1);
-      await expect(page.locator('main a[href^="https://www.mohre.gov.ae/"], main a[href^="https://icp.gov.ae/"], main a[href^="https://www.gdrfad.gov.ae/"]')).toHaveCount(slug === 'domestic-worker-visa-sponsorship-support' ? 4 : 3);
+      const officialCount = amendment.getAmendment(slug)?.after.record.sources?.filter((source: { url: string }) => ['www.mohre.gov.ae', 'mohre.gov.ae', 'icp.gov.ae', 'www.gdrfad.gov.ae'].includes(new URL(source.url).hostname)).length ?? (slug === 'domestic-worker-visa-sponsorship-support' ? 4 : 3);
+      await expect(page.locator('main a[href^="https://www.mohre.gov.ae/"], main a[href^="https://mohre.gov.ae/"], main a[href^="https://icp.gov.ae/"], main a[href^="https://www.gdrfad.gov.ae/"]')).toHaveCount(officialCount);
       await expect(page.locator('[data-seo="breadcrumbs"] a[href$="/blog/"]')).toHaveCount(1);
       const graph = JSON.parse(await page.locator('script[data-seo="route"]').textContent() as string)['@graph'];
       const article = graph.find((node: { '@type': string }) => node['@type'] === 'Article');
@@ -92,12 +95,13 @@ for (const locale of ['en', 'ar']) {
       await expect(page.locator(`header a[href="/${locale === 'en' ? 'ar' : 'en'}/blog/${slug}/"]`)).toBeAttached();
       await expect(page.locator('main aside a[href="tel:+97167400128"]')).toBeVisible();
       await expect(page.locator('main aside a[href="https://wa.me/971502036767"]')).toBeVisible();
-      if (slugs.indexOf(slug) >= 3 || slug === 'domestic-worker-package-pricing-factors') {
-        await expect(page.locator('main article table caption')).toHaveCount(tableCounts[slugs.indexOf(slug)]);
+      const tableCount = reviewedSections?.filter((section: { table?: unknown }) => section.table).length ?? tableCounts[slugs.indexOf(slug)];
+      if (tableCount > 0) {
+        await expect(page.locator('main article table caption')).toHaveCount(tableCount);
         await expect(page.locator('main article table th[scope="col"]').first()).toBeVisible();
         const tableRegions = page.locator('main article [role="region"]');
-        await expect(tableRegions).toHaveCount(tableCounts[slugs.indexOf(slug)]);
-        for (let index = 0; index < tableCounts[slugs.indexOf(slug)]; index++) {
+        await expect(tableRegions).toHaveCount(tableCount);
+        for (let index = 0; index < tableCount; index++) {
           const tableRegion = tableRegions.nth(index);
           await tableRegion.focus();
           await expect(tableRegion).toBeFocused();

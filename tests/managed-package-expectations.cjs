@@ -219,6 +219,15 @@ function approvedPackageMessages(locale, data) {
   return approvedDeliveryMessages(locale, approvedPosterMessages(locale, data));
 }
 const commercial = require('./fixtures/managed-package-copy.json');
+// Exact retained placements after the five reviewed guide replacements. The
+// former source-note paragraphs and rewritten sales copy are no longer present.
+// New editorial paragraphs receive no commercial-copy exemption.
+const refreshedCommercialCounts = {
+  'blog/documents-for-domestic-worker-enquiry': { en: { 0: 1 }, ar: { 0: 1 } },
+  'blog/domestic-worker-visa-sponsorship-support': { en: { 0: 1, 1: 1 }, ar: { 0: 1, 1: 1 } },
+  'blog/choosing-domestic-worker-agency-ajman': { en: {}, ar: {} },
+  'blog/domestic-worker-hiring-stages-timelines': { en: {}, ar: {} },
+};
 const { hubSummaries } = require('./domestic-service-refresh-expectations.cjs');
 const { withoutKeywordPresentation } = require('./keyword-article-presentation-expectations.cjs');
 const { readFileSync } = require('node:fs');
@@ -311,7 +320,7 @@ function editorialRepetition(audit) {
     }
     // The allowance is bounded to the reviewed placements too: missing copy or
     // another copy of an approved paragraph must fail, not disappear from the metric.
-    assert.deepEqual(occurrences, blog?.expected ?? commercial.paragraphCounts[page.route]?.[page.locale] ?? {}, `${page.url}: exact approved commercial paragraph placements`);
+    assert.deepEqual(occurrences, blog?.expected ?? refreshedCommercialCounts[page.route]?.[page.locale] ?? commercial.paragraphCounts[page.route]?.[page.locale] ?? {}, `${page.url}: exact approved commercial paragraph placements`);
     const hubCopy = page.route === 'services' ? Object.values(hubSummaries).map(copy => copy[page.locale].toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ')) : [];
     // Only the three exact service-card summaries on each localized hub are
     // excluded. Missing, changed or duplicated placements still fail.

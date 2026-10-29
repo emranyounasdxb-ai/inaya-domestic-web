@@ -1,0 +1,886 @@
+{
+  "createdAtUtc": "2026-10-29T08:41:36.601439+00:00",
+  "baselineCommit": "f61c45b9c241c9dd0d038024a00b7eee99d9d2da",
+  "scope": "Exact five existing guide pairs before Step1; preserve old fixtures, reconstruct old inputs using only reviewed target amendments.",
+  "sourceFiles": {
+    "content/keyword-articles-20261024.json": {
+      "normalizedSha256": "44dd13bfd31dc0b3910e5d3b2da535146509365823b15776cac6c8586cb32b13",
+      "bytes": 597224
+    },
+    "lib/keyword-article-metadata.ts": {
+      "normalizedSha256": "2660201f04ffc38dd3ea2272c97e13d9ab0f669830b224604cf233a1ebc08cb5",
+      "bytes": 28488
+    },
+    "lib/published-article-content.ts": {
+      "normalizedSha256": "a49a7beb583a8bd7fc6b9404d79354e3447c75b5b8bcf41f25a49f09d1c2a86b",
+      "bytes": 753291
+    },
+    "lib/published-article-metadata.ts": {
+      "normalizedSha256": "fb21892a3e28a4369395b8b0f505b5abdf49cd818faf558a689da1954614e62e",
+      "bytes": 81666
+    },
+    "lib/domestic-worker-guides.ts": {
+      "normalizedSha256": "82f2a87e7805884278d7ddb2806d30fdfebd72b0ef8093a93b858cdc54fa1864",
+      "bytes": 153327
+    },
+    "lib/customer-article-visuals.ts": {
+      "normalizedSha256": "a89f85246bed653b3355da7c8ffa5bd9558ffd3b112142b39e3190806deec44a",
+      "bytes": 44935
+    },
+    "lib/customer-article-faqs.ts": {
+      "normalizedSha256": "9e0525927f2ef4937092ffd74881140f5c86b91d7a8e16cc6d66e29cd2618934",
+      "bytes": 56957
+    }
+  },
+  "targets": [
+    {
+      "auditId": "A10",
+      "slug": "tadbeer-center-ajman-first-visit-service-routing",
+      "family": "keyword",
+      "record": {
+        "id": "K02",
+        "keyword": "Tadbeer center Ajman",
+        "slug": "tadbeer-center-ajman-first-visit-service-routing",
+        "published": "2026-10-24",
+        "updated": "2026-10-24",
+        "en": {
+          "title": "Tadbeer center Ajman: plan a first visit around the right service route",
+          "description": "Prepare a first Tadbeer centre visit in Ajman with a recruitment, managed-service and domestic-worker typing routing sheet.",
+          "body": "For a first Tadbeer center visit in Ajman, prepare a clear question about the service you need: recruitment, an agency-managed household service or domestic-worker application typing. Bring a short enquiry brief and ask which route applies before presenting a mixed folder of documents. This guide is a visit planner, with a routing desk sheet and an outcome note. It complements the broader [Ajman agency guide](https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/) rather than repeating its provider-comparison checklist.\n\n## Define the problem you want the visit to solve\n\nStart with what is changing in your household. Perhaps you need a worker for the first time, regular help under a managed arrangement or assistance with an existing domestic worker's renewal. A phrase such as “I need a maid” leaves too many decisions open. Explain the desired role, where the work would happen and whether a particular person is already involved.\n\nWrite down the decision you expect to leave with. It might be an appropriate service quotation, a case-specific document list or clarification of an application's current status. These are different outcomes. A useful visit can end with a documented next step even when a booking or official result cannot yet be confirmed.\n\n## Use a three-route desk sheet\n\nTell the centre which row most closely describes your enquiry. If two rows apply, ask how the activities connect and whether each has its own agreement or payment record. Keep assumptions out of the blank spaces.\n\n| Your starting situation | Route to discuss | Useful outcome from the first conversation |\n|---|---|---|\n| No worker selected; household needs recruitment | Recruitment and individual suitability | Role brief, selection approach and written commercial terms |\n| Household wants a booked service arrangement | Managed household service | Scope, schedule, responsibilities and applicable quotation |\n| Worker already identified; paperwork needs action | Domestic-worker application typing | Exact requested action and case-specific information route |\n| Transaction already submitted | Follow-up on that transaction | Reference, actual status and next responsible action |\n| Difficulty with an existing arrangement | Service or agreement review | Named contact, factual issue record and response process |\n\nFor recruitment, begin with [INAYA's recruitment service](https://inayadomestic.ae/en/services/recruitment/). For an application matter, use the [maid visa and related typing enquiry](https://inayadomestic.ae/en/services/maid-visa/). A centre visit should not turn a domestic-worker question into an unrelated tourist, business-formation or general immigration service.\n\n## Check the identity and destination before travelling\n\nUse the current [INAYA company reference](https://inayadomestic.ae/en/company-information/) rather than an undated directory screenshot. INAYA has one office at Grand Mall, Ground Floor, Sheikh Khalifa Bin Zayed Street, Al Rashidiya 3, Ajman. Office hours are Saturday–Thursday, 09:00–21:00; Friday is closed. Walk-in/token service and online appointment requests are available.\n\nIf a map or listing gives different information, call the office on +971 6 740 0128 or WhatsApp +971 50 203 6767 to confirm the practical visit. Check the exact entrance and any appointment response. A request sent through an online form is not automatically a confirmed appointment. No Sharjah or Dubai office branch should be inferred from a service-area enquiry.\n\n## Prepare information without over-sharing documents\n\nYour first note can contain the role, household location, proposed arrangement and the question to resolve. For an existing transaction, identify the reference and the latest message through the appropriate secure channel. Avoid forwarding identity documents to several public contacts simply to learn where to start.\n\nThe [documents for an enquiry guide](https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/) helps separate introductory information from later case requirements. Consult the relevant [MoHRE new domestic-worker permit page](https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022) when a new permit is actually the issue. Do not use one downloaded checklist for every worker situation.\n\n## Ask questions in an order that avoids circular answers\n\n{{visual:process}}\n\nFirst confirm the service. Then ask who the contracting parties are, what the written scope includes and what information is needed next. Only then discuss the applicable quotation and a realistic next checkpoint. If a conversation returns repeatedly to price while the route remains undefined, pause and restate your intended outcome.\n\nA short list of numbered questions works better than a long narrative covering several unrelated matters. Give the representative an opportunity to identify dependencies. Ask them to distinguish an estimate, a requirement still to be checked and an action actually completed. Record the distinction using those plain words.\n\n## Keep a visit outcome note\n\nThe purpose of this second table is to prevent a productive conversation from becoming an uncertain memory. Complete it before leaving or immediately afterward, and ask for clarification when the record is unclear.\n\n| Outcome field | What to write | Example of a useful distinction |\n|---|---|---|\n| Service route | Recruitment, managed service or named application | “Renewal enquiry,” rather than “visa work” |\n| Information received | Checklist, quotation or explanation | Version/date and the case it concerns |\n| Information still needed | Specific unresolved point | Who will provide the answer |\n| Money discussed | Written amount and what it covers | Quote received versus payment completed |\n| Next action | One person and one clear task | Household supplies requested information |\n| Follow-up checkpoint | Agreed contact method and review point | Check status rather than promise approval |\n\nA task written as “the centre will do everything” is too broad to follow. Divide it into the next observable action and retain the supporting message. Do the same for your own responsibilities.\n\n## Follow a clearly fictional first-visit example\n\n**Fictional planning example:** A family arrives asking for a live-in worker and a visa quotation. During the conversation, it becomes clear that the family has not chosen between recruitment and a managed service. The representative cannot usefully finalise both routes as if they were identical.\n\nThe family records its accommodation and household role, requests the two arrangements to be explained and postpones sharing application documents until the appropriate route is identified. Its visit outcome is a service decision to make, not an approval. The example illustrates preparation only; it is not a real customer result, available candidate or promised sequence.\n\n## Understand the connections between people and records\n\n{{visual:relationships}}\n\nA household brief informs a service discussion. The selected arrangement determines which agreement and information request matter. An actual transaction reference supports follow-up; a quotation does not serve the same function. Keep these records linked by their purpose rather than putting everything under a single “Tadbeer documents” label.\n\nFor the official background, refer to the [UAE Government's domestic-worker page](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers). For practical recruitment checkpoints, read [INAYA's stages and timelines guide](https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/). Use these references to prepare questions, not to infer approval for an individual case or a guaranteed start date.\n\n## Frequently asked questions\n\n**Can I walk in without an appointment?** INAYA offers walk-in/token service. Check current hours and practical arrangements before travel; an online appointment request is another available route.\n\n**Should I bring every document I possess?** Ask what applies to your case. Start with the enquiry and share sensitive material only through the appropriate agreed channel when required.\n\n**Does “typing” mean the application is approved?** No. Keep preparation, submission and the actual official result separate when recording progress.\n\n**Can I combine recruitment and a renewal question?** Explain both, but identify which worker and transaction each concerns. Ask for separate next actions so one enquiry does not obscure the other.\n\n## Make the next conversation easier\n\nPrepare your desk sheet and use [INAYA's contact page](https://inayadomestic.ae/en/contact/) to explain the main decision you need help with. A concise, routed enquiry makes it easier to request a relevant written answer. Keep the visit note for the next discussion, updating completed actions without deleting the questions that still need a response.",
+          "visuals": [
+            {
+              "id": "process",
+              "kind": "flow",
+              "title": "A practical first-visit route",
+              "caption": "Original editorial planning tool; not an official mandatory process or a guaranteed outcome.",
+              "steps": [
+                "Describe the actual household or application question",
+                "Choose the service route to discuss",
+                "Confirm the arrangement and applicable information",
+                "Review the written scope or case-specific next step",
+                "Save the visit outcome and follow-up contact"
+              ]
+            },
+            {
+              "id": "relationships",
+              "kind": "graph",
+              "title": "From a visit question to a usable follow-up",
+              "caption": "Editorial relationship map showing which records inform the household decision.",
+              "nodes": [
+                {
+                  "id": "household",
+                  "label": "Household question"
+                },
+                {
+                  "id": "route",
+                  "label": "Selected service route"
+                },
+                {
+                  "id": "agreement",
+                  "label": "Scope or applicable agreement"
+                },
+                {
+                  "id": "case",
+                  "label": "Relevant transaction record"
+                },
+                {
+                  "id": "followup",
+                  "label": "Named next action"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "household",
+                  "to": "route",
+                  "label": "Identifies the enquiry"
+                },
+                {
+                  "from": "route",
+                  "to": "agreement",
+                  "label": "Determines what to review"
+                },
+                {
+                  "from": "route",
+                  "to": "case",
+                  "label": "Identifies any application involved"
+                },
+                {
+                  "from": "agreement",
+                  "to": "followup",
+                  "label": "Clarifies responsibilities"
+                },
+                {
+                  "from": "case",
+                  "to": "followup",
+                  "label": "Provides status evidence"
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "title": "MoHRE new domestic-worker work permit",
+              "url": "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022"
+            },
+            {
+              "title": "UAE Government domestic-worker guidance",
+              "url": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+            }
+          ]
+        },
+        "ar": {
+          "title": "مركز تدبير في عجمان: خطط للزيارة الأولى وفق مسار الخدمة الصحيح",
+          "description": "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية.",
+          "body": "قبل زيارتك الأولى لمركز تدبير في عجمان، حدد سؤالاً واضحاً عن الخدمة المطلوبة: الاستقدام، أو خدمة منزلية تديرها الوكالة، أو طباعة معاملات العمالة المنزلية. جهز وصفاً مختصراً للاستفسار، واسأل عن المسار المناسب قبل تقديم ملف مختلط من المستندات. هذا دليل لتخطيط الزيارة، يتضمن ورقة لتوجيه الاستفسار وسجل نتيجته. وهو يكمل [دليل المكاتب في عجمان](https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/) بدلاً من تكرار قائمة المقارنة بين الجهات المقدمة للخدمة.\n\n## حدد المسألة التي تريد حلها في الزيارة\n\nابدأ بما يتغير في احتياج المنزل. ربما تحتاج إلى عاملة للمرة الأولى، أو مساعدة منتظمة بترتيب مدار، أو دعماً لتجديد معاملة عاملة موجودة. عبارة «أحتاج خادمة» تترك قرارات كثيرة مفتوحة. وضح الدور المطلوب، ومكان العمل، وهل يتصل الطلب بعاملة معينة بالفعل.\n\nاكتب القرار الذي تتوقع الوصول إليه بنهاية الزيارة. قد يكون عرضاً للخدمة المناسبة، أو قائمة مستندات خاصة بالحالة، أو توضيحاً لحالة معاملة قائمة. وهذه نتائج مختلفة. يمكن أن تكون الزيارة مفيدة وتنتهي بخطوة تالية موثقة، حتى إذا تعذر تأكيد الحجز أو النتيجة الرسمية بعد.\n\n## استخدم ورقة لتوجيه الاستفسار إلى المسار المناسب\n\nأخبر المركز أي صف يصف استفسارك بصورة أقرب. إذا انطبق صفان، فاسأل كيف يرتبط النشاطان، وهل يحتاج كل منهما إلى اتفاق أو سجل سداد مستقل. لا تملأ الفراغات بافتراضات.\n\n| وضعك عند بدء الاستفسار | المسار الذي تناقشه | النتيجة المفيدة للمحادثة الأولى |\n|---|---|---|\n| لم تختر عاملة وتحتاج الأسرة إلى استقدام | الاستقدام والملاءمة الفردية | وصف الدور وطريقة الاختيار والشروط التجارية المكتوبة |\n| تريد الأسرة ترتيب خدمة محجوزة | خدمة منزلية مدارة | النطاق والجدول والمسؤوليات والعرض المنطبق |\n| العاملة محددة وتحتاج مستنداتها إلى إجراء | طباعة معاملات العمالة المنزلية | الإجراء الدقيق وقناة معلومات الحالة |\n| المعاملة مقدمة بالفعل | متابعة تلك المعاملة | المرجع والحالة الفعلية والمسؤول عن الخطوة التالية |\n| توجد صعوبة في ترتيب قائم | مراجعة الخدمة أو الاتفاق | جهة تواصل محددة وسجل واقعي للمسألة وطريقة الرد |\n\nللاستقدام، ابدأ بـ[خدمة الاستقدام لدى عناية](https://inayadomestic.ae/ar/services/recruitment/). وللمعاملات، استخدم [استفسار التأشيرة وطباعة المعاملات ذات الصلة](https://inayadomestic.ae/ar/services/maid-visa/). لا ينبغي أن يتحول استفسار يخص العمالة المنزلية إلى طلب خدمات سياحية أو تأسيس أعمال أو هجرة عامة لا ترتبط به.\n\n## تحقق من الهوية والوجهة قبل الانتقال\n\nاستخدم [مرجع عناية الرسمي الحالي](https://inayadomestic.ae/ar/company-information/) بدلاً من صورة دليل أعمال غير مؤرخة. لعناية مكتب واحد في جراند مول، الطابق الأرضي، شارع الشيخ خليفة بن زايد، الراشدية 3، عجمان. الدوام من السبت إلى الخميس، 09:00–21:00، ويغلق المكتب يوم الجمعة. تتوفر خدمة الحضور المباشر بنظام الأرقام وطلبات المواعيد عبر الموقع.\n\nإذا اختلفت معلومات الخريطة أو الدليل، فاتصل على +971 6 740 0128 أو واتساب +971 50 203 6767 لتأكيد تفاصيل الزيارة. تحقق من المدخل الدقيق وأي رد يتعلق بالموعد. إرسال طلب عبر نموذج إلكتروني لا يعني تلقائياً تأكيد الموعد. ولا يستدل من استفسار خدمة في الشارقة أو دبي على وجود فرع مكتبي هناك.\n\n## جهز المعلومات دون مشاركة مستندات أكثر من اللازم\n\nيمكن أن تتضمن الملاحظة الأولى الدور، وموقع المنزل، والترتيب المقترح، والسؤال المراد حله. وللمعاملة القائمة، حدد المرجع وآخر رسالة عبر القناة الآمنة المناسبة. تجنب إرسال مستندات الهوية إلى عدة جهات عامة لمجرد معرفة نقطة البداية.\n\nيساعد [دليل مستندات الاستفسار](https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/) على فصل المعلومات الأولية عن متطلبات الحالة اللاحقة. ارجع إلى [صفحة الوزارة لتصريح عمل جديد للعمالة المساعدة](https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022) عندما يكون التصريح الجديد هو موضوع الاستفسار فعلاً. لا تستخدم قائمة واحدة محملة لكل أوضاع العاملات.\n\n## اطرح الأسئلة بترتيب يمنع الدوران في النقاش\n\n{{visual:process}}\n\nأكد الخدمة أولاً. ثم اسأل عن الأطراف المتعاقدة، وما يتضمنه النطاق المكتوب، والمعلومات المطلوبة تالياً. بعد ذلك ناقش العرض المناسب ونقطة متابعة واقعية. إذا عاد الحديث إلى السعر مراراً بينما بقي المسار مجهولاً، فتوقف وأعد توضيح النتيجة التي تريدها.\n\nتعمل قائمة أسئلة قصيرة ومرقمة أفضل من سرد طويل يضم مسائل غير مترابطة. أتح للممثل فرصة توضيح ما تعتمد عليه الخطوات. اطلب التمييز بين التقدير، والمتطلب الذي يحتاج إلى تحقق، والإجراء الذي أنجز فعلاً. وسجل هذا التمييز بهذه الكلمات المباشرة.\n\n## احتفظ بملاحظة عن نتيجة الزيارة\n\nالهدف من الجدول الثاني ألا تتحول المحادثة المفيدة إلى ذاكرة غير مؤكدة. أكمله قبل المغادرة أو بعدها مباشرة، واطلب التوضيح إذا لم يكن السجل واضحاً.\n\n| بند النتيجة | ما الذي تكتبه؟ | مثال على تمييز مفيد |\n|---|---|---|\n| مسار الخدمة | استقدام أو خدمة مدارة أو معاملة مسماة | «استفسار تجديد» بدلاً من «إجراءات تأشيرة» |\n| المعلومات المستلمة | قائمة أو عرض أو شرح | النسخة والتاريخ والحالة التي يخصها |\n| المعلومات المطلوبة بعد | نقطة محددة لم تحسم | من سيقدم الإجابة؟ |\n| المبالغ التي نوقشت | المبلغ المكتوب وما يشمله | استلام عرض مقابل اكتمال سداد |\n| الخطوة التالية | شخص واحد ومهمة واضحة | الأسرة تقدم المعلومات المطلوبة |\n| نقطة المتابعة | وسيلة التواصل ونقطة المراجعة المتفقتان | التحقق من الحالة بدلاً من ضمان الموافقة |\n\nعبارة «المركز سيفعل كل شيء» أوسع من أن تتابعها عملياً. قسمها إلى الإجراء التالي الذي يمكن التحقق منه، واحتفظ بالرسالة الداعمة له. وطبق الأسلوب نفسه على مسؤولياتك.\n\n## تابع مثالاً افتراضياً لزيارة أولى\n\n**مثال تخطيطي افتراضي:** تصل أسرة طالبة عاملة مقيمة وعرضاً للتأشيرة. يتضح أثناء النقاش أن الأسرة لم تختر بين الاستقدام والخدمة المدارة. لا يمكن للممثل إتمام المسارين بطريقة مفيدة وكأنهما متماثلان.\n\nتسجل الأسرة السكن والدور المنزلي، وتطلب شرح الترتيبين، وتؤجل مشاركة مستندات المعاملة حتى تحديد المسار المناسب. نتيجة الزيارة هي قرار خدمة يحتاج إلى اتخاذه، وليست موافقة. المثال يوضح الاستعداد فقط؛ ولا يمثل نتيجة عميل فعلي أو مرشحة متاحة أو تسلسلاً موعوداً.\n\n## افهم الروابط بين الأشخاص والسجلات\n\n{{visual:relationships}}\n\nيوجه وصف احتياج المنزل مناقشة الخدمة. ويحدد الترتيب المختار الاتفاق وطلب المعلومات المناسبين. أما مرجع المعاملة الفعلي فيدعم المتابعة؛ ولا يؤدي عرض السعر الوظيفة نفسها. اربط السجلات بحسب غرضها بدلاً من وضع كل شيء تحت عنوان واحد هو «مستندات تدبير».\n\nللخلفية الرسمية، ارجع إلى [صفحة حكومة الإمارات للعمالة المساعدة](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers). ولنقاط الاستقدام العملية، اقرأ [دليل المراحل والمدد لدى عناية](https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/). استخدم المراجع لتحضير الأسئلة، لا لاستنتاج موافقة لحالة فردية أو موعد بدء مضمون.\n\n## الأسئلة الشائعة\n\n**هل يمكن الحضور دون موعد؟** تقدم عناية خدمة الحضور المباشر بنظام الأرقام. تحقق من الدوام والترتيبات العملية قبل الانتقال؛ وتتوفر أيضاً طلبات المواعيد الإلكترونية.\n\n**هل أحضر كل مستند أملكه؟** اسأل عما ينطبق على حالتك. ابدأ بالاستفسار، ولا تشارك المواد الحساسة إلا عند الحاجة عبر القناة المناسبة المتفق عليها.\n\n**هل تعني الطباعة أن الطلب تمت الموافقة عليه؟** لا. افصل إعداد الطلب عن تقديمه وعن النتيجة الرسمية الفعلية عند تسجيل التقدم.\n\n**هل يمكن الجمع بين استفسار الاستقدام والتجديد؟** وضح الأمرين، لكن حدد العاملة والمعاملة اللتين يخصهما كل استفسار. اطلب خطوات تالية منفصلة حتى لا يحجب أحدهما الآخر.\n\n## اجعل المحادثة التالية أسهل\n\nجهز ورقة توجيه الاستفسار، واستخدم [صفحة التواصل مع عناية](https://inayadomestic.ae/ar/contact/) لشرح القرار الأساسي الذي تحتاج إلى مساعدة فيه. يسهل الاستفسار المختصر والموجه طلب إجابة مكتوبة مناسبة. احتفظ بملاحظة الزيارة للمناقشة التالية، وحدّث الإجراءات المكتملة دون حذف الأسئلة التي ما زالت تحتاج إلى رد.",
+          "visuals": [
+            {
+              "id": "process",
+              "kind": "flow",
+              "title": "مسار عملي للزيارة الأولى",
+              "caption": "أداة تخطيط تحريرية أصلية؛ ليست إجراءً رسمياً إلزامياً ولا ضماناً لنتيجة.",
+              "steps": [
+                "صف سؤال المنزل أو المعاملة الفعلي",
+                "اختر مسار الخدمة الذي ستناقشه",
+                "أكد الترتيب والمعلومات المنطبقة",
+                "راجع النطاق المكتوب أو الخطوة الخاصة بالحالة",
+                "احفظ نتيجة الزيارة وجهة المتابعة"
+              ]
+            },
+            {
+              "id": "relationships",
+              "kind": "graph",
+              "title": "من سؤال الزيارة إلى متابعة قابلة للتنفيذ",
+              "caption": "خريطة علاقات تحريرية تبين السجلات التي يستند إليها قرار الأسرة.",
+              "nodes": [
+                {
+                  "id": "household",
+                  "label": "سؤال الأسرة"
+                },
+                {
+                  "id": "route",
+                  "label": "مسار الخدمة المختار"
+                },
+                {
+                  "id": "agreement",
+                  "label": "النطاق أو الاتفاق المنطبق"
+                },
+                {
+                  "id": "case",
+                  "label": "سجل المعاملة المعنية"
+                },
+                {
+                  "id": "followup",
+                  "label": "خطوة تالية محددة المسؤول"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "household",
+                  "to": "route",
+                  "label": "يحدد الاستفسار"
+                },
+                {
+                  "from": "route",
+                  "to": "agreement",
+                  "label": "يحدد ما يجب مراجعته"
+                },
+                {
+                  "from": "route",
+                  "to": "case",
+                  "label": "يحدد أي معاملة مرتبطة"
+                },
+                {
+                  "from": "agreement",
+                  "to": "followup",
+                  "label": "يوضح المسؤوليات"
+                },
+                {
+                  "from": "case",
+                  "to": "followup",
+                  "label": "يقدم دليل الحالة"
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "title": "وزارة الموارد البشرية والتوطين: تصريح عمل جديد للعمالة المساعدة",
+              "url": "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022"
+            },
+            {
+              "title": "حكومة الإمارات: إرشادات العمالة المساعدة",
+              "url": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+            }
+          ]
+        }
+      },
+      "compactMetadata": {
+        "id": "K02",
+        "keyword": "Tadbeer center Ajman",
+        "slug": "tadbeer-center-ajman-first-visit-service-routing",
+        "published": "2026-10-24",
+        "updated": "2026-10-24",
+        "en": {
+          "title": "Tadbeer center Ajman: plan a first visit around the right service route",
+          "description": "Prepare a first Tadbeer centre visit in Ajman with a recruitment, managed-service and domestic-worker typing routing sheet.",
+          "searchTitle": "Tadbeer Center Ajman: Plan Your First Visit",
+          "citations": [
+            "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
+            "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          ]
+        },
+        "ar": {
+          "title": "مركز تدبير في عجمان: خطط للزيارة الأولى وفق مسار الخدمة الصحيح",
+          "description": "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية.",
+          "searchTitle": "مركز تدبير عجمان: جهز زيارتك الأولى",
+          "citations": [
+            "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
+            "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          ]
+        }
+      },
+      "customerVisual": null,
+      "customerFaqs": null
+    },
+    {
+      "auditId": "A02",
+      "slug": "choosing-domestic-worker-agency-ajman",
+      "family": "published",
+      "record": {
+        "slug": "choosing-domestic-worker-agency-ajman",
+        "published": "2026-09-18",
+        "updated": "2026-10-24",
+        "en": {
+          "title": "How to choose a domestic-worker agency in Ajman",
+          "description": "Compare Tadbeer domestic-worker services in Ajman with an agency-identity worksheet, clear recruitment, cleaning and visa-typing enquiries, and written terms.",
+          "body": "Choose an agency by checking its current recruitment licence, the legal arrangement it offers, the worker's suitability and the written contract. A low monthly price or an attractive profile is insufficient to answer who employs the worker, which costs you must pay or what happens if the arrangement ends.\n\nUAE law requires a Ministry of Human Resources and Emiratisation licence for domestic-worker recruitment or temporary employment activities. The licence requirement is separate from any professional licence required for a particular occupation. [Federal Decree-Law 9/2022, Article 4](https://uaelegislation.gov.ae/en/legislations/1593#item21138)\n\nThe UAE Government portal also directs readers to MOHRE-approved domestic-worker service centres. Use official channels for a current check instead of treating an advertisement as verification. [UAE Government: employing domestic workers](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers)\n\n## Start with the agency's identity and licensed activity\n\nAsk for the legal entity that will issue your contract and invoice, its current licence and the activity covering your proposed arrangement. Check that the names match. A directory listing can help locate a centre, but it does not by itself establish today's licence expiry, a particular package benefit or the quality of every candidate.\n\nLicensing also distinguishes mediation from temporary employment. In mediation, the worker is registered on the household employer's file and the agency is not a party to the employment relationship. In temporary employment, the agency employs the worker and makes their services available to a beneficiary. These models allocate responsibilities differently. [Federal Decree-Law 9/2022, Article 1](https://uaelegislation.gov.ae/en/legislations/1593#item21135) [Cabinet Resolution 106/2022, Article 3](https://uaelegislation.gov.ae/en/legislations/1620#item23227)\n\n## Compare the contract, not only the headline price\n\nThe recruitment agreement should record the required worker characteristics, work, financial obligations, services and recruitment timeframe. UAE law provides remedies where the agency fails to meet agreed conditions; the applicable replacement or refund rules still depend on the arrangement and relevant regulations. [Federal Decree-Law 9/2022, Article 6](https://uaelegislation.gov.ae/en/legislations/1593#item21140)\n\n| Question to ask | What a useful written answer contains |\n|---|---|\n| Who is the employer? | Household or agency, with the applicable contract identified |\n| What work is agreed? | Prioritised duties and any required skills |\n| What is payable? | Separate service charges, recruitment charges, government fees and wages |\n| Where will the worker live? | Accommodation responsibility and any transport arrangements |\n| What if the arrangement fails? | Applicable legal remedy, commercial terms and the evidence required |\n\nDo not treat “replacement available” as a promise of unlimited replacements, an immediate substitute or a refund of every payment.\n\n## Assess the individual worker respectfully\n\nAsk practical questions about the tasks your household actually needs. For example, discuss the foods you cook, the cleaning materials you use or how instructions will be communicated. A nationality or language label does not establish proficiency, childcare training or clinical competence.\n\nThe regulations address medical fitness, relevant professional qualifications where required, and criminal-record certificates in cases specified by the Ministry. Article 4(5) provides limited exceptions to certain agency obligations for direct named recruitment; it is not a blanket exemption from medical or occupational licensing requirements. The rules do not prove that a particular agency has completed every possible check on a particular person. Request appropriate evidence of the checks relevant to your case without demanding unrestricted copies of sensitive records. [Cabinet Resolution 106/2022, Article 4](https://uaelegislation.gov.ae/en/legislations/1620#item23228)\n\n## Use a short decision checklist\n\n- Confirm the contracting entity and current licensed activity.\n- Identify the employer and work-permit arrangement.\n- Agree essential duties, communication needs and accommodation.\n- Obtain an itemised quotation and both relevant contracts.\n- Read termination, replacement and refund conditions before paying.\n- Keep receipts and written communications.\n\n## Compare INAYA’s managed service by role and coordination\n\nINAYA’s published contract plans are AED 120 for 4 hours, AED 200 for 8 hours, AED 1,120 for 7 days and AED 3,500 for 30 days. A six-month contract costs AED 3,250 per month; a twelve-month contract costs AED 3,000 per month. The published rates are the same for live-in and live-out arrangements. Confirm the selected role, schedule, responsibilities and final written quotation before booking.\n\n| Contract plan | Duration or commitment | Published price |\n|---|---|---|\n| Half day | 4 hours | AED 120 |\n| Daily | 8 hours | AED 200 |\n| Weekly | 7 days | AED 1,120 |\n| Monthly | 30 days | AED 3,500 |\n| Six-month contract | 6-month commitment | AED 3,250 per month |\n| Yearly contract | 12-month commitment | AED 3,000 per month |\n\nThe written scope identifies the agency employer and sponsor, your household responsibilities, the individual role and the final price. Candidate assessment concerns the agreed duties; it does not establish that every possible identity, background or professional check has been completed. Request the evidence relevant to the individual candidate while protecting personal documents.\n\n[Review INAYA’s package scope and prices](https://inayadomestic.ae/en/pricing/) · [Discuss your individual duties and written quotation](https://inayadomestic.ae/en/contact/)\n\n## Useful INAYA pages\n\n- [About INAYA](https://inayadomestic.ae/en/about/)\n- [Domestic-worker services](https://inayadomestic.ae/en/services/)\n- [Questions to ask before hiring](https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/)\n\n## Official sources\n\n- [Federal Decree-Law 9/2022, current consolidated text; Articles 1, 4, 6](https://uaelegislation.gov.ae/en/legislations/1593#item21138)\n- [UAE Government: employing domestic workers](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers)\n- [Cabinet Resolution 106/2022; Articles 3, 4](https://uaelegislation.gov.ae/en/legislations/1620#item23227)\n\n## Tadbeer services in Ajman: prepare the right enquiry\n\nINAYA operates as a Tadbeer centre in Ajman, with domestic-worker recruitment, household cleaning and related visa-typing services. These are different enquiries: choosing a worker, booking a cleaning visit and processing an existing worker’s documents do not start with the same information. Identify the service you need before comparing profiles or prices.\n\nThe [MoHRE public centre record for INAYA](https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c) identifies the centre by its legal name. For current office communications, use [INAYA’s own contact page](https://inayadomestic.ae/en/contact/). Check the contracting entity and current licensed activity for your particular arrangement; a directory entry does not establish every package benefit or an individual application outcome.\n\n## Route your request before comparing offers\n\n| Your request | Information to prepare | Written confirmation to obtain |\n|---|---|---|\n| Recruit or select a domestic worker | Duties, arrangement, language needs, location and preferred start | Individual role, candidate availability, contracting parties and service terms |\n| Book household cleaning | Rooms, priority tasks, condition of the home and preferred visit | Duration, agreed work, access, supplies, transport responsibilities and final price |\n| Process an existing worker’s case | Requested action and current worker/sponsor situation | Applicable documents, supported processing steps, responsible parties and itemised costs |\n\nUse [domestic-worker recruitment](https://inayadomestic.ae/en/services/recruitment/) for a candidate enquiry, [cleaning and housekeeping](https://inayadomestic.ae/en/services/housekeeping/) for routine household work, and [domestic-worker visa assistance](https://inayadomestic.ae/en/services/maid-visa/) for related typing and processing. A service enquiry is not a confirmed booking or an authority approval.\n\n## Use an identity-and-scope comparison sheet\n\nFor each proposed provider, record the legal name, office, official source checked and date of that check. Then record the employer arrangement, agreed tasks, quoted amount, responsibilities and unanswered questions. A similar trading name or a phone number repeated in an old PDF should not replace a current identity check.\n\nKeep the same questions when comparing quotations. A household that needs a worker for continuing duties and a household that needs a four-hour cleaning visit are comparing different offers. The relevant test is whether the written arrangement fits the actual job, not which advertisement contains the most services.\n\n## Confirm the next step before sharing documents\n\nAt INAYA’s Grand Mall office, describe the request and ask what is needed for that case. Walk-ins can take a counter token during office hours; an online appointment request needs the team’s confirmation. Use a document-sharing channel confirmed by the team rather than putting identity documents into a general website enquiry.\n\nKeep the quotation, agreement and receipts together. Note the next action and who will carry it out. This makes recruitment, a cleaning booking and a document-processing request easier to follow without treating them as one automatic package.\n\n## Compare Ajman agency answers against one household brief\n\nBefore contacting a Tadbeer centre or maid agency in Ajman, write one short household brief and use it for every discussion. Describe the duties, preferred working arrangement, location and start preference. Keep essential needs separate from preferences. This makes an agency’s answer easier to assess without comparing unrelated services or treating a polished profile as a complete offer.\n\nFor example, a household may need daily cleaning and meal preparation during the same busy period. Ask how the proposed role and schedule address that overlap. Record the answer rather than assuming that a broad job title includes every task. This is a planning example, not a description of a particular available worker.\n\n## Record the answer and its evidence\n\n| Decision point | Useful answer to record | Evidence status to note |\n|---|---|---|\n| Individual role | Agreed duties and tasks needing separate discussion | Written scope supplied or clarification outstanding |\n| Candidate suitability | Relevant experience and communication discussed | Individual evidence reviewed or still to be checked |\n| Employment arrangement | Named contracting parties and responsibilities | Agreement received or explanation requested |\n| Start arrangements | Availability and prerequisites confirmed for this case | Current confirmation or an unresolved condition |\n\nUse the same evidence labels for each provider: supplied, needs clarification or not yet supplied. An unanswered question is a follow-up item. It is not proof that the answer is favourable, or evidence of misconduct. Compare the practical consequences of each answer rather than awarding a score to a person.\n\nAfter a discussion, send a short written recap: the request understood, documents or explanations still needed, and the next action. Ask the team to correct any misunderstanding before you rely on it. Store the quotation, scope and relevant correspondence together; keep personal identity records outside a general comparison sheet.\n\nUse the [Ajman service page](https://inayadomestic.ae/en/maid-services-ajman/), [candidate interview guide](https://inayadomestic.ae/en/blog/domestic-worker-interview-trial-probation/) and [INAYA contact page](https://inayadomestic.ae/en/contact/) for the next discussion. The [UAE Government’s domestic-worker guidance](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers) provides official context; confirm the current route for the actual agreement."
+        },
+        "ar": {
+          "title": "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟",
+          "description": "قارن خدمات تدبير للعمالة المنزلية في عجمان بنموذج للتحقق من الجهة، وافصل الاستقدام والتنظيف وطباعة التأشيرة مع مراجعة الشروط المكتوبة.",
+          "body": "اختر المكتب بعد التحقق من ترخيصه الحالي، ونوع التعاقد الذي يقدمه، وملاءمة العامل لاحتياجات أسرتك، وشروط العقد المكتوبة. فالسعر الشهري المنخفض أو الملف التعريفي الجذاب لا يكفيان لمعرفة من هو صاحب العمل، وما التكاليف التي ستتحملها، وما الذي يحدث عند انتهاء العلاقة.\n\nيشترط القانون الإماراتي الحصول على ترخيص من وزارة الموارد البشرية والتوطين لممارسة استقدام العمالة المساعدة أو تشغيلها مؤقتاً. ويختلف هذا الترخيص عن أي ترخيص مهني قد تتطلبه مهنة محددة. [المرسوم بقانون رقم 9 لسنة 2022، المادة 4](https://uaelegislation.gov.ae/ar/legislations/1593#item21138)\n\nوتوجه البوابة الرسمية لحكومة الإمارات القراء أيضاً إلى مراكز خدمات العمالة المساعدة المعتمدة لدى الوزارة. استخدم القنوات الرسمية للتحقق الحالي، بدلاً من اعتبار الإعلان إثباتاً. [حكومة الإمارات: توظيف العمالة المساعدة](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers)\n\n## ابدأ بهوية المكتب والنشاط المرخص\n\nاطلب اسم الكيان القانوني الذي سيصدر العقد والفاتورة، وترخيصه الحالي، والنشاط الذي يغطي الترتيب المقترح. تأكد من تطابق الأسماء. قد يساعدك ورود المكتب في دليل رسمي على العثور عليه، لكنه لا يثبت وحده تاريخ انتهاء ترخيصه الحالي، أو مزايا باقة معينة، أو جودة كل مرشح.\n\nيميز الترخيص أيضاً بين التوسط والتشغيل المؤقت. ففي التوسط، يُسجل العامل على ملف صاحب العمل المنزلي، ولا يكون المكتب طرفاً في علاقة العمل. أما في التشغيل المؤقت، فيوظف المكتب العامل ويتيح خدماته للمستفيد. وتختلف المسؤوليات تبعاً لهذا التمييز. [المرسوم بقانون رقم 9 لسنة 2022، المادة 1](https://uaelegislation.gov.ae/ar/legislations/1593#item21135) [قرار مجلس الوزراء رقم 106 لسنة 2022، المادة 3](https://uaelegislation.gov.ae/ar/legislations/1620#item23227)\n\n## قارن العقد، لا السعر المعلن وحده\n\nينبغي أن يبين عقد الاستقدام المواصفات المطلوبة في العامل، والعمل، والالتزامات المالية، والخدمات، والمدة المحددة للاستقدام. ويقرر القانون وسائل معالجة عند عدم التزام المكتب بالشروط المتفق عليها؛ لكن تطبيق الاستبدال أو رد المبالغ يظل مرتبطاً بنوع العلاقة والأحكام التنظيمية ذات الصلة. [المرسوم بقانون رقم 9 لسنة 2022، المادة 6](https://uaelegislation.gov.ae/ar/legislations/1593#item21140)\n\n| السؤال الذي تطرحه | ما ينبغي أن تتضمنه الإجابة المكتوبة |\n|---|---|\n| من هو صاحب العمل؟ | الأسرة أم المكتب، مع تحديد العقد المطبق |\n| ما العمل المتفق عليه؟ | المهام بحسب أولويتها والمهارات اللازمة |\n| ما المبالغ المستحقة؟ | فصل رسوم الخدمة والاستقدام والرسوم الحكومية والأجور |\n| أين سيقيم العامل؟ | مسؤولية السكن وأي ترتيبات للنقل |\n| ماذا لو لم ينجح الترتيب؟ | المعالجة القانونية المطبقة والشروط التجارية والإثبات المطلوب |\n\nلا تفهم عبارة «الاستبدال متاح» على أنها وعد باستبدالات غير محدودة، أو بديل فوري، أو استرداد جميع المبالغ المدفوعة.\n\n## قيّم العامل نفسه باحترام\n\nاطرح أسئلة عملية تتعلق بالمهام التي تحتاجها أسرتك فعلاً. ناقش مثلاً الأطعمة التي تُعد في المنزل، ومواد التنظيف المستخدمة، وطريقة إيصال التعليمات. فالجنسية أو اللغة المذكورة في الملف لا تثبت مستوى الإتقان، أو التدريب على رعاية الأطفال، أو الكفاءة الطبية.\n\nتتناول اللائحة اللياقة الصحية، والمؤهلات المهنية ذات الصلة حيث تكون مطلوبة، وشهادة الحالة الجنائية في الحالات التي تحددها الوزارة. وتقرر المادة 4(5) استثناءات محدودة لبعض التزامات المكتب في الاستقدام المباشر لعامل محدد، لا إعفاءً شاملاً من المتطلبات الطبية أو التراخيص المهنية. ولا تثبت القواعد أن مكتباً معيناً أجرى كل فحص ممكن لشخص معين. اطلب إثباتاً مناسباً للفحوص المرتبطة بحالتك، دون المطالبة بنسخ غير مقيدة من السجلات الحساسة. [قرار مجلس الوزراء رقم 106 لسنة 2022، المادة 4](https://uaelegislation.gov.ae/ar/legislations/1620#item23228)\n\n## استخدم قائمة مختصرة لاتخاذ القرار\n\n- تحقق من الكيان المتعاقد ونشاطه المرخص الحالي.\n- حدد صاحب العمل وترتيب تصريح العمل.\n- اتفق على المهام الأساسية واحتياجات التواصل والسكن.\n- احصل على عرض مفصل والعقود ذات الصلة.\n- اقرأ شروط الإنهاء والاستبدال ورد المبالغ قبل الدفع.\n- احتفظ بالإيصالات والمراسلات المكتوبة.\n\n## صفحات مفيدة من عناية\n\n- [عن عناية](https://inayadomestic.ae/ar/about/)\n- [خدمات العمالة المساعدة](https://inayadomestic.ae/ar/services/)\n- [أسئلة قبل التوظيف](https://inayadomestic.ae/ar/blog/uae-domestic-worker-hiring-process/)\n\n## قارن خدمة عناية المدارة بحسب الدور والتنسيق\n\nباقات عناية المنشورة هي 120 درهماً لأربع ساعات، و200 درهم لثماني ساعات، و1,120 درهماً لسبعة أيام، و3,500 درهم لثلاثين يوماً. تبلغ تكلفة عقد الستة أشهر 3,250 درهماً شهرياً، وعقد الاثني عشر شهراً 3,000 درهم شهرياً. الأسعار المنشورة واحدة للخدمة المقيمة وغير المقيمة. أكد الدور المختار والجدول والمسؤوليات وعرض السعر النهائي المكتوب قبل الحجز.\n\n| الباقة | المدة أو الالتزام | السعر المنشور |\n|---|---|---|\n| نصف يوم | 4 ساعات | 120 درهماً |\n| يومي | 8 ساعات | 200 درهم |\n| أسبوعي | 7 أيام | 1,120 درهماً |\n| شهري | 30 يوماً | 3,500 درهم |\n| عقد ستة أشهر | التزام لمدة 6 أشهر | 3,250 درهماً شهرياً |\n| عقد سنوي | التزام لمدة 12 شهراً | 3,000 درهم شهرياً |\n\nيحدد النطاق المكتوب الوكالة صاحبة العمل والكفيل ومسؤوليات منزلك والدور الفردي والسعر النهائي. يتعلق تقييم المرشحة بالمهام المتفق عليها، ولا يثبت إجراء كل فحص محتمل للهوية أو الخلفية أو المؤهلات المهنية. اطلب الإثبات المتعلق بالمرشحة الفردية مع حماية المستندات الشخصية.\n\n[راجع نطاق باقات عناية وأسعارها](https://inayadomestic.ae/ar/pricing/) · [ناقش المهام الفردية والعرض المكتوب](https://inayadomestic.ae/ar/contact/)\n\n## المصادر الرسمية\n\n- [المرسوم بقانون رقم 9 لسنة 2022، النص الموحد الحالي؛ المواد 1, 4, 6](https://uaelegislation.gov.ae/ar/legislations/1593#item21138)\n- [حكومة الإمارات: توظيف العمالة المساعدة](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers)\n- [قرار مجلس الوزراء رقم 106 لسنة 2022؛ المواد 3, 4](https://uaelegislation.gov.ae/ar/legislations/1620#item23227)\n\n## خدمات تدبير في عجمان: جهز الاستفسار المناسب\n\nتعمل عناية بوصفها مركز تدبير في عجمان، وتقدم استقدام العمالة المنزلية والتنظيف المنزلي وخدمات طباعة التأشيرة المرتبطة بالعمالة المنزلية. وهذه طلبات مختلفة؛ فاختيار عاملة وحجز زيارة تنظيف ومعالجة مستندات عاملة موجودة لا تبدأ بالمعلومات نفسها. حدد الخدمة المطلوبة قبل مقارنة الملفات أو الأسعار.\n\nيعرّف [سجل المركز العام لدى وزارة الموارد البشرية والتوطين](https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c) عناية باسمها القانوني. وللتواصل الحالي مع المكتب، استخدم [صفحة عناية الرسمية للتواصل](https://inayadomestic.ae/ar/contact/). تحقق من الجهة المتعاقدة والنشاط المرخص الحالي للترتيب المقصود؛ فالقيد في دليل لا يثبت كل مزايا الباقة أو نتيجة طلب فردي.\n\n## وجّه الطلب قبل مقارنة العروض\n\n| طلبك | المعلومات التي تجهزها | ما الذي تؤكده كتابةً؟ |\n|---|---|---|\n| استقدام عاملة منزلية أو اختيارها | المهام وترتيب العمل واللغة والمنطقة وموعد البدء المفضل | الدور الفردي وتوفر المرشحة وأطراف التعاقد وشروط الخدمة |\n| حجز تنظيف منزلي | الغرف والأولويات وحالة المنزل والموعد المفضل | المدة والعمل والدخول والمستلزمات ومسؤوليات النقل والسعر النهائي |\n| معالجة حالة عاملة موجودة | الإجراء المطلوب ووضع العاملة والكفيل | المستندات والخطوات التي يمكن خدمتها والمسؤوليات والتكاليف المفصلة |\n\nاستخدم [خدمة الاستقدام](https://inayadomestic.ae/ar/services/recruitment/) لطلب مرشحة، و[التنظيف وترتيب المنزل](https://inayadomestic.ae/ar/services/housekeeping/) للأعمال المنزلية المعتادة، و[المساعدة في تأشيرة العاملة المنزلية](https://inayadomestic.ae/ar/services/maid-visa/) للطباعة والإجراءات المرتبطة بها. الاستفسار عن خدمة لا يؤكد الحجز ولا يمثل موافقة من جهة رسمية.\n\n## استخدم ورقة لمقارنة الهوية والنطاق\n\nلكل جهة مقترحة، دوّن الاسم القانوني والمكتب والمصدر الرسمي الذي راجعته وتاريخ التحقق. ثم سجل نموذج التوظيف والمهام والمبلغ المعروض والمسؤوليات والأسئلة غير المحسومة. لا تجعل اسماً تجارياً مشابهاً أو رقماً متكرراً في ملف قديم بديلاً عن التحقق الحالي.\n\nاستخدم الأسئلة نفسها عند مقارنة العروض. فالأسرة التي تحتاج عاملة لمهام مستمرة والأسرة التي تحتاج زيارة تنظيف لأربع ساعات تقارنان عرضين مختلفين. المعيار المفيد هو ملاءمة الترتيب المكتوب للعمل الفعلي، لا عدد الخدمات المذكورة في الإعلان.\n\n## أكد الخطوة التالية قبل مشاركة المستندات\n\nعند زيارة مكتب عناية في جراند مول، صف الطلب واسأل عما تحتاجه حالتك. يمكن للزائر المباشر أخذ تذكرة انتظار خلال ساعات العمل، بينما يحتاج طلب الموعد الإلكتروني إلى تأكيد الفريق. استخدم قناة مستندات يؤكدها الفريق بدلاً من وضع وثائق الهوية في استفسار عام على الموقع.\n\nاحتفظ بعرض السعر والاتفاق والإيصالات معاً. ودوّن الخطوة التالية ومن سينفذها؛ فيسهل تتبع الاستقدام وحجز التنظيف ومعاملة المستندات دون اعتبارها باقة تلقائية واحدة.\n\n## قارن إجابات مكاتب عجمان وفق طلب منزلي واحد\n\nقبل التواصل مع مركز تدبير أو مكتب عمالة منزلية في عجمان، اكتب ملخصاً واضحاً لاحتياج أسرتك واستخدمه في كل مناقشة. حدد المهام وترتيب العمل المفضل والمنطقة وموعد البدء الذي ترغب فيه. افصل الاحتياجات الأساسية عن التفضيلات التي يمكن مناقشتها. يساعد ذلك على تقييم إجابة المكتب ومقارنة الخدمة نفسها، بدلاً من الاعتماد على عرض جذاب لا يوضح تفاصيل العمل أو مسؤوليات الأطراف.\n\nمثلاً، قد تحتاج أسرة إلى التنظيف اليومي وتحضير الوجبات خلال الفترة المزدحمة نفسها. اسأل كيف يراعي الدور والجدول المقترحان هذا التداخل، وسجل الإجابة بدلاً من افتراض أن المسمى العام يشمل كل مهمة. هذا مثال للتخطيط، وليس وصفاً لعاملة محددة متوفرة حالياً لدى عناية أو أي مكتب آخر.\n\n## سجل الإجابة وحالة الدليل\n\n| نقطة القرار | الإجابة المفيدة للتسجيل | حالة المعلومات التي تراجعها |\n|---|---|---|\n| الدور الفردي | المهام المتفق عليها وما يحتاج إلى مناقشة مستقلة | نطاق مكتوب متوفر أو توضيح مطلوب |\n| ملاءمة المرشحة | الخبرة المناسبة وطريقة التواصل التي نوقشت | دليل فردي روجع أو ما زال يحتاج إلى تحقق |\n| ترتيب التوظيف | أطراف التعاقد والمسؤوليات المسماة | اتفاق مستلم أو شرح مطلوب |\n| ترتيبات البدء | التوفر والشروط اللازمة للحالة | تأكيد حالي أو شرط لم يحسم بعد |\n\nاستخدم أوصاف الحالة نفسها لكل جهة: تم تقديم المعلومات، أو تحتاج إلى توضيح، أو لم تقدم بعد. السؤال غير المحسوم بند للمتابعة؛ لا يعني أن الإجابة مناسبة تلقائياً، ولا يثبت مخالفة. قارن أثر الإجابة على احتياج منزلك، وتجنب تحويل النموذج إلى درجات لتقييم الأشخاص أو استنتاج مهارات لم تراجع بصورة فردية.\n\nبعد المناقشة، أرسل ملخصاً قصيراً لما فهمه الطرفان، والتوضيحات أو المستندات المطلوبة، والخطوة التالية. اطلب تصحيح أي فهم مختلف قبل الاعتماد عليه. احتفظ بعرض السعر ونطاق الخدمة والمراسلات معاً، واترك وثائق الهوية الشخصية خارج ورقة المقارنة العامة. وإذا تغير الطلب، سجل التغيير قبل مقارنة إجابة جديدة بإجابة سابقة.\n\nراجع [خدمات عناية في عجمان](https://inayadomestic.ae/ar/maid-services-ajman/)، و[دليل مقابلة العاملة](https://inayadomestic.ae/ar/blog/domestic-worker-interview-trial-probation/)، و[صفحة التواصل](https://inayadomestic.ae/ar/contact/) للمناقشة التالية. توفر [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers) السياق الرسمي؛ وأكد المسار الحالي الملائم للاتفاق الفعلي."
+        }
+      },
+      "compactMetadata": {
+        "slug": "choosing-domestic-worker-agency-ajman",
+        "published": "2026-09-18",
+        "updated": "2026-10-24",
+        "en": {
+          "title": "How to choose a domestic-worker agency in Ajman",
+          "description": "Compare Tadbeer domestic-worker services in Ajman with an agency-identity worksheet, clear recruitment, cleaning and visa-typing enquiries, and written terms.",
+          "citations": [
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21138",
+            "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21135",
+            "https://uaelegislation.gov.ae/en/legislations/1620#item23227",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
+            "https://uaelegislation.gov.ae/en/legislations/1620#item23228",
+            "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          ]
+        },
+        "ar": {
+          "title": "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟",
+          "description": "قارن خدمات تدبير للعمالة المنزلية في عجمان بنموذج للتحقق من الجهة، وافصل الاستقدام والتنظيف وطباعة التأشيرة مع مراجعة الشروط المكتوبة.",
+          "citations": [
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21138",
+            "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
+            "https://uaelegislation.gov.ae/ar/legislations/1620#item23227",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
+            "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
+            "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c",
+            "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          ]
+        }
+      },
+      "customerVisual": {
+        "en": {
+          "kind": "steps",
+          "title": "Compare answers with a consistent evidence record",
+          "caption": "An original enquiry-planning workflow. These steps do not grade a worker or establish an approval or booking.",
+          "items": [
+            {
+              "label": "Write one household brief",
+              "detail": "Keep the same duties, arrangement and location when comparing answers."
+            },
+            {
+              "label": "Ask for the relevant answer",
+              "detail": "Separate the role, candidate evidence, agreement and start conditions."
+            },
+            {
+              "label": "Record what is established",
+              "detail": "Mark supplied information and questions still needing clarification."
+            },
+            {
+              "label": "Confirm the next action",
+              "detail": "Keep a written recap with the quotation and service scope."
+            }
+          ]
+        },
+        "ar": {
+          "kind": "steps",
+          "title": "قارن الإجابات بسجل واضح للمعلومات",
+          "caption": "مسار أصلي لتخطيط الاستفسار. لا يمنح درجات للعاملة ولا يثبت الموافقة أو تأكيد الحجز.",
+          "items": [
+            {
+              "label": "اكتب طلباً منزلياً واحداً",
+              "detail": "استخدم المهام وترتيب العمل والمنطقة نفسها عند مقارنة الإجابات."
+            },
+            {
+              "label": "اطلب الإجابة المناسبة",
+              "detail": "افصل الدور ودليل الخبرة والاتفاق وشروط البدء."
+            },
+            {
+              "label": "سجل ما اتضح",
+              "detail": "ميز المعلومات المقدمة والأسئلة التي تحتاج إلى توضيح."
+            },
+            {
+              "label": "أكد الخطوة التالية",
+              "detail": "احتفظ بملخص مكتوب مع عرض السعر ونطاق الخدمة."
+            }
+          ]
+        }
+      },
+      "customerFaqs": null
+    },
+    {
+      "auditId": "A13",
+      "slug": "domestic-worker-hiring-stages-timelines",
+      "family": "published",
+      "record": {
+        "slug": "domestic-worker-hiring-stages-timelines",
+        "published": "2026-09-24",
+        "updated": "2026-10-24",
+        "en": {
+          "title": "What happens during domestic-worker hiring, and how long does it take?",
+          "description": "Follow domestic-worker hiring stages and related visa typing in Ajman, with clear preparation, submission, follow-up and authority-decision records.",
+          "body": "Hiring has several stages: define the job, identify the employment model, select a suitable worker, sign the relevant agreements and complete the required official procedures. The total timeline depends on the worker's location, documents and approvals. A government service's processing target is not an agency's promised arrival date.\n\nThe recruitment contract must identify the required worker characteristics, services, financial obligations and recruitment timeframe. Agree these before payment rather than relying on an informal “available soon” message. [Federal Decree-Law 9/2022, Article 6](https://uaelegislation.gov.ae/en/legislations/1593#item21140)\n\n## 1. Define the job and legal arrangement\n\nWrite the essential tasks, communication needs and intended schedule. Decide whether the worker will be employed on your household file or supplied under a licensed agency's temporary employment arrangement. That decision affects the contracts and responsibility for wages, permits and accommodation. [Federal Decree-Law 9/2022, Article 1](https://uaelegislation.gov.ae/en/legislations/1593#item21135) [Federal Decree-Law 9/2022, Article 14](https://uaelegislation.gov.ae/en/legislations/1593#item21148)\n\n## 2. Review the candidate against the actual work\n\nDiscuss experience and practical skills relevant to your home. The law requires the agency to explain the nature of the work and wage to the worker and address suitability. Required pre-entry medical examinations must be conducted within the thirty days before entry, under Article 5; this rule is not proof that a particular candidate has already passed a particular examination. [Federal Decree-Law 9/2022, Article 5](https://uaelegislation.gov.ae/en/legislations/1593#item21139)\n\nWhere a profession requires a relevant certificate or licence, verify the credential for that role. An interview or general profile is not a substitute. [Federal Decree-Law 9/2022, Article 4](https://uaelegislation.gov.ae/en/legislations/1593#item21138) [Cabinet Resolution 106/2022, Article 4](https://uaelegislation.gov.ae/en/legislations/1620#item23228)\n\n## 3. Sign the right agreements\n\nFor household-employer recruitment, review the agency–employer recruitment agreement and the employer–worker employment contract. The employment contract records the work, wage, duration, leave, probation, rest and termination arrangements, and the worker receives a copy. For temporary employment, also check the approved agency–beneficiary agreement. [Federal Decree-Law 9/2022, Article 6](https://uaelegislation.gov.ae/en/legislations/1593#item21140) [Federal Decree-Law 9/2022, Article 7](https://uaelegislation.gov.ae/en/legislations/1593#item21141) [Cabinet Resolution 106/2022, Article 9](https://uaelegislation.gov.ae/en/legislations/1620#item23233)\n\nConfirm the quoted service period and who handles each official step. Keep a receipt for every payment and avoid beginning productive work without the required work permission. [Federal Decree-Law 9/2022, Article 12](https://uaelegislation.gov.ae/en/legislations/1593#item21146)\n\n## 4. Follow the applicable official applications\n\nMOHRE's new-permit process includes document submission, payment and permit issuance when requirements are met. Additional information may be requested. Residence and other immigration procedures should be confirmed for the actual case instead of assumed to be completed by one MOHRE transaction. [MOHRE: new domestic-worker work permit](https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022)\n\n| MOHRE service | Completion target | Scope of the target |\n|---|---|---|\n| New domestic-worker work permit | Two working days | The permit service only; recruitment, arrival and other immigration steps are separate |\n| New domestic-worker employment contract | One working day | The contract service only; the total hiring timeline depends on the other required stages |\n\nThese targets describe separate services. Adding them together does not create a guaranteed three-working-day hiring promise or establish a single common starting event for all steps. [MOHRE: new domestic-worker work permit](https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022) [MOHRE: new domestic-worker employment contract](https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022)\n\n## 5. Prepare the household handover\n\nBefore the first working day, explain priorities, equipment, safety instructions, rest and communication arrangements. Provide a realistic handover for tasks such as household cooking or childcare. Confirm what to do if the agreed scope or candidate suitability differs from the contract.\n\n## Ask for a milestone-based timeline\n\nRequest dates or expected stages for selection, contract signing, application submission, official approvals, travel where relevant and lawful service commencement. Ask how delays and unmet contractual conditions will be handled. A useful update identifies the unfinished step rather than simply saying “processing.”\n\n[Contact INAYA](https://inayadomestic.ae/en/contact/) to confirm the support available for your case, applicable requirements and fees. Availability and delivery dates should be confirmed for the individual request; they should not be inferred from a starting price or government processing target.\n\n## Candidate selection and service commencement\n\nINAYA first reviews the household role, location and availability, then provides the written scope and quotation for your review. Select and confirm the individual candidate before fixing the start arrangement. Service begins only after the required lawful authorisation and written confirmation; a revised profile needs your consent if the candidate changes.\n\n- Review the individual profile against agreed duties and communication needs, rather than nationality-based assumptions.\n- If another candidate is proposed, INAYA provides the revised profile and obtains customer consent.\n- Material changes and agreed alternatives are explained in writing.\n- Prepare a practical household handover with duties, safety instructions and key contacts.\n- Availability and official approvals determine the agreed start; no same-day placement or fixed government approval time is promised.\n\n## Monthly payments and written confirmation\n\nOnce the written scope and price are reviewed, the standard managed offer requires the first month in advance; later service months use the agreed billing date. No separate setup/recruitment fee or security deposit is required. Payment alone does not authorise work or replace the selected candidate and written start confirmation.\n\n- Receive the written service scope, price breakdown and applicable payment documentation before confirmation.\n- The quotation identifies included components, exclusions, applicable tax and the final payable amount.\n- Record the service period, monthly billing date, renewal arrangements and any agreed changes.\n- A package payment is different from the worker’s wage, even though the wage is included in the managed service price.\n\n## Follow-up schedules and human support hours\n\nAfter the written duty handover, use the contact and review schedule recorded in your service agreement. Discuss individual duties, coordination and any concerns with that contact. Follow-up does not promise immediate placement, a fixed response time or uninterrupted human support.\n\n- Human support hours: Saturday–Thursday, 9 AM–9 PM; Friday closed.\n- WhatsApp messages may be received outside office hours; this is not a 24/7 human helpline or a guaranteed response time.\n- Office: +971 6 740 0128. WhatsApp: +971 50 203 6767. Email: info@inayadomestic.ae.\n- Visit Grand Mall, ground floor, Al Rashidiya 3, Ajman, and coordinate the visit with the team.\n- For a complaint, share the relevant agreement and concern, keep written communications and use the existing support and official escalation channels.\n\nThe written service plan and practical handover turn the agreed duties into a household routine. Record onboarding and review arrangements with the team. These follow-ups are service coordination, not a promised government processing time.\n\n[Review INAYA’s package scope and prices](https://inayadomestic.ae/en/pricing/) · [Discuss your individual duties and written quotation](https://inayadomestic.ae/en/contact/)\n\n## Useful INAYA pages\n\n- [How the enquiry process works](https://inayadomestic.ae/en/how-it-works/)\n- [Service areas](https://inayadomestic.ae/en/service-areas/)\n- [Questions to ask before hiring](https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/)\n\n## Official sources\n\n- [Federal Decree-Law 9/2022, current consolidated text; Articles 1, 4, 5, 6, 7, 12, 14](https://uaelegislation.gov.ae/en/legislations/1593#item21140)\n- [Cabinet Resolution 106/2022; Articles 4, 9](https://uaelegislation.gov.ae/en/legislations/1620#item23228)\n- [MOHRE: new domestic-worker work permit](https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022)\n- [MOHRE: new domestic-worker employment contract](https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022)\n\n## Domestic-worker visa typing: separate preparation, submission and approval\n\nINAYA provides typing and document-processing support for domestic-worker services from its Ajman centre. Start by identifying the worker, sponsor situation and action requested. A new application, renewal, cancellation, status change or contract-related request can need different information; the team confirms the steps applicable to your case and the written service scope.\n\nRelated support can include application preparation and submission, enquiry follow-up, Emirates ID processing, medical-processing coordination and insurance processing as applicable. Medical coordination means arranging the required process, not medical treatment by INAYA. This service concerns domestic workers and their related documents; it is not a general visa service for every applicant category.\n\n## Ask which stage your case has reached\n\n| Stage | Useful record | What it does not establish |\n|---|---|---|\n| Preparation and typing | Application type, checked information and case-specific document list | Eligibility or approval merely because a form is complete |\n| Submission | Application or transaction reference and payment receipt where applicable | A completed authority decision |\n| Follow-up | Current status, further information requested and the next responsible person | A guaranteed decision date |\n| Decision and completion | The actual result and instructions for the next step | Permission for a different job or arrangement |\n\nThe [ICP residence-permit service information](https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64) separates application submission, review, document handling, fees, follow-up and issuance notification. Check the relevant category and channel; a page displaying multiple categories is not one universal document or fee checklist.\n\nWork-permit, contract and residence questions should be directed to the appropriate process for the actual record. For an ending arrangement, use the [existing cancellation guide](https://inayadomestic.ae/en/blog/domestic-worker-contract-permit-residence-cancellation/) to organise the different questions. Do not assume that closing a customer service agreement automatically closes every employment or residence record.\n\n## Confirm the support and charges before submission\n\nAsk INAYA to identify the requested action, the steps it will handle, any step requiring your participation and the applicable service charges and government fees. Keep the quotation and receipts together. Do not infer a universal fee or turnaround time from another household’s application or from the duration of an unrelated service.\n\nA typed application and a paid receipt do not guarantee approval. Requirements, eligibility, timing and official outcomes depend on the case and responsible authorities. A new recruitment enquiry and a document-processing request for a worker you already know should remain separate.\n\n## Share documents through an agreed private channel\n\nBegin with the emirate, current application stage and requested action. Confirm the document-sharing channel before sending passports, identity documents or personal records; do not put them in a general website message. Keep login credentials and one-time passwords private.\n\nFor domestic-worker typing, renewal, cancellation or processing questions, contact [INAYA’s visa-processing team](https://inayadomestic.ae/en/services/maid-visa/). Use the [documents enquiry guide](https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/) for preparation, then confirm the checklist and next action for your individual case.\n\n## Keep a candidate-specific recruitment progress record in Ajman\n\nFor domestic-worker recruitment in Ajman, ask for an update that identifies the current step, what supports that status and who carries out the next action. An update is easier to understand when attached to an actual milestone. Keep the record for the actual candidate and arrangement.\n\nRecord only what the team has confirmed about current availability and whether travel or another case-specific step is involved. A profile being reviewed, a candidate being selected and a start being authorised describe different points. If the proposed candidate changes, keep the earlier record and begin a clearly identified update rather than transferring assumptions to another person.\n\n## Use a recruitment milestone ledger\n\n| Milestone | Useful evidence or record | Next-action responsibility |\n|---|---|---|\n| Household requirement | Duties, arrangement, location and priorities recorded | Household clarifies outstanding needs |\n| Candidate review | Relevant profile discussion and unanswered questions | Team and household confirm what still needs review |\n| Written terms | Scope, quotation and applicable agreements available | Named parties resolve terms before relying on confirmation |\n| Authorisation and start | Required case steps and written start confirmation checked | Responsible party confirms the outstanding prerequisite |\n| Household handover | Practical instructions and a contact recorded | Household and team agree the next review |\n\nAdd the date of each update, its information source and the action still outstanding. Use status descriptions such as under review, clarification needed or confirmed for this case. Do not use the ledger to infer a completion date, promise availability or expose a worker’s personal documents in a shared sheet.\n\nWhen following up, ask one focused question: which action remains before the next milestone can be confirmed? Record the answer and the agreed review point. INAYA’s coordination concerns the actual recruitment and service arrangement; official requirements and outcomes remain subject to the responsible authorities. A payment receipt or an informal expected date does not replace the relevant confirmation.\n\nReview the [recruitment service](https://inayadomestic.ae/en/services/recruitment/), [skills and communication guide](https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/) and [first-week checklist](https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/). The [UAE Government’s domestic-worker guidance](https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers) provides official context for the employment arrangement."
+        },
+        "ar": {
+          "title": "ما مراحل توظيف العامل المساعد، وكم تستغرق؟",
+          "description": "تابع مراحل توظيف العاملة المنزلية وطباعة طلباتها في عجمان، مع الفصل بين الإعداد والتقديم والمتابعة وقرار الجهة المختصة.",
+          "body": "يمر التوظيف بمراحل تشمل تحديد العمل، واختيار نموذج التوظيف، وانتقاء عامل مناسب، وتوقيع الاتفاقات ذات الصلة، واستكمال الإجراءات الرسمية المطلوبة. وتعتمد المدة الإجمالية على مكان العامل ومستنداته والموافقات. ولا يمثل هدف إنجاز خدمة حكومية موعد وصول يلتزم به المكتب.\n\nيجب أن يحدد عقد الاستقدام مواصفات العامل المطلوبة والخدمات والالتزامات المالية والمدة المحددة للاستقدام. اتفق عليها قبل الدفع، بدلاً من الاكتفاء برسالة غير رسمية تفيد بأن العامل «متاح قريباً». [المرسوم بقانون رقم 9 لسنة 2022، المادة 6](https://uaelegislation.gov.ae/ar/legislations/1593#item21140)\n\n## 1. حدد العمل والترتيب القانوني\n\nاكتب المهام الأساسية واحتياجات التواصل والجدول المقصود. وحدد ما إذا كان العامل سيوظف على ملف أسرتك أو سيقدم خدماته ضمن تشغيل مؤقت لدى مكتب مرخص. ويؤثر هذا القرار في العقود ومسؤوليات الأجور والتصاريح والسكن. [المرسوم بقانون رقم 9 لسنة 2022، المادة 1](https://uaelegislation.gov.ae/ar/legislations/1593#item21135) [المرسوم بقانون رقم 9 لسنة 2022، المادة 14](https://uaelegislation.gov.ae/ar/legislations/1593#item21148)\n\n## 2. قيّم المرشح بحسب العمل الفعلي\n\nناقش الخبرة والمهارات العملية المرتبطة بمنزلك. ويلزم القانون المكتب بتوضيح طبيعة العمل والأجر للعامل والتحقق من الملاءمة. ووفق المادة 5، تُجرى الفحوص الطبية المطلوبة قبل الدخول خلال الثلاثين يوماً السابقة لدخول الدولة؛ ولا تثبت هذه القاعدة أن مرشحاً معيناً اجتاز بالفعل فحصاً معيناً. [المرسوم بقانون رقم 9 لسنة 2022، المادة 5](https://uaelegislation.gov.ae/ar/legislations/1593#item21139)\n\nعندما تتطلب المهنة شهادة أو ترخيصاً ذا صلة، تحقق من المؤهل المطلوب للدور. ولا تغني المقابلة أو المعلومات العامة في الملف عن ذلك. [المرسوم بقانون رقم 9 لسنة 2022، المادة 4](https://uaelegislation.gov.ae/ar/legislations/1593#item21138) [قرار مجلس الوزراء رقم 106 لسنة 2022، المادة 4](https://uaelegislation.gov.ae/ar/legislations/1620#item23228)\n\n## 3. وقع الاتفاقات المناسبة\n\nفي الاستقدام على ملف صاحب العمل المنزلي، راجع عقد الاستقدام بين المكتب وصاحب العمل، وعقد العمل بين صاحب العمل والعامل. ويبين عقد العمل المهام والأجر والمدة والإجازة والتجربة والراحة وترتيبات الإنهاء، ويتلقى العامل نسخة منه. وفي التشغيل المؤقت، راجع أيضاً اتفاق المكتب المعتمد مع المستفيد. [المرسوم بقانون رقم 9 لسنة 2022، المادة 6](https://uaelegislation.gov.ae/ar/legislations/1593#item21140) [المرسوم بقانون رقم 9 لسنة 2022، المادة 7](https://uaelegislation.gov.ae/ar/legislations/1593#item21141) [قرار مجلس الوزراء رقم 106 لسنة 2022، المادة 9](https://uaelegislation.gov.ae/ar/legislations/1620#item23233)\n\nحدد مدة الخدمة المعروضة والمسؤول عن كل إجراء رسمي. واحتفظ بإيصال لكل دفعة، ولا تبدأ عملاً فعلياً دون إذن العمل المطلوب. [المرسوم بقانون رقم 9 لسنة 2022، المادة 12](https://uaelegislation.gov.ae/ar/legislations/1593#item21146)\n\n## 4. تابع الطلبات الرسمية المطبقة\n\nتشمل إجراءات إصدار التصريح الجديد لدى الوزارة تقديم المستندات والسداد وإصدار التصريح عند استيفاء المتطلبات. وقد يُطلب استكمال معلومات إضافية. ويجب تأكيد إجراءات الإقامة وغيرها من إجراءات الهجرة للحالة الفعلية، بدلاً من افتراض اكتمالها بمعاملة واحدة لدى الوزارة. [الوزارة: إصدار تصريح عمل جديد لعامل مساعد](https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022)\n\n| خدمة الوزارة | هدف الإنجاز | نطاق الهدف |\n|---|---|---|\n| تصريح عمل جديد لعامل مساعد | يومان عمل | خدمة التصريح فقط؛ فالاستقدام والوصول وخطوات الإقامة الأخرى مستقلة |\n| عقد عمل جديد لعامل مساعد | يوم عمل واحد | خدمة العقد فقط؛ وتعتمد مدة التوظيف الإجمالية على المراحل المطلوبة الأخرى |\n\nتصف هذه الأهداف خدمات مستقلة. ولا ينتج عن جمعها وعد مضمون بالتوظيف خلال ثلاثة أيام عمل، ولا تحدد حدث بداية موحداً لجميع الخطوات. [الوزارة: إصدار تصريح عمل جديد لعامل مساعد](https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022) [الوزارة: إصدار عقد عمل جديد لعامل مساعد](https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022)\n\n## 5. جهز استلام العمل في المنزل\n\nقبل يوم العمل الأول، وضح الأولويات والمعدات وتعليمات السلامة والراحة وطرق التواصل. ووفر شرحاً عملياً مناسباً لمهام مثل الطهي المنزلي أو رعاية الأطفال. وحدد طريقة التصرف إذا اختلف نطاق العمل أو ملاءمة المرشح عما ورد في العقد.\n\n## اطلب جدولاً يقوم على مراحل واضحة\n\nاطلب تواريخ أو مراحل متوقعة للاختيار وتوقيع العقد وتقديم الطلب والموافقات الرسمية والسفر عند الحاجة وبدء الخدمة القانوني. واسأل كيف ستعالج التأخيرات وعدم استيفاء الشروط التعاقدية. فالتحديث المفيد يحدد الخطوة غير المكتملة بدلاً من الاكتفاء بعبارة «قيد الإجراء».\n\n[تواصل مع عناية](https://inayadomestic.ae/ar/contact/) لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المطبقة. ويجب تأكيد التوافر ومواعيد التسليم للطلب المحدد، دون استنتاجها من سعر ابتدائي أو هدف إنجاز حكومي.\n\n## صفحات مفيدة من عناية\n\n- [كيف تسير عملية الاستفسار](https://inayadomestic.ae/ar/how-it-works/)\n- [مناطق الخدمة](https://inayadomestic.ae/ar/service-areas/)\n- [أسئلة قبل التوظيف](https://inayadomestic.ae/ar/blog/uae-domestic-worker-hiring-process/)\n\n## اختيار المرشحة وبدء الخدمة\n\nتراجع عناية أولاً الدور المنزلي والموقع والتوفر، ثم تقدم النطاق وعرض السعر المكتوبين للمراجعة. اختر المرشحة الفردية وأكدها قبل تحديد ترتيب البدء. لا تبدأ الخدمة إلا بعد التصاريح النظامية المطلوبة والتأكيد المكتوب؛ ويحتاج الملف المعدل موافقتك إذا تغيرت المرشحة.\n\n- راجع الملف الفردي وفق المهام المتفق عليها واحتياجات التواصل، دون افتراضات مبنية على الجنسية.\n- إذا اقترحت مرشحة أخرى، تقدم عناية الملف المعدل وتحصل على موافقة العميل.\n- توضح التغييرات الجوهرية والبدائل المتفق عليها كتابةً.\n- جهز تسليماً عملياً لاحتياجات المنزل يشمل المهام وتعليمات السلامة وجهات التواصل الأساسية.\n- يحدد التوفر والموافقات الرسمية موعد البدء المتفق عليه؛ ولا يوجد وعد ببدء الخدمة في اليوم نفسه أو بمدة ثابتة للموافقة الحكومية.\n\n## السداد الشهري والتأكيد المكتوب\n\nبعد مراجعة النطاق والسعر المكتوبين، يتطلب العرض المدار القياسي سداد الشهر الأول مقدماً؛ ثم تعتمد أشهر الخدمة اللاحقة تاريخ الفوترة المتفق عليه. لا يتطلب رسم تجهيز أو استقدام منفصل أو تأميناً نقدياً. السداد وحده لا يجيز العمل ولا يحل محل اختيار المرشحة وتأكيد البدء المكتوب.\n\n- تسلم نطاق الخدمة المكتوب وتفصيل السعر ومستندات السداد المنطبقة قبل التأكيد.\n- يبين العرض العناصر المشمولة والاستثناءات والضريبة المنطبقة والمبلغ النهائي المستحق.\n- سجل فترة الخدمة وتاريخ الفوترة الشهري وترتيبات التجديد وأي تغييرات متفق عليها.\n- دفعة الباقة تختلف عن أجر العاملة، رغم أن الأجر مشمول في سعر الخدمة المدارة.\n\n## مواعيد المتابعة وساعات الدعم البشري\n\nبعد تسليم بيان المهام المكتوب، استخدم مسؤول التواصل وجدول المراجعة المحددين في اتفاق الخدمة. ناقش معه المهام الفردية والتنسيق وأي ملاحظات. لا تعني المتابعة وعداً بتوفير فوري لعاملة أو وقت رد ثابت أو دعم بشري مستمر.\n\n- ساعات الدعم البشري: من السبت إلى الخميس، من 9 صباحاً إلى 9 مساءً؛ الجمعة مغلق.\n- يمكن استقبال رسائل واتساب خارج ساعات المكتب؛ ولا يعني ذلك خطاً بشرياً يعمل على مدار الساعة أو وقت رد مضموناً.\n- هاتف المكتب: +971 6 740 0128. واتساب: +971 50 203 6767. البريد الإلكتروني: info@inayadomestic.ae.\n- العنوان: جراند مول، الطابق الأرضي، الراشدية 3، عجمان. نسق الزيارة مع الفريق.\n- للشكوى، شارك الاتفاق والملاحظة ذات الصلة، واحتفظ بالمراسلات المكتوبة، واستخدم قنوات الدعم والتصعيد الرسمي القائمة.\n\nتحول خطة الخدمة المكتوبة والتسليم العملي المهام المتفق عليها إلى روتين منزلي. سجل ترتيبات التهيئة والمراجعة مع الفريق. هذه المتابعة تنسيق للخدمة وليست وعداً بمدة معالجة حكومية.\n\n[راجع نطاق باقات عناية وأسعارها](https://inayadomestic.ae/ar/pricing/) · [ناقش المهام الفردية والعرض المكتوب](https://inayadomestic.ae/ar/contact/)\n\n## المصادر الرسمية\n\n- [المرسوم بقانون رقم 9 لسنة 2022، النص الموحد الحالي؛ المواد 1, 4, 5, 6, 7, 12, 14](https://uaelegislation.gov.ae/ar/legislations/1593#item21140)\n- [قرار مجلس الوزراء رقم 106 لسنة 2022؛ المواد 4, 9](https://uaelegislation.gov.ae/ar/legislations/1620#item23228)\n- [الوزارة: إصدار تصريح عمل جديد لعامل مساعد](https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022)\n- [الوزارة: إصدار عقد عمل جديد لعامل مساعد](https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022)\n\n## طباعة تأشيرة العاملة المنزلية: افصل الإعداد والتقديم والموافقة\n\nتقدم عناية دعماً لطباعة الطلبات ومعالجة المستندات المرتبطة بخدمات العمالة المنزلية من مركزها في عجمان. ابدأ بتحديد العاملة ووضع الكفيل والإجراء المطلوب. فقد يحتاج الطلب الجديد أو التجديد أو الإلغاء أو تعديل الوضع أو معاملة العقد إلى معلومات مختلفة؛ ويؤكد الفريق الخطوات المناسبة للحالة ونطاق الخدمة المكتوب.\n\nقد يشمل الدعم المرتبط إعداد الطلب وتقديمه ومتابعة الاستفسار وإجراءات الهوية الإماراتية وتنسيق الفحص الطبي وإجراءات التأمين بحسب الحالة. التنسيق الطبي يعني ترتيب الإجراء المطلوب، وليس علاجاً تقدمه عناية. وتتعلق هذه الخدمة بالعمالة المنزلية ومستنداتها، وليست خدمة تأشيرات عامة لكل فئات المتقدمين.\n\n## اسأل عن المرحلة التي وصل إليها الطلب\n\n| المرحلة | السجل المفيد | ما الذي لا تثبته؟ |\n|---|---|---|\n| الإعداد والطباعة | نوع الطلب والبيانات المراجعة وقائمة مستندات الحالة | الأهلية أو الموافقة لمجرد اكتمال النموذج |\n| التقديم | مرجع الطلب أو المعاملة وإيصال الدفع عند انطباقه | اكتمال القرار الرسمي |\n| المتابعة | الحالة الحالية والمعلومات الإضافية المطلوبة والمسؤول عن الخطوة التالية | موعداً مضموناً لصدور القرار |\n| القرار والإنجاز | النتيجة الفعلية وتعليمات الخطوة التالية | الإذن بعمل أو ترتيب آخر |\n\nتفصل [معلومات خدمة إصدار الإقامة لدى الهيئة الاتحادية للهوية والجنسية](https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64) بين التقديم والمراجعة والمستندات والرسوم والمتابعة والإشعار بالإصدار. تحقق من الفئة والقناة المناسبتين؛ فالصفحة التي تعرض فئات متعددة ليست قائمة موحدة للمستندات أو الرسوم.\n\nينبغي توجيه أسئلة تصريح العمل والعقد والإقامة إلى الإجراء المناسب للسجل الفعلي. وعند إنهاء ترتيب قائم، استخدم [دليل الإلغاء الحالي](https://inayadomestic.ae/ar/blog/domestic-worker-contract-permit-residence-cancellation/) لتنظيم الأسئلة المختلفة. لا تفترض أن إنهاء اتفاق خدمة العميل يغلق تلقائياً جميع سجلات التوظيف أو الإقامة.\n\n## أكد الدعم والتكاليف قبل تقديم الطلب\n\nاطلب من عناية تحديد الإجراء والخطوات التي تتولاها وما يحتاج إلى مشاركتك ورسوم الخدمة والرسوم الحكومية المطبقة. احتفظ بالعرض والإيصالات معاً. ولا تستنتج رسماً موحداً أو مدة إنجاز من معاملة أسرة أخرى أو من مدة خدمة غير مرتبطة.\n\nالطلب المطبوع والإيصال المدفوع لا يضمنان الموافقة. تعتمد المتطلبات والأهلية والمدة والنتيجة الرسمية على الحالة والجهات المسؤولة. ويظل طلب الاستقدام الجديد مختلفاً عن طلب معالجة مستندات عاملة معروفة لديك.\n\n## شارك المستندات عبر قناة خاصة متفق عليها\n\nابدأ بالإمارة ومرحلة الطلب والإجراء المطلوب. أكد قناة تبادل المستندات قبل إرسال الجوازات أو الهويات أو السجلات الشخصية، ولا تضعها في رسالة عامة على الموقع. واحتفظ ببيانات الدخول ورموز التحقق لمرة واحدة بصورة خاصة.\n\nلاستفسارات طباعة معاملات العاملة المنزلية أو تجديدها أو إلغائها، تواصل مع [فريق إجراءات التأشيرة لدى عناية](https://inayadomestic.ae/ar/services/maid-visa/). واستخدم [دليل تجهيز مستندات الاستفسار](https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/) للاستعداد، ثم أكد قائمة الحالة والخطوة التالية بصورة فردية.\n\n## احتفظ بسجل تقدم الاستقدام للمرشحة المعنية في عجمان\n\nفي طلب استقدام العمالة المنزلية بعجمان، اطلب تحديثاً يحدد الخطوة الحالية وما يؤيد حالتها ومن ينفذ الإجراء التالي. يصبح وصف تقدم الطلب أوضح عندما يرتبط بمرحلة فعلية يمكن الرجوع إليها. خصص السجل للمرشحة والترتيب الجاري مناقشتهما، ولا تجمع معلومات طلبات مختلفة في صف واحد يصعب فهمه لاحقاً.\n\nسجل فقط ما أكده الفريق عن التوفر الحالي، وما إذا كانت الحالة تتضمن سفراً أو خطوة خاصة أخرى. فمراجعة ملف المرشحة واختيارها وتأكيد السماح ببدء الخدمة نقاط مختلفة. إذا تغيرت المرشحة المقترحة، احتفظ بالسجل السابق وابدأ تحديثاً واضحاً للملف الجديد، بدلاً من نقل افتراضات أو إجابات من شخص إلى آخر دون مراجعة مستقلة.\n\n## استخدم سجل مراحل الاستقدام\n\n| المرحلة | الدليل أو السجل المفيد | مسؤولية الإجراء التالي |\n|---|---|---|\n| احتياج الأسرة | المهام والترتيب والمنطقة والأولويات | توضح الأسرة الاحتياجات غير المحسومة |\n| مراجعة المرشحة | مناقشة الملف والأسئلة التي تحتاج إلى إجابة | يؤكد الفريق والأسرة ما يحتاج إلى مراجعة |\n| الشروط المكتوبة | النطاق وعرض السعر والاتفاقات المناسبة | تحسم الأطراف المسماة الشروط قبل الاعتماد على التأكيد |\n| الإذن والبدء | خطوات الحالة اللازمة وتأكيد البدء المكتوب | يؤكد الطرف المسؤول الشرط المتبقي |\n| تسليم المهام | التعليمات العملية وجهة الاتصال | تتفق الأسرة والفريق على المراجعة التالية |\n\nأضف تاريخ كل تحديث ومصدر المعلومة والإجراء الذي ما زال مطلوباً. استخدم وصفاً واضحاً مثل قيد المراجعة أو يحتاج إلى توضيح أو مؤكد لهذه الحالة. لا تستنتج من السجل موعد إنجاز أو ضمان توفر، ولا تضع وثائق العاملة الشخصية في ورقة مشتركة. يكفي تسجيل حالة المراجعة دون نسخ البيانات الحساسة التي لا يحتاجها التخطيط.\n\nعند المتابعة، اسأل سؤالاً محدداً: ما الإجراء المتبقي قبل تأكيد المرحلة التالية؟ سجل الإجابة ونقطة المراجعة المتفق عليها، ثم حدث السجل عند توفر معلومة جديدة. يتعلق تنسيق عناية بترتيب الاستقدام والخدمة الفعلي؛ وتظل المتطلبات والنتائج الرسمية خاضعة للجهات المسؤولة. لا يستبدل إيصال الدفع أو الموعد المتوقع شفهياً التأكيد المناسب، ولا يجعل خطوة إدارية مكتملة دليلاً على اكتمال خطوات أخرى.\n\nراجع [خدمة الاستقدام](https://inayadomestic.ae/ar/services/recruitment/)، و[دليل تقييم المهارات والتواصل](https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/)، و[قائمة الأسبوع الأول](https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/). توفر [إرشادات حكومة الإمارات للعمالة المساعدة](https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers) السياق الرسمي لترتيب التوظيف، مع تأكيد الخطوات المناسبة للحالة الفردية."
+        }
+      },
+      "compactMetadata": {
+        "slug": "domestic-worker-hiring-stages-timelines",
+        "published": "2026-09-24",
+        "updated": "2026-10-24",
+        "en": {
+          "title": "What happens during domestic-worker hiring, and how long does it take?",
+          "description": "Follow domestic-worker hiring stages and related visa typing in Ajman, with clear preparation, submission, follow-up and authority-decision records.",
+          "citations": [
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21140",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21135",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21148",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21139",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21138",
+            "https://uaelegislation.gov.ae/en/legislations/1620#item23228",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21141",
+            "https://uaelegislation.gov.ae/en/legislations/1620#item23233",
+            "https://uaelegislation.gov.ae/en/legislations/1593#item21146",
+            "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
+            "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
+            "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
+            "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          ]
+        },
+        "ar": {
+          "title": "ما مراحل توظيف العامل المساعد، وكم تستغرق؟",
+          "description": "تابع مراحل توظيف العاملة المنزلية وطباعة طلباتها في عجمان، مع الفصل بين الإعداد والتقديم والمتابعة وقرار الجهة المختصة.",
+          "citations": [
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21140",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21148",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21139",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21138",
+            "https://uaelegislation.gov.ae/ar/legislations/1620#item23228",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21141",
+            "https://uaelegislation.gov.ae/ar/legislations/1620#item23233",
+            "https://uaelegislation.gov.ae/ar/legislations/1593#item21146",
+            "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-work-permit-domestic-workers-2022",
+            "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
+            "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
+            "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          ]
+        }
+      },
+      "customerVisual": {
+        "en": {
+          "kind": "steps",
+          "title": "Follow recruitment through an evidence-based update",
+          "caption": "An original coordination workflow. It does not assign a fixed duration or guarantee a candidate or official outcome.",
+          "items": [
+            {
+              "label": "Identify the current milestone",
+              "detail": "Keep the update tied to the actual candidate and arrangement."
+            },
+            {
+              "label": "Record the supporting information",
+              "detail": "Note what was confirmed, by whom and on which date."
+            },
+            {
+              "label": "Name the outstanding action",
+              "detail": "Clarify the responsible party and what still needs review."
+            },
+            {
+              "label": "Review before moving forward",
+              "detail": "Retain changes and confirm the next milestone on its own evidence."
+            }
+          ]
+        },
+        "ar": {
+          "kind": "steps",
+          "title": "تابع الاستقدام بتحديث يستند إلى معلومات واضحة",
+          "caption": "مسار أصلي للتنسيق، لا يحدد مدة ثابتة ولا يضمن مرشحة أو نتيجة رسمية.",
+          "items": [
+            {
+              "label": "حدد المرحلة الحالية",
+              "detail": "اربط التحديث بالمرشحة والترتيب الفعليين."
+            },
+            {
+              "label": "سجل المعلومات المؤيدة",
+              "detail": "وضح ما تأكد ومن أكده وتاريخ التحديث."
+            },
+            {
+              "label": "سم الإجراء المتبقي",
+              "detail": "حدد الطرف المسؤول وما يحتاج إلى مراجعة."
+            },
+            {
+              "label": "راجع قبل الانتقال",
+              "detail": "احتفظ بالتغييرات وأكد المرحلة التالية بمعلوماتها الخاصة."
+            }
+          ]
+        }
+      },
+      "customerFaqs": null
+    },
+    {
+      "auditId": "A11",
+      "slug": "documents-for-domestic-worker-enquiry",
+      "family": "base",
+      "record": {
+        "slug": "documents-for-domestic-worker-enquiry",
+        "published": "2026-10-12",
+        "updated": "2026-10-12",
+        "en": {
+          "title": "Documents to prepare for a domestic worker enquiry",
+          "description": "Separate the details needed for an initial enquiry from the identity and contract documents that an official UAE domestic worker application may require.",
+          "lead": "You can begin by explaining your household requirements. Identity and application documents may be needed later for an official process, but the exact list depends on the arrangement and employer. Confirm the current requirements before submitting anything.",
+          "sections": [
+            {
+              "heading": "For the first conversation, describe the service",
+              "paragraphs": [
+                "Prepare the work location, preferred start period, duties, schedule and the best way to contact you. If a particular worker role is needed, explain the actual tasks rather than relying only on the role name.",
+                "Ask what service arrangement is available and which documents that arrangement requires. An early discussion does not mean every formal document must be sent immediately."
+              ]
+            },
+            {
+              "heading": "For a formal application, check the current MOHRE list",
+              "paragraphs": [
+                "MOHRE’s domestic worker contract service lists examples such as the employer’s passport copy, the worker’s passport copy and photograph, insurance documents and a signed employment contract. It also sets validity conditions for some identity documents. The applicable set can change with the service and employer status.",
+                "A resident or investor may have additional identity or residence requirements. Ask the provider which official service will be used and verify the exact current list on MOHRE’s service page before the application is prepared."
+              ],
+              "points": [
+                "Check names and document validity before sharing copies.",
+                "Confirm who will receive each document and why it is needed.",
+                "Use the provider’s agreed secure channel for identity documents.",
+                "Keep a copy of the final signed agreement and official receipts."
+              ]
+            },
+            {
+              "heading": "Review the agreement before signing",
+              "paragraphs": [
+                "MOHRE’s current domestic-worker employment-contract service lists an employment contract signed by both parties among its required documents. Review the proposed work, duties, workplace, wage and terms against your discussion with the provider. Ask for corrections before signing if the description does not match.",
+                "Keep the recruitment or service terms and the employment contract distinct. They may describe different obligations. Ask for a clear explanation of any official fees, service charges and support conditions in the documents applicable to you."
+              ]
+            },
+            {
+              "heading": "Use INAYA’s enquiry channels appropriately",
+              "paragraphs": [
+                "The booking form on this website sends your enquiry details to the INAYA team; it does not submit an official application or upload documents. Contact the INAYA team by phone or WhatsApp for the next step and ask how sensitive documents should be shared if they become necessary.",
+                "If you are unsure whether a document is required, ask before sending it. The current official MOHRE service instructions should guide the final application checklist."
+              ]
+            },
+            {
+              "heading": "Agency employment and household responsibilities",
+              "paragraphs": [
+                "In a managed monthly enquiry, document the agency as employer/sponsor and your household as beneficiary. Agency wage administration and applicable employment obligations are included, while the agreement records your household responsibilities. Use those named parties to identify the correct documents; the service payment is not a second worker wage."
+              ],
+              "points": [
+                "The service payment includes the agreed worker salary; the customer does not pay that same salary separately.",
+                "Write down the individual role, duties, schedule, rest, supervision and safe working arrangements.",
+                "Record live-in accommodation, meals, household products and equipment responsibilities in the agreement.",
+                "Required lawful authorisation and written confirmation precede service commencement.",
+                "A monthly service charge does not replace the employment contract or waive statutory rights."
+              ]
+            }
+          ],
+          "nextSteps": [
+            {
+              "label": "Review the hiring process",
+              "route": "blog/uae-domestic-worker-hiring-process"
+            },
+            {
+              "label": "See INAYA document guidance",
+              "route": "documents-required"
+            },
+            {
+              "label": "Prepare an enquiry",
+              "route": "booking"
+            },
+            {
+              "label": "Read common questions",
+              "route": "faq"
+            },
+            {
+              "label": "Contact the team",
+              "route": "contact"
+            }
+          ],
+          "sourceIntro": "Official document and contract references",
+          "sourceNote": "The official sources explain the applicable employment and processing requirements. INAYA’s managed-service inclusions and commercial terms are stated separately above and in the written quotation."
+        },
+        "ar": {
+          "title": "المستندات التي تجهزها للاستفسار عن العمالة المنزلية",
+          "description": "ميّز بين معلومات الاستفسار الأولي ووثائق الهوية والعقد التي قد تتطلبها معاملة رسمية للعمالة المساعدة في الإمارات.",
+          "lead": "يمكنك البدء بشرح احتياجات المنزل. وقد تلزم لاحقاً مستندات هوية وطلب لإجراء رسمي، لكن القائمة الدقيقة تعتمد على الترتيب وصفة صاحب العمل. تأكد من المتطلبات الحالية قبل إرسال أي وثيقة.",
+          "sections": [
+            {
+              "heading": "للمحادثة الأولى، صف الخدمة المطلوبة",
+              "paragraphs": [
+                "جهز موقع العمل والفترة المناسبة للبدء والمهام والجدول ووسيلة التواصل المفضلة. إذا كنت تحتاج دوراً محدداً، اشرح الأعمال الفعلية بدلاً من الاعتماد على اسم الوظيفة وحده.",
+                "اسأل عن ترتيب الخدمة المتاح والمستندات التي يتطلبها. لا يعني النقاش الأولي ضرورة إرسال جميع الوثائق الرسمية فوراً."
+              ]
+            },
+            {
+              "heading": "للمعاملة الرسمية، راجع قائمة الوزارة الحالية",
+              "paragraphs": [
+                "تذكر خدمة عقد العامل المساعد لدى وزارة الموارد البشرية والتوطين أمثلة تشمل صورة جواز صاحب العمل وصورة جواز العامل وصورته الشخصية ومستندات التأمين وعقد العمل الموقع. وتحدد الخدمة كذلك شروط صلاحية لبعض وثائق الهوية. قد تختلف المجموعة اللازمة بحسب الخدمة وصفة صاحب العمل.",
+                "قد تنطبق متطلبات إضافية للهوية أو الإقامة على المقيم أو المستثمر. اسأل مقدم الخدمة عن المعاملة الرسمية التي ستستخدم، وتحقق من القائمة الحالية في صفحة الوزارة قبل تجهيز الطلب."
+              ],
+              "points": [
+                "راجع الأسماء وصلاحية الوثائق قبل مشاركة النسخ.",
+                "تأكد ممن سيستلم كل مستند وسبب الحاجة إليه.",
+                "استخدم وسيلة مشاركة آمنة ومتفقاً عليها لوثائق الهوية.",
+                "احتفظ بنسخة من الاتفاق النهائي الموقع والإيصالات الرسمية."
+              ]
+            },
+            {
+              "heading": "راجع الاتفاق قبل التوقيع",
+              "paragraphs": [
+                "تدرج خدمة عقد عمل العامل المساعد الحالية لدى الوزارة عقد عمل موقعاً من الطرفين ضمن المستندات المطلوبة. راجع العمل والمهام والمكان والأجر والشروط المقترحة وفق مناقشتك مع مقدم الخدمة، واطلب التصحيح قبل التوقيع إذا لم يطابق الوصف ما اتفقتم عليه.",
+                "ميّز بين شروط الاستقدام أو الخدمة وعقد العمل؛ فقد تحدد وثيقتان التزامات مختلفة. اطلب شرحاً واضحاً للرسوم الرسمية ورسوم الخدمة وشروط الدعم في الوثائق التي تنطبق على حالتك."
+              ]
+            },
+            {
+              "heading": "استخدم قنوات استفسار عناية بالشكل المناسب",
+              "paragraphs": [
+                "يرسل نموذج الحجز في هذا الموقع بيانات استفسارك إلى فريق عناية؛ ولا يقدم طلباً رسمياً أو يرفع مستندات. تواصل مع فريق عناية هاتفياً أو عبر واتساب لمعرفة الخطوة التالية، واسأل عن طريقة مشاركة المستندات الحساسة عند الحاجة إليها.",
+                "إذا لم تتأكد من ضرورة وثيقة معينة، فاسأل قبل إرسالها. ينبغي أن توجه تعليمات خدمة الوزارة الحالية القائمة النهائية للطلب."
+              ]
+            },
+            {
+              "heading": "توظيف الوكالة ومسؤوليات الأسرة",
+              "paragraphs": [
+                "في طلب الخدمة الشهرية المدارة، وثق الوكالة صاحبة العمل والكفيل ومنزلك بصفته المستفيد. تشمل الخدمة إدارة الوكالة للأجر والتزامات التوظيف المنطبقة، ويسجل الاتفاق مسؤوليات المنزل. استخدم هذه الأطراف المسماة لتحديد المستندات الصحيحة؛ فدفعة الخدمة ليست أجراً ثانياً للعاملة."
+              ],
+              "points": [
+                "تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى بصورة منفصلة.",
+                "سجل الدور الفردي والمهام والجدول والراحة والإشراف وترتيبات العمل الآمن كتابةً.",
+                "حدد في الاتفاق مسؤوليات السكن والطعام للعاملة المقيمة ومنتجات المنزل والمعدات.",
+                "يبدأ العمل بعد الحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.",
+                "رسوم الخدمة الشهرية لا تحل محل عقد العمل ولا تلغي الحقوق القانونية."
+              ]
+            }
+          ],
+          "nextSteps": [
+            {
+              "label": "راجع خطوات الاستقدام",
+              "route": "blog/uae-domestic-worker-hiring-process"
+            },
+            {
+              "label": "إرشادات عناية للمستندات",
+              "route": "documents-required"
+            },
+            {
+              "label": "جهز استفسارك",
+              "route": "booking"
+            },
+            {
+              "label": "اقرأ الأسئلة الشائعة",
+              "route": "faq"
+            },
+            {
+              "label": "تواصل مع الفريق",
+              "route": "contact"
+            }
+          ],
+          "sourceIntro": "مراجع رسمية للمستندات والعقود",
+          "sourceNote": "تشرح المصادر الرسمية متطلبات التوظيف والإجراءات المنطبقة. وتبين أعلاه عناصر خدمة عناية المدارة وشروطها التجارية بصورة منفصلة، كما تسجل في عرض السعر المكتوب."
+        },
+        "sources": [
+          {
+            "en": "MOHRE: domestic workers employers guide (English PDF)",
+            "ar": "وزارة الموارد البشرية والتوطين: دليل أصحاب العمل (ملف PDF بالإنجليزية)",
+            "url": "https://www.mohre.gov.ae/assets/download/5055543/domestic-workers-employers-guide-en_638924949072877160.pdf.aspx"
+          },
+          {
+            "en": "MOHRE: new domestic worker employment contract (English)",
+            "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالإنجليزية)",
+            "url": "https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+          },
+          {
+            "en": "MOHRE: new domestic worker employment contract (Arabic)",
+            "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالعربية)",
+            "url": "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+          }
+        ]
+      },
+      "compactMetadata": null,
+      "customerVisual": null,
+      "customerFaqs": null
+    },
+    {
+      "auditId": "A01",
+      "slug": "domestic-worker-visa-sponsorship-support",
+      "family": "base",
+      "record": {
+        "slug": "domestic-worker-visa-sponsorship-support",
+        "published": "2026-10-11",
+        "updated": "2026-10-12",
+        "en": {
+          "title": "Preparing a domestic worker visa or sponsorship case",
+          "description": "Prepare questions for INAYA’s complete visa-processing support and confirm the case-specific documents, authority requirements, fees and next steps.",
+          "lead": "INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your case and the relevant authorities.",
+          "sections": [
+            {
+              "heading": "Explain your current situation before choosing a process",
+              "paragraphs": [
+                "Describe the proposed household arrangement, emirate and current stage of the case. Ask which official service and employer category apply, and whether any existing residence or sponsorship situation needs review. Do not assume a new application and a transfer follow identical steps.",
+                "The initial discussion helps identify the correct next step; it does not establish eligibility or approve a transfer. Share sensitive identity documents only when needed through an agreed channel. The website enquiry form does not upload documents or submit an official application."
+              ]
+            },
+            {
+              "heading": "Understand the support INAYA provides",
+              "paragraphs": [
+                "The support covers coordination and processing for the steps listed below as applicable to the individual case. Confirm what is needed, who handles each part and which documents must be supplied. A listed support step does not mean it is required in every case.",
+                "Medical processing refers to support with the official processing step, not clinical care, nursing or treatment provided by INAYA. Government and other relevant authorities determine requirements and decisions; end-to-end case support does not guarantee approval or a completion date."
+              ],
+              "table": {
+                "caption": "INAYA visa-processing support and case questions",
+                "columns": [
+                  "Support",
+                  "What to clarify"
+                ],
+                "rows": [
+                  [
+                    "Document guidance",
+                    "The list for the correct service and applicant category"
+                  ],
+                  [
+                    "Application submission",
+                    "Required information and the applicable authority"
+                  ],
+                  [
+                    "Status change",
+                    "Whether this step applies to the present case"
+                  ],
+                  [
+                    "Medical processing",
+                    "The applicable official medical processing requirements"
+                  ],
+                  [
+                    "Emirates ID processing",
+                    "The related identity application requirements"
+                  ],
+                  [
+                    "Insurance processing",
+                    "Applicable insurance requirements and documentation"
+                  ],
+                  [
+                    "End-to-end case processing",
+                    "Case stages, responsibilities and follow-up"
+                  ]
+                ]
+              }
+            },
+            {
+              "heading": "Use official references for the correct category",
+              "paragraphs": [
+                "MOHRE’s domestic-worker contract service identifies contract documents and application steps. ICP residence services and Dubai’s GDRFA domestic-worker service provide additional authority context. Select the category that actually applies: a family residence checklist is not automatically a domestic-worker checklist.",
+                "Ask which contract, residence, identity, medical and insurance requirements apply together. Check the current official instructions before submission. Fees and requirements can differ by case and authority, so this guide does not publish a universal salary threshold, government price or processing deadline."
+              ]
+            },
+            {
+              "heading": "Confirm costs, responsibilities and follow-up",
+              "paragraphs": [
+                "Request a written explanation of the proposed support, applicable service charges and official costs, including how they are treated in your quotation. Confirm what happens if further information is requested. Do not assume an advertised monthly package defines every processing cost or guarantees a sponsorship outcome.",
+                "Contact INAYA’s Ajman office by phone or website WhatsApp to review your case and confirm availability. The team handles UAE enquiries subject to service confirmation. Keep the agreed next steps and contact details; an enquiry or appointment discussion is separate from an official application decision."
+              ]
+            },
+            {
+              "heading": "Included agency processing and separate visa-only requests",
+              "paragraphs": [
+                "In the managed monthly arrangement, the agency is employer/sponsor and includes wage administration and applicable employment obligations in its charge. The customer is the household beneficiary with responsibilities set out in writing. Use the actual named arrangement to distinguish included agency processing from a visa-only request.",
+                "The managed monthly charge includes applicable agency sponsorship and work-permit/residence processing, Emirates ID, required medical-fitness processing and the applicable health-insurance premium. Visa-only services and separately requested sponsorship transfers have their own case-specific scope and itemised quotation. Official approval and timelines remain with the responsible authorities."
+              ]
+            }
+          ],
+          "nextSteps": [
+            {
+              "label": "INAYA visa-processing support",
+              "route": "services/maid-visa"
+            },
+            {
+              "label": "Discuss sponsorship transfer support",
+              "route": "services/sponsorship-transfer"
+            },
+            {
+              "label": "Prepare enquiry information",
+              "route": "blog/documents-for-domestic-worker-enquiry"
+            },
+            {
+              "label": "Review the hiring questions",
+              "route": "blog/uae-domestic-worker-hiring-process"
+            },
+            {
+              "label": "Ask about your case",
+              "route": "contact"
+            }
+          ],
+          "sourceIntro": "Current official process references",
+          "sourceNote": "The official sources explain the applicable employment and processing requirements. INAYA’s managed-service inclusions and commercial terms are stated separately above and in the written quotation."
+        },
+        "ar": {
+          "title": "تجهيز حالة تأشيرة أو كفالة للعمالة المنزلية",
+          "description": "جهز أسئلتك عن دعم عناية الكامل لإجراءات التأشيرة، وأكد المستندات ومتطلبات الجهات والرسوم والخطوات المناسبة لحالتك.",
+          "lead": "تقدم عناية دعماً كاملاً لإجراءات التأشيرة: إرشادات المستندات وتقديم الطلب وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدد على الحالة والجهات المختصة.",
+          "sections": [
+            {
+              "heading": "اشرح وضعك الحالي قبل اختيار الإجراء",
+              "paragraphs": [
+                "وضح ترتيب العمل المنزلي المقترح والإمارة والمرحلة الحالية للحالة. اسأل عن الخدمة الرسمية وصفة صاحب العمل المناسبة، وعن الحاجة إلى مراجعة وضع إقامة أو كفالة قائم. لا تفترض تطابق خطوات الطلب الجديد ونقل الكفالة.",
+                "تساعد المناقشة الأولية على تحديد الخطوة المناسبة، لكنها لا تثبت الأهلية ولا توافق على النقل. شارك وثائق الهوية الحساسة عند الحاجة فقط عبر وسيلة متفق عليها. نموذج الموقع لا يرفع المستندات ولا يقدم طلباً رسمياً."
+              ]
+            },
+            {
+              "heading": "تعرف على الدعم الذي تقدمه عناية",
+              "paragraphs": [
+                "يشمل الدعم التنسيق والإجراءات للخطوات المبينة أدناه بحسب انطباقها على الحالة. أكد ما يلزم ومن يتابع كل جزء والمستندات المطلوبة منك. وجود خطوة ضمن نطاق الدعم لا يعني أنها ضرورية في جميع الحالات.",
+                "تعني إجراءات الفحص الطبي الدعم في الخطوة الرسمية، ولا تعني تقديم عناية رعاية سريرية أو تمريضاً أو علاجاً. تحدد الجهات المختصة المتطلبات والقرارات؛ ولا تضمن متابعة الحالة من البداية إلى النهاية الموافقة أو تاريخ إنجاز محدداً."
+              ],
+              "table": {
+                "caption": "دعم عناية لإجراءات التأشيرة وأسئلة الحالة",
+                "columns": [
+                  "الدعم",
+                  "ما الذي تستوضحه؟"
+                ],
+                "rows": [
+                  [
+                    "إرشادات المستندات",
+                    "القائمة المناسبة للخدمة وصفة مقدم الطلب"
+                  ],
+                  [
+                    "تقديم الطلب",
+                    "المعلومات المطلوبة والجهة المختصة"
+                  ],
+                  [
+                    "تعديل الوضع",
+                    "مدى انطباق الخطوة على الحالة الحالية"
+                  ],
+                  [
+                    "إجراءات الفحص الطبي",
+                    "متطلبات الإجراء الطبي الرسمي المنطبق"
+                  ],
+                  [
+                    "إجراءات الهوية الإماراتية",
+                    "متطلبات طلب الهوية المرتبط بالحالة"
+                  ],
+                  [
+                    "إجراءات التأمين",
+                    "المتطلبات والمستندات التأمينية المنطبقة"
+                  ],
+                  [
+                    "متابعة الحالة من البداية إلى النهاية",
+                    "المراحل والمسؤوليات وطريقة المتابعة"
+                  ]
+                ]
+              }
+            },
+            {
+              "heading": "راجع المراجع الرسمية للفئة المناسبة",
+              "paragraphs": [
+                "تحدد خدمة عقد العامل المساعد لدى الوزارة مستندات العقد وخطوات الطلب. وتوفر خدمات الإقامة لدى الهيئة الاتحادية وخدمة العمالة المنزلية لدى إقامة دبي سياقاً إضافياً. اختر الفئة المنطبقة فعلياً؛ فقائمة إقامة الأسرة ليست تلقائياً قائمة العمالة المساعدة.",
+                "اسأل عن متطلبات العقد والإقامة والهوية والفحص الطبي والتأمين المرتبطة بحالتك، وراجع التعليمات الحالية قبل التقديم. قد تختلف الرسوم والمتطلبات بحسب الحالة والجهة، ولذلك لا ينشر هذا الدليل حداً موحداً للراتب أو سعراً حكومياً أو مهلة إنجاز عامة."
+              ]
+            },
+            {
+              "heading": "أكد التكاليف والمسؤوليات والمتابعة",
+              "paragraphs": [
+                "اطلب بياناً مكتوباً بالدعم المقترح ورسوم الخدمة والتكاليف الرسمية المنطبقة وطريقة إدراجها في العرض. اسأل عن الخطوة التالية إذا طلبت معلومات إضافية. لا تفترض أن الباقة الشهرية تحدد كل تكلفة للإجراءات أو تضمن نتيجة الكفالة.",
+                "تواصل مع مكتب عناية في عجمان هاتفياً أو عبر واتساب الموقع لمراجعة الحالة وتأكيد التوفر. يستقبل الفريق استفسارات من الإمارات بحسب تأكيد الخدمة. احتفظ بالخطوات المتفق عليها وقنوات التواصل؛ فمناقشة الاستفسار أو الموعد منفصلة عن قرار الطلب الرسمي."
+              ]
+            },
+            {
+              "heading": "إجراءات الوكالة المشمولة وطلبات التأشيرة المنفصلة",
+              "paragraphs": [
+                "في الترتيب الشهري المدار، تكون الوكالة صاحبة العمل والكفيل وتشمل رسومها إدارة الأجر والتزامات التوظيف المنطبقة. العميل هو المستفيد المنزلي بمسؤوليات مبينة كتابةً. استخدم الترتيب الفعلي المسمى لتمييز إجراءات الوكالة المشمولة عن طلب تأشيرة فقط.",
+                "تشمل الرسوم الشهرية المدارة الكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة المنطبقة والهوية الإماراتية وفحص اللياقة الطبية المطلوب وقسط التأمين الصحي المنطبق. ولخدمات التأشيرة وحدها وطلبات نقل الكفالة المنفصلة نطاق خاص بحسب الحالة وعرض مفصل مستقل. وتبقى الموافقات والمواعيد الرسمية من اختصاص الجهات المعنية."
+              ]
+            }
+          ],
+          "nextSteps": [
+            {
+              "label": "دعم عناية لإجراءات التأشيرة",
+              "route": "services/maid-visa"
+            },
+            {
+              "label": "ناقش دعم نقل الكفالة",
+              "route": "services/sponsorship-transfer"
+            },
+            {
+              "label": "جهز معلومات الاستفسار",
+              "route": "blog/documents-for-domestic-worker-enquiry"
+            },
+            {
+              "label": "راجع أسئلة الاستقدام",
+              "route": "blog/uae-domestic-worker-hiring-process"
+            },
+            {
+              "label": "اسأل عن حالتك",
+              "route": "contact"
+            }
+          ],
+          "sourceIntro": "مراجع الإجراءات الرسمية الحالية",
+          "sourceNote": "تشرح المصادر الرسمية متطلبات التوظيف والإجراءات المنطبقة. وتبين أعلاه عناصر خدمة عناية المدارة وشروطها التجارية بصورة منفصلة، كما تسجل في عرض السعر المكتوب."
+        },
+        "sources": [
+          {
+            "en": "MOHRE: new domestic worker employment contract (English)",
+            "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالإنجليزية)",
+            "url": "https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+          },
+          {
+            "en": "MOHRE: new domestic worker employment contract (Arabic)",
+            "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالعربية)",
+            "url": "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+          },
+          {
+            "en": "ICP: residence service and applicant categories",
+            "ar": "الهيئة الاتحادية: خدمة الإقامة وفئات المتقدمين",
+            "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
+          },
+          {
+            "en": "GDRFA Dubai: domestic worker service",
+            "ar": "الإدارة العامة للإقامة في دبي: خدمة العمالة المنزلية",
+            "url": "https://www.gdrfad.gov.ae/en/node/14403"
+          }
+        ]
+      },
+      "compactMetadata": null,
+      "customerVisual": null,
+      "customerFaqs": null
+    }
+  ]
+}

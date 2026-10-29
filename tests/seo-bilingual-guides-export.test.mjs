@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
+import amendment from './five-guides-amendment-expectations.cjs';
+import './five-guides-amendment-export.test.mjs';
 import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 import domesticServices from './domestic-service-refresh-expectations.cjs';
@@ -43,7 +45,7 @@ function beforeAjmanRefresh(slug, locale, body) {
 
 test('five Ajman intents use four existing bilingual publications and preserve every released manuscript', async () => {
   const source = await readFile('lib/published-article-content.ts', 'utf8');
-  const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
+  const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, '')).map(record => amendment.historicalRecord(record, 'published'));
   assert.equal(articles.length, 37, 'the legacy publication family remains unchanged; the new keyword batch is separate');
   assert.deepEqual(ajmanRefreshes.entries.map(({ slug }) => slug).sort(), [
     'choosing-domestic-worker-agency-ajman', 'domestic-worker-employer-eligibility-documents',
@@ -70,6 +72,7 @@ test('Ajman decision aids render complete bilingual worksheets, useful process c
   const plain = (value) => tokens(value.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1').replace(/\*\*/g, '')).join(' ');
   for (const entry of ajmanRefreshes.entries) for (const locale of ['en', 'ar']) {
     const copy = entry[locale];
+    if (amendment.getAmendment(entry.slug)) continue; // Full reviewed replacement validated by imported amendment export checks.
     const url = `${origin}/${locale}/blog/${entry.slug}/`;
     const html = await readFile(`out/${locale}/blog/${entry.slug}/index.html`, 'utf8');
     const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
@@ -126,7 +129,7 @@ test('services hubs render all three complete approved summaries in their matchi
 
 test('domestic-service refreshes preserve the original manuscripts and render complete language-matched additions', async () => {
   const source = await readFile('lib/published-article-content.ts', 'utf8');
-  const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
+  const articles = JSON.parse(source.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, '')).map(record => amendment.historicalRecord(record, 'published'));
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
   assert.equal([...sitemap.matchAll(/<loc>/g)].length, 284, 'the original 274 canonicals plus the ten reviewed archive pages');
   assert.equal(articles.length, 37, 'domestic-service refreshes remain in the preserved 37-publication family');
@@ -143,6 +146,7 @@ test('domestic-service refreshes preserve the original manuscripts and render co
       assert.equal(createHash('sha256').update(parts[0]).digest('hex'), copy.baseBodySha256, 'original complete body preserved');
       assert.equal(parts[1], copy.body, 'complete reviewed addition retained');
       assert.ok(copy.body.split(/\s+/).length >= 250, 'substantive practical addition');
+      if (amendment.getAmendment(refresh.slug)) continue; // Old inputs verified above; complete new render verified by the amendment suite.
       const html = await readFile(`out/${locale}/blog/${refresh.slug}/index.html`, 'utf8');
       const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
       const renderedArticle = body.match(/<article\b[^>]*data-published-article="content"[^>]*>([\s\S]*?)<\/article>/)?.[1];
@@ -287,7 +291,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.ok(article, `${route}: visible article`);
       assert.ok(body.includes(`href="/${locale}/blog/${relatedGuide[slug]}/"`), `${route}: related guide link`);
       assert.ok(tokens(text(article)).length >= 200, `${route}: substantive article copy`);
-      assert.equal([...article.matchAll(/<h2\b/g)].length, sectionCounts[slugs.indexOf(slug)], `${route}: complete approved explanatory sections`);
+      assert.equal([...article.matchAll(/<h2\b/g)].length, amendment.getAmendment(slug)?.after.record[locale].sections.length ?? sectionCounts[slugs.indexOf(slug)], `${route}: complete approved explanatory sections`);
       assert.ok(html.includes('rel="canonical"'), `${route}: canonical`);
       assert.ok(html.includes(`content="${url}"`), `${route}: canonical URL`);
       assert.ok(html.includes('hrefLang="en"'), `${route}: English alternate`);
@@ -305,16 +309,17 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       assert.deepEqual(articleNode.author, { '@type': 'Organization', name: locale === 'ar' ? 'فريق تحرير عناية للعمالة المنزلية' : 'INAYA Domestic Workers Editorial Team' });
       assert.ok(text(body).includes(articleNode.author.name), `${route}: editorial author visible`);
       assert.equal(articleNode.datePublished, publicationSchedule[slug]);
-      assert.equal(articleNode.dateModified, guideUpdated[slug], `${route}: only substantively revised guides receive the new date`);
+      assert.equal(articleNode.dateModified, amendment.dateFor(slug, guideUpdated[slug]), `${route}: only substantively revised guides receive the new date`);
       assert.ok(body.includes(`dateTime="${articleNode.datePublished}"`), `${route}: published date visible`);
       assert.ok(body.includes(`dateTime="${articleNode.dateModified}"`), `${route}: updated date visible`);
       assert.match(body, /href="tel:\+97167400128"/, `${route}: approved office phone`);
       assert.match(body, /href="https:\/\/wa.me\/971502036767"/, `${route}: approved website WhatsApp`);
       assert.ok(graph.find((node) => node['@type'] === 'BreadcrumbList').itemListElement.some((crumb) => crumb.item === `${origin}/${locale}/blog/`));
-      const officialLinks = [...body.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href)
-        .filter((href) => href?.startsWith('https://u.ae/') || href?.startsWith('https://www.mohre.gov.ae/') || href?.startsWith('https://taqyeem.mohre.gov.ae/') || href?.startsWith('https://icp.gov.ae/') || href?.startsWith('https://www.gdrfad.gov.ae/'));
+      const mainBody = body.slice(body.indexOf('<main'), body.lastIndexOf('</main>') + 7);
+      const officialLinks = [...mainBody.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href)
+        .filter((href) => href?.startsWith('https://u.ae/') || href?.startsWith('https://www.mohre.gov.ae/') || href?.startsWith('https://mohre.gov.ae/') || href?.startsWith('https://taqyeem.mohre.gov.ae/') || href?.startsWith('https://icp.gov.ae/') || href?.startsWith('https://www.gdrfad.gov.ae/'));
       assert.ok(officialLinks.length >= 2, `${route}: official source links`);
-      const expectedSources = [
+      const expectedSources = amendment.getAmendment(slug)?.after.record.sources?.map(source => source.url).sort() ?? [
         'https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022',
         'https://www.mohre.gov.ae/ar/services/issuance-of-a-new-employment-contract-domestic-worker-2022',
         ...(slug === 'domestic-worker-visa-sponsorship-support' ? [
@@ -322,7 +327,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
           'https://www.gdrfad.gov.ae/en/node/14403'
         ] : ['https://www.mohre.gov.ae/assets/download/5055543/domestic-workers-employers-guide-en_638924949072877160.pdf.aspx'])
       ].sort();
-      assert.deepEqual([...new Set(officialLinks)].sort(), expectedSources, `${route}: verified sources for the intent`);
+      assert.deepEqual([...new Set(officialLinks)].sort(), expectedSources.filter(url => ['u.ae', 'www.mohre.gov.ae', 'mohre.gov.ae', 'taqyeem.mohre.gov.ae', 'icp.gov.ae', 'www.gdrfad.gov.ae'].includes(new URL(url).hostname)), `${route}: verified sources for the intent`);
       assert.deepEqual(articleNode.citation.slice().sort(), expectedSources, `${route}: citations match visible sources`);
       if (slugs.indexOf(slug) >= 3 || slug === 'domestic-worker-package-pricing-factors') {
         assert.match(article, /<caption\b/, `${route}: useful comparison table`);
@@ -338,11 +343,20 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
         assert.match(visible, locale === 'en' ? /3,000.*?(?:month|monthly)/ : /3,000.*?(?:شهر|شهري)/);
       }
       if (slug === 'domestic-worker-visa-sponsorship-support') {
-        for (const step of locale === 'en' ? ['Document guidance', 'Application submission', 'Status change', 'Medical processing', 'Emirates ID processing', 'Insurance processing', 'End-to-end case processing'] : ['إرشادات المستندات', 'تقديم الطلب', 'تعديل الوضع', 'إجراءات الفحص الطبي', 'إجراءات الهوية الإماراتية', 'إجراءات التأمين', 'متابعة الحالة من البداية إلى النهاية']) assert.ok(text(article).includes(step));
-        assert.match(text(article), locale === 'en' ? /does not guarantee approval/ : /لا تضمن.*الموافقة/);
+        const reviewedCopy = amendment.getAmendment(slug).after.record[locale];
+        assert.ok(text(body).includes(reviewedCopy.lead), `${route}: complete reviewed processing scope`);
+        assert.ok(text(article).includes(reviewedCopy.sections[3].paragraphs[1]), `${route}: exact reviewed authority and clinical-scope caveat`);
       }
       assert.doesNotMatch(body, /href="https:\/\/(?:u\.ae\/|taqyeem\.mohre\.gov\.ae\/)/, `${route}: no obsolete references`);
-      assert.match(text(body), locale === 'ar' ? /بالإنجليزية/ : /\(Arabic\)/, `${route}: reference languages labelled`);
+      const reviewedSources = amendment.getAmendment(slug)?.after.record.sources;
+      if (reviewedSources) {
+        const sourceAnchors = [...mainBody.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)]
+          .map(match => ({ href: attrs(match[1]).href, label: text(match[2]) }));
+        for (const source of reviewedSources) {
+          assert.match(source[locale], locale === 'ar' ? /بالإنجليزية/ : /\(English\)/, `${route}: reviewed source language is labelled`);
+          assert.ok(sourceAnchors.some(anchor => anchor.href === source.url && anchor.label === source[locale]), `${route}: exact reviewed reference label and destination`);
+        }
+      } else assert.match(text(body), locale === 'ar' ? /بالإنجليزية/ : /\(Arabic\)/, `${route}: reference languages labelled`);
       assert.match(body, new RegExp(`href="/${locale}/(?:contact|booking|pricing|how-it-works|documents-required)/"`));
     }
   }
@@ -356,7 +370,7 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
 test('twenty original bilingual topics retain exact copy and references alongside the approved customer-series additions', async () => {
   const approved = JSON.parse(await readFile('tests/fixtures/published-article-content.json', 'utf8'));
   const contentModule = await readFile('lib/published-article-content.ts', 'utf8');
-  const publishedArticles = JSON.parse(contentModule.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, ''));
+  const publishedArticles = JSON.parse(contentModule.split('export const publishedArticles: PublishedArticleContent[] = ')[1].trim().replace(/;$/, '')).map(record => amendment.historicalRecord(record, 'published'));
   const manifest = JSON.parse(await readFile('content/research/2026-10-20/article-manifest.json', 'utf8'));
   const supplements = new Map(manifest.filter((entry) => entry.mode === 'update').map((entry) => [entry.slug, entry]));
   const worksheetGuides = new Set(['domestic-worker-hiring-costs-uae', 'domestic-worker-skills-language-assessment', 'agreeing-domestic-worker-household-duties', 'domestic-worker-interview-trial-probation', 'new-maid-first-week-checklist', 'maid-daily-instructions-handover-template']);
@@ -394,6 +408,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
       }
       assert.equal(copy.title, snapshot.title, `${route}: approved title`);
       assert.equal(sha(beforeReplacementHeadingCorrection(article.slug, locale, originalMarkdown)), snapshot.body_sha256, `${route}: original Markdown preserved apart from the reviewed heading correction`);
+      if (amendment.getAmendment(article.slug)) continue; // Exact inverse preserves historical provenance; new full replacement has its own complete rendering checks.
       const html = await readFile(`out${route}index.html`, 'utf8');
       const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
       const rendered = body.match(/<article\b[^>]*data-published-article="content"[^>]*>([\s\S]*?)<\/article>/)?.[1];
