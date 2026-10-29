@@ -18,7 +18,7 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(page.locator('main h1')).toHaveCount(1);
     await expect(page.locator('[data-site-gallery]')).toHaveCount(1);
     const cards = page.locator('[data-site-image-id]');
-    await expect(cards).toHaveCount(111);
+    await expect(cards).toHaveCount(116);
     expect(await cards.evaluateAll(elements => elements.map(element => element.getAttribute('data-site-image-id')))).toEqual(entries.map(image => image.id));
     const sources = await cards.locator('img').evaluateAll(images => images.map(image => ({
       src: image.getAttribute('src'), alt: image.getAttribute('alt')
@@ -52,7 +52,7 @@ for (const locale of ['en', 'ar'] as const) {
     const reset = page.getByRole('button', { name: locale === 'ar' ? 'إعادة ضبط الفلاتر' : 'Reset filters', exact: true });
     await expect(result).toHaveAttribute('role', 'status');
     await expect(all).toHaveAttribute('aria-pressed', 'true');
-    await expect(cards).toHaveCount(111);
+    await expect(cards).toHaveCount(116);
     await category.click();
     await expect(category).toHaveAttribute('aria-pressed', 'true');
     await expect(all).toHaveAttribute('aria-pressed', 'false');
@@ -65,7 +65,7 @@ for (const locale of ['en', 'ar'] as const) {
     await reset.click();
     await expect(search).toHaveValue('');
     await expect(all).toHaveAttribute('aria-pressed', 'true');
-    await expect(cards).toHaveCount(111);
+    await expect(cards).toHaveCount(116);
 
     await search.fill(guide.title[locale]);
     await expect(cards).toHaveCount(1);
@@ -76,7 +76,7 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(result).toBeVisible();
     await expect(result).toContainText(/0|٠/);
     await reset.click();
-    await expect(cards).toHaveCount(111);
+    await expect(cards).toHaveCount(116);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
   });
 
