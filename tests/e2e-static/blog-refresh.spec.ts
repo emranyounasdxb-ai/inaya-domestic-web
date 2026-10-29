@@ -78,7 +78,10 @@ for (const lang of ['en', 'ar']) {
       } else {
         await related.scrollIntoViewIfNeeded(); await expect(related).toBeInViewport();
       }
+      await related.scrollIntoViewIfNeeded();
+      await expect(related).toBeInViewport();
       for (const image of await related.locator('img').all()) {
+        await image.scrollIntoViewIfNeeded();
         await expect.poll(() => image.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
