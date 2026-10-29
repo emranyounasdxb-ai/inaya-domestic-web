@@ -48,7 +48,7 @@ def contract():
         '{http://www.sitemaps.org/schemas/sitemap/0.9}url/'
         '{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
     pages = [urllib.parse.urlsplit(url).path for url in urls]
-    assert len(pages) == 292, f'Unexpected current sitemap inventory: {len(pages)}'
+    assert len(pages) == 294, f'Unexpected current sitemap inventory: {len(pages)}'
     # Preserve the complete historical inventory and order. The new four-guide
     # cohort appends eight URLs after all 284 previously reviewed canonical URLs.
     additions = json.loads((ROOT / 'tests' / 'fixtures' /
