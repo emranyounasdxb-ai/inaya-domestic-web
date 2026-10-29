@@ -104,14 +104,18 @@ test('all ten amended exports render the complete independently reviewed replace
   }
 });
 
-test('only the ten reviewed existing guide URLs receive the new substantive date, with all284 canonical identities preserved', () => {
+test('only the ten reviewed guide URLs and two privacy-policy URLs receive29October, with all284 canonical identities preserved', () => {
   assert.equal(urls.length, 284);
   assert.equal(new Set(urls).size, 284);
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match => match[1]);
   const dated = entries.filter(entry => entry.includes('<lastmod>'));
-  assert.equal(dated.length, 248, 'only the two previously undated base pairs add date coverage');
+  assert.equal(dated.length, 250, 'only the two privacy-policy copies add to the248 previously dated URLs');
   const actual = entries.filter(entry => entry.includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]);
-  const expected = amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`));
+  const expected = [
+    ...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)),
+    ...['en', 'ar'].map(locale => `${origin}/${locale}/privacy-policy/`)
+  ];
+  assert.equal(expected.length, 12);
   assert.deepEqual(actual.sort(), expected.sort());
   assert.equal(entries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>')).length, 56);
 });

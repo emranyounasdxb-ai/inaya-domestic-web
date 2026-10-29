@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar'] as const) {
   for (const route of ['', 'pricing/', 'booking/', 'blog/'] as const) {
@@ -20,7 +20,7 @@ for (const locale of ['en', 'ar'] as const) {
     test(locale + ': Back to Top remains accessible (' + reducedMotion + ')', async ({ page }) => {
       await page.emulateMedia({ reducedMotion });
       await page.goto('/' + locale + '/');
-      await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
+      await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics', exact: true }).click();
       const backToTop = page.getByTestId('back-to-top');
       await expect(backToTop).toHaveAttribute('aria-hidden', 'true');
       await expect(backToTop).toHaveAttribute('tabindex', '-1');

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar']) {
   test(`${locale}: deferred sections retain rendered geometry, print content and keyboard navigation`, async ({ page }) => {

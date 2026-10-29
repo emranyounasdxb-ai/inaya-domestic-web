@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import { expectedPlans } from '../poster-pricing-contract.cjs';
 
 for (const locale of ['en', 'ar'] as const) {
@@ -12,7 +12,7 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(page.locator('main')).not.toContainText('1,500');
     await expect(page.locator('main')).not.toContainText(/2,500|Essential|Signature|INAYA Black/);
     await expect(page.getByRole('link', { name: arabic ? 'دليل أسعار الباقات' : 'Package pricing guide', exact: true })).toHaveAttribute('href', `/${locale}/blog/domestic-worker-package-pricing-factors/`);
-    await page.getByRole('button', { name: arabic ? 'رفض التحليلات' : 'Reject analytics' }).click();
+    await page.getByRole('button', { name: arabic ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics' }).click();
     const firstPlan = page.locator('[data-package="half-day"]');
     // Reach the former promotion threshold and confirm the expired overlay is absent.
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));

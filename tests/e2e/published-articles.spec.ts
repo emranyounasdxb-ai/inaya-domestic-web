@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import { publishedArticles } from '../../lib/published-article-content';
 import blogOrder from '../fixtures/blog-guide-order-20261028.json';
 
@@ -16,7 +16,7 @@ for (const locale of ['en', 'ar'] as const) {
     test(`${locale} published ${article.slug} preserves responsive reading and translation`, async ({ page }) => {
       const route = `/${locale}/blog/${article.slug}/`;
       await page.goto(route);
-      await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
+      await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics', exact: true }).click();
       await expect(page.getByRole('region', { name: locale === 'ar' ? 'تفضيلات ملفات تعريف الارتباط' : 'Your cookie preferences' })).toBeHidden();
       await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
       const offer = page.getByTestId('sierra-leone-offer');

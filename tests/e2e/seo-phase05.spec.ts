@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar']) {
   test(`${locale}: GA4 remains disabled without explicit consent and emits no duplicate measurement`, async ({ page }) => {
@@ -30,8 +30,8 @@ for (const locale of ['en', 'ar']) {
     await expect(banner).toBeVisible();
     await expect(banner).toHaveAttribute('dir', ar ? 'rtl' : 'ltr');
     await expect(banner.getByRole('link', { name: ar ? 'سياسة الخصوصية' : 'Privacy policy' })).toHaveAttribute('href', `/${locale}/privacy-policy/`);
-    const reject = ar ? 'رفض التحليلات' : 'Reject analytics';
-    const accept = ar ? 'السماح بالتحليلات' : 'Accept analytics';
+    const reject = ar ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics';
+    const accept = ar ? 'السماح بالتحليلات الاختيارية' : 'Accept optional analytics';
     await banner.getByRole('button', { name: reject }).click();
     await expect(banner).toBeHidden();
     expect(await page.evaluate(() => localStorage.getItem('inaya.analytics-consent.v2'))).toBe('denied');

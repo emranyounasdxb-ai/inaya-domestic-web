@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar']) {
   for (const route of ['', 'services/live-in-maid', 'maid-source-countries/philippines-maid-uae', 'maid-services-ajman', 'contact', 'booking', 'careers', 'faq', 'service-areas']) {

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar']) {
   test(`${locale}: Contact map loads near the viewport without changing its dimensions or URL`, async ({ page }) => {

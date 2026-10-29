@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const [locale, label, oldLabel] of [
   ['en', 'Domestic Worker Guide', 'SEO Guide'],

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 const origin = 'https://inayadomestic.ae';
 const cases = [

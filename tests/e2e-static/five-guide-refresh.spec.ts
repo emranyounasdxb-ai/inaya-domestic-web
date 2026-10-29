@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 // These are the five user-selected existing URLs, not a newly generated cohort.
 const guides = [

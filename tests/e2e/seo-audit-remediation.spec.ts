@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 test('Arabic mixed-script pricing renders both owned font subsets without downloading the full Arabic fallback', async ({ page }) => {
   const fontResponses: Promise<number>[] = [];

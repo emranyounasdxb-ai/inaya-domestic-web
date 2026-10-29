@@ -9,8 +9,9 @@ const { approvedDescriptions, approvedHomeFlow } = require('./seo-final-remediat
 const { buyerAnswers } = require('../.next/phase-02-unit/lib/buyer-answers.js');
 const { getPageSeo } = require('../.next/phase-02-unit/lib/page-seo.js');
 const checkpoint = '0d4a804dd3c8c502e984ddb8ebfa68ed2e353617';
+const { beforeAhrefsSource } = require('./ahrefs-expectations.cjs');
 const previous = (file) => execFileSync('git', ['show', `${checkpoint}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
-const current = (file) => fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+const current = (file) => beforeAhrefsSource(file, fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n'));
 
 test('buyer answers have unique paired questions, contextual answers and real localized destinations', () => {
   assert.equal(Object.keys(buyerAnswers).length, 8);
