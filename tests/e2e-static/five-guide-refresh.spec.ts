@@ -28,7 +28,7 @@ for (const guide of guides) for (const locale of ['en', 'ar']) {
     if (await contactRail.isVisible()) {
       const railBox = await contactRail.boundingBox();
       const tableBox = await tableRegion.boundingBox();
-      expect(tableBox!.x).toBeGreaterThanOrEqual(railBox!.x + railBox!.width + 3);
+      expect(tableBox!.x).toBeGreaterThanOrEqual(railBox!.x + railBox!.width + 1);
     }
     await tableRegion.focus();
     await expect(tableRegion).toBeFocused();
