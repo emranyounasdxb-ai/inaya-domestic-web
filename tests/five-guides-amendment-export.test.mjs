@@ -105,11 +105,12 @@ test('all ten amended exports render the complete independently reviewed replace
   }
 });
 
-test('the ten Step1 guide dates remain exact alongside the eight new guides and changed archive indexes', () => {
+test('the ten Step1 guide dates remain exact alongside the eight new guides, changed archive indexes and two privacy notices', () => {
   additions.assertInventory(urls);
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match => match[1]);
   additions.assertLastmods(entries.map(entry => ({ url: entry.match(/<loc>(.*?)<\/loc>/)[1], lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] ?? null })));
   const actual = entries.filter(entry => entry.includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]);
-  const expected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls];
+  const expected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls, ...['en', 'ar'].map(locale => `${origin}/${locale}/privacy-policy/`)];
+  assert.equal(expected.length, 32);
   assert.deepEqual(actual.sort(), expected.sort());
 });

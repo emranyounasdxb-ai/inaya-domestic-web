@@ -11,6 +11,7 @@ import { auditExport } from '../scripts/seo-content-audit.mjs';
 import remediation from './seo-final-remediation-expectations.cjs';
 import corePageCopy from './core-page-copy-expectations.cjs';
 import managed from './managed-package-expectations.cjs';
+import ahrefs from './ahrefs-expectations.cjs';
 
 test('Phase 5 retains all prior routes and protected sources while serving seven bilingual guide pairs', async () => {
   const checkpoint = '3c2aee5822d1425feb19d3d08106790bd6d5561f';
@@ -27,7 +28,7 @@ test('Phase 5 retains all prior routes and protected sources while serving seven
     if (file === 'lib/service-content-briefs.ts') expected = corePageCopy.approvedCorePageCopy(file, expected);
     expected = octoberFixes.approvedSeoFixes(file, expected);
     expected = onPageSpec.approvedOnPageSource(file, expected);
-    assert.equal((await readFile(file, 'utf8')).replace(/\r\n/g, '\n'), expected, `${file}: exact checkpoint protection with reviewed remediation only`);
+    assert.equal(ahrefs.beforeAhrefsSource(file, (await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: exact checkpoint protection with reviewed remediation only`);
   }
   const audit = await auditExport();
   additions.assertInventory(audit.pages.map(page => page.url));

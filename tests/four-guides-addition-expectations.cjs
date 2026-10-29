@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const { createHash } = require('node:crypto');
 const before = require('./fixtures/four-guides-addition-20261029-before.json');
 const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
+const { privacyUrls } = require('./ahrefs-expectations.cjs');
 
 const date = '2026-10-29';
 const originalCanonicalCount = 284;
@@ -17,7 +18,7 @@ const newCanonicalUrls = newSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${
 const blogOrderSlugs = [...newSlugs, ...blogOrder.slugs];
 const indexRoutes = ['blog', ...[2, 3, 4, 5, 6].map(page => `blog/page/${page}`)];
 const indexUrls = indexRoutes.flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`));
-const expectedLastmods = { ...before.lastmods, ...Object.fromEntries([...indexUrls, ...newCanonicalUrls].map(url => [url, date])) };
+const expectedLastmods = { ...before.lastmods, ...Object.fromEntries([...indexUrls, ...newCanonicalUrls, ...privacyUrls].map(url => [url, date])) };
 const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === 'object'
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const hash = value => createHash('sha256').update(value).digest('hex');
@@ -36,9 +37,9 @@ function assertInventory(urls) {
 
 function assertLastmods(entries) {
   assertInventory(entries.map(entry => entry.url));
-  for (const entry of entries) assert.equal(entry.lastmod ?? null, expectedLastmods[entry.url], `${entry.url}: only new articles and changed index memberships get29October dates`);
-  assert.equal(entries.filter(entry => entry.lastmod).length, 256);
-  assert.equal(entries.filter(entry => entry.lastmod === date).length, 30);
+  for (const entry of entries) assert.equal(entry.lastmod ?? null, expectedLastmods[entry.url], `${entry.url}: only new articles, changed index memberships and two privacy notices get29October dates`);
+  assert.equal(entries.filter(entry => entry.lastmod).length, 258);
+  assert.equal(entries.filter(entry => entry.lastmod === date).length, 32);
   assert.equal(entries.filter(entry => entry.lastmod === '2026-10-28').length, 44);
 }
 

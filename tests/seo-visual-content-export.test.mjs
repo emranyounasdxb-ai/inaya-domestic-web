@@ -3,6 +3,7 @@ import ajmanOffice from './ajman-office-expectations.cjs';
 import companyGallery from './company-gallery-expectations.cjs';
 import onPage from './on-page-spec-expectations.cjs';
 import additions from './four-guides-addition-expectations.cjs';
+import ahrefs from './ahrefs-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -100,7 +101,7 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       // Only the approved off-screen rendering block may extend the protected stylesheet.
       before += '\n/* Defer off-screen rendering; keep Heroes, accessible content and print intact. */\n@supports (content-visibility: auto) and (overflow-clip-margin: 200px) {\n  @media screen {\n    main section:not(:has(h1)) {\n      content-visibility: auto;\n      contain-intrinsic-block-size: auto 800px;\n      overflow-clip-margin: 200px;\n    }\n    main section:focus-within {\n      content-visibility: visible;\n    }\n  }\n}\n';
     }
-    const current = (await readFile(file, 'utf8')).replace(/\r\n/g, '\n');
+    const current = ahrefs.beforeAhrefsSource(file, (await readFile(file, 'utf8')).replace(/\r\n/g, '\n'));
     if (file === 'components/Footer.tsx') {
       // 24 October: owner requested a responsive footer redesign. Preserve the
       // bilingual business data and destinations while browser tests check layout.

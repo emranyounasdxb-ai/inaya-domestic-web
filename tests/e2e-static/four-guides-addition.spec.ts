@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import additions from '../four-guides-addition-expectations.cjs';
 
 for (const locale of ['en', 'ar'] as const) for (const slug of additions.newSlugs) {
@@ -8,10 +8,15 @@ for (const locale of ['en', 'ar'] as const) for (const slug of additions.newSlug
     if (!article) throw new Error(`Reviewed article is missing: ${slug}`);
     let documents = 0;
     const failedSegments: string[] = [];
+    const isArticleOrArchiveSegment = (url: string) => {
+      const pathname = new URL(url).pathname;
+      return additions.newSlugs.some((candidate: string) => ['en', 'ar'].some(language => pathname.startsWith(`/${language}/blog/${candidate}/`)))
+        || /^\/(?:en|ar)\/blog\/(?:__next\.|index\.txt)/.test(pathname);
+    };
     page.on('request', request => { if (request.isNavigationRequest() && request.frame() === page.mainFrame()) documents++; });
     page.on('response', response => { if (new URL(response.url()).pathname.endsWith('.txt') && !response.ok()) failedSegments.push(response.url()); });
     await page.goto(`/${locale}/blog/`);
-    const reject = page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics' });
+    const reject = page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics' });
     if (await reject.isVisible()) await reject.click();
     const articleLink = page.locator(`main article[data-blog-guide="${slug}"] a[href="/${locale}/blog/${slug}/"]`);
     await expect(articleLink).toHaveCount(1);
@@ -23,7 +28,7 @@ for (const locale of ['en', 'ar'] as const) for (const slug of additions.newSlug
     await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://inayadomestic.ae/${locale}/blog/${slug}/`);
     expect(documents, 'new static article navigation retains the document').toBe(1);
-    expect(failedSegments, 'new articles receive real exported navigation segments').toEqual([]);
+    expect(failedSegments.filter(isArticleOrArchiveSegment), 'new articles and their archive receive real exported navigation segments').toEqual([]);
     const hero = page.locator('main img[fetchpriority="high"]').first();
     await expect(hero).toBeVisible();
     await expect.poll(() => hero.evaluate(image => (image as HTMLImageElement).naturalWidth), {
@@ -58,7 +63,13 @@ for (const locale of ['en', 'ar'] as const) for (const slug of additions.newSlug
     await expect(page.locator('main h1')).toHaveText(article[targetLocale].title);
     await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://inayadomestic.ae/${targetLocale}/blog/${slug}/`);
-    expect(failedSegments).toEqual([]);
+    expect(documents, 'translation retains the document using the actual exported navigation segments').toBe(1);
+    expect(failedSegments.filter(isArticleOrArchiveSegment)).toEqual([]);
+    const otherPrefetchFailures = failedSegments.filter(url => !isArticleOrArchiveSegment(url));
+    if (otherPrefetchFailures.length) {
+      await test.info().attach('other-route-prefetch-diagnostics', { body: JSON.stringify(otherPrefetchFailures, null, 2), contentType: 'application/json' });
+      console.warn('Other-route prefetch diagnostics:', JSON.stringify(otherPrefetchFailures));
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

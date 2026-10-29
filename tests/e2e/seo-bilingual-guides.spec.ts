@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import amendment from '../five-guides-amendment-expectations.cjs';
 
 const slugs = [
@@ -57,7 +57,7 @@ for (const locale of ['en', 'ar'] as const) {
     ]) {
       await page.goto(`/${locale}/${route}/`);
       if (route === 'services/live-in-maid') {
-        await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics' }).click();
+        await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics' }).click();
       }
       await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
       const link = page.locator(`main a[href="/${locale}/blog/${guide}/"]`);

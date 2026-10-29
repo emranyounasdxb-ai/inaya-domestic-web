@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from '../browser-fixture';
 
 async function expectLocationSchema(page: Page, locale: string) {
   const scripts = page.locator('script[type="application/ld+json"]');

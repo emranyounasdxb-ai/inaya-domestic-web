@@ -1,9 +1,9 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar'] as const) {
   test(`${locale}: footer stays readable and aligned on phones, tablets and laptops`, async ({ page }) => {
     await page.goto(`/${locale}/about/`);
-    await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
+    await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics', exact: true }).click();
     const footer = page.getByRole('contentinfo');
     await expect(footer.getByRole('heading', { level: 2 })).toHaveCount(3);
     await expect(footer.getByRole('link', { name: 'info@inayadomestic.ae', exact: true })).toHaveAttribute('href', 'mailto:info@inayadomestic.ae');

@@ -15,6 +15,7 @@ const locales = ['en', 'ar'] as const;
 
 // Record substantive content updates, not build times. Leave untracked routes undated.
 const contentUpdatedAt: Record<string, string> = {
+  'privacy-policy': '2026-10-29',
   ...Object.fromEntries(blogArchiveRoutes.map(route => [route, '2026-10-29'])),
   ...Object.fromEntries(countrySourcePages.map(country => [`maid-source-countries/${country.slug}`, '2026-10-28'])),
   'services/countries-we-source-from': '2026-10-28',

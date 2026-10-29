@@ -14,6 +14,7 @@ export default function TrustSupportPage({ locale, slug }: { locale: string; slu
         <p className="text-[0.66rem] font-bold uppercase tracking-[0.28em] text-accent-700">{page.badge[lang]}</p>
         <h1 className={`${lang === 'ar' ? 'font-arabic leading-[1.25]' : 'font-heading leading-[1.05]'} mt-4 text-[2.35rem] font-bold tracking-[-0.055em] sm:text-[3.5rem]`}>{page.title[lang]}</h1>
         <p className="mt-5 max-w-3xl text-sm leading-8 text-primary-900/72 sm:text-base">{page.lead[lang]}</p>
+        {slug === 'privacy-policy' && page.updated && <p className="mt-3 text-sm text-primary-900/65">{page.updated[lang]}</p>}
         <Link href={`/${locale}/contact`} className="mt-7 inline-flex rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white">{contactLabel}</Link>
         <PageBreadcrumbs locale={locale} route={slug === 'why-choose-inaya' ? 'inaya-advantages' : slug} />
         <section className="mt-10 grid gap-5 lg:grid-cols-2">

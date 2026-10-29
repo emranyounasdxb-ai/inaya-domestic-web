@@ -286,7 +286,7 @@
     "lib/domestic-worker-guides.ts": "611e7c83e724562c56e485a96d620fdf6576004d0afcdbfe0d0f6f5f32f1b2d8",
     "lib/article-search-titles.ts": "4d3f10f029555a89fe9e0ebb014aa82a9b3a38fa281fa4f6d133add7d7cab7cd",
     "lib/blog-images.ts": "26048b1c34a35104bc3149771d5675db7ffedd6c3dc4eb30aa952649762a9e43",
-    "app/sitemap.ts": "693214c9e6861adb561f661fc934f64bc5b52f4417b40307e89a12bd22cde3e9",
+    "app/sitemap.ts": "460a8ca335b0c3e3def610ae756dfc4bc275dcc787430bc93e4bf38ce6aa8f51",
     "app/[locale]/blog/[slug]/page.tsx": "f8169fc51f90278ba730d001109266c6c46c16673f26e30758e8ff0f16fd7277"
   }
 }
