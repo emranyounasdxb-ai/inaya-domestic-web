@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import { allServices } from '../../lib/service-helpers';
 import { serviceGroups } from '../../lib/service-presentation';
 

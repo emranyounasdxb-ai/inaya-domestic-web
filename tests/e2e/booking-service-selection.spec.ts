@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar'] as const) {
   test(`${locale} booking honors a known service query and keeps manual choice`, async ({ page }) => {

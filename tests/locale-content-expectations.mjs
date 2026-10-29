@@ -13,7 +13,7 @@ const decode = value => normalize(value
 
 // These are finite proper names, products and document-format acronyms. An
 // adjacent English verb or ordinary phrase is still checked, not exempted.
-const properTerms = ['Microsoft Clarity', 'Google Analytics', 'MOHRE UAE', 'UAE Pass', 'Google', 'Clarity', 'LinkedIn', 'Snapchat', 'TikTok', 'YouTube', 'Instagram', 'JSON', 'Excel', 'PDF', 'CDC', 'GINETEX', 'MOHRE', 'INAYA'];
+const properTerms = ['Microsoft Clarity', 'Google Analytics', 'MOHRE UAE', 'UAE Pass', 'Google', 'Clarity', 'Ahrefs', 'LinkedIn', 'Snapchat', 'TikTok', 'YouTube', 'Instagram', 'JSON', 'Excel', 'PDF', 'CDC', 'GINETEX', 'MOHRE', 'INAYA'];
 const removeTerm = (value, term) => value.replace(new RegExp(`(?<![\\p{L}\\p{N}])${escape(term)}(?![\\p{L}\\p{N}])`, 'gu'), '');
 
 export function authoredSegments(html) {

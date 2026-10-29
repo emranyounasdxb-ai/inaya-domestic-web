@@ -72,12 +72,18 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
   const countryPhotoUrls = countryPhotoRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`));
   const updatedUrls = [...countryPhotoUrls, ...[...onPageSpec.onPageUpdatedRoutes, ...onPageSpec.archiveRoutes].flatMap(route => locales.map(locale => `${origin}/${locale}/${route ? `${route}/` : ''}`))];
   const currentEntries = datedEntries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>'));
-  assert.equal(datedEntries.length, 248, 'retain all244 dated URLs and date only the four previously undated base-guide copies');
+  assert.equal(datedEntries.length, 250, 'retain all248 dated URLs and add only the two substantively updated privacy-policy copies');
   assert.deepEqual(currentEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), updatedUrls.sort(), 'only 26 country-photo, 20 substantive on-page and ten new archive URLs receive 28 October');
   for (const entry of currentEntries) {
     assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], 'each reviewed updated page has one exact substantive modification date');
   }
-  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 192, 'historical dates plus four newly dated base copies remain outside28October');
+  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 194, 'only the two privacy-policy copies add date coverage outside28October');
+  const expectedOctober29Urls = [
+    ...amendment.targetSlugs.flatMap(slug => locales.map(locale => `${origin}/${locale}/blog/${slug}/`)),
+    ...locales.map(locale => `${origin}/${locale}/privacy-policy/`)
+  ];
+  assert.equal(expectedOctober29Urls.length, 12);
+  assert.deepEqual(datedEntries.filter(entry => entry.includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedOctober29Urls.sort(), 'only the ten reviewed guide copies and two privacy-policy copies receive29October');
   assert.equal(receipt.articlePairs, 21);
   assert.equal(receipt.localePages, 42);
   assert.equal(receipt.manuscriptHashes.length, 42);

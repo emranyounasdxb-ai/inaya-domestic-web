@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import review from '../fixtures/keyword-articles-reviewed-20261024.json';
 
 // Export checks cover all 42 full copies. These two distinct articles exercise
@@ -9,7 +9,7 @@ for (const locale of ['en', 'ar'] as const) for (const topic of topics) {
   test(`${locale} keyword article ${topic.id} keeps tables, diagrams, TOC and language switching usable`, async ({ page }) => {
     const route = `/${locale}/blog/${topic.slug}/`;
     await page.goto(route);
-    await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
+    await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics', exact: true }).click();
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
     const offer = page.getByTestId('sierra-leone-offer');
     await expect(offer).toHaveCount(0);

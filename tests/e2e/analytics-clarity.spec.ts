@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar']) {
   test(`${locale}: Clarity requires fresh consent and stops when consent is withdrawn`, async ({ page }) => {
@@ -24,7 +24,7 @@ for (const locale of ['en', 'ar']) {
     expect(vendorRequests).toEqual([]);
     expect(await page.evaluate(() => window['ga-disable-G-986STCSR37'])).toBe(true);
 
-    await banner.getByRole('button', {name: locale === 'ar' ? 'السماح بالتحليلات' : 'Accept analytics', exact:true}).click();
+    await banner.getByRole('button', {name: locale === 'ar' ? 'السماح بالتحليلات الاختيارية' : 'Accept optional analytics', exact:true}).click();
     await expect(page.locator('script[src*="gtm.js?id=GTM-MDBQLVGJ"]')).toHaveCount(1);
     await expect(page.locator('script[src*="gtag/js?id=G-986STCSR37"]')).toHaveCount(1);
     const calls = () => page.evaluate(() => (window as unknown as {testClarityCalls?: unknown[][]}).testClarityCalls || []);

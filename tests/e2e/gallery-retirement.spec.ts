@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import galleryCatalog from '../../content/site-image-gallery.json';
 import { analyticsConsentKey } from '../../lib/analytics-consent';
 

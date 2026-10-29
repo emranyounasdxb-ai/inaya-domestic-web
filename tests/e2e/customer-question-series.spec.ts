@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 import brief from '../../content/research/2026-10-20/editorial-brief.json';
 import { customerArticleFaqs } from '../../lib/customer-article-faqs';
 
@@ -11,7 +11,7 @@ for (const locale of ['en', 'ar'] as const) {
     test(`${locale} customer article ${topic.id} keeps chart, Q&A and translation usable`, async ({ page }) => {
       const route = `/${locale}/blog/${topic.slug}/`;
       await page.goto(route);
-      await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics', exact: true }).click();
+      await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics', exact: true }).click();
       await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
       const offer = page.getByTestId('sierra-leone-offer');
       await expect(offer).toHaveCount(0);

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../browser-fixture';
 
 for (const locale of ['en', 'ar'] as const) {
   test(`${locale}: paginated guides remain usable with real navigation and localized URLs`, async ({ page }) => {
@@ -7,7 +7,7 @@ for (const locale of ['en', 'ar'] as const) {
     page.on('request', request => { if (request.isNavigationRequest() && request.frame() === page.mainFrame()) documents++; });
     page.on('response', response => { if (new URL(response.url()).pathname.endsWith('.txt') && !response.ok()) failedSegments.push(response.url()); });
     await page.goto(`/${locale}/blog/`);
-    const reject = page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics' });
+    const reject = page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics' });
     if (await reject.isVisible()) await reject.click();
     const nav = page.getByRole('navigation', { name: locale === 'ar' ? 'صفحات الأدلة' : 'Guide pages' });
     await expect(page.locator('[data-blog-guide]')).toHaveCount(12);
@@ -43,7 +43,7 @@ for (const locale of ['en', 'ar'] as const) {
       ['maid-services-dubai', 'uae-domestic-worker-hiring-process']
     ]) {
       await page.goto(`/${locale}/${route}/`);
-      if (route === 'services/live-in-maid') await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics' }).click();
+      if (route === 'services/live-in-maid') await page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics' }).click();
       const link = page.locator(`main a[href="/${locale}/blog/${guide}/"]`);
       await expect(link).toHaveCount(1);
       await link.focus();
@@ -63,7 +63,7 @@ for (const locale of ['en', 'ar'] as const) {
     const remoteFlags: string[] = [];
     page.on('request', request => { if (new URL(request.url()).hostname === 'flagcdn.com') remoteFlags.push(request.url()); });
     await page.goto(`/${locale}/`);
-    const reject = page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات' : 'Reject analytics' });
+    const reject = page.getByRole('button', { name: locale === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics' });
     if (await reject.isVisible()) await reject.click();
     const cards = page.locator('.home-country-card');
     await expect(cards).toHaveCount(12);

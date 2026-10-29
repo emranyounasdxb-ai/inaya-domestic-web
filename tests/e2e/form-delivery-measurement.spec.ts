@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from '../browser-fixture';
 
 async function stubAnalytics(page: Page) {
   // Exercise the real local GA queue without contacting either analytics vendor.

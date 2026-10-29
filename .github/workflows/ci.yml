@@ -69,6 +69,8 @@ jobs:
         run: node --test tests/on-page-identity-home-faq.test.cjs tests/on-page-editorial-classification-unit.test.cjs tests/on-page-spec-export.test.mjs tests/blog-pagination-unit.test.cjs tests/blog-pagination-export.test.mjs
       - name: Verify exactly five reviewed guide amendments and complete rendered copy
         run: node --test tests/five-guides-amendment-unit.test.cjs tests/five-guides-amendment-export.test.mjs
+      - name: Verify owner-approved native Ahrefs head and separate privacy disclosure
+        run: node --test tests/ahrefs-source-unit.test.cjs tests/ahrefs-head-export.test.mjs
       - name: Unit and export checks
         run: node --test tests/seo-phase02-unit.test.cjs tests/seo-phase03-unit.test.cjs tests/seo-phase04-unit.test.cjs tests/seo-phase05-unit.test.cjs tests/seo-final-remediation-unit.test.cjs tests/final-ux-accessibility-unit.test.cjs tests/keyword-article-markdown-unit.test.cjs tests/keyword-article-presentation-unit.test.cjs tests/seo-export.test.mjs tests/company-information-export.test.mjs tests/keyword-articles-export.test.mjs tests/locale-content-export.test.mjs tests/seo-phase02-export.test.mjs tests/seo-phase03-export.test.mjs tests/seo-phase04-export.test.mjs tests/seo-phase05-export.test.mjs tests/seo-bilingual-guides-export.test.mjs tests/seo-visual-content-export.test.mjs tests/final-ux-accessibility-export.test.mjs tests/seo-release-readiness.test.mjs tests/customer-question-series.test.mjs tests/article-publication-schedule.test.mjs
       - name: Install Chromium for browser regression
