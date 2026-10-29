@@ -1,3 +1,5 @@
+import { officeCareersMetadata } from './office-careers-metadata';
+
 type NewArticleMetadata = {
   id: string; slug: string; published: string; updated: string;
   en: { title: string; description: string; searchTitle: string; citations: string[] };
@@ -105,5 +107,6 @@ export const newArticleMetadata: NewArticleMetadata[] = [
         "https://icp.gov.ae/en/faq/"
       ]
     }
-  }
+  },
+  officeCareersMetadata
 ];

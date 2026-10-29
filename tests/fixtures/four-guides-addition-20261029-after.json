@@ -1,7 +1,7 @@
 {
   "baselineCommit": "09432ac6176708136b94457b9bf36e99fc59a953",
   "date": "2026-10-29",
-  "review": "Root confirmed all eight manuscripts and compact metadata final after independent editorial review; includes eight approved reciprocal cross-link paragraphs and no new facts.",
+  "review": "Original four bilingual manuscripts remain exact. Step3 adds separately owner-confirmed office-careers data and one approved existing-photo alias; integration hashes updated only for those exact additive source changes.",
   "articles": [
     {
       "id": "A03",
@@ -280,12 +280,12 @@
   },
   "sourceModuleSha256": {
     "content/new-articles-20261029.json": "e4c894e82b14fbcfe49bbea20b26cc72093c47886dcf895e88512a3c2969ece2",
-    "lib/new-article-content.ts": "f6b6516fe13315a62dbc18014b611d7cf28f8a9a941e712c0d97706e8cb98496",
-    "lib/new-article-metadata.ts": "d6887492b26e6c2ecb50c32a8d858a1d6f8cdcd4ff0a43803b8209cb553354f0",
+    "lib/new-article-content.ts": "2b5271eef33b51740401254863f37eaa80bbaae5ee0b6ec956a598a0aef654f1",
+    "lib/new-article-metadata.ts": "31552f47a6d4399a1c766ad43a29d1d2d209dbf8be38b46445fd1e5c6815f086",
     "lib/new-article-guides.ts": "40b35722df6f2678a9295b1b6cd30fa0c291b47c01502d749d61d4ac3dffb451",
     "lib/domestic-worker-guides.ts": "611e7c83e724562c56e485a96d620fdf6576004d0afcdbfe0d0f6f5f32f1b2d8",
     "lib/article-search-titles.ts": "4d3f10f029555a89fe9e0ebb014aa82a9b3a38fa281fa4f6d133add7d7cab7cd",
-    "lib/blog-images.ts": "26048b1c34a35104bc3149771d5675db7ffedd6c3dc4eb30aa952649762a9e43",
+    "lib/blog-images.ts": "0d9960305faeaf8e25590e5903d9f5d0223ea127948a30365dd591513045d5ce",
     "app/sitemap.ts": "460a8ca335b0c3e3def610ae756dfc4bc275dcc787430bc93e4bf38ce6aa8f51",
     "app/[locale]/blog/[slug]/page.tsx": "f8169fc51f90278ba730d001109266c6c46c16673f26e30758e8ff0f16fd7277"
   }

@@ -107,7 +107,7 @@ for (const locale of ['en', 'ar'] as const) {
     }
     expect(seen).toEqual(additions.blogOrderSlugs);
     expect(seen.filter(slug => !additions.newSlugs.includes(slug))).toEqual(blogOrder.slugs);
-    expect(new Set(seen).size).toBe(69);
+    expect(new Set(seen).size).toBe(70);
     for (const article of publishedArticles) expect(found.get(article.slug), `${locale}/${article.slug}: exactly one correctly localized archive card`).toBe(1);
   });
 }

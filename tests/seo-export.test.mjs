@@ -99,7 +99,7 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
   const privacyRoutes = new Set(['privacy-policy']);
   const datedRoutes = new Set([...step1Routes, ...step2Routes, ...privacyRoutes, ...onPageUpdatedRoutes, ...archiveRoutes, ...countryPhotoRoutes, ...keywordRoutes, ...companyInformationRoutes, ...updatedRoutes, ...todayRoutes, ...officeUpdatedRoutes, ...worksheetUpdatedRoutes, ...galleryUpdatedRoutes, ...paymentUpdatedRoutes, ...domesticUpdatedRoutes, ...ajmanUpdatedRoutes]);
   const expectedDatedUrls = ['en', 'ar'].flatMap(locale => [...datedRoutes].map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`));
-  assert.equal(datedEntries.length, 258, 'only eight new guide copies and two privacy copies add to248 dated routes');
+  assert.equal(datedEntries.length, 260, 'only eight new guide copies and two privacy copies add to248 dated routes');
   assert.deepEqual(datedEntries.map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), expectedDatedUrls.sort());
   assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-20</lastmod>')).length, 30, 'unchanged customer articles retain their substantive date');
   assert.equal(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-22</lastmod>')).length, 16, 'only unchanged office and worksheet pairs retain 22 October; contact now has substantive on-page changes');

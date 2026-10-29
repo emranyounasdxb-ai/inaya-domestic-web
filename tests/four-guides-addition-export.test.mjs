@@ -123,6 +123,6 @@ test('all69 guide cards occur once across the six bilingual archives with the or
     }
     assert.deepEqual(seen, additions.blogOrderSlugs);
     assert.deepEqual(seen.filter(slug => !additions.newSlugs.includes(slug)), additions.before.originalBlogOrder);
-    assert.equal(new Set(seen).size, 69);
+    assert.equal(new Set(seen).size, 70);
   }
 });

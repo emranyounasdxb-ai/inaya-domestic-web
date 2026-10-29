@@ -6,13 +6,14 @@ const { privacyUrls } = require('./ahrefs-expectations.cjs');
 
 const date = '2026-10-29';
 const originalCanonicalCount = 284;
-const canonicalCount = 292;
-const newSlugs = [
+const canonicalCount = 294;
+const reviewedSlugs = [
   'uae-domestic-worker-rights-employer-duties',
   'domestic-worker-centre-reviews-checklist',
   'domestic-workers-meaning-roles-uae',
   'choosing-domestic-worker-centre-across-emirates'
 ];
+const newSlugs = [...reviewedSlugs, 'inaya-office-staff-careers-ajman'];
 const origin = 'https://inayadomestic.ae';
 const newCanonicalUrls = newSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`));
 const blogOrderSlugs = [...newSlugs, ...blogOrder.slugs];
@@ -24,7 +25,7 @@ const stable = value => Array.isArray(value) ? value.map(stable) : value && type
 const hash = value => createHash('sha256').update(value).digest('hex');
 const fingerprint = value => hash(JSON.stringify(stable(value)));
 assert.equal(before.baselineCommit.slice(0, 7), '09432ac');
-assert.deepEqual(before.newSlugs, newSlugs, 'only the four separately authorized new topics');
+assert.deepEqual(before.newSlugs, reviewedSlugs, 'only the four separately authorized new topics');
 assert.deepEqual(before.originalBlogOrder, blogOrder.slugs, 'the65-guide order fixture remains immutable');
 assert.equal(before.canonicalUrls.length, originalCanonicalCount);
 
@@ -38,8 +39,8 @@ function assertInventory(urls) {
 function assertLastmods(entries) {
   assertInventory(entries.map(entry => entry.url));
   for (const entry of entries) assert.equal(entry.lastmod ?? null, expectedLastmods[entry.url], `${entry.url}: only new articles, changed index memberships and two privacy notices get29October dates`);
-  assert.equal(entries.filter(entry => entry.lastmod).length, 258);
-  assert.equal(entries.filter(entry => entry.lastmod === date).length, 32);
+  assert.equal(entries.filter(entry => entry.lastmod).length, 260);
+  assert.equal(entries.filter(entry => entry.lastmod === date).length, 34);
   assert.equal(entries.filter(entry => entry.lastmod === '2026-10-28').length, 44);
 }
 
@@ -95,10 +96,10 @@ function reviewed() {
   const after = require('./fixtures/four-guides-addition-20261029-after.json');
   assert.equal(after.baselineCommit, before.baselineCommit);
   assert.equal(after.date, date);
-  assert.deepEqual(after.articles.map(article => article.slug), newSlugs);
+  assert.deepEqual(after.articles.map(article => article.slug), reviewedSlugs);
   return after;
 }
 
-module.exports = { before, date, originalCanonicalCount, canonicalCount, newSlugs, newCanonicalUrls,
+module.exports = { before, date, originalCanonicalCount, canonicalCount, reviewedSlugs, newSlugs, newCanonicalUrls,
   blogOrderSlugs, indexRoutes, indexUrls, expectedLastmods, stable, hash, fingerprint,
   assertInventory, assertLastmods, beforeCatalogAddition, beforeImageAliases, assertExistingRecords, reviewed };

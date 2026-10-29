@@ -29,7 +29,7 @@ test('exactly four genuinely new bilingual articles and compact metadata match t
   const approved = additions.reviewed();
   const articles = JSON.parse(readFileSync('content/new-articles-20261029.json', 'utf8'));
   assert.deepEqual(articles, approved.articles, 'all eight final manuscripts and every field match independent review');
-  assert.deepEqual(articles.map(article => article.slug), additions.newSlugs);
+  assert.deepEqual(articles.map(article => article.slug), additions.reviewedSlugs);
   assert.deepEqual(articles.map(article => article.id), ['A03', 'A07', 'A08', 'A14']);
   assert.equal(new Set(articles.map(article => article.slug)).size, 4);
   const oldSlugs = new Set(additions.before.guideRecordSha256.map(article => article.slug));
@@ -45,7 +45,7 @@ test('exactly four genuinely new bilingual articles and compact metadata match t
   for (const [file, expectedHash] of Object.entries(approved.sourceModuleSha256)) {
     assert.equal(additions.hash(readFileSync(file, 'utf8').replace(/\r\n/g, '\n')), expectedHash, `${file}: exact reviewed cohort integration`);
   }
-  assert.deepEqual(additions.beforeImageAliases(readFileSync('lib/blog-images.ts', 'utf8')).aliases, approved.imageAliases);
+  assert.deepEqual(additions.beforeImageAliases(readFileSync('lib/blog-images.ts', 'utf8')).aliases, { ...approved.imageAliases, 'inaya-office-staff-careers-ajman': 'domestic-worker-contracts-renewal' });
   const contentModule = readFileSync('lib/new-article-content.ts', 'utf8');
   assert.match(contentModule, /import ['"]server-only['"]/);
   assert.ok(contentModule.includes('new-articles-20261029.json'));

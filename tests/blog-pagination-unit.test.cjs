@@ -11,13 +11,13 @@ test('six archive pages partition all69 guides once, preserving the original65 r
   assert.equal(blogPageCount, 6);
   assert.equal(baseline.slugs.length, 65);
   const pages = Array.from({ length: 6 }, (_, index) => getBlogPage(index + 1));
-  assert.deepEqual(pages.map(page => page.guides.length), [12, 12, 12, 12, 12, 9]);
+  assert.deepEqual(pages.map(page => page.guides.length), [12, 12, 12, 12, 12, 10]);
   const slugs = pages.flatMap(page => page.guides.map(guide => guide.slug));
   assert.deepEqual(slugs, additions.blogOrderSlugs);
   assert.deepEqual(slugs.filter(slug => !additions.newSlugs.includes(slug)), baseline.slugs, 'every original guide keeps its established relative position');
-  assert.equal(new Set(slugs).size, 69);
-  assert.deepEqual(pages.map(page => [page.first, page.last]), [[1, 12], [13, 24], [25, 36], [37, 48], [49, 60], [61, 69]]);
-  assert.ok(pages.every(page => page.total === 69 && page.count === 6));
+  assert.equal(new Set(slugs).size, 70);
+  assert.deepEqual(pages.map(page => [page.first, page.last]), [[1, 12], [13, 24], [25, 36], [37, 48], [49, 60], [61, 70]]);
+  assert.ok(pages.every(page => page.total === 70 && page.count === 6));
 });
 
 test('page1 keeps the original URL and only pages2through6 gain canonical archive paths', () => {
