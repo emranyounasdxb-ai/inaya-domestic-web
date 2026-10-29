@@ -640,48 +640,184 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   {
     "slug": "documents-for-domestic-worker-enquiry",
     "published": "2026-10-12",
-    "updated": "2026-10-12",
+    "updated": "2026-10-29",
     "en": {
-      "title": "Documents to prepare for a domestic worker enquiry",
-      "description": "Separate the details needed for an initial enquiry from the identity and contract documents that an official UAE domestic worker application may require.",
-      "lead": "You can begin by explaining your household requirements. Identity and application documents may be needed later for an official process, but the exact list depends on the arrangement and employer. Confirm the current requirements before submitting anything.",
+      "title": "Documents for a domestic-worker enquiry in Ajman",
+      "description": "Prepare a case-specific domestic-worker document folder: enquiry details, named parties, requested records, readiness checks and safe follow-up with INAYA.",
+      "lead": "Start with the household service or transaction you need, not a folder of every personal document you own. An initial enquiry, a managed monthly service and an official domestic-worker application need different information. This guide helps you identify the case, organise requested records and confirm a private sharing channel before submission.",
       "sections": [
         {
-          "heading": "For the first conversation, describe the service",
+          "heading": "1. Make the first conversation useful without sending identity files",
           "paragraphs": [
-            "Prepare the work location, preferred start period, duties, schedule and the best way to contact you. If a particular worker role is needed, explain the actual tasks rather than relying only on the role name.",
-            "Ask what service arrangement is available and which documents that arrangement requires. An early discussion does not mean every formal document must be sent immediately."
-          ]
-        },
-        {
-          "heading": "For a formal application, check the current MOHRE list",
-          "paragraphs": [
-            "MOHRE’s domestic worker contract service lists examples such as the employer’s passport copy, the worker’s passport copy and photograph, insurance documents and a signed employment contract. It also sets validity conditions for some identity documents. The applicable set can change with the service and employer status.",
-            "A resident or investor may have additional identity or residence requirements. Ask the provider which official service will be used and verify the exact current list on MOHRE’s service page before the application is prepared."
+            "Describe the emirate and work location, the duties, the preferred arrangement and the period in which you hope to begin. Explain essential skills or communication needs using actual household tasks. If you already know the worker or have an application in progress, say so; this changes the question the team needs to answer.",
+            "For a first service discussion, a short description is more useful than unsolicited passport, identity or medical copies. Ask whether the next step is a service quotation, candidate discussion or review of a particular official transaction. A preferred start date is a planning request until the required case steps and written confirmation are complete."
           ],
           "points": [
-            "Check names and document validity before sharing copies.",
-            "Confirm who will receive each document and why it is needed.",
-            "Use the provider’s agreed secure channel for identity documents.",
-            "Keep a copy of the final signed agreement and official receipts."
+            "Prepare one description of the work and the arrangement you want.",
+            "Mention an existing worker or application without putting private document numbers in a public message.",
+            "Ask the team what it needs next and why that information is relevant."
           ]
         },
         {
-          "heading": "Review the agreement before signing",
+          "heading": "2. Choose a document route for the actual request",
           "paragraphs": [
-            "MOHRE’s current domestic-worker employment-contract service lists an employment contract signed by both parties among its required documents. Review the proposed work, duties, workplace, wage and terms against your discussion with the provider. Ask for corrections before signing if the description does not match.",
-            "Keep the recruitment or service terms and the employment contract distinct. They may describe different obligations. Ask for a clear explanation of any official fees, service charges and support conditions in the documents applicable to you."
-          ]
+            "Use this routing matrix to organise the conversation. Its entries are questions to resolve, not a compulsory list of documents for every household. Confirm the applicant, employer or sponsor and the transaction before collecting files. Do not assume that the household receiving a managed service is also the worker’s employer.",
+            "A renewal, change of an existing arrangement or cancellation needs the relevant current record. A new household-employer application may involve a different applicant category from an agency-managed service. Where the correct category is uncertain, leave it for review rather than selecting the nearest-looking checklist."
+          ],
+          "table": {
+            "caption": "A planning matrix for domestic-worker document enquiries",
+            "columns": [
+              "Request",
+              "Describe first",
+              "Confirm before sharing files"
+            ],
+            "rows": [
+              [
+                "Managed household service",
+                "Role, location, routine and requested arrangement",
+                "Named agency and household parties; documents relevant to the service"
+              ],
+              [
+                "New household-employer case",
+                "Proposed arrangement and present worker situation",
+                "Applicable official service, applicant category and requested record list"
+              ],
+              [
+                "Existing worker’s renewal",
+                "Which contract or residence record needs renewal",
+                "Current record, appropriate renewal process and case-specific list"
+              ],
+              [
+                "Change or end of an arrangement",
+                "What is changing and the existing employment situation",
+                "Records affected, relevant parties and instructions for the next step"
+              ],
+              [
+                "Application already submitted",
+                "The requested action and latest status",
+                "Application reference, outstanding request and authorised follow-up channel"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Use INAYA’s enquiry channels appropriately",
+          "heading": "3. Separate document families instead of treating them as one checklist",
           "paragraphs": [
-            "The booking form on this website sends your enquiry details to the INAYA team; it does not submit an official application or upload documents. Contact the INAYA team by phone or WhatsApp for the next step and ask how sensitive documents should be shared if they become necessary.",
-            "If you are unsure whether a document is required, ask before sending it. The current official MOHRE service instructions should guide the final application checklist."
+            "When documents are requested, record their purpose and which transaction they support. The same person may have a service agreement, an employment record and a residence record; one does not establish that all the others are complete. The person handling the case should explain which record is relevant.",
+            "ICP’s residence service separates applicant categories and connects residence issuance with an Emirates ID application. Select the actual category; other lists on the page are not a domestic-worker checklist."
+          ],
+          "table": {
+            "caption": "Document families to review only where requested for the case",
+            "columns": [
+              "Record family",
+              "What to clarify",
+              "Useful quality check"
+            ],
+            "rows": [
+              [
+                "Worker identity or photograph",
+                "Which document or format the identified service requests",
+                "Legibility, matching names and the version requested"
+              ],
+              [
+                "Applicant or employer identity",
+                "Who is actually applying or named as employer",
+                "Correct person or entity; requested validity checked"
+              ],
+              [
+                "Contract and service terms",
+                "Which parties, duties and arrangement each document covers",
+                "Terms match the discussion and corrections are resolved"
+              ],
+              [
+                "Existing permit, residence or ID record",
+                "Which current record the transaction concerns",
+                "Correct reference and latest known result"
+              ],
+              [
+                "Medical or insurance record",
+                "What official record is relevant and who must receive it",
+                "Share only the required record through the agreed private channel"
+              ],
+              [
+                "Application and payment records",
+                "What was submitted, for which action and with what result",
+                "Keep reference, receipt and completed result distinguishable"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "4. Build a readiness ledger with clear limits",
+          "paragraphs": [
+            "Keep one private ledger for the identified case. Suggested fields are the record requested, who requested it, why it is needed, the version supplied, review status and next action. A ledger can say that information is ready for a review; it cannot grant eligibility or replace an authority decision.",
+            "Use plain status descriptions consistently. If a file has been sent but nobody has checked it, mark it supplied for review. If a discrepancy remains, record the question. Avoid using one word such as complete for both a document folder and an approved application."
+          ],
+          "table": {
+            "caption": "A simple readiness legend",
+            "columns": [
+              "Status",
+              "What it means",
+              "Next action"
+            ],
+            "rows": [
+              [
+                "Not requested",
+                "No confirmed need for this record in the current step",
+                "Do not send it merely because another checklist includes it"
+              ],
+              [
+                "Requested",
+                "The relevant recipient has identified the record",
+                "Confirm the purpose, format and sharing channel"
+              ],
+              [
+                "Supplied for review",
+                "A version has been delivered",
+                "Wait for or request confirmation of the review outcome"
+              ],
+              [
+                "Clarification needed",
+                "A name, version or requirement needs resolving",
+                "Record who will clarify it; do not guess or edit evidence"
+              ],
+              [
+                "Ready for the agreed next step",
+                "The requested review has been addressed",
+                "Confirm what happens next; this is not official approval"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "5. Compare names, references and versions before relying on a file",
+          "paragraphs": [
+            "Check the spelling and sequence of names against the relevant identity record, and compare the worker and employer shown on each document. If two versions differ, ask the person handling the transaction which version is current. Do not silently change a name, date or document image to make records appear consistent.",
+            "Use recognisable file names and keep superseded copies separate from the version being reviewed. Record the date of a correction and the reason for it. If a new passport or updated record has been issued, ask whether it changes the information required for the application. Document validity is service-specific; this guide does not impose one validity period on every case."
           ]
         },
         {
-          "heading": "Agency employment and household responsibilities",
+          "heading": "6. Agree how sensitive records will be shared",
+          "paragraphs": [
+            "Confirm the recipient and channel using INAYA’s official contact details before sharing personal records. Ask whether a copy is needed now, who is reviewing it and whether an original must be presented through the relevant official process. Do not place identity documents, full application references or medical details in public comments or a general household comparison sheet.",
+            "Keep passwords, one-time codes and account access under your control. Where an official step needs your authentication or participation, ask for clear instructions and complete that part yourself. Do not redact or alter a document required by an authority unless the receiving official channel confirms what it can accept. Retain the records you need to understand your agreement and transaction."
+          ],
+          "points": [
+            "Check the recipient before sending a sensitive file.",
+            "Keep a note of what was sent and which case it concerns.",
+            "Ask before sending an unrelated record or repeating a large document bundle.",
+            "Use the agreed private channel; a website enquiry is not a document submission."
+          ]
+        },
+        {
+          "heading": "7. Read agreements before signing and keep the parties distinct",
+          "paragraphs": [
+            "Review the proposed work, duties, workplace, pay and other terms against the discussion. Read any declarations and ask for a correction if the document does not describe the facts accurately. Keep a copy of the final agreement you sign; an earlier draft or quotation may not record the final terms.",
+            "Recruitment or household-service terms and the worker’s employment contract can describe different relationships. Ask which document sets the service charge, who is responsible for the employment obligations and where support or ending arrangements are explained. Signing a customer agreement does not, by itself, prove that an official application has been submitted or completed."
+          ]
+        },
+        {
+          "heading": "8. Record INAYA’s managed monthly arrangement correctly",
           "paragraphs": [
             "In a managed monthly enquiry, document the agency as employer/sponsor and your household as beneficiary. Agency wage administration and applicable employment obligations are included, while the agreement records your household responsibilities. Use those named parties to identify the correct documents; the service payment is not a second worker wage."
           ],
@@ -692,74 +828,247 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
             "Required lawful authorisation and written confirmation precede service commencement.",
             "A monthly service charge does not replace the employment contract or waive statutory rights."
           ]
+        },
+        {
+          "heading": "9. Two examples: different enquiries, different preparation",
+          "paragraphs": [
+            "Planning example: an Ajman household wants managed monthly help with cleaning and meal preparation but has not selected a worker. Its first record can describe the duties, household routine and preferred start period. The useful next questions concern suitability, availability and written service scope. It should not label itself the individual worker’s employer merely because it receives the service.",
+            "Different planning example: a household asks about renewal for a worker already in an established arrangement. The team first identifies the current record, the named parties and the action requested. The document ledger then follows that confirmed transaction. A new recruitment checklist copied from another family would not establish what this renewal needs. Neither example describes an approved application or a currently available candidate."
+          ]
+        },
+        {
+          "heading": "10. Follow up with a specific question and retain the result",
+          "paragraphs": [
+            "A useful update identifies the case, the last confirmed action, the record still under review and the person responsible for the next step. Ask whether the request is for missing information, a clearer copy or an additional official step. Confirm which version should be used before sending replacements.",
+            "Suggested message: “For the document review discussed with your team, please confirm which item remains outstanding, why it is needed and the agreed channel for supplying it.” Add private references only through that channel. Keep the completed outcome separately from a payment receipt or submission acknowledgement, and review any instructions that accompany it."
+          ]
+        },
+        {
+          "heading": "11. Take the right next step with INAYA",
+          "paragraphs": [
+            "The website booking form sends enquiry details to the INAYA team. It does not upload identity files or submit an official application. Use the team’s phone or WhatsApp contact to describe your request and agree any later document-sharing step. The Ajman office is at Grand Mall, Ground Floor, Al Rashidiya 3; confirm the requested service and arrangements before relying on a visit or start date.",
+            "Use the related visa-preparation guide for a processing question, the hiring guide for a new recruitment discussion and the contracts or cancellation guides when an existing arrangement is changing. These resources help you prepare questions; the final document list and official outcome depend on the actual case."
+          ]
         }
       ],
       "nextSteps": [
         {
-          "label": "Review the hiring process",
+          "label": "Use the Ajman application-readiness ledger",
+          "route": "blog/housemaid-visa-ajman-application-readiness-ledger"
+        },
+        {
+          "label": "Prepare a visa or sponsorship case",
+          "route": "blog/domestic-worker-visa-sponsorship-support"
+        },
+        {
+          "label": "Review employer and document categories",
+          "route": "blog/domestic-worker-employer-eligibility-documents"
+        },
+        {
+          "label": "Understand the hiring discussion",
           "route": "blog/uae-domestic-worker-hiring-process"
         },
         {
-          "label": "See INAYA document guidance",
+          "label": "Read the contracts and renewal guide",
+          "route": "blog/domestic-worker-contracts-renewal"
+        },
+        {
+          "label": "Separate cancellation records",
+          "route": "blog/domestic-worker-contract-permit-residence-cancellation"
+        },
+        {
+          "label": "INAYA document guidance",
           "route": "documents-required"
         },
         {
-          "label": "Prepare an enquiry",
+          "label": "Send a service enquiry",
           "route": "booking"
         },
         {
-          "label": "Read common questions",
-          "route": "faq"
-        },
-        {
-          "label": "Contact the team",
+          "label": "Contact INAYA",
           "route": "contact"
         }
       ],
-      "sourceIntro": "Official document and contract references",
-      "sourceNote": "The official sources explain the applicable employment and processing requirements. INAYA’s managed-service inclusions and commercial terms are stated separately above and in the written quotation."
+      "sourceIntro": "Official process references",
+      "sourceNote": "Official process information was checked on 29 October 2026. Select the relevant service and applicant category when checking current instructions. The worksheets and examples here are practical planning aids. INAYA’s managed-service inclusions are separate business terms recorded in the quotation and agreement."
     },
     "ar": {
-      "title": "المستندات التي تجهزها للاستفسار عن العمالة المنزلية",
-      "description": "ميّز بين معلومات الاستفسار الأولي ووثائق الهوية والعقد التي قد تتطلبها معاملة رسمية للعمالة المساعدة في الإمارات.",
-      "lead": "يمكنك البدء بشرح احتياجات المنزل. وقد تلزم لاحقاً مستندات هوية وطلب لإجراء رسمي، لكن القائمة الدقيقة تعتمد على الترتيب وصفة صاحب العمل. تأكد من المتطلبات الحالية قبل إرسال أي وثيقة.",
+      "title": "مستندات الاستفسار عن العمالة المنزلية في عجمان",
+      "description": "جهز ملف مستندات يناسب حالة العمالة المنزلية: معلومات الاستفسار وأطراف التعاقد والسجلات المطلوبة ومراجعة الجاهزية والمشاركة الخاصة مع عناية.",
+      "lead": "ابدأ بالخدمة المنزلية أو المعاملة التي تحتاجها، لا بجمع جميع وثائقك الشخصية وإرسالها. تختلف معلومات الاستفسار الأولي والخدمة الشهرية المدارة والطلب الرسمي للعمالة المنزلية. يساعدك هذا الدليل على تحديد الحالة وتنظيم السجلات المطلوبة وتأكيد قناة خاصة للمشاركة قبل التقديم.",
       "sections": [
         {
-          "heading": "للمحادثة الأولى، صف الخدمة المطلوبة",
+          "heading": "1. اجعل المحادثة الأولى مفيدة دون إرسال ملفات الهوية",
           "paragraphs": [
-            "جهز موقع العمل والفترة المناسبة للبدء والمهام والجدول ووسيلة التواصل المفضلة. إذا كنت تحتاج دوراً محدداً، اشرح الأعمال الفعلية بدلاً من الاعتماد على اسم الوظيفة وحده.",
-            "اسأل عن ترتيب الخدمة المتاح والمستندات التي يتطلبها. لا يعني النقاش الأولي ضرورة إرسال جميع الوثائق الرسمية فوراً."
-          ]
-        },
-        {
-          "heading": "للمعاملة الرسمية، راجع قائمة الوزارة الحالية",
-          "paragraphs": [
-            "تذكر خدمة عقد العامل المساعد لدى وزارة الموارد البشرية والتوطين أمثلة تشمل صورة جواز صاحب العمل وصورة جواز العامل وصورته الشخصية ومستندات التأمين وعقد العمل الموقع. وتحدد الخدمة كذلك شروط صلاحية لبعض وثائق الهوية. قد تختلف المجموعة اللازمة بحسب الخدمة وصفة صاحب العمل.",
-            "قد تنطبق متطلبات إضافية للهوية أو الإقامة على المقيم أو المستثمر. اسأل مقدم الخدمة عن المعاملة الرسمية التي ستستخدم، وتحقق من القائمة الحالية في صفحة الوزارة قبل تجهيز الطلب."
+            "وضح الإمارة وموقع العمل والمهام والترتيب المفضل والفترة التي تأمل بدء الخدمة خلالها. اشرح المهارات أو احتياجات التواصل من خلال أعمال المنزل الفعلية. وإذا كنت تعرف العاملة المقصودة أو لديك طلب جارٍ، فاذكر ذلك؛ لأنه يغير السؤال الذي يحتاج الفريق إلى مراجعته.",
+            "يكون الوصف المختصر أنسب للمناقشة الأولى من إرسال صور الجوازات والهويات والملفات الطبية دون طلب. اسأل هل الخطوة التالية عرض خدمة أم مناقشة مرشحة أم مراجعة معاملة رسمية معينة. يظل موعد البدء المفضل طلباً للتخطيط إلى حين إكمال الخطوات المطلوبة للحالة وتأكيد الترتيب كتابةً."
           ],
           "points": [
-            "راجع الأسماء وصلاحية الوثائق قبل مشاركة النسخ.",
-            "تأكد ممن سيستلم كل مستند وسبب الحاجة إليه.",
-            "استخدم وسيلة مشاركة آمنة ومتفقاً عليها لوثائق الهوية.",
-            "احتفظ بنسخة من الاتفاق النهائي الموقع والإيصالات الرسمية."
+            "جهز وصفاً واحداً للعمل والترتيب المطلوب.",
+            "اذكر وجود عاملة أو طلب قائم دون وضع أرقام الوثائق الخاصة في رسالة عامة.",
+            "اسأل عما يحتاجه الفريق في الخطوة التالية وسبب ارتباطه بطلبك."
           ]
         },
         {
-          "heading": "راجع الاتفاق قبل التوقيع",
+          "heading": "2. حدد مسار المستندات وفق الطلب الفعلي",
           "paragraphs": [
-            "تدرج خدمة عقد عمل العامل المساعد الحالية لدى الوزارة عقد عمل موقعاً من الطرفين ضمن المستندات المطلوبة. راجع العمل والمهام والمكان والأجر والشروط المقترحة وفق مناقشتك مع مقدم الخدمة، واطلب التصحيح قبل التوقيع إذا لم يطابق الوصف ما اتفقتم عليه.",
-            "ميّز بين شروط الاستقدام أو الخدمة وعقد العمل؛ فقد تحدد وثيقتان التزامات مختلفة. اطلب شرحاً واضحاً للرسوم الرسمية ورسوم الخدمة وشروط الدعم في الوثائق التي تنطبق على حالتك."
-          ]
+            "استخدم المصفوفة لتنظيم المحادثة. صفوفها أسئلة ينبغي حسمها، وليست قائمة وثائق إلزامية لكل أسرة. أكد مقدم الطلب وصاحب العمل أو الكفيل والمعاملة قبل جمع الملفات. لا تفترض أن الأسرة المستفيدة من خدمة مدارة هي أيضاً صاحبة عمل العاملة.",
+            "يحتاج التجديد أو تغيير ترتيب قائم أو الإلغاء إلى تحديد السجل الحالي المعني. وقد تختلف فئة مقدم الطلب في حالة صاحب عمل منزلي جديد عنها في خدمة تديرها وكالة. اترك الفئة غير المحسومة للمراجعة بدلاً من اختيار قائمة تبدو قريبة من حالتك دون تأكيد."
+          ],
+          "table": {
+            "caption": "مصفوفة لتخطيط استفسار مستندات العمالة المنزلية",
+            "columns": [
+              "الطلب",
+              "ما توضحه أولاً",
+              "ما تؤكده قبل مشاركة الملفات"
+            ],
+            "rows": [
+              [
+                "خدمة منزلية مدارة",
+                "الدور والمنطقة والروتين والترتيب المطلوب",
+                "أطراف الوكالة والأسرة والمستندات المتعلقة بالخدمة"
+              ],
+              [
+                "حالة جديدة لصاحب عمل منزلي",
+                "الترتيب المقترح ووضع العاملة الحالي",
+                "الخدمة الرسمية وفئة مقدم الطلب وقائمة السجلات المطلوبة"
+              ],
+              [
+                "تجديد لعاملة موجودة",
+                "العقد أو سجل الإقامة المراد تجديده",
+                "السجل الحالي وإجراء التجديد وقائمة الحالة"
+              ],
+              [
+                "تغيير ترتيب أو إنهاؤه",
+                "التغيير المطلوب ووضع التوظيف القائم",
+                "السجلات المتأثرة والأطراف وتعليمات الخطوة التالية"
+              ],
+              [
+                "طلب مقدم بالفعل",
+                "الإجراء المطلوب والحالة الأخيرة",
+                "مرجع الطلب وما طلب استكماله وقناة المتابعة المخولة"
+              ]
+            ]
+          }
         },
         {
-          "heading": "استخدم قنوات استفسار عناية بالشكل المناسب",
+          "heading": "3. افصل مجموعات السجلات بدلاً من جمعها في قائمة واحدة",
           "paragraphs": [
-            "يرسل نموذج الحجز في هذا الموقع بيانات استفسارك إلى فريق عناية؛ ولا يقدم طلباً رسمياً أو يرفع مستندات. تواصل مع فريق عناية هاتفياً أو عبر واتساب لمعرفة الخطوة التالية، واسأل عن طريقة مشاركة المستندات الحساسة عند الحاجة إليها.",
-            "إذا لم تتأكد من ضرورة وثيقة معينة، فاسأل قبل إرسالها. ينبغي أن توجه تعليمات خدمة الوزارة الحالية القائمة النهائية للطلب."
+            "عند طلب وثيقة، سجل الغرض منها والمعاملة التي تدعمها. فقد يكون للشخص اتفاق خدمة وسجل توظيف وسجل إقامة؛ ولا يثبت أحدها اكتمال البقية. ينبغي لمن يتابع الحالة توضيح السجل المناسب ولماذا يحتاج إليه في هذه الخطوة تحديداً.",
+            "تفصل خدمة الإقامة لدى الهيئة بين فئات المتقدمين، وترتبط إجراءات الإصدار بطلب الهوية الإماراتية. اختر الفئة الفعلية؛ فالقوائم الأخرى الظاهرة في الصفحة ليست قائمة للعمالة المنزلية."
+          ],
+          "table": {
+            "caption": "مجموعات تراجع عند طلبها للحالة فقط",
+            "columns": [
+              "مجموعة السجلات",
+              "ما الذي تستوضحه؟",
+              "مراجعة مفيدة"
+            ],
+            "rows": [
+              [
+                "هوية العاملة أو صورتها",
+                "الوثيقة أو الصيغة التي تطلبها الخدمة المحددة",
+                "وضوح النسخة وتطابق الأسماء والإصدار المطلوب"
+              ],
+              [
+                "هوية مقدم الطلب أو صاحب العمل",
+                "من يقدم الطلب أو يسمى صاحب عمل فعلياً",
+                "صحة الشخص أو الجهة ومراجعة الصلاحية المطلوبة"
+              ],
+              [
+                "العقد وشروط الخدمة",
+                "الأطراف والمهام والترتيب الذي تغطيه كل وثيقة",
+                "مطابقة المناقشة وحسم التصحيحات"
+              ],
+              [
+                "التصريح أو الإقامة أو الهوية القائمة",
+                "السجل الحالي الذي تتعلق به المعاملة",
+                "المرجع الصحيح وأحدث نتيجة معروفة"
+              ],
+              [
+                "السجل الطبي أو التأميني",
+                "السجل الرسمي المناسب والجهة التي تحتاجه",
+                "مشاركة المطلوب فقط عبر القناة الخاصة المتفق عليها"
+              ],
+              [
+                "الطلب والدفع",
+                "ما قدم والإجراء المقصود ونتيجته",
+                "تمييز المرجع والإيصال والنتيجة المكتملة"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "4. أنشئ سجل جاهزية بحدود واضحة",
+          "paragraphs": [
+            "خصص سجلاً خاصاً للحالة المحددة. يمكن أن يتضمن الوثيقة المطلوبة ومن طلبها والغرض منها والنسخة المقدمة وحالة مراجعتها والخطوة التالية. يستطيع السجل توضيح جاهزية المعلومات للمراجعة، لكنه لا يمنح الأهلية ولا يحل محل القرار الرسمي.",
+            "استخدم أوصاف الحالة باتساق. إذا أرسلت الملف ولم يراجعه المستلم بعد، فسجله مقدماً للمراجعة. وإذا بقي اختلاف، فاكتب السؤال المطلوب حسمه. تجنب كلمة مكتمل لوصف ملف المستندات والطلب الموافق عليه معاً؛ فهما نتيجتان مختلفتان."
+          ],
+          "table": {
+            "caption": "دليل مبسط لحالة الجاهزية",
+            "columns": [
+              "الحالة",
+              "معناها",
+              "الخطوة التالية"
+            ],
+            "rows": [
+              [
+                "لم تطلب",
+                "لا توجد حاجة مؤكدة لهذا السجل في الخطوة الحالية",
+                "لا ترسله لمجرد وجوده في قائمة أخرى"
+              ],
+              [
+                "مطلوبة",
+                "حدد المستلم المختص السجل المطلوب",
+                "أكد الغرض والصيغة وقناة المشاركة"
+              ],
+              [
+                "قدمت للمراجعة",
+                "سلمت نسخة من السجل",
+                "انتظر نتيجة المراجعة أو اطلب تأكيدها"
+              ],
+              [
+                "تحتاج إلى توضيح",
+                "يوجد سؤال عن الاسم أو الإصدار أو المتطلب",
+                "حدد من يوضحه ولا تخمن أو تعدل الدليل"
+              ],
+              [
+                "جاهزة للخطوة المتفق عليها",
+                "عولجت المراجعة المطلوبة",
+                "أكد الإجراء التالي؛ فهذا لا يعني الموافقة الرسمية"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "5. قارن الأسماء والمراجع والإصدارات قبل الاعتماد عليها",
+          "paragraphs": [
+            "راجع كتابة الأسماء وترتيبها وفق سجل الهوية المناسب، وقارن العاملة وصاحب العمل الواردين في الوثائق. إذا اختلف إصداران، فاسأل متابع المعاملة عن النسخة الحالية. لا تغير اسماً أو تاريخاً أو صورة وثيقة بنفسك لجعل السجلات تبدو متطابقة.",
+            "استخدم أسماء ملفات واضحة، وافصل النسخ السابقة عن النسخة الجاري مراجعتها. سجل تاريخ التصحيح وسببه. وإذا صدر جواز جديد أو سجل محدث، فاسأل عن أثره في المعلومات المطلوبة للطلب. تعتمد صلاحية الوثيقة على الخدمة؛ ولا يحدد هذا الدليل مدة صلاحية موحدة لجميع الحالات."
           ]
         },
         {
-          "heading": "توظيف الوكالة ومسؤوليات الأسرة",
+          "heading": "6. اتفق على طريقة مشاركة السجلات الحساسة",
+          "paragraphs": [
+            "أكد المستلم والقناة عبر بيانات عناية الرسمية قبل مشاركة السجلات الشخصية. اسأل هل تحتاج النسخة الآن ومن يراجعها وهل يلزم إبراز أصلها ضمن الإجراء الرسمي المعني. لا تضع وثائق الهوية أو مراجع الطلب الكاملة أو التفاصيل الطبية في التعليقات العامة أو ورقة مقارنة منزلية مشتركة.",
+            "احتفظ بالتحكم في كلمات المرور ورموز التحقق والدخول إلى الحسابات. إذا احتاج الإجراء الرسمي إلى تحققك أو مشاركتك، فاطلب تعليمات واضحة ونفذ هذا الجزء بنفسك. لا تحجب أجزاء من وثيقة رسمية أو تعدلها إلا بعد تأكيد ما تقبله الجهة المستلمة. واحتفظ بالسجلات اللازمة لفهم اتفاقك ومعاملتك."
+          ],
+          "points": [
+            "تحقق من المستلم قبل إرسال ملف حساس.",
+            "دوّن ما أرسلته والحالة التي يتعلق بها.",
+            "اسأل قبل إرسال سجل غير متعلق أو تكرار مجموعة كبيرة من الوثائق.",
+            "استخدم القناة الخاصة المتفق عليها؛ فالاستفسار عبر الموقع ليس تقديم مستندات."
+          ]
+        },
+        {
+          "heading": "7. اقرأ الاتفاقات قبل التوقيع وميز أطرافها",
+          "paragraphs": [
+            "راجع العمل والمهام والمكان والأجر وبقية الشروط وفق المناقشة. اقرأ الإقرارات واطلب التصحيح إذا لم تصف الوثيقة الوقائع بدقة. احتفظ بنسخة الاتفاق النهائي الذي توقعه؛ فقد لا تتضمن المسودة أو عرض السعر السابقان الشروط النهائية.",
+            "قد تصف شروط الاستقدام أو الخدمة المنزلية وعقد توظيف العاملة علاقات مختلفة. اسأل أي وثيقة تحدد رسوم الخدمة ومن يتحمل التزامات التوظيف وأين تسجل شروط الدعم أو الإنهاء. لا يثبت توقيع اتفاق العميل وحده تقديم الطلب الرسمي أو اكتماله."
+          ]
+        },
+        {
+          "heading": "8. سجل ترتيب عناية الشهري المدار بصورة صحيحة",
           "paragraphs": [
             "في طلب الخدمة الشهرية المدارة، وثق الوكالة صاحبة العمل والكفيل ومنزلك بصفته المستفيد. تشمل الخدمة إدارة الوكالة للأجر والتزامات التوظيف المنطبقة، ويسجل الاتفاق مسؤوليات المنزل. استخدم هذه الأطراف المسماة لتحديد المستندات الصحيحة؛ فدفعة الخدمة ليست أجراً ثانياً للعاملة."
           ],
@@ -770,48 +1079,85 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
             "يبدأ العمل بعد الحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.",
             "رسوم الخدمة الشهرية لا تحل محل عقد العمل ولا تلغي الحقوق القانونية."
           ]
+        },
+        {
+          "heading": "9. مثالان: استفساران مختلفان وتجهيز مختلف",
+          "paragraphs": [
+            "مثال للتخطيط: تريد أسرة في عجمان مساعدة شهرية مدارة للتنظيف وتحضير الوجبات، ولم تختر عاملة بعد. يمكن أن يصف سجلها الأول المهام وروتين المنزل والفترة المفضلة للبدء. تتعلق الأسئلة التالية بالملاءمة والتوفر ونطاق الخدمة المكتوب. ولا تسجل الأسرة نفسها صاحبة عمل للعاملة لمجرد أنها تستفيد من الخدمة.",
+            "مثال مختلف: تسأل أسرة عن تجديد لعاملة ضمن ترتيب قائم بالفعل. يحدد الفريق أولاً السجل الحالي والأطراف والإجراء المطلوب، ثم يتبع سجل المستندات هذه المعاملة المؤكدة. لا تثبت قائمة استقدام جديدة من أسرة أخرى ما يحتاجه التجديد. ولا يمثل أي من المثالين طلباً موافقاً عليه أو مرشحة متاحة حالياً."
+          ]
+        },
+        {
+          "heading": "10. تابع بسؤال محدد واحتفظ بالنتيجة",
+          "paragraphs": [
+            "يحدد التحديث المفيد الحالة وآخر إجراء مؤكد والسجل الذي ما زال يراجع والمسؤول عن الخطوة التالية. اسأل هل المطلوب معلومة ناقصة أم نسخة أوضح أم خطوة رسمية إضافية. أكد الإصدار المطلوب استخدامه قبل إرسال بدائل للوثائق السابقة.",
+            "رسالة مقترحة: «بخصوص مراجعة المستندات التي ناقشتها مع فريقكم، يرجى تأكيد العنصر المتبقي وسبب الحاجة إليه وقناة تقديمه المتفق عليها». أضف المراجع الخاصة عبر تلك القناة فقط. احتفظ بالنتيجة المكتملة منفصلة عن إيصال الدفع أو إشعار تقديم الطلب، وراجع التعليمات المرافقة لها."
+          ]
+        },
+        {
+          "heading": "11. اختر الخطوة المناسبة مع عناية",
+          "paragraphs": [
+            "يرسل نموذج الحجز في الموقع تفاصيل الاستفسار إلى فريق عناية؛ ولا يرفع ملفات الهوية ولا يقدم طلباً رسمياً. استخدم الهاتف أو واتساب لشرح طلبك والاتفاق على أي مشاركة لاحقة للوثائق. يقع مكتب عجمان في جراند مول، الطابق الأرضي، الراشدية 3؛ وأكد الخدمة والترتيب المطلوبين قبل الاعتماد على زيارة أو موعد بدء.",
+            "راجع دليل تجهيز التأشيرة لسؤال يتعلق بالإجراءات، ودليل الاستقدام لمناقشة توظيف جديد، ودليل العقود أو الإلغاء عند تغيير ترتيب قائم. تساعد الموارد على إعداد الأسئلة؛ وتعتمد القائمة النهائية للمستندات والنتيجة الرسمية على الحالة الفعلية."
+          ]
         }
       ],
       "nextSteps": [
         {
-          "label": "راجع خطوات الاستقدام",
+          "label": "استخدم سجل جاهزية طلب تأشيرة العاملة في عجمان",
+          "route": "blog/housemaid-visa-ajman-application-readiness-ledger"
+        },
+        {
+          "label": "جهز حالة تأشيرة أو كفالة",
+          "route": "blog/domestic-worker-visa-sponsorship-support"
+        },
+        {
+          "label": "راجع فئات صاحب العمل والمستندات",
+          "route": "blog/domestic-worker-employer-eligibility-documents"
+        },
+        {
+          "label": "افهم مناقشة الاستقدام",
           "route": "blog/uae-domestic-worker-hiring-process"
+        },
+        {
+          "label": "اقرأ دليل العقود والتجديد",
+          "route": "blog/domestic-worker-contracts-renewal"
+        },
+        {
+          "label": "ميز سجلات الإلغاء",
+          "route": "blog/domestic-worker-contract-permit-residence-cancellation"
         },
         {
           "label": "إرشادات عناية للمستندات",
           "route": "documents-required"
         },
         {
-          "label": "جهز استفسارك",
+          "label": "أرسل استفسار خدمة",
           "route": "booking"
         },
         {
-          "label": "اقرأ الأسئلة الشائعة",
-          "route": "faq"
-        },
-        {
-          "label": "تواصل مع الفريق",
+          "label": "تواصل مع عناية",
           "route": "contact"
         }
       ],
-      "sourceIntro": "مراجع رسمية للمستندات والعقود",
-      "sourceNote": "تشرح المصادر الرسمية متطلبات التوظيف والإجراءات المنطبقة. وتبين أعلاه عناصر خدمة عناية المدارة وشروطها التجارية بصورة منفصلة، كما تسجل في عرض السعر المكتوب."
+      "sourceIntro": "مراجع الإجراءات الرسمية",
+      "sourceNote": "روجعت معلومات الإجراءات الرسمية في 29 أكتوبر 2026. اختر الخدمة وفئة مقدم الطلب المناسبتين عند مراجعة التعليمات الحالية. الجداول والأمثلة هنا أدوات عملية للتخطيط. وتبقى عناصر خدمة عناية المدارة شروطاً تجارية منفصلة تسجل في العرض والاتفاق."
     },
     "sources": [
       {
-        "en": "MOHRE: domestic workers employers guide (English PDF)",
-        "ar": "وزارة الموارد البشرية والتوطين: دليل أصحاب العمل (ملف PDF بالإنجليزية)",
-        "url": "https://www.mohre.gov.ae/assets/download/5055543/domestic-workers-employers-guide-en_638924949072877160.pdf.aspx"
+        "en": "ICP: residence issuance and applicant categories (English)",
+        "ar": "الهيئة الاتحادية: إصدار الإقامة وفئات المتقدمين (بالإنجليزية)",
+        "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
       },
       {
-        "en": "MOHRE: new domestic worker employment contract (English)",
-        "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالإنجليزية)",
-        "url": "https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+        "en": "ICP: residence renewal and applicant categories (English)",
+        "ar": "الهيئة الاتحادية: تجديد الإقامة وفئات المتقدمين (بالإنجليزية)",
+        "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e66"
       },
       {
-        "en": "MOHRE: new domestic worker employment contract (Arabic)",
-        "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالعربية)",
-        "url": "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
+        "en": "ICP: residence cancellation and domestic-worker routing (English)",
+        "ar": "الهيئة الاتحادية: إلغاء الإقامة ومسار العمالة المنزلية (بالإنجليزية)",
+        "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e68"
       }
     ]
   },
@@ -1756,191 +2102,561 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   {
     "slug": "domestic-worker-visa-sponsorship-support",
     "published": "2026-10-11",
-    "updated": "2026-10-12",
+    "updated": "2026-10-29",
     "en": {
-      "title": "Preparing a domestic worker visa or sponsorship case",
-      "description": "Prepare questions for INAYA’s complete visa-processing support and confirm the case-specific documents, authority requirements, fees and next steps.",
+      "title": "Domestic-worker visa support in Ajman: stages and documents",
+      "description": "Plan domestic-worker visa support with INAYA: identify the transaction, employer and authority route, confirm document hand-offs and track the actual result.",
       "lead": "INAYA provides complete visa-processing support: document guidance, application submission, status change, medical processing, Emirates ID processing, insurance processing and end-to-end case processing. Requirements, fees, eligibility and timelines depend on your case and the relevant authorities.",
       "sections": [
         {
-          "heading": "Explain your current situation before choosing a process",
+          "heading": "1. Start with the transaction, the parties and the present record",
           "paragraphs": [
-            "Describe the proposed household arrangement, emirate and current stage of the case. Ask which official service and employer category apply, and whether any existing residence or sponsorship situation needs review. Do not assume a new application and a transfer follow identical steps.",
-            "The initial discussion helps identify the correct next step; it does not establish eligibility or approve a transfer. Share sensitive identity documents only when needed through an agreed channel. The website enquiry form does not upload documents or submit an official application."
+            "Explain what you want to achieve: a new domestic-worker arrangement, review of an existing case, renewal, a proposed sponsorship change or ending a current arrangement. Give the emirate, the current stage and whether the worker is already identified. Describe the current situation accurately instead of selecting a process from a headline alone.",
+            "Then identify the employer or sponsor named in the records and the household receiving the service. A household may be the beneficiary of a managed service rather than the employer. A worker’s existing residence document does not by itself settle whether a different work or sponsorship arrangement is permitted. Ask which records and parties must be reviewed before any next step is confirmed."
           ]
         },
         {
-          "heading": "Understand the support INAYA provides",
+          "heading": "2. Decide which enquiry you are making before comparing quotations",
           "paragraphs": [
-            "The support covers coordination and processing for the steps listed below as applicable to the individual case. Confirm what is needed, who handles each part and which documents must be supplied. A listed support step does not mean it is required in every case.",
-            "Medical processing refers to support with the official processing step, not clinical care, nursing or treatment provided by INAYA. Government and other relevant authorities determine requirements and decisions; end-to-end case support does not guarantee approval or a completion date."
+            "The same phrase, maid visa, can describe different customer questions. Use the matrix below to identify yours. It is an enquiry aid rather than an eligibility ruling or a complete application sequence. Where the arrangement is unclear, ask INAYA to identify the service that can be supported before sending documents or making assumptions about charges.",
+            "A new request and a change to an existing record should remain distinguishable. If you have already submitted a transaction through another channel, tell the team and keep its reference available privately. Ask how it affects the proposed next step instead of starting a second application simply to obtain an update."
           ],
           "table": {
-            "caption": "INAYA visa-processing support and case questions",
+            "caption": "Domestic-worker processing enquiries and the first confirmation",
+            "columns": [
+              "Enquiry",
+              "Establish first",
+              "What to request in writing"
+            ],
+            "rows": [
+              [
+                "Managed monthly household service",
+                "The named agency and household arrangement",
+                "Included agency processing and household responsibilities"
+              ],
+              [
+                "Separate visa-processing request",
+                "The specific action and applicant or employer category",
+                "Case scope, requested records and itemised quotation"
+              ],
+              [
+                "Renewal for an existing worker",
+                "Which contract, permit or residence record is involved",
+                "Applicable route and the next action for that record"
+              ],
+              [
+                "Proposed sponsorship change",
+                "Existing employment and residence situation",
+                "Whether the requested support and route apply to this case"
+              ],
+              [
+                "Ending an arrangement",
+                "The service agreement and official records concerned",
+                "Records to address and instructions following the completed result"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "3. Understand how the official stages connect",
+          "paragraphs": [
+            "ICP describes the Domestic Workers Work Bundle as a connected journey involving entry permission, medical fitness, biometrics, Emirates ID and residence. Confirm which stages actually apply to the case.",
+            "Use the table in reading order to review the case, not as a mandatory authority sequence. An existing record may mean a particular action is different or unnecessary. Confirm linked processing and required personal participation instead of opening a separate manual application for every row."
+          ],
+          "table": {
+            "caption": "A case-dependent stage and hand-off planner",
+            "columns": [
+              "Review stage",
+              "Question to resolve",
+              "Who clarifies the hand-off",
+              "Record to retain"
+            ],
+            "rows": [
+              [
+                "1. Classify the request",
+                "New arrangement, renewal, proposed change or ending?",
+                "Household and INAYA identify the actual case",
+                "Named parties and requested action"
+              ],
+              [
+                "2. Employment or work-entry step, if applicable",
+                "Which MoHRE domestic-worker service and contract or permit record matter?",
+                "Relevant applicant or employer and the team handling that service",
+                "Applicable agreement and transaction reference"
+              ],
+              [
+                "3. Personal steps, where required",
+                "What official medical, biometric or identity participation is requested?",
+                "Worker or applicant follows the confirmed official instructions",
+                "Relevant appointment, participation or result record"
+              ],
+              [
+                "4. Residence and linked ID",
+                "Which ICP process and existing record apply?",
+                "The responsible applicant and relevant official channel",
+                "Application reference and actual result"
+              ],
+              [
+                "5. Review the outcome",
+                "What is completed and which next-step instruction remains?",
+                "Responsible party checks the result with the household",
+                "Completed result and next-action record"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "4. Agree INAYA’s support and each hand-off",
+          "paragraphs": [
+            "INAYA’s support is for domestic workers and related documents. It covers coordination and processing within the written scope applicable to the case. Confirm what the team handles, what you or the worker must do personally and where an authority, insurer or official service provider must make the decision or supply the result.",
+            "Medical processing means support with the official step; INAYA is not providing clinical care, nursing or treatment. A statement that support is end-to-end describes case coordination. It does not promise that an authority will approve the request or that it will finish by a particular date."
+          ],
+          "table": {
+            "caption": "Support, hand-off and a useful record to retain",
             "columns": [
               "Support",
-              "What to clarify"
+              "Clarify the hand-off",
+              "Useful record"
             ],
             "rows": [
               [
                 "Document guidance",
-                "The list for the correct service and applicant category"
+                "The applicable service and reason for each requested record",
+                "Case-specific checklist and clarification notes"
               ],
               [
                 "Application submission",
-                "Required information and the applicable authority"
+                "Data review, participation and agreed submission channel",
+                "Submitted transaction reference and acknowledgement"
               ],
               [
-                "Status change",
-                "Whether this step applies to the present case"
+                "Status change where applicable",
+                "Whether it applies and which existing record matters",
+                "Relevant instruction and actual transaction outcome"
               ],
               [
                 "Medical processing",
-                "The applicable official medical processing requirements"
+                "Official appointment or processing step and personal participation",
+                "The required official appointment or result record"
               ],
               [
                 "Emirates ID processing",
-                "The related identity application requirements"
+                "The related application and any requested attendance",
+                "Application or completion reference as applicable"
               ],
               [
                 "Insurance processing",
-                "Applicable insurance requirements and documentation"
+                "Applicable policy, person covered and requested documentation",
+                "The policy or relevant processing record"
               ],
               [
-                "End-to-end case processing",
-                "Case stages, responsibilities and follow-up"
+                "Case follow-up",
+                "Who acts on an outstanding request and updates the case",
+                "Latest status, source and next-action owner"
               ]
             ]
           }
         },
         {
-          "heading": "Use official references for the correct category",
+          "heading": "5. Use the correct authority reference without copying unrelated rules",
           "paragraphs": [
-            "MOHRE’s domestic-worker contract service identifies contract documents and application steps. ICP residence services and Dubai’s GDRFA domestic-worker service provide additional authority context. Select the category that actually applies: a family residence checklist is not automatically a domestic-worker checklist.",
-            "Ask which contract, residence, identity, medical and insurance requirements apply together. Check the current official instructions before submission. Fees and requirements can differ by case and authority, so this guide does not publish a universal salary threshold, government price or processing deadline."
+            "Separate the MoHRE employment-contract or work-permit question from the residence and Emirates ID record in the applicable ICP process. An integrated route can connect them; identify the relevant service rather than assuming one record proves the others.",
+            "For cancellation, ICP specifically directs the domestic-worker residence route through MoHRE or the Domestic Work Bundle, including the linked residence and ID process. This is why a household service-ending message and a completed official cancellation are different records. Confirm the actual transaction and any related next step instead of assuming that one message closes every record.",
+            "Identify the issuing authority from the existing record and confirm the appropriate current channel. If the case requires instructions from another competent authority, use that authority’s applicable service. The office address alone does not establish the route for every residence file."
           ]
         },
         {
-          "heading": "Confirm costs, responsibilities and follow-up",
+          "heading": "6. Keep a private case pack with a practical readiness check",
           "paragraphs": [
-            "Request a written explanation of the proposed support, applicable service charges and official costs, including how they are treated in your quotation. Confirm what happens if further information is requested. Do not assume an advertised monthly package defines every processing cost or guarantees a sponsorship outcome.",
-            "Contact INAYA’s Ajman office by phone or website WhatsApp to review your case and confirm availability. The team handles UAE enquiries subject to service confirmation. Keep the agreed next steps and contact details; an enquiry or appointment discussion is separate from an official application decision."
+            "Build the pack around the confirmed action: requested identity records, applicable agreement, existing permit or residence references where relevant, requested medical or insurance records and transaction receipts. This describes record families to organise, not a list every customer must submit. Ask why an item is needed before adding it.",
+            "Use a readiness check before the next hand-off. Compare names and the relevant versions, identify unanswered questions and confirm who is receiving the information. If an item is unavailable or inconsistent, report that accurately. A neat file does not establish eligibility, and a missing item should not be replaced with an assumption."
+          ],
+          "table": {
+            "caption": "Case-readiness questions before a hand-off",
+            "columns": [
+              "Check",
+              "What to establish",
+              "If unresolved"
+            ],
+            "rows": [
+              [
+                "Action and route",
+                "The actual transaction and official service have been identified",
+                "Clarify before treating a generic checklist as final"
+              ],
+              [
+                "Named parties",
+                "Applicant, employer or sponsor and worker match the case",
+                "Ask which record needs review or correction"
+              ],
+              [
+                "Requested information",
+                "The relevant version is legible and reviewed",
+                "Keep the question open and request specific guidance"
+              ],
+              [
+                "Submission status",
+                "Draft, submitted request and completed result are distinct",
+                "Confirm the reference and latest actual status"
+              ],
+              [
+                "Next action",
+                "A responsible person and agreed follow-up point are recorded",
+                "Ask what remains before the next milestone"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "7. Protect document handling and personal participation",
+          "paragraphs": [
+            "Share sensitive files only when needed through the channel agreed with the INAYA team. Do not attach passports or medical information to a public comment or general planning worksheet. The website enquiry form collects enquiry details; it does not upload documents or submit an official application.",
+            "Keep account passwords and one-time codes private. If the official process needs your own authentication, signature or attendance, ask for the relevant instructions and complete that participation yourself. Read declarations before confirming them. Ask the receiving channel about the correct version or format rather than changing official evidence on your own."
           ]
         },
         {
-          "heading": "Included agency processing and separate visa-only requests",
+          "heading": "8. Keep managed-service inclusions separate from visa-only quotations",
           "paragraphs": [
             "In the managed monthly arrangement, the agency is employer/sponsor and includes wage administration and applicable employment obligations in its charge. The customer is the household beneficiary with responsibilities set out in writing. Use the actual named arrangement to distinguish included agency processing from a visa-only request.",
             "The managed monthly charge includes applicable agency sponsorship and work-permit/residence processing, Emirates ID, required medical-fitness processing and the applicable health-insurance premium. Visa-only services and separately requested sponsorship transfers have their own case-specific scope and itemised quotation. Official approval and timelines remain with the responsible authorities."
+          ],
+          "points": [
+            "The service charge includes the agreed worker salary; the customer does not pay the same salary again separately.",
+            "The written agreement records household responsibilities, including the applicable live-in accommodation, meals, products, equipment, rest, supervision and safe work arrangements.",
+            "Required lawful authorisation and written confirmation precede service commencement; a service payment does not waive statutory rights."
+          ]
+        },
+        {
+          "heading": "9. Review the quotation as a case document",
+          "paragraphs": [
+            "Ask which steps and charges are included in the proposed support and how applicable official costs are treated. Keep the quotation linked to the named service and case. A monthly service charge, a separate visa-processing quotation and a government receipt serve different purposes and should not be treated as interchangeable totals.",
+            "If the route or requested scope changes, ask for written clarification of its effect before relying on the earlier amount. Record payments against the correct transaction and retain the receipts. This guide does not publish one government fee, sponsor-income threshold or completion time for all domestic-worker cases."
+          ]
+        },
+        {
+          "heading": "10. Worked examples: useful questions for different cases",
+          "paragraphs": [
+            "Planning example: a household considers INAYA’s managed monthly service and asks whether it must separately sponsor the worker. The discussion should identify the named agency-employment arrangement and its included processing, then record the household’s responsibilities. It should not copy a separate household-employer application checklist simply because both enquiries concern domestic help.",
+            "Different planning example: someone requests support with an existing worker’s residence renewal and mentions a record submitted through another channel. The first task is to identify that record and the outstanding action. The team can then confirm the support it can provide and the necessary hand-off. The example assumes no particular eligibility, documents, fee or approval.",
+            "If the enquiry instead concerns ending the arrangement, identify whether the question is about the customer agreement, the worker’s employment record or residence. Use the completed relevant result to understand what happens next. Cancellation itself should not be treated as permission to begin work in a different arrangement."
+          ]
+        },
+        {
+          "heading": "11. Follow an actual status, not an expected date",
+          "paragraphs": [
+            "Keep a short progress record showing the last confirmed action, its source and date, an outstanding request, the responsible party and the agreed next review. Separate preparation, submission, a request for more information and a final result. Ask what evidence supports the update rather than treating a paid receipt or an informal expected date as completion.",
+            "A focused follow-up might say: “Please confirm the current status of the transaction we discussed, what action remains and who should complete it.” Send the private reference through the agreed channel. If further information is requested, ask exactly what is needed and which version should replace the earlier one. Keep the completed result with the instructions for the next step."
+          ]
+        },
+        {
+          "heading": "12. Discuss the case with the Ajman team",
+          "paragraphs": [
+            "Contact INAYA’s Grand Mall office in Ajman by its published phone or WhatsApp channel. Start with the requested action, the current situation and whether an application is already in progress. The team receives UAE enquiries subject to service confirmation; an appointment or enquiry discussion is separate from an official decision.",
+            "Use the document-preparation guide to organise requested records, the eligibility guide to frame applicant-category questions, and the contract, sponsorship-responsibilities and cancellation guides for the relevant issue. Confirm the supported route, written scope and next responsible action before treating the case as ready to proceed."
           ]
         }
       ],
       "nextSteps": [
         {
-          "label": "INAYA visa-processing support",
+          "label": "Use the Ajman application-readiness ledger",
+          "route": "blog/housemaid-visa-ajman-application-readiness-ledger"
+        },
+        {
+          "label": "INAYA domestic-worker visa support",
           "route": "services/maid-visa"
         },
         {
-          "label": "Discuss sponsorship transfer support",
+          "label": "Discuss sponsorship-transfer support",
           "route": "services/sponsorship-transfer"
         },
         {
-          "label": "Prepare enquiry information",
+          "label": "Prepare case-specific document records",
           "route": "blog/documents-for-domestic-worker-enquiry"
         },
         {
-          "label": "Review the hiring questions",
-          "route": "blog/uae-domestic-worker-hiring-process"
+          "label": "Review employer and document categories",
+          "route": "blog/domestic-worker-employer-eligibility-documents"
         },
         {
-          "label": "Ask about your case",
+          "label": "Understand sponsorship responsibilities",
+          "route": "blog/domestic-worker-sponsorship-responsibilities"
+        },
+        {
+          "label": "Read contracts and renewal questions",
+          "route": "blog/domestic-worker-contracts-renewal"
+        },
+        {
+          "label": "Separate ending and cancellation records",
+          "route": "blog/domestic-worker-contract-permit-residence-cancellation"
+        },
+        {
+          "label": "Ask INAYA about the actual case",
           "route": "contact"
         }
       ],
-      "sourceIntro": "Current official process references",
-      "sourceNote": "The official sources explain the applicable employment and processing requirements. INAYA’s managed-service inclusions and commercial terms are stated separately above and in the written quotation."
+      "sourceIntro": "Official process and Work Bundle references",
+      "sourceNote": "ICP process information was checked on 29 October 2026. Select the applicable category and current official channel for the actual case. This guide’s hand-off tables and examples are planning aids, not authority decisions. INAYA’s managed-service inclusions and separately quoted support remain distinct commercial terms."
     },
     "ar": {
-      "title": "تجهيز حالة تأشيرة أو كفالة للعمالة المنزلية",
-      "description": "جهز أسئلتك عن دعم عناية الكامل لإجراءات التأشيرة، وأكد المستندات ومتطلبات الجهات والرسوم والخطوات المناسبة لحالتك.",
+      "title": "دعم تأشيرة العمالة المنزلية في عجمان: المراحل والمستندات",
+      "description": "خطط لدعم تأشيرة العمالة المنزلية مع عناية: حدد المعاملة وصاحب العمل والجهة، وأكد تسليم المستندات والمسؤوليات وتابع النتيجة الفعلية.",
       "lead": "تقدم عناية دعماً كاملاً لإجراءات التأشيرة: إرشادات المستندات وتقديم الطلب وتعديل الوضع وإجراءات الفحص الطبي والهوية الإماراتية والتأمين ومتابعة الحالة من البداية إلى النهاية. تعتمد المتطلبات والرسوم والأهلية والمدد على الحالة والجهات المختصة.",
       "sections": [
         {
-          "heading": "اشرح وضعك الحالي قبل اختيار الإجراء",
+          "heading": "1. ابدأ بالمعاملة والأطراف والسجل الحالي",
           "paragraphs": [
-            "وضح ترتيب العمل المنزلي المقترح والإمارة والمرحلة الحالية للحالة. اسأل عن الخدمة الرسمية وصفة صاحب العمل المناسبة، وعن الحاجة إلى مراجعة وضع إقامة أو كفالة قائم. لا تفترض تطابق خطوات الطلب الجديد ونقل الكفالة.",
-            "تساعد المناقشة الأولية على تحديد الخطوة المناسبة، لكنها لا تثبت الأهلية ولا توافق على النقل. شارك وثائق الهوية الحساسة عند الحاجة فقط عبر وسيلة متفق عليها. نموذج الموقع لا يرفع المستندات ولا يقدم طلباً رسمياً."
+            "وضح ما تريد تحقيقه: ترتيب جديد للعمالة المنزلية، أو مراجعة حالة قائمة، أو تجديد، أو تغيير مقترح للكفالة، أو إنهاء ترتيب حالي. اذكر الإمارة والمرحلة الحالية وهل العاملة محددة بالفعل. صف الوضع بدقة بدلاً من اختيار إجراء اعتماداً على عنوان إعلان فقط.",
+            "حدد بعد ذلك صاحب العمل أو الكفيل المسمى في السجلات والأسرة المستفيدة من الخدمة. فقد تكون الأسرة مستفيدة من خدمة مدارة وليست صاحبة عمل العاملة. ولا تحسم وثيقة الإقامة القائمة وحدها السماح بترتيب عمل أو كفالة مختلف. اسأل عن السجلات والأطراف الواجب مراجعتها قبل تأكيد الخطوة التالية."
           ]
         },
         {
-          "heading": "تعرف على الدعم الذي تقدمه عناية",
+          "heading": "2. حدد نوع الاستفسار قبل مقارنة عروض الأسعار",
           "paragraphs": [
-            "يشمل الدعم التنسيق والإجراءات للخطوات المبينة أدناه بحسب انطباقها على الحالة. أكد ما يلزم ومن يتابع كل جزء والمستندات المطلوبة منك. وجود خطوة ضمن نطاق الدعم لا يعني أنها ضرورية في جميع الحالات.",
-            "تعني إجراءات الفحص الطبي الدعم في الخطوة الرسمية، ولا تعني تقديم عناية رعاية سريرية أو تمريضاً أو علاجاً. تحدد الجهات المختصة المتطلبات والقرارات؛ ولا تضمن متابعة الحالة من البداية إلى النهاية الموافقة أو تاريخ إنجاز محدداً."
+            "قد تصف عبارة تأشيرة خادمة أسئلة مختلفة للعملاء. استخدم المصفوفة لتحديد سؤالك؛ فهي أداة للاستفسار وليست حكماً بالأهلية أو تسلسلاً كاملاً للطلبات. إذا لم يتضح الترتيب، فاطلب من عناية تحديد الخدمة التي يمكن دعمها قبل إرسال المستندات أو افتراض التكاليف.",
+            "ميز الطلب الجديد عن تغيير سجل قائم. وإذا قدمت معاملة عبر قناة أخرى، فأخبر الفريق واحتفظ بمرجعها بصورة خاصة. اسأل عن أثرها في الخطوة المقترحة بدلاً من فتح طلب ثانٍ لمجرد الرغبة في معرفة الحالة."
           ],
           "table": {
-            "caption": "دعم عناية لإجراءات التأشيرة وأسئلة الحالة",
+            "caption": "استفسارات إجراءات العمالة المنزلية والتأكيد الأول",
+            "columns": [
+              "الاستفسار",
+              "ما الذي تحدده أولاً؟",
+              "ما الذي تطلبه كتابةً؟"
+            ],
+            "rows": [
+              [
+                "خدمة منزلية شهرية مدارة",
+                "ترتيب الوكالة والأسرة المسميتين",
+                "إجراءات الوكالة المشمولة ومسؤوليات الأسرة"
+              ],
+              [
+                "طلب إجراءات تأشيرة منفصل",
+                "الإجراء المحدد وفئة مقدم الطلب أو صاحب العمل",
+                "نطاق الحالة والسجلات المطلوبة والعرض المفصل"
+              ],
+              [
+                "تجديد لعاملة موجودة",
+                "العقد أو التصريح أو سجل الإقامة المعني",
+                "المسار والخطوة التالية للسجل المحدد"
+              ],
+              [
+                "تغيير كفالة مقترح",
+                "وضع التوظيف والإقامة القائم",
+                "انطباق الدعم والمسار المطلوبين على الحالة"
+              ],
+              [
+                "إنهاء ترتيب",
+                "اتفاق الخدمة والسجلات الرسمية المعنية",
+                "السجلات المطلوب التعامل معها وتعليمات ما بعد النتيجة"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "3. افهم ترابط المراحل الرسمية",
+          "paragraphs": [
+            "تعرض الهيئة باقة العمل للعمالة المنزلية مساراً يربط إذن الدخول واللياقة الطبية والبصمات والهوية والإقامة. أكد المراحل المنطبقة على الحالة الفعلية.",
+            "راجع الحالة وفق ترتيب الجدول، دون اعتباره تسلسلاً إلزامياً للجهات. فقد يجعل سجل قائم الإجراء مختلفاً أو غير مطلوب. أكد ترابط الإجراءات والمشاركة الشخصية اللازمة، بدلاً من فتح طلب يدوي منفصل لكل صف."
+          ],
+          "table": {
+            "caption": "مخطط مراحل وتسليم يعتمد على الحالة",
+            "columns": [
+              "مرحلة المراجعة",
+              "السؤال المطلوب حسمه",
+              "من يوضح التسليم؟",
+              "السجل الذي تحتفظ به"
+            ],
+            "rows": [
+              [
+                "1. تصنيف الطلب",
+                "ترتيب جديد أم تجديد أم تغيير مقترح أم إنهاء؟",
+                "تحدد الأسرة وعناية الحالة الفعلية",
+                "الأطراف المسماة والإجراء المطلوب"
+              ],
+              [
+                "2. خطوة التوظيف أو الدخول للعمل عند انطباقها",
+                "أي خدمة للعمالة المنزلية لدى الوزارة وأي عقد أو تصريح يتعلقان بالحالة؟",
+                "مقدم الطلب أو صاحب العمل والفريق المتابع للخدمة",
+                "الاتفاق المناسب ومرجع المعاملة"
+              ],
+              [
+                "3. المشاركة الشخصية عند طلبها",
+                "ما الفحص أو البصمة أو إجراء الهوية المطلوب رسمياً؟",
+                "تتبع العاملة أو مقدم الطلب التعليمات الرسمية المؤكدة",
+                "سجل الموعد أو المشاركة أو النتيجة المناسب"
+              ],
+              [
+                "4. الإقامة والهوية المرتبطة",
+                "أي إجراء للهيئة وسجل قائم ينطبقان؟",
+                "مقدم الطلب المسؤول والقناة الرسمية المناسبة",
+                "مرجع الطلب والنتيجة الفعلية"
+              ],
+              [
+                "5. مراجعة النتيجة",
+                "ما الذي اكتمل وما التعليمات المتبقية؟",
+                "يراجع الطرف المسؤول النتيجة مع الأسرة",
+                "النتيجة المكتملة وسجل الخطوة التالية"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "4. اتفق على دعم عناية ومسؤولية كل تسليم",
+          "paragraphs": [
+            "يتعلق دعم عناية بالعمالة المنزلية ومستنداتها المرتبطة. ويشمل التنسيق والإجراءات ضمن نطاق مكتوب يناسب الحالة. أكد ما يتولاه الفريق وما يلزمك أو يلزم العاملة تنفيذه شخصياً، وأين تصدر الجهة أو شركة التأمين أو مقدم الخدمة الرسمي القرار أو النتيجة.",
+            "تعني إجراءات الفحص الطبي الدعم في الخطوة الرسمية، ولا تقدم عناية رعاية سريرية أو تمريضاً أو علاجاً. تصف متابعة الحالة من البداية إلى النهاية تنسيق إجراءاتها؛ ولا تعد بموافقة الجهة أو الإنجاز في تاريخ معين."
+          ],
+          "table": {
+            "caption": "الدعم والتسليم والسجل المفيد",
             "columns": [
               "الدعم",
-              "ما الذي تستوضحه؟"
+              "ما الذي تؤكده عند التسليم؟",
+              "سجل مفيد"
             ],
             "rows": [
               [
                 "إرشادات المستندات",
-                "القائمة المناسبة للخدمة وصفة مقدم الطلب"
+                "الخدمة المناسبة وسبب كل سجل مطلوب",
+                "قائمة الحالة وملاحظات التوضيح"
               ],
               [
                 "تقديم الطلب",
-                "المعلومات المطلوبة والجهة المختصة"
+                "مراجعة البيانات والمشاركة وقناة التقديم",
+                "مرجع المعاملة وإشعار تقديمها"
               ],
               [
-                "تعديل الوضع",
-                "مدى انطباق الخطوة على الحالة الحالية"
+                "تعديل الوضع عند انطباقه",
+                "الحاجة إلى الخطوة والسجل القائم المعني",
+                "التعليمات ونتيجة المعاملة الفعلية"
               ],
               [
                 "إجراءات الفحص الطبي",
-                "متطلبات الإجراء الطبي الرسمي المنطبق"
+                "الموعد أو الإجراء الرسمي والمشاركة الشخصية",
+                "الموعد أو سجل النتيجة المطلوب"
               ],
               [
                 "إجراءات الهوية الإماراتية",
-                "متطلبات طلب الهوية المرتبط بالحالة"
+                "الطلب المرتبط وأي حضور يطلب",
+                "مرجع الطلب أو الإنجاز بحسب الحالة"
               ],
               [
                 "إجراءات التأمين",
-                "المتطلبات والمستندات التأمينية المنطبقة"
+                "الوثيقة والشخص المشمول والمستندات المطلوبة",
+                "وثيقة التأمين أو سجل الإجراء المناسب"
               ],
               [
-                "متابعة الحالة من البداية إلى النهاية",
-                "المراحل والمسؤوليات وطريقة المتابعة"
+                "متابعة الحالة",
+                "من يعالج طلب الاستكمال ويحدث الحالة",
+                "الحالة ومصدرها والمسؤول عن الخطوة التالية"
               ]
             ]
           }
         },
         {
-          "heading": "راجع المراجع الرسمية للفئة المناسبة",
+          "heading": "5. استخدم مرجع الجهة الصحيح دون نقل قواعد فئة أخرى",
           "paragraphs": [
-            "تحدد خدمة عقد العامل المساعد لدى الوزارة مستندات العقد وخطوات الطلب. وتوفر خدمات الإقامة لدى الهيئة الاتحادية وخدمة العمالة المنزلية لدى إقامة دبي سياقاً إضافياً. اختر الفئة المنطبقة فعلياً؛ فقائمة إقامة الأسرة ليست تلقائياً قائمة العمالة المساعدة.",
-            "اسأل عن متطلبات العقد والإقامة والهوية والفحص الطبي والتأمين المرتبطة بحالتك، وراجع التعليمات الحالية قبل التقديم. قد تختلف الرسوم والمتطلبات بحسب الحالة والجهة، ولذلك لا ينشر هذا الدليل حداً موحداً للراتب أو سعراً حكومياً أو مهلة إنجاز عامة."
+            "ميز مسألة عقد التوظيف أو تصريح العمل لدى الوزارة عن سجل الإقامة والهوية في إجراء الهيئة المناسب. قد يربط المسار المتكامل بينها؛ فحدد الخدمة المعنية بدلاً من اعتبار سجل واحد دليلاً على اكتمال البقية.",
+            "توجه الهيئة إلغاء إقامة العامل المساعد عبر الوزارة أو باقة العمل المنزلي، بما يشمل الإقامة والهوية المرتبطتين. لذلك يختلف طلب إنهاء الخدمة المنزلية عن نتيجة الإلغاء الرسمية المكتملة. أكد المعاملة والخطوة المرتبطة بها، ولا تفترض أن رسالة واحدة تغلق جميع السجلات.",
+            "حدد جهة الإصدار من السجل الحالي وأكد القناة الرسمية المناسبة. وإذا احتاجت الحالة إلى تعليمات من جهة مختصة أخرى، فاستخدم خدمتها المنطبقة. ولا يحدد عنوان المكتب وحده المسار الصحيح لكل ملف إقامة."
           ]
         },
         {
-          "heading": "أكد التكاليف والمسؤوليات والمتابعة",
+          "heading": "6. جهز ملف حالة خاصاً مع مراجعة عملية للجاهزية",
           "paragraphs": [
-            "اطلب بياناً مكتوباً بالدعم المقترح ورسوم الخدمة والتكاليف الرسمية المنطبقة وطريقة إدراجها في العرض. اسأل عن الخطوة التالية إذا طلبت معلومات إضافية. لا تفترض أن الباقة الشهرية تحدد كل تكلفة للإجراءات أو تضمن نتيجة الكفالة.",
-            "تواصل مع مكتب عناية في عجمان هاتفياً أو عبر واتساب الموقع لمراجعة الحالة وتأكيد التوفر. يستقبل الفريق استفسارات من الإمارات بحسب تأكيد الخدمة. احتفظ بالخطوات المتفق عليها وقنوات التواصل؛ فمناقشة الاستفسار أو الموعد منفصلة عن قرار الطلب الرسمي."
+            "ابن الملف حول الإجراء المؤكد: سجلات الهوية المطلوبة والاتفاق المناسب ومراجع التصريح أو الإقامة عند الحاجة والسجلات الطبية أو التأمينية المطلوبة وإيصالات المعاملة. هذه مجموعات لتنظيم السجلات، وليست قائمة يجب على كل عميل تقديمها. اسأل عن الغرض من العنصر قبل إضافته.",
+            "راجع الجاهزية قبل التسليم التالي. قارن الأسماء والإصدارات المعنية، وحدد الأسئلة المفتوحة وأكد المستلم. إذا تعذرت وثيقة أو اختلفت المعلومات، فوضح ذلك بدقة. لا يثبت الملف المرتب الأهلية، ولا يستعاض عن عنصر ناقص بافتراض غير مؤكد."
+          ],
+          "table": {
+            "caption": "أسئلة الجاهزية قبل تسليم الحالة",
+            "columns": [
+              "المراجعة",
+              "ما الذي تؤكده؟",
+              "عند عدم الحسم"
+            ],
+            "rows": [
+              [
+                "الإجراء والمسار",
+                "تحديد المعاملة والخدمة الرسمية الفعلية",
+                "استوضح قبل اعتماد قائمة عامة نهائية"
+              ],
+              [
+                "الأطراف المسماة",
+                "تطابق مقدم الطلب أو صاحب العمل أو الكفيل والعاملة",
+                "اسأل عن السجل الذي يحتاج إلى مراجعة أو تصحيح"
+              ],
+              [
+                "المعلومات المطلوبة",
+                "وضوح النسخة المعنية ومراجعتها",
+                "أبق السؤال مفتوحاً واطلب إرشاداً محدداً"
+              ],
+              [
+                "حالة التقديم",
+                "تمييز المسودة والطلب المقدم والنتيجة المكتملة",
+                "أكد المرجع وآخر حالة فعلية"
+              ],
+              [
+                "الخطوة التالية",
+                "تحديد المسؤول ونقطة المتابعة المتفق عليها",
+                "اسأل عما يبقى قبل المرحلة التالية"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "7. احمِ مشاركة المستندات والمشاركة الشخصية",
+          "paragraphs": [
+            "شارك الملفات الحساسة عند الحاجة فقط عبر القناة المتفق عليها مع فريق عناية. لا ترفق الجوازات أو المعلومات الطبية بتعليق عام أو ورقة تخطيط مشتركة. يجمع نموذج الاستفسار في الموقع تفاصيل الطلب؛ ولا يرفع الوثائق ولا يقدم معاملة رسمية.",
+            "احتفظ بكلمات المرور ورموز التحقق لنفسك. إذا احتاج الإجراء الرسمي إلى تحققك أو توقيعك أو حضورك، فاطلب التعليمات ونفذ مشاركتك شخصياً. اقرأ الإقرارات قبل تأكيدها. واسأل القناة المستلمة عن الإصدار أو الصيغة الصحيحة بدلاً من تعديل الدليل الرسمي بنفسك."
           ]
         },
         {
-          "heading": "إجراءات الوكالة المشمولة وطلبات التأشيرة المنفصلة",
+          "heading": "8. ميز عناصر الخدمة المدارة عن عروض التأشيرة المنفصلة",
           "paragraphs": [
             "في الترتيب الشهري المدار، تكون الوكالة صاحبة العمل والكفيل وتشمل رسومها إدارة الأجر والتزامات التوظيف المنطبقة. العميل هو المستفيد المنزلي بمسؤوليات مبينة كتابةً. استخدم الترتيب الفعلي المسمى لتمييز إجراءات الوكالة المشمولة عن طلب تأشيرة فقط.",
             "تشمل الرسوم الشهرية المدارة الكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة المنطبقة والهوية الإماراتية وفحص اللياقة الطبية المطلوب وقسط التأمين الصحي المنطبق. ولخدمات التأشيرة وحدها وطلبات نقل الكفالة المنفصلة نطاق خاص بحسب الحالة وعرض مفصل مستقل. وتبقى الموافقات والمواعيد الرسمية من اختصاص الجهات المعنية."
+          ],
+          "points": [
+            "تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى منفصلاً.",
+            "يسجل الاتفاق مسؤوليات الأسرة، بما فيها السكن والطعام للعاملة المقيمة والمنتجات والمعدات والراحة والإشراف والعمل الآمن بحسب الترتيب.",
+            "يسبق بدء الخدمة التصريح النظامي المطلوب والتأكيد المكتوب؛ ولا تلغي دفعة الخدمة الحقوق القانونية."
+          ]
+        },
+        {
+          "heading": "9. راجع عرض السعر بوصفه وثيقة للحالة",
+          "paragraphs": [
+            "اسأل عن الخطوات والتكاليف المشمولة بالدعم المقترح وطريقة احتساب التكاليف الرسمية المنطبقة. اربط العرض بالخدمة والحالة المسميتين. تختلف وظيفة رسوم الخدمة الشهرية وعرض إجراءات التأشيرة المنفصل والإيصال الحكومي، ولا تعاملها بوصفها إجماليات متبادلة.",
+            "إذا تغير المسار أو النطاق، فاطلب توضيح أثره كتابةً قبل الاعتماد على المبلغ السابق. سجل المدفوعات مقابل المعاملة الصحيحة واحتفظ بالإيصالات. لا ينشر الدليل رسماً حكومياً أو حد دخل للكفيل أو مدة إنجاز موحدة لجميع حالات العمالة المنزلية."
+          ]
+        },
+        {
+          "heading": "10. أمثلة عملية لأسئلة حالات مختلفة",
+          "paragraphs": [
+            "مثال للتخطيط: تفكر أسرة في خدمة عناية الشهرية المدارة وتسأل هل تحتاج إلى كفالة العاملة بنفسها بصورة منفصلة. ينبغي تحديد ترتيب توظيف الوكالة المسمى وإجراءاته المشمولة ثم تسجيل مسؤوليات الأسرة. ولا تنقل قائمة طلب صاحب عمل منزلي منفصل لمجرد أن الاستفسارين يتعلقان بالمساعدة المنزلية.",
+            "مثال آخر: يطلب شخص دعماً لتجديد إقامة عاملة موجودة ويذكر معاملة قدمت عبر قناة أخرى. تبدأ المراجعة بتحديد السجل والإجراء المتبقي، ثم يؤكد الفريق الدعم الذي يمكن تقديمه والتسليم المطلوب. لا يفترض المثال أهلية أو مستندات أو رسوماً أو موافقة محددة.",
+            "إذا كان السؤال عن إنهاء الترتيب، فحدد هل يتعلق باتفاق العميل أم سجل توظيف العاملة أم الإقامة. استخدم نتيجة المعاملة المعنية المكتملة لفهم الخطوة التالية. ولا يعد الإلغاء بذاته إذناً ببدء العمل ضمن ترتيب مختلف."
+          ]
+        },
+        {
+          "heading": "11. تابع الحالة الفعلية بدلاً من موعد متوقع",
+          "paragraphs": [
+            "احتفظ بسجل تقدم مختصر يوضح آخر إجراء مؤكد ومصدره وتاريخه وطلب الاستكمال والمسؤول ونقطة المراجعة المتفق عليها. ميز التجهيز والتقديم وطلب معلومات إضافية والنتيجة النهائية. اسأل عن الدليل الذي يستند إليه التحديث، ولا تعتبر الإيصال المدفوع أو الموعد المتوقع شفهياً اكتمالاً.",
+            "قد تكون المتابعة: «يرجى تأكيد حالة المعاملة التي ناقشناها، والإجراء المتبقي، ومن ينبغي أن ينفذه». أرسل المرجع الخاص عبر القناة المتفق عليها. وإذا طلبت معلومات إضافية، فاسأل عما يلزم بالضبط وعن النسخة التي تستبدل السابقة. احتفظ بالنتيجة المكتملة وتعليمات الخطوة التالية."
+          ]
+        },
+        {
+          "heading": "12. ناقش الحالة مع فريق عجمان",
+          "paragraphs": [
+            "تواصل مع مكتب عناية في جراند مول بعجمان عبر الهاتف أو واتساب المعلنين. ابدأ بالإجراء المطلوب والوضع الحالي ووجود طلب جارٍ من عدمه. يستقبل الفريق استفسارات من الإمارات بحسب تأكيد الخدمة؛ وتبقى مناقشة الموعد أو الاستفسار منفصلة عن القرار الرسمي.",
+            "استخدم دليل المستندات لتنظيم السجلات المطلوبة، ودليل الأهلية لصياغة أسئلة فئة مقدم الطلب، وأدلة العقود ومسؤوليات الكفالة والإلغاء للمسألة المناسبة. أكد المسار المدعوم والنطاق المكتوب والمسؤول عن الخطوة التالية قبل اعتبار الحالة جاهزة للمتابعة."
           ]
         }
       ],
       "nextSteps": [
         {
-          "label": "دعم عناية لإجراءات التأشيرة",
+          "label": "استخدم سجل جاهزية طلب تأشيرة العاملة في عجمان",
+          "route": "blog/housemaid-visa-ajman-application-readiness-ledger"
+        },
+        {
+          "label": "دعم عناية لتأشيرة العمالة المنزلية",
           "route": "services/maid-visa"
         },
         {
@@ -1948,41 +2664,53 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "route": "services/sponsorship-transfer"
         },
         {
-          "label": "جهز معلومات الاستفسار",
+          "label": "جهز سجلات مستندات الحالة",
           "route": "blog/documents-for-domestic-worker-enquiry"
         },
         {
-          "label": "راجع أسئلة الاستقدام",
-          "route": "blog/uae-domestic-worker-hiring-process"
+          "label": "راجع فئات صاحب العمل والمستندات",
+          "route": "blog/domestic-worker-employer-eligibility-documents"
         },
         {
-          "label": "اسأل عن حالتك",
+          "label": "افهم مسؤوليات الكفالة",
+          "route": "blog/domestic-worker-sponsorship-responsibilities"
+        },
+        {
+          "label": "اقرأ أسئلة العقود والتجديد",
+          "route": "blog/domestic-worker-contracts-renewal"
+        },
+        {
+          "label": "ميز سجلات الإنهاء والإلغاء",
+          "route": "blog/domestic-worker-contract-permit-residence-cancellation"
+        },
+        {
+          "label": "اسأل عناية عن الحالة الفعلية",
           "route": "contact"
         }
       ],
-      "sourceIntro": "مراجع الإجراءات الرسمية الحالية",
-      "sourceNote": "تشرح المصادر الرسمية متطلبات التوظيف والإجراءات المنطبقة. وتبين أعلاه عناصر خدمة عناية المدارة وشروطها التجارية بصورة منفصلة، كما تسجل في عرض السعر المكتوب."
+      "sourceIntro": "مراجع الإجراءات الرسمية وباقة العمل",
+      "sourceNote": "روجعت معلومات إجراءات الهيئة في 29 أكتوبر 2026. اختر الفئة والقناة الرسمية المناسبتين للحالة الفعلية. جداول التسليم والأمثلة أدوات للتخطيط وليست قرارات رسمية. وتبقى عناصر خدمة عناية المدارة والدعم المعروض بصورة منفصلة شروطاً تجارية مميزة."
     },
     "sources": [
       {
-        "en": "MOHRE: new domestic worker employment contract (English)",
-        "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالإنجليزية)",
-        "url": "https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
-      },
-      {
-        "en": "MOHRE: new domestic worker employment contract (Arabic)",
-        "ar": "وزارة الموارد البشرية والتوطين: عقد عمل جديد للعامل المساعد (بالعربية)",
-        "url": "https://www.mohre.gov.ae/ar/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
-      },
-      {
-        "en": "ICP: residence service and applicant categories",
-        "ar": "الهيئة الاتحادية: خدمة الإقامة وفئات المتقدمين",
+        "en": "ICP: residence issuance and applicant categories (English)",
+        "ar": "الهيئة الاتحادية: إصدار الإقامة وفئات المتقدمين (بالإنجليزية)",
         "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
       },
       {
-        "en": "GDRFA Dubai: domestic worker service",
-        "ar": "الإدارة العامة للإقامة في دبي: خدمة العمالة المنزلية",
-        "url": "https://www.gdrfad.gov.ae/en/node/14403"
+        "en": "ICP: residence renewal and applicant categories (English)",
+        "ar": "الهيئة الاتحادية: تجديد الإقامة وفئات المتقدمين (بالإنجليزية)",
+        "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e66"
+      },
+      {
+        "en": "ICP: residence cancellation and domestic-worker routing (English)",
+        "ar": "الهيئة الاتحادية: إلغاء الإقامة ومسار العمالة المنزلية (بالإنجليزية)",
+        "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e68"
+      },
+      {
+        "en": "ICP: FAQs, including the Domestic Workers Work Bundle (English)",
+        "ar": "الهيئة الاتحادية: الأسئلة الشائعة وباقة العمل للعمالة المنزلية (بالإنجليزية)",
+        "url": "https://icp.gov.ae/en/faq/"
       }
     ]
   },

@@ -32,23 +32,25 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
     "keyword": "Tadbeer center Ajman",
     "slug": "tadbeer-center-ajman-first-visit-service-routing",
     "published": "2026-10-24",
-    "updated": "2026-10-24",
+    "updated": "2026-10-29",
     "en": {
-      "title": "Tadbeer center Ajman: plan a first visit around the right service route",
-      "description": "Prepare a first Tadbeer centre visit in Ajman with a recruitment, managed-service and domestic-worker typing routing sheet.",
-      "searchTitle": "Tadbeer Center Ajman: Plan Your First Visit",
+      "title": "Tadbeer centre in Ajman: location, hours and first-visit checklist",
+      "description": "Plan your INAYA Tadbeer visit in Ajman: Grand Mall location, opening hours, verified contacts, service routes and a practical first-visit checklist.",
+      "searchTitle": "Tadbeer Ajman: Location & First-Visit Checklist",
       "citations": [
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
-        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
       ]
     },
     "ar": {
-      "title": "مركز تدبير في عجمان: خطط للزيارة الأولى وفق مسار الخدمة الصحيح",
-      "description": "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية.",
-      "searchTitle": "مركز تدبير عجمان: جهز زيارتك الأولى",
+      "title": "مركز تدبير في عجمان: الموقع والدوام وقائمة الزيارة الأولى",
+      "description": "جهز زيارتك إلى عناية في عجمان: موقع جراند مول والدوام وأرقام التواصل ومسارات الخدمة وقائمة عملية للتحضير والمتابعة.",
+      "searchTitle": "تدبير عجمان: الموقع والدوام وتجهيز الزيارة",
       "citations": [
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
-        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+        "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
       ]
     }
   },

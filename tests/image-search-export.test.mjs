@@ -5,6 +5,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 import test from 'node:test';
 import onPage from './on-page-spec-expectations.cjs';
+import fiveGuides from './five-guides-amendment-expectations.cjs';
 import { attrs, decode } from '../scripts/seo-content-audit.mjs';
 import { pageImageUrls } from '../scripts/enrich-image-sitemap.mjs';
 
@@ -131,13 +132,13 @@ test('all284 pages have localized previews while226 visible photos remain primar
     assert.ok(icons.some(icon => icon.href === '/apple-touch-icon.png' && icon.sizes === '180x180'), pageUrl);
     const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)[1]);
     const description = values('name', 'description')[0];
+    const beforeGuideRefresh = fiveGuides.pageBefore(pageUrl, title, description);
     const metadataChange = onPage.metadata[`${locale}/${route}`];
     if (metadataChange) assert.deepEqual({ title, description }, metadataChange.after, `${pageUrl}: exact reviewed Ajman/service summary`);
-    // Normalize only the twenty independently reviewed metadata pairs to their
-    // prior values. The original full274-row fingerprint still guards every
-    // other title, description, canonical and favicon declaration.
+    // Undo only the exact ten guide metadata amendments and the prior twenty
+    // on-page amendments. Preserve the original full274-row fingerprint.
     if (entryIndex < onPage.originalCanonicalCount) preservedPageMetadata.push([
-      pageUrl, metadataChange?.before.title ?? title, metadataChange?.before.description ?? description, canonical,
+      pageUrl, metadataChange?.before.title ?? beforeGuideRefresh.title, metadataChange?.before.description ?? beforeGuideRefresh.description, canonical,
       icons.map(icon => [icon.rel, icon.href, icon.type ?? null, icon.sizes ?? null]),
     ]);
     const graph = imageGraph(html);
@@ -223,7 +224,7 @@ test('all284 pages have localized previews while226 visible photos remain primar
   assert.equal(preservedMappings.length, 198);
   assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 prior photo assignments remain exact, with only the six reviewed descriptions normalized');
   assert.equal(preservedPageMetadata.length, 274);
-  assert.equal(fingerprint(preservedPageMetadata), 'ff1d4ce117376ba175b0c13cca3557eca6a994177108dc249a0f936fa1ea36a6', 'all274 prior identities remain exact, with only the twenty reviewed metadata pairs normalized');
+  assert.equal(fingerprint(preservedPageMetadata), 'ff1d4ce117376ba175b0c13cca3557eca6a994177108dc249a0f936fa1ea36a6', 'all274 prior identities remain exact after reversing only the pinned metadata amendments');
 });
 
 test('preview metadata changes preserve all111 approved original photos and all four deployed favicon files', async () => {

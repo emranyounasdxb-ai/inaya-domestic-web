@@ -1,0 +1,1258 @@
+{
+  "baselineCommit": "f61c45b9c241c9dd0d038024a00b7eee99d9d2da",
+  "sourceEvidence": "28Oct PR81 reviewed export; these same public facts passed actual294-request verification at2026-10-28T11:51:31Z",
+  "sourceExpectedManifestSha256": "a4a6a277875b2f86b0362657e4ff2f1d2a0cc98552a41b4f9c86b9949bc97b81",
+  "sourceActualReceiptSha256": "20edb1dcda1f60d30ccac02aaf9bcef7a8128b0bee5cee051c559e8f6a9d6bcb",
+  "pages": {
+    "/en/blog/tadbeer-center-ajman-first-visit-service-routing/": {
+      "lang": "en",
+      "dir": "ltr",
+      "titles": [
+        "Tadbeer Center Ajman: Plan Your First Visit | INAYA"
+      ],
+      "descriptions": [
+        "Prepare a first Tadbeer centre visit in Ajman with a recruitment, managed-service and domestic-worker typing routing sheet."
+      ],
+      "h1s": [
+        "Tadbeer center Ajman: plan a first visit around the right service route"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/tadbeer-center-ajman-first-visit-service-routing/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/"
+        ]
+      ],
+      "ogTitle": [
+        "Tadbeer Center Ajman: Plan Your First Visit | INAYA"
+      ],
+      "ogDescription": [
+        "Prepare a first Tadbeer centre visit in Ajman with a recruitment, managed-service and domestic-worker typing routing sheet."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/keyword-21-20261024/k02-tadbeer-center-ajman.webp"
+      ],
+      "twitterTitle": [
+        "Tadbeer Center Ajman: Plan Your First Visit | INAYA"
+      ],
+      "twitterDescription": [
+        "Prepare a first Tadbeer centre visit in Ajman with a recruitment, managed-service and domestic-worker typing routing sheet."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "INAYA Domestic Workers",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/ar/blog/tadbeer-center-ajman-first-visit-service-routing/": {
+      "lang": "ar",
+      "dir": "rtl",
+      "titles": [
+        "مركز تدبير عجمان: جهز زيارتك الأولى | عناية"
+      ],
+      "descriptions": [
+        "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية."
+      ],
+      "h1s": [
+        "مركز تدبير في عجمان: خطط للزيارة الأولى وفق مسار الخدمة الصحيح"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/ar/blog/tadbeer-center-ajman-first-visit-service-routing/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/tadbeer-center-ajman-first-visit-service-routing/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/"
+        ]
+      ],
+      "ogTitle": [
+        "مركز تدبير عجمان: جهز زيارتك الأولى | عناية"
+      ],
+      "ogDescription": [
+        "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/ar/blog/tadbeer-center-ajman-first-visit-service-routing/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/keyword-21-20261024/k02-tadbeer-center-ajman.webp"
+      ],
+      "twitterTitle": [
+        "مركز تدبير عجمان: جهز زيارتك الأولى | عناية"
+      ],
+      "twitterDescription": [
+        "استعد لزيارتك الأولى لمركز تدبير في عجمان بورقة لتوجيه استفسارات الاستقدام والخدمة المدارة وطباعة معاملات العمالة المنزلية."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "عناية للعمالة المنزلية",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/en/blog/choosing-domestic-worker-agency-ajman/": {
+      "lang": "en",
+      "dir": "ltr",
+      "titles": [
+        "How to choose a domestic-worker agency in Ajman | INAYA"
+      ],
+      "descriptions": [
+        "Compare Tadbeer domestic-worker services in Ajman with an agency-identity worksheet, clear recruitment, cleaning and visa-typing enquiries, and written terms."
+      ],
+      "h1s": [
+        "How to choose a domestic-worker agency in Ajman"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+        ]
+      ],
+      "ogTitle": [
+        "How to choose a domestic-worker agency in Ajman | INAYA"
+      ],
+      "ogDescription": [
+        "Compare Tadbeer domestic-worker services in Ajman with an agency-identity worksheet, clear recruitment, cleaning and visa-typing enquiries, and written terms."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/how-to-choose-a-domestic-worker-agency-in-ajman.webp"
+      ],
+      "twitterTitle": [
+        "How to choose a domestic-worker agency in Ajman | INAYA"
+      ],
+      "twitterDescription": [
+        "Compare Tadbeer domestic-worker services in Ajman with an agency-identity worksheet, clear recruitment, cleaning and visa-typing enquiries, and written terms."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "INAYA Domestic Workers",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/ar/blog/choosing-domestic-worker-agency-ajman/": {
+      "lang": "ar",
+      "dir": "rtl",
+      "titles": [
+        "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟ | عناية"
+      ],
+      "descriptions": [
+        "قارن خدمات تدبير للعمالة المنزلية في عجمان بنموذج للتحقق من الجهة، وافصل الاستقدام والتنظيف وطباعة التأشيرة مع مراجعة الشروط المكتوبة."
+      ],
+      "h1s": [
+        "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+        ]
+      ],
+      "ogTitle": [
+        "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟ | عناية"
+      ],
+      "ogDescription": [
+        "قارن خدمات تدبير للعمالة المنزلية في عجمان بنموذج للتحقق من الجهة، وافصل الاستقدام والتنظيف وطباعة التأشيرة مع مراجعة الشروط المكتوبة."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/how-to-choose-a-domestic-worker-agency-in-ajman.webp"
+      ],
+      "twitterTitle": [
+        "كيف تختار مكتب استقدام عمالة مساعدة في عجمان؟ | عناية"
+      ],
+      "twitterDescription": [
+        "قارن خدمات تدبير للعمالة المنزلية في عجمان بنموذج للتحقق من الجهة، وافصل الاستقدام والتنظيف وطباعة التأشيرة مع مراجعة الشروط المكتوبة."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "عناية للعمالة المنزلية",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/en/blog/domestic-worker-hiring-stages-timelines/": {
+      "lang": "en",
+      "dir": "ltr",
+      "titles": [
+        "Domestic Worker Hiring Stages & Timelines | INAYA"
+      ],
+      "descriptions": [
+        "Follow domestic-worker hiring stages and related visa typing in Ajman, with clear preparation, submission, follow-up and authority-decision records."
+      ],
+      "h1s": [
+        "What happens during domestic-worker hiring, and how long does it take?"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+        ]
+      ],
+      "ogTitle": [
+        "Domestic Worker Hiring Stages & Timelines | INAYA"
+      ],
+      "ogDescription": [
+        "Follow domestic-worker hiring stages and related visa typing in Ajman, with clear preparation, submission, follow-up and authority-decision records."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/what-happens-during-domestic-worker-hiring-and-how-long-does-it-take.webp"
+      ],
+      "twitterTitle": [
+        "Domestic Worker Hiring Stages & Timelines | INAYA"
+      ],
+      "twitterDescription": [
+        "Follow domestic-worker hiring stages and related visa typing in Ajman, with clear preparation, submission, follow-up and authority-decision records."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "INAYA Domestic Workers",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/ar/blog/domestic-worker-hiring-stages-timelines/": {
+      "lang": "ar",
+      "dir": "rtl",
+      "titles": [
+        "ما مراحل توظيف العامل المساعد، وكم تستغرق؟ | عناية"
+      ],
+      "descriptions": [
+        "تابع مراحل توظيف العاملة المنزلية وطباعة طلباتها في عجمان، مع الفصل بين الإعداد والتقديم والمتابعة وقرار الجهة المختصة."
+      ],
+      "h1s": [
+        "ما مراحل توظيف العامل المساعد، وكم تستغرق؟"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+        ]
+      ],
+      "ogTitle": [
+        "ما مراحل توظيف العامل المساعد، وكم تستغرق؟ | عناية"
+      ],
+      "ogDescription": [
+        "تابع مراحل توظيف العاملة المنزلية وطباعة طلباتها في عجمان، مع الفصل بين الإعداد والتقديم والمتابعة وقرار الجهة المختصة."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/what-happens-during-domestic-worker-hiring-and-how-long-does-it-take.webp"
+      ],
+      "twitterTitle": [
+        "ما مراحل توظيف العامل المساعد، وكم تستغرق؟ | عناية"
+      ],
+      "twitterDescription": [
+        "تابع مراحل توظيف العاملة المنزلية وطباعة طلباتها في عجمان، مع الفصل بين الإعداد والتقديم والمتابعة وقرار الجهة المختصة."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "عناية للعمالة المنزلية",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/en/blog/documents-for-domestic-worker-enquiry/": {
+      "lang": "en",
+      "dir": "ltr",
+      "titles": [
+        "Documents to prepare for a domestic worker enquiry | INAYA"
+      ],
+      "descriptions": [
+        "Separate the details needed for an initial enquiry from the identity and contract documents that an official UAE domestic worker application may require."
+      ],
+      "h1s": [
+        "Documents to prepare for a domestic worker enquiry"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/"
+        ]
+      ],
+      "ogTitle": [
+        "Documents to prepare for a domestic worker enquiry | INAYA"
+      ],
+      "ogDescription": [
+        "Separate the details needed for an initial enquiry from the identity and contract documents that an official UAE domestic worker application may require."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/documents-to-prepare-for-a-domestic-worker-enquiry.webp"
+      ],
+      "twitterTitle": [
+        "Documents to prepare for a domestic worker enquiry | INAYA"
+      ],
+      "twitterDescription": [
+        "Separate the details needed for an initial enquiry from the identity and contract documents that an official UAE domestic worker application may require."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "INAYA Domestic Workers",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/ar/blog/documents-for-domestic-worker-enquiry/": {
+      "lang": "ar",
+      "dir": "rtl",
+      "titles": [
+        "المستندات التي تجهزها للاستفسار عن العمالة المنزلية | عناية"
+      ],
+      "descriptions": [
+        "ميّز بين معلومات الاستفسار الأولي ووثائق الهوية والعقد التي قد تتطلبها معاملة رسمية للعمالة المساعدة في الإمارات."
+      ],
+      "h1s": [
+        "المستندات التي تجهزها للاستفسار عن العمالة المنزلية"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/"
+        ]
+      ],
+      "ogTitle": [
+        "المستندات التي تجهزها للاستفسار عن العمالة المنزلية | عناية"
+      ],
+      "ogDescription": [
+        "ميّز بين معلومات الاستفسار الأولي ووثائق الهوية والعقد التي قد تتطلبها معاملة رسمية للعمالة المساعدة في الإمارات."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/documents-to-prepare-for-a-domestic-worker-enquiry.webp"
+      ],
+      "twitterTitle": [
+        "المستندات التي تجهزها للاستفسار عن العمالة المنزلية | عناية"
+      ],
+      "twitterDescription": [
+        "ميّز بين معلومات الاستفسار الأولي ووثائق الهوية والعقد التي قد تتطلبها معاملة رسمية للعمالة المساعدة في الإمارات."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "عناية للعمالة المنزلية",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/en/blog/domestic-worker-visa-sponsorship-support/": {
+      "lang": "en",
+      "dir": "ltr",
+      "titles": [
+        "Preparing a domestic worker visa or sponsorship case | INAYA"
+      ],
+      "descriptions": [
+        "Prepare questions for INAYA’s complete visa-processing support and confirm the case-specific documents, authority requirements, fees and next steps."
+      ],
+      "h1s": [
+        "Preparing a domestic worker visa or sponsorship case"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/domestic-worker-visa-sponsorship-support/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/"
+        ]
+      ],
+      "ogTitle": [
+        "Preparing a domestic worker visa or sponsorship case | INAYA"
+      ],
+      "ogDescription": [
+        "Prepare questions for INAYA’s complete visa-processing support and confirm the case-specific documents, authority requirements, fees and next steps."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/preparing-a-domestic-worker-visa-or-sponsorship-case.webp"
+      ],
+      "twitterTitle": [
+        "Preparing a domestic worker visa or sponsorship case | INAYA"
+      ],
+      "twitterDescription": [
+        "Prepare questions for INAYA’s complete visa-processing support and confirm the case-specific documents, authority requirements, fees and next steps."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "INAYA Domestic Workers",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    },
+    "/ar/blog/domestic-worker-visa-sponsorship-support/": {
+      "lang": "ar",
+      "dir": "rtl",
+      "titles": [
+        "تجهيز حالة تأشيرة أو كفالة للعمالة المنزلية | عناية"
+      ],
+      "descriptions": [
+        "جهز أسئلتك عن دعم عناية الكامل لإجراءات التأشيرة، وأكد المستندات ومتطلبات الجهات والرسوم والخطوات المناسبة لحالتك."
+      ],
+      "h1s": [
+        "تجهيز حالة تأشيرة أو كفالة للعمالة المنزلية"
+      ],
+      "canonicals": [
+        "https://inayadomestic.ae/ar/blog/domestic-worker-visa-sponsorship-support/"
+      ],
+      "alternates": [
+        [
+          "ar",
+          "https://inayadomestic.ae/ar/blog/domestic-worker-visa-sponsorship-support/"
+        ],
+        [
+          "en",
+          "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/"
+        ],
+        [
+          "x-default",
+          "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/"
+        ]
+      ],
+      "ogTitle": [
+        "تجهيز حالة تأشيرة أو كفالة للعمالة المنزلية | عناية"
+      ],
+      "ogDescription": [
+        "جهز أسئلتك عن دعم عناية الكامل لإجراءات التأشيرة، وأكد المستندات ومتطلبات الجهات والرسوم والخطوات المناسبة لحالتك."
+      ],
+      "ogUrl": [
+        "https://inayadomestic.ae/ar/blog/domestic-worker-visa-sponsorship-support/"
+      ],
+      "ogImage": [
+        "https://inayadomestic.ae/images/blogs/preparing-a-domestic-worker-visa-or-sponsorship-case.webp"
+      ],
+      "twitterTitle": [
+        "تجهيز حالة تأشيرة أو كفالة للعمالة المنزلية | عناية"
+      ],
+      "twitterDescription": [
+        "جهز أسئلتك عن دعم عناية الكامل لإجراءات التأشيرة، وأكد المستندات ومتطلبات الجهات والرسوم والخطوات المناسبة لحالتك."
+      ],
+      "robots": [
+        "max-image-preview:large"
+      ],
+      "schemaTypes": {
+        "Article": 1,
+        "BreadcrumbList": 1,
+        "ImageObject": 1,
+        "LocalBusiness": 1,
+        "Organization": 1,
+        "WebPage": 1,
+        "WebSite": 1
+      },
+      "organizations": [
+        {
+          "@id": "https://inayadomestic.ae/#organization",
+          "name": "عناية للعمالة المنزلية",
+          "legalName": "INAYA DOMESTIC WORKERS SERVICES (S.P.S - L.L.C)",
+          "telephone": "+971 6 740 0128",
+          "email": "info@inayadomestic.ae",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "MOHRE Facility Number",
+            "value": "2637187",
+            "url": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/inaya-domestic-workers-ajman/",
+            "https://www.facebook.com/inayadomesticworkersajman/",
+            "https://www.instagram.com/inayadomesticworkers/"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grand Mall - Ground Floor - Sheikh Khalifa Bin Zayed St - Al Rashidiya 3 - Ajman",
+            "addressLocality": "Ajman",
+            "addressCountry": "AE"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Saturday",
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+              ],
+              "opens": "09:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Friday"
+              ],
+              "opens": "00:00",
+              "closes": "00:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "WhatsApp enquiries",
+            "telephone": "+971 50 203 6767",
+            "url": "https://wa.me/971502036767"
+          }
+        }
+      ],
+      "externalStylesheet": true,
+      "retainedRsc": true,
+      "visibleFacility": true,
+      "officeLink": true,
+      "whatsappLink": true
+    }
+  }
+}

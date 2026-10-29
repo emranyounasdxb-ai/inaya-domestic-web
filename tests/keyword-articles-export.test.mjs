@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
+import amendment from './five-guides-amendment-expectations.cjs';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
@@ -71,12 +72,12 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
   const countryPhotoUrls = countryPhotoRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`));
   const updatedUrls = [...countryPhotoUrls, ...[...onPageSpec.onPageUpdatedRoutes, ...onPageSpec.archiveRoutes].flatMap(route => locales.map(locale => `${origin}/${locale}/${route ? `${route}/` : ''}`))];
   const currentEntries = datedEntries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>'));
-  assert.equal(datedEntries.length, 244, 'retain all 234 dated URLs and date only the ten appended archive pages');
+  assert.equal(datedEntries.length, 248, 'retain all244 dated URLs and date only the four previously undated base-guide copies');
   assert.deepEqual(currentEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), updatedUrls.sort(), 'only 26 country-photo, 20 substantive on-page and ten new archive URLs receive 28 October');
   for (const entry of currentEntries) {
     assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], 'each reviewed updated page has one exact substantive modification date');
   }
-  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 188, 'all other historical substantive dates remain unchanged');
+  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 192, 'historical dates plus four newly dated base copies remain outside28October');
   assert.equal(receipt.articlePairs, 21);
   assert.equal(receipt.localePages, 42);
   assert.equal(receipt.manuscriptHashes.length, 42);
@@ -84,7 +85,7 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
 
 test('all 42 full publication copies match independent reviewed hashes, metadata and bounded visual facts', async () => {
   const aggregate = (await readFile('content/keyword-articles-20261024.json', 'utf8')).replace(/\r\n/g, '\n');
-  assert.equal(hash(aggregate), receipt.fullDataSha256, 'the reviewed aggregate input is immutable after Git checkout line-ending normalization');
+  assert.equal(hash(amendment.historicalSource('content/keyword-articles-20261024.json', aggregate)), receipt.fullDataSha256, 'the reviewed aggregate input is immutable after Git checkout line-ending normalization');
   const source = await readFile('lib/keyword-article-metadata.ts', 'utf8');
   const metadata = JSON.parse(source.split('export const keywordArticleMetadata: KeywordArticleMetadata[] = ')[1].trim().replace(/;$/, ''));
   assert.equal(metadata.length, 21);
@@ -97,13 +98,13 @@ test('all 42 full publication copies match independent reviewed hashes, metadata
       assert.equal(meta[key], expected[key]);
     }
     assert.equal(article.published, reviewedDate);
-    assert.equal(article.updated, reviewedDate);
+    assert.equal(article.updated, amendment.dateFor(article.slug, reviewedDate));
     for (const locale of locales) {
       const copy = article[locale];
       const label = `${article.id}/${locale}`;
       const sourceHash = receipt.manuscriptHashes.find(row => row.id === article.id && row.locale === locale)?.sha256;
       const pin = amendmentPins.amendments.find(row => row.id === article.id && row.locale === locale);
-      if (copyHash(copy) === expected[locale].contentSha256) {
+      if (copyHash(amendment.historicalRecord(article, 'keyword')[locale]) === expected[locale].contentSha256) {
         assert.equal(sourceHash, expected[locale].reviewedManuscriptSha256, `${label}: original independent source-review provenance`);
       } else {
         assert.ok(pin, `${label}: a copy change requires the exact user-approved locale amendment`);
@@ -262,10 +263,10 @@ test('all 42 exports render complete reviewed paragraphs, tables, FAQs and label
     assert.equal(articleNode.headline, copy.title);
     assert.equal(articleNode.inLanguage, locale);
     assert.equal(articleNode.datePublished, reviewedDate);
-    assert.equal(articleNode.dateModified, reviewedDate);
+    assert.equal(articleNode.dateModified, amendment.dateFor(article.slug, reviewedDate));
     assert.equal(articleNode.mainEntityOfPage['@id'], `${url}#webpage`);
     assert.deepEqual(articleNode.citation, copy.references.map(reference => reference.url));
     const entry = entries.find(value => value.includes(`<loc>${url}</loc>`));
-    assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), [reviewedDate]);
+    assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), [amendment.dateFor(article.slug, reviewedDate)]);
   }
 });
