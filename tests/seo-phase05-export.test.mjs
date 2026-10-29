@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
+import additions from './four-guides-addition-expectations.cjs';
 import path from 'node:path';
 import { auditExport } from '../scripts/seo-content-audit.mjs';
 import remediation from './seo-final-remediation-expectations.cjs';
@@ -30,11 +31,11 @@ test('Phase 5 retains all prior routes and protected sources while serving seven
     assert.equal(ahrefs.beforeAhrefsSource(file, (await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), expected, `${file}: exact checkpoint protection with reviewed remediation only`);
   }
   const audit = await auditExport();
-  assert.equal(audit.pages.length, 284);
-  assert.equal(audit.pages.filter((p) => p.locale === 'en').length, 142);
-  assert.equal(audit.pages.filter((p) => p.locale === 'ar').length, 142);
-  assert.equal(new Set(audit.pages.map((p) => p.title)).size, 284);
-  assert.equal(new Set(audit.pages.map((p) => p.description)).size, 284);
+  additions.assertInventory(audit.pages.map(page => page.url));
+  assert.equal(audit.pages.filter((p) => p.locale === 'en').length, additions.canonicalCount / 2);
+  assert.equal(audit.pages.filter((p) => p.locale === 'ar').length, additions.canonicalCount / 2);
+  assert.equal(new Set(audit.pages.map((p) => p.title)).size, additions.canonicalCount);
+  assert.equal(new Set(audit.pages.map((p) => p.description)).size, additions.canonicalCount);
   const editorial = managed.editorialRepetition(audit);
   assert.ok(editorial.repeatedTokens <= 8300);
   assert.ok(editorial.repeatedParagraphs <= 660);
@@ -44,10 +45,10 @@ test('Phase 5 retains all prior routes and protected sources while serving seven
   assert.ok(audit.paragraphTokens >= 31900);
   assert.equal(audit.nearPairs.length, 0);
   assert.deepEqual(audit.orphans, []);
-  for (const locale of ['en', 'ar']) { assert.equal(audit.linkCoverage[locale].reachable, 142); assert.ok(audit.linkCoverage[locale].maximumDepth <= 3); }
+  for (const locale of ['en', 'ar']) { assert.equal(audit.linkCoverage[locale].reachable, additions.canonicalCount / 2); assert.ok(audit.linkCoverage[locale].maximumDepth <= 3); }
   for (const page of audit.pages) {
     const html = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     assert.doesNotMatch(html, /<script[^>]+src=["'][^"']*(?:googletagmanager|google-analytics)/);
   }
-  console.log(JSON.stringify({ routes: 284, locales: 2, orphans: 0, repeatedTokens: audit.repeatedTokens, editorial, nearPairs: 0 }));
+  console.log(JSON.stringify({ routes: additions.canonicalCount, locales: 2, orphans: 0, repeatedTokens: audit.repeatedTokens, editorial, nearPairs: 0 }));
 });

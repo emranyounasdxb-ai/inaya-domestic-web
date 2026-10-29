@@ -11,9 +11,9 @@ const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 const scripts = html => [...html.matchAll(/<script\b([^>]*)>/g)].map(match => ({ tag: match[0], attributes: attrs(match[1]) }));
 const visible = html => html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/g, '');
 
-test('all284 canonical EN/AR pages contain one exact native async Ahrefs script in their initial head', async () => {
-  assert.equal(urls.length, 284);
-  assert.equal(new Set(urls).size, 284);
+test('all292 canonical EN/AR pages contain one exact native async Ahrefs script in their initial head', async () => {
+  assert.equal(urls.length, 292);
+  assert.equal(new Set(urls).size, 292);
   for (const url of urls) {
     const html = await readFile(`out${new URL(url).pathname}index.html`, 'utf8');
     const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/)?.[1];

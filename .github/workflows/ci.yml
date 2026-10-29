@@ -69,6 +69,8 @@ jobs:
         run: node --test tests/on-page-identity-home-faq.test.cjs tests/on-page-editorial-classification-unit.test.cjs tests/on-page-spec-export.test.mjs tests/blog-pagination-unit.test.cjs tests/blog-pagination-export.test.mjs
       - name: Verify exactly five reviewed guide amendments and complete rendered copy
         run: node --test tests/five-guides-amendment-unit.test.cjs tests/five-guides-amendment-export.test.mjs
+      - name: Verify four new bilingual guides and preserve the complete previous publication inventory
+        run: node --test tests/four-guides-addition-unit.test.cjs tests/four-guides-addition-export.test.mjs
       - name: Verify owner-approved native Ahrefs head and separate privacy disclosure
         run: node --test tests/ahrefs-source-unit.test.cjs tests/ahrefs-head-export.test.mjs
       - name: Unit and export checks

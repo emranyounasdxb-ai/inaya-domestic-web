@@ -365,6 +365,16 @@ const blogImages: Record<string, BlogImage> = {
   }
 };
 
+// These new guides reuse relevant owner-approved illustrations with their exact
+// original descriptions and frames; the existing 111 source assets stay intact.
+const newArticleImageAliases: Record<string, string> = {
+  'uae-domestic-worker-rights-employer-duties': 'domestic-worker-contracts-renewal',
+  'domestic-worker-centre-reviews-checklist': 'maid-agency-ajman-quote-comparison-workbook',
+  'domestic-workers-meaning-roles-uae': 'domestic-workers-ajman-household-role-design-canvas',
+  'choosing-domestic-worker-centre-across-emirates': 'maid-agency-sharjah-ajman-office-logistics',
+};
+
 export function getBlogImage(slug: string): BlogImage | undefined {
-  return keywordArticleImages[slug] ?? blogImages[slug];
+  const imageSlug = newArticleImageAliases[slug] ?? slug;
+  return keywordArticleImages[imageSlug] ?? blogImages[imageSlug];
 }

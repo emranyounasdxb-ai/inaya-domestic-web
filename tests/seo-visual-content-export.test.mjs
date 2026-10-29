@@ -2,6 +2,7 @@ import octoberFixes from './seo-october-fixes-expectations.cjs';
 import ajmanOffice from './ajman-office-expectations.cjs';
 import companyGallery from './company-gallery-expectations.cjs';
 import onPage from './on-page-spec-expectations.cjs';
+import additions from './four-guides-addition-expectations.cjs';
 import ahrefs from './ahrefs-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -13,12 +14,12 @@ import corePageCopy from './core-page-copy-expectations.cjs';
 import posterPricing from './poster-pricing-expectations.cjs';
 import { auditExport, attrs, text } from '../scripts/seo-content-audit.mjs';
 
-test('all284 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
+test('all292 pages remove the pre-Hero strip and render localized breadcrumbs after the Hero', async () => {
   const audit = await auditExport();
-  assert.equal(audit.pages.length, onPage.canonicalCount);
+  additions.assertInventory(audit.pages.map(page => page.url));
   assert.deepEqual(audit.orphans, []);
   for (const locale of ['en', 'ar']) {
-    assert.equal(audit.linkCoverage[locale].reachable, onPage.canonicalCount / 2);
+    assert.equal(audit.linkCoverage[locale].reachable, additions.canonicalCount / 2);
     assert.ok(audit.linkCoverage[locale].maximumDepth <= 3);
     assert.ok(audit.linkCoverage[locale].minimumOtherPageInbound > 0);
   }

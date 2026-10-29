@@ -6,6 +6,7 @@ import sharp from 'sharp';
 import test from 'node:test';
 import onPage from './on-page-spec-expectations.cjs';
 import fiveGuides from './five-guides-amendment-expectations.cjs';
+import newGuides from './four-guides-addition-expectations.cjs';
 import { attrs, decode } from '../scripts/seo-content-audit.mjs';
 import { pageImageUrls } from '../scripts/enrich-image-sitemap.mjs';
 
@@ -14,7 +15,7 @@ const xml = await readFile('out/sitemap.xml', 'utf8');
 const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)];
 
 test('every image sitemap entry matches visible content, with no lost canonical pages or responsive duplicates', async () => {
-  assert.equal(entries.length, onPage.canonicalCount);
+  assert.equal(entries.length, newGuides.canonicalCount);
   assert.ok(xml.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'), 'image sitemap namespace');
   const unique = new Set();
   for (const entry of entries) {
@@ -88,7 +89,7 @@ const countryPagePhotos = {
   'maid-source-countries/myanmar-maid-uae': '/images/about/about-hero-domestic-service.webp',
 };
 
-test('all284 pages have localized previews while226 visible photos remain primary image schema', async () => {
+test('all292 pages have localized previews with the eight new article photos and all previous assignments preserved', async () => {
   const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
   const approved = new Map(catalog.images.map(image => [origin + image.src, image]));
   const dimensions = new Map();
@@ -211,15 +212,17 @@ test('all284 pages have localized previews while226 visible photos remain primar
       }
       const preservedAlt = altChange ? [altChange.before] : ogAlt;
       const preservedTwitterAlt = altChange ? [altChange.before] : twitterAlt;
-      preservedMappings.push([pageUrl, ogImages, preservedAlt, twitterImages, preservedTwitterAlt, [image.contentUrl]]);
+      if (entryIndex < newGuides.originalCanonicalCount) {
+        preservedMappings.push([pageUrl, ogImages, preservedAlt, twitterImages, preservedTwitterAlt, [image.contentUrl]]);
+      }
     }
     described++;
   }
-  assert.equal(described, 226, 'all26 country pages gain visible primary photos; all200 previous primary photos remain');
+  assert.equal(described, 234, 'all226 prior primary photos remain and eight new locale pages reuse approved source photos');
   assert.deepEqual(picturedCountryPages.sort(), Object.keys(countryPagePhotos).flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`)).sort(), 'all26 expected country pages have matching visible, social, schema and sitemap photos');
-  const substantivelyUpdated = [...onPage.onPageUpdatedRoutes, ...onPage.archiveRoutes]
+  const substantivelyUpdated = onPage.onPageUpdatedRoutes.filter(route => !newGuides.indexRoutes.includes(route))
     .flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route ? route + '/' : ''}`));
-  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].sort(), 'only26 country photos,20 updated content pages and10 new archives have28October dates');
+  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].sort(), 'the44 prior non-archive updates retain28October; only the changed archive memberships receive29October');
   assert.deepEqual(fallbackCounts, { blog: 12, countries: 0, locations: 14, information: 32 }, 'all58 text/index pages get social previews without false primary-image schema');
   assert.equal(preservedMappings.length, 198);
   assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 prior photo assignments remain exact, with only the six reviewed descriptions normalized');
@@ -368,7 +371,7 @@ test('all 88 refreshed article heroes and all 88 index cards use the matching ve
     // Every prior card is still checked once across all six crawlable pages.
     const topicCards = [...visibleImageHtml(indexHtml).matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/gi)]
       .filter(card => [...card[1].matchAll(/<a\b[^>]*>/gi)].some(link => new RegExp(`^/${locale}/blog/[^/?#]+/$`).test(attrs(link[0]).href ?? '')));
-    assert.equal(topicCards.length, 65, `${locale}: all44 legacy and21 keyword cards remain discoverable across six pages`);
+    assert.equal(topicCards.length, 69, `${locale}: all65 original and four new cards remain discoverable across six pages`);
     for (const entry of approved.images) {
       const route = `/${locale}/blog/${entry.slug}/`;
       const html = await readFile(path.join('out', route, 'index.html'), 'utf8');

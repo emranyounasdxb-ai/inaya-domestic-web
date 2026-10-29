@@ -8,6 +8,7 @@ import BlogImage from '@/components/BlogImage';
 import KeywordArticle from '@/components/KeywordArticle';
 import { getKeywordArticle } from '@/lib/keyword-article-content';
 import { publishedArticles } from '@/lib/published-article-content';
+import { getNewArticle } from '@/lib/new-article-content';
 import { domesticWorkerGuides, getDomesticWorkerGuide, guideAuthor, type GuideLanguage } from '@/lib/domestic-worker-guides';
 import { pageMetadata } from '@/lib/page-seo';
 import { siteConfig } from '@/lib/site-config';
@@ -34,7 +35,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
   const keywordArticle = getKeywordArticle(slug);
   if (keywordArticle) return <KeywordArticle article={keywordArticle} lang={lang} />;
   if (guide.publication) {
-    const article = publishedArticles.find((entry) => entry.slug === slug);
+    const article = publishedArticles.find((entry) => entry.slug === slug) ?? getNewArticle(slug);
     if (!article) notFound();
     return <PublishedArticle guide={guide} body={article[lang].body} lang={lang} />;
   }

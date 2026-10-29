@@ -3,7 +3,7 @@ const test = require('node:test');
 const fixture = require('./fixtures/keyword-article-presentation-20261024.json');
 const review = require('./fixtures/keyword-articles-reviewed-20261024.json');
 const { withoutKeywordPresentation, reviewedPresentationPlacement } = require('./keyword-article-presentation-expectations.cjs');
-const blogOrder = require('./fixtures/blog-guide-order-20261028.json');
+const { blogOrderSlugs } = require('./four-guides-addition-expectations.cjs');
 
 function presentationPages() {
   const pages = new Map();
@@ -12,7 +12,7 @@ function presentationPages() {
     let route = placement.route;
     if (placement.kind === 'hub-summary') {
       const original = review.articles.find(article => article.id === placement.id);
-      const position = blogOrder.slugs.indexOf(original.slug);
+      const position = blogOrderSlugs.indexOf(original.slug);
       assert.ok(position >= 0, `${original.slug}: independently preserved65-guide order`);
       const pageNumber = Math.floor(position / 12) + 1;
       route = pageNumber === 1 ? 'blog' : `blog/page/${pageNumber}`;

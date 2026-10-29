@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
+import additions from './four-guides-addition-expectations.cjs';
 import { attrs, decode } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
@@ -12,14 +13,13 @@ const sitemap = await readFile('out/sitemap.xml', 'utf8');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => decode(match[1]));
 const body = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
 
-test('ten archive URLs append to the original inventory and all65 article routes remain canonical', () => {
+test('ten archive URLs retain their positions and all69 article routes remain canonical with eight new copies at the inventory tail', () => {
   const appended = [2, 3, 4, 5, 6].flatMap(page => ['en', 'ar'].map(locale => urlFor(locale, page)));
-  assert.equal(urls.length, 284);
-  assert.deepEqual(urls.slice(274), appended);
-  assert.equal(new Set(urls).size, 284);
+  additions.assertInventory(urls);
+  assert.deepEqual(urls.slice(274, additions.originalCanonicalCount), appended);
   for (const locale of ['en', 'ar']) {
     const articles = urls.filter(url => url.startsWith(`${origin}/${locale}/blog/`) && url !== `${origin}/${locale}/blog/` && !url.includes('/blog/page/'));
-    assert.deepEqual(articles.sort(), baseline.slugs.map(slug => `${origin}/${locale}/blog/${slug}/`).sort());
+    assert.deepEqual(articles.sort(), additions.blogOrderSlugs.map(slug => `${origin}/${locale}/blog/${slug}/`).sort());
     assert.ok(!urls.includes(`${origin}/${locale}/blog/page/1/`));
   }
 });
@@ -35,8 +35,8 @@ test('both languages render bounded archive cards with crawlable navigation, dis
       const url = urlFor(locale, page);
       const cards = [...visible.matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/g)]
         .filter(match => attrs(match[1])['data-blog-guide']);
-      const expected = baseline.slugs.slice((page - 1) * 12, page * 12);
-      assert.deepEqual(cards.map(match => attrs(match[1])['data-blog-guide']), expected, `${url}: original card order`);
+      const expected = additions.blogOrderSlugs.slice((page - 1) * 12, page * 12);
+      assert.deepEqual(cards.map(match => attrs(match[1])['data-blog-guide']), expected, `${url}: exact four-new-plus-original65 card order`);
       for (const [index, card] of cards.entries()) {
         assert.ok(card[2].includes(`href="/${locale}/blog/${expected[index]}/"`), `${url}: crawlable article link`);
         assert.equal([...card[2].matchAll(/<img\b/g)].length, 1, `${url}: one approved photo per guide`);
@@ -73,7 +73,8 @@ test('both languages render bounded archive cards with crawlable navigation, dis
       assert.equal(breadcrumb.itemListElement.at(-1).item, url);
       if (page > 1) assert.equal(breadcrumb.itemListElement.at(-2).item, urlFor(locale, 1));
     }
-    assert.deepEqual(seen, baseline.slugs, `${locale}: all original guides occur once across the archive`);
+    assert.deepEqual(seen, additions.blogOrderSlugs, `${locale}: all69 guides occur once across the archive`);
+    assert.deepEqual(seen.filter(slug => !additions.newSlugs.includes(slug)), baseline.slugs, `${locale}: all65 original guides retain their relative order`);
   }
 });
 

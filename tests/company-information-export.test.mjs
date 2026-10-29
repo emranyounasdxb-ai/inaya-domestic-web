@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
+import additions from './four-guides-addition-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
@@ -33,17 +34,18 @@ function visibleBody(html) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
 }
 
-test('the exact original 230 canonicals, company pair and 42 reviewed keyword copies survive before ten archive URLs', async () => {
+test('the exact original 230 canonicals, company pair and 42 keyword copies survive before ten archives and eight new guide URLs', async () => {
   const baseline = JSON.parse(await readFile('tests/fixtures/pre-company-information-canonical-routes.json', 'utf8'));
   assert.equal(baseline.urls.length, 230);
   assert.equal(new Set(baseline.urls).size, 230);
-  assert.equal(urls.length, 284);
+  additions.assertInventory(urls);
   assert.deepEqual(urls.slice(0, 230), baseline.urls, 'all original routes and their order are preserved');
   assert.deepEqual(urls.slice(230, 232), Object.values(sourcePages), 'company reference stays at its exact original position');
   assert.deepEqual(urls.slice(0, 232), keywordReview.previousCanonicalUrls, 'the complete previous 232-route inventory is unchanged');
   assert.equal(newArticleUrls.length, 42);
   assert.deepEqual(urls.slice(232, onPageSpec.originalCanonicalCount), newArticleUrls, 'reviewed article pairs retain their exact original positions');
-  assert.deepEqual(urls.slice(onPageSpec.originalCanonicalCount), onPageSpec.archiveRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`)), 'only ten reviewed archive URLs follow the complete original inventory');
+  assert.deepEqual(urls.slice(onPageSpec.originalCanonicalCount, additions.originalCanonicalCount), onPageSpec.archiveRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`)), 'the ten reviewed archives retain their exact positions after the original 274 canonicals');
+  assert.deepEqual(urls.slice(additions.originalCanonicalCount), additions.newCanonicalUrls, 'only eight reviewed new guide URLs follow the complete prior inventory');
   assert.ok(!urls.includes(`${origin}/company-information.json`), 'the data representation is not another HTML canonical');
   for (const url of Object.values(sourcePages)) {
     const entry = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(match => match[1].includes(`<loc>${url}</loc>`));

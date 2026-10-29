@@ -6,6 +6,7 @@ import ajmanRefresh from '../../content/research/2026-10-24/ajman-intent-refresh
 import keywordReview from '../fixtures/keyword-articles-reviewed-20261024.json';
 import onPageSpec from '../on-page-spec-expectations.cjs';
 import amendment from '../five-guides-amendment-expectations.cjs';
+import additions from '../four-guides-addition-expectations.cjs';
 
 test('sitemap includes service, country and location SEO pages', async ({ request }) => {
   const response = await request.get('/sitemap.xml');
@@ -56,7 +57,8 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   expect(ajmanRefreshPaths.size).toBe(4);
   const onPageUpdatedPaths = new Set(onPageSpec.onPageUpdatedRoutes);
   const archivePaths = new Set(onPageSpec.archiveRoutes);
-  const october28Paths = new Set([...countryPhotoPaths, ...onPageUpdatedPaths, ...archivePaths]);
+  const step2Paths = new Set([...additions.newSlugs.map(slug => `blog/${slug}`), ...additions.indexRoutes]);
+  const october28Paths = new Set([...countryPhotoPaths, ...onPageUpdatedPaths, ...archivePaths].filter(path => !step2Paths.has(path)));
   const worksheetUpdatedPaths = new Set([
     'blog/domestic-worker-hiring-costs-uae',
     'blog/domestic-worker-skills-language-assessment',
@@ -71,12 +73,12 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   const keywordUrls = ['en', 'ar'].flatMap(locale => [...keywordPaths].map(path => `https://inayadomestic.ae/${locale}/${path}/`));
   const step1Paths = new Set(amendment.targetSlugs.map(slug => `blog/${slug}`));
   const privacyPaths = new Set(['privacy-policy']);
-  const datedPaths = new Set([...step1Paths, ...privacyPaths, ...onPageUpdatedPaths, ...archivePaths, ...countryPhotoPaths, ...keywordPaths, ...companyInformationPaths, ...updatedPaths, ...todayPaths, ...officeUpdatedPaths, ...worksheetUpdatedPaths, ...galleryUpdatedPaths, ...paymentUpdatedPaths, ...domesticRefreshPaths, ...ajmanRefreshPaths]);
+  const datedPaths = new Set([...step1Paths, ...step2Paths, ...privacyPaths, ...onPageUpdatedPaths, ...archivePaths, ...countryPhotoPaths, ...keywordPaths, ...companyInformationPaths, ...updatedPaths, ...todayPaths, ...officeUpdatedPaths, ...worksheetUpdatedPaths, ...galleryUpdatedPaths, ...paymentUpdatedPaths, ...domesticRefreshPaths, ...ajmanRefreshPaths]);
   const expectedDatedUrls = ['en', 'ar'].flatMap((locale) =>
     [...datedPaths].map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
   );
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
-  expect(datedEntries).toHaveLength(250);
+  expect(datedEntries).toHaveLength(258);
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual(expectedDatedUrls.sort());
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(30);
@@ -87,20 +89,20 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
     .toEqual([...new Set([...domesticRefresh.routeChanges, ...ajmanRefresh.routeChanges].flatMap((entry) => entry.urls)), ...['en', 'ar'].map((locale) => `https://inayadomestic.ae/${locale}/company-information/`), ...keywordUrls].filter(url => !new Set([...galleryRetirementPaths, ...onPageUpdatedPaths, ...step1Paths]).has(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/'))).sort());
   expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-25</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...galleryRetirementPaths].filter(path => !onPageUpdatedPaths.has(path)).map(path => `https://inayadomestic.ae/${locale}/${path}/`)).sort());
   expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...october28Paths].map(path => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)).sort());
-  const expectedOctober29Urls = ['en', 'ar'].flatMap(locale => [...step1Paths, ...privacyPaths].map(path => `https://inayadomestic.ae/${locale}/${path}/`));
-  expect(expectedOctober29Urls).toHaveLength(12);
-  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(expectedOctober29Urls.sort());
+  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...new Set([...step1Paths, ...step2Paths, ...privacyPaths])].map(path => `https://inayadomestic.ae/${locale}/${path}/`)).sort());
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)![1]).pathname;
     const path = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = step1Paths.has(path) || privacyPaths.has(path) ? '2026-10-29' : october28Paths.has(path) ? '2026-10-28' : galleryRetirementPaths.has(path) ? '2026-10-25' : keywordPaths.has(path) || companyInformationPaths.has(path) ? '2026-10-24' : ajmanRefreshPaths.has(path) ? ajmanRefresh.date : domesticRefreshPaths.has(path) ? domesticRefresh.date : paymentUpdatedPaths.has(path) ? '2026-10-23' : officeUpdatedPaths.has(path) || worksheetUpdatedPaths.has(path) || galleryUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = step1Paths.has(path) || step2Paths.has(path) || privacyPaths.has(path) ? '2026-10-29' : october28Paths.has(path) ? '2026-10-28' : galleryRetirementPaths.has(path) ? '2026-10-25' : keywordPaths.has(path) || companyInformationPaths.has(path) ? '2026-10-24' : ajmanRefreshPaths.has(path) ? ajmanRefresh.date : domesticRefreshPaths.has(path) ? domesticRefresh.date : paymentUpdatedPaths.has(path) ? '2026-10-23' : officeUpdatedPaths.has(path) || worksheetUpdatedPaths.has(path) || galleryUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
     expect(entry[1].match(/<lastmod>(.*?)<\/lastmod>/g), pathname).toEqual([`<lastmod>${expectedDate}</lastmod>`]);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]);
-  expect(urls).toHaveLength(284);
+  additions.assertInventory(urls);
+  additions.assertLastmods(entries.map(entry => ({ url: entry[1].match(/<loc>(.*?)<\/loc>/)![1], lastmod: entry[1].match(/<lastmod>(.*?)<\/lastmod>/)?.[1] })));
   expect(urls.slice(0, 232)).toEqual(keywordReview.previousCanonicalUrls);
   expect(urls.slice(232, onPageSpec.originalCanonicalCount)).toEqual(keywordReview.articles.flatMap(article => ['en', 'ar'].map(locale => `https://inayadomestic.ae/${locale}/blog/${article.slug}/`)));
-  expect(urls.slice(onPageSpec.originalCanonicalCount)).toEqual(onPageSpec.archiveRoutes.flatMap(route => ['en', 'ar'].map(locale => `https://inayadomestic.ae/${locale}/${route}/`)));
+  expect(urls.slice(onPageSpec.originalCanonicalCount, additions.originalCanonicalCount)).toEqual(onPageSpec.archiveRoutes.flatMap(route => ['en', 'ar'].map(locale => `https://inayadomestic.ae/${locale}/${route}/`)));
+  expect(urls.slice(additions.originalCanonicalCount)).toEqual(additions.newCanonicalUrls);
   expect(new Set(urls).size).toBe(urls.length);
   for (const locale of ['en', 'ar']) {
     for (const path of ['', 'booking/', 'careers/', 'pricing/', 'blog/', 'faq/']) {

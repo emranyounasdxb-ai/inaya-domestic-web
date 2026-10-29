@@ -1,5 +1,6 @@
 import { publishedArticleGuides } from './published-articles';
 import { keywordArticleGuides } from './keyword-article-guides';
+import { newArticleGuides } from './new-article-guides';
 
 export type GuideLanguage = 'en' | 'ar';
 
@@ -2715,7 +2716,8 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
     ]
   },
   ...publishedArticleGuides,
-  ...keywordArticleGuides
+  ...keywordArticleGuides,
+  ...newArticleGuides
 ];
 
 export function getDomesticWorkerGuide(slug: string) {
