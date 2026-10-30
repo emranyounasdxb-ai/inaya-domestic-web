@@ -22,7 +22,7 @@ export default function BlogImage({ slug, locale, hero = false, className = '', 
         unoptimized
         loading={hero ? 'eager' : 'lazy'}
         fetchPriority={hero ? 'high' : undefined}
-        sizes={hero ? '(min-width: 1024px) 896px, 100vw' : variant === 'sidebar' ? '56px' : '(min-width: 768px) 33vw, 100vw'}
+        sizes={hero ? '(min-width: 1024px) 896px, 100vw' : variant === 'sidebar' ? '(min-width: 1024px) 240px, (min-width: 640px) 50vw, 100vw' : '(min-width: 768px) 33vw, 100vw'}
         className={hero ? (fullFrame ? 'h-auto w-full' : 'h-full w-full object-cover object-center') : 'h-full w-full object-cover object-center'}
       />
     </div>

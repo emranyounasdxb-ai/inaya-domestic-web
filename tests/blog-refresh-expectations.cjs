@@ -10,6 +10,15 @@ const galleryUrls = ['en', 'ar'].map(lang => `https://inayadomestic.ae/${lang}/g
 function historicalSource(file, current) {
   current = require('./page-clarity-expectations.cjs').historicalSource(file, current);
   current = current.replace(/\r\n/g, '\n');
+  // The owner's 30 October sidebar amendment changes only the sidebar size hint.
+  // Pin that exact replacement before retaining the original full-source hash.
+  if (file === 'components/BlogImage.tsx') {
+    const previous = "variant === 'sidebar' ? '56px'";
+    const updated = "variant === 'sidebar' ? '(min-width: 1024px) 240px, (min-width: 640px) 50vw, 100vw'";
+    assert.equal(current.split(updated).length, 2, 'one reviewed full-width sidebar hint');
+    assert.ok(!current.includes(previous), 'no remaining thumbnail-width hint');
+    current = current.replace(updated, previous);
+  }
   const pin = fixture.sources[file];
   if (!pin) return current;
   assert.equal(sha(current), pin.afterSha256, `${file}: exact reviewed blog presentation amendment`);

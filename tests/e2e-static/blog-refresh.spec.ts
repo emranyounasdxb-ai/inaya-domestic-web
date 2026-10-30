@@ -44,11 +44,25 @@ for (const lang of ['en', 'ar']) {
 
   for (const slug of ['domestic-worker-package-pricing-factors', 'domestic-worker-contracts-renewal', 'tadbeer-center-ajman-first-visit-service-routing']) {
     test(`${lang}/${slug}: related cards remain usable beside long reading and links are visible`, async ({ page }, testInfo) => {
+      await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(`/${lang}/blog/${slug}/`);
       const reject = page.getByRole('button', { name: lang === 'ar' ? 'رفض التحليلات الاختيارية' : 'Reject optional analytics' });
       if (await reject.isVisible()) await reject.click();
       const related = page.locator('[data-related-blog-cards]');
       await expect(related.locator('[data-related-guide]')).toHaveCount(3);
+      await expect(related).toHaveCSS('position', 'static');
+      for (const card of await related.locator('[data-related-guide]').all()) {
+        const frame = await card.locator('[data-blog-image="sidebar"]').boundingBox();
+        const heading = card.getByRole('heading', { level: 3 });
+        const title = await heading.boundingBox(), bounds = await card.boundingBox();
+        if (!frame || !title || !bounds) throw new Error('Missing image-first related card');
+        expect(frame.width).toBeGreaterThan(180);
+        expect(Math.abs(frame.width - (bounds.width - 26))).toBeLessThan(2);
+        expect(title.y).toBeGreaterThanOrEqual(frame.y + frame.height + 11);
+        expect(Math.abs(frame.width / frame.height - 1.6)).toBeLessThan(0.02);
+        await expect(heading).toHaveCSS('font-size', '16px');
+        expect(await heading.evaluate(el => el.scrollHeight > el.clientHeight + 1)).toBe(false);
+      }
       const inline = page.locator('[data-blog-layout] article a[data-contextual-blog-link]').first();
       await inline.scrollIntoViewIfNeeded();
       const style = await inline.evaluate(el => ({ line: getComputedStyle(el).textDecorationLine, weight: getComputedStyle(el).fontWeight }));
@@ -59,10 +73,6 @@ for (const lang of ['en', 'ar']) {
         const layout = page.locator('[data-blog-layout]');
         const reading = await layout.boundingBox(), box = await related.boundingBox();
         if (!reading || !box) throw new Error('Missing actual reading layout');
-        const initialY = await related.evaluate(el => el.getBoundingClientRect().top + scrollY);
-        await page.evaluate(y => scrollTo({ top: y, behavior: 'instant' }), initialY + 400);
-        await expect(related).toBeInViewport();
-        expect(Math.abs((await related.boundingBox())!.y - 96)).toBeLessThan(3);
         const body = await page.locator('[data-blog-layout] article').boundingBox(), cards = await related.boundingBox();
         if (!body || !cards) throw new Error('Missing columns');
         expect(lang === 'en' ? body.x + body.width <= cards.x : cards.x + cards.width <= body.x).toBe(true);
@@ -88,6 +98,10 @@ for (const lang of ['en', 'ar']) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       await page.screenshot({ path: testInfo.outputPath(`reading-${lang}-${slug}.png`) });
       const first = related.locator('[data-related-guide]').first();
+      await first.focus(); await page.keyboard.press('Tab'); await page.keyboard.press('Shift+Tab');
+      await expect(first).toBeFocused();
+      expect(await first.evaluate(el => getComputedStyle(el).outlineStyle)).not.toBe('none');
+      await expect(first).toHaveCSS('transition-property', 'none');
       const href = await first.getAttribute('href');
       // A normal document request verifies the actual static destination; the
       // dedicated release navigation suite separately checks Linux RSC routing.
