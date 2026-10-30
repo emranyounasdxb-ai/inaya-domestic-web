@@ -82,11 +82,11 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
     "keyword": "Housemaid visa Ajman",
     "slug": "housemaid-visa-ajman-application-readiness-ledger",
     "published": "2026-10-24",
-    "updated": "2026-10-24",
+    "updated": "2026-10-30",
     "en": {
-      "title": "Housemaid visa Ajman: create a case-specific application readiness ledger",
-      "description": "Organise a housemaid visa enquiry in Ajman with separate new, renewal, cancellation and follow-up records without assuming approval.",
-      "searchTitle": "Housemaid Visa Ajman: Application Readiness",
+      "title": "Housemaid Visa in Ajman: Documents and Application Checklist",
+      "description": "Prepare a housemaid visa enquiry in Ajman: organise case documents, new applications, renewals, cancellations and follow-up questions.",
+      "searchTitle": "Housemaid Visa Ajman: Documents & Application Checklist",
       "citations": [
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/renewal-of-a-domestic-workers-employment-contract-2022",
@@ -94,9 +94,9 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
       ]
     },
     "ar": {
-      "title": "تأشيرة خادمة في عجمان: أنشئ سجل استعداد خاصاً بمعاملتك",
-      "description": "نظم استفسار تأشيرة خادمة في عجمان بسجلات مستقلة للطلب الجديد والتجديد والإلغاء والمتابعة دون افتراض الموافقة.",
-      "searchTitle": "تأشيرة خادمة عجمان: تجهيز الطلب",
+      "title": "تأشيرة خادمة في عجمان: المستندات وخطوات الطلب",
+      "description": "جهز استفسار تأشيرة خادمة في عجمان: مستندات الحالة والطلب الجديد والتجديد والإلغاء وأسئلة المتابعة.",
+      "searchTitle": "تأشيرة خادمة عجمان: المستندات وخطوات الطلب",
       "citations": [
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/renewal-of-a-domestic-workers-employment-contract-2022",
@@ -132,20 +132,20 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
     "keyword": "Housemaid recruitment Ajman",
     "slug": "housemaid-recruitment-ajman-candidate-evidence-cards",
     "published": "2026-10-24",
-    "updated": "2026-10-24",
+    "updated": "2026-10-30",
     "en": {
-      "title": "Housemaid recruitment Ajman: compare candidates with evidence cards",
-      "description": "Use respectful interview evidence cards for housemaid recruitment in Ajman, with individual skills, clear unknowns and a practical handover.",
-      "searchTitle": "Housemaid Recruitment Ajman: Candidate Interviews",
+      "title": "Housemaid Recruitment in Ajman: Interviews and Candidate Comparison",
+      "description": "Compare housemaid candidates in Ajman with practical interview questions, relevant task experience, clear role expectations and a first week handover.",
+      "searchTitle": "Housemaid Recruitment Ajman: Interviews & Selection",
       "citations": [
         "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"
       ]
     },
     "ar": {
-      "title": "استقدام خادمات في عجمان: قارن المرشحات ببطاقات الأدلة",
-      "description": "استخدم بطاقات أدلة لمقابلات تحترم المرشحات عند استقدام الخادمات في عجمان، مع مهارات فردية وأسئلة واضحة وتسليم عملي.",
-      "searchTitle": "استقدام خادمات عجمان: مقابلة المرشحات",
+      "title": "استقدام خادمة في عجمان: المقابلة ومقارنة المرشحات",
+      "description": "قارن مرشحات العمل المنزلي في عجمان بأسئلة مقابلة عملية وخبرة مرتبطة بالمهام وتوقعات واضحة للدور وتسليم عملي للأسبوع الأول.",
+      "searchTitle": "استقدام خادمة عجمان: المقابلة واختيار المرشحة",
       "citations": [
         "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022"

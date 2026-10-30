@@ -7,6 +7,11 @@ const { blogOrderSlugs } = require('./four-guides-addition-expectations.cjs');
 const normalizeParagraph = value => value.toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ');
 
 function reviewedPresentationPlacement(original) {
+  const pin=Object.values(require('./service-refinement-expectations.cjs').fixture.records).find(item=>item.record.after.id===original.id);
+  if(pin && ['article-summary','hub-summary'].includes(original.kind)) {
+    assert.equal(original.paragraph,normalizeParagraph(pin.record.before[original.locale].description),'only exact prior summaries are amended');
+    return {...original,paragraph:normalizeParagraph(pin.record.after[original.locale].description)};
+  }
   if (original.id !== 'K02' || !['article-summary', 'hub-summary'].includes(original.kind)) return original;
   const amendment = getAmendment('tadbeer-center-ajman-first-visit-service-routing');
   assert.equal(original.paragraph, normalizeParagraph(amendment.before.record[original.locale].description),
@@ -57,7 +62,8 @@ function withoutKeywordPresentation(pages) {
   assert.equal(excludedParagraphs, fixture.expectedExcludedParagraphs);
   // Exactly four reviewed K02 summary placements add eight UI tokens. All
   // diagrams, coordination text and substantive manuscript prose stay counted.
-  assert.equal(excludedTokens, 2355);
+  const delta=fixture.placements.reduce((sum,original)=>{const current=reviewedPresentationPlacement(original);return sum+(current.paragraph.split(' ').length-original.paragraph.split(' ').length)*original.count;},0);
+  assert.equal(excludedTokens, fixture.expectedExcludedTokens + delta);
   return { pages: classified, excludedParagraphs, excludedTokens };
 }
 

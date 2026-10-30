@@ -12,7 +12,7 @@ const plain = s => tokens(s.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1')).j
 
 test('page-clarity source pins allow only the complete approved changes and preserve every other checkpoint', async () => {
   for (const [file, pin] of Object.entries(clarity.fixture.sources)) {
-    const source = (await readFile(file, 'utf8')).replace(/\r\n/g, '\n');
+    const source = require('./service-refinement-expectations.cjs').historicalSource(file, (await readFile(file, 'utf8')).replace(/\r\n/g, '\n'));
     assert.equal(clarity.sha(source), pin.afterSha256, `${file}: complete reviewed source`);
     if (pin.before !== null) {
       assert.equal(clarity.historicalSource(file, source), pin.before);

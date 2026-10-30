@@ -113,6 +113,7 @@ function dateFor(slug, fallback) {
 }
 
 function pageBefore(url, currentTitle, currentDescription) {
+  const prior=require('./service-refinement-expectations.cjs').pageBefore(url,currentTitle,currentDescription);currentTitle=prior.title;currentDescription=prior.description;
   const pathname = new URL(url).pathname;
   const slug = pathname.split('/').filter(Boolean).slice(2).join('/');
   const amendment = getAmendment(slug);
