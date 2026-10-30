@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
+import GoogleReviewsHub from '@/components/GoogleReviewsHub';
 import { getTrustSupportPage, type Lang } from '@/lib/trust-support-pages';
 
 export default function TrustSupportPage({ locale, slug }: { locale: string; slug: string }) {
@@ -10,13 +11,14 @@ export default function TrustSupportPage({ locale, slug }: { locale: string; slu
 
   return (
     <main className="bg-[#fbfaf7] px-6 py-16 text-primary-900 lg:px-10">
-      <div className="mx-auto max-w-6xl">
+      <div className={`mx-auto max-w-6xl${slug === 'reviews' ? ' lg:ps-12 xl:ps-0 rtl:ps-0' : ''}`}>
         <p className="text-[0.66rem] font-bold uppercase tracking-[0.28em] text-accent-700">{page.badge[lang]}</p>
         <h1 className={`${lang === 'ar' ? 'font-arabic leading-[1.25]' : 'font-heading leading-[1.05]'} mt-4 text-[2.35rem] font-bold tracking-[-0.055em] sm:text-[3.5rem]`}>{page.title[lang]}</h1>
         <p className="mt-5 max-w-3xl text-sm leading-8 text-primary-900/72 sm:text-base">{page.lead[lang]}</p>
         {slug === 'privacy-policy' && page.updated && <p className="mt-3 text-sm text-primary-900/65">{page.updated[lang]}</p>}
         <Link href={`/${locale}/contact`} className="mt-7 inline-flex rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white">{contactLabel}</Link>
         <PageBreadcrumbs locale={locale} route={slug === 'why-choose-inaya' ? 'inaya-advantages' : slug} />
+        {slug === 'reviews' && <GoogleReviewsHub locale={locale} />}
         <section className="mt-10 grid gap-5 lg:grid-cols-2">
           {page.sections.map((section) => (
             <article key={section.title.en} className="rounded-[26px] border border-white/80 bg-white/78 p-6 shadow-[0_18px_55px_rgba(7,22,74,0.06)]">
