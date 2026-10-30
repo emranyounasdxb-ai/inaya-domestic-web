@@ -186,7 +186,7 @@ function ServiceHero({
     <section className="relative border-b border-primary-900/10 bg-[#fffdf8] px-5 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(191,164,106,0.16),transparent_24rem),radial-gradient(circle_at_88%_16%,rgba(7,22,74,0.05),transparent_28rem)]" />
       <div className="relative mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1fr_0.88fr] lg:items-center">
-        <div className="ps-8 sm:ps-6 lg:ps-4 rtl:ps-0">
+        <div className="ps-8 sm:ps-6 lg:ps-12 xl:ps-4 rtl:ps-0">
           <p className="text-sm font-bold text-accent-700">{copy.badge}</p>
           <h1 className={`${headingFont(lang)} mt-4 max-w-3xl font-bold text-primary-900`}>{serviceHeadingRefinements[slug]?.[lang] ?? copy.title}</h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-primary-900/85 sm:text-[1.05rem]">{copy.lead}</p>

@@ -4,6 +4,7 @@ import {createRequire,Module} from 'node:module';
 import path from 'node:path';
 import test from 'node:test';
 import refinement from './service-refinement-expectations.cjs';
+import contactRail from './contact-rail-expectations.cjs';
 import {auditExport,attrs,text,tokens} from '../scripts/seo-content-audit.mjs';
 const require=createRequire(import.meta.url);const ts=require('typescript');
 const clean=s=>s.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g,'');
@@ -12,7 +13,9 @@ const benefits=load(await readFile('lib/service-support-benefits.ts','utf8'),'li
 
 test('exact scoped support refinement preserves prior checkpoints and rejects unreviewed mutations',async()=>{
  for(const[file,pin]of Object.entries(refinement.fixture.sources)){
-  const source=(await readFile(file,'utf8')).replace(/\r\n/g,'\n');assert.equal(refinement.sha(source),pin.afterSha256);
+  const current=(await readFile(file,'utf8')).replace(/\r\n/g,'\n');
+  const source=contactRail.historicalSource(file,current);assert.equal(refinement.sha(source),pin.afterSha256);
+  if(file==='components/ServiceDetailTemplate.tsx')assert.throws(()=>contactRail.historicalSource(file,current+'\n//unreviewed\n'),/exact reviewed/);
   if(pin.before!==null){assert.equal(refinement.historicalSource(file,source),pin.before);assert.throws(()=>refinement.historicalSource(file,source+'\n//unreviewed\n'),/exact reviewed/);}
  }
  for(const[slug,pin]of Object.entries(refinement.fixture.records)){
