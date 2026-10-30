@@ -95,7 +95,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
             <label htmlFor={fieldId('service')} className="sr-only">{labels.service}</label>
             <select {...fieldA11y('service')} name="service" className="w-full rounded-2xl border border-primary-700/10 bg-ivory-100/70 px-4 py-4 text-sm text-ink/70 shadow-sm outline-none transition focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30" defaultValue="">
               <option value="" disabled>{labels.service}</option>
-              {services.slice(0, 12).map((service) => (
+              {services.map((service) => (
                 <option key={service.slug} value={service.slug}>{service.name[lang]}</option>
               ))}
             </select>
@@ -150,7 +150,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
         <label htmlFor={fieldId('service')} className="label">{labels.service} *</label>
         <select {...fieldA11y('service')} name="service" className="field" defaultValue="">
           <option value="" disabled>{labels.chooseService}</option>
-          {services.slice(0, 12).map((service) => (
+          {services.map((service) => (
             <option key={service.slug} value={service.slug}>{service.name[lang]}</option>
           ))}
         </select>

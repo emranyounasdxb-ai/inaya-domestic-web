@@ -108,6 +108,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
           {guide.sources.length > 0 && <section data-blog-source-links="true" className="rounded-2xl border border-primary-900/10 bg-white/75 p-6">
             <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold text-primary-900`}>{copy.sourceIntro}</h2>
             <ul className="mt-4 list-disc space-y-3 ps-5 text-sm leading-7">{guide.sources.map(source => <li key={source.url}><a className="blog-inline-link font-semibold underline decoration-accent-700 decoration-2 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">{source[lang]}</a></li>)}</ul>
+            {slug === 'monthly-maid-package-inclusions-checklist' ? <p className="mt-4 text-sm leading-7">{copy.sourceNote}</p> : null}
           </section>}
         </article>
 
@@ -128,7 +129,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
               <li><a className="font-semibold leading-7 text-primary-900 underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700" href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer">{isArabic ? 'ناقش استفسارك عبر واتساب' : 'Discuss your enquiry on WhatsApp'}</a></li>
             </ul>
           </section>
-          <section className="glass-panel rounded-[24px] p-6">
+          {slug !== 'monthly-maid-package-inclusions-checklist' ? <section className="glass-panel rounded-[24px] p-6">
             <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-xl font-bold text-primary-900`}>{copy.sourceIntro}</h2>
             <ul className="mt-5 space-y-3">
               {guide.sources.map((source) => (
@@ -142,7 +143,7 @@ export default async function DomesticWorkerGuidePage({ params }: { params: Guid
             <p className="mt-5 text-sm leading-6 text-primary-900/70">
               {copy.sourceNote}
             </p>
-          </section>
+          </section> : null}
           <RelatedBlogCards slug={guide.slug} lang={lang} />
         </aside>
       </div>

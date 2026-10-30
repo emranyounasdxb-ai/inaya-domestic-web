@@ -59,7 +59,8 @@ test('core pages answer practical questions and visa exports contain case guidan
   for (const locale of ['en', 'ar']) for (const slug of core) {
     const body = visible(await htmlFor(locale, `services/${slug}`));
     assert.ok(body.includes(`href="/${locale}/pricing/"`));
-    assert.ok(body.includes(locale === 'ar' ? 'الحدود والمسؤوليات المطلوب توضيحها' : 'Limits and responsibilities to clarify'));
+    const limits = slug === 'maid-visa' ? (locale === 'ar' ? 'معلومات الاستفسار الأول' : 'Initial enquiry information') : ['monthly-maid-contract','live-in-maid','nanny'].includes(slug) ? (locale === 'ar' ? 'مسؤوليات الأسرة' : 'Household responsibilities') : (locale === 'ar' ? 'الحدود والمسؤوليات المطلوب توضيحها' : 'Limits and responsibilities to clarify');
+    assert.ok(body.includes(limits));
     assert.ok(body.includes(locale === 'ar' ? 'من الاستفسار إلى التأكيد' : 'From enquiry to confirmation'));
     assert.doesNotMatch(body, /Which roles can I compare when reviewing|ما الأدوار التي أقارنها عند مراجعة/);
     if (slug === 'maid-visa') {

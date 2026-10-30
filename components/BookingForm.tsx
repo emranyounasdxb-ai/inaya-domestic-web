@@ -5,6 +5,7 @@ import LocalFormConfirmation from './LocalFormConfirmation';
 import { DeliveryFeedback, useFormDelivery } from './FormDelivery';
 import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
+import { packageEnquiryValues } from '@/lib/package-enquiry';
 
 export default function BookingForm({ locale }: { locale: string }) {
   const t = useTranslations('booking');
@@ -21,6 +22,8 @@ export default function BookingForm({ locale }: { locale: string }) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [selectedService, setSelectedService] = useState(services[0].slug);
   const serviceRef = useRef<HTMLSelectElement & { inayaServiceInitialized?: boolean }>(null);
+  const [selectedPlan, setSelectedPlan] = useState(packageEnquiryValues['half-day']);
+  const planRef = useRef<HTMLSelectElement & { inayaPlanInitialized?: boolean }>(null);
 
   useEffect(() => {
     const syncServiceFromUrl = () => {
@@ -29,12 +32,15 @@ export default function BookingForm({ locale }: { locale: string }) {
         ? requested
         : services[0].slug;
       setSelectedService(selected);
+      const requestedPlan = new URLSearchParams(window.location.search).get('plan');
+      setSelectedPlan(requestedPlan && Object.values(packageEnquiryValues).includes(requestedPlan) ? requestedPlan : packageEnquiryValues['half-day']);
     };
 
     // The inline preselection already initialized the native field. Adopt its
     // current value so a choice made before hydration is never overwritten.
     if (serviceRef.current?.inayaServiceInitialized) {
       setSelectedService(serviceRef.current?.value ?? services[0].slug);
+      setSelectedPlan(planRef.current?.value ?? packageEnquiryValues['half-day']);
     } else {
       // React does not execute inline scripts on a client-side route change.
       syncServiceFromUrl();
@@ -107,7 +113,7 @@ export default function BookingForm({ locale }: { locale: string }) {
       </div>
       <div>
         <label htmlFor={fieldId('plan')} className="label">{t('plan')}</label>
-        <select {...fieldA11y('plan')} name="plan" className="field">
+        <select {...fieldA11y('plan')} ref={planRef} name="plan" className="field" value={selectedPlan} onChange={event => setSelectedPlan(event.target.value)}>
           <option value="Half day — 4 hours">{t('planHalfDay')}</option>
           <option value="Daily — 8 hours">{t('planDaily')}</option>
           <option value="Weekly — 7 days">{t('planWeekly')}</option>
@@ -116,6 +122,7 @@ export default function BookingForm({ locale }: { locale: string }) {
           <option value="12-month contract">{t('planYearly')}</option>
           <option value="Discuss requirements">{t('planDiscuss')}</option>
         </select>
+        <script dangerouslySetInnerHTML={{ __html: "(function(){var select=document.currentScript.previousElementSibling;var requested=new URLSearchParams(location.search).get('plan');if(select){select.inayaPlanInitialized=true;if(requested&&Array.prototype.some.call(select.options,function(option){return option.value===requested;}))select.value=requested;}})();" }} />
       </div>
       <div>
         <label htmlFor={fieldId('date')} className="label">{t('date')}</label>

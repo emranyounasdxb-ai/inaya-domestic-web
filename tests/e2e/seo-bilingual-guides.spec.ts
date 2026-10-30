@@ -1,5 +1,6 @@
 import { expect, test } from '../browser-fixture';
 import amendment from '../five-guides-amendment-expectations.cjs';
+import clarity from '../page-clarity-expectations.cjs';
 
 const slugs = [
   'uae-domestic-worker-hiring-process',
@@ -77,14 +78,17 @@ for (const locale of ['en', 'ar'] as const) {
       await page.goto(route);
       await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
       await expect(page.locator('main h1')).toHaveCount(1);
-      const reviewedSections = amendment.getAmendment(slug)?.after.record[locale].sections;
+      const reviewedGuide = clarity.currentRecord(slug, amendment.getAmendment(slug)?.after.record);
+      const reviewedSections = reviewedGuide?.[locale].sections;
       await expect(page.locator('main article h2')).toHaveCount((reviewedSections?.length ?? sectionCounts[slugs.indexOf(slug)]) + 1);
       await expect(page.locator('main article [data-blog-source-links]')).toHaveCount(1);
       const bodyReferences = page.locator('main article [data-blog-source-links] a');
       const sidebarReferences = page.locator('[data-blog-layout] > aside > section').nth(1).locator('a');
-      expect(await bodyReferences.evaluateAll(links => links.map(link => link.getAttribute('href')))).toEqual(await sidebarReferences.evaluateAll(links => links.map(link => link.getAttribute('href'))));
+      const bodyHrefs = await bodyReferences.evaluateAll(links => links.map(link => link.getAttribute('href')));
+      if (slug === 'monthly-maid-package-inclusions-checklist') expect(bodyHrefs).toEqual(reviewedGuide.sources.map((source: { url: string }) => source.url));
+      else expect(bodyHrefs).toEqual(await sidebarReferences.evaluateAll(links => links.map(link => link.getAttribute('href'))));
       await expect(page.locator('[data-blog-layout] > aside > section').first().locator(`a[href="/${locale}/blog/${relatedGuide[slug]}/"]`)).toHaveCount(1);
-      const officialCount = amendment.getAmendment(slug)?.after.record.sources?.filter((source: { url: string }) => ['www.mohre.gov.ae', 'mohre.gov.ae', 'icp.gov.ae', 'www.gdrfad.gov.ae'].includes(new URL(source.url).hostname)).length ?? (slug === 'domestic-worker-visa-sponsorship-support' ? 4 : 3);
+      const officialCount = slug === 'monthly-maid-package-inclusions-checklist' ? 0 : amendment.getAmendment(slug)?.after.record.sources?.filter((source: { url: string }) => ['www.mohre.gov.ae', 'mohre.gov.ae', 'icp.gov.ae', 'www.gdrfad.gov.ae'].includes(new URL(source.url).hostname)).length ?? (slug === 'domestic-worker-visa-sponsorship-support' ? 4 : 3);
       await expect(page.locator('main aside a[href^="https://www.mohre.gov.ae/"], main aside a[href^="https://mohre.gov.ae/"], main aside a[href^="https://icp.gov.ae/"], main aside a[href^="https://www.gdrfad.gov.ae/"]')).toHaveCount(officialCount);
       await expect(page.locator('[data-seo="breadcrumbs"] a[href$="/blog/"]')).toHaveCount(1);
       const graph = JSON.parse(await page.locator('script[data-seo="route"]').textContent() as string)['@graph'];

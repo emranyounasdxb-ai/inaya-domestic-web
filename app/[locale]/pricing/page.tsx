@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { managedPackages, packageArrangements, packageQuestions, packageSections } from '@/lib/package-content';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
+import { packageEnquiryHref } from '@/lib/package-enquiry';
 
 function CheckIcon({ className = '' }: { className?: string }) {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>;
@@ -77,12 +78,15 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                   <ul className="mb-7 mt-6 space-y-3">
                     {plan.features[lang].map((feature) => <li key={feature} className={`flex items-start gap-2 text-sm leading-6 ${featured ? 'text-white/85' : 'text-primary-900/80'}`}><CheckIcon className={`mt-0.5 h-5 w-5 shrink-0 ${featured ? 'text-accent-100' : 'text-accent-700'}`} /><span>{feature}</span></li>)}
                   </ul>
-                  <Link href={`/${locale}/booking/`} className={`mt-auto inline-flex min-h-12 items-center justify-center rounded-full border px-4 py-3 text-center text-sm font-bold transition ${featured ? 'border-accent-100 bg-accent-500 text-primary-900 hover:bg-accent-100' : 'border-primary-900/15 bg-[#f8f7f3] hover:border-accent-500 hover:bg-accent-50'}`}>
+                  <Link href={packageEnquiryHref(locale, plan.id)} className={`mt-auto inline-flex min-h-12 items-center justify-center rounded-full border px-4 py-3 text-center text-sm font-bold transition ${featured ? 'border-accent-100 bg-accent-500 text-primary-900 hover:bg-accent-100' : 'border-primary-900/15 bg-[#f8f7f3] hover:border-accent-500 hover:bg-accent-50'}`}>
                     {isArabic ? 'استفسر عن هذه الباقة' : `Enquire about ${plan.name[lang].toLowerCase()}`}
                   </Link>
                 </article>
               );
             })}
+          </div>
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-primary-900/10 bg-white" tabIndex={0} role="region" aria-label={isArabic ? 'مقارنة الباقات' : 'Package comparison'}>
+            <table className="w-full min-w-[32rem] text-start text-sm leading-7"><caption className="p-5 text-start text-lg font-bold">{isArabic ? 'قارن المدة والسعر والنطاق' : 'Compare duration, price and scope'}</caption><thead className="bg-primary-900/5"><tr>{(isArabic ? ['الباقة', 'المدة أو الالتزام', 'السعر المنشور', 'أساس النطاق'] : ['Package', 'Duration or commitment', 'Published price', 'Scope basis']).map(h => <th key={h} scope="col" className="px-5 py-3 text-start">{h}</th>)}</tr></thead><tbody>{managedPackages.map(plan => <tr key={plan.id} className="border-t border-primary-900/10"><th scope="row" className="px-5 py-3 text-start">{plan.name[lang]}</th><td className="px-5 py-3">{plan.duration[lang]}</td><td className="px-5 py-3"><bdi>{plan.price[lang]}</bdi> — {plan.period[lang]}</td><td className="px-5 py-3">{['monthly', 'six-month', 'yearly'].includes(plan.id) ? (isArabic ? 'مزايا الاتفاق الشهري المنطبق أدناه' : 'Applicable monthly agreement benefits below') : (isArabic ? 'مهام الزيارة أو الفترة المتفق عليها؛ لا تفترض شمول مزايا الاتفاق الشهري' : 'Agreed visit or period duties; monthly agreement benefits are not assumed')}</td></tr>)}</tbody></table>
           </div>
           <div data-content="package-price-basis" className="mt-7 rounded-2xl border border-accent-500/25 bg-[#f5f2e9] p-5 sm:p-6">
             <p className="text-sm font-bold leading-7">{isArabic ? '3,250 درهماً و3,000 درهم هما سعران شهريان مع الالتزام لمدة 6 أو 12 شهراً، وليسا إجمالي المدة.' : 'AED 3,250 and AED 3,000 are monthly prices with a 6- or 12-month commitment, not totals for the full term.'}</p>

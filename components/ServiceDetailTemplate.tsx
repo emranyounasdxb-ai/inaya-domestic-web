@@ -12,6 +12,10 @@ import { serviceHeadingRefinements } from '@/lib/on-page-seo-refinements';
 import { domesticServiceReferences } from '@/lib/domestic-service-content';
 import ServiceSeoBlock from './ServiceSeoBlock';
 import ServiceIcon from './ServiceIcon';
+import ServiceAgreementDetails from './ServiceAgreementDetails';
+import { liveInChecklist, reviewedServiceSlugs } from '@/lib/service-page-improvements';
+import { managedPackages } from '@/lib/package-content';
+import { packageEnquiryHref } from '@/lib/package-enquiry';
 
 type TemplateProps = {
   locale: string;
@@ -121,6 +125,7 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
         <div className="mx-auto max-w-4xl rounded-[26px] border border-accent-500/25 bg-white p-7 shadow-[0_20px_54px_rgba(7,22,74,0.08)] sm:p-10">
           <SectionTitle title={copy.whatTitle} lang={lang} />
           <p className="mt-6 max-w-3xl text-[1rem] leading-8 text-primary-900/85">{copy.whatText}</p>
+          {slug === 'live-in-maid' ? <div className="mt-6"><h3 className="text-lg font-bold">{lang === 'ar' ? 'قائمة ما قبل بدء الخدمة' : 'Before service starts: household checklist'}</h3><ul className="mt-3 grid list-disc gap-3 ps-5 text-sm leading-7 sm:grid-cols-2">{liveInChecklist[lang].map(point => <li key={point}>{point}</li>)}</ul></div> : null}
           {domesticServiceReferences[slug]?.map((reference) => <p key={reference.href} className="mt-4 text-sm leading-7 text-primary-900/75">
             <a href={reference.href} className="font-semibold underline decoration-accent-500/70 underline-offset-4 hover:text-accent-700">{reference.label[lang]}</a>
           </p>)}
@@ -134,6 +139,8 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
           </p> : null}
         </div>
       </section>
+
+      {slug === 'nanny' ? <MatchingCards copy={copy} lang={lang} locale={locale} slug={slug} /> : null}
 
       <section className={`${sectionPadding} bg-white`}>
         <div className="mx-auto max-w-6xl">
@@ -154,12 +161,13 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
       </section>
 
       <ProcessSection copy={copy} lang={lang} />
-      <MatchingCards copy={copy} lang={lang} locale={locale} slug={slug} />
+      {slug !== 'nanny' ? <MatchingCards copy={copy} lang={lang} locale={locale} slug={slug} /> : null}
       <PricingCards copy={copy} lang={lang} locale={locale} slug={slug} />
+      {['monthly-maid-contract', 'nanny', 'live-in-maid'].includes(slug) ? <ServiceAgreementDetails lang={lang} /> : null}
       <FAQSection copy={copy} lang={lang} slug={slug} />
       <RelatedServices copy={copy} lang={lang} locale={locale} />
       <ComparisonSection copy={copy} lang={lang} />
-      <ServiceSeoBlock locale={locale} slug={slug} />
+      {reviewedServiceSlugs.includes(slug) ? null : <ServiceSeoBlock locale={locale} slug={slug} />}
       <FinalCta copy={copy} lang={lang} locale={locale} slug={slug} />
     </div>
   );
@@ -295,7 +303,7 @@ function MatchingCards({
   slug: string;
 }) {
   const administrativeEnquiry = ['maid-visa', 'sponsorship-transfer'].includes(slug);
-  const countryBased = !administrativeEnquiry && usesCountryMatching(slug);
+  const countryBased = !reviewedServiceSlugs.includes(slug) && !administrativeEnquiry && usesCountryMatching(slug);
   const requestLabel = administrativeEnquiry
     ? lang === 'ar' ? 'ناقش حالتك' : 'Discuss your case'
     : lang === 'ar' ? 'اطلب المطابقة' : 'Request Matching';
@@ -380,7 +388,7 @@ function PricingCards({
         {['live-in-maid', 'full-time-maid', 'part-time-maid', 'monthly-maid-contract', 'nanny', 'maid-visa'].includes(slug) ? <p className="mt-4 text-center"><Link href={`/${locale}/pricing/`} className="text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4">{lang === 'ar' ? 'راجع أساس تسعير الباقات وما يجب تأكيده' : 'Review the package pricing basis and what to confirm'}</Link></p> : null}
         <p className="mx-auto mt-5 w-fit border-b border-accent-500/40 pb-1 text-sm font-bold text-accent-700">{note}</p>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
-          {copy.pricing.map((item) => (
+          {copy.pricing.map((item, index) => (
             <article key={item.title} className={`${surface} flex h-full flex-col p-6`}>
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-50 text-accent-700"><CheckIcon className="h-5 w-5" /></span>
               <h3 className={`${headingFont(lang)} mt-4 text-xl font-bold text-primary-900`}>{item.title}</h3>
@@ -394,7 +402,7 @@ function PricingCards({
                 ))}
               </div>
               <Link
-                href={`/${locale}/booking?service=${slug}`}
+                href={['monthly-maid-contract', 'live-in-maid', 'nanny', 'part-time-maid'].includes(slug) ? packageEnquiryHref(locale, managedPackages[(slug === 'part-time-maid' ? 0 : 3) + index].id).replace(/service=[^&]+/, `service=${slug}`) : `/${locale}/booking?service=${slug}`}
                 className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-primary-900 px-6 py-3 text-sm font-bold text-white transition hover:bg-primary-800"
               >
                 {copy.book}

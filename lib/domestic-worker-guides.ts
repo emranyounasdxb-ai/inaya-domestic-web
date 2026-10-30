@@ -1475,41 +1475,70 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
   {
     "slug": "monthly-maid-package-inclusions-checklist",
     "published": "2026-10-09",
-    "updated": "2026-10-19",
+    "updated": "2026-10-30",
     "en": {
       "title": "What is included in a monthly maid package?",
       "description": "See the managed monthly salary inclusions, tier features, household responsibilities, payment terms, cancellation refunds and eligible replacement support.",
-      "lead": "INAYA’s published contract plans are AED 120 for 4 hours, AED 200 for 8 hours, AED 1,120 for 7 days and AED 3,500 for 30 days. A six-month contract costs AED 3,250 per month; a twelve-month contract costs AED 3,000 per month. The published rates are the same for live-in and live-out arrangements. Confirm the selected role, schedule, responsibilities and final written quotation before booking.",
+      "lead": "Use this checklist to separate INAYA’s managed monthly agreement benefits, household responsibilities and items requiring quotation confirmation. The monthly scope includes the worker’s agreed salary and applicable benefits; it does not mean unlimited duties.",
       "sections": [
         {
-          "heading": "Compare the published contract plans",
+          "heading": "What the managed monthly service includes",
           "paragraphs": [
-            "INAYA’s published contract plans are AED 120 for 4 hours, AED 200 for 8 hours, AED 1,120 for 7 days and AED 3,500 for 30 days. A six-month contract costs AED 3,250 per month; a twelve-month contract costs AED 3,000 per month. The published rates are the same for live-in and live-out arrangements. Confirm the selected role, schedule, responsibilities and final written quotation before booking.",
-            "The published plan prices are the same for live-in and live-out service. Record accommodation, meals, transport, cleaning supplies, equipment and applicable tax in the written scope and quotation; equal plan prices do not establish that every related expense is included. The 4-hour and 8-hour plans specify visit duration. Agree working hours, weekly rest and additional duties for longer plans; a 7-day plan does not mean seven consecutive working days."
+            "Tick each core inclusion below against the monthly quotation. “All-inclusive” describes these defined components, not unlimited duties or every expense. For insurance, check the issued policy’s benefits, exclusions and co-payments separately from the included premium. These inclusions apply within the managed monthly agreement and its scope; they are not automatic benefits of every half-day, daily or weekly visit."
+          ],
+          "points": [
+            "The domestic worker’s agreed salary.",
+            "Documented salary-payment administration through the applicable approved mechanism.",
+            "Applicable government fees, agency sponsorship and work-permit/residence processing within the monthly agreement.",
+            "Emirates ID and required medical-fitness processing.",
+            "The applicable health-insurance premium; benefits, exclusions and co-payments follow the issued policy and lawful responsibilities.",
+            "Candidate assessment, initial orientation and agreed onboarding.",
+            "Return ticket and end-of-service benefits under the applicable monthly agreement and employment obligations.",
+            "Customer coordination and administration of eligible replacement requests.",
+            "Applicable agency employment obligations budgeted within the monthly service charge."
+          ]
+        },
+        {
+          "heading": "Agency employment and household responsibilities",
+          "paragraphs": [
+            "Check that the agency employer/sponsor, worker and household beneficiary are named. The agency administers the salary and employment obligations included in the charge; the household fulfils its agreed responsibilities. Confirm that the included wage is not also requested as a separate customer payment."
+          ],
+          "points": [
+            "The service payment includes the agreed worker salary; the customer does not pay that same salary separately.",
+            "Write down the individual role, duties, schedule, rest, supervision and safe working arrangements.",
+            "Record live-in accommodation, meals, household products and equipment responsibilities in the agreement.",
+            "Required lawful authorisation and written confirmation precede service commencement.",
+            "A monthly service charge does not replace the employment contract or waive statutory rights."
+          ]
+        },
+        {
+          "heading": "Household responsibilities and separately quoted services",
+          "paragraphs": [
+            "Published live-in and live-out prices are the same. Record accommodation, meals, transport, products, equipment and applicable tax in the written quotation; equal prices do not mean every expense is included. Agree working hours, rest and duties within the monthly scope."
+          ],
+          "points": [
+            "Live-in accommodation and meals: responsibilities are recorded in the applicable agreement.",
+            "Household cleaning products and equipment: responsibilities are recorded in the service scope.",
+            "Accommodation and transport responsibilities: recorded in the written quotation; published live-in and live-out plan prices are the same.",
+            "Overseas travel with the family and destination-specific procedures: separately agreed.",
+            "Specialist clinical care, specialist cleaning and duties outside the agreed role are outside the standard household scope unless separately and lawfully arranged.",
+            "Additional requested services and material scope changes are priced and agreed before acceptance.",
+            "Applicable tax and the final payable amount are identified in the written quotation."
+          ]
+        },
+        {
+          "heading": "Compare the monthly commitment options",
+          "paragraphs": [
+            "Choose a 30-day service period or a monthly rate tied to a six- or twelve-month commitment. Published live-in and live-out prices are the same; a service period does not mean continuous work. For short visits, use the [pricing page](https://inayadomestic.ae/en/pricing/) rather than assuming monthly benefits apply."
           ],
           "table": {
-            "caption": "INAYA contract plans — same published price for live-in and live-out",
+            "caption": "Monthly service and commitment options",
             "columns": [
               "Contract plan",
               "Duration or commitment",
               "Published price"
             ],
             "rows": [
-              [
-                "Half day",
-                "4 hours",
-                "AED 120"
-              ],
-              [
-                "Daily",
-                "8 hours",
-                "AED 200"
-              ],
-              [
-                "Weekly",
-                "7 days",
-                "AED 1,120"
-              ],
               [
                 "Monthly",
                 "30 days",
@@ -1531,58 +1560,13 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           "heading": "Choose the service period and record the duties",
           "paragraphs": [
-            "The 4-hour and 8-hour plans specify the visit duration. The weekly plan covers a 7-day service period and the monthly plan a 30-day period; these labels do not establish daily working hours or remove weekly rest. The six-month and yearly prices are monthly amounts tied to the stated contract commitment."
+            "Record the individual role, duties, work schedule and rest in the agreement. AED 3,250 is charged per month with a six-month commitment and AED 3,000 per month with a twelve-month commitment; neither is the total commitment price."
           ],
           "points": [
             "Confirm the individual role, available candidate and written schedule.",
             "Record accommodation, meals, transport, supplies, equipment and applicable tax responsibilities.",
             "Agree onboarding, the service contact and follow-up arrangements.",
             "Review the contract, cancellation and replacement terms before confirmation."
-          ]
-        },
-        {
-          "heading": "Agency employment and household responsibilities",
-          "paragraphs": [
-            "Check that the agency employer/sponsor, worker and household beneficiary are named. The agency administers the salary and employment obligations included in the charge; the household fulfils its agreed responsibilities. Confirm that the included wage is not also requested as a separate customer payment."
-          ],
-          "points": [
-            "The service payment includes the agreed worker salary; the customer does not pay that same salary separately.",
-            "Write down the individual role, duties, schedule, rest, supervision and safe working arrangements.",
-            "Record live-in accommodation, meals, household products and equipment responsibilities in the agreement.",
-            "Required lawful authorisation and written confirmation precede service commencement.",
-            "A monthly service charge does not replace the employment contract or waive statutory rights."
-          ]
-        },
-        {
-          "heading": "What the managed monthly service includes",
-          "paragraphs": [
-            "Tick each core inclusion below against the monthly quotation. “All-inclusive” describes these defined components, not unlimited duties or every expense. For insurance, check the issued policy’s benefits, exclusions and co-payments separately from the included premium. These inclusions apply within the managed monthly agreement and its scope; they are not automatic benefits of every half-day, daily or weekly visit."
-          ],
-          "points": [
-            "The domestic worker’s agreed salary.",
-            "Documented salary-payment administration through the applicable approved mechanism.",
-            "Applicable government fees, agency sponsorship and work-permit/residence processing within the monthly agreement.",
-            "Emirates ID and required medical-fitness processing.",
-            "The applicable health-insurance premium; benefits, exclusions and co-payments follow the issued policy and lawful responsibilities.",
-            "Candidate assessment, initial orientation and agreed onboarding.",
-            "Return ticket and end-of-service benefits under the applicable monthly agreement and employment obligations.",
-            "Customer coordination and administration of eligible replacement requests.",
-            "Applicable agency employment obligations budgeted within the monthly service charge."
-          ]
-        },
-        {
-          "heading": "Household responsibilities and separately quoted services",
-          "paragraphs": [
-            "The published plan prices are the same for live-in and live-out service. Record accommodation, meals, transport, cleaning supplies, equipment and applicable tax in the written scope and quotation; equal plan prices do not establish that every related expense is included. The 4-hour and 8-hour plans specify visit duration. Agree working hours, weekly rest and additional duties for longer plans; a 7-day plan does not mean seven consecutive working days."
-          ],
-          "points": [
-            "Live-in accommodation and meals: responsibilities are recorded in the applicable agreement.",
-            "Household cleaning products and equipment: responsibilities are recorded in the service scope.",
-            "Accommodation and transport responsibilities: recorded in the written quotation; published live-in and live-out plan prices are the same.",
-            "Overseas travel with the family and destination-specific procedures: separately agreed.",
-            "Specialist clinical care, specialist cleaning and duties outside the agreed role are outside the standard household scope unless separately and lawfully arranged.",
-            "Additional requested services and material scope changes are priced and agreed before acceptance.",
-            "Applicable tax and the final payable amount are identified in the written quotation."
           ]
         },
         {
@@ -1674,43 +1658,72 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "route": "contact"
         }
       ],
-      "sourceIntro": "Contract references for your checklist",
+      "sourceIntro": "Agreement and contract references",
       "sourceNote": "The official sources explain the applicable employment and processing requirements. INAYA’s managed-service inclusions and commercial terms are stated separately above and in the written quotation."
     },
     "ar": {
       "title": "ما الذي تشمله باقة العاملة المنزلية الشهرية؟",
       "description": "تعرف على شمول الراتب وعناصر الباقات الشهرية المدارة ومسؤوليات المنزل وشروط السداد والاسترداد عند الإلغاء ودعم الاستبدال المؤهل.",
-      "lead": "باقات عناية المنشورة هي 120 درهماً لأربع ساعات، و200 درهم لثماني ساعات، و1,120 درهماً لسبعة أيام، و3,500 درهم لثلاثين يوماً. تبلغ تكلفة عقد الستة أشهر 3,250 درهماً شهرياً، وعقد الاثني عشر شهراً 3,000 درهم شهرياً. الأسعار المنشورة واحدة للخدمة المقيمة وغير المقيمة. أكد الدور المختار والجدول والمسؤوليات وعرض السعر النهائي المكتوب قبل الحجز.",
+      "lead": "توضح هذه القائمة مزايا اتفاق الخدمة الشهرية المدارة لدى عناية، ومسؤوليات الأسرة، والبنود التي تحتاج تأكيداً في العرض. يشمل النطاق الشهري راتب العاملة المتفق عليه والمزايا المنطبقة، ولا يعني مهام غير محدودة.",
       "sections": [
         {
-          "heading": "قارن باقات العقود المنشورة",
+          "heading": "ما تشمله الخدمة الشهرية المدارة",
           "paragraphs": [
-            "باقات عناية المنشورة هي 120 درهماً لأربع ساعات، و200 درهم لثماني ساعات، و1,120 درهماً لسبعة أيام، و3,500 درهم لثلاثين يوماً. تبلغ تكلفة عقد الستة أشهر 3,250 درهماً شهرياً، وعقد الاثني عشر شهراً 3,000 درهم شهرياً. الأسعار المنشورة واحدة للخدمة المقيمة وغير المقيمة. أكد الدور المختار والجدول والمسؤوليات وعرض السعر النهائي المكتوب قبل الحجز.",
-            "أسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة. سجل السكن والطعام والنقل ومواد التنظيف والمعدات والضريبة المنطبقة في النطاق وعرض السعر المكتوبين؛ فتساوي سعر الباقة لا يثبت شمول كل نفقة مرتبطة بها. تحدد باقتا الأربع والثماني ساعات مدة الزيارة. اتفق على ساعات العمل والراحة الأسبوعية والمهام الإضافية للباقات الأطول؛ ولا تعني باقة السبعة أيام العمل سبعة أيام متتالية."
+            "طابق كل عنصر أساسي مشمول أدناه مع العرض الشهري. تصف عبارة شمول التكاليف هذه العناصر المحددة، لا مهاماً غير محدودة أو كل نفقة. وللتأمين، تحقق من منافع الوثيقة الصادرة واستثناءاتها والمساهمات في الدفع منفصلة عن القسط المشمول. تسري هذه العناصر ضمن اتفاق الخدمة الشهرية المدارة ونطاقه؛ ولا تعد مزايا تلقائية لكل زيارة بنصف يوم أو يومية أو أسبوعية."
+          ],
+          "points": [
+            "راتب العاملة المنزلية المتفق عليه.",
+            "إدارة موثقة لسداد الراتب عبر الآلية المعتمدة المنطبقة.",
+            "الرسوم الحكومية المنطبقة والكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة ضمن الاتفاق الشهري.",
+            "إجراءات الهوية الإماراتية وفحص اللياقة الطبية المطلوب.",
+            "قسط التأمين الصحي المنطبق؛ وتحدد الوثيقة الصادرة والمسؤوليات القانونية المنافع والاستثناءات والمساهمات في الدفع.",
+            "تقييم المرشحة والتوجيه الأولي والتهيئة المتفق عليها لبدء الخدمة.",
+            "تذكرة العودة ومكافأة نهاية الخدمة وفق الاتفاق الشهري المنطبق والتزامات التوظيف.",
+            "التنسيق مع العميل وإدارة طلبات الاستبدال المؤهلة.",
+            "التزامات الوكالة المتعلقة بالتوظيف والمنطبقة على الترتيب، محسوبة ضمن رسوم الخدمة الشهرية."
+          ]
+        },
+        {
+          "heading": "توظيف الوكالة ومسؤوليات الأسرة",
+          "paragraphs": [
+            "تحقق من تسمية الوكالة صاحبة العمل والكفيل والعاملة والأسرة المستفيدة. تدير الوكالة الراتب والتزامات التوظيف المشمولة في الرسوم؛ ويلتزم المنزل بمسؤولياته المتفق عليها. أكد ألا يطلب الأجر المشمول أيضاً كدفعة منفصلة من العميل."
+          ],
+          "points": [
+            "تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى بصورة منفصلة.",
+            "سجل الدور الفردي والمهام والجدول والراحة والإشراف وترتيبات العمل الآمن كتابةً.",
+            "حدد في الاتفاق مسؤوليات السكن والطعام للعاملة المقيمة ومنتجات المنزل والمعدات.",
+            "يبدأ العمل بعد الحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.",
+            "رسوم الخدمة الشهرية لا تحل محل عقد العمل ولا تلغي الحقوق القانونية."
+          ]
+        },
+        {
+          "heading": "مسؤوليات المنزل والخدمات ذات العروض المنفصلة",
+          "paragraphs": [
+            "أسعار الخدمة المنشورة واحدة للمقيمة وغير المقيمة. سجل مسؤوليات السكن والطعام والنقل والمنتجات والمعدات والضريبة المنطبقة في العرض المكتوب؛ فتساوي الأسعار لا يعني شمول كل مصروف. اتفق على ساعات العمل والراحة والمهام في النطاق الشهري."
+          ],
+          "points": [
+            "السكن والطعام للعاملة المقيمة: تسجل المسؤوليات في الاتفاق المنطبق.",
+            "منتجات التنظيف المنزلية والمعدات: تسجل المسؤوليات في نطاق الخدمة.",
+            "مسؤوليات السكن والنقل: تسجل في عرض السعر المكتوب؛ وأسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة.",
+            "السفر خارج الدولة مع الأسرة وإجراءات بلد الوجهة: يتفق عليها بصورة منفصلة.",
+            "الرعاية السريرية والتنظيف المتخصص والمهام خارج الدور المتفق عليه ليست ضمن نطاق الخدمة المنزلية القياسية إلا بترتيب منفصل ونظامي.",
+            "تحدد أسعار الخدمات الإضافية المطلوبة والتغييرات الجوهرية في النطاق، ويتفق عليها قبل قبولها.",
+            "يبين عرض السعر المكتوب الضريبة المنطبقة والمبلغ النهائي المستحق."
+          ]
+        },
+        {
+          "heading": "قارن خيارات الالتزام الشهري",
+          "paragraphs": [
+            "تتوفر فترة خدمة من 30 يوماً، أو سعر شهري مع الالتزام لمدة 6 أو 12 شهراً. السعر المنشور واحد للمقيمة وغير المقيمة؛ ولا تعني مدة الخدمة عملاً متواصلاً. راجع باقات الزيارة القصيرة في [صفحة الأسعار](https://inayadomestic.ae/ar/pricing/) بدلاً من خلطها بمزايا الاتفاق الشهري."
           ],
           "table": {
-            "caption": "باقات عناية — السعر المنشور نفسه للخدمة المقيمة وغير المقيمة",
+            "caption": "خيارات الخدمة الشهرية والالتزام",
             "columns": [
               "الباقة",
               "المدة أو الالتزام",
               "السعر المنشور"
             ],
             "rows": [
-              [
-                "نصف يوم",
-                "4 ساعات",
-                "120 درهماً"
-              ],
-              [
-                "يومي",
-                "8 ساعات",
-                "200 درهم"
-              ],
-              [
-                "أسبوعي",
-                "7 أيام",
-                "1,120 درهماً"
-              ],
               [
                 "شهري",
                 "30 يوماً",
@@ -1732,58 +1745,13 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
         {
           "heading": "اختر مدة الخدمة وسجل المهام",
           "paragraphs": [
-            "تحدد باقتا الأربع والثماني ساعات مدة الزيارة. تغطي الباقة الأسبوعية فترة خدمة لسبعة أيام والشهرية فترة لثلاثين يوماً؛ ولا تحدد هذه المسميات ساعات العمل اليومية ولا تلغي الراحة الأسبوعية. سعرا عقد الستة أشهر والعقد السنوي مبالغ شهرية مرتبطة بالالتزام المحدد للعقد."
+            "حدد الدور الفردي والمهام وساعات العمل والراحة في الاتفاق. مبلغ 3,250 درهماً هو سعر كل شهر مع الالتزام لمدة 6 أشهر، ومبلغ 3,000 درهم هو سعر كل شهر مع الالتزام لمدة 12 شهراً، وليس إجمالي المدة."
           ],
           "points": [
             "أكد الدور الفردي والمرشحة المتاحة والجدول المكتوب.",
             "سجل مسؤوليات السكن والطعام والنقل والمستلزمات والمعدات والضريبة المنطبقة.",
             "اتفق على التهيئة ومسؤول الخدمة وترتيبات المتابعة.",
             "راجع العقد وشروط الإلغاء والاستبدال قبل التأكيد."
-          ]
-        },
-        {
-          "heading": "توظيف الوكالة ومسؤوليات الأسرة",
-          "paragraphs": [
-            "تحقق من تسمية الوكالة صاحبة العمل والكفيل والعاملة والأسرة المستفيدة. تدير الوكالة الراتب والتزامات التوظيف المشمولة في الرسوم؛ ويلتزم المنزل بمسؤولياته المتفق عليها. أكد ألا يطلب الأجر المشمول أيضاً كدفعة منفصلة من العميل."
-          ],
-          "points": [
-            "تشمل رسوم الخدمة راتب العاملة المتفق عليه؛ ولا يدفع العميل الراتب نفسه مرة أخرى بصورة منفصلة.",
-            "سجل الدور الفردي والمهام والجدول والراحة والإشراف وترتيبات العمل الآمن كتابةً.",
-            "حدد في الاتفاق مسؤوليات السكن والطعام للعاملة المقيمة ومنتجات المنزل والمعدات.",
-            "يبدأ العمل بعد الحصول على التصاريح النظامية المطلوبة والتأكيد المكتوب.",
-            "رسوم الخدمة الشهرية لا تحل محل عقد العمل ولا تلغي الحقوق القانونية."
-          ]
-        },
-        {
-          "heading": "ما تشمله الخدمة الشهرية المدارة",
-          "paragraphs": [
-            "طابق كل عنصر أساسي مشمول أدناه مع العرض الشهري. تصف عبارة شمول التكاليف هذه العناصر المحددة، لا مهاماً غير محدودة أو كل نفقة. وللتأمين، تحقق من منافع الوثيقة الصادرة واستثناءاتها والمساهمات في الدفع منفصلة عن القسط المشمول. تسري هذه العناصر ضمن اتفاق الخدمة الشهرية المدارة ونطاقه؛ ولا تعد مزايا تلقائية لكل زيارة بنصف يوم أو يومية أو أسبوعية."
-          ],
-          "points": [
-            "راتب العاملة المنزلية المتفق عليه.",
-            "إدارة موثقة لسداد الراتب عبر الآلية المعتمدة المنطبقة.",
-            "الرسوم الحكومية المنطبقة والكفالة لدى الوكالة وإجراءات تصريح العمل والإقامة ضمن الاتفاق الشهري.",
-            "إجراءات الهوية الإماراتية وفحص اللياقة الطبية المطلوب.",
-            "قسط التأمين الصحي المنطبق؛ وتحدد الوثيقة الصادرة والمسؤوليات القانونية المنافع والاستثناءات والمساهمات في الدفع.",
-            "تقييم المرشحة والتوجيه الأولي والتهيئة المتفق عليها لبدء الخدمة.",
-            "تذكرة العودة ومكافأة نهاية الخدمة وفق الاتفاق الشهري المنطبق والتزامات التوظيف.",
-            "التنسيق مع العميل وإدارة طلبات الاستبدال المؤهلة.",
-            "التزامات الوكالة المتعلقة بالتوظيف والمنطبقة على الترتيب، محسوبة ضمن رسوم الخدمة الشهرية."
-          ]
-        },
-        {
-          "heading": "مسؤوليات المنزل والخدمات ذات العروض المنفصلة",
-          "paragraphs": [
-            "أسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة. سجل السكن والطعام والنقل ومواد التنظيف والمعدات والضريبة المنطبقة في النطاق وعرض السعر المكتوبين؛ فتساوي سعر الباقة لا يثبت شمول كل نفقة مرتبطة بها. تحدد باقتا الأربع والثماني ساعات مدة الزيارة. اتفق على ساعات العمل والراحة الأسبوعية والمهام الإضافية للباقات الأطول؛ ولا تعني باقة السبعة أيام العمل سبعة أيام متتالية."
-          ],
-          "points": [
-            "السكن والطعام للعاملة المقيمة: تسجل المسؤوليات في الاتفاق المنطبق.",
-            "منتجات التنظيف المنزلية والمعدات: تسجل المسؤوليات في نطاق الخدمة.",
-            "مسؤوليات السكن والنقل: تسجل في عرض السعر المكتوب؛ وأسعار الباقات المنشورة واحدة للخدمة المقيمة وغير المقيمة.",
-            "السفر خارج الدولة مع الأسرة وإجراءات بلد الوجهة: يتفق عليها بصورة منفصلة.",
-            "الرعاية السريرية والتنظيف المتخصص والمهام خارج الدور المتفق عليه ليست ضمن نطاق الخدمة المنزلية القياسية إلا بترتيب منفصل ونظامي.",
-            "تحدد أسعار الخدمات الإضافية المطلوبة والتغييرات الجوهرية في النطاق، ويتفق عليها قبل قبولها.",
-            "يبين عرض السعر المكتوب الضريبة المنطبقة والمبلغ النهائي المستحق."
           ]
         },
         {
@@ -1875,7 +1843,7 @@ export const domesticWorkerGuides: DomesticWorkerGuide[] = [
           "route": "contact"
         }
       ],
-      "sourceIntro": "مراجع العقود لقائمة المراجعة",
+      "sourceIntro": "مراجع الاتفاق والشروط",
       "sourceNote": "تشرح المصادر الرسمية متطلبات التوظيف والإجراءات المنطبقة. وتبين أعلاه عناصر خدمة عناية المدارة وشروطها التجارية بصورة منفصلة، كما تسجل في عرض السعر المكتوب."
     },
     "sources": [

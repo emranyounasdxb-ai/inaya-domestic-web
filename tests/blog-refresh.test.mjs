@@ -18,7 +18,7 @@ const anchors = html => [...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].map(m
 
 test('all70 complete manuscripts, dates and original111 image records retain their exact before bytes', async () => {
   for (const [file, sha] of Object.entries(refresh.fixture.preservedManuscriptSources)) {
-    assert.equal(refresh.sha((await readFile(file, 'utf8')).replace(/\r\n/g, '\n')), sha, `${file}: no factual/manuscript edits`);
+    assert.equal(refresh.sha(require('./page-clarity-expectations.cjs').historicalSource(file, await readFile(file, 'utf8'))), sha, `${file}: no factual/manuscript edits`);
   }
   for (const file of Object.keys(refresh.fixture.sources)) refresh.historicalSource(file, await readFile(file, 'utf8'));
   const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));

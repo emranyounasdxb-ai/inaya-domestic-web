@@ -210,6 +210,10 @@ export default function PhaseOneSeoSection({ page, locale }: { page: PageKey; lo
   const t = content[page][lang];
   const href = `/${locale}${t.ctaHref}`;
 
+  // The About page now presents the approved process in its main content.
+  // Keep these useful answers without appending a second generic company pitch.
+  if (page === 'about') return <section className="bg-[#fbfaf7] px-6 py-12 text-primary-900 lg:px-10"><div className="mx-auto max-w-6xl"><h2 className={`${lang === 'ar' ? 'font-arabic' : 'font-heading'} text-2xl font-bold`}>{t.faqTitle}</h2><div className="mt-6 grid gap-4 md:grid-cols-3">{t.faqs.map(faq => <details key={faq.question} className="rounded-2xl border border-primary-900/10 bg-white p-5"><summary className="cursor-pointer font-semibold">{faq.question}</summary><p className="mt-4 text-sm leading-7">{faq.answer}</p></details>)}</div></div></section>;
+
   return (
     <section className="bg-[#fbfaf7] px-6 py-16 text-primary-900 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-6xl rounded-[28px] border border-white/80 bg-white/78 p-7 shadow-[0_24px_70px_rgba(7,22,74,0.07)] ring-1 ring-accent-500/10 backdrop-blur-xl sm:p-9 lg:p-12">

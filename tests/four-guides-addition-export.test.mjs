@@ -1,3 +1,4 @@
+import clarity from './page-clarity-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
@@ -112,7 +113,7 @@ test('all70 guide cards occur once across the six bilingual archives with the or
       const route = page === 1 ? 'blog' : `blog/page/${page}`;
       const html = strip(await readFile(`out/${locale}/${route}/index.html`, 'utf8'));
       const cards = [...html.matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/g)].filter(match => attrs(match[1])['data-blog-guide']);
-      const expected = additions.blogOrderSlugs.slice((page - 1) * 12, page * 12);
+      const expected = clarity.archiveOrder(additions.blogOrderSlugs.slice((page - 1) * 12, page * 12));
       assert.deepEqual(cards.map(match => attrs(match[1])['data-blog-guide']), expected, `${locale}/${route}: independent70-guide order`);
       seen.push(...expected);
       for (const card of cards) {
@@ -121,7 +122,7 @@ test('all70 guide cards occur once across the six bilingual archives with the or
         assert.equal([...card[2].matchAll(/<img\b/g)].length, 1);
       }
     }
-    assert.deepEqual(seen, additions.blogOrderSlugs);
+    assert.deepEqual(seen, clarity.archiveSequence(additions.blogOrderSlugs));
     assert.deepEqual(seen.filter(slug => !additions.newSlugs.includes(slug)), additions.before.originalBlogOrder);
     assert.equal(new Set(seen).size, 70);
   }

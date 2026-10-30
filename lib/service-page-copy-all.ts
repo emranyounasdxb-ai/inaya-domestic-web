@@ -12,6 +12,7 @@ import { applyPracticalGuidance } from './service-practical-guidance';
 import { serviceCustomerQuestions } from './service-customer-questions';
 import { applyManagedServiceContent } from './package-content';
 import { applyDomesticServiceContent } from './domestic-service-content';
+import { improveServicePage } from './service-page-improvements';
 
 export type { CompareRow, Lang, Pair, Pricing, ServiceCopy } from './service-page-copy';
 
@@ -44,7 +45,7 @@ const polishedCopies = Object.entries(polishLayers).reduce((copies, [slug, patch
 export const servicePageCopies = Object.fromEntries(Object.entries(polishedCopies).map(([slug, copy]) => {
   const localizedCopy = (lang: Lang) => {
     const result = applyPracticalGuidance(slug, lang, strengthenServiceCopy(slug, lang, copy[lang]));
-    return applyDomesticServiceContent(slug, lang, applyManagedServiceContent(slug, lang, { ...result, faqs: serviceCustomerQuestions[slug]?.[lang] ?? result.faqs }));
+    return improveServicePage(slug, lang, applyDomesticServiceContent(slug, lang, applyManagedServiceContent(slug, lang, { ...result, faqs: serviceCustomerQuestions[slug]?.[lang] ?? result.faqs })));
   };
   return [slug, { en: localizedCopy('en'), ar: localizedCopy('ar') }];
 })) as Record<string, Record<Lang, ServiceCopy>>;

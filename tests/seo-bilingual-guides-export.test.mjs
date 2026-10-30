@@ -339,7 +339,8 @@ test('seven substantive EN/AR guides have hub links, visible attribution, dates 
       }
       if (['domestic-worker-package-pricing-factors', 'monthly-maid-package-inclusions-checklist'].includes(slug)) {
         const visible = text(body);
-        for (const amount of ['120', '200', '1,120', '3,500', '3,250', '3,000']) assert.ok(visible.includes(amount), `${route}: approved package amount ${amount}`);
+        for (const amount of (slug === 'monthly-maid-package-inclusions-checklist' ? ['3,500', '3,250', '3,000'] : ['120', '200', '1,120', '3,500', '3,250', '3,000'])) assert.ok(visible.includes(amount), `${route}: approved monthly package amount ${amount}`);
+        if (slug === 'monthly-maid-package-inclusions-checklist') assert.ok(body.includes(`href="https://inayadomestic.ae/${locale}/pricing/"`), 'short-visit packages use the pricing destination');
         assert.doesNotMatch(visible, /1,500|2,500|\bEssential\b|\bSignature\b|INAYA Black/);
         assert.match(visible, locale === 'en' ? /3,250.*?(?:month|monthly)/ : /3,250.*?(?:شهر|شهري)/);
         assert.match(visible, locale === 'en' ? /3,000.*?(?:month|monthly)/ : /3,000.*?(?:شهر|شهري)/);

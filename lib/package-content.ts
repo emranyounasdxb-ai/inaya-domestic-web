@@ -180,7 +180,7 @@ export const packageSections: Record<string, PackageSection> = {
 export const packageQuestions: { question: LocalizedText; answer: LocalizedText }[] = [
   {
     question: { en: 'What are the published package prices?', ar: 'ما أسعار الباقات المنشورة؟' },
-    answer: packageSummary
+    answer: { en: 'The package cards and comparison table show all six prices with their duration or commitment. Six- and twelve-month prices are monthly amounts, not commitment totals. Choose a package enquiry button to carry that choice into the enquiry form.', ar: 'تعرض بطاقات الباقات وجدول المقارنة الأسعار الستة مع المدة أو الالتزام. سعرا 6 و12 شهراً شهريان وليسا إجمالي الالتزام. اختر زر الاستفسار عن الباقة لنقل اختيارك إلى نموذج الاستفسار.' }
   },
   {
     question: { en: 'Are the six-month and yearly prices per month?', ar: 'هل سعرا باقتي الستة أشهر والسنة شهريان؟' },

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AjmanOfficeVisit from '@/components/AjmanOfficeVisit';
+import LocalVisitPlanning from '@/components/LocalVisitPlanning';
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { pageMetadata } from '@/lib/page-seo';
 import RouteSeo from '@/components/RouteSeo';
@@ -98,6 +99,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
       </section>
       <PageBreadcrumbs locale={locale} route={locationSlug} />
       {locationSlug === 'maid-services-ajman' ? <AjmanOfficeVisit locale={locale} /> : null}
+      {['maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah'].includes(locationSlug) ? <LocalVisitPlanning locale={locale} city={location.city[lang]} /> : null}
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.9fr_1.1fr]">

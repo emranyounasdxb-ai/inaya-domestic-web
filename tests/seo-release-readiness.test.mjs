@@ -29,7 +29,7 @@ test('customer guidance shows six approved packages, explicit billing units and 
       const plan = contract.expectedPlans[index];
       assert.equal(text(card[2].match(/<p\b[^>]*data-price="amount"[^>]*>([\s\S]*?)<\/p>/)[1]), plan.price[locale]);
       assert.equal(text(card[2].match(/<p\b[^>]*data-price="period"[^>]*>([\s\S]*?)<\/p>/)[1]), plan.period[locale]);
-      assert.ok(card[2].includes(`href="/${locale}/booking/"`));
+      assert.ok(card[2].includes(`href="/${locale}/booking/?service=${['half-day','daily','weekly'].includes(plan.id) ? 'part-time-maid' : 'monthly-maid-contract'}&amp;plan=`));
     }
     assert.doesNotMatch(pricing, /1,500|2,500|\bEssential\b|\bSignature\b|INAYA Black/);
     assert.match(text(pricing), locale === 'en' ? /monthly prices with a 6- or 12-month commitment, not totals for the full term/ : /سعران شهريان مع الالتزام لمدة 6 أو 12 شهراً، وليسا إجمالي المدة/);

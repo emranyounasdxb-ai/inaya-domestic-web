@@ -6,7 +6,7 @@ const test = require('node:test');
 const { assertFormPreserved } = require('./form-accessibility-preservation.cjs');
 const { approvedPackageMessages } = require('./managed-package-expectations.cjs');
 const base = 'f45a93dc0b8274ad6a792420cfa3e4bcbb828103';
-const current = file => readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+const current = file => require('./page-clarity-expectations.cjs').historicalSource(file, readFileSync(file, 'utf8'));
 const previous = file => execFileSync('git', ['show', `${base}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
 const replaceOnce = (source, before, after) => {
   assert.equal(source.split(before).length, 2, `Expected exactly one approved navigation anchor: ${before}`);

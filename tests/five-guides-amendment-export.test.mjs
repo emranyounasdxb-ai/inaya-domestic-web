@@ -1,3 +1,4 @@
+import clarity from './page-clarity-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
@@ -32,7 +33,8 @@ function markdownExpected(body) {
 test('all ten amended exports render the complete independently reviewed replacement, not a shortened or duplicated manuscript', async () => {
   for (const file of sourceFiles) amendment.historicalSource(file, await readFile(file, 'utf8'));
   for (const target of amendment.after.targets) for (const locale of ['en', 'ar']) {
-    const copy = target.record[locale], route = `/${locale}/blog/${target.slug}/`, url = origin + route;
+    const reviewedRecord = clarity.currentRecord(target.slug, target.record);
+    const copy = reviewedRecord[locale], route = `/${locale}/blog/${target.slug}/`, url = origin + route;
     const html = await readFile(`out${route}index.html`, 'utf8');
     const body = strip(html);
     const rendered = body.match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1];
@@ -84,12 +86,12 @@ test('all ten amended exports render the complete independently reviewed replace
     const nodes = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(match => attrs(match[1]).type === 'application/ld+json').flatMap(match => JSON.parse(match[2])['@graph'] ?? []);
     const article = nodes.find(node => node['@type'] === 'Article');
     assert.equal(article.headline, copy.title);
-    assert.equal(article.datePublished, target.record.published);
-    assert.equal(article.dateModified, amendment.date);
+    assert.equal(article.datePublished, reviewedRecord.published);
+    assert.equal(article.dateModified, reviewedRecord.updated);
     const dates = body.match(/<dl\b[^>]*data-guide="attribution"[^>]*>([\s\S]*?)<\/dl>/)?.[1];
-    assert.deepEqual([...dates.matchAll(/<time\b([^>]*)>/g)].map(match => attrs(match[1]).dateTime ?? attrs(match[1]).datetime), [target.record.published, amendment.date]);
+    assert.deepEqual([...dates.matchAll(/<time\b([^>]*)>/g)].map(match => attrs(match[1]).dateTime ?? attrs(match[1]).datetime), [reviewedRecord.published, reviewedRecord.updated]);
     const entry = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(match => match[1].includes(`<loc>${url}</loc>`));
-    assert.ok(entry[1].includes(`<lastmod>${amendment.date}</lastmod>`));
+    assert.ok(entry[1].includes(`<lastmod>${reviewedRecord.updated}</lastmod>`));
     const allAnchors = [...rendered.matchAll(/<a\b([^>]*)>/g)].map(match => attrs(match[1]).href);
     for (const href of [...(copy.body ?? '').matchAll(/\[[^\]]+\]\((https:\/\/[^)]+)\)/g)].map(match => match[1])) {
       assert.ok(allAnchors.includes(href), `${route}: reviewed link remains clickable`);
@@ -111,7 +113,8 @@ test('the ten Step1 guide dates remain exact alongside the eight new guides, cha
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match => match[1]);
   additions.assertLastmods(entries.map(entry => ({ url: entry.match(/<loc>(.*?)<\/loc>/)[1], lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] ?? null })));
   const actual = entries.filter(entry => entry.includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]);
-  const expected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls, ...['en', 'ar'].map(locale => `${origin}/${locale}/gallery/`), ...['en', 'ar'].map(locale => `${origin}/${locale}/privacy-policy/`)];
-  assert.equal(expected.length, 36);
+  const historicalExpected = [...amendment.targetSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${origin}/${locale}/blog/${slug}/`)), ...additions.newCanonicalUrls, ...additions.indexUrls, ...['en', 'ar'].map(locale => `${origin}/${locale}/gallery/`), ...['en', 'ar'].map(locale => `${origin}/${locale}/privacy-policy/`)];
+  assert.equal(historicalExpected.length, 36);
+  const expected = historicalExpected.filter(url => !clarity.fixture.updatedRoutes.includes(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/')));
   assert.deepEqual(actual.sort(), expected.sort());
 });

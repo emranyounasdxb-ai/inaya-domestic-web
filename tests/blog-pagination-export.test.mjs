@@ -1,3 +1,4 @@
+import clarity from './page-clarity-expectations.cjs';
 import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -35,7 +36,7 @@ test('both languages render bounded archive cards with crawlable navigation, dis
       const url = urlFor(locale, page);
       const cards = [...visible.matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/g)]
         .filter(match => attrs(match[1])['data-blog-guide']);
-      const expected = additions.blogOrderSlugs.slice((page - 1) * 12, page * 12);
+      const expected = clarity.archiveOrder(additions.blogOrderSlugs.slice((page - 1) * 12, page * 12));
       assert.deepEqual(cards.map(match => attrs(match[1])['data-blog-guide']), expected, `${url}: exact four-new-plus-original65 card order`);
       for (const [index, card] of cards.entries()) {
         assert.ok(card[2].includes(`href="/${locale}/blog/${expected[index]}/"`), `${url}: crawlable article link`);
@@ -73,7 +74,7 @@ test('both languages render bounded archive cards with crawlable navigation, dis
       assert.equal(breadcrumb.itemListElement.at(-1).item, url);
       if (page > 1) assert.equal(breadcrumb.itemListElement.at(-2).item, urlFor(locale, 1));
     }
-    assert.deepEqual(seen, additions.blogOrderSlugs, `${locale}: all69 guides occur once across the archive`);
+    assert.deepEqual(seen, clarity.archiveSequence(additions.blogOrderSlugs), `${locale}: all69 guides occur once across the archive`);
     assert.deepEqual(seen.filter(slug => !additions.newSlugs.includes(slug)), baseline.slugs, `${locale}: all65 original guides retain their relative order`);
   }
 });

@@ -73,6 +73,8 @@ jobs:
         run: node --test tests/four-guides-addition-unit.test.cjs tests/four-guides-addition-export.test.mjs tests/office-careers-export.test.mjs
       - name: Verify all70 unique blog images, bilingual links and related-guide navigation
         run: node --test tests/blog-refresh.test.mjs
+      - name: Verify bilingual page clarity, unchanged commercial terms and selected package enquiries
+        run: node --test tests/page-clarity-release.test.mjs
       - name: Verify owner-approved native Ahrefs head and separate privacy disclosure
         run: node --test tests/ahrefs-source-unit.test.cjs tests/ahrefs-head-export.test.mjs
       - name: Unit and export checks

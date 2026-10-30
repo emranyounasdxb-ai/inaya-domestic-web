@@ -4,15 +4,19 @@ for (const [locale, label, oldLabel] of [
   ['en', 'Domestic Worker Guide', 'SEO Guide'],
   ['ar', 'دليل العمالة المنزلية', 'دليل تحسين المحتوى']
 ]) {
-  test(`${locale} About guide label is localized in visible and initial HTML`, async ({ page, request }) => {
+  test(`${locale} About keeps three localized FAQs without the removed duplicate guide pitch`, async ({ page, request }) => {
     const response = await request.get(`/${locale}/about/`);
     expect(response.ok()).toBe(true);
     const html = await response.text();
-    expect(html).toContain(label);
+    const faqTitle = locale === 'ar' ? 'أسئلة شائعة عن عناية' : 'About INAYA — common questions';
+    expect(html).toContain(faqTitle);
+    expect(html).not.toContain(label);
     expect(html).not.toContain(oldLabel);
 
     await page.goto(`/${locale}/about/`);
-    await expect(page.locator('main').getByText(label, { exact: true })).toBeVisible();
+    await expect(page.locator('main').getByText(label, { exact: true })).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: faqTitle, exact: true })).toBeVisible();
+    await expect(page.locator('main details summary')).toHaveCount(3);
     await expect(page.locator('main').getByText(oldLabel, { exact: true })).toHaveCount(0);
   });
 }

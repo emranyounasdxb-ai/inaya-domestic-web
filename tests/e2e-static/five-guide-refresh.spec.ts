@@ -47,7 +47,7 @@ for (const guide of guides) for (const locale of ['en', 'ar']) {
     const graph = (await page.locator('script[type="application/ld+json"]').allTextContents())
       .flatMap(value => { const data = JSON.parse(value); return data['@graph'] ?? [data]; });
     const article = graph.find(node => node['@type'] === 'Article');
-    expect(article?.dateModified).toBe('2026-10-29');
+    expect(article?.dateModified).toBe(guide.slug === 'choosing-domestic-worker-agency-ajman' ? '2026-10-30' : '2026-10-29');
     expect(article?.image).toContain('https://inayadomestic.ae/images/');
     expect(article?.datePublished).not.toBe('2026-10-29');
   });

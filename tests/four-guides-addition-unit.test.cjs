@@ -65,8 +65,8 @@ test('new-cohort contracts reject old-route movement, unauthorized additions, st
   additions.assertLastmods(dates);
   assert.throws(() => additions.assertLastmods(dates.map((entry, index) => index === 0 ? { ...entry, lastmod: additions.date } : entry)), /only new articles/);
   const source = readFileSync('lib/domestic-worker-guides.ts', 'utf8');
-  assert.throws(() => additions.beforeCatalogAddition('lib/domestic-worker-guides.ts', source + '\n// Unreviewed change\n'), /original65-guide source bytes/);
+  assert.throws(() => additions.beforeCatalogAddition('lib/domestic-worker-guides.ts', source + '\n// Unreviewed change\n'), /original65-guide source bytes|exact reviewed/);
   const keyword = JSON.parse(readFileSync('content/keyword-articles-20261024.json', 'utf8'));
   keyword[0].en.body += '\n\nUnreviewed changed original.';
-  assert.throws(() => additions.assertExistingRecords(keyword, 'keyword'), /every original field/);
+  assert.throws(() => additions.assertExistingRecords(keyword, 'keyword'), /every original field|exact reviewed/);
 });

@@ -43,11 +43,14 @@ function assertApprovedRecord(record, family, field = 'record') {
 // New rendering is separately checked against the complete after manuscript;
 // removed/outdated historical statements are never required to stay public.
 function historicalRecord(record, family, field = 'record') {
+  record = require('./page-clarity-expectations.cjs').historicalRecord(record, family, field);
   const amendment = assertApprovedRecord(record, family, field);
   return amendment ? clone(amendment.before[field]) : record;
 }
 
 function historicalBody(slug, locale, body) {
+  const clarity = require('./page-clarity-expectations.cjs').fixture.records[slug];
+  if (clarity?.record.after[locale].body && body === clarity.record.after[locale].body) body = clarity.record.before[locale].body;
   const amendment = getAmendment(slug);
   if (!amendment) return body;
   assert.equal(body, amendment.after.record[locale].body, `${slug}/${locale}: exact approved replacement body`);
@@ -106,7 +109,7 @@ function historicalSource(file, current) {
 }
 
 function dateFor(slug, fallback) {
-  return getAmendment(slug) ? date : fallback;
+  return require('./page-clarity-expectations.cjs').dateFor(slug, getAmendment(slug) ? date : fallback);
 }
 
 function pageBefore(url, currentTitle, currentDescription) {

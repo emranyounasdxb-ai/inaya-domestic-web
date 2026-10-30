@@ -1,5 +1,6 @@
 import { expect, test } from '../browser-fixture';
 import { expectedPlans } from '../poster-pricing-contract.cjs';
+const planValues: Record<string, string> = { 'half-day': 'Half day — 4 hours', daily: 'Daily — 8 hours', weekly: 'Weekly — 7 days', monthly: 'Monthly — 30 days', 'six-month': '6-month contract', yearly: '12-month contract' };
 
 for (const locale of ['en', 'ar'] as const) {
   const arabic = locale === 'ar';
@@ -29,7 +30,7 @@ for (const locale of ['en', 'ar'] as const) {
       const heading = card.getByRole('heading', { level: 3 });
       await expect(card.locator('[data-price="amount"]')).toHaveText(plan.price[locale]);
       await expect(card.locator('[data-price="period"]')).toHaveText(plan.period[locale]);
-      await expect(card.getByRole('link')).toHaveAttribute('href', `/${locale}/booking/`);
+      await expect(card.getByRole('link')).toHaveAttribute('href', `/${locale}/booking/?service=${['half-day','daily','weekly'].includes(plan.id) ? 'part-time-maid' : 'monthly-maid-contract'}&plan=${encodeURIComponent(planValues[plan.id])}`);
       cards.push((await card.boundingBox())!);
       headings.push((await heading.boundingBox())!);
       buttons.push((await card.getByRole('link').boundingBox())!);
