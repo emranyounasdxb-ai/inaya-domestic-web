@@ -24,6 +24,7 @@ export function authoredSegments(html) {
   const segments = [];
   const stack = [];
   const context = () => ({ tag: stack.at(-1)?.tag, lang: stack.findLast(node => node.attributes.lang)?.attributes.lang,
+    inReviewsHub: stack.some(node => node.tag === 'section' && Object.hasOwn(node.attributes, 'data-reviews-hub')),
     closedOriginalReview: stack.some(node => node.tag === 'details' && node.attributes['data-original-review'] === 'true' && !node.open) });
   for (const match of markup.matchAll(/<!--[\s\S]*?-->|<[^>]+>|[^<]+/g)) {
     const token = match[0];
@@ -58,8 +59,10 @@ export function localeViolations(html, locale, route) {
       continue;
     }
     let value = segment.value;
-    if (route === '/ar/' && segment.kind === 'text' && quoted.has(value) && segment.tag === 'blockquote' && segment.lang === 'en' && segment.closedOriginalReview) continue;
+    const reviewedQuoteRoute = route === '/ar/' || (route === '/ar/reviews/' && segment.inReviewsHub);
+    if (reviewedQuoteRoute && segment.kind === 'text' && quoted.has(value) && segment.tag === 'blockquote' && segment.lang === 'en' && segment.closedOriginalReview) continue;
     if (route === '/ar/' && segment.kind === 'text' && segment.tag === 'h4' && reviewerNames.has(value)) continue;
+    if (route === '/ar/reviews/' && segment.inReviewsHub && segment.kind === 'text' && segment.tag === 'h3' && reviewerNames.has(value)) continue;
     // Original reviewers' names may occur only in the homepage's translated
     // image/selector labels. This cannot exempt any surrounding English prose.
     if (route === '/ar/' && segment.kind !== 'text') for (const review of originalReviews) value = removeTerm(value, review.name);

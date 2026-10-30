@@ -66,3 +66,23 @@ test('locale guards reject ordinary mixed prose, accessible labels and expanded 
   assert.ok(localeViolations(wrap('<a aria-label="القائمة">Menu</a>'), 'en', '/en/').length > 0);
   assert.equal(localeViolations(wrap('<script>const x="Not visible prose"</script><p>عناية</p>'), 'ar', '/ar/').length, 0);
 });
+
+test('reviews hub allows only the six preserved names and closed original quotes within its own section', async () => {
+  const html = await readFile('out/ar/reviews/index.html', 'utf8');
+  const segments = authoredSegments(html).filter(segment => segment.inReviewsHub);
+  for (const review of originalReviews) {
+    assert.equal(segments.filter(s => s.tag === 'h3' && s.value === review.name).length, 1);
+    const originals = segments.filter(s => s.value === review.text);
+    assert.equal(originals.length, 1);
+    assert.ok(originals.every(s => s.tag === 'blockquote' && s.lang === 'en' && s.closedOriginalReview));
+  }
+  const wrap = body => `<html lang="ar"><body>${body}</body></html>`;
+  const quote = `<details data-original-review="true"><summary>الأصل</summary><blockquote lang="en">${originalReviews[0].text}</blockquote></details>`;
+  const hub = body => `<section data-reviews-hub="true">${body}</section>`;
+  assert.equal(localeViolations(wrap(hub(quote)), 'ar', '/ar/reviews/').length, 0);
+  assert.equal(localeViolations(wrap(hub(`<h3>${originalReviews[0].name}</h3>`)), 'ar', '/ar/reviews/').length, 0);
+  for (const body of [quote, hub('<h3>Another reviewer</h3>'), hub('<p>Book now</p>'), hub(quote.replace('<details ', '<details open ')), hub(quote.replace(' lang="en"', '')), hub(quote.replace('Amazing service', 'Unverified quotation'))]) {
+    assert.ok(localeViolations(wrap(body), 'ar', '/ar/reviews/').length > 0);
+  }
+  assert.ok(localeViolations(wrap(hub(quote)), 'ar', '/ar/about/').length > 0);
+});
