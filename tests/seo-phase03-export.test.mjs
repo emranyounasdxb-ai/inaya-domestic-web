@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import remediation from './seo-audit-remediation-expectations.cjs';
 import managed from './managed-package-expectations.cjs';
+import clarity from './page-clarity-expectations.cjs';
 import ajmanOffice from './ajman-office-expectations.cjs';
 import domesticServices from './domestic-service-refresh-expectations.cjs';
 import onPage from './on-page-spec-expectations.cjs';
@@ -112,7 +113,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
         ? ['AED 120', 'AED 200', 'AED 1,120', 'AED 3,500', 'AED 3,250', 'AED 3,000']
         : ['120 درهم', '200 درهم', '1,120 درهم', '3,500 درهم', '3,250 درهم', '3,000 درهم']
       : [];
-    assert.deepEqual(page.prices, [...expectedPrices, ...reviewedFaqPrices].sort(), `${page.url}: displayed prices plus only the exact six Home FAQ package amounts`);
+    assert.deepEqual(page.prices, clarity.assertReviewedPage(page)?.priceMentions ?? [...expectedPrices, ...reviewedFaqPrices].sort(), `${page.url}: displayed prices plus only the exact six Home FAQ package amounts`);
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const body = file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
     assert.doesNotMatch(body, /data-seo="related-guides"|data-content="page-purpose"/, `${page.url}: removed strip must not render`);
@@ -132,7 +133,12 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
         question: text(m[1].match(/<summary\b[^>]*>([\s\S]*?)<\/summary>/)[1]),
         answer: text(m[1].match(/<p\b[^>]*>([\s\S]*?)<\/p>/)[1])
       }));
-      assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), details, `${page.url}: visible FAQ/schema`);
+      // Monthly contract accordions are policy disclosures, separately checked
+      // against unchanged packageSections, rather than FAQPage questions.
+      const policyTitles = clarity.rendered.sharedPolicyTitles?.[page.locale] ?? [];
+      const faqDetails = clarity.assertReviewedPage(page) ? details.filter(item => !policyTitles.includes(item.question)) : details;
+      assert.equal(details.length - faqDetails.length, ['services/live-in-maid','services/nanny','services/monthly-maid-contract'].includes(page.route) ? 4 : 0, 'exact four policy disclosures only');
+      assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer.text })), faqDetails, `${page.url}: visible FAQ/schema`);
     }
   }
   // The changed commercial allowances remain exact. Removed historical copy

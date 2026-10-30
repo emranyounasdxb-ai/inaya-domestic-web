@@ -1,0 +1,708 @@
+{
+  "baselineCommit": "c93ab866d3c5d5e4edeb1693e4511077bd983261",
+  "date": "2026-10-30",
+  "sharedCommercialParagraphs": {
+    "en": [
+      "these components apply within the applicable managed monthly agreement and its stated scope the published benefits include the worker s salary government fees medical insurance return ticket and end of service benefits as applicable under that agreement they are not automatic benefits of every half day daily or weekly visit",
+      "for the standard managed monthly offer the first service month is paid in advance and later payments follow the agreed monthly billing date there is no separate upfront recruitment setup fee and no security deposit separately contracted recruitment and visa only services have their own quotation and terms",
+      "before service commencement inaya returns the unused monthly service payment after commencement the unused prepaid service period following effective cancellation is refunded on a clear pro rata basis the calculation identifies the prepaid amount service period effective cancellation date and unused period",
+      "the managed monthly agreement includes review and administration of eligible replacement requests eligibility is assessed against the agreed duties applicable employment arrangement and relevant legal obligations matching coordination and follow up follow the agreed service plan",
+      "inaya coordinates follow up according to the agreed service plan the written plan records the contact person review schedule and how household feedback or replacement concerns will be handled"
+    ],
+    "ar": [
+      "تسري هذه العناصر ضمن اتفاق الخدمة الشهرية المدارة المنطبق ونطاقه المحدد وتشمل المزايا المنشورة راتب العاملة والرسوم الحكومية والتأمين الطبي وتذكرة العودة ومكافأة نهاية الخدمة بحسب ما ينطبق في ذلك الاتفاق ولا تعد مزايا تلقائية لكل زيارة بنصف يوم أو يومية أو أسبوعية",
+      "في العرض الشهري القياسي المدار يسدد الشهر الأول مقدما ثم تتبع الدفعات اللاحقة تاريخ الفوترة الشهري المتفق عليه لا توجد رسوم استقدام أو تجهيز منفصلة مقدما ولا تأمين نقدي وتكون لخدمات الاستقدام أو التأشيرة المتعاقد عليها منفصلة عروضها وشروطها الخاصة",
+      "قبل بدء الخدمة تعيد عناية دفعة الخدمة الشهرية غير المستخدمة وبعد البدء ترد قيمة الفترة المدفوعة مقدما وغير المستخدمة بعد سريان الإلغاء على أساس تناسبي واضح يبين الحساب المبلغ المدفوع وفترة الخدمة وتاريخ سريان الإلغاء والفترة غير المستخدمة",
+      "يشمل اتفاق الخدمة الشهرية المدارة مراجعة طلبات الاستبدال المؤهلة وإدارة إجراءاتها تقيم الأهلية وفق المهام المتفق عليها وترتيب التوظيف المنطبق والالتزامات القانونية ذات الصلة يتبع تنسيق المطابقة والمتابعة خطة الخدمة المتفق عليها",
+      "تنسق عناية المتابعة وفق خطة الخدمة المتفق عليها تسجل الخطة المكتوبة مسؤول التواصل وجدول المراجعة وطريقة التعامل مع ملاحظات الأسرة أو طلبات الاستبدال"
+    ]
+  },
+  "sharedPolicyTitles": {
+    "en": [
+      "Monthly payments and written confirmation",
+      "Managed monthly cancellation and refunds",
+      "Eligible replacement support under the monthly agreement",
+      "Follow-up schedules and human support hours"
+    ],
+    "ar": [
+      "السداد الشهري والتأكيد المكتوب",
+      "إلغاء الخدمة الشهرية المدارة والاسترداد",
+      "دعم الاستبدال المؤهل ضمن الاتفاق الشهري",
+      "مواعيد المتابعة وساعات الدعم البشري"
+    ]
+  },
+  "pages": {
+    "https://inayadomestic.ae/en/": {
+      "mainTextSha256": "94c472216c7b4bcf506811c5710836da2c05c451639d0c55fa47c80038dab01c",
+      "commercialCounts": {
+        "61": 1,
+        "62": 1,
+        "70": 1,
+        "71": 1
+      },
+      "priceMentions": [
+        "AED 1,120",
+        "AED 1,120",
+        "AED 120",
+        "AED 120",
+        "AED 200",
+        "AED 200",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/": {
+      "mainTextSha256": "e1902b2c8b787d14b9e296591430604fca434b6d0652e3df0de0c3ca914b9b97",
+      "commercialCounts": {
+        "60": 1,
+        "61": 1,
+        "64": 1,
+        "65": 1
+      },
+      "priceMentions": [
+        "1,120 درهم",
+        "1,120 درهم",
+        "120 درهم",
+        "120 درهم",
+        "200 درهم",
+        "200 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/about/": {
+      "mainTextSha256": "bef90fd3597d3d38da06a65dd5ade9ca40ac319fa45866469fd0469dcc04b8e2",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/about/": {
+      "mainTextSha256": "cef6decf6944d015501698077783f6c888c4a6e1fe5cd65f0a871b7de92f607b",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/contact/": {
+      "mainTextSha256": "e2169ab50a6b8ea1e00652c543430840568dc3ccc81c44f4698954e4e9a45d5c",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/contact/": {
+      "mainTextSha256": "4a07b4d99bdd734b396ab41c937bfdfdc81690559771aab2c7d0d4fb5ba9d955",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/booking/": {
+      "mainTextSha256": "6c8c71a06c0f932c2e688c3e86c9540cab932634710fa6578b908a0580b2a013",
+      "commercialCounts": {},
+      "priceMentions": [
+        "AED 1,120",
+        "AED 1,120",
+        "AED 120",
+        "AED 120",
+        "AED 200",
+        "AED 200",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/booking/": {
+      "mainTextSha256": "263f8847639b184d97d2e374f7eac28561fe32795c790a43dd63828268381820",
+      "commercialCounts": {},
+      "priceMentions": [
+        "1,120 درهم",
+        "1,120 درهم",
+        "120 درهم",
+        "120 درهم",
+        "200 درهم",
+        "200 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/pricing/": {
+      "mainTextSha256": "9dc86e88accd780bd2295236b7434e52ccab0b0d4271e10c2f640827c0a36a47",
+      "commercialCounts": {
+        "21": 2,
+        "26": 1,
+        "32": 2,
+        "114": 1,
+        "115": 1,
+        "116": 1,
+        "117": 1,
+        "118": 1,
+        "119": 1,
+        "120": 1,
+        "121": 1,
+        "122": 1,
+        "123": 2,
+        "124": 1,
+        "125": 1,
+        "126": 1,
+        "127": 1,
+        "128": 1,
+        "129": 1,
+        "130": 2,
+        "131": 1,
+        "132": 1,
+        "133": 1,
+        "135": 1,
+        "136": 1,
+        "137": 1,
+        "138": 1,
+        "139": 1
+      },
+      "priceMentions": [
+        "AED 1,120",
+        "AED 1,120",
+        "AED 120",
+        "AED 120",
+        "AED 200",
+        "AED 200",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/pricing/": {
+      "mainTextSha256": "11d9608ba220fea60e8b55e1e69e148df811b39e55696467b6bd629066161a43",
+      "commercialCounts": {
+        "20": 2,
+        "25": 1,
+        "30": 2,
+        "108": 1,
+        "109": 1,
+        "110": 1,
+        "111": 1,
+        "112": 1,
+        "113": 1,
+        "114": 1,
+        "115": 1,
+        "116": 1,
+        "117": 2,
+        "118": 1,
+        "119": 1,
+        "120": 2,
+        "121": 1,
+        "122": 1,
+        "123": 1,
+        "125": 1,
+        "126": 1,
+        "127": 1,
+        "128": 1,
+        "129": 1
+      },
+      "priceMentions": [
+        "1,120 درهم",
+        "1,120 درهم",
+        "120 درهم",
+        "120 درهم",
+        "200 درهم",
+        "200 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/": {
+      "mainTextSha256": "c7c38eab70e2c2f513b58a9c8daa73de45f23a874224571b36778e3779db8320",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/blog/": {
+      "mainTextSha256": "80fbaa749610849c3df601ee55023e6e674663439c82ab2fe0b68b746e0fb8cb",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/services/live-in-maid/": {
+      "mainTextSha256": "d5c99b86a1b42cc35184d8b5820c0281af701906dc0f0e697fed288da85ed804",
+      "commercialCounts": {
+        "1": 1,
+        "15": 1,
+        "18": 1,
+        "20": 1,
+        "21": 1,
+        "22": 1,
+        "23": 1,
+        "25": 1,
+        "26": 1,
+        "27": 1,
+        "28": 1
+      },
+      "priceMentions": [
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/live-in-maid/": {
+      "mainTextSha256": "c8572127692df8b041430ee026f2b1e29a52718945191c1b3bdc79cf008d6820",
+      "commercialCounts": {
+        "1": 1,
+        "13": 1,
+        "16": 1,
+        "18": 1,
+        "19": 1,
+        "20": 1,
+        "21": 1,
+        "23": 1,
+        "24": 1,
+        "25": 1,
+        "26": 1
+      },
+      "priceMentions": [
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/services/part-time-maid/": {
+      "mainTextSha256": "137a8fbbe041b961bcf3b3e7692e7a6393c3cc220e039a82b3c9a11111c11d5c",
+      "commercialCounts": {
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1,
+        "7": 1,
+        "8": 1
+      },
+      "priceMentions": [
+        "AED 1,120",
+        "AED 1,120",
+        "AED 120",
+        "AED 120",
+        "AED 120",
+        "AED 120",
+        "AED 120",
+        "AED 200",
+        "AED 200",
+        "AED 200",
+        "AED 200",
+        "AED 200"
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/part-time-maid/": {
+      "mainTextSha256": "5e2139b30403c19d27df93f37316af7e7a67fc82a718eddca6e9c9003c695158",
+      "commercialCounts": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1,
+        "7": 1
+      },
+      "priceMentions": [
+        "1,120 درهم",
+        "1,120 درهم",
+        "120 درهم",
+        "120 درهم",
+        "120 درهم",
+        "120 درهم",
+        "120 درهم",
+        "200 درهم",
+        "200 درهم",
+        "200 درهم",
+        "200 درهم",
+        "200 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/services/monthly-maid-contract/": {
+      "mainTextSha256": "4ce4de65897776c115c526f78b886fc57b0301c289a2a4fb18934031df4c92eb",
+      "commercialCounts": {
+        "2": 1,
+        "18": 1,
+        "21": 2,
+        "24": 1,
+        "26": 1,
+        "29": 1,
+        "30": 1,
+        "31": 1,
+        "32": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1
+      },
+      "priceMentions": [
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500",
+        "AED 3,500",
+        "AED 3,500",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/monthly-maid-contract/": {
+      "mainTextSha256": "90b8f034a2e4ac64784dc3ac8f3d2ce2946c5c3c98c407e7e97e1fcfc66d3e3e",
+      "commercialCounts": {
+        "2": 1,
+        "16": 1,
+        "19": 2,
+        "22": 1,
+        "24": 1,
+        "27": 1,
+        "28": 1,
+        "29": 1,
+        "30": 1,
+        "33": 1,
+        "34": 1,
+        "35": 1,
+        "36": 1
+      },
+      "priceMentions": [
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم",
+        "3,500 درهم",
+        "3,500 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/services/nanny/": {
+      "mainTextSha256": "6858b87aa0f2fbc537059dd41bd11012e355760d6d05dee1dfab089e7ac7f058",
+      "commercialCounts": {
+        "13": 1,
+        "15": 1,
+        "18": 1,
+        "20": 1,
+        "21": 1,
+        "22": 1,
+        "23": 1,
+        "24": 1,
+        "26": 1,
+        "27": 1,
+        "28": 1,
+        "29": 1
+      },
+      "priceMentions": [
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/nanny/": {
+      "mainTextSha256": "895b9aa4497999b0273f73ab6674330903822441a419839d7c423e032af074ff",
+      "commercialCounts": {
+        "11": 1,
+        "13": 1,
+        "16": 1,
+        "18": 1,
+        "19": 1,
+        "20": 1,
+        "21": 1,
+        "22": 1,
+        "24": 1,
+        "25": 1,
+        "26": 1,
+        "27": 1
+      },
+      "priceMentions": [
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/services/maid-visa/": {
+      "mainTextSha256": "b6b3ed1f3bbdcf7826703c76dcc2c5fa4967544e65d202ee6e96179e7f4e2a34",
+      "commercialCounts": {
+        "2": 2
+      },
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/services/maid-visa/": {
+      "mainTextSha256": "22916f12c859c737148bd83b07664b9966344322a1635f5c6ede7da0af3b88c3",
+      "commercialCounts": {
+        "1": 2
+      },
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/maid-services-ajman/": {
+      "mainTextSha256": "670fe426da06778963b8b5be6c89380aef1627b671a87f78fe406bd083a198f4",
+      "commercialCounts": {
+        "2": 1,
+        "3": 1,
+        "4": 1
+      },
+      "priceMentions": [
+        "AED 120",
+        "AED 200",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/maid-services-ajman/": {
+      "mainTextSha256": "26fdb62329a70e6910ce9cd7c698fe9d0f97c8774f3d667891d4b7fee00f680b",
+      "commercialCounts": {
+        "2": 1,
+        "3": 1,
+        "4": 1
+      },
+      "priceMentions": [
+        "120 درهم",
+        "200 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-dubai/": {
+      "mainTextSha256": "5591402829ac012a31d169489482c4cd5fbcb0f6c46a7dae4efc8a36e52ce0a5",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/maid-services-dubai/": {
+      "mainTextSha256": "e82cc618803be5f070aa397124a3f91e7347a8af0c9f5f3dd050b05ac5245f77",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/maid-services-sharjah/": {
+      "mainTextSha256": "58d14d5341fbe028c0b7ee49cf37ecf02e7d861d1f86b107d00e80d3ba6d5743",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/maid-services-sharjah/": {
+      "mainTextSha256": "66c8c183680f996180290368df72e70fb587da97166d1b0cd0fb1ce3a0bc7a1c",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/blog/monthly-maid-package-inclusions-checklist/": {
+      "mainTextSha256": "f51cb2dee80cda945e3da97efeb709d3ec972c41013ecfcdb50a81eab559b3b6",
+      "commercialCounts": {
+        "16": 1,
+        "35": 1,
+        "40": 1,
+        "46": 1,
+        "64": 1,
+        "68": 1,
+        "69": 1,
+        "70": 1
+      },
+      "priceMentions": [
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/monthly-maid-package-inclusions-checklist/": {
+      "mainTextSha256": "b76b86f35b9423ba3308f6b6f5b87f4d8fa855e5a2127eb2096b781645540940",
+      "commercialCounts": {
+        "13": 1,
+        "31": 1,
+        "36": 1,
+        "41": 1,
+        "58": 1,
+        "62": 1,
+        "63": 1,
+        "64": 1
+      },
+      "priceMentions": [
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/": {
+      "mainTextSha256": "ee5547b4d2bde8317a7cc37253f9541184ef4ba071c8b934fa2be9979e32ae03",
+      "commercialCounts": {},
+      "priceMentions": [
+        "AED 1,120",
+        "AED 120",
+        "AED 200",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,500"
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/": {
+      "mainTextSha256": "c2fb316d8d31cb1d57f623810d56c0c2372cb520e3005b564d30b3d975ee8524",
+      "commercialCounts": {},
+      "priceMentions": [
+        "1,120 درهم",
+        "120 درهم",
+        "200 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,500 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/maid-agency-ajman-quote-comparison-workbook/": {
+      "mainTextSha256": "a856ba3e3a6a7772338427409a6943af600bb462e02d39cb6e767f76e8aa1b82",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/blog/maid-agency-ajman-quote-comparison-workbook/": {
+      "mainTextSha256": "0a31049d5dfa3d2b724c9c642825ecca01814b15fef4c0debc3e8ee199889081",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/blog/monthly-maid-service-ajman-commitment-budget/": {
+      "mainTextSha256": "99cd68ff389d37df99954ed5ebb28c361ee976b3768ac70e7bc873d95020c7b2",
+      "commercialCounts": {},
+      "priceMentions": [
+        ", AED",
+        "3,000 AED",
+        "3,250 AED",
+        "3,500 AED",
+        "AED 19,500",
+        "AED 19,500",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,000",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,250",
+        "AED 3,500",
+        "AED 3,500",
+        "AED 3,500",
+        "AED 3,500",
+        "AED 36,000",
+        "AED 36,000"
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/monthly-maid-service-ajman-commitment-budget/": {
+      "mainTextSha256": "b822dc87fe97e1210cb1304c62e79a12f86a74259c7b83ba88bf703fbdb84c7f",
+      "commercialCounts": {},
+      "priceMentions": [
+        "19,500 درهم",
+        "19,500 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,000 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,250 درهم",
+        "3,500 درهم",
+        "3,500 درهم",
+        "3,500 درهم",
+        "3,500 درهم",
+        "3,500 درهم",
+        "36,000 درهم",
+        "36,000 درهم"
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/page/2/": {
+      "mainTextSha256": "d91d82e0ee612d7ddde289bac7caf269d51c6892c98a19055338cec3daf1ab9c",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/blog/page/2/": {
+      "mainTextSha256": "4c2a82af58558c17e4a2b827ac1561be32d9743263e750545ef802e612c922fc",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/blog/page/3/": {
+      "mainTextSha256": "04a82cc02f9cddc04127809935fcbe8e9cae5e52ef481a833c939182d6ce4972",
+      "commercialCounts": {
+        "1": 1
+      },
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/blog/page/3/": {
+      "mainTextSha256": "33e2ef54f33ad4c8edb8690cc286fb0d9d5104f1188480630e39e4941e2945ac",
+      "commercialCounts": {
+        "1": 1
+      },
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/blog/page/4/": {
+      "mainTextSha256": "b09443cfab3f2e5fdd245a924a2ce5c260e95c18db2871a81c1f1b47bf912aa4",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/blog/page/4/": {
+      "mainTextSha256": "1ed70e1dd51eda497c68969a52cbf7e6c63aafc0b6be5db12f43ab09437e5182",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/blog/page/5/": {
+      "mainTextSha256": "ea110072d26fb4f872fa4b6a190a6b37491adc40e18987dfdd3977ee7cd13b70",
+      "commercialCounts": {
+        "0": 1
+      },
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/blog/page/5/": {
+      "mainTextSha256": "941d25ab2a3ec3652bb96b0d60427c0b2303e747923857debc527d3596b900b0",
+      "commercialCounts": {
+        "0": 1
+      },
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/en/blog/page/6/": {
+      "mainTextSha256": "8f55bd2d9de4155938f7f032c2035050b85e532fde8926367cf002709b78e054",
+      "commercialCounts": {},
+      "priceMentions": []
+    },
+    "https://inayadomestic.ae/ar/blog/page/6/": {
+      "mainTextSha256": "abf3f697555c24c8adfb3e3d6109cced0f9f8780356a8ff82a37c8c52b6bd2c3",
+      "commercialCounts": {},
+      "priceMentions": []
+    }
+  }
+}

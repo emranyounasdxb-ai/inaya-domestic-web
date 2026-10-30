@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 // exact booking-service URL preselection and the approved six-package selector.
 // Local validation, existing service options, fields and styling stay exact.
 function assertFormPreserved(current, previous, file) {
+  current = require('./page-clarity-expectations.cjs').historicalSource(file, current);
   const handler = source => source.match(/  (?:async )?function handleSubmit\([\s\S]*?\n  }/)[0]
     .replace('async function handleSubmit', 'function handleSubmit')
     .replace(' && await delivery.send(data)', '')

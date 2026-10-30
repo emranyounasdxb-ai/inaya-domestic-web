@@ -11,7 +11,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
   {
     "slug": "choosing-domestic-worker-agency-ajman",
     "published": "2026-09-18",
-    "updated": "2026-10-29",
+    "updated": "2026-10-30",
     "en": {
       "title": "How to choose a licensed domestic-worker agency in Ajman",
       "description": "Choose a domestic-worker agency in Ajman using licence checks, an employer-arrangement worksheet, candidate questions and written price comparisons.",

@@ -1,7 +1,8 @@
+import HomeServiceChoices from '@/components/HomeServiceChoices';
 import { withPageImageVersion } from '@/lib/home-about-images';
 import HomeAboutPortrait from '@/components/HomeAboutPortrait';
 import HomeHeroImage from '@/components/HomeHeroImage';
-import { packageSummary, packageSections } from '@/lib/package-content';
+import { packageSections } from '@/lib/package-content';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/page-seo';
@@ -26,7 +27,7 @@ const homeContent = {
     heroLabel: 'Legacy of Trust',
     heroTitleA: 'Maid & Domestic Worker Services',
     heroTitleB: 'in Ajman and Across the UAE',
-    heroText: packageSummary.en,
+    heroText: 'Domestic-worker recruitment, cleaning visits, nanny enquiries and related visa typing from INAYA’s Grand Mall office in Ajman. Choose your service below and confirm availability and written terms with the team.',
     primaryCta: 'Request Consultation',
     secondaryCta: 'Explore Services',
     trustLabel: 'Logos identify organizations only; no endorsement or approval is claimed',
@@ -78,7 +79,7 @@ const homeContent = {
     heroLabel: 'إرث من الثقة',
     heroTitleA: 'خدمات الخادمات والعمالة المنزلية',
     heroTitleB: 'في عجمان وجميع أنحاء الإمارات',
-    heroText: packageSummary.ar,
+    heroText: 'استقدام العمالة المنزلية وزيارات التنظيف وطلبات المربيات وطباعة معاملات التأشيرة المرتبطة بها من مكتب عناية في جراند مول بعجمان. اختر الخدمة أدناه وأكد التوفر والشروط المكتوبة مع الفريق.',
     primaryCta: 'اطلب استشارة',
     secondaryCta: 'استكشف الخدمات',
     trustLabel: 'الشعارات للتعريف بالجهات فقط ولا تعني اعتماداً أو تأييداً',
@@ -323,6 +324,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+
+      <HomeServiceChoices locale={locale} />
 
       <section className="border-y border-accent-500/12 bg-white/72 px-6 py-14 backdrop-blur-xl lg:px-10">
         <div className="mx-auto max-w-7xl text-center">

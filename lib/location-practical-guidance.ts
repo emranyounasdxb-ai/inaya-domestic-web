@@ -1,4 +1,3 @@
-import { packageSummary, packageArrangements } from './package-content';
 import type { LocationServicePage } from './location-service-pages';
 
 const notes = {
@@ -66,6 +65,20 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
     'maid-services-dubai': { en: 'Dubai families can start by sharing the residential area, building access and preferred schedule; confirm visit timing before travelling to the office.', ar: 'يمكن لأسر دبي البدء بمشاركة المنطقة السكنية وتفاصيل الدخول والجدول المفضل؛ أكد موعد الزيارة قبل التوجه إلى المكتب.' },
     'maid-services-sharjah': { en: 'For a Sharjah enquiry, share the family and school routine and required hours so the discussion concerns the actual household need.', ar: 'لاستفسار من الشارقة، شارك روتين الأسرة والمدرسة والساعات المطلوبة كي تركز المناقشة على احتياج المنزل الفعلي.' }
   }[location.slug as keyof typeof notes];
+  const comparison = {
+    'maid-services-ajman': {
+      pricing: { en: 'For an Ajman office discussion, choose visit length or a monthly commitment from the pricing comparison before requesting a written quotation. Published live-in and live-out prices are equal. Ask the team to record household duties, transport, supplies and applicable tax.', ar: 'لمناقشة الطلب في مكتب عجمان، اختر مدة الزيارة أو الالتزام الشهري من مقارنة الأسعار قبل طلب العرض المكتوب. السعر المنشور واحد للمقيمة وغير المقيمة. اطلب تسجيل المهام والنقل والمستلزمات والضريبة المنطبقة.' },
+      review: { en: 'Bring an Ajman household task list to the agency discussion and compare it with the proposed individual profile. Ask which experience, references and documents can be reviewed, then check written costs and support terms. Read genuine reviews in context; neither a review nor nationality guarantees suitability.', ar: 'جهز قائمة مهام منزلك في عجمان وقارنها بالملف الفردي المقترح أثناء المناقشة. اسأل عن الخبرة والمراجع والمستندات المتاحة للمراجعة، ثم تحقق من التكاليف وشروط الدعم المكتوبة. اقرأ التقييمات الحقيقية ضمن سياقها؛ فلا يضمن التقييم أو الجنسية الملاءمة.' }
+    },
+    'maid-services-dubai': {
+      pricing: { en: 'When comparing a Dubai cleaning visit with monthly support, use the pricing page for the published duration and commitment. Live-in and live-out rates are the same. Include the actual Dubai address, arrival window and transport responsibilities in the quotation, alongside supplies, duties and applicable tax.', ar: 'عند مقارنة زيارة تنظيف في دبي بالدعم الشهري، راجع مدة الباقة والالتزام في صفحة الأسعار. أسعار المقيمة وغير المقيمة واحدة. أدرج العنوان الفعلي في دبي وفترة الوصول ومسؤوليات النقل في العرض، مع المستلزمات والمهام والضريبة المنطبقة.' },
+      review: { en: 'For a Dubai enquiry, compare providers against your actual childcare or household role and required schedule. Check the proposed person’s relevant experience and available references, rather than inferring ability from nationality or selected reviews. Read genuine feedback with its date and service context, and obtain written costs and support conditions.', ar: 'لطلب من دبي، قارن الجهات وفق دور الرعاية أو العمل المنزلي والجدول المطلوب فعلياً. افحص خبرة المرشحة والمراجع المتاحة بدلاً من استنتاج المهارة من الجنسية أو تقييم مختار. اقرأ الملاحظات الحقيقية مع تاريخها ونوع خدمتها، واحصل على التكاليف وشروط الدعم كتابةً.' }
+    },
+    'maid-services-sharjah': {
+      pricing: { en: 'Sharjah households can compare short visits and longer commitments on the pricing page, then discuss how the plan fits school times and home access. The published price is equal for live-in and live-out. Confirm the final duties, schedule, transport, supplies and applicable tax in writing.', ar: 'يمكن لأسر الشارقة مقارنة الزيارات والالتزامات الأطول في صفحة الأسعار، ثم مناقشة ملاءمة الخطة لأوقات المدرسة والدخول إلى المنزل. السعر المنشور واحد للمقيمة وغير المقيمة. أكد المهام والجدول والنقل والمستلزمات والضريبة المنطبقة كتابةً.' },
+      review: { en: 'Use your Sharjah family routine to assess the proposed worker’s task experience and communication. Ask which references and documents are available to check. Compare written scope, costs and follow-up conditions alongside genuine dated reviews; a nationality label or positive review does not establish an individual match.', ar: 'استخدم روتين أسرتك في الشارقة لتقييم خبرة المرشحة في المهام والتواصل. اسأل عن المراجع والمستندات المتاحة للتحقق. قارن النطاق والتكاليف والمتابعة المكتوبة مع التقييمات الحقيقية المؤرخة؛ فالجنسية أو التقييم الإيجابي لا يثبتان الملاءمة الفردية.' }
+    }
+  }[location.slug as keyof typeof notes];
   return {
     ...location,
     ...(location.slug === 'maid-services-ajman' ? {
@@ -86,8 +99,8 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
       slug,
       title: { en: title, ar: local.ar[index][1] },
       description: {
-        en: description + (slug === 'part-time-maid' ? ' Published visit packages: 4 hours for AED 120 or 8 hours for AED 200.' : slug === 'monthly-maid-contract' ? ' The 30-day package is AED 3,500; a 6-month commitment is AED 3,250 per month and a 12-month commitment is AED 3,000 per month. Live-in and live-out use the same package prices.' : ''),
-        ar: local.ar[index][2] + (slug === 'part-time-maid' ? ' باقات الزيارة المنشورة: 4 ساعات مقابل 120 درهماً أو 8 ساعات مقابل 200 درهم.' : slug === 'monthly-maid-contract' ? ' باقة 30 يوماً مقابل 3,500 درهم؛ والالتزام لمدة 6 أشهر مقابل 3,250 درهماً شهرياً، ولمدة 12 شهراً مقابل 3,000 درهم شهرياً. تنطبق أسعار الباقات نفسها على الخدمة المقيمة وغير المقيمة.' : '')
+        en: description,
+        ar: local.ar[index][2]
       }
     })),
     popularServices: [...location.popularServices, { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } }, { slug: 'monthly-maid-contract', title: { en: 'Monthly maid contract enquiries', ar: 'طلبات عقد خادمة شهري' } }],
@@ -96,13 +109,13 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
       ar: 'تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة.'
     } } : faq), {
       question: { en: 'What package prices apply, and are live-in and live-out priced differently?', ar: 'ما أسعار الباقات وهل تختلف بين الخدمة المقيمة وغير المقيمة؟' },
-      answer: { en: packageSummary.en + ' ' + packageArrangements.en, ar: packageSummary.ar + ' ' + packageArrangements.ar }
+      answer: comparison.pricing, links: [{ route: 'pricing', label: { en: 'Compare current package prices and commitments', ar: 'قارن أسعار الباقات والتزاماتها الحالية' } }]
     }, {
       question: { en: 'Where is the office, and does coverage confirm availability?', ar: 'أين المكتب وهل التغطية تؤكد التوفر؟' },
       answer: { en: `${visitContext.en} INAYA’s office is at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Dubai and Sharjah are service enquiry areas, not additional office locations. Share the exact address and schedule so the team can confirm current options. Walk-ins can collect a counter token during office hours, or request an appointment online for the team to confirm.`, ar: `${visitContext.ar} مكتب عناية في جراند مول، الطابق الأرضي، الراشدية 3، عجمان. دبي والشارقة منطقتان لاستفسارات الخدمة وليستا موقعين لمكاتب إضافية. شارك العنوان والجدول لتأكيد الخيارات الحالية. يمكن الزيارة المباشرة وأخذ تذكرة انتظار من الكاونتر خلال ساعات العمل، أو طلب موعد عبر الإنترنت ليؤكده الفريق.` }
     }, {
       question: { en: 'How can I compare an agency and a proposed worker?', ar: 'كيف أقارن الجهة والمرشحة المقترحة؟' },
-      answer: { en: 'Read genuine reviews in context and compare the written service scope, costs and support conditions. Review the individual worker’s relevant experience and ask which references or documents can be checked. A selected review or nationality is not a suitability guarantee.', ar: 'اقرأ التقييمات الحقيقية ضمن سياقها وقارن نطاق الخدمة والتكاليف وشروط الدعم المكتوبة. راجع خبرة العاملة الفردية المناسبة واسأل عن المراجع أو المستندات التي يمكن فحصها. التقييم المختار أو الجنسية ليسا ضماناً للملاءمة.' }
+      answer: comparison.review
     }]
   };
 }

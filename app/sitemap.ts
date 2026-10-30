@@ -105,7 +105,15 @@ const contentUpdatedAt: Record<string, string> = {
   "services/recruitment": '2026-10-24',
   "services/sponsorship-transfer": '2026-10-19',
   "support-process": '2026-10-19',
-  "terms": '2026-10-19'
+  "terms": '2026-10-19',
+  // Actual bilingual page-clarity edits; unrelated route dates remain unchanged.
+  ...Object.fromEntries([
+    '', 'about', 'contact', 'booking', 'pricing', 'blog', ...blogArchiveRoutes,
+    'services/part-time-maid', 'services/monthly-maid-contract', 'services/nanny', 'services/live-in-maid', 'services/maid-visa',
+    'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah',
+    'blog/monthly-maid-package-inclusions-checklist', 'blog/monthly-maid-service-ajman-commitment-budget',
+    'blog/maid-agency-ajman-quote-comparison-workbook', 'blog/choosing-domestic-worker-agency-ajman'
+  ].map(route => [route, '2026-10-30']))
 };
 
 export const dynamic = 'force-static';

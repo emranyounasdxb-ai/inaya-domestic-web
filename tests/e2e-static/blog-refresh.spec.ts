@@ -19,7 +19,7 @@ for (const lang of ['en', 'ar']) {
       const rows = await cards.evaluateAll(elements => elements.map(element => {
         const rect = (node: Element) => { const r = node.getBoundingClientRect(); return { y: r.y, height: r.height, width: r.width, bottom: r.bottom }; };
         const heading = element.querySelector('h2')!, description = element.querySelector('p')!, image = element.querySelector('[data-blog-image="card"]')!, cta = element.querySelector('a > span:last-child')!;
-        return { card: rect(element), image: rect(image), title: rect(heading), description: rect(description), cta: rect(cta), font: getComputedStyle(heading).fontSize, line: getComputedStyle(heading).lineHeight, bodyFont: getComputedStyle(description).fontSize, textOverflow: heading.scrollHeight > heading.clientHeight + 1, imageFit: getComputedStyle(image.querySelector('img')!).objectFit };
+        return { group: element.parentElement?.parentElement?.querySelector('h2')?.textContent === 'Office careers' || element.parentElement?.parentElement?.querySelector('h2')?.textContent === 'وظائف المكتب' ? 'careers' : 'customers', card: rect(element), image: rect(image), title: rect(heading), description: rect(description), cta: rect(cta), font: getComputedStyle(heading).fontSize, line: getComputedStyle(heading).lineHeight, bodyFont: getComputedStyle(description).fontSize, textOverflow: heading.scrollHeight > heading.clientHeight + 1, imageFit: getComputedStyle(image.querySelector('img')!).objectFit };
       }));
       for (const row of rows) {
         expect(Math.abs(row.image.width / row.image.height - 1.6)).toBeLessThan(0.015);
@@ -27,8 +27,9 @@ for (const lang of ['en', 'ar']) {
         expect(row.font).toBe(rows[0].font); expect(row.line).toBe('32px'); expect(row.bodyFont).toBe('14px');
       }
       if ((page.viewportSize()?.width ?? 0) >= 768) {
-        for (let index = 0; index < rows.length; index += 3) {
-          const group = rows.slice(index, index + 3);
+        const customers = rows.filter(row => row.group === 'customers');
+        for (let index = 0; index < customers.length; index += 3) {
+          const group = customers.slice(index, index + 3);
           for (const key of ['image', 'title', 'description', 'cta', 'card'] as const) {
             expect(Math.max(...group.map(row => row[key].y)) - Math.min(...group.map(row => row[key].y)), `${archive}/${index}: ${key} row`).toBeLessThan(1.5);
           }

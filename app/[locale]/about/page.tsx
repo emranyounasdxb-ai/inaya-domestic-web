@@ -33,13 +33,13 @@ export default async function AboutPage({ params }: PageProps) {
         missionLabel: 'رسالتنا',
         mission: 'رفع مستوى خدمات العمالة المنزلية من خلال تجربة هادئة، مهنية، وسهلة الفهم للعائلات في الإمارات.',
         visionLabel: 'رؤيتنا',
-        vision: 'أن تكون عناية اسماً موثوقاً للأسر التي تبحث عن خدمات منزلية منظمة وراقية في جميع أنحاء الإمارات.',
+        vision: 'توضيح قرارات الخدمة المنزلية من خلال مراجعة الاحتياج الفردي والنطاق المكتوب وخطة متابعة متفق عليها.',
         valuesTitle: 'قيم تقود كل خدمة',
         valuesSub: 'القيم التي توجه طريقة تعاملنا مع كل أسرة.',
         values: [
           { icon: '◇', title: 'الخصوصية', text: 'نحافظ على معلومات الأسرة والمستندات بعناية ومسؤولية.' },
           { icon: '✓', title: 'الموثوقية', text: 'نراجع تفاصيل الطلب قبل مشاركة الخيارات المناسبة.' },
-          { icon: '✦', title: 'الرقي', text: 'نهتم بتجربة خدمة هادئة تعكس معايير عناية.' },
+          { icon: '✦', title: 'نطاق مكتوب', text: 'تراجع المهام والمسؤوليات والتكاليف قبل التأكيد.' },
           { icon: '♡', title: 'الاهتمام', text: 'نتعامل مع كل منزل كحالة خاصة لها احتياجها.' }
         ],
         standardsTitle: 'خطوات عملية قبل القرار',
@@ -50,12 +50,12 @@ export default async function AboutPage({ params }: PageProps) {
           { title: 'شرح المتطلبات', text: 'نوضح المستندات، الرسوم، والمسؤوليات قبل أي تأكيد.' },
           { title: 'متابعة بعد الحجز', text: 'يبقى الفريق متاحاً للرد على الأسئلة ومراجعة أي ملاحظات.' }
         ],
-        leadershipTitle: 'قيادة تركز على جودة التجربة',
-        leadershipText: 'تعتمد عناية على تنسيق تشغيلي منظم وفهم لطبيعة الأسر في الإمارات، حتى تكون كل تجربة خدمة أكثر وضوحاً واحتراماً.',
+        leadershipTitle: 'كيف ينسق مكتب عجمان طلبك',
+        leadershipText: 'يراجع فريق جراند مول الدور المنزلي والتوفر الحالي، ويناقش الملفات الفردية المناسبة ويؤكد المهام وترتيبات البدء كتابةً. يتبع تقييم المرشحة والتهيئة الأولية الاتفاق المنطبق؛ ويعرض أي ملف بديل لأخذ موافقة الأسرة.',
         highlights: [
-          { title: 'إشراف تشغيلي', text: 'متابعة الطلبات بناءً على متطلبات موثقة وواضحة.' },
-          { title: 'فهم الأسرة', text: 'مراعاة خصوصية المنزل وروتين الأسرة قبل اقتراح الخدمة.' },
-          { title: 'تحسين مستمر', text: 'استخدام ملاحظات العملاء لتطوير طريقة التنسيق والمتابعة.' }
+          { title: 'مراجعة الاحتياج والملف', text: 'يسجل نوع الخدمة والموقع والمهام والجدول قبل مناقشة الخيارات المناسبة.' },
+          { title: 'ترتيبات تهيئة مكتوبة', text: 'يتفق على الدور الفردي وتعليمات المنزل والتصاريح النظامية وتأكيد البدء قبل بدء الخدمة.' },
+          { title: 'متابعة متفق عليها', text: 'تحدد خطة الخدمة مسؤول التواصل وجدول المراجعة وكيفية معالجة الملاحظات أو طلبات الاستبدال المؤهلة.' }
         ],
         differenceTitle: 'الفرق مع عناية',
         differenceText: 'تجمع عناية بين فهم احتياج المنزل، اختيار الخدمة المناسبة، والمتابعة المسؤولة، لتتمكن الأسرة من اتخاذ القرار براحة.',
@@ -78,13 +78,13 @@ export default async function AboutPage({ params }: PageProps) {
         missionLabel: 'Our Mission',
         mission: 'To raise the standard of domestic worker services through a calm, professional and easy-to-understand experience for UAE families.',
         visionLabel: 'Our Vision',
-        vision: 'To become a trusted UAE name for families seeking organized, premium and reliable domestic worker services.',
+        vision: 'To make household service decisions clearer through individual requirement review, written scope and an agreed follow-up plan.',
         valuesTitle: 'Values Behind Every Service',
         valuesSub: 'The values that shape how we support every household.',
         values: [
           { icon: '◇', title: 'Discretion', text: 'Family information and documents are handled with care and responsibility.' },
           { icon: '✓', title: 'Reliability', text: 'Every request is reviewed before suitable options are shared.' },
-          { icon: '✦', title: 'Refinement', text: 'We maintain a calm service experience that reflects INAYA standards.' },
+          { icon: '✦', title: 'Written scope', text: 'Duties, responsibilities and costs are reviewed before confirmation.' },
           { icon: '♡', title: 'Care', text: 'Each household is treated as a unique requirement, not a generic request.' }
         ],
         standardsTitle: 'Practical Steps Before You Decide',
@@ -95,12 +95,12 @@ export default async function AboutPage({ params }: PageProps) {
           { title: 'Guidance & Documents', text: 'Documents, fees and responsibilities are explained before confirmation.' },
           { title: 'After-booking Support', text: 'The team remains available for questions and service-related feedback.' }
         ],
-        leadershipTitle: 'Leadership Focused on Service Quality',
-        leadershipText: 'INAYA is guided by operational discipline and an understanding of UAE households, helping every service conversation remain focused, respectful and useful.',
+        leadershipTitle: 'How the Ajman office coordinates your request',
+        leadershipText: 'The Grand Mall team reviews the household role and current availability, discusses relevant individual profiles and confirms the written duties and start arrangements. Candidate assessment and initial orientation follow the applicable agreement; any alternative profile is presented for the household’s consent.',
         highlights: [
-          { title: 'Operational Oversight', text: 'Requests are managed against documented household requirements.' },
-          { title: 'Household Understanding', text: 'Family routines and privacy expectations guide our recommendations.' },
-          { title: 'Continuous Improvement', text: 'Client feedback helps refine our coordination and follow-up process.' }
+          { title: 'Requirement and profile review', text: 'Service type, location, duties and schedule are recorded before suitable options are discussed.' },
+          { title: 'Written onboarding arrangements', text: 'Agree the individual role, household instructions, lawful authorisation and start confirmation before service begins.' },
+          { title: 'Agreed follow-up', text: 'The service plan identifies the contact person, review schedule and how feedback or eligible replacement concerns are handled.' }
         ],
         differenceTitle: 'The INAYA Difference',
         differenceText: 'INAYA combines household understanding, relevant service guidance and responsible follow-up so families can move forward with confidence.',

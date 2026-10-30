@@ -20,7 +20,8 @@ const newCanonicalUrls = newSlugs.flatMap(slug => ['en', 'ar'].map(locale => `${
 const blogOrderSlugs = [...newSlugs, ...blogOrder.slugs];
 const indexRoutes = ['blog', ...[2, 3, 4, 5, 6].map(page => `blog/page/${page}`)];
 const indexUrls = indexRoutes.flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`));
-const expectedLastmods = { ...before.lastmods, ...Object.fromEntries([...indexUrls, ...newCanonicalUrls, ...privacyUrls, ...refresh.galleryUrls].map(url => [url, date])) };
+const clarity = require('./page-clarity-expectations.cjs');
+const expectedLastmods = { ...before.lastmods, ...Object.fromEntries([...indexUrls, ...newCanonicalUrls, ...privacyUrls, ...refresh.galleryUrls].map(url => [url, date])), ...Object.fromEntries(clarity.fixture.updatedRoutes.flatMap(route => ['en', 'ar'].map(lang => [`${origin}/${lang}/${route ? route + '/' : ''}`, clarity.fixture.date]))) };
 const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === 'object'
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const hash = value => createHash('sha256').update(value).digest('hex');
@@ -41,8 +42,7 @@ function assertLastmods(entries) {
   assertInventory(entries.map(entry => entry.url));
   for (const entry of entries) assert.equal(entry.lastmod ?? null, expectedLastmods[entry.url], `${entry.url}: only new articles, changed index memberships and two privacy notices get29October dates`);
   assert.equal(entries.filter(entry => entry.lastmod).length, 260);
-  assert.equal(entries.filter(entry => entry.lastmod === date).length, 36);
-  assert.equal(entries.filter(entry => entry.lastmod === '2026-10-28').length, 44);
+  for (const stamp of ['2026-10-28', date, clarity.fixture.date]) assert.equal(entries.filter(entry => entry.lastmod === stamp).length, Object.values(expectedLastmods).filter(value => value === stamp).length, `${stamp}: exact dated scope`);
 }
 
 // This exact inverse is required before the older five-guide provenance chain.
@@ -72,7 +72,8 @@ function beforeCatalogAddition(file, source) {
 function assertExistingRecords(records, family) {
   const expected = before.guideRecordSha256.filter(row => row.family === family);
   assert.equal(records.length, expected.length, `${family}: complete original cohort size`);
-  for (const [index, record] of records.entries()) {
+  for (const [index, current] of records.entries()) {
+    const record = require('./page-clarity-expectations.cjs').historicalRecord(current, family);
     assert.equal(record.slug, expected[index].slug, `${family}: original record order`);
     assert.equal(fingerprint(record), expected[index].sha256, `${record.slug}: every original field and full bilingual manuscript remains immutable`);
   }

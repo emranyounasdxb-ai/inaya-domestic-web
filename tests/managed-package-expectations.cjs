@@ -310,9 +310,12 @@ function editorialRepetition(audit) {
   // Retain the existing budgets for editorial prose; no arbitrary paragraph,
   // unrelated route or later duplication is covered by this source snapshot.
   const pages = audit.pages.map(original => {
+    const clarity = require('./page-clarity-expectations.cjs');
+    const reviewedPage = clarity.assertReviewedPage(original);
     const page = withoutReviewedHomeFaq(original);
     const blog = reviewedBlogPlacements(page);
-    const approved = blog?.approved ?? commercial.copy[page.route]?.[page.locale] ?? [];
+    const originalApproved = blog?.approved ?? commercial.copy[page.route]?.[page.locale] ?? [];
+    const approved = reviewedPage ? [...new Set([...originalApproved, ...clarity.rendered.sharedCommercialParagraphs[page.locale]])] : originalApproved;
     const occurrences = {};
     for (const paragraph of page.paragraphs) {
       const index = approved.indexOf(paragraph);
@@ -320,7 +323,7 @@ function editorialRepetition(audit) {
     }
     // The allowance is bounded to the reviewed placements too: missing copy or
     // another copy of an approved paragraph must fail, not disappear from the metric.
-    assert.deepEqual(occurrences, blog?.expected ?? refreshedCommercialCounts[page.route]?.[page.locale] ?? commercial.paragraphCounts[page.route]?.[page.locale] ?? {}, `${page.url}: exact approved commercial paragraph placements`);
+    assert.deepEqual(occurrences, reviewedPage?.commercialCounts ?? blog?.expected ?? refreshedCommercialCounts[page.route]?.[page.locale] ?? commercial.paragraphCounts[page.route]?.[page.locale] ?? {}, `${page.url}: exact approved commercial paragraph placements`);
     const hubCopy = page.route === 'services' ? Object.values(hubSummaries).map(copy => copy[page.locale].toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ')) : [];
     // Only the three exact service-card summaries on each localized hub are
     // excluded. Missing, changed or duplicated placements still fail.
@@ -353,4 +356,4 @@ function editorialRepetition(audit) {
     classifiedOnPageUiTokens: onPageUi.excludedTokens
   };
 }
-module.exports = { approvedManagedPackages, approvedPackageMessages, editorialRepetition, withoutReviewedSharedOnPageUi, metadata: commercial.metadata, priceMentions: commercial.priceMentions };
+module.exports = { approvedManagedPackages, approvedPackageMessages, editorialRepetition, withoutReviewedSharedOnPageUi, metadata: commercial.metadata, priceMentions: { ...commercial.priceMentions, ...Object.fromEntries(Object.entries(require('./page-clarity-expectations.cjs').rendered.pages).map(([url, pin]) => [new URL(url).pathname.slice(1).replace(/\/$/, ''), pin.priceMentions])) } };

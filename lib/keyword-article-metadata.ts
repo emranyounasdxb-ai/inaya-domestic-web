@@ -7,9 +7,9 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
     "keyword": "Maid agency Ajman",
     "slug": "maid-agency-ajman-quote-comparison-workbook",
     "published": "2026-10-24",
-    "updated": "2026-10-24",
+    "updated": "2026-10-30",
     "en": {
-      "title": "Maid agency Ajman: compare written quotes with a household decision workbook",
+      "title": "Maid agency Ajman: what to compare and confirm in a written quote",
       "description": "Compare maid agency quotations in Ajman using a practical scope, evidence, cost and responsibility workbook before committing.",
       "searchTitle": "Maid Agency Ajman: Compare Written Quotes",
       "citations": [
@@ -18,7 +18,7 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
       ]
     },
     "ar": {
-      "title": "مكتب خدم في عجمان: قارن العروض المكتوبة بورقة قرار للأسرة",
+      "title": "مكتب خدم في عجمان: ما تقارنه وتؤكده في عرض السعر المكتوب",
       "description": "قارن عروض مكاتب الخدم في عجمان بورقة عملية للنطاق والأدلة والتكاليف والمسؤوليات قبل الالتزام.",
       "searchTitle": "مكتب خدم عجمان: مقارنة عروض الأسعار",
       "citations": [
@@ -226,7 +226,7 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
     "keyword": "Monthly maid service Ajman",
     "slug": "monthly-maid-service-ajman-commitment-budget",
     "published": "2026-10-24",
-    "updated": "2026-10-24",
+    "updated": "2026-10-30",
     "en": {
       "title": "Monthly Maid Service in Ajman: Compare Commitments with a Clear Budget Sheet",
       "description": "Compare INAYA’s verified monthly service prices, commitment periods and household responsibilities using a practical budget and scope worksheet.",

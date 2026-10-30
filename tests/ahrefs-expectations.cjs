@@ -13,6 +13,7 @@ const baselineHashes = {
 };
 
 function beforeAhrefsSource(file, current) {
+  current = require('./page-clarity-expectations.cjs').historicalSource(file, current);
   current = current.replace(/\r\n/g, '\n');
   if (file === 'app/[locale]/layout.tsx') {
     assert.equal(current.split(src).length, 2, 'exactly one owner-approved Ahrefs source');

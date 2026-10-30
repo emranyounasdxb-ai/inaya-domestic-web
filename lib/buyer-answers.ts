@@ -1,4 +1,4 @@
-import { packageSections, packageSummary } from './package-content';
+import { packageSections } from './package-content';
 // Editorial answers grounded in the existing intake, pricing and support guides.
 // Owner-approved monthly terms and enquiry guidance remain separate from statutory rules.
 type Pair = { en: string; ar: string };
@@ -14,8 +14,8 @@ export const buyerAnswers: Record<string, { question: Pair; answer: Pair; detail
   pricing: {
     question: { en: 'Is the displayed price my final service quote?', ar: 'هل السعر المعروض هو عرض السعر النهائي لخدمتي؟' },
     answer: {
-      en: packageSummary.en + ' Request the written final quote, service scope, inclusions, exclusions and applicable tax before confirmation.',
-      ar: packageSummary.ar + ' اطلب عرض السعر النهائي المكتوب ونطاق الخدمة وما يشمله والاستثناءات والضريبة المنطبقة قبل التأكيد.'
+      en: 'The cards and comparison table show published package prices and their commitments. Request the written final quote, service scope, inclusions, exclusions and applicable tax before confirmation.',
+      ar: 'تعرض البطاقات وجدول المقارنة أسعار الباقات المنشورة والتزاماتها. اطلب عرض السعر النهائي المكتوب ونطاق الخدمة وما يشمله والاستثناءات والضريبة المنطبقة قبل التأكيد.'
     }, detailRoute: 'contact'
   },
   'documents-required': {

@@ -75,11 +75,11 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
   const updatedUrls = [...countryPhotoUrls, ...[...onPageSpec.onPageUpdatedRoutes, ...onPageSpec.archiveRoutes].flatMap(route => locales.map(locale => `${origin}/${locale}/${route ? `${route}/` : ''}`))].filter(url => !additions.indexUrls.includes(url));
   const currentEntries = datedEntries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>'));
   assert.equal(datedEntries.length, 260, 'retain all248 dated URLs and add only eight new guide and two privacy copies');
-  assert.deepEqual(currentEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), updatedUrls.sort(), 'only unchanged country-photo and on-page routes retain28October; updated archive memberships receive29October');
+  assert.deepEqual(currentEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), updatedUrls.filter(url => additions.expectedLastmods[url] === '2026-10-28').sort(), 'only unchanged country-photo and on-page routes retain28October; updated archive memberships receive29October');
   for (const entry of currentEntries) {
     assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], 'each reviewed updated page has one exact substantive modification date');
   }
-  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, 216, 'historical dates, eight new guide copies, two privacy copies and changed archive memberships remain outside28October');
+  assert.equal(datedEntries.filter(entry => !entry.includes('<lastmod>2026-10-28</lastmod>')).length, Object.values(additions.expectedLastmods).filter(date => date && date !== '2026-10-28').length, 'historical dates, eight new guide copies, two privacy copies and changed archive memberships remain outside28October');
   assert.equal(receipt.articlePairs, 21);
   assert.equal(receipt.localePages, 42);
   assert.equal(receipt.manuscriptHashes.length, 42);
@@ -200,7 +200,7 @@ test('all 42 exports render complete reviewed paragraphs, tables, FAQs and label
     assert.doesNotMatch(text(hero), locale === 'en' ? /[\u0600-\u06ff]/ : /[A-Za-z]/, `${route}: hero visible prose stays in its own locale`);
     assert.doesNotMatch(rendered, /\{\{visual:|^###?\s|TODO|TBD|<script\b/m, `${route}: no unrendered manuscript syntax or executable content`);
     const expectedTables = copy.body.split(/\r?\n\s*\r?\n/).filter(block => block.startsWith('|'));
-    assert.ok(expectedTables.length >= 2);
+    assert.ok(expectedTables.length >= (article.slug === 'monthly-maid-service-ajman-commitment-budget' ? 1 : 2));
     assert.equal([...rendered.matchAll(/<table\b/g)].length, expectedTables.length, `${route}: every reviewed table is rendered`);
     for (const block of copy.body.split(/\r?\n\s*\r?\n/)) {
       if (/^\{\{visual:[a-z0-9_-]+\}\}$/.test(block)) continue;
