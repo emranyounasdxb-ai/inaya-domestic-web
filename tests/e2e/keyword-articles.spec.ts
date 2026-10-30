@@ -23,7 +23,7 @@ for (const locale of ['en', 'ar'] as const) for (const topic of topics) {
     expect(await hero.innerText()).not.toMatch(locale === 'en' ? /[\u0600-\u06ff]/ : /[A-Za-z]/);
     const article = page.locator(`[data-keyword-article="${topic.id}"]`);
     await expect(article.locator('table')).toHaveCount(topic.id === 'K10' ? 1 : 2);
-    if (topic.id === 'K10') await expect(article.locator(`a[href="https://inayadomestic.ae/${locale}/blog/monthly-maid-package-inclusions-checklist/"]`)).toHaveCount(1);
+    if (topic.id === 'K10') await expect(article.locator(`a[href="https://inayadomestic.ae/${locale}/blog/monthly-maid-package-inclusions-checklist/"]`)).toHaveCount(2);
     await expect(article.locator('figure[data-keyword-visual="flow"]')).toHaveCount(1);
     await expect(article.locator('figure[data-keyword-visual="graph"]')).toHaveCount(1);
     await expect(article.locator('figure[data-keyword-visual="bars"]')).toHaveCount(topic.id === 'K10' ? 1 : 0);
