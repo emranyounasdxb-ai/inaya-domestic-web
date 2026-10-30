@@ -50,7 +50,7 @@ export default function GoogleReviewsHub({ locale }: { locale: string }) {
             <blockquote className="mt-4 break-words text-base leading-7 text-primary-900/85" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>{lang === 'ar' ? review.textAr : review.text}</blockquote>
             {lang === 'ar' && <>
               <p className="mt-4 text-sm leading-6 text-primary-900/65">{t.translation}</p>
-              <details className="mt-3 text-sm leading-7">
+              <details data-original-review="true" className="mt-3 text-sm leading-7">
                 <summary className="cursor-pointer font-semibold underline decoration-accent-500 underline-offset-4">{t.original}</summary>
                 <blockquote lang="en" dir="ltr" className="mt-3 break-words text-primary-900/80">{review.text}</blockquote>
               </details>
