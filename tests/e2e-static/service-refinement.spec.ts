@@ -23,4 +23,20 @@ for(const lang of ['en','ar'] as const){
    await expect(page.locator('article table')).toHaveCount(2);await expect(page.locator('article [data-keyword-visual="flow"]')).toHaveCount(1);
   }
  });
+ test(`${lang}: reduced motion and keyboard enquiry preserve accessible form behaviour`,async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  let submissions=0;page.on('request',request=>{if(request.method()==='POST')submissions++;});
+  await page.goto(`/${lang}/services/part-time-maid/`);
+  const reject=page.getByRole('button',{name:lang==='ar'?'رفض التحليلات الاختيارية':'Reject optional analytics',exact:true});if(await reject.isVisible())await reject.click();
+  const section=page.locator('[data-service-benefits="part-time-maid"]');await section.scrollIntoViewIfNeeded();
+  const styles=await section.locator('li').evaluateAll(items=>items.map(item=>({animation:getComputedStyle(item).animationName,transition:getComputedStyle(item).transitionDuration})));
+  expect(styles).toEqual(Array.from({length:3},()=>({animation:'none',transition:'0s'})));
+  const hero=page.locator('main section').filter({has:page.locator('h1')}).first();const cta=hero.locator('a[href*="/booking"]').first();
+  await page.keyboard.press('Tab');await cta.focus();await expect(cta).toBeFocused();
+  expect(await cta.evaluate(item=>Number.parseFloat(getComputedStyle(item).outlineWidth))).toBeGreaterThan(0);
+  await cta.press('Enter');await expect(page.locator('select[name="service"]')).toHaveValue('part-time-maid');
+  await expect(page.locator('input[name="name"]')).toHaveValue('');await expect(page.locator('input[name="phone"]')).toHaveValue('');
+  expect(submissions).toBe(0);
+ });
+
 }

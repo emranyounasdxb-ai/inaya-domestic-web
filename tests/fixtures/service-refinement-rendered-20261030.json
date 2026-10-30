@@ -2,13 +2,13 @@
   "baselineCommit": "a0ee4d6f3bddf5e7b22821930a9670bb20449d95",
   "pages": {
     "https://inayadomestic.ae/en/blog/": {
-      "mainTextSha256": "ba1d381fc6cec8e6ed3630e9c8e68d91d856bcff2f5cfcba387349a069ae9de8"
+      "mainTextSha256": "c2d350fd816533795db018b135aa39ba07d52145fd5fd11bd0e8648fbe593501"
     },
     "https://inayadomestic.ae/ar/blog/": {
       "mainTextSha256": "56fc22d0e7dad9a05a80ea0939bda8f59e2d1654b6da8ae1354e1757e4f8223c"
     },
     "https://inayadomestic.ae/en/services/live-in-maid/": {
-      "mainTextSha256": "2de6e5f01bbdc591bf9f54c0a4ebb26246c884f41d8f48d265ef5ea153919bb6"
+      "mainTextSha256": "b2f1bfd20c880bbad8ad0a7cb2d6a24cad4dedcf82a9326d87ee6bd34e62b4ae"
     },
     "https://inayadomestic.ae/ar/services/live-in-maid/": {
       "mainTextSha256": "087d53e6e73fc51e628955a01acd78ceb5de3acd305a8da0179986d35f13298a"
@@ -26,37 +26,37 @@
       "mainTextSha256": "838737dbf2a953b7708e93d54ecafac245e52190f956cb3d654f761eb6d5b3c6"
     },
     "https://inayadomestic.ae/en/services/housekeeping/": {
-      "mainTextSha256": "2c0386559adc2b0a729ea018533ca844bbff0ad8224121760b51345bdda1d65b"
+      "mainTextSha256": "07eca64841f670233e4c3049b80928796435b91737e2bba79a8207e04bac4ef7"
     },
     "https://inayadomestic.ae/ar/services/housekeeping/": {
       "mainTextSha256": "2bd2102064aede15cadac2b5847654932145436c85ae9f3e2924c1e1c76bfe8d"
     },
     "https://inayadomestic.ae/en/services/full-time-maid/": {
-      "mainTextSha256": "7e7dbf2f0407a2698cb9380ff5c98a850aa5bef3af725a8f58712cfec70d490d"
+      "mainTextSha256": "33a3a7098e95077225196cba1c71ef33340bce2d989180381cf4d09b3af440e1"
     },
     "https://inayadomestic.ae/ar/services/full-time-maid/": {
       "mainTextSha256": "334bd9942c6d547e149a2cee27f2b4879ce7d72689cb5e7f3e18967640a99e2e"
     },
     "https://inayadomestic.ae/en/services/part-time-maid/": {
-      "mainTextSha256": "87f00cbd03c0b6d27142b69ea4bda391323a697667b3bc0802245c01b21d35a4"
+      "mainTextSha256": "18229aea08e3ef99f2a6ff6621a0a835ea9f6a4c35b58844ad43cbea6ad47894"
     },
     "https://inayadomestic.ae/ar/services/part-time-maid/": {
       "mainTextSha256": "d82230c4c4982ccf0dc94272eb89c7bb7e95d79e7b0f5473464bacda4d841dd4"
     },
     "https://inayadomestic.ae/en/services/monthly-maid-contract/": {
-      "mainTextSha256": "1712aba2919ec00472c9e6db5a79195543aa87aef7ed0cf96ff1fce0863c2c58"
+      "mainTextSha256": "6aaaf8fee952b967490b8c3729d1f1331e034c1c5c90dc9716f0be75151d072e"
     },
     "https://inayadomestic.ae/ar/services/monthly-maid-contract/": {
       "mainTextSha256": "c75eaf45601754fec710640574ba49dea1dbf6d8d11c3863101983e58d44e5b6"
     },
     "https://inayadomestic.ae/en/services/on-demand-domestic-help/": {
-      "mainTextSha256": "8f013dc7e6ed223cbee3d1614d12d2a4f692531e37ac99b3968d646502b927bf"
+      "mainTextSha256": "03b8b4fe4d8ef5cfb18066a9b34c386374bcb598703208e47ed76a43fa13bac2"
     },
     "https://inayadomestic.ae/ar/services/on-demand-domestic-help/": {
       "mainTextSha256": "509df972d3acac2a14bcf9029f065d533e2cf7589b5fb165d96ff212b7143d2b"
     },
     "https://inayadomestic.ae/en/services/nanny/": {
-      "mainTextSha256": "4840c13b351d494594e3172b38ae0ba0dfb8bb273e6a250a290e4fbc8dcd19df"
+      "mainTextSha256": "3347cfdd5d5e3d3869e38e96809e82deb821f9016729c8bfed5c6c03b85d1f40"
     },
     "https://inayadomestic.ae/ar/services/nanny/": {
       "mainTextSha256": "5b702e63759e5e2c5e35273e2dc5b276a96b0c8e0b1c929801f131e07b5bcbd1"
@@ -74,13 +74,13 @@
       "mainTextSha256": "4424a523142c0f6dd401291fc8e61c345b32c1acc82d0e9e864ba6b7a51c62a3"
     },
     "https://inayadomestic.ae/en/services/newborn-care/": {
-      "mainTextSha256": "12cdf78d3a812e646510875a52f43d15960273232264a9c0cbfd9ed85bf2b1da"
+      "mainTextSha256": "d91b87154ab685a3ef6d49bd175b376f80e7cad7b83e45b94faa0c0f533b7d2d"
     },
     "https://inayadomestic.ae/ar/services/newborn-care/": {
       "mainTextSha256": "de3d44c408299ba56f6ed53f45941010308e8d57b13e8b5941fd727a257b72c9"
     },
     "https://inayadomestic.ae/en/services/home-cooking/": {
-      "mainTextSha256": "b7b935e7a3ca9057886aea8f1b99d2450b6f820743875c69cbbbb6104b78a395"
+      "mainTextSha256": "fb22a181ba76ffe11a350fef6332c026250cb4b3e3bc08dc8551113575851614"
     },
     "https://inayadomestic.ae/ar/services/home-cooking/": {
       "mainTextSha256": "cf46b5a67b8bd05dad2869ce25204b49dc45535255bcc089b45fa6d0a10c4b42"
@@ -92,7 +92,7 @@
       "mainTextSha256": "3dde96d49847974e0c0d3a3cff1681d2771761207e3268cf9b17bc80feeb21bb"
     },
     "https://inayadomestic.ae/en/services/personal-chef/": {
-      "mainTextSha256": "da0e330688c691490149b71323ec72d50dbc91a0f66bdea9c58f8c328a291fe7"
+      "mainTextSha256": "60abe80abf7e1adac77131f8e1224231a32b169ae1536499870708817add51a9"
     },
     "https://inayadomestic.ae/ar/services/personal-chef/": {
       "mainTextSha256": "c60309393fb2c2922594d692f70878adff46a28e1a699e47891bf1f09132964c"
@@ -110,13 +110,13 @@
       "mainTextSha256": "44257a1aaef73b7fda1834871288866058e717e315c951f87c4cd3ff1671ee94"
     },
     "https://inayadomestic.ae/en/services/elder-care/": {
-      "mainTextSha256": "bad3b4856b5e491473ef9abef919cf36a016349c09b6a7825e56222dc9625a84"
+      "mainTextSha256": "c4502c37f05faa99f4766a11c0780eb5cd247e69e54ce30c9e8c36ca581fc38d"
     },
     "https://inayadomestic.ae/ar/services/elder-care/": {
       "mainTextSha256": "3fb4b7aeee914d82cca330156c01be74cd1f627d8ab6a39d1f56585b79cfb43f"
     },
     "https://inayadomestic.ae/en/services/patient-care/": {
-      "mainTextSha256": "11636caae37a4ed0f9faf3e7180812f57578ac96ac22a9e3058bff4a16d997f5"
+      "mainTextSha256": "bf0796b4578bbfa8df99393bbd3da2bb95e9c2035a8e952d343ffba83333f717"
     },
     "https://inayadomestic.ae/ar/services/patient-care/": {
       "mainTextSha256": "19edef2afd5c9f790303c2d0e597a25c0692f754e384f19d5fa8b7937afa698a"
@@ -134,19 +134,19 @@
       "mainTextSha256": "d307e3b5213c28e5f49ce22e707590d3315d28b765e2b0d7250e9e9862a45d05"
     },
     "https://inayadomestic.ae/en/services/maid-visa/": {
-      "mainTextSha256": "77946dafb9a2eba2029c94ce4359e184770f574ccbb89fdafecd7155ffc6a06c"
+      "mainTextSha256": "e204e4f5dee663ab741dd0498121ace24fecc340360de9e0354c06ca59aac2a0"
     },
     "https://inayadomestic.ae/ar/services/maid-visa/": {
       "mainTextSha256": "d73b323beccbfd0a4232ce1a5593060fc315d8d0ef8d831c0fd781a16d5db472"
     },
     "https://inayadomestic.ae/en/services/maid-replacement/": {
-      "mainTextSha256": "b42a08e9e7155156f434ea1bb319eb4365435125ada78635571a688e48b5f4a7"
+      "mainTextSha256": "bb7ba35b6a7cd9f794c42b73bd5f36d7db6ff47a08d47c1d13a17448bfc6c812"
     },
     "https://inayadomestic.ae/ar/services/maid-replacement/": {
       "mainTextSha256": "98207acafa163c1bf442fc72d307734c1026bc4841cd12f5dc9d3a3a1839d9c7"
     },
     "https://inayadomestic.ae/en/services/sponsorship-transfer/": {
-      "mainTextSha256": "f34ba144d443622a09244c6d9f9fb27d23cc88020c0f3403453865ebc3c3f02b"
+      "mainTextSha256": "998a6668a3be39b0738257e0b5453e65fee30a614ef78581dc8b0dbc96aabf2c"
     },
     "https://inayadomestic.ae/ar/services/sponsorship-transfer/": {
       "mainTextSha256": "bb4ad6670e18dc9fc6cb376abbcc2437bc9f520ab051463639b513d7fcc770cd"
@@ -176,19 +176,19 @@
       "mainTextSha256": "cd3185526d102830402c302fe4e7257d0be83c8008f4eca6e2f67b764e76e1a0"
     },
     "https://inayadomestic.ae/en/services/relocation-support/": {
-      "mainTextSha256": "291f87271034df442bc8f25f96d6abfe43d3abe82e24679eff5569f511cfff85"
+      "mainTextSha256": "75aee3caaa592556f07a267dc49e95bd7e4d9819d61efe3a87be787aa3f7b7a1"
     },
     "https://inayadomestic.ae/ar/services/relocation-support/": {
       "mainTextSha256": "7c57a7760e426a79642f1a1884ce811862088dd2ba937db0b994bf3ac2fa933c"
     },
     "https://inayadomestic.ae/en/services/pet-care-specialists/": {
-      "mainTextSha256": "0f159fd1b7d557fb42102370f404e8ed6f27943c25e350a70b4e936d4892835d"
+      "mainTextSha256": "d72118ad6f1bb0b8fe602f3ee1276653f3b46b7988f9384857b06dd81dd8fd50"
     },
     "https://inayadomestic.ae/ar/services/pet-care-specialists/": {
       "mainTextSha256": "1bf3a72e184b541706ffe96726877b7642448aeedecd0c630357bacd8586d9de"
     },
     "https://inayadomestic.ae/en/services/event-staffing/": {
-      "mainTextSha256": "228c3854dac847c3c8e2a4f855d2416745b80350b1edf55193c9600445dc8b0b"
+      "mainTextSha256": "4c4f14bd18cc71238f4bdd70535048ed6cb88782f0b53934fb3045e83d7f871a"
     },
     "https://inayadomestic.ae/ar/services/event-staffing/": {
       "mainTextSha256": "453608ed0d44ac8d264d186aeff166089406859d5d272854fa873b1d9b884066"
@@ -250,7 +250,7 @@
       }
     },
     "https://inayadomestic.ae/en/blog/housemaid-recruitment-ajman-candidate-evidence-cards/": {
-      "mainTextSha256": "4b323f1c918114ec756d7e701a532d4d59dc699522fcbcdf43bd18a530508086",
+      "mainTextSha256": "d754999a2124919b4d1eb974621b1b885f24d2b9c5d036dc83475d424aeedfb7",
       "metadata": {
         "before": {
           "title": "Housemaid Recruitment Ajman: Candidate Interviews | INAYA",
@@ -258,7 +258,7 @@
         },
         "after": {
           "title": "Housemaid Recruitment Ajman: Interviews & Selection | INAYA",
-          "description": "Compare housemaid candidates in Ajman with practical interview questions, relevant task experience, clear role expectations and a first-week handover."
+          "description": "Compare housemaid candidates in Ajman with practical interview questions, relevant task experience, clear role expectations and a first week handover."
         }
       }
     },

@@ -9,7 +9,7 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
   'live-in-maid': [
     benefit('Residence planning', 'Discuss accommodation and privacy alongside the daily role, with working hours and rest agreed separately.', 'ترتيب الإقامة', 'ناقش السكن والخصوصية إلى جانب الدور اليومي، واتفق على ساعات العمل والراحة بصورة منفصلة.'),
     benefit('Individual household fit', 'Review the person’s relevant cleaning, laundry and kitchen experience against your actual household priorities.', 'ملاءمة فردية للمنزل', 'راجع خبرة المرشحة في التنظيف والغسيل والمطبخ وفق أولويات منزلك الفعلية.'),
-    benefit('A clear home handover', 'Record household instructions, the family contact and agreed follow-up before the live-in arrangement starts.', 'تسليم واضح لتعليمات المنزل', 'سجل تعليمات المنزل ومسؤول التواصل والمتابعة المتفق عليها قبل بدء ترتيب الإقامة.')
+    benefit('A clear home handover', 'Record household instructions, the family contact and agreed follow up before the live in arrangement starts.', 'تسليم واضح لتعليمات المنزل', 'سجل تعليمات المنزل ومسؤول التواصل والمتابعة المتفق عليها قبل بدء ترتيب الإقامة.')
   ],
   'live-out-maid': [
     benefit('A planned visit schedule', 'Coordinate arrival, departure and home access around the agreed visits, without requiring residence in your home.', 'جدول زيارات منظم', 'نسق الوصول والمغادرة والدخول إلى المنزل وفق الزيارات المتفق عليها، دون اشتراط الإقامة في منزلك.'),
@@ -22,33 +22,33 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
     benefit('Separate specialist duties', 'Discuss cooking or childcare as specific responsibilities, with relevant individual experience and written scope.', 'تحديد المهام الخاصة', 'ناقش الطبخ أو رعاية الأطفال كمسؤوليات محددة، مع مراجعة الخبرة الفردية والنطاق المكتوب.')
   ],
   housekeeping: [
-    benefit('Room-by-room priorities', 'Organise cleaning around named rooms and desired results, with the most important tasks agreed first.', 'أولويات كل غرفة', 'نظم التنظيف حسب الغرف والنتائج المطلوبة، واتفق على المهام الأهم أولاً.'),
+    benefit('Room by room priorities', 'Organise cleaning around named rooms and desired results, with the most important tasks agreed first.', 'أولويات كل غرفة', 'نظم التنظيف حسب الغرف والنتائج المطلوبة، واتفق على المهام الأهم أولاً.'),
     benefit('Surface and appliance instructions', 'Explain delicate finishes and equipment use before work; agree which products and tools will be supplied.', 'تعليمات الأسطح والأجهزة', 'وضح الخامات الحساسة واستخدام الأجهزة قبل العمل، واتفق على من يوفر المنتجات والأدوات.'),
     benefit('Laundry within the agreed visit', 'Add laundry or ironing when included in the task list; confirm time and scope without assuming specialist deep cleaning.', 'الغسيل ضمن نطاق الزيارة', 'أضف الغسيل أو الكي عند إدراجهما في المهام، وأكد الوقت والنطاق دون افتراض شمول التنظيف العميق المتخصص.')
   ],
   'full-time-maid': [
-    benefit('A regular household workload', 'Discuss recurring cleaning, laundry and kitchen assistance to define a realistic full-time role.', 'عمل منزلي منتظم', 'ناقش التنظيف والغسيل والمساعدة في المطبخ بصورة منتظمة لتحديد دور واقعي بدوام كامل.'),
-    benefit('Hours and residence clarified', 'Agree daily and weekly hours and rest, then confirm live-in or live-out residence separately.', 'توضيح الساعات والسكن', 'اتفق على الساعات اليومية والأسبوعية والراحة، ثم أكد الإقامة داخل المنزل أو خارجه بصورة منفصلة.'),
+    benefit('A regular household workload', 'Discuss recurring cleaning, laundry and kitchen assistance to define a realistic full time role.', 'عمل منزلي منتظم', 'ناقش التنظيف والغسيل والمساعدة في المطبخ بصورة منتظمة لتحديد دور واقعي بدوام كامل.'),
+    benefit('Hours and residence clarified', 'Agree daily and weekly hours and rest, then confirm live in or live out residence separately.', 'توضيح الساعات والسكن', 'اتفق على الساعات اليومية والأسبوعية والراحة، ثم أكد الإقامة داخل المنزل أو خارجه بصورة منفصلة.'),
     benefit('Consistent task communication', 'Record priorities and family instructions so the worker and household understand the same routine.', 'تواصل واضح بشأن المهام', 'سجل الأولويات وتعليمات الأسرة ليكون الروتين مفهوماً لدى العاملة والأسرة معاً.')
   ],
   'part-time-maid': [
-    benefit('A choice of visit length', 'Compare the published four-hour and eight-hour packages against the tasks you need; confirm availability before booking.', 'اختيار مدة الزيارة', 'قارن باقتي الأربع والثماني ساعات المنشورتين بالمهام المطلوبة، وأكد التوفر قبل الحجز.'),
+    benefit('A choice of visit length', 'Compare the published four hour and eight hour packages against the tasks you need; confirm availability before booking.', 'اختيار مدة الزيارة', 'قارن باقتي الأربع والثماني ساعات المنشورتين بالمهام المطلوبة، وأكد التوفر قبل الحجز.'),
     benefit('Priorities that fit the visit', 'Agree the rooms and cleaning, laundry or kitchen tasks to address first within the chosen time.', 'أولويات تناسب الزيارة', 'اتفق على الغرف ومهام التنظيف أو الغسيل أو المطبخ ذات الأولوية ضمن الوقت المختار.'),
     benefit('Arrival preparation', 'Coordinate the address, access and arrival window; record who provides products, equipment and transport.', 'الاستعداد للوصول', 'نسق العنوان والدخول وفترة الوصول، وسجل مسؤولية توفير المنتجات والمعدات والنقل.')
   ],
   'monthly-maid-contract': [
     benefit('Salary administration', 'The applicable managed monthly agreement includes the agreed worker salary and documented payment administration.', 'إدارة الراتب', 'يشمل الاتفاق الشهري المدار المنطبق راتب العاملة المتفق عليه وإدارة السداد الموثقة.'),
     benefit('Applicable employment processing', 'Review the published monthly employment, permit, residence and insurance benefits against your written agreement.', 'الإجراءات الوظيفية المنطبقة', 'راجع مزايا التوظيف والتصاريح والإقامة والتأمين الشهرية المنشورة وفق اتفاقك المكتوب.'),
-    benefit('Service follow-up', 'INAYA coordinates agreed follow-up and administers eligible replacement requests under the monthly terms.', 'متابعة الخدمة', 'تنسق عناية المتابعة المتفق عليها وتدير طلبات الاستبدال المؤهلة وفق الشروط الشهرية.')
+    benefit('Service follow up', 'INAYA coordinates agreed follow up and administers eligible replacement requests under the monthly terms.', 'متابعة الخدمة', 'تنسق عناية المتابعة المتفق عليها وتدير طلبات الاستبدال المؤهلة وفق الشروط الشهرية.')
   ],
   'on-demand-domestic-help': [
-    benefit('Support for a particular occasion', 'Explain guest preparation, moving-day household tasks or another short-term need so the request has a clear purpose.', 'دعم لمناسبة محددة', 'وضح تجهيز المنزل للضيوف أو المهام المنزلية يوم الانتقال أو احتياجاً مؤقتاً آخر ليكون الطلب محدداً.'),
-    benefit('A defined short-term task list', 'Identify the work, location and time window rather than treating an occasional request as an ongoing role.', 'قائمة مهام مؤقتة محددة', 'حدد العمل والموقع والفترة المطلوبة بدلاً من اعتبار الطلب المؤقت دوراً مستمراً.'),
+    benefit('Support for a particular occasion', 'Explain guest preparation, moving day household tasks or another short term need so the request has a clear purpose.', 'دعم لمناسبة محددة', 'وضح تجهيز المنزل للضيوف أو المهام المنزلية يوم الانتقال أو احتياجاً مؤقتاً آخر ليكون الطلب محدداً.'),
+    benefit('A defined short term task list', 'Identify the work, location and time window rather than treating an occasional request as an ongoing role.', 'قائمة مهام مؤقتة محددة', 'حدد العمل والموقع والفترة المطلوبة بدلاً من اعتبار الطلب المؤقت دوراً مستمراً.'),
     benefit('Availability checked before confirmation', 'The team reviews the proposed timing and scope; an urgent enquiry does not reserve immediate support.', 'مراجعة التوفر قبل التأكيد', 'يراجع الفريق التوقيت والنطاق المقترحين، ولا يحجز الاستفسار العاجل دعماً فورياً.')
   ],
   nanny: [
     benefit('Childcare experience matched to your family', 'Discuss the children’s ages and individual care needs, then review relevant experience and available references.', 'خبرة رعاية تناسب الأسرة', 'ناقش أعمار الأطفال واحتياجاتهم الفردية، ثم راجع الخبرة المناسبة والمراجع المتاحة.'),
-    benefit('Parent-led daily routines', 'Agree supervision, play, meals and hygiene according to parent instructions and the defined childcare role.', 'روتين يومي بتوجيه الوالدين', 'اتفق على الإشراف واللعب والوجبات والنظافة وفق تعليمات الوالدين ودور رعاية الأطفال المحدد.'),
+    benefit('Parent led daily routines', 'Agree supervision, play, meals and hygiene according to parent instructions and the defined childcare role.', 'روتين يومي بتوجيه الوالدين', 'اتفق على الإشراف واللعب والوجبات والنظافة وفق تعليمات الوالدين ودور رعاية الأطفال المحدد.'),
     benefit('School preparation and updates', 'Discuss nursery or school routines, handovers and parent communication separately from general housekeeping duties.', 'الاستعداد للمدرسة والتحديثات', 'ناقش روتين الحضانة أو المدرسة وتسليم الرعاية والتواصل مع الوالدين بصورة منفصلة عن مهام التنظيف العامة.')
   ],
   'executive-nannies': [
@@ -64,10 +64,10 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
   'newborn-care': [
     benefit('Support around the baby’s routine', 'Discuss practical feeding and hygiene routines according to the parents’ instructions and agreed role.', 'دعم روتين المولود', 'ناقش المساعدة العملية في التغذية والنظافة وفق تعليمات الوالدين والدور المتفق عليه.'),
     benefit('Relevant individual experience', 'Ask about the proposed carer’s newborn experience and available training evidence rather than assuming a qualification.', 'خبرة فردية مناسبة', 'اسأل عن خبرة المرشحة مع المواليد وأدلة التدريب المتاحة بدلاً من افتراض مؤهل معين.'),
-    benefit('Non-clinical care boundaries', 'Record family instructions and handovers; medical treatment and nursing require an appropriate healthcare provider.', 'حدود الرعاية غير الطبية', 'سجل تعليمات الأسرة وتسليم الرعاية، فالعلاج الطبي والتمريض يحتاجان إلى مقدم رعاية صحية مناسب.')
+    benefit('Non clinical care boundaries', 'Record family instructions and handovers; medical treatment and nursing require an appropriate healthcare provider.', 'حدود الرعاية غير الطبية', 'سجل تعليمات الأسرة وتسليم الرعاية، فالعلاج الطبي والتمريض يحتاجان إلى مقدم رعاية صحية مناسب.')
   ],
   'home-cooking': [
-    benefit('Meals that reflect your household', 'Discuss familiar recipes, family preferences and lunch-box needs before agreeing the cooking role.', 'وجبات تناسب المنزل', 'ناقش الوصفات المعتادة وتفضيلات الأسرة ووجبات المدرسة قبل الاتفاق على دور الطبخ.'),
+    benefit('Meals that reflect your household', 'Discuss familiar recipes, family preferences and lunch box needs before agreeing the cooking role.', 'وجبات تناسب المنزل', 'ناقش الوصفات المعتادة وتفضيلات الأسرة ووجبات المدرسة قبل الاتفاق على دور الطبخ.'),
     benefit('A workable preparation routine', 'Plan cooking times, ingredients and meal priorities around the family’s actual daily schedule.', 'روتين عملي للتحضير', 'نظم أوقات الطبخ والمكونات وأولويات الوجبات وفق جدول الأسرة اليومي الفعلي.'),
     benefit('Clear kitchen responsibilities', 'Explain equipment, dietary concerns and agreed cleaning tasks; confirm responsibilities before meal preparation starts.', 'مسؤوليات واضحة في المطبخ', 'وضح الأجهزة والاعتبارات الغذائية ومهام التنظيف المتفق عليها، وأكد المسؤوليات قبل بدء التحضير.')
   ],
@@ -78,8 +78,8 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
   ],
   'personal-chef': [
     benefit('Recipe and taste matching', 'Discuss the meals you actually want and the proposed person’s relevant recipe experience.', 'ملاءمة الوصفات والذوق', 'ناقش الوجبات المطلوبة فعلياً وخبرة المرشح في الوصفات المناسبة.'),
-    benefit('Dietary preferences discussed clearly', 'Explain allergies and dietary instructions before agreeing the menu; do not assume a clinical diet-planning service.', 'توضيح التفضيلات الغذائية', 'وضح الحساسية والتعليمات الغذائية قبل الاتفاق على القائمة، ولا تفترض وجود خدمة تخطيط غذائي طبي.'),
-    benefit('Daily or occasion-based planning', 'Agree cooking times and kitchen responsibilities for regular meals or a particular occasion.', 'تخطيط يومي أو لمناسبة', 'اتفق على أوقات الطبخ ومسؤوليات المطبخ للوجبات المنتظمة أو لمناسبة محددة.')
+    benefit('Dietary preferences discussed clearly', 'Explain allergies and dietary instructions before agreeing the menu; do not assume a clinical diet planning service.', 'توضيح التفضيلات الغذائية', 'وضح الحساسية والتعليمات الغذائية قبل الاتفاق على القائمة، ولا تفترض وجود خدمة تخطيط غذائي طبي.'),
+    benefit('Daily or occasion based planning', 'Agree cooking times and kitchen responsibilities for regular meals or a particular occasion.', 'تخطيط يومي أو لمناسبة', 'اتفق على أوقات الطبخ ومسؤوليات المطبخ للوجبات المنتظمة أو لمناسبة محددة.')
   ],
   'kitchen-helper': [
     benefit('Preparation assistance', 'Define washing and preparation tasks alongside the person responsible for cooking and the menu.', 'المساعدة في التحضير', 'حدد مهام الغسل والتحضير بالتنسيق مع المسؤول عن الطبخ والقائمة.'),
@@ -94,11 +94,11 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
   'elder-care': [
     benefit('Support for the person’s routine', 'Discuss daily assistance, meals, comfort and practical mobility needs as individual household requirements.', 'دعم روتين الشخص', 'ناقش المساعدة اليومية والوجبات والراحة واحتياجات الحركة العملية كمتطلبات فردية للأسرة.'),
     benefit('Companionship and family updates', 'Agree a respectful daily presence, conversation and the way the family will receive routine updates.', 'المرافقة وتحديثات الأسرة', 'اتفق على حضور يومي يحترم الشخص والحديث معه وطريقة مشاركة التحديثات الروتينية مع الأسرة.'),
-    benefit('Non-clinical responsibilities', 'Match practical duties to relevant experience; medical treatment, nursing and medication management are outside this role.', 'مسؤوليات غير طبية', 'طابق المهام العملية مع الخبرة المناسبة، فالعلاج والتمريض وإدارة الأدوية خارج هذا الدور.')
+    benefit('Non clinical responsibilities', 'Match practical duties to relevant experience; medical treatment, nursing and medication management are outside this role.', 'مسؤوليات غير طبية', 'طابق المهام العملية مع الخبرة المناسبة، فالعلاج والتمريض وإدارة الأدوية خارج هذا الدور.')
   ],
   'patient-care': [
     benefit('Practical daily living help', 'Discuss hygiene routines, meals, comfort and suitable household assistance according to the family’s instructions.', 'مساعدة عملية للحياة اليومية', 'ناقش روتين النظافة والوجبات والراحة والمساعدة المنزلية المناسبة وفق تعليمات الأسرة.'),
-    benefit('A clearly agreed support plan', 'Describe the schedule, practical duties and family contact so the proposed non-clinical role is understood.', 'خطة دعم متفق عليها بوضوح', 'وضح الجدول والمهام العملية ومسؤول التواصل لتكون طبيعة الدور غير الطبي مفهومة.'),
+    benefit('A clearly agreed support plan', 'Describe the schedule, practical duties and family contact so the proposed non clinical role is understood.', 'خطة دعم متفق عليها بوضوح', 'وضح الجدول والمهام العملية ومسؤول التواصل لتكون طبيعة الدور غير الطبي مفهومة.'),
     benefit('Healthcare kept with qualified providers', 'INAYA’s household support does not provide medical treatment, nursing or medication management.', 'إبقاء الرعاية الصحية لدى المختصين', 'لا يقدم الدعم المنزلي لدى عناية العلاج الطبي أو التمريض أو إدارة الأدوية.')
   ],
   'companion-care': [
@@ -112,19 +112,19 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
     benefit('Interview and placement coordination', 'Review questions, documents and proposed placement steps, with costs and start conditions confirmed for the selected arrangement.', 'تنسيق المقابلة وخطوات البدء', 'راجع الأسئلة والمستندات وخطوات البدء المقترحة، مع تأكيد التكاليف وشروط البداية للترتيب المختار.')
   ],
   'maid-visa': [
-    benefit('The correct transaction route', 'Separate a new application, renewal, cancellation or status follow-up before reviewing the case requirements.', 'مسار المعاملة المناسب', 'ميز بين الطلب الجديد والتجديد والإلغاء ومتابعة الحالة قبل مراجعة متطلبات المعاملة.'),
-    benefit('Typing and document processing', 'INAYA supports domestic-worker application typing, document guidance and submission within the agreed case scope.', 'الطباعة ومعالجة المستندات', 'تدعم عناية طباعة طلبات العمالة المنزلية وإرشاد المستندات والتقديم ضمن نطاق الحالة المتفق عليه.'),
-    benefit('Processing coordination and follow-up', 'Discuss applicable status, identity, medical-processing and insurance steps; official decisions and timing remain authority-dependent.', 'تنسيق الإجراءات والمتابعة', 'ناقش الخطوات المنطبقة للوضع والهوية وإجراءات الفحص والتأمين، فالقرارات والتوقيت يعتمدان على الجهات المختصة.')
+    benefit('The correct transaction route', 'Separate a new application, renewal, cancellation or status follow up before reviewing the case requirements.', 'مسار المعاملة المناسب', 'ميز بين الطلب الجديد والتجديد والإلغاء ومتابعة الحالة قبل مراجعة متطلبات المعاملة.'),
+    benefit('Typing and document processing', 'INAYA supports domestic worker application typing, document guidance and submission within the agreed case scope.', 'الطباعة ومعالجة المستندات', 'تدعم عناية طباعة طلبات العمالة المنزلية وإرشاد المستندات والتقديم ضمن نطاق الحالة المتفق عليه.'),
+    benefit('Processing coordination and follow up', 'Discuss applicable status, identity, medical processing and insurance steps; official decisions and timing remain authority dependent.', 'تنسيق الإجراءات والمتابعة', 'ناقش الخطوات المنطبقة للوضع والهوية وإجراءات الفحص والتأمين، فالقرارات والتوقيت يعتمدان على الجهات المختصة.')
   ],
   'maid-replacement': [
     benefit('Review of the actual service concern', 'Explain what is not working against the agreed duties and existing agreement, with relevant feedback.', 'مراجعة الملاحظة الفعلية على الخدمة', 'وضح ما لا يسير وفق المهام والاتفاق القائم، مع تقديم الملاحظات ذات الصلة.'),
     benefit('Eligibility explained against the terms', 'The team reviews the applicable replacement conditions rather than treating every request as an automatic entitlement.', 'توضيح الأهلية وفق الشروط', 'يراجع الفريق شروط الاستبدال المنطبقة بدلاً من اعتبار كل طلب استحقاقاً تلقائياً.'),
-    benefit('Coordination of eligible next steps', 'Discuss revised requirements, available options and follow-up under the applicable service arrangement.', 'تنسيق الخطوات المؤهلة التالية', 'ناقش المتطلبات المعدلة والخيارات المتاحة والمتابعة وفق ترتيب الخدمة المنطبق.')
+    benefit('Coordination of eligible next steps', 'Discuss revised requirements, available options and follow up under the applicable service arrangement.', 'تنسيق الخطوات المؤهلة التالية', 'ناقش المتطلبات المعدلة والخيارات المتاحة والمتابعة وفق ترتيب الخدمة المنطبق.')
   ],
   'sponsorship-transfer': [
     benefit('Review of the existing arrangement', 'Start with the current worker and sponsor situation and the exact change requested.', 'مراجعة الترتيب القائم', 'ابدأ بوضع العاملة والكفيل الحالي والتغيير المطلوب تحديداً.'),
-    benefit('A case-specific document discussion', 'Confirm eligibility questions and the current requirements for the proposed transfer before agreeing processing steps.', 'مناقشة مستندات الحالة', 'أكد أسئلة الأهلية والمتطلبات الحالية للنقل المقترح قبل الاتفاق على خطوات المعالجة.'),
-    benefit('Applicable processing coordination', 'Discuss submission, status and follow-up responsibilities with written costs; the responsible authority decides approval.', 'تنسيق الإجراءات المنطبقة', 'ناقش مسؤوليات التقديم والوضع والمتابعة مع التكاليف المكتوبة، فالجهة المختصة تقرر الموافقة.')
+    benefit('A case specific document discussion', 'Confirm eligibility questions and the current requirements for the proposed transfer before agreeing processing steps.', 'مناقشة مستندات الحالة', 'أكد أسئلة الأهلية والمتطلبات الحالية للنقل المقترح قبل الاتفاق على خطوات المعالجة.'),
+    benefit('Applicable processing coordination', 'Discuss submission, status and follow up responsibilities with written costs; the responsible authority decides approval.', 'تنسيق الإجراءات المنطبقة', 'ناقش مسؤوليات التقديم والوضع والمتابعة مع التكاليف المكتوبة، فالجهة المختصة تقرر الموافقة.')
   ],
   'experienced-maid': [
     benefit('Experience relevant to the duties', 'Compare previous household work with the cleaning, cooking or childcare responsibilities actually requested.', 'خبرة تناسب المهام', 'قارن العمل المنزلي السابق بمسؤوليات التنظيف أو الطبخ أو رعاية الأطفال المطلوبة فعلياً.'),
@@ -148,16 +148,16 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
   ],
   'relocation-support': [
     benefit('Household help around the move', 'Identify practical tasks before moving and while settling into the new home.', 'مساعدة منزلية حول الانتقال', 'حدد المهام العملية قبل الانتقال وأثناء الاستقرار في المنزل الجديد.'),
-    benefit('New-home priorities organised', 'Describe the rooms, household routine and order of tasks needed for the agreed support.', 'تنظيم أولويات المنزل الجديد', 'وضح الغرف وروتين الأسرة وترتيب المهام المطلوبة للدعم المتفق عليه.'),
-    benefit('Moving services confirmed separately', 'Clarify transport, packing and specialist moving requirements; these are not assumed household-support inclusions.', 'تأكيد خدمات النقل بصورة مستقلة', 'وضح احتياجات النقل والتغليف والانتقال المتخصص، فلا يفترض شمولها ضمن المساعدة المنزلية.')
+    benefit('New home priorities organised', 'Describe the rooms, household routine and order of tasks needed for the agreed support.', 'تنظيم أولويات المنزل الجديد', 'وضح الغرف وروتين الأسرة وترتيب المهام المطلوبة للدعم المتفق عليه.'),
+    benefit('Moving services confirmed separately', 'Clarify transport, packing and specialist moving requirements; these are not assumed household support inclusions.', 'تأكيد خدمات النقل بصورة مستقلة', 'وضح احتياجات النقل والتغليف والانتقال المتخصص، فلا يفترض شمولها ضمن المساعدة المنزلية.')
   ],
   'pet-care-specialists': [
-    benefit('The pet’s actual routine', 'Describe feeding, daily routine and the household instructions relevant to your pet-care enquiry.', 'روتين الحيوان الأليف الفعلي', 'وضح التغذية والروتين اليومي وتعليمات المنزل ذات الصلة بطلب رعاية الحيوان الأليف.'),
-    benefit('Relevant individual experience', 'Discuss experience with the required pet-related duties instead of assuming a general household role is sufficient.', 'خبرة فردية مناسبة', 'ناقش الخبرة في المهام المطلوبة للحيوان الأليف بدلاً من افتراض كفاية الدور المنزلي العام.'),
-    benefit('Clear household responsibility boundaries', 'Agree the specific pet-care role and schedule alongside any separate maid duties.', 'حدود واضحة لمسؤوليات المنزل', 'اتفق على دور رعاية الحيوان الأليف وجدوله إلى جانب أي مهام منفصلة للعاملة المنزلية.')
+    benefit('The pet’s actual routine', 'Describe feeding, daily routine and the household instructions relevant to your pet care enquiry.', 'روتين الحيوان الأليف الفعلي', 'وضح التغذية والروتين اليومي وتعليمات المنزل ذات الصلة بطلب رعاية الحيوان الأليف.'),
+    benefit('Relevant individual experience', 'Discuss experience with the required pet related duties instead of assuming a general household role is sufficient.', 'خبرة فردية مناسبة', 'ناقش الخبرة في المهام المطلوبة للحيوان الأليف بدلاً من افتراض كفاية الدور المنزلي العام.'),
+    benefit('Clear household responsibility boundaries', 'Agree the specific pet care role and schedule alongside any separate maid duties.', 'حدود واضحة لمسؤوليات المنزل', 'اتفق على دور رعاية الحيوان الأليف وجدوله إلى جانب أي مهام منفصلة للعاملة المنزلية.')
   ],
   'event-staffing': [
-    benefit('A brief for your household gathering', 'Describe the occasion, guest-related tasks and practical coordination needed in the home.', 'تصور لتجمع الأسرة', 'وضح المناسبة والمهام المتعلقة بالضيوف والتنسيق العملي المطلوب في المنزل.'),
+    benefit('A brief for your household gathering', 'Describe the occasion, guest related tasks and practical coordination needed in the home.', 'تصور لتجمع الأسرة', 'وضح المناسبة والمهام المتعلقة بالضيوف والتنسيق العملي المطلوب في المنزل.'),
     benefit('Serving duties and timing agreed', 'Define the requested waiting and support duties, arrival time and household contact.', 'تحديد مهام التقديم والتوقيت', 'حدد مهام التقديم والمساعدة المطلوبة ووقت الوصول ومسؤول التواصل في المنزل.'),
     benefit('Other event services separated', 'Discuss cooking and floral presentation through their own scopes rather than assuming they form part of staffing.', 'فصل خدمات المناسبة الأخرى', 'ناقش الطبخ وتنسيق الزهور ضمن نطاق كل منهما بدلاً من افتراض شمولها ضمن توفير الطاقم.')
   ]

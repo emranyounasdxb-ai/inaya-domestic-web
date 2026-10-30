@@ -487,13 +487,13 @@ function ComparisonSection({ copy, lang, slug }: { copy: ServiceCopy; lang: Lang
   const benefits = serviceSupportBenefits[slug];
   if (!benefits) return null;
   return (
-    <section className="bg-[#fffdf8] px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20" data-service-benefits={slug}>
+    <section className="bg-[#fffdf8] px-6 py-16 lg:px-10 lg:py-20" data-service-benefits={slug}>
       <div className="mx-auto max-w-6xl">
-        <h2 className={`${headingFont(lang)} mx-auto max-w-3xl text-center text-3xl font-bold tracking-[-0.03em] text-primary-900 sm:text-4xl`}>{copy.compareTitle}</h2>
-        <ul className="mt-8 grid gap-5 md:grid-cols-3">
-          {benefits.map(item => <li key={item.title.en} className="rounded-[20px] border border-primary-900/10 bg-white p-6 shadow-[0_18px_52px_rgba(7,22,74,0.06)]">
-            <h3 className={`${headingFont(lang)} text-xl font-bold leading-8 text-primary-900`}>{item.title[lang]}</h3>
-            <p className="mt-3 text-sm leading-7 text-primary-900/80">{item.text[lang]}</p>
+        <h2 className={`${headingFont(lang)} mx-auto max-w-3xl text-balance text-center text-3xl font-bold tracking-[-0.03em] text-primary-900 sm:text-4xl`}>{copy.compareTitle}</h2>
+        <ul className="mt-8 grid gap-6 md:grid-cols-3">
+          {benefits.map(item => <li key={item.title.en} className="rounded-2xl border border-primary-900/10 bg-white p-6 shadow-[0_18px_52px_rgba(7,22,74,0.06)]">
+            <h3 className={`${headingFont(lang)} text-balance text-xl font-bold text-primary-900`}>{item.title[lang]}</h3>
+            <p className="mt-3 text-pretty text-base text-primary-900/80">{item.text[lang]}</p>
           </li>)}
         </ul>
       </div>

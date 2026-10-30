@@ -135,7 +135,7 @@ export const keywordArticleMetadata: KeywordArticleMetadata[] = [
     "updated": "2026-10-30",
     "en": {
       "title": "Housemaid Recruitment in Ajman: Interviews and Candidate Comparison",
-      "description": "Compare housemaid candidates in Ajman with practical interview questions, relevant task experience, clear role expectations and a first-week handover.",
+      "description": "Compare housemaid candidates in Ajman with practical interview questions, relevant task experience, clear role expectations and a first week handover.",
       "searchTitle": "Housemaid Recruitment Ajman: Interviews & Selection",
       "citations": [
         "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
