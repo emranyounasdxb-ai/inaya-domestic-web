@@ -22,7 +22,8 @@ for (const locale of ['en', 'ar'] as const) for (const topic of topics) {
     await expect(hero.locator(`a[href="/${targetLocale}/blog/${topic.slug}/"]`)).toHaveText(locale === 'en' ? 'Read this article in Arabic' : 'اقرأ هذا المقال بالإنجليزية');
     expect(await hero.innerText()).not.toMatch(locale === 'en' ? /[\u0600-\u06ff]/ : /[A-Za-z]/);
     const article = page.locator(`[data-keyword-article="${topic.id}"]`);
-    await expect(article.locator('table')).toHaveCount(2);
+    await expect(article.locator('table')).toHaveCount(topic.id === 'K10' ? 1 : 2);
+    if (topic.id === 'K10') await expect(article.locator(`a[href="https://inayadomestic.ae/${locale}/blog/monthly-maid-package-inclusions-checklist/"]`)).toHaveCount(1);
     await expect(article.locator('figure[data-keyword-visual="flow"]')).toHaveCount(1);
     await expect(article.locator('figure[data-keyword-visual="graph"]')).toHaveCount(1);
     await expect(article.locator('figure[data-keyword-visual="bars"]')).toHaveCount(topic.id === 'K10' ? 1 : 0);
@@ -38,7 +39,7 @@ for (const locale of ['en', 'ar'] as const) for (const topic of topics) {
       await expect(figure.locator(`[id="${captionId}"]`)).toBeVisible();
     }
     const tables = article.locator('[role="region"]').filter({ has: page.locator('table') });
-    await expect(tables).toHaveCount(2);
+    await expect(tables).toHaveCount(topic.id === 'K10' ? 1 : 2);
     for (const region of await tables.all()) {
       await region.scrollIntoViewIfNeeded();
       await region.focus();
@@ -79,7 +80,7 @@ for (const locale of ['en', 'ar'] as const) for (const topic of topics) {
     await page.locator(`header a[href="/${target}/blog/${topic.slug}/"]`).click();
     await expect(page).toHaveURL(new RegExp(`/${target}/blog/${topic.slug}/$`));
     await expect(page.locator('html')).toHaveAttribute('lang', target);
-    await expect(page.locator(`[data-keyword-article="${topic.id}"] table`)).toHaveCount(2);
+    await expect(page.locator(`[data-keyword-article="${topic.id}"] table`)).toHaveCount(topic.id === 'K10' ? 1 : 2);
     await expect(page.locator(`[data-keyword-article="${topic.id}"] figure[data-keyword-visual="graph"]`)).toHaveCount(1);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   });

@@ -1,5 +1,6 @@
 import { expect, test } from '../browser-fixture';
 import amendment from '../five-guides-amendment-expectations.cjs';
+import clarity from '../page-clarity-expectations.cjs';
 
 const slugs = [
   'uae-domestic-worker-hiring-process',
@@ -77,7 +78,7 @@ for (const locale of ['en', 'ar'] as const) {
       await page.goto(route);
       await expect(page.locator('html')).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
       await expect(page.locator('main h1')).toHaveCount(1);
-      const reviewedSections = amendment.getAmendment(slug)?.after.record[locale].sections;
+      const reviewedSections = clarity.currentRecord(slug, amendment.getAmendment(slug)?.after.record)?.[locale].sections;
       await expect(page.locator('main article h2')).toHaveCount((reviewedSections?.length ?? sectionCounts[slugs.indexOf(slug)]) + 1);
       await expect(page.locator('main article [data-blog-source-links]')).toHaveCount(1);
       const bodyReferences = page.locator('main article [data-blog-source-links] a');
