@@ -38,13 +38,14 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(header.getByRole('link', { name: ar ? 'جهز استفسارك' : 'Prepare enquiry', exact: true }).last()).toBeVisible();
   });
 
-  test(`${locale}: visa page asks for confirmed scope and monthly visits distinguish employment`, async ({ page }) => {
+  test(`${locale}: visa transaction choices and monthly responsibilities are explicit`, async ({ page }) => {
     await page.goto(`/${locale}/services/maid-visa/`);
     await expect(page.getByTestId('sierra-leone-offer')).toHaveCount(0);
-    await expect(page.getByRole('heading', { name: ar ? 'المستندات والإجراءات: ما الذي يجب تأكيده؟' : 'Documents and process: what to confirm', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: ar ? 'حدد المعاملة المطلوبة' : 'Choose the requested transaction', exact: true })).toBeVisible();
     await expect(page.locator('main img[src*="maid-filipino"]')).toHaveCount(0);
     await page.goto(`/${locale}/services/monthly-maid-contract/`);
-    await expect(page.getByRole('heading', { name: ar ? 'المهام المتفق عليها وعناصر الخدمة الشهرية المشمولة' : 'Agreed duties and included monthly service components', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: ar ? 'المهام المتفق عليها للدور' : 'Agreed duties for the individual role', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: ar ? 'مسؤوليات عناية ضمن الاتفاق الشهري' : 'INAYA responsibilities within the monthly agreement', exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: ar ? 'راجع أساس تسعير الباقات وما يجب تأكيده' : 'Review the package pricing basis and what to confirm' })).toHaveAttribute('href', `/${locale}/pricing/`);
   });
 }

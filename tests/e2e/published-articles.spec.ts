@@ -2,6 +2,7 @@ import { expect, test } from '../browser-fixture';
 import { publishedArticles } from '../../lib/published-article-content';
 import blogOrder from '../fixtures/blog-guide-order-20261028.json';
 import additions from '../four-guides-addition-expectations.cjs';
+import clarity from '../page-clarity-expectations.cjs';
 
 const worksheetGuides = new Set([
   'domestic-worker-hiring-costs-uae',
@@ -88,14 +89,14 @@ for (const locale of ['en', 'ar'] as const) {
     for (let number = 1; number <= 6; number++) {
       const route = number === 1 ? 'blog' : `blog/page/${number}`;
       await page.goto(`/${locale}/${route}/`);
-      const expectedSlugs = additions.blogOrderSlugs.slice((number - 1) * 12, number * 12);
+      const expectedSlugs = clarity.archiveOrder(additions.blogOrderSlugs.slice((number - 1) * 12, number * 12));
       const cards = page.locator('main article[data-blog-guide]');
       await expect(cards).toHaveCount(expectedSlugs.length);
       const slugs = await cards.evaluateAll(elements => elements.map(element => element.getAttribute('data-blog-guide') ?? ''));
       expect(slugs).toEqual(expectedSlugs);
       seen.push(...slugs);
       for (const article of publishedArticles) {
-        const card = page.locator(`main a[href="/${locale}/blog/${article.slug}/"]`);
+        const card = page.locator(`main article[data-blog-guide] a[href="/${locale}/blog/${article.slug}/"]`);
         const expectedOnPage = expectedSlugs.includes(article.slug);
         await expect(card).toHaveCount(expectedOnPage ? 1 : 0);
         if (!expectedOnPage) continue;
@@ -105,7 +106,7 @@ for (const locale of ['en', 'ar'] as const) {
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
     }
-    expect(seen).toEqual(additions.blogOrderSlugs);
+    expect(seen).toEqual(clarity.archiveSequence(additions.blogOrderSlugs));
     expect(seen.filter(slug => !additions.newSlugs.includes(slug))).toEqual(blogOrder.slugs);
     expect(new Set(seen).size).toBe(70);
     for (const article of publishedArticles) expect(found.get(article.slug), `${locale}/${article.slug}: exactly one correctly localized archive card`).toBe(1);
