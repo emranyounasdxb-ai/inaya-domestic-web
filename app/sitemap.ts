@@ -113,7 +113,10 @@ const contentUpdatedAt: Record<string, string> = {
     'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah',
     'blog/monthly-maid-package-inclusions-checklist', 'blog/monthly-maid-service-ajman-commitment-budget',
     'blog/maid-agency-ajman-quote-comparison-workbook', 'blog/choosing-domestic-worker-agency-ajman'
-  ].map(route => [route, '2026-10-30']))
+  ].map(route => [route, '2026-10-30'])),
+  ...Object.fromEntries(allServices.filter(service => service.slug !== 'countries-we-source-from').map(service => [`services/${service.slug}`, '2026-10-30'])),
+  'blog/housemaid-visa-ajman-application-readiness-ledger': '2026-10-30',
+  'blog/housemaid-recruitment-ajman-candidate-evidence-cards': '2026-10-30'
 };
 
 export const dynamic = 'force-static';

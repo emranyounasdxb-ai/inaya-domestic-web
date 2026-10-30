@@ -51,7 +51,7 @@ test('presentation classification is exactly 147 reviewed placements with origin
   }
   const classified = withoutKeywordPresentation(presentationPages());
   assert.equal(classified.excludedParagraphs, 147);
-  assert.equal(classified.excludedTokens, 2355);
+  assert.equal(classified.excludedTokens, 2353); // Exact new K04/K06 summary lengths; paragraph placements remain147.
   assert.ok(classified.pages.every(page => page.paragraphs.length === 0));
 });
 

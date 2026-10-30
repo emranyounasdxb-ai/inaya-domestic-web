@@ -1,3 +1,4 @@
+import { serviceSupportBenefits } from '@/lib/service-support-benefits';
 import { withServiceImageVersion } from '@/lib/service-image-versions';
 import Image from 'next/image';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
@@ -63,13 +64,6 @@ function CheckIcon({ className = 'h-4 w-4' }: { className?: string }) {
   );
 }
 
-function CrossIcon({ className = 'h-4 w-4' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="M7 7l10 10M17 7 7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
 
 function ArrowIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -166,7 +160,7 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
       {['monthly-maid-contract', 'nanny', 'live-in-maid'].includes(slug) ? <ServiceAgreementDetails lang={lang} /> : null}
       <FAQSection copy={copy} lang={lang} slug={slug} />
       <RelatedServices copy={copy} lang={lang} locale={locale} />
-      <ComparisonSection copy={copy} lang={lang} />
+      <ComparisonSection copy={copy} lang={lang} slug={slug} />
       {reviewedServiceSlugs.includes(slug) ? null : <ServiceSeoBlock locale={locale} slug={slug} />}
       <FinalCta copy={copy} lang={lang} locale={locale} slug={slug} />
     </div>
@@ -489,63 +483,19 @@ function RelatedServices({ copy, lang, locale }: { copy: ServiceCopy; lang: Lang
   );
 }
 
-function ComparisonSection({ copy, lang }: { copy: ServiceCopy; lang: Lang }) {
-  const labels = lang === 'ar'
-    ? { offer: 'نقطة المراجعة', inaya: 'تفاصيل المنزل', others: 'وضح مع الفريق', promise: 'الثقة. الشفافية. الرعاية.' }
-    : { offer: 'Review point', inaya: 'Household details', others: 'Clarify with the team', promise: 'Trust. Transparency. Care.' };
-  const pledge = lang === 'ar'
-    ? 'وعد عناية: نتعامل مع كل عائلة بمسؤولية ووضوح.'
-    : 'INAYA Promise: We treat every family with responsibility and clarity.';
-
+function ComparisonSection({ copy, lang, slug }: { copy: ServiceCopy; lang: Lang; slug: string }) {
+  const benefits = serviceSupportBenefits[slug];
+  if (!benefits) return null;
   return (
-    <section className="bg-[#fffdf8] px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+    <section className="bg-[#fffdf8] px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20" data-service-benefits={slug}>
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className={`${headingFont(lang)} text-3xl font-bold tracking-[-0.03em] text-primary-900 sm:text-4xl`}>{copy.compareTitle}</h2>
-          {copy.compareText ? <p className="mx-auto mt-3 max-w-2xl text-sm font-medium leading-6 text-primary-900/75">{copy.compareText}</p> : null}
-        </div>
-
-        <div className="mt-10 overflow-hidden rounded-[20px] border border-primary-900/10 bg-white shadow-[0_18px_52px_rgba(7,22,74,0.10)]">
-          <div className="min-w-[760px]">
-            <div className="grid grid-cols-[1.55fr_1fr_1fr] border-b border-primary-900/10 text-[0.72rem] font-black uppercase tracking-[0.18em] text-primary-900">
-              <div className="bg-[#f7f8fb] px-5 py-4 text-center">{labels.offer}</div>
-              <div className="bg-accent-600 px-5 py-4 text-center text-white">{labels.inaya}</div>
-              <div className="bg-[#f7f8fb] px-5 py-4 text-center">{labels.others}</div>
-            </div>
-
-            {copy.comparison.map((row, index) => (
-              <div key={row.feature} className="grid min-h-[3.85rem] grid-cols-[1.55fr_1fr_1fr] border-b border-primary-900/10 text-sm text-primary-900 last:border-b-0">
-                <div className="flex items-center gap-3 px-5 py-3 font-bold leading-5">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent-500/35 bg-white text-[0.68rem] font-bold text-accent-700">
-                    {index + 1}
-                  </span>
-                  <span>{row.feature}</span>
-                </div>
-                <div className="flex items-center justify-center border-x border-primary-900/10 bg-white px-4 py-3 font-bold">
-                  <span className="grid w-[12rem] grid-cols-[1.5rem_minmax(0,1fr)] items-center gap-3 text-start">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-                      <CheckIcon className="h-3.5 w-3.5" />
-                    </span>
-                    <span>{row.inaya}</span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-center px-4 py-3 font-bold text-primary-900/82">
-                  <span className="grid w-[12rem] grid-cols-[1.5rem_minmax(0,1fr)] items-center gap-3 text-start">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
-                      <CrossIcon className="h-3.5 w-3.5" />
-                    </span>
-                    <span>{row.other}</span>
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-5 grid overflow-hidden rounded-[16px] border border-primary-900/10 bg-white text-center text-sm font-black text-primary-900 shadow-[0_12px_34px_rgba(7,22,74,0.06)] md:grid-cols-2">
-          <div className="px-5 py-4">{pledge}</div>
-          <div className="border-t border-primary-900/10 px-5 py-4 md:border-s md:border-t-0">{labels.promise}</div>
-        </div>
+        <h2 className={`${headingFont(lang)} mx-auto max-w-3xl text-center text-3xl font-bold tracking-[-0.03em] text-primary-900 sm:text-4xl`}>{copy.compareTitle}</h2>
+        <ul className="mt-8 grid gap-5 md:grid-cols-3">
+          {benefits.map(item => <li key={item.title.en} className="rounded-[20px] border border-primary-900/10 bg-white p-6 shadow-[0_18px_52px_rgba(7,22,74,0.06)]">
+            <h3 className={`${headingFont(lang)} text-xl font-bold leading-8 text-primary-900`}>{item.title[lang]}</h3>
+            <p className="mt-3 text-sm leading-7 text-primary-900/80">{item.text[lang]}</p>
+          </li>)}
+        </ul>
       </div>
     </section>
   );

@@ -75,6 +75,8 @@ jobs:
         run: node --test tests/blog-refresh.test.mjs
       - name: Verify bilingual page clarity, unchanged commercial terms and selected package enquiries
         run: node --test tests/page-clarity-release.test.mjs
+      - name: Verify specific service benefits and readable existing article titles
+        run: node --test tests/service-refinement.test.mjs
       - name: Verify owner-approved native Ahrefs head and separate privacy disclosure
         run: node --test tests/ahrefs-source-unit.test.cjs tests/ahrefs-head-export.test.mjs
       - name: Unit and export checks
@@ -92,6 +94,7 @@ jobs:
           path: |
             test-results/**/archive-*.png
             test-results/**/reading-*.png
+            test-results/**/service-benefit-*.png
           retention-days: 7
       - name: Check pricing layout before the full browser suite
         run: node node_modules/@playwright/test/cli.js test tests/e2e/core-page-clarity.spec.ts --grep 'six pricing cards'

@@ -59,7 +59,7 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   const onPageUpdatedPaths = new Set(onPageSpec.onPageUpdatedRoutes);
   const archivePaths = new Set(onPageSpec.archiveRoutes);
   const step2Paths = new Set(['gallery', ...additions.newSlugs.map(slug => `blog/${slug}`), ...additions.indexRoutes]);
-  const clarityPaths = new Set<string>(clarity.fixture.updatedRoutes);
+  const clarityPaths = new Set<string>(clarity.datedRoutes);
   const october28Paths = new Set([...countryPhotoPaths, ...onPageUpdatedPaths, ...archivePaths].filter(path => !step2Paths.has(path)));
   const worksheetUpdatedPaths = new Set([
     'blog/domestic-worker-hiring-costs-uae',
@@ -75,12 +75,12 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   const keywordUrls = ['en', 'ar'].flatMap(locale => [...keywordPaths].map(path => `https://inayadomestic.ae/${locale}/${path}/`));
   const step1Paths = new Set(amendment.targetSlugs.map(slug => `blog/${slug}`));
   const privacyPaths = new Set(['privacy-policy']);
-  const datedPaths = new Set([...step1Paths, ...step2Paths, ...privacyPaths, ...onPageUpdatedPaths, ...archivePaths, ...countryPhotoPaths, ...keywordPaths, ...companyInformationPaths, ...updatedPaths, ...todayPaths, ...officeUpdatedPaths, ...worksheetUpdatedPaths, ...galleryUpdatedPaths, ...paymentUpdatedPaths, ...domesticRefreshPaths, ...ajmanRefreshPaths]);
+  const datedPaths = new Set([...clarityPaths,...step1Paths, ...step2Paths, ...privacyPaths, ...onPageUpdatedPaths, ...archivePaths, ...countryPhotoPaths, ...keywordPaths, ...companyInformationPaths, ...updatedPaths, ...todayPaths, ...officeUpdatedPaths, ...worksheetUpdatedPaths, ...galleryUpdatedPaths, ...paymentUpdatedPaths, ...domesticRefreshPaths, ...ajmanRefreshPaths]);
   const expectedDatedUrls = ['en', 'ar'].flatMap((locale) =>
     [...datedPaths].map((path) => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)
   );
   const datedEntries = entries.filter((entry) => entry[1].includes('<lastmod>'));
-  expect(datedEntries).toHaveLength(260);
+  expect(datedEntries).toHaveLength(Object.values(additions.expectedLastmods).filter(Boolean).length);
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual(expectedDatedUrls.sort());
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(30);

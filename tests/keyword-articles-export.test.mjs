@@ -74,7 +74,7 @@ test('the new batch is exactly 21 independently reviewed pairs while all old 232
   const countryPhotoUrls = countryPhotoRoutes.flatMap(route => locales.map(locale => `${origin}/${locale}/${route}/`));
   const updatedUrls = [...countryPhotoUrls, ...[...onPageSpec.onPageUpdatedRoutes, ...onPageSpec.archiveRoutes].flatMap(route => locales.map(locale => `${origin}/${locale}/${route ? `${route}/` : ''}`))].filter(url => !additions.indexUrls.includes(url));
   const currentEntries = datedEntries.filter(entry => entry.includes('<lastmod>2026-10-28</lastmod>'));
-  assert.equal(datedEntries.length, 260, 'retain all248 dated URLs and add only eight new guide and two privacy copies');
+  assert.equal(datedEntries.length, Object.values(additions.expectedLastmods).filter(Boolean).length, 'retain all248 dated URLs and add only eight new guide and two privacy copies');
   assert.deepEqual(currentEntries.map(entry => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), updatedUrls.filter(url => additions.expectedLastmods[url] === '2026-10-28').sort(), 'only unchanged country-photo and on-page routes retain28October; updated archive memberships receive29October');
   for (const entry of currentEntries) {
     assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], 'each reviewed updated page has one exact substantive modification date');
