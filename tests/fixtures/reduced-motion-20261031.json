@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-31",
+  "baselineCommit": "0c1925d2f0c09ecac16674ca485a69a913480fcf",
+  "file": "app/globals.css",
+  "beforeSha256": "9576527415ea4c4a4c917c69217f634e2689c18f257497589834603b90c21d62",
+  "afterSha256": "c9c9a69acc14adbb60e3a40b58d1e8b6d4d53e703c7d2b6b40b9490dead73e79",
+  "before": "html { scroll-behavior: smooth; }",
+  "after": "html { scroll-behavior: smooth; }\n\n/* Honour the visitor's motion preference for anchors, focus and back-to-top. */\n@media (prefers-reduced-motion: reduce) {\n  html { scroll-behavior: auto; }\n}"
+}
