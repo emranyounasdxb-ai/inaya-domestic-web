@@ -32,6 +32,46 @@ test('retained dependency families meet the security baseline', () => {
   }
 });
 
+test('all legacy matcher consumers use the patched upstream engine with callable and named APIs', async () => {
+  const matcher = require('minimatch');
+  const named = await import('minimatch');
+  const adapter = lock.packages['node_modules/minimatch'];
+  const engine = lock.packages['node_modules/minimatch-engine'];
+  assert.equal(adapter.version, '11.0.3-inaya-compat.1');
+  assert.equal(adapter.resolved, 'file:tooling/minimatch-legacy');
+  assert.equal(engine.name, 'minimatch');
+  assert.equal(engine.version, '11.0.3');
+  assert.match(engine.integrity, /^sha512-/);
+  assert.deepEqual(Object.keys(lock.packages).filter(p => /(?:^|\/)node_modules\/minimatch$/.test(p)), ['node_modules/minimatch']);
+  assert.equal(typeof matcher, 'function');
+  assert.equal(typeof named.default, 'function');
+  assert.equal(typeof named.Minimatch, 'function');
+  for (const match of [matcher, named.default, named.minimatch]) {
+    assert.equal(match('app/en/page.tsx', '**/*.{ts,tsx}'), true);
+    assert.equal(match('app/.private.ts', '**/*.ts'), false);
+    assert.equal(match('app/.private.ts', '**/*.ts', {dot:true}), true);
+    assert.equal(match('guide.md', '!*.tsx'), true);
+    assert.equal(match('app/en/page.tsx', '**/*.js'), false);
+  }
+  assert.deepEqual(['x.ts', 'x.tsx', 'x.js'].filter(matcher.filter('*.{ts,tsx}')), ['x.ts', 'x.tsx']);
+  assert.deepEqual(matcher.match(['a.ts','b.js'], '*.ts'), ['a.ts']);
+  assert.equal(new matcher.Minimatch('**/*.tsx').match('app/en/page.tsx'), true);
+  assert.equal(new named.Minimatch('**/*.tsx').match('app/en/page.tsx'), true);
+  assert.equal(matcher.defaults({nocase:true})('PAGE.TSX', '*.tsx'), true);
+});
+
+test('patched matcher preserves real Next, React and accessibility lint reports', async () => {
+  const { ESLint } = require('eslint');
+  const eslint = new ESLint({overrideConfig:{rules:{'react/forbid-component-props':['error',{forbid:['style']}]}}});
+  const [invalid] = await eslint.lintText('export default function Probe(){ return <div><img src="/x.webp"/><Panel style={{color:"red"}}/></div>; }', {filePath:'app/lint-compat-probe.tsx'});
+  for (const rule of ['jsx-a11y/alt-text', 'react/forbid-component-props', '@next/next/no-img-element']) {
+    assert.ok(invalid.messages.some(message => message.ruleId === rule), rule);
+  }
+  assert.ok(!invalid.messages.some(message => message.fatal), 'no plugin or glob API failure');
+  const [valid] = await eslint.lintText('export default function Probe(){ return <p>Example</p>; }', {filePath:'app/lint-compat-probe.tsx'});
+  assert.equal(valid.errorCount, 0);
+});
+
 test('Next lint root-directory discovery retains supported default, glob and Windows paths', t => {
   const pluginRoot = path.dirname(require.resolve('@next/eslint-plugin-next'));
   const {getRootDirs} = require(path.join(pluginRoot, 'utils/get-root-dirs.js'));

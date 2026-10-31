@@ -240,8 +240,8 @@
         "ar": "خدمات الخادمات المقيمات"
       },
       "alt": {
-        "en": "Household service: Live-in Maid Services",
-        "ar": "خدمة خدمات الخادمات المقيمات"
+        "en": "Illustration of a domestic worker folding a green blanket on a bed",
+        "ar": "مشهد توضيحي لعاملة منزلية تطوي بطانية خضراء على سرير"
       },
       "category": "domestic",
       "relatedRoute": "services/live-in-maid",
@@ -262,8 +262,8 @@
         "ar": "خدمات الخادمات غير المقيمات"
       },
       "alt": {
-        "en": "Household service: Live-out Maid Services",
-        "ar": "خدمة خدمات الخادمات غير المقيمات"
+        "en": "Illustration of a domestic worker wiping a console table in a hallway",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح طاولة جانبية في مدخل المنزل"
       },
       "category": "domestic",
       "relatedRoute": "services/live-out-maid",
@@ -284,8 +284,8 @@
         "ar": "خدمات عاملات المنازل"
       },
       "alt": {
-        "en": "Household service: Housemaid Services",
-        "ar": "خدمة خدمات عاملات المنازل"
+        "en": "Illustration of a domestic worker folding towels beside laundry baskets",
+        "ar": "مشهد توضيحي لعاملة منزلية تطوي المناشف بجوار سلال الغسيل"
       },
       "category": "domestic",
       "relatedRoute": "services/housemaid",
@@ -306,8 +306,8 @@
         "ar": "خدمات التنظيف وترتيب المنزل"
       },
       "alt": {
-        "en": "Household service: Cleaning & Housekeeping Services",
-        "ar": "خدمة خدمات التنظيف وترتيب المنزل"
+        "en": "Illustration of a domestic worker mopping a kitchen floor",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح أرضية المطبخ بممسحة"
       },
       "category": "domestic",
       "relatedRoute": "services/housekeeping",
@@ -328,8 +328,8 @@
         "ar": "توظيف خادمة بدوام كامل"
       },
       "alt": {
-        "en": "Household service: Full-time Maid Hiring",
-        "ar": "خدمة توظيف خادمة بدوام كامل"
+        "en": "Illustration of a domestic worker arranging shirts on hangers in a wardrobe",
+        "ar": "مشهد توضيحي لعاملة منزلية ترتب القمصان المعلقة داخل خزانة الملابس"
       },
       "category": "domestic",
       "relatedRoute": "services/full-time-maid",
@@ -350,8 +350,8 @@
         "ar": "توظيف خادمة بدوام جزئي"
       },
       "alt": {
-        "en": "Household service: Part-time Maid Hiring",
-        "ar": "خدمة توظيف خادمة بدوام جزئي"
+        "en": "Illustration of a domestic worker vacuuming a living-room rug",
+        "ar": "مشهد توضيحي لعاملة منزلية تنظف سجادة غرفة الجلوس بالمكنسة الكهربائية"
       },
       "category": "domestic",
       "relatedRoute": "services/part-time-maid",
@@ -372,8 +372,8 @@
         "ar": "عقد خادمة شهري"
       },
       "alt": {
-        "en": "Household service: Monthly Maid Contract",
-        "ar": "خدمة عقد خادمة شهري"
+        "en": "Illustration of a domestic worker placing a basket of folded towels on a shelf",
+        "ar": "مشهد توضيحي لعاملة منزلية تضع سلة مناشف مطوية على رف"
       },
       "category": "domestic",
       "relatedRoute": "services/monthly-maid-contract",
@@ -394,8 +394,8 @@
         "ar": "مساعدة منزلية عند الطلب"
       },
       "alt": {
-        "en": "Household service: On-demand Domestic Help",
-        "ar": "خدمة مساعدة منزلية عند الطلب"
+        "en": "Illustration of a domestic worker wiping a small table on a balcony",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح طاولة صغيرة في شرفة"
       },
       "category": "domestic",
       "relatedRoute": "services/on-demand-domestic-help",
@@ -440,8 +440,8 @@
         "ar": "خدمات المربيات"
       },
       "alt": {
-        "en": "Household service: Nanny Services",
-        "ar": "خدمة خدمات المربيات"
+        "en": "Illustration of a nanny and child playing with wooden blocks",
+        "ar": "مشهد توضيحي لمربية وطفل يلعبان بالمكعبات الخشبية"
       },
       "category": "childcare",
       "relatedRoute": "services/nanny",
@@ -484,8 +484,8 @@
         "ar": "خدمات جليسات الأطفال"
       },
       "alt": {
-        "en": "Household service: Babysitting Services",
-        "ar": "خدمة خدمات جليسات الأطفال"
+        "en": "Illustration of a babysitter and child looking at a picture book on a rug",
+        "ar": "مشهد توضيحي لجليسة أطفال وطفل ينظران إلى كتاب مصور على سجادة"
       },
       "category": "childcare",
       "relatedRoute": "services/babysitting",
@@ -506,8 +506,8 @@
         "ar": "خدمات رعاية المواليد"
       },
       "alt": {
-        "en": "Household service: Newborn Care Services",
-        "ar": "خدمة خدمات رعاية المواليد"
+        "en": "Illustration of two women beside a baby's cot, with one holding a cloth",
+        "ar": "مشهد توضيحي لامرأتين بجوار سرير طفل رضيع، تحمل إحداهما قطعة قماش"
       },
       "category": "childcare",
       "relatedRoute": "services/newborn-care",
@@ -528,8 +528,8 @@
         "ar": "خدمات الطبخ المنزلي"
       },
       "alt": {
-        "en": "Household service: Home Cooking Services",
-        "ar": "خدمة خدمات الطبخ المنزلي"
+        "en": "Illustration of a household cook chopping carrots at a kitchen counter",
+        "ar": "مشهد توضيحي لطاهية منزلية تقطع الجزر على سطح المطبخ"
       },
       "category": "cooking",
       "relatedRoute": "services/home-cooking",
@@ -572,8 +572,8 @@
         "ar": "توظيف طاهٍ / شيف خاص"
       },
       "alt": {
-        "en": "Household service: Cook / Personal Chef Hiring",
-        "ar": "خدمة توظيف طاهٍ / شيف خاص"
+        "en": "Illustration of a household cook and a man looking at fresh ingredients in a kitchen",
+        "ar": "مشهد توضيحي لطاهية منزلية ورجل ينظران إلى المكونات الطازجة في المطبخ"
       },
       "category": "cooking",
       "relatedRoute": "services/personal-chef",
@@ -594,8 +594,8 @@
         "ar": "خدمات مساعد المطبخ"
       },
       "alt": {
-        "en": "Household service: Kitchen Helper Services",
-        "ar": "خدمة خدمات مساعد المطبخ"
+        "en": "Illustration of a kitchen helper rinsing leafy vegetables in a colander",
+        "ar": "مشهد توضيحي لمساعدة مطبخ تغسل خضراوات ورقية في مصفاة"
       },
       "category": "cooking",
       "relatedRoute": "services/kitchen-helper",
@@ -638,8 +638,8 @@
         "ar": "إدارة منزلية مخصصة"
       },
       "alt": {
-        "en": "Household service: Bespoke Household Management",
-        "ar": "خدمة إدارة منزلية مخصصة"
+        "en": "Illustration of three domestic workers tidying a living room with folded linen and cleaning supplies",
+        "ar": "مشهد توضيحي لثلاث عاملات يرتبن غرفة الجلوس مع أغطية مطوية ومستلزمات تنظيف"
       },
       "category": "cooking",
       "relatedRoute": "services/bespoke-household-management",
@@ -660,8 +660,8 @@
         "ar": "خدمات رعاية المسنين"
       },
       "alt": {
-        "en": "Household service: Elder Care Services",
-        "ar": "خدمة خدمات رعاية المسنين"
+        "en": "Illustration of a helper handing a glass of water to an older woman",
+        "ar": "مشهد توضيحي لمساعدة تقدم كوب ماء لامرأة كبيرة السن"
       },
       "category": "care",
       "relatedRoute": "services/elder-care",
@@ -682,8 +682,8 @@
         "ar": "دعم منزلي غير طبي"
       },
       "alt": {
-        "en": "Household service: Non-clinical Home Support",
-        "ar": "خدمة دعم منزلي غير طبي"
+        "en": "Illustration of a helper adjusting a cushion behind an older man in an armchair",
+        "ar": "مشهد توضيحي لمساعدة تعدل وسادة خلف رجل كبير السن يجلس على كرسي بذراعين"
       },
       "category": "care",
       "relatedRoute": "services/patient-care",
@@ -704,8 +704,8 @@
         "ar": "خدمات رعاية المرافقة"
       },
       "alt": {
-        "en": "Household service: Companion Care Services",
-        "ar": "خدمة خدمات رعاية المرافقة"
+        "en": "Illustration of a companion and an older woman talking over tea on a shaded patio",
+        "ar": "مشهد توضيحي لمرافقة وامرأة كبيرة السن تتحدثان أثناء تناول الشاي في فناء مظلل"
       },
       "category": "care",
       "relatedRoute": "services/companion-care",
@@ -726,8 +726,8 @@
         "ar": "توظيف العمالة المنزلية"
       },
       "alt": {
-        "en": "Household service: Domestic Worker Recruitment",
-        "ar": "خدمة توظيف العمالة المنزلية"
+        "en": "Illustration of a domestic worker and another woman checking a made bed",
+        "ar": "مشهد توضيحي لعاملة منزلية وامرأة أخرى تتفقدان ترتيب سرير"
       },
       "category": "support",
       "relatedRoute": "services/recruitment",
@@ -748,8 +748,8 @@
         "ar": "المساعدة في تأشيرة الخادمة"
       },
       "alt": {
-        "en": "Household service: Maid Visa Assistance",
-        "ar": "خدمة المساعدة في تأشيرة الخادمة"
+        "en": "Illustration of a domestic worker straightening a hallway rug while a man uses a phone",
+        "ar": "مشهد توضيحي لعاملة منزلية تسوي سجادة المدخل بينما يستخدم رجل الهاتف"
       },
       "category": "support",
       "relatedRoute": "services/maid-visa",
@@ -770,8 +770,8 @@
         "ar": "خدمات استبدال الخادمة"
       },
       "alt": {
-        "en": "Household service: Maid Replacement Services",
-        "ar": "خدمة خدمات استبدال الخادمة"
+        "en": "Illustration of a woman explaining washing-machine controls to a domestic worker",
+        "ar": "مشهد توضيحي لامرأة تشرح لوحة التحكم بالغسالة لعاملة منزلية"
       },
       "category": "support",
       "relatedRoute": "services/maid-replacement",
@@ -792,8 +792,8 @@
         "ar": "نقل الخادمة / تغيير الكفالة"
       },
       "alt": {
-        "en": "Household service: Maid Transfer / Sponsorship Change",
-        "ar": "خدمة نقل الخادمة / تغيير الكفالة"
+        "en": "Illustration of a domestic worker and a man arranging books on a shelf",
+        "ar": "مشهد توضيحي لعاملة منزلية ورجل يرتبان الكتب على رف"
       },
       "category": "support",
       "relatedRoute": "services/sponsorship-transfer",
@@ -814,8 +814,8 @@
         "ar": "توظيف خادمة ذات خبرة / مدربة"
       },
       "alt": {
-        "en": "Household service: Experienced / Trained Maid Hiring",
-        "ar": "خدمة توظيف خادمة ذات خبرة / مدربة"
+        "en": "Illustration of a domestic worker ironing a shirt on an ironing board",
+        "ar": "مشهد توضيحي لعاملة منزلية تكوي قميصاً على طاولة الكي"
       },
       "category": "support",
       "relatedRoute": "services/experienced-maid",
@@ -836,8 +836,8 @@
         "ar": "خدمات التحقق من الخلفية"
       },
       "alt": {
-        "en": "Household service: Background Verification Services",
-        "ar": "خدمة خدمات التحقق من الخلفية"
+        "en": "Illustration of two women shaking hands in a home laundry area",
+        "ar": "مشهد توضيحي لامرأتين تتصافحان في ركن الغسيل بالمنزل"
       },
       "category": "support",
       "relatedRoute": "services/background-verification",
@@ -881,8 +881,8 @@
         "ar": "تنسيق الزهور"
       },
       "alt": {
-        "en": "Household service: Floral Styling",
-        "ar": "خدمة تنسيق الزهور"
+        "en": "Illustration of a domestic worker arranging pink flowers in a vase",
+        "ar": "مشهد توضيحي لعاملة منزلية ترتب زهوراً وردية في مزهرية"
       },
       "category": "lifestyle",
       "relatedRoute": "services/floral-styling",
@@ -903,8 +903,8 @@
         "ar": "دعم الانتقال"
       },
       "alt": {
-        "en": "Household service: Relocation Support",
-        "ar": "خدمة دعم الانتقال"
+        "en": "Illustration of a domestic worker wiping a refrigerator beside moving boxes",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح ثلاجة بجوار صناديق انتقال"
       },
       "category": "lifestyle",
       "relatedRoute": "services/relocation-support",
@@ -925,8 +925,8 @@
         "ar": "متخصصو رعاية الحيوانات الأليفة"
       },
       "alt": {
-        "en": "Household service: Pet Care Specialists",
-        "ar": "خدمة متخصصو رعاية الحيوانات الأليفة"
+        "en": "Illustration of a domestic worker setting a bowl down beside a cat on a patio",
+        "ar": "مشهد توضيحي لعاملة منزلية تضع وعاء بجوار قطة في فناء"
       },
       "category": "lifestyle",
       "relatedRoute": "services/pet-care-specialists",
@@ -947,8 +947,8 @@
         "ar": "طاقم للمناسبات"
       },
       "alt": {
-        "en": "Household service: Event Staffing",
-        "ar": "خدمة طاقم للمناسبات"
+        "en": "Illustration of a domestic worker serving glasses of drinks to a woman at an outdoor table",
+        "ar": "مشهد توضيحي لعاملة منزلية تقدم أكواب مشروبات لامرأة تجلس إلى طاولة خارجية"
       },
       "category": "lifestyle",
       "relatedRoute": "services/event-staffing",

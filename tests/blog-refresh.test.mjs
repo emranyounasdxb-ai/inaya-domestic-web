@@ -21,7 +21,7 @@ test('all70 complete manuscripts, dates and original111 image records retain the
     assert.equal(refresh.sha(require('./page-clarity-expectations.cjs').historicalSource(file, await readFile(file, 'utf8'))), sha, `${file}: no factual/manuscript edits`);
   }
   for (const file of Object.keys(refresh.fixture.sources)) refresh.historicalSource(file, await readFile(file, 'utf8'));
-  const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
+  const catalog = JSON.parse(require('./service-image-alt-expectations.cjs').historicalSource('content/site-image-gallery.json', await readFile('content/site-image-gallery.json', 'utf8')));
   const before = JSON.parse(refresh.fixture.sources['content/site-image-gallery.json'].before);
   assert.deepEqual(catalog.images.slice(0, 111), before.images, 'all original images, localized captions, widths and cache versions');
   assert.equal(catalog.images.length, 116);

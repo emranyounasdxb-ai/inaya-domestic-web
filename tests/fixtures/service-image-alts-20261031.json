@@ -1,0 +1,316 @@
+{
+  "date": "2026-10-31",
+  "review": "32 actual service/fallback images visually inspected;28 generic EN/AR descriptions replaced. Images, paths and all other catalog fields unchanged.",
+  "beforeSha256": "d348b2b75a5a35008ec4257237f63b174e09a4555ec8471c75aebc3f20fb1a1c",
+  "afterSha256": "a8ed129c39934f6cf3d8f08851385066f4dfb05930e784cd21a57bc648606c70",
+  "changes": [
+    {
+      "src": "/images/services/live-in-maid.webp",
+      "before": {
+        "en": "Household service: Live-in Maid Services",
+        "ar": "خدمة خدمات الخادمات المقيمات"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker folding a green blanket on a bed",
+        "ar": "مشهد توضيحي لعاملة منزلية تطوي بطانية خضراء على سرير"
+      }
+    },
+    {
+      "src": "/images/services/live-out-maid.webp",
+      "before": {
+        "en": "Household service: Live-out Maid Services",
+        "ar": "خدمة خدمات الخادمات غير المقيمات"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker wiping a console table in a hallway",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح طاولة جانبية في مدخل المنزل"
+      }
+    },
+    {
+      "src": "/images/services/housemaid.webp",
+      "before": {
+        "en": "Household service: Housemaid Services",
+        "ar": "خدمة خدمات عاملات المنازل"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker folding towels beside laundry baskets",
+        "ar": "مشهد توضيحي لعاملة منزلية تطوي المناشف بجوار سلال الغسيل"
+      }
+    },
+    {
+      "src": "/images/services/housekeeping.webp",
+      "before": {
+        "en": "Household service: Cleaning & Housekeeping Services",
+        "ar": "خدمة خدمات التنظيف وترتيب المنزل"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker mopping a kitchen floor",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح أرضية المطبخ بممسحة"
+      }
+    },
+    {
+      "src": "/images/services/full-time-maid.webp",
+      "before": {
+        "en": "Household service: Full-time Maid Hiring",
+        "ar": "خدمة توظيف خادمة بدوام كامل"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker arranging shirts on hangers in a wardrobe",
+        "ar": "مشهد توضيحي لعاملة منزلية ترتب القمصان المعلقة داخل خزانة الملابس"
+      }
+    },
+    {
+      "src": "/images/services/part-time-maid.webp",
+      "before": {
+        "en": "Household service: Part-time Maid Hiring",
+        "ar": "خدمة توظيف خادمة بدوام جزئي"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker vacuuming a living-room rug",
+        "ar": "مشهد توضيحي لعاملة منزلية تنظف سجادة غرفة الجلوس بالمكنسة الكهربائية"
+      }
+    },
+    {
+      "src": "/images/services/monthly-maid-contract.webp",
+      "before": {
+        "en": "Household service: Monthly Maid Contract",
+        "ar": "خدمة عقد خادمة شهري"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker placing a basket of folded towels on a shelf",
+        "ar": "مشهد توضيحي لعاملة منزلية تضع سلة مناشف مطوية على رف"
+      }
+    },
+    {
+      "src": "/images/services/on-demand-domestic-help.webp",
+      "before": {
+        "en": "Household service: On-demand Domestic Help",
+        "ar": "خدمة مساعدة منزلية عند الطلب"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker wiping a small table on a balcony",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح طاولة صغيرة في شرفة"
+      }
+    },
+    {
+      "src": "/images/services/nanny.webp",
+      "before": {
+        "en": "Household service: Nanny Services",
+        "ar": "خدمة خدمات المربيات"
+      },
+      "after": {
+        "en": "Illustration of a nanny and child playing with wooden blocks",
+        "ar": "مشهد توضيحي لمربية وطفل يلعبان بالمكعبات الخشبية"
+      }
+    },
+    {
+      "src": "/images/services/babysitting.webp",
+      "before": {
+        "en": "Household service: Babysitting Services",
+        "ar": "خدمة خدمات جليسات الأطفال"
+      },
+      "after": {
+        "en": "Illustration of a babysitter and child looking at a picture book on a rug",
+        "ar": "مشهد توضيحي لجليسة أطفال وطفل ينظران إلى كتاب مصور على سجادة"
+      }
+    },
+    {
+      "src": "/images/services/newborn-care.webp",
+      "before": {
+        "en": "Household service: Newborn Care Services",
+        "ar": "خدمة خدمات رعاية المواليد"
+      },
+      "after": {
+        "en": "Illustration of two women beside a baby's cot, with one holding a cloth",
+        "ar": "مشهد توضيحي لامرأتين بجوار سرير طفل رضيع، تحمل إحداهما قطعة قماش"
+      }
+    },
+    {
+      "src": "/images/services/home-cooking.webp",
+      "before": {
+        "en": "Household service: Home Cooking Services",
+        "ar": "خدمة خدمات الطبخ المنزلي"
+      },
+      "after": {
+        "en": "Illustration of a household cook chopping carrots at a kitchen counter",
+        "ar": "مشهد توضيحي لطاهية منزلية تقطع الجزر على سطح المطبخ"
+      }
+    },
+    {
+      "src": "/images/services/personal-chef.webp",
+      "before": {
+        "en": "Household service: Cook / Personal Chef Hiring",
+        "ar": "خدمة توظيف طاهٍ / شيف خاص"
+      },
+      "after": {
+        "en": "Illustration of a household cook and a man looking at fresh ingredients in a kitchen",
+        "ar": "مشهد توضيحي لطاهية منزلية ورجل ينظران إلى المكونات الطازجة في المطبخ"
+      }
+    },
+    {
+      "src": "/images/services/kitchen-helper.webp",
+      "before": {
+        "en": "Household service: Kitchen Helper Services",
+        "ar": "خدمة خدمات مساعد المطبخ"
+      },
+      "after": {
+        "en": "Illustration of a kitchen helper rinsing leafy vegetables in a colander",
+        "ar": "مشهد توضيحي لمساعدة مطبخ تغسل خضراوات ورقية في مصفاة"
+      }
+    },
+    {
+      "src": "/images/services/elder-care.webp",
+      "before": {
+        "en": "Household service: Elder Care Services",
+        "ar": "خدمة خدمات رعاية المسنين"
+      },
+      "after": {
+        "en": "Illustration of a helper handing a glass of water to an older woman",
+        "ar": "مشهد توضيحي لمساعدة تقدم كوب ماء لامرأة كبيرة السن"
+      }
+    },
+    {
+      "src": "/images/services/patient-care.webp",
+      "before": {
+        "en": "Household service: Non-clinical Home Support",
+        "ar": "خدمة دعم منزلي غير طبي"
+      },
+      "after": {
+        "en": "Illustration of a helper adjusting a cushion behind an older man in an armchair",
+        "ar": "مشهد توضيحي لمساعدة تعدل وسادة خلف رجل كبير السن يجلس على كرسي بذراعين"
+      }
+    },
+    {
+      "src": "/images/services/companion-care.webp",
+      "before": {
+        "en": "Household service: Companion Care Services",
+        "ar": "خدمة خدمات رعاية المرافقة"
+      },
+      "after": {
+        "en": "Illustration of a companion and an older woman talking over tea on a shaded patio",
+        "ar": "مشهد توضيحي لمرافقة وامرأة كبيرة السن تتحدثان أثناء تناول الشاي في فناء مظلل"
+      }
+    },
+    {
+      "src": "/images/services/recruitment.webp",
+      "before": {
+        "en": "Household service: Domestic Worker Recruitment",
+        "ar": "خدمة توظيف العمالة المنزلية"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker and another woman checking a made bed",
+        "ar": "مشهد توضيحي لعاملة منزلية وامرأة أخرى تتفقدان ترتيب سرير"
+      }
+    },
+    {
+      "src": "/images/services/maid-visa.webp",
+      "before": {
+        "en": "Household service: Maid Visa Assistance",
+        "ar": "خدمة المساعدة في تأشيرة الخادمة"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker straightening a hallway rug while a man uses a phone",
+        "ar": "مشهد توضيحي لعاملة منزلية تسوي سجادة المدخل بينما يستخدم رجل الهاتف"
+      }
+    },
+    {
+      "src": "/images/services/maid-replacement.webp",
+      "before": {
+        "en": "Household service: Maid Replacement Services",
+        "ar": "خدمة خدمات استبدال الخادمة"
+      },
+      "after": {
+        "en": "Illustration of a woman explaining washing-machine controls to a domestic worker",
+        "ar": "مشهد توضيحي لامرأة تشرح لوحة التحكم بالغسالة لعاملة منزلية"
+      }
+    },
+    {
+      "src": "/images/services/sponsorship-transfer.webp",
+      "before": {
+        "en": "Household service: Maid Transfer / Sponsorship Change",
+        "ar": "خدمة نقل الخادمة / تغيير الكفالة"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker and a man arranging books on a shelf",
+        "ar": "مشهد توضيحي لعاملة منزلية ورجل يرتبان الكتب على رف"
+      }
+    },
+    {
+      "src": "/images/services/experienced-maid.webp",
+      "before": {
+        "en": "Household service: Experienced / Trained Maid Hiring",
+        "ar": "خدمة توظيف خادمة ذات خبرة / مدربة"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker ironing a shirt on an ironing board",
+        "ar": "مشهد توضيحي لعاملة منزلية تكوي قميصاً على طاولة الكي"
+      }
+    },
+    {
+      "src": "/images/services/background-verification.webp",
+      "before": {
+        "en": "Household service: Background Verification Services",
+        "ar": "خدمة خدمات التحقق من الخلفية"
+      },
+      "after": {
+        "en": "Illustration of two women shaking hands in a home laundry area",
+        "ar": "مشهد توضيحي لامرأتين تتصافحان في ركن الغسيل بالمنزل"
+      }
+    },
+    {
+      "src": "/images/services/bespoke-household-management.webp",
+      "before": {
+        "en": "Household service: Bespoke Household Management",
+        "ar": "خدمة إدارة منزلية مخصصة"
+      },
+      "after": {
+        "en": "Illustration of three domestic workers tidying a living room with folded linen and cleaning supplies",
+        "ar": "مشهد توضيحي لثلاث عاملات يرتبن غرفة الجلوس مع أغطية مطوية ومستلزمات تنظيف"
+      }
+    },
+    {
+      "src": "/images/services/floral-styling.webp",
+      "before": {
+        "en": "Household service: Floral Styling",
+        "ar": "خدمة تنسيق الزهور"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker arranging pink flowers in a vase",
+        "ar": "مشهد توضيحي لعاملة منزلية ترتب زهوراً وردية في مزهرية"
+      }
+    },
+    {
+      "src": "/images/services/relocation-support.webp",
+      "before": {
+        "en": "Household service: Relocation Support",
+        "ar": "خدمة دعم الانتقال"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker wiping a refrigerator beside moving boxes",
+        "ar": "مشهد توضيحي لعاملة منزلية تمسح ثلاجة بجوار صناديق انتقال"
+      }
+    },
+    {
+      "src": "/images/services/pet-care-specialists.webp",
+      "before": {
+        "en": "Household service: Pet Care Specialists",
+        "ar": "خدمة متخصصو رعاية الحيوانات الأليفة"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker setting a bowl down beside a cat on a patio",
+        "ar": "مشهد توضيحي لعاملة منزلية تضع وعاء بجوار قطة في فناء"
+      }
+    },
+    {
+      "src": "/images/services/event-staffing.webp",
+      "before": {
+        "en": "Household service: Event Staffing",
+        "ar": "خدمة طاقم للمناسبات"
+      },
+      "after": {
+        "en": "Illustration of a domestic worker serving glasses of drinks to a woman at an outdoor table",
+        "ar": "مشهد توضيحي لعاملة منزلية تقدم أكواب مشروبات لامرأة تجلس إلى طاولة خارجية"
+      }
+    }
+  ]
+}
