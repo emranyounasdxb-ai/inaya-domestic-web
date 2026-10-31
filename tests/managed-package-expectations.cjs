@@ -1,5 +1,6 @@
 const { approvedDeliveryMessages } = require('./form-delivery-expectations.cjs');
 const assert = require('node:assert/strict');
+const ajmanContacts = require('./ajman-faq-contact-expectations.cjs');
 const { approvedPosterPricing, approvedPosterMessages } = require('./poster-pricing-expectations.cjs');
 
 // Exact source allowances for the owner-approved managed monthly offering.
@@ -312,7 +313,7 @@ function editorialRepetition(audit) {
   const pages = audit.pages.map(original => {
     const clarity = require('./page-clarity-expectations.cjs');
     const reviewedPage = clarity.assertReviewedPage(original);
-    const page = withoutReviewedHomeFaq(original);
+    const page = withoutReviewedHomeFaq(ajmanContacts.historicalPage(original));
     const blog = reviewedBlogPlacements(page);
     const originalApproved = blog?.approved ?? commercial.copy[page.route]?.[page.locale] ?? [];
     const approved = reviewedPage ? [...new Set([...originalApproved, ...clarity.rendered.sharedCommercialParagraphs[page.locale]])] : originalApproved;

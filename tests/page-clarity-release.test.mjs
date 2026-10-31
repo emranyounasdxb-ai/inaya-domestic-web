@@ -29,6 +29,22 @@ test('page-clarity source pins allow only the complete approved changes and pres
   }
 });
 
+test('Ajman contact amendment preserves immutable checkpoints and rejects unrelated edits', async () => {
+  const contacts = require('./ajman-faq-contact-expectations.cjs');
+  for (const [file, pin] of Object.entries(contacts.sourcePins)) {
+    const source = await readFile(file, 'utf8');
+    assert.equal(clarity.sha(contacts.historicalSource(file, source)), pin.before);
+    assert.throws(() => contacts.historicalSource(file, source + '\n// Unreviewed edit\n'), /exact reviewed/);
+  }
+  for (const lang of ['en','ar']) {
+    const html = clean(await readFile(`out/${lang}/maid-services-ajman/index.html`, 'utf8'));
+    const main = html.slice(html.indexOf('<main'), html.lastIndexOf('</main>') + 7).replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/g, '');
+    const page = { url: `https://inayadomestic.ae/${lang}/maid-services-ajman/`, mainText: text(main) };
+    assert.equal(clarity.sha(contacts.historicalPage(page).mainText), clarity.rendered.pages[page.url].mainTextSha256);
+    assert.throws(() => contacts.historicalPage({ ...page, mainText: page.mainText + ' Unreviewed copy' }), /exact reviewed/);
+  }
+});
+
 test('all package amounts, scope, payment and refund policies are identical to the prior release', () => {
   const file = path.resolve('lib/package-content.ts');
   const baselineModule = new Module(file); baselineModule.filename = file;
