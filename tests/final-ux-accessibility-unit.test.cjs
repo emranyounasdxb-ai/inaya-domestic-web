@@ -13,6 +13,14 @@ const replaceOnce = (source, before, after) => {
   return source.replace(before, after);
 };
 
+test('the motion preference amendment preserves every other global style and rejects unrelated edits',()=>{
+  const motion=require('./reduced-motion-expectations.cjs');
+  const source=readFileSync(motion.fixture.file,'utf8').replace(/\r\n/g,'\n');
+  assert.equal(motion.sha(source),motion.fixture.afterSha256);
+  assert.equal(motion.sha(motion.historicalSource(motion.fixture.file,source)),motion.fixture.beforeSha256);
+  assert.throws(()=>motion.historicalSource(motion.fixture.file,source+'\nbody { color: red; }\n'),/exact reviewed/);
+});
+
 test('all form variants retain exact validation, fields, options and styling with unique labelled IDs', () => {
   for (const file of ['components/BookingForm.tsx', 'components/CareersForm.tsx', 'components/ContactForm.tsx']) {
     const source = current(file);

@@ -46,6 +46,11 @@
 
 html { scroll-behavior: smooth; }
 
+/* Honour the visitor's motion preference for anchors, focus and back-to-top. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 body {
   color: var(--color-text-charcoal);
   background: #fff;

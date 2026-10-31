@@ -6,6 +6,7 @@ const fixture = require('./fixtures/service-refinement-20261030.json');
 const sha = value => createHash('sha256').update(value).digest('hex');
 const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(k=>[k,stable(value[k])])) : value;
 function historicalSource(file, source) {
+  source=require('./reduced-motion-expectations.cjs').historicalSource(file,source);
   source=require('./editorial-scope-expectations.cjs').historicalSource(file,source);
   source=ajmanContacts.historicalSource(file,source);
   source=contactRail.historicalSource(file,source);
