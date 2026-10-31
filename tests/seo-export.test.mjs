@@ -36,13 +36,16 @@ test('Pinterest verification is present once in every public page head and the r
   assertVerification(fallback, 'deployment root fallback');
 });
 
-test('Ajman answer links resolve to exported pages in the same language', async () => {
+test('Ajman answer links preserve localized pages and exact official contact routes', async () => {
   for (const locale of ['en', 'ar']) {
     const html = await readFile(path.join(output, locale, 'maid-services-ajman/index.html'), 'utf8');
     const details = [...html.matchAll(/<details\b[^>]*>([\s\S]*?)<\/details>/g)];
     const targets = details.flatMap((block) => [...block[1].matchAll(/href="([^"]+)"/g)].map((link) => link[1]));
-    assert.ok(targets.length >= 8, `${locale}: service answers provide practical next steps`);
-    for (const href of targets) {
+    const contactRoutes = ['tel:+97167400128', 'https://wa.me/971502036767'];
+    assert.deepEqual(targets.filter(href => contactRoutes.includes(href)).sort(), [...contactRoutes, ...contactRoutes].sort(), `${locale}: exactly two office-call and two WhatsApp links`);
+    const internalTargets = targets.filter(href => !contactRoutes.includes(href));
+    assert.ok(internalTargets.length >= 8, `${locale}: service answers preserve practical internal next steps`);
+    for (const href of internalTargets) {
       assert.ok(href.startsWith(`/${locale}/`), `${locale}: preserve language for ${href}`);
       const destination = await readFile(path.join(output, href.slice(1), 'index.html'), 'utf8');
       assert.ok(destination.includes(`href="${origin}${href}"`), `${href}: canonical destination exists`);
