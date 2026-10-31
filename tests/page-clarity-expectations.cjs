@@ -33,6 +33,6 @@ function currentRecord(slug, previous, field = 'record') {
 function archiveOrder(slugs) { return [...slugs.filter(s => s !== 'inaya-office-staff-careers-ajman'), ...slugs.filter(s => s === 'inaya-office-staff-careers-ajman')]; }
 function dateFor(slug, fallback) { return refinement.fixture.records[slug] ? refinement.fixture.date : fixture.records[slug] ? fixture.date : fallback; }
 function archiveSequence(slugs) { return Array.from({length: Math.ceil(slugs.length / 12)}, (_, i) => archiveOrder(slugs.slice(i * 12, (i + 1) * 12))).flat(); }
-function assertReviewedPage(page) { page = ajmanContacts.historicalPage(page); const current = refinement.reviewedPage(page); const pin = rendered.pages[page.url]; if (pin && !current) assert.equal(sha(page.mainText), pin.mainTextSha256, `${page.url}: complete exact reviewed visible content`); return pin; }
+function assertReviewedPage(page) { page = require('./editorial-scope-expectations.cjs').historicalPage(page);page = ajmanContacts.historicalPage(page); const current = refinement.reviewedPage(page); const pin = rendered.pages[page.url]; if (pin && !current) assert.equal(sha(page.mainText), pin.mainTextSha256, `${page.url}: complete exact reviewed visible content`); return pin; }
 const datedRoutes = [...new Set([...fixture.updatedRoutes, ...refinement.fixture.datedRoutes])];
 module.exports = { fixture, rendered, datedRoutes, assertReviewedPage, sha, historicalSource, historicalRecord, currentRecord, archiveOrder, archiveSequence, dateFor };

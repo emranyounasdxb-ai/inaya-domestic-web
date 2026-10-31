@@ -1,4 +1,5 @@
 import Inline from './BlogInlineText';
+import ArticleEditorialNote from './ArticleEditorialNote';
 import RelatedBlogCards from './RelatedBlogCards';
 import { createBlogInlineParser } from '@/lib/blog-context-links';
 import Link from 'next/link';
@@ -42,6 +43,7 @@ export default function PublishedArticle({ guide, body, lang }: { guide: Domesti
               <div><dt className="font-semibold">{isArabic ? 'آخر تحديث' : 'Updated'}</dt><dd><time dateTime={guide.updated}>{formatDate(guide.updated)}</time></dd></div>
             </dl>
             <BlogImage slug={guide.slug} locale={lang} hero className="mt-8 rounded-[24px] border border-primary-900/10 shadow-sm" />
+            <ArticleEditorialNote lang={lang} careers={guide.slug === 'inaya-office-staff-careers-ajman'} />
           </div>
         </div>
       </section>
