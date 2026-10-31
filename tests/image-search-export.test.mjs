@@ -8,6 +8,7 @@ import test from 'node:test';
 import onPage from './on-page-spec-expectations.cjs';
 import fiveGuides from './five-guides-amendment-expectations.cjs';
 import newGuides from './four-guides-addition-expectations.cjs';
+import altAmendment from './service-image-alt-expectations.cjs';
 import { attrs, decode } from '../scripts/seo-content-audit.mjs';
 import { pageImageUrls } from '../scripts/enrich-image-sitemap.mjs';
 
@@ -211,8 +212,8 @@ test('all292 pages have localized previews with the eight new article photos and
         assert.deepEqual(ogAlt, [altChange.after], `${pageUrl}: reviewed scene description`);
         assert.deepEqual(twitterAlt, [altChange.after], `${pageUrl}: reviewed sharing description`);
       }
-      const preservedAlt = altChange ? [altChange.before] : ogAlt;
-      const preservedTwitterAlt = altChange ? [altChange.before] : twitterAlt;
+      const preservedAlt = altChange ? [altChange.before] : [altAmendment.historicalAlt(new URL(ogImages[0]).pathname, locale, ogAlt[0])];
+      const preservedTwitterAlt = altChange ? [altChange.before] : [altAmendment.historicalAlt(new URL(twitterImages[0]).pathname, locale, twitterAlt[0])];
       if (entryIndex < newGuides.originalCanonicalCount) {
         preservedMappings.push([pageUrl, ogImages, preservedAlt, twitterImages, preservedTwitterAlt, [image.contentUrl]]);
       }
@@ -226,7 +227,7 @@ test('all292 pages have localized previews with the eight new article photos and
   assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].filter(url => !clarity.datedRoutes.includes(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/'))).sort(), 'the44 prior non-archive updates retain28October; only the changed archive memberships receive29October');
   assert.deepEqual(fallbackCounts, { blog: 12, countries: 0, locations: 14, information: 32 }, 'all58 text/index pages get social previews without false primary-image schema');
   assert.equal(preservedMappings.length, 198);
-  assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 prior photo assignments remain exact, with only the six reviewed descriptions normalized');
+  assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 prior photo assignments remain exact after reversing only the pinned scene descriptions');
   assert.equal(preservedPageMetadata.length, 274);
   assert.equal(fingerprint(preservedPageMetadata), 'ff1d4ce117376ba175b0c13cca3557eca6a994177108dc249a0f936fa1ea36a6', 'all274 prior identities remain exact after reversing only the pinned metadata amendments');
 });

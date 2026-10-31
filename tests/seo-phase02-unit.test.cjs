@@ -44,11 +44,36 @@ test('FAQ schema faithfully retains exact supplied localized questions and answe
 });
 
 test('meaningful service image descriptions are localized and generic fallback is not mislabelled', () => {
-  assert.match(serviceImageAlt('en', 'live-in-maid'), /^Household service: /);
-  assert.match(serviceImageAlt('ar', 'live-in-maid'), /^خدمة /);
+  const { serviceImageBySlug, serviceFallbackImage } = require('../.next/phase-02-unit/lib/service-presentation.js');
+  const catalog = require('../content/site-image-gallery.json');
+  for (const [slug, src] of [...Object.entries(serviceImageBySlug), ['unknown-service', serviceFallbackImage]]) {
+    const image = catalog.images.find(row => row.src === src);
+    assert.ok(image, `${slug}: reviewed scene description exists`);
+    for (const locale of ['en', 'ar']) {
+      assert.equal(serviceImageAlt(locale, slug), image.alt[locale]);
+      assert.doesNotMatch(image.alt[locale], /^Household service: |^خدمة /);
+    }
+  }
+  assert.match(serviceImageAlt('en', 'live-in-maid'), /folding a green blanket on a bed/);
+  assert.match(serviceImageAlt('ar', 'babysitting'), /كتاب مصور/);
+  assert.match(serviceImageAlt('en', 'patient-care'), /adjusting a cushion behind an older man/);
   assert.match(serviceImageAlt('en', 'unknown-service'), /performing separate tasks/);
   assert.match(serviceImageAlt('ar', 'unknown-service'), /يؤدين مهام مختلفة/);
-  for (const locale of ['en', 'ar']) for (const slug of ['live-in-maid', 'unknown-service']) {
-    assert.doesNotMatch(serviceImageAlt(locale, slug), /illustration|صورة توضيحية/i);
-  }
+});
+
+test('alt amendment preserves all other catalog fields and rejects unrelated changes', () => {
+  const fs = require('node:fs');
+  const amendment = require('./service-image-alt-expectations.cjs');
+  const file = 'content/site-image-gallery.json';
+  const source = fs.readFileSync(file, 'utf8');
+  const restored = JSON.parse(amendment.historicalSource(file, source));
+  assert.equal(amendment.fixture.changes.length, 28);
+  assert.equal(new Set(amendment.fixture.changes.map(row => row.src)).size, 28);
+  assert.equal(restored.images.length, 116);
+  const changedTitle = JSON.parse(source);
+  changedTitle.images[0].title.en += ' unapproved claim';
+  assert.throws(() => amendment.historicalSource(file, JSON.stringify(changedTitle, null, 2) + '\n'), /exact visually reviewed/);
+  const changedAlt = source.replace('folding a green blanket', 'issuing a visa');
+  assert.notEqual(changedAlt, source);
+  assert.throws(() => amendment.historicalSource(file, changedAlt), /exact visually reviewed/);
 });

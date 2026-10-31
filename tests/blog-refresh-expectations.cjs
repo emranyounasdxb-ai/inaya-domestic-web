@@ -8,6 +8,7 @@ const galleryUrls = ['en', 'ar'].map(lang => `https://inayadomestic.ae/${lang}/g
 // the current presentation is EXACTLY the separately pinned user amendment.
 // No manuscript or arbitrary future change can enter through this projection.
 function historicalSource(file, current) {
+  current = require('./service-image-alt-expectations.cjs').historicalSource(file, current);
   current = require('./page-clarity-expectations.cjs').historicalSource(file, current);
   current = current.replace(/\r\n/g, '\n');
   // The owner's 30 October sidebar amendment changes only the sidebar size hint.
