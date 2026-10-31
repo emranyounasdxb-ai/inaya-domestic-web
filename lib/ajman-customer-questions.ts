@@ -34,8 +34,8 @@ export const ajmanCustomerQuestions: LocationServicePage['faqs'] = [
   {
     question: { en: 'How can I hire a housemaid or domestic worker in Ajman?', ar: 'كيف أوظف خادمة أو عاملة منزلية في عجمان؟' },
     answer: {
-      en: `INAYA Domestic Workers has an office at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Contact the team on ${siteConfig.phone} with your household duties, area and preferred schedule. Compare the individual profile, working arrangement and written costs before confirming recruitment or a managed service.`,
-      ar: `مكتب عناية للعمالة المنزلية في جراند مول، الطابق الأرضي، الراشدية 3، عجمان. تواصل مع الفريق على ${siteConfig.phone} وحدد مهام المنزل والمنطقة والجدول المطلوب. قارن الملف الفردي وترتيب العمل والتكاليف المكتوبة قبل تأكيد الاستقدام أو الخدمة المدارة.`
+      en: `INAYA Domestic Workers has an office at Grand Mall, ground floor, Al Rashidiya 3, Ajman. Call the office on ${siteConfig.phone} or WhatsApp ${siteConfig.whatsappDisplay} with your household duties, area and preferred schedule. Compare the individual profile, working arrangement and written costs before confirming recruitment or a managed service.`,
+      ar: `مكتب عناية للعمالة المنزلية في جراند مول، الطابق الأرضي، الراشدية 3، عجمان. اتصل بالمكتب على ${siteConfig.phone} أو راسلنا عبر واتساب ${siteConfig.whatsappDisplay} وحدد مهام المنزل والمنطقة والجدول المطلوب. قارن الملف الفردي وترتيب العمل والتكاليف المكتوبة قبل تأكيد الاستقدام أو الخدمة المدارة.`
     },
     links: [{ route: 'services/recruitment', label: { en: 'Domestic worker recruitment', ar: 'استقدام العمالة المنزلية' } }, { route: 'contact', label: { en: 'Contact the Ajman office', ar: 'تواصل مع مكتب عجمان' } }]
   },
@@ -58,8 +58,8 @@ export const ajmanCustomerQuestions: LocationServicePage['faqs'] = [
   {
     question: { en: 'Where can I request a part-time or hourly maid in Ajman?', ar: 'أين أطلب خادمة بالساعة أو بدوام جزئي في عجمان؟' },
     answer: {
-      en: `Contact INAYA’s Ajman team on ${siteConfig.phone} to request scheduled part-time help. Share the rooms, cleaning or laundry priorities, preferred hours, visit frequency and address. The published visit packages are 4 hours for AED 120 and 8 hours for AED 200; these amounts are package totals. Confirm the visit duration, availability, supplies, transport and total cost in writing before relying on a booking.`,
-      ar: `تواصل مع فريق عناية في عجمان على ${siteConfig.phone} لطلب مساعدة مجدولة بدوام جزئي. حدد الغرف وأولويات التنظيف أو الغسيل والساعات المفضلة وتكرار الزيارات والعنوان. الباقات المنشورة للزيارة هي 4 ساعات مقابل 120 درهماً و8 ساعات مقابل 200 درهم؛ وهذه مبالغ إجمالية للباقات. أكد مدة الزيارة والتوفر والمستلزمات والنقل والتكلفة الإجمالية كتابةً قبل اعتماد الحجز.`
+      en: `Call INAYA’s Ajman office on ${siteConfig.phone} or WhatsApp ${siteConfig.whatsappDisplay} to request scheduled part-time help. Share the rooms, cleaning or laundry priorities, preferred hours, visit frequency and address. The published visit packages are 4 hours for AED 120 and 8 hours for AED 200; these amounts are package totals. Confirm the visit duration, availability, supplies, transport and total cost in writing before relying on a booking.`,
+      ar: `اتصل بمكتب عناية في عجمان على ${siteConfig.phone} أو راسل الفريق عبر واتساب ${siteConfig.whatsappDisplay} لطلب مساعدة مجدولة بدوام جزئي. حدد الغرف وأولويات التنظيف أو الغسيل والساعات المفضلة وتكرار الزيارات والعنوان. الباقات المنشورة للزيارة هي 4 ساعات مقابل 120 درهماً و8 ساعات مقابل 200 درهم؛ وهذه مبالغ إجمالية للباقات. أكد مدة الزيارة والتوفر والمستلزمات والنقل والتكلفة الإجمالية كتابةً قبل اعتماد الحجز.`
     },
     links: [{ route: 'services/part-time-maid', label: { en: 'Part-time visit scope and booking questions', ar: 'نطاق الزيارات الجزئية وأسئلة الحجز' } }]
   },
