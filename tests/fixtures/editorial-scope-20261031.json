@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-31",
+  "baselineCommit": "6ff763bf85f5da1c425df8ceb078316759239972",
+  "sources": {
+    "components/PublishedArticle.tsx": {
+      "before": "8eca8a4240f6d94ffa81963d2bf84956db03712146f29933e69997060cb8137a",
+      "after": "e455bead76d48de19553fd47d5a8ad48f9b9b27d550aa591630c520d788d497d",
+      "changes": [
+        [
+          "",
+          "import ArticleEditorialNote from './ArticleEditorialNote';\n"
+        ],
+        [
+          "",
+          "            <ArticleEditorialNote lang={lang} careers={guide.slug === 'inaya-office-staff-careers-ajman'} />\n"
+        ]
+      ]
+    },
+    "components/KeywordArticle.tsx": {
+      "before": "cf6859ec5bdb860326436d7516e369a8de0c0a7553abb5921745f51d924dcaa0",
+      "after": "66d5ebbf8366298ba8fa01980b937fa2307fa3488637713f591a1e37c34d5e15",
+      "changes": [
+        [
+          "",
+          "import ArticleEditorialNote from './ArticleEditorialNote';\n"
+        ],
+        [
+          "",
+          "        <ArticleEditorialNote lang={lang} />\n"
+        ],
+        [
+          "ar?'آخر مراجعة':'Reviewed'",
+          "ar?'آخر تحديث':'Updated'"
+        ]
+      ]
+    },
+    "app/[locale]/blog/[slug]/page.tsx": {
+      "before": "676ab289ab638dab44fe0f119c4c5c794cf0aeb0b9b3f69076e7f2332249c451",
+      "after": "1124ee6b4725a635710b52170eceb1c81947cc7ef0d6045f2e7b0dc5485f74b4",
+      "changes": [
+        [
+          "",
+          "import ArticleEditorialNote from '@/components/ArticleEditorialNote';\n"
+        ],
+        [
+          "",
+          "            <ArticleEditorialNote lang={lang} />\n"
+        ]
+      ]
+    }
+  },
+  "noteSourceSha256": "8031921a979f0e2edc1af0134f9bc904f6abbe0f6ebc5347daf275b47a7da0ca",
+  "copy": {
+    "en": {
+      "title": "Content dates and scope",
+      "body": "The dates above record publication and content updates. This INAYA guide provides general service information and practical preparation points. Use the cited official sources to check requirements for your case and confirm INAYA’s service details through the company’s official contacts.",
+      "careersBody": "The dates above record publication and content updates. This company page provides recruitment information and application guidance. Confirm current vacancies, role requirements and application arrangements through INAYA’s official contacts.",
+      "link": "Confirm INAYA service details",
+      "careersLink": "Confirm current vacancies"
+    },
+    "ar": {
+      "title": "تواريخ المحتوى ونطاقه",
+      "body": "توضح التواريخ أعلاه وقت النشر وتحديث المحتوى. يقدم دليل عناية معلومات عامة عن الخدمات ونقاطاً عملية للاستعداد. راجع المصادر الرسمية المذكورة للتحقق من متطلبات حالتك، وأكد تفاصيل خدمات عناية عبر وسائل التواصل الرسمية للشركة.",
+      "careersBody": "توضح التواريخ أعلاه وقت النشر وتحديث المحتوى. تقدم هذه الصفحة معلومات عن التوظيف وإرشادات التقديم لدى عناية. أكد الشواغر الحالية ومتطلبات الدور وترتيبات التقديم عبر وسائل التواصل الرسمية لعناية.",
+      "link": "أكد تفاصيل خدمات عناية",
+      "careersLink": "تأكد من الشواغر الحالية"
+    }
+  },
+  "attributions": {
+    "https://inayadomestic.ae/en/blog/maid-agency-ajman-quote-comparison-workbook/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-30",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-30"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-agency-ajman-quote-comparison-workbook/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-30",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-30"
+    },
+    "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-29",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-29"
+    },
+    "https://inayadomestic.ae/ar/blog/tadbeer-center-ajman-first-visit-service-routing/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-29",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-29"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-workers-ajman-household-role-design-canvas/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-workers-ajman-household-role-design-canvas/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/housemaid-visa-ajman-application-readiness-ledger/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-30",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-30"
+    },
+    "https://inayadomestic.ae/ar/blog/housemaid-visa-ajman-application-readiness-ledger/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-30",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-30"
+    },
+    "https://inayadomestic.ae/en/blog/live-in-maid-ajman-home-start-readiness-walkthrough/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/live-in-maid-ajman-home-start-readiness-walkthrough/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/housemaid-recruitment-ajman-candidate-evidence-cards/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-30",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-30"
+    },
+    "https://inayadomestic.ae/ar/blog/housemaid-recruitment-ajman-candidate-evidence-cards/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-30",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-30"
+    },
+    "https://inayadomestic.ae/en/blog/filipino-maid-ajman-task-communication-workbook/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/filipino-maid-ajman-task-communication-workbook/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ethiopian-maid-ajman-language-onboarding-plan/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ethiopian-maid-ajman-language-onboarding-plan/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/nanny-agency-ajman-childcare-evidence-handover/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/nanny-agency-ajman-childcare-evidence-handover/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/monthly-maid-service-ajman-commitment-budget/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-30",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-30"
+    },
+    "https://inayadomestic.ae/ar/blog/monthly-maid-service-ajman-commitment-budget/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-30",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-30"
+    },
+    "https://inayadomestic.ae/en/blog/part-time-maid-ajman-priorities-carry-over/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/part-time-maid-ajman-priorities-carry-over/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/maid-agency-sharjah-ajman-office-logistics/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-agency-sharjah-ajman-office-logistics/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/maid-services-dubai-household-access-scope-plan/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-services-dubai-household-access-scope-plan/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/tadbeer-near-me-location-identity-visit-check/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/tadbeer-near-me-location-identity-visit-check/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-household-weekly-maid-priorities-handover/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-household-weekly-maid-priorities-handover/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-maid-recruitment-agreement-receipts-evidence/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-maid-recruitment-agreement-receipts-evidence/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-tadbeer-case-status-follow-up-record/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-tadbeer-case-status-follow-up-record/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-housemaid-visa-document-name-status-check/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-housemaid-visa-document-name-status-check/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-monthly-maid-service-review-evidence-log/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-monthly-maid-service-review-evidence-log/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-domestic-worker-communication-privacy-boundaries/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-domestic-worker-communication-privacy-boundaries/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-domestic-worker-recruitment-milestone-decisions/": {
+      "before": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Reviewed 2026-10-24",
+      "after": "By INAYA Domestic Workers Editorial Team Published 2026-10-24 Updated 2026-10-24"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-domestic-worker-recruitment-milestone-decisions/": {
+      "before": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر مراجعة 2026-10-24",
+      "after": "إعداد فريق تحرير عناية للعمالة المنزلية تاريخ النشر 2026-10-24 آخر تحديث 2026-10-24"
+    }
+  }
+}

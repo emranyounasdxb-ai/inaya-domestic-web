@@ -95,6 +95,7 @@ jobs:
             test-results/**/archive-*.png
             test-results/**/reading-*.png
             test-results/**/service-benefit-*.png
+            test-results/**/editorial-*.png
           retention-days: 7
       - name: Check pricing layout before the full browser suite
         run: node node_modules/@playwright/test/cli.js test tests/e2e/core-page-clarity.spec.ts --grep 'six pricing cards'

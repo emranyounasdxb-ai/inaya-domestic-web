@@ -1,4 +1,5 @@
 import Inline from './BlogInlineText';
+import ArticleEditorialNote from './ArticleEditorialNote';
 import RelatedBlogCards from './RelatedBlogCards';
 import { createBlogInlineParser } from '@/lib/blog-context-links';
 import Link from 'next/link';
@@ -27,10 +28,11 @@ export default function KeywordArticlePage({article,lang}:{article:KeywordArticl
         <dl className="mt-6 flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm leading-7" data-guide="attribution">
           <div><dt className="font-semibold">{ar?'إعداد':'By'}</dt><dd>{ar?'فريق تحرير عناية للعمالة المنزلية':'INAYA Domestic Workers Editorial Team'}</dd></div>
           <div><dt className="font-semibold">{ar?'تاريخ النشر':'Published'}</dt><dd><time dateTime={article.published}>{article.published}</time></dd></div>
-          <div><dt className="font-semibold">{ar?'آخر مراجعة':'Reviewed'}</dt><dd><time dateTime={article.updated}>{article.updated}</time></dd></div>
+          <div><dt className="font-semibold">{ar?'آخر تحديث':'Updated'}</dt><dd><time dateTime={article.updated}>{article.updated}</time></dd></div>
         </dl>
         <p className="mt-4"><Link href={`/${ar?'en':'ar'}/blog/${article.slug}/`} hrefLang={ar?'en':'ar'} className="text-sm font-semibold underline decoration-accent-500/70 underline-offset-4">{ar?'اقرأ هذا المقال بالإنجليزية':'Read this article in Arabic'}</Link></p>
         <BlogImage slug={article.slug} locale={lang} hero className="mt-8 rounded-3xl border border-primary-900/10" />
+        <ArticleEditorialNote lang={lang} />
       </div>
     </section>
     <PageBreadcrumbs locale={lang} route={route} />

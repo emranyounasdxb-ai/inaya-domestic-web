@@ -7,6 +7,7 @@ import refresh from './blog-refresh-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const require = createRequire(import.meta.url);
+const editorial = require('./editorial-scope-expectations.cjs');
 const origin = 'https://inayadomestic.ae';
 const related = JSON.parse(await readFile('content/blog-related-guides-20261029.json', 'utf8'));
 const newImages = JSON.parse(await readFile('content/blog-refresh-images-20261029.json', 'utf8'));
@@ -15,6 +16,34 @@ const xml = await readFile('out/sitemap.xml', 'utf8');
 const urls = new Set([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]));
 const clean = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
 const anchors = html => [...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].map(m => ({ ...attrs(m[1]), label: text(m[2]) }));
+
+test('all70 bilingual publications explain content dates without inventing specialist reviews or freshness', async () => {
+  const noteSource=(await readFile('components/ArticleEditorialNote.tsx','utf8')).replace(/\r\n/g,'\n');
+  assert.equal(editorial.sha(noteSource),editorial.fixture.noteSourceSha256);
+  for(const [file,pin] of Object.entries(editorial.fixture.sources)) {
+    const source=await readFile(file,'utf8');
+    assert.equal(editorial.sha(editorial.historicalSource(file,source)),pin.before);
+    assert.throws(()=>editorial.historicalSource(file,source+'\n// Unrelated edit\n'),/exact reviewed/);
+  }
+  assert.equal(Object.keys(editorial.fixture.attributions).length,42,'only21 keyword topics relabel their update field');
+  for(const slug of slugs) for(const locale of ['en','ar']) {
+    const url=`${origin}/${locale}/blog/${slug}/`;
+    const body=clean(await readFile(`out/${locale}/blog/${slug}/index.html`,'utf8'));
+    const notes=[...body.matchAll(/<div\b[^>]*data-editorial-scope="true"[^>]*>([\s\S]*?)<\/div>/g)];
+    assert.equal(notes.length,1,`${url}: one visible publication note`);
+    assert.equal(text(notes[0][1]),editorial.noteText(locale,slug==='inaya-office-staff-careers-ajman'));
+    assert.deepEqual(anchors(notes[0][1]).map(a=>a.href),[`/${locale}/contact/`],`${url}: actual company contact route`);
+    const attribution=body.match(/<dl\b[^>]*data-guide="attribution"[^>]*>([\s\S]*?)<\/dl>/)?.[1];
+    assert.ok(attribution,url);
+    assert.doesNotMatch(text(attribution),/Reviewed|آخر مراجعة/);
+    assert.match(text(attribution),locale==='ar'?/آخر تحديث/:/Updated/);
+    const raw=await readFile(`out/${locale}/blog/${slug}/index.html`,'utf8');
+    const article=[...raw.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(m=>JSON.parse(m[1])['@graph']??[]).find(n=>n['@type']==='Article');
+    assert.ok(article,`${url}: existing article schema`);
+    assert.deepEqual([...attribution.matchAll(/<time\b[^>]*dateTime="([^"]+)"/gi)].map(m=>m[1]),[article.datePublished,article.dateModified],`${url}: visible dates match the actual publication records`);
+    assert.equal(article.reviewedBy,undefined,`${url}: no invented specialist reviewer`);
+  }
+});
 
 test('all70 complete manuscripts, dates and original111 image records retain their exact before bytes', async () => {
   for (const [file, sha] of Object.entries(refresh.fixture.preservedManuscriptSources)) {
