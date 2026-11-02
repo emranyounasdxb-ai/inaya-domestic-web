@@ -26,6 +26,26 @@ const metadata = {
       "description": "خدمات عناية للخادمات في عجمان والإمارات. 4 ساعات بـ120 درهماً، أو 3,000 درهم شهرياً بالتزام 12 شهراً. اتصل 06 740 0128 أو واتساب 050 203 6767."
     }
   },
+  "en/pricing": {
+    "before": {
+      "title": "Domestic Worker Packages & Pricing | INAYA",
+      "description": "Compare INAYA maid packages: 4 hours AED 120, 8 hours AED 200 and monthly options from AED 3,000 with a 12-month commitment. Review inclusions and terms."
+    },
+    "after": {
+      "title": "Domestic Worker Packages & Pricing | INAYA",
+      "description": "Compare INAYA’s published one-time contract fee ranges by nationality alongside visit and monthly maid packages. A work visa is not included; confirm final charges in writing."
+    }
+  },
+  "ar/pricing": {
+    "before": {
+      "title": "باقات وأسعار العمالة المنزلية | عناية",
+      "description": "قارن باقات عناية: 4 ساعات مقابل 120 درهماً و8 ساعات مقابل 200 درهم، وباقات شهرية من 3,000 درهم مع التزام 12 شهراً. راجع المشمول والشروط."
+    },
+    "after": {
+      "title": "باقات وأسعار العمالة المنزلية | عناية",
+      "description": "قارن نطاقات رسوم عقود الاستقدام المنشورة من عناية لمرة واحدة حسب الجنسية، إلى جانب باقات الزيارات والخدمة الشهرية. التأشيرة غير مشمولة؛ أكد التكاليف النهائية كتابةً."
+    }
+  },
   "en/maid-services-ajman": {
     "before": {
       "title": "Maid Services in Ajman | Domestic Workers Ajman | INAYA",

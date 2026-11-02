@@ -107,7 +107,7 @@ export default function BookingForm({ locale }: { locale: string }) {
         <input {...fieldA11y('area')} name="area" className="field" />
       </div>
       <div>
-        <label htmlFor={fieldId('service')} className="label">{t('service')}</label>
+        <label htmlFor={fieldId('service')} className="label">{t('service')} *</label>
         <select {...fieldA11y('service')} ref={serviceRef} name="service" className="field" value={selectedService} onChange={handleServiceChange}>
           <option value="" disabled>{t('service')}</option>
           {services.map((s) => (

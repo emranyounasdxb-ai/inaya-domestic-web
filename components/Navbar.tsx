@@ -19,10 +19,13 @@ export default function Navbar({ locale, labels, logo }: { locale: string; label
 
     const current = new URLSearchParams(window.location.search);
     const preserved = new URLSearchParams();
-    const service = current.get('service');
-    const plan = current.get('plan');
+    const serviceField = document.querySelector<HTMLSelectElement>('form select[name="service"]');
+    const planField = document.querySelector<HTMLSelectElement>('form select[name="plan"]');
+    const service = serviceField ? serviceField.value : current.get('service');
+    const plan = planField ? planField.value : current.get('plan');
     if (service && services.some((item) => item.slug === service)) preserved.set('service', service);
-    if (plan && [...Object.values(packageEnquiryValues), 'Discuss requirements'].includes(plan)) preserved.set('plan', plan);
+    const hasSelectedPlan = current.has('plan') || (planField !== null && plan !== 'Discuss requirements');
+    if (hasSelectedPlan && plan && [...Object.values(packageEnquiryValues), 'Discuss requirements'].includes(plan)) preserved.set('plan', plan);
     if (!preserved.size) return;
 
     event.preventDefault();

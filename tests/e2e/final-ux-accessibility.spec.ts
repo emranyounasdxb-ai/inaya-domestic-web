@@ -46,6 +46,7 @@ for (const locale of ['en', 'ar'] as const) {
           await form.getByLabel(locale === 'ar' ? 'الخدمة المطلوبة' : 'Select Service').selectOption('live-in-maid');
           await form.getByLabel(locale === 'ar' ? 'رسالتك' : 'Your Message', { exact: false }).fill('Local-only QA details');
         }
+        if (route === 'booking') await form.locator('[name="service"]').selectOption('live-in-maid');
         const buttonCopy = locale === 'ar' ? 'إرسال الاستفسار' : 'Send Enquiry';
         await form.getByRole('button', { name: buttonCopy, exact: true }).click();
         const confirmation = page.getByRole('status');
@@ -74,7 +75,7 @@ for (const locale of ['en', 'ar'] as const) {
       await expect(offer).toHaveCount(0);
       await page.locator('form button[type="submit"]').click();
       const fields = page.locator('form [aria-invalid="true"]');
-      expect(await fields.count()).toBe(route === 'booking' ? 2 : 5);
+      expect(await fields.count()).toBe(route === 'booking' ? 3 : 5);
       for (const field of await fields.all()) {
         const id = await field.getAttribute('aria-describedby');
         expect(id).toBeTruthy();

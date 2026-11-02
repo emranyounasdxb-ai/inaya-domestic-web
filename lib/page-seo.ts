@@ -112,8 +112,8 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   pricing: {
     name: { en: 'Domestic Worker Packages & Pricing', ar: 'باقات وأسعار العمالة المنزلية' },
     description: {
-      en: 'Compare MOHRE-approved one-time contract fees by nationality, plus INAYA visit and monthly maid packages. Visa is not included; confirm final charges in writing.',
-      ar: 'قارن رسوم العقد المعتمدة لمرة واحدة حسب الجنسية وباقات عناية للزيارات والخدمة الشهرية. التأشيرة غير مشمولة؛ أكد التكاليف النهائية كتابةً.'
+      en: 'Compare INAYA’s published one-time contract fee ranges by nationality alongside visit and monthly maid packages. A work visa is not included; confirm final charges in writing.',
+      ar: 'قارن نطاقات رسوم عقود الاستقدام المنشورة من عناية لمرة واحدة حسب الجنسية، إلى جانب باقات الزيارات والخدمة الشهرية. التأشيرة غير مشمولة؛ أكد التكاليف النهائية كتابةً.'
     }
   },
   blog: {

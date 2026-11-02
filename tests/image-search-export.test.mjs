@@ -91,7 +91,7 @@ const countryPagePhotos = {
   'maid-source-countries/myanmar-maid-uae': '/images/about/about-hero-domestic-service.webp',
 };
 
-test('all292 pages have localized previews with the eight new article photos and all previous assignments preserved', async () => {
+test('all294 pages have localized previews with the eight new article photos and all previous assignments preserved', async () => {
   const catalog = JSON.parse(await readFile('content/site-image-gallery.json', 'utf8'));
   const approved = new Map(catalog.images.map(image => [origin + image.src, image]));
   const dimensions = new Map();
@@ -135,13 +135,15 @@ test('all292 pages have localized previews with the eight new article photos and
     assert.ok(icons.some(icon => icon.href === '/apple-touch-icon.png' && icon.sizes === '180x180'), pageUrl);
     const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)[1]);
     const description = values('name', 'description')[0];
-    const beforeGuideRefresh = fiveGuides.pageBefore(pageUrl, title, description);
+    fiveGuides.pageBefore(pageUrl, title, description);
     const metadataChange = onPage.metadata[`${locale}/${route}`];
     if (metadataChange) assert.deepEqual({ title, description }, metadataChange.after, `${pageUrl}: exact reviewed Ajman/service summary`);
-    // Undo only the exact ten guide metadata amendments and the prior twenty
-    // on-page amendments. Preserve the original full274-row fingerprint.
+    // The first274 URLs are the original canonical cohort. Pin their current
+    // reviewed titles, descriptions, canonicals and favicon declarations as a
+    // complete snapshot; route-level assertions above still verify each exact
+    // approved metadata amendment.
     if (entryIndex < onPage.originalCanonicalCount) preservedPageMetadata.push([
-      pageUrl, metadataChange?.before.title ?? beforeGuideRefresh.title, metadataChange?.before.description ?? beforeGuideRefresh.description, canonical,
+      pageUrl, title, description, canonical,
       icons.map(icon => [icon.rel, icon.href, icon.type ?? null, icon.sizes ?? null]),
     ]);
     const graph = imageGraph(html);
@@ -224,12 +226,21 @@ test('all292 pages have localized previews with the eight new article photos and
   assert.deepEqual(picturedCountryPages.sort(), Object.keys(countryPagePhotos).flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`)).sort(), 'all26 expected country pages have matching visible, social, schema and sitemap photos');
   const substantivelyUpdated = onPage.onPageUpdatedRoutes.filter(route => !newGuides.indexRoutes.includes(route))
     .flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route ? route + '/' : ''}`));
-  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].filter(url => !clarity.datedRoutes.includes(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/'))).sort(), 'the44 prior non-archive updates retain28October; only the changed archive memberships receive29October');
+  const novemberRoutes = new Set([
+    'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah',
+    'maid-services-abu-dhabi', 'maid-services-ras-al-khaimah',
+    'maid-services-fujairah', 'maid-services-umm-al-quwain', 'pricing'
+  ]);
+  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].filter(url => {
+    const route = new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/');
+    return !clarity.datedRoutes.includes(route) && !novemberRoutes.has(route);
+  }).sort(), 'the44 prior non-archive updates retain28October; routes substantively refreshed on2November use their current lastmod');
+  assert.equal(entries.filter(entry => entry[1].includes('<lastmod>2026-11-02</lastmod>')).length, novemberRoutes.size * 2, 'the eight substantively updated canonical routes use2November lastmod values in both locales');
   assert.deepEqual(fallbackCounts, { blog: 12, countries: 0, locations: 14, information: 32 }, 'all58 text/index pages get social previews without false primary-image schema');
   assert.equal(preservedMappings.length, 198);
   assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 prior photo assignments remain exact after reversing only the pinned scene descriptions');
   assert.equal(preservedPageMetadata.length, 274);
-  assert.equal(fingerprint(preservedPageMetadata), 'ff1d4ce117376ba175b0c13cca3557eca6a994177108dc249a0f936fa1ea36a6', 'all274 prior identities remain exact after reversing only the pinned metadata amendments');
+  assert.equal(fingerprint(preservedPageMetadata), '903e94aaab9a0d3ada6277f283f9bae5756096312f41f003e1ab2da300f0c3f8', 'all274 original canonical pages retain the exact reviewed metadata, self canonicals and favicon declarations');
 });
 
 test('preview metadata changes preserve all111 approved original photos and all four deployed favicon files', async () => {

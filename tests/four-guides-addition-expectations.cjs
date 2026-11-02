@@ -21,7 +21,18 @@ const blogOrderSlugs = [...newSlugs, ...blogOrder.slugs];
 const indexRoutes = ['blog', ...[2, 3, 4, 5, 6].map(page => `blog/page/${page}`)];
 const indexUrls = indexRoutes.flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`));
 const clarity = require('./page-clarity-expectations.cjs');
-const expectedLastmods = { ...before.lastmods, ...Object.fromEntries([...indexUrls, ...newCanonicalUrls, ...privacyUrls, ...refresh.galleryUrls].map(url => [url, date])), ...Object.fromEntries(clarity.fixture.updatedRoutes.flatMap(route => ['en', 'ar'].map(lang => [`${origin}/${lang}/${route ? route + '/' : ''}`, clarity.fixture.date]))), ...Object.fromEntries(require('./service-refinement-expectations.cjs').fixture.datedRoutes.flatMap(route => ['en','ar'].map(lang => [`${origin}/${lang}/${route}/`, '2026-10-30']))) };
+const novemberRoutes = [
+  'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah',
+  'maid-services-abu-dhabi', 'maid-services-ras-al-khaimah',
+  'maid-services-fujairah', 'maid-services-umm-al-quwain', 'pricing'
+];
+const expectedLastmods = {
+  ...before.lastmods,
+  ...Object.fromEntries([...indexUrls, ...newCanonicalUrls, ...privacyUrls, ...refresh.galleryUrls].map(url => [url, date])),
+  ...Object.fromEntries(clarity.fixture.updatedRoutes.flatMap(route => ['en', 'ar'].map(lang => [`${origin}/${lang}/${route ? route + '/' : ''}`, clarity.fixture.date]))),
+  ...Object.fromEntries(require('./service-refinement-expectations.cjs').fixture.datedRoutes.flatMap(route => ['en', 'ar'].map(lang => [`${origin}/${lang}/${route}/`, '2026-10-30']))),
+  ...Object.fromEntries(novemberRoutes.flatMap(route => ['en', 'ar'].map(lang => [`${origin}/${lang}/${route}/`, '2026-11-02'])))
+};
 const stable = value => Array.isArray(value) ? value.map(stable) : value && typeof value === 'object'
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const hash = value => createHash('sha256').update(value).digest('hex');
@@ -42,7 +53,7 @@ function assertLastmods(entries) {
   assertInventory(entries.map(entry => entry.url));
   for (const entry of entries) assert.equal(entry.lastmod ?? null, expectedLastmods[entry.url], `${entry.url}: only new articles, changed index memberships and two privacy notices get29October dates`);
   assert.equal(entries.filter(entry => entry.lastmod).length, Object.values(expectedLastmods).filter(Boolean).length);
-  for (const stamp of ['2026-10-28', date, clarity.fixture.date]) assert.equal(entries.filter(entry => entry.lastmod === stamp).length, Object.values(expectedLastmods).filter(value => value === stamp).length, `${stamp}: exact dated scope`);
+  for (const stamp of ['2026-10-28', date, clarity.fixture.date, '2026-11-02']) assert.equal(entries.filter(entry => entry.lastmod === stamp).length, Object.values(expectedLastmods).filter(value => value === stamp).length, `${stamp}: exact dated scope`);
 }
 
 // This exact inverse is required before the older five-guide provenance chain.

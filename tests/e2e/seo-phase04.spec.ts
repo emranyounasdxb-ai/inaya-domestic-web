@@ -11,6 +11,7 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(offer).toHaveCount(0);
     await page.locator('input[name="name"]').fill('Local validation');
     await page.locator('input[name="phone"]').fill('+971500000000');
+    await page.locator('select[name="service"]').selectOption('live-in-maid');
     await page.getByRole('button', { name: locale === 'ar' ? 'إرسال الاستفسار' : 'Send Enquiry' }).click();
     const confirmation = page.getByRole('status');
     await expect(confirmation).toBeVisible();

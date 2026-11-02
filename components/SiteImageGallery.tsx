@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import type { GalleryCategory, GalleryImage } from '@/lib/site-image-gallery';
 
@@ -96,7 +97,7 @@ export default function SiteImageGallery({ locale, images, categories }: { local
             <button type="button" onClick={() => setSelected(null)} aria-label={copy.close}>{copy.close} <span aria-hidden="true">×</span></button>
           </div>
           {selected ? <figure>
-            <div className="site-gallery__dialog-media"><img src={selected.displaySrc} alt={selected.alt[locale]} width={selected.width} height={selected.height} /></div>
+            <div className="site-gallery__dialog-media"><Image src={selected.displaySrc} alt={selected.alt[locale]} width={selected.width} height={selected.height} loading="eager" unoptimized /></div>
             <figcaption><h2>{selected.title[locale]}</h2><Link href={relatedHref(selected)}>{selected.category === 'guides' ? copy.guide : copy.related}</Link></figcaption>
           </figure> : null}
           <div className="site-gallery__dialog-nav">

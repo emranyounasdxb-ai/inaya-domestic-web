@@ -10,7 +10,7 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(service).toHaveValue('nanny');
 
     await page.goto(`/${locale}/booking/?service=unknown-service`);
-    await expect(service).toHaveValue('live-in-maid');
+    await expect(service).toHaveValue('');
 
     await page.goto(`/${locale}/services/part-time-maid/`);
     await page.locator(`a[href="/${locale}/booking/?service=part-time-maid"]`).first().click();
@@ -46,9 +46,23 @@ for (const locale of ['en', 'ar'] as const) {
         history.pushState(null, '', '?service=unknown-service');
         window.dispatchEvent(new PopStateEvent('popstate'));
       });
-      await expect(service).toHaveValue('live-in-maid');
+      await expect(service).toHaveValue('');
     } finally {
       releaseScripts();
     }
+  });
+
+  test(`${locale} booking preserves the selected service and package when switching language`, async ({ page }) => {
+    const otherLocale = locale === 'en' ? 'ar' : 'en';
+    await page.goto(`/${locale}/booking/`);
+    const service = page.locator('select[name="service"]');
+    const plan = page.locator('select[name="plan"]');
+    await service.selectOption('nanny');
+    await plan.selectOption('12-month contract');
+
+    await page.locator(`header a[hreflang="${otherLocale}"]`).click();
+    await expect(page).toHaveURL(new RegExp(`/${otherLocale}/booking/\\?`));
+    await expect(service).toHaveValue('nanny');
+    await expect(plan).toHaveValue('12-month contract');
   });
 }

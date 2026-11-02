@@ -20,7 +20,7 @@ async function fillForm(page: Page, kind: 'contact' | 'booking' | 'careers') {
   await form.locator('[name="phone"]').fill('+971500000000');
   await form.locator('[name="email"]').fill('measurement@example.invalid');
   await form.locator('[name="message"]').fill('Private synthetic message');
-  if (kind === 'contact') await form.locator('[name="service"]').selectOption('live-in-maid');
+  if (kind === 'contact' || kind === 'booking') await form.locator('[name="service"]').selectOption('live-in-maid');
   return form;
 }
 
