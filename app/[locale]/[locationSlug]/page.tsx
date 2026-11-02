@@ -65,9 +65,9 @@ export default async function LocationServicePage({ params }: { params: Promise<
       ? ['شارك الدور المنزلي والمهام والمنطقة في عجمان', 'راجع خيارات الخدمة والتوفر وفق جدول الأسرة', 'اطلب توضيح النطاق والتكاليف والمستندات حسب حالتك كتابةً', 'أكد الشروط قبل إتمام الترتيب']
       : ['Share the household role, duties and Ajman location', 'Review service options and availability for your schedule', 'Ask for the proposed scope, costs and case-specific documents in writing', 'Confirm the terms before making an arrangement']
     : t.process;
-  const ajmanWhatsAppMessage = lang === 'ar'
-    ? 'مرحباً عناية، أرغب في الاستفسار عن خدمات الخادمات في عجمان. يرجى توضيح الخيارات والتوفر والتكلفة.'
-    : 'Hello INAYA, I am enquiring about maid services in Ajman. Please share suitable options, availability and costs.';
+  const locationWhatsAppMessage = lang === 'ar'
+    ? `مرحباً عناية، أرغب في الاستفسار عن خدمات الخادمات في ${location.city.ar}. يرجى توضيح الخيارات والتوفر والتكاليف المكتوبة.`
+    : `Hello INAYA, I am enquiring about maid services in ${location.city.en}. Please share suitable options, availability and written costs.`;
 
   return (
     <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
@@ -87,13 +87,9 @@ export default async function LocationServicePage({ params }: { params: Promise<
             <p className="mt-5 max-w-2xl text-[0.98rem] leading-8 text-primary-900/72">{location.lead[lang]}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href={`/${locale}/contact`} className="rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-[0_18px_45px_rgba(7,22,74,0.16)]">{t.contact}</Link>
-              {locationSlug === 'maid-services-ajman' ? (
-                <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(ajmanWhatsAppMessage)}`} target="_blank" rel="noreferrer" className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">
-                  {lang === 'ar' ? 'استفسر عبر واتساب' : 'Ask on WhatsApp'}
-                </a>
-              ) : (
-                <Link href={`/${locale}/services/countries-we-source-from`} className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">{t.countries}</Link>
-              )}
+              <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(locationWhatsAppMessage)}`} target="_blank" rel="noreferrer" className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">
+                {lang === 'ar' ? 'استفسر عبر واتساب' : 'Ask on WhatsApp'}
+              </a>
             </div>
           </div>
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">

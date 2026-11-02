@@ -17,6 +17,48 @@ export const onPageSeoRefinements: Record<string, { title: Localized; descriptio
       ar: 'هل تبحث عن خدمة خادمات في عجمان؟ زر مكتب عناية في جراند مول أو استفسر عن الاستقدام وزيارات التنظيف والباقات الجزئية والشهرية. أكد التوفر والتكلفة المكتوبة مع الفريق.'
     }
   },
+  'maid-services-dubai': {
+    title: { en: 'Maid Services in Dubai | INAYA Domestic Workers', ar: 'خدمات خادمات في دبي | عناية للعمالة المنزلية' },
+    description: {
+      en: 'Looking for maid support in Dubai? Tell INAYA about your area, household duties and schedule to discuss maid, nanny or cleaning options, availability and written costs.',
+      ar: 'هل تبحث عن دعم منزلي في دبي؟ أخبر فريق عناية عن منطقتك ومهام المنزل والجدول المطلوب لمناقشة خيارات الخادمات والمربيات والتنظيف والتوفر والتكاليف المكتوبة.'
+    }
+  },
+  'maid-services-sharjah': {
+    title: { en: 'Maid Services in Sharjah | INAYA Domestic Workers', ar: 'خدمات خادمات في الشارقة | عناية للعمالة المنزلية' },
+    description: {
+      en: 'Need home help in Sharjah? Discuss maid, nanny and part-time cleaning options with INAYA. Share your area and schedule to confirm availability and written costs.',
+      ar: 'هل تحتاج إلى مساعدة منزلية في الشارقة؟ ناقش مع عناية خيارات الخادمات والمربيات والتنظيف الجزئي، وشارك المنطقة والجدول لتأكيد التوفر والتكلفة المكتوبة.'
+    }
+  },
+  'maid-services-abu-dhabi': {
+    title: { en: 'Maid Services in Abu Dhabi | INAYA Domestic Workers', ar: 'خدمات خادمات في أبوظبي | عناية للعمالة المنزلية' },
+    description: {
+      en: 'Looking for a maid or nanny in Abu Dhabi? Share your household duties, area and preferred schedule with INAYA to discuss options, availability and written costs.',
+      ar: 'هل تبحث عن خادمة أو مربية في أبوظبي؟ شارك عناية مهام المنزل والمنطقة والجدول المطلوب لمناقشة الخيارات المناسبة والتوفر والتكاليف المكتوبة.'
+    }
+  },
+  'maid-services-ras-al-khaimah': {
+    title: { en: 'Maid Services in Ras Al Khaimah | INAYA Domestic Workers', ar: 'خدمات خادمات في رأس الخيمة | عناية للعمالة المنزلية' },
+    description: {
+      en: 'Need domestic worker support in Ras Al Khaimah? Tell INAYA your area and household needs to review maid, nanny or cleaning options and written costs.',
+      ar: 'هل تحتاج إلى دعم العمالة المنزلية في رأس الخيمة؟ أخبر عناية عن منطقتك واحتياجات المنزل لمراجعة خيارات الخادمات والمربيات والتنظيف والتكلفة المكتوبة.'
+    }
+  },
+  'maid-services-fujairah': {
+    title: { en: 'Maid Services in Fujairah | INAYA Domestic Workers', ar: 'خدمات خادمات في الفجيرة | عناية للعمالة المنزلية' },
+    description: {
+      en: 'Looking for maid services in Fujairah? Share your area, household duties and schedule with INAYA to discuss suitable options, availability and written costs.',
+      ar: 'هل تبحث عن خدمات خادمات في الفجيرة؟ شارك عناية المنطقة ومهام المنزل والجدول المطلوب لمناقشة الخيارات المناسبة والتوفر والتكلفة المكتوبة.'
+    }
+  },
+  'maid-services-umm-al-quwain': {
+    title: { en: 'Maid Services in Umm Al Quwain | INAYA Domestic Workers', ar: 'خدمات خادمات في أم القيوين | عناية للعمالة المنزلية' },
+    description: {
+      en: 'Need maid or nanny support in Umm Al Quwain? Share your household duties and area with INAYA to discuss service options, availability and written costs.',
+      ar: 'هل تحتاج إلى خادمة أو مربية في أم القيوين؟ شارك عناية مهام المنزل والمنطقة لمناقشة خيارات الخدمة والتوفر والتكاليف المكتوبة.'
+    }
+  },
   about: {
     title: { en: 'About INAYA | Domestic Worker Centre, Grand Mall Ajman', ar: 'عن عناية | مركز العمالة المنزلية في جراند مول عجمان' },
     description: {

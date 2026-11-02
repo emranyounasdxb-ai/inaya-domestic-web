@@ -1,8 +1,9 @@
 const assert = require('node:assert/strict');
 
 // Fixed reviewed release expectations. Existing before values came from the
-// independent 28 October production crawl; Ajman page metadata was captured on
-// 2 November. After values use GSC query evidence and verified business facts.
+// independent 28 October production crawl; city-page metadata was captured on
+// 2 November. Ajman uses supplied GSC evidence; other city copy reflects its
+// reviewed page content and verified availability language.
 // Tests do not import production selectors.
 const metadata = {
   "en/": {
@@ -43,6 +44,126 @@ const metadata = {
     "after": {
       "title": "خدمات خادمات في عجمان | عناية للعمالة المنزلية",
       "description": "هل تبحث عن خدمة خادمات في عجمان؟ زر مكتب عناية في جراند مول أو استفسر عن الاستقدام وزيارات التنظيف والباقات الجزئية والشهرية. أكد التوفر والتكلفة المكتوبة مع الفريق."
+    }
+  },
+  "en/maid-services-dubai": {
+    "before": {
+      "title": "Maid Services in Dubai | Nanny, Cook & Domestic Workers | INAYA",
+      "description": "Looking for maid services in Dubai? INAYA helps families compare live-in maids, live-out maids, part-time maids, nannies, cooks, caregivers and visa support."
+    },
+    "after": {
+      "title": "Maid Services in Dubai | INAYA Domestic Workers",
+      "description": "Looking for maid support in Dubai? Tell INAYA about your area, household duties and schedule to discuss maid, nanny or cleaning options, availability and written costs."
+    }
+  },
+  "ar/maid-services-dubai": {
+    "before": {
+      "title": "خدمات خادمات في دبي | مربيات وطهاة وعمالة منزلية | عناية",
+      "description": "تبحث عن خدمات خادمات في دبي؟ تساعد عناية الأسر على مقارنة الخادمات المقيمات وغير المقيمات والدوام الجزئي والمربيات والطهاة والرعاية والتأشيرة."
+    },
+    "after": {
+      "title": "خدمات خادمات في دبي | عناية للعمالة المنزلية",
+      "description": "هل تبحث عن دعم منزلي في دبي؟ أخبر فريق عناية عن منطقتك ومهام المنزل والجدول المطلوب لمناقشة خيارات الخادمات والمربيات والتنظيف والتوفر والتكاليف المكتوبة."
+    }
+  },
+  "en/maid-services-sharjah": {
+    "before": {
+      "title": "Maid Services in Sharjah | Domestic Workers Sharjah | INAYA",
+      "description": "Maid services in Sharjah with INAYA. Get guided support for live-in maids, live-out maids, nannies, cooks, elder care, recruitment and maid visa assistance."
+    },
+    "after": {
+      "title": "Maid Services in Sharjah | INAYA Domestic Workers",
+      "description": "Need home help in Sharjah? Discuss maid, nanny and part-time cleaning options with INAYA. Share your area and schedule to confirm availability and written costs."
+    }
+  },
+  "ar/maid-services-sharjah": {
+    "before": {
+      "title": "خدمات خادمات في الشارقة | عمالة منزلية الشارقة | عناية",
+      "description": "خدمات خادمات في الشارقة مع عناية. دعم موجه للخادمات المقيمات وغير المقيمات والمربيات والطهاة ورعاية كبار السن والتوظيف وتأشيرة الخادمة."
+    },
+    "after": {
+      "title": "خدمات خادمات في الشارقة | عناية للعمالة المنزلية",
+      "description": "هل تحتاج إلى مساعدة منزلية في الشارقة؟ ناقش مع عناية خيارات الخادمات والمربيات والتنظيف الجزئي، وشارك المنطقة والجدول لتأكيد التوفر والتكلفة المكتوبة."
+    }
+  },
+  "en/maid-services-abu-dhabi": {
+    "before": {
+      "title": "Maid Services in Abu Dhabi | Domestic Workers Abu Dhabi | INAYA",
+      "description": "Maid services in Abu Dhabi with INAYA. Compare live-in maids, nannies, cooks, caregivers, recruitment and maid visa guidance for family homes."
+    },
+    "after": {
+      "title": "Maid Services in Abu Dhabi | INAYA Domestic Workers",
+      "description": "Looking for a maid or nanny in Abu Dhabi? Share your household duties, area and preferred schedule with INAYA to discuss options, availability and written costs."
+    }
+  },
+  "ar/maid-services-abu-dhabi": {
+    "before": {
+      "title": "خدمات خادمات في أبوظبي | عمالة منزلية أبوظبي | عناية",
+      "description": "خدمات خادمات في أبوظبي مع عناية. قارن الخادمات المقيمات والمربيات والطهاة والرعاية والتوظيف وإرشاد تأشيرة الخادمة للمنازل العائلية."
+    },
+    "after": {
+      "title": "خدمات خادمات في أبوظبي | عناية للعمالة المنزلية",
+      "description": "هل تبحث عن خادمة أو مربية في أبوظبي؟ شارك عناية مهام المنزل والمنطقة والجدول المطلوب لمناقشة الخيارات المناسبة والتوفر والتكاليف المكتوبة."
+    }
+  },
+  "en/maid-services-ras-al-khaimah": {
+    "before": {
+      "title": "Maid Services in Ras Al Khaimah | Domestic Workers RAK | INAYA",
+      "description": "Maid services in Ras Al Khaimah with INAYA. Get guidance for live-in maids, live-out maids, nannies, cooks, caregivers and maid visa support."
+    },
+    "after": {
+      "title": "Maid Services in Ras Al Khaimah | INAYA Domestic Workers",
+      "description": "Need domestic worker support in Ras Al Khaimah? Tell INAYA your area and household needs to review maid, nanny or cleaning options and written costs."
+    }
+  },
+  "ar/maid-services-ras-al-khaimah": {
+    "before": {
+      "title": "خدمات خادمات في رأس الخيمة | عمالة منزلية رأس الخيمة | عناية",
+      "description": "خدمات خادمات في رأس الخيمة مع عناية. إرشاد للخادمات المقيمات وغير المقيمات والمربيات والطهاة والرعاية وتأشيرة الخادمة."
+    },
+    "after": {
+      "title": "خدمات خادمات في رأس الخيمة | عناية للعمالة المنزلية",
+      "description": "هل تحتاج إلى دعم العمالة المنزلية في رأس الخيمة؟ أخبر عناية عن منطقتك واحتياجات المنزل لمراجعة خيارات الخادمات والمربيات والتنظيف والتكلفة المكتوبة."
+    }
+  },
+  "en/maid-services-fujairah": {
+    "before": {
+      "title": "Maid Services in Fujairah | Domestic Workers Fujairah | INAYA",
+      "description": "Maid services in Fujairah with INAYA. Get guided support for domestic workers, live-in maids, nannies, cooks, caregivers, recruitment and maid visa steps."
+    },
+    "after": {
+      "title": "Maid Services in Fujairah | INAYA Domestic Workers",
+      "description": "Looking for maid services in Fujairah? Share your area, household duties and schedule with INAYA to discuss suitable options, availability and written costs."
+    }
+  },
+  "ar/maid-services-fujairah": {
+    "before": {
+      "title": "خدمات خادمات في الفجيرة | عمالة منزلية الفجيرة | عناية",
+      "description": "خدمات خادمات في الفجيرة مع عناية. دعم موجه للعمالة المنزلية والخادمات المقيمات والمربيات والطهاة والرعاية والتوظيف وخطوات التأشيرة."
+    },
+    "after": {
+      "title": "خدمات خادمات في الفجيرة | عناية للعمالة المنزلية",
+      "description": "هل تبحث عن خدمات خادمات في الفجيرة؟ شارك عناية المنطقة ومهام المنزل والجدول المطلوب لمناقشة الخيارات المناسبة والتوفر والتكلفة المكتوبة."
+    }
+  },
+  "en/maid-services-umm-al-quwain": {
+    "before": {
+      "title": "Maid Services in Umm Al Quwain | Domestic Workers UAQ | INAYA",
+      "description": "Maid services in Umm Al Quwain with INAYA. Get guidance for live-in maids, live-out maids, nannies, cooks, elder care, recruitment and visa support."
+    },
+    "after": {
+      "title": "Maid Services in Umm Al Quwain | INAYA Domestic Workers",
+      "description": "Need maid or nanny support in Umm Al Quwain? Share your household duties and area with INAYA to discuss service options, availability and written costs."
+    }
+  },
+  "ar/maid-services-umm-al-quwain": {
+    "before": {
+      "title": "خدمات خادمات في أم القيوين | عمالة منزلية أم القيوين | عناية",
+      "description": "خدمات خادمات في أم القيوين مع عناية. إرشاد للخادمات المقيمات وغير المقيمات والمربيات والطهاة ورعاية كبار السن والتوظيف والتأشيرة."
+    },
+    "after": {
+      "title": "خدمات خادمات في أم القيوين | عناية للعمالة المنزلية",
+      "description": "هل تحتاج إلى خادمة أو مربية في أم القيوين؟ شارك عناية مهام المنزل والمنطقة لمناقشة خيارات الخدمة والتوفر والتكاليف المكتوبة."
     }
   },
   "en/about": {
@@ -290,7 +411,8 @@ const homeFaqAnswers = {
   ]
 };
 
-const onPageUpdatedRoutes = ['', 'about', 'contact', 'maid-services-ajman', 'company-information', 'blog', 'services/housemaid', 'services/nanny', 'services/maid-visa', 'services/part-time-maid'];
+const locationRoutes = ['maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah', 'maid-services-abu-dhabi', 'maid-services-ras-al-khaimah', 'maid-services-fujairah', 'maid-services-umm-al-quwain'];
+const onPageUpdatedRoutes = ['', 'about', 'contact', ...locationRoutes, 'company-information', 'blog', 'services/housemaid', 'services/nanny', 'services/maid-visa', 'services/part-time-maid'];
 const archiveRoutes = [2,3,4,5,6].map(page => `blog/page/${page}`);
 // Reviewed shared entity facts and archive navigation copy are classified only
 // at these18 exact main-content placements; they are not editorial articles.
@@ -309,7 +431,7 @@ const sharedOnPageUiPlacements = Object.entries(onPageUiCopy).flatMap(([kind, co
     .flatMap(route => ['en', 'ar'].map(locale => ({ kind, route, locale, text: copy[locale] }))));
 const sharedOnPageUiCounts = { paragraphs: 18, tokens: 236 };
 const originalCanonicalCount = 274;
-const titleUpdatedRoutes = ['', 'about', 'contact', 'maid-services-ajman', 'services/housemaid', 'services/nanny', 'services/part-time-maid', 'services/maid-visa', 'services/executive-nannies'];
+const titleUpdatedRoutes = ['', 'about', 'contact', ...locationRoutes, 'services/housemaid', 'services/nanny', 'services/part-time-maid', 'services/maid-visa', 'services/executive-nannies'];
 const descriptionOnlyRoutes = ['services', 'service-areas'];
 const canonicalCount = 284;
 
