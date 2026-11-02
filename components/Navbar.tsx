@@ -2,14 +2,33 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { services } from '@/lib/services';
+import { packageEnquiryValues } from '@/lib/package-enquiry';
 
 export default function Navbar({ locale, labels, logo }: { locale: string; labels: Record<string, string>; logo: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   const otherLocale = locale === 'en' ? 'ar' : 'en';
   const switchedPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
+  const handleLocaleSwitch = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const isBookingPage = pathname === `/${locale}/booking` || pathname === `/${locale}/booking/`;
+    if (!isBookingPage) return;
+
+    const current = new URLSearchParams(window.location.search);
+    const preserved = new URLSearchParams();
+    const service = current.get('service');
+    const plan = current.get('plan');
+    if (service && services.some((item) => item.slug === service)) preserved.set('service', service);
+    if (plan && [...Object.values(packageEnquiryValues), 'Discuss requirements'].includes(plan)) preserved.set('plan', plan);
+    if (!preserved.size) return;
+
+    event.preventDefault();
+    const target = `${switchedPath.replace(/\/+$/, '')}/?${preserved.toString()}`;
+    router.push(target);
+  };
 
   const links = [
     { href: `/${locale}`, label: labels.home },
@@ -52,6 +71,7 @@ export default function Navbar({ locale, labels, logo }: { locale: string; label
         <div className="flex shrink-0 items-center gap-2.5">
           <Link
             href={switchedPath}
+            onClick={handleLocaleSwitch}
             hrefLang={otherLocale}
             prefetch={false}
             className="rounded-full border border-primary-700/10 bg-white/45 px-3 py-1.5 text-[12px] font-semibold leading-none text-primary-900 shadow-sm transition hover:border-accent-500 hover:bg-white/80"

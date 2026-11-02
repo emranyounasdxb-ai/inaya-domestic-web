@@ -11,6 +11,7 @@ import Footer from '@/components/Footer';
 import FloatingSocialBar from '@/components/FloatingSocialBar';
 import BackToTop from '@/components/BackToTop';
 import GoogleAnalyticsConsent from '@/components/GoogleAnalyticsConsent';
+import ContactInteractionMeasurement from '@/components/ContactInteractionMeasurement';
 import '../globals.css';
 import '../arabic-body-font.css';
 import '../arabic-heading-font.css';
@@ -52,6 +53,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       </head>
       <body className={`${inter.variable} ${plusJakarta.variable} ${notoSansArabic.variable} ${ibmPlexSansArabic.variable}`} style={locale === 'ar' ? { '--font-arabic-body': `"INAYA Arabic Body", ${notoSansArabic.style.fontFamily}`, '--font-arabic-heading': `"INAYA Arabic Heading", ${ibmPlexSansArabic.style.fontFamily}` } as React.CSSProperties : undefined}>
           <GoogleAnalyticsConsent locale={locale} />
+          <ContactInteractionMeasurement locale={locale} />
           <Navbar locale={locale} labels={labels} logo={<BrandLogo locale={locale} alt={locale === 'ar' ? 'عناية للعمالة المنزلية — الرئيسية' : 'INAYA Domestic Workers — Home'} width={156} className="h-7 w-auto max-w-[132px] object-contain sm:max-w-[156px]" />} />
           <FloatingSocialBar locale={locale} />
           <BackToTop locale={locale} />

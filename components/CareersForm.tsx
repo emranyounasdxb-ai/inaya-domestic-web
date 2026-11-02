@@ -36,7 +36,7 @@ export default function CareersForm({ locale }: { locale: string }) {
       </div>
       <div>
         <label htmlFor={fieldId('phone')} className="label">{t('phone')} *</label>
-        <input id={fieldId('phone')} name="phone" required className="field" dir="ltr" />
+        <input id={fieldId('phone')} name="phone" type="tel" inputMode="tel" autoComplete="tel" required className="field" dir="ltr" />
       </div>
       <div>
         <label htmlFor={fieldId('email')} className="label">{t('email')}</label>

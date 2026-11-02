@@ -76,7 +76,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
           </div>
           <div>
             <div className="relative">
-              <input {...fieldA11y('phone')} name="phone" placeholder=" " className={floatingInputClass} dir="ltr" />
+              <input {...fieldA11y('phone')} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder=" " className={floatingInputClass} dir="ltr" />
               <label htmlFor={fieldId('phone')} className={floatingLabelClass}>{t('phone')} *</label>
             </div>
             {errors.phone && <p id={`${fieldId('phone')}-error`} className="mt-1 text-xs text-red-600">{errors.phone}</p>}
@@ -138,7 +138,7 @@ export default function ContactForm({ locale = 'en', variant = 'default' }: Cont
       </div>
       <div>
         <label htmlFor={fieldId('phone')} className="label">{t('phone')} *</label>
-        <input {...fieldA11y('phone')} name="phone" className="field" dir="ltr" />
+        <input {...fieldA11y('phone')} name="phone" type="tel" inputMode="tel" autoComplete="tel" className="field" dir="ltr" />
         {errors.phone && <p id={`${fieldId('phone')}-error`} className="mt-1 text-xs text-red-600">{errors.phone}</p>}
       </div>
       <div>

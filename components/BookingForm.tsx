@@ -7,6 +7,9 @@ import { useTranslations } from 'next-intl';
 import { services } from '@/lib/services';
 import { packageEnquiryValues } from '@/lib/package-enquiry';
 
+const discussRequirements = 'Discuss requirements';
+const validPlanValues = [...Object.values(packageEnquiryValues), discussRequirements];
+
 export default function BookingForm({ locale }: { locale: string }) {
   const t = useTranslations('booking');
   const lang = locale === 'ar' ? 'ar' : 'en';
@@ -20,9 +23,9 @@ export default function BookingForm({ locale }: { locale: string }) {
   });
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [selectedService, setSelectedService] = useState(services[0].slug);
+  const [selectedService, setSelectedService] = useState('');
   const serviceRef = useRef<HTMLSelectElement & { inayaServiceInitialized?: boolean }>(null);
-  const [selectedPlan, setSelectedPlan] = useState(packageEnquiryValues['half-day']);
+  const [selectedPlan, setSelectedPlan] = useState(discussRequirements);
   const planRef = useRef<HTMLSelectElement & { inayaPlanInitialized?: boolean }>(null);
 
   useEffect(() => {
@@ -30,17 +33,17 @@ export default function BookingForm({ locale }: { locale: string }) {
       const requested = new URLSearchParams(window.location.search).get('service');
       const selected = requested && services.some((service) => service.slug === requested)
         ? requested
-        : services[0].slug;
+        : '';
       setSelectedService(selected);
       const requestedPlan = new URLSearchParams(window.location.search).get('plan');
-      setSelectedPlan(requestedPlan && Object.values(packageEnquiryValues).includes(requestedPlan) ? requestedPlan : packageEnquiryValues['half-day']);
+      setSelectedPlan(requestedPlan && validPlanValues.includes(requestedPlan) ? requestedPlan : discussRequirements);
     };
 
     // The inline preselection already initialized the native field. Adopt its
     // current value so a choice made before hydration is never overwritten.
     if (serviceRef.current?.inayaServiceInitialized) {
-      setSelectedService(serviceRef.current?.value ?? services[0].slug);
-      setSelectedPlan(planRef.current?.value ?? packageEnquiryValues['half-day']);
+      setSelectedService(serviceRef.current?.value ?? '');
+      setSelectedPlan(planRef.current?.value ?? discussRequirements);
     } else {
       // React does not execute inline scripts on a client-side route change.
       syncServiceFromUrl();
@@ -68,6 +71,7 @@ export default function BookingForm({ locale }: { locale: string }) {
     const phone = String(data.get('phone') || '');
     if (!phone) next.phone = t('required');
     else if (!/^[+\d][\d\s-]{6,}$/.test(phone)) next.phone = t('invalidPhone');
+    if (!data.get('service')) next.service = t('required');
     const email = String(data.get('email') || '');
     if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) next.email = t('invalidEmail');
     setErrors(next);
@@ -90,7 +94,7 @@ export default function BookingForm({ locale }: { locale: string }) {
       </div>
       <div>
         <label htmlFor={fieldId('phone')} className="label">{t('phone')} *</label>
-        <input {...fieldA11y('phone')} name="phone" className="field" dir="ltr" />
+        <input {...fieldA11y('phone')} name="phone" type="tel" inputMode="tel" autoComplete="tel" className="field" dir="ltr" />
         {errors.phone && <p id={`${fieldId('phone')}-error`} className="mt-1 text-xs text-red-600">{errors.phone}</p>}
       </div>
       <div>
@@ -105,11 +109,13 @@ export default function BookingForm({ locale }: { locale: string }) {
       <div>
         <label htmlFor={fieldId('service')} className="label">{t('service')}</label>
         <select {...fieldA11y('service')} ref={serviceRef} name="service" className="field" value={selectedService} onChange={handleServiceChange}>
+          <option value="" disabled>{t('service')}</option>
           {services.map((s) => (
             <option key={s.slug} value={s.slug}>{s.name[lang]}</option>
           ))}
         </select>
         <script dangerouslySetInnerHTML={{ __html: "(function(){var select=document.currentScript.previousElementSibling;var requested=new URLSearchParams(location.search).get('service');if(select){select.inayaServiceInitialized=true;if(requested&&Array.prototype.some.call(select.options,function(option){return option.value===requested;}))select.value=requested;}})();" }} />
+        {errors.service && <p id={`${fieldId('service')}-error`} className="mt-1 text-xs text-red-600">{errors.service}</p>}
       </div>
       <div>
         <label htmlFor={fieldId('plan')} className="label">{t('plan')}</label>
@@ -120,7 +126,7 @@ export default function BookingForm({ locale }: { locale: string }) {
           <option value="Monthly — 30 days">{t('planMonthly')}</option>
           <option value="6-month contract">{t('planSixMonth')}</option>
           <option value="12-month contract">{t('planYearly')}</option>
-          <option value="Discuss requirements">{t('planDiscuss')}</option>
+          <option value={discussRequirements}>{t('planDiscuss')}</option>
         </select>
         <script dangerouslySetInnerHTML={{ __html: "(function(){var select=document.currentScript.previousElementSibling;var requested=new URLSearchParams(location.search).get('plan');if(select){select.inayaPlanInitialized=true;if(requested&&Array.prototype.some.call(select.options,function(option){return option.value===requested;}))select.value=requested;}})();" }} />
       </div>

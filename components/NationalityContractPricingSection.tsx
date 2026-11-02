@@ -10,10 +10,10 @@ export default function NationalityContractPricingSection({ locale, city }: Prop
   const isArabic = locale === 'ar';
 
   return (
-    <section data-content="nationality-contract-prices" className="border-y border-primary-900/10 bg-white px-6 py-14 lg:px-10">
+    <section id="nationality-contract-prices" data-content="nationality-contract-prices" className="border-y border-primary-900/10 bg-white px-6 py-14 lg:px-10">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-wide text-accent-700">{isArabic ? 'أسعار عقود معتمدة من وزارة الموارد البشرية والتوطين' : 'MOHRE-approved contract rates'}</p>
+          <p className="text-xs font-bold uppercase tracking-wide text-accent-700">{isArabic ? 'رسوم عقود الاستقدام المنشورة' : 'Published recruitment contract fees'}</p>
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} mt-3 text-3xl font-bold leading-tight text-primary-900`}>
             {city
               ? (isArabic ? `رسوم العقد لمرة واحدة حسب الجنسية في ${city}` : `One-time contract fees by nationality in ${city}`)
@@ -21,8 +21,8 @@ export default function NationalityContractPricingSection({ locale, city }: Prop
           </h2>
           <p className="mt-4 text-sm leading-7 text-primary-900/75">
             {isArabic
-              ? 'هذه رسوم عقد استقدام لمرة واحدة وفق الأسعار المعتمدة الحالية. تأشيرة العمل غير مشمولة. اطلب تفصيلاً مكتوباً لتأكيد ضريبة القيمة المضافة وأي رسوم أخرى والمبلغ النهائي قبل التأكيد.'
-              : 'These are current MOHRE-approved one-time recruitment contract fees. A visa is not included. Request a written breakdown to confirm VAT, any other charges and the final payable amount before confirming.'}
+              ? 'هذه نطاقات رسوم عقود الاستقدام لمرة واحدة المنشورة من عناية. تأشيرة العمل غير مشمولة. اطلب عرضاً مكتوباً لتأكيد الرسوم المنطبقة وضريبة القيمة المضافة وأي تكاليف أخرى والمبلغ النهائي قبل التأكيد.'
+              : 'These are INAYA’s published one-time recruitment contract fee ranges. A work visa is not included. Request a written quote to confirm the applicable fees, VAT, other costs and final payable amount before confirming.'}
           </p>
         </div>
         <div className="mt-7 overflow-x-auto rounded-2xl border border-primary-900/10 bg-[#fbfaf7]" tabIndex={0} role="region" aria-label={isArabic ? 'رسوم العقد حسب الجنسية' : 'Contract fees by nationality'}>

@@ -72,7 +72,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
     : `Hello INAYA, I am enquiring about maid services in ${location.city.en}. Please share suitable options, availability and written costs.`;
 
   return (
-    <main className="overflow-hidden bg-[#fbfaf7] text-primary-900">
+    <div className="overflow-hidden bg-[#fbfaf7] text-primary-900">
       <RouteSeo locale={locale} route={locationSlug} />
 
       <section className="relative px-6 py-16 lg:px-10 lg:py-20">
@@ -183,6 +183,6 @@ export default async function LocationServicePage({ params }: { params: Promise<
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
