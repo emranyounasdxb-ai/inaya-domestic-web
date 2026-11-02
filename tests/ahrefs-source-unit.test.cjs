@@ -3,7 +3,7 @@ const { readFileSync } = require('node:fs');
 const test = require('node:test');
 const { src, dataKey, beforeAhrefsSource } = require('./ahrefs-expectations.cjs');
 
-test('the native Ahrefs head and browser import are the only changes to their complete protected baseline sources', () => {
+test('the exact Ahrefs and lead-measurement insertions plus browser-fixture import match the protected baseline sources', () => {
   for (const file of ['app/[locale]/layout.tsx', 'tests/e2e/home.spec.ts']) beforeAhrefsSource(file, readFileSync(file, 'utf8'));
 });
 

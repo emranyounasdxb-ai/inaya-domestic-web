@@ -5,6 +5,8 @@ const src = 'https://analytics.ahrefs.com/analytics.js';
 const dataKey = '2EXv77rohxGm3Dfl3xH7Gw';
 const privacyUrls = ['en', 'ar'].map(locale => `https://inayadomestic.ae/${locale}/privacy-policy/`);
 const head = `      <head>\n        <script src="${src}" data-key="${dataKey}" async />\n      </head>\n`;
+const measurementImport = "import ContactInteractionMeasurement from '@/components/ContactInteractionMeasurement';\n";
+const measurementMount = '          <ContactInteractionMeasurement locale={locale} />\n';
 const browserImport = "import { expect, test, type Page } from '../browser-fixture';\n";
 const oldImport = "import { expect, test, type Page } from '@playwright/test';\n";
 const baselineHashes = {
@@ -19,7 +21,11 @@ function beforeAhrefsSource(file, current) {
     assert.equal(current.split(src).length, 2, 'exactly one owner-approved Ahrefs source');
     assert.equal(current.split(dataKey).length, 2, 'exactly one owner-approved Ahrefs project key');
     assert.equal(current.split(head).length, 2, 'one exact native async head insertion');
+    assert.equal(current.split(measurementImport).length, 2, 'one exact lead-measurement import');
+    assert.equal(current.split(measurementMount).length, 2, 'one exact lead-measurement mount');
     current = current.replace(head, '');
+    current = current.replace(measurementImport, '');
+    current = current.replace(measurementMount, '');
   } else if (file === 'tests/e2e/home.spec.ts') {
     assert.ok(current.startsWith(browserImport), 'only the exact shared browser-fixture import changes');
     assert.equal(current.split(browserImport).length, 2, 'one browser-fixture import');
