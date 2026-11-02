@@ -10,6 +10,7 @@ import { notFound } from 'next/navigation';
 import { getLocationServicePage, locationServicePages, type Lang } from '@/lib/location-service-pages';
 import { siteConfig } from '@/lib/site-config';
 import NationalityContractPricingSection from '@/components/NationalityContractPricingSection';
+import AjmanQuickPackages from '@/components/AjmanQuickPackages';
 
 export function generateStaticParams() {
   return locationServicePages.map((location) => ({ locationSlug: location.slug }));
@@ -91,6 +92,9 @@ export default async function LocationServicePage({ params }: { params: Promise<
               <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(locationWhatsAppMessage)}`} target="_blank" rel="noreferrer" className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">
                 {lang === 'ar' ? 'استفسر عبر واتساب' : 'Ask on WhatsApp'}
               </a>
+              {locationSlug === 'maid-services-ajman' ? <a href={`tel:${siteConfig.phone.replace(/[^+\d]/g, '')}`} className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">
+                {lang === 'ar' ? <>اتصل بعناية <bdi dir="ltr">{siteConfig.phone}</bdi></> : <>Call INAYA <bdi dir="ltr">{siteConfig.phone}</bdi></>}
+              </a> : null}
             </div>
           </div>
           <div className="rounded-[30px] border border-white/80 bg-white/78 p-6 shadow-[0_24px_70px_rgba(7,22,74,0.08)] ring-1 ring-accent-500/10">
@@ -106,6 +110,7 @@ export default async function LocationServicePage({ params }: { params: Promise<
         </div>
       </section>
       <PageBreadcrumbs locale={locale} route={locationSlug} />
+      {locationSlug === 'maid-services-ajman' ? <AjmanQuickPackages locale={locale} /> : null}
       {locationSlug === 'maid-services-ajman' ? <AjmanOfficeVisit locale={locale} /> : null}
       {['maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah'].includes(locationSlug) ? <LocalVisitPlanning locale={locale} city={location.city[lang]} /> : null}
 

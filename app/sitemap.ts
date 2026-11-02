@@ -74,10 +74,6 @@ const contentUpdatedAt: Record<string, string> = {
   "faq": '2026-10-19',
   "how-it-works": '2026-10-19',
   "inaya-advantages": '2026-10-19',
-  "maid-services-ajman": '2026-10-28',
-  "maid-services-dubai": '2026-10-22',
-  "maid-services-sharjah": '2026-10-22',
-  "pricing": '2026-10-23',
   "refund-policy": '2026-10-19',
   "service-guidelines": '2026-10-19',
   "services": '2026-10-24',
@@ -116,7 +112,16 @@ const contentUpdatedAt: Record<string, string> = {
   ].map(route => [route, '2026-10-30'])),
   ...Object.fromEntries(allServices.filter(service => service.slug !== 'countries-we-source-from').map(service => [`services/${service.slug}`, '2026-10-30'])),
   'blog/housemaid-visa-ajman-application-readiness-ledger': '2026-10-30',
-  'blog/housemaid-recruitment-ajman-candidate-evidence-cards': '2026-10-30'
+  'blog/housemaid-recruitment-ajman-candidate-evidence-cards': '2026-10-30',
+  // Only routes with substantive edits in the 2 November release are marked current.
+  'maid-services-ajman': '2026-11-02',
+  'maid-services-dubai': '2026-11-02',
+  'maid-services-sharjah': '2026-11-02',
+  'maid-services-abu-dhabi': '2026-11-02',
+  'maid-services-ras-al-khaimah': '2026-11-02',
+  'maid-services-fujairah': '2026-11-02',
+  'maid-services-umm-al-quwain': '2026-11-02',
+  'pricing': '2026-11-02'
 };
 
 export const dynamic = 'force-static';
