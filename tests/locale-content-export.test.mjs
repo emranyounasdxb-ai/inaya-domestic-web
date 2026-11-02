@@ -53,6 +53,14 @@ test('the original review exception preserves exactly six real quoted comments a
 test('locale guards reject ordinary mixed prose, accessible labels and expanded quotation exceptions without skipping main or hidden UI', () => {
   const wrap = body => `<html lang="ar"><body>${body}</body></html>`;
   assert.equal(localeViolations(wrap('<main><p>عناية على Google</p></main>'), 'ar', '/ar/').length, 0);
+  assert.equal(localeViolations(wrap('<main><bdi>AED 15,000–22,000</bdi></main>'), 'ar', '/ar/pricing/').length, 0, 'only an exact current range from shared nationality pricing may remain left-to-right');
+  assert.equal(localeViolations(wrap('<main><bdi>AED 10,000–14,000</bdi></main>'), 'ar', '/ar/maid-services-ajman/').length, 0, 'the same shared currency values appear on the Arabic city pages');
+  for (const [body, route] of [
+    ['<main><bdi>AED 15,000–23,000</bdi></main>', '/ar/pricing/'],
+    ['<main><span>AED 15,000–22,000</span></main>', '/ar/pricing/'],
+    ['<main><bdi>AED 15,000–22,000</bdi></main>', '/ar/contact/'],
+    ['<main><bdi>AED 15,000–22,000 book now</bdi></main>', '/ar/pricing/'],
+  ]) assert.ok(localeViolations(wrap(body), 'ar', route).length > 0, `${route}: ${body}`);
   for (const body of ['<main><p>Google offers the best service</p></main>', '<main><p>INAYA book now</p></main>', '<nav><span class="sr-only">Open menu</span></nav>', '<footer title="Contact us">عناية</footer>', '<img alt="INAYA call now"/>', '<input placeholder="Your name"/>', '<input type="submit" value="Send"/>', '<p>UNREVIEWED ACRONYM</p>']) {
     assert.ok(localeViolations(wrap(body), 'ar', '/ar/').length > 0, body);
   }

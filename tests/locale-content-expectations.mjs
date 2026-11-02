@@ -1,6 +1,18 @@
 import { readFile } from 'node:fs/promises';
 
 export const originalReviews = JSON.parse(await readFile(new URL('./fixtures/locale-original-reviews-20261024.json', import.meta.url), 'utf8')).reviews;
+const nationalityPriceSource = await readFile(new URL('../lib/nationality-contract-prices.ts', import.meta.url), 'utf8');
+const approvedNationalityPriceRanges = new Set([...nationalityPriceSource.matchAll(/range:\s*'([^']+)'/g)].map(([, range]) => range));
+const arabicNationalityPricingRoutes = new Set([
+  '/ar/pricing/',
+  '/ar/maid-services-ajman/',
+  '/ar/maid-services-dubai/',
+  '/ar/maid-services-sharjah/',
+  '/ar/maid-services-abu-dhabi/',
+  '/ar/maid-services-ras-al-khaimah/',
+  '/ar/maid-services-fujairah/',
+  '/ar/maid-services-umm-al-quwain/',
+]);
 const quoted = new Set(originalReviews.map(review => review.text));
 const reviewerNames = new Set(originalReviews.map(review => review.name));
 const escape = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -58,6 +70,11 @@ export function localeViolations(html, locale, route) {
       if (/\p{Script=Arabic}/u.test(segment.value)) violations.push(segment);
       continue;
     }
+    // Currency ranges on Arabic pricing and city pages use an LTR bdi so AED
+    // and numeric amounts remain readable. Exempt only exact values from the
+    // shared pricing data; nearby English prose and unapproved amounts remain
+    // subject to the normal Arabic-language check.
+    if (arabicNationalityPricingRoutes.has(route) && segment.kind === 'text' && segment.tag === 'bdi' && approvedNationalityPriceRanges.has(segment.value)) continue;
     let value = segment.value;
     const reviewedQuoteRoute = route === '/ar/' || (route === '/ar/reviews/' && segment.inReviewsHub);
     if (reviewedQuoteRoute && segment.kind === 'text' && quoted.has(value) && segment.tag === 'blockquote' && segment.lang === 'en' && segment.closedOriginalReview) continue;
