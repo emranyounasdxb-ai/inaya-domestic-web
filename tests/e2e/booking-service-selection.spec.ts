@@ -65,4 +65,10 @@ for (const locale of ['en', 'ar'] as const) {
     await expect(service).toHaveValue('nanny');
     await expect(plan).toHaveValue('12-month contract');
   });
+
+  test(`${locale} booking identifies the required service field accessibly`, async ({ page }) => {
+    await page.goto(`/${locale}/booking/`);
+    const service = page.getByLabel(locale === 'ar' ? 'اختر الخدمة *' : 'Select Service *', { exact: true });
+    await expect(service).toHaveAttribute('aria-required', 'true');
+  });
 }

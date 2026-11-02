@@ -37,13 +37,17 @@ function historicalSource(file, source) {
 }
 
 const renderedPins = {
-  en: { before: '670fe426da06778963b8b5be6c89380aef1627b671a87f78fe406bd083a198f4', after: 'bc14a9ed9122ff75603b98f5ad750e266729329da3846effcc2d96aefd12250b' },
-  ar: { before: '26fdb62329a70e6910ce9cd7c698fe9d0f97c8774f3d667891d4b7fee00f680b', after: '7839ad5b2fb003c80dc9b8f03b6f8ca9706429766e9691e406a69250183efead' },
+  en: { before: '670fe426da06778963b8b5be6c89380aef1627b671a87f78fe406bd083a198f4', after: 'bc14a9ed9122ff75603b98f5ad750e266729329da3846effcc2d96aefd12250b', current: 'f2b0f3cf27cf8f3ce812769a336f84fdd85b453040c2a1f9f8cc84772041e7ba' },
+  ar: { before: '26fdb62329a70e6910ce9cd7c698fe9d0f97c8774f3d667891d4b7fee00f680b', after: '7839ad5b2fb003c80dc9b8f03b6f8ca9706429766e9691e406a69250183efead', current: '06fbb1e3412c6dd7ca531cac0d4cb66f297a823404e03f0f15e14095aa6a9f74' },
 };
 const expand = value => value.replaceAll('${siteConfig.phone}', '+971 6 740 0128').replaceAll('${siteConfig.whatsappDisplay}', '+971 50 203 6767');
+function isCurrentPage(page) {
+  const lang = ['en', 'ar'].find(lang => page.url === `https://inayadomestic.ae/${lang}/maid-services-ajman/`);
+  return Boolean(lang && sha(page.mainText) === renderedPins[lang].current);
+}
 function historicalPage(page) {
   const lang = ['en', 'ar'].find(lang => page.url === `https://inayadomestic.ae/${lang}/maid-services-ajman/`);
-  if (!lang || sha(page.mainText) === renderedPins[lang].before) return page;
+  if (!lang || sha(page.mainText) === renderedPins[lang].before || isCurrentPage(page)) return page;
   const pin = renderedPins[lang];
   assert.equal(sha(page.mainText), pin.after, `${page.url}: exact reviewed Ajman contact output`);
   let mainText = page.mainText;
@@ -57,4 +61,4 @@ function historicalPage(page) {
   return { ...page, mainText, ...(paragraphs ? { paragraphs } : {}) };
 }
 
-module.exports = { sourcePins, historicalSource, historicalPage };
+module.exports = { sourcePins, renderedPins, historicalSource, historicalPage, isCurrentPage };

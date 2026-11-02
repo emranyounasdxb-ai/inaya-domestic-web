@@ -18,6 +18,7 @@ export default function BookingForm({ locale }: { locale: string }) {
   const fieldId = (name: string) => `${formId}-${name}`;
   const fieldA11y = (name: string) => ({
     id: fieldId(name),
+    'aria-required': name === 'service' ? true : undefined,
     'aria-invalid': errors[name] ? true : undefined,
     'aria-describedby': errors[name] ? `${fieldId(name)}-error` : undefined
   });

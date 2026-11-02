@@ -12,7 +12,7 @@ const plain = s => tokens(s.replace(/\[([^\]]+)\]\(https:\/\/[^)]+\)/g, '$1')).j
 
 test('page-clarity source pins allow only the complete approved changes and preserve every other checkpoint', async () => {
   for (const [file, pin] of Object.entries(clarity.fixture.sources)) {
-    const source = require('./service-refinement-expectations.cjs').historicalSource(file, (await readFile(file, 'utf8')).replace(/\r\n/g, '\n'));
+    const source = clarity.checkpointSource(file, (await readFile(file, 'utf8')).replace(/\r\n/g, '\n'));
     assert.equal(clarity.sha(source), pin.afterSha256, `${file}: complete reviewed source`);
     if (pin.before !== null) {
       assert.equal(clarity.historicalSource(file, source), pin.before);
@@ -31,16 +31,28 @@ test('page-clarity source pins allow only the complete approved changes and pres
 
 test('Ajman contact amendment preserves immutable checkpoints and rejects unrelated edits', async () => {
   const contacts = require('./ajman-faq-contact-expectations.cjs');
+  const cityPageRevisions = require('./location-page-revisions-expectations.cjs');
   for (const [file, pin] of Object.entries(contacts.sourcePins)) {
-    const source = await readFile(file, 'utf8');
+    const rawSource = await readFile(file, 'utf8');
+    const source = cityPageRevisions.historicalSource(file, rawSource);
     assert.equal(clarity.sha(contacts.historicalSource(file, source)), pin.before);
     assert.throws(() => contacts.historicalSource(file, source + '\n// Unreviewed edit\n'), /exact reviewed/);
+    if (file === cityPageRevisions.pageFile) {
+      assert.equal(clarity.sha(source), cityPageRevisions.contactCheckpointSha256);
+      assert.throws(() => cityPageRevisions.historicalSource(file, rawSource + '\n// Unreviewed location-page edit\n'), /exact reviewed/);
+    }
   }
   for (const lang of ['en','ar']) {
     const html = clean(await readFile(`out/${lang}/maid-services-ajman/index.html`, 'utf8'));
     const main = html.slice(html.indexOf('<main'), html.lastIndexOf('</main>') + 7).replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/g, '');
     const page = { url: `https://inayadomestic.ae/${lang}/maid-services-ajman/`, mainText: text(main) };
-    assert.equal(clarity.sha(contacts.historicalPage(page).mainText), clarity.rendered.pages[page.url].mainTextSha256);
+    assert.equal(contacts.isCurrentPage(page), true, `${page.url}: exact current copy including the reviewed city options and published fee ranges`);
+    assert.equal(clarity.sha(contacts.historicalPage(page).mainText), contacts.renderedPins[lang].current);
+    for (const phrase of lang === 'ar'
+      ? ['زيارات قصيرة', 'خدمة شهرية مُدارة', 'استقدام بعقد لمرة واحدة', 'رسوم العقد لمرة واحدة حسب الجنسية']
+      : ['Short visits', 'Managed monthly service', 'One-time recruitment', 'One-time contract fees by nationality']) {
+      assert.ok(page.mainText.includes(phrase), `${page.url}: ${phrase}`);
+    }
     assert.throws(() => contacts.historicalPage({ ...page, mainText: page.mainText + ' Unreviewed copy' }), /exact reviewed/);
   }
 });
@@ -94,15 +106,37 @@ test('all six package enquiries preserve selected plan, current amounts and exis
   }
 });
 
+test('pricing pages show the reviewed nationality contract fee ranges without an unsupported approval claim', async () => {
+  const audit = await auditExport();
+  const expectedRanges = ['AED 15,000–22,000', 'AED 10,000–14,000', 'AED 8,500–14,000', 'AED 12,000–17,000', 'AED 11,000–15,000'];
+  const nationalities = {
+    en: ['Filipino', 'Ethiopian', 'Ugandan', 'Indian', 'Kenyan', 'Sri Lankan', 'Nepali', 'Bangladeshi', 'Ghanaian', 'Sierra Leonean', 'Indonesian', 'Myanmar'],
+    ar: ['الفلبين', 'إثيوبيا', 'أوغندا', 'الهند', 'كينيا', 'سريلانكا', 'نيبال', 'بنغلاديش', 'غانا', 'سيراليون', 'إندونيسيا', 'ميانمار'],
+  };
+  for (const lang of ['en', 'ar']) {
+    const url = `https://inayadomestic.ae/${lang}/pricing/`;
+    const page = audit.pages.find((item) => item.url === url);
+    assert.ok(page, `${url}: exported pricing page exists`);
+    assert.equal(clarity.isCurrentPricingPage(page), true, `${url}: exact reviewed published-fee content`);
+    assert.ok(page.mainText.includes(lang === 'ar' ? 'رسوم العقد لمرة واحدة حسب الجنسية' : 'One-time contract fees by nationality'));
+    assert.ok(page.mainText.includes(lang === 'ar' ? 'تأشيرة العمل غير مشمولة' : 'A work visa is not included'));
+    assert.doesNotMatch(page.mainText, /MOHRE-approved|معتمد من وزارة الموارد البشرية/);
+    for (const nationality of nationalities[lang]) assert.ok(page.mainText.includes(nationality), `${url}: ${nationality} price row`);
+    for (const range of expectedRanges) assert.ok(page.mainText.includes(range), `${url}: ${range}`);
+  }
+});
+
 test('archive categories, career separation, complete original article inventory and exact update dates are visible', async () => {
   const audit = await auditExport();
   assert.equal(Object.keys(clarity.rendered.pages).length, 46);
   for (const page of audit.pages) clarity.assertReviewedPage(page);
   const sitemap = await readFile('out/sitemap.xml', 'utf8');
+  const novemberUpdatedRoutes = new Set(['maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah', 'maid-services-abu-dhabi', 'maid-services-ras-al-khaimah', 'maid-services-fujairah', 'maid-services-umm-al-quwain', 'pricing']);
   for (const route of clarity.fixture.updatedRoutes) for (const lang of ['en','ar']) {
     const url = `https://inayadomestic.ae/${lang}/${route ? route + '/' : ''}`;
     const block = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(m=>m[1].includes(`<loc>${url}</loc>`));
-    assert.ok(block?.[1].includes('<lastmod>2026-10-30</lastmod>'), `${url}: real content update date`);
+    const expectedLastmod = novemberUpdatedRoutes.has(route) ? '2026-11-02' : '2026-10-30';
+    assert.ok(block?.[1].includes(`<lastmod>${expectedLastmod}</lastmod>`), `${url}: real content update date`);
   }
   for (const lang of ['en','ar']) {
     const archive = clean(await readFile(`out/${lang}/blog/index.html`, 'utf8'));

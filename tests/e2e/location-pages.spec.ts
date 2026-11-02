@@ -14,6 +14,10 @@ async function expectLocationSchema(page: Page, locale: string) {
   expect(byType('FAQPage')[0].url).toBe(canonical);
   expect(byType('FAQPage')[0].inLanguage).toBe(locale);
   expect(byType('FAQPage')[0].mainEntity.length).toBeGreaterThan(0);
+  const nationalityFees = page.locator('[data-content="nationality-contract-prices"]');
+  await expect(nationalityFees).toHaveCount(1);
+  await expect(nationalityFees.locator('tbody tr')).toHaveCount(12);
+  await expect(nationalityFees).not.toContainText(/MOHRE[- ]approved/i);
 }
 
 const englishLocationPages = [
@@ -71,3 +75,31 @@ test('service areas page links to emirate SEO pages', async ({ page }) => {
   await expect(page.getByRole('link', { name: /Maid Services in Ajman/i })).toBeVisible();
   await expect(page.getByRole('link', { name: /Maid Services in Sharjah/i })).toBeVisible();
 });
+
+for (const locale of ['en', 'ar'] as const) {
+  for (const width of [320, 390, 768, 1440]) {
+    test(`${locale} Ajman separates visits, monthly service and one-time recruitment at ${width}px`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(`/${locale}/maid-services-ajman/`);
+
+      const main = page.locator('main');
+      await expect(main).toHaveCount(1);
+      const options = main.locator('[data-content="ajman-quick-packages"]');
+      await expect(options.locator('article')).toHaveCount(3);
+      for (const heading of locale === 'ar'
+        ? ['زيارات قصيرة', 'خدمة شهرية مُدارة', 'استقدام بعقد لمرة واحدة']
+        : ['Short visits', 'Managed monthly service', 'One-time recruitment']) {
+        await expect(options.getByRole('heading', { name: heading, exact: true })).toBeVisible();
+      }
+
+      const fees = main.locator('[data-content="nationality-contract-prices"]');
+      const rows = fees.locator('tbody tr');
+      await expect(rows).toHaveCount(12);
+      for (const range of ['AED 15,000–22,000', 'AED 10,000–14,000', 'AED 8,500–14,000', 'AED 12,000–17,000', 'AED 11,000–15,000']) {
+        await expect(fees).toContainText(range);
+      }
+      await expect(fees).not.toContainText(/MOHRE[- ]approved/i);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width + 1);
+    });
+  }
+}

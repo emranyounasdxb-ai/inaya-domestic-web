@@ -1,6 +1,7 @@
 const assert = require('node:assert/strict');
 const contactRail = require('./contact-rail-expectations.cjs');
 const ajmanContacts = require('./ajman-faq-contact-expectations.cjs');
+const locationPages = require('./location-page-revisions-expectations.cjs');
 const {createHash} = require('node:crypto');
 const fixture = require('./fixtures/service-refinement-20261030.json');
 const sha = value => createHash('sha256').update(value).digest('hex');
@@ -9,6 +10,7 @@ function removeLaterSitemapUpdates(file, source) {
   source=source.replace(/\r\n/g,'\n');
   if (file === 'app/sitemap.ts') {
     const novemberLastmods = `  // Only routes with substantive edits in the 2 November release are marked current.\n  'maid-services-ajman': '2026-11-02',\n  'maid-services-dubai': '2026-11-02',\n  'maid-services-sharjah': '2026-11-02',\n  'maid-services-abu-dhabi': '2026-11-02',\n  'maid-services-ras-al-khaimah': '2026-11-02',\n  'maid-services-fujairah': '2026-11-02',\n  'maid-services-umm-al-quwain': '2026-11-02',\n  'pricing': '2026-11-02'\n`;
+    if (!source.includes(novemberLastmods)) return source;
     assert.equal(source.split(novemberLastmods).length, 2, `${file}: exact 2 November sitemap timestamps`);
     source = source.replace(novemberLastmods, '');
     const historicalLocationLastmods = `  "inaya-advantages": '2026-10-19',\n  "refund-policy": '2026-10-19',`;
@@ -28,6 +30,7 @@ function checkpointSource(file, source) {
 function historicalSource(file, source) {
   source=require('./reduced-motion-expectations.cjs').historicalSource(file,source);
   source=require('./editorial-scope-expectations.cjs').historicalSource(file,source);
+  source=locationPages.historicalSource(file,source);
   source=ajmanContacts.historicalSource(file,source);
   source=contactRail.historicalSource(file,source);
   source=removeLaterSitemapUpdates(file, source);
