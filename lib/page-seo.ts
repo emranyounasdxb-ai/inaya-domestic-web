@@ -112,8 +112,8 @@ const pages: Record<string, { name: Localized; description: Localized }> = {
   pricing: {
     name: { en: 'Domestic Worker Packages & Pricing', ar: 'باقات وأسعار العمالة المنزلية' },
     description: {
-      en: 'Compare INAYA maid packages: 4 hours AED 120, 8 hours AED 200 and monthly options from AED 3,000 with a 12-month commitment. Review inclusions and terms.',
-      ar: 'قارن باقات عناية: 4 ساعات مقابل 120 درهماً و8 ساعات مقابل 200 درهم، وباقات شهرية من 3,000 درهم مع التزام 12 شهراً. راجع المشمول والشروط.'
+      en: 'Compare MOHRE-approved one-time contract fees by nationality, plus INAYA visit and monthly maid packages. Visa is not included; confirm final charges in writing.',
+      ar: 'قارن رسوم العقد المعتمدة لمرة واحدة حسب الجنسية وباقات عناية للزيارات والخدمة الشهرية. التأشيرة غير مشمولة؛ أكد التكاليف النهائية كتابةً.'
     }
   },
   blog: {

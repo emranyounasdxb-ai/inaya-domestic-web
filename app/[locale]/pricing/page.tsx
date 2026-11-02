@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { managedPackages, packageArrangements, packageQuestions, packageSections } from '@/lib/package-content';
 import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import { packageEnquiryHref } from '@/lib/package-enquiry';
+import NationalityContractPricingSection from '@/components/NationalityContractPricingSection';
 
 function CheckIcon({ className = '' }: { className?: string }) {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>;
@@ -94,6 +95,8 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
           </div>
         </div>
       </section>
+
+      <NationalityContractPricingSection locale={locale} />
 
       <section data-content="monthly-package-benefits" className="border-y border-primary-900/10 bg-white py-16 sm:py-20">
         <div className="container-x">

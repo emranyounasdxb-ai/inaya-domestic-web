@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getLocationServicePage, locationServicePages, type Lang } from '@/lib/location-service-pages';
 import { siteConfig } from '@/lib/site-config';
+import NationalityContractPricingSection from '@/components/NationalityContractPricingSection';
 
 export function generateStaticParams() {
   return locationServicePages.map((location) => ({ locationSlug: location.slug }));
@@ -138,6 +139,8 @@ export default async function LocationServicePage({ params }: { params: Promise<
           </article>
         </div>
       </section>
+
+      <NationalityContractPricingSection locale={locale} city={location.city[lang]} />
 
       <section className="bg-[#f7f4ee] px-6 py-14 lg:px-10">
         <div className="mx-auto max-w-6xl text-center">
