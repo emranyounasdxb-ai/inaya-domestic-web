@@ -14,12 +14,21 @@ function assertFormPreserved(current, previous, file) {
   assert.equal(handler(current), handler(previous), `${file}: exact local validation logic`);
   const fields = source => [...source.matchAll(/<(input|select|textarea)\b[^>]*name="([^"]+)"[^>]*>/g)]
     .map(m => {
-      const field = m[0].replace(/ \{\.\.\.fieldA11y\('[^']+'\)\}/g, '').replace(/ id=\{fieldId\('[^']+'\)\}/g, '');
+      let field = m[0].replace(/ \{\.\.\.fieldA11y\('[^']+'\)\}/g, '').replace(/ id=\{fieldId\('[^']+'\)\}/g, '');
+      if (file === 'components/CareersForm.tsx' && m[2] === 'phone') {
+        // Approved semantic telephone input metadata; all other field markup
+        // remains byte-for-byte protected by the historical comparison.
+        field = field.replace(' type="tel" inputMode="tel" autoComplete="tel"', '');
+      }
       return file === 'components/BookingForm.tsx' && m[2] === 'service'
         ? field.replace(/ ref=\{serviceRef\}/, '').replace(/ value=\{selectedService\} onChange=\{handleServiceChange\}/, '')
         : field;
     });
   assert.deepEqual(fields(current), fields(previous), `${file}: original field attributes and order`);
+  if (file === 'components/CareersForm.tsx') {
+    assert.match(current, /<input id=\{fieldId\('phone'\)\} name="phone" type="tel" inputMode="tel" autoComplete="tel" required className="field" dir="ltr" \/>/,
+      `${file}: reviewed telephone keyboard and autofill semantics`);
+  }
   if (file === 'components/BookingForm.tsx') {
     assert.match(current, /<select \{\.\.\.fieldA11y\('service'\)\} ref=\{serviceRef\} name="service" className="field" value=\{selectedService\} onChange=\{handleServiceChange\}>/);
     assert.match(current, /setSelectedService\(serviceRef\.current\?\.value \?\? services\[0\]\.slug\)/, 'hydration adopts the actual user selection');

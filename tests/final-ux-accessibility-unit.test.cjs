@@ -12,6 +12,40 @@ const replaceOnce = (source, before, after) => {
   assert.equal(source.split(before).length, 2, `Expected exactly one approved navigation anchor: ${before}`);
   return source.replace(before, after);
 };
+const approveBookingLocaleSwitch = source => {
+  source = replaceOnce(source,
+    "import { usePathname } from 'next/navigation';\n",
+    "import { usePathname, useRouter } from 'next/navigation';\nimport { services } from '@/lib/services';\nimport { packageEnquiryValues } from '@/lib/package-enquiry';\n");
+  source = replaceOnce(source,
+    '  const pathname = usePathname();\n',
+    '  const pathname = usePathname();\n  const router = useRouter();\n');
+  source = replaceOnce(source,
+    '  const switchedPath = pathname.replace(`/${locale}`, `/${otherLocale}`);\n',
+    [
+      '  const switchedPath = pathname.replace(`/${locale}`, `/${otherLocale}`);',
+      '  const handleLocaleSwitch = (event: React.MouseEvent<HTMLAnchorElement>) => {',
+      '    const isBookingPage = pathname === `/${locale}/booking` || pathname === `/${locale}/booking/`;',
+      '    if (!isBookingPage) return;',
+      '',
+      '    const current = new URLSearchParams(window.location.search);',
+      '    const preserved = new URLSearchParams();',
+      `    const serviceField = document.querySelector<HTMLSelectElement>('form select[name="service"]');`,
+      `    const planField = document.querySelector<HTMLSelectElement>('form select[name="plan"]');`,
+      "    const service = serviceField ? serviceField.value : current.get('service');",
+      "    const plan = planField ? planField.value : current.get('plan');",
+      "    if (service && services.some((item) => item.slug === service)) preserved.set('service', service);",
+      "    const hasSelectedPlan = current.has('plan') || (planField !== null && plan !== 'Discuss requirements');",
+      "    if (hasSelectedPlan && plan && [...Object.values(packageEnquiryValues), 'Discuss requirements'].includes(plan)) preserved.set('plan', plan);",
+      '    if (!preserved.size) return;',
+      '',
+      '    event.preventDefault();',
+      "    const target = `${switchedPath.replace(/\\/+$/, '')}/?${preserved.toString()}`;",
+      '    router.push(target);',
+      '  };'
+    ].join('\n') + '\n');
+  source = replaceOnce(source, '            href={switchedPath}\n', '            href={switchedPath}\n            onClick={handleLocaleSwitch}\n');
+  return source;
+};
 
 test('the motion preference amendment preserves every other global style and rejects unrelated edits',()=>{
   const motion=require('./reduced-motion-expectations.cjs');
@@ -94,7 +128,8 @@ test('messages and navigation permit only reviewed localized copy changes', () =
     '            })}'
   ].join('\n');
   expected = replaceOnce(expected, previousMobile, approvedMobile);
-  assert.equal(current(file), approvedSeoFixes(file, expected));
+  expected = approveBookingLocaleSwitch(approvedSeoFixes(file, expected));
+  assert.equal(current(file), expected);
 });
 
 test('page and CTA sources permit only the approved localized copy replacements', () => {
