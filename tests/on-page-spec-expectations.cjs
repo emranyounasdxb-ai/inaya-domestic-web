@@ -1,8 +1,9 @@
 const assert = require('node:assert/strict');
 
-// Fixed reviewed release expectations. Before values came from the independent
-// 28 October production crawl of main5b62244; after values were reviewed against
-// the PDF and verified business facts. Tests do not import production selectors.
+// Fixed reviewed release expectations. Existing before values came from the
+// independent 28 October production crawl; Ajman page metadata was captured on
+// 2 November. After values use GSC query evidence and verified business facts.
+// Tests do not import production selectors.
 const metadata = {
   "en/": {
     "before": {
@@ -22,6 +23,26 @@ const metadata = {
     "after": {
       "title": "خادمات ومربيات في عجمان والإمارات | عناية",
       "description": "خدمات عناية للخادمات في عجمان والإمارات. 4 ساعات بـ120 درهماً، أو 3,000 درهم شهرياً بالتزام 12 شهراً. اتصل 06 740 0128 أو واتساب 050 203 6767."
+    }
+  },
+  "en/maid-services-ajman": {
+    "before": {
+      "title": "Maid Services in Ajman | Domestic Workers Ajman | INAYA",
+      "description": "Maid services in Ajman by INAYA Domestic Workers. Get help with live-in maids, live-out maids, nannies, cooks, caregivers, recruitment and maid visa support."
+    },
+    "after": {
+      "title": "Maid Services in Ajman | INAYA Domestic Workers",
+      "description": "Need a maid service in Ajman? Visit INAYA at Grand Mall to discuss recruitment, cleaning visits, part-time and monthly options. Confirm availability and written costs."
+    }
+  },
+  "ar/maid-services-ajman": {
+    "before": {
+      "title": "خدمات خادمات في عجمان | عمالة منزلية عجمان | عناية",
+      "description": "خدمات خادمات في عجمان من عناية للعمالة المنزلية. دعم للخادمات المقيمات وغير المقيمات والمربيات والطهاة والرعاية والتوظيف وتأشيرة الخادمة."
+    },
+    "after": {
+      "title": "خدمات خادمات في عجمان | عناية للعمالة المنزلية",
+      "description": "هل تبحث عن خدمة خادمات في عجمان؟ زر مكتب عناية في جراند مول أو استفسر عن الاستقدام وزيارات التنظيف والباقات الجزئية والشهرية. أكد التوفر والتكلفة المكتوبة مع الفريق."
     }
   },
   "en/about": {
@@ -288,7 +309,7 @@ const sharedOnPageUiPlacements = Object.entries(onPageUiCopy).flatMap(([kind, co
     .flatMap(route => ['en', 'ar'].map(locale => ({ kind, route, locale, text: copy[locale] }))));
 const sharedOnPageUiCounts = { paragraphs: 18, tokens: 236 };
 const originalCanonicalCount = 274;
-const titleUpdatedRoutes = ['', 'about', 'contact', 'services/housemaid', 'services/nanny', 'services/part-time-maid', 'services/maid-visa', 'services/executive-nannies'];
+const titleUpdatedRoutes = ['', 'about', 'contact', 'maid-services-ajman', 'services/housemaid', 'services/nanny', 'services/part-time-maid', 'services/maid-visa', 'services/executive-nannies'];
 const descriptionOnlyRoutes = ['services', 'service-areas'];
 const canonicalCount = 284;
 

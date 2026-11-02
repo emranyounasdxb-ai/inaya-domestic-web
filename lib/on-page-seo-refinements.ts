@@ -10,6 +10,13 @@ export const onPageSeoRefinements: Record<string, { title: Localized; descriptio
       ar: 'خدمات عناية للخادمات في عجمان والإمارات. 4 ساعات بـ120 درهماً، أو 3,000 درهم شهرياً بالتزام 12 شهراً. اتصل 06 740 0128 أو واتساب 050 203 6767.'
     }
   },
+  'maid-services-ajman': {
+    title: { en: 'Maid Services in Ajman | INAYA Domestic Workers', ar: 'خدمات خادمات في عجمان | عناية للعمالة المنزلية' },
+    description: {
+      en: 'Need a maid service in Ajman? Visit INAYA at Grand Mall to discuss recruitment, cleaning visits, part-time and monthly options. Confirm availability and written costs.',
+      ar: 'هل تبحث عن خدمة خادمات في عجمان؟ زر مكتب عناية في جراند مول أو استفسر عن الاستقدام وزيارات التنظيف والباقات الجزئية والشهرية. أكد التوفر والتكلفة المكتوبة مع الفريق.'
+    }
+  },
   about: {
     title: { en: 'About INAYA | Domestic Worker Centre, Grand Mall Ajman', ar: 'عن عناية | مركز العمالة المنزلية في جراند مول عجمان' },
     description: {
