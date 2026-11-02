@@ -167,6 +167,15 @@ test('technical SEO, content datasets, trust, prices, measurement and protected 
       assert.equal(expected.split(originalHeading).length, 2, 'one service H1 expression');
       expected = expected.replace(originalHeading, '>{serviceHeadingRefinements[slug]?.[lang] ?? copy.title}</h1>');
     }
+    if (file === 'app/[locale]/[locationSlug]/page.tsx') {
+      const countriesLink = '<Link href={`/${locale}/services/countries-we-source-from`} className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">{t.countries}</Link>';
+      const reviewedWhatsAppCta = '<a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(locationWhatsAppMessage)}`} target="_blank" rel="noreferrer" className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">\n                {lang === \'ar\' ? \'استفسر عبر واتساب\' : \'Ask on WhatsApp\'}\n              </a>';
+      assert.equal(expected.split(countriesLink).length, 2, 'one reviewed city WhatsApp CTA replacement');
+      expected = expected.replace(countriesLink, reviewedWhatsAppCta);
+      const ajmanPhoneCta = '              {locationSlug === \'maid-services-ajman\' ? <a href={`tel:${siteConfig.phone.replace(/[^+\\d]/g, \'\')}`} className="rounded-full border border-accent-500/28 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-primary-900">\n                {lang === \'ar\' ? <>اتصل بعناية <bdi dir="ltr">{siteConfig.phone}</bdi></> : <>Call INAYA <bdi dir="ltr">{siteConfig.phone}</bdi></>}\n              </a> : null}';
+      assert.equal(expected.split(reviewedWhatsAppCta).length, 2, 'one reviewed city WhatsApp CTA');
+      expected = expected.replace(reviewedWhatsAppCta, `${reviewedWhatsAppCta}\n${ajmanPhoneCta}`);
+    }
     // The owner-approved service-image release adds only display cache versions;
     // all surrounding protected hero markup and styling must remain exact.
     if (file === 'app/[locale]/services/page.tsx') {

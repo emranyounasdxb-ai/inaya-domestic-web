@@ -113,7 +113,8 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
         ? ['AED 120', 'AED 200', 'AED 1,120', 'AED 3,500', 'AED 3,250', 'AED 3,000']
         : ['120 درهم', '200 درهم', '1,120 درهم', '3,500 درهم', '3,250 درهم', '3,000 درهم']
       : [];
-    assert.deepEqual(page.prices, clarity.assertReviewedPage(page)?.priceMentions ?? [...expectedPrices, ...reviewedFaqPrices].sort(), `${page.url}: displayed prices plus only the exact six Home FAQ package amounts`);
+    const nationalityPagePrices = managed.currentNationalityPriceMentions(page.locale, page.route);
+    assert.deepEqual(page.prices, nationalityPagePrices ?? clarity.assertReviewedPage(page)?.priceMentions ?? [...expectedPrices, ...reviewedFaqPrices].sort(), `${page.url}: exact published packages and, on reviewed pricing/city routes, all source-backed nationality fee minima`);
     const file = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
     const body = file.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
     assert.doesNotMatch(body, /data-seo="related-guides"|data-content="page-purpose"/, `${page.url}: removed strip must not render`);

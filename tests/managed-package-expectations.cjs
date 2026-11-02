@@ -234,9 +234,80 @@ const { withoutKeywordPresentation } = require('./keyword-article-presentation-e
 const { readFileSync } = require('node:fs');
 const { homeFaqAnswers, archiveRoutes, sharedOnPageUiPlacements, sharedOnPageUiCounts } = require('./on-page-spec-expectations.cjs');
 const { blogOrderSlugs } = require('./four-guides-addition-expectations.cjs');
+const nationalityPricingSource = readFileSync('lib/nationality-contract-prices.ts', 'utf8');
+const nationalityPricingRows = [...nationalityPricingSource.matchAll(/\{ nationality: \{ en: '([^']+)', ar: '([^']+)' \}, role: \{ en: '([^']+)', ar: '([^']+)' \}, range: '([^']+)' \}/g)]
+  .map((match) => ({ en: { nationality: match[1], role: match[3] }, ar: { nationality: match[2], role: match[4] }, range: match[5] }));
+assert.equal(nationalityPricingRows.length, 12, 'exactly twelve owner-approved nationality contract ranges remain in the shared source');
+const nationalityPricingRoutes = new Set(['pricing', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah', 'maid-services-abu-dhabi', 'maid-services-ras-al-khaimah', 'maid-services-fujairah', 'maid-services-umm-al-quwain']);
 const commercialBlogSlugs = ['all-inclusive-domestic-worker-packages', 'domestic-worker-package-pricing-factors'];
 const paragraphTokens = value => value.toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu).join(' ');
 const visibleText = value => value.replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
+
+function nationalityPricingDisclosures(locale) {
+  return locale === 'ar'
+    ? [
+      'هذه نطاقات رسوم عقود الاستقدام لمرة واحدة المنشورة من عناية. تأشيرة العمل غير مشمولة. اطلب عرضاً مكتوباً لتأكيد الرسوم المنطبقة وضريبة القيمة المضافة وأي تكاليف أخرى والمبلغ النهائي قبل التأكيد.',
+      'قد تختلف الخيارات والتوفر حسب الملف والدور. أكد الجنسية والدور والتكاليف المشمولة والشروط كتابةً مع الفريق. اطلب عرض سعر مكتوباً'
+    ]
+    : [
+      'These are INAYA’s published one-time recruitment contract fee ranges. A work visa is not included. Request a written quote to confirm the applicable fees, VAT, other costs and final payable amount before confirming.',
+      'Options and availability may vary by profile and role. Confirm the nationality, role, included costs and terms in writing with the team. Request a written quote'
+    ];
+}
+
+function withoutReviewedNationalityPricing(page) {
+  if (!nationalityPricingRoutes.has(page.route)) {
+    assert.ok(!page.paragraphs.some(paragraph => /published one time recruitment contract fee ranges|نطاقات رسوم عقود الاستقدام لمرة واحدة المنشورة/.test(paragraph)), `${page.url}: nationality pricing disclosures belong only to reviewed pricing and city routes`);
+    return page;
+  }
+  const html = readFileSync(`out/${page.locale}/${page.route}/index.html`, 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+  const sections = [...html.matchAll(/<section\b[^>]*data-content="nationality-contract-prices"[^>]*>([\s\S]*?)<\/section>/gi)];
+  assert.equal(sections.length, 1, `${page.url}: exactly one shared nationality-price section`);
+  const section = sections[0][1];
+  const tables = [...section.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)];
+  assert.equal(tables.length, 1, `${page.url}: exactly one nationality-price table`);
+  const table = tables[0][1];
+  const caption = visibleText(table.match(/<caption\b[^>]*>([\s\S]*?)<\/caption>/i)?.[1] ?? '');
+  assert.equal(caption, page.locale === 'ar' ? 'الجنسية والدور ورسوم العقد' : 'Nationality, role and contract fee', `${page.url}: reviewed table caption`);
+  const header = table.match(/<thead\b[^>]*>([\s\S]*?)<\/thead>/i)?.[1] ?? '';
+  const headings = [...header.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map(match => visibleText(match[1]));
+  assert.deepEqual(headings, page.locale === 'ar' ? ['الجنسية', 'الدور', 'رسوم العقد لمرة واحدة'] : ['Nationality', 'Role', 'One-time contract fee'], `${page.url}: reviewed table headings`);
+  const body = table.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1] ?? '';
+  const rows = [...body.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map(match => {
+    const row = match[1];
+    const nationality = visibleText(row.match(/<th\b[^>]*>([\s\S]*?)<\/th>/i)?.[1] ?? '');
+    const cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(cell => visibleText(cell[1]));
+    return { nationality, role: cells[0], range: cells[1] };
+  });
+  assert.deepEqual(rows, nationalityPricingRows.map(row => ({ nationality: row[page.locale].nationality, role: row[page.locale].role, range: row.range })), `${page.url}: all twelve visible nationality, role and fee rows match the shared approved source`);
+  const renderedParagraphs = [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(match => visibleText(match[1]));
+  const expectedDisclosureParagraphs = nationalityPricingDisclosures(page.locale);
+  assert.deepEqual(renderedParagraphs.slice(1), expectedDisclosureParagraphs, `${page.url}: only the exact reviewed disclosure text may be classified as shared pricing copy`);
+  const paragraphs = [...page.paragraphs];
+  for (const disclosure of expectedDisclosureParagraphs) {
+    const value = paragraphTokens(disclosure);
+    assert.equal(paragraphs.filter(paragraph => paragraph === value).length, 1, `${page.url}: exactly one verified shared-pricing disclosure`);
+    paragraphs.splice(paragraphs.indexOf(value), 1);
+  }
+  return { ...page, paragraphs };
+}
+
+function currentNationalityPriceMentions(locale, route) {
+  if (!nationalityPricingRoutes.has(route)) return undefined;
+  const minimums = nationalityPricingRows.map(({ range }) => {
+    const amount = range.match(/[\d,]+/)?.[0];
+    assert.ok(amount, `approved fee range has a numeric minimum: ${range}`);
+    return `AED ${amount}`;
+  });
+  if (route === 'pricing') return [...(module.exports.priceMentions[`${locale}/${route}`] ?? []), ...minimums].sort();
+  if (route === 'maid-services-ajman') {
+    const cityPackages = locale === 'ar'
+      ? ['1,120 درهم', ...Array(2).fill('120 درهم'), ...Array(2).fill('200 درهم'), ...Array(2).fill('3,000 درهم'), ...Array(2).fill('3,250 درهم'), ...Array(2).fill('3,500 درهم')]
+      : ['AED 1,120', ...Array(2).fill('AED 120'), ...Array(2).fill('AED 200'), ...Array(2).fill('AED 3,000'), ...Array(2).fill('AED 3,250'), ...Array(2).fill('AED 3,500')];
+    return [...cityPackages, ...minimums].sort();
+  }
+  return minimums.sort();
+}
 
 function withoutReviewedHomeFaq(page) {
   if (page.route !== '') return page;
@@ -313,7 +384,7 @@ function editorialRepetition(audit) {
   const pages = audit.pages.map(original => {
     const clarity = require('./page-clarity-expectations.cjs');
     const reviewedPage = clarity.assertReviewedPage(original);
-    const page = withoutReviewedHomeFaq(ajmanContacts.historicalPage(original));
+    const page = withoutReviewedNationalityPricing(withoutReviewedHomeFaq(ajmanContacts.historicalPage(original)));
     const blog = reviewedBlogPlacements(page);
     const originalApproved = blog?.approved ?? commercial.copy[page.route]?.[page.locale] ?? [];
     const approved = reviewedPage ? [...new Set([...originalApproved, ...clarity.rendered.sharedCommercialParagraphs[page.locale]])] : originalApproved;
@@ -357,4 +428,4 @@ function editorialRepetition(audit) {
     classifiedOnPageUiTokens: onPageUi.excludedTokens
   };
 }
-module.exports = { approvedManagedPackages, approvedPackageMessages, editorialRepetition, withoutReviewedSharedOnPageUi, metadata: commercial.metadata, priceMentions: { ...commercial.priceMentions, ...Object.fromEntries(Object.entries(require('./page-clarity-expectations.cjs').rendered.pages).map(([url, pin]) => [new URL(url).pathname.slice(1).replace(/\/$/, ''), pin.priceMentions])) } };
+module.exports = { approvedManagedPackages, approvedPackageMessages, editorialRepetition, withoutReviewedSharedOnPageUi, currentNationalityPriceMentions, metadata: commercial.metadata, priceMentions: { ...commercial.priceMentions, ...Object.fromEntries(Object.entries(require('./page-clarity-expectations.cjs').rendered.pages).map(([url, pin]) => [new URL(url).pathname.slice(1).replace(/\/$/, ''), pin.priceMentions])) } };

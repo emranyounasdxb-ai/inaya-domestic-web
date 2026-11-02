@@ -22,6 +22,14 @@ const currentRenderedPins = {
   'https://inayadomestic.ae/en/maid-services-umm-al-quwain/': 'fb7102411d28a729154e406d6bf247d7bff4173ca67951cd85383a785a0ea2fe',
   'https://inayadomestic.ae/ar/maid-services-umm-al-quwain/': 'c5d348d715320fd3d7a078c783a4f1e2077c179f157df8542abba6890520279a',
 };
+// Exact current Ajman copy omits the older generic scheduled-visit phone
+// paragraph; the page now presents localized phone/WhatsApp actions and the
+// reviewed early package comparison. Full rendered-page hashes above protect
+// the current copy while this keeps the commercial-placement inventory exact.
+const currentRenderedCommercialCounts = {
+  'https://inayadomestic.ae/en/maid-services-ajman/': { 2: 1, 3: 1 },
+  'https://inayadomestic.ae/ar/maid-services-ajman/': { 2: 1, 3: 1 },
+};
 
 const reviewedChanges = [
   {
@@ -78,4 +86,4 @@ function isCurrentRenderedPage(page) {
   return Boolean(pin && sha(page.mainText) === pin);
 }
 
-module.exports = { pageFile, currentSha256, contactCheckpointSha256, priorCheckpointSha256, currentRenderedPins, reviewedChanges, historicalSource, isCurrentRenderedPage, sha };
+module.exports = { pageFile, currentSha256, contactCheckpointSha256, priorCheckpointSha256, currentRenderedPins, currentRenderedCommercialCounts, reviewedChanges, historicalSource, isCurrentRenderedPage, sha };
