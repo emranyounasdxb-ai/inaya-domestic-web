@@ -3,6 +3,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
+import citations from './official-citation-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
@@ -161,7 +162,7 @@ test('exported twenty-article series renders its tables, charts, Q&A and working
       }
       const actualLinks = [...article.matchAll(/<a\b([^>]*)>/g)].map((match) => attrs(match[1]).href);
       for (const link of linksIn(copy.body)) {
-        assert.ok(actualLinks.includes(link), `${route}: reference remains clickable: ${link}`);
+        assert.ok(actualLinks.includes(citations.currentUrl(link)), `${route}: reference remains clickable: ${citations.currentUrl(link)}`);
         const target = new URL(link);
         if (target.origin === origin) {
           const canonical = `${origin}${target.pathname.replace(/\/$/, '')}/`;
