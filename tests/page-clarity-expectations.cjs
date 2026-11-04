@@ -12,6 +12,7 @@ const stable = v => Array.isArray(v) ? v.map(stable) : v && typeof v === 'object
 // Only a complete exact owner-reviewed after source can project to the immutable
 // prior checkpoint. Unrelated source edits and partial amendments still fail.
 function checkpointSource(file, source) {
+  source = require('./official-citation-expectations.cjs').historicalSource(file, source);
   source = refinement.historicalSource(file, source);
   source = source.replace(/\r\n/g, '\n');
   const pin = fixture.sources[file];
@@ -35,6 +36,7 @@ function historicalSource(file, source) {
   return pin.before;
 }
 function historicalRecord(record, family, field = 'record') {
+  record = require('./official-citation-expectations.cjs').historicalRecord(record, family, field);
   record = refinement.historicalRecord(record, family, field);
   const pin = fixture.records[record.slug];
   if (!pin || pin.family !== family || !pin[field]) return record;
@@ -43,7 +45,7 @@ function historicalRecord(record, family, field = 'record') {
   return structuredClone(pin[field].before);
 }
 function currentRecord(slug, previous, field = 'record') {
-  return refinement.currentRecord(slug, fixture.records[slug]?.[field]?.after ?? previous, field);
+  return require('./official-citation-expectations.cjs').currentValue(refinement.currentRecord(slug, fixture.records[slug]?.[field]?.after ?? previous, field));
 }
 function archiveOrder(slugs) { return [...slugs.filter(s => s !== 'inaya-office-staff-careers-ajman'), ...slugs.filter(s => s === 'inaya-office-staff-careers-ajman')]; }
 function dateFor(slug, fallback) { return refinement.fixture.records[slug] ? refinement.fixture.date : fixture.records[slug] ? fixture.date : fallback; }

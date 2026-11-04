@@ -9,6 +9,7 @@ import './five-guides-amendment-export.test.mjs';
 import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 import domesticServices from './domestic-service-refresh-expectations.cjs';
+import citations from './official-citation-expectations.cjs';
 
 const origin = 'https://inayadomestic.ae';
 // The original hub now exposes six crawlable, canonical archive pages. Read all
@@ -102,7 +103,7 @@ test('Ajman decision aids render complete bilingual worksheets, useful process c
     assert.ok(links.filter((link) => new URL(link).origin === origin).length >= 3, `${url}: contextual internal navigation`);
     assert.ok(links.some((link) => new URL(link).origin !== origin), `${url}: primary external reference`);
     for (const link of links) {
-      assert.ok(addition.includes(`href="${link.replace(/&/g, '&amp;')}"`), `${url}: source is clickable`);
+      assert.ok(addition.includes(`href="${citations.currentUrl(link).replace(/&/g, '&amp;')}"`), `${url}: source is clickable`);
       const target = new URL(link);
       if (target.origin === origin) {
         assert.ok(target.pathname.startsWith(`/${locale}/`), `${url}: translation-correct internal link`);
@@ -174,7 +175,7 @@ test('domestic-service refreshes preserve the original manuscripts and render co
       }
       assert.match(addition, /<table\b/, 'the new addition itself contains its practical table');
       for (const [, link] of copy.body.matchAll(/\[[^\]]+\]\((https:\/\/[^)]+)\)/g)) {
-        assert.ok(body.includes(`href="${link.replace(/&/g, '&amp;')}"`), `clickable source/destination ${link}`);
+        assert.ok(body.includes(`href="${citations.currentUrl(link).replace(/&/g, '&amp;')}"`), `clickable source/destination ${link}`);
         const target = new URL(link);
         if (target.origin === origin) {
           assert.ok(target.pathname.startsWith(`/${locale}/`), 'internal link keeps language');

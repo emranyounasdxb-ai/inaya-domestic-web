@@ -138,7 +138,7 @@ export const refundPolicyCopy = {
       },
       {
         "label": "UAE Government: domestic workers and recruitment contracts",
-        "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "url": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       }
     ],
     "cta": "Contact INAYA",
@@ -281,7 +281,7 @@ export const refundPolicyCopy = {
       },
       {
         "label": "حكومة الإمارات: العمالة المساعدة وعقود الاستقدام",
-        "url": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "url": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       }
     ],
     "cta": "تواصل مع عناية",

@@ -223,7 +223,7 @@ export const trustSupportPages: TrustSupportPage[] = [
     ctaTitle: { en: 'Need to clarify terms before booking?', ar: 'هل تحتاج توضيح الشروط قبل الحجز؟' },
     ctaText: { en: 'Contact INAYA before confirmation so the team can explain the relevant service terms.', ar: 'تواصل مع عناية قبل التأكيد حتى يشرح الفريق شروط الخدمة المناسبة.' },
     links: [{ label: { en: 'Refund and replacement conditions', ar: 'شروط الاسترداد والاستبدال' }, route: 'refund-policy' }, { label: { en: 'Support and complaint channels', ar: 'وسائل الدعم والشكوى' }, route: 'support-process' }],
-    sources: [{ label: { en: 'UAE Government: domestic-worker contracts and responsibilities', ar: 'حكومة الإمارات: عقود العمالة المساعدة والمسؤوليات' }, url: { en: 'https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers', ar: 'https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers' } }]
+    sources: [{ label: { en: 'UAE Government: domestic-worker contracts and responsibilities', ar: 'حكومة الإمارات: عقود العمالة المساعدة والمسؤوليات' }, url: { en: 'https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers', ar: 'https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers' } }]
   },
   {
     slug: 'refund-policy',

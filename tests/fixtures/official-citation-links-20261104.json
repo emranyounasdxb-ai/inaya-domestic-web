@@ -1,0 +1,741 @@
+{
+  "baseline": "af8a4a60276f1e2929485d7d3cfc410a9f8633ab",
+  "targets": {
+    "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+    "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+    "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+    "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+    "https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+  },
+  "sources": {
+    "lib/published-article-content.ts": {
+      "beforeSha256": "5d8ebffca4a3ffb26e1f0ed9efbac24a2711e0b56efb3d13de03d457ee8129dc",
+      "afterSha256": "04a84c0bbb7dbb411f3dabee612e407a4bfdc172a05980d01f3b169ccdead243",
+      "changes": [
+        {
+          "offset": 22329,
+          "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 34550,
+          "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 45878,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 61415,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 184403,
+          "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 235333,
+          "before": "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 248968,
+          "before": "https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 376016,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 387153,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 410002,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 418672,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 427073,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 432348,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 491320,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 497136,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 528072,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 533317,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 539340,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 544512,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 549968,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 555446,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 573166,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 578944,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 582525,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 588589,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        }
+      ]
+    },
+    "lib/published-article-metadata.ts": {
+      "beforeSha256": "678df83e3337d32c7a1ec2f089e8d15dd18fe14d061e5aca81a6c41ee86f598f",
+      "afterSha256": "66ecb1e850bf40a036cc78a345cbfbc562bab02052184a2d9fa78d829b6d2593",
+      "changes": [
+        {
+          "offset": 1712,
+          "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 3397,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 4998,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 20323,
+          "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 29181,
+          "before": "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 31182,
+          "before": "https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 51775,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 52534,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 55115,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 55582,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 56188,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 56674,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 62568,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 63145,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 66318,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 66756,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 67373,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 67845,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 68371,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 68810,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 70684,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 71263,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 71773,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 72350,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        }
+      ]
+    },
+    "lib/refund-policy-content.ts": {
+      "beforeSha256": "50396749838df800f3bf26ffce8dcb78641739e5ca6ec5b823a3c685e892cb2b",
+      "afterSha256": "8a5b5982e235b6508fbbb424c4a77afe7f8ed1eddb2b9a3dd818abe59562a446",
+      "changes": [
+        {
+          "offset": 10178,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 18934,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        }
+      ]
+    },
+    "lib/trust-support-pages.ts": {
+      "beforeSha256": "b4b63baa7cf682279b2a477de54630eeb5b179711872f5387d12d8f841d765dc",
+      "afterSha256": "3b5fc06645789deb36c5c39d65c812f4f8a9a7011a85f07de28835353f3c8b0e",
+      "changes": [
+        {
+          "offset": 34073,
+          "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        },
+        {
+          "offset": 34165,
+          "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        }
+      ]
+    },
+    "app/[locale]/service-guidelines/page.tsx": {
+      "beforeSha256": "a44dbccda769d805454ea9332d27124aea98f510552c086df0e1c2b7c7f0a3ab",
+      "afterSha256": "df6aa3e52e998979a955f0aa2eb641b87ad333aa6ea2de0ed09d445557663ee7",
+      "changes": [
+        {
+          "offset": 7497,
+          "before": "/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+          "after": "/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        }
+      ]
+    }
+  },
+  "records": {
+    "choosing-domestic-worker-agency-ajman": {
+      "record": {
+        "beforeSha256": "52c0a06c0fe8ef595926967ca249aa50edb2eee07d76dc99bd43610d33a9a21e",
+        "afterSha256": "e905e4aade465262249aa4b4d294c19afc881b719949f12c275da87e880cb35c",
+        "changes": [
+          {
+            "offset": 21885,
+            "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 34106,
+            "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "ba39b9c8e222ea67b9935127ebc00c535c9de2ed80c4ff8018663105190ded3f",
+        "afterSha256": "78fd61e3cd9938d805229adc1a510a4bc946ef530e29bbd0c0284def0b3a819c",
+        "changes": [
+          {
+            "offset": 1159,
+            "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "domestic-worker-hiring-costs-uae": {
+      "record": {
+        "beforeSha256": "d6a94dcca34a0a24c269da00116a88cec3d287d79edf68ef1b8a5eb48d4633f6",
+        "afterSha256": "dceb82bd3fa3868e67f2bc79a22e6b8b2c4124cb6e29b3cc67d7861e2165136e",
+        "changes": [
+          {
+            "offset": 11033,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 26535,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "30b1095aa23b392125e5c1172d81a90f19128090697674674f30d3af46360f1e",
+        "afterSha256": "728c9871a0b7600aca9a4f020f5b4632190388ddfa12a66da1f96c8f9b0c1460",
+        "changes": [
+          {
+            "offset": 1051,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 2529,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "domestic-worker-hiring-stages-timelines": {
+      "record": {
+        "beforeSha256": "aaf6ee2c12f7a71d57e6646acd6345633b4e59d7543b86bec744d3e27963347b",
+        "afterSha256": "f0fbc375a9d253b301effbc3ba447e02a05f3d9bfb8193595be43a2d73dfadb8",
+        "changes": [
+          {
+            "offset": 38112,
+            "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "9cb8e5620120fee2eff398fd1162b299e7970393a7d8c53ed3003e0480be9bed",
+        "afterSha256": "b599203379d17c07800129482238c52c73102d3078f57c12ceb595f89c704b95",
+        "changes": [
+          {
+            "offset": 1818,
+            "before": "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "agreeing-domestic-worker-household-duties": {
+      "record": {
+        "beforeSha256": "f6d53716c5996453bba73f81b60895aa58aacb3827edd1accc297eb976078a26",
+        "afterSha256": "663a7fe941d48c0fe9e173bf047bc08f7c3d10fd9caccd5030263dbbe50eb082",
+        "changes": [
+          {
+            "offset": 9759,
+            "before": "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 23359,
+            "before": "https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "c70fcabeb379a9695d6631c83e300f43957cfe5f447e47652fb57affa6e19c50",
+        "afterSha256": "983806658e0299730cca4b5372558ec1fc1ed40b64677a43946ab0ad69421fb8",
+        "changes": [
+          {
+            "offset": 1819,
+            "before": "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 3679,
+            "before": "https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "domestic-worker-leave-travel-planning": {
+      "record": {
+        "beforeSha256": "203849c3932330d9cdb03e5b635f13240df398d2e84732bbb64305655536b0d2",
+        "afterSha256": "847b6463e2c0dc1d22163ee196ec837bbf810635ae128530e0c6acb0c8f8d893",
+        "changes": [
+          {
+            "offset": 9973,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 21075,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "66080db9ad4ef74b7d38f513ab578bb88b68d5125207cd97ec176137ff387a0f",
+        "afterSha256": "e6703ec9f8c0b82d82b93abffe2c2ededf3d2b3707af4e186fd0361817f255f0",
+        "changes": [
+          {
+            "offset": 689,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 1352,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "four-hour-eight-hour-maid-visit-plan": {
+      "record": {
+        "beforeSha256": "d23afc0ef25fc9e20beb41b380e0f7a7ea0dc4918af04f9122f07bdd58bcc634",
+        "afterSha256": "c0ab8cae745131d4284858e1f71d50133253f44b1111fef331201c16fa92ac7b",
+        "changes": [
+          {
+            "offset": 4215,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 12850,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "404424ba15aaaba476cb2f42de557f14a524c326850e55adfcdce1202b4202a8",
+        "afterSha256": "64144b92c85260c1df980fe5d736fdc23c1961b16c8d9b71bb3094473b25d4fa",
+        "changes": [
+          {
+            "offset": 437,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 844,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "maid-visit-frequency-planner": {
+      "record": {
+        "beforeSha256": "a618cf1a833c53f5603cab30c6b6a059d27864ed8a5304035c72390427005ac2",
+        "afterSha256": "63ef00db78a25bb7d6023198dd21a6bdc60b3509f55249f275de4d40803e4a18",
+        "changes": [
+          {
+            "offset": 4156,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 9396,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "f6bd75f028f02f75264a76cdaf1dd1aecca8aac6b39f0d0aa80d85292343f8b1",
+        "afterSha256": "1706cf426991a4c2a6f7fce52991ef3bd30ebdcfef26f39ef61ffed8b0928911",
+        "changes": [
+          {
+            "offset": 433,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 859,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "new-maid-first-week-checklist": {
+      "record": {
+        "beforeSha256": "eec4b36d3747e59c39bf81b56c9749420a55e3d17fb6630685563b9bbc5d23c3",
+        "afterSha256": "a9216d75f863ce6e8f98178e2bcbd669c1dd4819ef7a036894e8a99bc01c3167",
+        "changes": [
+          {
+            "offset": 1356,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 7137,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "6b7d06ea156f61c341a3c33b2f8f391f823fa0f4cc4f604303d157ae44e90e2b",
+        "afterSha256": "53788e2d318506a6cff07903406c5c28c7f1e7df83069f0ff7e4ee9a8a3205a4",
+        "changes": [
+          {
+            "offset": 362,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 879,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "maid-home-access-keys-privacy": {
+      "record": {
+        "beforeSha256": "ab3634ab80ef85055b91ff6284051bfeaa3ca05dc2952b7b3bd4e40c07de0034",
+        "afterSha256": "fc122b12afcce00e32d9fd856e7a5c3d9217ebb3a0ecd83c9b76d0d0b9e849d5",
+        "changes": [
+          {
+            "offset": 4782,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 9992,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "3a90d3cdc63b06b7ffcea98bca925d95bfb381dee4e35d4400c4673e8658add7",
+        "afterSha256": "d516a2b1d4497bb6ce69ec3fb2cdd1e1e3643fc4916391d3295c7c52c6fc593e",
+        "changes": [
+          {
+            "offset": 397,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 775,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "maid-help-family-guests-gathering": {
+      "record": {
+        "beforeSha256": "b7d814be4dcb5b9aa42bac161cfa5eedd5bb5234ce12383e4c5b4bad30067d07",
+        "afterSha256": "74a04d13b89e98105f7f978b4afbde08cac98b6abdae684a684658f41e63b9e4",
+        "changes": [
+          {
+            "offset": 4856,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 9993,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "ebba21191160f174e455cf27914e3119b74b588fdce427b99c4eb029c31d7360",
+        "afterSha256": "03fbdc204562089b1c208431da3d24d05fa683138e13724f0185539b709159d5",
+        "changes": [
+          {
+            "offset": 444,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 856,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "maid-duties-family-holiday": {
+      "record": {
+        "beforeSha256": "c153efaa4871cdbd0ef3483fdf773bfde08152a79f0c624b29e1b579fc28efb4",
+        "afterSha256": "c43aae06ddb0dfb0188c7bbeb79d1488c5692a49433d629b174f2c5fa0aef79d",
+        "changes": [
+          {
+            "offset": 4336,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 9779,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "ea723a452bbf420dab8ce6ed648428a0ca3920240e6bf762e91cb48a2ef93fa4",
+        "afterSha256": "2c60baf91b246b1674c46a82cddc27f1845277b88babf57cff8a993f05e7e03b",
+        "changes": [
+          {
+            "offset": 362,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 741,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "one-maid-two-helpers-workload": {
+      "record": {
+        "beforeSha256": "8965866908511ec60d35c0312bd41449a9bb3458149cd956fc497030f672737a",
+        "afterSha256": "73827ffdf65dedee5b810fac2e46c54042a8437a72a5eca5ac4f33e9ad292fab",
+        "changes": [
+          {
+            "offset": 3285,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 9028,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "e66bc97ac8bfa347e06db2ac286ec74ce11afec192c400bf318bccac4d17235e",
+        "afterSha256": "4e3ebc985b339a6642535bd6d4f78406eda2304b6331ac427aa9f91eb29e2ccf",
+        "changes": [
+          {
+            "offset": 513,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 1032,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    },
+    "maid-daily-instructions-handover-template": {
+      "record": {
+        "beforeSha256": "c93abdce58eb71033349006a0621bda01dfb11ff7db312767cf13789e7bf146a",
+        "afterSha256": "23a1c53c1f339ae11406c321def63b5e00905b102dc79b1bb678fcfa7d1b6e84",
+        "changes": [
+          {
+            "offset": 1198,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 7227,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      },
+      "compactMetadata": {
+        "beforeSha256": "eda6b1684ee7dfd981f53359c3d21603df66357480bf6af26b8960ace58d0e3d",
+        "afterSha256": "7e3fea8d75ada5f51d726e501c56c4c70c0b02e9763f4407d273af56ff8d2dea",
+        "changes": [
+          {
+            "offset": 346,
+            "before": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          },
+          {
+            "offset": 863,
+            "before": "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+            "after": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+          }
+        ]
+      }
+    }
+  }
+}

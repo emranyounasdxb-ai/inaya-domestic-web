@@ -30,7 +30,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "اختر مكتب عمالة مساعدة في عجمان بمراجعة الترخيص وترتيب التوظيف وملاءمة المرشح، واستخدم نموذجاً عملياً لمقارنة النطاق والأسعار والشروط المكتوبة.",
       "citations": [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21138",
-        "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21135",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23227",
@@ -54,7 +54,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21148",
         "https://www.mohre.gov.ae/assets/download/22d1c7aa/Ministerial%20Resolution%20No.%20504%20of%202026%20Concerning%20the%20Procedures%20or%20Subscribing%20to%20Health%20Insurance%20for%20Workers%20Employed%20by%20Private%20Sector%20Establishments%20and%20Domestic%20Workers.pdf.aspx#page=1",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23230",
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/en/legislations/1593"
       ]
     },
@@ -69,7 +69,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21148",
         "https://www.mohre.gov.ae/assets/download/ae31d28a/%D9%82%D8%B1%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20504%20%D9%84%D8%B3%D9%86%D8%A9%202026%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%20%D9%84%D9%84%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86%20%D9%81%D9%8A%20%D9%85%D9%86%D8%B4%D8%A2%D8%AA%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9.pdf.aspx#page=1",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23230",
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/ar/legislations/1593"
       ]
     }
@@ -233,7 +233,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://www.mohre.gov.ae/en/services/issuance-of-a-new-work-permit-domestic-workers-2022",
         "https://mohre.gov.ae/en/services/issuance-of-a-new-employment-contract-domestic-worker-2022",
         "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
-        "https://u.ae/ar-ae/information-and-services/jobs/Workplace-regulations/domestic-helpers"
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -349,7 +349,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21143",
         "https://uaelegislation.gov.ae/en/legislations/1620#item23236",
         "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11",
-        "https://u.ae/en/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/en/legislations/1593"
       ]
     },
@@ -366,7 +366,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21143",
         "https://uaelegislation.gov.ae/ar/legislations/1620#item23236",
         "https://www.mohre.gov.ae/assets/download/b361586d/%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202024%20%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%20%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D9%8A%20%D8%B1%D9%82%D9%85%20676%20%D9%84%D8%B3%D9%86%D8%A9%202022%20%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%20%D9%85%D9%83%D8%A7%D8%AA%D8%A8%20%D8%A7%D8%B3%D8%AA%D9%82%D8%AF%D8%A7%D9%85%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9_638944174363309813.pdf.aspx#page=11",
-        "https://u.ae/ar/information-and-services/justice-safety-and-the-law/anti-discrimination-laws-and-policies",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/ar/legislations/1593"
       ]
     }
@@ -609,7 +609,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/en/legislations/1593#item21157",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21137",
         "https://uaelegislation.gov.ae/en/legislations/1593#item21145",
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -621,7 +621,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21157",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21137",
         "https://uaelegislation.gov.ae/ar/legislations/1593#item21145",
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -665,7 +665,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "Plan INAYA four-hour or eight-hour cleaning visits with a task worksheet, access and supplies checklist, published package prices and a clear handover.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -673,7 +673,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "نظم زيارة تنظيف لأربع أو ثماني ساعات من عناية بنموذج للأولويات والدخول والمستلزمات وأسعار الباقات، مع تسليم واضح ومراجعة للمهام.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -686,7 +686,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "Plan weekly, twice-weekly or more frequent maid support from your household workload, with a visit-frequency table and clear INAYA package distinctions.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -694,7 +694,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "نظم الزيارات الأسبوعية أو المتعددة بحسب أعمال أسرتك، باستخدام جدول للتكرار ومراجعة عملية للمهام، مع التمييز بين الزيارات ومدد باقات عناية المنشورة.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -811,7 +811,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "title": "A new maid’s first week: a practical household orientation checklist",
       "description": "Welcome a new maid with a clear first-week plan: household routines, equipment demonstrations, priorities, work and rest arrangements, feedback and handovers.",
       "citations": [
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
       ]
     },
@@ -819,7 +819,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "title": "الأسبوع الأول للعاملة المنزلية: قائمة عملية للتعريف بالمنزل",
       "description": "استقبل العاملة المنزلية بخطة واضحة للأسبوع الأول تشمل روتين الأسرة والأجهزة والأولويات والعمل والراحة والملاحظات وتسليم المهام وطريقة مراجعة الروتين.",
       "citations": [
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
       ]
     }
@@ -875,7 +875,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "Plan keys, arrival instructions, private areas and handovers with your maid. Use a practical access record that protects your household and the worker.",
       "citations": [
         "https://uaelegislation.gov.ae/en/legislations/1593",
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -883,7 +883,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "نظم دخول العاملة المنزلية وتسليم المفاتيح وحدود الخصوصية والتسليم اليومي باستخدام سجل واضح يحمي الأسرة والعاملة ويقلل سوء الفهم.",
       "citations": [
         "https://uaelegislation.gov.ae/ar/legislations/1593",
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -896,7 +896,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "Organise household help before guests arrive with a before/during/after task plan, clear priorities and a practical handover for your family gathering.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -904,7 +904,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "نظم المساعدة المنزلية قبل استقبال الضيوف بخطة للمهام قبل التجمع وأثناءه وبعده، مع أولويات واضحة وتسليم عملي يناسب احتياجات أسرتك.",
       "citations": [
         "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html",
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -916,7 +916,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "title": "Maid duties while your family is on holiday: a home-stays-occupied plan",
       "description": "Prepare a practical household plan when your family travels and the maid stays in the UAE. Organise duties, living arrangements, access and a return handover.",
       "citations": [
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/en/legislations/1593"
       ]
     },
@@ -924,7 +924,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "title": "مهام العاملة المنزلية أثناء سفر الأسرة: خطة للمنزل خلال الغياب",
       "description": "جهز خطة واضحة عندما تسافر الأسرة وتبقى العاملة في الإمارات، تشمل المهام والسكن والدخول والتواصل المحلي وتسليم المنزل عند العودة.",
       "citations": [
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://uaelegislation.gov.ae/ar/legislations/1593"
       ]
     }
@@ -959,7 +959,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "Map overlapping childcare, cooking and cleaning duties to decide whether your home needs one helper, different visit times or separate household roles.",
       "citations": [
         "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3",
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     },
     "ar": {
@@ -967,7 +967,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "description": "حدد المهام المتزامنة لرعاية الأطفال والطهي والتنظيف لتختار بين عاملة واحدة أو زيارات بتوقيت مختلف أو أدوار منزلية منفصلة بوضوح. دون نسب مفترضة لعدد العاملات.",
       "citations": [
         "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3",
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers"
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers"
       ]
     }
   },
@@ -979,7 +979,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "title": "Daily maid instructions and a household handover template",
       "description": "Write a practical daily maid handover with priorities, task locations, household methods, completion notes and a clear contact for questions.",
       "citations": [
-        "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
       ]
     },
@@ -987,7 +987,7 @@ export const publishedArticleMetadata: PublishedArticleMetadata[] = [
       "title": "تعليمات يومية واضحة للعاملة المنزلية ونموذج لتسليم المهام",
       "description": "اكتب تسليماً يومياً عملياً يتضمن الأولويات ومواقع المهام وطريقة الأسرة وملاحظات الإنجاز وجهة واضحة للأسئلة وتغيير التعليمات. بأسلوب واضح ومحترم للجميع.",
       "citations": [
-        "https://u.ae/ar/information-and-services/jobs/employment-in-the-private-sector/domestic-helpers",
+        "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
         "https://www.eca.gov.ae/-/media/ECA/human-capital-files/Live/EN/Employers-competencies-nanny-housekeeper-with-childcare-duties-pdf.pdf?rev=74da0d3d952a426b8c768a76d33e88e3"
       ]
     }

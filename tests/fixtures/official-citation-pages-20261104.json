@@ -1,0 +1,1059 @@
+{
+  "baseline": "af8a4a60276f1e2929485d7d3cfc410a9f8633ab",
+  "pages": {
+    "https://inayadomestic.ae/en/terms/": {
+      "mainTextSha256": "4fde80967646aed0d6d4a4b81427bdb95482a0b6793e5a2f314fdf908fb90f08",
+      "title": "Terms & Conditions | INAYA Domestic Workers UAE",
+      "description": "Read INAYA terms for website use, maid service enquiries, booking confirmation, pricing, responsibilities, service changes and support communication.",
+      "canonical": [
+        "https://inayadomestic.ae/en/terms/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/terms/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/terms/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/terms/"
+        }
+      ],
+      "h1": [
+        "Terms & Conditions for INAYA Domestic Workers"
+      ],
+      "structuredDataSha256": "509703f5a8430ff12024b0b7532d18989cd24a3a28ba9a07187d4b991dcaddf4",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government: domestic-worker contracts and responsibilities"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/refund-policy/": {
+      "mainTextSha256": "cbb7fc4b4646883371a25b75830ec0b4fc2830b1fc479883689eddd1517d24fa",
+      "title": "Refund & Replacement Policy | INAYA",
+      "description": "INAYA monthly cancellation refunds return unused pre-service payments or unused prepaid periods pro rata, with eligible replacement support and statutory rights preserved.",
+      "canonical": [
+        "https://inayadomestic.ae/en/refund-policy/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/refund-policy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/refund-policy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/refund-policy/"
+        }
+      ],
+      "h1": [
+        "Refund & Replacement Policy for INAYA Services"
+      ],
+      "structuredDataSha256": "f2464aea86a3f21abb0ea1e714f8b8e598d1dfe8065c7319c0836a1f61129cf2",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government: domestic workers and recruitment contracts"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/service-guidelines/": {
+      "mainTextSha256": "94e3e6a0dcfe65377e531c0823dc324de14b2dcceb1028ff3326d8d76e286501",
+      "title": "Domestic Worker Service Guidelines | INAYA",
+      "description": "Read INAYA service guidelines on household duties, documents, availability, agreement details and the steps to review before confirming a service.",
+      "canonical": [
+        "https://inayadomestic.ae/en/service-guidelines/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/service-guidelines/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/service-guidelines/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/service-guidelines/"
+        }
+      ],
+      "h1": [
+        "INAYA Domestic Worker Service Guidelines"
+      ],
+      "structuredDataSha256": "4fc426fb373112b64398c9ce6c6999bb1715532bec85f61f88d373b947d05046",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government: domestic worker rights"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/": {
+      "mainTextSha256": "79fdbaf7dced36152706de15f264671133d8034046b9403f258c46a42f06ecee",
+      "title": "What is the total cost of hiring a domestic worker in Ajman? | INAYA",
+      "description": "The total depends on whether you recruit a worker onto your own employer file or buy services from an agency that employs the worker. Build your budget from…",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-costs-uae/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/"
+        }
+      ],
+      "h1": [
+        "What is the total cost of hiring a domestic worker in Ajman?"
+      ],
+      "structuredDataSha256": "b45a6682f84913b737819bed18dcb868b2ed32773afe00f37ee0e7922fec405e",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government domestic-worker guidance"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/": {
+      "mainTextSha256": "970afbd91750fcc8202fd9ef98c0b5f1fe4d76255bcc6760d8e5d70a87366d1e",
+      "title": "Planning a Domestic Worker's Annual Leave & Travel | INAYA",
+      "description": "Plan leave dates, pay, cover and travel responsibility before booking. Annual leave, travel accompanying the employer and return travel after termination are…",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/domestic-worker-leave-travel-planning/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/"
+        }
+      ],
+      "h1": [
+        "How should a household plan a domestic worker's annual leave and travel?"
+      ],
+      "structuredDataSha256": "fa0080f69fc0474c3b0c107b0235a837002cb3fc067975e9e998ed6070d5e487",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government domestic-worker guide"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/": {
+      "mainTextSha256": "dae1a8478f464d464546430734024503a70e02d0aa185fabcd9939c5094f526a",
+      "title": "Four-hour or eight-hour maid visit: how to plan the work | INAYA",
+      "description": "Plan INAYA four-hour or eight-hour cleaning visits with a task worksheet, access and supplies checklist, published package prices and a clear handover.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/"
+        }
+      ],
+      "h1": [
+        "Four-hour or eight-hour maid visit: how to plan the work"
+      ],
+      "structuredDataSha256": "c5ac30a463adcd0f8915de379a3b8f639f83741cf150d1833e759d751ba97be1",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government’s domestic-worker guidance"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/": {
+      "mainTextSha256": "fbd804caf998952a2fab1eeae14cc28bb9914c34e1efeb25c84710d884432783",
+      "title": "How often should you book a maid? A household visit planner | INAYA",
+      "description": "Plan weekly, twice-weekly or more frequent maid support from your household workload, with a visit-frequency table and clear INAYA package distinctions.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-visit-frequency-planner/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/"
+        }
+      ],
+      "h1": [
+        "How often should you book a maid? A household visit planner"
+      ],
+      "structuredDataSha256": "997abc9f0bb2c6772a20861a8bf90f3a97d61572bbf0026a46513a1f9dc63053",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government’s domestic-worker guidance"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/": {
+      "mainTextSha256": "52eafd2ac39dc2fd6ebaf8d2e389997c002ba0f319d8a2f10cbf381228fcb7bc",
+      "title": "New Maid First Week: Household Checklist | INAYA",
+      "description": "Welcome a new maid with a clear first-week plan: household routines, equipment demonstrations, priorities, work and rest arrangements, feedback and handovers.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/"
+        }
+      ],
+      "h1": [
+        "A new maid’s first week: a practical household orientation checklist"
+      ],
+      "structuredDataSha256": "cd1046a66fd1f230a0c9b56ae0b344c0b9c74506e14a882465b40d5b8fdf2c7d",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government domestic-worker guidance"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/": {
+      "mainTextSha256": "2bff8c642f53cea5f9a5d079081a9f25940f018931cc15902e6f6e2b72389976",
+      "title": "Maid home access, keys and privacy: a household checklist | INAYA",
+      "description": "Plan keys, arrival instructions, private areas and handovers with your maid. Use a practical access record that protects your household and the worker.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/"
+        }
+      ],
+      "h1": [
+        "Maid home access, keys and privacy: a household checklist"
+      ],
+      "structuredDataSha256": "3b56e63617a470f0efb583768c3f0c7a6f3579d05644d6d5d83c03aa47733b18",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government's domestic-worker guide"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/": {
+      "mainTextSha256": "c15a01b57488894813c0678a6cb79246ab5cb0795e4a418bc2d410f34001a7f3",
+      "title": "Maid Help for Guests & Family Gatherings | INAYA",
+      "description": "Organise household help before guests arrive with a before/during/after task plan, clear priorities and a practical handover for your family gathering.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-help-family-guests-gathering/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/"
+        }
+      ],
+      "h1": [
+        "Booking maid help before guests: a practical family gathering plan"
+      ],
+      "structuredDataSha256": "8cea4d5da92ec927b829ecefc25165276b35b752d37b4d7971a847665bbcf111",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government domestic-worker guide"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/": {
+      "mainTextSha256": "d33f1ce1e01cb160e3a7d64ec9dc61aab5546c5d0a8d84a8059a3efd59a6b993",
+      "title": "Maid Duties While the Family Is on Holiday | INAYA",
+      "description": "Prepare a practical household plan when your family travels and the maid stays in the UAE. Organise duties, living arrangements, access and a return handover.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-duties-family-holiday/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/"
+        }
+      ],
+      "h1": [
+        "Maid duties while your family is on holiday: a home-stays-occupied plan"
+      ],
+      "structuredDataSha256": "f947edc05df6487c4b4afe6b103dfb9f0a632036b2de3d9a34fd599411c5c246",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government domestic-worker guide"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/": {
+      "mainTextSha256": "8672463990911298cc916d22b39ca87b832c651d5635a0a4cbece87cb73cff3f",
+      "title": "One maid or two helpers? A household workload planner | INAYA",
+      "description": "Map overlapping childcare, cooking and cleaning duties to decide whether your home needs one helper, different visit times or separate household roles.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/one-maid-two-helpers-workload/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/"
+        }
+      ],
+      "h1": [
+        "One maid or two helpers? A household workload planner"
+      ],
+      "structuredDataSha256": "160ae398860d0c6d5fd34cb9cdc73d45f224b34e818e3e8aab93f26fdb510899",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government domestic-worker guidance"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/": {
+      "mainTextSha256": "2752015db9fa32c82173f7ff6f99b62703636e830f3f991ed46ef7bda46839e4",
+      "title": "Daily maid instructions and a household handover template | INAYA",
+      "description": "Write a practical daily maid handover with priorities, task locations, household methods, completion notes and a clear contact for questions.",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-daily-instructions-handover-template/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/"
+        }
+      ],
+      "h1": [
+        "Daily maid instructions and a household handover template"
+      ],
+      "structuredDataSha256": "2013b7e7e9c804c115c3dcbbe39b29990498430ce66ed5804897fe929ba30c4e",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government domestic-worker guidance"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/terms/": {
+      "mainTextSha256": "e7224d544086fde3fdc2111dad04c21e5ec89cc6335f827279864f1282a0a803",
+      "title": "الشروط والأحكام | عناية للعمالة المنزلية في الإمارات",
+      "description": "اقرأ شروط عناية لاستخدام الموقع وطلبات خدمات الخادمات وتأكيد الحجز والأسعار والمسؤوليات وتغييرات الخدمة والتواصل.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/terms/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/terms/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/terms/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/terms/"
+        }
+      ],
+      "h1": [
+        "الشروط والأحكام لعناية للعمالة المنزلية"
+      ],
+      "structuredDataSha256": "442fa69ac8d200eb2d1e27969075ce844d8140e0b4f56c16e8be3421f664feb5",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "حكومة الإمارات: عقود العمالة المساعدة والمسؤوليات"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/refund-policy/": {
+      "mainTextSha256": "e50adebd89817b270e1f36265d35b8afad498ab8d9c8dcbbf1f74a9ced87bd9a",
+      "title": "سياسة الاسترداد والاستبدال | عناية",
+      "description": "تعيد عناية الدفعات غير المستخدمة قبل البدء أو الفترات المدفوعة غير المستخدمة بالتناسب بعد الإلغاء، مع دعم الاستبدال المؤهل وحفظ الحقوق القانونية.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/refund-policy/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/refund-policy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/refund-policy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/refund-policy/"
+        }
+      ],
+      "h1": [
+        "سياسة الاسترداد والاستبدال لخدمات عناية"
+      ],
+      "structuredDataSha256": "cb50f41c20a2557709df0c1e641f4194424037a2097d434fa848c1a551af37db",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "حكومة الإمارات: العمالة المساعدة وعقود الاستقدام"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/service-guidelines/": {
+      "mainTextSha256": "1523db398758e5c007d7f2bd4a6f380811427f1fa08973fa85069bfa4782a09e",
+      "title": "إرشادات خدمات العمالة المنزلية | عناية",
+      "description": "اقرأ إرشادات عناية للخدمات حول المهام المنزلية والمستندات والتوفر وتفاصيل الاتفاق والخطوات الواجب مراجعتها قبل تأكيد الخدمة.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/service-guidelines/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/service-guidelines/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/service-guidelines/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/service-guidelines/"
+        }
+      ],
+      "h1": [
+        "إرشادات خدمات عناية للعمالة المنزلية"
+      ],
+      "structuredDataSha256": "f9ac7a50300ab4a1f9d4f8dec5f153d74a9b35349c74897c2e61d519b4f4ffc0",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "حكومة الإمارات: حقوق العمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-costs-uae/": {
+      "mainTextSha256": "0fc04254bc02423b853c990fc194042c9bc48e86798d554eb062c3ae9645520f",
+      "title": "ما التكلفة الإجمالية لتوظيف عامل مساعد في عجمان؟ | عناية",
+      "description": "تعتمد التكلفة الإجمالية على ما إذا كنت تستقدم عاملاً على ملفك بوصفك صاحب العمل، أو تشتري خدمة من مكتب يوظف العامل. ابنِ ميزانيتك على بنود منفصلة، بدلاً من ضرب…",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-costs-uae/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-costs-uae/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/"
+        }
+      ],
+      "h1": [
+        "ما التكلفة الإجمالية لتوظيف عامل مساعد في عجمان؟"
+      ],
+      "structuredDataSha256": "e4496793ea74263c662bc6d5a71f451a284be8674d4f6477d4d03d187d678361",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "دليل حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-leave-travel-planning/": {
+      "mainTextSha256": "65b7a43b0a0e5ed7b90ba82531fc64639003de490f3d83fc86825a77c8f775db",
+      "title": "كيف تخطط الأسرة لإجازة العامل المساعد السنوية وسفره؟ | عناية",
+      "description": "خطط لتواريخ الإجازة والأجر والتغطية ومسؤولية السفر قبل الحجز. فالإجازة السنوية والسفر مع صاحب العمل وسفر العودة بعد إنهاء العلاقة حالات مختلفة. ولا تفترض تطابق…",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/domestic-worker-leave-travel-planning/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/domestic-worker-leave-travel-planning/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/"
+        }
+      ],
+      "h1": [
+        "كيف تخطط الأسرة لإجازة العامل المساعد السنوية وسفره؟"
+      ],
+      "structuredDataSha256": "cb789187a41b43682587c8621aa0dc82d3b414335796df897a279c1f6affdf8f",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "دليل حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/": {
+      "mainTextSha256": "a97502b1885f429e64f4b9802514c03c953d0ed3f82e8be0d5b998e51c44e450",
+      "title": "زيارة عاملة منزلية لأربع أم ثماني ساعات: كيف تخطط للعمل؟ | عناية",
+      "description": "نظم زيارة تنظيف لأربع أو ثماني ساعات من عناية بنموذج للأولويات والدخول والمستلزمات وأسعار الباقات، مع تسليم واضح ومراجعة للمهام.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/"
+        }
+      ],
+      "h1": [
+        "زيارة عاملة منزلية لأربع أم ثماني ساعات: كيف تخطط للعمل؟"
+      ],
+      "structuredDataSha256": "fcbc04abae48783ecf927c11ece04ffb63bdebb74da2ea8f3394987ab11fe922",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "إرشادات حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/maid-visit-frequency-planner/": {
+      "mainTextSha256": "a296f7233fbcdfc7022a5ebf0c69c84a59d8dd8ed3c931d4d6b7ffa64604b8ed",
+      "title": "كم مرة تحتاج إلى خدمة عاملة منزلية؟ دليل لتنظيم الزيارات | عناية",
+      "description": "نظم الزيارات الأسبوعية أو المتعددة بحسب أعمال أسرتك، باستخدام جدول للتكرار ومراجعة عملية للمهام، مع التمييز بين الزيارات ومدد باقات عناية المنشورة.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/maid-visit-frequency-planner/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-visit-frequency-planner/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/"
+        }
+      ],
+      "h1": [
+        "كم مرة تحتاج إلى خدمة عاملة منزلية؟ دليل لتنظيم الزيارات"
+      ],
+      "structuredDataSha256": "0190add7bfcfb431e8f180cb6a583c29c895f7c0278468d329c408146dca5ea4",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "إرشادات حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/": {
+      "mainTextSha256": "bb517d4e76d8ba6e9d5b5d46fc5dd40dd4d6331800760e1d889abd83087b0ffd",
+      "title": "الأسبوع الأول للعاملة المنزلية: قائمة عملية للتعريف بالمنزل | عناية",
+      "description": "استقبل العاملة المنزلية بخطة واضحة للأسبوع الأول تشمل روتين الأسرة والأجهزة والأولويات والعمل والراحة والملاحظات وتسليم المهام وطريقة مراجعة الروتين.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/"
+        }
+      ],
+      "h1": [
+        "الأسبوع الأول للعاملة المنزلية: قائمة عملية للتعريف بالمنزل"
+      ],
+      "structuredDataSha256": "08adbcf789df13e8b60933d4b217f5e2918e078a0a595351e0bfe5ab219c42ab",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "إرشادات حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/": {
+      "mainTextSha256": "758483140fca99ba81e29bb0a3901eb53899af91edeeece27a7bad0c095b2657",
+      "title": "دخول العاملة المنزلية والمفاتيح والخصوصية: قائمة عملية للأسرة | عناية",
+      "description": "نظم دخول العاملة المنزلية وتسليم المفاتيح وحدود الخصوصية والتسليم اليومي باستخدام سجل واضح يحمي الأسرة والعاملة ويقلل سوء الفهم.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/"
+        }
+      ],
+      "h1": [
+        "دخول العاملة المنزلية والمفاتيح والخصوصية: قائمة عملية للأسرة"
+      ],
+      "structuredDataSha256": "0d5c2e2df8b9087c99c77c7aa9ba5b5cad582e59a73123457dfeb97e748a7a86",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "دليل حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/maid-help-family-guests-gathering/": {
+      "mainTextSha256": "3936a2d5fff984d7c490b1a5f0c56021cdfcca320dd144d83d892b89eea3bdd3",
+      "title": "ترتيب المساعدة المنزلية قبل الضيوف: خطة عملية للتجمع العائلي | عناية",
+      "description": "نظم المساعدة المنزلية قبل استقبال الضيوف بخطة للمهام قبل التجمع وأثناءه وبعده، مع أولويات واضحة وتسليم عملي يناسب احتياجات أسرتك.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/maid-help-family-guests-gathering/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-help-family-guests-gathering/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/"
+        }
+      ],
+      "h1": [
+        "ترتيب المساعدة المنزلية قبل الضيوف: خطة عملية للتجمع العائلي"
+      ],
+      "structuredDataSha256": "93222f215b2354f7c7ed7bef8d0e1ba03989c806996e9bd5c909c0ebac5ef044",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "دليل حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/maid-duties-family-holiday/": {
+      "mainTextSha256": "0f3e33e090b51addb0dbd81a8bc2828d9a08e6d58a2df9540b0eabbb9f6d6d3e",
+      "title": "مهام العاملة المنزلية أثناء سفر الأسرة: خطة للمنزل خلال الغياب | عناية",
+      "description": "جهز خطة واضحة عندما تسافر الأسرة وتبقى العاملة في الإمارات، تشمل المهام والسكن والدخول والتواصل المحلي وتسليم المنزل عند العودة.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/maid-duties-family-holiday/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-duties-family-holiday/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/"
+        }
+      ],
+      "h1": [
+        "مهام العاملة المنزلية أثناء سفر الأسرة: خطة للمنزل خلال الغياب"
+      ],
+      "structuredDataSha256": "76e03e132446612002c1bfab58c9b8f8638d9234c6c60e9dfc0cc1eafdb3ef28",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "دليل حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/one-maid-two-helpers-workload/": {
+      "mainTextSha256": "47c5e8e0a078861d3bd9350fcb521933141b62ca051d5e488165813e9725e3ef",
+      "title": "عاملة واحدة أم مساعدتان؟ دليل تخطيط عبء العمل المنزلي | عناية",
+      "description": "حدد المهام المتزامنة لرعاية الأطفال والطهي والتنظيف لتختار بين عاملة واحدة أو زيارات بتوقيت مختلف أو أدوار منزلية منفصلة بوضوح. دون نسب مفترضة لعدد العاملات.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/one-maid-two-helpers-workload/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/one-maid-two-helpers-workload/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/"
+        }
+      ],
+      "h1": [
+        "عاملة واحدة أم مساعدتان؟ دليل تخطيط عبء العمل المنزلي"
+      ],
+      "structuredDataSha256": "22b20c40dd087ed4524cd6d5f3e9aca10b9e0f00a07a3d01485b7b2215880a17",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "دليل حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/maid-daily-instructions-handover-template/": {
+      "mainTextSha256": "a7c22c8b4e7039a55016debab71d50306c88e9e1beaf0901c6a20915ca958923",
+      "title": "تعليمات يومية واضحة للعاملة المنزلية ونموذج لتسليم المهام | عناية",
+      "description": "اكتب تسليماً يومياً عملياً يتضمن الأولويات ومواقع المهام وطريقة الأسرة وملاحظات الإنجاز وجهة واضحة للأسئلة وتغيير التعليمات. بأسلوب واضح ومحترم للجميع.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/maid-daily-instructions-handover-template/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/maid-daily-instructions-handover-template/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/"
+        }
+      ],
+      "h1": [
+        "تعليمات يومية واضحة للعاملة المنزلية ونموذج لتسليم المهام"
+      ],
+      "structuredDataSha256": "f22fe2c1da7144127f40c1f1482d6222b760cefa9046f70ecb34776002867e2c",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "دليل حكومة الإمارات للعمالة المساعدة"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/": {
+      "mainTextSha256": "bf4039229de70cf82c61a6befb3c420f4f122022a0ae4c8b6494ce8f0f78d757",
+      "title": "كيف تختار مكتب عمالة مساعدة مرخصاً في عجمان؟ | عناية",
+      "description": "اختر مكتب عمالة مساعدة في عجمان بمراجعة الترخيص وترتيب التوظيف وملاءمة المرشح، واستخدم نموذجاً عملياً لمقارنة النطاق والأسعار والشروط المكتوبة.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/"
+        }
+      ],
+      "h1": [
+        "كيف تختار مكتب عمالة مساعدة مرخصاً في عجمان؟"
+      ],
+      "structuredDataSha256": "1fab4a8d9af25a1120fed0e18fec964f4a7b9f5a83e59d357319c09f62b59967",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "إرشادات حكومة الإمارات بشأن العمالة المنزلية"
+        },
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "حكومة الإمارات: العمالة المنزلية"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/": {
+      "mainTextSha256": "731361b575b88a7f4d2f9029a575312137f15e93d26d648dbc96f2f734ecdab2",
+      "title": "مراحل توظيف العمالة المنزلية ومددها في عجمان | عناية",
+      "description": "تابع مراحل توظيف العمالة المنزلية في عجمان بنموذج عملي وأمثلة، وافصل إعداد الطلب وتقديمه والقرار الرسمي وتأكيد بدء الخدمة لكل حالة.",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/"
+        }
+      ],
+      "h1": [
+        "مراحل توظيف العمالة المنزلية ومددها في عجمان"
+      ],
+      "structuredDataSha256": "7d17bf877c0641180922518b7bacea933b4a8657eafaa4a30010a823ec24440f",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "حكومة الإمارات: العمالة المنزلية"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/": {
+      "mainTextSha256": "56a5e11fc2fe4e74453541c157515f561e579a84c09aec056e2d922055cc471b",
+      "title": "Cleaning, Cooking & Childcare: Agreeing Maid Duties | INAYA",
+      "description": "One person may be able to perform more than one agreed household task, but the scope must match their skills, lawful occupation and a realistic schedule. Do not…",
+      "canonical": [
+        "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/"
+        }
+      ],
+      "h1": [
+        "Can one domestic worker handle cleaning, cooking and childcare?"
+      ],
+      "structuredDataSha256": "93d6bd7a81dd7928fca4bed62c8a6e396956dab8480ab9e61e337e82347affc7",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/en/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "UAE Government guidance on discrimination and domestic-worker protections"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/": {
+      "mainTextSha256": "78a387779028848f8b5c8d5bc2e050fa49f6e8cb59f99b79105d9b2fa882f112",
+      "title": "مهام العاملة المنزلية: التنظيف والطهي ورعاية الأطفال | عناية",
+      "description": "قد يستطيع شخص واحد تنفيذ أكثر من مهمة منزلية متفق عليها، لكن يجب أن يتناسب نطاق العمل مع مهاراته ومهنته القانونية وجدول واقعي. ولا تفترض أن مسمى «عامل مساعد»…",
+      "canonical": [
+        "https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/"
+      ],
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hrefLang": "en",
+          "href": "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "ar",
+          "href": "https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/"
+        },
+        {
+          "rel": "alternate",
+          "hrefLang": "x-default",
+          "href": "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/"
+        }
+      ],
+      "h1": [
+        "هل يستطيع عامل مساعد واحد الجمع بين التنظيف والطهي ورعاية الأطفال؟"
+      ],
+      "structuredDataSha256": "42e2c42bc308a38916deec04c1f0ce9f775af4b1e98454f07097967936fb3043",
+      "repairedAnchors": [
+        {
+          "href": "https://u.ae/ar/information-and-services/jobs/Workplace-regulations/domestic-helpers",
+          "label": "إرشادات حكومة الإمارات بشأن الحماية من التمييز وحقوق العمالة المساعدة"
+        }
+      ]
+    }
+  }
+}
