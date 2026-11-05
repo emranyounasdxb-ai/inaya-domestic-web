@@ -459,6 +459,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {[
               ['services/housemaid', 'Housemaid services', 'خدمات عاملة المنزل'],
               ['services/live-in-maid', 'Live-in maid', 'خادمة مقيمة'],
+              ['services/live-out-maid', 'Live-out maid', 'خادمة غير مقيمة'],
               ['services/full-time-maid', 'Full-time maid', 'خادمة بدوام كامل'],
               ['services/part-time-maid', 'Part-time maid', 'خادمة بدوام جزئي'],
               ['services/monthly-maid-contract', 'Monthly maid contracts', 'عقود خادمة شهرية'],

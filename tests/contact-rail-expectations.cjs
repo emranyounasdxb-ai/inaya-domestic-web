@@ -5,7 +5,7 @@ const sha = value => createHash('sha256').update(value).digest('hex');
 // Project only the exact responsive-spacing amendment onto the prior content
 // checkpoint. The previous release fixture and its protected copy stay intact.
 function historicalSource(file, source) {
-  source = source.replace(/\r\n/g, '\n');
+  source = require('./bilingual-seo-draft-expectations.cjs').historicalSource(file, source);
   if (file !== 'components/ServiceDetailTemplate.tsx') return source;
   const beforeSha = 'fb4566300106ab64f19d0ce6c77bf5c0df625fc19a364b5b0526ea43b3f1eef8';
   if ([beforeSha, 'f935969c19ab941f9ca607034c97516a1efbe2a5d3160bf0acfb45488335bfee'].includes(sha(source))) return source;

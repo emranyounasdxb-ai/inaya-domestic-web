@@ -1,5 +1,6 @@
 const assert = require('node:assert/strict');
 const refinement = require('./service-refinement-expectations.cjs');
+const bilingualDraft = require('./bilingual-seo-draft-expectations.cjs');
 const ajmanContacts = require('./ajman-faq-contact-expectations.cjs');
 const bookingRequirements = require('./booking-service-requirement-expectations.cjs');
 const locationPages = require('./location-page-revisions-expectations.cjs');
@@ -12,6 +13,7 @@ const stable = v => Array.isArray(v) ? v.map(stable) : v && typeof v === 'object
 // Only a complete exact owner-reviewed after source can project to the immutable
 // prior checkpoint. Unrelated source edits and partial amendments still fail.
 function checkpointSource(file, source) {
+  source = bilingualDraft.historicalSource(file, source);
   source = require('./official-citation-expectations.cjs').historicalSource(file, source);
   source = refinement.historicalSource(file, source);
   source = source.replace(/\r\n/g, '\n');
@@ -55,6 +57,25 @@ const pricingCurrentPins = {
   'https://inayadomestic.ae/ar/pricing/': '623b70fccfe22c84450fe3039c6dac3c070f379dd9f9e23caa31ba601a48d134',
 };
 function isCurrentPricingPage(page) { const pin = pricingCurrentPins[page.url]; return Boolean(pin && sha(page.mainText) === pin); }
-function assertReviewedPage(page) { page = require('./editorial-scope-expectations.cjs').historicalPage(page);page = ajmanContacts.historicalPage(page);page = bookingRequirements.historicalPage(page); const currentLocationPage = locationPages.isCurrentRenderedPage(page); const current = refinement.reviewedPage(page) || ajmanContacts.isCurrentPage(page) || currentLocationPage || bookingRequirements.isCurrentPage(page) || isCurrentPricingPage(page); const pin = rendered.pages[page.url]; if (pin && !current) assert.equal(sha(page.mainText), pin.mainTextSha256, `${page.url}: complete exact reviewed visible content`); const currentCommercialCounts = currentLocationPage && locationPages.currentRenderedCommercialCounts[page.url]; return currentCommercialCounts ? { ...pin, commercialCounts: currentCommercialCounts } : pin; }
+function assertReviewedPage(page) {
+  const checkpoint = bilingualDraft.historicalPage(page);
+  const matchesDraft = checkpoint !== page;
+  page = require('./editorial-scope-expectations.cjs').historicalPage(checkpoint);
+  page = ajmanContacts.historicalPage(page);
+  page = bookingRequirements.historicalPage(page);
+  const currentLocationPage = locationPages.isCurrentRenderedPage(page);
+  const current = refinement.reviewedPage(page) || ajmanContacts.isCurrentPage(page) || currentLocationPage || bookingRequirements.isCurrentPage(page) || isCurrentPricingPage(page);
+  const pin = rendered.pages[page.url];
+  if (pin && !current) assert.equal(sha(page.mainText), pin.mainTextSha256, `${page.url}: complete exact reviewed visible content`);
+  const currentCommercialCounts = currentLocationPage && locationPages.currentRenderedCommercialCounts[page.url];
+  if (currentCommercialCounts) return { ...pin, commercialCounts: currentCommercialCounts };
+  if (matchesDraft && page.route === 'services/monthly-maid-contract') {
+    // The shortened journey no longer matches the old repeated paragraph.
+    const commercialCounts = { ...pin.commercialCounts };
+    delete commercialCounts[page.locale === 'ar' ? 16 : 18];
+    return { ...pin, commercialCounts };
+  }
+  return pin;
+}
 const datedRoutes = [...new Set([...fixture.updatedRoutes, ...refinement.fixture.datedRoutes])];
 module.exports = { fixture, rendered, datedRoutes, assertReviewedPage, isCurrentPricingPage, pricingCurrentPins, sha, checkpointSource, historicalSource, historicalRecord, currentRecord, archiveOrder, archiveSequence, dateFor };

@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import {
   CURATED_GOOGLE_REVIEWS,
   GOOGLE_REVIEWS_VIEW_URL,
@@ -280,6 +281,9 @@ export default function HomeGoogleReviewsShowcase({ locale }: { locale: string }
               <span>{t.view}</span>
               <ExternalArrow />
             </a>
+            <Link className="google-review-secondary" href={`/${locale}/reviews/`}>
+              {locale === 'ar' ? 'اقرأ تقييمات عملاء عناية' : 'Read INAYA customer reviews'}
+            </Link>
           </div>
         </header>
 

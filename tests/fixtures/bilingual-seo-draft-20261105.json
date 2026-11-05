@@ -1,0 +1,447 @@
+{
+  "baseline": "a996fd8b875d91a63b55a6f836687c5c7b656c70",
+  "sources": {
+    "app/[locale]/page.tsx": {
+      "before": "6a0bcb2be754079324af1be01cbd6adf14920cd956114284d3d0bd9f1188ed58",
+      "after": "8815e5a4565755a68e9d577f237a799465659f33ccde915cb2d31d6adbf2dbed",
+      "patches": [
+        [
+          26492,
+          78,
+          ""
+        ]
+      ]
+    },
+    "components/HomeGoogleReviewsShowcase.tsx": {
+      "before": "b33c816de915542392c97f5ee37a7e76539242667de5fb9a95756673a18781cc",
+      "after": "6bb40996e88cf34d8f723c2752066bdf229566bd13f1db76864b3c9a8b0c93f0",
+      "patches": [
+        [
+          81,
+          30,
+          ""
+        ],
+        [
+          10316,
+          197,
+          ""
+        ]
+      ]
+    },
+    "components/ServiceDetailTemplate.tsx": {
+      "before": "cf30a54a9d4f6310a89e4bc8044009e3968043ce63b0edcd1dbbb6ea0447e37e",
+      "after": "494a60448930ba60432107031be644f261491ae52c7647fc3b2c993841360bdd",
+      "patches": [
+        [
+          1719,
+          186,
+          ""
+        ],
+        [
+          20046,
+          450,
+          "        {['live-in-maid', 'full-time-maid', 'part-time-maid', 'monthly-maid-contract', 'nanny', 'maid-visa'].includes(slug) ? <p className=\"mt-4 text-center\"><Link href={`/${locale}/pricing/`} className=\"text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4\">{lang === 'ar' ? 'راجع أساس تسعير الباقات وما يجب تأكيده' : 'Review the package pricing basis and what to confirm'}</Link></p> : null}\n"
+        ]
+      ]
+    },
+    "lib/location-practical-guidance.ts": {
+      "before": "379f983851e38d8e502f9ed8d9f619ec7f1c6cb750fed4e852a011a2cc673c3e",
+      "after": "b962b22c64eb9c50bb5e3864617781e6980f71fb2b5eba2d4e85438990ea4002",
+      "patches": [
+        [
+          69,
+          131,
+          ""
+        ],
+        [
+          4051,
+          220,
+          "      ['maid-visa', 'Maid visa enquiries from Dubai', 'State the current case and ask what support INAYA can provide. Confirm applicable requirements, responsible parties and fees before relying on a checklist or proposed next step.']\n"
+        ],
+        [
+          5259,
+          180,
+          "      ['maid-visa', 'استفسارات تأشيرة الخادمة من دبي', 'حدد الحالة الحالية واسأل عن الدعم الذي يمكن لعناية تقديمه. أكد المتطلبات والأطراف المسؤولة والرسوم قبل الاعتماد على قائمة أو خطوة مقترحة.']\n"
+        ],
+        [
+          6702,
+          237,
+          "      ['maid-visa', 'Maid visa enquiries from Sharjah', 'Prepare the current worker and sponsor situation and your question. Contact INAYA to confirm available case support, applicable requirements and fees; no submission or approval is promised here.']\n"
+        ],
+        [
+          7885,
+          178,
+          "      ['maid-visa', 'استفسارات تأشيرة الخادمة من الشارقة', 'جهز الوضع الحالي للعاملة والكفيل وسؤالك. تواصل مع عناية لتأكيد دعم الحالة والمتطلبات والرسوم؛ لا يوجد وعد بتقديم الطلب أو الموافقة هنا.']\n"
+        ],
+        [
+          8823,
+          374,
+          "    'maid-services-sharjah': { en: 'For a Sharjah enquiry, share the family and school routine and required hours so the discussion concerns the actual household need.', ar: 'لاستفسار من الشارقة، شارك روتين الأسرة والمدرسة والساعات المطلوبة كي تركز المناقشة على احتياج المنزل الفعلي.' }\n"
+        ],
+        [
+          13463,
+          817,
+          "        en: 'Choose the request before comparing offers: recruitment begins with the role and individual profile, cleaning with tasks and visit length, and domestic-worker typing with the application and sponsor situation. INAYA confirms availability, responsibilities, case requirements and costs in the written scope; an enquiry does not confirm a booking or government approval.',\n        ar: 'حدد الطلب قبل مقارنة العروض: يبدأ الاستقدام بالدور والملف الفردي، والتنظيف بالمهام ومدة الزيارة، وطباعة معاملات العمالة المنزلية بنوع الطلب ووضع الكفيل. تؤكد عناية التوفر والمسؤوليات ومتطلبات الحالة والتكاليف في النطاق المكتوب؛ فالاستفسار لا يثبت الحجز أو الموافقة الرسمية.'\n"
+        ],
+        [
+          14890,
+          369,
+          "    popularServices: [...location.popularServices, { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } }, { slug: 'monthly-maid-contract', title: { en: 'Monthly maid contract enquiries', ar: 'طلبات عقد خادمة شهري' } }],\n"
+        ]
+      ]
+    },
+    "lib/package-content.ts": {
+      "before": "9bc5e360b8cb8a71715bfd673990dfc75f01e38e12dd584b6171b2eade441ec6",
+      "after": "283c513e2133dcd4843071fed921f85316e19a919f9b8a72846d002c9d2f1a34",
+      "patches": [
+        [
+          37881,
+          372,
+          ""
+        ],
+        [
+          40001,
+          119,
+          "      journeyText: copy.journeyText + (ar ? ' أكد المرشحة والنطاق كتابةً؛ تبدأ الخدمة بعد الاختيار والتصاريح النظامية المطلوبة. يقدم أي ملف بديل لأخذ موافقتك.' : ' Confirm the candidate and scope in writing; service begins after selection and required lawful authorisation. Any alternative profile is presented for your consent.'),\n"
+        ]
+      ]
+    },
+    "lib/service-support-benefits.ts": {
+      "before": "67cebb2ad008812fd5f775fca971f51241b8d86ef53d5d5fa4591b17304a9eef",
+      "after": "e02340179390ce2b75ef891ead81792e8fc36c924a770baa5cb3460d130a23ff",
+      "patches": [
+        [
+          5087,
+          311,
+          "    benefit('Arrival preparation', 'Coordinate the address, access and arrival window; record who provides products, equipment and transport.', 'الاستعداد للوصول', 'نسق العنوان والدخول وفترة الوصول، وسجل مسؤولية توفير المنتجات والمعدات والنقل.')\n"
+        ]
+      ]
+    }
+  },
+  "pages": {
+    "https://inayadomestic.ae/en/": {
+      "before": "94c472216c7b4bcf506811c5710836da2c05c451639d0c55fa47c80038dab01c",
+      "after": "a4a2ffafa5c60316ca963adbd8b48ed7643ece22ef1f0ff5dc013136d25b870f",
+      "patches": [
+        [
+          4455,
+          28,
+          ""
+        ],
+        [
+          8630,
+          14,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/": {
+      "before": "e1902b2c8b787d14b9e296591430604fca434b6d0652e3df0de0c3ca914b9b97",
+      "after": "72480b84735f0072624a38e5269479a1e89b4a5de0b05f54b6b1da1e49204262",
+      "patches": [
+        [
+          3650,
+          25,
+          ""
+        ],
+        [
+          8999,
+          16,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/live-out-maid/": {
+      "before": "67d40b2fd33c40244954df82669451b0c8ff25767ace837584cf3227d8c52924",
+      "after": "5f30da6e54f6569c180dea61927d8cd6b7910e095c769a7cfa53719c852d54fa",
+      "patches": [
+        [
+          1986,
+          139,
+          ""
+        ],
+        [
+          3564,
+          10,
+          "deep "
+        ],
+        [
+          3583,
+          0,
+          "needs "
+        ],
+        [
+          6186,
+          53,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/live-out-maid/": {
+      "before": "98d9a1109cea25875939cc514d4d869af55d07c7f1f51e1df2cb3bd768c934fc",
+      "after": "c60436b448865514abed8a723c8c80f93c0d18293ad18033db3f4271ae7d6732",
+      "patches": [
+        [
+          1536,
+          113,
+          ""
+        ],
+        [
+          4934,
+          39,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/part-time-maid/": {
+      "before": "18229aea08e3ef99f2a6ff6621a0a835ea9f6a4c35b58844ad43cbea6ad47894",
+      "after": "3f9c55baf79846c803cc1fc0abd4f5acf9c15e93b8d9b686400e9c487082d13e",
+      "patches": [
+        [
+          6724,
+          63,
+          "Arrival preparation Coordinate "
+        ],
+        [
+          6791,
+          7,
+          "address, access "
+        ],
+        [
+          6802,
+          69,
+          "arrival window; record who provides products, equipment and transport. "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/part-time-maid/": {
+      "before": "d82230c4c4982ccf0dc94272eb89c7bb7e95d79e7b0f5473464bacda4d841dd4",
+      "after": "9bfaf263f7fe9d5df9b93970c9769823b541ac83cadc801579235a89abeb958c",
+      "patches": [
+        [
+          5564,
+          140,
+          "الاستعداد للوصول نسق العنوان والدخول وفترة الوصول، وسجل مسؤولية توفير المنتجات والمعدات والنقل. "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/monthly-maid-contract/": {
+      "before": "6aaaf8fee952b967490b8c3729d1f1331e034c1c5c90dc9716f0be75151d072e",
+      "after": "19d357b6e9e13f0498a8faabb0ef9fa008537a41dff702b8282d0933cd8ac3d0",
+      "patches": [
+        [
+          2786,
+          0,
+          "Confirm the candidate and scope in writing; service begins after selection and required lawful authorisation. "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/monthly-maid-contract/": {
+      "before": "c75eaf45601754fec710640574ba49dea1dbf6d8d11c3863101983e58d44e5b6",
+      "after": "fa1e06f2e007f3ebea1ae19603cacda0a52227525cc5fc67f660f8efbe67aee9",
+      "patches": [
+        [
+          2262,
+          0,
+          "أكد المرشحة والنطاق كتابةً؛ تبدأ الخدمة بعد الاختيار والتصاريح النظامية المطلوبة. "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-ajman/": {
+      "before": "f2b0f3cf27cf8f3ce812769a336f84fdd85b453040c2a1f9f8cc84772041e7ba",
+      "after": "9e20a860efae04efa94608ab62512cef5b38d656e5f5bc91ac615c0878544779",
+      "patches": [
+        [
+          417,
+          23,
+          "Choose the request before comparing offers: recruitment begins "
+        ],
+        [
+          458,
+          11,
+          ""
+        ],
+        [
+          480,
+          42,
+          "profile, cleaning with "
+        ],
+        [
+          538,
+          60,
+          "length, "
+        ],
+        [
+          602,
+          66,
+          "domestic-worker typing with "
+        ],
+        [
+          797,
+          10,
+          "scope; an "
+        ],
+        [
+          4092,
+          37,
+          "Maid Visa Assistance "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/maid-services-ajman/": {
+      "before": "06fbb1e3412c6dd7ca531cac0d4cb66f297a823404e03f0f15e14095aa6a9f74",
+      "after": "93d01c3a27c4048bbb75b19e9aefa29e9946b1eabd8ef2a4dbdb258fda3e9f1f",
+      "patches": [
+        [
+          358,
+          11,
+          ""
+        ],
+        [
+          373,
+          62,
+          "الطلب قبل مقارنة العروض: يبدأ الاستقدام بالدور والملف الفردي، والتنظيف بالمهام "
+        ],
+        [
+          440,
+          77,
+          "الزيارة، وطباعة "
+        ],
+        [
+          525,
+          7,
+          ""
+        ],
+        [
+          540,
+          18,
+          "المنزلية بنوع "
+        ],
+        [
+          643,
+          19,
+          "المكتوب؛ فالاستفسار "
+        ],
+        [
+          665,
+          5,
+          "يثبت "
+        ],
+        [
+          3370,
+          48,
+          "مساعدة تأشيرة الخادمة "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-dubai/": {
+      "before": "74c93c6f8a1ce9a2dc97b0cf7185c07e1e36df4ac1af40d23b20bf502bf7b327",
+      "after": "cb1ef8132615d0494d46d3b322cef3cb9d5b0fb4e7afb545a23b58bd544a7881",
+      "patches": [
+        [
+          1717,
+          37,
+          "Maid Visa Assistance "
+        ],
+        [
+          2877,
+          16,
+          "Maid "
+        ],
+        [
+          2898,
+          16,
+          "enquiries from Dubai "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/maid-services-dubai/": {
+      "before": "7744f33ec351a065dc27f389ea52ff9a7376430392a3344459c6e1a11533ca09",
+      "after": "eb0477ae3f5e33f06a9523b957d1971b5634e2615e5b264e927ace2f6d0f4d88",
+      "patches": [
+        [
+          1432,
+          48,
+          "مساعدة تأشيرة الخادمة "
+        ],
+        [
+          2333,
+          48,
+          "استفسارات تأشيرة الخادمة من دبي "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-sharjah/": {
+      "before": "d169f257e2cf4d6ce37d20699678d6c30630bef32c3a9a135c41e5c3d6679fe6",
+      "after": "1222326c0fc8a6462ec248d5d42e28ebc4c014b2c4bc7375c0e713174531721a",
+      "patches": [
+        [
+          1677,
+          37,
+          "Maid Visa Assistance "
+        ],
+        [
+          2818,
+          16,
+          "Maid "
+        ],
+        [
+          2839,
+          16,
+          "enquiries from Sharjah "
+        ],
+        [
+          5538,
+          55,
+          "the family "
+        ],
+        [
+          5597,
+          15,
+          "school routine "
+        ],
+        [
+          5616,
+          63,
+          "required hours so the discussion concerns the actual household need. "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/maid-services-sharjah/": {
+      "before": "151f80a884be1d14740ba64703616c3b8140392dec76e9475b754f5ad2fa566b",
+      "after": "68214f68e0a8b9ee68b7ed4049e601bf4e474e79b4abf8925432804aacf0e7f7",
+      "patches": [
+        [
+          1395,
+          48,
+          "مساعدة تأشيرة الخادمة "
+        ],
+        [
+          2254,
+          48,
+          "استفسارات تأشيرة الخادمة من الشارقة "
+        ],
+        [
+          4492,
+          25,
+          "لاستفسار من "
+        ],
+        [
+          4526,
+          17,
+          "شارك روتين "
+        ],
+        [
+          4550,
+          29,
+          "والمدرسة "
+        ],
+        [
+          4588,
+          62,
+          "المطلوبة كي تركز المناقشة على احتياج المنزل الفعلي. "
+        ]
+      ]
+    }
+  }
+}

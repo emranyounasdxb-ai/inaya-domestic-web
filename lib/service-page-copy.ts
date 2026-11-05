@@ -222,7 +222,7 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
       ],
       why: ['Flexible daily, weekly or monthly scheduling', 'Suitable for apartments, villas and family homes', 'Clear duty scope before confirmation', 'Support for cleaning, laundry and kitchen routines', 'Professional coordination and follow-up', 'UAE-wide availability subject to matching'],
       included: ['General home cleaning', 'Bedroom and living area cleaning', 'Bathroom and kitchen cleaning', 'Laundry and ironing support', 'Kitchen assistance and light meal preparation', 'Floor cleaning, dusting and organizing'],
-      perfect: ['Families who do not need a live-in maid', 'Working professionals', 'Apartments and small villas', 'Weekly deep cleaning needs', 'Families who need privacy at home', 'Short-term or flexible household support'],
+      perfect: ['Families who do not need a live-in maid', 'Working professionals', 'Apartments and small villas', 'Weekly household cleaning', 'Families who need privacy at home', 'Short-term or flexible household support'],
       journey: [
         { title: 'Review', text: 'We understand your home size, preferred timing, location and duties.' },
         { title: 'Schedule', text: 'We check availability and match service timing with your routine.' },
@@ -244,7 +244,7 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'Monthly Plan', text: 'For ongoing scheduled household help.', points: ['Regular visits', 'Priority coordination', 'Clear monthly scope'] }
       ],
       faqs: [
-        { title: 'Is a live-out maid better than a live-in maid?', text: 'It depends on your household needs. Live-out is better for scheduled support without accommodation, while live-in is better for full-time daily care.' },
+        { title: 'How do live-in and live-out arrangements differ?', text: 'A live-in worker lives in the household. A live-out worker lives elsewhere. For either arrangement, agree the duties, work hours, rest and transport responsibilities separately. Discuss the hours you need when choosing full-time or part-time support.' },
         { title: 'Can I book weekly cleaning?', text: 'Yes. Weekly cleaning support can be arranged depending on location, timing and availability.' },
         { title: 'Can the maid help with laundry and ironing?', text: 'Yes. Laundry and ironing can be included when discussed before booking.' },
         { title: 'Do you provide live-out maid services in Dubai and Ajman?', text: 'Yes, INAYA supports families across the UAE including Dubai, Ajman, Sharjah, Abu Dhabi and other emirates subject to availability.' },
@@ -307,7 +307,7 @@ export const servicePageCopies: Record<string, Record<Lang, ServiceCopy>> = {
         { title: 'خطة شهرية', text: 'للدعم المنزلي المجدول بشكل مستمر.', points: ['زيارات منتظمة', 'تنسيق أولوية', 'نطاق شهري واضح'] }
       ],
       faqs: [
-        { title: 'هل الخادمة غير المقيمة أفضل من الخادمة المقيمة؟', text: 'يعتمد ذلك على احتياج الأسرة. الخادمة غير المقيمة مناسبة للدعم المجدول دون إقامة، بينما الخادمة المقيمة مناسبة للدعم اليومي الكامل.' },
+        { title: 'ما الفرق بين الخادمة المقيمة وغير المقيمة؟', text: 'تقيم الخادمة المقيمة في منزل الأسرة، وتسكن الخادمة غير المقيمة خارجه. اتفق على المهام وساعات العمل والراحة ومسؤوليات النقل في كل ترتيب. ناقش عدد الساعات التي تحتاجها عند الاختيار بين الدوام الكامل والجزئي.' },
         { title: 'هل يمكن حجز تنظيف أسبوعي؟', text: 'نعم، يمكن ترتيب زيارات أسبوعية حسب الموقع والوقت وتوفر العمالة.' },
         { title: 'هل تساعد الخادمة في الغسيل والكي؟', text: 'نعم، يمكن إضافة الغسيل والكي ضمن المهام عند توضيح ذلك قبل الحجز.' },
         { title: 'هل تقدمون الخدمة في دبي وعجمان؟', text: 'نعم، تقدم عناية خدماتها في جميع إمارات الدولة بما في ذلك دبي وعجمان والشارقة وأبوظبي حسب التوفر.' },
