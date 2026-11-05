@@ -1,5 +1,10 @@
 import type { LocationServicePage } from './location-service-pages';
 
+const ajmanVisaTitle = {
+  en: 'Domestic worker visa typing in Ajman',
+  ar: 'طباعة معاملات تأشيرات العمالة المنزلية في عجمان'
+};
+
 const notes = {
   'maid-services-ajman': {
     en: [
@@ -26,7 +31,7 @@ const notes = {
       ['part-time-maid', 'Scheduled maid visits in Dubai', 'Prioritize tasks for each visit and specify your area, building access and preferred time window. Ask what supplies and equipment should be ready.'],
       ['nanny', 'Nanny services for Dubai families', 'Working parents can describe childcare hours, school or nursery preparation and handovers. Review relevant individual experience and distinguish ongoing nanny care from occasional babysitting.'],
       ['monthly-maid-contract', 'Monthly contract enquiries in Dubai', 'Share your Dubai area, building access and household priorities for a monthly contract enquiry. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.'],
-      ['maid-visa', 'Maid visa enquiries from Dubai', 'State the current case and ask what support INAYA can provide. Confirm applicable requirements, responsible parties and fees before relying on a checklist or proposed next step.']
+      ['maid-visa', ajmanVisaTitle.en, 'State the current case and ask what support INAYA can provide. Confirm applicable requirements, responsible parties and fees before relying on a checklist or proposed next step.']
     ],
     ar: [
       ['live-in-maid', 'خادمة مقيمة لأسرة في دبي', 'وضح روتين المنزل واقتراح السكن إلى جانب المهام. الإقامة وحدها لا تحدد جدول العمل؛ راجع الاثنين قبل مقارنة الخيار.'],
@@ -34,7 +39,7 @@ const notes = {
       ['part-time-maid', 'زيارات خادمة مجدولة في دبي', 'رتب مهام كل زيارة وحدد المنطقة والدخول إلى المبنى والفترة الزمنية المفضلة. اسأل عن المستلزمات والمعدات المطلوب تجهيزها.'],
       ['nanny', 'خدمات المربيات لأسر دبي', 'يمكن للوالدين العاملين توضيح ساعات الرعاية والاستعداد للمدرسة أو الحضانة وتسليم الرعاية. راجع الخبرة الفردية وميز الرعاية المستمرة عن جليسة الأطفال المؤقتة.'],
       ['monthly-maid-contract', 'طلبات عقد خادمة شهري في دبي', 'شارك منطقة المنزل في دبي وتفاصيل الدخول والأولويات لطلب العقد الشهري. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.'],
-      ['maid-visa', 'استفسارات تأشيرة الخادمة من دبي', 'حدد الحالة الحالية واسأل عن الدعم الذي يمكن لعناية تقديمه. أكد المتطلبات والأطراف المسؤولة والرسوم قبل الاعتماد على قائمة أو خطوة مقترحة.']
+      ['maid-visa', ajmanVisaTitle.ar, 'حدد الحالة الحالية واسأل عن الدعم الذي يمكن لعناية تقديمه. أكد المتطلبات والأطراف المسؤولة والرسوم قبل الاعتماد على قائمة أو خطوة مقترحة.']
     ]
   },
   'maid-services-sharjah': {
@@ -44,7 +49,7 @@ const notes = {
       ['part-time-maid', 'Part-time maid visits in Sharjah', 'Specify the rooms and tasks that matter most, preferred days and the exact area. Discuss visit length and practical access before confirming a scheduled visit.'],
       ['nanny', 'Nanny enquiries for Sharjah families', 'Separate child supervision, meals and school preparation from household cleaning. Share ages and parent instructions and ask about suitable individual experience and communication.'],
       ['monthly-maid-contract', 'Monthly household contract enquiries in Sharjah', 'Describe your Sharjah family routine and the recurring household work you want to discuss. Contact INAYA to confirm the working arrangement, duties, schedule and terms included in your selected package.'],
-      ['maid-visa', 'Maid visa enquiries from Sharjah', 'Prepare the current worker and sponsor situation and your question. Contact INAYA to confirm available case support, applicable requirements and fees; no submission or approval is promised here.']
+      ['maid-visa', ajmanVisaTitle.en, 'Prepare the current worker and sponsor situation and your question. Contact INAYA to confirm available case support, applicable requirements and fees; no submission or approval is promised here.']
     ],
     ar: [
       ['live-in-maid', 'طلبات خادمة مقيمة في الشارقة', 'صف روتين الأسرة وأولويات التنظيف والسكن. اتفق على الساعات والراحة؛ الإقامة ليست وعداً بدعم متواصل بلا توقف.'],
@@ -52,7 +57,7 @@ const notes = {
       ['part-time-maid', 'زيارات خادمة بدوام جزئي في الشارقة', 'حدد الغرف والمهام الأهم والأيام المفضلة والمنطقة الدقيقة. ناقش مدة الزيارة والدخول قبل تأكيد الموعد.'],
       ['nanny', 'طلبات المربيات لأسر الشارقة', 'افصل الإشراف على الأطفال والوجبات والاستعداد للمدرسة عن التنظيف. شارك الأعمار وتعليمات الوالدين واسأل عن الخبرة الفردية والتواصل المناسبين.'],
       ['monthly-maid-contract', 'طلبات عقد خادمة شهري في الشارقة', 'صف روتين الأسرة في الشارقة والعمل المنزلي المتكرر المطلوب مناقشته. تواصل مع عناية لتأكيد ترتيب العمل والمهام والجدول والشروط المشمولة في الباقة التي تختارها.'],
-      ['maid-visa', 'استفسارات تأشيرة الخادمة من الشارقة', 'جهز الوضع الحالي للعاملة والكفيل وسؤالك. تواصل مع عناية لتأكيد دعم الحالة والمتطلبات والرسوم؛ لا يوجد وعد بتقديم الطلب أو الموافقة هنا.']
+      ['maid-visa', ajmanVisaTitle.ar, 'جهز الوضع الحالي للعاملة والكفيل وسؤالك. تواصل مع عناية لتأكيد دعم الحالة والمتطلبات والرسوم؛ لا يوجد وعد بتقديم الطلب أو الموافقة هنا.']
     ]
   }
 };
@@ -63,7 +68,7 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
   const visitContext = {
     'maid-services-ajman': { en: 'Before an Ajman office visit, prepare your household duties and the working arrangement you want to discuss.', ar: 'قبل زيارة المكتب في عجمان، جهز المهام المنزلية وترتيب العمل المطلوب مناقشته.' },
     'maid-services-dubai': { en: 'Dubai families can start by sharing the residential area, building access and preferred schedule; confirm visit timing before travelling to the office.', ar: 'يمكن لأسر دبي البدء بمشاركة المنطقة السكنية وتفاصيل الدخول والجدول المفضل؛ أكد موعد الزيارة قبل التوجه إلى المكتب.' },
-    'maid-services-sharjah': { en: 'For a Sharjah enquiry, share the family and school routine and required hours so the discussion concerns the actual household need.', ar: 'لاستفسار من الشارقة، شارك روتين الأسرة والمدرسة والساعات المطلوبة كي تركز المناقشة على احتياج المنزل الفعلي.' }
+    'maid-services-sharjah': { en: 'For a Sharjah enquiry, share your neighbourhood, household routine, priority duties and preferred days and hours. Discuss building access and who will arrange transport.', ar: 'عند الاستفسار عن خدمة في الشارقة، اذكر الحي وروتين الأسرة والمهام ذات الأولوية والأيام والساعات المناسبة. ناقش طريقة الدخول إلى المبنى ومن يتولى ترتيب النقل.' }
   }[location.slug as keyof typeof notes];
   const comparison = {
     'maid-services-ajman': {
@@ -87,8 +92,8 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
         ar: 'يدعم مركز عناية تدبير في جراند مول بعجمان استقدام العمالة المنزلية وتنظيف المنازل والطباعة ومعالجة المستندات المرتبطة بها. صف احتياج المنزل أو حالة العاملة الموجودة ليؤكد الفريق الخدمة المناسبة.'
       },
       intro: {
-        en: 'Choose the request before comparing offers: recruitment begins with the role and individual profile, cleaning with tasks and visit length, and domestic-worker typing with the application and sponsor situation. INAYA confirms availability, responsibilities, case requirements and costs in the written scope; an enquiry does not confirm a booking or government approval.',
-        ar: 'حدد الطلب قبل مقارنة العروض: يبدأ الاستقدام بالدور والملف الفردي، والتنظيف بالمهام ومدة الزيارة، وطباعة معاملات العمالة المنزلية بنوع الطلب ووضع الكفيل. تؤكد عناية التوفر والمسؤوليات ومتطلبات الحالة والتكاليف في النطاق المكتوب؛ فالاستفسار لا يثبت الحجز أو الموافقة الرسمية.'
+        en: 'For recruitment, start with the role and review the individual profile. For scheduled cleaning, list the tasks and visit length. For managed monthly support, compare the commitment and what the agreement covers. For domestic worker visa typing, share the application and sponsor situation. INAYA confirms availability, responsibilities, case requirements and costs in the written scope. An enquiry does not confirm a booking or government approval.',
+        ar: 'للاستقدام، حدد الدور وراجع الملف الفردي للمرشحة. للتنظيف المجدول، حدد المهام ومدة الزيارة. للخدمة الشهرية المدارة، قارن مدة الالتزام وما يشمله الاتفاق. لطباعة معاملات تأشيرة العمالة المنزلية، وضح نوع الطلب ووضع الكفيل. تؤكد عناية التوفر والمسؤوليات ومتطلبات الحالة والتكاليف في النطاق المكتوب. الاستفسار لا يؤكد الحجز أو الموافقة الرسمية.'
       },
       metaDescription: {
         en: 'INAYA Tadbeer centre in Ajman for domestic-worker recruitment, cleaning visits and related visa typing. Confirm duties, availability and case-specific written scope.',
@@ -103,7 +108,11 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
         ar: local.ar[index][2]
       }
     })),
-    popularServices: [...location.popularServices, { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } }, { slug: 'monthly-maid-contract', title: { en: 'Monthly maid contract enquiries', ar: 'طلبات عقد خادمة شهري' } }],
+    popularServices: [
+      ...location.popularServices.map(service => service.slug === 'maid-visa' ? { ...service, title: ajmanVisaTitle } : service),
+      { slug: 'full-time-maid', title: { en: 'Full-time maid', ar: 'خادمة بدوام كامل' } },
+      { slug: 'monthly-maid-contract', title: { en: 'Monthly maid contract enquiries', ar: 'طلبات عقد خادمة شهري' } }
+    ],
     faqs: [...location.faqs.map((faq) => location.slug !== 'maid-services-ajman' && /visa/i.test(faq.question.en) ? { ...faq, answer: {
       en: 'Contact INAYA to confirm the support available for your case, applicable requirements and fees.',
       ar: 'تواصل مع عناية لتأكيد الدعم المتاح لحالتك والمتطلبات والرسوم المنطبقة.'

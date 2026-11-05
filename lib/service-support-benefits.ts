@@ -34,7 +34,7 @@ export const serviceSupportBenefits: Record<string, Benefit[]> = {
   'part-time-maid': [
     benefit('A choice of visit length', 'Compare the published four hour and eight hour packages against the tasks you need; confirm availability before booking.', 'اختيار مدة الزيارة', 'قارن باقتي الأربع والثماني ساعات المنشورتين بالمهام المطلوبة، وأكد التوفر قبل الحجز.'),
     benefit('Priorities that fit the visit', 'Agree the rooms and cleaning, laundry or kitchen tasks to address first within the chosen time.', 'أولويات تناسب الزيارة', 'اتفق على الغرف ومهام التنظيف أو الغسيل أو المطبخ ذات الأولوية ضمن الوقت المختار.'),
-    benefit('Arrival preparation', 'Coordinate the address, access and arrival window; record who provides products, equipment and transport.', 'الاستعداد للوصول', 'نسق العنوان والدخول وفترة الوصول، وسجل مسؤولية توفير المنتجات والمعدات والنقل.')
+    benefit('Recurring visit schedules', 'For visits throughout a month, agree the number and length of the visits. Compare a managed monthly contract separately.', 'جدول الزيارات المتكررة', 'إذا كنت تحتاج إلى زيارات على مدار الشهر، فاتفق على عددها ومدة كل زيارة. قارن عقد الخدمة الشهرية المدارة كخيار مستقل.')
   ],
   'monthly-maid-contract': [
     benefit('Salary administration', 'The applicable managed monthly agreement includes the agreed worker salary and documented payment administration.', 'إدارة الراتب', 'يشمل الاتفاق الشهري المدار المنطبق راتب العاملة المتفق عليه وإدارة السداد الموثقة.'),

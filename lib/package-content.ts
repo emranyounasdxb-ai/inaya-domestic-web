@@ -266,6 +266,10 @@ export function applyManagedServiceContent(slug: string, lang: Lang, copy: Servi
     ? { ...faq, text: shortPackageSummary[lang] + (ar ? ' تحدد الخدمات المتخصصة والإضافات المطلوبة خارج نطاق الباقة في عرض مكتوب منفصل، مع بيان الضريبة المنطبقة والمبلغ النهائي قبل التأكيد.' : ' Specialist services and requested additions outside the package scope are separately quoted in writing, with applicable tax and the final total stated before confirmation.') }
     : faq);
   if (role) {
+    const confirmation = ar
+      ? ' أكد المرشحة والنطاق كتابةً؛ تبدأ الخدمة بعد الاختيار والتصاريح النظامية المطلوبة.'
+      : ' Confirm the candidate and scope in writing; service begins after selection and required lawful authorisation.';
+    const alternativeProfile = ar ? 'يقدم أي ملف بديل لأخذ موافقتك.' : 'Any alternative profile is presented for your consent.';
     if (slug !== 'monthly-maid-contract') relevantFaqs.push(
       { title: ar ? 'هل أدفع راتب العاملة منفصلاً في الخدمة الشهرية؟' : 'Do I pay the worker’s salary separately in monthly service?', text: packageSections.responsibilities.points[lang][0] },
       { title: ar ? 'ما شروط السداد والإلغاء الشهري؟' : 'What are the monthly payment and cancellation terms?', text: packageSections.payments.body[lang] + ' ' + packageSections.cancellation.body[lang] },
@@ -283,7 +287,7 @@ export function applyManagedServiceContent(slug: string, lang: Lang, copy: Servi
       included: [ar ? 'تحدد المهام الفردية في نطاق الدور المكتوب؛ ولا يؤدي كل عامل جميع المهام المذكورة معاً.' : 'Individual duties follow the written role scope; not every worker performs all listed tasks together.', ...copy.included, ...packageSections.inclusions.points[lang]],
       pricingText: monthlyPackageSummary[lang] + ' ' + packageArrangements[lang],
       pricing: packagePricingCards(lang, 'monthly'),
-      journeyText: copy.journeyText + (ar ? ' أكد المرشحة والنطاق كتابةً؛ تبدأ الخدمة بعد الاختيار والتصاريح النظامية المطلوبة. يقدم أي ملف بديل لأخذ موافقتك.' : ' Confirm the candidate and scope in writing; service begins after selection and required lawful authorisation. Any alternative profile is presented for your consent.'),
+      journeyText: `${copy.journeyText}${slug === 'monthly-maid-contract' ? '' : confirmation} ${alternativeProfile}`,
       finalText: copy.journeyText,
       faqs: relevantFaqs
     };

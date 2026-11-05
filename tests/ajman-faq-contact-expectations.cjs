@@ -42,10 +42,12 @@ const renderedPins = {
 };
 const expand = value => value.replaceAll('${siteConfig.phone}', '+971 6 740 0128').replaceAll('${siteConfig.whatsappDisplay}', '+971 50 203 6767');
 function isCurrentPage(page) {
+  page = require('./bilingual-seo-draft-expectations.cjs').historicalPage(page);
   const lang = ['en', 'ar'].find(lang => page.url === `https://inayadomestic.ae/${lang}/maid-services-ajman/`);
   return Boolean(lang && sha(page.mainText) === renderedPins[lang].current);
 }
 function historicalPage(page) {
+  page = require('./bilingual-seo-draft-expectations.cjs').historicalPage(page);
   const lang = ['en', 'ar'].find(lang => page.url === `https://inayadomestic.ae/${lang}/maid-services-ajman/`);
   if (!lang || sha(page.mainText) === renderedPins[lang].before || isCurrentPage(page)) return page;
   const pin = renderedPins[lang];

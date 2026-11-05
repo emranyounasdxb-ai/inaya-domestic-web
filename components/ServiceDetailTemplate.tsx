@@ -33,6 +33,7 @@ type SectionTitleProps = {
 const sectionPadding = 'px-5 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20';
 const ajmanContexts: Record<string, Record<Lang, string>> = {
   'live-in-maid': { en: 'For a live-in enquiry, prepare accommodation details, daily duties and work and rest arrangements. Compare ', ar: 'لطلب خادمة مقيمة، جهز تفاصيل السكن والمهام اليومية وترتيبات العمل والراحة. قارن ' },
+  'live-out-maid': { en: 'For a live-out enquiry from Ajman, share your area and preferred schedule. Review ', ar: 'لطلب خادمة غير مقيمة في عجمان، اذكر منطقتك والجدول المناسب. راجع ' },
   'full-time-maid': { en: 'For a full-time role, list the workload and daily and weekly hours, then clarify residence separately. Review ', ar: 'لدور بدوام كامل، حدد حجم العمل والساعات اليومية والأسبوعية، ثم وضح السكن بشكل منفصل. راجع ' },
   'part-time-maid': { en: 'For part-time help, share cleaning priorities, preferred hours and access details for your home. Discuss ', ar: 'للمساعدة الجزئية، شارك أولويات التنظيف والساعات المفضلة وتفاصيل دخول المنزل. ناقش ' },
   'monthly-maid-contract': { en: 'For a monthly contract, describe your recurring household needs and confirm the selected package terms with the team. Explore ', ar: 'للعقد الشهري، صف احتياجات المنزل المتكررة وأكد شروط الباقة المختارة مع الفريق. استكشف ' },
@@ -379,7 +380,7 @@ function PricingCards({
     <section className={`${sectionPadding} bg-white`}>
       <div className="mx-auto max-w-6xl">
         <SectionTitle title={copy.pricingTitle} text={copy.pricingText} lang={lang} align="center" />
-        {['live-in-maid', 'full-time-maid', 'part-time-maid', 'monthly-maid-contract', 'nanny', 'maid-visa'].includes(slug) ? <p className="mt-4 text-center"><Link href={`/${locale}/pricing/`} className="text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4">{lang === 'ar' ? 'راجع أساس تسعير الباقات وما يجب تأكيده' : 'Review the package pricing basis and what to confirm'}</Link></p> : null}
+        {['live-in-maid', 'live-out-maid', 'full-time-maid', 'part-time-maid', 'monthly-maid-contract', 'nanny', 'maid-visa'].includes(slug) ? <p className="mt-4 text-center"><Link href={`/${locale}/pricing/`} className="text-sm font-semibold text-primary-900 underline decoration-accent-500/70 underline-offset-4">{lang === 'ar' ? 'راجع أساس تسعير الباقات وما يجب تأكيده' : 'Review the package pricing basis and what to confirm'}</Link></p> : null}
         <p className="mx-auto mt-5 w-fit border-b border-accent-500/40 pb-1 text-sm font-bold text-accent-700">{note}</p>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
           {copy.pricing.map((item, index) => (

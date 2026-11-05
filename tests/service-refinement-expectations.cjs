@@ -25,9 +25,10 @@ function removeLaterSitemapUpdates(file, source) {
   return source;
 }
 function checkpointSource(file, source) {
-  return removeLaterSitemapUpdates(file, source);
+  return removeLaterSitemapUpdates(file, require('./bilingual-seo-draft-expectations.cjs').historicalSource(file, source));
 }
 function historicalSource(file, source) {
+  source=require('./bilingual-seo-draft-expectations.cjs').historicalSource(file,source);
   source=require('./reduced-motion-expectations.cjs').historicalSource(file,source);
   source=require('./editorial-scope-expectations.cjs').historicalSource(file,source);
   source=locationPages.historicalSource(file,source);
@@ -45,6 +46,6 @@ function historicalRecord(record, family, field='record') {
   assert.deepEqual(record,pin[field].after,`${record.slug}: exact reviewed service refinement ${field}`);return structuredClone(pin[field].before);
 }
 function currentRecord(slug,previous,field='record'){return fixture.records[slug]?.[field]?.after??previous;}
-function reviewedPage(page) { page=require('./editorial-scope-expectations.cjs').historicalPage(page);const pin=require('./fixtures/service-refinement-rendered-20261030.json').pages[page.url];if(pin)assert.equal(sha(page.mainText),pin.mainTextSha256,`${page.url}: exact reviewed service refinement output`);return pin; }
+function reviewedPage(page) { page=require('./bilingual-seo-draft-expectations.cjs').historicalPage(page);page=require('./editorial-scope-expectations.cjs').historicalPage(page);const pin=require('./fixtures/service-refinement-rendered-20261030.json').pages[page.url];if(pin)assert.equal(sha(page.mainText),pin.mainTextSha256,`${page.url}: exact reviewed service refinement output`);return pin; }
 function pageBefore(url,title,description){const pin=require('./fixtures/service-refinement-rendered-20261030.json').pages[url]?.metadata;if(!pin)return{title,description};assert.deepEqual({title,description},pin.after,`${url}: exact reviewed readable metadata`);return pin.before;}
 module.exports={fixture,sha,pageBefore,checkpointSource,historicalSource,historicalRecord,currentRecord,reviewedPage};

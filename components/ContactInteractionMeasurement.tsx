@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { sendGAEvent } from '@next/third-parties/google';
+import { siteConfig } from '@/lib/site-config';
 
 const measurementId = 'G-986STCSR37';
 
@@ -12,7 +13,7 @@ declare global {
   }
 }
 
-type InteractionEvent = 'phone_click' | 'whatsapp_click' | 'language_switch' | 'contact_cta' | 'service_enquiry';
+type InteractionEvent = 'phone_click' | 'whatsapp_click' | 'directions_click' | 'language_switch' | 'contact_cta' | 'service_enquiry';
 
 export default function ContactInteractionMeasurement({ locale }: { locale: string }) {
   const pathname = usePathname();
@@ -29,6 +30,7 @@ export default function ContactInteractionMeasurement({ locale }: { locale: stri
 
       if (href.startsWith('tel:')) eventName = 'phone_click';
       else if (/^https:\/\/(?:wa\.me|api\.whatsapp\.com)\//.test(href)) eventName = 'whatsapp_click';
+      else if (href === siteConfig.directionsUrl) eventName = 'directions_click';
       else {
         let destination: URL;
         try { destination = new URL(href, window.location.origin); } catch { return; }
