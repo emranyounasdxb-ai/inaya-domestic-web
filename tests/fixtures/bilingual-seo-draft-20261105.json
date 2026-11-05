@@ -153,75 +153,175 @@
     },
     "https://inayadomestic.ae/en/services/live-out-maid/": {
       "before": "67d40b2fd33c40244954df82669451b0c8ff25767ace837584cf3227d8c52924",
-      "after": "5f30da6e54f6569c180dea61927d8cd6b7910e095c769a7cfa53719c852d54fa",
+      "after": "292a4972a84607cfd2d293d1ecef82045b62a868c05baa912e8c9c67698da782",
       "patches": [
         [
-          1986,
+          305,
+          30,
+          "Book Live-out Maid "
+        ],
+        [
+          1997,
           139,
           ""
         ],
         [
-          3564,
+          3575,
           10,
           "deep "
         ],
         [
-          3583,
+          3594,
           0,
           "needs "
         ],
         [
-          6186,
+          6197,
           53,
           ""
+        ],
+        [
+          6511,
+          30,
+          "Book Live-out Maid "
+        ],
+        [
+          6754,
+          30,
+          "Book Live-out Maid "
+        ],
+        [
+          6999,
+          30,
+          "Book Live-out Maid "
+        ],
+        [
+          10846,
+          29,
+          "Book Live-out Maid"
         ]
       ]
     },
     "https://inayadomestic.ae/ar/services/live-out-maid/": {
       "before": "98d9a1109cea25875939cc514d4d869af55d07c7f1f51e1df2cb3bd768c934fc",
-      "after": "c60436b448865514abed8a723c8c80f93c0d18293ad18033db3f4271ae7d6732",
+      "after": "bf21dd8563d0eddf3fd48756afada042580aa84763ac89218fa3013c891d6c8c",
       "patches": [
         [
-          1536,
+          239,
+          10,
+          "احجز "
+        ],
+        [
+          1541,
           113,
           ""
         ],
         [
-          4934,
+          4939,
           39,
           ""
+        ],
+        [
+          5210,
+          10,
+          "احجز "
+        ],
+        [
+          5435,
+          10,
+          "احجز "
+        ],
+        [
+          5665,
+          10,
+          "احجز "
+        ],
+        [
+          8810,
+          10,
+          "احجز "
         ]
       ]
     },
     "https://inayadomestic.ae/en/services/part-time-maid/": {
       "before": "18229aea08e3ef99f2a6ff6621a0a835ea9f6a4c35b58844ad43cbea6ad47894",
-      "after": "3f9c55baf79846c803cc1fc0abd4f5acf9c15e93b8d9b686400e9c487082d13e",
+      "after": "879742c93e8c744695b9fd887938f851bced2c6061d6d72b64bea46e8c90aaf9",
       "patches": [
         [
-          6724,
+          228,
+          31,
+          "Book Part-time Maid "
+        ],
+        [
+          4094,
+          31,
+          "Book Part-time Maid "
+        ],
+        [
+          4315,
+          31,
+          "Book Part-time Maid "
+        ],
+        [
+          4548,
+          31,
+          "Book Part-time Maid "
+        ],
+        [
+          6768,
           63,
           "Arrival preparation Coordinate "
         ],
         [
-          6791,
+          6835,
           7,
           "address, access "
         ],
         [
-          6802,
+          6846,
           69,
           "arrival window; record who provides products, equipment and transport. "
+        ],
+        [
+          7012,
+          30,
+          "Book Part-time Maid"
         ]
       ]
     },
     "https://inayadomestic.ae/ar/services/part-time-maid/": {
       "before": "d82230c4c4982ccf0dc94272eb89c7bb7e95d79e7b0f5473464bacda4d841dd4",
-      "after": "9bfaf263f7fe9d5df9b93970c9769823b541ac83cadc801579235a89abeb958c",
+      "after": "2511bd3e597d2e9c64bf30374f434225205be0e7f1ddb5a9fa723d905b6c546e",
       "patches": [
         [
-          5564,
+          224,
+          10,
+          "احجز "
+        ],
+        [
+          3350,
+          10,
+          "احجز "
+        ],
+        [
+          3551,
+          10,
+          "احجز "
+        ],
+        [
+          3772,
+          10,
+          "احجز "
+        ],
+        [
+          5584,
           140,
           "الاستعداد للوصول نسق العنوان والدخول وفترة الوصول، وسجل مسؤولية توفير المنتجات والمعدات والنقل. "
+        ],
+        [
+          5811,
+          10,
+          "احجز "
         ]
       ]
     },
@@ -440,6 +540,68 @@
           4588,
           62,
           "المطلوبة كي تركز المناقشة على احتياج المنزل الفعلي. "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/full-time-maid/": {
+      "before": "33a3a7098e95077225196cba1c71ef33340bce2d989180381cf4d09b3af440e1",
+      "after": "8fd4461bc76140f30ed8c2ee86b27208edca393f358cfdf7b3984e2808d33bd0",
+      "patches": [
+        [
+          320,
+          31,
+          "Book Full-time Maid "
+        ],
+        [
+          6556,
+          31,
+          "Book Full-time Maid "
+        ],
+        [
+          6800,
+          31,
+          "Book Full-time Maid "
+        ],
+        [
+          7046,
+          31,
+          "Book Full-time Maid "
+        ],
+        [
+          10329,
+          30,
+          "Book Full-time Maid"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/full-time-maid/": {
+      "before": "334bd9942c6d547e149a2cee27f2b4879ce7d72689cb5e7f3e18967640a99e2e",
+      "after": "eb2addf3d8453561d28f1d4223e812454a09cc15c6b2001e0d63e9d980cf35d5",
+      "patches": [
+        [
+          270,
+          10,
+          "احجز "
+        ],
+        [
+          5216,
+          10,
+          "احجز "
+        ],
+        [
+          5442,
+          10,
+          "احجز "
+        ],
+        [
+          5673,
+          10,
+          "احجز "
+        ],
+        [
+          8391,
+          10,
+          "احجز "
         ]
       ]
     }
