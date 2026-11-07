@@ -1,0 +1,34 @@
+# INAYA Domestic Workers
+
+> Official English and Arabic website for INAYA Domestic Workers in Ajman, UAE, with service information, packages, guides and enquiry options.
+
+Use the linked pages for current service scope, package details and terms. Availability and final arrangements are confirmed through the enquiry process. These links point to the website's canonical HTML pages.
+
+## English
+
+- [Home](https://inayadomestic.ae/en/): Overview of INAYA and its services.
+- [Services](https://inayadomestic.ae/en/services/): Service categories and links to detailed service pages.
+- [Pricing](https://inayadomestic.ae/en/pricing/): Published packages, inclusions and pricing information.
+- [How it works](https://inayadomestic.ae/en/how-it-works/): Enquiry and service arrangement process.
+- [FAQ](https://inayadomestic.ae/en/faq/): Common questions about services and enquiries.
+- [Guides](https://inayadomestic.ae/en/blog/): Domestic-worker and household-service articles.
+- [Request a service](https://inayadomestic.ae/en/booking/): Submit an enquiry for the team to review.
+
+## العربية
+
+- [الرئيسية](https://inayadomestic.ae/ar/): نبذة عن عناية وخدماتها.
+- [الخدمات](https://inayadomestic.ae/ar/services/): فئات الخدمات وروابط صفحاتها التفصيلية.
+- [الباقات والأسعار](https://inayadomestic.ae/ar/pricing/): الباقات المنشورة ومعلومات الأسعار وما تتضمنه.
+- [كيف نعمل](https://inayadomestic.ae/ar/how-it-works/): خطوات الاستفسار وترتيب الخدمة.
+- [الأسئلة الشائعة](https://inayadomestic.ae/ar/faq/): إجابات عن الأسئلة المتعلقة بالخدمات والاستفسارات.
+- [الأدلة](https://inayadomestic.ae/ar/blog/): مقالات عن العمالة المنزلية وخدمات الأسرة.
+- [طلب خدمة](https://inayadomestic.ae/ar/booking/): إرسال استفسار ليراجعه الفريق.
+
+## Optional
+
+- [Terms](https://inayadomestic.ae/en/terms/): English terms and conditions.
+- [Privacy policy](https://inayadomestic.ae/en/privacy-policy/): English privacy information.
+- [Refund and replacement policy](https://inayadomestic.ae/en/refund-policy/): English policy details and conditions.
+- [الشروط والأحكام](https://inayadomestic.ae/ar/terms/): الشروط والأحكام باللغة العربية.
+- [سياسة الخصوصية](https://inayadomestic.ae/ar/privacy-policy/): معلومات الخصوصية باللغة العربية.
+- [سياسة الاسترداد والاستبدال](https://inayadomestic.ae/ar/refund-policy/): تفاصيل السياسة وشروطها باللغة العربية.
