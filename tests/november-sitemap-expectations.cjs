@@ -20,14 +20,14 @@ const pairs = {
     '', 'services/live-out-maid', 'services/part-time-maid', 'services/monthly-maid-contract',
     'services/full-time-maid', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah'
   ],
-  '2026-11-07': ['services', 'services/recruitment', 'services/maid-visa', 'services/experienced-maid']
+  '2026-11-07': ['services', 'services/recruitment', 'services/maid-visa', 'services/experienced-maid', 'services/executive-nannies']
 };
 const lastmods = Object.fromEntries(Object.entries(pairs).flatMap(([date, routes]) =>
   routes.flatMap(route => ['en', 'ar'].map(locale => [`${origin}/${locale}/${route ? route + '/' : ''}`, date]))));
 for (const route of ['choosing-domestic-worker-agency-ajman', 'domestic-worker-hiring-stages-timelines']) {
   lastmods[`${origin}/ar/blog/${route}/`] = '2026-11-04';
 }
-assert.equal(Object.keys(lastmods).length, 54, 'exactly 30 citation, 16 copy/navigation and eight card URLs');
+assert.equal(Object.keys(lastmods).length, 56, 'exactly 30 citation, 16 copy/navigation, eight guidance-card and two executive-matching URLs');
 function dateForUrl(url, previous) { return lastmods[url] ?? previous; }
 function unchangedUrl(url) { return !Object.hasOwn(lastmods, url); }
 function assertRecentLastmods(entries) {
@@ -37,6 +37,7 @@ function assertRecentLastmods(entries) {
   }
 }
 function historicalSitemap(source) {
+  source = require('./november-clarity-expectations.cjs').historicalSource('app/sitemap.ts', source);
   source = source.replace(/\r\n/g, '\n');
   const sha = value => createHash('sha256').update(value).digest('hex');
   if (!source.includes('const recentContentUpdatedAt:')) return source;

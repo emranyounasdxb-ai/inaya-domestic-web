@@ -430,7 +430,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     en: {
       scope: 'Nanny enquiries focus on a child’s daily routine: supervision, play, meals, hygiene and school or nursery preparation according to parent instructions and the agreed role. Childcare should be defined separately from general housemaid duties.',
       arrangement: 'Discuss regular or scheduled childcare and whether you need a live-in or live-out arrangement. For occasional supervision, compare babysitting rather than assuming the same schedule.',
-      prepare: 'Share the children’s ages, daily routine, required hours, language and communication needs, parent instructions and any essential experience requirements.',
+      prepare: 'Share the children’s ages, daily routine and required hours. Explain language and communication needs, parent instructions and any essential experience requirements.',
       duties: ['Daily child routine support', 'Supervised play and activities', 'Meal and hygiene routine assistance', 'School or nursery preparation and parent updates'],
       limits: ['Agree childcare duties separately from general cleaning', 'Do not infer qualifications or experience from nationality', 'Discuss any specialist or medical needs separately; they are not promised', 'Confirm working hours, residence, costs and support terms in writing'],
       steps: [

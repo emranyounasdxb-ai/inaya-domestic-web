@@ -20,12 +20,14 @@ function historicalValue(value, checkpoint) {
 }
 
 function historicalSource(file, source) {
+  source = require('./november-clarity-expectations.cjs').historicalSource(file, source);
   source = require('./service-hero-sizing-expectations.cjs').historicalSource(file, source);
   source = require('./background-guidance-expectations.cjs').historicalSource(file, source);
   return historicalValue(source.replace(/\r\n/g, '\n'), sources[file]);
 }
 
 function historicalPage(page) {
+  page = require('./november-clarity-expectations.cjs').historicalPage(page);
   page = require('./background-guidance-expectations.cjs').historicalPage(page);
   const mainText = historicalValue(page.mainText, pages[page.url]);
   return mainText === page.mainText ? page : { ...page, mainText };

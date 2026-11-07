@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import citations from './official-citation-expectations.cjs';
+import clarity from './november-clarity-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 const baseline = JSON.parse(await readFile('tests/fixtures/official-citation-pages-20261104.json', 'utf8'));
 
@@ -9,7 +10,7 @@ test('only the five approved URL replacements change the five active sources', a
   assert.equal(Object.keys(citations.fixture.targets).length, 5);
   assert.equal(Object.keys(citations.fixture.sources).length, 5);
   for (const [file, pin] of Object.entries(citations.fixture.sources)) {
-    const source = (await readFile(file, 'utf8')).replace(/\r\n/g, '\n');
+    const source = clarity.historicalSource(file, await readFile(file, 'utf8'));
     assert.equal(citations.sha(source), pin.afterSha256, `${file}: complete pinned result`);
     for (const old of Object.keys(citations.fixture.targets)) assert.ok(!source.includes(old), `${file}: retired URL absent`);
     assert.equal(citations.sha(citations.historicalSource(file, source)), pin.beforeSha256);

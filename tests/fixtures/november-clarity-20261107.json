@@ -1,0 +1,225 @@
+{
+  "baseline": "be5c9e7876124c84b6d2ad2910a5f4a026416ffe",
+  "sources": {
+    "lib/domestic-service-content.ts": {
+      "before": "dfa391d02563bea587b71a8255a361404b552fc1d245aeb22b82d8f3b2600183",
+      "after": "3d5af374cacc0ea607d14346ed746c6898b9a8546a4e3848499b407d6bf2475e",
+      "changes": [
+        {
+          "before": "INAYA provides application typing and document processing related to domestic workers. Support covers document guidance, application submission and follow-up, renewal, cancellation, status change, contract-related requests, Emirates ID processing, medical-processing coordination and insurance processing as applicable. Identify the action first so the steps, eligibility, responsibilities and fees can be confirmed in writing. Medical processing is coordination, not treatment provided by INAYA.",
+          "after": "INAYA provides application typing and document processing related to domestic workers. Depending on the case, support covers document guidance, application submission and follow-up, renewal, cancellation, status change and contract-related requests. It may also include Emirates ID processing, medical-processing coordination and insurance processing. Identify the action first so the steps, eligibility, responsibilities and fees can be confirmed in writing. Medical processing is coordination, not treatment provided by INAYA."
+        }
+      ]
+    },
+    "lib/service-practical-guidance.ts": {
+      "before": "463977f7a3373731e7b75ec3fe6a2d5347fcaa2d847833e9d85708d810c12d88",
+      "after": "cb338a49ed831690f99a55b28e7a277b92e7e569eb14809689816e133d1ffa23",
+      "changes": [
+        {
+          "before": "Share the children’s ages, daily routine, required hours, language and communication needs, parent instructions and any essential experience requirements.",
+          "after": "Share the children’s ages, daily routine and required hours. Explain language and communication needs, parent instructions and any essential experience requirements."
+        }
+      ]
+    },
+    "lib/published-article-content.ts": {
+      "before": "04a84c0bbb7dbb411f3dabee612e407a4bfdc172a05980d01f3b169ccdead243",
+      "after": "13a418bbad01c04b346b31e2399158b5171ac42735de573c0993a4c8a3a8aae3",
+      "changes": [
+        {
+          "before": "The Arabic text prevails in a difference.",
+          "after": "If the versions differ, the Arabic text prevails."
+        },
+        {
+          "before": "Required lawful authorisation precedes commencement.",
+          "after": "The required lawful authorisation must be in place before work starts."
+        }
+      ]
+    },
+    "lib/service-page-improvements.ts": {
+      "before": "db1c3b3f4b85fbf30b4bfcd1995e5ce7b86a74a8e015ce73b9e8244abe7e7587",
+      "after": "d250ac4afaa6e3fced0d8e55fdb038045a812d8d2f8c73a1e5461d4ad4a44503",
+      "changes": [
+        {
+          "before": "",
+          "after": "slug === 'executive-nannies') {\n    return {\n      ...copy,\n      countriesTitle: lang === 'ar' ? 'حدد متطلبات دور المربية التنفيذية' : 'Prepare the executive nanny role',\n      countriesText: lang === 'ar' ? 'استند إلى روتين الأسرة الفعلي وتوقعاتها لمراجعة الخبرة الفردية والاتفاق على الدور.' : \"Use the family's actual routine and expectations to review individual experience and agree the role.\",\n      countries: pairs(lang, [\n        ['Childcare routine', \"Describe the children's ages, daily routine and parent instructions so the individual childcare role can be agreed.\", 'روتين رعاية الأطفال', 'وضح أعمار الأطفال وروتينهم اليومي وتعليمات الوالدين للاتفاق على دور رعاية الأطفال الفردي.'],\n        ['Individual experience', 'Review relevant childcare experience and communication against the requested duties. The executive title alone does not establish qualifications.', 'الخبرة الفردية', 'راجع خبرة رعاية الأطفال والتواصل وفق المهام المطلوبة. المسمى التنفيذي وحده لا يثبت المؤهلات.'],\n        ['Learning routine', \"Explain the child's learning routine and the support you want to discuss, then compare it with the individual's relevant experience.\", 'روتين التعلم', 'اشرح روتين تعلم الطفل والدعم الذي تريد مناقشته، ثم قارنه بالخبرة الفردية ذات الصلة.'],\n        ['Privacy and handover', 'Set household privacy expectations, parent communication and handover instructions before agreeing responsibilities.', 'الخصوصية وتسليم الرعاية', 'حدد توقعات الخصوصية في المنزل والتواصل مع الوالدين وتعليمات تسليم الرعاية قبل الاتفاق على المسؤوليات.'],\n        ['Travel and schedule', 'Explain planned travel and changes to the family schedule before agreeing which responsibilities belong in the role.', 'السفر والجدول', 'وضح السفر المخطط له وتغيرات جدول الأسرة قبل الاتفاق على المسؤوليات التي تدخل ضمن الدور.'],\n        ['Written scope and availability', 'Confirm the duties, routine, package and availability. For complex household staffing, agree a separate written scope.', 'النطاق المكتوب والتوفر', 'أكد المهام والروتين والباقة والتوفر. لترتيبات العمالة المنزلية المعقدة، اتفق على نطاق مكتوب مستقل.']\n      ])\n    };\n  }\n  if ("
+        }
+      ]
+    },
+    "components/ServiceDetailTemplate.tsx": {
+      "before": "f5c7e6d929d689d915c0583e356600cbb9e7510c6f23dfad8d6c454bc33e81c4",
+      "after": "0d75257e3c1b730e4d8318c2ffcec9a48224ba4118cc012181e0b1c0414748eb",
+      "changes": [
+        {
+          "before": "",
+          "after": "slug !== 'executive-nannies' && "
+        }
+      ]
+    },
+    "app/sitemap.ts": {
+      "before": "0b91bfd8a322fe21f112b6f1b14307ca45668981a7ba243f54259b5482a94160",
+      "after": "37cd3e6186ae46ea5b4c95567c1e64d62d5bfae5668f2fdbf1cf2b4d0dcfe669",
+      "changes": [
+        {
+          "before": "",
+          "after": ",\n  'en/services/executive-nannies': '2026-11-07',\n  'ar/services/executive-nannies': '2026-11-07'"
+        }
+      ]
+    }
+  },
+  "records": {
+    "domestic-worker-contracts-renewal": {
+      "before": "92ae0749639b2916bf9f3e5912d117cece9cb523464be339f6c87fd251d88402",
+      "after": "ef32acae4ca1df969fed022b76a66c81c6335ddb40e3bad54298df65727d0769",
+      "change": {
+        "before": "The Arabic text prevails in a difference.",
+        "after": "If the versions differ, the Arabic text prevails."
+      }
+    },
+    "domestic-worker-employer-eligibility-documents": {
+      "before": "cfb7b2be69bcca222facac8245cb1943304e874f3674c2a64ea61c200344c97e",
+      "after": "7d98ce602f8d523f78cac8a8cb0fcb266a5c6199c1d2ea5ecbada734a5238220",
+      "change": {
+        "before": "Required lawful authorisation precedes commencement.",
+        "after": "The required lawful authorisation must be in place before work starts."
+      }
+    }
+  },
+  "articleSentences": [
+    {
+      "slug": "domestic-worker-contracts-renewal",
+      "locale": "en",
+      "before": "The Arabic text prevails in a difference.",
+      "after": "If the versions differ, the Arabic text prevails."
+    },
+    {
+      "slug": "domestic-worker-employer-eligibility-documents",
+      "locale": "en",
+      "before": "Required lawful authorisation precedes commencement.",
+      "after": "The required lawful authorisation must be in place before work starts."
+    }
+  ],
+  "pages": {
+    "https://inayadomestic.ae/en/services/nanny/": {
+      "before": "3347cfdd5d5e3d3869e38e96809e82deb821f9016729c8bfed5c6c03b85d1f40",
+      "after": "6554e56ff689cfea212c488c2241d9e9244b0aad01513725aa3d98ca47338a0b",
+      "changes": [
+        {
+          "before": ", required hours, language and communication needs, parent instructions and any essential experience requirements. Confirm the candidate and scope in writing; service begins after selection and required lawful authorisation. Any alternative profile is presented for your consent. 01 Describe the children’s routine Share ages, daily activities and parent instructions. 02 Specify the arrangement Discuss required hours, residence and whether care is regular or occasional. 03 Review relevant experience Ask what childcare experience and supporting references can be reviewed for the individual profile. 04 Agree family communication Discuss handovers, updates, priorities and which duties are outside the role. 05 Review the proposal Confirm availability, costs, documents and support conditions before agreeing. Pricing Guidance Choose the commitment below. Published live-in and live-out prices are the same; duties, schedule, responsibilities, applicable tax and the final amount are recorded in the agreement. Review the package pricing basis and what to confirm Guidance only, not a fixed quote Monthly — AED 3,500 — for 30 days Managed household support for a thirty-day service period under the agreed monthly scope. 30-day service period Agreed salary included in the monthly scope Live-in or live-out at the same price Book Consultation Six-month plan — AED 3,250 — per month · 6-month commitment A monthly package rate for an agreed six-month service commitment. AED 3,250 each month 6-month service commitment Live-in or live-out at the same price Book Consultation Yearly plan — AED 3,000 — per month · 12-month commitment A monthly package rate for an agreed twelve-month service commitment. AED 3,000 each month 12-month service commitment Live-in or live-out at the same price Book Consultation INAYA responsibilities within the monthly agreement These components apply within the applicable managed monthly agreement and its stated scope. The published benefits include the worker’s salary, government fees, medical insurance, return ticket and end-of-service benefits as applicable under that agreement. They are not automatic benefits of every half-day, daily or weekly visit. The domestic worker’s agreed salary. Documented salary-payment administration through the applicable approved mechanism. Applicable government fees, agency sponsorship and work-permit/residence processing within the monthly agreement. Emirates ID and required medical-fitness processing. The applicable health-insurance premium; benefits, exclusions and co-payments follow the issued policy and lawful responsibilities. Candidate assessment, initial orientation and agreed onboarding. Return ticket and end-of-service benefits under the applicable monthly agreement and employment obligations. Customer coordination and administration of eligible replacement requests. Applicable agency employment obligations budgeted within the monthly service charge. Monthly payments and written confirmation For the standard managed monthly offer, the first service month is paid in advance and later payments follow the agreed monthly billing date. There is no separate upfront recruitment/setup fee and no security deposit. Separately contracted recruitment and visa-only services have their own quotation and terms. Receive the written service scope, price breakdown and applicable payment documentation before confirmation. The quotation identifies included components, exclusions, applicable tax and the final payable amount. Record the service period, monthly billing date, renewal arrangements and any agreed changes. A package payment is different from the worker’s wage, even though the wage is included in the managed service price. Managed monthly cancellation and refunds Before service commencement, INAYA returns the unused monthly service payment. After commencement, the unused prepaid service period following effective cancellation is refunded on a clear pro-rata basis. The calculation identifies the prepaid amount, service period, effective cancellation date and unused period. The unused-period calculation and relevant dates are explained in writing. No undisclosed cancellation charge is imposed. Costs already included in the monthly package are not reintroduced as unexpected deductions. Customer service refunds are separate from the worker’s wages and employment entitlements. Normal paid rest and protected leave are not automatic cancellation or refund events. Applicable statutory remedies and deadlines remain in force; recruitment-fee rules apply to the relevant recruitment arrangement, not automatically to monthly payments. Eligible replacement support under the monthly agreement The managed monthly agreement includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Matching coordination and follow-up follow the agreed service plan. Share the agreement, agreed duties, relevant dates and a clear description of the concern. INAYA explains the eligibility review, available matching options and next steps. Review the proposed candidate and give consent before a replacement arrangement is confirmed. If a suitable replacement is unavailable, discuss available alternatives and effective cancellation; unused prepaid service is handled under the monthly refund terms. The support includes eligible review, matching coordination and administration, without an unlimited replacement promise or fixed completion deadline. Legally required remedies remain available. Follow-up schedules and human support hours INAYA coordinates follow-up according to the agreed service plan. The written plan records the contact person, review schedule and how household feedback or replacement concerns will be handled. Human support hours: Saturday–Thursday, 9 AM–9 PM; Friday closed. WhatsApp messages may be received outside office hours; this is not a 24/7 human helpline or a guaranteed response time. Office: +971 6 740 0128. WhatsApp: +971 50 203 6767. Email: info@inayadomestic.ae. Visit Grand Mall, ground floor, Al Rashidiya 3, Ajman, and coordinate the visit with the team. For a complaint, share the relevant agreement and concern, keep written communications and use the existing support and official escalation channels. Compare packages and quotation details · Refund and replacement terms Frequently Asked Questions How do I request a live-out nanny in Ajman? INAYA accepts nanny enquiries from families in Ajman. Share the children’s ages, home location, childcare duties and required days and hours. Ask the team to review live-out availability and relevant individual experience, then confirm the duties, transport and accommodation responsibilities, selected package and written terms. Live-in and live-out use the same published package prices. For occasional supervision, compare babysitting instead of an ongoing nanny arrangement. How should I review nanny experience? Ask about experience with your child’s age group, daily routines and communication needs. Ask which references or documents can be reviewed; a job title or nationality is not proof of a qualification. Can I combine nanny care and housemaid duties? Discuss the priorities and time required for each role. Do not assume general cleaning is included in childcare, or that a housemaid has the required nanny experience. How do parents communicate requirements? Prepare a routine and clear instructions for meals, hygiene, activities and handovers. Discuss how updates and changes will be communicated before agreeing. How does nanny care differ from babysitting? Nanny enquiries concern ongoing childcare routines. Babysitting concerns occasional supervision. Confirm hours, duties and the individual profile for the arrangement you need. Do I pay the worker’s salary separately in monthly service? The service payment includes the agreed worker salary; the customer does not pay that same salary separately. Related Services Babysitting Services Trusted babysitters on demand. View service Newborn Care Services Specialist newborn care. View service Executive Nannies Premium childcare for executive households. View service Why INAYA? Childcare experience matched to your family Discuss the children’s ages and individual care needs, then review relevant experience and available references. Parent led daily routines Agree supervision, play, meals and hygiene according to parent instructions and the defined childcare role. School preparation and updates Discuss nursery or school routines, handovers and parent communication separately from general housekeeping duties. Looking for a nanny in the UAE? Share the children’s ages, daily routine, required hours,",
+          "after": " and required hours. Explain language and communication needs, parent instructions and any essential experience requirements. Confirm the candidate and scope in writing; service begins after selection and required lawful authorisation. Any alternative profile is presented for your consent. 01 Describe the children’s routine Share ages, daily activities and parent instructions. 02 Specify the arrangement Discuss required hours, residence and whether care is regular or occasional. 03 Review relevant experience Ask what childcare experience and supporting references can be reviewed for the individual profile. 04 Agree family communication Discuss handovers, updates, priorities and which duties are outside the role. 05 Review the proposal Confirm availability, costs, documents and support conditions before agreeing. Pricing Guidance Choose the commitment below. Published live-in and live-out prices are the same; duties, schedule, responsibilities, applicable tax and the final amount are recorded in the agreement. Review the package pricing basis and what to confirm Guidance only, not a fixed quote Monthly — AED 3,500 — for 30 days Managed household support for a thirty-day service period under the agreed monthly scope. 30-day service period Agreed salary included in the monthly scope Live-in or live-out at the same price Book Consultation Six-month plan — AED 3,250 — per month · 6-month commitment A monthly package rate for an agreed six-month service commitment. AED 3,250 each month 6-month service commitment Live-in or live-out at the same price Book Consultation Yearly plan — AED 3,000 — per month · 12-month commitment A monthly package rate for an agreed twelve-month service commitment. AED 3,000 each month 12-month service commitment Live-in or live-out at the same price Book Consultation INAYA responsibilities within the monthly agreement These components apply within the applicable managed monthly agreement and its stated scope. The published benefits include the worker’s salary, government fees, medical insurance, return ticket and end-of-service benefits as applicable under that agreement. They are not automatic benefits of every half-day, daily or weekly visit. The domestic worker’s agreed salary. Documented salary-payment administration through the applicable approved mechanism. Applicable government fees, agency sponsorship and work-permit/residence processing within the monthly agreement. Emirates ID and required medical-fitness processing. The applicable health-insurance premium; benefits, exclusions and co-payments follow the issued policy and lawful responsibilities. Candidate assessment, initial orientation and agreed onboarding. Return ticket and end-of-service benefits under the applicable monthly agreement and employment obligations. Customer coordination and administration of eligible replacement requests. Applicable agency employment obligations budgeted within the monthly service charge. Monthly payments and written confirmation For the standard managed monthly offer, the first service month is paid in advance and later payments follow the agreed monthly billing date. There is no separate upfront recruitment/setup fee and no security deposit. Separately contracted recruitment and visa-only services have their own quotation and terms. Receive the written service scope, price breakdown and applicable payment documentation before confirmation. The quotation identifies included components, exclusions, applicable tax and the final payable amount. Record the service period, monthly billing date, renewal arrangements and any agreed changes. A package payment is different from the worker’s wage, even though the wage is included in the managed service price. Managed monthly cancellation and refunds Before service commencement, INAYA returns the unused monthly service payment. After commencement, the unused prepaid service period following effective cancellation is refunded on a clear pro-rata basis. The calculation identifies the prepaid amount, service period, effective cancellation date and unused period. The unused-period calculation and relevant dates are explained in writing. No undisclosed cancellation charge is imposed. Costs already included in the monthly package are not reintroduced as unexpected deductions. Customer service refunds are separate from the worker’s wages and employment entitlements. Normal paid rest and protected leave are not automatic cancellation or refund events. Applicable statutory remedies and deadlines remain in force; recruitment-fee rules apply to the relevant recruitment arrangement, not automatically to monthly payments. Eligible replacement support under the monthly agreement The managed monthly agreement includes review and administration of eligible replacement requests. Eligibility is assessed against the agreed duties, applicable employment arrangement and relevant legal obligations. Matching coordination and follow-up follow the agreed service plan. Share the agreement, agreed duties, relevant dates and a clear description of the concern. INAYA explains the eligibility review, available matching options and next steps. Review the proposed candidate and give consent before a replacement arrangement is confirmed. If a suitable replacement is unavailable, discuss available alternatives and effective cancellation; unused prepaid service is handled under the monthly refund terms. The support includes eligible review, matching coordination and administration, without an unlimited replacement promise or fixed completion deadline. Legally required remedies remain available. Follow-up schedules and human support hours INAYA coordinates follow-up according to the agreed service plan. The written plan records the contact person, review schedule and how household feedback or replacement concerns will be handled. Human support hours: Saturday–Thursday, 9 AM–9 PM; Friday closed. WhatsApp messages may be received outside office hours; this is not a 24/7 human helpline or a guaranteed response time. Office: +971 6 740 0128. WhatsApp: +971 50 203 6767. Email: info@inayadomestic.ae. Visit Grand Mall, ground floor, Al Rashidiya 3, Ajman, and coordinate the visit with the team. For a complaint, share the relevant agreement and concern, keep written communications and use the existing support and official escalation channels. Compare packages and quotation details · Refund and replacement terms Frequently Asked Questions How do I request a live-out nanny in Ajman? INAYA accepts nanny enquiries from families in Ajman. Share the children’s ages, home location, childcare duties and required days and hours. Ask the team to review live-out availability and relevant individual experience, then confirm the duties, transport and accommodation responsibilities, selected package and written terms. Live-in and live-out use the same published package prices. For occasional supervision, compare babysitting instead of an ongoing nanny arrangement. How should I review nanny experience? Ask about experience with your child’s age group, daily routines and communication needs. Ask which references or documents can be reviewed; a job title or nationality is not proof of a qualification. Can I combine nanny care and housemaid duties? Discuss the priorities and time required for each role. Do not assume general cleaning is included in childcare, or that a housemaid has the required nanny experience. How do parents communicate requirements? Prepare a routine and clear instructions for meals, hygiene, activities and handovers. Discuss how updates and changes will be communicated before agreeing. How does nanny care differ from babysitting? Nanny enquiries concern ongoing childcare routines. Babysitting concerns occasional supervision. Confirm hours, duties and the individual profile for the arrangement you need. Do I pay the worker’s salary separately in monthly service? The service payment includes the agreed worker salary; the customer does not pay that same salary separately. Related Services Babysitting Services Trusted babysitters on demand. View service Newborn Care Services Specialist newborn care. View service Executive Nannies Premium childcare for executive households. View service Why INAYA? Childcare experience matched to your family Discuss the children’s ages and individual care needs, then review relevant experience and available references. Parent led daily routines Agree supervision, play, meals and hygiene according to parent instructions and the defined childcare role. School preparation and updates Discuss nursery or school routines, handovers and parent communication separately from general housekeeping duties. Looking for a nanny in the UAE? Share the children’s ages, daily routine and required hours. Explain"
+        }
+      ],
+      "title": "Nanny Services in Ajman & UAE | Childcare Support | INAYA",
+      "description": "Nanny and childcare support in Ajman and across the UAE. Match your child’s routine with individual experience. WhatsApp 050 203 6767.",
+      "graphSha256": "a4d062d31e072546a631e91610d815617151efd41aaff7bbaf9410386f553496",
+      "h1": [
+        "Nanny Services in Ajman & UAE"
+      ]
+    },
+    "https://inayadomestic.ae/en/services/executive-nannies/": {
+      "before": "33315a17d89cd00f32b90ce42d694ac01848ff0f276a25a9ed38a919e4ccbcf4",
+      "after": "60fc28aae0260fc0f3949b5310c3df2c7428a3fcc60a313fdb099f1d8fac0ee5",
+      "changes": [
+        {
+          "before": "Candidate Matching Guidance Families can be guided by language, household experience, family routine, service type and availability across the UAE. Language Preference English, Arabic or other communication preferences can be discussed. English Speaking Childcare Housekeeping Request Matching Household Experience Experience is considered according to your home duties and service type. Cooking Cleaning Family Care Request Matching Family Routine Home size, family routine and privacy expectations are reviewed. Cleaning Laundry Daily Support Request Matching Service Type Matching differs for maids, nannies, chefs, house managers and support services. Cooking Housekeeping Laundry Request Matching UAE Location Service coordination depends on emirate, area and availability. Kitchen Support Cleaning Family Support Request Matching Start Plan Next steps and timing are clarified before final confirmation. English Speaking Childcare Elder Care",
+          "after": "Prepare the executive nanny role Use the family's actual routine and expectations to review individual experience and agree the role. Clear coordination Childcare routine Describe the children's ages, daily routine and parent instructions so the individual childcare role can be agreed. Request Matching Clear coordination Individual experience Review relevant childcare experience and communication against the requested duties. The executive title alone does not establish qualifications. Request Matching Clear coordination Learning routine Explain the child's learning routine and the support you want to discuss, then compare it with the individual's relevant experience. Request Matching Clear coordination Privacy and handover Set household privacy expectations, parent communication and handover instructions before agreeing responsibilities. Request Matching Clear coordination Travel and schedule Explain planned travel and changes to the family schedule before agreeing which responsibilities belong in the role. Request Matching Clear coordination Written scope and availability Confirm the duties, routine, package and availability. For complex household staffing, agree a separate written scope."
+        }
+      ],
+      "title": "Executive Nanny Services in Ajman & UAE | INAYA",
+      "description": "Plan childcare routines and household coordination with INAYA’s executive nanny service in Ajman and UAE. Review individual experience. Call 06 740 0128.",
+      "graphSha256": "3ff5812c9634cb2b75e690e45baefe2ab1de9ce495e97725ffa2f66c484900ac",
+      "h1": [
+        "Executive Nannies in UAE"
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/executive-nannies/": {
+      "before": "f452af4f67afa18a311f0a7968f2163e33de138f8d011d43d1f35439292e2393",
+      "after": "05c513ab983c1054197b0d60b2559aa3ec0f8bc68e409fe3c5aa2717e1cf76b1",
+      "changes": [
+        {
+          "before": "إرشاد مطابقة العمالة يمكن الإرشاد حسب اللغة والخبرة المنزلية ونمط الأسرة ونوع الخدمة والتوفر داخل الإمارات. تفضيل اللغة يمكن مراعاة الإنجليزية أو العربية أو لغات أخرى حسب التوفر. تحدث الإنجليزية رعاية الأطفال تنظيم المنزل اطلب المطابقة خبرة منزلية ننظر إلى الخبرة المناسبة للمهام المطلوبة داخل المنزل. الطبخ التنظيف رعاية الأسرة اطلب المطابقة نمط الأسرة نراعي حجم المنزل وروتين الأسرة ومستوى الخصوصية. التنظيف الغسيل الدعم اليومي اطلب المطابقة نوع الخدمة تختلف المطابقة بين الخادمة والمربية والطاهي ومدير المنزل والدعم الإداري. الطبخ تنظيم المنزل الغسيل اطلب المطابقة الموقع داخل الإمارات يتم تنسيق الخدمة حسب الإمارة والمنطقة والتوفر. دعم المطبخ التنظيف دعم الأسرة اطلب المطابقة خطة البدء نوضح الخطوات والجدول قبل تأكيد الترتيب النهائي. تحدث الإنجليزية رعاية الأطفال رعاية كبار السن",
+          "after": "حدد متطلبات دور المربية التنفيذية استند إلى روتين الأسرة الفعلي وتوقعاتها لمراجعة الخبرة الفردية والاتفاق على الدور. تنسيق واضح روتين رعاية الأطفال وضح أعمار الأطفال وروتينهم اليومي وتعليمات الوالدين للاتفاق على دور رعاية الأطفال الفردي. اطلب المطابقة تنسيق واضح الخبرة الفردية راجع خبرة رعاية الأطفال والتواصل وفق المهام المطلوبة. المسمى التنفيذي وحده لا يثبت المؤهلات. اطلب المطابقة تنسيق واضح روتين التعلم اشرح روتين تعلم الطفل والدعم الذي تريد مناقشته، ثم قارنه بالخبرة الفردية ذات الصلة. اطلب المطابقة تنسيق واضح الخصوصية وتسليم الرعاية حدد توقعات الخصوصية في المنزل والتواصل مع الوالدين وتعليمات تسليم الرعاية قبل الاتفاق على المسؤوليات. اطلب المطابقة تنسيق واضح السفر والجدول وضح السفر المخطط له وتغيرات جدول الأسرة قبل الاتفاق على المسؤوليات التي تدخل ضمن الدور. اطلب المطابقة تنسيق واضح النطاق المكتوب والتوفر أكد المهام والروتين والباقة والتوفر. لترتيبات العمالة المنزلية المعقدة، اتفق على نطاق مكتوب مستقل."
+        }
+      ],
+      "title": "خدمات مربيات تنفيذيات في عجمان والإمارات | عناية",
+      "description": "خطط لروتين رعاية الأطفال وتنسيق المنزل مع خدمة المربيات التنفيذيات من عناية في عجمان والإمارات. راجع الخبرة الفردية. اتصل 06 740 0128.",
+      "graphSha256": "02073fc278d1c38bbc39fff5412203310d082868726f7571583efc2b14071eaf",
+      "h1": [
+        "مربيات تنفيذيات في الإمارات"
+      ]
+    },
+    "https://inayadomestic.ae/en/services/maid-visa/": {
+      "before": "68e7e81e28f7363dd9c26b637346a97d5933ccb7f707a11074128ec96a42dabc",
+      "after": "83ab9ec1258cfb831058c63ebaa617bfec4ea14802d591ac0b8dd1dd4b77ef5f",
+      "changes": [
+        {
+          "before": "Support covers document guidance, application submission and follow-up, renewal, cancellation, status change, contract-related requests, Emirates ID processing, medical-processing coordination and insurance processing as applicable",
+          "after": "Depending on the case, support covers document guidance, application submission and follow-up, renewal, cancellation, status change and contract-related requests. It may also include Emirates ID processing, medical-processing coordination and insurance processing"
+        }
+      ],
+      "title": "Maid Visa Typing in Ajman | Renewal & Cancellation | INAYA",
+      "description": "Domestic-worker visa typing, renewal and cancellation support at INAYA, Grand Mall Ajman. Authority decisions apply. Call 06 740 0128.",
+      "graphSha256": "b2d08661dd0f685bf9211ac3d0ec379a654e91bb127da6d9f0bfefbbd13b908c",
+      "h1": [
+        "Domestic-Worker Visa Typing in Ajman"
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-employer-eligibility-documents/": {
+      "before": "de3ea96ae7943118bb43d8346096ca1db3855693ead849d862376248f060ea32",
+      "after": "2b8d79209e4b15e258103f3dc1995c688db0d25e9f827443ffa7bcc4c0c0ada1",
+      "changes": [
+        {
+          "before": "Required lawful authorisation precedes commencement",
+          "after": "The required lawful authorisation must be in place before work starts"
+        }
+      ],
+      "title": "Domestic Worker Permit Eligibility & Documents | INAYA",
+      "description": "Eligibility depends on the applicant category and the permit route. For a domestic worker recruited onto a household employer's file, follow MOHRE's current…",
+      "graphSha256": "a9c1c68f25d5daf240e8acc24979916b7b30f474705164dd9d776d9d4c61477c",
+      "h1": [
+        "Who can apply for a domestic-worker permit, and which documents are needed?"
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-contracts-renewal/": {
+      "before": "12c0c153f8f5d80ac70dcc08a745d91d4b93964ad0bd243bcdee758f83ab928f",
+      "after": "90e00f3452d4f861be1dad269bb83b7e714ede5fee5c688a998f2fcb376787ce",
+      "changes": [
+        {
+          "before": "The Arabic text prevails in a difference",
+          "after": "If the versions differ, the Arabic text prevails"
+        }
+      ],
+      "title": "Domestic Worker Contracts & Renewal Guide | INAYA",
+      "description": "Read the agreement for each relationship: the agency's recruitment or service agreement, the worker's employment contract and, for temporary employment, the…",
+      "graphSha256": "676d14cb7f6bbed817d58f54a25880488740b5b94c5ba823f58ff72fd53d83e0",
+      "h1": [
+        "Which domestic-worker contracts should you read, and how does renewal work?"
+      ]
+    }
+  },
+  "articleText": {
+    "en/domestic-worker-contracts-renewal": {
+      "before": "8e939c88185d698d580634a165978feca14821a07154412fde049653def23b7f",
+      "after": "261eba97e3eb29a9d87c1cd0c8ff05f991ffc3916021441e51e79568fd010ac9",
+      "changes": [
+        {
+          "before": "The Arabic text prevails in a difference.",
+          "after": "If the versions differ, the Arabic text prevails."
+        }
+      ]
+    },
+    "en/domestic-worker-employer-eligibility-documents": {
+      "before": "43636ab0997f3d95b231e7bb514c8b8c86453ad33929af2fba339ed12b64cac8",
+      "after": "819d2dc69f9d2c33afd913b6b4decd4fa669fb1220797b1dc5b12283b335e50c",
+      "changes": [
+        {
+          "before": "Required lawful authorisation precedes commencement.",
+          "after": "The required lawful authorisation must be in place before work starts."
+        }
+      ]
+    }
+  },
+  "executiveMatchingTitle": {
+    "en": "Prepare the executive nanny role",
+    "ar": "حدد متطلبات دور المربية التنفيذية"
+  }
+}

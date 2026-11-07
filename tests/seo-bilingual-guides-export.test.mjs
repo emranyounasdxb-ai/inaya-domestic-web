@@ -1,4 +1,5 @@
 import november from './november-sitemap-expectations.cjs';
+import novemberClarity from './november-clarity-expectations.cjs';
 import additionsRefresh from './blog-refresh-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
@@ -446,7 +447,7 @@ test('twenty original bilingual topics retain exact copy and references alongsid
         assert.ok(boundary, `${route}: the supplement follows every original heading`);
         originalRendered = originalRendered.slice(0, boundary.index);
       }
-      assert.equal(sha(beforeReplacementHeadingCorrection(article.slug, locale, text(additionsRefresh.beforeContextLinks(originalRendered)))), snapshot.visible_sha256, `${route}: every original word, figure and condition rendered apart from the reviewed heading correction`);
+      assert.equal(sha(beforeReplacementHeadingCorrection(article.slug, locale, novemberClarity.historicalArticleText(article.slug, locale, text(additionsRefresh.beforeContextLinks(originalRendered))))), snapshot.visible_sha256, `${route}: every original word, figure and condition rendered apart from exact reviewed amendments`);
       assert.equal([...originalRendered.matchAll(/<h2\b/g)].length, snapshot.heading_count, `${route}: all original headings`);
       assert.equal([...originalRendered.matchAll(/<li\b/g)].length, snapshot.list_items, `${route}: all original list items`);
       assert.equal([...originalRendered.matchAll(/<table\b/g)].length, snapshot.tables, `${route}: all original tables`);

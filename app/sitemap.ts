@@ -146,7 +146,9 @@ const recentContentUpdatedAt: Record<string, string> = {
   ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-05']))),
   ...Object.fromEntries([
     'services', 'services/recruitment', 'services/maid-visa', 'services/experienced-maid'
-  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-07'])))
+  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-07']))),
+  'en/services/executive-nannies': '2026-11-07',
+  'ar/services/executive-nannies': '2026-11-07'
 };
 
 const coreRoutes = [
