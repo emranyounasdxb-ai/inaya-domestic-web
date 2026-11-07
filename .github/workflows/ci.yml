@@ -48,13 +48,21 @@ jobs:
         run: node node_modules/typescript/bin/tsc lib/json-ld.ts lib/structured-data.ts lib/image-alt.ts lib/content-architecture.ts lib/guide-content.ts lib/buyer-answers.ts lib/measurement.ts lib/keyword-article-markdown.ts lib/blog-context-links.ts --outDir .next/phase-02-unit --rootDir . --module commonjs --target es2020 --esModuleInterop --resolveJsonModule --skipLibCheck
       - name: Verify consent-gated accepted enquiry measurement
         run: node --test tests/form-delivery-measurement.test.mjs
-      - name: Verify real Apache legacy migration and all current routes
+      - name: Verify real Apache migration, current routes and bounded HTTPS HSTS
         run: |
-          if ! command -v apache2 >/dev/null; then
+          if ! command -v apache2 >/dev/null || ! command -v openssl >/dev/null; then
             sudo apt-get update
-            sudo apt-get install -y apache2
+            sudo apt-get install -y apache2 openssl
           fi
           python3 tests/cpanel-migration.py
+          python3 tests/cpanel-hsts.py --report output/deep-review-20261107/cpanel-hsts-ci.json
+      - name: Save bounded HSTS integration evidence
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: cpanel-hsts-evidence
+          path: output/deep-review-20261107/cpanel-hsts-ci.json
+          if-no-files-found: error
+          retention-days: 7
       - name: Install real FTP client for nested gallery inventory regression
         run: |
           if ! command -v lftp >/dev/null; then
