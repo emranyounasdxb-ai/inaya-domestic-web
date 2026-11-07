@@ -1,3 +1,4 @@
+import november from './november-sitemap-expectations.cjs';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createRequire,Module} from 'node:module';
@@ -59,6 +60,6 @@ test('complete published inventory and image discovery remain intact',async()=>{
  const audit=await auditExport();assert.equal(audit.pages.length,294);assert.deepEqual(audit.orphans,[]);for(const page of audit.pages)refinement.reviewedPage(page);
  const sitemap=await readFile('out/sitemap.xml','utf8');assert.equal(new Set([...sitemap.matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map(m=>m[1])).size,116);
  for(const route of refinement.fixture.datedRoutes)for(const lang of ['en','ar']){
-  const url=`https://inayadomestic.ae/${lang}/${route}/`;const block=[...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(m=>m[1].includes(`<loc>${url}</loc>`));assert.ok(block?.[1].includes('<lastmod>2026-10-30</lastmod>'));
+  const url=`https://inayadomestic.ae/${lang}/${route}/`;const block=[...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(m=>m[1].includes(`<loc>${url}</loc>`));assert.ok(block?.[1].includes(`<lastmod>${november.dateForUrl(url,'2026-10-30')}</lastmod>`));
  }
 });

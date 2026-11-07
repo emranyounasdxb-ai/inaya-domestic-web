@@ -4,6 +4,7 @@ import { createRequire, Module } from 'node:module';
 import path from 'node:path';
 import test from 'node:test';
 import clarity from './page-clarity-expectations.cjs';
+import november from './november-sitemap-expectations.cjs';
 import { auditExport, attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 const require = createRequire(import.meta.url);
 const ts = require('typescript');
@@ -135,7 +136,7 @@ test('archive categories, career separation, complete original article inventory
   for (const route of clarity.fixture.updatedRoutes) for (const lang of ['en','ar']) {
     const url = `https://inayadomestic.ae/${lang}/${route ? route + '/' : ''}`;
     const block = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].find(m=>m[1].includes(`<loc>${url}</loc>`));
-    const expectedLastmod = novemberUpdatedRoutes.has(route) ? '2026-11-02' : '2026-10-30';
+    const expectedLastmod = november.dateForUrl(url, novemberUpdatedRoutes.has(route) ? '2026-11-02' : '2026-10-30');
     assert.ok(block?.[1].includes(`<lastmod>${expectedLastmod}</lastmod>`), `${url}: real content update date`);
   }
   for (const lang of ['en','ar']) {

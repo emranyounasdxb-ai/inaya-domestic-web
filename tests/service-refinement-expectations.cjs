@@ -9,6 +9,7 @@ const stable = value => Array.isArray(value) ? value.map(stable) : value && type
 function removeLaterSitemapUpdates(file, source) {
   source=source.replace(/\r\n/g,'\n');
   if (file === 'app/sitemap.ts') {
+    source = require('./november-sitemap-expectations.cjs').historicalSitemap(source);
     const novemberLastmods = `  // Only routes with substantive edits in the 2 November release are marked current.\n  'maid-services-ajman': '2026-11-02',\n  'maid-services-dubai': '2026-11-02',\n  'maid-services-sharjah': '2026-11-02',\n  'maid-services-abu-dhabi': '2026-11-02',\n  'maid-services-ras-al-khaimah': '2026-11-02',\n  'maid-services-fujairah': '2026-11-02',\n  'maid-services-umm-al-quwain': '2026-11-02',\n  'pricing': '2026-11-02'\n`;
     if (!source.includes(novemberLastmods)) return source;
     assert.equal(source.split(novemberLastmods).length, 2, `${file}: exact 2 November sitemap timestamps`);

@@ -1,3 +1,4 @@
+import november from './november-sitemap-expectations.cjs';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
@@ -269,6 +270,6 @@ test('all 42 exports render complete reviewed paragraphs, tables, FAQs and label
     assert.equal(articleNode.mainEntityOfPage['@id'], `${url}#webpage`);
     assert.deepEqual(articleNode.citation, copy.references.map(reference => reference.url));
     const entry = entries.find(value => value.includes(`<loc>${url}</loc>`));
-    assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), [amendment.dateFor(article.slug, reviewedDate)]);
+    assert.deepEqual([...entry.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), [november.dateForUrl(url, amendment.dateFor(article.slug, reviewedDate))]);
   }
 });

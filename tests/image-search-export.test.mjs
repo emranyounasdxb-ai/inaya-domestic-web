@@ -1,3 +1,4 @@
+import november from './november-sitemap-expectations.cjs';
 import clarity from './page-clarity-expectations.cjs';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -235,7 +236,7 @@ test('all294 pages have localized previews with the eight new article photos and
     const route = new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/');
     return !clarity.datedRoutes.includes(route) && !novemberRoutes.has(route);
   }).sort(), 'the44 prior non-archive updates retain28October; routes substantively refreshed on2November use their current lastmod');
-  assert.equal(entries.filter(entry => entry[1].includes('<lastmod>2026-11-02</lastmod>')).length, novemberRoutes.size * 2, 'the eight substantively updated canonical routes use2November lastmod values in both locales');
+  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-11-02</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...novemberRoutes].flatMap(route => ['en', 'ar'].map(locale => `${origin}/${locale}/${route}/`)).filter(november.unchangedUrl).sort(), 'the pricing page and four unchanged city pairs retain2November');
   assert.deepEqual(fallbackCounts, { blog: 12, countries: 0, locations: 14, information: 32 }, 'all58 text/index pages get social previews without false primary-image schema');
   assert.equal(preservedMappings.length, 198);
   assert.equal(fingerprint(preservedMappings), '13c657789b876e2365251033f1ac01f16cde1359d42d17bafbdb91477145445d', 'all198 prior photo assignments remain exact after reversing only the pinned scene descriptions');

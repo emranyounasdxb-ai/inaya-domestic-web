@@ -1,0 +1,79 @@
+{
+  "baseline": "018c29ada9b4a957fdf60ad9d5778db1e7c260fb",
+  "sources": {
+    "lib/services.ts": {
+      "before": "7338a17ff5d82fd015f32196316969e714b72dadf5eb112d5b18a5a9a03b2000",
+      "after": "a53063b652011b0ad449dad86fd6ff6838392b65946b30fe568d9de481703aef",
+      "replacements": [
+        {
+          "before": "    short: { en: 'Thorough staff verification.', ar: 'تحقق شامل من العمالة.' },",
+          "after": "    short: { en: 'Review available profile information.', ar: 'مراجعة معلومات الملف المتاحة.' },"
+        },
+        {
+          "before": "    description: { en: 'Thorough background verification support designed to improve trust, safety and reliability before domestic worker placement.', ar: 'دعم شامل للتحقق من الخلفية بهدف تعزيز الثقة والسلامة والموثوقية قبل توظيف العمالة المنزلية.' }",
+          "after": "    description: { en: 'Discuss available identity details, documents and experience notes before selecting a domestic worker. Confirm the scope and evidence of any checks with the team.', ar: 'ناقش بيانات الهوية والمستندات وملاحظات الخبرة المتاحة قبل اختيار عاملة منزلية. أكد نطاق أي فحوصات وأدلتها مع الفريق.' }"
+        }
+      ]
+    }
+  },
+  "summaries": {
+    "en": {
+      "before": "Thorough staff verification.",
+      "after": "Review available profile information."
+    },
+    "ar": {
+      "before": "تحقق شامل من العمالة.",
+      "after": "مراجعة معلومات الملف المتاحة."
+    }
+  },
+  "pages": {
+    "https://inayadomestic.ae/en/services/": {
+      "locale": "en",
+      "occurrences": 1,
+      "before": "eac2a42112aeed6bd440b004565c5a05a6c521a4ba44df23373cc48447c6d00e",
+      "after": "1a18bc0d00456e88373d413da1c215c65c35095a2f9a0a9fd0236580b4f7a3be"
+    },
+    "https://inayadomestic.ae/en/services/recruitment/": {
+      "locale": "en",
+      "occurrences": 2,
+      "before": "128c93e5dbe13ed169b09d5c3370b3b2b2077dc3cadb43ceacc62d124f31f33e",
+      "after": "f6cf27104a46b5e42cdd99d724d19d415973fd4ccab3a010ab64731fd2071f78"
+    },
+    "https://inayadomestic.ae/en/services/maid-visa/": {
+      "locale": "en",
+      "occurrences": 1,
+      "before": "e204e4f5dee663ab741dd0498121ace24fecc340360de9e0354c06ca59aac2a0",
+      "after": "68e7e81e28f7363dd9c26b637346a97d5933ccb7f707a11074128ec96a42dabc"
+    },
+    "https://inayadomestic.ae/en/services/experienced-maid/": {
+      "locale": "en",
+      "occurrences": 2,
+      "before": "7510e3f5a3700504efed099c946b8c53923387edc6a0c8179adb5d78969d3bb0",
+      "after": "1b9a3ade8be356796861287203a2c01c7f2f94c5aed46e1291a741e6d5f190e1"
+    },
+    "https://inayadomestic.ae/ar/services/": {
+      "locale": "ar",
+      "occurrences": 1,
+      "before": "ebe67903ae500ca90336498839b7d80c30c98d22aa0e28caaad99e16d95de374",
+      "after": "ba33731335e736b11beec47c086e98c180833482949ae2fc35f95cba22976e04"
+    },
+    "https://inayadomestic.ae/ar/services/recruitment/": {
+      "locale": "ar",
+      "occurrences": 2,
+      "before": "d307e3b5213c28e5f49ce22e707590d3315d28b765e2b0d7250e9e9862a45d05",
+      "after": "89e6a0206a1b3cdd25dce04f5cfc5decf398a43f8c1e6b16316768074f787577"
+    },
+    "https://inayadomestic.ae/ar/services/maid-visa/": {
+      "locale": "ar",
+      "occurrences": 1,
+      "before": "d73b323beccbfd0a4232ce1a5593060fc315d8d0ef8d831c0fd781a16d5db472",
+      "after": "8f010636386c865a4852ac6ed7d1d71b16a57ac4ead7dd2557f4ec8cc9853184"
+    },
+    "https://inayadomestic.ae/ar/services/experienced-maid/": {
+      "locale": "ar",
+      "occurrences": 2,
+      "before": "ceacc0cc79c101b5453d4188edf1ffac304c0bdbe97792f438439dd74b991bc4",
+      "after": "5b49e19ee8d5ca65fc7a96a08260a40854c0e58dbb69758da660a48913fe29b7"
+    }
+  }
+}

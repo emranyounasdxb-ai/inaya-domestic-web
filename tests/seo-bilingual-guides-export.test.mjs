@@ -1,3 +1,4 @@
+import november from './november-sitemap-expectations.cjs';
 import additionsRefresh from './blog-refresh-expectations.cjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
@@ -112,7 +113,7 @@ test('Ajman decision aids render complete bilingual worksheets, useful process c
     }
     assert.doesNotMatch(text(addition), /TODO|TBD|Golden Visa|tourist visa|company formation|guaranteed ranking/i);
     const sitemapEntry = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].find((match) => match[1].includes(`<loc>${url}</loc>`));
-    assert.ok(sitemapEntry?.[1].includes('<lastmod>2026-10-24</lastmod>'), `${url}: substantive modification date`);
+    assert.ok(sitemapEntry?.[1].includes(`<lastmod>${november.dateForUrl(url, '2026-10-24')}</lastmod>`), `${url}: substantive modification date`);
   }
 });
 

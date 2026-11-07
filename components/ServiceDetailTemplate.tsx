@@ -208,7 +208,7 @@ function ServiceHero({
             </a>
           </div>
         </div>
-        <div className="relative aspect-[4/3] min-h-[350px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]">
           <Image src={withServiceImageVersion(image)} unoptimized alt={serviceImageAlt(lang, slug)} fill loading="eager" fetchPriority="high" sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover" />
         </div>
       </div>

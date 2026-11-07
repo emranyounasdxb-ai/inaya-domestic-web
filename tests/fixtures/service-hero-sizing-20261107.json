@@ -1,0 +1,8 @@
+{
+  "baseline": "018c29ada9b4a957fdf60ad9d5778db1e7c260fb",
+  "file": "components/ServiceDetailTemplate.tsx",
+  "before": "494a60448930ba60432107031be644f261491ae52c7647fc3b2c993841360bdd",
+  "after": "f5c7e6d929d689d915c0583e356600cbb9e7510c6f23dfad8d6c454bc33e81c4",
+  "previous": "relative aspect-[4/3] min-h-[350px] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]",
+  "current": "relative aspect-[4/3] overflow-hidden rounded-[28px] border border-primary-900/10 bg-white shadow-[0_28px_76px_rgba(7,22,74,0.15)]"
+}
