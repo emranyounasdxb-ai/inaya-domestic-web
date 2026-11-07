@@ -298,7 +298,7 @@ function MatchingCards({
   slug: string;
 }) {
   const administrativeEnquiry = ['maid-visa', 'sponsorship-transfer'].includes(slug);
-  const countryBased = !reviewedServiceSlugs.includes(slug) && !administrativeEnquiry && usesCountryMatching(slug);
+  const countryBased = slug !== 'executive-nannies' && !reviewedServiceSlugs.includes(slug) && !administrativeEnquiry && usesCountryMatching(slug);
   const requestLabel = administrativeEnquiry
     ? lang === 'ar' ? 'ناقش حالتك' : 'Discuss your case'
     : lang === 'ar' ? 'اطلب المطابقة' : 'Request Matching';

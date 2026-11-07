@@ -38,6 +38,7 @@ function historicalSource(file, source) {
   return pin.before;
 }
 function historicalRecord(record, family, field = 'record') {
+  record = require('./november-clarity-expectations.cjs').historicalRecord(record, family, field);
   record = require('./official-citation-expectations.cjs').historicalRecord(record, family, field);
   record = refinement.historicalRecord(record, family, field);
   const pin = fixture.records[record.slug];

@@ -79,6 +79,8 @@ jobs:
         run: node --test tests/service-refinement.test.mjs
       - name: Verify background guidance cards and exact preserved content
         run: node --test tests/background-guidance-export.test.mjs tests/background-guidance-preservation.test.cjs tests/service-hero-sizing-unit.test.cjs
+      - name: Verify scoped readability and executive matching amendments
+        run: node --test tests/november-clarity-preservation.test.mjs
       - name: Verify owner-approved native Ahrefs head and separate privacy disclosure
         run: node --test tests/ahrefs-source-unit.test.cjs tests/ahrefs-head-export.test.mjs
       - name: Unit and export checks

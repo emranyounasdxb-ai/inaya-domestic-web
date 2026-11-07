@@ -25,7 +25,7 @@ test('the eight affected exports change only the exact background card summaries
     const html = readFileSync(`out${new URL(url).pathname}index.html`, 'utf8');
     const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
     const main = body.slice(body.indexOf('<main'), body.lastIndexOf('</main>') + 7).replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/g, '');
-    const page = { url, mainText: text(main) };
+    const page = require('./november-clarity-expectations.cjs').historicalPage({ url, mainText: text(main) });
     const pin = guidance.fixture.pages[url];
     assert.equal(guidance.hash(page.mainText), pin.after, `${url}: exact visible result`);
     assert.equal(guidance.hash(guidance.historicalPage(page).mainText), pin.before, `${url}: all other words preserved`);

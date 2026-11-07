@@ -18,6 +18,21 @@ export const liveInChecklist = {
 // This presentation layer uses existing approved scope and package terms.
 // It does not change prices, refund rules, availability or employment commitments.
 export function improveServicePage(slug: string, lang: Lang, copy: ServiceCopy): ServiceCopy {
+  if (slug === 'executive-nannies') {
+    return {
+      ...copy,
+      countriesTitle: lang === 'ar' ? 'حدد متطلبات دور المربية التنفيذية' : 'Prepare the executive nanny role',
+      countriesText: lang === 'ar' ? 'استند إلى روتين الأسرة الفعلي وتوقعاتها لمراجعة الخبرة الفردية والاتفاق على الدور.' : "Use the family's actual routine and expectations to review individual experience and agree the role.",
+      countries: pairs(lang, [
+        ['Childcare routine', "Describe the children's ages, daily routine and parent instructions so the individual childcare role can be agreed.", 'روتين رعاية الأطفال', 'وضح أعمار الأطفال وروتينهم اليومي وتعليمات الوالدين للاتفاق على دور رعاية الأطفال الفردي.'],
+        ['Individual experience', 'Review relevant childcare experience and communication against the requested duties. The executive title alone does not establish qualifications.', 'الخبرة الفردية', 'راجع خبرة رعاية الأطفال والتواصل وفق المهام المطلوبة. المسمى التنفيذي وحده لا يثبت المؤهلات.'],
+        ['Learning routine', "Explain the child's learning routine and the support you want to discuss, then compare it with the individual's relevant experience.", 'روتين التعلم', 'اشرح روتين تعلم الطفل والدعم الذي تريد مناقشته، ثم قارنه بالخبرة الفردية ذات الصلة.'],
+        ['Privacy and handover', 'Set household privacy expectations, parent communication and handover instructions before agreeing responsibilities.', 'الخصوصية وتسليم الرعاية', 'حدد توقعات الخصوصية في المنزل والتواصل مع الوالدين وتعليمات تسليم الرعاية قبل الاتفاق على المسؤوليات.'],
+        ['Travel and schedule', 'Explain planned travel and changes to the family schedule before agreeing which responsibilities belong in the role.', 'السفر والجدول', 'وضح السفر المخطط له وتغيرات جدول الأسرة قبل الاتفاق على المسؤوليات التي تدخل ضمن الدور.'],
+        ['Written scope and availability', 'Confirm the duties, routine, package and availability. For complex household staffing, agree a separate written scope.', 'النطاق المكتوب والتوفر', 'أكد المهام والروتين والباقة والتوفر. لترتيبات العمالة المنزلية المعقدة، اتفق على نطاق مكتوب مستقل.']
+      ])
+    };
+  }
   if (!reviewedServiceSlugs.includes(slug)) return copy;
   const ar = lang === 'ar';
   const monthly = ['monthly-maid-contract', 'nanny', 'live-in-maid'].includes(slug);
