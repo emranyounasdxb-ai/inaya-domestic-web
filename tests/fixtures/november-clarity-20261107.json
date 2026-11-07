@@ -221,5 +221,34 @@
   "executiveMatchingTitle": {
     "en": "Prepare the executive nanny role",
     "ar": "حدد متطلبات دور المربية التنفيذية"
+  },
+  "commercialParagraphs": {
+    "https://inayadomestic.ae/en/services/nanny/": {
+      "before": "1df789683b54251c99cac437a350c2d1af4720c835845f8cc95d8b364cb46f87",
+      "after": "3f8fc6a8f5eca59cdbe86a9ad731afc5caf7176329fb05bd76faa752eb55fe9c",
+      "changes": [
+        {
+          "index": 11,
+          "before": "share the children s ages daily routine required hours language and communication needs parent instructions and any essential experience requirements confirm the candidate and scope in writing service begins after selection and required lawful authorisation any alternative profile is presented for your consent",
+          "after": "share the children s ages daily routine and required hours explain language and communication needs parent instructions and any essential experience requirements confirm the candidate and scope in writing service begins after selection and required lawful authorisation any alternative profile is presented for your consent"
+        },
+        {
+          "index": 35,
+          "before": "share the children s ages daily routine required hours language and communication needs parent instructions and any essential experience requirements",
+          "after": "share the children s ages daily routine and required hours explain language and communication needs parent instructions and any essential experience requirements"
+        }
+      ]
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-employer-eligibility-documents/": {
+      "before": "565cfe03a6a12c479649eba0b8c5cd8a2b246dc6d74f1019876a3461f418c521",
+      "after": "14c63dcb979427e7f2b7deaef7fa16e62a76ca9d19daca49a5dbe8581aaf0be9",
+      "changes": [
+        {
+          "index": 14,
+          "before": "the household is the beneficiary of the managed monthly service the applicable agreements identify the agency employer and sponsor the household employer permit categories described above must therefore be checked against the actual applicant and route rather than imposed on every monthly service customer start with your role duties location and preferred timing then request only the documents needed for that route required lawful authorisation precedes commencement",
+          "after": "the household is the beneficiary of the managed monthly service the applicable agreements identify the agency employer and sponsor the household employer permit categories described above must therefore be checked against the actual applicant and route rather than imposed on every monthly service customer start with your role duties location and preferred timing then request only the documents needed for that route the required lawful authorisation must be in place before work starts"
+        }
+      ]
+    }
   }
 }

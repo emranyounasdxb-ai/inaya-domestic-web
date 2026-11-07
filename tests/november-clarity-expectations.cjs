@@ -37,4 +37,16 @@ function historicalArticleText(slug, locale, value) {
   return restore(value, fixture.articleText?.[`${locale}/${slug}`], `${locale}/${slug}`);
 }
 
-module.exports = { fixture, hash, historicalSource, historicalRecord, historicalPage, historicalArticleText };
+function historicalCommercialParagraphs(page) {
+  const pin = fixture.commercialParagraphs[page.url];
+  if (!pin || hash(page.mainText) !== fixture.pages[page.url].after || hash(JSON.stringify(page.paragraphs)) !== pin.after) return page;
+  const paragraphs = [...page.paragraphs];
+  for (const change of pin.changes) {
+    assert.equal(paragraphs[change.index], change.after, `${page.url}: exact reviewed paragraph placement`);
+    paragraphs[change.index] = change.before;
+  }
+  assert.equal(hash(JSON.stringify(paragraphs)), pin.before, `${page.url}: every other paragraph preserved`);
+  return { ...page, paragraphs };
+}
+
+module.exports = { fixture, hash, historicalSource, historicalRecord, historicalPage, historicalArticleText, historicalCommercialParagraphs };

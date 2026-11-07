@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import clarity from './november-clarity-expectations.cjs';
-import { attrs, text } from '../scripts/seo-content-audit.mjs';
+import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 test('six exact source amendments preserve every other byte and reject partial changes', async () => {
   assert.deepEqual(Object.keys(clarity.fixture.sources).sort(), [
@@ -80,5 +80,40 @@ test('six affected pages render the exact scoped copy with unchanged metadata, h
       const links = [...section.matchAll(/<a\b([^>]*)>/g)].map(match => attrs(match[1]).href);
       assert.deepEqual(links, Array(6).fill(`/${locale}/booking/?service=executive-nannies`), `${url}: existing selected-service enquiry destinations`);
     }
+  }
+});
+
+test('only exact nanny and eligibility paragraphs project to unchanged commercial-placement snapshots', async () => {
+  const nannyUrl = 'https://inayadomestic.ae/en/services/nanny/';
+  const eligibilitySlug = 'domestic-worker-employer-eligibility-documents';
+  const eligibilityUrl = `https://inayadomestic.ae/en/blog/${eligibilitySlug}/`;
+  assert.deepEqual(Object.keys(clarity.fixture.commercialParagraphs), [nannyUrl, eligibilityUrl]);
+  for (const url of [nannyUrl, eligibilityUrl]) {
+    const html = await readFile(`out${new URL(url).pathname}index.html`, 'utf8');
+    const body = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
+    const main = body.slice(body.indexOf('<main'), body.lastIndexOf('</main>') + 7).replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/g, '');
+    const paragraphs = [...main.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(match => tokens(text(match[1])).join(' ')).filter(value => value.length >= 60 && tokens(value).length >= 8);
+    const page = { url, mainText: text(main), paragraphs };
+    const pin = clarity.fixture.commercialParagraphs[url];
+    assert.equal(clarity.hash(page.mainText), clarity.fixture.pages[url].after);
+    assert.equal(clarity.hash(JSON.stringify(paragraphs)), pin.after);
+    const previous = clarity.historicalCommercialParagraphs(page);
+    assert.equal(clarity.hash(JSON.stringify(previous.paragraphs)), pin.before);
+    assert.equal(previous.mainText, page.mainText, 'commercial comparison does not rewrite current visible text');
+    assert.deepEqual(pin.changes.map(change => change.index), url === nannyUrl ? [11, 35] : [14]);
+    const sentence = url === nannyUrl ? clarity.fixture.sources['lib/service-practical-guidance.ts'].changes[0] : clarity.fixture.articleSentences.find(item => item.slug === eligibilitySlug);
+    for (const change of pin.changes) {
+      assert.equal(change.after.split(tokens(sentence.after).join(' ')).length, 2);
+      assert.equal(change.after.replace(tokens(sentence.after).join(' '), tokens(sentence.before).join(' ')), change.before);
+    }
+    const partial = [...paragraphs];
+    partial[pin.changes[0].index] = pin.changes[0].before;
+    for (const changed of [
+      { ...page, paragraphs: partial },
+      { ...page, paragraphs: [...paragraphs, paragraphs[pin.changes[0].index]] },
+      { ...page, paragraphs: paragraphs.map((value, index) => index === 0 ? value + ' unreviewed copy' : value) },
+      { ...page, mainText: page.mainText + ' Unreviewed copy' },
+      { ...page, url: url.replace('/en/', '/ar/') }
+    ]) assert.equal(clarity.historicalCommercialParagraphs(changed), changed, 'unknown, partial and duplicated paragraphs cannot project');
   }
 });

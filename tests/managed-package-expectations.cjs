@@ -384,7 +384,8 @@ function editorialRepetition(audit) {
   const pages = audit.pages.map(original => {
     const clarity = require('./page-clarity-expectations.cjs');
     const reviewedPage = clarity.assertReviewedPage(original);
-    const page = withoutReviewedNationalityPricing(withoutReviewedHomeFaq(ajmanContacts.historicalPage(original)));
+    const reviewedParagraphs = require('./november-clarity-expectations.cjs').historicalCommercialParagraphs(original);
+    const page = withoutReviewedNationalityPricing(withoutReviewedHomeFaq(ajmanContacts.historicalPage(reviewedParagraphs)));
     const blog = reviewedBlogPlacements(page);
     const originalApproved = blog?.approved ?? commercial.copy[page.route]?.[page.locale] ?? [];
     const approved = reviewedPage ? [...new Set([...originalApproved, ...clarity.rendered.sharedCommercialParagraphs[page.locale]])] : originalApproved;
