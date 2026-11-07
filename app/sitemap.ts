@@ -126,6 +126,29 @@ const contentUpdatedAt: Record<string, string> = {
 
 export const dynamic = 'force-static';
 
+// Actual published link/copy changes, recorded per locale where the repair differed.
+// These dates are release dates, not a build timestamp or a new factual review.
+const recentContentUpdatedAt: Record<string, string> = {
+  ...Object.fromEntries([
+    'terms', 'refund-policy', 'service-guidelines',
+    'blog/domestic-worker-hiring-costs-uae', 'blog/agreeing-domestic-worker-household-duties',
+    'blog/domestic-worker-leave-travel-planning', 'blog/four-hour-eight-hour-maid-visit-plan',
+    'blog/maid-visit-frequency-planner', 'blog/new-maid-first-week-checklist',
+    'blog/maid-home-access-keys-privacy', 'blog/maid-help-family-guests-gathering',
+    'blog/maid-duties-family-holiday', 'blog/one-maid-two-helpers-workload',
+    'blog/maid-daily-instructions-handover-template'
+  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-04']))),
+  'ar/blog/choosing-domestic-worker-agency-ajman': '2026-11-04',
+  'ar/blog/domestic-worker-hiring-stages-timelines': '2026-11-04',
+  ...Object.fromEntries([
+    '', 'services/live-out-maid', 'services/part-time-maid', 'services/monthly-maid-contract',
+    'services/full-time-maid', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah'
+  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-05']))),
+  ...Object.fromEntries([
+    'services', 'services/recruitment', 'services/maid-visa', 'services/experienced-maid'
+  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-07'])))
+};
+
 const coreRoutes = [
   '',
   'about',
@@ -154,9 +177,10 @@ const trustRoutes = [
 
 function localizedEntry(path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'weekly') {
   return locales.map((locale) => {
+    const lastModified = recentContentUpdatedAt[`${locale}/${path}`] ?? contentUpdatedAt[path];
     return {
       url: localizedUrl(locale, path),
-      ...(contentUpdatedAt[path] ? { lastModified: contentUpdatedAt[path] } : {}),
+      ...(lastModified ? { lastModified } : {}),
       changeFrequency,
       priority,
       alternates: {

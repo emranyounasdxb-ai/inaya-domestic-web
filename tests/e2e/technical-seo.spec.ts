@@ -1,3 +1,4 @@
+import november from '../november-sitemap-expectations.cjs';
 import { expect, test } from '../browser-fixture';
 import updatedPaths from '../fixtures/poster-pricing-updated-routes.json';
 import articleManifest from '../../content/research/2026-10-20/article-manifest.json';
@@ -88,24 +89,25 @@ test('every sitemap route has one self-canonical and reciprocal locale alternate
   expect(datedEntries).toHaveLength(Object.values(additions.expectedLastmods).filter(Boolean).length);
   expect(datedEntries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual(expectedDatedUrls.sort());
-  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(30);
-  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-22</lastmod>'))).toHaveLength(12);
+  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-20</lastmod>'))).toHaveLength(18);
+  expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-22</lastmod>'))).toHaveLength(4);
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-23</lastmod>'))).toHaveLength(0);
   expect(datedEntries.filter((entry) => entry[1].includes('<lastmod>2026-10-24</lastmod>'))
     .map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort())
     .toEqual([...new Set([...domesticRefresh.routeChanges, ...ajmanRefresh.routeChanges].flatMap((entry) => entry.urls)), ...['en', 'ar'].map((locale) => `https://inayadomestic.ae/${locale}/company-information/`), ...keywordUrls].filter(url => {
       const path = new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/');
-      return !new Set([...galleryRetirementPaths, ...onPageUpdatedPaths, ...step1Paths, ...clarityPaths]).has(path) && !novemberRoutes.has(path);
+      return !new Set([...galleryRetirementPaths, ...onPageUpdatedPaths, ...step1Paths, ...clarityPaths]).has(path) && !novemberRoutes.has(path) && november.unchangedUrl(url);
     }).sort());
   expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-25</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...galleryRetirementPaths].filter(path => !onPageUpdatedPaths.has(path) && !step2Paths.has(path) && !clarityPaths.has(path) && !novemberRoutes.has(path)).map(path => `https://inayadomestic.ae/${locale}/${path}/`)).sort());
   expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...october28Paths].filter(path => !clarityPaths.has(path)).map(path => `https://inayadomestic.ae/${locale}/${path ? `${path}/` : ''}`)).sort());
-  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...new Set([...step1Paths, ...step2Paths, ...privacyPaths])].filter(path => !clarityPaths.has(path)).map(path => `https://inayadomestic.ae/${locale}/${path}/`)).sort());
-  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-30</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en','ar'].flatMap(locale => [...clarityPaths].filter(path => !novemberRoutes.has(path)).map(path => `https://inayadomestic.ae/${locale}/${path ? path + '/' : ''}`)).sort());
-  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-11-02</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...novemberRoutes].map(path => `https://inayadomestic.ae/${locale}/${path}/`)).sort());
+  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-29</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...new Set([...step1Paths, ...step2Paths, ...privacyPaths])].filter(path => !clarityPaths.has(path)).map(path => `https://inayadomestic.ae/${locale}/${path}/`)).filter(november.unchangedUrl).sort());
+  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-30</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en','ar'].flatMap(locale => [...clarityPaths].filter(path => !novemberRoutes.has(path)).map(path => `https://inayadomestic.ae/${locale}/${path ? path + '/' : ''}`)).filter(november.unchangedUrl).sort());
+  expect(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-11-02</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)![1]).sort()).toEqual(['en', 'ar'].flatMap(locale => [...novemberRoutes].map(path => `https://inayadomestic.ae/${locale}/${path}/`)).filter(november.unchangedUrl).sort());
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)![1]).pathname;
     const path = pathname.split('/').slice(2).filter(Boolean).join('/');
-    const expectedDate = novemberRoutes.has(path) ? '2026-11-02' : clarityPaths.has(path) ? '2026-10-30' : step1Paths.has(path) || step2Paths.has(path) || privacyPaths.has(path) ? '2026-10-29' : october28Paths.has(path) ? '2026-10-28' : galleryRetirementPaths.has(path) ? '2026-10-25' : keywordPaths.has(path) || companyInformationPaths.has(path) ? '2026-10-24' : ajmanRefreshPaths.has(path) ? ajmanRefresh.date : domesticRefreshPaths.has(path) ? domesticRefresh.date : paymentUpdatedPaths.has(path) ? '2026-10-23' : officeUpdatedPaths.has(path) || worksheetUpdatedPaths.has(path) || galleryUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
+    const previousDate = novemberRoutes.has(path) ? '2026-11-02' : clarityPaths.has(path) ? '2026-10-30' : step1Paths.has(path) || step2Paths.has(path) || privacyPaths.has(path) ? '2026-10-29' : october28Paths.has(path) ? '2026-10-28' : galleryRetirementPaths.has(path) ? '2026-10-25' : keywordPaths.has(path) || companyInformationPaths.has(path) ? '2026-10-24' : ajmanRefreshPaths.has(path) ? ajmanRefresh.date : domesticRefreshPaths.has(path) ? domesticRefresh.date : paymentUpdatedPaths.has(path) ? '2026-10-23' : officeUpdatedPaths.has(path) || worksheetUpdatedPaths.has(path) || galleryUpdatedPaths.has(path) ? '2026-10-22' : todayPaths.has(path) ? '2026-10-20' : '2026-10-19';
+    const expectedDate = november.dateForUrl(`https://inayadomestic.ae${pathname}`, previousDate);
     expect(entry[1].match(/<lastmod>(.*?)<\/lastmod>/g), pathname).toEqual([`<lastmod>${expectedDate}</lastmod>`]);
   }
   const urls = entries.map((entry) => entry[1].match(/<loc>(.*?)<\/loc>/)![1]);

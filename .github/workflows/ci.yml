@@ -77,6 +77,8 @@ jobs:
         run: node --test tests/page-clarity-release.test.mjs
       - name: Verify specific service benefits and readable existing article titles
         run: node --test tests/service-refinement.test.mjs
+      - name: Verify background guidance cards and exact preserved content
+        run: node --test tests/background-guidance-export.test.mjs tests/background-guidance-preservation.test.cjs tests/service-hero-sizing-unit.test.cjs
       - name: Verify owner-approved native Ahrefs head and separate privacy disclosure
         run: node --test tests/ahrefs-source-unit.test.cjs tests/ahrefs-head-export.test.mjs
       - name: Unit and export checks

@@ -188,8 +188,8 @@ export const services: Service[] = [
     slug: 'background-verification',
     icon: '🔍',
     name: { en: 'Background Verification Services', ar: 'خدمات التحقق من الخلفية' },
-    short: { en: 'Thorough staff verification.', ar: 'تحقق شامل من العمالة.' },
-    description: { en: 'Thorough background verification support designed to improve trust, safety and reliability before domestic worker placement.', ar: 'دعم شامل للتحقق من الخلفية بهدف تعزيز الثقة والسلامة والموثوقية قبل توظيف العمالة المنزلية.' }
+    short: { en: 'Review available profile information.', ar: 'مراجعة معلومات الملف المتاحة.' },
+    description: { en: 'Discuss available identity details, documents and experience notes before selecting a domestic worker. Confirm the scope and evidence of any checks with the team.', ar: 'ناقش بيانات الهوية والمستندات وملاحظات الخبرة المتاحة قبل اختيار عاملة منزلية. أكد نطاق أي فحوصات وأدلتها مع الفريق.' }
   },
   {
     slug: 'bespoke-household-management',

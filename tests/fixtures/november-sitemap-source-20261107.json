@@ -1,0 +1,19 @@
+{
+  "baseline": "018c29ada9b4a957fdf60ad9d5778db1e7c260fb",
+  "beforeSha256": "ba9b760023e5335a8b36a084ee712c21d15a428ea115c2affe8c258b84d0d6e0",
+  "afterSha256": "0b91bfd8a322fe21f112b6f1b14307ca45668981a7ba243f54259b5482a94160",
+  "changes": [
+    {
+      "before": "",
+      "after": "// Actual published link/copy changes, recorded per locale where the repair differed.\n// These dates are release dates, not a build timestamp or a new factual review.\nconst recentContentUpdatedAt: Record<string, string> = {\n  ...Object.fromEntries([\n    'terms', 'refund-policy', 'service-guidelines',\n    'blog/domestic-worker-hiring-costs-uae', 'blog/agreeing-domestic-worker-household-duties',\n    'blog/domestic-worker-leave-travel-planning', 'blog/four-hour-eight-hour-maid-visit-plan',\n    'blog/maid-visit-frequency-planner', 'blog/new-maid-first-week-checklist',\n    'blog/maid-home-access-keys-privacy', 'blog/maid-help-family-guests-gathering',\n    'blog/maid-duties-family-holiday', 'blog/one-maid-two-helpers-workload',\n    'blog/maid-daily-instructions-handover-template'\n  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-04']))),\n  'ar/blog/choosing-domestic-worker-agency-ajman': '2026-11-04',\n  'ar/blog/domestic-worker-hiring-stages-timelines': '2026-11-04',\n  ...Object.fromEntries([\n    '', 'services/live-out-maid', 'services/part-time-maid', 'services/monthly-maid-contract',\n    'services/full-time-maid', 'maid-services-ajman', 'maid-services-dubai', 'maid-services-sharjah'\n  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-05']))),\n  ...Object.fromEntries([\n    'services', 'services/recruitment', 'services/maid-visa', 'services/experienced-maid'\n  ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-07'])))\n};\n\n"
+    },
+    {
+      "before": "  return locales.map((locale) => {\n    return {",
+      "after": "  return locales.map((locale) => {\n    const lastModified = recentContentUpdatedAt[`${locale}/${path}`] ?? contentUpdatedAt[path];\n    return {"
+    },
+    {
+      "before": "      ...(contentUpdatedAt[path] ? { lastModified: contentUpdatedAt[path] } : {}),",
+      "after": "      ...(lastModified ? { lastModified } : {}),"
+    }
+  ]
+}
