@@ -77,6 +77,8 @@ DirectoryIndex index.html
 </FilesMatch>
 
 <IfModule mod_headers.c>
+  # Approved five-minute HSTS policy: HTTPS apex/www only, without subdomain or preload opt-in.
+  Header always set Strict-Transport-Security "max-age=300" "expr=%{HTTPS} == 'on' && req_novary('Host') =~ m#^(?:www\.)?inayadomestic\.ae(?::443)?$#i"
   Header always merge Vary Accept-Language "expr=%{REQUEST_URI} == '/'"
   Header always set Cache-Control "private, no-store" "expr=%{REQUEST_URI} == '/'"
   <FilesMatch "\.(?:css|js|mjs|webp|avif|png|jpe?g|svg|ico|woff2)$">
