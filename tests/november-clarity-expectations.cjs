@@ -16,6 +16,7 @@ function restore(value, pin, label) {
 }
 
 function historicalSource(file, source) {
+  source = require('./live-in-readability-expectations.cjs').historicalSource(file, source);
   return restore(source.replace(/\r\n/g, '\n'), fixture.sources[file], file);
 }
 
@@ -29,6 +30,7 @@ function historicalRecord(record, family, field = 'record') {
 }
 
 function historicalPage(page) {
+  page = require('./live-in-readability-expectations.cjs').historicalPage(page);
   const mainText = restore(page.mainText, fixture.pages[page.url], page.url);
   return mainText === page.mainText ? page : { ...page, mainText };
 }
@@ -38,6 +40,7 @@ function historicalArticleText(slug, locale, value) {
 }
 
 function historicalCommercialParagraphs(page) {
+  page = require('./live-in-readability-expectations.cjs').historicalCommercialParagraphs(page);
   const pin = fixture.commercialParagraphs[page.url];
   if (!pin || hash(page.mainText) !== fixture.pages[page.url].after || hash(JSON.stringify(page.paragraphs)) !== pin.after) return page;
   const paragraphs = [...page.paragraphs];

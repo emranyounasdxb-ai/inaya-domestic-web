@@ -18,12 +18,12 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     en: {
       scope: 'A live-in maid resides in the household and supports the agreed daily cleaning, laundry and household routine. Living in describes accommodation; the duties, working schedule and rest arrangements still need a separate agreement.',
       arrangement: 'Discuss accommodation and the daily work schedule separately. Living in does not mean continuous availability or an unlimited list of duties.',
-      prepare: 'Prepare the home size, daily tasks, family routine, accommodation details, emirate and preferred start date. Separate essential duties from optional preferences.',
+      prepare: "Share your home's size, daily tasks and family routine. Include the accommodation details, emirate and preferred start date. Separate essential duties from optional preferences.",
       duties: ['Room and surface cleaning agreed for the home', 'Laundry and ironing routine', 'Kitchen and meal preparation assistance where agreed', 'Daily task priorities and communication with the family'],
       limits: ['Do not assume childcare or specialist care is part of cleaning duties', 'Agree working hours, rest and accommodation responsibilities', 'Review the written price, document responsibilities and support terms', 'Confirm individual experience and current availability before agreeing'],
       steps: [
         { title: 'Describe the home', text: 'Share the rooms, household routine and duties that need daily support.' },
-        { title: 'Discuss living arrangements', text: 'Explain accommodation and the work and rest schedule you want to discuss.' },
+        { title: 'Discuss living arrangements', text: 'Describe the accommodation available and the proposed work and rest schedule.' },
         { title: 'Review individual profiles', text: 'Ask about relevant cleaning, laundry and communication experience.' },
         { title: 'Review costs and documents', text: 'Request a written scope, quote and case-specific responsibilities.' },
         { title: 'Confirm the agreement', text: 'Confirm availability, timing and support terms before making an arrangement.' }
