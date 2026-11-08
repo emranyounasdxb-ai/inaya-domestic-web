@@ -88,6 +88,7 @@ export function improveServicePage(slug: string, lang: Lang, copy: ServiceCopy):
   }
   if (slug === 'nanny' || slug === 'live-in-maid') {
     const nanny = slug === 'nanny';
+    if (slug === 'live-in-maid' && !ar) result.whatTitle = 'What do live-in maid services cover?';
     result.cards = nanny ? pairs(lang, [
       ['Childcare duties', 'Supervision, play, meals, hygiene and school preparation follow parent instructions and the agreed role. Cleaning is a separate duty.', 'مهام رعاية الأطفال', 'تتبع المراقبة واللعب والوجبات والنظافة والاستعداد للمدرسة تعليمات الوالدين والدور المتفق عليه. التنظيف مهمة منفصلة.'],
       ['Relevant age-group experience', 'Review the individual’s experience with babies, toddlers or school-age children against your family’s actual needs.', 'الخبرة مع الفئة العمرية', 'راجع خبرة المرشحة الفردية مع الرضع أو الصغار أو أطفال المدرسة وفق احتياج أسرتك الفعلي.'],

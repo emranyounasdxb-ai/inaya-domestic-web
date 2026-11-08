@@ -1,0 +1,79 @@
+{
+  "baseline": "e7d1dbdfa0d266afe3ae80de873bca1efcb28750",
+  "sources": {
+    "lib/service-practical-guidance.ts": {
+      "before": "cb338a49ed831690f99a55b28e7a277b92e7e569eb14809689816e133d1ffa23",
+      "after": "184802de1184c32d89e1328c997b2f4422332c8955191e8e12895dc07f834a43",
+      "changes": [
+        {
+          "before": "      prepare: 'Prepare the home size, daily tasks, family routine, accommodation details, emirate and preferred start date. Separate essential duties from optional preferences.',\n",
+          "after": "      prepare: \"Share your home's size, daily tasks and family routine. Include the accommodation details, emirate and preferred start date. Separate essential duties from optional preferences.\",\n"
+        },
+        {
+          "before": "Explain accommodation and the work and rest schedule you want to discuss.",
+          "after": "Describe the accommodation available and the proposed work and rest schedule."
+        }
+      ]
+    },
+    "lib/service-page-improvements.ts": {
+      "before": "d250ac4afaa6e3fced0d8e55fdb038045a812d8d2f8c73a1e5461d4ad4a44503",
+      "after": "5e2257c757540748ff7d1164fec881a242f633066a7a40806f3250a347e549af",
+      "changes": [
+        {
+          "before": "",
+          "after": "    if (slug === 'live-in-maid' && !ar) result.whatTitle = 'What do live-in maid services cover?';\n"
+        }
+      ]
+    }
+  },
+  "url": "https://inayadomestic.ae/en/services/live-in-maid/",
+  "page": {
+    "before": "b2f1bfd20c880bbad8ad0a7cb2d6a24cad4dedcf82a9326d87ee6bd34e62b4ae",
+    "after": "ab6cce8f551e0ea87ac58eb8e8e7c9837f7fdc3e5ad26f56db5f2c9e88c2a9c1",
+    "changes": [
+      {
+        "before": "What does Live-in Maid Services cover?",
+        "after": "What do live-in maid services cover?",
+        "count": 1
+      },
+      {
+        "before": "Prepare the home size, daily tasks, family routine, accommodation details, emirate and preferred start date. Separate essential duties from optional preferences.",
+        "after": "Share your home's size, daily tasks and family routine. Include the accommodation details, emirate and preferred start date. Separate essential duties from optional preferences.",
+        "count": 2
+      },
+      {
+        "before": "Explain accommodation and the work and rest schedule you want to discuss.",
+        "after": "Describe the accommodation available and the proposed work and rest schedule.",
+        "count": 1
+      }
+    ],
+    "title": "Live-in Maid Services in UAE for Daily Home Support | INAYA",
+    "description": "Discuss live-in maid services in the UAE with INAYA. Review household duties, accommodation and work arrangements before choosing a profile.",
+    "h1": [
+      "Live-in Maid Services in UAE for Daily Home Support"
+    ],
+    "graphSha256": "c9c5c1b1b99625ad940894ab47d1a5c43e8e8443e8e2f8907418497ccf2e3ebc"
+  },
+  "paragraphs": {
+    "before": "c9f51e6fd43f2379edf741a44d19bcddd54135a5c2fa08808cfe12f25178c229",
+    "after": "29fbdf70d27bdbdfe771a026e105bd42c588295e7dad86913681fc1c0a189ec1",
+    "changes": [
+      {
+        "index": 6,
+        "before": "prepare the home size daily tasks family routine accommodation details emirate and preferred start date separate essential duties from optional preferences confirm the candidate and scope in writing service begins after selection and required lawful authorisation any alternative profile is presented for your consent",
+        "after": "share your home s size daily tasks and family routine include the accommodation details emirate and preferred start date separate essential duties from optional preferences confirm the candidate and scope in writing service begins after selection and required lawful authorisation any alternative profile is presented for your consent"
+      },
+      {
+        "index": 8,
+        "before": "explain accommodation and the work and rest schedule you want to discuss",
+        "after": "describe the accommodation available and the proposed work and rest schedule"
+      },
+      {
+        "index": 34,
+        "before": "prepare the home size daily tasks family routine accommodation details emirate and preferred start date separate essential duties from optional preferences",
+        "after": "share your home s size daily tasks and family routine include the accommodation details emirate and preferred start date separate essential duties from optional preferences"
+      }
+    ]
+  },
+  "arabicMainTextSha256": "087d53e6e73fc51e628955a01acd78ceb5de3acd305a8da0179986d35f13298a"
+}
