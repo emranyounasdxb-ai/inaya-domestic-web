@@ -51,7 +51,7 @@ export default async function ServicesPage({ params }: PageProps) {
       }
     : {
         brand: 'INAYA Domestic Workers',
-        title: 'Domestic Worker Services for Every Household Need',
+        title: 'Housemaid Agency in the UAE',
         subtitle: 'Explore organized home services, clear matching guidance and dedicated support for families across the UAE.',
         consult: 'Book Consultation',
         browse: 'Browse service categories',
@@ -72,6 +72,7 @@ export default async function ServicesPage({ params }: PageProps) {
             <h1 className={`${headingClass} mt-4 max-w-3xl text-[2.45rem] font-bold tracking-[-0.045em] text-primary-900 sm:text-[3.35rem] lg:text-[4.05rem]`}>
               {copy.title}
             </h1>
+            {!isArabic && <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-primary-900/85 sm:text-[1.05rem]">Domestic Worker Services for Every Household Need</p>}
             <p className="mt-5 max-w-2xl text-base leading-8 text-primary-900/85 sm:text-[1.05rem]">{copy.subtitle}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href={`/${locale}/booking`} className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary-900 px-7 py-3 text-sm font-bold text-white shadow-[0_14px_34px_rgba(7,22,74,0.20)] transition hover:-translate-y-0.5 hover:bg-primary-800">
@@ -96,6 +97,29 @@ export default async function ServicesPage({ params }: PageProps) {
         </div>
       </section>
       <PageBreadcrumbs locale={locale} route="services" />
+
+      {!isArabic && (
+        <section aria-labelledby="service-selection-guide" className="border-b border-primary-900/10 px-5 py-12 sm:px-6 lg:px-10">
+          <div className="mx-auto max-w-6xl">
+            <h2 id="service-selection-guide" className="font-heading text-2xl font-bold tracking-[-0.025em] text-primary-900 sm:text-3xl">Choose the right household service</h2>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-primary-900/80">Start with the work you need. Then choose the schedule and accommodation arrangement. These are separate decisions.</p>
+            <div className="mt-7 grid gap-6 lg:grid-cols-3">
+              <div className="rounded-2xl border border-primary-900/10 bg-[#fffdf8] p-5 sm:p-6">
+                <h3 className="font-heading text-xl font-bold text-primary-900">Define the main task</h3>
+                <p className="mt-3 text-sm leading-7 text-primary-900/80">For cleaning, laundry or ironing, compare <Link href="/en/services/housekeeping/" className="font-semibold underline decoration-accent-500 underline-offset-4">housekeeping</Link> and <Link href="/en/services/part-time-maid/" className="font-semibold underline decoration-accent-500 underline-offset-4">part-time help</Link>. Choose <Link href="/en/services/nanny/" className="font-semibold underline decoration-accent-500 underline-offset-4">nanny support</Link> for ongoing childcare, or <Link href="/en/services/babysitting/" className="font-semibold underline decoration-accent-500 underline-offset-4">babysitting</Link> for occasional supervision. Cooking and household management have their own service guides. Agree the duties instead of assuming one role covers every household task.</p>
+              </div>
+              <div className="rounded-2xl border border-primary-900/10 bg-[#fffdf8] p-5 sm:p-6">
+                <h3 className="font-heading text-xl font-bold text-primary-900">Separate the schedule from accommodation</h3>
+                <p className="mt-3 text-sm leading-7 text-primary-900/80"><Link href="/en/services/live-in-maid/" className="font-semibold underline decoration-accent-500 underline-offset-4">Live-in</Link> means living in the family home; <Link href="/en/services/live-out-maid/" className="font-semibold underline decoration-accent-500 underline-offset-4">live-out</Link> means living elsewhere. Neither label defines the daily hours or every duty. Compare <Link href="/en/services/full-time-maid/" className="font-semibold underline decoration-accent-500 underline-offset-4">full-time work</Link> and <Link href="/en/services/monthly-maid-contract/" className="font-semibold underline decoration-accent-500 underline-offset-4">monthly arrangements</Link> separately, then confirm the work and rest schedule in writing.</p>
+              </div>
+              <div className="rounded-2xl border border-primary-900/10 bg-[#fffdf8] p-5 sm:p-6">
+                <h3 className="font-heading text-xl font-bold text-primary-900">Prepare a clear enquiry</h3>
+                <p className="mt-3 text-sm leading-7 text-primary-900/80">Share your main duties, preferred hours, start date and any relevant care or communication needs. If you need a <Link href="/en/maid-services-dubai/" className="font-semibold underline decoration-accent-500 underline-offset-4">maid in Dubai</Link> or another emirate, include your area and home access details so the team can check availability. Review the individual profile and confirm the agreed scope and price before booking.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <nav id="service-groups" aria-label={copy.browse} className="sticky top-0 z-20 border-b border-primary-900/10 bg-white/92 px-5 py-5 shadow-sm backdrop-blur-xl sm:px-6 lg:px-10">
         <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto pb-1 lg:flex-wrap lg:overflow-visible lg:pb-0">

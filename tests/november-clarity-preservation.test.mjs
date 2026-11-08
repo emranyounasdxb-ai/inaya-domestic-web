@@ -3,6 +3,8 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import clarity from './november-clarity-expectations.cjs';
 import liveIn from './live-in-readability-expectations.cjs';
+import semrushContent from './semrush-content-expectations.cjs';
+import './semrush-content-preservation.test.mjs';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
 test('six exact source amendments preserve every other byte and reject partial changes', async () => {
@@ -27,7 +29,7 @@ test('six exact source amendments preserve every other byte and reject partial c
 test('live-in English amendments preserve exact prior source and reject unrelated changes', async () => {
   assert.deepEqual(Object.keys(liveIn.fixture.sources).sort(), ['lib/service-page-improvements.ts', 'lib/service-practical-guidance.ts']);
   for (const [file, pin] of Object.entries(liveIn.fixture.sources)) {
-    const current = (await readFile(file, 'utf8')).replace(/\r\n/g, '\n');
+    const current = semrushContent.historicalSource(file, await readFile(file, 'utf8'));
     assert.equal(liveIn.hash(current), pin.after, `${file}: complete English-only change`);
     assert.equal(pin.before, clarity.fixture.sources[file].after, `${file}: immutable November checkpoint`);
     assert.equal(liveIn.hash(liveIn.historicalSource(file, current)), pin.before);

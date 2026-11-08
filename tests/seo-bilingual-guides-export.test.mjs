@@ -12,6 +12,8 @@ import { createHash } from 'node:crypto';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 import domesticServices from './domestic-service-refresh-expectations.cjs';
 import citations from './official-citation-expectations.cjs';
+import semrushContent from './semrush-content-expectations.cjs';
+import { extractContract } from './semrush-content-contract.mjs';
 
 const origin = 'https://inayadomestic.ae';
 // The original hub now exposes six crawlable, canonical archive pages. Read all
@@ -221,7 +223,8 @@ test('Tadbeer, cleaning and domestic-worker typing are visible with matching fac
         for (const phrase of locale === 'en' ? ['renewal', 'cancellation', 'status change', 'contract-related', 'Emirates ID', 'medical', 'insurance'] : ['التجديد', 'الإلغاء', 'تعديل الوضع', 'العقد', 'الهوية الإماراتية', 'الفحص الطبي', 'التأمين']) assert.ok(visible.includes(phrase), `domestic-worker step ${phrase}`);
       }
     }
-    const ajman = text((await readFile(`out/${locale}/maid-services-ajman/index.html`, 'utf8')).replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, ''));
+    const ajmanHtml = await readFile(`out/${locale}/maid-services-ajman/index.html`, 'utf8');
+    const ajman = semrushContent.historicalPage({ url: `${origin}/${locale}/maid-services-ajman/`, mainText: extractContract(ajmanHtml).mainText }).mainText;
     assert.match(ajman, locale === 'en' ? /INAYA Tadbeer centre at Grand Mall, Ajman/ : /مركز عناية تدبير في جراند مول بعجمان/);
   }
 });

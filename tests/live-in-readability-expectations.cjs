@@ -15,16 +15,19 @@ function restore(value, pin, label) {
 }
 
 function historicalSource(file, source) {
+  source = require('./semrush-content-expectations.cjs').historicalSource(file, source);
   return restore(source.replace(/\r\n/g, '\n'), fixture.sources[file], file);
 }
 
 function historicalPage(page) {
+  page = require('./semrush-content-expectations.cjs').historicalPage(page);
   if (page.url !== fixture.url) return page;
   const mainText = restore(page.mainText, fixture.page, page.url);
   return mainText === page.mainText ? page : { ...page, mainText };
 }
 
 function historicalCommercialParagraphs(page) {
+  page = require('./semrush-content-expectations.cjs').historicalCommercialParagraphs(page);
   const pin = fixture.paragraphs;
   if (page.url !== fixture.url || hash(page.mainText) !== fixture.page.after || hash(JSON.stringify(page.paragraphs)) !== pin.after) return page;
   const paragraphs = [...page.paragraphs];

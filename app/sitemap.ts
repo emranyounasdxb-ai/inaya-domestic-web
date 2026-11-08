@@ -148,7 +148,14 @@ const recentContentUpdatedAt: Record<string, string> = {
     'services', 'services/recruitment', 'services/maid-visa', 'services/experienced-maid'
   ].flatMap(route => locales.map(locale => [`${locale}/${route}`, '2026-11-07']))),
   'en/services/executive-nannies': '2026-11-07',
-  'ar/services/executive-nannies': '2026-11-07'
+  'ar/services/executive-nannies': '2026-11-07',
+  // Substantive English content updates and the bilingual live-out matching correction.
+  ...Object.fromEntries([
+    '', 'services', 'maid-source-countries/indonesian-maid-uae',
+    'maid-services-ajman', 'maid-services-sharjah', 'services/live-out-maid',
+    'services/full-time-maid', 'services/private-chefs'
+  ].map(route => [`en/${route}`, '2026-11-08'])),
+  'ar/services/live-out-maid': '2026-11-08'
 };
 
 const coreRoutes = [

@@ -14,7 +14,7 @@ export default function HomeServiceChoices({ locale }: { locale: string }) {
     ['part-time-maid', 'Part-time cleaning', 'Plan rooms, cleaning priorities, laundry and ironing within an agreed visit.'],
     ['monthly-maid-contract', 'Monthly maid service', 'Compare 30 days, six-month and twelve-month commitments and the monthly agreement scope.'],
     ['nanny', 'Nanny service', 'Discuss children’s ages, routines, individual experience and the childcare schedule.'],
-    ['maid-visa', 'Visa typing', 'Identify the domestic-worker application, renewal, cancellation or status enquiry.']
+    ['maid-visa', 'Maid visa typing', 'Identify the domestic-worker application, renewal, cancellation or status enquiry.']
   ];
   return <section aria-labelledby="home-service-choices" className="bg-[#fffdf8] px-6 py-12 lg:px-10">
     <div className="mx-auto max-w-7xl">

@@ -33,6 +33,17 @@ export function improveServicePage(slug: string, lang: Lang, copy: ServiceCopy):
       ])
     };
   }
+  if (slug === 'live-out-maid' && lang === 'en') {
+    return { ...copy, whatTitle: 'What does live-out support include?' };
+  }
+  if (slug === 'full-time-maid' && lang === 'en') {
+    return {
+      ...copy,
+      whatTitle: 'What does full-time support include?',
+      pricingTitle: 'Package prices and terms',
+      compareTitle: 'How INAYA supports your household'
+    };
+  }
   if (!reviewedServiceSlugs.includes(slug)) return copy;
   const ar = lang === 'ar';
   const monthly = ['monthly-maid-contract', 'nanny', 'live-in-maid'].includes(slug);
@@ -61,7 +72,7 @@ export function improveServicePage(slug: string, lang: Lang, copy: ServiceCopy):
       ['Laundry and ironing', 'Agree the priority items and care instructions, and make suitable working equipment available as agreed.', 'الغسيل والكي', 'اتفق على الملابس ذات الأولوية وتعليمات العناية، وجهز معدات صالحة وفق الاتفاق.'],
       ['Kitchen assistance', 'Name the agreed kitchen tasks and appliance instructions; do not assume specialist cooking or childcare is included.', 'المساعدة في المطبخ', 'حدد مهام المطبخ وتعليمات الأجهزة المتفق عليها؛ ولا تفترض شمول الطبخ المتخصص أو رعاية الأطفال.'],
       ['Time and changes', 'Confirm extra time, rescheduling and any resulting cost against the agreed terms before changing the visit.', 'الوقت والتغييرات', 'أكد الوقت الإضافي وتغيير الموعد وأي تكلفة مترتبة وفق الشروط المتفق عليها قبل تعديل الزيارة.'],
-      ['Products and equipment', 'Confirm who supplies each item. Explain surface-specific products; no blanket inclusion is assumed.', 'المنتجات والمعدات', 'أكد من يوفر كل أداة أو منتج، واشرح متطلبات الأسطح؛ ولا يفترض شمول المستلزمات دائماً.'],
+      ['Products and equipment', 'Confirm who supplies each item. Explain which products are needed for particular surfaces. Do not assume that all products and equipment are included.', 'المنتجات والمعدات', 'أكد من يوفر كل أداة أو منتج، واشرح متطلبات الأسطح؛ ولا يفترض شمول المستلزمات دائماً.'],
       ['Access and transport', 'Share entry instructions and the household contact. Record transport and arrival responsibilities in the written proposal.', 'الدخول والنقل', 'شارك تعليمات الدخول ومسؤول التواصل، وسجل مسؤوليات النقل والوصول في العرض المكتوب.']
     ]);
     result.faqs = result.faqs.filter(f => !['Which package and scope should I confirm?', 'ما الباقة والنطاق اللذان يجب تأكيدهما؟'].includes(f.title));

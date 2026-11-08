@@ -10,6 +10,7 @@ import onPage from './on-page-spec-expectations.cjs';
 import fiveGuides from './five-guides-amendment-expectations.cjs';
 import newGuides from './four-guides-addition-expectations.cjs';
 import altAmendment from './service-image-alt-expectations.cjs';
+import semrushContent from './semrush-content-expectations.cjs';
 import { attrs, decode } from '../scripts/seo-content-audit.mjs';
 import { pageImageUrls } from '../scripts/enrich-image-sitemap.mjs';
 
@@ -136,15 +137,16 @@ test('all294 pages have localized previews with the eight new article photos and
     assert.ok(icons.some(icon => icon.href === '/apple-touch-icon.png' && icon.sizes === '180x180'), pageUrl);
     const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)[1]);
     const description = values('name', 'description')[0];
-    fiveGuides.pageBefore(pageUrl, title, description);
+    const previousMetadata = semrushContent.historicalMetadata(pageUrl, { title, description });
+    fiveGuides.pageBefore(pageUrl, previousMetadata.title, previousMetadata.description);
     const metadataChange = onPage.metadata[`${locale}/${route}`];
-    if (metadataChange) assert.deepEqual({ title, description }, metadataChange.after, `${pageUrl}: exact reviewed Ajman/service summary`);
+    if (metadataChange) assert.deepEqual(previousMetadata, metadataChange.after, `${pageUrl}: exact reviewed Ajman/service summary`);
     // The first274 URLs are the original canonical cohort. Pin their current
     // reviewed titles, descriptions, canonicals and favicon declarations as a
     // complete snapshot; route-level assertions above still verify each exact
     // approved metadata amendment.
     if (entryIndex < onPage.originalCanonicalCount) preservedPageMetadata.push([
-      pageUrl, title, description, canonical,
+      pageUrl, previousMetadata.title, previousMetadata.description, canonical,
       icons.map(icon => [icon.rel, icon.href, icon.type ?? null, icon.sizes ?? null]),
     ]);
     const graph = imageGraph(html);
@@ -206,7 +208,7 @@ test('all294 pages have localized previews with the eight new article photos and
       if (locale === 'en') assert.doesNotMatch(caption, /[\u0600-\u06ff]/, `${pageUrl}: English caption stays English`);
       const advertised = [...entry[1].matchAll(/<image:loc>(.*?)<\/image:loc>/g)].map(match => decode(match[1]));
       assert.equal(advertised.filter(url => url === origin + countryImagePath).length, 1, `${pageUrl}: sitemap discovers the same canonical country photo once`);
-      assert.deepEqual([...entry[1].matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]), ['2026-10-28'], `${pageUrl}: substantive country photo update has its exact modification date`);
+      assert.deepEqual([...entry[1].matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => semrushContent.historicalLastmod(pageUrl, match[1])), ['2026-10-28'], `${pageUrl}: substantive country photo checkpoint retains its exact modification date`);
       picturedCountryPages.push(pageUrl);
     } else {
       const altChange = onPage.roleImageAlts[`${locale}/${route}`];
@@ -232,7 +234,7 @@ test('all294 pages have localized previews with the eight new article photos and
     'maid-services-abu-dhabi', 'maid-services-ras-al-khaimah',
     'maid-services-fujairah', 'maid-services-umm-al-quwain', 'pricing'
   ]);
-  assert.deepEqual(entries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].filter(url => {
+  assert.deepEqual(entries.filter(entry => semrushContent.historicalLastmod(decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1]), entry[1].match(/<lastmod>(.*?)<\/lastmod>/)?.[1]) === '2026-10-28').map(entry => decode(entry[1].match(/<loc>(.*?)<\/loc>/)[1])).sort(), [...picturedCountryPages, ...substantivelyUpdated].filter(url => {
     const route = new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/');
     return !clarity.datedRoutes.includes(route) && !novemberRoutes.has(route);
   }).sort(), 'the44 prior non-archive updates retain28October; routes substantively refreshed on2November use their current lastmod');

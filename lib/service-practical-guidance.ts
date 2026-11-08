@@ -60,7 +60,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     en: {
   "scope": "Full-time maid enquiries concern regular household work on an agreed schedule: cleaning, laundry, ironing and kitchen assistance where agreed. Full-time does not by itself specify that the worker lives in your home.",
   "arrangement": "Define the daily and weekly schedule first, then discuss live-in or live-out arrangements separately. A monthly pricing period alone does not define the working arrangement.",
-  "prepare": "Share the home size, recurring duties, required hours and days, emirate, preferred timing and any accommodation proposal.",
+  "prepare": "Share your home's size, recurring duties and required hours and days. Include your emirate, preferred timing and any accommodation proposal.",
   "duties": [
     "Regular room and surface cleaning",
     "Laundry and ironing priorities",
@@ -178,7 +178,7 @@ const guidance: Record<string, Record<Lang, Guidance>> = {
     en: {
   "scope": "Part-time maid support is organized around scheduled visits and a defined task list. Discuss room cleaning, laundry, ironing or kitchen assistance according to the time and scope agreed for each visit.",
   "arrangement": "State the preferred visit days, time window and priorities. Part-time visits do not imply a full-time worker or residence in your home.",
-  "prepare": "Prepare the rooms to clean, priority tasks, visit frequency, preferred hours, address and building access details. Ask which supplies and equipment to prepare.",
+  "prepare": "Share the rooms that need cleaning, priority tasks and visit frequency. Include your preferred hours, address and building access details. Ask which supplies and equipment to prepare.",
   "duties": [
     "Agreed rooms and surfaces",
     "Laundry or ironing when included in the task list",

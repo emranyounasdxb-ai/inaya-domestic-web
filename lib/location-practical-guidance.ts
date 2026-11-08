@@ -73,7 +73,7 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
   const comparison = {
     'maid-services-ajman': {
       pricing: { en: 'For an Ajman office discussion, choose visit length or a monthly commitment from the pricing comparison before requesting a written quotation. Published live-in and live-out prices are equal. Ask the team to record household duties, transport, supplies and applicable tax.', ar: 'لمناقشة الطلب في مكتب عجمان، اختر مدة الزيارة أو الالتزام الشهري من مقارنة الأسعار قبل طلب العرض المكتوب. السعر المنشور واحد للمقيمة وغير المقيمة. اطلب تسجيل المهام والنقل والمستلزمات والضريبة المنطبقة.' },
-      review: { en: 'Bring an Ajman household task list to the agency discussion and compare it with the proposed individual profile. Ask which experience, references and documents can be reviewed, then check written costs and support terms. Read genuine reviews in context; neither a review nor nationality guarantees suitability.', ar: 'جهز قائمة مهام منزلك في عجمان وقارنها بالملف الفردي المقترح أثناء المناقشة. اسأل عن الخبرة والمراجع والمستندات المتاحة للمراجعة، ثم تحقق من التكاليف وشروط الدعم المكتوبة. اقرأ التقييمات الحقيقية ضمن سياقها؛ فلا يضمن التقييم أو الجنسية الملاءمة.' }
+      review: { en: 'Bring your Ajman household task list to the maid agency discussion and compare it with each proposed profile. Before hiring a maid, ask which relevant experience you can review, including the person’s years of experience with those tasks. Check which references and documents you can review. Compare written costs and support terms. When comparing professional maids, read genuine reviews in context. Neither a review nor nationality guarantees suitability.', ar: 'جهز قائمة مهام منزلك في عجمان وقارنها بالملف الفردي المقترح أثناء المناقشة. اسأل عن الخبرة والمراجع والمستندات المتاحة للمراجعة، ثم تحقق من التكاليف وشروط الدعم المكتوبة. اقرأ التقييمات الحقيقية ضمن سياقها؛ فلا يضمن التقييم أو الجنسية الملاءمة.' }
     },
     'maid-services-dubai': {
       pricing: { en: 'When comparing a Dubai cleaning visit with monthly support, use the pricing page for the published duration and commitment. Live-in and live-out rates are the same. Include the actual Dubai address, arrival window and transport responsibilities in the quotation, alongside supplies, duties and applicable tax.', ar: 'عند مقارنة زيارة تنظيف في دبي بالدعم الشهري، راجع مدة الباقة والالتزام في صفحة الأسعار. أسعار المقيمة وغير المقيمة واحدة. أدرج العنوان الفعلي في دبي وفترة الوصول ومسؤوليات النقل في العرض، مع المستلزمات والمهام والضريبة المنطبقة.' },
@@ -88,7 +88,7 @@ export function addLocalGuidance(location: LocationServicePage): LocationService
     ...location,
     ...(location.slug === 'maid-services-ajman' ? {
       lead: {
-        en: 'INAYA Tadbeer centre at Grand Mall, Ajman, supports domestic-worker recruitment, home cleaning and related visa typing and document processing. Describe your household or existing-worker case so the team can confirm the appropriate service.',
+        en: 'INAYA is an Ajman maid agency and Tadbeer centre at Grand Mall. We support domestic-worker recruitment, home cleaning, related visa typing and document processing. Describe your household needs or existing-worker case so the team can confirm the right service.',
         ar: 'يدعم مركز عناية تدبير في جراند مول بعجمان استقدام العمالة المنزلية وتنظيف المنازل والطباعة ومعالجة المستندات المرتبطة بها. صف احتياج المنزل أو حالة العاملة الموجودة ليؤكد الفريق الخدمة المناسبة.'
       },
       intro: {

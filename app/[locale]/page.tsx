@@ -26,7 +26,7 @@ const homeContent = {
   en: {
     heroLabel: 'Legacy of Trust',
     heroTitleA: 'Maid & Domestic Worker Services',
-    heroTitleB: 'in Ajman and Across the UAE',
+    heroTitleB: 'in Ajman, Dubai and Across the UAE',
     heroText: 'Domestic-worker recruitment, cleaning visits, nanny enquiries and related visa typing from INAYA’s Grand Mall office in Ajman. Choose your service below and confirm availability and written terms with the team.',
     primaryCta: 'Request Consultation',
     secondaryCta: 'Explore Services',
@@ -54,7 +54,7 @@ const homeContent = {
     steps: [
       { title: 'Share Requirement', text: 'Tell us the service type, emirate, timing and household details.' },
       { title: 'Confirm Details', text: "Review individual profiles, agreed duties and the written scope, price breakdown and payment documents." },
-      { title: 'Review Before Confirmation', text: "Confirm the selected candidate and service start after required lawful authorisation and written confirmation; any revised candidate requires your consent." }
+      { title: 'Review Before Confirmation', text: "Confirm the selected candidate and service start after required lawful authorisation and written confirmation. Any revised candidate requires your consent." }
     ],
     disciplinesTitle: 'Curated Disciplines',
     disciplinesText: 'Compare the listed household roles and discuss which duties are relevant to your request.',
@@ -455,6 +455,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="mx-auto max-w-6xl">
           <h2 className={`${isArabic ? 'font-arabic' : 'font-heading'} text-2xl font-bold text-primary-900`}>{isArabic ? 'اختر الخدمة ومنطقة طلبك' : 'Find the service for your household and emirate'}</h2>
           <p className="mt-4 text-sm leading-7 text-primary-900/75">{isArabic ? 'ابدأ بنوع المهام والجدول المطلوب، ثم راجع التفاصيل مع المكتب في عجمان. التغطية لا تؤكد التوفر أو موعد البدء.' : 'Start with the duties and schedule you need, then discuss the details with our Ajman office. Service coverage does not confirm availability or a start date.'}</p>
+          {!isArabic && <p className="mt-4 text-sm leading-7 text-primary-900/75">For domestic services in Dubai, share your residential area, building access and preferred hours. A cleaning visit, a live-in arrangement and ongoing childcare need different plans. Dubai enquiries are coordinated through our Ajman office, subject to availability and written confirmation.</p>}
           <div className="mt-5 flex flex-wrap gap-3">
             {[
               ['services/housemaid', 'Housemaid services', 'خدمات عاملة المنزل'],
