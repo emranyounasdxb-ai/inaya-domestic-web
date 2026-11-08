@@ -36,10 +36,10 @@ test('service template renders the required content sections and labeled related
   await expect(page.getByRole('heading', { name: 'Choose the arrangement for your request' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Agreed duties and included monthly service components' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Limits and responsibilities to clarify' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Full-time Maid Pricing Guidance' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Package prices and terms', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Full-time Maid FAQs' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Related Maid Services' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Why Choose INAYA for Full-time Maid Hiring?' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'How INAYA supports your household', exact: true })).toBeVisible();
   await expect(page.getByText('Helpful Service Guide', { exact: true })).toBeVisible();
 
   const relatedHeading = page.getByRole('heading', { name: 'Related Maid Services' });

@@ -14,6 +14,7 @@ import { domesticServiceReferences } from '@/lib/domestic-service-content';
 import ServiceSeoBlock from './ServiceSeoBlock';
 import ServiceIcon from './ServiceIcon';
 import ServiceAgreementDetails from './ServiceAgreementDetails';
+import PrivateChefPlanningGuide from './PrivateChefPlanningGuide';
 import { liveInChecklist, reviewedServiceSlugs } from '@/lib/service-page-improvements';
 import { managedPackages } from '@/lib/package-content';
 import { packageEnquiryHref } from '@/lib/package-enquiry';
@@ -157,6 +158,7 @@ export default function ServiceDetailTemplate({ locale, slug }: TemplateProps) {
 
       <ProcessSection copy={copy} lang={lang} />
       {slug !== 'nanny' ? <MatchingCards copy={copy} lang={lang} locale={locale} slug={slug} /> : null}
+      {slug === 'private-chefs' && lang === 'en' ? <PrivateChefPlanningGuide /> : null}
       <PricingCards copy={copy} lang={lang} locale={locale} slug={slug} />
       {['monthly-maid-contract', 'nanny', 'live-in-maid'].includes(slug) ? <ServiceAgreementDetails lang={lang} /> : null}
       <FAQSection copy={copy} lang={lang} slug={slug} />
@@ -298,7 +300,7 @@ function MatchingCards({
   slug: string;
 }) {
   const administrativeEnquiry = ['maid-visa', 'sponsorship-transfer'].includes(slug);
-  const countryBased = slug !== 'executive-nannies' && !reviewedServiceSlugs.includes(slug) && !administrativeEnquiry && usesCountryMatching(slug);
+  const countryBased = !['executive-nannies', 'live-out-maid'].includes(slug) && !reviewedServiceSlugs.includes(slug) && !administrativeEnquiry && usesCountryMatching(slug);
   const requestLabel = administrativeEnquiry
     ? lang === 'ar' ? 'ناقش حالتك' : 'Discuss your case'
     : lang === 'ar' ? 'اطلب المطابقة' : 'Request Matching';
@@ -307,6 +309,15 @@ function MatchingCards({
     <section className={`${sectionPadding} border-y border-primary-900/8 bg-[#fffdf8]`}>
       <div className="mx-auto max-w-6xl">
         <SectionTitle title={copy.countriesTitle} text={copy.countriesText} lang={lang} align="center" />
+        {slug === 'full-time-maid' && lang === 'en' ? (
+          <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-7 text-primary-900/75">
+            For a Filipino maid enquiry, read the{' '}
+            <Link href="/en/maid-source-countries/philippines-maid-uae/" className="font-bold text-primary-700 underline underline-offset-4">
+              Philippines source guide
+            </Link>
+            {' '}and review the individual’s experience, communication and availability against your agreed duties. Nationality alone does not establish skills or guarantee a suitable match.
+          </p>
+        ) : null}
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {copy.countries.slice(0, 6).map((item, index) => {
             const profile = countryProfiles[index];

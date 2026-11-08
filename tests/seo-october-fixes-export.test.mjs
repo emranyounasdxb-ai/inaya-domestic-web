@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import test from 'node:test';
 import onPageSpec from './on-page-spec-expectations.cjs';
+import semrushContent from './semrush-content-expectations.cjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const core = ['live-in-maid', 'full-time-maid', 'part-time-maid', 'monthly-maid-contract', 'nanny', 'maid-visa'];
@@ -14,7 +15,7 @@ test('both home exports have descriptive H1, prioritized responsive LCP, smaller
     const body = visible(html);
     const headings = [...body.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)];
     assert.equal(headings.length, 1);
-    assert.equal(text(headings[0][1]), locale === 'ar' ? 'خدمات الخادمات والعمالة المنزلية في عجمان وجميع أنحاء الإمارات' : 'Maid & Domestic Worker Services in Ajman and Across the UAE');
+    assert.equal(semrushContent.historicalHeading('https://inayadomestic.ae/' + locale + '/', text(headings[0][1])), locale === 'ar' ? 'خدمات الخادمات والعمالة المنزلية في عجمان وجميع أنحاء الإمارات' : 'Maid & Domestic Worker Services in Ajman and Across the UAE');
     const hero = [...body.matchAll(/<img\b([^>]*)>/g)].map(m => attrs(m[1])).find(img => img.src.includes('inaya-home-hero-family'));
     assert.equal(hero.fetchPriority, 'high');
     assert.equal(hero.loading, 'eager');

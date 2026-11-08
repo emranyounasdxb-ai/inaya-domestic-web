@@ -237,7 +237,7 @@ export function getPageSeo(locale: string, route: string): PageSeo | undefined {
   if (!page) return page;
   const refinement = onPageSeoRefinements[route];
   const lang = locale === 'ar' ? 'ar' : 'en';
-  if (refinement) return { ...page, title: refinement.title[lang], description: refinement.description[lang] };
+  if (refinement) return { ...page, title: refinement.title?.[lang] ?? page.title, description: refinement.description?.[lang] ?? onPageDescriptionRefinements[route]?.[lang] ?? page.description };
   const description = onPageDescriptionRefinements[route]?.[lang];
   return description ? { ...page, description } : page;
 }

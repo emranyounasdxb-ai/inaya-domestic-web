@@ -28,10 +28,12 @@ for (const route of ['choosing-domestic-worker-agency-ajman', 'domestic-worker-h
   lastmods[`${origin}/ar/blog/${route}/`] = '2026-11-04';
 }
 assert.equal(Object.keys(lastmods).length, 56, 'exactly 30 citation, 16 copy/navigation, eight guidance-card and two executive-matching URLs');
+Object.assign(lastmods, require('./semrush-content-expectations.cjs').fixture.lastmods);
+assert.equal(Object.keys(lastmods).length, 58, 'nine exact November 8 amendments include two newly updated routes');
 function dateForUrl(url, previous) { return lastmods[url] ?? previous; }
 function unchangedUrl(url) { return !Object.hasOwn(lastmods, url); }
 function assertRecentLastmods(entries) {
-  for (const date of Object.keys(pairs)) {
+  for (const date of [...Object.keys(pairs), '2026-11-08']) {
     assert.deepEqual(entries.filter(entry => entry.lastmod === date).map(entry => entry.url).sort(),
       Object.keys(lastmods).filter(url => lastmods[url] === date).sort(), `${date}: exact affected locale/URL scope`);
   }

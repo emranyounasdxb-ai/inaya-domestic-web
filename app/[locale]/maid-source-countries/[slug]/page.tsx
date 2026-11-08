@@ -3,6 +3,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { pageMetadata } from '@/lib/page-seo';
 import RouteSeo from '@/components/RouteSeo';
 import CountryGuidePhoto from '@/components/CountryGuidePhoto';
+import IndonesianHouseholdGuide from '@/components/IndonesianHouseholdGuide';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -23,6 +24,7 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
   if (!country) notFound();
 
   const lang: Lang = locale === 'ar' ? 'ar' : 'en';
+  const isEnglishIndonesian = lang === 'en' && country.slug === 'indonesian-maid-uae';
   const t = lang === 'ar'
     ? {
         badge: 'دليل دولة المصدر',
@@ -71,8 +73,9 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
             </Link>
             <p className="mt-7 text-[0.66rem] font-bold uppercase tracking-[0.28em] text-accent-700">{t.badge}</p>
             <h1 className={`${lang === 'ar' ? 'font-arabic leading-[1.25]' : 'font-heading leading-[1.02]'} mt-4 max-w-4xl text-[2.35rem] font-bold tracking-[-0.055em] text-primary-900 sm:text-[3.6rem]`}>
-              {country.heroTitle[lang]}
+              {isEnglishIndonesian ? 'Indonesian Housemaid in Dubai & UAE' : country.heroTitle[lang]}
             </h1>
+            {isEnglishIndonesian ? <p className="mt-3 max-w-2xl text-sm font-semibold leading-7 text-primary-900/75">{country.heroTitle[lang]}</p> : null}
             <p className="mt-5 max-w-2xl text-[0.98rem] leading-8 text-primary-900/72">{country.lead[lang]}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href={`/${locale}/contact`} className="rounded-full bg-primary-900 px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-[0_18px_45px_rgba(7,22,74,0.16)]">{t.cta}</Link>
@@ -114,6 +117,8 @@ export default async function MaidSourceCountryPage({ params }: { params: Promis
           </article>
         </div>
       </section>
+
+      {isEnglishIndonesian ? <IndonesianHouseholdGuide /> : null}
 
       <section className="px-6 py-10 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-2">

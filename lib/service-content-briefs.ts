@@ -12,7 +12,7 @@ export const serviceContentBriefs: Record<string, Brief> = {
     prepare: { en: 'Describe the accommodation available, the household routine and which daily tasks take priority. Compare live-out visits if accommodation is not part of your plan.', ar: 'وضح الإقامة المتاحة وروتين المنزل والمهام اليومية ذات الأولوية. قارن الزيارات غير المقيمة إذا لم تكن الإقامة ضمن خطتك.' }, related: ['live-out-maid', 'full-time-maid', 'housemaid']
   },
   'live-out-maid': {
-    overview: { en: 'Live-out support is arranged around visits rather than residence in your home. The useful starting point is a visit plan: which rooms and tasks need attention, when access is possible and what can wait until another visit.', ar: 'يرتبط الدعم غير المقيم بالزيارات بدلاً من السكن في منزلك. تبدأ المقارنة بخطة للزيارة: الغرف والمهام المطلوبة، ومواعيد دخول المنزل، وما يمكن تأجيله لزيارة أخرى.' },
+    overview: { en: 'Live-out support is arranged around visits rather than residence in your home. Start with a visit plan. List the rooms and tasks that need attention, when access is possible and what can wait until another visit.', ar: 'يرتبط الدعم غير المقيم بالزيارات بدلاً من السكن في منزلك. تبدأ المقارنة بخطة للزيارة: الغرف والمهام المطلوبة، ومواعيد دخول المنزل، وما يمكن تأجيله لزيارة أخرى.' },
     prepare: { en: 'Share preferred visit days, access arrangements and the cleaning or laundry priorities. Part-time support describes hours, while live-out describes the accommodation arrangement.', ar: 'شارك أيام الزيارة المفضلة وترتيبات الدخول وأولويات التنظيف أو الغسيل. يصف الدوام الجزئي الساعات، بينما يصف العمل غير المقيم ترتيب الإقامة.' }, related: ['part-time-maid', 'live-in-maid', 'housekeeping']
   },
   housemaid: {

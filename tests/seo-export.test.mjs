@@ -7,6 +7,7 @@ import onPageSpec from './on-page-spec-expectations.cjs';
 import amendment from './five-guides-amendment-expectations.cjs';
 import additions from './four-guides-addition-expectations.cjs';
 import november from './november-sitemap-expectations.cjs';
+import semrushContent from './semrush-content-expectations.cjs';
 
 const output = path.resolve('out');
 const origin = 'https://inayadomestic.ae';
@@ -124,7 +125,7 @@ test('export sitemap exactly covers localized HTML with reciprocal canonical alt
     [...new Set([...domesticRefresh.routeChanges, ...ajmanRefresh.routeChanges].flatMap(entry => entry.urls)), ...['en', 'ar'].map(locale => `${origin}/${locale}/company-information/`), ...keywordUrls].filter(url => !new Set([...galleryRetirementRoutes, ...onPageUpdatedRoutes, ...step1Routes, ...clarity.datedRoutes]).has(new URL(url).pathname.split('/').slice(2).filter(Boolean).join('/'))).filter(november.unchangedUrl).sort(),
     'unchanged approved substantive route pairs retain24October');
   assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-25</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...galleryRetirementRoutes].filter(route => !onPageUpdatedRoutes.has(route) && !step2Routes.has(route)).map(route => `${origin}/${locale}/${route}/`)).sort(), 'the unchanged gallery pair retains 25 October; About and Ajman have reviewed substantive changes');
-  assert.deepEqual(datedEntries.filter(entry => entry[1].includes('<lastmod>2026-10-28</lastmod>')).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...october28Routes].filter(route => !clarity.datedRoutes.includes(route)).map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`)).sort(), 'unchanged country-photo and on-page URLs retain28October; updated archive memberships receive29October');
+  assert.deepEqual(datedEntries.filter(entry => semrushContent.historicalLastmod(entry[1].match(/<loc>(.*?)<\/loc>/)[1], entry[1].match(/<lastmod>(.*?)<\/lastmod>/)?.[1]) === '2026-10-28').map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...october28Routes].filter(route => !clarity.datedRoutes.includes(route)).map(route => `${origin}/${locale}/${route ? `${route}/` : ''}`)).sort(), 'unchanged country-photo and on-page URLs retain28October; updated archive memberships receive29October');
   assert.deepEqual(datedEntries.filter(entry => entry[1].includes(`<lastmod>${additions.date}</lastmod>`)).map(entry => entry[1].match(/<loc>(.*?)<\/loc>/)[1]).sort(), ['en', 'ar'].flatMap(locale => [...new Set([...step1Routes, ...step2Routes, ...privacyRoutes])].filter(route => !clarity.datedRoutes.includes(route)).map(route => `${origin}/${locale}/${route}/`)).filter(november.unchangedUrl).sort(), 'unchanged Step1 copies, new guides, indexes and privacy notices retain29October');
   for (const entry of datedEntries) {
     const pathname = new URL(entry[1].match(/<loc>(.*?)<\/loc>/)[1]).pathname;

@@ -7,6 +7,7 @@ import domesticServices from './domestic-service-refresh-expectations.cjs';
 import onPage from './on-page-spec-expectations.cjs';
 import fiveGuides from './five-guides-amendment-expectations.cjs';
 import newGuides from './four-guides-addition-expectations.cjs';
+import semrushContent from './semrush-content-expectations.cjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -83,7 +84,8 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   assert.ok(current.nearPairs.length < baseline.nearPairs);
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
-    const beforeGuideRefresh = fiveGuides.pageBefore(page.url, page.title, page.description);
+    const metadata = semrushContent.historicalMetadata(page.url, { title: page.title, description: page.description });
+    const beforeGuideRefresh = fiveGuides.pageBefore(page.url, metadata.title, metadata.description);
     const approved = onPage.metadata[`${page.locale}/${page.route}`]?.after ?? domesticServices.metadata[`${page.locale}/${page.route}`] ?? ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];
     const correctedCare = page.route === 'services/patient-care' ? correctedCareMetadata[page.locale] : undefined;
     assert.equal(beforeGuideRefresh.title, approved?.title ?? (page.route === 'services/maid-visa' ? visaTitles[page.locale] : correctedCare?.title ?? before.title), page.url);

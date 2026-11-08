@@ -23,7 +23,7 @@ for (const locale of ['en', 'ar'] as const) {
     await page.goto(`/${locale}/`);
     await expect(page.getByTestId('sierra-leone-offer')).toHaveCount(0);
     await expect(page.locator('html')).toHaveAttribute('dir', ar ? 'rtl' : 'ltr');
-    await expect(page.locator('h1')).toHaveText(ar ? 'خدمات الخادمات والعمالة المنزلية في عجمان وجميع أنحاء الإمارات' : 'Maid & Domestic Worker Services in Ajman and Across the UAE');
+    await expect(page.locator('h1')).toHaveText(ar ? 'خدمات الخادمات والعمالة المنزلية في عجمان وجميع أنحاء الإمارات' : 'Maid & Domestic Worker Services in Ajman, Dubai and Across the UAE');
     await expect(page.locator('img[src*="inaya-home-hero-family"]')).toHaveAttribute('fetchpriority', 'high');
     const logo = page.locator('header img');
     await expect(logo).toBeVisible();

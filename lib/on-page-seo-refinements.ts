@@ -2,18 +2,24 @@ type Localized = { en: string; ar: string };
 
 // Reviewed summaries of existing services and owner-approved package terms.
 // A monthly amount always states its commitment; no training or availability is promised.
-export const onPageSeoRefinements: Record<string, { title: Localized; description: Localized }> = {
+export const onPageSeoRefinements: Record<string, { title?: Partial<Localized>; description?: Partial<Localized> }> = {
+  services: {
+    title: { en: 'Housemaid Agency in UAE & Domestic Worker Services | INAYA' }
+  },
+  'maid-source-countries/indonesian-maid-uae': {
+    title: { en: 'Indonesian Housemaid in Dubai & UAE | INAYA' }
+  },
   '': {
-    title: { en: 'Maid Agency in Ajman & UAE | Housemaids & Nannies | INAYA', ar: 'خادمات ومربيات في عجمان والإمارات | عناية' },
+    title: { en: 'Maid Agency in Ajman | Domestic Services in Dubai & UAE | INAYA', ar: 'خادمات ومربيات في عجمان والإمارات | عناية' },
     description: {
       en: 'INAYA maid services in Ajman & UAE. 4 hours AED 120; AED 3,000/month with a 12-month commitment. Call 06 740 0128; WhatsApp 050 203 6767.',
       ar: 'خدمات عناية للخادمات في عجمان والإمارات. 4 ساعات بـ120 درهماً، أو 3,000 درهم شهرياً بالتزام 12 شهراً. اتصل 06 740 0128 أو واتساب 050 203 6767.'
     }
   },
   'maid-services-ajman': {
-    title: { en: 'Maid Services in Ajman | INAYA Domestic Workers', ar: 'خدمات خادمات في عجمان | عناية للعمالة المنزلية' },
+    title: { en: 'Ajman Maid Agency | Maid Services & Recruitment | INAYA', ar: 'خدمات خادمات في عجمان | عناية للعمالة المنزلية' },
     description: {
-      en: 'Need a maid service in Ajman? Visit INAYA at Grand Mall to discuss recruitment, cleaning visits, part-time and monthly options. Confirm availability and written costs.',
+      en: 'INAYA is an Ajman maid agency at Grand Mall. Discuss recruitment, cleaning visits, part-time and monthly options. Confirm availability and written costs.',
       ar: 'هل تبحث عن خدمة خادمات في عجمان؟ زر مكتب عناية في جراند مول أو استفسر عن الاستقدام وزيارات التنظيف والباقات الجزئية والشهرية. أكد التوفر والتكلفة المكتوبة مع الفريق.'
     }
   },
@@ -25,9 +31,9 @@ export const onPageSeoRefinements: Record<string, { title: Localized; descriptio
     }
   },
   'maid-services-sharjah': {
-    title: { en: 'Maid Services in Sharjah | INAYA Domestic Workers', ar: 'خدمات خادمات في الشارقة | عناية للعمالة المنزلية' },
+    title: { en: 'Housemaid in Sharjah | INAYA Domestic Workers', ar: 'خدمات خادمات في الشارقة | عناية للعمالة المنزلية' },
     description: {
-      en: 'Need home help in Sharjah? Discuss maid, nanny and part-time cleaning options with INAYA. Share your area and schedule to confirm availability and written costs.',
+      en: 'Need a housemaid in Sharjah? Discuss maid, nanny and part-time cleaning with INAYA. Share your area and schedule to confirm availability and written costs.',
       ar: 'هل تحتاج إلى مساعدة منزلية في الشارقة؟ ناقش مع عناية خيارات الخادمات والمربيات والتنظيف الجزئي، وشارك المنطقة والجدول لتأكيد التوفر والتكلفة المكتوبة.'
     }
   },

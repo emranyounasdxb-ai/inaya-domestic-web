@@ -1,0 +1,5359 @@
+{
+  "baseline": "cf032574c603006d3da53497a019ad856b2b951e",
+  "sources": {
+    "app/[locale]/maid-source-countries/[slug]/page.tsx": {
+      "before": "aa52ecc28ae2220712eaf63e9bca251d8a98ddabc1a03438fcf4c3cc6f0cfcf5",
+      "after": "4ed5369ab18b3942fec82981e4417b53e55a149951f17c26fd6bd9cc6055198e",
+      "patches": [
+        [
+          255,
+          78,
+          ""
+        ],
+        [
+          1178,
+          87,
+          ""
+        ],
+        [
+          4166,
+          102,
+          "              {country.heroTitle[lang]}\n"
+        ],
+        [
+          4286,
+          155,
+          ""
+        ],
+        [
+          7806,
+          67,
+          ""
+        ]
+      ]
+    },
+    "app/[locale]/page.tsx": {
+      "before": "8815e5a4565755a68e9d577f237a799465659f33ccde915cb2d31d6adbf2dbed",
+      "after": "e7d2c2274906f209de82b58f5183ec36b9f0359aaf57b380eda038b44d0f4e73",
+      "patches": [
+        [
+          1227,
+          54,
+          "    heroTitleB: 'in Ajman and Across the UAE',\n"
+        ],
+        [
+          3481,
+          211,
+          "      { title: 'Review Before Confirmation', text: \"Confirm the selected candidate and service start after required lawful authorisation and written confirmation; any revised candidate requires your consent.\" }\n"
+        ],
+        [
+          26276,
+          377,
+          ""
+        ]
+      ]
+    },
+    "app/[locale]/services/page.tsx": {
+      "before": "f0672ff662ca9ba0d205f2f01782ced4060bb1325921d557344b4acb87fbb693",
+      "after": "4b913d7afb24ce75c8b1ceb666bcdeba990109a67965c7fb50c080867f049221",
+      "patches": [
+        [
+          2163,
+          46,
+          "        title: 'Domestic Worker Services for Every Household Need',\n"
+        ],
+        [
+          3598,
+          183,
+          ""
+        ],
+        [
+          5351,
+          3603,
+          ""
+        ]
+      ]
+    },
+    "app/sitemap.ts": {
+      "before": "37cd3e6186ae46ea5b4c95567c1e64d62d5bfae5668f2fdbf1cf2b4d0dcfe669",
+      "after": "1147b2c623ce233042372b21a3c3595729dc3fa0b2a1c43c8907d4f28c10af80",
+      "patches": [
+        [
+          8441,
+          457,
+          "  'ar/services/executive-nannies': '2026-11-07'\n"
+        ]
+      ]
+    },
+    "components/HomeServiceChoices.tsx": {
+      "before": "8c9eb6106a5e64a7fa099ee78063e78393807de7b2c084e910b3e3ebfdf9d426",
+      "after": "8cafe49c62f57b10d9a3d6530757b643672c79ccac652730a5a2b50c0fdfc5a3",
+      "patches": [
+        [
+          1154,
+          124,
+          "    ['maid-visa', 'Visa typing', 'Identify the domestic-worker application, renewal, cancellation or status enquiry.']\n"
+        ]
+      ]
+    },
+    "components/ServiceDetailTemplate.tsx": {
+      "before": "0d75257e3c1b730e4d8318c2ffcec9a48224ba4118cc012181e0b1c0414748eb",
+      "after": "45574701d9c09f1abe3c5aa737b49ca6dfce033d5f9268ca9917d9846c16816d",
+      "patches": [
+        [
+          983,
+          67,
+          ""
+        ],
+        [
+          10274,
+          88,
+          ""
+        ],
+        [
+          16339,
+          174,
+          "  const countryBased = slug !== 'executive-nannies' && !reviewedServiceSlugs.includes(slug) && !administrativeEnquiry && usesCountryMatching(slug);\n"
+        ],
+        [
+          16924,
+          635,
+          ""
+        ]
+      ]
+    },
+    "lib/location-practical-guidance.ts": {
+      "before": "b962b22c64eb9c50bb5e3864617781e6980f71fb2b5eba2d4e85438990ea4002",
+      "after": "936fd0c58d813a5f214d161048fc0a1d62c44d5004a154fc83a671772ae8da32",
+      "patches": [
+        [
+          9800,
+          734,
+          "      review: { en: 'Bring an Ajman household task list to the agency discussion and compare it with the proposed individual profile. Ask which experience, references and documents can be reviewed, then check written costs and support terms. Read genuine reviews in context; neither a review nor nationality guarantees suitability.', ar: 'جهز قائمة مهام منزلك في عجمان وقارنها بالملف الفردي المقترح أثناء المناقشة. اسأل عن الخبرة والمراجع والمستندات المتاحة للمراجعة، ثم تحقق من التكاليف وشروط الدعم المكتوبة. اقرأ التقييمات الحقيقية ضمن سياقها؛ فلا يضمن التقييم أو الجنسية الملاءمة.' }\n"
+        ],
+        [
+          13121,
+          276,
+          "        en: 'INAYA Tadbeer centre at Grand Mall, Ajman, supports domestic-worker recruitment, home cleaning and related visa typing and document processing. Describe your household or existing-worker case so the team can confirm the appropriate service.',\n"
+        ]
+      ]
+    },
+    "lib/location-service-pages.ts": {
+      "before": "aa5c4a3bedf0cf7c596ba4682a4d0ec3e9f3d9403c97dd141b0bfc0e877e02a8",
+      "after": "446db019a4a9e931424a1ab907955029a1a533c94914ca214edc2d8247823b02",
+      "patches": [
+        [
+          2124,
+          115,
+          "    heroTitle: { en: 'Maid Services in Ajman for Trusted Home Support', ar: 'خدمات خادمات في عجمان لدعم منزلي موثوق' },\n"
+        ],
+        [
+          8620,
+          491,
+          "    heroTitle: { en: 'Maid Services in Sharjah for Family Routines', ar: 'خدمات خادمات في الشارقة لروتين الأسرة' },\n    lead: { en: 'INAYA helps Sharjah families compare domestic worker services for household cleaning, childcare, cooking, care support and document-guided hiring.', ar: 'تساعد عناية الأسر في الشارقة على مقارنة خدمات العمالة المنزلية للتنظيف ورعاية الأطفال والطبخ والرعاية والتوظيف الموجه بالمستندات.' },\n"
+        ]
+      ]
+    },
+    "lib/on-page-seo-refinements.ts": {
+      "before": "cfddeec3e77b6edaf7e91fc38d1c7ab9cda1af24218a013419c707eec105abcb",
+      "after": "3562d8852e8ed421f9a29a23742abf487c3f7d594713c1d43194ce93e8c90a83",
+      "patches": [
+        [
+          214,
+          338,
+          "export const onPageSeoRefinements: Record<string, { title: Localized; description: Localized }> = {\n"
+        ],
+        [
+          560,
+          135,
+          "    title: { en: 'Maid Agency in Ajman & UAE | Housemaids & Nannies | INAYA', ar: 'خادمات ومربيات في عجمان والإمارات | عناية' },\n"
+        ],
+        [
+          1058,
+          132,
+          "    title: { en: 'Maid Services in Ajman | INAYA Domestic Workers', ar: 'خدمات خادمات في عجمان | عناية للعمالة المنزلية' },\n"
+        ],
+        [
+          1209,
+          167,
+          "      en: 'Need a maid service in Ajman? Visit INAYA at Grand Mall to discuss recruitment, cleaning visits, part-time and monthly options. Confirm availability and written costs.',\n"
+        ],
+        [
+          2122,
+          124,
+          "    title: { en: 'Maid Services in Sharjah | INAYA Domestic Workers', ar: 'خدمات خادمات في الشارقة | عناية للعمالة المنزلية' },\n"
+        ],
+        [
+          2265,
+          169,
+          "      en: 'Need home help in Sharjah? Discuss maid, nanny and part-time cleaning options with INAYA. Share your area and schedule to confirm availability and written costs.',\n"
+        ]
+      ]
+    },
+    "lib/page-seo.ts": {
+      "before": "a94669755a35ccd0798ed2f424effd933cd71a45a8b9c989d4457aabc5331b9e",
+      "after": "56e6d929dc51878a239169ac5fc790c60b69eb81698b9c4b2ffb4d8afc86ed8b",
+      "patches": [
+        [
+          18052,
+          197,
+          "  if (refinement) return { ...page, title: refinement.title[lang], description: refinement.description[lang] };\n"
+        ]
+      ]
+    },
+    "lib/profile-content-briefs.ts": {
+      "before": "4211d62e9f4db046d2f5fe0682237bb95a7a3c18d3af8ba501f25ce1746f7fcf",
+      "after": "da55f5d5f4a6ff255c5eb1873afa69a8326c11b90efe5992ac93940958bdc00d",
+      "patches": [
+        [
+          7525,
+          514,
+          "  'maid-services-sharjah': { en: 'For Sharjah, describe the family timetable and separate cleaning from childcare or cooking responsibilities. Use the individual service guides to decide which role to discuss, then share the residential area and preferred arrangement for a case-specific availability review.', ar: 'لطلب الشارقة، وضح جدول الأسرة وافصل التنظيف عن مسؤوليات رعاية الأطفال أو الطبخ. استخدم أدلة الخدمات لتحديد الدور المطلوب، ثم شارك المنطقة السكنية والترتيب المفضل لمراجعة التوفر حسب الحالة.' },\n"
+        ]
+      ]
+    },
+    "lib/service-content-briefs.ts": {
+      "before": "d762c24f5063a27f33d50f5b9ed98e176960583779544517cdc1691ab73e0f96",
+      "after": "af8720eddd3ec227600842569085411aa7a794f24580683b0f5c23b00a09135c",
+      "patches": [
+        [
+          1328,
+          405,
+          "    overview: { en: 'Live-out support is arranged around visits rather than residence in your home. The useful starting point is a visit plan: which rooms and tasks need attention, when access is possible and what can wait until another visit.', ar: 'يرتبط الدعم غير المقيم بالزيارات بدلاً من السكن في منزلك. تبدأ المقارنة بخطة للزيارة: الغرف والمهام المطلوبة، ومواعيد دخول المنزل، وما يمكن تأجيله لزيارة أخرى.' },\n"
+        ]
+      ]
+    },
+    "lib/service-page-copy.ts": {
+      "before": "ec8a2eb4f66c8290e98a7e2dde34954084e9f0e429aa9560defe9e06c1af6646",
+      "after": "c15d5ef84eed635d8e7a94705c175eef9cb24662dc71e8ea06eee0901f89d851",
+      "patches": [
+        [
+          14374,
+          48,
+          "      pricingTitle: 'Live-out Maid Pricing Guidance',\n"
+        ],
+        [
+          14624,
+          57,
+          "      compareTitle: 'Why Choose INAYA for Live-out Maid Services?',\n"
+        ]
+      ]
+    },
+    "lib/service-page-improvements.ts": {
+      "before": "5e2257c757540748ff7d1164fec881a242f633066a7a40806f3250a347e549af",
+      "after": "83f2f1260c331f66ed6b2f72776cf098cd48e3ee1530e0af1b0c2e916c484477",
+      "patches": [
+        [
+          4144,
+          381,
+          ""
+        ],
+        [
+          8547,
+          297,
+          "      ['Products and equipment', 'Confirm who supplies each item. Explain surface-specific products; no blanket inclusion is assumed.', 'المنتجات والمعدات', 'أكد من يوفر كل أداة أو منتج، واشرح متطلبات الأسطح؛ ولا يفترض شمول المستلزمات دائماً.'],\n"
+        ]
+      ]
+    },
+    "lib/service-practical-guidance.ts": {
+      "before": "184802de1184c32d89e1328c997b2f4422332c8955191e8e12895dc07f834a43",
+      "after": "eccec1b4046450cbe87dd5c8b77a033d07e3d0640cc053eb68055c7d451d170e",
+      "patches": [
+        [
+          5780,
+          157,
+          "  \"prepare\": \"Share the home size, recurring duties, required hours and days, emirate, preferred timing and any accommodation proposal.\",\n"
+        ],
+        [
+          10205,
+          200,
+          "  \"prepare\": \"Prepare the rooms to clean, priority tasks, visit frequency, preferred hours, address and building access details. Ask which supplies and equipment to prepare.\",\n"
+        ]
+      ]
+    }
+  },
+  "newSources": {
+    "components/IndonesianHouseholdGuide.tsx": "efc766422331e3ca78962cb1c4d4c00a45b678564500d0e56d0b960d0c169b50",
+    "components/PrivateChefPlanningGuide.tsx": "bc7df10bf3bce58030ea31859d0ac48213b75c3342c014e61a5c3a5a8e7bfec6"
+  },
+  "pages": {
+    "https://inayadomestic.ae/en/": {
+      "before": "a4a2ffafa5c60316ca963adbd8b48ed7643ece22ef1f0ff5dc013136d25b870f",
+      "after": "13f8b9282b9bca2bc55da887e889285dfa94b519a2e7f71d04ee0cc113a6536f",
+      "patches": [
+        [
+          51,
+          12,
+          "Ajman"
+        ],
+        [
+          717,
+          9,
+          "Visa"
+        ],
+        [
+          3787,
+          13,
+          "confirmation;"
+        ],
+        [
+          3801,
+          3,
+          "any"
+        ],
+        [
+          8610,
+          290,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/": {
+      "before": "1a18bc0d00456e88373d413da1c215c65c35095a2f9a0a9fd0236580b4f7a3be",
+      "after": "68fc65beadf9c4fecc9fee9cfe44d2e23318062ab8e164f174393fecc818e80d",
+      "patches": [
+        [
+          22,
+          28,
+          ""
+        ],
+        [
+          252,
+          1087,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/live-out-maid/": {
+      "before": "292a4972a84607cfd2d293d1ecef82045b62a868c05baa912e8c9c67698da782",
+      "after": "0e0d47cf14db654170ffea03e76fc035b023553c1cfd24402cd68f1e9095daf2",
+      "patches": [
+        [
+          1698,
+          8,
+          "Live-out"
+        ],
+        [
+          1707,
+          7,
+          "Maid"
+        ],
+        [
+          1715,
+          8,
+          "Services cover?"
+        ],
+        [
+          1803,
+          5,
+          "The"
+        ],
+        [
+          1809,
+          4,
+          "useful starting point is"
+        ],
+        [
+          1822,
+          5,
+          "plan:"
+        ],
+        [
+          1828,
+          8,
+          "which"
+        ],
+        [
+          1852,
+          5,
+          ""
+        ],
+        [
+          4585,
+          19,
+          ""
+        ],
+        [
+          4695,
+          0,
+          "English Speaking Childcare Housekeeping "
+        ],
+        [
+          4711,
+          19,
+          ""
+        ],
+        [
+          4823,
+          0,
+          "Cooking Cleaning Family Care "
+        ],
+        [
+          4839,
+          19,
+          ""
+        ],
+        [
+          4947,
+          0,
+          "Cleaning Laundry Daily Support "
+        ],
+        [
+          4963,
+          19,
+          ""
+        ],
+        [
+          5066,
+          0,
+          "Cooking Housekeeping Laundry "
+        ],
+        [
+          5082,
+          19,
+          ""
+        ],
+        [
+          5181,
+          0,
+          "Kitchen Support Cleaning Family Support "
+        ],
+        [
+          5197,
+          19,
+          ""
+        ],
+        [
+          5296,
+          0,
+          "English Speaking Childcare Elder Care "
+        ],
+        [
+          5313,
+          7,
+          "Live-out"
+        ],
+        [
+          5321,
+          6,
+          "Maid"
+        ],
+        [
+          5328,
+          3,
+          "Pricing"
+        ],
+        [
+          5332,
+          5,
+          "Guidance"
+        ],
+        [
+          9800,
+          3,
+          "Why Choose"
+        ],
+        [
+          9810,
+          8,
+          "for"
+        ],
+        [
+          9819,
+          4,
+          "Live-out"
+        ],
+        [
+          9824,
+          9,
+          "Maid Services?"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/ar/services/live-out-maid/": {
+      "before": "bf21dd8563d0eddf3fd48756afada042580aa84763ac89218fa3013c891d6c8c",
+      "after": "5d8a459ee71798385abf379db1f446fae9275daa15b95e2c531952ac15202f4f",
+      "patches": [
+        [
+          3619,
+          11,
+          ""
+        ],
+        [
+          3698,
+          0,
+          "تحدث الإنجليزية رعاية الأطفال تنظيم المنزل "
+        ],
+        [
+          3711,
+          11,
+          ""
+        ],
+        [
+          3778,
+          0,
+          "الطبخ التنظيف رعاية الأسرة "
+        ],
+        [
+          3791,
+          11,
+          ""
+        ],
+        [
+          3872,
+          0,
+          "التنظيف الغسيل الدعم اليومي "
+        ],
+        [
+          3885,
+          11,
+          ""
+        ],
+        [
+          3954,
+          0,
+          "الطبخ تنظيم المنزل الغسيل "
+        ],
+        [
+          3967,
+          11,
+          ""
+        ],
+        [
+          4042,
+          0,
+          "دعم المطبخ التنظيف دعم الأسرة "
+        ],
+        [
+          4055,
+          11,
+          ""
+        ],
+        [
+          4130,
+          0,
+          " تحدث الإنجليزية رعاية الأطفال رعاية كبار السن"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/full-time-maid/": {
+      "before": "8fd4461bc76140f30ed8c2ee86b27208edca393f358cfdf7b3984e2808d33bd0",
+      "after": "f4ef73c48d9e6974570be799608aa8d088c8c82602e6e4048c9acd05d4a7f2bc",
+      "patches": [
+        [
+          1714,
+          9,
+          "Full-time"
+        ],
+        [
+          1724,
+          7,
+          "Maid"
+        ],
+        [
+          1732,
+          8,
+          "Hiring cover?"
+        ],
+        [
+          3869,
+          4,
+          "the"
+        ],
+        [
+          3874,
+          6,
+          "home"
+        ],
+        [
+          3897,
+          10,
+          "duties,"
+        ],
+        [
+          3927,
+          18,
+          "days,"
+        ],
+        [
+          4774,
+          237,
+          ""
+        ],
+        [
+          5718,
+          7,
+          "Full-time"
+        ],
+        [
+          5726,
+          6,
+          "Maid"
+        ],
+        [
+          5733,
+          3,
+          "Pricing"
+        ],
+        [
+          5737,
+          5,
+          "Guidance"
+        ],
+        [
+          9744,
+          3,
+          "Why Choose"
+        ],
+        [
+          9754,
+          8,
+          "for"
+        ],
+        [
+          9763,
+          4,
+          "Full-time"
+        ],
+        [
+          9768,
+          9,
+          "Maid Hiring?"
+        ],
+        [
+          10450,
+          4,
+          "the"
+        ],
+        [
+          10455,
+          6,
+          "home"
+        ],
+        [
+          10478,
+          10,
+          "duties,"
+        ],
+        [
+          10508,
+          18,
+          "days,"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/part-time-maid/": {
+      "before": "879742c93e8c744695b9fd887938f851bced2c6061d6d72b64bea46e8c90aaf9",
+      "after": "bc58aa5f9e45482d77de79c6f4c744f0ecb7880ea28815ea4eca7b3582d28a54",
+      "patches": [
+        [
+          1873,
+          5,
+          "Prepare"
+        ],
+        [
+          1889,
+          4,
+          "to"
+        ],
+        [
+          1894,
+          14,
+          "clean,"
+        ],
+        [
+          1918,
+          9,
+          "tasks,"
+        ],
+        [
+          1934,
+          23,
+          "frequency,"
+        ],
+        [
+          3309,
+          5,
+          "surface-specific"
+        ],
+        [
+          3315,
+          8,
+          "products;"
+        ],
+        [
+          3324,
+          3,
+          "no"
+        ],
+        [
+          3328,
+          6,
+          "blanket"
+        ],
+        [
+          3335,
+          3,
+          "inclusion"
+        ],
+        [
+          3339,
+          10,
+          "is"
+        ],
+        [
+          3350,
+          69,
+          "assumed."
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/private-chefs/": {
+      "before": "f03d9eb5c76700bdd862049a9c9d1cf190fb61b1bd654a6550b3216f3729205a",
+      "after": "fce95c69501736bca675dd381688007245907ec4c3f6147edea86fc0ec11dc46",
+      "patches": [
+        [
+          3215,
+          1897,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/": {
+      "before": "c4655e55c1fab86147091dfc5db0f7d663528b947b7c025b534c9ad0a31e7fcd",
+      "after": "c0f48ed3438c83bd59a610b1386979829215a7f408f1b3b16fa56740f047218b",
+      "patches": [
+        [
+          45,
+          36,
+          ""
+        ],
+        [
+          1055,
+          2648,
+          ""
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-ajman/": {
+      "before": "9e20a860efae04efa94608ab62512cef5b38d656e5f5bc91ac615c0878544779",
+      "after": "fc781c49346ea67ccbe8b1466f6e4b70be30781d5547b1864629c8f77449765d",
+      "patches": [
+        [
+          41,
+          6,
+          ""
+        ],
+        [
+          52,
+          6,
+          "Services in Ajman"
+        ],
+        [
+          90,
+          28,
+          ""
+        ],
+        [
+          142,
+          5,
+          "Mall,"
+        ],
+        [
+          148,
+          2,
+          "Ajman,"
+        ],
+        [
+          151,
+          7,
+          "supports"
+        ],
+        [
+          193,
+          9,
+          "cleaning and"
+        ],
+        [
+          272,
+          6,
+          ""
+        ],
+        [
+          330,
+          5,
+          "appropriate"
+        ],
+        [
+          13374,
+          4,
+          "an"
+        ],
+        [
+          13412,
+          5,
+          ""
+        ],
+        [
+          13455,
+          4,
+          "the"
+        ],
+        [
+          13469,
+          0,
+          "individual "
+        ],
+        [
+          13478,
+          25,
+          "Ask"
+        ],
+        [
+          13510,
+          108,
+          "experience,"
+        ],
+        [
+          13644,
+          4,
+          ""
+        ],
+        [
+          13652,
+          7,
+          "be"
+        ],
+        [
+          13660,
+          7,
+          "reviewed, then check"
+        ],
+        [
+          13701,
+          39,
+          "Read"
+        ],
+        [
+          13760,
+          8,
+          "context;"
+        ],
+        [
+          13769,
+          7,
+          "neither"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-sharjah/": {
+      "before": "1222326c0fc8a6462ec248d5d42e28ebc4c014b2c4bc7375c0e713174531721a",
+      "after": "9f8c668ba64e95dced473e3ef8e176b4e257677ff354fb15904b04b7257cce99",
+      "patches": [
+        [
+          41,
+          9,
+          "Maid Services"
+        ],
+        [
+          66,
+          4,
+          "Family"
+        ],
+        [
+          71,
+          52,
+          "Routines"
+        ],
+        [
+          135,
+          0,
+          " Sharjah"
+        ],
+        [
+          182,
+          0,
+          "household "
+        ],
+        [
+          203,
+          11,
+          "cooking,"
+        ],
+        [
+          220,
+          41,
+          "support"
+        ],
+        [
+          266,
+          6,
+          "document-guided"
+        ],
+        [
+          273,
+          29,
+          "hiring."
+        ],
+        [
+          398,
+          10,
+          "timetable"
+        ],
+        [
+          409,
+          20,
+          "and"
+        ],
+        [
+          438,
+          0,
+          " cleaning"
+        ],
+        [
+          457,
+          8,
+          "cooking responsibilities."
+        ],
+        [
+          503,
+          6,
+          "decide"
+        ],
+        [
+          510,
+          3,
+          "which"
+        ],
+        [
+          519,
+          9,
+          ""
+        ],
+        [
+          531,
+          8,
+          "discuss,"
+        ],
+        [
+          540,
+          5,
+          "then"
+        ],
+        [
+          546,
+          4,
+          "share the"
+        ],
+        [
+          594,
+          2,
+          "for"
+        ],
+        [
+          597,
+          3,
+          "a"
+        ],
+        [
+          601,
+          15,
+          "case-specific"
+        ],
+        [
+          630,
+          14,
+          "review."
+        ]
+      ]
+    }
+  },
+  "metadata": {
+    "https://inayadomestic.ae/en/": {
+      "before": "18b7e55c114b621e4ab3b27c6332a194e394729803e41d17293d78a2ff58c5e7",
+      "after": "0778b39fb1845e702e58c0cba98b1c8abf68b2660d994bd563ee22030ee75881",
+      "patches": [
+        [
+          31,
+          29,
+          ""
+        ],
+        [
+          65,
+          0,
+          " | Housemaids & Nannies"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/": {
+      "before": "d6cc1fb1cb1bf24afd54657075fde66ecf7ee22d6ca77520db2942c6d7694751",
+      "after": "3eb57ac0b0017d6a09a313c1cb99464c4ce6053764c0710e67090d41088508b6",
+      "patches": [
+        [
+          0,
+          44,
+          "{\"title\":\"Domestic"
+        ],
+        [
+          60,
+          0,
+          " in UAE"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/": {
+      "before": "ed53d8f51e12e82df25a6cb3e3e42d26690781388175683fbbdac7304ef2f65e",
+      "after": "578528ce68fe30c371184ab82f54b7068c71fb2cab3e8e48d6805c3eb93e4986",
+      "patches": [
+        [
+          21,
+          9,
+          "Maid"
+        ],
+        [
+          34,
+          8,
+          ""
+        ],
+        [
+          45,
+          0,
+          " | Indonesia Domestic Workers"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-ajman/": {
+      "before": "f524f24687445415a1f2c5d69780a25a2d3cfbd527b3878978b92d022914388f",
+      "after": "e645fce81a40529af924bf178fd79be697595c5a221f61a6c90e0e8ac2850aaf",
+      "patches": [
+        [
+          0,
+          34,
+          "{\"title\":\"Maid"
+        ],
+        [
+          44,
+          49,
+          "in"
+        ],
+        [
+          100,
+          0,
+          "| INAYA Domestic Workers\",\"description\":\"Need a "
+        ],
+        [
+          105,
+          6,
+          "service in Ajman? Visit INAYA"
+        ],
+        [
+          121,
+          5,
+          "Mall"
+        ],
+        [
+          127,
+          7,
+          "to discuss"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-sharjah/": {
+      "before": "7185421e0bb8672bec35b8004e6d06589ad534ffdd988a50b44bec8737f953c1",
+      "after": "85267924962332fafcd218d9a0c3abfedc1e7417a7a31e9f1ed9945042a4a964",
+      "patches": [
+        [
+          0,
+          19,
+          "{\"title\":\"Maid Services"
+        ],
+        [
+          77,
+          1,
+          "home"
+        ],
+        [
+          79,
+          9,
+          "help"
+        ],
+        [
+          143,
+          0,
+          " options"
+        ]
+      ]
+    }
+  },
+  "headings": {
+    "https://inayadomestic.ae/en/": {
+      "before": "1e2cbc1686f6935b3a71328f1e4902072e5304593ad2ff78d1d153d6f83e77ea",
+      "after": "115b1a371a4cafc864c16145f706169f909f72bb41d17542e80ac5badc24dfbb",
+      "patches": [
+        [
+          35,
+          12,
+          "Ajman"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/services/": {
+      "before": "21003e0b9ac1e4cbf2df169e31d2664e4a30d37a2f04263a8d164886f9d2368a",
+      "after": "eb096b48a74639503848280ace08037e5021587c81636cc8839970c24934b69e",
+      "patches": [
+        [
+          0,
+          9,
+          "Domestic"
+        ],
+        [
+          10,
+          6,
+          "Worker"
+        ],
+        [
+          17,
+          2,
+          "Services"
+        ],
+        [
+          20,
+          3,
+          "for"
+        ],
+        [
+          24,
+          3,
+          "Every Household Need"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/": {
+      "before": "80d8d29baea93fd57b1df82da77bc8a110de3ed625139a1c7748cd657b10c63e",
+      "after": "a7bec1e2597b00089f10bfb1f95408396d7d079b6bdaabab4493d250cff4b693",
+      "patches": [
+        [
+          11,
+          18,
+          "Maid"
+        ],
+        [
+          32,
+          0,
+          "Domestic Worker Profiles in "
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-ajman/": {
+      "before": "1504c3bae3a88f7fd78e8703734b0aabd7a9a2211f1c8073fca16bbb368cd9bf",
+      "after": "aabf5eef501b6000e67f6beacb4125ba89cc1a0aa1f9c36494caf7ab78cad54f",
+      "patches": [
+        [
+          0,
+          6,
+          ""
+        ],
+        [
+          11,
+          6,
+          "Services in Ajman"
+        ]
+      ]
+    },
+    "https://inayadomestic.ae/en/maid-services-sharjah/": {
+      "before": "20cd368cc2e8514ae79ca8e646fc8d9f20e144dd7b783aa2e3bad6bca45f8d54",
+      "after": "95383c5c3d401bb3f653409d30c1c2cbe55f9ca291ba2f591ab4f391108d7257",
+      "patches": [
+        [
+          0,
+          9,
+          "Maid Services"
+        ],
+        [
+          25,
+          4,
+          "Family"
+        ],
+        [
+          30,
+          16,
+          "Routines"
+        ]
+      ]
+    }
+  },
+  "commercialParagraphs": {
+    "https://inayadomestic.ae/en/services/full-time-maid/": {
+      "before": "f084b51e8ea3a43f2e2966afb79d766cbcb7a9c93f80e31032c22e56a10d1057",
+      "after": "930694c235cd2fe23fff15cc69b10b3b89e34c02426f923f69a09c99dc4c4cd0",
+      "changes": [
+        {
+          "index": 7,
+          "before": "share the home size recurring duties required hours and days emirate preferred timing and any accommodation proposal confirm the candidate and scope in writing service begins after selection and required lawful authorisation any alternative profile is presented for your consent",
+          "after": "share your home s size recurring duties and required hours and days include your emirate preferred timing and any accommodation proposal confirm the candidate and scope in writing service begins after selection and required lawful authorisation any alternative profile is presented for your consent"
+        }
+      ]
+    }
+  },
+  "pageContracts": {
+    "https://inayadomestic.ae/en/": {
+      "beforeSha256": "27c7f35b2d009ea1cfcdbed15b923f3cd600ce951937151a56ec62e7cbd65b1a",
+      "afterSha256": "ba7a57f08c695f7cfe377c6ae4ad504411f81fc194b05d750ae41e58295d0dea"
+    },
+    "https://inayadomestic.ae/ar/": {
+      "beforeSha256": "73c2d4f3088861ccec28d34b83befc9e7f7b2379d398dfefef3826e23acc4e72"
+    },
+    "https://inayadomestic.ae/en/about/": {
+      "beforeSha256": "ff31920a555f7f319c121098c2780743720ba8036c99dabbd9976e6b4f4aaaab"
+    },
+    "https://inayadomestic.ae/ar/about/": {
+      "beforeSha256": "0c281577d566d3cafa63c7783359d9d75fe5b8fb9a2a644520c1606dbcab7599"
+    },
+    "https://inayadomestic.ae/en/services/": {
+      "beforeSha256": "dbb5af41875cf98902678773c88ca9bc1ced55ddb4b9add27044998edbf86d31",
+      "afterSha256": "ce353d3647f578332cfa9635d02c18cd95f07d02be737ecc8a73de356b8f5bae"
+    },
+    "https://inayadomestic.ae/ar/services/": {
+      "beforeSha256": "f320edf46a3b3ac59bda3232fddc3486c6589e1c5024b1a5b9b8a21a40fdc23c"
+    },
+    "https://inayadomestic.ae/en/contact/": {
+      "beforeSha256": "c857b3960c8173d9dc845a6babd953e4e32414e2db4648f773f077e0339e0782"
+    },
+    "https://inayadomestic.ae/ar/contact/": {
+      "beforeSha256": "b0ecdae9b34f03569c73f35984efd317ff68ecd4340f4a4d3add56716dfba84a"
+    },
+    "https://inayadomestic.ae/en/how-it-works/": {
+      "beforeSha256": "88c2fee0281a4b810ce293c34fdacc052dbbe42882c0c6a88b345dca6516a4e1"
+    },
+    "https://inayadomestic.ae/ar/how-it-works/": {
+      "beforeSha256": "d266795462a89de241aa6f3c79390a81d9f0bcf9175239c05852f0779077f023"
+    },
+    "https://inayadomestic.ae/en/service-areas/": {
+      "beforeSha256": "0e294b432c2b17c333c6f509681c1e48f165dcd85d3d4552ba95ce9b3f3297c4"
+    },
+    "https://inayadomestic.ae/ar/service-areas/": {
+      "beforeSha256": "241ce64a504d98680e8c58905a06bcaaf8d22a456c6ae6d8542fd0ae1102628b"
+    },
+    "https://inayadomestic.ae/en/services/countries-we-source-from/": {
+      "beforeSha256": "9547e6821b901dcb0cd3a13a1305c53af73bbb3981677e4bdedde3265336fa8c"
+    },
+    "https://inayadomestic.ae/ar/services/countries-we-source-from/": {
+      "beforeSha256": "f7c27bacde054ee67252878ae165f5c113dc58075f5b54d5fc7fb9fbe463b4c6"
+    },
+    "https://inayadomestic.ae/en/booking/": {
+      "beforeSha256": "ace2a04c3c136a515d920bb4ddf082300f696e65e08b8c75095d4985bd3847ae"
+    },
+    "https://inayadomestic.ae/ar/booking/": {
+      "beforeSha256": "08851f7a9d13cd066da4a49b47f4e957c5b9e7f6af4630d7fa541b48aa83d1e2"
+    },
+    "https://inayadomestic.ae/en/careers/": {
+      "beforeSha256": "44493fe7b25a4142fe874ac3129e645a9f1f1b15483aca5dab092a2a4f06737d"
+    },
+    "https://inayadomestic.ae/ar/careers/": {
+      "beforeSha256": "2d217bcadf5c9dce6552d37c37d309f3678eca08ad9c39d43d0f3099be2e94d8"
+    },
+    "https://inayadomestic.ae/en/pricing/": {
+      "beforeSha256": "8396308be31685fbdf1867dfd378e9a15b888b98ac30ee90955812dd5d96be48"
+    },
+    "https://inayadomestic.ae/ar/pricing/": {
+      "beforeSha256": "c3fff0dcb9f3a574843fc8eef17e0ea3802f02fe054a55d7dc6efb8200ca05f7"
+    },
+    "https://inayadomestic.ae/en/blog/": {
+      "beforeSha256": "471a75068e67247de302bb09e6da2554ddc35b091d5db2dddb175687270c2f96"
+    },
+    "https://inayadomestic.ae/ar/blog/": {
+      "beforeSha256": "12ca3e9e59f9155e6c78e99d14cd11a9115fe726bb0b2ff7cab833a29dfff3cb"
+    },
+    "https://inayadomestic.ae/en/faq/": {
+      "beforeSha256": "bfcfc194f952644df5884b2a27e169696f782d5c458b7f1d11681213594e81c8"
+    },
+    "https://inayadomestic.ae/ar/faq/": {
+      "beforeSha256": "d9c31c7cd52d6f69eb5160edccc1d1c21f086b929c2054d9edb7b357b9ef4d27"
+    },
+    "https://inayadomestic.ae/en/documents-required/": {
+      "beforeSha256": "c8f512bc90ccce8ba097d43d653e20fca55a3146af444a3dcd8bf41148a7bf6b"
+    },
+    "https://inayadomestic.ae/ar/documents-required/": {
+      "beforeSha256": "bb029cad400e7308b17811e2f1664ee2faf3bf49289ef5bc052dad3dac2fe289"
+    },
+    "https://inayadomestic.ae/en/inaya-advantages/": {
+      "beforeSha256": "01a8dd237ffb51e959f53cb2262eae070f0f9f427e82d91686ef860660b2a2b4"
+    },
+    "https://inayadomestic.ae/ar/inaya-advantages/": {
+      "beforeSha256": "35ac8fe9c879ce71be7f912e209fe1cbd3fa9228b528647ce4024a5590082204"
+    },
+    "https://inayadomestic.ae/en/reviews/": {
+      "beforeSha256": "c33eba9a019dde4a60c8fa430ceedbe6e1179e3ebab7ce3d1f0b39ab32d1b0e1"
+    },
+    "https://inayadomestic.ae/ar/reviews/": {
+      "beforeSha256": "830b3a0700f3ee75abf5b476128d1c4d7c9f050991a4b7dfda6342e8acc64564"
+    },
+    "https://inayadomestic.ae/en/privacy-policy/": {
+      "beforeSha256": "8da809713f6ab323883c70189ccf66c61fa652fa9e04288cda01b6fb19600f60"
+    },
+    "https://inayadomestic.ae/ar/privacy-policy/": {
+      "beforeSha256": "1b70abfd5b99058081ca6d8c12fdd771a7c042f239ab3bf4f67998d365f03b84"
+    },
+    "https://inayadomestic.ae/en/terms/": {
+      "beforeSha256": "c88e61de3de78cce10129f3365c56764a60e9a6c3efdf1f05d4323d1ea73467b"
+    },
+    "https://inayadomestic.ae/ar/terms/": {
+      "beforeSha256": "2604567e0238ab1d8aad3830faa298da4d75616cc220f392ad6be511b9167a3d"
+    },
+    "https://inayadomestic.ae/en/refund-policy/": {
+      "beforeSha256": "7b12272ef21890fd965ef7439faab9c69ab213e5440d5929bbfcf83a874d2da7"
+    },
+    "https://inayadomestic.ae/ar/refund-policy/": {
+      "beforeSha256": "68cd3d1778aeec84ae5df89798b4588fff05ae3ec461e8713769596f2819e8e8"
+    },
+    "https://inayadomestic.ae/en/service-guidelines/": {
+      "beforeSha256": "efcb4def6d854bf2f27b9e8bdb55406a5e77bbcffd97d818585d0a7163504a0b"
+    },
+    "https://inayadomestic.ae/ar/service-guidelines/": {
+      "beforeSha256": "f777cdf43434fe23f5e3f6d0ad15734a18d1259afaa3c5f10832730fab7e25bc"
+    },
+    "https://inayadomestic.ae/en/support-process/": {
+      "beforeSha256": "b292df339392d34d367da8096706a24cf4a4c57f08def2743588231947cc27f0"
+    },
+    "https://inayadomestic.ae/ar/support-process/": {
+      "beforeSha256": "edc55628708ed162e0f2b6822eb47621fb977f30a6d7c370029a58e7711294bf"
+    },
+    "https://inayadomestic.ae/en/services/live-in-maid/": {
+      "beforeSha256": "6f4a501e1fba1ccd3b899737b4ebae96d1f024b0b3e572f07d07b72c921ea65a"
+    },
+    "https://inayadomestic.ae/ar/services/live-in-maid/": {
+      "beforeSha256": "63c92c0320a66e0b2d77a495cfe0ef6fb13694c399232295b84753222c4db562"
+    },
+    "https://inayadomestic.ae/en/services/live-out-maid/": {
+      "beforeSha256": "6b55d8f48e99713ef1b4d0a2f32ff6fdb74d60374c1b760018b81af1777feea9",
+      "afterSha256": "5df6d032314463dd5a351a214259938109acccfa1e4df9d3d41144227358664b"
+    },
+    "https://inayadomestic.ae/ar/services/live-out-maid/": {
+      "beforeSha256": "2a43d2880539abd2bf952e08593272f6889e8ef112f30d1867af923beffb0e4f",
+      "afterSha256": "189a2db5ed3c395cac7bde8a862e582200ca1ef04b7e483a91dd5beb0a778ee0"
+    },
+    "https://inayadomestic.ae/en/services/housemaid/": {
+      "beforeSha256": "b8c83b9bf62deff69c64bded24743f630e56a28abf0b0bbbdb06ff6c68d04c82"
+    },
+    "https://inayadomestic.ae/ar/services/housemaid/": {
+      "beforeSha256": "6be4f1c5d36111d349b2e633547a7c3794dd07b2fff46c032308e857937e8531"
+    },
+    "https://inayadomestic.ae/en/services/housekeeping/": {
+      "beforeSha256": "acf5cd17a3c22ab8b6d0137e75584e5276fc174bb03286e189fe00bf7054b1a1"
+    },
+    "https://inayadomestic.ae/ar/services/housekeeping/": {
+      "beforeSha256": "f79c103c4d2224668c99ad59099f5802fc2b823ed00e95dd20c9a4ac79d87fec"
+    },
+    "https://inayadomestic.ae/en/services/full-time-maid/": {
+      "beforeSha256": "a898e3aa215284876a63801632b6b5a82c5bdcde1015256db8899ccd0a808a23",
+      "afterSha256": "e5eb0678582af466c18eb191e93047779991dbf7febf087756d5cdea315b3229"
+    },
+    "https://inayadomestic.ae/ar/services/full-time-maid/": {
+      "beforeSha256": "11f30636c84daf49ae22b52a1277c61545d8aed1bfd7ec3cb5ffffd7b26ef020"
+    },
+    "https://inayadomestic.ae/en/services/part-time-maid/": {
+      "beforeSha256": "5b7d7ba9e5b54ce15093626934494c50dbb685a17dfc8937fafd7e1f8a13074d",
+      "afterSha256": "570b8fe7098b91191b4fe0670e907003be95de00aa7ba569870f8c777c01c0ed"
+    },
+    "https://inayadomestic.ae/ar/services/part-time-maid/": {
+      "beforeSha256": "547024c73e04c1d8c72ad261c40375ecb1684f65cf5ea1b61ba9b517e308fed7"
+    },
+    "https://inayadomestic.ae/en/services/monthly-maid-contract/": {
+      "beforeSha256": "9195a03e506814d7edb1cd71e29ed3156bb7e62ff9fcdd471af80fde7a445b17"
+    },
+    "https://inayadomestic.ae/ar/services/monthly-maid-contract/": {
+      "beforeSha256": "87fd7df5a56305cd048dbcdb6b340611697cbdaaa8ca7b37ecaed2f2d7e8fec2"
+    },
+    "https://inayadomestic.ae/en/services/on-demand-domestic-help/": {
+      "beforeSha256": "4ec6829b3489348827da5fd88581e5324e48ae8e3e303830e527b64b65c5b0b2"
+    },
+    "https://inayadomestic.ae/ar/services/on-demand-domestic-help/": {
+      "beforeSha256": "98a5ba35e835a72103936a9f82823c83427b28be207517ef2494ceed9acba7d5"
+    },
+    "https://inayadomestic.ae/en/services/nanny/": {
+      "beforeSha256": "257b27bc8be6aa1538ec037f92d82edec4fd2e8dbe3203ae28cac6acab6e8523"
+    },
+    "https://inayadomestic.ae/ar/services/nanny/": {
+      "beforeSha256": "a3913d14321dc5e0191ddaa21042f9c5ce12a883a41d4b4917d6d7c29a8a3113"
+    },
+    "https://inayadomestic.ae/en/services/executive-nannies/": {
+      "beforeSha256": "a180148003a3d12e736ba7233024a9670a7ece6d7d3211b9aa1762481453178d"
+    },
+    "https://inayadomestic.ae/ar/services/executive-nannies/": {
+      "beforeSha256": "3d103d12341440afd6f19bbaa0074fe93cd53b53900c6fef5dd3ba95ede35c94"
+    },
+    "https://inayadomestic.ae/en/services/babysitting/": {
+      "beforeSha256": "4b7850fd754580e7484d576249154b9fca193a5edfbb389a99b613dde62df85a"
+    },
+    "https://inayadomestic.ae/ar/services/babysitting/": {
+      "beforeSha256": "041d355f3b2a5e35f5852225b5db3e2f89b57707b2e0d2031a14f7a930af02fe"
+    },
+    "https://inayadomestic.ae/en/services/newborn-care/": {
+      "beforeSha256": "ee880e6afa183b5bee63889c49d1374d42d96cdf9537374ce9bcc0bb90461961"
+    },
+    "https://inayadomestic.ae/ar/services/newborn-care/": {
+      "beforeSha256": "c35e69447fe4c85898228a4eb62f2b6b0b0cdfdfc71603912cb7ca0172ccbe33"
+    },
+    "https://inayadomestic.ae/en/services/home-cooking/": {
+      "beforeSha256": "7a8163bc3f75b41f3db1f51c4d5564eee5a842372b0b4bb3fbf837deabd0c14d"
+    },
+    "https://inayadomestic.ae/ar/services/home-cooking/": {
+      "beforeSha256": "61a2b12d8c5d133d6aceb6e4ddcff64bb83ae753d1829711933fcaeda553bf39"
+    },
+    "https://inayadomestic.ae/en/services/private-chefs/": {
+      "beforeSha256": "d4650a864208f4a12aa5eb4f4a64f64d31ad492287f0adc18783e87da75d6357",
+      "afterSha256": "ad7998128086c731418e7b7a049aa9e2618178f4285ce70650e5bf1c08cefa8e"
+    },
+    "https://inayadomestic.ae/ar/services/private-chefs/": {
+      "beforeSha256": "ae9c4b29972f3802ae64c3bb4e920848b179fe1504e14b27e81ba865d047dcf2"
+    },
+    "https://inayadomestic.ae/en/services/personal-chef/": {
+      "beforeSha256": "ec7d52dd0069b095e59ce8e73e1e9382e606985e5aade8ffeda73615ab2ee99b"
+    },
+    "https://inayadomestic.ae/ar/services/personal-chef/": {
+      "beforeSha256": "92d8a8b2d38915eb71aaab15eaccb4f07dbc20b298c82f1e1bc46a43075cdb84"
+    },
+    "https://inayadomestic.ae/en/services/kitchen-helper/": {
+      "beforeSha256": "373ec3e57ce4607bb1b9f7aedc6e4eaf353c7f230ed317052edc9ad055b36196"
+    },
+    "https://inayadomestic.ae/ar/services/kitchen-helper/": {
+      "beforeSha256": "40574bdc62f4ab69526f1f0fe286d52e61641ee2216b21fa68a00798387b51df"
+    },
+    "https://inayadomestic.ae/en/services/house-managers/": {
+      "beforeSha256": "2bb247762fa177c2f9d2e9784f119e5b36ee3ed37ebbf3e108b5ed5f0f137566"
+    },
+    "https://inayadomestic.ae/ar/services/house-managers/": {
+      "beforeSha256": "30a01cb4bd0c20dd02b99b9c17f550c5d82a323464b89afccef09e33db52eec1"
+    },
+    "https://inayadomestic.ae/en/services/elder-care/": {
+      "beforeSha256": "c2afbe5acfded08026751bab6c2bc5803b8b2110e8f5f97ae47ec9079d701780"
+    },
+    "https://inayadomestic.ae/ar/services/elder-care/": {
+      "beforeSha256": "4dd2aa920554b3e7af6822d367fa226e5bed81b198fb44026f9d49e59c8b9327"
+    },
+    "https://inayadomestic.ae/en/services/patient-care/": {
+      "beforeSha256": "2756671e01d2382a0af2852913c970d9ac6353fd0ac88736d0147ebdd950eb91"
+    },
+    "https://inayadomestic.ae/ar/services/patient-care/": {
+      "beforeSha256": "3dd2827e0cc4539b4db1b30de762d6f631460693443407d4c2d576439ed1db68"
+    },
+    "https://inayadomestic.ae/en/services/companion-care/": {
+      "beforeSha256": "7acf38ed11d87feaeae02b6d07142aa1bc22e8167ac9d2284d9b5fba7a7f8a1e"
+    },
+    "https://inayadomestic.ae/ar/services/companion-care/": {
+      "beforeSha256": "a0463551268f0dfb3180ed6d3ebbf3d94e8513c2414a78882c40393328c71d0d"
+    },
+    "https://inayadomestic.ae/en/services/recruitment/": {
+      "beforeSha256": "5ecb8c3d2f8f8a4bb653a993dd76534b195660907a3b760592ead0682079ba74"
+    },
+    "https://inayadomestic.ae/ar/services/recruitment/": {
+      "beforeSha256": "502e371f9fd9fa985bce6966ebb0c697f262cefe1d0ed155184f2cf50b930d92"
+    },
+    "https://inayadomestic.ae/en/services/maid-visa/": {
+      "beforeSha256": "5c8682d6a6f02a545e1ecfda4175839268f98afa9bc9ef4414132ba1ee09aff9"
+    },
+    "https://inayadomestic.ae/ar/services/maid-visa/": {
+      "beforeSha256": "d30c9562320128d03df1ae14960ea53a7292b965858c6214fe23aa796020560b"
+    },
+    "https://inayadomestic.ae/en/services/maid-replacement/": {
+      "beforeSha256": "3a5e90a3839f164865f17db7ad04472d69bf28216dba1e80a64838e8ee15db98"
+    },
+    "https://inayadomestic.ae/ar/services/maid-replacement/": {
+      "beforeSha256": "c3799d4a167df3716b953d979e26c00fd3e8609fed4c2db576b9756e8e9f62eb"
+    },
+    "https://inayadomestic.ae/en/services/sponsorship-transfer/": {
+      "beforeSha256": "26f117ddb4c8e4c8b7663b8dcac311dc8f2e16474edfff0a2694cc0b5829284e"
+    },
+    "https://inayadomestic.ae/ar/services/sponsorship-transfer/": {
+      "beforeSha256": "624714a9fa5d6471a6e8cb1297a8fd0382d0f2b5addccf5cd83c79b4a5947cdb"
+    },
+    "https://inayadomestic.ae/en/services/experienced-maid/": {
+      "beforeSha256": "4368545ff92f4848a159ddd7702aa81884caa98475702548e48e8d17acba91d8"
+    },
+    "https://inayadomestic.ae/ar/services/experienced-maid/": {
+      "beforeSha256": "eeeb239e211f87de57cf06527738e66ddfde981593e4c9977a0b6d3c10ccbe96"
+    },
+    "https://inayadomestic.ae/en/services/background-verification/": {
+      "beforeSha256": "956c8ee4a78d0ac4d6b7f5050f4599dca1376cc78b89d6721259541d2d81409e"
+    },
+    "https://inayadomestic.ae/ar/services/background-verification/": {
+      "beforeSha256": "9448341c407444aa951d58ae218f5f875b747741e2710fcaef35ab72aff359aa"
+    },
+    "https://inayadomestic.ae/en/services/bespoke-household-management/": {
+      "beforeSha256": "cc6f8fc2bc1efe8031f9492ada8b7fc190fcefe8f1a96800e258ede824932ae2"
+    },
+    "https://inayadomestic.ae/ar/services/bespoke-household-management/": {
+      "beforeSha256": "18433788c1c670df1270d8daeb57dc94d9aa1814a8464567fde3a0e8b7bfdf2b"
+    },
+    "https://inayadomestic.ae/en/services/floral-styling/": {
+      "beforeSha256": "30708b2a2f476922bf0863f449b3b76b3bc288779691148f011d67c73e0037fd"
+    },
+    "https://inayadomestic.ae/ar/services/floral-styling/": {
+      "beforeSha256": "1c6acdeab243310db79a7f234d0ea3abcfaa7b4c104d3987b99c28cf39389c7f"
+    },
+    "https://inayadomestic.ae/en/services/relocation-support/": {
+      "beforeSha256": "9fff699ae8b9ad86f807e5bf3367ddfac5afca7a1f9465255aba2ca449adc20c"
+    },
+    "https://inayadomestic.ae/ar/services/relocation-support/": {
+      "beforeSha256": "900e0674e1d45d706c4b45a2dcdc54a491cba63870b7bc34760b255c6e740d98"
+    },
+    "https://inayadomestic.ae/en/services/pet-care-specialists/": {
+      "beforeSha256": "696a07b8901b10e28798be43ef6f9666cb889f951ea69f5bed87c609c1167369"
+    },
+    "https://inayadomestic.ae/ar/services/pet-care-specialists/": {
+      "beforeSha256": "f62ee60dbddad0735607747bfb969c6d28b2dd2c18e0c00a90977ab48fee092d"
+    },
+    "https://inayadomestic.ae/en/services/event-staffing/": {
+      "beforeSha256": "c7c8c0f869b6ff4d1e1ef0f74941b4ea9068b1d5eccbd0467809c14c07a75b54"
+    },
+    "https://inayadomestic.ae/ar/services/event-staffing/": {
+      "beforeSha256": "5e3b97d88c242bbdfcb8088df97cf15c387444b92264ee8b33fe439a0af35f86"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/philippines-maid-uae/": {
+      "beforeSha256": "db16353e86d4c41db173150b120e52495e30bf7887c342a25705605a6920faf9"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/philippines-maid-uae/": {
+      "beforeSha256": "2663ca8a8d1263857b3511506633e637e3abc3a760d202933207ae67d0e2c904"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/sri-lankan-maid-uae/": {
+      "beforeSha256": "7e683556bf2a7aa9731a1310fb84d0a5a9e19763e69bbac76d79a8f4b1c0a216"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/sri-lankan-maid-uae/": {
+      "beforeSha256": "e7b2cdb86abd567ec81d7456abf0bb04ffc5b4590d4da68f35fcf0d5cb92b4f8"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/nepali-maid-uae/": {
+      "beforeSha256": "8337e161e3e30974e9eb3933699bcaf556b904bed0ca5fa75f0e9dddccdd71b3"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/nepali-maid-uae/": {
+      "beforeSha256": "247f7596a1ca21bb69bd10fd3fae1eacc518ed0a4ba6e058548bc943bcfcc86b"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/indian-maid-uae/": {
+      "beforeSha256": "27413e6348dc1309f44e99329e4fa4bb17ac709466a2e34eeb61c690c55706be"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/indian-maid-uae/": {
+      "beforeSha256": "96e2574cb274413a9e29ae0fb6492ae341c066874d5eafa8524787eebbc891d3"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/bangladeshi-maid-uae/": {
+      "beforeSha256": "767816dc79dd7d607b618985464241d29c09eb335f811acdfdbe531f00317232"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/bangladeshi-maid-uae/": {
+      "beforeSha256": "7c02f64d2d605ef7bbb0d1f5462d3458b9d856c4fad7c5c12f69b06f51b1b8ed"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/ethiopian-maid-uae/": {
+      "beforeSha256": "1366c700590c1a33b173956053d00b017293a6a5585c58aa0fc63f6f1f77c2e5"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/ethiopian-maid-uae/": {
+      "beforeSha256": "6b39837693c050b479fb367b985832a4bfd351d1585ca1db85754b92a4e71bfb"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/kenyan-maid-uae/": {
+      "beforeSha256": "6c5f37e489ea75cac98347bb8b091f165cfdafc9b48df77f238a12f8647c14a9"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/kenyan-maid-uae/": {
+      "beforeSha256": "366b19637f7bd1e0daef3883cb84e0e031110ccd121502779dd4408f8f9185c2"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/ugandan-maid-uae/": {
+      "beforeSha256": "b5a146c8187a774118bf0f2968750d660b4f26592168c578676078756589d61b"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/ugandan-maid-uae/": {
+      "beforeSha256": "7fef734804bfd986d123433805a4a17f838d24de1331a595195fcfec28785080"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/ghanaian-maid-uae/": {
+      "beforeSha256": "1e3f7eac27c72f91d7fd4829563cc48192fc0e7bdec948d6f1550b12433ba753"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/ghanaian-maid-uae/": {
+      "beforeSha256": "4aa7ae7c22357fba250ffb166376e548c18ac4d52ad2df8f75a8f883bd76b794"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/sierra-leone-maid-uae/": {
+      "beforeSha256": "efcf44cb0d557d04133c94487ce83e29303c2d43923ba5f1ed843520d6a024da"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/sierra-leone-maid-uae/": {
+      "beforeSha256": "fc1f5e099b9407d8f396a86352b5e794b07c1b9afbaa1bdb3d1af8eb03d53a40"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/": {
+      "beforeSha256": "fdc195fcaa8229dd6b66a46c562f69fe315f0331cf77164843171b7dc8416207",
+      "afterSha256": "6723dc618caad95535ae7409bdb04cf207b5448ec5e44ee3cc72d82da059acb3"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/indonesian-maid-uae/": {
+      "beforeSha256": "b8679920366bc8cbdd7d452c7f97b718a2a196356b645d6c159c962104b60085"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/myanmar-maid-uae/": {
+      "beforeSha256": "1bd1629f86553b4d2c419d9417ae587112cdbe602ff4ef3ec6e9e03be4743b9c"
+    },
+    "https://inayadomestic.ae/ar/maid-source-countries/myanmar-maid-uae/": {
+      "beforeSha256": "48f2bf73854a9087da9db4a8ae1a148af08c47fb043c316bdfa7f05626112573"
+    },
+    "https://inayadomestic.ae/en/maid-services-ajman/": {
+      "beforeSha256": "d09b331cec8a8520f8d9e099abdb6932777b7360d2a1330eb35b4ffe74dd3e4c",
+      "afterSha256": "a6560223c4a53428725e8abb8c8efb1e4a58a9b77e64120e4ff903055bb05062"
+    },
+    "https://inayadomestic.ae/ar/maid-services-ajman/": {
+      "beforeSha256": "d458a044e787a64dd77d69ef295172eb6def5f8aec91328deb0e37edfd09cc82"
+    },
+    "https://inayadomestic.ae/en/maid-services-dubai/": {
+      "beforeSha256": "0b83e8e711f95f757a1d30b443127ea746fd2c5fcd6ac828d62954149c887ed2"
+    },
+    "https://inayadomestic.ae/ar/maid-services-dubai/": {
+      "beforeSha256": "bd4e6c9c476c0a165d48ab3e135d1df8c6b54afc4efcc07fbbb39ca6ad89460b"
+    },
+    "https://inayadomestic.ae/en/maid-services-sharjah/": {
+      "beforeSha256": "38c44eb217ab7867f9fe8ca4a86548bd223ba32d9950fefa6347ddc1cfbd35c2",
+      "afterSha256": "7a519fec398b8ce18711b5b35a817ae6e643913fec3d118a4de0684637562a2d"
+    },
+    "https://inayadomestic.ae/ar/maid-services-sharjah/": {
+      "beforeSha256": "2f0f2cae2afbefb61c24865cee1b80b1ccdf191bb0b17bf6016a803a11229a44"
+    },
+    "https://inayadomestic.ae/en/maid-services-abu-dhabi/": {
+      "beforeSha256": "5364de58a1582ad93d8a36e588de853899f3c4c360a64ec7d04bb50a4a5a4ba4"
+    },
+    "https://inayadomestic.ae/ar/maid-services-abu-dhabi/": {
+      "beforeSha256": "ab9729e0ebd77608c1a5d70e081a5f70f0136106571d9278adcb4ce267615330"
+    },
+    "https://inayadomestic.ae/en/maid-services-ras-al-khaimah/": {
+      "beforeSha256": "60455cbfb4875078c65c1fdcbcf59d10bebfa572f4524de276cb90d1503d0437"
+    },
+    "https://inayadomestic.ae/ar/maid-services-ras-al-khaimah/": {
+      "beforeSha256": "b6c16630c6ac9d84876923491fef62db16d6fcf2ce51efb1aae71e1f0e02eb66"
+    },
+    "https://inayadomestic.ae/en/maid-services-fujairah/": {
+      "beforeSha256": "5a57cd81c6c0fe9225b23ab6ca0cd28cc10f31ab7653fcc1d44b4d636451ba20"
+    },
+    "https://inayadomestic.ae/ar/maid-services-fujairah/": {
+      "beforeSha256": "6e56932905de71ed376c7b648e1faebf97be4ee521b4e4332cdc238f8ee08644"
+    },
+    "https://inayadomestic.ae/en/maid-services-umm-al-quwain/": {
+      "beforeSha256": "c83c5430f338848b02665820195dc083f0206170acb8a8aa2f0f5b789421dd7a"
+    },
+    "https://inayadomestic.ae/ar/maid-services-umm-al-quwain/": {
+      "beforeSha256": "bcbdf9d9b11ce3eecb57f68df89fbb3725ce17ce9505a1c9a7ea81c37ed0d7d6"
+    },
+    "https://inayadomestic.ae/en/blog/uae-domestic-worker-hiring-process/": {
+      "beforeSha256": "817bfc2ec5220a229730d241b83a5c2ec039b6033ccee156431e7798a53cc111"
+    },
+    "https://inayadomestic.ae/ar/blog/uae-domestic-worker-hiring-process/": {
+      "beforeSha256": "0000c3e1657b86515a9e60f1b1810f5258afb6a7a90286ff89c0d2cc85878853"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-package-pricing-factors/": {
+      "beforeSha256": "11dd442a2ad14c0222fa9ef6995f505c61402d6e9f59de8ff1da20543515162a"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-package-pricing-factors/": {
+      "beforeSha256": "27eec9c533c8dd191296cde3224c70ee24decf7ed38135c5962e41e580ec8318"
+    },
+    "https://inayadomestic.ae/en/blog/documents-for-domestic-worker-enquiry/": {
+      "beforeSha256": "eb1425bcde51a1e0c24e530986a49edcfbd471984e81d9b3052a64ab2d71909e"
+    },
+    "https://inayadomestic.ae/ar/blog/documents-for-domestic-worker-enquiry/": {
+      "beforeSha256": "f462f27c5939b847836107044a5c8c409985dd01a6734b7963569cffeb7281a3"
+    },
+    "https://inayadomestic.ae/en/blog/live-in-live-out-part-time-maid-uae/": {
+      "beforeSha256": "232cd0f893ddb072bb585f4f8f51ad6370cda1b1560c15ef0694da33bf55df10"
+    },
+    "https://inayadomestic.ae/ar/blog/live-in-live-out-part-time-maid-uae/": {
+      "beforeSha256": "c0015991929f2e0f85ddb037e0c1fca2d55622e4afb503fb4cb89250a0bd1291"
+    },
+    "https://inayadomestic.ae/en/blog/monthly-maid-package-inclusions-checklist/": {
+      "beforeSha256": "4be7f2513718efb1a49d0e8ae822121bff7a9e3b1717f5f025ce919444ee99db"
+    },
+    "https://inayadomestic.ae/ar/blog/monthly-maid-package-inclusions-checklist/": {
+      "beforeSha256": "9d5e5c3ff31d8084f7e318e036990844c05d53b73ded15d3c550c51f982b50c7"
+    },
+    "https://inayadomestic.ae/en/blog/maid-nanny-babysitter-differences/": {
+      "beforeSha256": "6188fd5a6d796eda7a560f650f31474343047eb75bbbfeec4ab199ea2e9c9495"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-nanny-babysitter-differences/": {
+      "beforeSha256": "5b7331e66305baefd31f1c4dfc278c38ca184be52ee50f011b163dbfd3386b70"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-visa-sponsorship-support/": {
+      "beforeSha256": "354717c89aa6db6a4e29ee13d7fa8b9156e45fc049f8d90d9fdf9ba52fdd9eba"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-visa-sponsorship-support/": {
+      "beforeSha256": "f174d45dffd6b98a43f301ee201310489f1938afdd13c578982bb93887e211fc"
+    },
+    "https://inayadomestic.ae/en/blog/choosing-domestic-worker-agency-ajman/": {
+      "beforeSha256": "0ade454db9f00ad643c6348ee2c7137d6ff702f4f2260868d2886e6618bf1d1f"
+    },
+    "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-agency-ajman/": {
+      "beforeSha256": "c8d8423268608257e0dbabe8c3a93407e87c0ff0727273b369055a4b99e29343"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-hiring-costs-uae/": {
+      "beforeSha256": "98a2b7976581ff5343f0f95f1678d48e207db260b4fe1fa0d97080a56d41dcb7"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-costs-uae/": {
+      "beforeSha256": "94e91c95390d83f8a5254a6b949f276ebafddd2a022fc3b5f03b7a3656160786"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-employment-arrangements-uae/": {
+      "beforeSha256": "8ffd3298fe26d9c90862e206cea668eafe049b30bdacf50553e896c60359ff12"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-employment-arrangements-uae/": {
+      "beforeSha256": "ad44c15b58247ff95447127434c816cfd56e54229903ff7dad48f4c1557c44cc"
+    },
+    "https://inayadomestic.ae/en/blog/all-inclusive-domestic-worker-packages/": {
+      "beforeSha256": "39e488868716e31411921b59a00d766778b686de4daf1ed5eedc669bebc45b00"
+    },
+    "https://inayadomestic.ae/ar/blog/all-inclusive-domestic-worker-packages/": {
+      "beforeSha256": "db52f174bdb0328977136d86ae8269467b7e97f0d36453a3a67f9cb425cc6dd7"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-sponsorship-responsibilities/": {
+      "beforeSha256": "6469ca5e549a3eceecbd46ac5e09a6f7b962a5a290f2b600611659b94a88a984"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-sponsorship-responsibilities/": {
+      "beforeSha256": "9379b539b74f12190690d4a8f3006b7171c946cb80e63a4e383a890805b7c9a1"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-employer-eligibility-documents/": {
+      "beforeSha256": "55d3ab04998c0c7c8123752dc2eb0fc72d02a80d6bac433915f5dd8eeb03f94d"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-employer-eligibility-documents/": {
+      "beforeSha256": "4a5d36fc6acfef38a8e0cedc2fa5f9f5cba0ec68fbffa6086a4766432fcdde68"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-hiring-stages-timelines/": {
+      "beforeSha256": "f4bc4f5a5342709dbdf6480c7349e0ed7361f48bd17941bfe5909796320d1421"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-hiring-stages-timelines/": {
+      "beforeSha256": "613e5d46f23ffa3e0004abc1dc36f4ab7fdb0fa44b61eddce5b02e88e1a13f00"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-skills-language-assessment/": {
+      "beforeSha256": "b67e492cdc65de3c360f17ef628ed1a6871192ad2d5b44d1eff4403f4a858a07"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-skills-language-assessment/": {
+      "beforeSha256": "b022d08e741ecedbb756f651a3d192b28122ce3694f1e30f80635126127bab1f"
+    },
+    "https://inayadomestic.ae/en/blog/choosing-nanny-newborn-support/": {
+      "beforeSha256": "d0b618bf94288371754ff8aa4c4e98af98f1f4fee4c194ac50c87d28dbf7e798"
+    },
+    "https://inayadomestic.ae/ar/blog/choosing-nanny-newborn-support/": {
+      "beforeSha256": "0c27e1cd2d122b2755e266567c422e3aec52907e3e72bd9abef4d1498590f4e0"
+    },
+    "https://inayadomestic.ae/en/blog/caregiver-versus-licensed-nurse/": {
+      "beforeSha256": "a7e5f4960e5af3bbf7266c4f256475218d7a22ba2efad4cc8acd6beeb900d254"
+    },
+    "https://inayadomestic.ae/ar/blog/caregiver-versus-licensed-nurse/": {
+      "beforeSha256": "02ad3cd0f6988fb76d42beca9fa57f191a497ef3211d7bcc922c7486eb13959b"
+    },
+    "https://inayadomestic.ae/en/blog/agreeing-domestic-worker-household-duties/": {
+      "beforeSha256": "68457d6052b077c5a5e3cf23ce29d529d2f2a172dc28d70e69d4e464d3fe2fe7"
+    },
+    "https://inayadomestic.ae/ar/blog/agreeing-domestic-worker-household-duties/": {
+      "beforeSha256": "8aef0a7c8365ec171cee561a0d204f9e765e3cbca382550cfdbd8a5e56b8b32a"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-verification-checks/": {
+      "beforeSha256": "b9aa4cdd5ee0c93ae4ef13af6b7d1196d815624979abf03c6ea901770fdac5ef"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-verification-checks/": {
+      "beforeSha256": "acf8411518af5e36875e031d6d7b447af5571687defccd9ae8bc01a9e3c37e70"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-interview-trial-probation/": {
+      "beforeSha256": "0a2e6f61fecc4ae7c6ee66d2cbcf595e0e7bd84760cf8f3e2a67929338980d9b"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-interview-trial-probation/": {
+      "beforeSha256": "9a37b6177ef06a391c1099bfc440307037a528bdf6275f35e78e5efb14547675"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-replacement-eligibility/": {
+      "beforeSha256": "037524fc8f53d644b2184ed033df6c1dec24fc2da09f29a86198fc42264ad9dc"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-replacement-eligibility/": {
+      "beforeSha256": "b060cecb65d5029ccf15f554f066466b6272307b837818637b8bdc1d6b485744"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-recruitment-refund-rules/": {
+      "beforeSha256": "8167d8223cc0352c8f7cd5d6dcc2a4e5a1dbfc987b7de9b6014ac214570431d1"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-recruitment-refund-rules/": {
+      "beforeSha256": "149bfb5796e9a12deb6e615bfdb985daac61f117cca10b5112a5c5edf255fbdf"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-contracts-renewal/": {
+      "beforeSha256": "af734995e0d582b1fb2c20d145dcb3d9ed2ea883d64373d5e42f8c336b33ca8a"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-contracts-renewal/": {
+      "beforeSha256": "bf68e09e4a65b105b24a57d0aef717a060f1a8abf3892863364f94798f999b9b"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-wages-rest-leave/": {
+      "beforeSha256": "401166e2df242e716eaa4e3c607dd50397986e1cf05a6b037bdfd651a0a83142"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-wages-rest-leave/": {
+      "beforeSha256": "df4f5385a3838e9ccc74251aab6e6d1c8d673d731ad1784f178e09f97a567e89"
+    },
+    "https://inayadomestic.ae/en/blog/own-visa-part-time-domestic-work/": {
+      "beforeSha256": "706bc52d46c7b8429522ad86cc7420786d3ee3f771485e6d68a41b37328d5cbe"
+    },
+    "https://inayadomestic.ae/ar/blog/own-visa-part-time-domestic-work/": {
+      "beforeSha256": "9bb24cc322f15c183f4b3b373d04ddef10e882168e4dca270d2300afd9083360"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-leave-travel-planning/": {
+      "beforeSha256": "93a5b7ad5767cfcf4448253dc601075bd6b0d1da1a9650c6f93f7654dd49f91a"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-leave-travel-planning/": {
+      "beforeSha256": "8f02155890e4473e55c4ed1bf9108db930f1a77cac14cea248b406f78f02ab6a"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-complaints-disputes/": {
+      "beforeSha256": "8527d0e38c639e297e81173848faf48c6ea1117d89ee3fe046bf6f85a3cee0bf"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-complaints-disputes/": {
+      "beforeSha256": "c7c5a4433792d0b66c62047abdde676c3589b051da688c8edc7c2c4c1d989e2f"
+    },
+    "https://inayadomestic.ae/en/blog/four-hour-eight-hour-maid-visit-plan/": {
+      "beforeSha256": "e0bdf741ae7630090e55e62e08a71cf352f0605a1418c79ff4330038ecee6430"
+    },
+    "https://inayadomestic.ae/ar/blog/four-hour-eight-hour-maid-visit-plan/": {
+      "beforeSha256": "fcd57ce9b3d5e105e86e62b5bc73b36b38aa4df6707e9340edc4bd2a7d85009b"
+    },
+    "https://inayadomestic.ae/en/blog/maid-visit-frequency-planner/": {
+      "beforeSha256": "70fcc6b454e36fdb7154da976326359e945b9fc8f90fa359388fc199d893820c"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-visit-frequency-planner/": {
+      "beforeSha256": "c06dc93dc5fc1006237a33f6d44e945137c71929590eaf0c8919fbb8fb71e90c"
+    },
+    "https://inayadomestic.ae/en/blog/apartment-villa-maid-task-plan/": {
+      "beforeSha256": "bacd3984e37ed5ba93a629efaa5eafb44e27e7686f391b266d071c57a0e96193"
+    },
+    "https://inayadomestic.ae/ar/blog/apartment-villa-maid-task-plan/": {
+      "beforeSha256": "ec57191603ee57df89bcb765512411bda660710faba00a99d1d5440f6ea73bb3"
+    },
+    "https://inayadomestic.ae/en/blog/regular-maid-service-deep-move-in-cleaning/": {
+      "beforeSha256": "622e3be03c6e31c8ec1f3b370519076d9d22fb9958e962d85717d5ac8f55d06c"
+    },
+    "https://inayadomestic.ae/ar/blog/regular-maid-service-deep-move-in-cleaning/": {
+      "beforeSha256": "3d103e62c249db79ebbfeb34f8b3ab87d762b32e320b16f204f9f14d97a18543"
+    },
+    "https://inayadomestic.ae/en/blog/prepare-cleaning-supplies-maid-visit/": {
+      "beforeSha256": "02c9bcf5e85e12d9bd970266dad5e1bb2a9ab91e0e6d5fdbff349a60e1c0a73b"
+    },
+    "https://inayadomestic.ae/ar/blog/prepare-cleaning-supplies-maid-visit/": {
+      "beforeSha256": "9356b31081ea2690778de030833e216625420f723cc81bb2f862fdf74fcb88f9"
+    },
+    "https://inayadomestic.ae/en/blog/maid-laundry-ironing-task-checklist/": {
+      "beforeSha256": "27a4ceca15a8e1ea117a32c84efd280030602673bee78ebe5154445c748d99d9"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-laundry-ironing-task-checklist/": {
+      "beforeSha256": "43932a4c6cda909c76d443bf543aa95c53d1dc996f9c49d7d3c31045bddbfc45"
+    },
+    "https://inayadomestic.ae/en/blog/home-cooking-weekly-meal-prep-plan/": {
+      "beforeSha256": "865e5f40e0393d7f3502b9f5127911185cd93d7ccc13f6c9e9466b67582ef021"
+    },
+    "https://inayadomestic.ae/ar/blog/home-cooking-weekly-meal-prep-plan/": {
+      "beforeSha256": "3940d8a8689235fe7700d9e2616f6858ffdb74141b550ab01ce3bb1d5a66f679"
+    },
+    "https://inayadomestic.ae/en/blog/new-maid-first-week-checklist/": {
+      "beforeSha256": "663ae5e7409d8de7791bc0842154ccef7e173b09910e6bd05e0e4d65d7053c47"
+    },
+    "https://inayadomestic.ae/ar/blog/new-maid-first-week-checklist/": {
+      "beforeSha256": "ba3556707c369f033f4fb1c823b184a77c9e8dad71234ef957177ea4bd159209"
+    },
+    "https://inayadomestic.ae/en/blog/nanny-school-routine-child-handover/": {
+      "beforeSha256": "b7434b5d8264c88bb07e2c934f3ae1fdf29350bc20cece9143969626c9bf6d90"
+    },
+    "https://inayadomestic.ae/ar/blog/nanny-school-routine-child-handover/": {
+      "beforeSha256": "7c4905dfefe8662ab6a69f61fc57e7cbe0197a286160be03a928047b3b9e2c98"
+    },
+    "https://inayadomestic.ae/en/blog/maid-household-with-pets/": {
+      "beforeSha256": "8ca90788966de1455398ff7e811587b04b057218f23a177f1fd21563b2fb2eeb"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-household-with-pets/": {
+      "beforeSha256": "21ee9df59d70fb2b4d1de8de310b352b82a386130534fbcc43a24c36b8f0dfac"
+    },
+    "https://inayadomestic.ae/en/blog/maid-home-access-keys-privacy/": {
+      "beforeSha256": "27fa525d5c136bc88c280be223e951c2aa630f71214b2215c83ee3e53d70d08b"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-home-access-keys-privacy/": {
+      "beforeSha256": "ee18ec4534a083eee116c8d6882d9d34fbcb076131f7836778761271ccd81c89"
+    },
+    "https://inayadomestic.ae/en/blog/maid-help-family-guests-gathering/": {
+      "beforeSha256": "0e187f160a18b874bd1c4fbc81a227e51ee16c73ab3ce1b8ea6ea98c01ca1324"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-help-family-guests-gathering/": {
+      "beforeSha256": "6006a307c416eb7adc84bd0a63f3dd1210cdfe28d026b5423488474393938fc6"
+    },
+    "https://inayadomestic.ae/en/blog/maid-duties-family-holiday/": {
+      "beforeSha256": "442e0ec3cc739f71544ac9c9c5a179ac389851d0cb46e5ffef8d2cd1a29e74f1"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-duties-family-holiday/": {
+      "beforeSha256": "75485a8c40eb5355f8e3a3ccb1fc931e24048e6bebeca7111a2337e817256e24"
+    },
+    "https://inayadomestic.ae/en/blog/moving-home-emirate-with-domestic-worker/": {
+      "beforeSha256": "834c356db4728f3fd7f46fa220a13a356650bd9165576fc7c0ab640511706f45"
+    },
+    "https://inayadomestic.ae/ar/blog/moving-home-emirate-with-domestic-worker/": {
+      "beforeSha256": "78804f2f5b2255455afd8eafbfa12409366e73fb57c9c0616e46496f941d5dd1"
+    },
+    "https://inayadomestic.ae/en/blog/one-maid-two-helpers-workload/": {
+      "beforeSha256": "46d1c79b17a3157ff2759ce32b513fdcf5835a8f4df67076223bc2fa4237abbe"
+    },
+    "https://inayadomestic.ae/ar/blog/one-maid-two-helpers-workload/": {
+      "beforeSha256": "0a2f5b70cfb185fa422739c681a80bad5c7a5e54b331730f30981935bda23904"
+    },
+    "https://inayadomestic.ae/en/blog/maid-daily-instructions-handover-template/": {
+      "beforeSha256": "73921f7c70e79c6f447cc345f21e39ae48ba4d873342ba2a2a0fb55ed1a3f7cb"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-daily-instructions-handover-template/": {
+      "beforeSha256": "294f14f820251466ad7abc4917ad0754c07dcaac3a79e2fb0699131b19c17d88"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-contract-permit-residence-cancellation/": {
+      "beforeSha256": "98de749e82270b687359d60096c94912f0e6fe9636be11befcb39ae5df21fc7f"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-contract-permit-residence-cancellation/": {
+      "beforeSha256": "14b7ec5cba7a3cebebe91d4a9a0b37486b9b591454e1d553ae220d7b34427ad7"
+    },
+    "https://inayadomestic.ae/en/gallery/": {
+      "beforeSha256": "da726974376e7532350d76f4293bbcdf4c13a5befc1aae9a5c1100c5ff44950e"
+    },
+    "https://inayadomestic.ae/ar/gallery/": {
+      "beforeSha256": "0326bcdf387c09b30bd5b9387cde5ea74086e00e83f1ab7cdb0c9bf776a6aa7d"
+    },
+    "https://inayadomestic.ae/en/company-information/": {
+      "beforeSha256": "37c4c1ccb0bf1f32bd33af41878f4c1107dae4a27c561aa68f484af0da07c492"
+    },
+    "https://inayadomestic.ae/ar/company-information/": {
+      "beforeSha256": "d47de638b188c3be16248c0e4b18c4548646352179b34c4204b53f4b8cc2575a"
+    },
+    "https://inayadomestic.ae/en/blog/maid-agency-ajman-quote-comparison-workbook/": {
+      "beforeSha256": "2f2de60024504e8715edd3bbb5a1c220134d7ad05d31cb1388caf396d2d9a347"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-agency-ajman-quote-comparison-workbook/": {
+      "beforeSha256": "ad06cc313ca42c7fd344d20638daee1cdafbda5b6d5bf069fcbb45b705c6a014"
+    },
+    "https://inayadomestic.ae/en/blog/tadbeer-center-ajman-first-visit-service-routing/": {
+      "beforeSha256": "265ea948fce946ec9f3bf3f2a7ed7d83d3a20332b50126cc820934b27a5a7931"
+    },
+    "https://inayadomestic.ae/ar/blog/tadbeer-center-ajman-first-visit-service-routing/": {
+      "beforeSha256": "2897ba26ec473327185f5f7de482b89469b42a55110d7d3f6a43fa806c189080"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-workers-ajman-household-role-design-canvas/": {
+      "beforeSha256": "1d9c9ac2640d3a4ec6c52e4364527b3c39bc91ec25ebebb57cb6fadeff40f33c"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-workers-ajman-household-role-design-canvas/": {
+      "beforeSha256": "ec8ad21f4365ad775d3bc275ce30fbea27f60c776b6e4218bf4cf2246550bee8"
+    },
+    "https://inayadomestic.ae/en/blog/housemaid-visa-ajman-application-readiness-ledger/": {
+      "beforeSha256": "3af7e712cec564265db6e524afc16dc1defb179c2243b0c296fac89b122e6f43"
+    },
+    "https://inayadomestic.ae/ar/blog/housemaid-visa-ajman-application-readiness-ledger/": {
+      "beforeSha256": "95d84703546c3f342ed12b2af9d02f2c067586b26da58e9dbffd21d2c12dd031"
+    },
+    "https://inayadomestic.ae/en/blog/live-in-maid-ajman-home-start-readiness-walkthrough/": {
+      "beforeSha256": "0ddb9e712630ea8c5d504c47c691ff1bc01499b9d863aaa804b22bff3915c249"
+    },
+    "https://inayadomestic.ae/ar/blog/live-in-maid-ajman-home-start-readiness-walkthrough/": {
+      "beforeSha256": "6e03c4b2ae2297f0fe0106f6b16833d40ce478daea749392d57831af2bd92404"
+    },
+    "https://inayadomestic.ae/en/blog/housemaid-recruitment-ajman-candidate-evidence-cards/": {
+      "beforeSha256": "ff19ee5379dc35cdcfddac133e9b6bb31054653b14fcb0427492034f3d7a823a"
+    },
+    "https://inayadomestic.ae/ar/blog/housemaid-recruitment-ajman-candidate-evidence-cards/": {
+      "beforeSha256": "e55c0b266f6e66d6696fd64ac7b0d44841cb8a9bc38ef5c685c8bb68ddf8bbea"
+    },
+    "https://inayadomestic.ae/en/blog/filipino-maid-ajman-task-communication-workbook/": {
+      "beforeSha256": "a4beca0b89e1b9b2ba0413758b4fa37de62481746c4132b95e21f5037658b660"
+    },
+    "https://inayadomestic.ae/ar/blog/filipino-maid-ajman-task-communication-workbook/": {
+      "beforeSha256": "8c9d06bb37cabf5e4b7823532bd5e616063a1754164996dc87185102a4152086"
+    },
+    "https://inayadomestic.ae/en/blog/ethiopian-maid-ajman-language-onboarding-plan/": {
+      "beforeSha256": "9e073ce508f55551d745aaf3dda2574fafdac0e3c354bda94b62c49e28441c8b"
+    },
+    "https://inayadomestic.ae/ar/blog/ethiopian-maid-ajman-language-onboarding-plan/": {
+      "beforeSha256": "9ede4b97debe4d8240cc65e96da582bc8c3f9033853e5c5dd17f495d3c5e4568"
+    },
+    "https://inayadomestic.ae/en/blog/nanny-agency-ajman-childcare-evidence-handover/": {
+      "beforeSha256": "82fb05c5d574dc88b6f00ab0527838ea80364217c5b03982e10c713069d34f1c"
+    },
+    "https://inayadomestic.ae/ar/blog/nanny-agency-ajman-childcare-evidence-handover/": {
+      "beforeSha256": "7ef875bc813c62a366394ddcea08b0dab75432025a45ed590349c46c821db6ae"
+    },
+    "https://inayadomestic.ae/en/blog/monthly-maid-service-ajman-commitment-budget/": {
+      "beforeSha256": "d618c22a2b50d318f30ae7332f7dccbf83b187ef7c7760f465dce2a262274ec7"
+    },
+    "https://inayadomestic.ae/ar/blog/monthly-maid-service-ajman-commitment-budget/": {
+      "beforeSha256": "d9a278f5a70802d59bfca033fc933e93e09bff79309ddc6ffd4800cacb2ef5a1"
+    },
+    "https://inayadomestic.ae/en/blog/part-time-maid-ajman-priorities-carry-over/": {
+      "beforeSha256": "befce67e3bde496614ff89a23fd35c1e1f6ce034298730042e322d14f610729b"
+    },
+    "https://inayadomestic.ae/ar/blog/part-time-maid-ajman-priorities-carry-over/": {
+      "beforeSha256": "6eeb0001d55a8780b3c1516c5cafba32297dd353ba31b625f1fd2d591f7a41b5"
+    },
+    "https://inayadomestic.ae/en/blog/maid-agency-sharjah-ajman-office-logistics/": {
+      "beforeSha256": "e2d66a35e2cf40aaf4c2bacfe0c679380f14061a77b8d1aad82f422faee5c544"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-agency-sharjah-ajman-office-logistics/": {
+      "beforeSha256": "f4eee11a14c4529f5772c2cebdc40b618cab34942ecd52f0716a90409255c60b"
+    },
+    "https://inayadomestic.ae/en/blog/maid-services-dubai-household-access-scope-plan/": {
+      "beforeSha256": "61727a88426b97b6b3b5b3430ad32b7485372da596ad3cf52f0754691cb5732d"
+    },
+    "https://inayadomestic.ae/ar/blog/maid-services-dubai-household-access-scope-plan/": {
+      "beforeSha256": "3311ded9b4419a3d77625b91fce9e614f8ae4c971d39d493026007d9a198f10d"
+    },
+    "https://inayadomestic.ae/en/blog/tadbeer-near-me-location-identity-visit-check/": {
+      "beforeSha256": "83219dd5121e38ee959016b1e9b0bb71c6cf6d6051d37cc743b9ba027a78632c"
+    },
+    "https://inayadomestic.ae/ar/blog/tadbeer-near-me-location-identity-visit-check/": {
+      "beforeSha256": "2771853f9824b835d8103d60b22bac5c866ce7fa6ea3adda20df526933cba1d5"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-household-weekly-maid-priorities-handover/": {
+      "beforeSha256": "60159c62767a3e5b0e6769eedd1158d819c6bd11919bb63387b00aaadd31dd5a"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-household-weekly-maid-priorities-handover/": {
+      "beforeSha256": "da1794e212b1ad1bd2665a66abc17964bbfd9174a4a18c66b5fbb7fc5f57af8f"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-maid-recruitment-agreement-receipts-evidence/": {
+      "beforeSha256": "0cecfb042d1740e40d98120485b441b190f4f9d6ae9ff77ce8d73aba318e4f90"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-maid-recruitment-agreement-receipts-evidence/": {
+      "beforeSha256": "60bd0747f4264b111a558141d820ca859765821a0c91dd44e325af271f2fab03"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-tadbeer-case-status-follow-up-record/": {
+      "beforeSha256": "00e698684816899461114c5c76777584b6f8ec64f11db6fee9ce651026bd3d1a"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-tadbeer-case-status-follow-up-record/": {
+      "beforeSha256": "9ae4de4ec6506b7a510394f1a98513e7e9b33383da62764648dfea71df6fa03e"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-housemaid-visa-document-name-status-check/": {
+      "beforeSha256": "3f111413e14c88044d41218ef7f4ba35617f2a6763f7c7def900f9250c616f50"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-housemaid-visa-document-name-status-check/": {
+      "beforeSha256": "14ac4bd94537858c7be4cfc2b38257c2f4578eab607cc47998dcdecb0347b5e1"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-monthly-maid-service-review-evidence-log/": {
+      "beforeSha256": "b5eac9ede11b24d92585e56e0d8bad53d80a58dda2240122fbbdd8ca7cca6ed0"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-monthly-maid-service-review-evidence-log/": {
+      "beforeSha256": "6ffb10e71552212f1aba8fbd7d8ac3e04d7f1bbf9383d0920b42245025f0ede5"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-domestic-worker-communication-privacy-boundaries/": {
+      "beforeSha256": "3e0890208440182e0ea5c89aeb50020f7c332d3efc9fdedc6596f4db980ce173"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-domestic-worker-communication-privacy-boundaries/": {
+      "beforeSha256": "3ac14589b08843608673bcd2469a87a988fdc666b26dcda6bd6e9e4d5f5cc33a"
+    },
+    "https://inayadomestic.ae/en/blog/ajman-domestic-worker-recruitment-milestone-decisions/": {
+      "beforeSha256": "85aefd6e216af79005941d2b6f8ba981d475e0d9ad370dff46bfb843a238b709"
+    },
+    "https://inayadomestic.ae/ar/blog/ajman-domestic-worker-recruitment-milestone-decisions/": {
+      "beforeSha256": "0f856d73e228dcdd624e42c0ea6d09ff9a66cc9cb1cbe0ee9b684e60fdae2b77"
+    },
+    "https://inayadomestic.ae/en/blog/page/2/": {
+      "beforeSha256": "19d8b5c448a43fb12f482ac6f9747f78208b08b3051f75154160fdc3274ea234"
+    },
+    "https://inayadomestic.ae/ar/blog/page/2/": {
+      "beforeSha256": "76d845f8544af085d305da39cd0cb72bceac97e2aca61ff1059391c46b12e701"
+    },
+    "https://inayadomestic.ae/en/blog/page/3/": {
+      "beforeSha256": "531c0c0d8f81ebb1aab859c1d4f6ee7b5c60e020431fa3a9a4aca381e44f2e62"
+    },
+    "https://inayadomestic.ae/ar/blog/page/3/": {
+      "beforeSha256": "109f09c5e9a899847fb920a640d92306d02f6ad634c6e18bca759bfdca5fba4a"
+    },
+    "https://inayadomestic.ae/en/blog/page/4/": {
+      "beforeSha256": "39c36aab38857169f28661dc763c4a25267d1574f1f804b2ceba3359422e39a4"
+    },
+    "https://inayadomestic.ae/ar/blog/page/4/": {
+      "beforeSha256": "8122f5351c346ce08909d04fa07121ecc5d69f280a220b6e17b30c42b96eed32"
+    },
+    "https://inayadomestic.ae/en/blog/page/5/": {
+      "beforeSha256": "297ab29d421d9d8c81dacbf83358abddb990543c4c791a80754126e0eaa65b18"
+    },
+    "https://inayadomestic.ae/ar/blog/page/5/": {
+      "beforeSha256": "0d765618542bad008bceced45a9e2f562cb0d199a02eb4e157f8656522108da3"
+    },
+    "https://inayadomestic.ae/en/blog/page/6/": {
+      "beforeSha256": "58b23cc35bfc97ba17fef3eae443ec1719b9379e8a27c09c11baa1bc0dd80315"
+    },
+    "https://inayadomestic.ae/ar/blog/page/6/": {
+      "beforeSha256": "d645e52a7966c3718328196db526d25732b238d960c94e6ab46a2aa5bbb27a12"
+    },
+    "https://inayadomestic.ae/en/blog/uae-domestic-worker-rights-employer-duties/": {
+      "beforeSha256": "45764467278e97b241de7a900d64fc3b0908ed5568f96f813b6f30506c42d775"
+    },
+    "https://inayadomestic.ae/ar/blog/uae-domestic-worker-rights-employer-duties/": {
+      "beforeSha256": "91c1a6aeca2f2d088438a9dcecb63adb0399813c4eea4b264871d44dbe0d5657"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-worker-centre-reviews-checklist/": {
+      "beforeSha256": "d89b9180f7db871fd88e4948ef1635362b2bd55511d070b61bb71073e7f31222"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-worker-centre-reviews-checklist/": {
+      "beforeSha256": "25a34102ad19267c39e773e8ea497c413f81a4051b250dd8d364225f496a311c"
+    },
+    "https://inayadomestic.ae/en/blog/domestic-workers-meaning-roles-uae/": {
+      "beforeSha256": "5cf9196e7a990039ef0fbb967ad49532aacd81697a8f9c81d3f0b1d102d7e188"
+    },
+    "https://inayadomestic.ae/ar/blog/domestic-workers-meaning-roles-uae/": {
+      "beforeSha256": "901707f015cffe2be50d2cff15e0f71a2be2bd4809b344777c61f7b3413b5e3d"
+    },
+    "https://inayadomestic.ae/en/blog/choosing-domestic-worker-centre-across-emirates/": {
+      "beforeSha256": "4c1f3aed415312c08987d6314b09dbe4316bf25f58f1850da789c985bfaec1ba"
+    },
+    "https://inayadomestic.ae/ar/blog/choosing-domestic-worker-centre-across-emirates/": {
+      "beforeSha256": "1daf0f9cf97aaf892fcdc8acd8b64e66a38f8f4c56411bc3603023cf166434e6"
+    },
+    "https://inayadomestic.ae/en/blog/inaya-office-staff-careers-ajman/": {
+      "beforeSha256": "82886baf8e2d9f5ac9690eb9f8c60a704e25ffeab616290bf1a825e84ea2765a"
+    },
+    "https://inayadomestic.ae/ar/blog/inaya-office-staff-careers-ajman/": {
+      "beforeSha256": "2a455f7e876851ea2cfd052c313c396af898e9f4d38a30ce8693b4d48078bf88"
+    }
+  },
+  "graphChanges": {
+    "https://inayadomestic.ae/en/maid-services-ajman/": [
+      {
+        "path": [
+          0,
+          "@graph",
+          2,
+          "name"
+        ],
+        "before": "Maid Services in Ajman for Trusted Home Support",
+        "after": "Ajman Maid Agency for Trusted Home Support"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          2,
+          "description"
+        ],
+        "before": "Need a maid service in Ajman? Visit INAYA at Grand Mall to discuss recruitment, cleaning visits, part-time and monthly options. Confirm availability and written costs.",
+        "after": "INAYA is an Ajman maid agency at Grand Mall. Discuss recruitment, cleaning visits, part-time and monthly options. Confirm availability and written costs."
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          3,
+          "itemListElement",
+          2,
+          "name"
+        ],
+        "before": "Maid Services in Ajman for Trusted Home Support",
+        "after": "Ajman Maid Agency for Trusted Home Support"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          4,
+          "name"
+        ],
+        "before": "Maid Services in Ajman for Trusted Home Support",
+        "after": "Ajman Maid Agency for Trusted Home Support"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          4,
+          "serviceType"
+        ],
+        "before": "Maid Services in Ajman for Trusted Home Support",
+        "after": "Ajman Maid Agency for Trusted Home Support"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          4,
+          "description"
+        ],
+        "before": "INAYA Tadbeer centre at Grand Mall, Ajman, supports domestic-worker recruitment, home cleaning and related visa typing and document processing. Describe your household or existing-worker case so the team can confirm the appropriate service.",
+        "after": "INAYA is an Ajman maid agency and Tadbeer centre at Grand Mall. We support domestic-worker recruitment, home cleaning, related visa typing and document processing. Describe your household needs or existing-worker case so the team can confirm the right service."
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          5,
+          "mainEntity",
+          14,
+          "acceptedAnswer",
+          "text"
+        ],
+        "before": "Bring an Ajman household task list to the agency discussion and compare it with the proposed individual profile. Ask which experience, references and documents can be reviewed, then check written costs and support terms. Read genuine reviews in context; neither a review nor nationality guarantees suitability.",
+        "after": "Bring your Ajman household task list to the maid agency discussion and compare it with each proposed profile. Before hiring a maid, ask which relevant experience you can review, including the person’s years of experience with those tasks. Check which references and documents you can review. Compare written costs and support terms. When comparing professional maids, read genuine reviews in context. Neither a review nor nationality guarantees suitability."
+      }
+    ],
+    "https://inayadomestic.ae/en/maid-services-sharjah/": [
+      {
+        "path": [
+          0,
+          "@graph",
+          2,
+          "name"
+        ],
+        "before": "Maid Services in Sharjah for Family Routines",
+        "after": "Housemaid in Sharjah for Your Family’s Routine"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          2,
+          "description"
+        ],
+        "before": "Need home help in Sharjah? Discuss maid, nanny and part-time cleaning options with INAYA. Share your area and schedule to confirm availability and written costs.",
+        "after": "Need a housemaid in Sharjah? Discuss maid, nanny and part-time cleaning with INAYA. Share your area and schedule to confirm availability and written costs."
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          3,
+          "itemListElement",
+          2,
+          "name"
+        ],
+        "before": "Maid Services in Sharjah for Family Routines",
+        "after": "Housemaid in Sharjah for Your Family’s Routine"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          4,
+          "name"
+        ],
+        "before": "Maid Services in Sharjah for Family Routines",
+        "after": "Housemaid in Sharjah for Your Family’s Routine"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          4,
+          "serviceType"
+        ],
+        "before": "Maid Services in Sharjah for Family Routines",
+        "after": "Housemaid in Sharjah for Your Family’s Routine"
+      },
+      {
+        "path": [
+          0,
+          "@graph",
+          4,
+          "description"
+        ],
+        "before": "INAYA helps Sharjah families compare domestic worker services for household cleaning, childcare, cooking, care support and document-guided hiring.",
+        "after": "Looking for a housemaid in Sharjah? INAYA helps families compare domestic worker services for cleaning, childcare, cooking and care support. The team also explains documents and hiring steps for the chosen service."
+      }
+    ]
+  },
+  "lastmods": {
+    "https://inayadomestic.ae/en/": "2026-11-08",
+    "https://inayadomestic.ae/en/services/": "2026-11-08",
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/": "2026-11-08",
+    "https://inayadomestic.ae/en/maid-services-ajman/": "2026-11-08",
+    "https://inayadomestic.ae/en/maid-services-sharjah/": "2026-11-08",
+    "https://inayadomestic.ae/en/services/live-out-maid/": "2026-11-08",
+    "https://inayadomestic.ae/ar/services/live-out-maid/": "2026-11-08",
+    "https://inayadomestic.ae/en/services/full-time-maid/": "2026-11-08",
+    "https://inayadomestic.ae/en/services/private-chefs/": "2026-11-08"
+  },
+  "details": {
+    "https://inayadomestic.ae/en/": {
+      "graphBefore": "9bd90591d54fe3e72510e86a1f53bf817ad05f9c36122a3e066966ff6e168cfb",
+      "graphAfter": "9bd90591d54fe3e72510e86a1f53bf817ad05f9c36122a3e066966ff6e168cfb",
+      "beforeLinks": [
+        {
+          "href": "/en/contact/",
+          "text": "Request Consultation"
+        },
+        {
+          "href": "/en/services/",
+          "text": "Explore Services"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time cleaning Plan rooms, cleaning priorities, laundry and ironing within an agreed visit. Service details"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly maid service Compare 30 days, six-month and twelve-month commitments and the monthly agreement scope. Service details"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny service Discuss children’s ages, routines, individual experience and the childcare schedule. Service details"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Visa typing Identify the domestic-worker application, renewal, cancellation or status enquiry. Service details"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid&plan=Half%20day%20%E2%80%94%204%20hours",
+          "text": "Half-day : AED 120 — for 4 hours"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid&plan=Daily%20%E2%80%94%208%20hours",
+          "text": "Daily : AED 200 — for 8 hours"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid&plan=Weekly%20%E2%80%94%207%20days",
+          "text": "Weekly : AED 1,120 — for 7 days"
+        },
+        {
+          "href": "/en/booking/?service=monthly-maid-contract&plan=Monthly%20%E2%80%94%2030%20days",
+          "text": "Monthly : AED 3,500 — for 30 days"
+        },
+        {
+          "href": "/en/booking/?service=monthly-maid-contract&plan=6-month%20contract",
+          "text": "Six-month plan : AED 3,250 — per month · 6-month commitment"
+        },
+        {
+          "href": "/en/booking/?service=monthly-maid-contract&plan=12-month%20contract",
+          "text": "Yearly plan : AED 3,000 — per month · 12-month commitment"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Compare packages, benefits and terms"
+        },
+        {
+          "href": "https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c",
+          "text": "Official MOHRE record"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Contact INAYA Support"
+        },
+        {
+          "href": "/en/maid-source-countries/sri-lankan-maid-uae/",
+          "text": "Sri Lanka Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/nepali-maid-uae/",
+          "text": "Nepal Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/myanmar-maid-uae/",
+          "text": "Myanmar Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/philippines-maid-uae/",
+          "text": "Philippines Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/indian-maid-uae/",
+          "text": "India Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/bangladeshi-maid-uae/",
+          "text": "Bangladesh Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/ethiopian-maid-uae/",
+          "text": "Ethiopia Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/kenyan-maid-uae/",
+          "text": "Kenya Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/ghanaian-maid-uae/",
+          "text": "Ghana Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/ugandan-maid-uae/",
+          "text": "Uganda Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/sierra-leone-maid-uae/",
+          "text": "Sierra Leone Candidate profiles"
+        },
+        {
+          "href": "/en/maid-source-countries/indonesian-maid-uae/",
+          "text": "Indonesia Candidate profiles"
+        },
+        {
+          "href": "/en/services/countries-we-source-from/",
+          "text": "Explore Countries"
+        },
+        {
+          "href": "/en/how-it-works/",
+          "text": "Start Your Search"
+        },
+        {
+          "href": "/en/services/executive-nannies/",
+          "text": "Premier Selection Executive Nannies Specialized childcare support focused on care, routine and family comfort. Learn More"
+        },
+        {
+          "href": "/en/services/private-chefs/",
+          "text": "Private Chefs Culinary support in the comfort of your kitchen. Inquire"
+        },
+        {
+          "href": "/en/services/house-managers/",
+          "text": "House Managers Structured household support and coordination for busy homes. View Credentials"
+        },
+        {
+          "href": "https://search.google.com/local/writereview?placeid=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "text": "Write a Google Review ↗"
+        },
+        {
+          "href": "https://www.google.com/maps/search/?api=1&query=INAYA%20Domestic%20Workers%20Ajman&query_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "text": "View on Google ↗"
+        },
+        {
+          "href": "/en/reviews/",
+          "text": "Read INAYA customer reviews"
+        },
+        {
+          "href": "/en/faq/",
+          "text": "All frequently asked questions"
+        },
+        {
+          "href": "/en/services/housemaid/",
+          "text": "Housemaid services"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in maid"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out maid"
+        },
+        {
+          "href": "/en/services/full-time-maid/",
+          "text": "Full-time maid"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time maid"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly maid contracts"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny and childcare"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Maid visa enquiry"
+        },
+        {
+          "href": "/en/maid-services-ajman/",
+          "text": "Maid services in Ajman"
+        },
+        {
+          "href": "/en/maid-services-dubai/",
+          "text": "Maid services in Dubai"
+        },
+        {
+          "href": "/en/maid-services-sharjah/",
+          "text": "Maid services in Sharjah"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Enquire About Your Requirements"
+        }
+      ],
+      "afterLinksSha256": "0a61ad164312a7972bf98ec74e294198adcc54aeea462e89d86dfa3161c5f2c3",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Start with the service you need"
+        ],
+        [
+          "h3",
+          "Part-time cleaning"
+        ],
+        [
+          "h3",
+          "Monthly maid service"
+        ],
+        [
+          "h3",
+          "Nanny service"
+        ],
+        [
+          "h3",
+          "Visa typing"
+        ],
+        [
+          "h2",
+          "Managed Service & Follow-up"
+        ],
+        [
+          "h2",
+          "Countries We Source Domestic Workers From"
+        ],
+        [
+          "h3",
+          "Sri Lanka"
+        ],
+        [
+          "h3",
+          "Nepal"
+        ],
+        [
+          "h3",
+          "Myanmar"
+        ],
+        [
+          "h3",
+          "Philippines"
+        ],
+        [
+          "h3",
+          "India"
+        ],
+        [
+          "h3",
+          "Bangladesh"
+        ],
+        [
+          "h3",
+          "Ethiopia"
+        ],
+        [
+          "h3",
+          "Kenya"
+        ],
+        [
+          "h3",
+          "Ghana"
+        ],
+        [
+          "h3",
+          "Uganda"
+        ],
+        [
+          "h3",
+          "Sierra Leone"
+        ],
+        [
+          "h3",
+          "Indonesia"
+        ],
+        [
+          "h3",
+          "Document Care"
+        ],
+        [
+          "h3",
+          "Family Privacy"
+        ],
+        [
+          "h2",
+          "Safety & Discretion"
+        ],
+        [
+          "h2",
+          "Which household roles can I discuss?"
+        ],
+        [
+          "h3",
+          "Childcare"
+        ],
+        [
+          "h3",
+          "Cooking"
+        ],
+        [
+          "h3",
+          "Household Coordination"
+        ],
+        [
+          "h2",
+          "A Seamless Journey"
+        ],
+        [
+          "h3",
+          "Share Requirement"
+        ],
+        [
+          "h3",
+          "Confirm Details"
+        ],
+        [
+          "h3",
+          "Review Before Confirmation"
+        ],
+        [
+          "h2",
+          "Curated Disciplines"
+        ],
+        [
+          "h3",
+          "Executive Nannies"
+        ],
+        [
+          "h3",
+          "Private Chefs"
+        ],
+        [
+          "h3",
+          "House Managers"
+        ],
+        [
+          "h2",
+          "Google Reviews"
+        ],
+        [
+          "h3",
+          "Selected customer reviews"
+        ],
+        [
+          "h2",
+          "Questions about INAYA’s services in Ajman"
+        ],
+        [
+          "h3",
+          "What are INAYA’s published maid package prices?"
+        ],
+        [
+          "h3",
+          "What domestic-worker visa support can I discuss?"
+        ],
+        [
+          "h3",
+          "What replacement support applies to the monthly agreement?"
+        ],
+        [
+          "h3",
+          "How are nationality and communication preferences reviewed?"
+        ],
+        [
+          "h3",
+          "Do live-in and live-out arrangements have different package prices?"
+        ],
+        [
+          "h3",
+          "Where can I check INAYA’s MOHRE facility record?"
+        ],
+        [
+          "h2",
+          "Find the service for your household and emirate"
+        ],
+        [
+          "h2",
+          "Bespoke Staffing & Household Support"
+        ]
+      ],
+      "afterHeadingsSha256": "0646fefabd46c205152c167ae83d759453dc61adcfa18b788dcc02f3b376a8d9",
+      "beforeImages": [
+        {
+          "src": "/images/home/inaya-home-hero-family.webp?v=389c2830a017",
+          "alt": "Five women in blue, pink, beige, maroon and white INAYA uniforms"
+        },
+        {
+          "src": "/authority-logos/Ministry-logo.png",
+          "alt": "Ministry of Human Resources and Emiratisation (MOHRE)"
+        },
+        {
+          "src": "/authority-logos/ajman-tadbeer-logo.png",
+          "alt": "Tadbeer"
+        },
+        {
+          "src": "/authority-logos/Ajman-Chamber-logo.png",
+          "alt": "Ajman Chamber"
+        },
+        {
+          "src": "/authority-logos/ajman-UAE-Pass-Logo.png",
+          "alt": "UAE Pass"
+        },
+        {
+          "src": "/authority-logos/Ajman-Gold-logo.png",
+          "alt": "Ajman Gold"
+        },
+        {
+          "src": "/authority-logos/Ajman-logo.png",
+          "alt": "Ajman"
+        },
+        {
+          "src": "/authority-logos/Ministry-logo.png",
+          "alt": ""
+        },
+        {
+          "src": "/authority-logos/ajman-tadbeer-logo.png",
+          "alt": ""
+        },
+        {
+          "src": "/authority-logos/Ajman-Chamber-logo.png",
+          "alt": ""
+        },
+        {
+          "src": "/authority-logos/ajman-UAE-Pass-Logo.png",
+          "alt": ""
+        },
+        {
+          "src": "/authority-logos/Ajman-Gold-logo.png",
+          "alt": ""
+        },
+        {
+          "src": "/authority-logos/Ajman-logo.png",
+          "alt": ""
+        },
+        {
+          "src": "/images/home/home-team-follow-up.webp?v=cfb2a2e90aa6",
+          "alt": "Four women in white INAYA uniforms beside a woman in office attire"
+        },
+        {
+          "src": "/flags/lk.svg",
+          "alt": "Sri Lanka flag"
+        },
+        {
+          "src": "/flags/np.svg",
+          "alt": "Nepal flag"
+        },
+        {
+          "src": "/flags/mm.svg",
+          "alt": "Myanmar flag"
+        },
+        {
+          "src": "/flags/ph.svg",
+          "alt": "Philippines flag"
+        },
+        {
+          "src": "/flags/in.svg",
+          "alt": "India flag"
+        },
+        {
+          "src": "/flags/bd.svg",
+          "alt": "Bangladesh flag"
+        },
+        {
+          "src": "/flags/et.svg",
+          "alt": "Ethiopia flag"
+        },
+        {
+          "src": "/flags/ke.svg",
+          "alt": "Kenya flag"
+        },
+        {
+          "src": "/flags/gh.svg",
+          "alt": "Ghana flag"
+        },
+        {
+          "src": "/flags/ug.svg",
+          "alt": "Uganda flag"
+        },
+        {
+          "src": "/flags/sl.svg",
+          "alt": "Sierra Leone flag"
+        },
+        {
+          "src": "/flags/id.svg",
+          "alt": "Indonesia flag"
+        },
+        {
+          "src": "/images/services/nanny.webp?v=cc2f9b0bdddd",
+          "alt": "A nanny in a beige uniform playing with blocks beside a child"
+        },
+        {
+          "src": "/images/services/home-cooking.webp?v=53a0c74d84a7",
+          "alt": "A worker in a pink uniform chopping vegetables in a home kitchen"
+        },
+        {
+          "src": "/images/services/bespoke-household-management.webp?v=1a5e9e70e6f8",
+          "alt": "Workers in pink, blue and beige uniforms organising blankets and books at home"
+        },
+        {
+          "src": "/images/services/executive-nannies.webp?v=6d9073bf2613",
+          "alt": "Nanny helping a child pack a school bag at a table"
+        },
+        {
+          "src": "/images/services/private-chefs.webp?v=09853e467eac",
+          "alt": "Household cook serving chicken and vegetables in a home kitchen"
+        },
+        {
+          "src": "/images/services/house-managers.webp?v=a444ffefef60",
+          "alt": "Household supervisor coordinating cleaning tasks with a colleague in a living room"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a/ACg8ocJ_oqfwppRUvQP7llv2kjHNYH-qcp8itVwIZDxWwZAfSSvl=w36-h36-p-rp-mo-br100",
+          "alt": "Google profile image for reviewer Hanan"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a-/ALV-UjWveaa1ql1SyryTIN0Sb61bUnLdwMdAsW0rp14EGqob-TvB_CO5=w36-h36-p-rp-mo-ba12-br100",
+          "alt": "Google profile image for reviewer shadi el-aker"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a/ACg8ocKtCptQQ0HR-i1nxD2a4Ie5jHUeoh2EN_L5Del37qVHMC_8dQ=w36-h36-p-rp-mo-br100",
+          "alt": "Google profile image for reviewer Jamic Jamic"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a/ACg8ocJ6zVuqMeS-i27NrB_PGNHV1kRpJ2mabEPqSARtGwwoyHZ-wg=w36-h36-p-rp-mo-br100",
+          "alt": "Google profile image for reviewer clarisa Delfin"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a-/ALV-UjWDvYH64Wa6jABBHwOkKPYnfULZrEVxuz3EC2SdNiCZpffWWtc5fQ=w36-h36-p-rp-mo-br100",
+          "alt": "Google profile image for reviewer Hayfa Ebrahim"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a-/ALV-UjUaRAY3fS-nOC_SiBx6Ol9QBTTD0rRlpjNvf04OTPeH7zqh96jgrg=w36-h36-p-rp-mo-ba12-br100",
+          "alt": "Google profile image for reviewer Md Trend"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a/ACg8ocJ_oqfwppRUvQP7llv2kjHNYH-qcp8itVwIZDxWwZAfSSvl=w36-h36-p-rp-mo-br100",
+          "alt": "Google profile image for reviewer Hanan"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a-/ALV-UjWveaa1ql1SyryTIN0Sb61bUnLdwMdAsW0rp14EGqob-TvB_CO5=w36-h36-p-rp-mo-ba12-br100",
+          "alt": "Google profile image for reviewer shadi el-aker"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/a/ACg8ocKtCptQQ0HR-i1nxD2a4Ie5jHUeoh2EN_L5Del37qVHMC_8dQ=w36-h36-p-rp-mo-br100",
+          "alt": "Google profile image for reviewer Jamic Jamic"
+        }
+      ],
+      "afterImagesSha256": "ff38259582bcf69c127dcb5f94356ffca143c06bf7c90147b098a3bea93aa8b8"
+    },
+    "https://inayadomestic.ae/en/services/": {
+      "graphBefore": "e63007555eac5891562719e40efea8d576d070fe211152248230548fdcdfb8b8",
+      "graphAfter": "e63007555eac5891562719e40efea8d576d070fe211152248230548fdcdfb8b8",
+      "beforeLinks": [
+        {
+          "href": "/en/booking/",
+          "text": "Book Consultation"
+        },
+        {
+          "href": "#service-groups",
+          "text": "Browse service categories"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid Services Residential maid support with agreed duties and schedule. View service"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out Maid Services Maids who visit on a schedule. View service"
+        },
+        {
+          "href": "/en/services/housemaid/",
+          "text": "Housemaid Services Everyday home support for families. View service"
+        },
+        {
+          "href": "/en/services/housekeeping/",
+          "text": "Cleaning & Housekeeping Services Cleaning and housekeeping visits for agreed household tasks: 4 hours for AED 120 or 8 hours for AED 200. Confirm priorities, access, supplies, availability and the final written scope. View service"
+        },
+        {
+          "href": "/en/services/full-time-maid/",
+          "text": "Full-time Maid Hiring Dedicated full-time household help. View service"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time Maid Hiring 4-hour or 8-hour maid visits. View service"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly Maid Contract Discuss monthly maid contracts and package terms. View service"
+        },
+        {
+          "href": "/en/services/on-demand-domestic-help/",
+          "text": "On-demand Domestic Help Domestic support when you need it. View service"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny Services Caring nannies for your children. View service"
+        },
+        {
+          "href": "/en/services/executive-nannies/",
+          "text": "Executive Nannies Premium childcare for executive households. View service"
+        },
+        {
+          "href": "/en/services/babysitting/",
+          "text": "Babysitting Services Trusted babysitters on demand. View service"
+        },
+        {
+          "href": "/en/services/newborn-care/",
+          "text": "Newborn Care Services Specialist newborn care. View service"
+        },
+        {
+          "href": "/en/services/home-cooking/",
+          "text": "Home Cooking Services Delicious home-cooked meals. View service"
+        },
+        {
+          "href": "/en/services/private-chefs/",
+          "text": "Private Chefs Premium private chef support at home. View service"
+        },
+        {
+          "href": "/en/services/personal-chef/",
+          "text": "Cook / Personal Chef Hiring Private cooks for your home. View service"
+        },
+        {
+          "href": "/en/services/kitchen-helper/",
+          "text": "Kitchen Helper Services Extra hands in the kitchen. View service"
+        },
+        {
+          "href": "/en/services/house-managers/",
+          "text": "House Managers Executive household coordination. View service"
+        },
+        {
+          "href": "/en/services/bespoke-household-management/",
+          "text": "Bespoke Household Management Tailored household support packages. View service"
+        },
+        {
+          "href": "/en/services/elder-care/",
+          "text": "Elder Care Services Compassionate elderly care. View service"
+        },
+        {
+          "href": "/en/services/patient-care/",
+          "text": "Non-clinical Home Support Practical daily help and companionship at home. View service"
+        },
+        {
+          "href": "/en/services/companion-care/",
+          "text": "Companion Care Services Friendly companionship support. View service"
+        },
+        {
+          "href": "/en/services/recruitment/",
+          "text": "Domestic Worker Recruitment INAYA Tadbeer centre in Ajman supports domestic-worker recruitment, individual profile review and household service enquiries. Confirm the role, availability, employment arrangement and written terms. View service"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Maid Visa Assistance Domestic-worker visa typing and document processing in Ajman: applications, renewal, cancellation, status and contract-related requests, with Emirates ID, medical and insurance processing as applicable. Scope, fees and official outcomes depend on the case. View service"
+        },
+        {
+          "href": "/en/services/maid-replacement/",
+          "text": "Maid Replacement Services Replacement support as per policy. View service"
+        },
+        {
+          "href": "/en/services/sponsorship-transfer/",
+          "text": "Maid Transfer / Sponsorship Change Ask INAYA about support, requirements and fees for your transfer enquiry. View service"
+        },
+        {
+          "href": "/en/services/experienced-maid/",
+          "text": "Experienced / Trained Maid Hiring Compare relevant household experience. View service"
+        },
+        {
+          "href": "/en/services/background-verification/",
+          "text": "Background Verification Services Review available profile information. View service"
+        },
+        {
+          "href": "/en/services/countries-we-source-from/",
+          "text": "Countries We Source From Domestic worker source countries. View service"
+        },
+        {
+          "href": "/en/services/floral-styling/",
+          "text": "Floral Styling Fresh floral styling for homes. View service"
+        },
+        {
+          "href": "/en/services/relocation-support/",
+          "text": "Relocation Support Organized moving assistance. View service"
+        },
+        {
+          "href": "/en/services/pet-care-specialists/",
+          "text": "Pet Care Specialists Pet wellbeing support at home. View service"
+        },
+        {
+          "href": "/en/services/event-staffing/",
+          "text": "Event Staffing Waitstaff for private parties. View service"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Consult an Advisor"
+        }
+      ],
+      "afterLinksSha256": "3e8be532f60205b59de2176895f09410aecda3cc4a9d3fb2fc0f66617fda736e",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Core Domestic Services"
+        ],
+        [
+          "h3",
+          "Live-in Maid Services"
+        ],
+        [
+          "h3",
+          "Live-out Maid Services"
+        ],
+        [
+          "h3",
+          "Housemaid Services"
+        ],
+        [
+          "h3",
+          "Cleaning & Housekeeping Services"
+        ],
+        [
+          "h3",
+          "Full-time Maid Hiring"
+        ],
+        [
+          "h3",
+          "Part-time Maid Hiring"
+        ],
+        [
+          "h3",
+          "Monthly Maid Contract"
+        ],
+        [
+          "h3",
+          "On-demand Domestic Help"
+        ],
+        [
+          "h2",
+          "Childcare Services"
+        ],
+        [
+          "h3",
+          "Nanny Services"
+        ],
+        [
+          "h3",
+          "Executive Nannies"
+        ],
+        [
+          "h3",
+          "Babysitting Services"
+        ],
+        [
+          "h3",
+          "Newborn Care Services"
+        ],
+        [
+          "h2",
+          "Cooking & Household Management"
+        ],
+        [
+          "h3",
+          "Home Cooking Services"
+        ],
+        [
+          "h3",
+          "Private Chefs"
+        ],
+        [
+          "h3",
+          "Cook / Personal Chef Hiring"
+        ],
+        [
+          "h3",
+          "Kitchen Helper Services"
+        ],
+        [
+          "h3",
+          "House Managers"
+        ],
+        [
+          "h3",
+          "Bespoke Household Management"
+        ],
+        [
+          "h2",
+          "Elderly & Care Support"
+        ],
+        [
+          "h3",
+          "Elder Care Services"
+        ],
+        [
+          "h3",
+          "Non-clinical Home Support"
+        ],
+        [
+          "h3",
+          "Companion Care Services"
+        ],
+        [
+          "h2",
+          "Administrative & Support Services"
+        ],
+        [
+          "h3",
+          "Domestic Worker Recruitment"
+        ],
+        [
+          "h3",
+          "Maid Visa Assistance"
+        ],
+        [
+          "h3",
+          "Maid Replacement Services"
+        ],
+        [
+          "h3",
+          "Maid Transfer / Sponsorship Change"
+        ],
+        [
+          "h3",
+          "Experienced / Trained Maid Hiring"
+        ],
+        [
+          "h3",
+          "Background Verification Services"
+        ],
+        [
+          "h3",
+          "Countries We Source From"
+        ],
+        [
+          "h2",
+          "Add-ons & Lifestyle Services"
+        ],
+        [
+          "h3",
+          "Floral Styling"
+        ],
+        [
+          "h3",
+          "Relocation Support"
+        ],
+        [
+          "h3",
+          "Pet Care Specialists"
+        ],
+        [
+          "h3",
+          "Event Staffing"
+        ],
+        [
+          "h2",
+          "Not sure which service fits your household?"
+        ]
+      ],
+      "afterHeadingsSha256": "43d3fae8af7eee26e9c5e1a8e8852aeb6beac42d5a321fabc227567047a11b7b",
+      "beforeImages": [
+        {
+          "src": "/images/home/home-concierge-support.webp?v=0b76c3c89f74",
+          "alt": "A domestic worker arranging sofa cushions near a mother and child"
+        },
+        {
+          "src": "/images/services/live-in-maid.webp?v=a113ff88aad8",
+          "alt": "Illustration of a domestic worker folding a green blanket on a bed"
+        },
+        {
+          "src": "/images/services/live-out-maid.webp?v=6c15410e8dd1",
+          "alt": "Illustration of a domestic worker wiping a console table in a hallway"
+        },
+        {
+          "src": "/images/services/housemaid.webp?v=ea8c5e3c68e6",
+          "alt": "Illustration of a domestic worker folding towels beside laundry baskets"
+        },
+        {
+          "src": "/images/services/housekeeping.webp?v=507bd20de996",
+          "alt": "Illustration of a domestic worker mopping a kitchen floor"
+        },
+        {
+          "src": "/images/services/full-time-maid.webp?v=1ae3362c984e",
+          "alt": "Illustration of a domestic worker arranging shirts on hangers in a wardrobe"
+        },
+        {
+          "src": "/images/services/part-time-maid.webp?v=31373ca6ceb6",
+          "alt": "Illustration of a domestic worker vacuuming a living-room rug"
+        },
+        {
+          "src": "/images/services/monthly-maid-contract.webp?v=342607df85fb",
+          "alt": "Illustration of a domestic worker placing a basket of folded towels on a shelf"
+        },
+        {
+          "src": "/images/services/on-demand-domestic-help.webp?v=09167e1ea520",
+          "alt": "Illustration of a domestic worker wiping a small table on a balcony"
+        },
+        {
+          "src": "/images/services/nanny.webp?v=cc2f9b0bdddd",
+          "alt": "Illustration of a nanny and child playing with wooden blocks"
+        },
+        {
+          "src": "/images/services/executive-nannies.webp?v=6d9073bf2613",
+          "alt": "Nanny helping a child pack a school bag at a table"
+        },
+        {
+          "src": "/images/services/babysitting.webp?v=c4947caeb00f",
+          "alt": "Illustration of a babysitter and child looking at a picture book on a rug"
+        },
+        {
+          "src": "/images/services/newborn-care.webp?v=3a2355856cb0",
+          "alt": "Illustration of two women beside a baby's cot, with one holding a cloth"
+        },
+        {
+          "src": "/images/services/home-cooking.webp?v=53a0c74d84a7",
+          "alt": "Illustration of a household cook chopping carrots at a kitchen counter"
+        },
+        {
+          "src": "/images/services/private-chefs.webp?v=09853e467eac",
+          "alt": "Household cook serving chicken and vegetables in a home kitchen"
+        },
+        {
+          "src": "/images/services/personal-chef.webp?v=bb0cc28545c7",
+          "alt": "Illustration of a household cook and a man looking at fresh ingredients in a kitchen"
+        },
+        {
+          "src": "/images/services/kitchen-helper.webp?v=8dff1101a2b1",
+          "alt": "Illustration of a kitchen helper rinsing leafy vegetables in a colander"
+        },
+        {
+          "src": "/images/services/house-managers.webp?v=a444ffefef60",
+          "alt": "Household supervisor coordinating cleaning tasks with a colleague in a living room"
+        },
+        {
+          "src": "/images/services/bespoke-household-management.webp?v=1a5e9e70e6f8",
+          "alt": "Illustration of three domestic workers tidying a living room with folded linen and cleaning supplies"
+        },
+        {
+          "src": "/images/services/elder-care.webp?v=05d5e300f945",
+          "alt": "Illustration of a helper handing a glass of water to an older woman"
+        },
+        {
+          "src": "/images/services/patient-care.webp?v=be556c496a32",
+          "alt": "Illustration of a helper adjusting a cushion behind an older man in an armchair"
+        },
+        {
+          "src": "/images/services/companion-care.webp?v=dddc105613df",
+          "alt": "Illustration of a companion and an older woman talking over tea on a shaded patio"
+        },
+        {
+          "src": "/images/services/recruitment.webp?v=a4f0ca350594",
+          "alt": "Illustration of a domestic worker and another woman checking a made bed"
+        },
+        {
+          "src": "/images/services/maid-visa.webp?v=c0a0172646fa",
+          "alt": "Illustration of a domestic worker straightening a hallway rug while a man uses a phone"
+        },
+        {
+          "src": "/images/services/maid-replacement.webp?v=9f24ce17f9ba",
+          "alt": "Illustration of a woman explaining washing-machine controls to a domestic worker"
+        },
+        {
+          "src": "/images/services/sponsorship-transfer.webp?v=82b7929b6a20",
+          "alt": "Illustration of a domestic worker and a man arranging books on a shelf"
+        },
+        {
+          "src": "/images/services/experienced-maid.webp?v=0d0957703a01",
+          "alt": "Illustration of a domestic worker ironing a shirt on an ironing board"
+        },
+        {
+          "src": "/images/services/background-verification.webp?v=904e082fc76e",
+          "alt": "Illustration of two women shaking hands in a home laundry area"
+        },
+        {
+          "src": "/images/about/about-hero-domestic-service.webp?v=964813adb925",
+          "alt": "Illustrative household scene with domestic workers performing separate tasks in role-specific uniforms"
+        },
+        {
+          "src": "/images/services/floral-styling.webp?v=695e9d8cb9c7",
+          "alt": "Illustration of a domestic worker arranging pink flowers in a vase"
+        },
+        {
+          "src": "/images/services/relocation-support.webp?v=355774c99823",
+          "alt": "Illustration of a domestic worker wiping a refrigerator beside moving boxes"
+        },
+        {
+          "src": "/images/services/pet-care-specialists.webp?v=8d0517a1fa28",
+          "alt": "Illustration of a domestic worker setting a bowl down beside a cat on a patio"
+        },
+        {
+          "src": "/images/services/event-staffing.webp?v=1f38ec24113c",
+          "alt": "Illustration of a domestic worker serving glasses of drinks to a woman at an outdoor table"
+        }
+      ],
+      "afterImagesSha256": "3ae1d3e34be1e3b2d0c3510a467886bb0e8de3a8c4ac1fb2d256343fcc7a8989"
+    },
+    "https://inayadomestic.ae/en/services/live-out-maid/": {
+      "graphBefore": "94ad3222918624c4301379b96cf81a6e91a053580830d18e15321229eef134c1",
+      "graphAfter": "94ad3222918624c4301379b96cf81a6e91a053580830d18e15321229eef134c1",
+      "beforeLinks": [
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Enquire about a live-out maid"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=Hello%20INAYA%2C%20I%20would%20like%20to%20ask%20about%20Live-out%20Maid%20Services.",
+          "text": "WhatsApp Inquiry"
+        },
+        {
+          "href": "/en/blog/live-in-live-out-part-time-maid-uae/",
+          "text": "Compare live-out residence and work schedules"
+        },
+        {
+          "href": "/en/maid-services-ajman/",
+          "text": "maid services in Ajman"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Review the package pricing basis and what to confirm"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Enquire about a live-out maid"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Enquire about a live-out maid"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Enquire about a live-out maid"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time Maid Hiring 4-hour or 8-hour maid visits. View service"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid Services Residential maid support with agreed duties and schedule. View service"
+        },
+        {
+          "href": "/en/services/housekeeping/",
+          "text": "Cleaning & Housekeeping Services Organized cleaning and housekeeping help. View service"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time Maid Hiring"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid Services"
+        },
+        {
+          "href": "/en/services/housekeeping/",
+          "text": "Cleaning & Housekeeping Services"
+        },
+        {
+          "href": "/en/booking/?service=live-out-maid",
+          "text": "Enquire about a live-out maid"
+        }
+      ],
+      "afterLinksSha256": "aa826a82d0e2809a8b482bc5e0346e5c30bb9930bb1768d900f8ab73fbd9cf6e",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Agency employment and monthly salary"
+        ],
+        [
+          "h2",
+          "Monthly payment and cancellation"
+        ],
+        [
+          "h2",
+          "Service plan and follow-up"
+        ],
+        [
+          "h2",
+          "What does Live-out Maid Services cover?"
+        ],
+        [
+          "h2",
+          "Why Families Choose INAYA"
+        ],
+        [
+          "h2",
+          "Agreed duties and included monthly service components"
+        ],
+        [
+          "h2",
+          "Perfect For"
+        ],
+        [
+          "h2",
+          "What should I prepare before discussing this role?"
+        ],
+        [
+          "h3",
+          "Review"
+        ],
+        [
+          "h3",
+          "Schedule"
+        ],
+        [
+          "h3",
+          "Duties"
+        ],
+        [
+          "h3",
+          "Visit"
+        ],
+        [
+          "h3",
+          "Follow-up"
+        ],
+        [
+          "h2",
+          "Candidate Matching Guidance"
+        ],
+        [
+          "h3",
+          "Language Preference"
+        ],
+        [
+          "h3",
+          "Cleaning Experience"
+        ],
+        [
+          "h3",
+          "Kitchen Support"
+        ],
+        [
+          "h3",
+          "Childcare Exposure"
+        ],
+        [
+          "h3",
+          "Home Size"
+        ],
+        [
+          "h3",
+          "Service Frequency"
+        ],
+        [
+          "h2",
+          "Live-out Maid Pricing Guidance"
+        ],
+        [
+          "h3",
+          "Monthly — AED 3,500 — for 30 days"
+        ],
+        [
+          "h3",
+          "Six-month plan — AED 3,250 — per month · 6-month commitment"
+        ],
+        [
+          "h3",
+          "Yearly plan — AED 3,000 — per month · 12-month commitment"
+        ],
+        [
+          "h2",
+          "Live-out Maid FAQs"
+        ],
+        [
+          "h2",
+          "Related Maid Services"
+        ],
+        [
+          "h2",
+          "Why Choose INAYA for Live-out Maid Services?"
+        ],
+        [
+          "h3",
+          "A planned visit schedule"
+        ],
+        [
+          "h3",
+          "A practical task list"
+        ],
+        [
+          "h3",
+          "Continuity between visits"
+        ],
+        [
+          "h2",
+          "Compare roles before defining your request"
+        ],
+        [
+          "h3",
+          "Part-time Maid Hiring"
+        ],
+        [
+          "h3",
+          "Live-in Maid Services"
+        ],
+        [
+          "h3",
+          "Cleaning & Housekeeping Services"
+        ],
+        [
+          "h2",
+          "Need scheduled live-out maid support?"
+        ]
+      ],
+      "afterHeadingsSha256": "33633beee9277169eb3845c40186822b1dde148e5f03d81a94cd1eaa730299f9",
+      "beforeImages": [
+        {
+          "src": "/images/services/live-out-maid.webp?v=6c15410e8dd1",
+          "alt": "Illustration of a domestic worker wiping a console table in a hallway"
+        },
+        {
+          "src": "/images/countries/maid-philippines.webp",
+          "alt": "Philippines"
+        },
+        {
+          "src": "/images/countries/maid-indonesia.webp",
+          "alt": "Indonesia"
+        },
+        {
+          "src": "/images/countries/maid-nepal.webp",
+          "alt": "Nepal"
+        },
+        {
+          "src": "/images/countries/maid-sri-lanka.webp",
+          "alt": "Sri Lanka"
+        },
+        {
+          "src": "/images/countries/maid-india.webp",
+          "alt": "India"
+        },
+        {
+          "src": "/images/countries/maid-kenya-uganda.webp",
+          "alt": "Kenya / Uganda"
+        },
+        {
+          "src": "/images/services/part-time-maid.webp?v=31373ca6ceb6",
+          "alt": "Illustration of a domestic worker vacuuming a living-room rug"
+        },
+        {
+          "src": "/images/services/live-in-maid.webp?v=a113ff88aad8",
+          "alt": "Illustration of a domestic worker folding a green blanket on a bed"
+        },
+        {
+          "src": "/images/services/housekeeping.webp?v=507bd20de996",
+          "alt": "Illustration of a domestic worker mopping a kitchen floor"
+        }
+      ],
+      "afterImagesSha256": "6a197639ce959a804178691e5e9619be9586c42d2f0b92de2633ad5cfb158823"
+    },
+    "https://inayadomestic.ae/ar/services/live-out-maid/": {
+      "graphBefore": "6d65c891ef9d0b3af71fc9cc4135208512fb50252447150c7682d72f33f03c9f",
+      "graphAfter": "6d65c891ef9d0b3af71fc9cc4135208512fb50252447150c7682d72f33f03c9f",
+      "beforeLinks": [
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "استفسر عن خادمة غير مقيمة"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AE%D8%A7%D8%AF%D9%85%D8%A7%D8%AA%20%D8%BA%D9%8A%D8%B1%20%D8%A7%D9%84%D9%85%D9%82%D9%8A%D9%85%D8%A7%D8%AA.",
+          "text": "استفسار واتساب"
+        },
+        {
+          "href": "/ar/blog/live-in-live-out-part-time-maid-uae/",
+          "text": "قارن الإقامة خارج المنزل وجداول العمل"
+        },
+        {
+          "href": "/ar/maid-services-ajman/",
+          "text": "خدمات الخادمات في عجمان"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "اطلب المطابقة"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "اطلب المطابقة"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "اطلب المطابقة"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "اطلب المطابقة"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "اطلب المطابقة"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "اطلب المطابقة"
+        },
+        {
+          "href": "/ar/pricing/",
+          "text": "راجع أساس تسعير الباقات وما يجب تأكيده"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "استفسر عن خادمة غير مقيمة"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "استفسر عن خادمة غير مقيمة"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "استفسر عن خادمة غير مقيمة"
+        },
+        {
+          "href": "/ar/services/part-time-maid/",
+          "text": "توظيف خادمة بدوام جزئي زيارات خادمة لمدة 4 أو 8 ساعات. تفاصيل الخدمة"
+        },
+        {
+          "href": "/ar/services/live-in-maid/",
+          "text": "خدمات الخادمات المقيمات دعم منزلي مع الإقامة وفق مهام وجدول متفق عليهما. تفاصيل الخدمة"
+        },
+        {
+          "href": "/ar/services/housekeeping/",
+          "text": "خدمات التنظيف وترتيب المنزل مساعدة منظمة للتنظيف وترتيب المنزل. تفاصيل الخدمة"
+        },
+        {
+          "href": "/ar/services/part-time-maid/",
+          "text": "توظيف خادمة بدوام جزئي"
+        },
+        {
+          "href": "/ar/services/live-in-maid/",
+          "text": "خدمات الخادمات المقيمات"
+        },
+        {
+          "href": "/ar/services/housekeeping/",
+          "text": "خدمات التنظيف وترتيب المنزل"
+        },
+        {
+          "href": "/ar/booking/?service=live-out-maid",
+          "text": "استفسر عن خادمة غير مقيمة"
+        }
+      ],
+      "afterLinksSha256": "f9369b95ae1e76ecbef39ff95c17323daba58de887f40935015313438eadde3e",
+      "beforeHeadings": [
+        [
+          "h2",
+          "توظيف الوكالة والراتب الشهري"
+        ],
+        [
+          "h2",
+          "السداد والإلغاء الشهري"
+        ],
+        [
+          "h2",
+          "خطة الخدمة والمتابعة"
+        ],
+        [
+          "h2",
+          "ما نطاق خدمات الخادمات غير المقيمات؟"
+        ],
+        [
+          "h2",
+          "لماذا تختار الأسر عناية؟"
+        ],
+        [
+          "h2",
+          "المهام المتفق عليها وعناصر الخدمة الشهرية المشمولة"
+        ],
+        [
+          "h2",
+          "مناسبة لـ"
+        ],
+        [
+          "h2",
+          "ماذا أجهز قبل مناقشة هذا الدور؟"
+        ],
+        [
+          "h3",
+          "المراجعة"
+        ],
+        [
+          "h3",
+          "الجدول"
+        ],
+        [
+          "h3",
+          "المهام"
+        ],
+        [
+          "h3",
+          "الزيارة"
+        ],
+        [
+          "h3",
+          "المتابعة"
+        ],
+        [
+          "h2",
+          "إرشاد مطابقة العمالة"
+        ],
+        [
+          "h3",
+          "تفضيل اللغة"
+        ],
+        [
+          "h3",
+          "خبرة التنظيف"
+        ],
+        [
+          "h3",
+          "دعم المطبخ"
+        ],
+        [
+          "h3",
+          "خبرة رعاية الأطفال"
+        ],
+        [
+          "h3",
+          "حجم المنزل"
+        ],
+        [
+          "h3",
+          "عدد الزيارات"
+        ],
+        [
+          "h2",
+          "إرشاد أسعار الخادمة غير المقيمة"
+        ],
+        [
+          "h3",
+          "شهري — 3,500 درهم — لمدة 30 يوماً"
+        ],
+        [
+          "h3",
+          "باقة 6 أشهر — 3,250 درهماً — شهرياً · التزام لمدة 6 أشهر"
+        ],
+        [
+          "h3",
+          "باقة سنوية — 3,000 درهم — شهرياً · التزام لمدة 12 شهراً"
+        ],
+        [
+          "h2",
+          "أسئلة خادمة غير مقيمة"
+        ],
+        [
+          "h2",
+          "خدمات خادمات ذات صلة"
+        ],
+        [
+          "h2",
+          "لماذا تختار عناية للخادمة غير المقيمة؟"
+        ],
+        [
+          "h3",
+          "جدول زيارات منظم"
+        ],
+        [
+          "h3",
+          "قائمة مهام عملية"
+        ],
+        [
+          "h3",
+          "تنسيق العمل بين الزيارات"
+        ],
+        [
+          "h2",
+          "قارن الأدوار قبل تحديد طلبك"
+        ],
+        [
+          "h3",
+          "توظيف خادمة بدوام جزئي"
+        ],
+        [
+          "h3",
+          "خدمات الخادمات المقيمات"
+        ],
+        [
+          "h3",
+          "خدمات التنظيف وترتيب المنزل"
+        ],
+        [
+          "h2",
+          "هل تحتاج خادمة غير مقيمة بجدول واضح؟"
+        ]
+      ],
+      "afterHeadingsSha256": "2f468cbdf687ca7f9f039b159ccc68d47e2214f34e1b6829289e2c5d6143f941",
+      "beforeImages": [
+        {
+          "src": "/images/services/live-out-maid.webp?v=6c15410e8dd1",
+          "alt": "مشهد توضيحي لعاملة منزلية تمسح طاولة جانبية في مدخل المنزل"
+        },
+        {
+          "src": "/images/countries/maid-philippines.webp",
+          "alt": "الفلبين"
+        },
+        {
+          "src": "/images/countries/maid-indonesia.webp",
+          "alt": "إندونيسيا"
+        },
+        {
+          "src": "/images/countries/maid-nepal.webp",
+          "alt": "نيبال"
+        },
+        {
+          "src": "/images/countries/maid-sri-lanka.webp",
+          "alt": "سريلانكا"
+        },
+        {
+          "src": "/images/countries/maid-india.webp",
+          "alt": "الهند"
+        },
+        {
+          "src": "/images/countries/maid-kenya-uganda.webp",
+          "alt": "كينيا / أوغندا"
+        },
+        {
+          "src": "/images/services/part-time-maid.webp?v=31373ca6ceb6",
+          "alt": "مشهد توضيحي لعاملة منزلية تنظف سجادة غرفة الجلوس بالمكنسة الكهربائية"
+        },
+        {
+          "src": "/images/services/live-in-maid.webp?v=a113ff88aad8",
+          "alt": "مشهد توضيحي لعاملة منزلية تطوي بطانية خضراء على سرير"
+        },
+        {
+          "src": "/images/services/housekeeping.webp?v=507bd20de996",
+          "alt": "مشهد توضيحي لعاملة منزلية تمسح أرضية المطبخ بممسحة"
+        }
+      ],
+      "afterImagesSha256": "15ab5b9cb5421bc2f069e20c30f5699fb69fb3b97920ea0c6060953578280b0d"
+    },
+    "https://inayadomestic.ae/en/services/full-time-maid/": {
+      "graphBefore": "0ca98cecad3e44738234b3486eb9ca2ef4f708f2e6e393b5a97da6518f1e3fe0",
+      "graphAfter": "0ca98cecad3e44738234b3486eb9ca2ef4f708f2e6e393b5a97da6518f1e3fe0",
+      "beforeLinks": [
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Enquire about a full-time maid"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=Hello%20INAYA%2C%20I%20would%20like%20to%20ask%20about%20Full-time%20Maid%20Hiring.",
+          "text": "WhatsApp Inquiry"
+        },
+        {
+          "href": "/en/blog/live-in-live-out-part-time-maid-uae/",
+          "text": "Understand the difference between residence and full-time work"
+        },
+        {
+          "href": "/en/maid-services-ajman/",
+          "text": "maid services in Ajman"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Review the package pricing basis and what to confirm"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Enquire about a full-time maid"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Enquire about a full-time maid"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Enquire about a full-time maid"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid Services Residential maid support with agreed duties and schedule. View service"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out Maid Services Maids who visit on a schedule. View service"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time Maid Hiring 4-hour or 8-hour maid visits. View service"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid Services"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out Maid Services"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time Maid Hiring"
+        },
+        {
+          "href": "/en/booking/?service=full-time-maid",
+          "text": "Enquire about a full-time maid"
+        }
+      ],
+      "afterLinksSha256": "29b2aaa28fec787bce3005d902235630645a85628dfccc3d0d5c911b1d27de6e",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Agency employment and monthly salary"
+        ],
+        [
+          "h2",
+          "Monthly payment and cancellation"
+        ],
+        [
+          "h2",
+          "Service plan and follow-up"
+        ],
+        [
+          "h2",
+          "What does Full-time Maid Hiring cover?"
+        ],
+        [
+          "h2",
+          "Choose the arrangement for your request"
+        ],
+        [
+          "h2",
+          "Agreed duties and included monthly service components"
+        ],
+        [
+          "h2",
+          "Limits and responsibilities to clarify"
+        ],
+        [
+          "h2",
+          "From enquiry to confirmation"
+        ],
+        [
+          "h3",
+          "List recurring work"
+        ],
+        [
+          "h3",
+          "Define the schedule"
+        ],
+        [
+          "h3",
+          "Compare experience"
+        ],
+        [
+          "h3",
+          "Request a written proposal"
+        ],
+        [
+          "h3",
+          "Confirm the arrangement"
+        ],
+        [
+          "h2",
+          "Candidate Matching Guidance"
+        ],
+        [
+          "h3",
+          "Philippines"
+        ],
+        [
+          "h3",
+          "Indonesia"
+        ],
+        [
+          "h3",
+          "Nepal"
+        ],
+        [
+          "h3",
+          "Sri Lanka"
+        ],
+        [
+          "h3",
+          "India"
+        ],
+        [
+          "h3",
+          "Kenya / Uganda"
+        ],
+        [
+          "h2",
+          "Full-time Maid Pricing Guidance"
+        ],
+        [
+          "h3",
+          "Monthly — AED 3,500 — for 30 days"
+        ],
+        [
+          "h3",
+          "Six-month plan — AED 3,250 — per month · 6-month commitment"
+        ],
+        [
+          "h3",
+          "Yearly plan — AED 3,000 — per month · 12-month commitment"
+        ],
+        [
+          "h2",
+          "Full-time Maid FAQs"
+        ],
+        [
+          "h2",
+          "Related Maid Services"
+        ],
+        [
+          "h2",
+          "Why Choose INAYA for Full-time Maid Hiring?"
+        ],
+        [
+          "h3",
+          "A regular household workload"
+        ],
+        [
+          "h3",
+          "Hours and residence clarified"
+        ],
+        [
+          "h3",
+          "Consistent task communication"
+        ],
+        [
+          "h2",
+          "Compare roles before defining your request"
+        ],
+        [
+          "h3",
+          "Live-in Maid Services"
+        ],
+        [
+          "h3",
+          "Live-out Maid Services"
+        ],
+        [
+          "h3",
+          "Part-time Maid Hiring"
+        ],
+        [
+          "h2",
+          "Need full-time maid support in UAE?"
+        ]
+      ],
+      "afterHeadingsSha256": "0d94aefe43eb6cffda0ae314ad738bccbc67eb382a4c42993c45f3aa0b2e8d2f",
+      "beforeImages": [
+        {
+          "src": "/images/services/full-time-maid.webp?v=1ae3362c984e",
+          "alt": "Illustration of a domestic worker arranging shirts on hangers in a wardrobe"
+        },
+        {
+          "src": "/images/countries/maid-philippines.webp",
+          "alt": "Philippines"
+        },
+        {
+          "src": "/images/countries/maid-indonesia.webp",
+          "alt": "Indonesia"
+        },
+        {
+          "src": "/images/countries/maid-nepal.webp",
+          "alt": "Nepal"
+        },
+        {
+          "src": "/images/countries/maid-sri-lanka.webp",
+          "alt": "Sri Lanka"
+        },
+        {
+          "src": "/images/countries/maid-india.webp",
+          "alt": "India"
+        },
+        {
+          "src": "/images/countries/maid-kenya-uganda.webp",
+          "alt": "Kenya / Uganda"
+        },
+        {
+          "src": "/images/services/live-in-maid.webp?v=a113ff88aad8",
+          "alt": "Illustration of a domestic worker folding a green blanket on a bed"
+        },
+        {
+          "src": "/images/services/live-out-maid.webp?v=6c15410e8dd1",
+          "alt": "Illustration of a domestic worker wiping a console table in a hallway"
+        },
+        {
+          "src": "/images/services/part-time-maid.webp?v=31373ca6ceb6",
+          "alt": "Illustration of a domestic worker vacuuming a living-room rug"
+        }
+      ],
+      "afterImagesSha256": "474e59cb1aeb1777b056ef582ee7d9005869f27a8758f8365eed8050510734af"
+    },
+    "https://inayadomestic.ae/en/services/part-time-maid/": {
+      "graphBefore": "41c902da680b6aa7547155368fc212cae815063cf93b0b53e789a5d5f7304975",
+      "graphAfter": "41c902da680b6aa7547155368fc212cae815063cf93b0b53e789a5d5f7304975",
+      "beforeLinks": [
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Enquire about a part-time maid"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=Hello%20INAYA%2C%20I%20would%20like%20to%20ask%20about%20Part-time%20Maid%20Hiring.",
+          "text": "WhatsApp Inquiry"
+        },
+        {
+          "href": "/en/blog/live-in-live-out-part-time-maid-uae/",
+          "text": "Compare part-time visits with other household arrangements"
+        },
+        {
+          "href": "/en/maid-services-ajman/",
+          "text": "maid services in Ajman"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Review the package pricing basis and what to confirm"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid&plan=Half%20day%20%E2%80%94%204%20hours",
+          "text": "Enquire about a part-time maid"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid&plan=Daily%20%E2%80%94%208%20hours",
+          "text": "Enquire about a part-time maid"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid&plan=Weekly%20%E2%80%94%207%20days",
+          "text": "Enquire about a part-time maid"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly Maid Contract Discuss monthly maid contracts and package terms. View service"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out Maid Services Maids who visit on a schedule. View service"
+        },
+        {
+          "href": "/en/services/on-demand-domestic-help/",
+          "text": "On-demand Domestic Help Domestic support when you need it. View service"
+        },
+        {
+          "href": "/en/booking/?service=part-time-maid",
+          "text": "Enquire about a part-time maid"
+        }
+      ],
+      "afterLinksSha256": "0fc24b3733fb6e88be4985f96892c4c8c4d683a67e89fd503e5d522602d2a372",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Visit packages"
+        ],
+        [
+          "h2",
+          "Rooms and priorities"
+        ],
+        [
+          "h2",
+          "Arrival preparation"
+        ],
+        [
+          "h2",
+          "What does Part-time Maid Hiring cover?"
+        ],
+        [
+          "h2",
+          "Choose the visit arrangement"
+        ],
+        [
+          "h2",
+          "Scope to agree"
+        ],
+        [
+          "h2",
+          "Limits and responsibilities to clarify"
+        ],
+        [
+          "h2",
+          "From enquiry to confirmation"
+        ],
+        [
+          "h3",
+          "List the tasks"
+        ],
+        [
+          "h3",
+          "Specify visit timing"
+        ],
+        [
+          "h3",
+          "Check practical details"
+        ],
+        [
+          "h3",
+          "Review the quote"
+        ],
+        [
+          "h3",
+          "Confirm the visit"
+        ],
+        [
+          "h2",
+          "Prepare the visit plan"
+        ],
+        [
+          "h3",
+          "Rooms and surfaces"
+        ],
+        [
+          "h3",
+          "Laundry and ironing"
+        ],
+        [
+          "h3",
+          "Kitchen assistance"
+        ],
+        [
+          "h3",
+          "Time and changes"
+        ],
+        [
+          "h3",
+          "Products and equipment"
+        ],
+        [
+          "h3",
+          "Access and transport"
+        ],
+        [
+          "h2",
+          "Part-time Maid Pricing Guidance"
+        ],
+        [
+          "h3",
+          "Half-day — AED 120 — for 4 hours"
+        ],
+        [
+          "h3",
+          "Daily — AED 200 — for 8 hours"
+        ],
+        [
+          "h3",
+          "Weekly — AED 1,120 — for 7 days"
+        ],
+        [
+          "h2",
+          "Part-time Maid FAQs"
+        ],
+        [
+          "h2",
+          "Related Maid Services"
+        ],
+        [
+          "h2",
+          "Why Choose INAYA for Part-time Maid Services?"
+        ],
+        [
+          "h3",
+          "A choice of visit length"
+        ],
+        [
+          "h3",
+          "Priorities that fit the visit"
+        ],
+        [
+          "h3",
+          "Recurring visit schedules"
+        ],
+        [
+          "h2",
+          "Need flexible part-time maid support?"
+        ]
+      ],
+      "afterHeadingsSha256": "904b2e8249103f63ccd9911b4035877d007bedf536c88959dde2304d3aecc4b9",
+      "beforeImages": [
+        {
+          "src": "/images/services/part-time-maid.webp?v=31373ca6ceb6",
+          "alt": "Illustration of a domestic worker vacuuming a living-room rug"
+        },
+        {
+          "src": "/images/services/monthly-maid-contract.webp?v=342607df85fb",
+          "alt": "Illustration of a domestic worker placing a basket of folded towels on a shelf"
+        },
+        {
+          "src": "/images/services/live-out-maid.webp?v=6c15410e8dd1",
+          "alt": "Illustration of a domestic worker wiping a console table in a hallway"
+        },
+        {
+          "src": "/images/services/on-demand-domestic-help.webp?v=09167e1ea520",
+          "alt": "Illustration of a domestic worker wiping a small table on a balcony"
+        }
+      ],
+      "afterImagesSha256": "5f853a7a5354b739cfdbd86060bb1ab714b0e1b4d78bca17e3b1cade9c5775b3"
+    },
+    "https://inayadomestic.ae/en/services/private-chefs/": {
+      "graphBefore": "5904edad890a36d09f7201b5c4eeed30ead96cbad2b4af954c56aba886766458",
+      "graphAfter": "5904edad890a36d09f7201b5c4eeed30ead96cbad2b4af954c56aba886766458",
+      "beforeLinks": [
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Book Consultation"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=Hello%20INAYA%2C%20I%20would%20like%20to%20ask%20about%20Private%20Chefs.",
+          "text": "WhatsApp Inquiry"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Request Matching"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Book Consultation"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Book Consultation"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Book Consultation"
+        },
+        {
+          "href": "/en/services/personal-chef/",
+          "text": "Cook / Personal Chef Hiring Private cooks for your home. View service"
+        },
+        {
+          "href": "/en/services/home-cooking/",
+          "text": "Home Cooking Services Delicious home-cooked meals. View service"
+        },
+        {
+          "href": "/en/services/event-staffing/",
+          "text": "Event Staffing Waitstaff for private parties. View service"
+        },
+        {
+          "href": "/en/services/personal-chef/",
+          "text": "Cook / Personal Chef Hiring"
+        },
+        {
+          "href": "/en/services/home-cooking/",
+          "text": "Home Cooking Services"
+        },
+        {
+          "href": "/en/services/event-staffing/",
+          "text": "Event Staffing"
+        },
+        {
+          "href": "/en/booking/?service=private-chefs",
+          "text": "Book Consultation"
+        }
+      ],
+      "afterLinksSha256": "f566a9e8fd681c32f968a1b584667b5286c374170f323db6b00f17dec2e826d0",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Requirement Review"
+        ],
+        [
+          "h2",
+          "Trusted Coordination"
+        ],
+        [
+          "h2",
+          "Follow-up Support"
+        ],
+        [
+          "h2",
+          "What does Private Chefs cover?"
+        ],
+        [
+          "h2",
+          "Why Families Choose INAYA"
+        ],
+        [
+          "h2",
+          "What This Service Can Include"
+        ],
+        [
+          "h2",
+          "Perfect For"
+        ],
+        [
+          "h2",
+          "What should I prepare before discussing this role?"
+        ],
+        [
+          "h3",
+          "Consultation"
+        ],
+        [
+          "h3",
+          "Service Scope"
+        ],
+        [
+          "h3",
+          "Matching"
+        ],
+        [
+          "h3",
+          "Confirmation"
+        ],
+        [
+          "h3",
+          "Follow-up"
+        ],
+        [
+          "h2",
+          "Candidate Matching Guidance"
+        ],
+        [
+          "h3",
+          "Language Preference"
+        ],
+        [
+          "h3",
+          "Household Experience"
+        ],
+        [
+          "h3",
+          "Family Routine"
+        ],
+        [
+          "h3",
+          "Service Type"
+        ],
+        [
+          "h3",
+          "UAE Location"
+        ],
+        [
+          "h3",
+          "Start Plan"
+        ],
+        [
+          "h2",
+          "Transparent Pricing Guidance"
+        ],
+        [
+          "h3",
+          "Consultation"
+        ],
+        [
+          "h3",
+          "Service Coordination"
+        ],
+        [
+          "h3",
+          "Document Support"
+        ],
+        [
+          "h2",
+          "Frequently Asked Questions"
+        ],
+        [
+          "h2",
+          "Related Services"
+        ],
+        [
+          "h2",
+          "Why Choose INAYA?"
+        ],
+        [
+          "h3",
+          "A menu brief for your occasion"
+        ],
+        [
+          "h3",
+          "Experience relevant to the menu"
+        ],
+        [
+          "h3",
+          "Cooking and event roles separated"
+        ],
+        [
+          "h2",
+          "Compare roles before defining your request"
+        ],
+        [
+          "h3",
+          "Cook / Personal Chef Hiring"
+        ],
+        [
+          "h3",
+          "Home Cooking Services"
+        ],
+        [
+          "h3",
+          "Event Staffing"
+        ],
+        [
+          "h2",
+          "Ready to arrange Private Chefs?"
+        ]
+      ],
+      "afterHeadingsSha256": "60fb37c3c1664ef398e7394cfac04817a938a17c64d8c349200e0ce2287b3d09",
+      "beforeImages": [
+        {
+          "src": "/images/services/private-chefs.webp?v=09853e467eac",
+          "alt": "Household cook serving chicken and vegetables in a home kitchen"
+        },
+        {
+          "src": "/images/countries/maid-philippines.webp",
+          "alt": "Philippines"
+        },
+        {
+          "src": "/images/countries/maid-indonesia.webp",
+          "alt": "Indonesia"
+        },
+        {
+          "src": "/images/countries/maid-nepal.webp",
+          "alt": "Nepal"
+        },
+        {
+          "src": "/images/countries/maid-sri-lanka.webp",
+          "alt": "Sri Lanka"
+        },
+        {
+          "src": "/images/countries/maid-india.webp",
+          "alt": "India"
+        },
+        {
+          "src": "/images/countries/maid-kenya-uganda.webp",
+          "alt": "Kenya / Uganda"
+        },
+        {
+          "src": "/images/services/personal-chef.webp?v=bb0cc28545c7",
+          "alt": "Illustration of a household cook and a man looking at fresh ingredients in a kitchen"
+        },
+        {
+          "src": "/images/services/home-cooking.webp?v=53a0c74d84a7",
+          "alt": "Illustration of a household cook chopping carrots at a kitchen counter"
+        },
+        {
+          "src": "/images/services/event-staffing.webp?v=1f38ec24113c",
+          "alt": "Illustration of a domestic worker serving glasses of drinks to a woman at an outdoor table"
+        }
+      ],
+      "afterImagesSha256": "6148e5e9e663201e359a88566e80c940bc72f3da0a5e00d82a460cbd588381e3"
+    },
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/": {
+      "graphBefore": "75e77e816589a23fd8409ab93aed3182399d6cc97e30050a51e0e1adc8c271b4",
+      "graphAfter": "75e77e816589a23fd8409ab93aed3182399d6cc97e30050a51e0e1adc8c271b4",
+      "beforeLinks": [
+        {
+          "href": "/en/services/countries-we-source-from/",
+          "text": "Back to Source Countries"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Contact INAYA"
+        },
+        {
+          "href": "/en/services/recruitment/",
+          "text": "Recruitment"
+        },
+        {
+          "href": "/en/services/countries-we-source-from/",
+          "text": "Read the country and profile comparison guide"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out Maid"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny"
+        },
+        {
+          "href": "/en/services/home-cooking/",
+          "text": "Home Cooking"
+        },
+        {
+          "href": "/en/services/elder-care/",
+          "text": "Elder Care"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Maid Visa Support"
+        },
+        {
+          "href": "/en/services/recruitment/",
+          "text": "1 Define the role: recruitment guide"
+        },
+        {
+          "href": "/en/documents-required/",
+          "text": "2 Prepare: documents guide"
+        },
+        {
+          "href": "/en/how-it-works/",
+          "text": "3 Follow the enquiry: service process"
+        },
+        {
+          "href": "/en/services/countries-we-source-from/",
+          "text": "Back to Source Countries"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Contact INAYA"
+        }
+      ],
+      "afterLinksSha256": "e0598f915a0111e5a4a52d7b0492b8b49bf611773f1783df3242505850adfbf7",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Indonesia"
+        ],
+        [
+          "h3",
+          "Profile-first selection"
+        ],
+        [
+          "h2",
+          "Indonesian maid"
+        ],
+        [
+          "h2",
+          "Questions for individual profile review"
+        ],
+        [
+          "h2",
+          "Prepare for the profile discussion"
+        ],
+        [
+          "h2",
+          "Related services"
+        ],
+        [
+          "h2",
+          "How INAYA guides your selection"
+        ],
+        [
+          "h2",
+          "Frequently asked questions"
+        ],
+        [
+          "h2",
+          "Other countries to compare"
+        ],
+        [
+          "h3",
+          "Want to discuss candidate profiles?"
+        ]
+      ],
+      "afterHeadingsSha256": "b4993330312ffcae4d373dd8673b2139445f3d5fd1437821905dd4aeb64c88fb",
+      "beforeImages": [
+        {
+          "src": "/flags/id.svg",
+          "alt": "Indonesia flag"
+        },
+        {
+          "src": "/images/countries/maid-indonesia.webp?v=85ca6b404e10",
+          "alt": "A woman in a beige and brown uniform standing near orchids and a sofa"
+        }
+      ],
+      "afterImagesSha256": "3846606f090dd68e6f27478a77fa87ade2f1f5cc74a4d5d5a19c0af588f029f9"
+    },
+    "https://inayadomestic.ae/en/maid-services-ajman/": {
+      "graphBefore": "96c44594c1189cc6ee762ccc27f2ec3b7b595405c13ea9c3a842010de7151420",
+      "graphAfter": "e836e7b04fdf0e01460a9afe598ac076ce972681d1e65c644a20a1e1c53c446f",
+      "beforeLinks": [
+        {
+          "href": "/en/service-areas/",
+          "text": "All Service Areas"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Request Consultation"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=Hello%20INAYA%2C%20I%20am%20enquiring%20about%20maid%20services%20in%20Ajman.%20Please%20share%20suitable%20options%2C%20availability%20and%20written%20costs.",
+          "text": "Ask on WhatsApp"
+        },
+        {
+          "href": "tel:+97167400128",
+          "text": "Call INAYA +971 6 740 0128"
+        },
+        {
+          "href": "/en/documents-required/",
+          "text": "Prepare your enquiry details"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time service details"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly service details"
+        },
+        {
+          "href": "/en/pricing/#nationality-contract-prices",
+          "text": "View fees by nationality"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Request a visit or suitable profiles"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=Hello%20INAYA%2C%20I%20would%20like%20to%20review%20suitable%20profiles%20for%20my%20household.%20Role%3A%20__.%20Area%3A%20__.%20Duties%3A%20__.%20Days%20and%20hours%3A%20__.%20Preferred%20start%20date%3A%20__.%20Please%20confirm%20availability%2C%20transport%20and%20costs.",
+          "text": "Ask about profiles on WhatsApp"
+        },
+        {
+          "href": "https://www.google.com/maps/dir/?api=1&destination=INAYA%20Domestic%20Workers%20Ajman&destination_place_id=ChIJxzRGAUJZXz4R8zN5ye8vn_M",
+          "text": "Directions to the Ajman office"
+        },
+        {
+          "href": "/en/gallery/",
+          "text": "INAYA photo gallery"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Compare pricing and terms"
+        },
+        {
+          "href": "/en/maid-services-ajman/#ajman-office-heading",
+          "text": "Office address, hours, directions and appointments"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out Maid"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time Maid"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny Services"
+        },
+        {
+          "href": "/en/services/home-cooking/",
+          "text": "Home Cooking"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Domestic worker visa typing in Ajman"
+        },
+        {
+          "href": "/en/services/full-time-maid/",
+          "text": "Full-time maid"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly maid contract enquiries"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in maid in Ajman"
+        },
+        {
+          "href": "/en/services/full-time-maid/",
+          "text": "Full-time housemaid in Ajman"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time maid visits in Ajman"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny enquiries in Ajman"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly maid contract enquiries in Ajman"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Maid visa enquiries in Ajman"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Pricing"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Request a written quote"
+        },
+        {
+          "href": "/en/blog/uae-domestic-worker-hiring-process/",
+          "text": "Read the UAE domestic worker hiring process"
+        },
+        {
+          "href": "/en/services/recruitment/",
+          "text": "Recruitment and Tadbeer service enquiries"
+        },
+        {
+          "href": "/en/services/housekeeping/",
+          "text": "Cleaning visit planning"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Domestic-worker typing and processing"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Request an office appointment"
+        },
+        {
+          "href": "tel:+97167400128",
+          "text": "+971 6 740 0128"
+        },
+        {
+          "href": "https://wa.me/971502036767",
+          "text": "+971 50 203 6767"
+        },
+        {
+          "href": "/en/services/recruitment/",
+          "text": "Domestic worker recruitment"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Contact the Ajman office"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly maid arrangements"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Package prices and inclusions"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny services"
+        },
+        {
+          "href": "/en/services/babysitting/",
+          "text": "Babysitting services"
+        },
+        {
+          "href": "tel:+97167400128",
+          "text": "+971 6 740 0128"
+        },
+        {
+          "href": "https://wa.me/971502036767",
+          "text": "+971 50 203 6767"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time visit scope and booking questions"
+        },
+        {
+          "href": "/en/services/elder-care/",
+          "text": "Non-medical elderly support"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Maid visa processing support"
+        },
+        {
+          "href": "/en/maid-source-countries/philippines-maid-uae/",
+          "text": "Philippines domestic-worker guide"
+        },
+        {
+          "href": "/en/services/home-cooking/",
+          "text": "Home cooking support"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Compare current package prices and commitments"
+        },
+        {
+          "href": "/en/service-areas/",
+          "text": "All Service Areas"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Contact INAYA"
+        }
+      ],
+      "afterLinksSha256": "59c00e83fed06ac202b6ac43c95eae99871ce0ef0b298189ac5c03d2e2403612",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Ajman"
+        ],
+        [
+          "h2",
+          "Compare home-support options in Ajman"
+        ],
+        [
+          "h3",
+          "Short visits"
+        ],
+        [
+          "h3",
+          "Managed monthly service"
+        ],
+        [
+          "h3",
+          "One-time recruitment"
+        ],
+        [
+          "h2",
+          "Visit INAYA in Ajman or start your enquiry online"
+        ],
+        [
+          "h2",
+          "Plan your local service enquiry"
+        ],
+        [
+          "h2",
+          "Common family needs in this emirate"
+        ],
+        [
+          "h2",
+          "Available service options"
+        ],
+        [
+          "h3",
+          "Live-in maid in Ajman"
+        ],
+        [
+          "h3",
+          "Full-time housemaid in Ajman"
+        ],
+        [
+          "h3",
+          "Part-time maid visits in Ajman"
+        ],
+        [
+          "h3",
+          "Nanny enquiries in Ajman"
+        ],
+        [
+          "h3",
+          "Monthly maid contract enquiries in Ajman"
+        ],
+        [
+          "h3",
+          "Maid visa enquiries in Ajman"
+        ],
+        [
+          "h3",
+          "Areas to specify in your enquiry"
+        ],
+        [
+          "h2",
+          "One-time contract fees by nationality in Ajman"
+        ],
+        [
+          "h2",
+          "How INAYA helps"
+        ],
+        [
+          "h2",
+          "Frequently asked questions"
+        ],
+        [
+          "h2",
+          "Other UAE service areas"
+        ],
+        [
+          "h3",
+          "Need maid service in this emirate?"
+        ]
+      ],
+      "afterHeadingsSha256": "d82491c8d171f994e9215c1c5764cbb3aab26e12d1af663b991f6ec5ad2dfe0c",
+      "beforeImages": [],
+      "afterImagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "https://inayadomestic.ae/en/maid-services-sharjah/": {
+      "graphBefore": "2bf9c460ba9a4f5fe3e23c5e8f0e68eb1f0436750a763dd94c5b5ee7841f4183",
+      "graphAfter": "d4931433b4d7f1fff9f25d27260be864175c5e7cf5f56a0bdf0751fbb25c6406",
+      "beforeLinks": [
+        {
+          "href": "/en/service-areas/",
+          "text": "All Service Areas"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Request Consultation"
+        },
+        {
+          "href": "https://wa.me/971502036767?text=Hello%20INAYA%2C%20I%20am%20enquiring%20about%20maid%20services%20in%20Sharjah.%20Please%20share%20suitable%20options%2C%20availability%20and%20written%20costs.",
+          "text": "Ask on WhatsApp"
+        },
+        {
+          "href": "/en/documents-required/",
+          "text": "Prepare your enquiry details"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Compare pricing and terms"
+        },
+        {
+          "href": "/en/maid-services-ajman/#ajman-office-heading",
+          "text": "Office address, hours, directions and appointments"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in Maid"
+        },
+        {
+          "href": "/en/services/live-out-maid/",
+          "text": "Live-out Maid"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time Maid"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny Services"
+        },
+        {
+          "href": "/en/services/home-cooking/",
+          "text": "Home Cooking"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Domestic worker visa typing in Ajman"
+        },
+        {
+          "href": "/en/services/full-time-maid/",
+          "text": "Full-time maid"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly maid contract enquiries"
+        },
+        {
+          "href": "/en/services/live-in-maid/",
+          "text": "Live-in maid enquiries in Sharjah"
+        },
+        {
+          "href": "/en/services/full-time-maid/",
+          "text": "Full-time maid for a Sharjah home"
+        },
+        {
+          "href": "/en/services/part-time-maid/",
+          "text": "Part-time maid visits in Sharjah"
+        },
+        {
+          "href": "/en/services/nanny/",
+          "text": "Nanny enquiries for Sharjah families"
+        },
+        {
+          "href": "/en/services/monthly-maid-contract/",
+          "text": "Monthly household contract enquiries in Sharjah"
+        },
+        {
+          "href": "/en/services/maid-visa/",
+          "text": "Domestic worker visa typing in Ajman"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Request a written quote"
+        },
+        {
+          "href": "/en/blog/uae-domestic-worker-hiring-process/",
+          "text": "Prepare your Sharjah enquiry questions before contacting INAYA’s Ajman office"
+        },
+        {
+          "href": "/en/pricing/",
+          "text": "Compare current package prices and commitments"
+        },
+        {
+          "href": "/en/service-areas/",
+          "text": "All Service Areas"
+        },
+        {
+          "href": "/en/contact/",
+          "text": "Contact INAYA"
+        }
+      ],
+      "afterLinksSha256": "92080d22c50a58d6d15b0b663965564134c6f1713af5e6762f731d7b4e9bfe28",
+      "beforeHeadings": [
+        [
+          "h2",
+          "Sharjah"
+        ],
+        [
+          "h2",
+          "Plan your local service enquiry"
+        ],
+        [
+          "h2",
+          "Common family needs in this emirate"
+        ],
+        [
+          "h2",
+          "Available service options"
+        ],
+        [
+          "h3",
+          "Live-in maid enquiries in Sharjah"
+        ],
+        [
+          "h3",
+          "Full-time maid for a Sharjah home"
+        ],
+        [
+          "h3",
+          "Part-time maid visits in Sharjah"
+        ],
+        [
+          "h3",
+          "Nanny enquiries for Sharjah families"
+        ],
+        [
+          "h3",
+          "Monthly household contract enquiries in Sharjah"
+        ],
+        [
+          "h3",
+          "Domestic worker visa typing in Ajman"
+        ],
+        [
+          "h3",
+          "Areas to specify in your enquiry"
+        ],
+        [
+          "h2",
+          "One-time contract fees by nationality in Sharjah"
+        ],
+        [
+          "h2",
+          "How INAYA helps"
+        ],
+        [
+          "h2",
+          "Frequently asked questions"
+        ],
+        [
+          "h2",
+          "Other UAE service areas"
+        ],
+        [
+          "h3",
+          "Need maid service in this emirate?"
+        ]
+      ],
+      "afterHeadingsSha256": "e25c361ba952e587349518483706c4d8cdf08456b8deb2126a0d1f04397ce5c7",
+      "beforeImages": [],
+      "afterImagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "deploymentImages": {
+    "https://inayadomestic.ae/en/": {
+      "deployed": "b031d745b66f8a20852d0a549165d29e8dcc4269a9cd3d66e3d750b6b74dc72a",
+      "built": "ff38259582bcf69c127dcb5f94356ffca143c06bf7c90147b098a3bea93aa8b8",
+      "paths": {
+        "/authority-logos/Ministry-logo.webp": "/authority-logos/Ministry-logo.png",
+        "/authority-logos/ajman-tadbeer-logo.webp": "/authority-logos/ajman-tadbeer-logo.png",
+        "/authority-logos/Ajman-Chamber-logo.webp": "/authority-logos/Ajman-Chamber-logo.png",
+        "/authority-logos/ajman-UAE-Pass-Logo.webp": "/authority-logos/ajman-UAE-Pass-Logo.png",
+        "/authority-logos/Ajman-Gold-logo.webp": "/authority-logos/Ajman-Gold-logo.png",
+        "/authority-logos/Ajman-logo.webp": "/authority-logos/Ajman-logo.png"
+      }
+    },
+    "https://inayadomestic.ae/ar/": {
+      "deployed": "0a6fd30946e23188780272fb1218006e04fab090fbc4313d026faa235e3b6f5e",
+      "built": "a7e1377cbe96fbcb4832e6c3ebedd7eba689e4a9512936b74c2bcc240c0b965c",
+      "paths": {
+        "/authority-logos/Ministry-logo.webp": "/authority-logos/Ministry-logo.png",
+        "/authority-logos/ajman-tadbeer-logo.webp": "/authority-logos/ajman-tadbeer-logo.png",
+        "/authority-logos/Ajman-Chamber-logo.webp": "/authority-logos/Ajman-Chamber-logo.png",
+        "/authority-logos/ajman-UAE-Pass-Logo.webp": "/authority-logos/ajman-UAE-Pass-Logo.png",
+        "/authority-logos/Ajman-Gold-logo.webp": "/authority-logos/Ajman-Gold-logo.png",
+        "/authority-logos/Ajman-logo.webp": "/authority-logos/Ajman-logo.png"
+      }
+    }
+  },
+  "liveOutMatching": [
+    {
+      "lang": "en",
+      "url": "https://inayadomestic.ae/en/services/live-out-maid/",
+      "cards": [
+        {
+          "title": "Language Preference",
+          "text": "Options can be guided by English, Arabic or other communication needs.",
+          "imageAlt": "Philippines",
+          "imageSource": "/images/countries/maid-philippines.webp",
+          "countryTags": [
+            "English Speaking",
+            "Childcare",
+            "Housekeeping"
+          ],
+          "enquiryHref": "/en/booking/?service=live-out-maid"
+        },
+        {
+          "title": "Cleaning Experience",
+          "text": "Profiles are matched with routine cleaning and home organization needs.",
+          "imageAlt": "Indonesia",
+          "imageSource": "/images/countries/maid-indonesia.webp",
+          "countryTags": [
+            "Cooking",
+            "Cleaning",
+            "Family Care"
+          ],
+          "enquiryHref": "/en/booking/?service=live-out-maid"
+        },
+        {
+          "title": "Kitchen Support",
+          "text": "Light meal prep and kitchen assistance can be discussed before booking.",
+          "imageAlt": "Nepal",
+          "imageSource": "/images/countries/maid-nepal.webp",
+          "countryTags": [
+            "Cleaning",
+            "Laundry",
+            "Daily Support"
+          ],
+          "enquiryHref": "/en/booking/?service=live-out-maid"
+        },
+        {
+          "title": "Childcare Exposure",
+          "text": "Families may request experience around children where suitable.",
+          "imageAlt": "Sri Lanka",
+          "imageSource": "/images/countries/maid-sri-lanka.webp",
+          "countryTags": [
+            "Cooking",
+            "Housekeeping",
+            "Laundry"
+          ],
+          "enquiryHref": "/en/booking/?service=live-out-maid"
+        },
+        {
+          "title": "Home Size",
+          "text": "Apartment and villa needs are reviewed before schedule confirmation.",
+          "imageAlt": "India",
+          "imageSource": "/images/countries/maid-india.webp",
+          "countryTags": [
+            "Kitchen Support",
+            "Cleaning",
+            "Family Support"
+          ],
+          "enquiryHref": "/en/booking/?service=live-out-maid"
+        },
+        {
+          "title": "Service Frequency",
+          "text": "Daily, weekly, part-time and monthly plans can be discussed.",
+          "imageAlt": "Kenya / Uganda",
+          "imageSource": "/images/countries/maid-kenya-uganda.webp",
+          "countryTags": [
+            "English Speaking",
+            "Childcare",
+            "Elder Care"
+          ],
+          "enquiryHref": "/en/booking/?service=live-out-maid"
+        }
+      ]
+    },
+    {
+      "lang": "ar",
+      "url": "https://inayadomestic.ae/ar/services/live-out-maid/",
+      "cards": [
+        {
+          "title": "تفضيل اللغة",
+          "text": "يمكن الإرشاد حسب الحاجة للإنجليزية أو العربية أو غيرها.",
+          "imageAlt": "الفلبين",
+          "imageSource": "/images/countries/maid-philippines.webp",
+          "countryTags": [
+            "تحدث الإنجليزية",
+            "رعاية الأطفال",
+            "تنظيم المنزل"
+          ],
+          "enquiryHref": "/ar/booking/?service=live-out-maid"
+        },
+        {
+          "title": "خبرة التنظيف",
+          "text": "تتم المطابقة حسب احتياج التنظيف والتنظيم.",
+          "imageAlt": "إندونيسيا",
+          "imageSource": "/images/countries/maid-indonesia.webp",
+          "countryTags": [
+            "الطبخ",
+            "التنظيف",
+            "رعاية الأسرة"
+          ],
+          "enquiryHref": "/ar/booking/?service=live-out-maid"
+        },
+        {
+          "title": "دعم المطبخ",
+          "text": "يمكن مناقشة التحضير الخفيف والمساعدة في المطبخ قبل الحجز.",
+          "imageAlt": "نيبال",
+          "imageSource": "/images/countries/maid-nepal.webp",
+          "countryTags": [
+            "التنظيف",
+            "الغسيل",
+            "الدعم اليومي"
+          ],
+          "enquiryHref": "/ar/booking/?service=live-out-maid"
+        },
+        {
+          "title": "خبرة رعاية الأطفال",
+          "text": "يمكن طلب خبرة حول الأطفال عند الحاجة.",
+          "imageAlt": "سريلانكا",
+          "imageSource": "/images/countries/maid-sri-lanka.webp",
+          "countryTags": [
+            "الطبخ",
+            "تنظيم المنزل",
+            "الغسيل"
+          ],
+          "enquiryHref": "/ar/booking/?service=live-out-maid"
+        },
+        {
+          "title": "حجم المنزل",
+          "text": "تتم مراجعة احتياج الشقة أو الفيلا قبل تأكيد الجدول.",
+          "imageAlt": "الهند",
+          "imageSource": "/images/countries/maid-india.webp",
+          "countryTags": [
+            "دعم المطبخ",
+            "التنظيف",
+            "دعم الأسرة"
+          ],
+          "enquiryHref": "/ar/booking/?service=live-out-maid"
+        },
+        {
+          "title": "عدد الزيارات",
+          "text": "يمكن مناقشة الخطط اليومية أو الأسبوعية أو الشهرية.",
+          "imageAlt": "كينيا / أوغندا",
+          "imageSource": "/images/countries/maid-kenya-uganda.webp",
+          "countryTags": [
+            "تحدث الإنجليزية",
+            "رعاية الأطفال",
+            "رعاية كبار السن"
+          ],
+          "enquiryHref": "/ar/booking/?service=live-out-maid"
+        }
+      ]
+    }
+  ],
+  "previousLastmods": {
+    "https://inayadomestic.ae/en/": "2026-11-05",
+    "https://inayadomestic.ae/en/services/": "2026-11-07",
+    "https://inayadomestic.ae/en/maid-source-countries/indonesian-maid-uae/": "2026-10-28",
+    "https://inayadomestic.ae/en/maid-services-ajman/": "2026-11-05",
+    "https://inayadomestic.ae/en/maid-services-sharjah/": "2026-11-05",
+    "https://inayadomestic.ae/en/services/live-out-maid/": "2026-11-05",
+    "https://inayadomestic.ae/ar/services/live-out-maid/": "2026-11-05",
+    "https://inayadomestic.ae/en/services/full-time-maid/": "2026-11-05",
+    "https://inayadomestic.ae/en/services/private-chefs/": "2026-10-30"
+  }
+}
