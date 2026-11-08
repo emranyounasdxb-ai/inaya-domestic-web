@@ -46,7 +46,12 @@ test.describe('location service pages', () => {
       const response = await page.goto(url);
       expect(response?.status()).toBeLessThan(400);
 
-      await expect(page.locator('h1')).toContainText(/Maid Services/i);
+      const reviewedHeadings: Record<string, string> = {
+        '/en/maid-services-ajman': 'Ajman Maid Agency for Trusted Home Support',
+        '/en/maid-services-sharjah': 'Housemaid in Sharjah for Your Family’s Routine'
+      };
+      if (reviewedHeadings[url]) await expect(page.locator('h1')).toHaveText(reviewedHeadings[url]);
+      else await expect(page.locator('h1')).toContainText(/Maid Services/i);
       await expect(page.getByText('Available service options')).toBeVisible();
       await expect(page.getByText('Frequently asked questions')).toBeVisible();
       await expect(page.getByRole('link', { name: /Request Consultation/i })).toBeVisible();

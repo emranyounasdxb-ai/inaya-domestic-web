@@ -8,8 +8,9 @@ const { corrections, approvedDescriptions, approvedHomeFlow } = require('./seo-f
 const { getPageSeo } = require('../.next/phase-02-unit/lib/page-seo.js');
 const checkpoint = '3e8e673f43df6f7f39fe3d64b340a5139520e754';
 const { beforeAhrefsSource } = require('./ahrefs-expectations.cjs');
+const { beforeSemrushBrowserSource } = require('./semrush-browser-expectations.cjs');
 const previous = (file) => execFileSync('git', ['show', `${checkpoint}:${file}`], { encoding: 'utf8' }).replace(/\r\n/g, '\n');
-const current = (file) => beforeAhrefsSource(file, fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n'));
+const current = (file) => beforeAhrefsSource(file, beforeSemrushBrowserSource(file, fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n')));
 
 test('exactly four hand-reviewed localized descriptions change; all other source and snapshot values stay intact', () => {
   assert.equal(current('tests/fixtures/seo-phase03-baseline.json'), approvedDescriptions(previous('tests/fixtures/seo-phase03-baseline.json')));
