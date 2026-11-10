@@ -3,6 +3,8 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import citations from './official-citation-expectations.cjs';
 import clarity from './november-clarity-expectations.cjs';
+import descriptions from './search-description-expectations.cjs';
+import { extractContract } from './semrush-content-contract.mjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 const baseline = JSON.parse(await readFile('tests/fixtures/official-citation-pages-20261104.json', 'utf8'));
 
@@ -25,11 +27,11 @@ test('all30 affected EN/AR pages preserve visible copy and metadata while repair
     const html = await readFile(`out${new URL(url).pathname}index.html`, 'utf8');
     const clean = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
     const main = clean.slice(clean.indexOf('<main'), clean.lastIndexOf('</main>') + 7);
-    const meta = [...html.matchAll(/<meta\b([^>]*)>/g)].map(m => attrs(m[1]));
+    const priorContract = descriptions.historicalContract(url, extractContract(html));
     const links = [...html.matchAll(/<link\b([^>]*)>/g)].map(m => attrs(m[1]));
     assert.equal(citations.sha(text(main)), expected.mainTextSha256, `${url}: every visible word, label, price and date unchanged`);
     assert.equal(text(html.match(/<title>([\s\S]*?)<\/title>/)[1]), expected.title);
-    assert.equal(meta.find(m => m.name === 'description').content, expected.description);
+    assert.equal(priorContract.description, expected.description);
     assert.deepEqual(links.filter(l => l.rel === 'canonical').map(l => l.href), expected.canonical);
     assert.deepEqual(links.filter(l => l.rel === 'alternate'), expected.alternates);
     assert.deepEqual([...main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)].map(m => text(m[1])), expected.h1);

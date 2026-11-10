@@ -11,6 +11,8 @@ import fiveGuides from './five-guides-amendment-expectations.cjs';
 import newGuides from './four-guides-addition-expectations.cjs';
 import altAmendment from './service-image-alt-expectations.cjs';
 import semrushContent from './semrush-content-expectations.cjs';
+import descriptions from './search-description-expectations.cjs';
+import { extractContract } from './semrush-content-contract.mjs';
 import { attrs, decode } from '../scripts/seo-content-audit.mjs';
 import { pageImageUrls } from '../scripts/enrich-image-sitemap.mjs';
 
@@ -136,8 +138,8 @@ test('all294 pages have localized previews with the eight new article photos and
     assert.ok(icons.some(icon => icon.href === '/favicon-48x48.png' && icon.sizes === '48x48'), pageUrl);
     assert.ok(icons.some(icon => icon.href === '/apple-touch-icon.png' && icon.sizes === '180x180'), pageUrl);
     const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)[1]);
-    const description = values('name', 'description')[0];
-    const previousMetadata = semrushContent.historicalMetadata(pageUrl, { title, description });
+    const priorContract = descriptions.historicalContract(pageUrl, extractContract(html));
+    const previousMetadata = semrushContent.historicalMetadata(pageUrl, { title, description: priorContract.description });
     fiveGuides.pageBefore(pageUrl, previousMetadata.title, previousMetadata.description);
     const metadataChange = onPage.metadata[`${locale}/${route}`];
     if (metadataChange) assert.deepEqual(previousMetadata, metadataChange.after, `${pageUrl}: exact reviewed Ajman/service summary`);

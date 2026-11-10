@@ -17,6 +17,7 @@ import { articleSearchTitles } from './article-search-titles';
 import { companyInformationCopy } from './company-information';
 import { onPageDescriptionRefinements, onPageSeoRefinements } from './on-page-seo-refinements';
 import { getBlogPage, getBlogPageNumber } from './blog-pagination';
+import { getSearchDescription } from './search-description-refinements';
 
 type Localized = Record<Lang, string>;
 // Only actual visible page photos belong in primary-image structured data.
@@ -268,17 +269,18 @@ function pagePreviewImage(lang: Lang, route: string, page: PageSeo) {
 export function pageMetadata(locale: string, route: string): Metadata {
   const page = getPageSeo(locale, route);
   if (!page) return {};
+  const description = getSearchDescription(locale, route, page.description);
   const title = /INAYA|عناية/i.test(page.title) ? page.title : `${page.title} | ${locale === 'ar' ? 'عناية' : 'INAYA'}`;
   const images = [pagePreviewImage(locale === 'ar' ? 'ar' : 'en', route, page)];
   return {
-    title: { absolute: title }, description: page.description,
+    title: { absolute: title }, description,
     alternates: localeAlternates(locale, route),
     openGraph: {
-      type: 'website', title, description: page.description,
+      type: 'website', title, description,
       url: localizedUrl(locale, route), siteName: locale === 'ar' ? 'عناية للعمالة المنزلية' : siteConfig.name,
       locale: locale === 'ar' ? 'ar_AE' : 'en_AE', alternateLocale: locale === 'ar' ? 'en_AE' : 'ar_AE', images
     },
-    twitter: { card: 'summary_large_image', title, description: page.description, images }
+    twitter: { card: 'summary_large_image', title, description, images }
   };
 }
 

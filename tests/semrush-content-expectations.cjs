@@ -14,6 +14,7 @@ function restore(value, pin, label) {
   return value;
 }
 function historicalSource(file, source) {
+  source = require('./search-description-expectations.cjs').historicalSource(file, source);
   return restore(source.replace(/\r\n/g, '\n'), fixture.sources[file], file);
 }
 function historicalPage(page) {

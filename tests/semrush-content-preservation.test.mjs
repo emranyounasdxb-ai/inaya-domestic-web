@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import amendment from './semrush-content-expectations.cjs';
+import descriptions from './search-description-expectations.cjs';
+import './search-description-preservation.test.mjs';
 import { extractContract, auditParagraphs } from './semrush-content-contract.mjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
@@ -18,7 +20,7 @@ test('seventeen exact source amendments preserve prior checkpoints and reject pa
   assert.equal(Object.keys(fixture.sources).length, 15);
   assert.deepEqual(Object.keys(fixture.newSources).sort(), ['components/IndonesianHouseholdGuide.tsx', 'components/PrivateChefPlanningGuide.tsx']);
   for (const [file, pin] of Object.entries(fixture.sources)) {
-    const source = (await readFile(file, 'utf8')).replace(/\r\n/g, '\n');
+    const source = descriptions.historicalSource(file, (await readFile(file, 'utf8')).replace(/\r\n/g, '\n'));
     assert.equal(hash(source), pin.after, `${file}: complete reviewed source`);
     assert.equal(hash(amendment.historicalSource(file, source)), pin.before, `${file}: unchanged immutable prior source`);
     const [offset, length, previous] = pin.patches[0];
@@ -37,7 +39,7 @@ test('all 294 page contracts preserve every unassigned page, all blogs and the p
   assert.deepEqual([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]).sort(), Object.keys(fixture.pageContracts).sort());
   let unchanged = 0;
   for (const [url, pin] of Object.entries(fixture.pageContracts)) {
-    const page = extractContract(await htmlFor(url));
+    const page = descriptions.historicalContract(url, extractContract(await htmlFor(url)));
     assert.equal(digest(page), pin.afterSha256 ?? pin.beforeSha256, `${url}: exact text, links, headings, images, head and JSON-LD contract`);
     if (!pin.afterSha256) { unchanged++; continue; }
     assert.equal(hash(page.mainText), fixture.pages[url].after, url);

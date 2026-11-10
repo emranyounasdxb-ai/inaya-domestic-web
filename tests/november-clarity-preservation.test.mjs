@@ -4,6 +4,8 @@ import test from 'node:test';
 import clarity from './november-clarity-expectations.cjs';
 import liveIn from './live-in-readability-expectations.cjs';
 import semrushContent from './semrush-content-expectations.cjs';
+import descriptions from './search-description-expectations.cjs';
+import { extractContract } from './semrush-content-contract.mjs';
 import './semrush-content-preservation.test.mjs';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
@@ -118,9 +120,9 @@ test('six affected pages render the exact scoped copy with unchanged metadata, h
     assert.equal(clarity.hash(clarity.historicalPage(page).mainText), pin.before, `${url}: all other wording preserved`);
     const unrelated = { ...page, mainText: page.mainText + ' Unreviewed page edit' };
     assert.equal(clarity.historicalPage(unrelated), unrelated);
-    const metas = [...html.matchAll(/<meta\b([^>]*)>/g)].map(match => attrs(match[1]));
+    const priorContract = descriptions.historicalContract(url, extractContract(html));
     assert.equal(text(html.match(/<title>([\s\S]*?)<\/title>/)[1]), pin.title);
-    assert.equal(metas.find(meta => meta.name === 'description').content, pin.description);
+    assert.equal(priorContract.description, pin.description);
     assert.deepEqual([...body.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)].map(match => text(match[1])), pin.h1);
     const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(match => attrs(match[1]).type === 'application/ld+json').map(match => JSON.parse(match[2]));
     assert.equal(clarity.hash(JSON.stringify(graph)), pin.graphSha256, `${url}: every FAQ and structured-data value unchanged`);
