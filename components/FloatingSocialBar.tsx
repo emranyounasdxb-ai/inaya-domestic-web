@@ -3,6 +3,14 @@ import { instagramProfileUrl, siteConfig } from '@/lib/site-config';
 
 const iconClass = 'h-4 w-4';
 
+function FacebookIcon() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true" className={iconClass}><circle cx="12" cy="12" r="10" fill="#1877F2" /><path fill="#fff" d="M13.5 22v-8h2.7l.4-3h-3.1V9c0-.9.3-1.5 1.6-1.5h1.6V4.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H7.6v3h2.7v8Z" /></svg>;
+}
+
+function XIcon() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true" className={iconClass}><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l8.2-9.4L.8 2h6.5l4.5 6.8L18.9 2ZM17.8 20h1.7L6.3 4H4.5l13.3 16Z" /></svg>;
+}
+
 function PhoneIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={iconClass}>
@@ -91,7 +99,7 @@ function IconLink({ href, label, children }: { href: string; label: string; chil
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       aria-label={label}
       title={label}
-      className="group relative inline-flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-black/[0.04]"
+      className="group relative inline-flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-black/[0.04] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
     >
       <span className="transition group-hover:scale-110">{children}</span>
     </a>
@@ -104,7 +112,13 @@ export default function FloatingSocialBar({ locale }: { locale: string }) {
   const emailHref = `mailto:${siteConfig.email}`;
   const whatsappHref = `https://wa.me/${siteConfig.whatsapp}`;
 
-  const links = [
+  const socialLinks = [
+    { href: siteConfig.socialProfiles.find(profile => profile.name === 'Facebook')!.url, label: 'Facebook', icon: <FacebookIcon /> },
+    { href: instagramProfileUrl, label: 'Instagram', icon: <InstagramIcon /> },
+    { href: siteConfig.socialProfiles.find(profile => profile.name === 'X')!.url, label: 'X', icon: <XIcon /> }
+  ];
+
+  const links: { href: string; label: string; icon: ReactNode; tone?: string }[] = [
     { href: phoneHref, label: isArabic ? 'اتصل بعناية للعمالة المنزلية' : 'Call INAYA Domestic Workers', icon: <PhoneIcon />, tone: 'text-gray-800' },
     { href: whatsappHref, label: isArabic ? 'تواصل مع عناية عبر واتساب' : 'WhatsApp INAYA Domestic Workers', icon: <WhatsAppIcon /> },
     { href: emailHref, label: isArabic ? 'راسل عناية بالبريد الإلكتروني' : 'Email INAYA Domestic Workers', icon: <EmailIcon />, tone: 'text-gray-800' },
@@ -112,12 +126,15 @@ export default function FloatingSocialBar({ locale }: { locale: string }) {
     { href: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/', label: 'LinkedIn', icon: <LinkedInIcon /> },
     { href: 'https://www.tiktok.com/@inayadomesticworkers', label: 'TikTok', icon: <TikTokIcon /> },
     { href: 'https://www.youtube.com/@inayadomesticworker', label: 'YouTube', icon: <YouTubeIcon /> },
-    { href: instagramProfileUrl, label: 'Instagram', icon: <InstagramIcon /> }
+    ...socialLinks
   ];
 
   return (
     <>
-      <aside className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center rounded-full border border-white/70 bg-white/80 p-1.5 shadow-[0_16px_45px_rgba(15,23,42,0.16)] backdrop-blur-xl lg:flex">
+      <nav aria-label={isArabic ? 'حسابات التواصل الاجتماعي' : 'Social profiles'} className="flex justify-center gap-3 border-b border-gray-100 bg-white py-2 text-gray-900 lg:hidden">
+        {socialLinks.map(item => <IconLink key={item.label} href={item.href} label={item.label}>{item.icon}</IconLink>)}
+      </nav>
+      <aside aria-label={isArabic ? 'روابط التواصل' : 'Contact and social links'} className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center rounded-full border border-white/70 bg-white/80 p-1.5 shadow-[0_16px_45px_rgba(15,23,42,0.16)] backdrop-blur-xl lg:flex">
         {links.map((item, index) => (
           <div key={item.label} className={index === 3 ? 'border-t border-black/10 pt-1.5' : undefined}>
             <IconLink href={item.href} label={item.label}>
