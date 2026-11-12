@@ -196,7 +196,7 @@ test('every page exposes the localized official reference from its footer and re
       .map(match => attrs(match[1]))
       .filter(link => link['aria-label'] === 'Instagram');
     assert.deepEqual(instagramLinks.map(link => link.href),
-      [record.organization.profiles.find(profile => profile.name === 'Instagram').url],
+      Array(2).fill(record.organization.profiles.find(profile => profile.name === 'Instagram').url),
       `${url}: floating Instagram link agrees with the company profile`);
     for (const previous of [
       'https://www.facebook.com/inayadomesticworkersajman/',
