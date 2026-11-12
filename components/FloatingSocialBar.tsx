@@ -113,9 +113,9 @@ export default function FloatingSocialBar({ locale }: { locale: string }) {
   const whatsappHref = `https://wa.me/${siteConfig.whatsapp}`;
 
   const socialLinks = [
-    { href: siteConfig.socialProfiles.find(profile => profile.name === 'Facebook')!.url, label: 'Facebook', icon: <FacebookIcon /> },
+    { href: siteConfig.socialProfiles.find(profile => profile.name === 'Facebook')!.url, label: isArabic ? 'فيسبوك' : 'Facebook', icon: <FacebookIcon /> },
     { href: instagramProfileUrl, label: 'Instagram', icon: <InstagramIcon /> },
-    { href: siteConfig.socialProfiles.find(profile => profile.name === 'X')!.url, label: 'X', icon: <XIcon /> }
+    { href: siteConfig.socialProfiles.find(profile => profile.name === 'X')!.url, label: isArabic ? 'إكس' : 'X', icon: <XIcon /> }
   ];
 
   const links: { href: string; label: string; icon: ReactNode; tone?: string }[] = [
