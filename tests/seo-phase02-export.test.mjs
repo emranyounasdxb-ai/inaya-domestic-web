@@ -112,7 +112,7 @@ test('all exported EN/AR pages have unique localized metadata, one H1, valid gra
     assert.equal(organization['@id'], `${origin}/#organization`);
     assert.equal(organization.telephone, '+971 6 740 0128');
     assert.equal(organization.email, 'info@inayadomestic.ae');
-    assert.deepEqual(organization.sameAs, ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/', 'https://www.facebook.com/inayadomesticworkersajman/', 'https://www.instagram.com/inayadomesticworkers/']);
+    assert.deepEqual(organization.sameAs, ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/', 'https://www.facebook.com/idwajman', 'https://www.instagram.com/idw.ajman/', 'https://x.com/idwajman']);
     assert.deepEqual(organization.identifier, { '@type': 'PropertyValue', propertyID: 'MOHRE Facility Number', value: '2637187', url: 'https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c' });
     assert.equal(organization.address.addressLocality, 'Ajman');
     assert.equal(organization.address.addressCountry, 'AE');

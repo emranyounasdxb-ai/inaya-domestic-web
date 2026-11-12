@@ -9,7 +9,7 @@ import fiveGuides from './five-guides-amendment-expectations.cjs';
 import newGuides from './four-guides-addition-expectations.cjs';
 import semrushContent from './semrush-content-expectations.cjs';
 import descriptions from './search-description-expectations.cjs';
-import { extractContract } from './semrush-content-contract.mjs';
+import { contractBeforeSocialLinksUpdate } from './semrush-content-contract.mjs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -87,7 +87,7 @@ test('Phase 3 preserves all route identities, reduces measured repetition and re
   for (const page of current.pages.slice(0, 140)) {
     const before = baseline.pages.find((p) => p.url === page.url);
     const html = await readFile(path.join('out', new URL(page.url).pathname.slice(1), 'index.html'), 'utf8');
-    const priorContract = descriptions.historicalContract(page.url, extractContract(html));
+    const priorContract = descriptions.historicalContract(page.url, contractBeforeSocialLinksUpdate(html));
     const metadata = semrushContent.historicalMetadata(page.url, { title: priorContract.title, description: priorContract.description });
     const beforeGuideRefresh = fiveGuides.pageBefore(page.url, metadata.title, metadata.description);
     const approved = onPage.metadata[`${page.locale}/${page.route}`]?.after ?? domesticServices.metadata[`${page.locale}/${page.route}`] ?? ajmanOffice.metadata[`${page.locale}/${page.route}`] ?? managed.metadata[`${page.locale}/${page.route}`] ?? remediation.metadata[`${page.locale}/${page.route}`];

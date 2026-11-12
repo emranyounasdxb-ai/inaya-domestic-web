@@ -77,8 +77,9 @@ test('public JSON gives exact approved company facts, fixed review dates and a b
   });
   assert.deepEqual(company.profiles, [
     { name: 'LinkedIn', nameAr: 'لينكدإن', url: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/' },
-    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/inayadomesticworkersajman/' },
-    { name: 'Instagram', nameAr: 'إنستغرام', url: 'https://www.instagram.com/inayadomesticworkers/' }
+    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/idwajman' },
+    { name: 'Instagram', nameAr: 'إنستغرام', url: 'https://www.instagram.com/idw.ajman/' },
+    { name: 'X', nameAr: 'إكس', url: 'https://x.com/idwajman' }
   ]);
   assert.equal(company.office.count, 1);
   for (const fragment of ['Grand Mall', 'Ground Floor', 'Sheikh Khalifa Bin Zayed', 'Al Rashidiya 3', 'Ajman']) assert.ok(company.office.address.en.includes(fragment), fragment);
@@ -121,10 +122,16 @@ test('both visible language pages and their single shared organization graph agr
     assert.ok(visible.includes(company.mohreFacility.number), `${locale}: visible independently sourced facility number`);
     assert.ok(visible.includes(company.mohreFacility.description[locale]), `${locale}: accurate listed-centre description`);
     assert.ok(main.includes(`href="${company.mohreFacility.sourceUrl}"`), `${locale}: official source is visibly linked`);
-    for (const profile of company.profiles) {
-      assert.ok(main.includes(`href="${profile.url}"`), `${locale}: controlled ${profile.name} profile is visible`);
-      assert.ok(visible.includes(locale === 'ar' ? profile.nameAr : profile.name), `${locale}: localized ${profile.name} label is visible`);
-    }
+    const profilesLabel = locale === 'ar' ? 'صفحات عناية الرسمية' : 'Official INAYA profiles';
+    const profilesList = [...main.matchAll(/<ul\b([^>]*)>([\s\S]*?)<\/ul>/g)]
+      .find(match => attrs(match[1])['aria-label'] === profilesLabel);
+    assert.ok(profilesList, `${locale}: official profiles list is present`);
+    const profileLinks = [...profilesList[2].matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)]
+      .map(match => ({ href: attrs(match[1]).href, label: text(match[2]) }));
+    assert.deepEqual(profileLinks, company.profiles.map(profile => ({
+      href: profile.url,
+      label: locale === 'ar' ? profile.nameAr : profile.name
+    })), `${locale}: one localized link for each current official profile`);
     assert.match(main, /<time\b[^>]*dateTime="2026-10-28"|<time\b[^>]*datetime="2026-10-28"/, `${locale}: machine-readable visible review date`);
     assert.match(visible, locale === 'en' ? /Friday.*[Cc]losed|[Cc]losed.*Friday/ : /الجمعة.*مغلق|مغلق.*الجمعة/);
     for (const service of company.services) {
@@ -184,5 +191,19 @@ test('every page exposes the localized official reference from its footer and re
     assert.equal(organizations[0]['@id'], organizationId);
     assert.equal(organizations[0].telephone, record.organization.officeTelephone);
     assert.equal(organizations[0].email, record.organization.email);
+    assert.deepEqual(organizations[0].sameAs, record.organization.profiles.map(profile => profile.url), `${url}: exact current profile URLs`);
+    const instagramLinks = [...visibleBody(html).matchAll(/<a\b([^>]*)>/g)]
+      .map(match => attrs(match[1]))
+      .filter(link => link['aria-label'] === 'Instagram');
+    assert.deepEqual(instagramLinks.map(link => link.href),
+      [record.organization.profiles.find(profile => profile.name === 'Instagram').url],
+      `${url}: floating Instagram link agrees with the company profile`);
+    for (const previous of [
+      'https://www.facebook.com/inayadomesticworkersajman/',
+      'https://www.facebook.com/profile.php?id=61596498300411',
+      'https://www.instagram.com/inayadomesticworkers/'
+    ]) {
+      assert.ok(!html.includes(previous), `${url}: previous profile URL absent (${previous})`);
+    }
   }
 });

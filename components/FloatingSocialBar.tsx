@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { siteConfig } from '@/lib/site-config';
+import { instagramProfileUrl, siteConfig } from '@/lib/site-config';
 
 const iconClass = 'h-4 w-4';
 
@@ -112,7 +112,7 @@ export default function FloatingSocialBar({ locale }: { locale: string }) {
     { href: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/', label: 'LinkedIn', icon: <LinkedInIcon /> },
     { href: 'https://www.tiktok.com/@inayadomesticworkers', label: 'TikTok', icon: <TikTokIcon /> },
     { href: 'https://www.youtube.com/@inayadomesticworker', label: 'YouTube', icon: <YouTubeIcon /> },
-    { href: 'https://www.instagram.com/inayadomesticworkers/', label: 'Instagram', icon: <InstagramIcon /> }
+    { href: instagramProfileUrl, label: 'Instagram', icon: <InstagramIcon /> }
   ];
 
   return (

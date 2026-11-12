@@ -5,7 +5,7 @@ import clarity from './november-clarity-expectations.cjs';
 import liveIn from './live-in-readability-expectations.cjs';
 import semrushContent from './semrush-content-expectations.cjs';
 import descriptions from './search-description-expectations.cjs';
-import { extractContract } from './semrush-content-contract.mjs';
+import { contractBeforeSocialLinksUpdate, graphBeforeSocialLinksUpdate } from './semrush-content-contract.mjs';
 import './semrush-content-preservation.test.mjs';
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
@@ -58,7 +58,7 @@ test('only the English live-in heading and two instructions change with Arabic, 
   assert.equal(metas.find(meta => meta.name === 'description').content, pin.description);
   assert.deepEqual([...page.main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)].map(match => text(match[1])), pin.h1);
   const graph = [...page.html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(match => attrs(match[1]).type === 'application/ld+json').map(match => JSON.parse(match[2]));
-  assert.equal(liveIn.hash(JSON.stringify(graph)), pin.graphSha256, 'every original JSON-LD and FAQ value');
+  assert.equal(liveIn.hash(JSON.stringify(graphBeforeSocialLinksUpdate(graph))), pin.graphSha256, 'every original JSON-LD and FAQ value');
   const arabic = await readPage('ar');
   assert.equal(liveIn.hash(arabic.mainText), liveIn.fixture.arabicMainTextSha256);
   assert.equal(liveIn.historicalPage(arabic), arabic);
@@ -120,12 +120,12 @@ test('six affected pages render the exact scoped copy with unchanged metadata, h
     assert.equal(clarity.hash(clarity.historicalPage(page).mainText), pin.before, `${url}: all other wording preserved`);
     const unrelated = { ...page, mainText: page.mainText + ' Unreviewed page edit' };
     assert.equal(clarity.historicalPage(unrelated), unrelated);
-    const priorContract = descriptions.historicalContract(url, extractContract(html));
+    const priorContract = descriptions.historicalContract(url, contractBeforeSocialLinksUpdate(html));
     assert.equal(text(html.match(/<title>([\s\S]*?)<\/title>/)[1]), pin.title);
     assert.equal(priorContract.description, pin.description);
     assert.deepEqual([...body.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)].map(match => text(match[1])), pin.h1);
     const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(match => attrs(match[1]).type === 'application/ld+json').map(match => JSON.parse(match[2]));
-    assert.equal(clarity.hash(JSON.stringify(graph)), pin.graphSha256, `${url}: every FAQ and structured-data value unchanged`);
+    assert.equal(clarity.hash(JSON.stringify(graphBeforeSocialLinksUpdate(graph))), pin.graphSha256, `${url}: every FAQ and structured-data value unchanged`);
     if (url.includes('/services/executive-nannies/')) {
       const locale = new URL(url).pathname.split('/')[1];
       const section = [...main.matchAll(/<section\b[^>]*>([\s\S]*?)<\/section>/g)].find(match => text(match[1]).includes(clarity.fixture.executiveMatchingTitle[locale]))?.[1];
