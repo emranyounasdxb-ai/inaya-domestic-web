@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useId, type ReactNode } from 'react';
 import { instagramProfileUrl, siteConfig } from '@/lib/site-config';
 
 const iconClass = 'h-4 w-4';
@@ -74,10 +74,11 @@ function YouTubeIcon() {
 }
 
 function InstagramIcon() {
+  const gradientId = useId();
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={iconClass}>
       <defs>
-        <linearGradient id="floatingInstagramGradient" x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse">
+        <linearGradient id={gradientId} x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse">
           <stop stopColor="#FEDA75" />
           <stop offset=".28" stopColor="#FA7E1E" />
           <stop offset=".52" stopColor="#D62976" />
@@ -85,7 +86,7 @@ function InstagramIcon() {
           <stop offset="1" stopColor="#4F5BD5" />
         </linearGradient>
       </defs>
-      <rect width="20" height="20" x="2" y="2" rx="6" fill="url(#floatingInstagramGradient)" />
+      <rect width="20" height="20" x="2" y="2" rx="6" fill={`url(#${gradientId})`} />
       <path fill="#fff" d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3Zm0 7.7A3 3 0 1 1 12 9a3 3 0 0 1 0 6Zm5.1-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z" />
     </svg>
   );
