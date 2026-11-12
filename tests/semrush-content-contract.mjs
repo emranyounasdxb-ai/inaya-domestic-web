@@ -1,33 +1,59 @@
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
-const oldFacebookUrl = 'https://www.facebook.com/inayadomesticworkersajman/';
-const facebookUrl = 'https://www.facebook.com/profile.php?id=61596498300411';
+const facebook = {
+  previous: 'https://www.facebook.com/inayadomesticworkersajman/',
+  current: 'https://www.facebook.com/idwajman',
+  en: 'Facebook',
+  ar: 'فيسبوك'
+};
+const instagram = {
+  previous: 'https://www.instagram.com/inayadomesticworkers/',
+  current: 'https://www.instagram.com/idw.ajman/',
+  en: 'Instagram',
+  ar: 'إنستغرام'
+};
+const x = { current: 'https://x.com/idwajman', en: 'X', ar: 'إكس' };
 const organizationId = 'https://inayadomestic.ae/#organization';
 const companyPages = new Set(['en', 'ar'].map(locale => `https://inayadomestic.ae/${locale}/company-information/`));
 
-// The older checkpoints predate this one approved link change. Project only
-// its exact value in the organization's profile list and the two public links.
-export function graphBeforeFacebookUpdate(graph) {
-  return graph.map(document => ({
-    ...document,
-    ...(Array.isArray(document['@graph']) ? {
-      '@graph': document['@graph'].map(node => node['@id'] === organizationId && node.sameAs?.[1] === facebookUrl
-        ? { ...node, sameAs: node.sameAs.map((url, index) => index === 1 ? oldFacebookUrl : url) }
-        : node)
-    } : {})
-  }));
+// Restore the previous social profile destinations for historical checkpoints.
+export function graphBeforeSocialLinksUpdate(graph) {
+  return graph.map(document => {
+    if (!Array.isArray(document['@graph'])) return document;
+    return {
+      ...document,
+      '@graph': document['@graph'].map(node => {
+        if (node['@id'] !== organizationId || !Array.isArray(node.sameAs)) return node;
+        const sameAs = [...node.sameAs];
+        if (sameAs[1] === facebook.current) sameAs[1] = facebook.previous;
+        if (sameAs[2] === instagram.current) sameAs[2] = instagram.previous;
+        if (sameAs.length === 4 && sameAs[3] === x.current) sameAs.pop();
+        return { ...node, sameAs };
+      })
+    };
+  });
 }
 
-export function contractBeforeFacebookUpdate(html) {
+export function contractBeforeSocialLinksUpdate(html) {
   const contract = extractContract(html);
   const companyPage = contract.canonical.length === 1 && companyPages.has(contract.canonical[0]);
-  const facebookLabel = contract.lang === 'ar' ? 'فيسبوك' : 'Facebook';
+  const locale = contract.lang === 'ar' ? 'ar' : 'en';
+  const nextLabel = locale === 'ar' ? 'الاسم التجاري المعلن' : 'Public business name';
+  const precedingLabels = `${facebook[locale]} ${instagram[locale]}`;
+  const mainText = companyPage
+    ? contract.mainText.replace(`${precedingLabels} ${x[locale]} ${nextLabel}`, `${precedingLabels} ${nextLabel}`)
+    : contract.mainText;
+  const mainLinks = companyPage
+    ? contract.mainLinks.filter(link => link.href !== x.current || link.text !== x[locale]).map(link => {
+      const profile = [facebook, instagram].find(profile => profile.current === link.href && profile[locale] === link.text);
+      return profile ? { ...link, href: profile.previous } : link;
+    })
+    : contract.mainLinks;
   return {
     ...contract,
-    graph: graphBeforeFacebookUpdate(contract.graph),
-    mainLinks: companyPage ? contract.mainLinks.map(link => link.href === facebookUrl && link.text === facebookLabel
-      ? { ...link, href: oldFacebookUrl }
-      : link) : contract.mainLinks
+    graph: graphBeforeSocialLinksUpdate(contract.graph),
+    mainText,
+    mainLinks
   };
 }
 

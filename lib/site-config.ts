@@ -1,3 +1,5 @@
+export const instagramProfileUrl = 'https://www.instagram.com/idw.ajman/';
+
 export const siteConfig = {
   name: 'INAYA Domestic Workers',
   nameAr: 'عناية للعمالة المنزلية',
@@ -13,8 +15,9 @@ export const siteConfig = {
   // Controlled company profiles confirmed in the dated native business receipts.
   socialProfiles: [
     { name: 'LinkedIn', nameAr: 'لينكدإن', url: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/' },
-    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/profile.php?id=61596498300411' },
-    { name: 'Instagram', nameAr: 'إنستغرام', url: 'https://www.instagram.com/inayadomesticworkers/' }
+    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/idwajman' },
+    { name: 'Instagram', nameAr: 'إنستغرام', url: instagramProfileUrl },
+    { name: 'X', nameAr: 'إكس', url: 'https://x.com/idwajman' }
   ],
   hours: { en: 'Saturday–Thursday: 9:00 AM–9:00 PM. Friday: Closed.', ar: 'السبت إلى الخميس: 9 صباحاً إلى 9 مساءً. الجمعة: مغلق.' },
   phone: '+971 6 740 0128',

@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import test from 'node:test';
 import descriptions from './search-description-expectations.cjs';
 import semrush from './semrush-content-expectations.cjs';
-import { contractBeforeFacebookUpdate } from './semrush-content-contract.mjs';
+import { contractBeforeSocialLinksUpdate } from './semrush-content-contract.mjs';
 import { attrs } from '../scripts/seo-content-audit.mjs';
 
 const require = createRequire(import.meta.url);
@@ -96,7 +96,7 @@ test('all 294 rendered pages have the reviewed three descriptions and preserve e
       assert.deepEqual(values, [pin.after], `${url}: one complete, consistent ${name}`);
       assert.equal(hasTerminalEllipsis(values[0]), false, `${url}: no literal terminal truncation`);
     }
-    const contract = contractBeforeFacebookUpdate(html);
+    const contract = contractBeforeSocialLinksUpdate(html);
     assert.equal(digest(contract), pin.afterContractSha256, `${url}: exact current contract`);
     const prior = historicalContract(url, contract);
     assert.equal(digest(prior), pin.beforeContractSha256, `${url}: all prior body, headings, links, images, title, canonical, hreflang, robots and JSON-LD fields retained`);
@@ -106,7 +106,7 @@ test('all 294 rendered pages have the reviewed three descriptions and preserve e
 
 test('contract projection rejects unknown URLs, partial descriptions and unrelated changes to every field', async () => {
   for (const [url, pin] of changed) {
-    const contract = contractBeforeFacebookUpdate(await htmlFor(url));
+    const contract = contractBeforeSocialLinksUpdate(await htmlFor(url));
     assert.equal(digest(contract), pin.afterContractSha256);
     const partialMetadata = { title: contract.title, description: contract.description };
     assert.equal(historicalContract(url, partialMetadata), partialMetadata, `${url}: two fields cannot authorize a projection`);
