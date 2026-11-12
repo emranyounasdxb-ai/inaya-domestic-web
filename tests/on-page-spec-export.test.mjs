@@ -6,7 +6,7 @@ import { attrs, decode, text } from '../scripts/seo-content-audit.mjs';
 
 const origin = 'https://inayadomestic.ae';
 const mohre = 'https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c';
-const profiles = ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/', 'https://www.facebook.com/inayadomesticworkersajman/', 'https://www.instagram.com/inayadomesticworkers/'];
+const profiles = ['https://www.linkedin.com/company/inaya-domestic-workers-ajman/', 'https://www.facebook.com/profile.php?id=61596498300411', 'https://www.instagram.com/inayadomesticworkers/'];
 const countries = { lk: 'sri-lankan', np: 'nepali', mm: 'myanmar', ph: 'philippines', in: 'indian', bd: 'bangladeshi', et: 'ethiopian', ke: 'kenyan', gh: 'ghanaian', ug: 'ugandan', sl: 'sierra-leone', id: 'indonesian' };
 const xml = await readFile('out/sitemap.xml', 'utf8');
 const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => decode(match[1]));

@@ -1,5 +1,36 @@
 import { attrs, text, tokens } from '../scripts/seo-content-audit.mjs';
 
+const oldFacebookUrl = 'https://www.facebook.com/inayadomesticworkersajman/';
+const facebookUrl = 'https://www.facebook.com/profile.php?id=61596498300411';
+const organizationId = 'https://inayadomestic.ae/#organization';
+const companyPages = new Set(['en', 'ar'].map(locale => `https://inayadomestic.ae/${locale}/company-information/`));
+
+// The older checkpoints predate this one approved link change. Project only
+// its exact value in the organization's profile list and the two public links.
+export function graphBeforeFacebookUpdate(graph) {
+  return graph.map(document => ({
+    ...document,
+    ...(Array.isArray(document['@graph']) ? {
+      '@graph': document['@graph'].map(node => node['@id'] === organizationId && node.sameAs?.[1] === facebookUrl
+        ? { ...node, sameAs: node.sameAs.map((url, index) => index === 1 ? oldFacebookUrl : url) }
+        : node)
+    } : {})
+  }));
+}
+
+export function contractBeforeFacebookUpdate(html) {
+  const contract = extractContract(html);
+  const companyPage = contract.canonical.length === 1 && companyPages.has(contract.canonical[0]);
+  const facebookLabel = contract.lang === 'ar' ? 'فيسبوك' : 'Facebook';
+  return {
+    ...contract,
+    graph: graphBeforeFacebookUpdate(contract.graph),
+    mainLinks: companyPage ? contract.mainLinks.map(link => link.href === facebookUrl && link.text === facebookLabel
+      ? { ...link, href: oldFacebookUrl }
+      : link) : contract.mainLinks
+  };
+}
+
 // Same visible-text rules as auditExport; head, links, images and JSON-LD are
 // independent fields so a copy amendment cannot conceal a structural change.
 export function extractContract(html) {

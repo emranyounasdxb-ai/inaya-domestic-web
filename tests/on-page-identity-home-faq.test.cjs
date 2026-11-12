@@ -52,7 +52,7 @@ test('public business facts use the official facility identifier and newly contr
   const { text } = await import('../scripts/seo-content-audit.mjs');
   const profiles = [
     'https://www.linkedin.com/company/inaya-domestic-workers-ajman/',
-    'https://www.facebook.com/inayadomesticworkersajman/',
+    'https://www.facebook.com/profile.php?id=61596498300411',
     'https://www.instagram.com/inayadomesticworkers/'
   ];
   const source = 'https://mohre.gov.ae/en/services/approved-services-centers-new1/inaya-domestic-workers-services-s-p-s-l-l-c';

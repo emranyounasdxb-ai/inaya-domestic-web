@@ -13,7 +13,7 @@ export const siteConfig = {
   // Controlled company profiles confirmed in the dated native business receipts.
   socialProfiles: [
     { name: 'LinkedIn', nameAr: 'لينكدإن', url: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/' },
-    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/inayadomesticworkersajman/' },
+    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/profile.php?id=61596498300411' },
     { name: 'Instagram', nameAr: 'إنستغرام', url: 'https://www.instagram.com/inayadomesticworkers/' }
   ],
   hours: { en: 'Saturday–Thursday: 9:00 AM–9:00 PM. Friday: Closed.', ar: 'السبت إلى الخميس: 9 صباحاً إلى 9 مساءً. الجمعة: مغلق.' },

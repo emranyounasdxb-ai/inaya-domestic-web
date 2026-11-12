@@ -4,7 +4,7 @@ import test from 'node:test';
 import amendment from './semrush-content-expectations.cjs';
 import descriptions from './search-description-expectations.cjs';
 import './search-description-preservation.test.mjs';
-import { extractContract, auditParagraphs } from './semrush-content-contract.mjs';
+import { contractBeforeFacebookUpdate, extractContract, auditParagraphs } from './semrush-content-contract.mjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 
 const { fixture, hash } = amendment;
@@ -39,7 +39,7 @@ test('all 294 page contracts preserve every unassigned page, all blogs and the p
   assert.deepEqual([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]).sort(), Object.keys(fixture.pageContracts).sort());
   let unchanged = 0;
   for (const [url, pin] of Object.entries(fixture.pageContracts)) {
-    const page = descriptions.historicalContract(url, extractContract(await htmlFor(url)));
+    const page = descriptions.historicalContract(url, contractBeforeFacebookUpdate(await htmlFor(url)));
     assert.equal(digest(page), pin.afterSha256 ?? pin.beforeSha256, `${url}: exact text, links, headings, images, head and JSON-LD contract`);
     if (!pin.afterSha256) { unchanged++; continue; }
     assert.equal(hash(page.mainText), fixture.pages[url].after, url);
@@ -72,7 +72,7 @@ test('only thirteen exact derived location schema fields change; all other struc
     [0, '@graph', 4, 'name'], [0, '@graph', 4, 'serviceType'], [0, '@graph', 4, 'description']
   ];
   for (const url of Object.keys(fixture.pages)) {
-    const contract = extractContract(await htmlFor(url));
+    const contract = contractBeforeFacebookUpdate(await htmlFor(url));
     const pin = fixture.details[url], graph = structuredClone(contract.graph), changes = fixture.graphChanges[url] ?? [];
     assert.equal(digest(graph), pin.graphAfter);
     if (changes.length) {

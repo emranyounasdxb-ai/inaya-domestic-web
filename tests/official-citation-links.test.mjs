@@ -4,7 +4,7 @@ import test from 'node:test';
 import citations from './official-citation-expectations.cjs';
 import clarity from './november-clarity-expectations.cjs';
 import descriptions from './search-description-expectations.cjs';
-import { extractContract } from './semrush-content-contract.mjs';
+import { contractBeforeFacebookUpdate, graphBeforeFacebookUpdate } from './semrush-content-contract.mjs';
 import { attrs, text } from '../scripts/seo-content-audit.mjs';
 const baseline = JSON.parse(await readFile('tests/fixtures/official-citation-pages-20261104.json', 'utf8'));
 
@@ -27,7 +27,7 @@ test('all30 affected EN/AR pages preserve visible copy and metadata while repair
     const html = await readFile(`out${new URL(url).pathname}index.html`, 'utf8');
     const clean = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
     const main = clean.slice(clean.indexOf('<main'), clean.lastIndexOf('</main>') + 7);
-    const priorContract = descriptions.historicalContract(url, extractContract(html));
+    const priorContract = descriptions.historicalContract(url, contractBeforeFacebookUpdate(html));
     const links = [...html.matchAll(/<link\b([^>]*)>/g)].map(m => attrs(m[1]));
     assert.equal(citations.sha(text(main)), expected.mainTextSha256, `${url}: every visible word, label, price and date unchanged`);
     assert.equal(text(html.match(/<title>([\s\S]*?)<\/title>/)[1]), expected.title);
@@ -36,7 +36,7 @@ test('all30 affected EN/AR pages preserve visible copy and metadata while repair
     assert.deepEqual(links.filter(l => l.rel === 'alternate'), expected.alternates);
     assert.deepEqual([...main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)].map(m => text(m[1])), expected.h1);
     const graph = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(m => attrs(m[1]).type === 'application/ld+json').map(m => JSON.parse(m[2]));
-    assert.equal(citations.sha(JSON.stringify(graph)), expected.structuredDataSha256, `${url}: structured data changes only the approved citations`);
+    assert.equal(citations.sha(JSON.stringify(graphBeforeFacebookUpdate(graph))), expected.structuredDataSha256, `${url}: structured data changes only the approved citations`);
     const anchors = [...main.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].map(m => ({ href: attrs(m[1]).href, label: text(m[2]) }));
     for (const anchor of expected.repairedAnchors) {
       const match = anchors.findIndex(a => a.href === anchor.href && a.label === anchor.label);

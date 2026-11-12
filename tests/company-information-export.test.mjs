@@ -77,7 +77,7 @@ test('public JSON gives exact approved company facts, fixed review dates and a b
   });
   assert.deepEqual(company.profiles, [
     { name: 'LinkedIn', nameAr: 'لينكدإن', url: 'https://www.linkedin.com/company/inaya-domestic-workers-ajman/' },
-    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/inayadomesticworkersajman/' },
+    { name: 'Facebook', nameAr: 'فيسبوك', url: 'https://www.facebook.com/profile.php?id=61596498300411' },
     { name: 'Instagram', nameAr: 'إنستغرام', url: 'https://www.instagram.com/inayadomesticworkers/' }
   ]);
   assert.equal(company.office.count, 1);
@@ -184,5 +184,7 @@ test('every page exposes the localized official reference from its footer and re
     assert.equal(organizations[0]['@id'], organizationId);
     assert.equal(organizations[0].telephone, record.organization.officeTelephone);
     assert.equal(organizations[0].email, record.organization.email);
+    assert.deepEqual(organizations[0].sameAs, record.organization.profiles.map(profile => profile.url), `${url}: exact current profile URLs`);
+    assert.ok(!html.includes('https://www.facebook.com/inayadomesticworkersajman/'), `${url}: retired Facebook URL absent`);
   }
 });
